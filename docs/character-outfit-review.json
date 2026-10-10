@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-05",
+  "stage": "M5_character_outfit_equipment_batch",
+  "batchChangeVerified": true,
+  "characterQualityAccepted": false,
+  "fullGoalComplete": false,
+  "productionChanges": [
+    "外套曲面肩腰/下摆轮廓、贴合前片的翻领/口袋盖、背包卷毯。",
+    "薄面倒角石斧头及尖刃厚面晶石剑，工具仍随右手关节。",
+    "待机/移动持剑轻抬肩弯肘；攻击/采集覆盖原有姿态，游泳不叠加该握姿。腿部、玩法和存档不变。"
+  ],
+  "tests": {
+    "command": "npm test",
+    "passed": 95,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 1422.009459,
+    "log": "docs/character-outfit-tests.txt",
+    "expectedRegressionBefore": "docs/character-outfit-test-before.txt",
+    "syntaxChecks": [
+      "node --check src/character.js",
+      "node --check /private/tmp/tidelands-character-outfit-qa.mjs"
+    ],
+    "note": "完整测试后生产源码未再改；最后QA仅zoom修正，另做语法检查。"
+  },
+  "sourceSha256": {
+    "src/game.js": "5f27ece647163b1e076ccbe5eaf7e5ecf8960eba765e1fb4cd9f7e7b4a0b8cb2",
+    "src/scene.js": "b9e2bce7ccc6344660752bfe2a596bc112205bc1cd460a9d9241b9ff57d4cca7",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/main.js": "be2759df76430daa74c99405efb4cbd2b65e6382583f9662cc098128be733cfb",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/audio.js": "6e2cdcef0d1557515ee8f9151e66bbb1cba5c5546270e011bf31c1e0037f7fe6",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/character.js": "cbe3fac0b203391e634adeda6cf1b8a275f86b9eeef33acc970fbb29ab98d33a",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "index.html": "2245f69cea28e3ac482acf169d56ce48ab3ef8be9a1fce74af8390d29a95b15e",
+    "styles.css": "252b652e5198b084d87a41ef24e6328edbcbaf5685ad2e867cd40e4114b0b477",
+    "tests/camera.test.js": "b95a340e14b5976b3742456f3c6e00b0eb85ab662e916a34912affa76eec81db",
+    "tests/visual-review.html": "8906a292f21b9ef130d7d61d8498eed6e0aa264da9e45fb650f5785548171b82",
+    "tests/playthrough.html": "8b8d9bb7e840f3fad4caf40abe8d9e31f5c337a0c6ae6751b337e377a182ba05",
+    "tests/camera-motion.html": "e12210ba7f2f023b3696d6103666ef9bcbfc1588ad1ecc2b49f6b15771a693d4",
+    "tests/experiments/camera-motion-smoothing.mjs": "d1e2381f35e93844616029794792d665d4bc0502a75022360dd2a469ad4c7c2d",
+    "tests/experiments/camera-motion-smoothing.test.mjs": "29434a0805129b4cf4c961e99e0e8a71e767468b5367a2a841793b5d05af698f",
+    "tests/scene.test.js": "5f14168dcbc99de614d157f2cfed4040d12cc26eddb72b557222e45488eb9dd6",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "tests/sky.test.js": "0d39314c908b7dbd72db905853adc395367a38bcb0d5a940d85b4af12fc92bf0",
+    "README.md": "a6d27057c86ee881d51522efec34dfc9ef80cb0630cff9d4f6687e32bf0814a3",
+    "tests/creature.test.js": "70937937aad8ec732fc1dbff9ff630e4193ae6b8edc1560a2dbd9b2a3f574503",
+    "tests/creatures.html": "8423d48dc0e728c40874005099446e7b7498f4e96fabad0603e29646cc3ce25c",
+    "tests/character.test.js": "b1d9ddb3c0b2afd6286f66111bca5d1e07d1cecda9df1713b7f85632534d98b1",
+    "tests/locomotion.html": "735882857abb1984392aa7903f8ad9660479aed84b7a7fe87b7db20dbab35826"
+  },
+  "browserReport": "docs/character-outfit-browser-checks.json",
+  "currentShortSample": "docs/character-outfit-sample.json",
+  "qualityRemaining": [
+    "程序化人物材质/脸部/衣装、自然攻击/采集以及全身无穿插尚未完成。",
+    "12秒关节诊断不代替整靴/骨盆和动作自然度；仍约0.4米下降。",
+    "生物全身接地、树林/营地镜头突转及focus内贴塔遮挡仍待处理。",
+    "声音实际试听/交互一致性、代表性连续玩法、真机/GPU/当前长时性能及最终更新包仍待验收。"
+  ],
+  "quotaCheck": {
+    "ordinaryUsageAllowed": true,
+    "primaryUsedPercent": 5,
+    "weeklyUsedPercent": 80,
+    "goalStatus": "usageLimited",
+    "historicalUsageLimitedWasForced": false,
+    "resetCreditsUsed": 0,
+    "paidCreditsUsed": 0
+  },
+  "cleanup": {
+    "tabsClosed": [
+      85,
+      86,
+      87
+    ],
+    "viewportReset": true,
+    "server": "127.0.0.1:4190",
+    "originalPid": 45694
+  },
+  "archive": {
+    "file": "dist/tidelands-local.zip",
+    "sha256": "61e173d0bf869afda5cfa674a6a675780b9453a8389baabbd33948fb12bc90ac",
+    "rebuilt": false,
+    "currentSourceLongRunAccepted": false
+  },
+  "automation2048Continues": true
+}

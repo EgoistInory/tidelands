@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-03",
+  "browser": "Codex IAB 2",
+  "comparison": {"entry": "/tests/visual-review.html", "position": [-70, 102], "time": 240, "canvasCss": [1280, 608], "before": {"distance": 23, "pitch": 0.484, "calls": 116, "triangles": 660243}, "after": {"distance": 14, "pitch": 0.29, "calls": 181, "triangles": 666171}, "note": "Closer framing exposes more distant scenery; not a performance optimization"},
+  "productionSmoke": {"mode": "menus", "desktop": [1280, 720], "dragBearing": ["北", "西北"], "mobileViewport": [390, 844], "positionBeforeAfter": [[-70, 102], [-70.1, 101.1]], "note": "Viewport emulation and one pointer; limited camera angles, not physical-phone/multi-touch acceptance. Immediate post-reload start did not advance; click after ready-state observation did, cause unconfirmed"},
+  "performanceSample": {"mode": "performance", "buildings": 3, "position": [-63, 115.8], "movement": "stationary", "durationMs": 30483.3, "activeMs": 30016.5, "frames": 1801, "medianMs": 16.7, "p95Ms": 17.8, "maxMs": 18.7, "over50Ms": 0, "hidden": false, "viewport": [1280, 672], "devicePixelRatio": 2, "note": "Paused intervals excluded; scheduling only. Began in afternoon, result was read at night, not proof this 30-second sample covered a night"},
+  "warnError": [],
+  "tests": {"command": "node --test tests/camera.test.js tests/scene.test.js", "passed": 9, "failed": 0},
+  "sha256": {"src/main.js": "4dfb26075e8a30b62e5786b2969c692f7464edc43d114a44f7e8c88b9f55980d", "src/scene.js": "db87c0c15d48d912869c4c7766b25607aac5014b921fd8bbdb415e86a43b3535", "tests/visual-review.html": "61df0e2b5bb1b19c4459bd9936d90ead2d2c1811cd21c4f4e4c484a4d7331000"},
+  "images": "Actual tool screenshots inspected; no disk image or motion video saved",
+  "m5Complete": false,
+  "aaaComplete": false
+}

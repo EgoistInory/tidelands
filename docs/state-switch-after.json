@@ -1,0 +1,157 @@
+{
+  "complete": true,
+  "hidden": false,
+  "viewport": [
+    1280,
+    720
+  ],
+  "canvasBuffer": [
+    1920,
+    816
+  ],
+  "rows": [
+    {
+      "kind": "same-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0,
+      "syncMs": 0.2,
+      "drawCpuMs": 87.7,
+      "heapBytes": 99530703,
+      "geometries": 279,
+      "textures": 13
+    },
+    {
+      "kind": "fresh-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0.5,
+      "syncMs": 1,
+      "drawCpuMs": 3,
+      "heapBytes": 99530703,
+      "geometries": 282,
+      "textures": 13
+    },
+    {
+      "kind": "same-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0,
+      "syncMs": 0.1,
+      "drawCpuMs": 2.7,
+      "heapBytes": 99530703,
+      "geometries": 289,
+      "textures": 13
+    },
+    {
+      "kind": "fresh-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0.4,
+      "syncMs": 0.3,
+      "drawCpuMs": 3.9,
+      "heapBytes": 99530703,
+      "geometries": 308,
+      "textures": 13
+    },
+    {
+      "kind": "same-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0,
+      "syncMs": 0,
+      "drawCpuMs": 3,
+      "heapBytes": 99530703,
+      "geometries": 351,
+      "textures": 13
+    },
+    {
+      "kind": "fresh-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0.3,
+      "syncMs": 0.3,
+      "drawCpuMs": 2.4,
+      "heapBytes": 60895351,
+      "geometries": 362,
+      "textures": 13
+    },
+    {
+      "kind": "same-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0,
+      "syncMs": 0.1,
+      "drawCpuMs": 2.1,
+      "heapBytes": 60895351,
+      "geometries": 362,
+      "textures": 13
+    },
+    {
+      "kind": "fresh-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0.4,
+      "syncMs": 0.2,
+      "drawCpuMs": 2.3,
+      "heapBytes": 60895351,
+      "geometries": 362,
+      "textures": 13
+    },
+    {
+      "kind": "same-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0,
+      "syncMs": 0.1,
+      "drawCpuMs": 2.2,
+      "heapBytes": 60895351,
+      "geometries": 362,
+      "textures": 13
+    },
+    {
+      "kind": "fresh-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0.5,
+      "syncMs": 0.1,
+      "drawCpuMs": 2.3,
+      "heapBytes": 64219267,
+      "geometries": 362,
+      "textures": 13
+    }
+  ],
+  "note": "Ten fixed-camera isolated production sync calls, five same-object/five new-state. No saves or GPU timing. CPU draw includes WebGL command submission.",
+  "consoleWarnError": [],
+  "harnessSha256": "96ac9d10431c391102d8b55dc5d8aba30a80d3525052ddbb9405acc0d301df55",
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "756271e155e184a4a2b2e1faa9152f79da096d61cff64c9fcb8966f06d106a58",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "96c7ebc8d3d02675d1845f5d90c8315b3d4887616ade49d4298e75bb2507cb25",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "98a7be6306f53353c629827de56168d6c9a27efc57a9ac1e7e182f6d75c648de",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "fa838a156dea30a46d0bc32081894651b949d44536fc51aab2f532dfc0219017",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  }
+}

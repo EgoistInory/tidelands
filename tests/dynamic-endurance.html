@@ -1,0 +1,66 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>潮生群岛 · 动态负载隔离验收</title>
+<style>html,body{margin:0;height:100%;background:#192723;color:#efe6cf;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}button,select{font:inherit;padding:6px}output{height:86px;overflow:auto;overflow-wrap:anywhere;padding:8px;font:11px monospace}canvas{flex:1;min-height:0;width:100%;display:block}</style>
+<nav><strong>隔离脚本负载 · 无存档读写</strong><span>五场景切换会传送；阶段内使用生产移动、敌人、伤害和绘制。不是正常主线/真机/GPU测试。</span><label>时长 <select id="duration"><option value="60">60秒烟测</option><option value="600">10分钟动态样本</option></select></label><button id="start">开始动态采样</button></nav>
+<output id="result">准备实际世界…</output><canvas id="world" aria-label="自动脚本驱动的生产世界，非主线游玩证明"></canvas>
+<script type="module">
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain,dayCycle} from '../src/world.js';
+import {freshGame,movePlayer,tick,nearest,nearestEnemy,attack,resolveAttack,eat} from '../src/game.js';
+import {GameAudio} from '../src/audio.js';
+import {ATTACK_IMPACT} from '../src/action-timing.js';
+const scenes=[{name:'shore-exploration',x:-90,z:140,time:240},{name:'forest-combat',x:132,z:-26,time:240},{name:'highland-movement',x:-75,z:-205,time:360},{name:'amber-swimming',x:190,z:248,time:120},{name:'night-camp',x:-56,z:49,time:0}];
+const world=createWorld(),canvas=document.querySelector('canvas'),output=document.querySelector('#result'),view=new WorldView(canvas,world),audio=new GameAudio();
+let state=freshGame(),running=false,last=null,start=null,activeMs=0,index=-1,frames=0,movingFrames=0,distance=0,hidden=false,intervals=[],checkpoints=[],stages=[],phase=null,pending=null,syncAt=-1,nextCheckpoint=0;
+let stepAttempts=0,stepsScheduled=0,damageTaken=0,hitCount=0,respawns=0,revivedPairs=0,targetMs=60000;
+const frameSpikes=[];let previousFrame=null;
+const nativeEffect=audio.effect.bind(audio);audio.effect=(kind,options)=>{const n=audio.sources.size;nativeEffect(kind,options);if(kind==='step'){stepAttempts++;if(audio.sources.size>n)stepsScheduled++;}};
+const round=n=>Math.round(n*100)/100;
+function configure(i){
+  if(phase)stages.push({...phase,endPosition:[round(state.player.x),round(state.player.z)],kills:state.kills});
+  index=i;const s=scenes[i];state=freshGame();Object.assign(state.player,{x:s.x,z:s.z});state.respawn={x:s.x,z:s.z};state.time=s.time;state.inventory.sword=1;state.inventory.berry=100;state.selected='sword';state.quest=6;
+  if(i===4)state.buildings=[{id:'qa-fire',type:'campfire',x:-56,z:56},{id:'qa-tent',type:'tent',x:-65,z:49},{id:'qa-bench',type:'workbench',x:-47,z:49}];
+  phase={name:s.name,startPosition:[s.x,s.z],frames:0,movingFrames:0,distance:0,attackHits:0,damageTaken:0,revivedPairs:0};pending=null;syncAt=-1;
+  view.gatherAt=-100;view.player.userData.lastPosition=null;view.player.userData.worldFeet=null;view.sync(state);view.yaw=.15;view.camera.position.set(s.x+5,Math.max(terrain(s.x,s.z),0)+12,s.z+20);
+}
+function checkpoint(){
+  const info=view.renderer.info;
+  checkpoints.push({activeMs:round(activeMs),stage:scenes[index].name,position:[round(state.player.x),round(state.player.z)],height:round(terrain(state.player.x,state.player.z)),time:round(state.time),daytime:dayCycle(state.time).label,hp:state.player.hp,kills:state.kills,frames,movingFrames,distance:round(distance),calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures,heapBytes:performance.memory?.usedJSHeapSize??null,audio:{context:audio.context?.state,voices:audio.sources.size,stepsScheduled,surfGain:audio.surf?.gain.value??null},viewport:[innerWidth,innerHeight],canvasBuffer:[canvas.width,canvas.height]});
+}
+function result(complete=false){
+  const sorted=[...intervals].sort((a,b)=>a-b);
+  return {complete,targetMs,activeMs:round(activeMs),wallMs:start===null?0:round(performance.now()-start),frames,movingFrames,movingFraction:round(movingFrames/Math.max(1,frames)),distanceMeters:round(distance),hidden,medianMs:round(sorted[Math.floor(sorted.length*.5)]??0),p95Ms:round(sorted[Math.floor(sorted.length*.95)]??0),maxMs:round(sorted.at(-1)??0),over50Ms:intervals.filter(n=>n>50).length,frameSpikes,stepAttempts,stepsScheduled,hitCount,damageTaken,respawns,revivedPairs,stages,checkpoints,note:'QA scripted input and five phase teleports; production movement/tick/render/audio. Combat pair revived as labelled load fixture. Frame intervals and JS heap only; no save or campaign acceptance.'};
+}
+configure(0);view.draw(state,nearest(state,world.objects),null,false,1/60);output.textContent='就绪。点击开始；敌人/剑/食物/建筑为明确隔离fixture，无存档读写。';
+document.querySelector('#start').onclick=async()=>{
+  document.querySelectorAll('button,select').forEach(e=>e.disabled=true);
+  try{await audio.unlock();audio.setActive(true);targetMs=Number(document.querySelector('#duration').value)*1000;running=true;requestAnimationFrame(frame);}
+  catch(error){output.textContent='音频初始化失败：'+error.message;console.error(error);}
+};
+function frame(now){
+  if(!running)return;if(start===null){start=now;last=now;checkpoint();nextCheckpoint=60000;}
+  const cpuStart=performance.now(),raw=now-last;last=now;if(raw>0){intervals.push(raw);activeMs+=raw;}if(raw>50)frameSpikes.push({atMs:round(activeMs),intervalMs:round(raw),previousFrame});const dt=Math.min(.05,raw/1000);hidden||=document.hidden;
+  const i=Math.min(4,Math.floor(activeMs/(targetMs/5))),transition=i!==index;if(transition)configure(i);
+  const phaseTime=(activeMs%(targetMs/5))/1000,angle=phaseTime*.9;
+  if(index===1&&Math.floor(phaseTime/15)>=phase.revivedPairs){
+    for(const [j,e] of state.enemies.slice(0,2).entries())Object.assign(e,{x:state.player.x+3+j,z:state.player.z+1,hp:e.type==='boar'?70:40,attackAt:state.time,homeX:state.player.x+3+j,homeZ:state.player.z+1});
+    phase.revivedPairs++;revivedPairs++;view.sync(state);
+  }
+  const enemy=index===1?nearestEnemy(state):null,dx=enemy?enemy.x-state.player.x:Math.sin(angle),dz=enemy?enemy.z-state.player.z:Math.cos(angle),before={x:state.player.x,z:state.player.z};
+  movePlayer(state,world.objects,dx,dz,dt,index===2&&phaseTime%8<3);
+  const moved=Math.hypot(state.player.x-before.x,state.player.z-before.z),moving=moved>.001;
+  distance+=moved;phase.distance+=moved;frames++;phase.frames++;if(moving){movingFrames++;phase.movingFrames++;}
+  const feedback={};tick(state,dt,index===2&&phaseTime%8<3,feedback);damageTaken+=feedback.damage;phase.damageTaken+=feedback.damage;
+  if(feedback.damage){view.hurtAt=state.time;audio.effect('hurt');}if(feedback.respawned){respawns++;pending=null;view.sync(state);}
+  if(state.player.hp<40)eat(state);
+  if(index===1&&!pending&&enemy&&Math.hypot(enemy.x-state.player.x,enemy.z-state.player.z)<5.2){const a=attack(state,{defer:true});if(a.pending){pending=a.pending;audio.effect('swing');}}
+  if(pending&&state.time-pending.at>=ATTACK_IMPACT){const hit=resolveAttack(state,pending);pending=null;if(hit){hitCount+=hit.hits.length;phase.attackHits+=hit.hits.length;if(hit.hits.length)audio.effect('hit');view.sync(state);}}
+  if(state.time-syncAt>.15){view.sync(state);syncAt=state.time;}view.draw(state,nearest(state,world.objects),null,moving,dt);audio.update(state.player,state.time,terrain(state.player.x,state.player.z),view.player.userData.footfallCount);
+  if(activeMs>=nextCheckpoint){checkpoint();nextCheckpoint+=60000;}
+  if(frames%30===0)output.textContent=JSON.stringify(result());
+  previousFrame={stage:scenes[index].name,transition,cpuMs:round(performance.now()-cpuStart)};
+  if(activeMs<targetMs){requestAnimationFrame(frame);return;}
+  if(checkpoints.at(-1)?.activeMs!==round(activeMs))checkpoint();stages.push({...phase,endPosition:[round(state.player.x),round(state.player.z)],kills:state.kills});audio.setActive(false);running=false;output.textContent=JSON.stringify(result(true));
+}
+window.addEventListener('resize',()=>{view.resize();if(!running)view.draw(state,null,null,false,1/60);});
+window.addEventListener('pagehide',()=>{audio.dispose();view.renderer.dispose();});
+</script></html>

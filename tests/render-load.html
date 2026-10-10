@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><title>实际场景渲染负载</title>
+<style>body{margin:0;background:#10282e;color:white;font:14px monospace}canvas{width:100vw;height:calc(100vh - 110px);display:block}output{display:block;white-space:pre-wrap;padding:12px}</style>
+<canvas id="world"></canvas><output id="result">正在创建实际世界；指标为单帧渲染计数，不代表帧率或GPU耗时。</output>
+<script type="module">
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain} from '../src/world.js';
+import {freshGame,nearest} from '../src/game.js';
+const canvas=document.getElementById('world'),result=document.getElementById('result');
+try{
+  const world=createWorld(),state=freshGame(),view=new WorldView(canvas,world);
+  const params=new URL(location.href).searchParams,suite=params.get('suite')==='1',profile=params.get('profile')==='1';
+  const views=suite?[{name:'coast',x:-70,z:102,yaw:.15},{name:'forest',x:132,z:-26,yaw:Math.PI},{name:'highlands',x:-70,z:-190,yaw:Math.PI},{name:'amber',x:145,z:180,yaw:0}]:[{name:'coast',x:-70,z:102,yaw:.15}];
+  if(profile&&suite)views.push(...views.map(v=>({...v,name:v.name+'-repeat'})));
+  const samples=[];let frames=0,index=0,submissions={};
+  function position(){const point=views[index];Object.assign(state.player,{x:point.x,z:point.z});view.yaw=point.yaw;view.sync(state);view.camera.position.set(point.x+5,terrain(point.x,point.z)+18,point.z+24);view.player.userData.lastPosition=null;}
+  position();
+  if(profile){
+    const categories=new Map(),tag=(root,name)=>root.traverse(o=>{if(o.isMesh)categories.set(o,name);});
+    tag(view.scene,'scenery');tag(view.player,'player');
+    for(const child of view.scene.children)if(child!==view.player&&child.userData.hips)tag(child,'npc');
+    for(const creature of view.creatures.values())tag(creature,'creatures');
+    for(const {batch} of view.batches)categories.set(batch,'resources');
+    categories.set(view.water,'water');
+    for(const [mesh,category] of categories){
+      const render=mesh.onBeforeRender,shadow=mesh.onBeforeShadow;
+      mesh.onBeforeRender=function(...args){const counter=submissions[category]??={main:0,shadow:0};counter.main++;render.apply(this,args);};
+      mesh.onBeforeShadow=function(...args){const counter=submissions[category]??={main:0,shadow:0};counter.shadow++;shadow.apply(this,args);};
+    }
+  }
+  // Freeze simulation and settle the camera: comparable load without enemy movement.
+  function sample(){
+    // Suite batches ten draws per callback to avoid confusing host throttling with GPU load.
+    // These are deterministic render counts, explicitly NOT a frame-rate benchmark.
+    for(let i=0;i<(suite?10:1);i++){submissions={};view.draw(state,nearest(state,world.objects),null,false,1/60);frames++;}
+    if(frames<60){requestAnimationFrame(sample);return;}
+    const {render,memory,programs}=view.renderer.info;
+    samples.push({name:views[index].name,draws:frames,position:[state.player.x,state.player.z],canvas:[canvas.width,canvas.height],calls:render.calls,triangles:render.triangles,geometries:memory.geometries,textures:memory.textures,programs:programs.length,visibility:document.visibilityState,...(profile?{submissions}: {})});
+    index++;result.textContent=JSON.stringify({complete:index===views.length,samples,note:'固定视角单次render计数；suite每次回调批量绘制10次；不是GPU耗时、帧率或长期内存验收'},null,2);
+    if(index<views.length){frames=0;position();requestAnimationFrame(sample);}
+  }
+  requestAnimationFrame(sample);
+}catch(error){result.textContent=error.stack;console.error(error);}
+</script></html>

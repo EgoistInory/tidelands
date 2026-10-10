@@ -1,0 +1,275 @@
+{
+  "date": "2026-10-05",
+  "stage": "M5_tree_camera_bounds_batch",
+  "batchChangeVerified": true,
+  "continuousCameraQualityAccepted": false,
+  "fullGoalComplete": false,
+  "change": "Generate seven local boxes from actual unmerged tree trunk, five branches and wind-expanded leaf geometry; apply each resource scale/rotation/translation. Build once during createScenery, retain depletion filtering and all existing rock/crystal/building/landmark/terrain checks. No camera smoothing experiment enabled.",
+  "productionFilesChanged": [
+    "src/scene.js"
+  ],
+  "testsChanged": [
+    "tests/scene.test.js"
+  ],
+  "failingRegression": {
+    "command": "node --test tests/scene.test.js",
+    "artifact": "docs/tree-camera-test-before.txt",
+    "error": "empty space near the player must not collide with a ground-to-crown box"
+  },
+  "verification": {
+    "command": "npm test",
+    "tests": 88,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 1347.177083,
+    "artifact": "docs/tree-camera-tests.txt",
+    "syntax": [
+      "src/scene.js",
+      "src/camera.js"
+    ]
+  },
+  "geometryEvidence": {
+    "artifact": "docs/tree-camera-geometry.json",
+    "resourceId": "resource-1216",
+    "beforeNearestRayHitMeters": 0.0825546561483855,
+    "afterNearestRayHitMeters": 6.986767869792317,
+    "trunkAndCrownStillBlock": true,
+    "testUsesActualProductionWorldModel": true
+  },
+  "motionScope": "Each route runs 20 seconds of scripted world-coordinate movement through production movePlayer/tick/WorldView.draw, with gradual yaw input in seconds 5-10. Enemies removed; camp uses existing three-building fixture. No save read/write, actual-mainline, human steering, frame-time/GPU or video claim. Initial reset camera adjustment precedes measurements.",
+  "priorMotionReview": {
+    "path": "docs/camera-motion-review.json",
+    "sha256": "1ba10f43c30d77c01589922d794647402b0bd83715e8ba07ba9f581c2bd676c9"
+  },
+  "motionResults": {
+    "lighthouse": {
+      "complete": true,
+      "elapsedSeconds": 20,
+      "position": [
+        -87.1036,
+        -57.041
+      ],
+      "waypointsReached": 12,
+      "stats": {
+        "frames": 1201,
+        "travelMeters": 138.5818000000003,
+        "automaticTurns": 7,
+        "minFocusDistance": 6.625539796990227,
+        "maxFocusDistance": 16.04316591545542,
+        "belowSixMetersSeconds": 0,
+        "maxCameraStepMeters": 9.52214322770125,
+        "maxYawStepRadians": 0.5235987755982986,
+        "hidden": false
+      },
+      "viewport": [
+        1280,
+        580
+      ],
+      "canvasBuffer": [
+        1920,
+        870
+      ],
+      "dpr": 2
+    },
+    "forest": {
+      "complete": true,
+      "elapsedSeconds": 20,
+      "position": [
+        136.2302,
+        -29.6893
+      ],
+      "waypointsReached": 8,
+      "stats": {
+        "frames": 1202,
+        "travelMeters": 139.17773799999978,
+        "automaticTurns": 2,
+        "minFocusDistance": 13.668390422503478,
+        "maxFocusDistance": 15.283879939216106,
+        "belowSixMetersSeconds": 0,
+        "maxCameraStepMeters": 13.556852319859013,
+        "maxYawStepRadians": 1.033837551196601,
+        "hidden": false
+      },
+      "viewport": [
+        1280,
+        580
+      ],
+      "canvasBuffer": [
+        1920,
+        870
+      ],
+      "dpr": 2
+    },
+    "campMidnight": {
+      "complete": true,
+      "elapsedSeconds": 20,
+      "position": [
+        -70.3928,
+        108.3588
+      ],
+      "waypointsReached": 7,
+      "stats": {
+        "frames": 1201,
+        "travelMeters": 139.19593799999996,
+        "automaticTurns": 2,
+        "minFocusDistance": 6.8268758184822484,
+        "maxFocusDistance": 15.374994830811548,
+        "belowSixMetersSeconds": 0,
+        "maxCameraStepMeters": 20.130883440859332,
+        "maxYawStepRadians": 1.5707963267948963,
+        "hidden": false
+      },
+      "viewport": [
+        1280,
+        580
+      ],
+      "canvasBuffer": [
+        1920,
+        870
+      ],
+      "dpr": 2
+    },
+    "mobileLighthouse": {
+      "complete": true,
+      "elapsedSeconds": 20,
+      "position": [
+        -87.0994,
+        -57.1577
+      ],
+      "waypointsReached": 12,
+      "stats": {
+        "frames": 1202,
+        "travelMeters": 138.7035999999988,
+        "automaticTurns": 7,
+        "minFocusDistance": 6.613331880259095,
+        "maxFocusDistance": 16.04317492561974,
+        "belowSixMetersSeconds": 0,
+        "maxCameraStepMeters": 9.531291432382497,
+        "maxYawStepRadians": 0.5235987755982996,
+        "hidden": false
+      },
+      "viewport": [
+        390,
+        612
+      ],
+      "canvasBuffer": [
+        585,
+        918
+      ],
+      "dpr": 1
+    }
+  },
+  "interpretation": "Lighthouse max camera step falls from 24.9832m/120 degrees to 9.5221m/30 degrees (mobile 9.5313m/30 degrees). Forest remains about 13.56m/59 degrees; camp still 20.13m/90 degrees. All four samples retain focus distance above 6m. This verifies the specific bounds correction, not smooth camera quality overall.",
+  "actualMobileGame": {
+    "mode": "m4",
+    "normalCompletedSaveUsed": true,
+    "fixtureImported": false,
+    "browserViewport": [
+      390,
+      844
+    ],
+    "hp": 82,
+    "quest": 6,
+    "buildings": 1,
+    "kills": 3,
+    "initialPosition": [
+      -96.3,
+      -53.1
+    ],
+    "afterTwoForwardDrags": [
+      -95.9,
+      -54.9
+    ],
+    "afterSecondLookAndTwoForwardDrags": [
+      -95,
+      -56.4
+    ],
+    "afterTwoLeftDrags": [
+      -96.6,
+      -57.5
+    ],
+    "lighthouseInteraction": "归航的灯火长明。谢谢你，旅人。",
+    "saveMessage": "存档已保存。",
+    "cameraQualityGap": "At the two closest tower positions the tower obscured part of the character. Moving left away from the tower restored full-body visibility. Focus-inside landmark-box behavior is still a quality todo, not an accepted fix.",
+    "savedPausedClosed": true,
+    "consoleWarningsAndErrors": []
+  },
+  "shortSample": {
+    "artifact": "docs/tree-camera-sample.json",
+    "scope": "30 seconds effective rAF scheduling on production rendering in the existing three-building performance save. Parent control pause excluded. Initial Shift+W and D occurred while sampling and moved [-43.3,90.4] to [-42.9,89.7]. Later 12 Shift+W, 12 D, look and missed attack were checked around/after completion; do not claim all those actions ran inside sample. No GPU or leak-proof claim.",
+    "postSamplePositions": [
+      [
+        -44.4,
+        81.8
+      ],
+      [
+        -39.3,
+        81
+      ]
+    ],
+    "postSampleAttack": "未命中 · 靠近目标再攻击",
+    "finalHp": 100,
+    "finalBuildings": 3,
+    "finalKills": 0,
+    "finalAudioRouting": {
+      "stepsAttempted": 5,
+      "stepsScheduled": 5,
+      "footfallCount": 7,
+      "context": "running",
+      "actualSoundListened": false
+    },
+    "saveMessage": "存档已保存。",
+    "consoleWarningsAndErrors": []
+  },
+  "screenshots": {
+    "inspectedInline": true,
+    "savedImageOrVideoPaths": []
+  },
+  "cleanup": {
+    "temporaryTabsClosed": true,
+    "viewportOverrideReset": true,
+    "server": "127.0.0.1:4190 PID45694"
+  },
+  "quotaRecovery": {
+    "observedGoalStatus": "usageLimited",
+    "ordinaryUsageAllowed": true,
+    "primaryUsedPercent": 10,
+    "secondaryUsedPercent": 65,
+    "statusForced": false,
+    "resetCreditUsed": false
+  },
+  "remainingQuality": [
+    "Abrupt orbit turns in forest/camp and some tower positions",
+    "Partial character occlusion when focus lies inside landmark box",
+    "Procedural character/creature/environment appearance, motion and audio listening",
+    "Current long-term whole-world/GPU/physical-device acceptance"
+  ],
+  "nextAction": "Keep camera remainder as a quality todo; proceed to the next M5 character/creature/environment/audio batch instead of iterating only camera. Full M5 and 3A goal remain unfinished. M4 archive stays historical and has not been rebuilt.",
+  "sourceSha256": {
+    "src/game.js": "5f27ece647163b1e076ccbe5eaf7e5ecf8960eba765e1fb4cd9f7e7b4a0b8cb2",
+    "src/scene.js": "b67c06091b6c18b0757cc360048820e99a0c8cbb859a26d6d203317d4cd6937e",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/main.js": "be2759df76430daa74c99405efb4cbd2b65e6382583f9662cc098128be733cfb",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/audio.js": "6e2cdcef0d1557515ee8f9151e66bbb1cba5c5546270e011bf31c1e0037f7fe6",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/character.js": "7e516f1cfcdd4319b54b7489290ba8fcb1e8e1fdd2d8634d016d20b9e0f213a5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "index.html": "2245f69cea28e3ac482acf169d56ce48ab3ef8be9a1fce74af8390d29a95b15e",
+    "styles.css": "252b652e5198b084d87a41ef24e6328edbcbaf5685ad2e867cd40e4114b0b477",
+    "tests/camera.test.js": "b95a340e14b5976b3742456f3c6e00b0eb85ab662e916a34912affa76eec81db",
+    "tests/visual-review.html": "fd2e18bd7e14845e499f91d604e3d5d832bd0c12e1bb23d1317e29611eca6dda",
+    "tests/playthrough.html": "8b8d9bb7e840f3fad4caf40abe8d9e31f5c337a0c6ae6751b337e377a182ba05",
+    "tests/camera-motion.html": "e12210ba7f2f023b3696d6103666ef9bcbfc1588ad1ecc2b49f6b15771a693d4",
+    "tests/experiments/camera-motion-smoothing.mjs": "d1e2381f35e93844616029794792d665d4bc0502a75022360dd2a469ad4c7c2d",
+    "tests/experiments/camera-motion-smoothing.test.mjs": "29434a0805129b4cf4c961e99e0e8a71e767468b5367a2a841793b5d05af698f",
+    "tests/scene.test.js": "5f14168dcbc99de614d157f2cfed4040d12cc26eddb72b557222e45488eb9dd6"
+  }
+}

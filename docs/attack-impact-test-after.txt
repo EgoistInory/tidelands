@@ -1,0 +1,34 @@
+TAP version 13
+# Subtest: deferred attack commits damage at the rendered swing peak and only once
+ok 1 - deferred attack commits damage at the rendered swing peak and only once
+  ---
+  duration_ms: 13.745166
+  type: 'test'
+  ...
+# Subtest: wind-up reserves the cooldown and kill rewards are committed once at impact
+ok 2 - wind-up reserves the cooldown and kill rewards are committed once at impact
+  ---
+  duration_ms: 1.196
+  type: 'test'
+  ...
+# Subtest: impact uses the starting weapon but the current target distance
+ok 3 - impact uses the starting weapon but the current target distance
+  ---
+  duration_ms: 0.813791
+  type: 'test'
+  ...
+# Subtest: cancelled, expired and replaced-save swings cannot damage or survive serialization
+ok 4 - cancelled, expired and replaced-save swings cannot damage or survive serialization
+  ---
+  duration_ms: 5.419167
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 70.6675

@@ -1,0 +1,196 @@
+{
+  "recordedAt": "2026-10-04T09:36:37.618764+00:00",
+  "milestone": "M3",
+  "status": "functional_complete",
+  "fullGoalComplete": false,
+  "sourceHashes": {
+    "index.html": "2245f69cea28e3ac482acf169d56ce48ab3ef8be9a1fce74af8390d29a95b15e",
+    "styles.css": "252b652e5198b084d87a41ef24e6328edbcbaf5685ad2e867cd40e4114b0b477",
+    "tests/playthrough.html": "e5f5e1daf08f4e1d34b9c238c22deee0d476317718e6cc20f2dd586a3d330bc4",
+    "tests/game.test.js": "63523d20f5e457f8ca5ac9f0caca50d29a743c8cf901d5d8461ae4913cc25c11",
+    "src/audio.js": "6e2cdcef0d1557515ee8f9151e66bbb1cba5c5546270e011bf31c1e0037f7fe6",
+    "src/camera.js": "eba766f996b6d841c44509196bd0f79273e6bb6d37b63aee293ce723f2e66333",
+    "src/character.js": "7e516f1cfcdd4319b54b7489290ba8fcb1e8e1fdd2d8634d016d20b9e0f213a5",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "5f27ece647163b1e076ccbe5eaf7e5ecf8960eba765e1fb4cd9f7e7b4a0b8cb2",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/main.js": "be2759df76430daa74c99405efb4cbd2b65e6382583f9662cc098128be733cfb",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "ef24f7266be81533bc9a535c825478caa0c319bc8e19cbaa399604c55ad400ba",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "tests/fixtures/m3-botanist-locked.json": "b038e2162b7c07e6ef59de84719d9cb2f0a2dfb836e2e4c1f9d8d5aa4cc3891a",
+    "tests/fixtures/m3-botanist-ready.json": "5be74c5421006a0f1a46997615c3c6114adf31fd5bbf299d41192139af1fc6af",
+    "tests/fixtures/m3-equipment.json": "bd33ce7912284117e0866987a13477c5644326ea81077d7534352d0ad5dada1b",
+    "tests/fixtures/m3-explorer-locked.json": "e9a8c0d0b4ad61c8e24d8a9d505a3a0c68a2dcfba0fd65ad336981834db31375",
+    "tests/fixtures/m3-explorer-ready.json": "7db786fd0a0c6a2b7f997e909ea250d2e9fa72abc87d938a41eaa136490d6a10",
+    "tests/fixtures/m3-keeper.json": "541610038787ed0382ff71fa36ae0ca3ace6f8d7fc23943614ed93f69eeaff09",
+    "tests/fixtures/m3-lighthouse-ready.json": "4fe0be4b0e4a9a6553f4b167d0a4681b88fb38db12b4be07d511ab939631874f",
+    "tests/fixtures/m3-lighthouse-short.json": "059ceb7fb3f5573cd9f1d1669e0d5d143f0297fe20e81afcc146f91eb16c49af"
+  },
+  "tests": {
+    "command": "npm test",
+    "passed": 86,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 3745.445541,
+    "artifact": "docs/m3-tests.txt",
+    "intentionalRegressionReproduction": "docs/m3-dialog-before.txt",
+    "syntaxChecks": [
+      "src/game.js",
+      "/private/tmp/tidelands-m3-harness.mjs"
+    ]
+  },
+  "productionFix": {
+    "file": "src/game.js",
+    "problem": "Botanist promised berries before camp prerequisite without awarding them",
+    "result": "Prerequisite, one-time gift, subsequent target and completed quest dialogue follow actual state"
+  },
+  "browser": {
+    "mode": "m3",
+    "saveKey": "tidelands-qa-m3",
+    "importMethod": "Production pause menu file chooser",
+    "regions": [
+      "潮汐海岸",
+      "苍翠林地",
+      "雾岬高地"
+    ],
+    "keeper": {
+      "quest": [
+        0,
+        1
+      ],
+      "position": [
+        -54.5,
+        94
+      ]
+    },
+    "botanistLocked": {
+      "quest": 2,
+      "berries": 3,
+      "messageMentionsCampfire": true
+    },
+    "botanistReady": {
+      "quest": [
+        3,
+        4
+      ],
+      "berries": [
+        3,
+        8
+      ]
+    },
+    "botanistRepeat": {
+      "quest": 4,
+      "berries": 8,
+      "noRepeatedGiftPromise": true
+    },
+    "explorerLocked": {
+      "quest": 4,
+      "kills": 1
+    },
+    "explorerReady": {
+      "quest": [
+        4,
+        5
+      ],
+      "kills": 2,
+      "crystalAfter": 1
+    },
+    "lighthouseShort": {
+      "quest": 5,
+      "wood": 11,
+      "stone": 8,
+      "crystal": 3,
+      "materialsUnchanged": true
+    },
+    "lighthouseReady": {
+      "quest": [
+        5,
+        6
+      ],
+      "wood": [
+        12,
+        0
+      ],
+      "stone": [
+        8,
+        0
+      ],
+      "crystal": [
+        3,
+        0
+      ]
+    },
+    "completedReload": {
+      "questTitle": "群岛，再次相连",
+      "from": [
+        -88.5,
+        -54
+      ],
+      "to": [
+        -87.7,
+        -49
+      ]
+    },
+    "swordCraft": {
+      "wood": [
+        4,
+        0
+      ],
+      "stone": [
+        4,
+        0
+      ],
+      "crystal": [
+        3,
+        0
+      ],
+      "sword": 1,
+      "reloadBuildings": 1,
+      "reloadSwordButtonClass": "selected"
+    },
+    "warnError": [],
+    "temporaryTabsClosed": true,
+    "productionAndJourneyUntouched": true,
+    "uniqueFixturesImported": 8,
+    "totalFixtureImports": 9
+  },
+  "combat": {
+    "url": "http://127.0.0.1:4190/tests/playthrough.html?mode=combat",
+    "fixture": "40 HP close crab with sword, other enemies dead",
+    "firstRapidSpacePair": {
+      "kills": 0,
+      "message": "命中 1 个目标"
+    },
+    "subsequentAttack": {
+      "kills": 1,
+      "hpDisplayed": 44,
+      "message": "击败 1 个目标",
+      "fiberAfter": 2,
+      "berriesAfter": 4,
+      "sword": 1
+    },
+    "cooldownExactDamageEvidence": "Current equipped damage and attack cooldown unit tests; browser shows no kill from rapid pair then a later kill",
+    "warnError": []
+  },
+  "historicalEvidence": {
+    "source": "docs/VERIFICATION.md",
+    "journeyCompletedFromFresh": true,
+    "currentFreshEntireUIReplay": false,
+    "crossIslandSwimming": "Historical journey, not current fixture import"
+  },
+  "limitations": [
+    "Functional milestone only, not final 3A quality",
+    "Labelled fixture imports do not constitute a fresh full playthrough",
+    "Some milestone coverage combines current rules and historical real UI evidence",
+    "Current entire fresh playthrough, endurance, GPU, physical devices, audio listening and motion quality still required",
+    "Screenshots inspected inline but not newly archived"
+  ],
+  "nextMilestone": "M4"
+}

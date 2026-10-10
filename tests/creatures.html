@@ -1,0 +1,35 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>生物动作隔离验收</title><style>html,body{margin:0;height:100%;background:#203239;color:#fff;font:14px system-ui}body{display:flex;flex-direction:column}nav{display:flex;flex-wrap:wrap;gap:6px;padding:10px;align-items:center}button,select{padding:7px;font:inherit}canvas{display:block;flex:1;min-height:0;width:100%}output{display:block;height:90px;overflow:auto;padding:8px;font:12px monospace;overflow-wrap:anywhere}</style><nav>生产生物模型 · 不读写存档 <button data-action="idle">站立</button><button data-action="walk">行走</button><button data-action="attack">攻击</button><button data-action="strike">攻击定格</button><button data-action="hit">受击</button><button data-action="defeat">倒地</button><button data-action="reset">恢复</button><button data-action="cycle">12秒动作循环</button><label>镜头 <select id="camera"><option value="pair">两类全身</option><option value="boar">野猪细节</option><option value="crab">蟹螯细节</option></select></label><span id="status">站立；循环仅为模型诊断，不是实际战斗验收。</span></nav><output id="probe"></output><canvas aria-label="实际生产野猪与蟹模型"></canvas><script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {createCreature,animateCreature} from '../src/creature.js';
+const canvas=document.querySelector('canvas'),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(40,1,.1,100),renderer=new THREE.WebGLRenderer({canvas,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setClearColor(0x203239);scene.add(new THREE.HemisphereLight(0xffffff,0x6e6c52,2));const sun=new THREE.DirectionalLight(0xffe5c2,3);sun.position.set(-4,8,5);scene.add(sun);
+const models=['boar','crab'].map((type,i)=>{const root=createCreature(type);scene.add(root);return {root,state:{x:i?3:-3,z:0,hp:70,attackAt:-100}};});
+let frames=0,time=10,last=performance.now(),walk=false,strike=false,sample=null,viewWidth=0,viewHeight=0;
+function resize(){viewWidth=canvas.clientWidth;viewHeight=canvas.clientHeight;renderer.setSize(viewWidth,viewHeight,false);camera.aspect=viewWidth/viewHeight;camera.zoom=Math.min(1,camera.aspect/(document.querySelector('#camera').value==='pair'?1.3:1));camera.updateProjectionMatrix();}window.addEventListener('resize',resize);document.querySelector('#camera').onchange=resize;resize();
+document.querySelector('nav').onclick=e=>{
+  const action=e.target.dataset.action;if(!action)return;document.querySelector('#status').textContent=e.target.textContent;
+  sample=null;strike=action==='strike';if(['walk','idle','cycle','reset'].includes(action))walk=action==='walk';
+  for(const {state}of models){if(action==='attack')state.attackAt=time;if(action==='hit')state.hp=Math.max(0,state.hp-10);if(action==='defeat')state.hp=0;if(['reset','cycle'].includes(action)){state.hp=70;state.z=0;state.attackAt=-100;}}
+  if(action==='cycle')sample={start:null,last:null,intervals:[],frames:0,elapsedMs:0,hidden:false,stages:[],complete:false,feedback:{boar:{hurtObserved:false,defeatHidden:false,recoveryVisible:false},crab:{hurtObserved:false,defeatHidden:false,recoveryVisible:false,maxPincerAngle:0}}};
+};
+function frame(now){
+  if(canvas.clientWidth!==viewWidth||canvas.clientHeight!==viewHeight)resize();
+  const dt=Math.min(.05,(now-last)/1000);last=now;time+=dt;frames++;
+  let stage='manual';
+  if(sample&&!sample.complete){
+    if(sample.start===null)sample.start=now;if(sample.last!==null)sample.intervals.push(now-sample.last);sample.last=now;
+    sample.elapsedMs=now-sample.start;sample.frames++;sample.hidden||=document.hidden;
+    const elapsed=sample.elapsedMs/1000;stage=elapsed<4?'walk':elapsed<7?'attack':elapsed<8?'hit':elapsed<9?'defeat':'recover';
+    if(!sample.stages.includes(stage))sample.stages.push(stage);
+    for(const {state}of models){state.hp=stage==='defeat'?0:stage==='hit'?60:70;state.attackAt=stage==='attack'?time-elapsed%1:-100;}
+    walk=stage==='walk'||stage==='recover';
+    if(elapsed>=12){sample.complete=true;walk=false;const sorted=[...sample.intervals].sort((a,b)=>a-b);Object.assign(sample,{medianMs:sorted[Math.floor(sorted.length*.5)],p95Ms:sorted[Math.floor(sorted.length*.95)],maxMs:Math.max(...sorted),over50ms:sorted.filter(v=>v>50).length});document.querySelector('#status').textContent='12秒动作循环完成；未执行游戏战斗或存档操作';}
+  }
+  for(const {root,state}of models){if(walk&&state.hp>0)state.z=Math.sin(time*.7)*1.7;if(strike)state.attackAt=time-.175;animateCreature(root,state,time,dt,0,{x:state.x,z:10});}
+  if(sample&&!sample.complete)for(const {root}of models){const feedback=sample.feedback[root.userData.type];feedback.hurtObserved||=root.userData.hide.emissive.r>0;feedback.defeatHidden||=stage==='defeat'&&!root.visible;feedback.recoveryVisible||=stage==='recover'&&root.visible;if(root.userData.claws.length)feedback.maxPincerAngle=Math.max(feedback.maxPincerAngle,...root.userData.claws.map(claw=>Math.abs(claw.userData.pincer.rotation.y)));}
+  const chosen=document.querySelector('#camera').value,index=chosen==='boar'?0:1,target=models[index].root.position;
+  if(chosen==='pair'){camera.position.set(8,6,12);camera.lookAt(0,.8,0);}else{camera.position.set(target.x+4,target.y+2.7,target.z+5);camera.lookAt(target.x,target.y+1.05,target.z);}
+  renderer.render(scene,camera);
+  if(frames%15===0)document.querySelector('#probe').textContent=JSON.stringify({time,stage,visibility:document.visibilityState,camera:chosen,viewport:[canvas.clientWidth,canvas.clientHeight],canvasBuffer:[canvas.width,canvas.height],dpr:devicePixelRatio,calls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,models:models.map(({root,state})=>({type:root.userData.type,hp:state.hp,visible:root.visible,position:root.position.toArray(),legCount:root.userData.legs.length,clawAngles:root.userData.claws.map(claw=>claw.userData.pincer.rotation.y),hurt:root.userData.hide.emissive.toArray()})),sample:sample&&Object.fromEntries(Object.entries(sample).filter(([key])=>!['intervals','start','last'].includes(key)))});
+  requestAnimationFrame(frame);
+}requestAnimationFrame(frame);
+</script></html>

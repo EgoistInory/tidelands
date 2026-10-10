@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-05",
+  "stage": "M5_camera_batch",
+  "fullGoalComplete": false,
+  "cause": "Near blocking scenery the original camera only retracts along the requested ray, with no minimum framing distance. Observed lighthouse-west focus distance 2.6707823242309554m produced a very large character.",
+  "change": "When requested clearance is below 6m, try orbit directions in alternating 30-degree increments, retaining box and terrain collision checks. Use the first sufficiently clear side, or the best available clearance if enclosed. Update yaw on an escape so movement input follows the new viewing direction. Normal unobstructed view continues the existing interpolation.",
+  "failingRegression": {
+    "command": "node --test tests/camera.test.js",
+    "artifact": "docs/camera-framing-test-before.txt",
+    "passed": 2,
+    "failed": 1,
+    "error": "near-wall camera should use an open side of the player"
+  },
+  "tests": {
+    "command": "npm test",
+    "artifact": "docs/camera-framing-tests.txt",
+    "passed": 87,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 2534.71925
+  },
+  "syntax": [
+    "src/camera.js",
+    "src/scene.js",
+    "tests/visual-review.html extracted module"
+  ],
+  "fixedView": {
+    "position": [
+      -98.4,
+      -54.3
+    ],
+    "time": 240,
+    "pitch": 0.41,
+    "requestedYaw": 0.858,
+    "before": {
+      "focusDistance": 2.6707823242309554,
+      "cameraPosition": [
+        -96.54691753880229,
+        17.09632557563037,
+        -52.698190672288206
+      ],
+      "characterDominatesImage": true,
+      "viewportDiagnosticStaleAfterOverride": true
+    },
+    "after": {
+      "focusDistance": 6.471508219977303,
+      "cameraPosition": [
+        -96.45206065559819,
+        18.611330370786813,
+        -48.693611098513145
+      ],
+      "resolvedYaw": 0.33440122440170184,
+      "portraitViewport": [
+        390,
+        599
+      ],
+      "portraitCanvasBuffer": [
+        585,
+        898
+      ],
+      "desktopViewport": [
+        1280,
+        564
+      ],
+      "desktopCanvasBuffer": [
+        1920,
+        846
+      ],
+      "dpr": 1,
+      "fullBodyVisible": true,
+      "verifiedAfterFinalSixMetreChange": true,
+      "rendererPixelRatioRetainedAcrossViewportOverride": 1.5
+    },
+    "spawnClear": {
+      "focusDistance": 14.610059461647449,
+      "requestedYaw": 0.15,
+      "resolvedYaw": 0.15
+    },
+    "consoleWarningsAndErrors": []
+  },
+  "actualGame": {
+    "mode": "m4",
+    "completedSaveRetained": true,
+    "fixturesImported": [],
+    "viewport": [
+      390,
+      844
+    ],
+    "pageWidth": 390,
+    "scrollWidth": 390,
+    "beforeMovement": [
+      -98.0,
+      -52.5
+    ],
+    "afterTwoJoystickDrags": [
+      -96.3,
+      -53.1
+    ],
+    "nativeCameraDrag": {
+      "from": [
+        320,
+        530
+      ],
+      "to": [
+        202,
+        500
+      ]
+    },
+    "wholeCharacterAndSurroundingsVisible": true,
+    "quest": 6,
+    "buildings": 1,
+    "kills": 3,
+    "hp": 82,
+    "lighthouseInteraction": "归航的灯火长明。谢谢你，旅人。",
+    "saveMessage": "存档已保存。",
+    "savedPausedAndClosed": true,
+    "viewportOverrideReset": true,
+    "consoleWarningsAndErrors": []
+  },
+  "screenshots": {
+    "inspectedInline": true,
+    "newSavedImagePaths": []
+  },
+  "limitations": [
+    "Orbit escape can turn promptly; continuous near-wall motion and repeated turns still need quality review.",
+    "Fully enclosed scenery keeps collision authoritative and may still restrict framing.",
+    "The 6m threshold is a framing target when clear space exists, not a guaranteed distance or no-occlusion proof.",
+    "Controlled viewport/pointer checks are not physical mobile or multitouch verification.",
+    "M4 600-second report and ZIP remain their previous camera/scene source snapshot; do not inherit them as current long-term proof.",
+    "Character/creature/environment/motion/audio quality and representative whole-world GPU/real-device checks remain M5 work."
+  ],
+  "sourceSha256": {
+    "src/game.js": "5f27ece647163b1e076ccbe5eaf7e5ecf8960eba765e1fb4cd9f7e7b4a0b8cb2",
+    "src/scene.js": "49ba4233444466231c105e3ae7eb93c028c8e64805735fae1420490991ba26f5",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/main.js": "be2759df76430daa74c99405efb4cbd2b65e6382583f9662cc098128be733cfb",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/audio.js": "6e2cdcef0d1557515ee8f9151e66bbb1cba5c5546270e011bf31c1e0037f7fe6",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/character.js": "7e516f1cfcdd4319b54b7489290ba8fcb1e8e1fdd2d8634d016d20b9e0f213a5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "index.html": "2245f69cea28e3ac482acf169d56ce48ab3ef8be9a1fce74af8390d29a95b15e",
+    "styles.css": "252b652e5198b084d87a41ef24e6328edbcbaf5685ad2e867cd40e4114b0b477",
+    "tests/camera.test.js": "b95a340e14b5976b3742456f3c6e00b0eb85ab662e916a34912affa76eec81db",
+    "tests/visual-review.html": "fd2e18bd7e14845e499f91d604e3d5d832bd0c12e1bb23d1317e29611eca6dda",
+    "tests/playthrough.html": "8b8d9bb7e840f3fad4caf40abe8d9e31f5c337a0c6ae6751b337e377a182ba05"
+  },
+  "sampleArtifact": "docs/camera-framing-sample.json"
+}

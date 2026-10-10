@@ -1,0 +1,40 @@
+{
+  "asset": "Leafy Grass",
+  "author": "Charlotte Baglioni",
+  "tileWidthMeters": 2,
+  "source": "https://polyhaven.com/a/leafy_grass",
+  "license": "CC0-1.0",
+  "licensePage": "https://polyhaven.com/license",
+  "apiTerms": "https://github.com/Poly-Haven/Public-API/blob/master/ToS.md",
+  "verifiedDate": "2026-10-03",
+  "note": "Official asset and license pages verified; free API metadata used only at development time. No runtime API/network dependency.",
+  "files": [
+    {
+      "path": "assets/ground/leafy-grass/albedo.jpg",
+      "channel": "Diffuse",
+      "resolution": "1k",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_diff_1k.jpg",
+      "bytes": 1195394,
+      "md5": "0dbc071e91d6905edfcfbe8eb785a1ab",
+      "sha256": "cfa40bc9d9417d1852db8753a8d5917f110c40101179f63543c382e39bc05e4a"
+    },
+    {
+      "path": "assets/ground/leafy-grass/normal-gl.jpg",
+      "channel": "nor_gl",
+      "resolution": "1k",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_nor_gl_1k.jpg",
+      "bytes": 1466049,
+      "md5": "8279e096e204ea326d57a318869f99df",
+      "sha256": "832328216adc0a7e1f70a31d5ee48c9ab7f2152d83816122736cf42ac4b2ebd6"
+    },
+    {
+      "path": "assets/ground/leafy-grass/roughness.jpg",
+      "channel": "Rough",
+      "resolution": "1k",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_rough_1k.jpg",
+      "bytes": 511385,
+      "md5": "05f6bb1383e12b327727d313c5899cf2",
+      "sha256": "0c2a1d91aacb8e54a496051b59854e51e456fe858abeade778e308359ef16463"
+    }
+  ]
+}

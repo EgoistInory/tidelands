@@ -1,0 +1,85 @@
+{
+  "observedAt": "2026-10-08T06:04:40.173282+00:00",
+  "evidenceIntegrityPassed": true,
+  "runtimeUnchangedThisTurn": true,
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "756271e155e184a4a2b2e1faa9152f79da096d61cff64c9fcb8966f06d106a58",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "98a7be6306f53353c629827de56168d6c9a27efc57a9ac1e7e182f6d75c648de",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "42d0fce139ed1d5a53e785b6f6b33b4b8d7a0c748148040d62640209b0e33a66",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "sourceAndArchiveMatch": true,
+  "archive": {
+    "archive": "tidelands-m5-2026-10-08-coastal.zip",
+    "archiveBytes": 6304452,
+    "archiveSha256": "4151c774820b95a8a7f2047f8d04e3d3ce7f3fce506f25b6de361bea8190487e",
+    "archiveEntries": 35,
+    "stage": "M1-M4 functional; M5 coastal audio and dune grass checkpoint"
+  },
+  "checkedFiles": 34,
+  "historicalArchivesUnchanged": {
+    "tidelands-local.zip": "61e173d0bf869afda5cfa674a6a675780b9453a8389baabbd33948fb12bc90ac",
+    "tidelands-m5-2026-10-05.zip": "02c7cc719a0a48608813e46c2d34075e12d280b42ae7c239acaba34f0a870d57",
+    "tidelands-m5-2026-10-07.zip": "96afc2db4479ff52507b4d9401a4923a63b330f2cda2a852d92d08979b8c47f3",
+    "tidelands-m5-2026-10-07-actions.zip": "6185ccc117cade308691fe9cafbf816f2ccb924a4b5e593077708de593e4be03",
+    "tidelands-m5-2026-10-08-environment.zip": "425e9c09c15e972db5f92a47f50d53b9a11e6a68c9c76d712a83c3bb880a2b27",
+    "tidelands-m5-2026-10-08-impact.zip": "2e14043826237e907b7ba7bcfac79655a6eb10ba38e0cb220462cc2b6553a4cd",
+    "tidelands-m5-2026-10-08-gather.zip": "85652535f557cd969a0187bab03a828df6182250160442fb7ec23192c8df6aab"
+  },
+  "sha256": {
+    "tests/dynamic-endurance.html": "6b9b7e72675ec929c860661ba12bae22d26ba0e2d111934b5f97ca9ce5c7ff99",
+    "docs/dynamic-endurance-smoke.json": "c18e6c0f8dc4b015fb9ce6c6e4061417415b0c6e5d8198d56bcde641c576f496",
+    "docs/dynamic-endurance-sample.json": "e7b6a52834acd7abc09281a0ad31d04275e48dc85ccf36dde85a6db4d20e3c78",
+    "docs/dynamic-endurance-mobile-sample.json": "15b9c5f00cc1262d1e4f87e5a080951a3157cba05cc7116e862ef88fad36c0ce",
+    "docs/coastal-delivery-review.json": "ad27ad9da2f9c9c10506d86e4277fcd368aa4cfa9a51d12c2eba52a190c8b5e8",
+    "docs/tidelands-m5-2026-10-08-coastal-verification.json": "709490d2c5526af6cc4f5221f9049d733bff24c5deeb8691a545b7f6ab3b8e19",
+    "docs/coastal-delivery-full-tests.txt": "6c54adc34dd642bfd85c93d48f64efb74ba0825f135f7329e1730b4061e0c901",
+    "docs/coastal-delivery-packaging-tests.txt": "8d452b2e6538d0dd9e5f4e8626eaaca34a2755c5cb9c34b352e1586b70aa69cc",
+    "dist/tidelands-m5-2026-10-08-coastal.json": "fca46616469fb2a1af8e5d68d2e0af1dcc2e750829a91dc9c9f62ba34be41cdf",
+    "docs/LOCAL-DELIVERY.md": "2f816e389258147972f6c3ba7dbd3ca10e5a4772ea50961790362144861f64d0",
+    "AGENT_PROGRESS.md": "ee81bfb154dd978b36acef6d65a5d9b000d006a6a4e9fc6fb54b745e6ef4fbd6",
+    "ROADMAP.md": "efa52ce37c3909ccd31e7a9958e33d6b38f75710381a6ca213c742c17ce35c50",
+    "docs/VERIFICATION.md": "1eff7337588905623edaabf02339845451893df27e701c1fc988ee033a417078",
+    "README.md": "6bc9ba2e4a2602175769105ccc76d92eaa18eb5999bbb2f6b638847a9ad83488"
+  },
+  "precursorProgressSha256": "cfc4e0528e9cf1e51e92461149d1aaf4ba4b745445e9501c06160a0b67470dd6",
+  "checks": [
+    "113-rule-test log",
+    "4-packaging-test log",
+    "34 current archive input hashes/CRC",
+    "harness syntax",
+    "desktop 600-second/mobile 60-second visible script load",
+    "stage counters/actual movement",
+    "live local process/cleanup",
+    "five M5 unchecked"
+  ],
+  "processes": {
+    "4190": {
+      "exitCode": 0,
+      "output": "COMMAND   PID       USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nPython  92409 huxiaocong    3u  IPv4 0x6856dea303bd9096      0t0  TCP 127.0.0.1:4190 (LISTEN)"
+    },
+    "51636": {
+      "exitCode": 1,
+      "output": ""
+    }
+  },
+  "performanceQualityAccepted": false,
+  "m5Accepted": false,
+  "fullGoalComplete": false,
+  "automationRetained": "2048",
+  "note": "Integrity and captured evidence only. Four fixture transition stalls remain in each sample; no GPU/physical-device/leak/listening or final-quality acceptance."
+}

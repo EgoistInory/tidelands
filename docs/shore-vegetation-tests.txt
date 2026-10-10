@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: curved grass and petals have finite normals, nondegenerate faces and bounded sway
+ok 1 - curved grass and petals have finite normals, nondegenerate faces and bounded sway
+  ---
+  duration_ms: 6.705
+  type: 'test'
+  ...
+# Subtest: region culling preserves all original grass transforms and random sequence
+ok 2 - region culling preserves all original grass transforms and random sequence
+  ---
+  duration_ms: 339.432875
+  type: 'test'
+  ...
+# Subtest: grass and flowers share the game clock for rooted vertex sway
+ok 3 - grass and flowers share the game clock for rooted vertex sway
+  ---
+  duration_ms: 0.51
+  type: 'test'
+  ...
+# Subtest: dense patches stay on gentle land with shared geometry and per-patch tint
+ok 4 - dense patches stay on gentle land with shared geometry and per-patch tint
+  ---
+  duration_ms: 385.044
+  type: 'test'
+  ...
+# Subtest: near patch batches cull beyond the fade range and recover after the camera returns
+ok 5 - near patch batches cull beyond the fade range and recover after the camera returns
+  ---
+  duration_ms: 256.070625
+  type: 'test'
+  ...
+# Subtest: coastal tufts stay above waves on gentle sand across all islands and cull at distance
+ok 6 - coastal tufts stay above waves on gentle sand across all islands and cull at distance
+  ---
+  duration_ms: 251.931041
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1299.175083

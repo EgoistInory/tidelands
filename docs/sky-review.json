@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-05",
+  "stage": "M5_environment_batch",
+  "batchChangeVerified": true,
+  "environmentQualityAccepted": false,
+  "fullGoalComplete": false,
+  "productionChanges": [
+    "src/sky.js:一个天空网格与连续昼夜/暮色、柔和密度云层及慢速漂移，替换18组共72个多面体云块。",
+    "src/scene.js:天空随镜头中心移动；雾色和海面菲涅耳/远处雾化共享当前海平线颜色。固定沙岸画面中减轻固定昼间反射与海天硬界。"
+  ],
+  "tests": {
+    "command": "npm test",
+    "passed": 91,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 1342.330541,
+    "log": "docs/sky-tests.txt",
+    "syntaxChecks": [
+      "node --check src/sky.js",
+      "node --check src/scene.js",
+      "node --check /private/tmp/tidelands-sky-visual-review.mjs"
+    ],
+    "regressions": [
+      "480秒昼夜周期、负时间和晨昏连续边界",
+      "天空远距离随镜头/无深度与阴影遮挡/GPU资源复用",
+      "水面共享随昼夜改变的海平线颜色"
+    ]
+  },
+  "sourceSha256": {
+    "src/game.js": "5f27ece647163b1e076ccbe5eaf7e5ecf8960eba765e1fb4cd9f7e7b4a0b8cb2",
+    "src/scene.js": "b9e2bce7ccc6344660752bfe2a596bc112205bc1cd460a9d9241b9ff57d4cca7",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/main.js": "be2759df76430daa74c99405efb4cbd2b65e6382583f9662cc098128be733cfb",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/audio.js": "6e2cdcef0d1557515ee8f9151e66bbb1cba5c5546270e011bf31c1e0037f7fe6",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/character.js": "7e516f1cfcdd4319b54b7489290ba8fcb1e8e1fdd2d8634d016d20b9e0f213a5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "index.html": "2245f69cea28e3ac482acf169d56ce48ab3ef8be9a1fce74af8390d29a95b15e",
+    "styles.css": "252b652e5198b084d87a41ef24e6328edbcbaf5685ad2e867cd40e4114b0b477",
+    "tests/camera.test.js": "b95a340e14b5976b3742456f3c6e00b0eb85ab662e916a34912affa76eec81db",
+    "tests/visual-review.html": "8906a292f21b9ef130d7d61d8498eed6e0aa264da9e45fb650f5785548171b82",
+    "tests/playthrough.html": "8b8d9bb7e840f3fad4caf40abe8d9e31f5c337a0c6ae6751b337e377a182ba05",
+    "tests/camera-motion.html": "e12210ba7f2f023b3696d6103666ef9bcbfc1588ad1ecc2b49f6b15771a693d4",
+    "tests/experiments/camera-motion-smoothing.mjs": "d1e2381f35e93844616029794792d665d4bc0502a75022360dd2a469ad4c7c2d",
+    "tests/experiments/camera-motion-smoothing.test.mjs": "29434a0805129b4cf4c961e99e0e8a71e767468b5367a2a841793b5d05af698f",
+    "tests/scene.test.js": "5f14168dcbc99de614d157f2cfed4040d12cc26eddb72b557222e45488eb9dd6",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "tests/sky.test.js": "0d39314c908b7dbd72db905853adc395367a38bcb0d5a940d85b4af12fc92bf0",
+    "README.md": "97e966150fd12d7f1bd3cdf4e58f40ff296d70b394c80453cff9650eace12a7e"
+  },
+  "browserReport": "docs/sky-browser-checks.json",
+  "currentShortSample": "docs/sky-sample.json",
+  "gameSmoke": {
+    "page": "http://127.0.0.1:4190/tests/playthrough.html?mode=performance",
+    "independentSave": true,
+    "productionAndJourneyUntouched": true,
+    "existingCampBuildings": 3,
+    "startPosition": [
+      -39.3,
+      81.0
+    ],
+    "endPosition": [
+      -35.6,
+      71.7
+    ],
+    "hp": 100,
+    "kills": 0,
+    "actionsWithinSample": [
+      "父采样控件使游戏暂停；实际继续探索恢复。",
+      "采样中12次Shift+W、12次D、拖镜头及空格空挥，仍显示采样中。",
+      "未命中反馈与位置变化可见，属于间歇按键而非持续按住运动或实敌战斗。"
+    ],
+    "actionsAfterSample": [
+      "点击晶石剑快捷按钮，装备轮廓在14米静帧中仍不清晰，未判品质通过。",
+      "实际暂停/保存显示存档已保存，然后关闭页面。"
+    ],
+    "audioDiagnostic": {
+      "stepsAttempted": 4,
+      "stepsScheduled": 4,
+      "footfallCount": 6,
+      "context": "running",
+      "active": true,
+      "auditoryQualityAccepted": false
+    },
+    "consoleWarningsOrErrors": []
+  },
+  "qualityRemaining": [
+    "云层是远景二维密度场，没有体积自遮阴、天气或真实云层反射；慢速漂移仅有短时固定视角诊断。",
+    "近海波浪、角色/生物轮廓与自然动作、持械辨识度、残余镜头突转/贴塔遮挡及音色仍需后续品质批次。",
+    "截图仅工具内查看，没有保存动作视频；当前10/30秒帧间隔及JS堆不是GPU耗时、无泄漏、实体手机或长时全场景证明。",
+    "M4历史ZIP和十分钟保留原SHA，未继承为当前天空版本证据。"
+  ],
+  "quotaCheck": {
+    "goalStatus": "usageLimited",
+    "ordinaryUsageAllowed": true,
+    "primaryUsedPercent": 40,
+    "weeklyUsedPercent": 69,
+    "statusForced": false,
+    "resetCreditsUsed": false
+  },
+  "cleanup": {
+    "temporaryTabsClosed": [
+      79,
+      80,
+      81
+    ],
+    "viewportReset": true,
+    "server": "127.0.0.1:4190",
+    "pid": 45694
+  },
+  "archive": {
+    "path": "dist/tidelands-local.zip",
+    "sha256": "61e173d0bf869afda5cfa674a6a675780b9453a8389baabbd33948fb12bc90ac",
+    "rebuilt": false
+  }
+}

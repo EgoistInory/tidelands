@@ -1,0 +1,262 @@
+{
+  "date": "2026-10-04",
+  "status": "smoke_verified",
+  "sha256": {
+    "src/main.js": "4dfb26075e8a30b62e5786b2969c692f7464edc43d114a44f7e8c88b9f55980d",
+    "src/scene.js": "a657d76fa9d399b349ed5e09cd5660dd5a176ee7f81b5ee37a3167e25af65f98",
+    "src/meadow.js": "59c91dc00ab96e1c98c3c61aa816b20d02bf3f64ad69460b351c6539575fd5f6",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "tests/playthrough.html": "7ada3d2c2722e35e24dadce3dd0e9e051d7a7db3ed9b1e7619de6f0a876c71fe",
+    "tests/visual-review.html": "68239eec7668ecad0733bd7e6aab624eb4d975922259a16f42ce3fa2fd4c7e10",
+    "tests/rock-surface.test.js": "a5153977ef5c819c51d2e3d342aaf327705ec5e1414e886b050a21481dc5372a",
+    "tests/scene.test.js": "1d165a2c5b2ff868305262c5c33c3c65c4c0c37c60019cd0830c750b0c89b6a0",
+    "assets/rock/lichen-rock/manifest.json": "3099a12429d3ca75bc837223242cb9a4bec4022e22f8071b899d0d56dc3fd17c",
+    "assets/rock/lichen-rock/albedo.jpg": "780128a5757920a7e30c50042e8975e8333ef4ae5809b30bb5be6a2f9fec3ec5",
+    "assets/rock/lichen-rock/normal-gl.jpg": "a3510a296030a1e312ef589a872ae416f2d23203a7b7c0c9e3646e8109c6a61c",
+    "assets/rock/lichen-rock/roughness.jpg": "13a12b95d951f6fa4407d210fc97244274ff73583b60208eff651f3779c01a2e"
+  },
+  "asset": {
+    "asset": "Lichen Rock",
+    "assetId": "lichen_rock",
+    "author": "Rico Cilliers",
+    "license": "CC0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "sourceUrl": "https://polyhaven.com/a/lichen_rock",
+    "apiTermsUrl": "https://github.com/Poly-Haven/Public-API/blob/master/ToS.md",
+    "metres": 2,
+    "downloaded": "2026-10-04",
+    "runtimeNetwork": false,
+    "files": {
+      "albedo.jpg": {
+        "channel": "Diffuse",
+        "resolution": "1k",
+        "bytes": 1070311,
+        "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/lichen_rock/lichen_rock_diff_1k.jpg",
+        "md5": "453cc496091c1be83d0151249c97cecd",
+        "sha256": "780128a5757920a7e30c50042e8975e8333ef4ae5809b30bb5be6a2f9fec3ec5"
+      },
+      "normal-gl.jpg": {
+        "channel": "nor_gl",
+        "resolution": "1k",
+        "bytes": 1259569,
+        "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/lichen_rock/lichen_rock_nor_gl_1k.jpg",
+        "md5": "93783a7b605a162b4be4600f561ea408",
+        "sha256": "a3510a296030a1e312ef589a872ae416f2d23203a7b7c0c9e3646e8109c6a61c"
+      },
+      "roughness.jpg": {
+        "channel": "Rough",
+        "resolution": "1k",
+        "bytes": 573955,
+        "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/lichen_rock/lichen_rock_rough_1k.jpg",
+        "md5": "29bc56b1e789e65d7fa821d31b775f4b",
+        "sha256": "13a12b95d951f6fa4407d210fc97244274ff73583b60208eff651f3779c01a2e"
+      }
+    }
+  },
+  "changes": [
+    "Local CC0 Lichen Rock albedo, OpenGL normal and roughness channels added to shared stone material",
+    "All three channels must load successfully before detail is enabled; failure keeps original colour and surface",
+    "Spherical UVs scale with radius and round horizontal repeat count to whole tiles; approximate source scale, not exact on deformed or scaled rocks",
+    "Geometry, resource IDs, harvest amounts, collision bounds and saved state format remain unchanged"
+  ],
+  "assetBytes": 2903835,
+  "tests": {
+    "npmTest": {
+      "passed": 66,
+      "failed": 0
+    },
+    "log": "/private/tmp/tidelands-tests-rock-surface.log",
+    "syntax": [
+      "src/rock-surface.js",
+      "src/rock.js",
+      "src/scene.js",
+      "tests/visual-review.html extracted module",
+      "tests/playthrough.html extracted module"
+    ],
+    "coverage": [
+      "Load completion, all-channel fallback, colour spaces, mips, repeat scale, anisotropy and shared idempotent loading",
+      "UV scale and finite geometry; channel file sizes, MD5/SHA256 and manifest",
+      "Stone and fibre complete depletion/regeneration via production scene objects"
+    ]
+  },
+  "fixedView": {
+    "entry": "/tests/visual-review.html",
+    "position": [
+      -70,
+      102
+    ],
+    "time": 240,
+    "camera": {
+      "distance": 14,
+      "pitch": 0.29
+    },
+    "canvas": [
+      1280,
+      608
+    ],
+    "devicePixelRatio": 2,
+    "canvasBuffer": [
+      1920,
+      912
+    ],
+    "before": {
+      "calls": 208,
+      "triangles": 1185197,
+      "geometries": 182,
+      "textures": 11
+    },
+    "detail": {
+      "rockStatus": "ready",
+      "calls": 208,
+      "triangles": 1185197,
+      "geometries": 182,
+      "textures": 14
+    },
+    "baseToggle": "Old smooth grey stone surface visibly returns under identical camera/time. All maps remain resident; matching counters do not establish GPU cost.",
+    "detailClose": {
+      "distance": 6,
+      "pitch": 0.65,
+      "calls": 102,
+      "triangles": 1102110,
+      "geometries": 182,
+      "textures": 14,
+      "note": "Weathered grain and lichen visible; large left-edge stone partly cropped, no full seam/pole acceptance."
+    },
+    "otherViews": [
+      {
+        "position": [
+          -90,
+          145
+        ],
+        "time": 120,
+        "cameraDistance": 14,
+        "calls": 211,
+        "triangles": 1187717,
+        "geometries": 182,
+        "textures": 14,
+        "rockStatus": "ready"
+      },
+      {
+        "position": [
+          145,
+          -25
+        ],
+        "time": 0,
+        "cameraDistance": 14,
+        "calls": 150,
+        "triangles": 1028147,
+        "geometries": 212,
+        "textures": 14,
+        "rockStatus": "ready"
+      }
+    ]
+  },
+  "harvest": {
+    "entry": "/tests/playthrough.html?mode=stone",
+    "saveKey": "tidelands-qa-stone",
+    "position": [
+      -67,
+      115.5
+    ],
+    "viewports": [
+      [
+        1280,
+        720
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "initialStone": 0,
+    "finalStone": 2,
+    "feedback": "石料 +2",
+    "nextPrompt": "采集浆果",
+    "visual": "Main and smaller stone both have textured surfaces and disappear together. Before and after native screenshots inspected in both viewports.",
+    "note": "Actual production harvest and bag buttons; labelled fresh QA fixture reset by reload. Responsive viewport is not physical phone or multitouch evidence. Production and journey saves not operated."
+  },
+  "performance": {
+    "entry": "/tests/playthrough.html?mode=performance",
+    "saveKey": "tidelands-qa-performance",
+    "startPosition": [
+      -56.1,
+      113.6
+    ],
+    "endPosition": [
+      -53.1,
+      110.5
+    ],
+    "buildings": 3,
+    "movement": "After parent sampling control caused a pause, actual Continue button resumed play. Ten W presses and camera drag occurred during effective sample; attempted D presses while paused caused no movement.",
+    "result": {
+      "complete": true,
+      "targetMs": 30000,
+      "durationMs": 41250,
+      "activeMs": 30000,
+      "frames": 1800,
+      "medianMs": 16.7,
+      "p95Ms": 17.6,
+      "maxMs": 18.7,
+      "over50Ms": 0,
+      "hidden": false,
+      "viewport": [
+        1280,
+        672
+      ],
+      "devicePixelRatio": 2,
+      "canvasBuffer": [
+        1920,
+        1008
+      ],
+      "heapSupported": true,
+      "checkpoints": [
+        {
+          "activeMs": 0,
+          "frames": 0,
+          "daytime": "第 7 天 · 午后",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 68397836,
+          "viewport": [
+            1280,
+            672
+          ],
+          "devicePixelRatio": 2,
+          "canvasBuffer": [
+            1920,
+            1008
+          ]
+        },
+        {
+          "activeMs": 30000,
+          "frames": 1800,
+          "daytime": "第 7 天 · 黄昏",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 82974850,
+          "viewport": [
+            1280,
+            672
+          ],
+          "devicePixelRatio": 2,
+          "canvasBuffer": [
+            1920,
+            1008
+          ]
+        }
+      ]
+    },
+    "limits": "Short intermittent camp movement/rAF sample; paused intervals excluded. Different camp position from prior report prevents a strict before/after performance comparison. Not sustained traversal/combat, GPU timing/memory, leak or endurance proof."
+  },
+  "warnError": [],
+  "screenshots": "Native tool still images inspected; no saved PNG or video",
+  "limits": [
+    "Dark weathered surface is visible but lighting/style harmony and spherical poles/seams still need representative movement review",
+    "Rounded/repeated rocks, sparse grass, simple characters, crystals, clouds and motion/audio still show quality gaps",
+    "Final M1-M4 gameplay/delivery regression, physical devices, longer current-version runs and GPU metrics remain unfinished"
+  ],
+  "m5Complete": false,
+  "aaaComplete": false
+}

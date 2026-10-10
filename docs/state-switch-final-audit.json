@@ -1,0 +1,74 @@
+{
+  "kind": "state-switch-checkpoint-evidence-integrity-audit",
+  "evidenceIntegrityPassed": true,
+  "productionChanged": [
+    "src/creature.js",
+    "src/scene.js"
+  ],
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "756271e155e184a4a2b2e1faa9152f79da096d61cff64c9fcb8966f06d106a58",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "96c7ebc8d3d02675d1845f5d90c8315b3d4887616ade49d4298e75bb2507cb25",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "98a7be6306f53353c629827de56168d6c9a27efc57a9ac1e7e182f6d75c648de",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "fa838a156dea30a46d0bc32081894651b949d44536fc51aab2f532dfc0219017",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "archiveSha256": "9df94bc69a2cf34e5e9d73b38d247e505f492bf6ba297b9ee3cb0721d9860f46",
+  "archiveCheckedFiles": 34,
+  "historicalArchivesUnchanged": 8,
+  "tests": {
+    "redExpectedFailure": 1,
+    "focusedPass": 17,
+    "fullPass": 114,
+    "packagingPass": 4
+  },
+  "dynamicComplete": {
+    "desktopMs": 600016.97,
+    "mobileMs": 60016.67,
+    "phaseTransitionSpikesOver50Ms": 0,
+    "desktopInitialSpikeMs": 66.67
+  },
+  "memoryBudgetStillPending": true,
+  "packageUiScopedSmokeRecorded": true,
+  "toolWaitSecondsOutsidePerformanceSamples": 5677.7586,
+  "processes": {
+    "development4190Pid": 92409,
+    "temporary56072Stopped": true
+  },
+  "evidenceSha256": {
+    "docs/state-switch-review.json": "b62e0c20d1ff33400d68b7e7caafccce7d40a99299650508332fd9b7afe1226a",
+    "docs/state-switch-before.json": "f858bc12a2c69c86785cf3e7a229f98951656605d126257568b5b9df2f57a560",
+    "docs/state-switch-after.json": "e456350c36652ba9684f7c4e57ccb6192f77712010b20f3c3cd6733fe6085f48",
+    "docs/state-switch-desktop-sample.json": "3f08d8acf3ec79df65edf3d58df2198b72e95688f99dfdd63e13a8fcfd0c8ae6",
+    "docs/state-switch-mobile-sample.json": "dceae41954f918126d6676b35ce5e352ff634c39aef26602cf33109db87ef0f0",
+    "docs/state-switch-red-tests.txt": "c6a8ac7c2dc3ac123cefafab0ae0bf452d471c2951a600e6705ebd40235475df",
+    "docs/state-switch-green-tests.txt": "f125815b02686f60dd1638f619d4f1684f6b3c2beae6533239a6715b39bb384e",
+    "docs/state-switch-full-tests.txt": "cbd727487e11340927245aa1acc062300d6c8c6a80b1284a9b916ba381fc8985",
+    "docs/state-switch-packaging-tests.txt": "7d3da46aae0667bb9b4bfe554a0da795843cb5a53495c19aa13bf37a333a3c9a",
+    "tests/state-switch-review.html": "96ac9d10431c391102d8b55dc5d8aba30a80d3525052ddbb9405acc0d301df55",
+    "tests/dynamic-endurance.html": "6b9b7e72675ec929c860661ba12bae22d26ba0e2d111934b5f97ca9ce5c7ff99",
+    "tests/scene.test.js": "83060e6c44f7651722d454bbb8ac281aefe9127caa7ce19f0f1f203e37b9ee1f",
+    "AGENT_PROGRESS.md": "68be95a95517204ad7bb1b7d1e31bf0e8b52432465b0fe54ddfa8b9fc08f28ac",
+    "ROADMAP.md": "b5b9ba51455fd7a52954a87dc57c684d755d138821032fac2d4678d4f8e78882",
+    "docs/VERIFICATION.md": "cf5d0ee44e03493777e147c410337b8c976103fe5c421ebf4197cd6862758776",
+    "README.md": "8926f9516fa26e86ac39527340e0d578c4e4afb9e9a22b2aea51c59fa3133f9a",
+    "docs/LOCAL-DELIVERY.md": "a861d2f2d3f981ddae9b8bdef474c4b9a3c1d242b24fee3e227db60cde23bf82"
+  },
+  "auditScriptSha256": "fa7a2f1bebd2b55e310662e92aea9e2cd934d4203272514b9b797da867ff13dd",
+  "performanceQualityAccepted": false,
+  "m5Accepted": false,
+  "fullGoalComplete": false,
+  "automation2048Retained": true
+}

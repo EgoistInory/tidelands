@@ -1,0 +1,168 @@
+{
+  "date": "2026-10-05",
+  "url": "http://127.0.0.1:4190/tests/creatures.html",
+  "mode": "productionModels_noSaveAccess",
+  "desktop": {
+    "browserViewport": [
+      1280,
+      720
+    ],
+    "canvas": [
+      1280,
+      556
+    ],
+    "canvasBuffer": [
+      1280,
+      556
+    ],
+    "devicePixelRatio": 2,
+    "rendererPixelRatioRetainedFromMobile": 1,
+    "sample": {
+      "complete": true,
+      "frames": 721,
+      "elapsedMs": 12000.099999999991,
+      "hidden": false,
+      "medianMs": 16.69999999999709,
+      "p95Ms": 18.19999999999709,
+      "maxMs": 18.70000000001164,
+      "over50ms": 0,
+      "stages": [
+        "walk",
+        "attack",
+        "hit",
+        "defeat",
+        "recover"
+      ],
+      "feedback": {
+        "boar": {
+          "hurtObserved": true,
+          "defeatHidden": true,
+          "recoveryVisible": true
+        },
+        "crab": {
+          "hurtObserved": true,
+          "defeatHidden": true,
+          "recoveryVisible": true,
+          "maxPincerAngle": 0.4289733777353277
+        }
+      }
+    },
+    "finalRender": {
+      "calls": 26,
+      "triangles": 16560,
+      "geometries": 26
+    }
+  },
+  "mobile": {
+    "browserViewport": [
+      390,
+      844
+    ],
+    "canvasAtStart": [
+      390,
+      596
+    ],
+    "canvasAtComplete": [
+      390,
+      570
+    ],
+    "canvasBufferAtComplete": [
+      390,
+      570
+    ],
+    "devicePixelRatio": 1,
+    "overflow": false,
+    "sample": {
+      "complete": true,
+      "frames": 721,
+      "elapsedMs": 12000,
+      "hidden": false,
+      "medianMs": 16.699999999999818,
+      "p95Ms": 18.200000000000273,
+      "maxMs": 18.699999999999818,
+      "over50ms": 0,
+      "stages": [
+        "walk",
+        "attack",
+        "hit",
+        "defeat",
+        "recover"
+      ],
+      "feedback": {
+        "boar": {
+          "hurtObserved": true,
+          "defeatHidden": true,
+          "recoveryVisible": true
+        },
+        "crab": {
+          "hurtObserved": true,
+          "defeatHidden": true,
+          "recoveryVisible": true,
+          "maxPincerAngle": 0.42894655003318066
+        }
+      }
+    },
+    "finalRender": {
+      "calls": 26,
+      "triangles": 16560,
+      "geometries": 26
+    }
+  },
+  "visualInspection": {
+    "screenshotsViewedInline": true,
+    "savedNewImagesOrVideo": false,
+    "matchedBeforeAfterInitialPageViewport": [
+      1280,
+      720
+    ],
+    "beforeCreatureSha256": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "observations": [
+      "野猪由球体拼接的躯干/吻部改为肩峰、渐窄长吻与连续背鬃，耳/獠牙/尾改为薄面和曲线。",
+      "蟹可见八条弯折渐细步足、腹面/壳缘、带关节的螯钳；攻击定格两钳转角±0.43弧度。",
+      "首轮窄屏两类全身镜头裁掉蟹，QA加入按长宽比的镜头zoom及画布尺寸跟随；最终全身可见且无水平溢出。",
+      "模型仍是简单程序化表面，野猪腿/脸、动物落脚和全身自然度未通过；不能以轮廓改进认定3A。"
+    ]
+  },
+  "combatSmoke": {
+    "url": "http://127.0.0.1:4190/tests/playthrough.html?mode=combat",
+    "fixture": {
+      "label": "固定近身战斗测试档，刷新重置",
+      "swordGranted": true,
+      "oneCrabHp": 40,
+      "otherEnemiesDead": true,
+      "position": [
+        -70,
+        102
+      ],
+      "basedOnFreshGame": true,
+      "normalFromZeroNewGame": false
+    },
+    "actions": [
+      "实际开始旅程",
+      "第一次空格：命中1个目标，击败0，生命100",
+      "等待/观察期间持续受蟹伤害；第二次空格：击败1个目标，生命37",
+      "实际背包：纤维2/浆果4/晶石剑1，背包面板暂停游戏"
+    ],
+    "end": {
+      "position": [
+        -70,
+        102
+      ],
+      "hp": 37,
+      "kills": 1,
+      "fiber": 2,
+      "berry": 4,
+      "sword": 1
+    },
+    "deathMotionViewed": true,
+    "normalFromZeroPath": false,
+    "weaponIdleQualityAccepted": false
+  },
+  "consoleWarningsOrErrors": [],
+  "limitations": [
+    "12秒循环是隔离模型的合成位移/伤害/死亡恢复，不是实际游戏战斗或落脚自然度验收。",
+    "近身战斗是明确预填剑/敌人状态的固定fixture，不替代历史M4正常从零主线。",
+    "rAF指标是帧调度，不是GPU耗时、真实手机或长期稳定性；桌面循环保留1倍内部缓冲。",
+    "截图仅工具内查看，没有新保存图片/视频。"
+  ]
+}

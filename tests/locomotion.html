@@ -1,0 +1,50 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>角色落脚隔离验收</title>
+<style>html,body{margin:0;height:100%;background:#263630;color:#f0e9d6;font:14px system-ui}body{display:flex;flex-direction:column}nav{display:flex;flex-wrap:wrap;gap:8px;padding:10px;align-items:center}button,select{padding:7px;font:inherit}output{display:block;min-height:44px;max-height:75px;padding:8px;overflow:auto;font:12px monospace;overflow-wrap:anywhere}canvas{display:block;flex:1;min-height:0;width:100%}</style>
+<nav><strong>生产角色 · 隔离落脚检查</strong><button data-mode="idle">站立</button><button data-mode="walk">行走12秒</button><button data-mode="run">奔跑12秒</button><button data-mode="turn">转向12秒</button><button data-mode="restart">起停12秒</button><button data-mode="reverse">折返12秒</button><button data-mode="swim">泳姿12秒</button>
+<label>地面 <select id="ground"><option value="flat">平地</option><option value="ramp">缓坡</option></select></label><label>镜头 <select id="camera"><option value="side">侧面</option><option value="front">正面</option></select></label><label>装备 <select id="equipment"><option value="hand">徒手</option><option value="axe">石斧</option><option value="sword">晶石剑</option></select></label><label>姿态 <select id="gesture"><option value="idle">待机</option><option value="attack">攻击定格</option><option value="gather">采集定格</option><option value="attack-cycle">攻击循环12秒</option><option value="gather-cycle">采集循环12秒</option></select></label><span id="status">隔离模型，不读写存档；计数不能代替运动画面审查。</span></nav>
+<output id="result">加载模型…</output><canvas aria-label="实际生产角色的关节与脚底参考平面"></canvas>
+<script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {createCharacter,animateCharacter} from '../src/character.js';
+const canvas=document.querySelector('canvas'),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(38,1,.1,250),renderer=new THREE.WebGLRenderer({canvas,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setClearColor(0x263630);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;
+scene.add(new THREE.HemisphereLight(0xc5dcdf,0x6e6751,2));
+const sun=new THREE.DirectionalLight(0xffe9cc,3);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.left=-5;sun.shadow.camera.right=5;sun.shadow.camera.top=5;sun.shadow.camera.bottom=-5;sun.shadow.bias=-.001;scene.add(sun,sun.target);
+const pixels=new Uint8Array(32*32*4);for(let z=0;z<32;z++)for(let x=0;x<32;x++){const i=(z*32+x)*4,v=((x+z)%2)?130:155;pixels[i]=v;pixels[i+1]=v+5;pixels[i+2]=v-10;pixels[i+3]=255;}
+const checker=new THREE.DataTexture(pixels,32,32);checker.colorSpace=THREE.SRGBColorSpace;checker.magFilter=THREE.NearestFilter;checker.needsUpdate=true;
+const floorGeometry=new THREE.PlaneGeometry(400,400,1,1);floorGeometry.rotateX(-Math.PI/2);const floor=new THREE.Mesh(floorGeometry,new THREE.MeshStandardMaterial({map:checker,roughness:1}));floor.receiveShadow=true;scene.add(floor);
+const root=createCharacter();scene.add(root);let slope=0,mode='idle',time=0,last=performance.now(),elapsed=0,frames=0,stats=null,prior=[null,null],lastArm=null;
+const ground=(x,z)=>z*slope;
+function reset(nextMode){mode=nextMode;elapsed=0;root.position.set(0,0,0);root.rotation.y=0;root.userData.lastPosition=null;root.userData.phase=0;root.userData.walkBlend=0;root.userData.worldFeet=null;prior=[null,null];lastArm=null;stats={contacts:0,maxStanceDrift:0,maxSoleHeightError:0,minPelvisOffset:0,bothFeetAirborneFrames:0,actionFrames:0,maxArmFrameDelta:0};document.querySelector('#status').textContent=nextMode==='idle'?'站立检查':nextMode+' 检查运行中';}
+for(const button of document.querySelectorAll('[data-mode]'))button.onclick=()=>reset(button.dataset.mode);
+document.querySelector('#gesture').onchange=()=>reset(document.querySelector('#gesture').value.endsWith('-cycle')?'actions':'idle');
+document.querySelector('#ground').onchange=()=>{slope=document.querySelector('#ground').value==='ramp'?.12:0;const p=floorGeometry.attributes.position;for(let i=0;i<p.count;i++)p.setY(i,p.getZ(i)*slope);p.needsUpdate=true;floorGeometry.computeVertexNormals();reset('idle');};
+let viewWidth=0,viewHeight=0;
+function resize(){viewWidth=canvas.clientWidth;viewHeight=canvas.clientHeight;renderer.setSize(viewWidth,viewHeight,false);camera.aspect=viewWidth/viewHeight;camera.zoom=.85*Math.min(1,camera.aspect);camera.updateProjectionMatrix();}window.addEventListener('resize',resize);resize();reset('idle');
+function frame(now){
+  if(canvas.clientWidth!==viewWidth||canvas.clientHeight!==viewHeight)resize();
+  const dt=Math.min(.05,(now-last)/1000);last=now;time+=dt;frames++;
+  const running=mode!=='idle'&&elapsed<12;
+  const yaw=(mode==='turn'||mode==='reverse')&&elapsed>=6?(mode==='reverse'?Math.PI:Math.PI/2):0;
+  if(running){elapsed=Math.min(12,elapsed+dt);if(mode!=='actions'&&mode!=='swim'&&!(mode==='restart'&&elapsed>=3&&elapsed<5)){const distance=dt*(mode==='run'?12:7);root.position.x+=Math.sin(yaw)*distance;root.position.z+=Math.cos(yaw)*distance;}}
+  root.position.y=ground(root.position.x,root.position.z);
+  const selected=document.querySelector('#equipment').value,gesture=document.querySelector('#gesture').value;
+  // Synthetic one-second cycles expose complete pose transitions, not live combat timing.
+  const cycling=running&&mode==='actions',actionAt=time-elapsed%1;
+  animateCharacter(root,{x:root.position.x,z:root.position.z,yaw,time,attackAt:gesture==='attack'?time-.225:cycling&&gesture==='attack-cycle'?actionAt:-100,gatherAt:gesture==='gather'?time-.21:cycling&&gesture==='gather-cycle'?actionAt:-100,selected,swimming:running&&mode==='swim'},dt,ground);root.updateMatrixWorld(true);
+  if(cycling){const arm=[root.userData.shoulders[1].rotation.x,root.userData.elbows[1].rotation.x];if(lastArm)stats.maxArmFrameDelta=Math.max(stats.maxArmFrameDelta,...arm.map((v,i)=>Math.abs(v-lastArm[i])));lastArm=arm;stats.actionFrames++;}
+  if(running&&mode!=='swim'){
+    stats.minPelvisOffset=Math.min(stats.minPelvisOffset,root.userData.body.position.y);
+    if(root.userData.moving&&root.userData.footContacts.every(contact=>!contact))stats.bothFeetAirborneFrames++;
+  }
+  if(running&&mode!=='swim')for(let side=0;side<2;side++){
+    const cycle=(root.userData.phase+side*Math.PI)/(Math.PI*2),stance=root.userData.footContacts[side],point=root.userData.ankles[side].getWorldPosition(new THREE.Vector3());
+    if(stance){stats.maxSoleHeightError=Math.max(stats.maxSoleHeightError,Math.abs((point.y-ground(point.x,point.z))/Math.sqrt(1+slope*slope)-.145));if(elapsed>1&&prior[side]?.cycle===Math.floor(cycle)&&prior[side].stance){stats.maxStanceDrift=Math.max(stats.maxStanceDrift,point.distanceTo(prior[side].point));stats.contacts++;}}
+    prior[side]={cycle:Math.floor(cycle),stance,point};
+  }
+  if(elapsed>=12)document.querySelector('#status').textContent=mode+' 12秒检查完成；现在回到站立';
+  const front=document.querySelector('#camera').value==='front';camera.position.set(root.position.x+(front?.5:6),root.position.y+3,root.position.z+(front?7:.8));camera.lookAt(root.position.x,root.position.y+1.4,root.position.z);
+  sun.position.set(-4,root.position.y+8,root.position.z+5);sun.target.position.copy(root.position);renderer.render(scene,camera);
+  if(frames%15===0){const tool=selected==='sword'?root.userData.sword:selected==='axe'?root.userData.axe:null,toolBounds=tool&&new THREE.Box3().setFromObject(tool);document.querySelector('#result').textContent=JSON.stringify({mode,complete:mode!=='idle'&&elapsed>=12,elapsedSeconds:Number(elapsed.toFixed(3)),frames,position:root.position.toArray().map(v=>Number(v.toFixed(3))),equipment:selected,gesture,toolBounds:toolBounds&&{min:toolBounds.min.toArray(),max:toolBounds.max.toArray()},slope,phase:Number(root.userData.phase.toFixed(3)),walkBlend:Number(root.userData.walkBlend.toFixed(3)),strideLengthMeters:root.userData.strideLength,stanceFraction:root.userData.stanceFraction,feet:root.userData.ankles.map(ankle=>ankle.getWorldPosition(new THREE.Vector3()).toArray().map(v=>Number(v.toFixed(6)))),contacts:root.userData.footContacts,stats,viewport:[canvas.clientWidth,canvas.clientHeight],canvasBuffer:[canvas.width,canvas.height]});}
+  requestAnimationFrame(frame);
+}requestAnimationFrame(frame);
+</script></html>

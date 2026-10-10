@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>潮生群岛 · 换档模型复用隔离诊断</title>
+<style>html,body{height:100%;margin:0;background:#192723;color:#efe6cf;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:8px}button{font:inherit;padding:6px}output{height:110px;overflow:auto;overflow-wrap:anywhere;padding:8px;font:11px monospace}canvas{flex:1;min-height:0;width:100%;display:block}</style>
+<nav><strong>无存档隔离诊断</strong> · 同对象同步与全新状态交替，固定镜头，测生产同步和绘制CPU。不是主线/GPU/真机验收。<button id="start">开始10次同步诊断</button></nav>
+<output id="result">准备实际世界…</output><canvas aria-label="生产世界换档复用诊断"></canvas>
+<script type="module">
+import {WorldView} from '../src/scene.js';
+import {createWorld} from '../src/world.js';
+import {freshGame} from '../src/game.js';
+const canvas=document.querySelector('canvas'),output=document.querySelector('#result'),world=createWorld(),view=new WorldView(canvas,world);
+let state=freshGame(),disposed=0;
+const nativeDispose=view.disposeGroup.bind(view);view.disposeGroup=group=>{disposed++;nativeDispose(group);};
+const round=n=>Math.round(n*100)/100;
+function prepare(s,time){Object.assign(s.player,{x:-56,z:49});s.time=time;s.inventory.sword=1;s.selected='sword';return s;}
+prepare(state,240);view.sync(state);view.draw(state,null,null,false,1/60);output.textContent='就绪：世界与生物均已初始化，点击开始。';
+document.querySelector('#start').onclick=async()=>{
+  document.querySelector('button').disabled=true;
+  const rows=[];let hidden=false;
+  for(let i=0;i<10;i++){
+    await new Promise(requestAnimationFrame);hidden||=document.hidden;
+    const replace=i%2===1,before=new Map(view.creatures),d0=disposed,start=performance.now();
+    const next=prepare(replace?freshGame():state,240+i),prepared=performance.now();
+    view.sync(next);const synced=performance.now();
+    view.draw(next,null,null,false,1/60);const drawn=performance.now();
+    let retained=0;for(const [id,model] of before)if(view.creatures.get(id)===model)retained++;
+    rows.push({kind:replace?'fresh-state':'same-state',enemyCount:next.enemies.length,retained,disposedGroups:disposed-d0,prepareMs:round(prepared-start),syncMs:round(synced-prepared),drawCpuMs:round(drawn-synced),heapBytes:performance.memory?.usedJSHeapSize??null,geometries:view.renderer.info.memory.geometries,textures:view.renderer.info.memory.textures});
+    state=next;output.textContent=JSON.stringify({complete:false,hidden,rows});
+  }
+  output.textContent=JSON.stringify({complete:true,hidden,viewport:[innerWidth,innerHeight],canvasBuffer:[canvas.width,canvas.height],rows,note:'Ten fixed-camera isolated production sync calls, five same-object/five new-state. No saves or GPU timing. CPU draw includes WebGL command submission.'});
+};
+window.addEventListener('resize',()=>{view.resize();view.draw(state,null,null,false,1/60);});
+window.addEventListener('pagehide',()=>view.renderer.dispose());
+</script></html>

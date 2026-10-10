@@ -1,0 +1,346 @@
+{
+  "passed": true,
+  "currentRuntimeAndQaMatchesPreviousBatch": {
+    "src/game.js": true,
+    "src/scene.js": true,
+    "src/pointer-controls.js": true,
+    "src/world.js": true,
+    "src/meadow.js": true,
+    "src/creature.js": true,
+    "src/cottage-surfaces.js": true,
+    "src/merge-parts.js": true,
+    "src/main.js": true,
+    "src/rock.js": true,
+    "src/audio.js": true,
+    "src/ground-surface.js": true,
+    "src/camera.js": true,
+    "src/rock-surface.js": true,
+    "src/character.js": true,
+    "src/foliage.js": true,
+    "index.html": true,
+    "styles.css": true,
+    "tests/camera.test.js": true,
+    "tests/visual-review.html": true,
+    "tests/playthrough.html": true,
+    "tests/camera-motion.html": true,
+    "tests/experiments/camera-motion-smoothing.mjs": true,
+    "tests/experiments/camera-motion-smoothing.test.mjs": true,
+    "tests/scene.test.js": true,
+    "src/sky.js": true,
+    "tests/sky.test.js": true,
+    "tests/creature.test.js": true,
+    "tests/creatures.html": true,
+    "tests/character.test.js": true,
+    "tests/locomotion.html": true,
+    "tests/audio.test.js": true,
+    "tests/audio-render.html": true
+  },
+  "packagedFiles": {
+    "README.md": {
+      "workspace": true,
+      "extracted": true
+    },
+    "assets/ground/leafy-grass/albedo.jpg": {
+      "workspace": true,
+      "extracted": true
+    },
+    "assets/ground/leafy-grass/manifest.json": {
+      "workspace": true,
+      "extracted": true
+    },
+    "assets/ground/leafy-grass/normal-gl.jpg": {
+      "workspace": true,
+      "extracted": true
+    },
+    "assets/ground/leafy-grass/roughness.jpg": {
+      "workspace": true,
+      "extracted": true
+    },
+    "assets/rock/lichen-rock/albedo.jpg": {
+      "workspace": true,
+      "extracted": true
+    },
+    "assets/rock/lichen-rock/manifest.json": {
+      "workspace": true,
+      "extracted": true
+    },
+    "assets/rock/lichen-rock/normal-gl.jpg": {
+      "workspace": true,
+      "extracted": true
+    },
+    "assets/rock/lichen-rock/roughness.jpg": {
+      "workspace": true,
+      "extracted": true
+    },
+    "index.html": {
+      "workspace": true,
+      "extracted": true
+    },
+    "serve.py": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/audio.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/camera.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/character.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/cottage-surfaces.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/creature.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/foliage.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/game.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/ground-surface.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/main.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/meadow.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/merge-parts.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/pointer-controls.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/rock-surface.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/rock.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/scene.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/sky.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "src/world.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "styles.css": {
+      "workspace": true,
+      "extracted": true
+    },
+    "vendor/README.md": {
+      "workspace": true,
+      "extracted": true
+    },
+    "vendor/THREE-LICENSE": {
+      "workspace": true,
+      "extracted": true
+    },
+    "vendor/three.core.min.js": {
+      "workspace": true,
+      "extracted": true
+    },
+    "vendor/three.module.min.js": {
+      "workspace": true,
+      "extracted": true
+    }
+  },
+  "http": {
+    "README.md": {
+      "status": 200,
+      "bytes": 2359,
+      "matchesArchive": true
+    },
+    "assets/ground/leafy-grass/albedo.jpg": {
+      "status": 200,
+      "bytes": 1195394,
+      "matchesArchive": true
+    },
+    "assets/ground/leafy-grass/manifest.json": {
+      "status": 200,
+      "bytes": 1638,
+      "matchesArchive": true
+    },
+    "assets/ground/leafy-grass/normal-gl.jpg": {
+      "status": 200,
+      "bytes": 1466049,
+      "matchesArchive": true
+    },
+    "assets/ground/leafy-grass/roughness.jpg": {
+      "status": 200,
+      "bytes": 511385,
+      "matchesArchive": true
+    },
+    "assets/rock/lichen-rock/albedo.jpg": {
+      "status": 200,
+      "bytes": 1070311,
+      "matchesArchive": true
+    },
+    "assets/rock/lichen-rock/manifest.json": {
+      "status": 200,
+      "bytes": 1427,
+      "matchesArchive": true
+    },
+    "assets/rock/lichen-rock/normal-gl.jpg": {
+      "status": 200,
+      "bytes": 1259569,
+      "matchesArchive": true
+    },
+    "assets/rock/lichen-rock/roughness.jpg": {
+      "status": 200,
+      "bytes": 573955,
+      "matchesArchive": true
+    },
+    "index.html": {
+      "status": 200,
+      "bytes": 4057,
+      "matchesArchive": true
+    },
+    "serve.py": {
+      "status": 200,
+      "bytes": 1081,
+      "matchesArchive": true
+    },
+    "src/audio.js": {
+      "status": 200,
+      "bytes": 5676,
+      "matchesArchive": true
+    },
+    "src/camera.js": {
+      "status": 200,
+      "bytes": 1385,
+      "matchesArchive": true
+    },
+    "src/character.js": {
+      "status": 200,
+      "bytes": 18128,
+      "matchesArchive": true
+    },
+    "src/cottage-surfaces.js": {
+      "status": 200,
+      "bytes": 2904,
+      "matchesArchive": true
+    },
+    "src/creature.js": {
+      "status": 200,
+      "bytes": 9021,
+      "matchesArchive": true
+    },
+    "src/foliage.js": {
+      "status": 200,
+      "bytes": 6762,
+      "matchesArchive": true
+    },
+    "src/game.js": {
+      "status": 200,
+      "bytes": 12896,
+      "matchesArchive": true
+    },
+    "src/ground-surface.js": {
+      "status": 200,
+      "bytes": 3680,
+      "matchesArchive": true
+    },
+    "src/main.js": {
+      "status": 200,
+      "bytes": 21046,
+      "matchesArchive": true
+    },
+    "src/meadow.js": {
+      "status": 200,
+      "bytes": 10387,
+      "matchesArchive": true
+    },
+    "src/merge-parts.js": {
+      "status": 200,
+      "bytes": 2082,
+      "matchesArchive": true
+    },
+    "src/pointer-controls.js": {
+      "status": 200,
+      "bytes": 1824,
+      "matchesArchive": true
+    },
+    "src/rock-surface.js": {
+      "status": 200,
+      "bytes": 3137,
+      "matchesArchive": true
+    },
+    "src/rock.js": {
+      "status": 200,
+      "bytes": 2377,
+      "matchesArchive": true
+    },
+    "src/scene.js": {
+      "status": 200,
+      "bytes": 24582,
+      "matchesArchive": true
+    },
+    "src/sky.js": {
+      "status": 200,
+      "bytes": 3089,
+      "matchesArchive": true
+    },
+    "src/world.js": {
+      "status": 200,
+      "bytes": 2934,
+      "matchesArchive": true
+    },
+    "styles.css": {
+      "status": 200,
+      "bytes": 11920,
+      "matchesArchive": true
+    },
+    "vendor/README.md": {
+      "status": 200,
+      "bytes": 376,
+      "matchesArchive": true
+    },
+    "vendor/THREE-LICENSE": {
+      "status": 200,
+      "bytes": 1081,
+      "matchesArchive": true
+    },
+    "vendor/three.core.min.js": {
+      "status": 200,
+      "bytes": 381124,
+      "matchesArchive": true
+    },
+    "vendor/three.module.min.js": {
+      "status": 200,
+      "bytes": 338908,
+      "matchesArchive": true
+    }
+  },
+  "originalM4": {
+    "dist/tidelands-local.zip": "61e173d0bf869afda5cfa674a6a675780b9453a8389baabbd33948fb12bc90ac",
+    "dist/tidelands-local.json": "aaa7501ad55734ee0c7ab3f12f957f6f35ce9da82d5e1415128bd1b65904d902",
+    "docs/m4-delivery-verification.json": "557db03a289e7e27a88028b60d7b73ff285f7772a91f56db41821845d387eaa2"
+  },
+  "rebuildIdentical": true,
+  "fullGoalComplete": false
+}

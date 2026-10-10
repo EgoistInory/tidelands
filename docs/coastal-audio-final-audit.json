@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-08",
+  "passed": true,
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "756271e155e184a4a2b2e1faa9152f79da096d61cff64c9fcb8966f06d106a58",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "42d0fce139ed1d5a53e785b6f6b33b4b8d7a0c748148040d62640209b0e33a66",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "historicalArchivesUnchanged": {
+    "tidelands-local.zip": "61e173d0bf869afda5cfa674a6a675780b9453a8389baabbd33948fb12bc90ac",
+    "tidelands-m5-2026-10-05.zip": "02c7cc719a0a48608813e46c2d34075e12d280b42ae7c239acaba34f0a870d57",
+    "tidelands-m5-2026-10-07.zip": "96afc2db4479ff52507b4d9401a4923a63b330f2cda2a852d92d08979b8c47f3",
+    "tidelands-m5-2026-10-07-actions.zip": "6185ccc117cade308691fe9cafbf816f2ccb924a4b5e593077708de593e4be03",
+    "tidelands-m5-2026-10-08-environment.zip": "425e9c09c15e972db5f92a47f50d53b9a11e6a68c9c76d712a83c3bb880a2b27",
+    "tidelands-m5-2026-10-08-impact.zip": "2e14043826237e907b7ba7bcfac79655a6eb10ba38e0cb220462cc2b6553a4cd",
+    "tidelands-m5-2026-10-08-gather.zip": "85652535f557cd969a0187bab03a828df6182250160442fb7ec23192c8df6aab"
+  },
+  "evidenceSha256": {
+    "AGENT_PROGRESS.md": "927c62437787da66e5bba3b501d68fdf076d67f50e91ebf6f05a49a089aa2dab",
+    "ROADMAP.md": "b73677be136546e833cfec21be297bd5cb1e3872d9f9fa6cbc223d51debca29e",
+    "README.md": "5034f79ac1098cfe006aa2d4870a481cdf57aab88c3e0c997dd803a53ac06170",
+    "docs/VERIFICATION.md": "e692937816ed6bc032ebb4d242987ef5e6625fc9b0ac412cb82cee8e604f3e8d",
+    "docs/coastal-audio-review.json": "90d41f039016b5bf345677a526b6d7db0da4ea4a494d1e4a64157be1fc0089a5",
+    "docs/coastal-audio-source-checkpoint.json": "377af27af59162c994db58279fb968dd617c3bc198db9ad724326fe8e7a84e5e",
+    "docs/coastal-audio-test-before.txt": "7fb3be5e8d14510573150d86d8469e404ba585f56c18a77442b9814953da2f1f",
+    "docs/coastal-audio-test-after.txt": "82c5c83dd7ba6fa1a3ad10a8b904ee3ea47a8a1c814343de1517c1d41f78afb5",
+    "docs/coastal-audio-full-tests.txt": "914749fde90ace197e1b94196cc849c4648e468f984d229834b73da58afa678c",
+    "tests/audio.test.js": "8c46f4b0308b79a04450424051302fcd6865fd4a272039ccb61bd85a222e93b4",
+    "tests/audio-render.html": "89615f9fd08a77f343ed7cd1ba322136bb3f4c612ddb504fc2e8d32cd910e3eb",
+    "tests/coastal-audio-render.html": "1c30103a7d0b6b2bd65ebc2902d30c3c97d8a84bd427a047ea3ea9a7e53ac932",
+    "tests/playthrough.html": "019e0cb9f754dbffded632cdea7bf1a413a77735862db6717856c452926b291d"
+  },
+  "auditorSha256": "883f90d92dccc31ed4b1bd4f138a56df3a4c29717f08e69091ce34d870abe2b6",
+  "soundQualityAccepted": false,
+  "fullGoalComplete": false,
+  "currentAudioPackaged": false
+}

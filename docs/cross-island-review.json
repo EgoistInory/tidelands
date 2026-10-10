@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-07",
+  "stage": "M5_cross_island_and_real_encounters",
+  "fullGoalAccepted": false,
+  "sampleFile": "docs/cross-island-endurance-sample.json",
+  "browser": {
+    "tab": "95",
+    "url": "http://127.0.0.1:4190/tests/playthrough.html?mode=m4&sample=frames&seconds=600",
+    "saveKey": "tidelands-qa-m4",
+    "newFixtureImported": false,
+    "stateInjected": false,
+    "consoleWarningsErrors": [],
+    "temporaryTabClosed": true,
+    "viewportReset": true
+  },
+  "input": "Native intermittent WASD, E, food shortcuts, spaced Space attacks and camera drags. Game remained active while stationary between actions; pause intervals excluded.",
+  "route": [
+    {
+      "region": "潮汐海岸",
+      "position": [
+        -34.8,
+        65.3
+      ],
+      "hp": 100,
+      "kills": 4,
+      "note": "Continued the normal completed m4 journey after a quota interruption."
+    },
+    {
+      "region": "苍翠林地",
+      "position": [
+        135.8,
+        -24.3
+      ],
+      "hp": 100,
+      "kills": 4,
+      "note": "Swam from coast, gathered wood and spoke to 林栖; completed-lighthouse dialogue was already correct."
+    },
+    {
+      "region": "苍翠林地",
+      "position": [
+        112.2,
+        -125.4
+      ],
+      "hpAfterEncounter": 93,
+      "killsAfterEncounter": 5,
+      "note": "Actual crab encounter: 40/40 approaching at 6 metres, five Space presses spaced about one second, enemy panel hidden after defeat; reward berry eaten to restore HP100."
+    },
+    {
+      "region": "雾岬高地",
+      "position": [
+        -70.6,
+        -190.1
+      ],
+      "hp": 82,
+      "kills": 7,
+      "note": "Crossed northern sea, earlier boar encounter killed two enemies (5→7) and reduced HP100→28; three reward berries restored HP82. Spoke to 远舟; incorrect post-completion material request observed."
+    },
+    {
+      "region": "潮汐海岸",
+      "position": [
+        -57.1,
+        94.4
+      ],
+      "hp": 100,
+      "kills": 8,
+      "note": "Return-coast boar defeat 7→8; gathered resources and two berries, food use restored HP100. 阿岚 incorrectly repeated the dark-lighthouse starter dialogue."
+    },
+    {
+      "region": "琥珀浅滩",
+      "position": [
+        102.4,
+        170.9
+      ],
+      "hpBeforeEncounter": 100,
+      "hpAfterEncounter": 48,
+      "killsBeforeEncounter": 8,
+      "killsAfterEncounter": 13,
+      "note": "Swam to fourth island. Crab40/40 at6m, multiple creatures visible. Gathered stone then eight Space presses at900ms intervals; five enemies defeated, food0→5 and enemy panel hidden. Three reward berries restored HP100/food2. Individual enemy damage sequences were not captured."
+    },
+    {
+      "region": "潮汐海岸",
+      "position": [
+        -55.9,
+        95
+      ],
+      "hp": 100,
+      "kills": 13,
+      "food": 2,
+      "note": "Returned through sea, completed ten active minutes, saved and reloaded. Quest6/building1/position/HP/kills/food preserved."
+    }
+  ],
+  "observedQualityGaps": [
+    "Camera avoidance repeatedly flipped North/East/West and changed subsequent camera-relative travel; a post-fix attempt to return to 远舟 stopped at a coastal tree instead of reaching him.",
+    "Nearby rock and NPC occasionally filled the foreground or hid the player. Gathering removed the resource obstruction, but camera/NPC occlusion quality remains open.",
+    "Simple faces, geometric NPC/creature/landmark forms, sparse repeated ground vegetation and material/lighting limits remain visible.",
+    "Success toast and final attack-miss feedback can coexist."
+  ],
+  "bounds": [
+    "Ten active minutes, 36001 rAF intervals and eleven JS-heap snapshots; about another ten minutes of pause time excluded.",
+    "Movement was intermittent native keypresses, not ten minutes of continuously held movement. Several real multi-enemy fights and all four island regions were visited within the sample.",
+    "All minute checkpoints happened between fights and show enemy:null; actual encounter evidence comes from separate visible HUD observations.",
+    "Frame scheduling is not GPU timing; bounded heap snapshots do not prove absence of leaks.",
+    "No physical mobile test, audio listening, saved image/video or downloaded-save-file proof was added.",
+    "Runtime fingerprint was checked unchanged before sampler completion. The keeper/explorer dialogue fix was applied afterward; do not label this sample as the exact final package source."
+  ],
+  "runtimeSourceSha256": {
+    "src/game.js": "4f4c73b4f44844cd5cefd5c5dd39ac887348d50cad485db5d77a849085d328ea",
+    "src/scene.js": "b9e2bce7ccc6344660752bfe2a596bc112205bc1cd460a9d9241b9ff57d4cca7",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/main.js": "52d9cf124b02915a2c36cfe7510840be3cf6f9d281931c3a511601f0f3641924",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/audio.js": "b3ec2bff2a521932823a998fcc86eefd16ae0fead315e7d5324b064d63436ca5",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/character.js": "cbe3fac0b203391e634adeda6cf1b8a275f86b9eeef33acc970fbb29ab98d33a",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+    "styles.css": "9ebaa347043c3d65b51e19085f923a9c2a06ff370446aae0bab26358c0c98a3b",
+    "tests/playthrough.html": "173f45fbeae700359c819589ad3b5012fb7867102b6e770533b95dc3715ffe94"
+  },
+  "sampleSha256": "5c720143ccf4ffe5fa16e1a182b1e23f9075770241c15f0365f230932612cd63",
+  "runtimeFilesChangedAfterSample": [
+    "src/game.js"
+  ]
+}

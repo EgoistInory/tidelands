@@ -1,0 +1,180 @@
+{
+  "date": "2026-10-08",
+  "heartbeat": "2026-10-08T05:40:17.971Z",
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "756271e155e184a4a2b2e1faa9152f79da096d61cff64c9fcb8966f06d106a58",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "98a7be6306f53353c629827de56168d6c9a27efc57a9ac1e7e182f6d75c648de",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "42d0fce139ed1d5a53e785b6f6b33b4b8d7a0c748148040d62640209b0e33a66",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "archive": {
+    "archive": "tidelands-m5-2026-10-08-coastal.zip",
+    "archiveBytes": 6304452,
+    "archiveSha256": "4151c774820b95a8a7f2047f8d04e3d3ce7f3fce506f25b6de361bea8190487e",
+    "archiveEntries": 35,
+    "stage": "M1-M4 functional; M5 coastal audio and dune grass checkpoint"
+  },
+  "checkedFiles": 34,
+  "archiveChecks": {
+    "kind": "local-delivery-archive-check",
+    "passed": true,
+    "archive": "tidelands-m5-2026-10-08-coastal.zip",
+    "stage": "M1-M4 functional; M5 coastal audio and dune grass checkpoint",
+    "archiveSha256": "4151c774820b95a8a7f2047f8d04e3d3ce7f3fce506f25b6de361bea8190487e",
+    "checkedFiles": 34,
+    "archiveEntries": 35,
+    "extractedPath": "/private/tmp/tidelands-delivery-ygjebfiq/tidelands-local",
+    "invalidPortsRejected": [
+      -1,
+      65536
+    ],
+    "browserLaunchVerified": false,
+    "fullGoalComplete": false
+  },
+  "currentInputsMatch": true,
+  "historicalArchivesUnchanged": {
+    "tidelands-local.zip": "61e173d0bf869afda5cfa674a6a675780b9453a8389baabbd33948fb12bc90ac",
+    "tidelands-m5-2026-10-05.zip": "02c7cc719a0a48608813e46c2d34075e12d280b42ae7c239acaba34f0a870d57",
+    "tidelands-m5-2026-10-07.zip": "96afc2db4479ff52507b4d9401a4923a63b330f2cda2a852d92d08979b8c47f3",
+    "tidelands-m5-2026-10-07-actions.zip": "6185ccc117cade308691fe9cafbf816f2ccb924a4b5e593077708de593e4be03",
+    "tidelands-m5-2026-10-08-environment.zip": "425e9c09c15e972db5f92a47f50d53b9a11e6a68c9c76d712a83c3bb880a2b27",
+    "tidelands-m5-2026-10-08-impact.zip": "2e14043826237e907b7ba7bcfac79655a6eb10ba38e0cb220462cc2b6553a4cd",
+    "tidelands-m5-2026-10-08-gather.zip": "85652535f557cd969a0187bab03a828df6182250160442fb7ec23192c8df6aab"
+  },
+  "fullTests": 113,
+  "browser": {
+    "path": "Controlled CUA Playwright; Browser plugin not available",
+    "url": "http://127.0.0.1:51636/",
+    "title": "潮生群岛 · Tidelands",
+    "freshOrdinaryOrigin": true,
+    "fixtureImport": false,
+    "desktopViewport": [
+      1280,
+      720
+    ],
+    "mobileViewport": [
+      390,
+      844
+    ],
+    "mobileScrollWidth": 390,
+    "mobileCanvasBuffer": [
+      585,
+      1266
+    ],
+    "flow": "Begin -> native keys -> collect berries -> bag -> pause/save -> reload -> continue/bag -> mobile collect wood -> save/reload -> bag",
+    "start": {
+      "position": [
+        -70,
+        102
+      ],
+      "hp": 100,
+      "quest": 0,
+      "buildings": 0,
+      "kills": 0,
+      "wood": 0,
+      "berry": 3
+    },
+    "desktopReload": {
+      "position": [
+        -63.4,
+        107.6
+      ],
+      "hp": 100,
+      "quest": 0,
+      "buildings": 0,
+      "kills": 0,
+      "wood": 0,
+      "berry": 5
+    },
+    "mobileReload": {
+      "position": [
+        -63.4,
+        107.6
+      ],
+      "hp": 100,
+      "quest": 0,
+      "buildings": 0,
+      "kills": 0,
+      "wood": 2,
+      "berry": 5
+    },
+    "consoleWarnError": [],
+    "blankOrFrameworkOverlay": false,
+    "screenshots": "Viewed only in tools; no new PNG/video",
+    "scope": "Normal fresh isolated port, actual move/gather/save/reload; did not reach NPC or replay full campaign; no sound listening."
+  },
+  "cleanup": {
+    "packageTab18Closed": true,
+    "viewportReset": true,
+    "temporaryServer51636Stopped": true,
+    "stopExit": 130,
+    "original4190Retained": true,
+    "dynamicTab17Closed": true,
+    "dynamicMobileTab19Closed": true
+  },
+  "failures": [
+    "First reads used parent cwd /Users/huxiaocong/Codex and returned missing paths; corrected to tidelands cwd. Later guessed package.test.js absent; discovered existing tools/test_local_delivery.py.",
+    "Port0 first sandbox bind Operation not permitted; authorized local-only escalation started 51636, then stopped after smoke.",
+    "A single pressKey containing repeated space-separated keys returned Unknown key and moved nothing. Read fresh coordinates and used documented individual key calls.",
+    "Camera avoidance changed heading, so intended NPC approach did not reach NPC. UI wood label later resolved to actual berries+2 at E; inventory and saved position used as evidence."
+  ],
+  "dynamicEndurance": {
+    "status": "complete_evidence_captured_quality_pending",
+    "url": "http://127.0.0.1:4190/tests/dynamic-endurance.html",
+    "harnessSha256": "6b9b7e72675ec929c860661ba12bae22d26ba0e2d111934b5f97ca9ce5c7ff99",
+    "desktopEvidence": "docs/dynamic-endurance-sample.json",
+    "mobileEvidence": "docs/dynamic-endurance-mobile-sample.json",
+    "initialSmokeEvidence": "docs/dynamic-endurance-smoke.json",
+    "desktop": {
+      "activeMs": 600000.27,
+      "frames": 35917,
+      "movingFrames": 35554,
+      "distanceMeters": 4040.02,
+      "p95Ms": 17.5,
+      "maxMs": 366.7,
+      "over50Ms": 4,
+      "hitCount": 34,
+      "stepsScheduled": 2019,
+      "hidden": false
+    },
+    "mobile": {
+      "activeMs": 60000.07,
+      "frames": 3511,
+      "movingFrames": 3509,
+      "distanceMeters": 406.84,
+      "p95Ms": 17.6,
+      "maxMs": 400,
+      "over50Ms": 4,
+      "hitCount": 6,
+      "stepsScheduled": 197,
+      "hidden": false
+    },
+    "performanceQualityAccepted": false,
+    "scope": "Five explicit fixture teleports; scripted production movement/tick/render/attack/audio. Long desktop / 60-second mobile viewport only. No save or ordinary campaign acceptance; no listening, GPU timing, physical device or leak proof."
+  },
+  "m5Accepted": false,
+  "fullGoalComplete": false,
+  "quota": {
+    "ordinaryUsageAllowed": true,
+    "primaryUsedPercent": 35,
+    "secondaryUsedPercent": 85,
+    "historicalGoalStatus": "usageLimited",
+    "goalStatusForced": false,
+    "transientReadError": "One usage query unavailable; retry returned live ordinaryUsageAllowed=true."
+  },
+  "productionCodeChangedThisTurn": false
+}

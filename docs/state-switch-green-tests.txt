@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: crab has eight walking legs and its articulated pincers close during a strike
+ok 1 - crab has eight walking legs and its articulated pincers close during a strike
+  ---
+  duration_ms: 35.428208
+  type: 'test'
+  ...
+# Subtest: boar: sculpted surfaces stay finite and retain the same distant silhouette
+ok 2 - boar: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 16.368333
+  type: 'test'
+  ...
+# Subtest: crab: sculpted surfaces stay finite and retain the same distant silhouette
+ok 3 - crab: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 17.123542
+  type: 'test'
+  ...
+# Subtest: boar: distance gait, bounded turn, hit isolation and death recovery
+ok 4 - boar: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 16.788167
+  type: 'test'
+  ...
+# Subtest: crab: distance gait, bounded turn, hit isolation and death recovery
+ok 5 - crab: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 32.668334
+  type: 'test'
+  ...
+# Subtest: boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 6 - boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 4.246208
+  type: 'test'
+  ...
+# Subtest: crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 7 - crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 7.794291
+  type: 'test'
+  ...
+# Subtest: islanders respond to a nearby conversation target without moving or changing the save
+ok 8 - islanders respond to a nearby conversation target without moving or changing the save
+  ---
+  duration_ms: 419.319292
+  type: 'test'
+  ...
+# Subtest: tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+ok 9 - tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+  ---
+  duration_ms: 290.464417
+  type: 'test'
+  ...
+# Subtest: distant geometry is shared until the last owner leaves, while materials remain private
+ok 10 - distant geometry is shared until the last owner leaves, while materials remain private
+  ---
+  duration_ms: 29.126875
+  type: 'test'
+  ...
+# Subtest: resource bounds retain regenerating nodes after initial depletion
+ok 11 - resource bounds retain regenerating nodes after initial depletion
+  ---
+  duration_ms: 278.394833
+  type: 'test'
+  ...
+# Subtest: save replacement releases creatures and resets transient death/hit animation
+ok 12 - save replacement releases creatures and resets transient death/hit animation
+  ---
+  duration_ms: 19.831375
+  type: 'test'
+  ...
+# Subtest: same-type save replacement reuses creature models without carrying over animation or damage
+ok 13 - same-type save replacement reuses creature models without carrying over animation or damage
+  ---
+  duration_ms: 31.764542
+  type: 'test'
+  ...
+# Subtest: loading a different save updates buildings even when IDs are reused
+ok 14 - loading a different save updates buildings even when IDs are reused
+  ---
+  duration_ms: 1.206916
+  type: 'test'
+  ...
+# Subtest: campfire flames emit light without changing shared building materials
+ok 15 - campfire flames emit light without changing shared building materials
+  ---
+  duration_ms: 1.250208
+  type: 'test'
+  ...
+# Subtest: repeated build previews release their geometry and private materials
+ok 16 - repeated build previews release their geometry and private materials
+  ---
+  duration_ms: 13.607875
+  type: 'test'
+  ...
+# Subtest: tent preview retains double-sided cloth and shares replacement material safely
+ok 17 - tent preview retains double-sided cloth and shares replacement material safely
+  ---
+  duration_ms: 0.63175
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1147.162667

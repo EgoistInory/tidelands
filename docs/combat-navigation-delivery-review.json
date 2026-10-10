@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-07",
+  "stage": "M5_versioned_combat_navigation_dialogue_delivery",
+  "fullGoalAccepted": false,
+  "archive": "dist/tidelands-m5-2026-10-07.zip",
+  "archiveSha256": "96afc2db4479ff52507b4d9401a4923a63b330f2cda2a852d92d08979b8c47f3",
+  "archiveBytes": 6302105,
+  "archiveEntries": 34,
+  "checkedFiles": 33,
+  "archiveVerification": "docs/tidelands-m5-2026-10-07-verification.json",
+  "contents": "Includes previous M5 camera/sky/creature/outfit/audio improvements plus combat HUD, compass correction and completed keeper/explorer dialogue.",
+  "browser": {
+    "tab": "96",
+    "origin": "http://127.0.0.1:64166",
+    "extractedPath": "/private/tmp/tidelands-delivery-p04sb8ph/tidelands-local",
+    "normalNewGame": true,
+    "fixtureImported": false,
+    "enteredWorld": true,
+    "positionAfterNativeMovement": [
+      -61.4,
+      96.2
+    ],
+    "keeperQuestAdvanced": [
+      0,
+      1
+    ],
+    "saveFeedback": "存档已保存。",
+    "reload": {
+      "button": "继续旅程",
+      "questTitle": "荒野的第一把工具",
+      "position": [
+        -61.4,
+        96.2
+      ],
+      "hp": 100,
+      "stamina": 100,
+      "food": 3,
+      "buildings": 0,
+      "kills": 0
+    },
+    "consoleWarningsErrors": [],
+    "temporaryTabClosed": true,
+    "temporaryServerStopped": true,
+    "serverSession": 4629,
+    "intentionalStopExitCode": 130
+  },
+  "limits": [
+    "Extracted package smoke covers launch, movement, first NPC objective and save/reload; it does not repeat the whole six-quest route.",
+    "No new current-package ten-minute sample after the two dialogue branches; earlier cross-island sample retains its pre-fix fingerprint.",
+    "No new mobile hardware, GPU timing, audio listening, saved screenshot/video or file-chooser retry.",
+    "Original M4 and 2026-10-05 M5 archives preserved."
+  ],
+  "sourceSha256": {
+    "src/audio.js": "b3ec2bff2a521932823a998fcc86eefd16ae0fead315e7d5324b064d63436ca5",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "cbe3fac0b203391e634adeda6cf1b8a275f86b9eeef33acc970fbb29ab98d33a",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "cbed1c37f16752218a9194fab147269ada0539161f19a349a52754245bc1cf2a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/main.js": "52d9cf124b02915a2c36cfe7510840be3cf6f9d281931c3a511601f0f3641924",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "b9e2bce7ccc6344660752bfe2a596bc112205bc1cd460a9d9241b9ff57d4cca7",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+    "styles.css": "9ebaa347043c3d65b51e19085f923a9c2a06ff370446aae0bab26358c0c98a3b",
+    "tests/playthrough.html": "173f45fbeae700359c819589ad3b5012fb7867102b6e770533b95dc3715ffe94"
+  }
+}

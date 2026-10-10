@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-28",
+  "harness": "tests/render-load.html",
+  "conditions": {
+    "settleFrames": 60,
+    "position": [
+      -70,
+      102
+    ],
+    "canvas": [
+      1920,
+      915
+    ],
+    "simulation": "frozen",
+    "visibility": "visible"
+  },
+  "baseline": {
+    "calls": 890,
+    "triangles": 776843,
+    "geometries": 913,
+    "textures": 3,
+    "programs": 10
+  },
+  "rejected80UnitCells": {
+    "calls": 1323,
+    "triangles": 696371,
+    "geometries": 913,
+    "textures": 3,
+    "programs": 10
+  },
+  "decision": "80-unit resource partition reverted: calls increased 48.65%, triangles decreased 10.36%; no proven frame-time improvement.",
+  "limits": "Single starting view, renderer counters only; not GPU timing or long-run memory/visual acceptance.",
+  "mergedStaticParts": {
+    "date": "2026-09-29",
+    "calls": 428,
+    "triangles": 776843,
+    "geometries": 438,
+    "textures": 3,
+    "programs": 10,
+    "consoleErrors": []
+  },
+  "mergeDecision": "Retained: 51.91% fewer calls with identical submitted triangles at same starting view. Geometry count is not memory bytes; non-indexed merging can increase buffer bytes. FPS/visual acceptance still pending.",
+  "indexedMergeCpuStorage": {
+    "date": "2026-09-29",
+    "scope": "scenery and all creatures; excludes player, terrain, water",
+    "command": "node tests/measure-geometry.js",
+    "beforeTypedArrayBytes": 29718680,
+    "afterTypedArrayBytes": 11485172,
+    "meshes": 1031,
+    "limits": "CPU typed arrays only; not total heap or GPU memory; browser render counters not repeated for this change"
+  }
+}

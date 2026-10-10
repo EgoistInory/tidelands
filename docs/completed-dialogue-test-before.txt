@@ -1,0 +1,170 @@
+TAP version 13
+# Subtest: starter clearing provides enough materials for the first tool without waiting for respawn
+ok 1 - starter clearing provides enough materials for the first tool without waiting for respawn
+  ---
+  duration_ms: 2.967291
+  type: 'test'
+  ...
+# Subtest: day labels and lighting share a continuous repeating day cycle
+ok 2 - day labels and lighting share a continuous repeating day cycle
+  ---
+  duration_ms: 0.899875
+  type: 'test'
+  ...
+# Subtest: deterministic, populated world with safe start and diverse regions
+ok 3 - deterministic, populated world with safe start and diverse regions
+  ---
+  duration_ms: 1.953583
+  type: 'test'
+  ...
+# Subtest: wood, mineral and food nodes deplete and recover without duplicate rewards
+ok 4 - wood, mineral and food nodes deplete and recover without duplicate rewards
+  ---
+  duration_ms: 2.959208
+  type: 'test'
+  ...
+# Subtest: craft consumes exact materials, never negative or repeated unique tools
+ok 5 - craft consumes exact materials, never negative or repeated unique tools
+  ---
+  duration_ms: 0.865
+  type: 'test'
+  ...
+# Subtest: building location checks, material use, persistence and overlap
+ok 6 - building location checks, material use, persistence and overlap
+  ---
+  duration_ms: 1.419792
+  type: 'test'
+  ...
+# Subtest: movement normalizes diagonal speed, respects trees and bounds
+ok 7 - movement normalizes diagonal speed, respects trees and bounds
+  ---
+  duration_ms: 2.001708
+  type: 'test'
+  ...
+# Subtest: attack cooldown and kill rewards happen only once
+ok 8 - attack cooldown and kill rewards happen only once
+  ---
+  duration_ms: 0.899792
+  type: 'test'
+  ...
+# Subtest: food consumes only when healing; camp heals and defeat preserves inventory
+ok 9 - food consumes only when healing; camp heals and defeat preserves inventory
+  ---
+  duration_ms: 1.39775
+  type: 'test'
+  ...
+# Subtest: entire six-step quest chain reaches conclusion with no repeat reward
+ok 10 - entire six-step quest chain reaches conclusion with no repeat reward
+  ---
+  duration_ms: 1.650959
+  type: 'test'
+  ...
+# Subtest: save roundtrip preserves all world changes
+ok 11 - save roundtrip preserves all world changes
+  ---
+  duration_ms: 2.446167
+  type: 'test'
+  ...
+# Subtest: invalid imports rejected without changing running state
+ok 12 - invalid imports rejected without changing running state
+  ---
+  duration_ms: 12.116125
+  type: 'test'
+  ...
+# Subtest: nearest target respects interaction distance
+ok 13 - nearest target respects interaction distance
+  ---
+  duration_ms: 0.78825
+  type: 'test'
+  ...
+# Subtest: respawn protection survives reload and expires without granting permanent immunity
+ok 14 - respawn protection survives reload and expires without granting permanent immunity
+  ---
+  duration_ms: 3.148166
+  type: 'test'
+  ...
+# Subtest: tick reports lethal damage before healing and clears feedback during protection
+ok 15 - tick reports lethal damage before healing and clears feedback during protection
+  ---
+  duration_ms: 0.718209
+  type: 'test'
+  ...
+# Subtest: damage follows equipped weapon instead of the strongest item in the bag
+ok 16 - damage follows equipped weapon instead of the strongest item in the bag
+  ---
+  duration_ms: 7.700166
+  type: 'test'
+  ...
+# Subtest: duplicate building IDs and malformed entries are rejected with actionable messages
+ok 17 - duplicate building IDs and malformed entries are rejected with actionable messages
+  ---
+  duration_ms: 4.535625
+  type: 'test'
+  ...
+# Subtest: enemy cooldowns cannot be frozen by malformed or future saved attack times
+ok 18 - enemy cooldowns cannot be frozen by malformed or future saved attack times
+  ---
+  duration_ms: 6.758916
+  type: 'test'
+  ...
+# Subtest: sprint exhaustion, swimming and rest preserve a recoverable stamina cycle
+ok 19 - sprint exhaustion, swimming and rest preserve a recoverable stamina cycle
+  ---
+  duration_ms: 1.448584
+  type: 'test'
+  ...
+# Subtest: crafted food consumes its ingredients once and never consumes food at full health
+ok 20 - crafted food consumes its ingredients once and never consumes food at full health
+  ---
+  duration_ms: 1.193167
+  type: 'test'
+  ...
+# Subtest: botanist dialogue matches quest prerequisites and a one-time gift
+ok 21 - botanist dialogue matches quest prerequisites and a one-time gift
+  ---
+  duration_ms: 0.556916
+  type: 'test'
+  ...
+# Subtest: all islanders acknowledge the lit lighthouse after completion without repeating gifts or objectives
+not ok 22 - all islanders acknowledge the lit lighthouse after completion without repeating gifts or objectives
+  ---
+  duration_ms: 1.004459
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/game.test.js:169:1'
+  failureType: 'testCodeFailure'
+  error: 'keeper'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: '阿岚：风暴熄灭了归航灯塔。先采些木材和石料，做一把石斧，我们会需要它。'
+  operator: 'doesNotMatch'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/game.test.js:178:14)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: combat target ignores corpses and distant enemies without changing the save
+ok 23 - combat target ignores corpses and distant enemies without changing the save
+  ---
+  duration_ms: 0.702416
+  type: 'test'
+  ...
+# Subtest: combat target reflects actual weapon damage, cooldown and defeat
+ok 24 - combat target reflects actual weapon damage, cooldown and defeat
+  ---
+  duration_ms: 1.372083
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 23
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 115.312208

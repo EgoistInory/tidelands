@@ -1,0 +1,22 @@
+...E
+======================================================================
+ERROR: test_versioned_archive_is_reproducible_and_verifies (__main__.LocalDeliveryTests.test_versioned_archive_is_reproducible_and_verifies)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/test_local_delivery.py", line 47, in test_versioned_archive_is_reproducible_and_verifies
+    verification = verify_local.verify('tidelands-m5-test')
+  File "/Users/huxiaocong/Codex/tidelands/tools/verify_local.py", line 46, in verify
+    (ROOT / 'docs' / (name + '-verification.json')).write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 809, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/v0/73fpj1qn6kz9kfhbsxx3skgw0000gn/T/tidelands-package-test-_gfecmrb/docs/vendor/three.module.min.js-verification.json'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.138s
+
+FAILED (errors=1)

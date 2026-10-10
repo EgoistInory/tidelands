@@ -1,0 +1,176 @@
+{
+  "date": "2026-10-03",
+  "status": "smoke_verified",
+  "sha256": {
+    "src/main.js": "4dfb26075e8a30b62e5786b2969c692f7464edc43d114a44f7e8c88b9f55980d",
+    "src/scene.js": "7f5d1a140a85ec0a1cf33fde5c76b17cc605df5203559cb1f801aab6bf95ccdc",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/rock.js": "abfbe74ddf5713360d397abffaa5a056229902d0e029527ae9758b1af89bd67c",
+    "tests/playthrough.html": "28c9e62e282428c6abe75dd499c9ee2fe892214dd39debfffedca6ef44a6791d",
+    "tests/visual-review.html": "54b33b9b758e1c23883c6c5b3d7119d155a48b75072e38cd6893f661125792c1",
+    "tests/rock.test.js": "3169179acf51a130e46bb69e68f5dd1f5c29bf9a6cd8e574cf6365a616e9f91b",
+    "tests/scene.test.js": "7cf9faf3f961d9e9bd2ab5ee0ad8cfccb63bb28a4a67ba8fab1d2cd894e3f3b7"
+  },
+  "entry": "/tests/visual-review.html",
+  "changes": [
+    "Stone resource uses 320-triangle deformed smooth geometry per part instead of twenty flat triangles",
+    "Finite surface-tangent normals and deterministic grey/moss vertex colours",
+    "Existing resource IDs, positions, scale, rotation, shadow flags and camera clearance retained"
+  ],
+  "tests": {
+    "npmTest": {
+      "passed": 59,
+      "failed": 0
+    },
+    "rockSceneSubsetAfterStoneDepletionExtension": {
+      "passed": 9,
+      "failed": 0
+    },
+    "syntax": [
+      "src/scene.js",
+      "src/rock.js",
+      "tests/playthrough.html extracted module"
+    ]
+  },
+  "desktop": {
+    "position": [
+      -70,
+      102
+    ],
+    "time": 240,
+    "viewport": [
+      1280,
+      720
+    ],
+    "canvas": [
+      1280,
+      608
+    ],
+    "devicePixelRatio": 2,
+    "canvasBuffer": [
+      1920,
+      912
+    ],
+    "defaultCamera": {
+      "distance": 14,
+      "pitch": 0.29,
+      "calls": 182,
+      "triangles": 766551,
+      "geometries": 182,
+      "textures": 11
+    },
+    "beforeStone": {
+      "triangles": 713751,
+      "note": "Same ground version, fixed position/time/camera; captured before integration"
+    },
+    "materialCamera": {
+      "distance": 6,
+      "pitch": 0.65,
+      "calls": 84,
+      "triangles": 760183
+    },
+    "triangleIncrease": 52800
+  },
+  "harvest": {
+    "entry": "/tests/playthrough.html?mode=stone",
+    "saveKey": "tidelands-qa-stone",
+    "position": [
+      -67,
+      115.5
+    ],
+    "viewports": [
+      [
+        1280,
+        720
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "initialStone": 0,
+    "finalStone": 2,
+    "feedback": "石料 +2",
+    "nextTarget": "采集浆果",
+    "visual": "Large and small resource stones disappear together; desktop before/after images and mobile after image inspected",
+    "note": "Fresh labelled fixture on reload, no axe; real production button and backpack used. Not physical phone/multitouch or full game regression."
+  },
+  "performance": {
+    "entry": "/tests/playthrough.html?mode=performance",
+    "position": [
+      -63,
+      115.8
+    ],
+    "buildings": 3,
+    "movement": "stationary",
+    "result": {
+      "complete": true,
+      "targetMs": 30000,
+      "durationMs": 30383.3,
+      "activeMs": 30000,
+      "frames": 1800,
+      "medianMs": 16.7,
+      "p95Ms": 17.8,
+      "maxMs": 18.7,
+      "over50Ms": 0,
+      "hidden": false,
+      "viewport": [
+        1280,
+        672
+      ],
+      "devicePixelRatio": 2,
+      "canvasBuffer": [
+        1920,
+        1008
+      ],
+      "heapSupported": true,
+      "checkpoints": [
+        {
+          "activeMs": 0,
+          "frames": 0,
+          "daytime": "第 7 天 · 午后",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 73376485,
+          "viewport": [
+            1280,
+            672
+          ],
+          "devicePixelRatio": 2,
+          "canvasBuffer": [
+            1920,
+            1008
+          ]
+        },
+        {
+          "activeMs": 30000,
+          "frames": 1800,
+          "daytime": "第 7 天 · 午后",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 77158699,
+          "viewport": [
+            1280,
+            672
+          ],
+          "devicePixelRatio": 2,
+          "canvasBuffer": [
+            1920,
+            1008
+          ]
+        }
+      ]
+    },
+    "note": "New stone version thirty-second sample; earlier ground ten-minute sample is historical, not proof for this geometry"
+  },
+  "warnError": [],
+  "screenshots": "Native tool images inspected, not saved as PNG/video",
+  "limits": [
+    "Stone shapes are less faceted but still repeat and appear smooth; fine weathering is weak at default camera",
+    "No GPU byte/timing proof, extended traversal/combat/mobile performance or movement-video audit",
+    "Three-dimensional grass/flowers, character, crystals and clouds retain prototype appearance; sound listening not completed"
+  ],
+  "m5Complete": false,
+  "aaaComplete": false
+}

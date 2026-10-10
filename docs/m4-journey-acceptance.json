@@ -1,0 +1,291 @@
+{
+  "date": "2026-10-05",
+  "stage": "M4_functional_accepted",
+  "fullGoalComplete": false,
+  "method": "Controlled browser native key presses, pointer drags and visible UI actions. DOM text/AX readback. No imported inventory or runtime game-state injection.",
+  "url": "http://127.0.0.1:4190/tests/playthrough.html?mode=m4",
+  "storageKey": "tidelands-qa-m4",
+  "freshGame": true,
+  "normalEnemies": true,
+  "fixturesImported": [],
+  "desktop": {
+    "spawn": {
+      "position": [
+        -70,
+        102
+      ],
+      "hp": 100,
+      "quest": 0,
+      "buildings": 0,
+      "kills": 0,
+      "wood": 0,
+      "stone": 0,
+      "berry": 3
+    },
+    "axeCraft": {
+      "before": {
+        "wood": 4,
+        "stone": 4
+      },
+      "after": {
+        "wood": 0,
+        "stone": 1,
+        "axe": 1
+      },
+      "quest": 2
+    },
+    "campfire": {
+      "before": {
+        "wood": 6,
+        "stone": 4
+      },
+      "after": {
+        "wood": 1,
+        "stone": 1
+      },
+      "buildings": 1,
+      "quest": 3
+    },
+    "botanist": {
+      "position": [
+        130.1,
+        -24.8
+      ],
+      "quest": 4,
+      "berryBefore": 3,
+      "berryAfter": 8
+    },
+    "combat": {
+      "tool": "石斧",
+      "kills": 3,
+      "realCooldownWaitsMs": [
+        700,
+        750
+      ],
+      "minimumObservedHp": 2,
+      "foodRecoveryVerified": true,
+      "respawnsObserved": 0
+    },
+    "wayfarer": {
+      "position": [
+        -69.9,
+        -189.3
+      ],
+      "quest": 5,
+      "crystalBefore": 2,
+      "crystalAfter": 3
+    },
+    "beforeLighthouse": {
+      "wood": 13,
+      "stone": 10,
+      "crystal": 3,
+      "fiber": 6,
+      "berry": 0,
+      "axe": 1,
+      "sword": 0,
+      "hp": 82,
+      "buildings": 1,
+      "kills": 3
+    },
+    "afterLighthouse": {
+      "quest": 6,
+      "questTitle": "群岛，再次相连",
+      "wood": 1,
+      "stone": 2,
+      "crystal": 0,
+      "fiber": 6,
+      "berry": 0,
+      "axe": 1,
+      "hp": 82,
+      "buildings": 1,
+      "kills": 3
+    },
+    "spent": {
+      "wood": 12,
+      "stone": 8,
+      "crystal": 3
+    },
+    "freeMovementAndReload": {
+      "position": [
+        -98.1,
+        -50.6
+      ],
+      "quest": 6,
+      "hp": 82,
+      "buildings": 1,
+      "kills": 3,
+      "manualSaveMessage": "存档已保存。",
+      "sameAfterReload": true
+    }
+  },
+  "mobilePortrait": {
+    "viewport": [
+      390,
+      844
+    ],
+    "pageWidth": 390,
+    "scrollWidth": 390,
+    "joystick": {
+      "drags": 4,
+      "before": [
+        -98.1,
+        -50.6
+      ],
+      "after": [
+        -98.4,
+        -54.3
+      ],
+      "releasedSpanStyle": ""
+    },
+    "cameraYawAndPitchDrags": true,
+    "lighthouseInteraction": "归航的灯火长明。谢谢你，旅人。",
+    "attackFeedback": "未命中 · 靠近目标再攻击",
+    "bag": {
+      "width": 354,
+      "scrollWidth": 354,
+      "emptyFoodDisabled": true,
+      "wood": 1,
+      "stone": 2,
+      "fiber": 6,
+      "crystal": 0
+    },
+    "craft": {
+      "insufficientDisabled": true,
+      "ingredientCountsVisible": true,
+      "swordWorkbenchRequired": true
+    },
+    "map": {
+      "bounds": [
+        36,
+        250.75,
+        318,
+        318
+      ],
+      "setMarkerMessage": "已设置地图标记。任务区会显示距离。",
+      "navigationDistanceMetres": 233,
+      "clearMessage": "导航标记已清除，任务提示已恢复。"
+    },
+    "manualSaveMessage": "存档已保存。",
+    "resumeStatePreserved": true,
+    "qualityGap": "Near lighthouse/obstacles the retracted camera shows a very large face/body. Rotating and raising pitch restores usable view; this is an M5 quality gap, not a passed camera-quality check."
+  },
+  "mobileLandscape": {
+    "viewport": [
+      844,
+      390
+    ],
+    "pageWidth": 844,
+    "scrollWidth": 844,
+    "controls": [
+      {
+        "id": "joystick",
+        "bounds": [
+          18,
+          280,
+          92,
+          92
+        ]
+      },
+      {
+        "id": "attack-button",
+        "bounds": [
+          757,
+          307,
+          65,
+          65
+        ]
+      },
+      {
+        "id": "map-button",
+        "bounds": [
+          720,
+          142.5,
+          53,
+          44
+        ]
+      },
+      {
+        "id": "pause-button",
+        "bounds": [
+          779,
+          142.5,
+          53,
+          44
+        ]
+      },
+      {
+        "id": "bag-button",
+        "bounds": [
+          715.984375,
+          250,
+          54.2421875,
+          44
+        ]
+      },
+      {
+        "id": "craft-button",
+        "bounds": [
+          777.2265625,
+          250,
+          54.7734375,
+          44
+        ]
+      }
+    ],
+    "joystick": {
+      "drags": 2,
+      "before": [
+        -98.4,
+        -54.3
+      ],
+      "after": [
+        -98.0,
+        -52.5
+      ],
+      "releasedSpanStyle": ""
+    },
+    "attackFeedback": "未命中 · 靠近目标再攻击",
+    "manualSaveMessage": "存档已保存。",
+    "hp": 82,
+    "quest": 6,
+    "buildings": 1,
+    "kills": 3
+  },
+  "consoleWarningsAndErrors": [],
+  "savedPausedAndClosed": true,
+  "viewportOverrideReset": true,
+  "screenshots": {
+    "inspectedInline": true,
+    "newSavedImagePaths": []
+  },
+  "limitations": [
+    "Desktop mainline used intermittent native key bursts; not continuous human play.",
+    "Mobile is browser viewport and simulated pointer input; not a physical phone, multitouch or a complete fresh mobile mainline.",
+    "No respawn occurred in this journey; existing M2 evidence remains separate.",
+    "Visual, motion, audio, real-device and GPU quality are still M5 work."
+  ],
+  "sourceSha256": {
+    "src/audio.js": "6e2cdcef0d1557515ee8f9151e66bbb1cba5c5546270e011bf31c1e0037f7fe6",
+    "src/camera.js": "eba766f996b6d841c44509196bd0f79273e6bb6d37b63aee293ce723f2e66333",
+    "src/character.js": "7e516f1cfcdd4319b54b7489290ba8fcb1e8e1fdd2d8634d016d20b9e0f213a5",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "5f27ece647163b1e076ccbe5eaf7e5ecf8960eba765e1fb4cd9f7e7b4a0b8cb2",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/main.js": "be2759df76430daa74c99405efb4cbd2b65e6382583f9662cc098128be733cfb",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "ef24f7266be81533bc9a535c825478caa0c319bc8e19cbaa399604c55ad400ba",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "index.html": "2245f69cea28e3ac482acf169d56ce48ab3ef8be9a1fce74af8390d29a95b15e",
+    "styles.css": "252b652e5198b084d87a41ef24e6328edbcbaf5685ad2e867cd40e4114b0b477",
+    "tests/playthrough.html": "8b8d9bb7e840f3fad4caf40abe8d9e31f5c337a0c6ae6751b337e377a182ba05",
+    "tests/scene-lifecycle.html": "ce5e4eb6f37806396f40940937b87abca066f32dbce56578fa9730048e8d6f5c",
+    "tests/fixtures/m4-version-invalid.json": "0da3acc10c2260a8be4f3c78ea232f2f3a4401feccbad96c269e99671b5113cd",
+    "tests/fixtures/camp-upgraded.json": "6ed5b3070e3d1b6684b7b38b3938a771fe527e7fbd513230504fe1fe29da8e24"
+  }
+}

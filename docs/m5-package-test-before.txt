@@ -1,0 +1,76 @@
+EEEEEEE
+======================================================================
+ERROR: test_changed_inputs_cannot_replace_existing_checkpoint (__main__.LocalDeliveryTests.test_changed_inputs_cannot_replace_existing_checkpoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/test_local_delivery.py", line 54, in test_changed_inputs_cannot_replace_existing_checkpoint
+    self.build()
+    ~~~~~~~~~~^^
+  File "/Users/huxiaocong/Codex/tidelands/tools/test_local_delivery.py", line 35, in build
+    return package_local.build('tidelands-m5-test', 'M5 quality batch checkpoint')
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: build() takes 0 positional arguments but 2 were given
+
+======================================================================
+ERROR: test_names_cannot_escape_dist (__main__.LocalDeliveryTests.test_names_cannot_escape_dist) (name='../checkpoint')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/test_local_delivery.py", line 64, in test_names_cannot_escape_dist
+    package_local.build(name, 'M5 checkpoint')
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: build() takes 0 positional arguments but 2 were given
+
+======================================================================
+ERROR: test_names_cannot_escape_dist (__main__.LocalDeliveryTests.test_names_cannot_escape_dist) (name='/tmp/checkpoint')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/test_local_delivery.py", line 64, in test_names_cannot_escape_dist
+    package_local.build(name, 'M5 checkpoint')
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: build() takes 0 positional arguments but 2 were given
+
+======================================================================
+ERROR: test_names_cannot_escape_dist (__main__.LocalDeliveryTests.test_names_cannot_escape_dist) (name='checkpoint.zip')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/test_local_delivery.py", line 64, in test_names_cannot_escape_dist
+    package_local.build(name, 'M5 checkpoint')
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: build() takes 0 positional arguments but 2 were given
+
+======================================================================
+ERROR: test_names_cannot_escape_dist (__main__.LocalDeliveryTests.test_names_cannot_escape_dist) (name='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/test_local_delivery.py", line 64, in test_names_cannot_escape_dist
+    package_local.build(name, 'M5 checkpoint')
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: build() takes 0 positional arguments but 2 were given
+
+======================================================================
+ERROR: test_report_manifest_disagreement_is_rejected (__main__.LocalDeliveryTests.test_report_manifest_disagreement_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/test_local_delivery.py", line 67, in test_report_manifest_disagreement_is_rejected
+    self.build()
+    ~~~~~~~~~~^^
+  File "/Users/huxiaocong/Codex/tidelands/tools/test_local_delivery.py", line 35, in build
+    return package_local.build('tidelands-m5-test', 'M5 quality batch checkpoint')
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: build() takes 0 positional arguments but 2 were given
+
+======================================================================
+ERROR: test_versioned_archive_is_reproducible_and_verifies (__main__.LocalDeliveryTests.test_versioned_archive_is_reproducible_and_verifies)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/test_local_delivery.py", line 38, in test_versioned_archive_is_reproducible_and_verifies
+    report = self.build()
+  File "/Users/huxiaocong/Codex/tidelands/tools/test_local_delivery.py", line 35, in build
+    return package_local.build('tidelands-m5-test', 'M5 quality batch checkpoint')
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: build() takes 0 positional arguments but 2 were given
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.012s
+
+FAILED (errors=7)

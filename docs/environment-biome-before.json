@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-08",
+  "status": "before",
+  "design": "Bounded M5 environment batch: preserve the four regional ground colours when the CC0 grass surface is ready; retain its fine luminance, normal and roughness detail without increasing geometry, texture count or random placements. User authorized autonomous milestone continuation; no new dependencies or gameplay change.",
+  "observations": [
+    "Desktop noon meadow and forest show nearly the same yellow ground although the existing vertex palettes differ. The current grass shader replaces that palette with the sampled albedo and only a weak clamped tint.",
+    "Sparse repeated grass, simple crystals and figures remain quality backlog; this batch does not close M5."
+  ],
+  "sourceSha256": {
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/scene.js": "42d0fce139ed1d5a53e785b6f6b33b4b8d7a0c748148040d62640209b0e33a66",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "tests/visual-review.html": "8906a292f21b9ef130d7d61d8498eed6e0aa264da9e45fb650f5785548171b82"
+  },
+  "browser": {
+    "entry": "http://127.0.0.1:4190/tests/visual-review.html",
+    "storageUsed": false,
+    "noon": 240,
+    "viewport": [
+      1280,
+      564
+    ],
+    "canvasBuffer": [
+      1920,
+      846
+    ],
+    "dpr": 2,
+    "meadow": {
+      "position": [
+        -77.3,
+        110.2
+      ],
+      "calls": 232,
+      "triangles": 1356881,
+      "geometries": 199,
+      "textures": 14,
+      "coverRegions": 10
+    },
+    "forest": {
+      "position": [
+        145,
+        -25
+      ],
+      "calls": 186,
+      "triangles": 1352691,
+      "geometries": 242,
+      "textures": 14,
+      "coverRegions": 15
+    }
+  },
+  "toolFailure": {
+    "action": "getByLabel exact 地点 selectOption",
+    "reason": "no matches because the native label includes whitespace",
+    "resolution": "fresh AX showed ID place; used #place and #time successfully"
+  },
+  "screenshots": "Tool screenshots inspected; no saved image or video."
+}

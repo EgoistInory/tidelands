@@ -1,0 +1,47 @@
+{
+  "recordedAt": "2026-10-07T14:37:03.002121+00:00",
+  "kind": "M5 batch checkpoint audit",
+  "stage": "M5 ongoing; M1-M4 closed",
+  "goalComplete": false,
+  "sha256": {
+    "AGENT_PROGRESS.md": "0c86067075c5a72e50093b887ee8313fc0c4a907bde72b2f9d5b101a9686717d",
+    "ROADMAP.md": "b17c6863f609a6721b318855bafa2462b5b764a59832cc192eacbe82d79a9fd5",
+    "README.md": "acfb5ab90d4379c96eede9495b91427caa6598fa525b049f01ec4fd9ff5fc507",
+    "docs/LOCAL-DELIVERY.md": "7bb719a6356f7d5215bb6e86bf979cc1b73c0e4851e6667debfb4141ca88cd59",
+    "docs/VERIFICATION.md": "53fc6d9b30fbdb08e73e015aa6421b211310af29b2824c818971b5bfd3c24116",
+    "src/character.js": "40655ad14741d5fa5ceff50a395ace8ad7472dbe0ac1ca8ef414566cf52a4327",
+    "src/main.js": "7c331195e235188a49b93dc26044e2d70754c6bd4fcc37f44449a3ce25dd62d7",
+    "src/scene.js": "42d0fce139ed1d5a53e785b6f6b33b4b8d7a0c748148040d62640209b0e33a66",
+    "src/game.js": "cbed1c37f16752218a9194fab147269ada0539161f19a349a52754245bc1cf2a",
+    "tests/character.test.js": "45be5b4c91f6f00a779a446f9a2f9773a60c31707ac0bba4f2b6a14e8b152def",
+    "tests/locomotion.html": "8e31df1bcd057895ce2527b43076873982ee35834847b8da33844ad583bc4c6f",
+    "docs/action-transition-test-before.txt": "ab3e7f1159a4ea4aaeccb4bf0abd6efa5465086b82c7030b38afca859680db24",
+    "docs/action-transition-test-after.txt": "ab2998fcd57b765a69623bd51fe847303bb28de1e4b784760c0f48e0519bd16e",
+    "docs/action-transition-full-tests.txt": "4edba0eadc6300b32e8507ebea3123698918f39b95ff79d9dc17bfb44145ea21",
+    "docs/action-feedback-full-tests.txt": "74b581ef05963316cb4b14e79343f69184455ac934a5531f4d41600854386428",
+    "docs/action-cycle-browser-before.json": "4086fa126f9ed8ff289dcdfc21e4ec0203cfdbc82249424faf9a5e2f553bd798",
+    "docs/action-cycle-browser-after.json": "c8256f9d6acb6ff663c6346dc1548fa4298fced6be941f48830bb58e3e645356",
+    "docs/action-transition-review.json": "c2b1213144dd4a04cd5c0febc984f25752b90b68c5d5aa1b8d6400a1190363b2",
+    "docs/attack-feedback-browser-before.json": "7497051d25e6957226250b730e23bff0fc6e002444d815447e67851b5f9d2138",
+    "docs/attack-feedback-review.json": "80915ad9efb4595cfd3f7d5c5eb007e26bf5afb592ac53c8601302426cc02072",
+    "docs/action-feedback-delivery-review.json": "e06b1c342123fb7f8a3a579a3224889ab00ea099d5d9cd535fa99bdd2fd72857",
+    "docs/tidelands-m5-2026-10-07-actions-verification.json": "4eab6a05cafb0448512dadb7e239e2545698877cb3f8acfe0b2f6983316f07f0",
+    "dist/tidelands-m5-2026-10-07-actions.zip": "6185ccc117cade308691fe9cafbf816f2ccb924a4b5e593077708de593e4be03",
+    "dist/tidelands-m5-2026-10-07-actions.json": "2e7a4837aff9ff509ccd28ee3360d2bc79ab26ac02ed03c7117926ddf85df56f"
+  },
+  "runtimeArchiveSourceMatch": true,
+  "previousArchivesUnchanged": {
+    "dist/tidelands-local.zip": "61e173d0bf869afda5cfa674a6a675780b9453a8389baabbd33948fb12bc90ac",
+    "dist/tidelands-m5-2026-10-05.zip": "02c7cc719a0a48608813e46c2d34075e12d280b42ae7c239acaba34f0a870d57",
+    "dist/tidelands-m5-2026-10-07.zip": "96afc2db4479ff52507b4d9401a4923a63b330f2cda2a852d92d08979b8c47f3"
+  },
+  "testPassCount": 101,
+  "nextAction": "M1-M4保留收口；M5攻击/采集由装备姿态平滑进入/恢复（19项角色及全量101项通过，桌面/390窄屏12秒循环），原命中toast与空挥矛盾已实测修正。新dist/tidelands-m5-2026-10-07-actions.zip包含NPC反馈和本批改进，33文件校验/独立解压正常采集、阿岚首任务、保存刷新通过，见docs/action-feedback-delivery-review.json。下一项环境材质/植被整体一致性及代表性实景，再动作撞击时序/试听和最终性能交付，不反复打磨单个关节。完整M5/3A仍未通过，镜头突转/遮挡、全身穿插、真机/GPU/长时仍待办。4190/PID92409保留；m1/m4上次保存位置未在本轮读改。历史限额不强改，2048保留、无付费/重置券。",
+  "missingFinalEvidence": [
+    "Whole-body motion and no tool/body intersection",
+    "Audio listening/impact timing and mix",
+    "Camera continuous quality",
+    "Environment materials and vegetation consistency",
+    "Current long-run/GPU and physical mobile acceptance"
+  ]
+}

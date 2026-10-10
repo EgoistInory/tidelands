@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><title>Tidelands 隔离验收</title>
+<style>html,body,iframe{margin:0;width:100%;height:100%;border:0}body{overflow:hidden}#error{font:18px sans-serif}</style>
+<iframe title="隔离游戏验收"></iframe><p id="error" hidden></p>
+<script type="module">
+// Production UI and modules with separate save keys. Combat and menus seed labelled QA fixtures.
+const mode=new URL(location.href).searchParams.get('mode')||'journey';
+if(!['journey','m1','m3','m4','render-blocked','blocked','corrupt','imports','performance','audio-blocked','combat','menus','berry','stone','fiber','swim','respawn','context-lost','context-lost-blocked'].includes(mode))throw new Error('Unknown QA mode');
+// Optional observation controls reuse the selected save; they do not seed inventory or input.
+if(mode==='performance'||new URL(location.href).searchParams.get('sample')==='frames'){
+  const seconds=new URL(location.href).searchParams.get('seconds')==='600'?600:30,targetMs=seconds*1000;
+  const controls=document.createElement('div'),button=document.createElement('button'),result=document.createElement('output');
+  controls.style.cssText='height:48px;display:flex;align-items:center;gap:12px;background:#fff;color:#111;font:13px monospace';
+  button.style.flexShrink='0';button.textContent=`开始${seconds===600?'10分钟':'30秒'}帧间隔采样`;
+  result.id='performance-result';result.style.cssText='min-width:0;max-height:44px;overflow:auto;overflow-wrap:anywhere';
+  result.textContent='先进入游戏，再采样；若游戏暂停，点继续探索。仅测帧调度，不代表GPU耗时。';
+  controls.append(button,result);document.body.prepend(controls);document.querySelector('iframe').style.height='calc(100% - 48px)';
+  button.onclick=()=>{
+    const win=document.querySelector('iframe').contentWindow,values=[],checkpoints=[];
+    if(!win.document.getElementById('world')||!win.document.getElementById('panel')||!win.document.getElementById('start-screen')){result.textContent='游戏尚未就绪，加载完成后可重试。';return;}
+    const round=n=>Math.round(n*100)/100;
+    let start=null,last=null,hidden=false,activeMs=0,nextCheckpoint=60000;
+    const checkpoint=()=>{
+      const heap=win.performance.memory?.usedJSHeapSize,canvas=win.document.getElementById('world');
+      const text=id=>win.document.getElementById(id)?.textContent??null,enemy=win.document.getElementById('enemy-status');
+      checkpoints.push({activeMs:round(activeMs),frames:values.length,daytime:text('daytime'),save:text('save-state'),hp:Number(win.document.getElementById('hp').value),region:text('region'),coordinates:text('coordinates'),enemy:enemy&&!enemy.hidden?{name:text('enemy-name'),hp:text('enemy-hp-value'),hint:text('enemy-hint')}:null,heapBytes:Number.isFinite(heap)?heap:null,viewport:[win.innerWidth,win.innerHeight],devicePixelRatio:win.devicePixelRatio,canvasBuffer:[canvas.width,canvas.height]});
+    };
+    button.disabled=true;result.textContent=`采样中（${seconds}秒），请保持游戏运行…`;
+    // A parent control takes focus from the game. Explicitly return it to the canvas.
+    win.document.getElementById('world').focus();
+    const sample=now=>{
+      hidden ||= document.hidden||win.document.hidden;
+      if(start===null){start=now;checkpoint();}
+      const paused=win.document.getElementById('panel').open||!win.document.getElementById('start-screen').hidden;
+      if(paused){last=null;}else{if(last!==null){values.push(now-last);activeMs+=now-last;}last=now;}
+      if(activeMs>=nextCheckpoint){checkpoint();nextCheckpoint+=60000;result.textContent=JSON.stringify({sampling:true,targetMs,activeMs:round(activeMs),checkpoints});}
+      if(activeMs<targetMs&&now-start<targetMs*2){win.requestAnimationFrame(sample);return;}
+      if(!values.length){result.textContent='未取得运行中的帧，请进入游戏后重试。';button.disabled=false;return;}
+      if(checkpoints.at(-1).activeMs!==round(activeMs))checkpoint();
+      const sorted=[...values].sort((a,b)=>a-b);
+      result.textContent=JSON.stringify({complete:activeMs>=targetMs,targetMs,durationMs:round(now-start),activeMs:round(activeMs),frames:values.length,medianMs:round(sorted[Math.floor(sorted.length*.5)]),p95Ms:round(sorted[Math.floor(sorted.length*.95)]),maxMs:round(sorted.at(-1)),over50Ms:values.filter(n=>n>50).length,hidden,viewport:[win.innerWidth,win.innerHeight],devicePixelRatio:win.devicePixelRatio,canvasBuffer:checkpoints.at(-1).canvasBuffer,heapSupported:checkpoints.some(c=>c.heapBytes!==null),checkpoints});button.disabled=false;
+    };win.requestAnimationFrame(sample);
+  };
+}
+try{
+  const response=await fetch('../index.html',{cache:'no-store'});
+  if(!response.ok)throw new Error(`HTTP ${response.status}`);
+  const doc=new DOMParser().parseFromString(await response.text(),'text/html');
+  const base=doc.createElement('base');base.href=new URL('../',location.href).href;doc.head.prepend(base);
+  doc.body.dataset.testHarness='true';
+  for(const script of doc.querySelectorAll('script'))script.remove();
+  const setup=doc.createElement('script');setup.type='module';
+  setup.textContent=`import {boot} from './src/main.js';
+    import {WorldView} from './src/scene.js';
+    import {freshGame,restore} from './src/game.js';
+    import {GameAudio} from './src/audio.js';
+    const mode=${JSON.stringify(mode)},key='tidelands-qa-'+mode;
+    if(mode==='performance'||mode==='swim'){
+      const result=document.createElement('output');result.id='audio-diagnostic';
+      result.style.cssText='position:fixed;top:0;left:320px;font:10px monospace;background:#fff;color:#111;z-index:100;pointer-events:none';document.body.append(result);
+      const diagnostics={stepsAttempted:0,stepsScheduled:0,footfallCount:null,context:'uninitialized',active:false},nativeEffect=GameAudio.prototype.effect,nativeUpdate=GameAudio.prototype.update;let audioRef=null;
+      GameAudio.prototype.effect=function(kind,options){const count=this.sources.size;nativeEffect.call(this,kind,options);if(kind==='step'){diagnostics.stepsAttempted++;if(this.sources.size>count)diagnostics.stepsScheduled++;}};
+      GameAudio.prototype.update=function(player,time,height,footfallCount){nativeUpdate.call(this,player,time,height,footfallCount);audioRef=this;diagnostics.footfallCount=footfallCount;diagnostics.height=height;};
+      setInterval(()=>{if(audioRef){Object.assign(diagnostics,{context:audioRef.context?.state??'uninitialized',active:audioRef.active,enabled:audioRef.enabled,surfPresent:!!audioRef.surfSource,surfGain:audioRef.surf?.gain.value??null,windGain:audioRef.wind?.gain.value??null,masterGain:audioRef.master?.gain.value??null,physicalVoices:audioRef.sources.size});}result.textContent='落脚声音诊断 '+JSON.stringify(diagnostics);},1000);
+    }
+    if(mode==='blocked'||mode==='context-lost-blocked')Object.defineProperty(window,'localStorage',{get(){throw new DOMException('QA storage blocked','SecurityError');}});
+    if(mode==='corrupt')localStorage.setItem(key,'broken save');
+    if(mode==='audio-blocked')window.AudioContext=class{constructor(){throw new Error('QA audio unavailable');}};
+    if(mode==='render-blocked'){
+      const nativeContext=HTMLCanvasElement.prototype.getContext;
+      HTMLCanvasElement.prototype.getContext=function(type,...args){return type==='webgl2'?null:nativeContext.call(this,type,...args);};
+    }
+    let initialState=null;
+    if(mode==='combat'){
+      initialState=freshGame();initialState.inventory.sword=1;initialState.selected='sword';
+      initialState.enemies.forEach(e=>e.hp=0);
+      Object.assign(initialState.enemies[0],{type:'crab',x:initialState.player.x+2.5,z:initialState.player.z,hp:40,attackAt:initialState.time});
+    }
+    if(mode==='respawn'){
+      initialState=freshGame();initialState.player.hp=5;initialState.player.x+=20;initialState.inventory.wood=11;
+      initialState.enemies.forEach(e=>e.hp=0);
+      Object.assign(initialState.enemies[0],{type:'boar',x:initialState.player.x,z:initialState.player.z,hp:70,attackAt:0});
+    }
+    if(mode==='menus'){initialState=freshGame();initialState.player.hp=70;initialState.inventory.wood=5;initialState.inventory.stone=5;initialState.enemies.forEach(e=>e.hp=0);}
+    if(mode==='berry'){initialState=freshGame();initialState.player.x=-64;initialState.player.z=112.5;initialState.enemies.forEach(e=>e.hp=0);}
+    if(mode==='stone'){initialState=freshGame();initialState.player.x=-67;initialState.player.z=115.5;initialState.enemies.forEach(e=>e.hp=0);}
+    if(mode==='fiber'){initialState=freshGame();initialState.player.x=-82;initialState.player.z=93.2;initialState.enemies.forEach(e=>e.hp=0);}
+    if(mode==='swim'){initialState=freshGame();initialState.player.x=-70;initialState.player.z=138;initialState.enemies.forEach(e=>e.hp=0);}
+    boot({storageKey:key,initialState});
+    if(mode==='imports'||mode==='context-lost'||mode==='context-lost-blocked'){
+      const nativeClick=HTMLAnchorElement.prototype.click;
+      // Inspect the production export blob without placing QA files in Downloads.
+      HTMLAnchorElement.prototype.click=function(){
+        if(!this.download||!this.href.startsWith('blob:'))return nativeClick.call(this);
+        fetch(this.href).then(response=>response.text()).then(text=>{
+          const saved=restore(text),result=document.createElement('output');result.id='backup-check';
+          result.textContent='备份校验通过：'+JSON.stringify({bytes:new TextEncoder().encode(text).length,quest:saved.quest,position:[saved.player.x,saved.player.z],wood:saved.inventory.wood,buildings:saved.buildings.length});
+          document.getElementById('panel-body').append(result);
+        }).catch(error=>{const result=document.createElement('p');result.textContent='备份校验失败：'+error.message;document.getElementById('panel-body').append(result);});
+      };
+      if(mode==='context-lost'||mode==='context-lost-blocked'){
+        const lose=document.createElement('button');lose.textContent='验收：中断图形上下文';lose.style.cssText='position:fixed;bottom:0;left:0;z-index:100';document.body.append(lose);
+        lose.onclick=()=>{const extension=document.getElementById('world').getContext('webgl2').getExtension('WEBGL_lose_context');if(extension){extension.loseContext();lose.disabled=true;}else lose.textContent='此浏览器不支持中断测试';};
+      }
+    }
+    if(['stone','berry','fiber'].includes(mode)){
+      const timing=document.createElement('output');timing.id='gather-timing';
+      timing.style.cssText='position:fixed;bottom:0;left:0;max-width:100%;max-height:72px;overflow:auto;font:10px monospace;background:#fff;color:#111;z-index:100;pointer-events:none';document.body.append(timing);
+      let trace=null,latestState=null,latestView=null;
+      const beginTrace=()=>{if(document.getElementById('panel').open||!document.getElementById('start-screen').hidden)return;trace={inputAt:performance.now(),frames:[],effects:[]};};
+      document.addEventListener('keydown',event=>{if(event.key.toLowerCase()==='e'&&!event.repeat)beginTrace();},true);
+      document.getElementById('interact-button').addEventListener('click',beginTrace,true);
+      const nativeDraw=WorldView.prototype.draw,nativeEffect=GameAudio.prototype.effect,round=n=>Math.round(n*10000)/10000;
+      WorldView.prototype.draw=function(state,...args){
+        latestState=state;latestView=this;nativeDraw.call(this,state,...args);
+        if(trace&&performance.now()-trace.inputAt<550){trace.frames.push({wallMs:round(performance.now()-trace.inputAt),age:round(state.time-this.gatherAt),inventory:{...state.inventory},depleted:{...state.depleted},shoulder:round(this.player.userData.shoulders[1].rotation.x)});timing.textContent=JSON.stringify(trace);}
+      };
+      GameAudio.prototype.effect=function(kind,options){const before=this.sources.size;nativeEffect.call(this,kind,options);if(trace&&performance.now()-trace.inputAt<550){trace.effects.push({kind,wallMs:round(performance.now()-trace.inputAt),age:latestState&&latestView?round(latestState.time-latestView.gatherAt):null,scheduled:this.sources.size>before});timing.textContent=JSON.stringify(trace);}};
+    }
+    if(mode==='combat'){
+      const timing=document.createElement('output');timing.id='attack-timing';
+      timing.style.cssText='position:fixed;bottom:18px;left:0;max-width:100%;max-height:72px;overflow:auto;font:10px monospace;background:#fff;color:#111;z-index:100;pointer-events:none';document.body.append(timing);
+      let trace=null,latestState=null;
+      const beginTrace=()=>{if(document.getElementById('panel').open||!document.getElementById('start-screen').hidden)return;trace={inputAt:performance.now(),frames:[],effects:[]};};
+      document.addEventListener('keydown',event=>{if(event.key===' '&&!event.repeat)beginTrace();},true);
+      document.getElementById('attack-button').addEventListener('click',beginTrace,true);
+      const nativeDraw=WorldView.prototype.draw,nativeEffect=GameAudio.prototype.effect;
+      WorldView.prototype.draw=function(state,...args){
+        latestState=state;nativeDraw.call(this,state,...args);
+        if(trace&&performance.now()-trace.inputAt<550){
+          const round=n=>Math.round(n*10000)/10000;
+          trace.frames.push({wallMs:round(performance.now()-trace.inputAt),age:round(state.time-state.attackAt),enemyHp:state.enemies[0].hp,shoulder:round(this.player.userData.shoulders[1].rotation.x),kills:state.kills});
+          timing.textContent=JSON.stringify(trace);
+        }
+      };
+      GameAudio.prototype.effect=function(kind,options){const before=this.sources.size;nativeEffect.call(this,kind,options);if(trace&&performance.now()-trace.inputAt<550){trace.effects.push({kind,wallMs:Math.round((performance.now()-trace.inputAt)*100)/100,age:latestState?Math.round((latestState.time-latestState.attackAt)*10000)/10000:null,scheduled:this.sources.size>before});timing.textContent=JSON.stringify(trace);}};
+      const status=document.createElement('output');status.id='frame-diagnostic';
+      status.style.cssText='position:fixed;bottom:0;left:0;font:11px monospace;background:#fff;color:#111;z-index:100;pointer-events:none';document.body.append(status);
+      let frames=0,lastFrame=performance.now();
+      function count(now){frames++;lastFrame=now;requestAnimationFrame(count);}requestAnimationFrame(count);
+      setInterval(()=>{status.textContent=JSON.stringify({frames,frameAgeMs:Math.round(performance.now()-lastFrame),visibility:document.visibilityState,paused:document.getElementById('panel').open});},1000);
+    }`;
+  doc.body.append(setup);document.querySelector('iframe').srcdoc='<!doctype html>'+doc.documentElement.outerHTML;
+}catch(error){const message=document.getElementById('error');message.hidden=false;message.textContent=error.message;}
+</script></html>

@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>提示音离线渲染验收</title><style>body{font:16px system-ui;padding:24px;max-width:800px;background:#eef0e6;color:#25382d}button{padding:12px}pre{white-space:pre-wrap}audio{display:block;margin:12px 0}</style><h1>提示音离线渲染验收</h1><p>使用生产音频模块与真实 Web Audio 离线渲染。数值只检查静音/削波；音色需试听。</p><button id="render">渲染提示音与连续动作</button><pre id="result">尚未运行</pre><div id="players"></div><script type="module">
+import {GameAudio} from '../src/audio.js';
+const result=document.getElementById('result'),button=document.getElementById('render'),players=document.getElementById('players');
+const urls=[];
+function wav(samples,rate){const bytes=new ArrayBuffer(44+samples.length*2),v=new DataView(bytes);const word=(offset,s)=>[...s].forEach((c,i)=>v.setUint8(offset+i,c.charCodeAt(0)));word(0,'RIFF');v.setUint32(4,bytes.byteLength-8,true);word(8,'WAVE');word(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,rate,true);v.setUint32(28,rate*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);word(36,'data');v.setUint32(40,samples.length*2,true);samples.forEach((n,i)=>v.setInt16(44+i*2,Math.max(-1,Math.min(1,n))*32767,true));return new Blob([bytes],{type:'audio/wav'});}
+button.onclick=async()=>{button.disabled=true;result.textContent='渲染中';urls.forEach(URL.revokeObjectURL);urls.length=0;players.replaceChildren();const reports=[];
+ try{for(const kind of ['craft','food','quest','step','step-sand','gather','swing','hit','splash','busy-mix','paused-menu']){
+   const ctx=new OfflineAudioContext(1,48000,48000);let scheduledTime=0;const repeated=!['craft','food','quest','busy-mix','paused-menu'].includes(kind);let routing=null;
+   // Offline contexts have no resume(); adapt only lifecycle, retaining real nodes.
+   const adapter=new Proxy(ctx,{get(target,key){if(key==='state')return 'running';if(key==='currentTime')return scheduledTime;if(key==='resume'||key==='close')return async()=>{};const value=Reflect.get(target,key,target);return typeof value==='function'?value.bind(target):value;}});
+   const audio=new GameAudio({contextFactory:()=>adapter});audio.setActive(true);await audio.unlock();
+   audio.ambience.stop();audio.surfSource?.stop();audio.master.gain.setValueAtTime(.35,0);
+   if(kind==='busy-mix'){
+     for(let i=0;i<30;i++)audio.effect('hit');const physicalQueued=audio.sources.size;
+     for(const cue of ['quest','craft','food'])audio.effect(cue);
+     routing={physicalQueued,totalQueued:audio.sources.size,successCuesQueued:[...audio.sources].filter(node=>node.type==='sine').length};
+   }else if(kind==='paused-menu'){
+     audio.setActive(false);audio.master.gain.setValueAtTime(0,0);audio.ui.gain.setValueAtTime(.35,0);
+     audio.effect('hit');const physicalQueued=audio.sources.size;audio.effect('craft',{menu:true});audio.effect('food',{menu:true});
+     routing={physicalQueued,totalQueued:audio.sources.size,successCuesQueued:[...audio.sources].filter(node=>node.type==='sine').length};
+   }else{
+     audio.effect(kind==='step-sand'?'step':kind,{surface:kind==='step-sand'?'sand':'grass'});if(repeated){scheduledTime=.3;audio.effect(kind==='step-sand'?'step':kind,{surface:kind==='step-sand'?'sand':'grass'});scheduledTime=.6;audio.effect(kind==='step-sand'?'step':kind,{surface:kind==='step-sand'?'sand':'grass'});}
+   }
+   const rendered=await ctx.startRendering(),samples=rendered.getChannelData(0);let energy=0,peak=0;
+   for(const value of samples){energy+=value*value;peak=Math.max(peak,Math.abs(value));}
+   const rms=Math.sqrt(energy/samples.length);let difference=0;if(repeated)for(let i=0;i<10560;i++)difference+=(samples[i]-samples[i+14400])**2;reports.push({kind,peak,rms,finite:Number.isFinite(rms),nonSilent:rms>.0001,unclipped:peak<1,...(repeated?{repeatDifferenceRms:Math.sqrt(difference/10560)}:{}),...(routing?{routing}:{})});
+   const label=document.createElement('p');label.textContent=kind;const player=document.createElement('audio');player.controls=true;player.src=URL.createObjectURL(wav(samples,48000));urls.push(player.src);players.append(label,player);await audio.dispose();
+ }result.textContent=JSON.stringify(reports,null,2);}catch(error){result.textContent='渲染失败：'+error.message;}finally{button.disabled=false;}
+};
+</script></html>

@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-03",
+  "status": "complete",
+  "entry": "/tests/playthrough.html?mode=performance&seconds=600",
+  "targetMs": 600000,
+  "browser": "Codex IAB 2",
+  "saveKey": "tidelands-qa-performance",
+  "position": [
+    -63,
+    115.8
+  ],
+  "buildings": 3,
+  "movement": "stationary",
+  "sha256": {
+    "src/main.js": "4dfb26075e8a30b62e5786b2969c692f7464edc43d114a44f7e8c88b9f55980d",
+    "src/scene.js": "db87c0c15d48d912869c4c7766b25607aac5014b921fd8bbdb415e86a43b3535",
+    "src/foliage.js": "a7bf37d45f5a49171e32b09e6005c077b35d1e3fd7c80deda2ecc8460b5757e1",
+    "tests/playthrough.html": "f42f73d7dfae32d327c9418ffb444991ad8e3a5213568387692393254dbe9f9b"
+  },
+  "note": "Actual DOM readback complete. Paused initial focus handoff excluded. Page paused/closed; viewport reset. Production/journey saves not touched.",
+  "m5Complete": false,
+  "aaaComplete": false,
+  "result": {
+    "complete": true,
+    "targetMs": 600000,
+    "durationMs": 604783.4,
+    "activeMs": 600000,
+    "frames": 36000,
+    "medianMs": 16.7,
+    "p95Ms": 17.7,
+    "maxMs": 18.8,
+    "over50Ms": 0,
+    "hidden": false,
+    "viewport": [
+      1280,
+      672
+    ],
+    "devicePixelRatio": 1,
+    "heapSupported": true,
+    "checkpoints": [
+      {
+        "activeMs": 0,
+        "frames": 0,
+        "daytime": "第 2 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 77462149
+      },
+      {
+        "activeMs": 60000,
+        "frames": 3600,
+        "daytime": "第 3 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 60734138
+      },
+      {
+        "activeMs": 120000,
+        "frames": 7200,
+        "daytime": "第 3 天 · 清晨",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 43631700
+      },
+      {
+        "activeMs": 180000,
+        "frames": 10800,
+        "daytime": "第 3 天 · 午后",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 49981426
+      },
+      {
+        "activeMs": 240016.7,
+        "frames": 14401,
+        "daytime": "第 3 天 · 午后",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 54231472
+      },
+      {
+        "activeMs": 300016.4,
+        "frames": 18001,
+        "daytime": "第 3 天 · 午后",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 47768019
+      },
+      {
+        "activeMs": 360016.7,
+        "frames": 21601,
+        "daytime": "第 3 天 · 黄昏",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 41816133
+      },
+      {
+        "activeMs": 420016.5,
+        "frames": 25201,
+        "daytime": "第 3 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 55899923
+      },
+      {
+        "activeMs": 480016.5,
+        "frames": 28801,
+        "daytime": "第 3 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 44764695
+      },
+      {
+        "activeMs": 540000,
+        "frames": 32400,
+        "daytime": "第 4 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 63011615
+      },
+      {
+        "activeMs": 600000,
+        "frames": 36000,
+        "daytime": "第 4 天 · 清晨",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 50671845
+      }
+    ]
+  },
+  "warnError": [],
+  "limits": [
+    "Stationary three-building camp; no traversal/combat stress or physical phone",
+    "Frame scheduling and sampled browser JS heap only; not GPU timing/bytes or proof of no leak",
+    "DPR 1 differs from previous DPR 2 short samples",
+    "Source hashes belong to modules loaded at start, before subsequent berry/bark edits"
+  ]
+}

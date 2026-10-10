@@ -1,0 +1,16 @@
+{
+  "recordedAt": "2026-10-07T14:31:03.265072+00:00",
+  "mode": "labelled combat QA fixture, production UI/modules, sword, one crab, separate storage; not a normal campaign",
+  "sourceSha256": {
+    "src/main.js": "52d9cf124b02915a2c36cfe7510840be3cf6f9d281931c3a511601f0f3641924"
+  },
+  "observedMiss": {
+    "combat": "未命中 · 靠近目标再攻击",
+    "toast": "命中 1 个目标 · 累计击败 1",
+    "combatVisible": true,
+    "toastVisible": true,
+    "coordinates": "位置 X -70.0，Z 102.0；建筑 0；击败 1"
+  },
+  "explanation": "First hit reduced crab40→2, next hit killed it, then empty swing; recent attack toast lasted4.2s while new combat feedback reported a miss.",
+  "earlierReadError": "Read-only contentDocument query was unsupported; used supported frame locators and AX state."
+}

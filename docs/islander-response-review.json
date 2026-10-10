@@ -1,0 +1,118 @@
+{
+  "date": "2026-10-07",
+  "stage": "M5_islander_response_batch",
+  "fullGoalAccepted": false,
+  "change": "Reuse production character posing for all three stationary islanders every draw. Only the current nearby conversation target smoothly turns toward the player; small phase-offset shoulder/elbow motion leaves existing torso/foot posing in control. No save, quest, inventory or movement rules changed.",
+  "tests": {
+    "red": {
+      "log": "docs/islander-response-test-before.txt",
+      "tests": 9,
+      "pass": 8,
+      "fail": 1,
+      "reason": "updateIslanders did not exist"
+    },
+    "green": {
+      "log": "docs/islander-response-test-after.txt",
+      "tests": 9,
+      "pass": 9,
+      "fail": 0,
+      "durationMs": 1034.372166
+    },
+    "full": {
+      "log": "docs/islander-response-tests.txt",
+      "tests": 100,
+      "pass": 100,
+      "fail": 0,
+      "durationMs": 1464.816708
+    },
+    "syntax": "node --check src/scene.js",
+    "coverage": "Actual Three.js islander models: nearby selected keeper turns toward a player to the east; distant stale target does not turn him; coordinates and save stay unchanged, tools hidden, exactly three models retained; advancing time changes arm pose."
+  },
+  "browser": {
+    "tab": "97",
+    "mode": "m1",
+    "newFixtureImported": false,
+    "stateInjected": false,
+    "start": {
+      "position": [
+        -69.2,
+        101.6
+      ],
+      "quest": 0,
+      "hp": 100,
+      "food": 3
+    },
+    "interaction": {
+      "position": [
+        -59.2,
+        97.8
+      ],
+      "npc": "阿岚",
+      "questAdvanced": [
+        0,
+        1
+      ]
+    },
+    "secondPosition": [
+      -62.5,
+      93.7
+    ],
+    "desktop": "Native intermittent WASD and E; selected NPC remains visibly present from two player positions. Static screenshots inspected through tool output, no saved image/video.",
+    "mobile": {
+      "browserViewport": [
+        390,
+        844
+      ],
+      "gameViewport": [
+        390,
+        796
+      ],
+      "scrollWidth": 390,
+      "realConversationButtonClicked": true,
+      "quest": 1,
+      "hp": 100,
+      "food": 3,
+      "buildings": 0,
+      "kills": 0
+    },
+    "saved": true,
+    "paused": true,
+    "temporaryTabClosed": true,
+    "viewportReset": true,
+    "consoleWarningsErrors": []
+  },
+  "sampleFile": "docs/islander-response-sample.json",
+  "sampleSha256": "36a8242473828ddc80be539998b0a6567d4452374d8b96a15afac8f16133207c",
+  "sourceSha256": {
+    "src/audio.js": "b3ec2bff2a521932823a998fcc86eefd16ae0fead315e7d5324b064d63436ca5",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "cbe3fac0b203391e634adeda6cf1b8a275f86b9eeef33acc970fbb29ab98d33a",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "cbed1c37f16752218a9194fab147269ada0539161f19a349a52754245bc1cf2a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/main.js": "52d9cf124b02915a2c36cfe7510840be3cf6f9d281931c3a511601f0f3641924",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "42d0fce139ed1d5a53e785b6f6b33b4b8d7a0c748148040d62640209b0e33a66",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+    "styles.css": "9ebaa347043c3d65b51e19085f923a9c2a06ff370446aae0bab26358c0c98a3b",
+    "tests/playthrough.html": "173f45fbeae700359c819589ad3b5012fb7867102b6e770533b95dc3715ffe94",
+    "tests/scene.test.js": "fdc596417fc75d58662b6d5b6edb7bf68fdcf273fde0cd991966f0be4323f6a0"
+  },
+  "bounds": [
+    "Thirty active seconds in a calm coastal NPC area with intermittent movement and substantial stationary time; not ten-minute, held movement, GPU or whole-world memory evidence.",
+    "Existing sampler parent click caused automatic pause; explicitly continued. The 41431.8ms wall duration includes excluded pause time.",
+    "Real game sample: 30015.2ms/1801 frames, median16.7/P9517.9/max18.7ms, no over50ms, hiddenfalse; desktop1280x672/DPR2/buffer1920x1008, heap61.04 to82.83MB. Two heap snapshots do not establish no leak.",
+    "Only keeper visibly visited this batch; three-NPC rendering behavior covered by actual model regression, not all-three browser encounters.",
+    "The modest idle arm motion and selected-NPC facing do not establish natural full-body performance, face/voice/gesture quality, no foot sliding or final AAA art.",
+    "No physical mobile/multitouch or audio listening added. Existing camera abrupt turns and NPC foreground occlusion remain open.",
+    "The accepted 2026-10-07 package remains immutable and predates this scene.js change; current source has not been repackaged."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-03",
+  "browser": "Codex IAB 2",
+  "scope": "Wind-enabled production renderer; visible and directional-shadow leaves share vertex displacement and clock",
+  "maxLocalDisplacement": {"x": 0.16, "z": 0.1, "y": 0.03},
+  "boundsMargin": 0.22,
+  "treeCameraRadiusBeforeAfter": [3.7, 3.9],
+  "visualSample": {"entry": "/tests/visual-review.html", "position": [-70, 102], "fromTime": 240, "toTime": 250, "canvasCss": [1280, 608], "calls": 116, "triangles": 660243, "geometries": 116, "textures": 7, "completed": true, "note": "Actual playback and screenshot smoke review; no saved video or natural-motion acceptance"},
+  "productionPerformanceSample": {
+    "mode": "performance", "buildings": 3, "position": [-63, 115.8], "dayLabel": "第2天 午后", "movement": "stationary",
+    "durationMs": 30466.6, "activeMs": 30016.6, "frames": 1801, "medianMs": 16.7, "p95Ms": 17.9, "maxMs": 18.6, "over50Ms": 0, "hidden": false, "viewport": [1280, 672], "devicePixelRatio": 2,
+    "note": "Paused intervals excluded. Frame scheduling only; not GPU timing, physical-mobile performance or long-run memory acceptance"
+  },
+  "warnError": [],
+  "tests": {"command": "node --test tests/foliage.test.js tests/scene.test.js", "passed": 10, "failed": 0},
+  "sha256": {
+    "src/foliage.js": "a7bf37d45f5a49171e32b09e6005c077b35d1e3fd7c80deda2ecc8460b5757e1",
+    "src/scene.js": "6cb38c5c65158fdaadb15b754802baf8c19e9d62566f507b27403b4b666e069c",
+    "tests/visual-review.html": "92df6af9f67fc0cad963e42e99a623f4eae1998e6847872586c6b75ebf76cc56",
+    "tests/foliage.test.js": "12872c44453b4b4a811cc8a72830f478187715718d8f3caa82bc24e3f13df122",
+    "tests/scene.test.js": "3ca3b8c29e7707acfe06ac057548020d27be96bd9eef465738beb2b24b413655"
+  },
+  "remaining": ["leaf transmission", "trunk, bush, stone detail", "ground distribution", "motion review", "sound listening", "long-run performance and memory"],
+  "m5Complete": false,
+  "aaaComplete": false
+}

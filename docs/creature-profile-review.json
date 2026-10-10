@@ -1,0 +1,148 @@
+{
+  "date": "2026-10-05",
+  "stage": "M5_creature_model_batch",
+  "batchChangeVerified": true,
+  "creatureQualityAccepted": false,
+  "fullGoalComplete": false,
+  "productionChanges": [
+    "src/creature.js：野猪连续截面躯干/长吻与肩峰、薄面耳、曲线渐细獠牙/尾、连续背鬃，替换球体拼接主体。",
+    "src/creature.js：蟹壳/腹面/壳缘、八条弯折渐细步足、螯钳固定指/独立活动指；活动指随生产攻击阶段闭合并恢复。",
+    "保留敌人状态/伤害/掉落/距离步态/转向/受击/死亡恢复与三材质远景共享/释放方式；未修改角色、玩法、存档和镜头。"
+  ],
+  "tests": {
+    "command": "npm test",
+    "passed": 94,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 1454.456542,
+    "log": "docs/creature-profile-tests.txt",
+    "expectedRegressionBefore": "docs/creature-profile-test-before.txt：期望八足，旧模型只有六足，测试先失败。",
+    "syntaxChecks": [
+      "node --check src/creature.js",
+      "node --check /private/tmp/tidelands-creature-review.mjs"
+    ],
+    "regressions": [
+      "八足/双螯开合及攻击后恢复",
+      "两类模型顶点/UV/法线/索引有限、地面/高度范围和每类<15000三角形",
+      "近/远景包围范围一致、既有远景滞回/运动/伤害/死亡恢复和共享资源释放测试保留"
+    ]
+  },
+  "sourceSha256": {
+    "src/game.js": "5f27ece647163b1e076ccbe5eaf7e5ecf8960eba765e1fb4cd9f7e7b4a0b8cb2",
+    "src/scene.js": "b9e2bce7ccc6344660752bfe2a596bc112205bc1cd460a9d9241b9ff57d4cca7",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/main.js": "be2759df76430daa74c99405efb4cbd2b65e6382583f9662cc098128be733cfb",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/audio.js": "6e2cdcef0d1557515ee8f9151e66bbb1cba5c5546270e011bf31c1e0037f7fe6",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/character.js": "7e516f1cfcdd4319b54b7489290ba8fcb1e8e1fdd2d8634d016d20b9e0f213a5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "index.html": "2245f69cea28e3ac482acf169d56ce48ab3ef8be9a1fce74af8390d29a95b15e",
+    "styles.css": "252b652e5198b084d87a41ef24e6328edbcbaf5685ad2e867cd40e4114b0b477",
+    "tests/camera.test.js": "b95a340e14b5976b3742456f3c6e00b0eb85ab662e916a34912affa76eec81db",
+    "tests/visual-review.html": "8906a292f21b9ef130d7d61d8498eed6e0aa264da9e45fb650f5785548171b82",
+    "tests/playthrough.html": "8b8d9bb7e840f3fad4caf40abe8d9e31f5c337a0c6ae6751b337e377a182ba05",
+    "tests/camera-motion.html": "e12210ba7f2f023b3696d6103666ef9bcbfc1588ad1ecc2b49f6b15771a693d4",
+    "tests/experiments/camera-motion-smoothing.mjs": "d1e2381f35e93844616029794792d665d4bc0502a75022360dd2a469ad4c7c2d",
+    "tests/experiments/camera-motion-smoothing.test.mjs": "29434a0805129b4cf4c961e99e0e8a71e767468b5367a2a841793b5d05af698f",
+    "tests/scene.test.js": "5f14168dcbc99de614d157f2cfed4040d12cc26eddb72b557222e45488eb9dd6",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "tests/sky.test.js": "0d39314c908b7dbd72db905853adc395367a38bcb0d5a940d85b4af12fc92bf0",
+    "README.md": "663e1e2c15b7283790c581af51fe5d6aa6dbcfc11a6dd88dcb419a5782dd3883",
+    "tests/creature.test.js": "70937937aad8ec732fc1dbff9ff630e4193ae6b8edc1560a2dbd9b2a3f574503",
+    "tests/creatures.html": "8423d48dc0e728c40874005099446e7b7498f4e96fabad0603e29646cc3ce25c"
+  },
+  "browserReport": "docs/creature-profile-browser-checks.json",
+  "geometryReport": "docs/creature-profile-geometry.json",
+  "currentShortSample": "docs/creature-profile-sample.json",
+  "gameSmoke": {
+    "mode": "performance",
+    "initialFixtureImportedThisRun": false,
+    "start": {
+      "position": [
+        -35.6,
+        71.7
+      ],
+      "hp": 100,
+      "buildings": 3,
+      "kills": 0,
+      "quest": 3
+    },
+    "inputWithinSample": [
+      "10次原生Shift+W",
+      "10次原生A",
+      "拖镜头",
+      "空格空挥"
+    ],
+    "end": {
+      "position": [
+        -40.8,
+        65.2
+      ],
+      "hp": 100,
+      "buildings": 3,
+      "kills": 0,
+      "quest": 3
+    },
+    "visibleFeedback": "采样中/未命中/坐标变化同时可见；完成后实际暂停保存，显示存档已保存。",
+    "weaponObservation": "转镜头后晶石剑空挥向上及待机向下轮廓均可见；此前不清晰不能直接认定装备缺失，但持械整体品质仍未通过。",
+    "audio": {
+      "attempts": 3,
+      "scheduled": 3,
+      "footfallCount": 5,
+      "context": "running",
+      "active": true,
+      "listened": false
+    },
+    "notContinuousHeldInput": true,
+    "notCombatOrGpuOrLongRun": true,
+    "productionJourneyM4SavesTouched": false
+  },
+  "qualityRemaining": [
+    "野猪四腿/蹄与头脸、整体材质细节和两类生物的脚底接地/转向/攻击自然度仍有程序化原型感。",
+    "蟹步足/螯钳轮廓改进不是生物全身质量完成；未证明全身无穿插。",
+    "角色衣装/轮廓/持械/采集呈现、快速转向骨盆、树林/营地镜头突转和近塔遮挡仍待分批。",
+    "真实音色试听/环境一致性、代表性连续探索战斗与GPU/真机/当前版长时内存及最终包仍待验收。"
+  ],
+  "failuresResolved": [
+    "首次蟹壳缘曲线传入数组而非Vector3，相关测试报distanceToSquared；已改为Vector3并通过最终94项。",
+    "初版手机QA两类全身镜头裁切蟹；增加窄屏zoom。诊断文本改变可用画布高度后，帧内跟随尺寸，最终buffer与实际画布一致。"
+  ],
+  "quotaCheck": {
+    "ordinaryUsageAllowed": true,
+    "primaryUsedPercent": 72,
+    "weeklyUsedPercent": 74,
+    "goalStatus": "usageLimited",
+    "historicalUsageLimitedWasForced": false,
+    "resetCreditsUsed": 0,
+    "paidCreditsUsed": 0
+  },
+  "cleanup": {
+    "temporaryTabsClosed": [
+      82,
+      83,
+      84
+    ],
+    "viewportReset": true,
+    "server": "127.0.0.1:4190",
+    "originalPid": 45694
+  },
+  "archive": {
+    "file": "dist/tidelands-local.zip",
+    "sha256": "61e173d0bf869afda5cfa674a6a675780b9453a8389baabbd33948fb12bc90ac",
+    "rebuilt": false,
+    "scope": "保留M4原运行文件，未含后续M5镜头/天空/生物变化。"
+  },
+  "limitations": [
+    "桌面循环在390×844切回后保留1倍内部缓冲，不能与营地1.5倍缓冲直接比较性能。",
+    "循环是合成模型位移/伤害/死亡恢复，实际近身战斗使用标注fixture；不替代M4正常新游戏主线。",
+    "截图仅工具内查看，没有新保存图片/视频；本版仅短时rAF/JS堆证据，不继承旧ZIP/十分钟。"
+  ]
+}

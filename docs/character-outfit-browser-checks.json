@@ -1,0 +1,246 @@
+{
+  "date": "2026-10-05",
+  "method": "受控IAB实际UI输入、生产模型隔离页、可见DOM诊断与工具内静帧审查。以下为实际输出的定向摘录，不是自然动作视频。",
+  "characterSourceSha256": "cbe3fac0b203391e634adeda6cf1b8a275f86b9eeef33acc970fbb29ab98d33a",
+  "qaSourceSha256": "735882857abb1984392aa7903f8ad9660479aed84b7a7fe87b7db20dbab35826",
+  "idleFlatGround": {
+    "tool": "sword",
+    "oldRegressionMinY": -0.11942539283116604,
+    "observedMinY": 0.44323641918744816,
+    "beforeFinalQaFramingOnly": true,
+    "stillAttachedToRightElbow": true
+  },
+  "fixedPoseViews": [
+    {
+      "view": "desktop_attack_side",
+      "equipment": "sword",
+      "gesture": "attack",
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvas": [
+        1280,
+        576
+      ],
+      "buffer": [
+        1920,
+        864
+      ],
+      "boundsMin": [
+        0.2599999970197678,
+        2.464337181198942,
+        0.3944714493246558
+      ],
+      "boundsMax": [
+        0.6600000029802322,
+        3.9284720174905257,
+        1.413370680866017
+      ],
+      "wholeWeaponVisible": true
+    },
+    {
+      "view": "mobile_attack_front",
+      "equipment": "sword",
+      "gesture": "attack",
+      "viewport": [
+        390,
+        844
+      ],
+      "canvas": [
+        390,
+        561
+      ],
+      "buffer": [
+        585,
+        841
+      ],
+      "dpr": 1,
+      "boundsMin": [
+        0.2599999970197678,
+        2.467346113079247,
+        0.3944714493246558
+      ],
+      "boundsMax": [
+        0.6600000029802322,
+        3.9314809493708305,
+        1.413370680866017
+      ],
+      "wholeWeaponVisible": true
+    },
+    {
+      "view": "mobile_gather_front",
+      "equipment": "axe",
+      "gesture": "gather",
+      "viewport": [
+        390,
+        844
+      ],
+      "canvas": [
+        390,
+        561
+      ],
+      "buffer": [
+        585,
+        841
+      ],
+      "dpr": 1,
+      "boundsMin": [
+        0.04754041790962216,
+        2.0722269319104747,
+        0.8282610290214386
+      ],
+      "boundsMax": [
+        0.521999998986721,
+        2.617684824338503,
+        1.7737373338140094
+      ],
+      "wholeWeaponVisible": true
+    }
+  ],
+  "movementDiagnostics": [
+    {
+      "mode": "turn",
+      "viewport": [
+        390,
+        844
+      ],
+      "canvas": [
+        390,
+        533
+      ],
+      "buffer": [
+        585,
+        799
+      ],
+      "dpr": 1,
+      "elapsedSeconds": 12,
+      "complete": true,
+      "totalPageFrames": 3240,
+      "position": [
+        42,
+        0,
+        42
+      ],
+      "maxStanceDrift": 1.464916037223002e-14,
+      "maxSoleHeightError": 6.38378239159465e-16,
+      "minPelvisOffset": -0.4022694433003954,
+      "bothFeetAirborneFrames": 139,
+      "contactsMeasured": 482
+    },
+    {
+      "mode": "run",
+      "slope": 0.12,
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvas": [
+        1280,
+        548
+      ],
+      "buffer": [
+        1920,
+        822
+      ],
+      "dpr": 2,
+      "elapsedSeconds": 12,
+      "complete": true,
+      "totalPageFrames": 6765,
+      "position": [
+        0,
+        17.304,
+        144.2
+      ],
+      "maxStanceDrift": 2.929642751054232e-14,
+      "maxSoleHeightError": 5.440092820663267e-15,
+      "minPelvisOffset": -0.42854099447627486,
+      "bothFeetAirborneFrames": 344,
+      "contactsMeasured": 291
+    }
+  ],
+  "movementLimits": "页累计帧数不是每个12秒样本帧数；落脚计数不是整个靴子无穿插/动作自然度证明。仍有约0.4米骨盆下降，保留品质待办。没有采本页rAF直方图。",
+  "layout": {
+    "desktopClientScrollWidth": [
+      1280,
+      1280
+    ],
+    "mobileClientScrollWidth": [
+      390,
+      390
+    ],
+    "bufferScaleRetained": 1.5
+  },
+  "actualGame": {
+    "mode": "performance",
+    "newFixtureImport": false,
+    "start": {
+      "position": [
+        -40.8,
+        65.2
+      ],
+      "hp": 100,
+      "buildings": 3,
+      "kills": 0,
+      "quest": 3
+    },
+    "inputWithinSample": [
+      "8次原生Shift+W",
+      "8次原生D",
+      "拖镜头",
+      "一次空格空挥"
+    ],
+    "end": {
+      "position": [
+        -38.3,
+        59.0
+      ],
+      "hp": 100,
+      "buildings": 3,
+      "kills": 0,
+      "quest": 3
+    },
+    "visibleFeedback": "采样中、未命中、坐标变化、上举剑轮廓；最后实际暂停保存显示存档已保存。",
+    "sample": "docs/character-outfit-sample.json",
+    "audio": {
+      "attempts": 3,
+      "scheduled": 3,
+      "footfallCount": 5,
+      "context": "running",
+      "active": true,
+      "listened": false
+    }
+  },
+  "gatherFixture": {
+    "mode": "berry",
+    "fixture": "出生位置附近浆果、其他敌人预先死亡；徒手，不预填斧/剑。",
+    "initialPosition": [
+      -64,
+      112.5
+    ],
+    "hp": 100,
+    "berryBefore": 3,
+    "berryAfter": 5,
+    "actualInput": "原生E",
+    "feedback": "浆果 +2；背包显示浆果5、木材/石料/斧/剑均0。",
+    "observation": "工具内静帧看到面向资源前伸；不是整段自然采集视频。"
+  },
+  "consoleWarningsErrors": {
+    "character": [],
+    "performance": [],
+    "gather": []
+  },
+  "resolvedQaIssue": "首次侧面剑攻击定格剑尖被QA画布裁切；降低QA镜头zoom至0.85并适配窄屏，最终桌面/手机完整可见。只改QA取景，不改生产镜头。",
+  "savedNewScreenshotsOrVideo": false,
+  "productionJourneyM4SavesTouched": false,
+  "cleanup": {
+    "tabsClosed": [
+      85,
+      86,
+      87
+    ],
+    "viewportReset": true,
+    "server": "127.0.0.1:4190",
+    "originalPid": 45694
+  }
+}

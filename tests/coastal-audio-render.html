@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>岸线声场离线验收</title>
+<style>body{font:16px system-ui;padding:24px;max-width:800px;background:#eef0e6;color:#25382d}button{padding:12px}pre{white-space:pre-wrap}audio{display:block;margin:12px 0}</style>
+<h1>岸线声场离线验收</h1><p>使用生产 GameAudio 与真实 OfflineAudioContext 渲染八秒声场。波形与队列只验证接线、静音和余量，音色仍须试听。</p>
+<button id="render">渲染海岸、过渡带、内陆与静音</button><pre id="result">尚未运行</pre><div id="players"></div>
+<script type="module">
+import {GameAudio} from '../src/audio.js';
+const button=document.getElementById('render'),result=document.getElementById('result'),players=document.getElementById('players'),urls=[];
+function wav(samples,rate){const bytes=new ArrayBuffer(44+samples.length*2),v=new DataView(bytes),word=(offset,s)=>[...s].forEach((c,i)=>v.setUint8(offset+i,c.charCodeAt(0)));word(0,'RIFF');v.setUint32(4,bytes.byteLength-8,true);word(8,'WAVE');word(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,rate,true);v.setUint32(28,rate*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);word(36,'data');v.setUint32(40,samples.length*2,true);samples.forEach((n,i)=>v.setInt16(44+i*2,Math.max(-1,Math.min(1,n))*32767,true));return new Blob([bytes],{type:'audio/wav'});}
+button.onclick=async()=>{
+  button.disabled=true;result.textContent='渲染中';urls.forEach(URL.revokeObjectURL);urls.length=0;players.replaceChildren();const reports=[];
+  try{for(const kind of ['coast','shore-transition','inland','surf-only-coast','surf-only-inland','paused-coast','muted-coast','busy-coast']){
+    const rate=48000,ctx=new OfflineAudioContext(1,rate*8,rate);let scheduledTime=0;
+    const adapter=new Proxy(ctx,{get(target,key){if(key==='state')return 'running';if(key==='currentTime')return scheduledTime;if(key==='resume'||key==='close')return async()=>{};const value=Reflect.get(target,key,target);return typeof value==='function'?value.bind(target):value;}});
+    const audio=new GameAudio({contextFactory:()=>adapter});audio.setActive(true);await audio.unlock();audio.master.gain.setValueAtTime(.35,0);
+    if(kind.startsWith('surf-only'))audio.ambience.stop();
+    if(kind==='paused-coast'){audio.setActive(false);audio.master.gain.setValueAtTime(0,0);}
+    if(kind==='muted-coast'){audio.setEnabled(false);audio.master.gain.setValueAtTime(0,0);}
+    let routing=null;
+    if(kind==='busy-coast'){scheduledTime=.5;for(let i=0;i<30;i++)audio.effect('hit');const physicalQueued=audio.sources.size;for(const cue of ['quest','craft','food'])audio.effect(cue);routing={physicalQueued,totalQueued:audio.sources.size,successCuesQueued:[...audio.sources].filter(node=>node.type==='sine').length};}
+    const heights={coast:.5,'shore-transition':3,inland:10,'surf-only-coast':.5,'surf-only-inland':10,'paused-coast':.5,'muted-coast':.5,'busy-coast':.5};
+    for(let frame=0;frame<80;frame++){scheduledTime=frame/10;audio.update({x:0,z:0},120+scheduledTime,heights[kind],0);}
+    const background={surfSourcePresent:!!audio.surfSource,surfLoops:audio.surfSource?.loop??false,sharedNoise:audio.surfSource?.buffer===audio.noise,physicalVoicesUsed:kind==='busy-coast'?routing.physicalQueued:audio.sources.size};
+    const rendered=await ctx.startRendering(),samples=rendered.getChannelData(0);let energy=0,peak=0,nonfinite=0;
+    for(const x of samples){if(!Number.isFinite(x))nonfinite++;energy+=x*x;peak=Math.max(peak,Math.abs(x));}
+    const windows=[];for(let window=0;window<8;window++){let energy=0;for(let i=window*rate;i<(window+1)*rate;i++)energy+=samples[i]**2;windows.push(Math.sqrt(energy/rate));}
+    const label=document.createElement('p');label.textContent=kind;const player=document.createElement('audio');player.controls=true;player.src=URL.createObjectURL(wav(samples,rate));urls.push(player.src);players.append(label,player);
+    reports.push({kind,seconds:8,sampleRate:rate,peak,rms:Math.sqrt(energy/samples.length),windowsRms:windows,finite:nonfinite===0,unclipped:peak<1,background,...(routing?{routing}:{})});await audio.dispose();
+  }result.textContent=JSON.stringify(reports,null,2);}catch(error){result.textContent='渲染失败：'+error.message;}finally{button.disabled=false;}
+};
+</script></html>

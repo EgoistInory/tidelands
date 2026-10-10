@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><title>潮生群岛 · 固定画面验收</title>
+<style>
+html,body{margin:0;height:100%;background:#192723;color:#f0e9d6;font:14px system-ui}body{display:flex;flex-direction:column}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:10px}select,button{font:inherit;padding:7px}canvas{display:block;width:100%;flex:1;min-height:0}output{font-size:12px;flex-basis:100%;height:44px;overflow:auto;overflow-wrap:anywhere}
+</style>
+<header><strong>固定画面验收 · 无存档读写</strong>
+<label>地点 <select id="place"><option value="cottage">小屋正面</option><option value="spawn">出生树林</option><option value="forest">林地</option><option value="understory">林缘树下</option><option value="highland">雾岬草坡</option><option value="shallows">浅湾草坡</option><option value="berry">新手浆果灌木</option><option value="shore">新手沙岸</option><option value="meadow">草丛与野花</option><option value="fiber">新手纤维</option><option value="lighthouse">灯塔西侧镜头回归</option></select></label>
+<label>时刻 <select id="time"><option value="120">清晨 120秒</option><option value="240">正午 240秒</option><option value="360">黄昏 360秒</option><option value="0">午夜 0秒</option></select></label>
+<label>镜头 <select id="camera"><option value="close">默认近景 14米</option><option value="overview">原远景 23米</option><option value="detail">材质检查 6米</option><option value="obstructed">近塔遮挡方向 14米</option><option value="sky">海平线向海 14米</option></select></label>
+<label>地表 <select id="surface"><option value="grass">细节草地</option><option value="base">原地表</option></select></label>
+<label>石料 <select id="rock"><option value="detail">风化石料</option><option value="base">原表面</option></select></label>
+<label>草丛 <select id="cover"><option value="detail">密生斑块</option><option value="base">原散布</option></select></label>
+<label>沙岸 <select id="shore"><option value="detail">沙草斑块</option><option value="base">原沙岸</option></select></label>
+<label>林下 <select id="understory"><option value="detail">蕨类群落</option><option value="base">原林下</option></select></label>
+<button id="motion">播放10秒风动（时间推进）</button>
+<output id="result">加载场景…</output></header>
+<canvas id="world" aria-label="固定位置与时刻的实际游戏场景"></canvas>
+<script type="module">
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain} from '../src/world.js';
+import {freshGame} from '../src/game.js';
+const state=freshGame();state.enemies=[];
+const view=new WorldView(document.querySelector('canvas'),createWorld());view.sync(state);
+const places={cottage:[-52.8,86.4],spawn:[-70,102],forest:[145,-25],understory:[107,-10],highland:[-120,-210],shallows:[105,175],berry:[-64,115],shore:[-90,145],meadow:[-77.3,110.2],fiber:[-82,94],lighthouse:[-98.4,-54.3]};
+const cameras={overview:{distance:23,pitch:.484},close:{distance:14,pitch:.29},detail:{distance:6,pitch:.65},obstructed:{distance:14,pitch:.41,yaw:.858},sky:{distance:14,pitch:.08,yaw:Math.PI}};
+let motionStats=null;
+function render(elapsed=0){
+  const [x,z]=places[document.querySelector('#place').value];
+  view.groundSurface.userData.ground.enabled.value=document.querySelector('#surface').value==='grass'?1:0;
+  view.rockSurface.userData.rock.enabled.value=document.querySelector('#rock').value==='detail'?1:0;
+  for(const batch of view.meadow)if(batch.name==='meadow-cover')batch.userData.detailEnabled=document.querySelector('#cover').value==='detail';
+  for(const batch of view.meadow)if(batch.name==='meadow-shore')batch.userData.detailEnabled=document.querySelector('#shore').value==='detail';
+  for(const batch of view.meadow)if(batch.name==='meadow-fern')batch.userData.detailEnabled=document.querySelector('#understory').value==='detail';
+  state.player.x=x;state.player.z=z;state.player.yaw=0;state.time=Number(document.querySelector('#time').value)+elapsed;
+  view.player.userData.lastPosition=null;view.player.userData.phase=0;view.player.rotation.y=state.player.yaw;
+  const h=Math.max(terrain(x,z),-.45),camera=cameras[document.querySelector('#camera').value];view.yaw=camera.yaw??.15;view.pitch=camera.pitch;view.distance=camera.distance;
+  view.resize();view.camera.position.set(x+Math.sin(view.yaw)*view.distance,h+2.4+Math.tan(view.pitch)*view.distance,z+Math.cos(view.yaw)*view.distance);
+  view.draw(state,null,null,false,1/60);
+  const info=view.renderer.info;
+  const shoreBatches=view.meadow.filter(b=>b.name==='meadow-shore');
+  document.querySelector('#shore').title=JSON.stringify({enabled:document.querySelector('#shore').value==='detail',regions:shoreBatches.filter(b=>b.visible).length,instances:shoreBatches.reduce((n,b)=>n+b.count,0)});
+  const fernBatches=view.meadow.filter(b=>b.name==='meadow-fern');
+  document.querySelector('#understory').title=JSON.stringify({enabled:document.querySelector('#understory').value==='detail',regions:fernBatches.filter(b=>b.visible).length,instances:fernBatches.reduce((n,b)=>n+b.count,0)});
+  document.querySelector('#result').textContent=JSON.stringify({position:[x,z],time:Number(state.time.toFixed(3)),surface:document.querySelector('#surface').value,surfaceStatus:view.groundSurface.userData.ground.state.status,rock:document.querySelector('#rock').value,rockStatus:view.rockSurface.userData.rock.state.status,cover:document.querySelector('#cover').value,coverRegions:view.meadow.filter(b=>b.name==='meadow-cover'&&b.visible).length,cameraPosition:view.camera.position.toArray(),cameraFocusDistance:Math.hypot(view.camera.position.x-x,view.camera.position.y-h-2.4,view.camera.position.z-z),requestedYaw:camera.yaw??.15,resolvedYaw:view.yaw,skyPosition:view.sky.position.toArray(),fogColor:view.scene.fog.color.toArray(),skyLight:view.sky.material.uniforms.light.value,skyTime:view.sky.material.uniforms.time.value,motionStats,calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures,viewport:[view.canvas.clientWidth,view.canvas.clientHeight],dpr:devicePixelRatio,canvasBuffer:[view.canvas.width,view.canvas.height]});
+}
+for(const control of document.querySelectorAll('select'))control.onchange=()=>{motionStats=null;render();};window.addEventListener('resize',()=>render());render();
+view.groundSurface.userData.ground.loaded.then(()=>render());
+view.rockSurface.userData.rock.loaded.then(()=>render());
+document.querySelector('#motion').onclick=()=>{
+  const controls=[...document.querySelectorAll('select,button')];controls.forEach(control=>control.disabled=true);
+  let start=null,last=null,intervals=[];
+  motionStats={complete:false,frames:0,elapsedMs:0,hidden:false};
+  function frame(now){
+    if(start===null)start=now;
+    if(last!==null)intervals.push(now-last);last=now;
+    const elapsed=Math.min(10,(now-start)/1000);render(elapsed);
+    motionStats.frames++;motionStats.elapsedMs=now-start;motionStats.hidden||=document.hidden;
+    if(elapsed<10)requestAnimationFrame(frame);else{
+      const sorted=intervals.slice().sort((a,b)=>a-b);
+      Object.assign(motionStats,{complete:true,medianMs:sorted[Math.floor(sorted.length*.5)],p95Ms:sorted[Math.floor(sorted.length*.95)],maxMs:Math.max(...sorted),over50ms:sorted.filter(v=>v>50).length});
+      controls.forEach(control=>control.disabled=false);render(elapsed);
+    }
+  }
+  requestAnimationFrame(frame);
+};
+</script></html>

@@ -1,0 +1,242 @@
+{
+  "date": "2026-10-03",
+  "status": "complete",
+  "entry": "/tests/playthrough.html?mode=performance&seconds=600",
+  "targetMs": 600000,
+  "saveKey": "tidelands-qa-performance",
+  "position": [
+    -63,
+    115.8
+  ],
+  "buildings": 3,
+  "movement": "stationary",
+  "sha256": {
+    "src/main.js": "4dfb26075e8a30b62e5786b2969c692f7464edc43d114a44f7e8c88b9f55980d",
+    "src/scene.js": "f66f30ba1c64274c91f8bc55b992ea76343dba26e075264c6b790a1e50f78229",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "tests/playthrough.html": "3cdf57b2b0bea74a64bcae1914a9ef5903cfefa4d9e83c942f5554fa3c1ace9e",
+    "tests/visual-review.html": "54b33b9b758e1c23883c6c5b3d7119d155a48b75072e38cd6893f661125792c1",
+    "tests/ground-surface.test.js": "85d205608d145b2aa55c1c0b3785a83fb1cb54cd7e1c6e742721d20e47261c2e"
+  },
+  "note": "Actual DOM result read; all captured source hashes still matched at completion, before stone integration. Initial parent-button focus pause excluded. Agent-created tab paused and closed.",
+  "m5Complete": false,
+  "aaaComplete": false,
+  "result": {
+    "complete": true,
+    "targetMs": 600000,
+    "durationMs": 611216.7,
+    "activeMs": 600000,
+    "frames": 36000,
+    "medianMs": 16.7,
+    "p95Ms": 17.7,
+    "maxMs": 18.8,
+    "over50Ms": 0,
+    "hidden": false,
+    "viewport": [
+      1280,
+      672
+    ],
+    "devicePixelRatio": 2,
+    "canvasBuffer": [
+      1920,
+      1008
+    ],
+    "heapSupported": true,
+    "checkpoints": [
+      {
+        "activeMs": 0,
+        "frames": 0,
+        "daytime": "第 6 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 67348479,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 60016.7,
+        "frames": 3601,
+        "daytime": "第 6 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 77363673,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 120016.6,
+        "frames": 7201,
+        "daytime": "第 6 天 · 清晨",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 52302306,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 180016.6,
+        "frames": 10801,
+        "daytime": "第 6 天 · 午后",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 59243568,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 240016.7,
+        "frames": 14401,
+        "daytime": "第 6 天 · 午后",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 54306497,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 300000,
+        "frames": 18000,
+        "daytime": "第 6 天 · 午后",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 43958286,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 360000,
+        "frames": 21600,
+        "daytime": "第 6 天 · 黄昏",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 64150902,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 420016.6,
+        "frames": 25201,
+        "daytime": "第 6 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 55649416,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 480000,
+        "frames": 28800,
+        "daytime": "第 7 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 48248169,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 540000,
+        "frames": 32400,
+        "daytime": "第 7 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 65821187,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 600000,
+        "frames": 36000,
+        "daytime": "第 7 天 · 清晨",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 65828930,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      }
+    ]
+  },
+  "warnError": [],
+  "limits": [
+    "Stationary three-building camp only, no traversal/combat/physical phone stress",
+    "Browser JS heap includes instrumentation/GC; not GPU timing, GPU memory or proof of no leak",
+    "Ten minutes is not hour-long gameplay stability"
+  ]
+}

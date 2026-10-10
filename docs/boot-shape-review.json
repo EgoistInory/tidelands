@@ -1,0 +1,273 @@
+{
+  "date": "2026-10-04",
+  "status": "smoke_verified_quality_gaps_remain",
+  "fullGoalComplete": false,
+  "sha256": {
+    "src/character.js": "7e516f1cfcdd4319b54b7489290ba8fcb1e8e1fdd2d8634d016d20b9e0f213a5",
+    "src/scene.js": "ef24f7266be81533bc9a535c825478caa0c319bc8e19cbaa399604c55ad400ba",
+    "src/main.js": "be2759df76430daa74c99405efb4cbd2b65e6382583f9662cc098128be733cfb",
+    "src/game.js": "54cb5d150120efe5ad751b5cda045d6a61a591620f45e340b33028ea71aa402e",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "tests/character.test.js": "7f67e4575290c89bc94fcaa6388908a769794150d1241ffa382ee2583d2a4b54",
+    "tests/scene.test.js": "01b0e9f769e29b6729dba245b1eab3846af5255840c57451571a868cacf51024",
+    "tests/locomotion.html": "6e3fb9dba15585e4fc2fa7409c5f47ea11794f01a297526911d4e8e4031f0d7d",
+    "tests/playthrough.html": "c00befbff77705398c4dbc82132a4de33771b186ed4a2562af9c334f85b7e3fd",
+    "vendor/three.module.min.js": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+    "tests/locomotion-audit.js": "3a049682280705b2a58ea1898e8abf3350e366f641ae1e5748b9c42f47f8de33",
+    "src/audio.js": "6e2cdcef0d1557515ee8f9151e66bbb1cba5c5546270e011bf31c1e0037f7fe6",
+    "tests/audio.test.js": "859aaaeecd683ef0d9da9a2f3bf0643f66c86e21ed0b06e35da3245963affbef"
+  },
+  "changes": [
+    "Replace horizontal capsule boots with tapered leather uppers, separate bevelled rubber soles, ankle cuffs and outer buckles",
+    "Keep the ankle reference at 0.145m above the floor; sole contact vertices remain at local y=-0.145",
+    "No gait, footfall/audio, rule speeds, collisions or save changes"
+  ],
+  "tests": {
+    "passed": 83,
+    "failed": 0,
+    "durationMs": 1386.427542,
+    "log": "/private/tmp/tidelands-tests-boot-shape-final.log",
+    "syntax": [
+      "src/character.js"
+    ],
+    "coverage": [
+      "All actual sole vertices tested against planted slope/turn/stop at 30/60/144fps",
+      "Existing gait/contact/equipment/swim/audio/game regressions"
+    ]
+  },
+  "offlineAudit": "docs/boot-shape-gap-audit.json",
+  "limitations": [
+    "Flat local sole and limited stills support boot silhouette/analytic slope clearance only; not toe/world-contact/motion acceptance",
+    "Basic shaded leather/cuffs and the remaining character/creatures still have clear prototype geometry",
+    "No actual sound listening, current endurance/GPU/physical-device/full-playthrough quality acceptance",
+    "Prior contact-audio and running reports retain historical source hashes"
+  ],
+  "browserRig": {
+    "url": "http://127.0.0.1:4190/tests/locomotion.html",
+    "nativeViewport": [
+      1280,
+      720
+    ],
+    "initialFlatStand": {
+      "feet": [
+        [
+          -0.22,
+          0.145,
+          0
+        ],
+        [
+          0.22,
+          0.145,
+          0
+        ]
+      ],
+      "strideLengthMeters": 1.6,
+      "stanceFraction": 0.6,
+      "viewport": [
+        1280,
+        602
+      ],
+      "canvasBuffer": [
+        1920,
+        903
+      ]
+    },
+    "slopeTurn": {
+      "mode": "turn",
+      "complete": true,
+      "elapsedSeconds": 12,
+      "position": [
+        41.884,
+        5.054,
+        42.117
+      ],
+      "slope": 0.12,
+      "strideLengthMeters": 3.20000000000005,
+      "stanceFraction": 0.3999999999999961,
+      "feet": [
+        [
+          41.8838,
+          5.226468,
+          42.3369
+        ],
+        [
+          41.8838,
+          5.173668,
+          41.8969
+        ]
+      ],
+      "contacts": [
+        true,
+        true
+      ],
+      "stats": {
+        "contacts": 478,
+        "maxStanceDrift": 2.1408600746742135e-14,
+        "maxSoleHeightError": 2.7755575615628914e-15,
+        "minPelvisOffset": -0.470792943870472,
+        "bothFeetAirborneFrames": 144
+      },
+      "viewport": [
+        1280,
+        590
+      ],
+      "canvasBuffer": [
+        1920,
+        903
+      ]
+    },
+    "resetStand": {
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "slope": 0.12,
+      "feet": [
+        [
+          -0.22,
+          0.14604,
+          0
+        ],
+        [
+          0.22,
+          0.14604,
+          0
+        ]
+      ],
+      "strideLengthMeters": 1.6,
+      "stanceFraction": 0.6,
+      "viewport": [
+        1280,
+        602
+      ],
+      "canvasBuffer": [
+        1920,
+        903
+      ]
+    },
+    "stillsInspected": [
+      "flat side stand: leather toe/heel with separate sole visible",
+      "early slope turn: boot silhouette and cuff visible",
+      "settled turn front: separated soles visible"
+    ],
+    "savedScreenshotOrMotionVideo": false,
+    "warnErrorLogs": [],
+    "closed": true,
+    "limitations": [
+      "Planner ankle reference error, not full native boot vertex instrumentation",
+      "Dynamic output wraps changed CSS canvas height without a resize; existing QA canvas ratio limitation retained",
+      "Observed pelvis drop 0.47079m remains; gait math unchanged, frame timing differs from previous smoke",
+      "Foot/toe rotation during turning and irregular terrain remain unaccepted"
+    ]
+  },
+  "browserCamp": {
+    "url": "http://127.0.0.1:4190/tests/playthrough.html?mode=performance",
+    "nativeViewport": [
+      1280,
+      720
+    ],
+    "sample": {
+      "complete": true,
+      "targetMs": 30000,
+      "durationMs": 36566.6,
+      "activeMs": 30000,
+      "frames": 1800,
+      "medianMs": 16.7,
+      "p95Ms": 18,
+      "maxMs": 18.7,
+      "over50Ms": 0,
+      "hidden": false,
+      "viewport": [
+        1280,
+        672
+      ],
+      "devicePixelRatio": 2,
+      "canvasBuffer": [
+        1920,
+        1008
+      ],
+      "heapSupported": true,
+      "checkpoints": [
+        {
+          "activeMs": 0,
+          "frames": 0,
+          "daytime": "第 11 天 · 午后",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 64987286
+        },
+        {
+          "activeMs": 30000,
+          "frames": 1800,
+          "daytime": "第 11 天 · 午后",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 61347864
+        }
+      ]
+    },
+    "actualInput": [
+      "12 intermittent Shift+W key presses",
+      "12 intermittent D key presses",
+      "space with sword selected: 未命中 · 靠近目标再攻击"
+    ],
+    "positionInitial": [
+      -49.4,
+      96.9
+    ],
+    "positionAfterSprint": [
+      -50.7,
+      88.2
+    ],
+    "positionFinal": [
+      -45.7,
+      87.4
+    ],
+    "staminaAfterSprint": 89,
+    "hpFinal": 100,
+    "staminaFinal": 100,
+    "buildings": 3,
+    "kills": 0,
+    "audioFinalRunningRead": {
+      "stepsAttempted": 6,
+      "stepsScheduled": 6,
+      "footfallCount": 6,
+      "context": "running",
+      "active": true
+    },
+    "stillsInspected": true,
+    "savedScreenshotOrMotionVideo": false,
+    "warnErrorLogs": [],
+    "saveConfirmation": "存档已保存。",
+    "pausedAndClosed": true,
+    "productionAndJourneySaveUntouched": true,
+    "limitations": [
+      "Short rAF/JS heap sample excludes parent-control pause; no GPU, endurance, device or continuous exploration/live combat evidence",
+      "Intermittent key-step movement is not held movement",
+      "WebAudio scheduled sources do not prove audible tone quality"
+    ]
+  },
+  "checkpoint": {
+    "ordinaryUsageAllowed": true,
+    "primaryUsedPercent": 11,
+    "secondaryUsedPercent": 97,
+    "goalStatus": "usageLimited",
+    "goalStatusIsHistorical": true,
+    "goalNotRewritten": true,
+    "resetCreditsAvailableAndUntouched": 2,
+    "automationRetained": "2048",
+    "loopbackService": {
+      "pid": 45694,
+      "address": "127.0.0.1:4190"
+    },
+    "agentBrowserTabsRemaining": 0,
+    "sourceHashesVerified": 19
+  }
+}

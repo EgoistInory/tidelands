@@ -1,0 +1,684 @@
+{
+  "status": "known_quality_gaps",
+  "characterSha256": "f1385a2f701e465e3b0e28bb21397606a7887b2209d51485a7a37b7397f13188",
+  "cases": [
+    {
+      "kind": "straight",
+      "fps": 60,
+      "speedMetersPerSecond": 7,
+      "slope": 0,
+      "contacts": 132,
+      "maxFrameDriftMeters": 7.119291619286993e-15,
+      "maxWithinStanceTravelMeters": 1.811266751764466e-14,
+      "maxSoleHeightErrorMeters": 5.273559366969494e-16,
+      "maxFrameFootTravelMeters": 0.4353676639262516,
+      "minPelvisOffsetMeters": -0.3855982400732356,
+      "strideLengthMeters": 3.2000000000000095,
+      "stanceFraction": 0.39999999999999925,
+      "phaseCyclesPerSecondLast2Seconds": 2.187500000000004,
+      "bothFeetAirborneFrames": 44,
+      "worstSole": {
+        "frame": 115,
+        "side": 1,
+        "position": [
+          0.22,
+          0.14499999999999946,
+          13.304007193841633
+        ],
+        "phase": 29.752177301359335
+      },
+      "worstFootStep": {
+        "frame": 7,
+        "side": 0,
+        "position": [
+          -0.22,
+          0.26550404350949375,
+          1.0009957246072612
+        ],
+        "priorPosition": [
+          -0.22,
+          0.2471250854721216,
+          0.5660161656690714
+        ],
+        "phase": 4.779851918187211,
+        "contact": false
+      }
+    },
+    {
+      "kind": "turn",
+      "fps": 60,
+      "speedMetersPerSecond": 7,
+      "slope": 0,
+      "contacts": 129,
+      "maxFrameDriftMeters": 5.40286359082741e-15,
+      "maxWithinStanceTravelMeters": 3.10343636230176e-14,
+      "maxSoleHeightErrorMeters": 5.273559366969494e-16,
+      "maxFrameFootTravelMeters": 0.6160200748108547,
+      "minPelvisOffsetMeters": -0.3855982400732356,
+      "strideLengthMeters": 3.2000000000000095,
+      "stanceFraction": 0.39999999999999925,
+      "phaseCyclesPerSecondLast2Seconds": 2.1875000000000036,
+      "bothFeetAirborneFrames": 47,
+      "worstSole": {
+        "frame": 115,
+        "side": 1,
+        "position": [
+          0.22,
+          0.14499999999999946,
+          13.304007193841633
+        ],
+        "phase": 29.752177301359335
+      },
+      "worstFootStep": {
+        "frame": 120,
+        "side": 0,
+        "position": [
+          0.37320270064772587,
+          0.211987268344211,
+          14.412509154989028
+        ],
+        "priorPosition": [
+          -0.22,
+          0.23833977419360874,
+          14.57651169749881
+        ],
+        "phase": 30.897549622980616,
+        "contact": false
+      }
+    },
+    {
+      "kind": "stop",
+      "fps": 60,
+      "speedMetersPerSecond": 7,
+      "slope": 0,
+      "contacts": 134,
+      "maxFrameDriftMeters": 1.806490179667719e-9,
+      "maxWithinStanceTravelMeters": 9.965231528857588e-9,
+      "maxSoleHeightErrorMeters": 9.965784114607246e-9,
+      "maxFrameFootTravelMeters": 0.4353676639262516,
+      "minPelvisOffsetMeters": -0.3855982400732356,
+      "strideLengthMeters": 3.2,
+      "stanceFraction": 0.39999999999999997,
+      "phaseCyclesPerSecondLast2Seconds": 0,
+      "bothFeetAirborneFrames": 21,
+      "worstSole": {
+        "frame": 191,
+        "side": 1,
+        "position": [
+          0.22,
+          0.1450000099657841,
+          14.00000000000001
+        ],
+        "phase": 30.897549622980616
+      },
+      "worstFootStep": {
+        "frame": 7,
+        "side": 0,
+        "position": [
+          -0.22,
+          0.26550404350949375,
+          1.0009957246072612
+        ],
+        "priorPosition": [
+          -0.22,
+          0.2471250854721216,
+          0.5660161656690714
+        ],
+        "phase": 4.779851918187211,
+        "contact": false
+      }
+    },
+    {
+      "kind": "reverse",
+      "fps": 60,
+      "speedMetersPerSecond": 7,
+      "slope": 0,
+      "contacts": 125,
+      "maxFrameDriftMeters": 3.573900864766138e-15,
+      "maxWithinStanceTravelMeters": 1.5026488080951222e-14,
+      "maxSoleHeightErrorMeters": 5.273559366969494e-16,
+      "maxFrameFootTravelMeters": 0.7386186153737453,
+      "minPelvisOffsetMeters": -0.3855982400732356,
+      "strideLengthMeters": 3.2,
+      "stanceFraction": 0.39999999999999997,
+      "phaseCyclesPerSecondLast2Seconds": 2.187500000000004,
+      "bothFeetAirborneFrames": 51,
+      "worstSole": {
+        "frame": 115,
+        "side": 1,
+        "position": [
+          0.22,
+          0.14499999999999946,
+          13.304007193841633
+        ],
+        "phase": 29.752177301359335
+      },
+      "worstFootStep": {
+        "frame": 120,
+        "side": 0,
+        "position": [
+          0.24114579496971622,
+          0.21198726834421078,
+          14.000137201017717
+        ],
+        "priorPosition": [
+          -0.22,
+          0.23833977419360874,
+          14.57651169749881
+        ],
+        "phase": 30.897549622980616,
+        "contact": false
+      }
+    },
+    {
+      "kind": "restart",
+      "fps": 60,
+      "speedMetersPerSecond": 7,
+      "slope": 0,
+      "contacts": 151,
+      "maxFrameDriftMeters": 7.106294666405892e-15,
+      "maxWithinStanceTravelMeters": 2.893733853783538e-14,
+      "maxSoleHeightErrorMeters": 5.273559366969494e-16,
+      "maxFrameFootTravelMeters": 0.4668696978091235,
+      "minPelvisOffsetMeters": -0.3946900265143349,
+      "strideLengthMeters": 3.2,
+      "stanceFraction": 0.39999999999999997,
+      "phaseCyclesPerSecondLast2Seconds": 2.2905137906513335,
+      "bothFeetAirborneFrames": 30,
+      "worstSole": {
+        "frame": 164,
+        "side": 1,
+        "position": [
+          0.22,
+          0.14499999999999946,
+          12.52805328302822
+        ],
+        "phase": 28.985015775394086
+      },
+      "worstFootStep": {
+        "frame": 120,
+        "side": 0,
+        "position": [
+          -0.22,
+          0.17399646468136842,
+          7.46596844157427
+        ],
+        "priorPosition": [
+          -0.22,
+          0.14500118594122313,
+          6.999999999999989
+        ],
+        "phase": 17.61123068669136,
+        "contact": false
+      }
+    },
+    {
+      "kind": "circle",
+      "fps": 60,
+      "speedMetersPerSecond": 7,
+      "slope": 0,
+      "contacts": 132,
+      "maxFrameDriftMeters": 1.0807438076588089e-14,
+      "maxWithinStanceTravelMeters": 3.8708420123010855e-14,
+      "maxSoleHeightErrorMeters": 5.273559366969494e-16,
+      "maxFrameFootTravelMeters": 0.43779469841702456,
+      "minPelvisOffsetMeters": -0.4140039657345336,
+      "strideLengthMeters": 3.200000000000002,
+      "stanceFraction": 0.3999999999999998,
+      "phaseCyclesPerSecondLast2Seconds": 2.187500000000003,
+      "bothFeetAirborneFrames": 44,
+      "worstSole": {
+        "frame": 56,
+        "side": 1,
+        "position": [
+          2.169500588417064,
+          0.14499999999999946,
+          6.41698113244557
+        ],
+        "phase": 16.236783885430487
+      },
+      "worstFootStep": {
+        "frame": 7,
+        "side": 0,
+        "position": [
+          -0.17075103589977197,
+          0.26550404350949364,
+          1.0043899205592792
+        ],
+        "priorPosition": [
+          -0.19579034165228576,
+          0.24712508547212142,
+          0.5676984447655031
+        ],
+        "phase": 4.779851918187211,
+        "contact": false
+      }
+    },
+    {
+      "kind": "burst",
+      "fps": 60,
+      "speedMetersPerSecond": 7,
+      "slope": 0,
+      "contacts": 197,
+      "maxFrameDriftMeters": 0.011446984555240292,
+      "maxWithinStanceTravelMeters": 0.011446984555240292,
+      "maxSoleHeightErrorMeters": 9.978319975845196e-9,
+      "maxFrameFootTravelMeters": 1.4928890504338355,
+      "minPelvisOffsetMeters": -0.36973324772464494,
+      "strideLengthMeters": 4.337767284456485,
+      "stanceFraction": 0.31150698898671775,
+      "phaseCyclesPerSecondLast2Seconds": 0,
+      "bothFeetAirborneFrames": 12,
+      "worstSole": {
+        "frame": 137,
+        "side": 0,
+        "position": [
+          -0.22,
+          0.14500000997831997,
+          11.923333333333323
+        ],
+        "phase": 24.97835135511388
+      },
+      "worstFootStep": {
+        "frame": 60,
+        "side": 0,
+        "position": [
+          -0.22,
+          0.1964918863821068,
+          8.341278685155073
+        ],
+        "priorPosition": [
+          -0.22,
+          0.30490726445920663,
+          6.852331465572848
+        ],
+        "phase": 18.44228805474136,
+        "contact": false
+      }
+    },
+    {
+      "kind": "turn",
+      "fps": 30,
+      "speedMetersPerSecond": 2.4,
+      "slope": 0.04,
+      "contacts": 108,
+      "maxFrameDriftMeters": 1.8638607851033673e-14,
+      "maxWithinStanceTravelMeters": 2.8362229648929288e-14,
+      "maxSoleHeightErrorMeters": 1.8512968935624485e-14,
+      "maxFrameFootTravelMeters": 0.3506080131530952,
+      "minPelvisOffsetMeters": -0.41335743001775377,
+      "strideLengthMeters": 1.6,
+      "stanceFraction": 0.6,
+      "phaseCyclesPerSecondLast2Seconds": 1.5000000000000056,
+      "bothFeetAirborneFrames": 0,
+      "worstSole": {
+        "frame": 116,
+        "side": 1,
+        "position": [
+          4.080000000022221,
+          0.44758113686275663,
+          4.500000000048519
+        ],
+        "phase": 38.327430373795565
+      },
+      "worstFootStep": {
+        "frame": 70,
+        "side": 0,
+        "position": [
+          0.7295082403562598,
+          0.5219090504415187,
+          4.871066659270272
+        ],
+        "priorPosition": [
+          0.38063961425999565,
+          0.4982389161157697,
+          4.8454466406546075
+        ],
+        "phase": 23.87610416728245,
+        "contact": false
+      }
+    },
+    {
+      "kind": "turn",
+      "fps": 30,
+      "speedMetersPerSecond": 7,
+      "slope": 0.04,
+      "contacts": 60,
+      "maxFrameDriftMeters": 3.9968028886505635e-15,
+      "maxWithinStanceTravelMeters": 1.1275838343544177e-14,
+      "maxSoleHeightErrorMeters": 5.551115123125783e-16,
+      "maxFrameFootTravelMeters": 0.9222824430692619,
+      "minPelvisOffsetMeters": -0.4207404481876984,
+      "strideLengthMeters": 3.2,
+      "stanceFraction": 0.39999999999999997,
+      "phaseCyclesPerSecondLast2Seconds": 2.187500000000004,
+      "bothFeetAirborneFrames": 23,
+      "worstSole": {
+        "frame": 38,
+        "side": 0,
+        "position": [
+          -0.22,
+          0.4810001827124687,
+          8.560476146308464
+        ],
+        "phase": 20.707396663864905
+      },
+      "worstFootStep": {
+        "frame": 60,
+        "side": 0,
+        "position": [
+          0.6946889395375782,
+          0.8136305640340427,
+          14.219021987459827
+        ],
+        "priorPosition": [
+          -0.22,
+          0.8363585645277067,
+          14.334920592606684
+        ],
+        "phase": 30.786673094154217,
+        "contact": false
+      }
+    },
+    {
+      "kind": "turn",
+      "fps": 30,
+      "speedMetersPerSecond": 12,
+      "slope": 0.04,
+      "contacts": 33,
+      "maxFrameDriftMeters": 7.944109290391274e-15,
+      "maxWithinStanceTravelMeters": 1.3012371638204299e-14,
+      "maxSoleHeightErrorMeters": 5.551115123125783e-16,
+      "maxFrameFootTravelMeters": 1.2187357590482495,
+      "minPelvisOffsetMeters": -0.405010908392035,
+      "strideLengthMeters": 4.999999999999984,
+      "stanceFraction": 0.26000000000000123,
+      "phaseCyclesPerSecondLast2Seconds": 2.4000000001800554,
+      "bothFeetAirborneFrames": 56,
+      "worstSole": {
+        "frame": 62,
+        "side": 1,
+        "position": [
+          1.2969053315332952,
+          1.143476872455758,
+          23.984714391240725
+        ],
+        "phase": 35.14981374628405
+      },
+      "worstFootStep": {
+        "frame": 60,
+        "side": 1,
+        "position": [
+          1.2755553679965397,
+          1.1812285056413327,
+          23.905293330321097
+        ],
+        "priorPosition": [
+          0.22,
+          1.2203532414099072,
+          24.513231625321207
+        ],
+        "phase": 34.14450409603433,
+        "contact": false
+      }
+    },
+    {
+      "kind": "turn",
+      "fps": 60,
+      "speedMetersPerSecond": 2.4,
+      "slope": 0.04,
+      "contacts": 216,
+      "maxFrameDriftMeters": 3.259714817153988e-14,
+      "maxWithinStanceTravelMeters": 5.140227145177274e-14,
+      "maxSoleHeightErrorMeters": 3.269606807521086e-14,
+      "maxFrameFootTravelMeters": 0.27303927332837297,
+      "minPelvisOffsetMeters": -0.3801227527860385,
+      "strideLengthMeters": 1.6,
+      "stanceFraction": 0.6,
+      "phaseCyclesPerSecondLast2Seconds": 1.5000000000000082,
+      "bothFeetAirborneFrames": 0,
+      "worstSole": {
+        "frame": 232,
+        "side": 1,
+        "position": [
+          4.040000000022204,
+          0.4479811368627706,
+          4.540000000048526
+        ],
+        "phase": 38.32743037379564
+      },
+      "worstFootStep": {
+        "frame": 120,
+        "side": 1,
+        "position": [
+          0.47891616520258384,
+          0.5021254159675426,
+          4.564419853934363
+        ],
+        "priorPosition": [
+          0.22,
+          0.49473803171741654,
+          4.650781250000055
+        ],
+        "phase": 20.734511513692706,
+        "contact": false
+      }
+    },
+    {
+      "kind": "turn",
+      "fps": 60,
+      "speedMetersPerSecond": 7,
+      "slope": 0.04,
+      "contacts": 129,
+      "maxFrameDriftMeters": 5.4037190382940445e-15,
+      "maxWithinStanceTravelMeters": 2.3803640039685934e-14,
+      "maxSoleHeightErrorMeters": 5.551115123125783e-16,
+      "maxFrameFootTravelMeters": 0.6156417687095083,
+      "minPelvisOffsetMeters": -0.40399014879267603,
+      "strideLengthMeters": 3.2000000000000095,
+      "stanceFraction": 0.39999999999999925,
+      "phaseCyclesPerSecondLast2Seconds": 2.1875000000000036,
+      "bothFeetAirborneFrames": 47,
+      "worstSole": {
+        "frame": 76,
+        "side": 0,
+        "position": [
+          -0.22,
+          0.4787414246228873,
+          8.50400719406893
+        ],
+        "phase": 20.81827319268687
+      },
+      "worstFootStep": {
+        "frame": 120,
+        "side": 0,
+        "position": [
+          0.373202700647726,
+          0.7998648524233344,
+          14.41250915498903
+        ],
+        "priorPosition": [
+          -0.22,
+          0.8149813789536923,
+          14.576511697498812
+        ],
+        "phase": 30.897549622980616,
+        "contact": false
+      }
+    },
+    {
+      "kind": "turn",
+      "fps": 60,
+      "speedMetersPerSecond": 12,
+      "slope": 0.04,
+      "contacts": 78,
+      "maxFrameDriftMeters": 1.0805156823142815e-14,
+      "maxWithinStanceTravelMeters": 2.511250227254268e-14,
+      "maxSoleHeightErrorMeters": 7.771561172376096e-16,
+      "maxFrameFootTravelMeters": 0.761886582688477,
+      "minPelvisOffsetMeters": -0.38579139067873586,
+      "strideLengthMeters": 4.999999999999983,
+      "stanceFraction": 0.2600000000000013,
+      "phaseCyclesPerSecondLast2Seconds": 2.400000000196382,
+      "bothFeetAirborneFrames": 114,
+      "worstSole": {
+        "frame": 214,
+        "side": 0,
+        "position": [
+          18.50026993317983,
+          1.660989234857536,
+          24.020000000050274
+        ],
+        "phase": 57.993461177208246
+      },
+      "worstFootStep": {
+        "frame": 4,
+        "side": 0,
+        "position": [
+          -0.22,
+          0.2683809746176663,
+          1.0498161044572463
+        ],
+        "priorPosition": [
+          -0.22,
+          0.19975280192234757,
+          0.29102671418269394
+        ],
+        "phase": 4.43395072518658,
+        "contact": false
+      }
+    },
+    {
+      "kind": "turn",
+      "fps": 144,
+      "speedMetersPerSecond": 2.4,
+      "slope": 0.04,
+      "contacts": 504,
+      "maxFrameDriftMeters": 2.6668472207145996e-15,
+      "maxWithinStanceTravelMeters": 4.809009844114208e-14,
+      "maxSoleHeightErrorMeters": 5.551115123125783e-16,
+      "maxFrameFootTravelMeters": 0.24239187557591207,
+      "minPelvisOffsetMeters": -0.36361491723997097,
+      "strideLengthMeters": 1.6,
+      "stanceFraction": 0.6,
+      "phaseCyclesPerSecondLast2Seconds": 1.5000000000000002,
+      "bothFeetAirborneFrames": 0,
+      "worstSole": {
+        "frame": 327,
+        "side": 1,
+        "position": [
+          0.8469978504840816,
+          0.35650413518727686,
+          4.6478265703156065
+        ],
+        "phase": 23.287055544734223
+      },
+      "worstFootStep": {
+        "frame": 288,
+        "side": 1,
+        "position": [
+          0.4263005856642837,
+          0.5023826262325897,
+          4.610311795214275
+        ],
+        "priorPosition": [
+          0.22,
+          0.5007482357043953,
+          4.737556514033499
+        ],
+        "phase": 20.73451151369257,
+        "contact": false
+      }
+    },
+    {
+      "kind": "turn",
+      "fps": 144,
+      "speedMetersPerSecond": 7,
+      "slope": 0.04,
+      "contacts": 323,
+      "maxFrameDriftMeters": 5.352150186685534e-15,
+      "maxWithinStanceTravelMeters": 5.583565828402814e-14,
+      "maxSoleHeightErrorMeters": 6.661338147750939e-16,
+      "maxFrameFootTravelMeters": 0.41546925833210807,
+      "minPelvisOffsetMeters": -0.41550629655720867,
+      "strideLengthMeters": 3.2,
+      "stanceFraction": 0.39999999999999997,
+      "phaseCyclesPerSecondLast2Seconds": 2.1874999999999254,
+      "bothFeetAirborneFrames": 120,
+      "worstSole": {
+        "frame": 498,
+        "side": 0,
+        "position": [
+          10.518358103373886,
+          1.0275874355233348,
+          14.171388889049704
+        ],
+        "phase": 51.00883499973842
+      },
+      "worstFootStep": {
+        "frame": 288,
+        "side": 0,
+        "position": [
+          0.15147839988086792,
+          0.7882861289403551,
+          14.503561387745073
+        ],
+        "priorPosition": [
+          -0.22,
+          0.7961621271183059,
+          14.689455098487752
+        ],
+        "phase": 30.964819371366715,
+        "contact": false
+      }
+    },
+    {
+      "kind": "turn",
+      "fps": 144,
+      "speedMetersPerSecond": 12,
+      "slope": 0.04,
+      "contacts": 196,
+      "maxFrameDriftMeters": 7.95651227888113e-15,
+      "maxWithinStanceTravelMeters": 5.64753828047099e-14,
+      "maxSoleHeightErrorMeters": 9.71445146547012e-16,
+      "maxFrameFootTravelMeters": 0.40036960805151856,
+      "minPelvisOffsetMeters": -0.439246559294353,
+      "strideLengthMeters": 4.999999999999943,
+      "stanceFraction": 0.2600000000000044,
+      "phaseCyclesPerSecondLast2Seconds": 2.400000000206373,
+      "bothFeetAirborneFrames": 283,
+      "worstSole": {
+        "frame": 561,
+        "side": 0,
+        "position": [
+          23.263489877774283,
+          1.8085524998600273,
+          24.136666666666677
+        ],
+        "phase": 63.10811650576542
+      },
+      "worstFootStep": {
+        "frame": 288,
+        "side": 0,
+        "position": [
+          0.17019474446586758,
+          1.2202160818334418,
+          23.396921835666188
+        ],
+        "priorPosition": [
+          -0.22,
+          1.19851844858443,
+          23.309898291990155
+        ],
+        "phase": 34.519623355504955,
+        "contact": false
+      }
+    }
+  ],
+  "limitations": [
+    "Offline rig audit on analytic flat and gently sloped floors",
+    "Abrupt 90/180 degree input after two seconds; stop, restart and curved travel",
+    "Contact comes from the production planner including early release of overextended steps; swing movement is reported separately",
+    "No motion video, GPU measurement, irregular terrain or complete gameplay acceptance"
+  ]
+}

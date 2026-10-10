@@ -1,0 +1,70 @@
+{
+  "kind": "resident-geometry-checkpoint-evidence-integrity-audit",
+  "evidenceIntegrityPassed": true,
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "756271e155e184a4a2b2e1faa9152f79da096d61cff64c9fcb8966f06d106a58",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "98a7be6306f53353c629827de56168d6c9a27efc57a9ac1e7e182f6d75c648de",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "fa838a156dea30a46d0bc32081894651b949d44536fc51aab2f532dfc0219017",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "productionChanged": [
+    "src/creature.js"
+  ],
+  "sameFiveViewCallsAndTriangles": true,
+  "fixedCircuitPeakRequestedBufferBytes": [
+    26970316,
+    14332332
+  ],
+  "reductionPercent": 46.86,
+  "fixedCircuitBudgetStableAfterWarmup": true,
+  "trackedBuffersAfterFullQaCleanup": 0,
+  "archiveCheckedFiles": 34,
+  "archiveSha256": "71c01deb02da8c3bb52b6e964a923889c66a87de16d8175da2336b6d9e2e7951",
+  "historicalArchivesUnchanged": 9,
+  "tests": {
+    "redExpectedFailures": 2,
+    "focusedPass": 19,
+    "fullPass": 116
+  },
+  "temporary63457Stopped": true,
+  "development4190Pid": 92409,
+  "evidenceSha256": {
+    "docs/resident-geometry-review.json": "451c93ffc7c346d113699aed48e104ecc9053e590b52a7a03ee4856bfe186af9",
+    "docs/resident-budget-initial.json": "ac8b295553a08ffb7c19f5a91fa472a5cc3ba6250334453120779404de334c2f",
+    "docs/resident-budget-before.json": "0c1ec7fceca5b4090757ab3f7c023387dd6b0c4f4bb8fdf12f82764f01418a29",
+    "docs/resident-budget-after.json": "d0eedad89aa7da97985cf86dc0222055571b6a0c9a218e6ebb7362ca30a5fdff",
+    "docs/resident-budget-mobile.json": "afd9c6a8be43c0c4d6865652957d9ec70ce5eeffd9f9ac13de7266c46f9fb4e6",
+    "docs/resident-geometry-red-tests.txt": "dfa764b5abdd8a886bbdf7c62bda8c12781bbc6cbfad6ddc3de963a31418d944",
+    "docs/resident-geometry-green-tests.txt": "0ef6ba3c6c86101b9af99e2b7911eb302c07afd1dce22e5cd659f4878b00c603",
+    "docs/resident-geometry-full-tests.txt": "d1fd7bb838e9f659ce6f16e3f88fcc356bc9c490ff067ff19866f19f065585ee",
+    "tests/resident-budget.html": "00aa643984e44e11ffc3e237f39ec936f027d87f09d5f201e0023a52f5b47b9b",
+    "tests/scene.test.js": "742df300713a9e946c91fb31fc59112b4fb0fd0f187c13d8fd7c2997ba4c680f",
+    "README.md": "2fb1b6ef5791b53654bb3408d81a5d429789d03bd9ab75ff2fe4b3332101aef8",
+    "AGENT_PROGRESS.md": "b63360e2c84da34483755a64671856785fd6b871f2d0e18fd5bcd2b8cda6cc66",
+    "ROADMAP.md": "ce03105e7f9c7ac871b8ca78e40bb393a4dde13d2203b98dc6de80806d971b30",
+    "docs/VERIFICATION.md": "f21b6406905b5dbdf49deff57fa20b6fb6c692de82d92eddcab5b807e402eb76",
+    "docs/resident-geometry-desktop-sample.json": "b85fd783f8d7db065a56f4983bdd1b4a7693a5fc9fc083ac9164617ffba3c7c7",
+    "docs/resident-geometry-mobile-sample.json": "51d7474176e969c40d7dae7d943a352472f89d94ba15894ae7a61d8cc0e04120"
+  },
+  "auditScriptSha256": "4dbfbd57839089c4913c42bb1a9887fb3ed18eb9ea4524b17c734d31b7782b45",
+  "physicalVramMeasured": false,
+  "physicalDeviceTested": false,
+  "performanceQualityAccepted": false,
+  "m5Accepted": false,
+  "fullGoalComplete": false,
+  "automation2048Retained": true
+}

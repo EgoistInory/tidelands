@@ -1,0 +1,219 @@
+{
+  "date": "2026-10-04",
+  "status": "smoke_verified_quality_gaps_remain",
+  "fullGoalComplete": false,
+  "sha256": {
+    "src/character.js": "dd16764ba97d5ae69f56d9cd99c25db9d839f0587d4dea1414b9f3c97999ee03",
+    "src/scene.js": "ef24f7266be81533bc9a535c825478caa0c319bc8e19cbaa399604c55ad400ba",
+    "src/main.js": "4dfb26075e8a30b62e5786b2969c692f7464edc43d114a44f7e8c88b9f55980d",
+    "src/game.js": "54cb5d150120efe5ad751b5cda045d6a61a591620f45e340b33028ea71aa402e",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "tests/character.test.js": "05ca287522d73fda9f08a55b39b2bc3fb59c42ddcdd631c069fceed24e546108",
+    "tests/scene.test.js": "01b0e9f769e29b6729dba245b1eab3846af5255840c57451571a868cacf51024",
+    "tests/locomotion.html": "f4da05ac77b0736e01270d05c9dd397c6813d662bcd561204b5c17db42c2edfd",
+    "tests/playthrough.html": "fa763bbfad540aa0d214e1fc83aa8d491edf736b447f442b7d325ce29876f6f6",
+    "vendor/three.module.min.js": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+    "tests/locomotion-audit.js": "bfff430c158256b6ef7c56b6a67e6a086efa2237e9b4663f66d88bb0c57960ba"
+  },
+  "changes": [
+    "Predict the next rendered translation and remaining yaw before a stance leg exceeds 0.82m horizontal reach",
+    "Bound only airborne XZ ankle targets to 0.76m from the hip; planted contacts remain in world coordinates",
+    "No change to movement speeds, collision, gameplay, assets or persistence keys"
+  ],
+  "tests": {
+    "passed": 78,
+    "failed": 0,
+    "log": "/private/tmp/tidelands-tests-reach-final.log",
+    "syntax": [
+      "src/character.js"
+    ],
+    "coverage": [
+      "30/60/144fps at 2.4/7/12m/s and 90/180 degree turns: pelvis above -0.45m and airborne reach <=0.76m",
+      "Existing stance drift, slope sole/normal, stop recovery, teleport, burst, swim, NPC and gameplay regressions"
+    ]
+  },
+  "offlineAudit": "docs/anticipatory-footing-gap-audit.json",
+  "baselineAudit": "docs/idle-recovery-gap-audit.json",
+  "auditComparison": {
+    "maxAnalyticTurnPelvisOffsetBefore": -0.6270792997213442,
+    "maxAnalyticTurnPelvisOffsetAfter": -0.4291087407132113,
+    "scope": "Same offline cases and ground; numerical reach, not visual naturalness or gameplay performance"
+  },
+  "browserIssue": "Label locator for 地面 matched no elements; after current AX inspection the visible #ground select worked. No game error or repeated retries.",
+  "limitations": [
+    "Still a rapid 1.6m gait at 7/12m/s; running flight and body motion unfinished",
+    "Maximum 30fps/12m/s turn swing travel remains about 1.112m per frame; synthetic 0.84m burst is reported separately",
+    "Prediction assumes the next input continues; abrupt future direction changes and irregular mesh contact remain gaps",
+    "Boot toe contact, full weight distribution, smooth interruption and natural movement need saved motion review",
+    "Simple character/environment assets, audio listening, final gameplay/device/delivery and M5 acceptance unfinished",
+    "Old 30-second and 10-minute samples remain historical with their original source hashes"
+  ],
+  "isolatedBrowser": {
+    "entry": "/tests/locomotion.html",
+    "slope": 0.12,
+    "elapsedSeconds": 12,
+    "turn": {
+      "complete": true,
+      "position": [
+        42,
+        5.054,
+        42.116
+      ],
+      "feet": [
+        [
+          42,
+          5.226384,
+          42.3362
+        ],
+        [
+          42,
+          5.173584,
+          41.8962
+        ]
+      ],
+      "contacts": 687,
+      "maxStanceDriftMeters": 1.443119118362539e-14,
+      "maxSoleHeightErrorMeters": 2.4980018054066022e-15
+    },
+    "reverse": {
+      "complete": true,
+      "position": [
+        0,
+        0,
+        0.002
+      ],
+      "feet": [
+        [
+          0.22,
+          0.146292,
+          0.0021
+        ],
+        [
+          -0.22,
+          0.132264,
+          -0.1148
+        ]
+      ],
+      "contacts": 682,
+      "maxStanceDriftMeters": 2.1316354352825292e-14,
+      "maxSoleHeightErrorMeters": 1.915134717478395e-15
+    },
+    "resetToIdle": {
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "feet": [
+        [
+          -0.22,
+          0.14604,
+          0
+        ],
+        [
+          0.22,
+          0.14604,
+          0
+        ]
+      ],
+      "contacts": [
+        true,
+        true
+      ]
+    },
+    "viewport": [
+      1280,
+      602
+    ],
+    "canvasBuffer": [
+      1920,
+      903
+    ],
+    "stillsReviewed": true,
+    "savedVideo": false,
+    "consoleWarningsErrors": [],
+    "closed": true
+  },
+  "worldBrowser": {
+    "entry": "/tests/playthrough.html?mode=performance",
+    "isolation": "tidelands-qa-performance only; production/journey untouched",
+    "initialPosition": [
+      -49.4,
+      96.7
+    ],
+    "after12S": [
+      -48.6,
+      102.0
+    ],
+    "after12W": [
+      -49.4,
+      96.9
+    ],
+    "inputsDuringSample": "Resume after parent-control pause, 12 actual S then 12 W; intermittent key presses, not held movement or live combat",
+    "stillsReviewed": true,
+    "savedThroughPauseMenu": true,
+    "saveConfirmation": "存档已保存。",
+    "closed": true,
+    "consoleWarningsErrors": [],
+    "performance": {
+      "complete": true,
+      "durationMs": 36466.7,
+      "activeMs": 30000.7,
+      "frames": 1800,
+      "medianMs": 16.7,
+      "p95Ms": 18,
+      "maxMs": 18.7,
+      "over50Ms": 0,
+      "hidden": false,
+      "viewport": [
+        1280,
+        672
+      ],
+      "devicePixelRatio": 2,
+      "canvasBuffer": [
+        1920,
+        1008
+      ],
+      "checkpoints": [
+        {
+          "activeMs": 0,
+          "frames": 0,
+          "daytime": "第 10 天 · 午后",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 58041757
+        },
+        {
+          "activeMs": 30000.7,
+          "frames": 1800,
+          "daytime": "第 10 天 · 午后",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 72824166
+        }
+      ]
+    }
+  },
+  "rejectedCadenceExperiment": {
+    "productionUnchanged": true,
+    "prototype": "/private/tmp/tidelands-character-cadence-probe.mjs",
+    "diagnostic": "/private/tmp/tidelands-cadence-probe.json",
+    "finding": "Naive speed-dependent stride/contact fraction plus forward lean worsened pelvis drop to about -0.58m and introduced a 0.011m contact-segment diagnostic in the synthetic burst; not adopted. Next work needs body-pose-aware reach and stable parameters through stopping.",
+    "initialFailure": "Prototype missed a local stanceFraction binding; corrected and diagnostic rerun. No production change from experiment."
+  },
+  "quotaCheckpoint": {
+    "ordinaryUsageAllowed": true,
+    "fiveHourUsedPercent": 68,
+    "weeklyUsedPercent": 90,
+    "goalStatus": "historical usageLimited; not rewritten",
+    "resetCreditsAvailable": 2,
+    "resetCreditsConsumed": 0,
+    "automation2048": "retained"
+  }
+}

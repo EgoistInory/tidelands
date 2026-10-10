@@ -1,0 +1,73 @@
+{
+  "recordedAt": "2026-10-07T14:27Z",
+  "method": "Public #result DOM after native select controls; synthetic stationary one-second actions, twelve-second run; no live combat or storage.",
+  "sourceSha256": {
+    "src/character.js": "cbe3fac0b203391e634adeda6cf1b8a275f86b9eeef33acc970fbb29ab98d33a",
+    "tests/character.test.js": "45be5b4c91f6f00a779a446f9a2f9773a60c31707ac0bba4f2b6a14e8b152def",
+    "tests/locomotion.html": "8e31df1bcd057895ce2527b43076873982ee35834847b8da33844ad583bc4c6f"
+  },
+  "browserCycles": [
+    {
+      "equipment": "sword",
+      "gesture": "attack-cycle",
+      "mode": "actions",
+      "complete": true,
+      "elapsedSeconds": 12,
+      "frames": 1050495,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "stats": {
+        "contacts": 1322,
+        "maxStanceDrift": 6.731800026102354e-16,
+        "maxSoleHeightError": 5.273559366969494e-16,
+        "minPelvisOffset": -0.06099999286703736,
+        "bothFeetAirborneFrames": 0,
+        "actionFrames": 720,
+        "maxArmFrameDelta": 0.48
+      },
+      "viewport": [
+        892,
+        937
+      ],
+      "canvasBuffer": [
+        1338,
+        1405
+      ]
+    },
+    {
+      "equipment": "axe",
+      "gesture": "gather-cycle",
+      "mode": "actions",
+      "complete": true,
+      "elapsedSeconds": 12,
+      "frames": 1049220,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "stats": {
+        "contacts": 1312,
+        "maxStanceDrift": 7.776515945702112e-16,
+        "maxSoleHeightError": 7.494005416219807e-16,
+        "minPelvisOffset": -0.0638931432993506,
+        "bothFeetAirborneFrames": 0,
+        "actionFrames": 716,
+        "maxArmFrameDelta": 0.5328742812733478
+      },
+      "viewport": [
+        892,
+        937
+      ],
+      "canvasBuffer": [
+        1338,
+        1405
+      ]
+    }
+  ],
+  "warningsAndErrors": [],
+  "earlierInterruption": "Browser auto-review rejected operations when usage limit was reached; stopped until live quota recovered. Failed exact label selector was replaced with DOM-grounded IDs. No circumvention."
+}

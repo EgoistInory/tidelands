@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-05",
+  "method": "受控IAB真实OfflineAudioContext，复用生产GameAudio；仅离线生命周期适配。每个样本1秒/48000Hz，环境声停止。",
+  "listened": false,
+  "consoleWarningsErrors": [],
+  "samples": [
+    {"kind":"craft","peak":0.046769917011260986,"rms":0.004373819849753262,"finite":true,"nonSilent":true,"unclipped":true},
+    {"kind":"food","peak":0.04534299671649933,"rms":0.004285420110221248,"finite":true,"nonSilent":true,"unclipped":true},
+    {"kind":"quest","peak":0.04586033150553703,"rms":0.007115266499785245,"finite":true,"nonSilent":true,"unclipped":true},
+    {"kind":"step","peak":0.005136549938470125,"rms":0.0004477637722742778,"finite":true,"nonSilent":true,"unclipped":true,"repeatDifferenceRms":0.0008956907997253285},
+    {"kind":"step-sand","peak":0.006284425035119057,"rms":0.0004719906310604383,"finite":true,"nonSilent":true,"unclipped":true,"repeatDifferenceRms":0.0009540696047533917},
+    {"kind":"gather","peak":0.012894186191260815,"rms":0.0014579009836105277,"finite":true,"nonSilent":true,"unclipped":true,"repeatDifferenceRms":0.002647348734878842},
+    {"kind":"swing","peak":0.014780568890273571,"rms":0.001016033175976366,"finite":true,"nonSilent":true,"unclipped":true,"repeatDifferenceRms":0.0017765788031940814},
+    {"kind":"hit","peak":0.024587441235780716,"rms":0.001766609883472302,"finite":true,"nonSilent":true,"unclipped":true,"repeatDifferenceRms":0.003305634109833685},
+    {"kind":"splash","peak":0.012611025013029575,"rms":0.0012190520068457009,"finite":true,"nonSilent":true,"unclipped":true,"repeatDifferenceRms":0.0020268688854687238},
+    {"kind":"busy-mix","peak":0.13510265946388245,"rms":0.009572487810715902,"finite":true,"nonSilent":true,"unclipped":true,"routing":{"physicalQueued":9,"totalQueued":12,"successCuesQueued":3}},
+    {"kind":"paused-menu","peak":0.08366986364126205,"rms":0.006110026673983735,"finite":true,"nonSilent":true,"unclipped":true,"routing":{"physicalQueued":0,"totalQueued":2,"successCuesQueued":2}}
+  ],
+  "limits": "忙碌场景按同一时刻尝试30次命中再加3种成功提示，是合成压力检查；不是正常实战或听感/音量平衡/设备播放证明。未保存新WAV文件。"
+}

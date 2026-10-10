@@ -1,0 +1,45 @@
+{
+  "date": "2026-09-29",
+  "url": "http://127.0.0.1:4190/tests/render-load.html?suite=1",
+  "canvas": [
+    1920,
+    915
+  ],
+  "samples": [
+    {
+      "name": "coast",
+      "beforeCalls": 428,
+      "calls": 188,
+      "triangles": 785411,
+      "geometries": 198
+    },
+    {
+      "name": "forest",
+      "beforeCalls": 294,
+      "calls": 126,
+      "triangles": 728143,
+      "geometries": 307
+    },
+    {
+      "name": "highlands",
+      "beforeCalls": 571,
+      "calls": 260,
+      "triangles": 828231,
+      "geometries": 484
+    },
+    {
+      "name": "amber",
+      "beforeCalls": 740,
+      "calls": 320,
+      "triangles": 894935,
+      "geometries": 738
+    }
+  ],
+  "cpuArrayBytes": {
+    "before": 11485172,
+    "after": 20376164,
+    "scope": "scenery and all creatures"
+  },
+  "consoleErrors": [],
+  "limits": "Additional distant pose buffers increase CPU storage. Counts do not prove FPS, visual transition or total GPU memory."
+}

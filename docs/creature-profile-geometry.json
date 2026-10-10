@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-05",
+  "command": "node /private/tmp/tidelands-creature-geometry.mjs",
+  "models": {
+    "boar": {
+      "walkingLegs": 4,
+      "claws": 0,
+      "nearMeshes": 11,
+      "nearTriangles": 6704,
+      "finite": true,
+      "bounds": {
+        "min": [
+          -0.800000011920929,
+          0.029999999999999943,
+          -1.6969823837280273
+        ],
+        "max": [
+          0.800000011920929,
+          2.450000047683716,
+          2.0169999599456787
+        ]
+      },
+      "distantMeshes": 3,
+      "distantBoundsDelta": 6.705521971017703e-10,
+      "pincerGapMeters": {
+        "open": [],
+        "atStrike": []
+      }
+    },
+    "crab": {
+      "walkingLegs": 8,
+      "claws": 2,
+      "nearMeshes": 15,
+      "nearTriangles": 9856,
+      "finite": true,
+      "bounds": {
+        "min": [
+          -1.8128266429901123,
+          0.03903302907943729,
+          -1.1998277378082276
+        ],
+        "max": [
+          1.8128266429901123,
+          1.3450000286102295,
+          1.762391664981842
+        ]
+      },
+      "distantMeshes": 3,
+      "distantBoundsDelta": 5.3312223186984816e-8,
+      "pincerGapMeters": {
+        "open": [
+          0.21023796041628637,
+          0.21023796041628637
+        ],
+        "atStrike": [
+          0.0379048162063697,
+          0.0379048162063697
+        ]
+      }
+    }
+  }
+}

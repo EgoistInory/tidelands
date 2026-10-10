@@ -1,0 +1,44 @@
+TAP version 13
+# Subtest: camera retracts before a blocking rock and returns to requested distance when clear
+ok 1 - camera retracts before a blocking rock and returns to requested distance when clear
+  ---
+  duration_ms: 1.213167
+  type: 'test'
+  ...
+# Subtest: camera avoids intervening terrain even when its destination is above ground
+ok 2 - camera avoids intervening terrain even when its destination is above ground
+  ---
+  duration_ms: 0.079792
+  type: 'test'
+  ...
+# Subtest: close scenery turns the framed camera into clear space instead of the player head
+not ok 3 - close scenery turns the framed camera into clear space instead of the player head
+  ---
+  duration_ms: 0.3155
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/camera.test.js:21:1'
+  failureType: 'testCodeFailure'
+  error: 'near-wall camera should use an open side of the player'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/camera.test.js:24:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 2
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 50.2515

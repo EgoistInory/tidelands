@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-04",
+  "status": "smoke_verified",
+  "sha256": {
+    "src/scene.js": "8e6229be4c4b5abaafaed762bc647cdcd27611248c635d1346399d13898854e8",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "tests/meadow.test.js": "9dd8d932e6b24ebf4efa1fe02464939418aac570738602d8e4444f567b6854d7",
+    "tests/visual-review.html": "32175bfdebe421b91956646d17f8611e9e241a9390700be654fd17b3f51ed585"
+  },
+  "changes": [
+    "A separate seeded ground-cover layer adds dense grass patches with thinning edges and per-patch tints",
+    "Original 22595 grass and 1200 flower placements and the external scenery random sequence stay unchanged",
+    "Extra cover is restricted to gentle land, clears landmark footprints and the spawn/keeper/cottage path",
+    "32m regions fade grass height between 50m and 80m and skip batches beyond the fade range; original background grass remains"
+  ],
+  "geometry": {
+    "extraInstances": 86957,
+    "extraRegions": 122,
+    "trianglesPerInstance": 25,
+    "matrixAndTintBytes": 6608732,
+    "extraGeometry": 1,
+    "extraTextures": 0
+  },
+  "tests": {
+    "npmTest": {
+      "passed": 68,
+      "failed": 0
+    },
+    "log": "/private/tmp/tidelands-tests-ground-cover.log",
+    "coverage": [
+      "Original placement hash and random sequence",
+      "Valid slope/height/landmark clearances and instance bounds",
+      "Shared geometry/material/clock and near/far hide/recovery",
+      "Resource depletion and scene lifecycle regression"
+    ]
+  },
+  "fixedView": {
+    "entry": "/tests/visual-review.html",
+    "position": [
+      -70,
+      102
+    ],
+    "time": 240,
+    "cameraDistance": 14,
+    "pitch": 0.29,
+    "viewport": [
+      1280,
+      608
+    ],
+    "devicePixelRatio": 2,
+    "canvasBuffer": [
+      1920,
+      912
+    ],
+    "base": {
+      "calls": 208,
+      "triangles": 1185197,
+      "geometries": 183,
+      "textures": 14,
+      "coverRegions": 0
+    },
+    "detail": {
+      "calls": 214,
+      "triangles": 1339772,
+      "geometries": 183,
+      "textures": 14,
+      "coverRegions": 10
+    },
+    "note": "Same camera/time toggle; geometry allocated before toggle. Count increase is submission cost, not proof of GPU timing.",
+    "close": {
+      "position": [
+        -77.3,
+        110.2
+      ],
+      "distance": 6,
+      "pitch": 0.65,
+      "calls": 71,
+      "triangles": 1272907,
+      "geometries": 183,
+      "textures": 14,
+      "coverRegions": 11
+    },
+    "motion": {
+      "startTime": 240,
+      "endTime": 250,
+      "seconds": 10,
+      "result": "Actual playback control finished; native stills and console checked, no motion video acceptance."
+    }
+  },
+  "responsive": {
+    "entry": "/tests/playthrough.html?mode=fiber",
+    "viewport": [
+      390,
+      844
+    ],
+    "fixturePosition": [
+      -82,
+      93.2
+    ],
+    "result": "Applied viewport to the existing tab and reloaded, then used real Start/camera drag/harvest/bag buttons. Dense grass visible; fibre prompt available, 纤维 +2, bag fibre2, collectible stalks disappear while decorative cover remains. No visible UI overlap in these stills.",
+    "limits": "Viewport simulation only; not a physical phone, multitouch or a mobile performance result."
+  },
+  "enduranceReport": "docs/ground-cover-endurance-sample.json",
+  "warnError": [],
+  "screenshots": "Native tool images inspected; no saved PNG or video",
+  "limitations": [
+    "The meadow has more concentrated growth, but repeated narrow ribbons and broad bare ground remain visible",
+    "Height fade has been checked by code/near-view smoke tests; camera traversal transition still needs actual review",
+    "Still does not prove AAA, full gameplay regression, audio listening, natural locomotion, GPU performance or actual mobile input"
+  ],
+  "m5Complete": false,
+  "aaaComplete": false,
+  "endurance": "Completed separate current-source ten-minute static camp sample; see linked JSON for exact source, result and limitations."
+}

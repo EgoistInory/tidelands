@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-07",
+  "stage": "M5_completed_quest_feedback",
+  "fullGoalAccepted": false,
+  "problem": "After quest6, keeper still said a storm extinguished the lighthouse and explorer still requested repair materials.",
+  "change": "Two quest6 dialogue branches in src/game.js acknowledge completion before the existing prerequisite/reward branches.",
+  "before": {
+    "keeper": {
+      "position": [
+        -57.1,
+        94.4
+      ],
+      "quest": 6,
+      "text": "阿岚：风暴熄灭了归航灯塔。先采些木材和石料，做一把石斧，我们会需要它。"
+    },
+    "explorer": {
+      "position": [
+        -70.6,
+        -190.1
+      ],
+      "quest": 6,
+      "text": "远舟：灯塔需要 12 木材、8 石料和 3 晶石。"
+    }
+  },
+  "validation": {
+    "red": {
+      "command": "node --test tests/game.test.js",
+      "log": "docs/completed-dialogue-test-before.txt",
+      "tests": 24,
+      "pass": 23,
+      "fail": 1
+    },
+    "green": {
+      "command": "node --test tests/game.test.js",
+      "log": "docs/completed-dialogue-test-after.txt",
+      "tests": 24,
+      "pass": 24,
+      "fail": 0,
+      "durationMs": 112.53375
+    },
+    "full": {
+      "command": "npm test",
+      "log": "docs/completed-dialogue-tests.txt",
+      "tests": 99,
+      "pass": 99,
+      "fail": 0,
+      "durationMs": 1558.295166
+    },
+    "syntax": [
+      "node --check src/game.js",
+      "node --check /private/tmp/tidelands-cross-island-harness.mjs"
+    ],
+    "regression": "All three NPCs acknowledge the lit lighthouse on two visits; inventory, quest and kill count unchanged."
+  },
+  "browserAfter": {
+    "mode": "m4",
+    "newFixtureImported": false,
+    "keeperText": "阿岚：归航灯塔又亮起来了。谢谢你，旅人。海上的人有了回家的方向。",
+    "position": [
+      -55.9,
+      95
+    ],
+    "quest": 6,
+    "hp": 100,
+    "kills": 13,
+    "buildings": 1,
+    "food": 2,
+    "saveReloadPreserved": true,
+    "consoleWarningsErrors": [],
+    "explorerDialogueAfterFixVerifiedBy": "Rule regression only; actual return navigation was disrupted by existing camera avoidance/trees and stopped before NPC."
+  },
+  "checkpoint": {
+    "position": [
+      -87.2,
+      -94.7
+    ],
+    "region": "潮汐海岸",
+    "quest": 6,
+    "hp": 100,
+    "stamina": 100,
+    "kills": 13,
+    "buildings": 1,
+    "food": 2,
+    "saved": true,
+    "paused": true,
+    "temporaryTabClosed": true,
+    "saveKey": "tidelands-qa-m4"
+  },
+  "bounds": [
+    "No new gift or material deduction is introduced.",
+    "Dialogue-only fix does not change rendering or navigation. Ten-minute evidence was captured before these two branches changed.",
+    "M1-M4 remain functionally closed; M5 and complete AAA goal remain unaccepted."
+  ],
+  "sourceSha256": {
+    "src/audio.js": "b3ec2bff2a521932823a998fcc86eefd16ae0fead315e7d5324b064d63436ca5",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "cbe3fac0b203391e634adeda6cf1b8a275f86b9eeef33acc970fbb29ab98d33a",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "cbed1c37f16752218a9194fab147269ada0539161f19a349a52754245bc1cf2a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/main.js": "52d9cf124b02915a2c36cfe7510840be3cf6f9d281931c3a511601f0f3641924",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "b9e2bce7ccc6344660752bfe2a596bc112205bc1cd460a9d9241b9ff57d4cca7",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+    "styles.css": "9ebaa347043c3d65b51e19085f923a9c2a06ff370446aae0bab26358c0c98a3b",
+    "tests/playthrough.html": "173f45fbeae700359c819589ad3b5012fb7867102b6e770533b95dc3715ffe94"
+  }
+}

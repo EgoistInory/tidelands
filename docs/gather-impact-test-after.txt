@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: gather commits inventory and depletion once at the rendered reach peak
+ok 1 - gather commits inventory and depletion once at the rendered reach peak
+  ---
+  duration_ms: 14.44525
+  type: 'test'
+  ...
+# Subtest: gather reserves interaction cooldown and locks the starting tool yield
+ok 2 - gather reserves interaction cooldown and locks the starting tool yield
+  ---
+  duration_ms: 1.227542
+  type: 'test'
+  ...
+# Subtest: leaving range or losing the resource before impact awards nothing
+ok 3 - leaving range or losing the resource before impact awards nothing
+  ---
+  duration_ms: 1.692833
+  type: 'test'
+  ...
+# Subtest: expired, cancelled and replaced-save gathers never commit; NPCs remain immediate
+ok 4 - expired, cancelled and replaced-save gathers never commit; NPCs remain immediate
+  ---
+  duration_ms: 6.533875
+  type: 'test'
+  ...
+# Subtest: swimming cannot start or finish a hidden gathering animation
+ok 5 - swimming cannot start or finish a hidden gathering animation
+  ---
+  duration_ms: 1.077583
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 82.748166

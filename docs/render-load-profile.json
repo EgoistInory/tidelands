@@ -1,0 +1,85 @@
+{
+  "date": "2026-09-29",
+  "url": "http://127.0.0.1:4190/tests/render-load.html?suite=1&profile=1",
+  "canvas": [
+    1920,
+    915
+  ],
+  "drawsPerView": 60,
+  "samples": [
+    {
+      "name": "coast",
+      "mainCalls": 428,
+      "creatureMainSubmissions": 344,
+      "creatureShadowSubmissions": 32,
+      "geometries": 438,
+      "textures": 3,
+      "programs": 10
+    },
+    {
+      "name": "forest",
+      "mainCalls": 294,
+      "creatureMainSubmissions": 217,
+      "creatureShadowSubmissions": 29,
+      "geometries": 702,
+      "textures": 3,
+      "programs": 12
+    },
+    {
+      "name": "highlands",
+      "mainCalls": 571,
+      "creatureMainSubmissions": 451,
+      "creatureShadowSubmissions": 126,
+      "geometries": 842,
+      "textures": 3,
+      "programs": 12
+    },
+    {
+      "name": "amber",
+      "mainCalls": 740,
+      "creatureMainSubmissions": 637,
+      "creatureShadowSubmissions": 207,
+      "geometries": 967,
+      "textures": 3,
+      "programs": 12
+    },
+    {
+      "name": "coast-repeat",
+      "mainCalls": 428,
+      "creatureMainSubmissions": 344,
+      "creatureShadowSubmissions": 32,
+      "geometries": 967,
+      "textures": 3,
+      "programs": 12
+    },
+    {
+      "name": "forest-repeat",
+      "mainCalls": 294,
+      "creatureMainSubmissions": 217,
+      "creatureShadowSubmissions": 29,
+      "geometries": 967,
+      "textures": 3,
+      "programs": 12
+    },
+    {
+      "name": "highlands-repeat",
+      "mainCalls": 571,
+      "creatureMainSubmissions": 451,
+      "creatureShadowSubmissions": 126,
+      "geometries": 967,
+      "textures": 3,
+      "programs": 12
+    },
+    {
+      "name": "amber-repeat",
+      "mainCalls": 740,
+      "creatureMainSubmissions": 637,
+      "creatureShadowSubmissions": 207,
+      "geometries": 967,
+      "textures": 3,
+      "programs": 12
+    }
+  ],
+  "consoleErrors": [],
+  "limits": "Two deterministic circuits, frozen simulation, not long-run memory or frame-rate acceptance. renderer.info calls describe main pass; shadow callbacks reported separately."
+}

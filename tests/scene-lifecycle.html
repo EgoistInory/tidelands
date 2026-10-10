@@ -1,0 +1,45 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>换档资源生命周期验收</title>
+<style>body{margin:0;background:#183339;color:white;font:13px monospace}canvas{width:100vw;height:60vh;display:block}output{display:block;white-space:pre-wrap}</style>
+<canvas></canvas><output id="result">实际渲染器换档测试运行中；不读取或写入用户存档。</output>
+<script type="module">
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain} from '../src/world.js';
+import {freshGame,restore,nearest} from '../src/game.js';
+const output=document.getElementById('result');
+try{
+  const response=await fetch('./fixtures/camp-upgraded.json');if(!response.ok)throw new Error(`HTTP ${response.status}`);
+  const camp=await response.text(),world=createWorld(),view=new WorldView(document.querySelector('canvas'),world),samples=[];
+  let cycle=0;
+  const seenGeometry=new Map(),firstFresh=new Set(),watched=new WeakSet();
+  function observeGeometry(){
+    view.scene.traverse(o=>{
+      if(!o.isMesh||watched.has(o))return;watched.add(o);
+      let category='scenery';
+      for(let p=o;p;p=p.parent){if(p===view.player)category='player';if([...view.creatures.values()].includes(p))category='creature';if([...view.buildings.values()].includes(p))category='building';}
+      const record=()=>{if(!seenGeometry.has(o.geometry)){const detail={category,type:o.geometry.type,firstCycle:cycle};seenGeometry.set(o.geometry,detail);o.geometry.addEventListener('dispose',()=>seenGeometry.delete(o.geometry));}};
+      const before=o.onBeforeRender,shadow=o.onBeforeShadow;
+      o.onBeforeRender=function(...args){record();before.apply(this,args);};
+      o.onBeforeShadow=function(...args){record();shadow.apply(this,args);};
+    });
+  }
+  function step(){
+    const kind=cycle%2?'camp':'fresh',state=kind==='camp'?restore(camp):freshGame();
+    // Use one fixed viewpoint and clock so differences come from save contents.
+    state.player.x=-70;state.player.z=102;state.time=120;
+    view.sync(state);view.camera.position.set(-65,terrain(-70,102)+18,126);
+    observeGeometry();
+    for(let i=0;i<60;i++)view.draw(state,nearest(state,world.objects),null,false,1/60);
+    const {memory,render,programs}=view.renderer.info;
+    if(cycle===0)for(const geometry of seenGeometry.keys())firstFresh.add(geometry);
+    const retainedSinceFirst=[...seenGeometry].filter(([geometry,detail])=>!firstFresh.has(geometry)&&detail.category!=='creature').map(([,detail])=>detail);
+    samples.push({cycle,kind,retainedSinceFirst:kind==='fresh'?retainedSinceFirst:undefined,buildings:view.buildings.size,creatures:view.creatures.size,cacheTypes:view.creatureGeometryCache.size,cacheReferences:[...view.creatureGeometryCache.values()].reduce((n,v)=>n+v.references,0),geometries:memory.geometries,textures:memory.textures,programs:programs.length,calls:render.calls});
+    cycle++;
+    const stable=['fresh','camp'].every(kind=>{const same=samples.filter(s=>s.kind===kind);return same.every(s=>['geometries','textures','programs','calls','cacheReferences'].every(k=>s[k]===same[0][k]));});
+    const repeated=samples.filter(s=>s.cycle>=2);
+    const stableAfterFirstPair=cycle===12&&['fresh','camp'].every(kind=>{const same=repeated.filter(s=>s.kind===kind);return same.every(s=>['geometries','textures','programs','calls','cacheReferences'].every(k=>s[k]===same[0][k]));});
+    output.textContent=JSON.stringify({complete:cycle===12,stable,stableAfterFirstPair,samples,retainedSinceFirst,note:'12次交替换档，每次60次批量draw；保留首次采样差异，另比较首次往返后的10次。资源计数稳定不代表总堆/GPU字节或长期无泄漏'},null,2);
+    if(cycle<12)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}catch(error){output.textContent=error.stack;console.error(error);}
+</script></html>

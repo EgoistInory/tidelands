@@ -1,0 +1,283 @@
+{
+  "date": "2026-10-08",
+  "status": "limited_gather_timing_batch_verified",
+  "fullGoalComplete": false,
+  "flow": "Local production entry -> E/resource button -> inventory/depletion/gather cue at reach peak; pause or attack before impact -> no late reward.",
+  "implementation": {
+    "duration": 0.42,
+    "impact": 0.21,
+    "cooldown": 0.45,
+    "reach": 7,
+    "legacyImmediateRuleApiPreserved": true,
+    "yieldLockedAtStart": true,
+    "pendingSaved": false,
+    "cancelOn": [
+      "pause/panels",
+      "equipment/build selection",
+      "accepted attack",
+      "respawn",
+      "WebGL context loss"
+    ],
+    "swimming": "refuse start or finish because current swimming rig has no gathering pose",
+    "committedAttackRecovery": "gather waits until .45-second attack recovery ends; .6-second attack cooldown preserved"
+  },
+  "tests": {
+    "red": {
+      "pass": 0,
+      "fail": 4,
+      "log": "docs/gather-impact-test-before.txt"
+    },
+    "green": {
+      "pass": 5,
+      "fail": 0,
+      "log": "docs/gather-impact-test-after.txt"
+    },
+    "full": {
+      "pass": 110,
+      "fail": 0,
+      "skipped": 0,
+      "log": "docs/gather-impact-full-tests.txt"
+    },
+    "syntax": [
+      "src/main.js",
+      "src/game.js",
+      "src/character.js",
+      "src/action-timing.js"
+    ]
+  },
+  "sourceSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "b3ec2bff2a521932823a998fcc86eefd16ae0fead315e7d5324b064d63436ca5",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "42d0fce139ed1d5a53e785b6f6b33b4b8d7a0c748148040d62640209b0e33a66",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "browser": {
+    "provider": "CUA Codex in-app browser",
+    "base": "http://127.0.0.1:4190/tests/playthrough.html?mode=stone",
+    "fixture": true,
+    "fixtureInventory": "fresh hand/no axe; enemies dead; isolated stone save, not ordinary campaign",
+    "diagnostic": "test-only native WorldView.draw / GameAudio.effect wrappers; 550ms input window, read visible JSON",
+    "before": {
+      "firstFrame": {
+        "wallMs": 11.3,
+        "age": 0.015,
+        "stone": 2,
+        "shoulder": -0.1791,
+        "depleted": "starter-5"
+      },
+      "peak": {
+        "wallMs": 208.9,
+        "age": 0.2147,
+        "shoulder": -1.599
+      },
+      "gatherCue": {
+        "wallMs": 0.6,
+        "scheduled": true,
+        "age": 223.9367,
+        "ageNote": "old view.gatherAt=-100 sentinel before it is assigned; not actual elapsed time"
+      }
+    },
+    "desktop": {
+      "viewport": "Default browser viewport; exact dimensions were not queried in this run",
+      "lastWindup": {
+        "wallMs": 190.9,
+        "age": 0.1999,
+        "stone": 0,
+        "depleted": {},
+        "shoulder": -1.5954
+      },
+      "firstImpact": {
+        "wallMs": 207.1,
+        "age": 0.2146,
+        "stone": 2,
+        "shoulder": -1.5991
+      },
+      "gatherCue": {
+        "wallMs": 203.9,
+        "age": 0.2146,
+        "scheduled": true
+      },
+      "consoleWarnError": []
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "lastWindup": {
+        "wallMs": 194.1,
+        "age": 0.2016,
+        "stone": 0,
+        "shoulder": -1.5968
+      },
+      "firstImpact": {
+        "wallMs": 209.9,
+        "age": 0.2166,
+        "stone": 2,
+        "shoulder": -1.5981
+      },
+      "gatherCue": {
+        "wallMs": 207.1,
+        "age": 0.2166,
+        "scheduled": true
+      },
+      "pauseCancel": {
+        "first": {
+          "wallMs": 3.7,
+          "age": 0.0153,
+          "stone": 0,
+          "shoulder": -0.1827
+        },
+        "last": {
+          "wallMs": 539.3,
+          "stone": 0,
+          "depleted": {},
+          "shoulder": 0,
+          "age": 220.3512
+        },
+        "ageNote": "cancelled gatherAt=-100 sentinel, not duration",
+        "effects": [],
+        "bagAfterResume": {
+          "stone": 0,
+          "berry": 3
+        }
+      },
+      "attackCancel": {
+        "swingWallMs": 102.8,
+        "lastWallMs": 541.9,
+        "stone": 0,
+        "depleted": {},
+        "gatherCueCount": 0,
+        "swingScheduled": true,
+        "resultTextRead": false
+      },
+      "twoKeys": {
+        "firstObservedAge": 0.1186,
+        "stoneBefore": 0,
+        "impactAge": 0.2186,
+        "stoneAfter": 2,
+        "gatherCueCount": 1,
+        "lastAge": 0.6519,
+        "stoneFinal": 2,
+        "note": "sequential E keys about .1s apart, not simultaneous multitouch; second key resets observer only"
+      },
+      "consoleWarnError": []
+    },
+    "routing": "Browser plugin skill not listed; existing CUA controlled browser and its documented Playwright APIs used. No external browser/dependencies."
+  },
+  "delivery": {
+    "archive": "dist/tidelands-m5-2026-10-08-gather.zip",
+    "bytes": 6303798,
+    "entries": 35,
+    "files": 34,
+    "sha256": "85652535f557cd969a0187bab03a828df6182250160442fb7ec23192c8df6aab",
+    "verification": "docs/tidelands-m5-2026-10-08-gather-verification.json",
+    "browserLaunchVerified": true,
+    "url": "http://127.0.0.1:54541/",
+    "extracted": "/private/tmp/tidelands-delivery-i01msrue/tidelands-local",
+    "fixture": false,
+    "freshOrigin": true,
+    "start": {
+      "position": [
+        -70,
+        102
+      ],
+      "quest": 0,
+      "berry": 3,
+      "stone": 0
+    },
+    "normalActions": "Start -> 20d/10w -> 25d (camera avoidance changed heading) -> E awarded stone2 -> bag -> mobile save/reload -> visible berry button awarded berry+2 -> save/reload -> bag stone2/berry5. No imported or injected inventory.",
+    "positionAfter": [
+      -69.9,
+      112.7
+    ],
+    "hpVisible": 100,
+    "quest": 0,
+    "buildings": 0,
+    "kills": 0,
+    "finalInventory": {
+      "wood": 0,
+      "stone": 2,
+      "berry": 5
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "scrollWidth": 390,
+      "canvas": [
+        390,
+        844
+      ]
+    },
+    "consoleWarnError": [],
+    "limits": "resource and save/reload smoke only; no NPC arrival, whole campaign, live battle, export, or endurance in this package"
+  },
+  "failures": [
+    {
+      "kind": "atomic_patch_context",
+      "where": "main openPanel and README verifier paragraph",
+      "result": "no changes on failure; read exact context, corrected full production line; README switched to asserted targeted string replacement"
+    },
+    {
+      "kind": "water_test_fixture",
+      "expected": "water at (0,0)",
+      "actual": "terrain land; rejected by range instead",
+      "resolution": "saved failed 4/5 and 109/110 logs, used (390,390) with explicit terrain assertion; final5/5 and110/110 pass",
+      "logs": [
+        "docs/gather-impact-water-fixture-failure.txt",
+        "docs/gather-impact-full-fixture-failure.txt"
+      ]
+    },
+    {
+      "kind": "sandbox_local_bind",
+      "message": "Operation not permitted",
+      "resolution": "authorized elevation for localhost-only temporary serve.py --port0; launched54541 then intentionally stopped, exit130 KeyboardInterrupt"
+    },
+    {
+      "kind": "search_wrong_cwd",
+      "message": "tests/game.test.js and src/world.js unavailable from workspace parent",
+      "resolution": "scoped subsequent command to tidelands; files read successfully"
+    },
+    {
+      "kind": "checkpoint_relative_parent",
+      "message": "Path(.) parent remained current directory, so precursor path did not exist",
+      "result": "README/review/game progress/roadmap/verification written before failure; only precursor append missing",
+      "resolution": "verified existing precursor, append only with absolute path; do not repeat completed writes"
+    }
+  ],
+  "cleanup": {
+    "temporaryTabsClosed": [
+      "11",
+      "12"
+    ],
+    "viewportReset": true,
+    "temporaryServer54541Stopped": true,
+    "developmentServer4190": 92409,
+    "ordinaryM1M4NotOpened": true
+  },
+  "limits": [
+    "Animation maximum reach matches rule/cue scheduling; not spatial hand/tool contact or natural whole-body acceptance.",
+    "Audio scheduled only, not listened.",
+    "Equipment/respawn/WebGL cancellation and water/out-of-range boundaries have code/rule coverage; browser exercised pause and accepted attack only.",
+    "Only stone timing fixture; other resources covered by common path and normal berry UI.",
+    "No new saved PNG/video or current performance sample; old samples/ZIPs remain historical source versions.",
+    "M5 visual/model/environment/camera/audio and device/GPU/endurance acceptance remain incomplete."
+  ],
+  "next": "Move to actual sound/mix review and broader vegetation/shoreline layers, then representative exploration/battle performance; retain hourly2048."
+}

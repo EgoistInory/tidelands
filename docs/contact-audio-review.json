@@ -1,0 +1,174 @@
+{
+  "date": "2026-10-04",
+  "status": "smoke_verified_quality_gaps_remain",
+  "fullGoalComplete": false,
+  "sha256": {
+    "src/character.js": "f1385a2f701e465e3b0e28bb21397606a7887b2209d51485a7a37b7397f13188",
+    "src/scene.js": "ef24f7266be81533bc9a535c825478caa0c319bc8e19cbaa399604c55ad400ba",
+    "src/main.js": "be2759df76430daa74c99405efb4cbd2b65e6382583f9662cc098128be733cfb",
+    "src/game.js": "54cb5d150120efe5ad751b5cda045d6a61a591620f45e340b33028ea71aa402e",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "tests/character.test.js": "de9769d4a44f7b78163254c65d474572e62fd874e87a32c7529863c7b6912131",
+    "tests/scene.test.js": "01b0e9f769e29b6729dba245b1eab3846af5255840c57451571a868cacf51024",
+    "tests/locomotion.html": "6e3fb9dba15585e4fc2fa7409c5f47ea11794f01a297526911d4e8e4031f0d7d",
+    "tests/playthrough.html": "c00befbff77705398c4dbc82132a4de33771b186ed4a2562af9c334f85b7e3fd",
+    "vendor/three.module.min.js": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+    "tests/locomotion-audit.js": "3a049682280705b2a58ea1898e8abf3350e366f641ae1e5748b9c42f47f8de33",
+    "src/audio.js": "6e2cdcef0d1557515ee8f9151e66bbb1cba5c5546270e011bf31c1e0037f7fe6",
+    "tests/audio.test.js": "859aaaeecd683ef0d9da9a2f3bf0643f66c86e21ed0b06e35da3245963affbef"
+  },
+  "changes": [
+    "Production rig counts actual false-to-true planned contacts; cache reset/first placement do not fabricate landings",
+    "Main frame updates audio after drawing the current pose, passing the cumulative footfall count",
+    "Land steps follow newly completed contacts including idle recovery; repeated counts, initialization, pause/resume and teleports do not replay events; per-frame scheduling capped at two",
+    "Swimming splash spacing retained at 1.7m; standalone distance-only walking fallback uses 0.8m",
+    "Performance QA displays attempted versus actually scheduled WebAudio steps and current contact counter; no runtime asset or paid service"
+  ],
+  "tests": {
+    "passed": 82,
+    "failed": 0,
+    "log": "/private/tmp/tidelands-tests-contact-audio-final.log",
+    "syntax": [
+      "src/character.js",
+      "src/audio.js",
+      "src/main.js",
+      "tests/playthrough.html outer and generated setup modules"
+    ],
+    "coverage": [
+      "Production rig ankle heights versus actual audio calls at 30/60/144fps, 2.4/7/12m/s",
+      "Replay/pause/teleport suppression and stationary recovery contact can sound; coast/grass/splash routing",
+      "Existing cadence/IK/equipment/game and audio voice-limit/mute/menu/failure/cleanup regressions"
+    ],
+    "durationMs": 1315.480625
+  },
+  "offlineAudit": "docs/contact-audio-gap-audit.json",
+  "limitations": [
+    "Scheduled WebAudio sources and unit contact counts are wiring evidence, not actual sound listening or tone quality",
+    "Prior native running/turn stills are historical with their source hashes; pose math unchanged by this counter-only character change",
+    "No current long/GPU/device/continuous exploration/live combat/motion-video acceptance",
+    "Batched movement cache fallback and simple models, toe contact/high-speed swing, audio/sky/final M1-M5 delivery gaps remain"
+  ],
+  "browser": {
+    "url": "http://127.0.0.1:4190/tests/playthrough.html?mode=performance",
+    "nativeViewport": [
+      1280,
+      720
+    ],
+    "sample": {
+      "complete": true,
+      "targetMs": 30000,
+      "durationMs": 30416.8,
+      "activeMs": 30000.5,
+      "frames": 1800,
+      "medianMs": 16.7,
+      "p95Ms": 17.7,
+      "maxMs": 18.7,
+      "over50Ms": 0,
+      "hidden": false,
+      "viewport": [
+        1280,
+        672
+      ],
+      "devicePixelRatio": 2,
+      "canvasBuffer": [
+        1920,
+        1008
+      ],
+      "heapSupported": true,
+      "checkpoints": [
+        {
+          "activeMs": 0,
+          "frames": 0,
+          "daytime": "第 10 天 · 夜晚",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 70405431
+        },
+        {
+          "activeMs": 30000.5,
+          "frames": 1800,
+          "daytime": "第 11 天 · 夜晚",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 62623065
+        }
+      ]
+    },
+    "actualInput": [
+      "12 intermittent Shift+S key presses",
+      "12 intermittent A key presses",
+      "space with sword selected: 未命中 · 靠近目标再攻击"
+    ],
+    "positionInitial": [
+      -45.7,
+      87.4
+    ],
+    "positionAfterSprint": [
+      -44.4,
+      96.2
+    ],
+    "positionFinal": [
+      -49.4,
+      96.9
+    ],
+    "staminaAfterSprint": 89,
+    "audioReadAfterMovement": {
+      "stepsAttempted": 3,
+      "stepsScheduled": 3,
+      "footfallCount": 3,
+      "context": "running",
+      "active": true
+    },
+    "audioFinalRunningRead": {
+      "stepsAttempted": 6,
+      "stepsScheduled": 6,
+      "footfallCount": 6,
+      "context": "running",
+      "active": true
+    },
+    "stateAtFinalRead": {
+      "daytime": "第 11 天 · 午后",
+      "hp": 100,
+      "stamina": 100,
+      "buildings": 3,
+      "kills": 0,
+      "save": "已保存"
+    },
+    "warnErrorLogs": [],
+    "stillInspected": true,
+    "savedScreenshotOrMotionVideo": false,
+    "actualAudioListening": false,
+    "saveConfirmation": "存档已保存。",
+    "pausedAndClosed": true,
+    "qaMode": "performance",
+    "productionAndJourneySaveUntouched": true,
+    "limitations": [
+      "Short rAF/JS heap sample excludes paused frames; not GPU, endurance, actual device or continuous exploration/combat proof",
+      "Intermittent key steps can reset foot cache; no held movement claim",
+      "Audio diagnostic reflects the last running update; paused activity is covered by unit tests, not this snapshot",
+      "Scheduled source counts verify WebAudio wiring; no listening or tone-quality acceptance"
+    ]
+  },
+  "checkpoint": {
+    "ordinaryUsageAllowed": true,
+    "primaryUsedPercent": 97,
+    "secondaryUsedPercent": 95,
+    "goalStatus": "usageLimited",
+    "goalStatusIsHistorical": true,
+    "goalNotRewritten": true,
+    "resetCreditsAvailableAndUntouched": 2,
+    "automationRetained": "2048",
+    "loopbackService": {
+      "pid": 45694,
+      "address": "127.0.0.1:4190"
+    },
+    "agentBrowserTabsRemaining": 0,
+    "sourceHashesVerified": 19
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-08",
+  "hypothesis": "Production strike previously applied damage, hit audio and feedback immediately although the .45s arm animation peaks .225s later. A transient game-clock pending swing can commit at that rendered peak without changing damage values, range or the .6s input cooldown.",
+  "design": "Bounded attack-only batch. Preserve legacy immediate rule API; defer production UI attack, lock starting damage, evaluate live enemy range at impact, commit once, cancel on pause/load/new journey/respawn/equipment change. Shared animation/impact duration prevents drift. Gather remains a separate follow-up.",
+  "redTest": "docs/attack-impact-test-before.txt",
+  "greenRulesTest": "docs/attack-impact-test-after.txt",
+  "beforeMainSha256": "7c331195e235188a49b93dc26044e2d70754c6bd4fcc37f44449a3ce25dd62d7",
+  "sourceBeforeUiChange": {
+    "src/main.js": "7c331195e235188a49b93dc26044e2d70754c6bd4fcc37f44449a3ce25dd62d7",
+    "src/game.js": "9c1083571eb241b2ab8a7fe132ed0bb02033d9d2fa3f3463c0dc8044d00013eb",
+    "src/character.js": "a65d0c730eb8ec579a229146d685f4c9dabb06d19ecae1f47d684ca0f9716981",
+    "src/audio.js": "b3ec2bff2a521932823a998fcc86eefd16ae0fead315e7d5324b064d63436ca5",
+    "src/action-timing.js": "47cf01d3583137e5eee2a983c9dd1a06928837dbea6241fd1e717dac4bd4f5fc",
+    "tests/playthrough.html": "9151315fb5a233d1b90ab02cf9e9784e44b3e9b248c7b693d17319f2f6ff79ad",
+    "tests/attack-impact.test.js": "1ce92a8535e6e5fc6f2bd900077c911e6b289d0d44783ac7827b069ed8a99730"
+  },
+  "toolFailure": {
+    "action": "first attempted apply_patch production header",
+    "reason": "Incomplete import context did not match; patch failed atomically. Read actual game import and verified no timing file existed, then applied precise patch.",
+    "userDataChanged": false
+  },
+  "m5Complete": false
+}

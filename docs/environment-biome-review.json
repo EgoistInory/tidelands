@@ -1,0 +1,294 @@
+{
+  "date": "2026-10-08",
+  "status": "limited_environment_batch_verified",
+  "changes": [
+    "Ground material retains regional vertex colours instead of largely replacing them with the dry CC0 albedo. Texture luminance, normals, roughness and existing height/slope fade remain.",
+    "No additional geometry, texture, light, foliage placement, gameplay or save change.",
+    "Fixed-view QA adds fog cape and shallow bay selections with no storage reads/writes."
+  ],
+  "design": "Bounded follow-up under the user-authorized autonomous M5 batches; retain terrain, resource and random-placement rules and avoid rebuilding a rendering system.",
+  "beforeReport": "docs/environment-biome-before.json",
+  "tests": {
+    "groundSurface": {
+      "passed": 4,
+      "failed": 0,
+      "log": "docs/environment-biome-ground-tests.txt"
+    },
+    "full": {
+      "passed": 101,
+      "failed": 0,
+      "log": "docs/environment-biome-full-tests.txt"
+    },
+    "syntax": "node --check src/ground-surface.js exited 0"
+  },
+  "sourceSha256": {
+    "src/audio.js": "b3ec2bff2a521932823a998fcc86eefd16ae0fead315e7d5324b064d63436ca5",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "40655ad14741d5fa5ceff50a395ace8ad7472dbe0ac1ca8ef414566cf52a4327",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "cbed1c37f16752218a9194fab147269ada0539161f19a349a52754245bc1cf2a",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "7c331195e235188a49b93dc26044e2d70754c6bd4fcc37f44449a3ce25dd62d7",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "42d0fce139ed1d5a53e785b6f6b33b4b8d7a0c748148040d62640209b0e33a66",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "qaSha256": {
+    "tests/visual-review.html": "9beccda412e2f7249fabc560ef85aed345f765c6b56ae5c28cc9ac604b89a547",
+    "tests/playthrough.html": "173f45fbeae700359c819589ad3b5012fb7867102b6e770533b95dc3715ffe94"
+  },
+  "fixedViews": {
+    "entry": "http://127.0.0.1:4190/tests/visual-review.html",
+    "storageUsed": false,
+    "meadow": {
+      "position": [
+        -77.3,
+        110.2
+      ],
+      "time": 240,
+      "surfaceStatus": "ready",
+      "rockStatus": "ready",
+      "calls": 232,
+      "triangles": 1356881,
+      "geometries": 199,
+      "textures": 14,
+      "coverRegions": 10,
+      "viewport": [
+        1280,
+        564
+      ],
+      "canvasBuffer": [
+        1920,
+        846
+      ],
+      "dpr": 2
+    },
+    "forest": {
+      "position": [
+        145,
+        -25
+      ],
+      "time": 240,
+      "surfaceStatus": "ready",
+      "rockStatus": "ready",
+      "calls": 186,
+      "triangles": 1352691,
+      "geometries": 242,
+      "textures": 14,
+      "coverRegions": 15,
+      "viewport": [
+        1280,
+        564
+      ],
+      "canvasBuffer": [
+        1920,
+        846
+      ],
+      "dpr": 2
+    },
+    "highland": {
+      "position": [
+        -120,
+        -210
+      ],
+      "time": 240,
+      "surfaceStatus": "ready",
+      "rockStatus": "ready",
+      "calls": 74,
+      "triangles": 781498,
+      "geometries": 199,
+      "textures": 14,
+      "coverRegions": 8,
+      "viewport": [
+        1280,
+        564
+      ],
+      "canvasBuffer": [
+        1920,
+        846
+      ],
+      "dpr": 2
+    },
+    "shallows": {
+      "position": [
+        105,
+        175
+      ],
+      "time": 240,
+      "surfaceStatus": "ready",
+      "rockStatus": "ready",
+      "calls": 238,
+      "triangles": 1361140,
+      "geometries": 242,
+      "textures": 14,
+      "coverRegions": 15,
+      "viewport": [
+        1280,
+        564
+      ],
+      "canvasBuffer": [
+        1920,
+        846
+      ],
+      "dpr": 2
+    },
+    "shore": {
+      "position": [
+        -90,
+        145
+      ],
+      "time": 240,
+      "surfaceStatus": "ready",
+      "rockStatus": "ready",
+      "calls": 234,
+      "triangles": 1291951,
+      "geometries": 242,
+      "textures": 14,
+      "coverRegions": 7,
+      "viewport": [
+        1280,
+        564
+      ],
+      "canvasBuffer": [
+        1920,
+        846
+      ],
+      "dpr": 2
+    },
+    "midnightMeadow": {
+      "position": [
+        -77.3,
+        110.2
+      ],
+      "time": 0,
+      "skyLight": 0,
+      "result": "Dark scene remains recognizable in the inspected still; no night gameplay or visibility acceptance inferred."
+    },
+    "mobileForest": {
+      "position": [
+        145,
+        -25
+      ],
+      "time": 240,
+      "surfaceStatus": "ready",
+      "rockStatus": "ready",
+      "calls": 73,
+      "triangles": 1022848,
+      "geometries": 242,
+      "textures": 14,
+      "coverRegions": 15,
+      "viewport": [
+        390,
+        599
+      ],
+      "canvasBuffer": [
+        585,
+        898
+      ],
+      "dpr": 1
+    },
+    "visualFinding": "Inspected desktop noon before/after meadow and forest: grassland is greener and the forest no longer shares the earlier yellow tint. High ridge retains grey/olive slope colour and shallow bay its drier colour; sand remains pale. This is a visual review finding, not a quantitative colour or AAA score.",
+    "countsBeforeAfter": "Meadow 232 calls/1356881 triangles/199 geometries/14 textures, forest 186/1352691/242/14 unchanged at identical camera/time."
+  },
+  "motion": {
+    "desktopForest": {
+      "frames": 601,
+      "elapsedMs": 10000.034,
+      "medianMs": 16.7,
+      "p95Ms": 17.9,
+      "maxMs": 18.6,
+      "over50ms": 0,
+      "hidden": false,
+      "timeRange": [
+        240,
+        250
+      ]
+    },
+    "mobileForest": {
+      "frames": 601,
+      "elapsedMs": 10000.0,
+      "medianMs": 16.7,
+      "p95Ms": 18.1,
+      "maxMs": 18.7,
+      "over50ms": 0,
+      "hidden": false,
+      "timeRange": [
+        240,
+        250
+      ]
+    },
+    "scope": "QA playback is a fixed-camera wind/daylight sample; not continuous exploration, GPU time or natural character-motion acceptance."
+  },
+  "warnError": [],
+  "delivery": {
+    "archive": "dist/tidelands-m5-2026-10-08-environment.zip",
+    "archiveBytes": 6302499,
+    "archiveEntries": 34,
+    "checkedFiles": 33,
+    "sha256": "425e9c09c15e972db5f92a47f50d53b9a11e6a68c9c76d712a83c3bb880a2b27",
+    "archiveVerification": "docs/tidelands-m5-2026-10-08-environment-verification.json",
+    "extractedPath": "/private/tmp/tidelands-delivery-il_z_p96/tidelands-local",
+    "browserOrigin": "http://127.0.0.1:50520/",
+    "browserLaunchVerified": true,
+    "normalNewGame": true,
+    "seedOrImportUsed": false,
+    "actions": [
+      "Start normal journey at [-70,102], HP100, food3, quest0, buildings0, kills0.",
+      "Actual keyboard input reaches [-57.9,100.5]; E dialogue obtains quest1 荒野的第一把工具.",
+      "Further input reaches [-57.7,102.0]; at viewport390x844 click real E采集木材, 木材+2 and bag wood2.",
+      "Save panel reports 存档已保存; reload Continue restores quest1, wood2, food3, HP100 and coordinates[-57.7,102.0], buildings0/kills0."
+    ],
+    "restoredViewport": [
+      390,
+      844
+    ],
+    "restoredCanvasBuffer": [
+      390,
+      844
+    ],
+    "restoredScrollWidth": 390,
+    "warnError": [],
+    "temporaryServerStopped": true,
+    "stopResult": "Intentional Ctrl+C, exit130 KeyboardInterrupt; not a server failure.",
+    "limits": "Normal first-path/save smoke only. No mainline, complete delivery export or long-run reacceptance claimed."
+  },
+  "screenshots": "Tool screenshots inspected; no saved PNG or video artifact.",
+  "limitations": [
+    "Sparse/repeated vegetation, simple crystals, figures and flat terrain remain visibly below the final art target.",
+    "Fixed-view isolated characters may show initial foot/ground offset; this batch did not address full-body footing or action intersections.",
+    "Near-obstacle camera jumps/occlusion, attack/gather impact timing and actual audio listening remain.",
+    "Current source has only short samples; previous ten-minute samples bind previous source hashes. No real-device, GPU or leak-proof claim."
+  ],
+  "m5Complete": false,
+  "aaaComplete": false,
+  "next": "Attack/gather impact and audio feedback timing diagnosis, then environment density/variety and representative performance/delivery. Do not repeat tint polishing indefinitely.",
+  "currentGameFrameSample": "docs/environment-biome-frame-sample.json",
+  "cleanup": {
+    "agentTabsClosed": [
+      5,
+      6,
+      7
+    ],
+    "viewportReset": true,
+    "developmentServer": "4190 PID92409 retained; recheck next run",
+    "m1Checkpoint": {
+      "position": [
+        -62.4,
+        93.7
+      ],
+      "hp": 100,
+      "quest": 1,
+      "buildings": 0,
+      "kills": 0,
+      "savedAndPaused": true
+    },
+    "m4Save": "Not opened or modified in this batch."
+  }
+}

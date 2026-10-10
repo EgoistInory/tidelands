@@ -1,0 +1,31 @@
+{
+  "kind": "local-delivery-archive-check",
+  "passed": true,
+  "archiveSha256": "61e173d0bf869afda5cfa674a6a675780b9453a8389baabbd33948fb12bc90ac",
+  "checkedFiles": 32,
+  "archiveEntries": 33,
+  "extractedPath": "/private/tmp/tidelands-delivery-7x83bv6m/tidelands-local",
+  "invalidPortsRejected": [
+    -1,
+    65536
+  ],
+  "browserLaunchVerified": true,
+  "browserSmoke": {
+    "url": "http://127.0.0.1:52023/",
+    "viewport": [1280, 720],
+    "startPosition": [-70, 102],
+    "after12W": [-70.8, 97],
+    "saveAndReloadPosition": [-70.8, 97],
+    "quest": "归航的灯火",
+    "hp": 100,
+    "buildings": 0,
+    "invalidImportMessage": "导入失败：存档角色数据无效",
+    "consoleWarningsAndErrors": [],
+    "localAssetsHttp200": true,
+    "temporaryServerStopped": true,
+    "downloadFileVerified": false,
+    "downloadToolLimitation": "Two waitForEvent(download) attempts timed out although export toast appeared; no file path was returned. Current export Blob is checked separately in the imports harness.",
+    "longWaitIsEnduranceEvidence": false
+  },
+  "fullGoalComplete": false
+}

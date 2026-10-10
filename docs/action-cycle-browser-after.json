@@ -1,0 +1,82 @@
+{
+  "recordedAt": "2026-10-07T14:28:58.370418+00:00",
+  "sourceSha256": {
+    "src/character.js": "40655ad14741d5fa5ceff50a395ace8ad7472dbe0ac1ca8ef414566cf52a4327",
+    "tests/character.test.js": "45be5b4c91f6f00a779a446f9a2f9773a60c31707ac0bba4f2b6a14e8b152def",
+    "tests/locomotion.html": "8e31df1bcd057895ce2527b43076873982ee35834847b8da33844ad583bc4c6f"
+  },
+  "method": "Public DOM from actual production model harness; stationary synthetic one-second cycles; each twelve-second run includes recovery. Not live combat. Selected controls via CUA, no injected state.",
+  "cycles": [
+    {
+      "equipment": "sword",
+      "gesture": "attack-cycle",
+      "complete": true,
+      "elapsedSeconds": 12,
+      "frames": 795,
+      "actionFrames": 720,
+      "maxArmFrameDelta": 0.2148738126096238,
+      "maxStanceDrift": 5.613217783960923e-16,
+      "maxSoleHeightError": 5.273559366969494e-16,
+      "minPelvisOffset": -0.06099999567944089,
+      "viewport": [
+        892,
+        937
+      ],
+      "canvasBuffer": [
+        1338,
+        1405
+      ]
+    },
+    {
+      "equipment": "axe",
+      "gesture": "gather-cycle",
+      "complete": true,
+      "elapsedSeconds": 12,
+      "frames": 1590,
+      "actionFrames": 721,
+      "maxArmFrameDelta": 0.2190758166253465,
+      "maxStanceDrift": 7.816041058999314e-16,
+      "maxSoleHeightError": 5.273559366969494e-16,
+      "minPelvisOffset": -0.06393590914683173,
+      "viewport": [
+        892,
+        937
+      ],
+      "canvasBuffer": [
+        1338,
+        1405
+      ]
+    },
+    {
+      "equipment": "axe",
+      "gesture": "gather-cycle",
+      "complete": true,
+      "elapsedSeconds": 12,
+      "frames": 4995,
+      "actionFrames": 721,
+      "maxArmFrameDelta": 0.21998009243428246,
+      "maxStanceDrift": 7.894497640785698e-16,
+      "maxSoleHeightError": 6.38378239159465e-16,
+      "minPelvisOffset": -0.06388748346027595,
+      "viewport": [
+        390,
+        533
+      ],
+      "canvasBuffer": [
+        585,
+        799
+      ]
+    }
+  ],
+  "warningsAndErrors": [],
+  "mobileLayout": {
+    "viewport": [
+      390,
+      844
+    ],
+    "width": 390,
+    "scrollWidth": 390
+  },
+  "screenshots": "Desktop gather peak and mobile sword attack peak inspected in tool only, no video or saved screenshot artifact.",
+  "cleanup": "Temporary action tab closed, viewport reset; original 4190/PID92409 kept."
+}

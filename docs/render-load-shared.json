@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-29",
+  "cpuArrayBytes": {
+    "before": 20376164,
+    "after": 11713268,
+    "scope": "scenery and all creatures, excludes player/terrain/water"
+  },
+  "samples": [
+    {
+      "name": "coast",
+      "calls": 188,
+      "triangles": 785411,
+      "geometries": 131
+    },
+    {
+      "name": "forest",
+      "calls": 126,
+      "triangles": 728143,
+      "geometries": 191
+    },
+    {
+      "name": "highlands",
+      "calls": 260,
+      "triangles": 828231,
+      "geometries": 352
+    },
+    {
+      "name": "amber",
+      "calls": 320,
+      "triangles": 894935,
+      "geometries": 559
+    }
+  ],
+  "canvas": [
+    1920,
+    915
+  ],
+  "consoleErrors": [],
+  "screenshot": "Unable to capture screenshot",
+  "limits": "CPU arrays and renderer counters, not total GPU bytes, FPS or visual acceptance"
+}

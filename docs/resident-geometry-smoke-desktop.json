@@ -1,0 +1,134 @@
+{
+  "complete": true,
+  "targetMs": 60000,
+  "activeMs": 60016.63,
+  "wallMs": 60022.23,
+  "frames": 3598,
+  "movingFrames": 3584,
+  "movingFraction": 1,
+  "distanceMeters": 413.7,
+  "hidden": false,
+  "medianMs": 16.7,
+  "p95Ms": 17.8,
+  "maxMs": 83.23,
+  "over50Ms": 1,
+  "frameSpikes": [
+    {
+      "atMs": 83.23,
+      "intervalMs": 83.23,
+      "previousFrame": {
+        "stage": "shore-exploration",
+        "transition": false,
+        "cpuMs": 78.7
+      }
+    }
+  ],
+  "stepAttempts": 196,
+  "stepsScheduled": 196,
+  "hitCount": 6,
+  "damageTaken": 31,
+  "respawns": 0,
+  "revivedPairs": 1,
+  "stages": [
+    {
+      "name": "shore-exploration",
+      "frames": 717,
+      "movingFrames": 716,
+      "distance": 71.16670000000008,
+      "attackHits": 0,
+      "damageTaken": 0,
+      "endPosition": [
+        -88.03,
+        137.01
+      ]
+    },
+    {
+      "name": "forest-combat",
+      "frames": 720,
+      "movingFrames": 707,
+      "distance": 82.48309999999995,
+      "attackHits": 6,
+      "damageTaken": 7,
+      "endPosition": [
+        147.55,
+        -46.51
+      ]
+    },
+    {
+      "name": "highland-movement",
+      "frames": 719,
+      "movingFrames": 719,
+      "distance": 113.88330000000003,
+      "attackHits": 0,
+      "damageTaken": 24,
+      "endPosition": [
+        -46.75,
+        -217.27
+      ]
+    },
+    {
+      "name": "amber-swimming",
+      "frames": 721,
+      "movingFrames": 721,
+      "distance": 62.05209999999993,
+      "attackHits": 0,
+      "damageTaken": 0,
+      "endPosition": [
+        194.99,
+        243.61
+      ]
+    },
+    {
+      "name": "night-camp",
+      "frames": 721,
+      "movingFrames": 721,
+      "distance": 84.11690000000021,
+      "attackHits": 0,
+      "damageTaken": 0,
+      "endPosition": [
+        -46.76,
+        41.42
+      ]
+    }
+  ],
+  "actualViewport": [
+    1280,
+    720
+  ],
+  "actualCanvasBuffer": [
+    1920,
+    852
+  ],
+  "geometriesStartEnd": [
+    217,
+    341
+  ],
+  "heapBytesStartEnd": [
+    85901227,
+    82009599
+  ],
+  "consoleWarnError": [],
+  "issue": "Viewport was set before tab creation, but the new tab ran at1280x720. Preserve as desktop60s diagnostic; do not accept as mobile. Correct by setting after creation/reload, then verify innerWidth/innerHeight before rerunning.",
+  "fullGoalComplete": false,
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "756271e155e184a4a2b2e1faa9152f79da096d61cff64c9fcb8966f06d106a58",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "98a7be6306f53353c629827de56168d6c9a27efc57a9ac1e7e182f6d75c648de",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "fa838a156dea30a46d0bc32081894651b949d44536fc51aab2f532dfc0219017",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "harnessSha256": "6b9b7e72675ec929c860661ba12bae22d26ba0e2d111934b5f97ca9ce5c7ff99"
+}

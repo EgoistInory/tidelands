@@ -1,0 +1,262 @@
+{
+  "date": "2026-10-08",
+  "status": "limited_attack_timing_batch_verified",
+  "changes": [
+    "Production attacks now play a swing cue at input and reserve the unchanged .6s cooldown; damage/hit cue/result commit once at .225s, using the same .45s game-clock interval as the model.",
+    "Damage values and 5.2m radius remain; starting weapon damage is locked and live target distance is re-evaluated at impact. Pauses, interactions, equipment changes, respawn and lost WebGL cancel pending attacks.",
+    "Pending swings remain outside saved state; restored/replaced states and expired swings reject old commits. Existing immediate attack API remains for rule callers.",
+    "Combat-only QA adds visible input, actual shoulder, HP and audio scheduling trace, using real production draw/effect calls. No production diagnostic or seeded normal saves."
+  ],
+  "tests": {
+    "red": {
+      "passed": 0,
+      "failed": 4,
+      "file": "docs/attack-impact-test-before.txt",
+      "reason": "Old attack applied 38 damage/kill rewards at input rather than after wind-up."
+    },
+    "green": {
+      "passed": 4,
+      "failed": 0,
+      "file": "docs/attack-impact-test-after.txt"
+    },
+    "full": {
+      "passed": 105,
+      "failed": 0,
+      "file": "docs/attack-impact-full-tests.txt"
+    },
+    "syntax": "main/game/character/action-timing node --check exit0"
+  },
+  "desktop": {
+    "entry": "http://127.0.0.1:4190/tests/playthrough.html?mode=combat",
+    "fixture": true,
+    "seededSwordCrab": true,
+    "normalCampaignAcceptance": false,
+    "before": {
+      "hitAudioGameAge": 0,
+      "hitAudioWallMs": 0.4,
+      "firstFrame": {
+        "age": 0.016,
+        "enemyHp": 2,
+        "shoulder": -0.5451
+      },
+      "nearPeak": {
+        "age": 0.2167,
+        "enemyHp": 2,
+        "shoulder": -2.0971
+      }
+    },
+    "afterFirst": {
+      "lastWindupFrame": {
+        "age": 0.218,
+        "enemyHp": 40,
+        "shoulder": -2.0979
+      },
+      "firstDamageFrame": {
+        "age": 0.2347,
+        "wallMs": 235.1,
+        "enemyHp": 2,
+        "shoulder": -2.096
+      },
+      "effects": [
+        {
+          "kind": "swing",
+          "age": 0,
+          "wallMs": 0.4,
+          "scheduled": true
+        },
+        {
+          "kind": "hit",
+          "age": 0.2347,
+          "wallMs": 232.2,
+          "scheduled": true
+        }
+      ]
+    },
+    "afterKill": {
+      "firstKillFrame": {
+        "age": 0.2337,
+        "wallMs": 227.1,
+        "enemyHp": -36,
+        "shoulder": -2.0968,
+        "kills": 1
+      },
+      "effects": [
+        {
+          "kind": "swing",
+          "age": 0,
+          "wallMs": 0.2,
+          "scheduled": true
+        },
+        {
+          "kind": "hit",
+          "age": 0.2337,
+          "wallMs": 224.3,
+          "scheduled": true
+        }
+      ],
+      "food": 4,
+      "hpAfterWaitingForDiagnostics": 65
+    },
+    "warnError": [],
+    "miss": {
+      "effects": [
+        {
+          "kind": "swing",
+          "age": 0,
+          "wallMs": 0.1,
+          "scheduled": true
+        }
+      ],
+      "feedback": "未命中 · 靠近目标再攻击",
+      "kills": 1,
+      "hitNotScheduled": true
+    }
+  },
+  "sourceSha256": {
+    "src/action-timing.js": "47cf01d3583137e5eee2a983c9dd1a06928837dbea6241fd1e717dac4bd4f5fc",
+    "src/audio.js": "b3ec2bff2a521932823a998fcc86eefd16ae0fead315e7d5324b064d63436ca5",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "a65d0c730eb8ec579a229146d685f4c9dabb06d19ecae1f47d684ca0f9716981",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "9c1083571eb241b2ab8a7fe132ed0bb02033d9d2fa3f3463c0dc8044d00013eb",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "3bbcdd801dc481e1fb0397f0a8c4df374e814a530f305bc5f5a15754426beb72",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "42d0fce139ed1d5a53e785b6f6b33b4b8d7a0c748148040d62640209b0e33a66",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "limitations": [
+    "Timing follows animation maximum reach; no geometric weapon/target collision, natural whole-body contact or audio listening quality inferred.",
+    "Gather still commits resources/sound before its animation peak; separate follow-up.",
+    "Rule/save cancellation and expired-swing checks passed; actual UI cancellation was checked for pause, other interruptions remain code/rule verified only.",
+    "All five older archives retain historical hashes; their long samples are not current-source performance proof.",
+    "Sparse/repeated vegetation and simple terrain/characters/crystals, whole-body motion/contact, camera jumps/occlusion, audio listening, physical mobile/GPU/long performance remain."
+  ],
+  "m5Complete": false,
+  "aaaComplete": false,
+  "mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "fixture": true,
+    "firstDamage": {
+      "age": 0.2334,
+      "wallMs": 227.5,
+      "enemyHp": 2,
+      "shoulder": -2.097
+    },
+    "lastWindup": {
+      "age": 0.2167,
+      "enemyHp": 40,
+      "shoulder": -2.0971
+    },
+    "effects": [
+      {
+        "kind": "swing",
+        "age": 0,
+        "wallMs": 0.2,
+        "scheduled": true
+      },
+      {
+        "kind": "hit",
+        "age": 0.2334,
+        "wallMs": 224.7,
+        "scheduled": true
+      }
+    ],
+    "twoClicksCooldown": {
+      "secondInputFirstFrameAge": 0.3002,
+      "enemyHp": 2,
+      "effectsForRejectedSecondInput": [],
+      "note": "CUA click calls were separated by roughly .3s, within .6s cooldown; no repeated damage/swing, not simultaneous multitouch."
+    },
+    "pauseCancellation": {
+      "firstFrameBeforeEscape": {
+        "age": 0.015,
+        "enemyHp": 40,
+        "shoulder": -0.5329
+      },
+      "firstCancelledFrame": {
+        "wallMs": 32.8,
+        "enemyHp": 40,
+        "shoulder": -0.35,
+        "ageSentinel": 220.4297
+      },
+      "effects": [
+        {
+          "kind": "swing",
+          "age": 0,
+          "wallMs": 0.2,
+          "scheduled": true
+        }
+      ],
+      "afterResumeEnemyHp": "40 / 40",
+      "laterReadStill40": true,
+      "note": "Reset attackAt=-100 explains large sentinel age; no elapsed 220s swing or resumed hit."
+    },
+    "warnError": []
+  },
+  "deliveryVerification": "docs/tidelands-m5-2026-10-08-impact-verification.json",
+  "frameSample": "docs/attack-impact-frame-sample.json",
+  "delivery": {
+    "archive": "dist/tidelands-m5-2026-10-08-impact.zip",
+    "archiveBytes": 6303315,
+    "sha256": "2e14043826237e907b7ba7bcfac79655a6eb10ba38e0cb220462cc2b6553a4cd",
+    "archiveEntries": 35,
+    "checkedFiles": 34,
+    "extractedPath": "/private/tmp/tidelands-delivery-zou3iu5u/tidelands-local",
+    "browserOrigin": "http://127.0.0.1:51427/",
+    "browserLaunchVerified": true,
+    "seedOrImportUsed": false,
+    "actualPath": [
+      "Normal Start[-70,102], HP100, food3, buildings0/kills0.",
+      "20d/10w discrete input reaches[-58,101.7], visible wood prompt; E grants wood+2.",
+      "14a moves[-58.9,95.9], E keeper quest0→1. Actual space produces 未命中 · 靠近目标再攻击.",
+      "At390x844 bag wood2/food3; Save reports 存档已保存. Reload Continue preserves quest1,wood2,food3,HP100,coordinates[-58.9,95.9],buildings0/kills0."
+    ],
+    "restoredViewport": [
+      390,
+      844
+    ],
+    "restoredCanvasBuffer": [
+      390,
+      844
+    ],
+    "restoredScrollWidth": 390,
+    "warnError": [],
+    "temporaryServerStopped": true,
+    "stopResult": "Intentional Ctrl+C exit130 KeyboardInterrupt, not server failure.",
+    "limits": "First path/save/layout smoke only, no full mainline or live enemy in extracted package."
+  },
+  "cleanup": {
+    "agentTabsClosed": [
+      8,
+      9,
+      10
+    ],
+    "viewportReset": true,
+    "developmentServer": "4190/PID92409 retained",
+    "m1Checkpoint": {
+      "position": [
+        -62.4,
+        93.7
+      ],
+      "hp": 100,
+      "quest": 1,
+      "buildings": 0,
+      "kills": 0,
+      "savedAndPaused": true
+    },
+    "m4": "Not opened or changed this batch."
+  },
+  "screenshots": "One restored narrow-layout package screenshot inspected through the tool; no saved PNG/video.",
+  "next": "Gather resource/audio timing at the gather peak, then actual audio listening and environment variety/representative longer performance. No continued single-joint polishing."
+}

@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-07",
+  "kind": "M5-cross-island-dialogue-and-delivery-checkpoint-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestones": {
+    "M1": true,
+    "M2": true,
+    "M3": true,
+    "M4": true,
+    "M5": false
+  },
+  "verifiedCurrentSourceFiles": 20,
+  "currentPackageSourceFiles": 33,
+  "crossIslandSampleBoundToPreDialogueFix": true,
+  "runtimeChangesAfterTenMinuteSample": [
+    "src/game.js"
+  ],
+  "preservedArchiveSha256": {
+    "dist/tidelands-local.zip": "61e173d0bf869afda5cfa674a6a675780b9453a8389baabbd33948fb12bc90ac",
+    "dist/tidelands-m5-2026-10-05.zip": "02c7cc719a0a48608813e46c2d34075e12d280b42ae7c239acaba34f0a870d57",
+    "dist/tidelands-m5-2026-10-07.zip": "96afc2db4479ff52507b4d9401a4923a63b330f2cda2a852d92d08979b8c47f3"
+  },
+  "fileSha256": {
+    "AGENT_PROGRESS.md": "e4fb8b67cb47bfdd1793dc0b1c84f506b750db5a6af5a3233ea89482ba037e79",
+    "README.md": "f9753236d23ef14f4338bdb1f3433b1b6eabb025c4df3e69b8aa47d875234ed0",
+    "ROADMAP.md": "b0e830b51139194fc44ec2daa3993bcd3341d9d54095d2155563ba7ec3cba4a0",
+    "dist/tidelands-m5-2026-10-07.json": "b2b5997f2ff26c9938ba9253963eb33bb25f119fe54fa81fa43fec115399b57d",
+    "docs/LOCAL-DELIVERY.md": "c07497386a53f1e6e4f95374df929ccc7dc79c922d4d4d0238b257ecbe6dd1f6",
+    "docs/VERIFICATION.md": "49d34cc461313f8bc32f2042371bd3d153a60d5eb5d42e07fea7904fcf99065a",
+    "docs/combat-navigation-delivery-review.json": "d4659b2558892a4d1b133a1f0a017d071dc308f7bdf0aa6d8d98d50cf8ceb6e8",
+    "docs/completed-dialogue-review.json": "e9d3392f9ea2d47b2e1e02b874b299c340fe480f3fe0f63e75b67e1c23389b3d",
+    "docs/completed-dialogue-test-after.txt": "35250294e6e32ffa67ff86fd406f610802d00cbbe18322bd09af1ceaf7065b10",
+    "docs/completed-dialogue-test-before.txt": "2280142ff75c2e1b0a70ac976fbb36e418b25663bf1ec3d699449d188aa7c8ea",
+    "docs/completed-dialogue-tests.txt": "dadbed83436dae6407a7377f5afdf4e01bc8dd10141ad1036c633b1c77d436c9",
+    "docs/cross-island-endurance-sample.json": "5c720143ccf4ffe5fa16e1a182b1e23f9075770241c15f0365f230932612cd63",
+    "docs/cross-island-interrupted-sample.json": "2a7dd5bde46e8a778f5045135718ccfdd270f43c905cd5c00a00c46a3f14d3e9",
+    "docs/cross-island-review.json": "80b62276a7788fb6cb788d31c5c816cd3f6c21693a5c4bc27752eaeef6f7a0fa",
+    "docs/tidelands-m5-2026-10-07-verification.json": "67c18e9f765a2a8782ba9c752625551cae61c8283fd16e82c405a587f1e78d5f",
+    "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+    "serve.py": "15a7ff5096fd6b8c33c14591065d184ba7e643f9efd3f4c036e4c4058f349e45",
+    "src/audio.js": "b3ec2bff2a521932823a998fcc86eefd16ae0fead315e7d5324b064d63436ca5",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "cbe3fac0b203391e634adeda6cf1b8a275f86b9eeef33acc970fbb29ab98d33a",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "cbed1c37f16752218a9194fab147269ada0539161f19a349a52754245bc1cf2a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/main.js": "52d9cf124b02915a2c36cfe7510840be3cf6f9d281931c3a511601f0f3641924",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "b9e2bce7ccc6344660752bfe2a596bc112205bc1cd460a9d9241b9ff57d4cca7",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "styles.css": "9ebaa347043c3d65b51e19085f923a9c2a06ff370446aae0bab26358c0c98a3b",
+    "tests/game.test.js": "d67cbaa63dcd5b0d95cb80a10de91f6027d0d696e07acfd9a24977b402f2fd2d",
+    "tests/playthrough.html": "173f45fbeae700359c819589ad3b5012fb7867102b6e770533b95dc3715ffe94",
+    "tools/package_local.py": "7456d293ce4b0787a1a071a2fb79a582b17ba49113f64fee1c3da616bb79a3db",
+    "tools/verify_local.py": "4dd43e52e32c4c4625626338bcffb4b3e02689b1b54cd95bb26791e13a367436",
+    "../tide-2048/AGENT_PROGRESS.md": "740d0b3b3bb47da3fb74c4a9fc0bd2088ce8ed1cd1f403beb113085da59481f6"
+  },
+  "automation": {
+    "id": "2048",
+    "retained": true,
+    "goalStatusNotForced": true
+  },
+  "resolvedCommandIssues": [
+    {
+      "command": "ps -p 45694 -o pid=,etime=,command=",
+      "initialFailure": "sandbox Operation not permitted",
+      "resolution": "Read-only escalation confirmed existing PID45694; no duplicate server."
+    },
+    {
+      "command": "python3 serve.py --port 0 in extracted package",
+      "initialFailure": "sandbox Operation not permitted",
+      "resolution": "Loopback-only escalation started64166; actual browser smoke passed and temporary process was stopped."
+    },
+    {
+      "command": "append precursor checkpoint using Path('.').parent",
+      "initialFailure": "FileNotFoundError tide-2048/AGENT_PROGRESS.md; other scoped updates had completed",
+      "resolution": "Used known absolute precursor path and appended only the missing entry, without repeating other appends."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-08",
+  "sourceSha256": {
+    "src/action-timing.js": "47cf01d3583137e5eee2a983c9dd1a06928837dbea6241fd1e717dac4bd4f5fc",
+    "src/audio.js": "b3ec2bff2a521932823a998fcc86eefd16ae0fead315e7d5324b064d63436ca5",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "a65d0c730eb8ec579a229146d685f4c9dabb06d19ecae1f47d684ca0f9716981",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "9c1083571eb241b2ab8a7fe132ed0bb02033d9d2fa3f3463c0dc8044d00013eb",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "3bbcdd801dc481e1fb0397f0a8c4df374e814a530f305bc5f5a15754426beb72",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "42d0fce139ed1d5a53e785b6f6b33b4b8d7a0c748148040d62640209b0e33a66",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "entry": "http://127.0.0.1:4190/tests/playthrough.html?mode=m1&sample=frames",
+  "sample": {
+    "complete": true,
+    "targetMs": 30000,
+    "durationMs": 35050,
+    "activeMs": 30000,
+    "frames": 1800,
+    "medianMs": 16.7,
+    "p95Ms": 17.1,
+    "maxMs": 18.7,
+    "over50Ms": 0,
+    "hidden": false,
+    "viewport": [
+      1280,
+      672
+    ],
+    "devicePixelRatio": 2,
+    "canvasBuffer": [
+      1920,
+      1008
+    ],
+    "heapSupported": true,
+    "checkpoints": [
+      {
+        "activeMs": 0,
+        "frames": 0,
+        "daytime": "第 1 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "region": "潮汐海岸",
+        "coordinates": "位置 X -62.4，Z 93.7；建筑 0；击败 0",
+        "enemy": null,
+        "heapBytes": 77777474,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 30000,
+        "frames": 1800,
+        "daytime": "第 1 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "region": "潮汐海岸",
+        "coordinates": "位置 X -62.4，Z 93.7；建筑 0；击败 0",
+        "enemy": null,
+        "heapBytes": 76210806,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      }
+    ]
+  },
+  "inputs": "Parent sample control paused the game. Continued through UI, eight d presses moved[-62.4,93.7]→[-59,93.2]; eight a returned[-62.4,93.7]. One actual space attack gave 未命中 · 靠近目标再攻击 with no enemy/kills. Saved and paused. No new seed/import.",
+  "warnError": [],
+  "limits": "Mostly static night coastal scene with brief discrete-key movement and one miss, no live battle/cross-island during this sample. Pauses excluded. Two heap points/30s do not prove GPU, leaks, device performance or long stability."
+}

@@ -1,0 +1,63 @@
+{
+  "date": "2026-09-29",
+  "command": "http://127.0.0.1:4190/tests/render-load.html?suite=1",
+  "canvas": [
+    1920,
+    915
+  ],
+  "drawsPerView": 60,
+  "drawsPerCallback": 10,
+  "simulation": "frozen",
+  "consoleErrors": [],
+  "samples": [
+    {
+      "name": "coast",
+      "position": [
+        -70,
+        102
+      ],
+      "calls": 428,
+      "triangles": 776843,
+      "geometries": 438,
+      "programs": 10,
+      "textures": 3
+    },
+    {
+      "name": "forest",
+      "position": [
+        132,
+        -26
+      ],
+      "calls": 294,
+      "triangles": 728143,
+      "geometries": 702,
+      "programs": 12,
+      "textures": 3
+    },
+    {
+      "name": "highlands",
+      "position": [
+        -70,
+        -190
+      ],
+      "calls": 571,
+      "triangles": 825039,
+      "geometries": 842,
+      "programs": 12,
+      "textures": 3
+    },
+    {
+      "name": "amber",
+      "position": [
+        145,
+        180
+      ],
+      "calls": 740,
+      "triangles": 894263,
+      "geometries": 967,
+      "programs": 12,
+      "textures": 3
+    }
+  ],
+  "limits": "Deterministic submitted render work only. No FPS, GPU timings, video or long-run heap acceptance. Geometry counts accumulate as first-used assets are uploaded."
+}

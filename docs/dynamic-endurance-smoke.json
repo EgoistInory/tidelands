@@ -1,0 +1,33 @@
+{
+  "complete": true,
+  "source": "first revision without spike metadata",
+  "targetMs": 60000,
+  "activeMs": 60000.07,
+  "wallMs": 60005.47,
+  "frames": 3487,
+  "movingFrames": 3486,
+  "distanceMeters": 404.48,
+  "hidden": false,
+  "medianMs": 16.7,
+  "p95Ms": 17,
+  "maxMs": 699.9,
+  "over50Ms": 5,
+  "stepAttempts": 195,
+  "stepsScheduled": 195,
+  "hitCount": 6,
+  "damageTaken": 19,
+  "respawns": 0,
+  "revivedPairs": 1,
+  "stageNames": [
+    "shore-exploration",
+    "forest-combat",
+    "highland-movement",
+    "amber-swimming",
+    "night-camp"
+  ],
+  "startHeapBytes": 106189971,
+  "endHeapBytes": 76970112,
+  "startGeometries": 228,
+  "endGeometries": 475,
+  "note": "Five labelled QA teleports and scripted production movement/combat/audio, no saves. Short smoke revealed spikes; next harness adds prior-frame stage/transition/CPU context. No production change."
+}

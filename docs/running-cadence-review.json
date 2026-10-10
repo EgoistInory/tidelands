@@ -1,0 +1,230 @@
+{
+  "date": "2026-10-04",
+  "status": "smoke_verified_quality_gaps_remain",
+  "fullGoalComplete": false,
+  "sha256": {
+    "src/character.js": "260f8c4a230fe0dbf52d280ee007640a17db11e291321f2d6af2db22724441de",
+    "src/scene.js": "ef24f7266be81533bc9a535c825478caa0c319bc8e19cbaa399604c55ad400ba",
+    "src/main.js": "4dfb26075e8a30b62e5786b2969c692f7464edc43d114a44f7e8c88b9f55980d",
+    "src/game.js": "54cb5d150120efe5ad751b5cda045d6a61a591620f45e340b33028ea71aa402e",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "tests/character.test.js": "de9769d4a44f7b78163254c65d474572e62fd874e87a32c7529863c7b6912131",
+    "tests/scene.test.js": "01b0e9f769e29b6729dba245b1eab3846af5255840c57451571a868cacf51024",
+    "tests/locomotion.html": "6e3fb9dba15585e4fc2fa7409c5f47ea11794f01a297526911d4e8e4031f0d7d",
+    "tests/playthrough.html": "fa763bbfad540aa0d214e1fc83aa8d491edf736b447f442b7d325ce29876f6f6",
+    "vendor/three.module.min.js": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+    "tests/locomotion-audit.js": "3a049682280705b2a58ea1898e8abf3350e366f641ae1e5748b9c42f47f8de33"
+  },
+  "changes": [
+    "Measured movement speed is smoothed with actual dt, without changing player rule speed",
+    "Stride grows from 1.6m walking to 3.2m at 7m/s and 5m at 12m/s; stance fraction drops from 0.6 to 0.4/0.26 with both feet airborne between contacts",
+    "Running leans forward up to 0.12rad with stronger arm swing and bent elbows",
+    "Reach prediction and airborne bounds use the hip center after body rotation/offset",
+    "Stopping holds the last gait parameters while torso blend fades and idle recovery places the feet; new placement/teleport/swim reset defaults"
+  ],
+  "tests": {
+    "passed": 80,
+    "failed": 0,
+    "log": "/private/tmp/tidelands-tests-cadence-final.log",
+    "syntax": [
+      "src/character.js",
+      "tests/locomotion.html extracted module"
+    ],
+    "coverage": [
+      "30/60/144fps at 2.4/7/12m/s: steady distance cadence, stride length, stance fraction and both actual ankles lifted during flight",
+      "Stop keeps gait shape stable then recovers neutral feet and torso",
+      "Body-pose-aware reach/90/180 turns above -0.45m pelvis on analytic gentle slope",
+      "Existing stance drift/sole normals, equipment, attack/gather/hurt, reset/swim/terrain/NPC/game regressions"
+    ]
+  },
+  "offlineAudit": "docs/running-cadence-gap-audit.json",
+  "steadyCadence": {
+    "7mPerSecond": {
+      "beforeCyclesPerSecond": 4.375,
+      "afterCyclesPerSecond": 2.1875,
+      "strideMeters": 3.2,
+      "stanceFraction": 0.4
+    },
+    "12mPerSecond": {
+      "beforeCyclesPerSecond": 7.5,
+      "afterCyclesPerSecond": 2.4,
+      "strideMeters": 5,
+      "stanceFraction": 0.26
+    },
+    "scope": "Steady analytic motion; faster inputs/starting/turning are not constant cadence"
+  },
+  "auditFindings": {
+    "maxAnalyticTurnPelvisOffset": -0.439246559294353,
+    "maxTurnFrameFootTravelMeters": 1.2187357590482495,
+    "syntheticBurstContactTravelMeters": 0.011446984555240292,
+    "burstScope": "0.84m input bursts deliberately reset contacts; a same-cycle adjacent-contact diagnostic can include separate cache placements and is not continuous planted-foot proof"
+  },
+  "limitations": [
+    "Cadence/airborne counters and stills do not prove complete natural motion or toe contact; saved motion review remains",
+    "Body-pose-aware reach prevents the prototype collapse, but turn/stride swing can still move about 1.219m at 30fps/12m/s in the diagnostic",
+    "Synthetic batched inputs retain a cache-reset landing fallback; not claimed slide-free or smooth",
+    "No final equipment/attack moving-video intersection or irregular visible-terrain review",
+    "Simple character/bio/environment models, audio listening and final M1-M5/device/delivery acceptance unfinished",
+    "Old short/10-minute samples retain their original hashes and are not current-version long-run proof",
+    "Native 0.12 ramp turn pelvis reaches -0.459m; the -0.45m test bound applies only to the gentler analytic test slope",
+    "Land sound still uses the old fixed-distance interval; must follow actual new gait contacts in the next change"
+  ],
+  "isolatedBrowser": {
+    "entry": "/tests/locomotion.html",
+    "slope": 0.12,
+    "elapsedSeconds": 12,
+    "run12mPerSecond": {
+      "complete": true,
+      "position": [
+        0,
+        17.304,
+        144.2
+      ],
+      "strideLengthMeters": 4.999999999999895,
+      "stanceFraction": 0.26000000000000817,
+      "contacts": 291,
+      "maxStanceDriftMeters": 2.8916994303251375e-14,
+      "maxSoleHeightErrorMeters": 5.440092820663267e-15,
+      "minPelvisOffsetMeters": -0.4325042222687543,
+      "bothFeetAirborneFrames": 344,
+      "feet": [
+        [
+          -0.22,
+          17.450088,
+          144.2004
+        ],
+        [
+          0.22,
+          17.450088,
+          144.2004
+        ]
+      ]
+    },
+    "turn7mPerSecond": {
+      "complete": true,
+      "position": [
+        42.005,
+        5.053,
+        42.111
+      ],
+      "strideLengthMeters": 3.2000000000000215,
+      "stanceFraction": 0.3999999999999983,
+      "contacts": 481,
+      "maxStanceDriftMeters": 1.434896150467636e-14,
+      "maxSoleHeightErrorMeters": 2.4980018054066022e-15,
+      "minPelvisOffsetMeters": -0.45878071074372057,
+      "bothFeetAirborneFrames": 141
+    },
+    "viewport": [
+      1280,
+      590
+    ],
+    "canvasBuffer": [
+      1920,
+      903
+    ],
+    "viewportNote": "Output wrapping changes the CSS canvas height without a window resize; report the observed CSS/buffer dimensions, not a claimed uniform ratio",
+    "runEarlyFlightStillReviewed": true,
+    "settledStillsReviewed": true,
+    "savedVideo": false,
+    "resetToIdle": {
+      "strideLengthMeters": 1.6,
+      "stanceFraction": 0.6,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "feet": [
+        [
+          -0.22,
+          0.14604,
+          0
+        ],
+        [
+          0.22,
+          0.14604,
+          0
+        ]
+      ]
+    },
+    "consoleWarningsErrors": [],
+    "closed": true
+  },
+  "worldBrowser": {
+    "entry": "/tests/playthrough.html?mode=performance",
+    "initialPosition": [
+      -49.4,
+      96.9
+    ],
+    "after12ShiftW": [
+      -50.7,
+      88.2
+    ],
+    "after12D": [
+      -45.7,
+      87.4
+    ],
+    "staminaAfterSprint": 89,
+    "actionsDuringSample": "Resumed parent-control pause; 12 Shift+W presses, 12 D presses and sword miss. Actual HUD position/stamina checked; intermittent steps, not held running/live enemy combat",
+    "stillsReviewed": true,
+    "savedThroughPauseMenu": true,
+    "saveConfirmation": "存档已保存。",
+    "closed": true,
+    "consoleWarningsErrors": [],
+    "performance": {
+      "complete": true,
+      "durationMs": 38883.2,
+      "activeMs": 30016.6,
+      "frames": 1801,
+      "medianMs": 16.7,
+      "p95Ms": 18,
+      "maxMs": 18.8,
+      "over50Ms": 0,
+      "hidden": false,
+      "viewport": [
+        1280,
+        672
+      ],
+      "devicePixelRatio": 2,
+      "canvasBuffer": [
+        1920,
+        1008
+      ],
+      "checkpoints": [
+        {
+          "activeMs": 0,
+          "frames": 0,
+          "daytime": "第 10 天 · 午后",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 74560874
+        },
+        {
+          "activeMs": 30016.6,
+          "frames": 1801,
+          "daytime": "第 10 天 · 黄昏",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 49782129
+        }
+      ]
+    },
+    "isolation": "tidelands-qa-performance only; production/journey untouched"
+  },
+  "quotaCheckpoint": {
+    "ordinaryUsageAllowed": true,
+    "fiveHourUsedPercent": 85,
+    "weeklyUsedPercent": 93,
+    "goalStatus": "historical usageLimited; not rewritten",
+    "resetCreditsAvailable": 2,
+    "resetCreditsConsumed": 0,
+    "automation2048": "retained"
+  }
+}

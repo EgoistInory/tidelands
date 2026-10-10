@@ -1,0 +1,159 @@
+{
+  "date": "2026-10-04",
+  "status": "smoke_verified_quality_gaps_remain",
+  "fullGoalComplete": false,
+  "sha256": {
+    "src/character.js": "9772d18d32f5ab8043e0d6fab896d68b44145a617765a1dd21e3226b10766dda",
+    "src/scene.js": "ef24f7266be81533bc9a535c825478caa0c319bc8e19cbaa399604c55ad400ba",
+    "src/main.js": "4dfb26075e8a30b62e5786b2969c692f7464edc43d114a44f7e8c88b9f55980d",
+    "src/game.js": "54cb5d150120efe5ad751b5cda045d6a61a591620f45e340b33028ea71aa402e",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "tests/character.test.js": "eeef51a5d4c0f0e53305a84f51ecada8f2a54c0826ba37ef9f020a7cf211379b",
+    "tests/scene.test.js": "01b0e9f769e29b6729dba245b1eab3846af5255840c57451571a868cacf51024",
+    "tests/locomotion.html": "f4da05ac77b0736e01270d05c9dd397c6813d662bcd561204b5c17db42c2edfd",
+    "tests/playthrough.html": "fa763bbfad540aa0d214e1fc83aa8d491edf736b447f442b7d325ce29876f6f6",
+    "vendor/three.module.min.js": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+    "tests/locomotion-audit.js": "bfff430c158256b6ef7c56b6a67e6a086efa2237e9b4663f66d88bb0c57960ba"
+  },
+  "changes": [
+    "After 0.22 seconds stopped, take one 0.32-second recovery step at a time to return to a neutral stance",
+    "Recovery lifts the moving boot 0.12m and keeps the other planned contact planted",
+    "A 0.04m sideways body shift follows the support side while the foot returns",
+    "Slope normals and sole heights remain part of the IK; movement/swimming clear the sideways offset and cancel recovery"
+  ],
+  "tests": {
+    "passed": 77,
+    "failed": 0,
+    "log": "/private/tmp/tidelands-tests-idle-recovery-final.log",
+    "syntax": [
+      "src/character.js"
+    ],
+    "coverage": [
+      "30/60/144fps grounded ankle drift, slope sole height and boot-up normal while yaw settles and recovery moves",
+      "Neutral end stance after stopping instead of a permanent split stance",
+      "Movement/swimming interruption clears recovery and lateral offset",
+      "Existing teleport/key-burst/equipment/gather/hurt/terrain/NPC/game regressions"
+    ]
+  },
+  "offlineAudit": "docs/idle-recovery-gap-audit.json",
+  "isolatedBrowser": {
+    "entry": "/tests/locomotion.html",
+    "mode": "restart",
+    "complete": true,
+    "elapsedSeconds": 12,
+    "slope": 0.12,
+    "position": [
+      0,
+      8.428,
+      70.234
+    ],
+    "feet": [
+      [
+        -0.22,
+        8.574096,
+        70.2338
+      ],
+      [
+        0.22,
+        8.574096,
+        70.2338
+      ]
+    ],
+    "contacts": 724,
+    "maxStanceDriftMeters": 1.6454477780314392e-09,
+    "maxSoleHeightErrorMeters": 8.996456857257584e-09,
+    "viewport": [
+      1280,
+      602
+    ],
+    "canvasBuffer": [
+      1920,
+      903
+    ],
+    "stillsReviewed": true,
+    "savedVideo": false,
+    "consoleWarningsErrors": []
+  },
+  "limitations": [
+    "Numeric ankle contact and a neutral still do not prove toe contact, natural weight distribution or full mesh motion",
+    "7/12m/s with a 1.6m gait remains rapid; running flight, turns, torso motion and swim/head motion need further work",
+    "Turning pelvis offset still reaches about -0.627m and a 30fps/12m/s swing moves up to 1.256m per frame in the diagnostic",
+    "Interruption cancels a recovery step; transition smoothness still needs a saved motion review",
+    "Simple character/bio/environment models, audio listening and final M1-M5 acceptance remain unfinished",
+    "30-second rAF/JS heap sample is short scheduling evidence; no GPU, physical device, long endurance or full gameplay proof",
+    "Prior world-footing/locomotion/grass reports remain historical with their original source hashes"
+  ],
+  "worldBrowser": {
+    "entry": "/tests/playthrough.html?mode=performance",
+    "isolation": "tidelands-qa-performance; production and journey untouched",
+    "initialPosition": [
+      -49.1,
+      99.2
+    ],
+    "lastPosition": [
+      -49.4,
+      96.7
+    ],
+    "actions": "During sample resumed after parent-control pause, 12 A and 12 D presses, then 6 W and a sword miss; intermittent inputs, not held movement or live enemy combat",
+    "stillsReviewed": true,
+    "savedVideo": false,
+    "settledStill": "Both boots returned under the body in camp; simple model remains",
+    "saveAndClose": "Saved through pause menu; visible 存档已保存; temporary tab closed",
+    "consoleWarningsErrors": [],
+    "performance": {
+      "complete": true,
+      "targetMs": 30000,
+      "durationMs": 30468.3,
+      "activeMs": 30000,
+      "frames": 1800,
+      "medianMs": 16.7,
+      "p95Ms": 17.9,
+      "maxMs": 18.7,
+      "over50Ms": 0,
+      "hidden": false,
+      "viewport": [
+        1280,
+        672
+      ],
+      "devicePixelRatio": 2,
+      "canvasBuffer": [
+        1920,
+        1008
+      ],
+      "heapSupported": true,
+      "checkpoints": [
+        {
+          "activeMs": 0,
+          "frames": 0,
+          "daytime": "第 9 天 · 夜晚",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 57384193
+        },
+        {
+          "activeMs": 30000,
+          "frames": 1800,
+          "daytime": "第 9 天 · 夜晚",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 59481697
+        }
+      ]
+    }
+  },
+  "quotaCheckpoint": {
+    "ordinaryUsageAllowed": true,
+    "fiveHourUsedPercent": 52,
+    "weeklyUsedPercent": 88,
+    "goalStatus": "historical usageLimited; not rewritten",
+    "resetCreditsAvailable": 2,
+    "resetCreditsConsumed": 0,
+    "automation2048": "retained"
+  }
+}

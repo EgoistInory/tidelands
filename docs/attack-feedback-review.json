@@ -1,0 +1,53 @@
+{
+  "recordedAt": "2026-10-07T14:37:03.002121+00:00",
+  "sourceSha256": {
+    "src/main.js": "7c331195e235188a49b93dc26044e2d70754c6bd4fcc37f44449a3ce25dd62d7",
+    "src/character.js": "40655ad14741d5fa5ceff50a395ace8ad7472dbe0ac1ca8ef414566cf52a4327",
+    "src/game.js": "cbed1c37f16752218a9194fab147269ada0539161f19a349a52754245bc1cf2a",
+    "tests/playthrough.html": "173f45fbeae700359c819589ad3b5012fb7867102b6e770533b95dc3715ffe94"
+  },
+  "change": "Keep attack hit/defeat/miss in existing 1.1s combat feedback; remove duplicate 4.2s attack toast. Damage/cooldown/rewards/audio invocation unchanged. Other quest/gather/hurt toasts preserved.",
+  "before": "See attack-feedback-browser-before.json: visible miss and old hit simultaneously.",
+  "desktop": {
+    "crabHp": [
+      40,
+      2,
+      0
+    ],
+    "killCount": [
+      0,
+      1
+    ],
+    "hit": "命中 1 个目标",
+    "defeat": "击败 1 个目标",
+    "miss": "未命中 · 靠近目标再攻击",
+    "toastOnHit": "欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。",
+    "toastOnMiss": "受到攻击！空格反击，或拉开距离。",
+    "hpAfter": 93,
+    "enemyCardHiddenAfter": true
+  },
+  "mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "immediateSecondButtonPressHp": "2 / 40",
+    "killCount": 1,
+    "hpAfter": 93,
+    "miss": "未命中 · 靠近目标再攻击",
+    "toastOnMiss": "受到攻击！空格反击，或拉开距离。",
+    "enemyCardHiddenAfter": true
+  },
+  "warningsAndErrors": [],
+  "fullTestsPassed": 101,
+  "syntaxPassed": true,
+  "scope": "Labelled combat fixture with isolated QA save, not normal campaign completion. Native keyboard and buttons, readonly frame locators; no injected runtime state.",
+  "qualityStillPending": [
+    "Audio listening and delayed impact alignment",
+    "Continuous full-body motion/prop collision",
+    "Camera jumps and occlusion",
+    "Materials/environment and physical mobile/GPU"
+  ],
+  "fullGoalComplete": false,
+  "cleanup": "combat tab3 paused then closed; viewport reset. Screenshots inspected in tool only, not archived video."
+}

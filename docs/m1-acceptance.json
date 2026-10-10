@@ -1,0 +1,173 @@
+{
+  "recordedAt": "2026-10-04T09:18:38.676635+00:00",
+  "milestone": "M1",
+  "status": "functional_complete",
+  "fullGoalComplete": false,
+  "sourceHashes": {
+    "index.html": "2245f69cea28e3ac482acf169d56ce48ab3ef8be9a1fce74af8390d29a95b15e",
+    "styles.css": "252b652e5198b084d87a41ef24e6328edbcbaf5685ad2e867cd40e4114b0b477",
+    "tests/playthrough.html": "bb02860b6231acf7fa2bc87ce4b7399cd54f9e6c80b3c85b4b7af0c6d7ee2c21",
+    "tests/game.test.js": "b211eab4df60e6371c263f875fbe74e3017ff319730b4546eb48f4937c0963d1",
+    "tests/pointer-controls.test.js": "8df42551b4be2ca3908dd697ec8c262d83bdd519d20ba2baaf72e6a3651b91a3",
+    "src/audio.js": "6e2cdcef0d1557515ee8f9151e66bbb1cba5c5546270e011bf31c1e0037f7fe6",
+    "src/camera.js": "eba766f996b6d841c44509196bd0f79273e6bb6d37b63aee293ce723f2e66333",
+    "src/character.js": "7e516f1cfcdd4319b54b7489290ba8fcb1e8e1fdd2d8634d016d20b9e0f213a5",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "54cb5d150120efe5ad751b5cda045d6a61a591620f45e340b33028ea71aa402e",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/main.js": "be2759df76430daa74c99405efb4cbd2b65e6382583f9662cc098128be733cfb",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "ef24f7266be81533bc9a535c825478caa0c319bc8e19cbaa399604c55ad400ba",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "tests": {
+    "command": "npm test",
+    "passed": 83,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 1318.601292,
+    "artifact": "docs/m1-tests.txt",
+    "syntaxChecks": [
+      "/private/tmp/tidelands-m1-harness.mjs",
+      "/private/tmp/tidelands-m1-setup.mjs",
+      "/private/tmp/tidelands-render-blocked-setup.mjs"
+    ]
+  },
+  "browser": {
+    "url": "http://127.0.0.1:4190/tests/playthrough.html?mode=m1",
+    "saveKey": "tidelands-qa-m1",
+    "fixtureOverrides": false,
+    "desktopViewport": [
+      1280,
+      720
+    ],
+    "portraitViewport": [
+      390,
+      844
+    ],
+    "landscapeViewport": [
+      844,
+      390
+    ],
+    "keyboardMovement": {
+      "from": [
+        -70,
+        102
+      ],
+      "to": [
+        -70.8,
+        97
+      ],
+      "inputs": "12 intermittent W key presses"
+    },
+    "cameraAndArrowKey": {
+      "drag": [
+        [
+          690,
+          402
+        ],
+        [
+          770,
+          410
+        ]
+      ],
+      "arrowPosition": [
+        -70.6,
+        96.6
+      ]
+    },
+    "navigation": {
+      "desktopDistanceMeters": 237,
+      "portraitDistanceMeters": 238,
+      "clearedRestoredQuestHint": true
+    },
+    "pause": {
+      "attemptedKey": "w",
+      "beforeAndAfter": [
+        -70.6,
+        96.6
+      ]
+    },
+    "newGame": {
+      "cancelPreservedPosition": [
+        -70.6,
+        96.6
+      ],
+      "confirmedPosition": [
+        -70,
+        102
+      ],
+      "hp": 100,
+      "stamina": 100,
+      "buildings": 0,
+      "kills": 0,
+      "questTitle": "归航的灯火"
+    },
+    "portraitJoystick": {
+      "drag": [
+        [
+          72,
+          681
+        ],
+        [
+          103,
+          650
+        ]
+      ],
+      "from": [
+        -70,
+        102
+      ],
+      "to": [
+        -69.2,
+        101.6
+      ],
+      "subsequentCameraAndAttackNoDrift": true,
+      "attackFeedback": "未命中 · 靠近目标再攻击",
+      "scrollWidth": 390,
+      "clientWidth": 390
+    },
+    "normalWarnError": [],
+    "savedPausedAndClosed": true,
+    "viewportReset": true
+  },
+  "renderFailure": {
+    "url": "http://127.0.0.1:4190/tests/playthrough.html?mode=render-blocked",
+    "simulation": "WebGL 2 getContext returns null; 2D context unchanged",
+    "buttonEnabled": false,
+    "buttonText": "3D 渲染不可用",
+    "message": "无法启动 3D 渲染。请使用支持 WebGL 2 的浏览器并开启硬件加速。",
+    "expectedConsoleErrors": 2
+  },
+  "mapFix": {
+    "file": "styles.css",
+    "oldDesktopMap": [
+      608,
+      608
+    ],
+    "newDesktopMap": [
+      377,
+      377
+    ],
+    "portraitMap": [
+      318,
+      318
+    ],
+    "fourIslandsAndControlsVisible": true
+  },
+  "limitations": [
+    "Functional milestone only; M5 and full game acceptance remain incomplete",
+    "Phone viewport uses browser pointer input; no physical phone or simultaneous multitouch evidence",
+    "Screenshots inspected in tool output; no new archived images or motion video",
+    "Collision/region invariants verified by tests, not a new full-world traversal",
+    "Landscape map labels are small and remain a non-blocking quality backlog item",
+    "No current endurance, GPU timing, sound listening, or final full-playthrough claim"
+  ],
+  "nextMilestone": "M2"
+}

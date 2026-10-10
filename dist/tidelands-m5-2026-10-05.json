@@ -1,0 +1,144 @@
+{
+  "project": "潮生群岛",
+  "stage": "M5 quality batch checkpoint",
+  "fullGoalComplete": false,
+  "builderSha256": "7456d293ce4b0787a1a071a2fb79a582b17ba49113f64fee1c3da616bb79a3db",
+  "files": {
+    "README.md": {
+      "bytes": 2359,
+      "sha256": "28d795cb563144b089e68ad354ba517dd46c8ebf6cc4a8abffd64fca711d6fce"
+    },
+    "assets/ground/leafy-grass/albedo.jpg": {
+      "bytes": 1195394,
+      "sha256": "cfa40bc9d9417d1852db8753a8d5917f110c40101179f63543c382e39bc05e4a"
+    },
+    "assets/ground/leafy-grass/manifest.json": {
+      "bytes": 1638,
+      "sha256": "f49abbcbc4a709048e10e6c3355337ab9753473825f1176bfebe6eb060eba513"
+    },
+    "assets/ground/leafy-grass/normal-gl.jpg": {
+      "bytes": 1466049,
+      "sha256": "832328216adc0a7e1f70a31d5ee48c9ab7f2152d83816122736cf42ac4b2ebd6"
+    },
+    "assets/ground/leafy-grass/roughness.jpg": {
+      "bytes": 511385,
+      "sha256": "0c2a1d91aacb8e54a496051b59854e51e456fe858abeade778e308359ef16463"
+    },
+    "assets/rock/lichen-rock/albedo.jpg": {
+      "bytes": 1070311,
+      "sha256": "780128a5757920a7e30c50042e8975e8333ef4ae5809b30bb5be6a2f9fec3ec5"
+    },
+    "assets/rock/lichen-rock/manifest.json": {
+      "bytes": 1427,
+      "sha256": "3099a12429d3ca75bc837223242cb9a4bec4022e22f8071b899d0d56dc3fd17c"
+    },
+    "assets/rock/lichen-rock/normal-gl.jpg": {
+      "bytes": 1259569,
+      "sha256": "a3510a296030a1e312ef589a872ae416f2d23203a7b7c0c9e3646e8109c6a61c"
+    },
+    "assets/rock/lichen-rock/roughness.jpg": {
+      "bytes": 573955,
+      "sha256": "13a12b95d951f6fa4407d210fc97244274ff73583b60208eff651f3779c01a2e"
+    },
+    "index.html": {
+      "bytes": 4057,
+      "sha256": "2245f69cea28e3ac482acf169d56ce48ab3ef8be9a1fce74af8390d29a95b15e"
+    },
+    "serve.py": {
+      "bytes": 1081,
+      "sha256": "15a7ff5096fd6b8c33c14591065d184ba7e643f9efd3f4c036e4c4058f349e45"
+    },
+    "src/audio.js": {
+      "bytes": 5676,
+      "sha256": "b3ec2bff2a521932823a998fcc86eefd16ae0fead315e7d5324b064d63436ca5"
+    },
+    "src/camera.js": {
+      "bytes": 1385,
+      "sha256": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1"
+    },
+    "src/character.js": {
+      "bytes": 18128,
+      "sha256": "cbe3fac0b203391e634adeda6cf1b8a275f86b9eeef33acc970fbb29ab98d33a"
+    },
+    "src/cottage-surfaces.js": {
+      "bytes": 2904,
+      "sha256": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a"
+    },
+    "src/creature.js": {
+      "bytes": 9021,
+      "sha256": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4"
+    },
+    "src/foliage.js": {
+      "bytes": 6762,
+      "sha256": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a"
+    },
+    "src/game.js": {
+      "bytes": 12896,
+      "sha256": "5f27ece647163b1e076ccbe5eaf7e5ecf8960eba765e1fb4cd9f7e7b4a0b8cb2"
+    },
+    "src/ground-surface.js": {
+      "bytes": 3680,
+      "sha256": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48"
+    },
+    "src/main.js": {
+      "bytes": 21046,
+      "sha256": "be2759df76430daa74c99405efb4cbd2b65e6382583f9662cc098128be733cfb"
+    },
+    "src/meadow.js": {
+      "bytes": 10387,
+      "sha256": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72"
+    },
+    "src/merge-parts.js": {
+      "bytes": 2082,
+      "sha256": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272"
+    },
+    "src/pointer-controls.js": {
+      "bytes": 1824,
+      "sha256": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974"
+    },
+    "src/rock-surface.js": {
+      "bytes": 3137,
+      "sha256": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b"
+    },
+    "src/rock.js": {
+      "bytes": 2377,
+      "sha256": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7"
+    },
+    "src/scene.js": {
+      "bytes": 24582,
+      "sha256": "b9e2bce7ccc6344660752bfe2a596bc112205bc1cd460a9d9241b9ff57d4cca7"
+    },
+    "src/sky.js": {
+      "bytes": 3089,
+      "sha256": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1"
+    },
+    "src/world.js": {
+      "bytes": 2934,
+      "sha256": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+    },
+    "styles.css": {
+      "bytes": 11920,
+      "sha256": "252b652e5198b084d87a41ef24e6328edbcbaf5685ad2e867cd40e4114b0b477"
+    },
+    "vendor/README.md": {
+      "bytes": 376,
+      "sha256": "ba420a3a87fdd72cd14ec0251ee69a1971e52f2e2150b25ed208396c6e225c6d"
+    },
+    "vendor/THREE-LICENSE": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "vendor/three.core.min.js": {
+      "bytes": 381124,
+      "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de"
+    },
+    "vendor/three.module.min.js": {
+      "bytes": 338908,
+      "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6"
+    }
+  },
+  "archive": "tidelands-m5-2026-10-05.zip",
+  "archiveBytes": 6301368,
+  "archiveSha256": "02c7cc719a0a48608813e46c2d34075e12d280b42ae7c239acaba34f0a870d57",
+  "archiveEntries": 34
+}

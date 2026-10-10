@@ -1,0 +1,169 @@
+{
+  "date": "2026-10-05",
+  "stage": "M4_functional_accepted",
+  "fullGoalComplete": false,
+  "storage": {
+    "isolatedKeys": true,
+    "version2ImportRejected": true,
+    "versionError": "导入失败：存档角色数据无效",
+    "originalStateAfterRejection": {
+      "quest": 3,
+      "position": [
+        -59.1,
+        115.4
+      ],
+      "buildings": 1
+    },
+    "exportBlobRestoredBeforeImport": {
+      "bytes": 12523,
+      "quest": 3,
+      "position": [
+        -59.103861529043066,
+        115.38194564326778
+      ],
+      "wood": 11,
+      "buildings": 1
+    },
+    "validFixtureImport": "tests/fixtures/camp-upgraded.json",
+    "afterImportAndReload": {
+      "quest": 3,
+      "position": [
+        -63.7,
+        115.9
+      ],
+      "buildings": 3,
+      "hp": 100,
+      "hotbarTool": "晶石剑"
+    },
+    "exportBlobRestoredAfterReload": {
+      "bytes": 12758,
+      "quest": 3,
+      "position": [
+        -63.719244647338776,
+        115.94827083544891
+      ],
+      "wood": 11,
+      "buildings": 3
+    },
+    "corruptAutoSave": {
+      "fallbackMessage": "旧存档未能读取；你可以开始新旅程或导入备份。",
+      "startAllowed": true,
+      "after12S": [
+        -69.2,
+        107.1
+      ],
+      "hp": 100,
+      "saveLabel": "已保存"
+    },
+    "blockedStorage": {
+      "startAllowed": true,
+      "after12D": [
+        -64.8,
+        101.2
+      ],
+      "hp": 100,
+      "saveMessage": "无法保存，请导出备份。"
+    },
+    "consoleWarningsAndErrors": [],
+    "downloadFileVerifiedThisRun": false,
+    "exportVerificationKind": "Production Blob restored by QA interception; not a downloaded file check"
+  },
+  "sceneLifecycle": {
+    "complete": true,
+    "cycles": 12,
+    "drawsPerCycle": 60,
+    "stableFromFirstFrame": false,
+    "stableAfterFirstPair": true,
+    "initialFresh": {
+      "buildings": 0,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 279,
+      "textures": 8,
+      "programs": 17,
+      "calls": 406
+    },
+    "initialCamp": {
+      "buildings": 3,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 344,
+      "textures": 8,
+      "programs": 20,
+      "calls": 419
+    },
+    "repeatedFreshCycles": [
+      2,
+      4,
+      6,
+      8,
+      10
+    ],
+    "repeatedFresh": {
+      "buildings": 0,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 283,
+      "textures": 14,
+      "programs": 19,
+      "calls": 406
+    },
+    "repeatedCampCycles": [
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "repeatedCamp": {
+      "buildings": 3,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 344,
+      "textures": 14,
+      "programs": 20,
+      "calls": 419
+    },
+    "retainedOnFreshAfterFirstPair": [
+      "player CapsuleGeometry",
+      "player BoxGeometry",
+      "player OctahedronGeometry",
+      "scenery RingGeometry"
+    ],
+    "consoleWarningsAndErrors": [],
+    "limitation": "Fixed view, repeated batch draw. Stable counters after warmup do not prove heap/GPU bytes or long-term absence of leaks."
+  },
+  "remaining": [
+    "Near-obstacle camera quality, character/creature/environment/motion/audio quality, real devices and GPU evidence; M5"
+  ],
+  "sourceSha256": {
+    "src/audio.js": "6e2cdcef0d1557515ee8f9151e66bbb1cba5c5546270e011bf31c1e0037f7fe6",
+    "src/camera.js": "eba766f996b6d841c44509196bd0f79273e6bb6d37b63aee293ce723f2e66333",
+    "src/character.js": "7e516f1cfcdd4319b54b7489290ba8fcb1e8e1fdd2d8634d016d20b9e0f213a5",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "5f27ece647163b1e076ccbe5eaf7e5ecf8960eba765e1fb4cd9f7e7b4a0b8cb2",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/main.js": "be2759df76430daa74c99405efb4cbd2b65e6382583f9662cc098128be733cfb",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "ef24f7266be81533bc9a535c825478caa0c319bc8e19cbaa399604c55ad400ba",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "index.html": "2245f69cea28e3ac482acf169d56ce48ab3ef8be9a1fce74af8390d29a95b15e",
+    "styles.css": "252b652e5198b084d87a41ef24e6328edbcbaf5685ad2e867cd40e4114b0b477",
+    "tests/playthrough.html": "8b8d9bb7e840f3fad4caf40abe8d9e31f5c337a0c6ae6751b337e377a182ba05",
+    "tests/scene-lifecycle.html": "ce5e4eb6f37806396f40940937b87abca066f32dbce56578fa9730048e8d6f5c",
+    "tests/fixtures/m4-version-invalid.json": "0da3acc10c2260a8be4f3c78ea232f2f3a4401feccbad96c269e99671b5113cd",
+    "tests/fixtures/camp-upgraded.json": "6ed5b3070e3d1b6684b7b38b3938a771fe527e7fbd513230504fe1fe29da8e24"
+  },
+  "enduranceArtifact": "docs/m4-endurance-sample.json",
+  "journeyArtifact": "docs/m4-journey-acceptance.json"
+}

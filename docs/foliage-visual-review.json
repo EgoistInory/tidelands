@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-03",
+  "browser": "Codex IAB 2",
+  "entry": "/tests/visual-review.html",
+  "scope": "Production WorldView; fixed player, time, camera, no enemies or save access; screenshot images are tool results only",
+  "camera": {"yaw": 0.15, "pitch": 0.484, "distance": 23},
+  "spawnComparison": {
+    "position": [-70, 102], "time": 120, "canvasCss": [1280, 666],
+    "beforeLeafCards": {"calls": 118, "triangles": 645039, "geometries": 118, "textures": 6},
+    "afterLeafCards": {"calls": 116, "triangles": 660243, "geometries": 116, "textures": 7},
+    "note": "Main render counters; triangle count increased, alpha/shadow cost not measured by these counters"
+  },
+  "reviewed": [
+    {"place": "spawn", "time": 120, "canvasCss": [1280, 666]},
+    {"place": "spawn", "time": 240, "canvasCss": [1280, 666]},
+    {"place": "spawn", "time": 0, "canvasCss": [1280, 666]},
+    {"place": "forest", "position": [145, -25], "time": 240, "calls": 110, "triangles": 665015},
+    {"place": "cottage", "position": [-52.8, 86.4], "time": 120, "calls": 116, "triangles": 660243},
+    {"place": "spawn", "time": 240, "canvasCss": [390, 693], "calls": 47, "triangles": 654535}
+  ],
+  "lighting": {"midnightBeforeAfter": 0.372, "noonBeforeAfter": 2.1, "dawnBefore": 0.57, "dawnAfterApprox": 0.957},
+  "leafResourceCpuBytes": {"geometryAttributes": 177408, "textureData": 65536, "note": "Resource data only; not whole-scene delta, heap or GPU memory"},
+  "productionPerformanceSample": {
+    "mode": "performance", "buildings": 3, "position": [-63, 115.8], "dayLabel": "第2天 午后", "movement": "stationary",
+    "durationMs": 36815.4, "activeMs": 30015.4, "frames": 1801, "medianMs": 16.7, "p95Ms": 17.7, "maxMs": 18.7, "over50Ms": 0, "hidden": false, "viewport": [1280, 672], "devicePixelRatio": 2,
+    "note": "Parent-control focus paused the game; paused intervals excluded. Frame scheduling only, not GPU timing or long-run acceptance"
+  },
+  "mobileSmoke": {"mode": "menus", "viewport": [390, 844], "positionBefore": [-70, 102], "positionAfterJoystickDrag": [-70.1, 101.1], "note": "Desktop browser viewport and one pointer; not physical mobile or multi-touch proof"},
+  "warnError": [],
+  "tests": {"command": "node --test tests/foliage.test.js tests/scene.test.js", "passed": 9, "failed": 0},
+  "sha256": {
+    "src/foliage.js": "891d2b9408eb7460e769c951dfed60be66b4af9b6d7b9b0aff4b4088024f0e1e",
+    "src/scene.js": "6ce111fbf2a1dbc4b3305db10f4f41bdcf13374bbf85c5591d50218ce6f6f891",
+    "tests/visual-review.html": "3600ce815b3ed3aa84d52260f02d466d73768d4c4d516b9399f035dbdd943954",
+    "tests/foliage.test.js": "3d2bca30c9a443aa8de6392c9c00dd216ea4f20ae83c81c3f7df04747ec3bb2e"
+  },
+  "remaining": ["foliage wind and transmission", "trunk and resource detail", "ground distribution", "character and creature motion", "sound listening", "long-run performance and memory"],
+  "m5Complete": false,
+  "aaaComplete": false
+}

@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-03",
+  "browser": "Codex IAB 2",
+  "renderReview": {
+    "entry": "/tests/visual-review.html",
+    "position": [
+      -64,
+      115
+    ],
+    "time": 240,
+    "canvasCss": [
+      1280,
+      608
+    ],
+    "canvasBuffer": [
+      1920,
+      912
+    ],
+    "devicePixelRatio": 2,
+    "calls": 182,
+    "triangles": 713751,
+    "geometries": 182,
+    "textures": 8,
+    "leafTextureAB": "Same position/time/camera: single giant leaf card texture changed to five-leaf twig; render counts unchanged. Actual screenshots inspected, no images saved.",
+    "motionFinalTime": 250,
+    "note": "Rendered ten-second clock playback completed; no motion video or final naturalness acceptance"
+  },
+  "productionHarvest": {
+    "mode": "berry",
+    "fixture": "Fresh state beside starter berry; enemy roster retained with HP=0, separate save key, refresh resets",
+    "desktop": [
+      1280,
+      720
+    ],
+    "mobileViewport": [
+      390,
+      844
+    ],
+    "position": [
+      -64,
+      112.5
+    ],
+    "berriesBeforeAfter": [
+      3,
+      5
+    ],
+    "feedback": "浆果 +2",
+    "targetBeforeAfter": [
+      "采集浆果",
+      "采集石料"
+    ],
+    "model": "Actual screenshots before/after show leaf, twig and fruit meshes disappear together",
+    "note": "Viewport emulation only, not phone GPU/multitouch or natural gathering motion acceptance"
+  },
+  "resources": {
+    "berryLeafCards": 240,
+    "berryLeafTriangles": 480,
+    "berryLeafCpuAttributeBytes": 63360,
+    "barkTextureBytes": 131072,
+    "leafTextureReused": true,
+    "note": "Raw newly constructed resources, not net heap/GPU memory delta"
+  },
+  "tests": {
+    "command": "npm test",
+    "passed": 53,
+    "failed": 0
+  },
+  "warnError": [],
+  "sha256": {
+    "src/main.js": "4dfb26075e8a30b62e5786b2969c692f7464edc43d114a44f7e8c88b9f55980d",
+    "src/scene.js": "21ba18ad984d43b64719a642b877f83129931cf429e567609aca0a3584eb3bde",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "tests/playthrough.html": "3cdf57b2b0bea74a64bcae1914a9ef5903cfefa4d9e83c942f5554fa3c1ace9e",
+    "tests/visual-review.html": "deed8daaef7b9119fe6c6ee89d855c61c2896bd5bb5187e38adaef912da168dc",
+    "tests/foliage.test.js": "c532dde0b7872496ec9bc4c95f5e201a4dd709f9be8a93f1a86a0b917f543e19",
+    "tests/scene.test.js": "f8b3a4b2eb51794ff0bb38234161ef64e77d95a4cc371b061a68d3c66f9c0ca7"
+  },
+  "m5Complete": false,
+  "aaaComplete": false
+}

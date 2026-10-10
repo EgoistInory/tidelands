@@ -1,0 +1,35 @@
+{
+  "status": "known_quality_gaps",
+  "characterSha256": "670c4cd837ccb13ab3944489766b0942f60c345fa5454be2e0530c55c5ac3116",
+  "cases": [
+    {
+      "kind": "straight",
+      "fps": 60,
+      "speedMetersPerSecond": 7,
+      "contacts": 188,
+      "maxFrameDriftMeters": 7.268712627350737e-7,
+      "maxWithinStanceTravelMeters": 0.0000022154199355028936
+    },
+    {
+      "kind": "turn",
+      "fps": 60,
+      "speedMetersPerSecond": 7,
+      "contacts": 188,
+      "maxFrameDriftMeters": 0.2127096892407723,
+      "maxWithinStanceTravelMeters": 0.5062267477427301
+    },
+    {
+      "kind": "stop",
+      "fps": 60,
+      "speedMetersPerSecond": 7,
+      "contacts": 183,
+      "maxFrameDriftMeters": 0.014501539753215553,
+      "maxWithinStanceTravelMeters": 0.0800000000205312
+    }
+  ],
+  "limitations": [
+    "Offline rig audit on a flat analytic floor",
+    "Abrupt 90 degree input after two seconds; stop after two seconds",
+    "No motion video, GPU measurement, irregular terrain or complete gameplay acceptance"
+  ]
+}

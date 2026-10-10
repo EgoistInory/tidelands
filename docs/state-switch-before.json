@@ -1,0 +1,139 @@
+{
+  "complete": true,
+  "hidden": false,
+  "viewport": [
+    1280,
+    720
+  ],
+  "canvasBuffer": [
+    1920,
+    816
+  ],
+  "rows": [
+    {
+      "kind": "same-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0,
+      "syncMs": 0.2,
+      "drawCpuMs": 82.1,
+      "heapBytes": 83984667,
+      "geometries": 279,
+      "textures": 13
+    },
+    {
+      "kind": "fresh-state",
+      "enemyCount": 79,
+      "retained": 0,
+      "disposedGroups": 79,
+      "prepareMs": 0.5,
+      "syncMs": 361.1,
+      "drawCpuMs": 6,
+      "heapBytes": 88065371,
+      "geometries": 282,
+      "textures": 13
+    },
+    {
+      "kind": "same-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0,
+      "syncMs": 0.1,
+      "drawCpuMs": 3.3,
+      "heapBytes": 88065371,
+      "geometries": 289,
+      "textures": 13
+    },
+    {
+      "kind": "fresh-state",
+      "enemyCount": 79,
+      "retained": 0,
+      "disposedGroups": 79,
+      "prepareMs": 0.6,
+      "syncMs": 342,
+      "drawCpuMs": 7.6,
+      "heapBytes": 98992123,
+      "geometries": 308,
+      "textures": 13
+    },
+    {
+      "kind": "same-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0,
+      "syncMs": 0.2,
+      "drawCpuMs": 3.6,
+      "heapBytes": 98992123,
+      "geometries": 351,
+      "textures": 13
+    },
+    {
+      "kind": "fresh-state",
+      "enemyCount": 79,
+      "retained": 0,
+      "disposedGroups": 79,
+      "prepareMs": 0.5,
+      "syncMs": 347.5,
+      "drawCpuMs": 6.7,
+      "heapBytes": 142427508,
+      "geometries": 362,
+      "textures": 13
+    },
+    {
+      "kind": "same-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0,
+      "syncMs": 0.1,
+      "drawCpuMs": 2.6,
+      "heapBytes": 142427508,
+      "geometries": 362,
+      "textures": 13
+    },
+    {
+      "kind": "fresh-state",
+      "enemyCount": 79,
+      "retained": 0,
+      "disposedGroups": 79,
+      "prepareMs": 0.5,
+      "syncMs": 348.5,
+      "drawCpuMs": 6.5,
+      "heapBytes": 99752043,
+      "geometries": 362,
+      "textures": 13
+    },
+    {
+      "kind": "same-state",
+      "enemyCount": 79,
+      "retained": 79,
+      "disposedGroups": 0,
+      "prepareMs": 0,
+      "syncMs": 0,
+      "drawCpuMs": 2.8,
+      "heapBytes": 99752043,
+      "geometries": 362,
+      "textures": 13
+    },
+    {
+      "kind": "fresh-state",
+      "enemyCount": 79,
+      "retained": 0,
+      "disposedGroups": 79,
+      "prepareMs": 0.3,
+      "syncMs": 338.8,
+      "drawCpuMs": 5.8,
+      "heapBytes": 141431356,
+      "geometries": 362,
+      "textures": 13
+    }
+  ],
+  "note": "Ten fixed-camera isolated production sync calls, five same-object/five new-state. No saves or GPU timing. CPU draw includes WebGL command submission.",
+  "consoleWarnError": [],
+  "sceneSha256": "42d0fce139ed1d5a53e785b6f6b33b4b8d7a0c748148040d62640209b0e33a66",
+  "creatureSha256": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+  "harnessSha256": "96ac9d10431c391102d8b55dc5d8aba30a80d3525052ddbb9405acc0d301df55"
+}

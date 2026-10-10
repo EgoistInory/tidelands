@@ -1,0 +1,19 @@
+{
+  "kind":"initial-instrumentation-result",
+  "complete":true,
+  "stableAfterWarmup":true,
+  "circuits":4,
+  "visits":20,
+  "peakBufferBytes":26970316,
+  "warmRegionBufferBytes":26887244,
+  "warmRegionGeometries":1010,
+  "warmCampGeometries":1071,
+  "creatureBodyArrayBytes":13092288,
+  "creatureDistantArrayBytes":454304,
+  "afterCreatureRemoval":{"glBufferBytes":13340652,"glBufferCount":1108,"rendererGeometries":244,"creatures":0,"cacheReferences":0},
+  "afterGeometryOnlyCleanup":{"glBufferBytes":4386560,"glBufferCount":150,"rendererGeometries":0},
+  "consoleWarnError":[],
+  "issue":"QA cleanup disposed geometry but omitted InstancedMesh.dispose, leaving instance buffers in the tracker. This is an incomplete test cleanup, not proof of a production leak. Add explicit instance disposal before repeating baseline; do not alter production to hide it.",
+  "runtimeSceneSha256":"fa838a156dea30a46d0bc32081894651b949d44536fc51aab2f532dfc0219017",
+  "runtimeCreatureSha256":"96c7ebc8d3d02675d1845f5d90c8315b3d4887616ade49d4298e75bb2507cb25"
+}

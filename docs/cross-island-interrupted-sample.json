@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-07",
+  "stage": "M5_cross_island_observation",
+  "status": "interrupted_by_account_usage_limit",
+  "sample": {
+    "complete": false,
+    "targetMs": 600000,
+    "durationMs": 1200000,
+    "activeMs": 3533.2,
+    "frames": 212,
+    "medianMs": 16.7,
+    "p95Ms": 18.2,
+    "maxMs": 18.7,
+    "over50Ms": 0,
+    "hidden": false,
+    "viewport": [
+      1280,
+      672
+    ],
+    "devicePixelRatio": 1,
+    "canvasBuffer": [
+      1920,
+      1008
+    ],
+    "heapSupported": true,
+    "checkpoints": [
+      {
+        "activeMs": 0,
+        "frames": 0,
+        "daytime": "第 3 天 · 午后",
+        "save": "已保存",
+        "hp": 100,
+        "region": "潮汐海岸",
+        "coordinates": "位置 X -99.0，Z 80.1；建筑 1；击败 4",
+        "enemy": null,
+        "heapBytes": 62335997,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 1,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 3533.2,
+        "frames": 212,
+        "daytime": "第 3 天 · 午后",
+        "save": "已保存",
+        "hp": 100,
+        "region": "潮汐海岸",
+        "coordinates": "位置 X -34.8，Z 65.3；建筑 1；击败 4",
+        "enemy": null,
+        "heapBytes": 66973112,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 1,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      }
+    ]
+  },
+  "browser": {
+    "tab": "95",
+    "mode": "m4",
+    "newFixtureImported": false,
+    "consoleWarningsErrors": [],
+    "pausedOnInterruption": true
+  },
+  "input": "Native intermittent W/D key presses; no held movement or state injection.",
+  "bounds": [
+    "Only 3.53 seconds active before paused timeout; not ten-minute acceptance.",
+    "The 20-minute sampler wall timeout elapsed while paused during quota interruption.",
+    "Save currently remains in QA m4; production and journey were not operated.",
+    "Cross-island route is not yet complete."
+  ],
+  "sourceSha256": {
+    "src/game.js": "4f4c73b4f44844cd5cefd5c5dd39ac887348d50cad485db5d77a849085d328ea",
+    "src/scene.js": "b9e2bce7ccc6344660752bfe2a596bc112205bc1cd460a9d9241b9ff57d4cca7",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/main.js": "52d9cf124b02915a2c36cfe7510840be3cf6f9d281931c3a511601f0f3641924",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/audio.js": "b3ec2bff2a521932823a998fcc86eefd16ae0fead315e7d5324b064d63436ca5",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/character.js": "cbe3fac0b203391e634adeda6cf1b8a275f86b9eeef33acc970fbb29ab98d33a",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+    "styles.css": "9ebaa347043c3d65b51e19085f923a9c2a06ff370446aae0bab26358c0c98a3b",
+    "tests/playthrough.html": "173f45fbeae700359c819589ad3b5012fb7867102b6e770533b95dc3715ffe94"
+  },
+  "fullGoalAccepted": false
+}

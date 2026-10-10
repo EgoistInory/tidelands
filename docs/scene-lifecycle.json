@@ -1,0 +1,180 @@
+{
+  "complete": true,
+  "stable": false,
+  "stableAfterFirstPair": true,
+  "samples": [
+    {
+      "cycle": 0,
+      "kind": "fresh",
+      "buildings": 0,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 162,
+      "textures": 3,
+      "programs": 10,
+      "calls": 235
+    },
+    {
+      "cycle": 1,
+      "kind": "camp",
+      "buildings": 3,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 227,
+      "textures": 3,
+      "programs": 13,
+      "calls": 251
+    },
+    {
+      "cycle": 2,
+      "kind": "fresh",
+      "buildings": 0,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 166,
+      "textures": 3,
+      "programs": 12,
+      "calls": 235
+    },
+    {
+      "cycle": 3,
+      "kind": "camp",
+      "buildings": 3,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 227,
+      "textures": 3,
+      "programs": 13,
+      "calls": 251
+    },
+    {
+      "cycle": 4,
+      "kind": "fresh",
+      "buildings": 0,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 166,
+      "textures": 3,
+      "programs": 12,
+      "calls": 235
+    },
+    {
+      "cycle": 5,
+      "kind": "camp",
+      "buildings": 3,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 227,
+      "textures": 3,
+      "programs": 13,
+      "calls": 251
+    },
+    {
+      "cycle": 6,
+      "kind": "fresh",
+      "buildings": 0,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 166,
+      "textures": 3,
+      "programs": 12,
+      "calls": 235
+    },
+    {
+      "cycle": 7,
+      "kind": "camp",
+      "buildings": 3,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 227,
+      "textures": 3,
+      "programs": 13,
+      "calls": 251
+    },
+    {
+      "cycle": 8,
+      "kind": "fresh",
+      "buildings": 0,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 166,
+      "textures": 3,
+      "programs": 12,
+      "calls": 235
+    },
+    {
+      "cycle": 9,
+      "kind": "camp",
+      "buildings": 3,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 227,
+      "textures": 3,
+      "programs": 13,
+      "calls": 251
+    },
+    {
+      "cycle": 10,
+      "kind": "fresh",
+      "buildings": 0,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 166,
+      "textures": 3,
+      "programs": 12,
+      "calls": 235
+    },
+    {
+      "cycle": 11,
+      "kind": "camp",
+      "buildings": 3,
+      "creatures": 79,
+      "cacheTypes": 2,
+      "cacheReferences": 79,
+      "geometries": 227,
+      "textures": 3,
+      "programs": 13,
+      "calls": 251
+    }
+  ],
+  "console": [],
+  "source": "IAB tests/scene-lifecycle.html, 2026-09-29",
+  "limitations": "首次空档计数存在差异；后10次稳定不能证明长期无泄漏、总堆/GPU内存或视觉品质。",
+  "retainedGeometryAudit": {
+    "verified": "2026-09-29 IAB, 12 cycles complete, stableAfterFirstPair=true, console=[]",
+    "firstReturn": [
+      {
+        "category": "player",
+        "type": "CapsuleGeometry",
+        "firstCycle": 1
+      },
+      {
+        "category": "player",
+        "type": "BoxGeometry",
+        "firstCycle": 1
+      },
+      {
+        "category": "player",
+        "type": "OctahedronGeometry",
+        "firstCycle": 1
+      },
+      {
+        "category": "scenery",
+        "type": "RingGeometry",
+        "firstCycle": 1
+      }
+    ],
+    "interpretation": "三件剑模型几何与交互环首次显示后保留，仍属于活跃场景。program增加2的具体来源未逐项确认。"
+  }
+}

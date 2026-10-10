@@ -1,0 +1,22 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#183d37"><title>潮生群岛 · Tidelands</title><link rel="icon" href="data:,"><link rel="stylesheet" href="styles.css"><script type="module" src="src/main.js"></script></head>
+<body><canvas id="world" aria-label="潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互" tabindex="0"></canvas>
+<div id="hud" hidden>
+<div id="damage-feedback" aria-hidden="true" hidden></div>
+<output id="combat-feedback" role="status" aria-live="polite" hidden></output>
+  <section class="vitals glass"><div class="brand"><h1>潮生群岛</h1><span>TIDELANDS</span></div><p id="region">潮汐海岸</p><div class="meter"><span>生命</span><progress id="hp" value="100" max="100"></progress><b id="hp-value">100</b></div><div class="meter stamina"><span>体力</span><progress id="stamina" value="100" max="100"></progress><b id="stamina-value">100</b></div></section>
+  <section class="quest glass"><h2 id="quest-title">归航的灯火</h2><p id="quest-text">与海边的守灯人交谈</p><small id="quest-hint">靠近后按 E 交谈</small></section>
+  <div class="compass" aria-label="朝向"><span>西</span><span>北</span><strong id="bearing">北</strong><span>东</span><span>南</span></div>
+  <section id="enemy-status" class="glass" aria-label="附近敌人" hidden><div class="enemy-heading"><strong id="enemy-name"></strong><b id="enemy-hp-value"></b></div><progress id="enemy-hp" aria-label="敌人生命" value="40" max="40"></progress><small id="enemy-hint"></small></section>
+  <aside class="map-corner"><canvas id="minimap" width="180" height="180" aria-label="群岛小地图"></canvas><p class="glass" id="daytime">第 1 天 · 午后</p><div><button id="map-button">地图 M</button><button id="pause-button">暂停</button></div></aside>
+  <div class="interaction"><button id="interact-button" hidden><kbd>E</kbd><span id="interact-label">交互</span></button><p id="placement-tip" hidden></p></div>
+  <div id="toast" class="toast glass" role="status" aria-live="polite" hidden></div>
+  <nav class="hotbar" aria-label="快捷操作"><button data-slot="hand" class="selected"><kbd>1</kbd><span>✋</span><small>徒手</small></button><button data-slot="axe"><kbd>2</kbd><span>⚒</span><small>石斧</small></button><button data-slot="food"><kbd>3</kbd><span>◉</span><small>食物 <b id="food-count">3</b></small></button><button data-slot="campfire"><kbd>4</kbd><span>♨</span><small>营火</small></button><button data-slot="tent"><kbd>5</kbd><span>△</span><small>帐篷</small></button><button data-slot="workbench"><kbd>6</kbd><span>▤</span><small>工作台</small></button></nav>
+  <div class="bottom-left glass">WASD 移动 · Shift 奔跑 · 空格攻击<br><small>拖动视角 · 滚轮缩放 · 自动存档 <span id="save-state">已就绪</span></small></div>
+  <div class="bottom-right"><button id="bag-button">背包 B</button><button id="craft-button">制作 C</button></div>
+  <div class="touch-controls"><div id="joystick" aria-label="移动摇杆"><span></span></div><button id="attack-button">攻击</button></div>
+  <span id="coordinates" class="sr-only"></span>
+</div>
+<section id="start-screen" class="start-screen"><div class="start-content"><span class="wordmark">T I D E L A N D S</span><h2>潮生群岛</h2><p>海风带来远方的消息。<br>探索群岛，建起营地，让归航的灯再次亮起。</p><button id="start-button" class="gold" disabled>正在唤醒群岛…</button><small id="load-status" role="status">正在加载本地世界</small><p class="start-hint">单人开放世界 · 自由探索 · 本地存档</p></div></section>
+<dialog id="panel"><div class="panel-head"><h2 id="panel-title"></h2><button id="panel-close" aria-label="关闭面板">×</button></div><div id="panel-body"></div><input type="file" id="import-file" accept="application/json,.json" hidden></dialog>
+<dialog id="new-dialog"><h2>重新启航？</h2><p>当前进度会被覆盖。可以先在暂停菜单导出存档。</p><div class="dialog-actions"><button id="cancel-new">返回</button><button id="confirm-new" class="gold">开始新旅程</button></div></dialog>
+<noscript>请开启 JavaScript 后游玩。</noscript></body></html>

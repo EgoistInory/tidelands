@@ -1,0 +1,517 @@
+{
+  "date": "2026-10-08",
+  "stage": "M5_coastal_audio_layer_batch",
+  "batchChangeVerified": true,
+  "soundQualityAccepted": false,
+  "fullGoalComplete": false,
+  "problem": "Existing ambience only routed a single filtered wind-noise source. Added a separately offset, swelling surf layer in low shore elevations.",
+  "productionChange": {
+    "file": "src/audio.js",
+    "sharedNoiseBuffer": true,
+    "additionalPersistentNodes": 3,
+    "bufferOffsetSeconds": 1.173,
+    "shore": "clamp((5-height)/5,0,1), elevation proxy rather than exact distance to water",
+    "wave": "(.5+.5*sin(time*.65)) squared amplitude; filtered wash changes with crest",
+    "gainTargetSmoothSeconds": 0.45,
+    "filterSmoothSeconds": 0.4,
+    "routing": "world master, shares pause/mute; never counts against 12 transient effect voices",
+    "dependenciesAdded": 0
+  },
+  "tests": {
+    "red": {
+      "pass": 10,
+      "fail": 2,
+      "log": "docs/coastal-audio-test-before.txt"
+    },
+    "green": {
+      "pass": 12,
+      "fail": 0,
+      "log": "docs/coastal-audio-test-after.txt"
+    },
+    "full": {
+      "pass": 112,
+      "fail": 0,
+      "skipped": 0,
+      "log": "docs/coastal-audio-full-tests.txt"
+    },
+    "syntax": "node --check src/audio.js"
+  },
+  "offline": {
+    "url": "http://127.0.0.1:4190/tests/coastal-audio-render.html",
+    "provider": "CUA in-app browser",
+    "actualWebAudio": true,
+    "mono": true,
+    "secondsPerScenario": 8,
+    "sampleRate": 48000,
+    "before": [
+      {
+        "kind": "coast",
+        "peak": 0.02465772069990635,
+        "rms": 0.005225255396680975,
+        "seconds": 8,
+        "sampleRate": 48000,
+        "finite": true,
+        "unclipped": true,
+        "surfSourcePresent": false
+      },
+      {
+        "kind": "shore-transition",
+        "peak": 0.009917852468788624,
+        "rms": 0.0020898989886016578,
+        "seconds": 8,
+        "sampleRate": 48000,
+        "finite": true,
+        "unclipped": true,
+        "surfSourcePresent": false
+      },
+      {
+        "kind": "inland",
+        "peak": 0.010486389510333538,
+        "rms": 0.0023020293937812695,
+        "seconds": 8,
+        "sampleRate": 48000,
+        "finite": true,
+        "unclipped": true,
+        "surfSourcePresent": false
+      },
+      {
+        "kind": "paused-coast",
+        "peak": 0,
+        "rms": 0,
+        "seconds": 8,
+        "sampleRate": 48000,
+        "finite": true,
+        "unclipped": true,
+        "surfSourcePresent": false
+      },
+      {
+        "kind": "muted-coast",
+        "peak": 0,
+        "rms": 0,
+        "seconds": 8,
+        "sampleRate": 48000,
+        "finite": true,
+        "unclipped": true,
+        "surfSourcePresent": false
+      },
+      {
+        "kind": "busy-coast",
+        "peak": 0.12957583367824554,
+        "rms": 0.00628771501525742,
+        "routing": {
+          "physicalQueued": 9,
+          "totalQueued": 12,
+          "successCuesQueued": 3
+        },
+        "seconds": 8,
+        "sampleRate": 48000,
+        "finite": true,
+        "unclipped": true,
+        "surfSourcePresent": false
+      }
+    ],
+    "after": [
+      {
+        "kind": "coast",
+        "peak": 0.0245504230260849,
+        "rms": 0.005168660551808884,
+        "windowsRms": [
+          0.004081143446445136,
+          0.004306573700257499,
+          0.00453623361065677,
+          0.00484465069986745,
+          0.005016018461912567,
+          0.00556224315405778,
+          0.006105160356247216,
+          0.006410778226361724
+        ],
+        "seconds": 8,
+        "sampleRate": 48000,
+        "finite": true,
+        "unclipped": true,
+        "surfSourcePresent": true,
+        "surfLoops": true,
+        "sharedNoise": true
+      },
+      {
+        "kind": "shore-transition",
+        "peak": 0.010788665153086185,
+        "rms": 0.0023990665592911226,
+        "windowsRms": [
+          0.002551520543885041,
+          0.0018312123296276468,
+          0.0021741611939083585,
+          0.002200402567896664,
+          0.002104070863038807,
+          0.0026700011828418553,
+          0.002779306896145332,
+          0.0027076283850057574
+        ],
+        "seconds": 8,
+        "sampleRate": 48000,
+        "finite": true,
+        "unclipped": true,
+        "surfSourcePresent": true,
+        "surfLoops": true,
+        "sharedNoise": true
+      },
+      {
+        "kind": "inland",
+        "peak": 0.010052014142274857,
+        "rms": 0.002134697724670682,
+        "windowsRms": [
+          0.002189770961632414,
+          0.0018214014602826068,
+          0.0017382620847816574,
+          0.0019024711760465272,
+          0.0021289874877749265,
+          0.0021324560131467537,
+          0.0023739553578197435,
+          0.0026431615158129585
+        ],
+        "seconds": 8,
+        "sampleRate": 48000,
+        "finite": true,
+        "unclipped": true,
+        "surfSourcePresent": true,
+        "surfLoops": true,
+        "sharedNoise": true
+      },
+      {
+        "kind": "surf-only-coast",
+        "peak": 0.006016196217387915,
+        "rms": 0.0010006551568185029,
+        "windowsRms": [
+          0.0008113015363337491,
+          0.0008974885803039435,
+          0.0006653224018385867,
+          0.0006177227765938729,
+          0.000634478282951036,
+          0.0007752128662934457,
+          0.0012192136137140447,
+          0.001797930801150419
+        ],
+        "seconds": 8,
+        "sampleRate": 48000,
+        "finite": true,
+        "unclipped": true,
+        "surfSourcePresent": true,
+        "surfLoops": true,
+        "sharedNoise": true
+      },
+      {
+        "kind": "surf-only-inland",
+        "peak": 0,
+        "rms": 0,
+        "windowsRms": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "seconds": 8,
+        "sampleRate": 48000,
+        "finite": true,
+        "unclipped": true,
+        "surfSourcePresent": true,
+        "surfLoops": true,
+        "sharedNoise": true
+      },
+      {
+        "kind": "paused-coast",
+        "peak": 0,
+        "rms": 0,
+        "windowsRms": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "seconds": 8,
+        "sampleRate": 48000,
+        "finite": true,
+        "unclipped": true,
+        "surfSourcePresent": true,
+        "surfLoops": true,
+        "sharedNoise": true
+      },
+      {
+        "kind": "muted-coast",
+        "peak": 0,
+        "rms": 0,
+        "windowsRms": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "seconds": 8,
+        "sampleRate": 48000,
+        "finite": true,
+        "unclipped": true,
+        "surfSourcePresent": true,
+        "surfLoops": true,
+        "sharedNoise": true
+      },
+      {
+        "kind": "busy-coast",
+        "peak": 0.1336081176996231,
+        "rms": 0.006097432967812796,
+        "windowsRms": [
+          0.01022682769674814,
+          0.004219606641349899,
+          0.004557139728715839,
+          0.004775890641603596,
+          0.004903386413185365,
+          0.00558489998807486,
+          0.006037841029804595,
+          0.006306341332851812
+        ],
+        "routing": {
+          "physicalQueued": 9,
+          "totalQueued": 12,
+          "successCuesQueued": 3
+        },
+        "seconds": 8,
+        "sampleRate": 48000,
+        "finite": true,
+        "unclipped": true,
+        "surfSourcePresent": true,
+        "surfLoops": true,
+        "sharedNoise": true
+      }
+    ],
+    "heard": false,
+    "savedWav": false,
+    "players": "Generated WAV blob playback controls on QA page; no playback/human listening performed, not downloaded.",
+    "note": "Each context uses independent random noise. Before/after amplitudes do not prove a perceptual improvement. Surf-only output proves the added route separately.",
+    "consoleWarnError": []
+  },
+  "live": {
+    "camp": {
+      "mode": "performance",
+      "newFixtureImport": false,
+      "provenance": "existing isolated camp save, historical seed/import provenance not re-audited; not ordinary from-zero campaign proof",
+      "positionBefore": [
+        -56.4,
+        48.7
+      ],
+      "positionAfter": [
+        -56.3,
+        48.7
+      ],
+      "quest": 3,
+      "hp": 100,
+      "buildings": 3,
+      "kills": 0,
+      "actions": [
+        "continue existing save",
+        "start 30s sampler -> focus loss opens pause",
+        "explicit continue",
+        "8d and 8a actual input",
+        "pause and save"
+      ],
+      "inland": {
+        "height": 12.481732704388175,
+        "active": true,
+        "enabled": true,
+        "context": "running",
+        "surfPresent": true,
+        "surfGain": 0,
+        "windGain": 0.05787999927997589,
+        "masterGain": 0.3499999940395355,
+        "physicalVoices": 0,
+        "stepsAttempted": 1,
+        "stepsScheduled": 1,
+        "footfallCount": 3
+      },
+      "paused": {
+        "active": false,
+        "enabled": true,
+        "masterGain": 0
+      },
+      "consoleWarnError": []
+    },
+    "water": {
+      "mode": "swim",
+      "fixture": true,
+      "seed": "(-70,138), fresh inventory, dead enemies; labelled existing QA fixture",
+      "positionAfter": [
+        -70.4,
+        135.6
+      ],
+      "hp": 100,
+      "quest": 0,
+      "buildings": 0,
+      "kills": 0,
+      "actions": [
+        "start",
+        "8w native inputs",
+        "confirmed resize to390x844",
+        "pause -> AX sound off -> continue",
+        "pause -> restore original sound on"
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "scrollWidth": 390,
+      "playing": {
+        "height": -0.05191474455241041,
+        "context": "running",
+        "active": true,
+        "enabled": true,
+        "surfPresent": true,
+        "surfGain": 0.07571399956941605,
+        "windGain": 0.1476966142654419,
+        "masterGain": 0.3499999940395355,
+        "physicalVoices": 0
+      },
+      "muted": {
+        "height": -0.05191474455241041,
+        "context": "running",
+        "active": true,
+        "enabled": false,
+        "surfPresent": true,
+        "surfGain": 0.03600456565618515,
+        "windGain": 0.14667877554893494,
+        "masterGain": 0,
+        "physicalVoices": 0
+      },
+      "soundRestoredOn": true,
+      "consoleWarnError": []
+    }
+  },
+  "shortSample": {
+    "mode": "performance",
+    "complete": true,
+    "targetMs": 30000,
+    "durationMs": 36400.1,
+    "activeMs": 30000.1,
+    "frames": 1800,
+    "medianMs": 16.7,
+    "p95Ms": 18.2,
+    "maxMs": 18.7,
+    "over50Ms": 0,
+    "hidden": false,
+    "viewport": [
+      1280,
+      672
+    ],
+    "devicePixelRatio": 2,
+    "canvasBuffer": [
+      1920,
+      1008
+    ],
+    "heapBytes": [
+      68740894,
+      66844097
+    ],
+    "checkpoints": [
+      {
+        "activeMs": 0,
+        "coordinates": "位置 X -56.4，Z 48.7；建筑 3；击败 0",
+        "daytime": "第 15 天 · 午后",
+        "hp": 100
+      },
+      {
+        "activeMs": 30000.1,
+        "coordinates": "位置 X -56.3，Z 48.7；建筑 3；击败 0",
+        "daytime": "第 15 天 · 午后",
+        "hp": 100
+      }
+    ],
+    "limits": "Mostly stationary camp and brief input; pause excluded, two heap snapshots do not prove leaks, GPU cost, representative battle/exploration or endurance."
+  },
+  "failures": [
+    {
+      "kind": "offline_diagnostic",
+      "observed": "AudioParam.value stayed0 before offline rendering; scheduled target times had not been rendered",
+      "resolution": "removed misleading surfTargetRange; isolated surf-only coast/inland render proves actual output instead. No production change for this issue."
+    },
+    {
+      "kind": "checkbox_locator",
+      "observed": "Two Playwright role checkbox locators returned0 matches despite fresh AX checkbox; deadlines read, did not repeat that path.",
+      "resolution": "fresh AX native click13 toggled sound off/on, verified labels and live enabled/master parameters; reason for locator mismatch not established."
+    },
+    {
+      "kind": "viewport_setup",
+      "observed": "Setting viewport before opening new water tab did not yield narrow layout",
+      "resolution": "set viewport after tab creation; verified DOM390x844 and scrollWidth390 before mobile claim."
+    }
+  ],
+  "delivery": {
+    "latestPack": "dist/tidelands-m5-2026-10-08-gather.zip",
+    "currentAudioChangeInLatestPack": false,
+    "newArchiveBuilt": false,
+    "historicalPacksUnchanged": 7,
+    "developmentServer": "127.0.0.1:4190",
+    "pid": 92409
+  },
+  "cleanup": {
+    "tabsClosed": [
+      "13",
+      "14",
+      "15"
+    ],
+    "viewportReset": true,
+    "newServerStarted": false,
+    "formalSaveAndM1M4NotOpened": true,
+    "campSavedPaused": true,
+    "swimSoundRestoredAndPaused": true
+  },
+  "limits": [
+    "Numerical route/PCM/mute evidence only; no audible listening, device mix acceptance or saved WAV/video.",
+    "Mono synthetic brown-noise wash and elevation-based coast proxy are interim quality, not full environmental sound design.",
+    "No forest/animal/campfire layers, stereo positioning, weather or perceptual mix audit in this batch.",
+    "Current development audio source differs from latest gather package; all old packages and long samples retain original source versions.",
+    "M5 visual/model/natural actions/camera/sound/device/GPU/endurance remain incomplete."
+  ],
+  "next": "Continue vegetation/shoreline visual variety and representative exploration/battle performance; retain actual listening and broader environmental sound audit as quality backlog, not a completed gate.",
+  "quota": {
+    "ordinaryUsageAllowed": true,
+    "primary": {
+      "usedPercent": 81,
+      "windowDurationMins": 300,
+      "resetsAt": 1791435974
+    },
+    "secondary": {
+      "usedPercent": 76,
+      "windowDurationMins": 10080,
+      "resetsAt": 1791949842
+    }
+  },
+  "goalState": "historical usageLimited retained; real ordinary usage allowed",
+  "sourceSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "756271e155e184a4a2b2e1faa9152f79da096d61cff64c9fcb8966f06d106a58",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "42d0fce139ed1d5a53e785b6f6b33b4b8d7a0c748148040d62640209b0e33a66",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  }
+}

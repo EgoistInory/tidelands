@@ -1,0 +1,88 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>潮生群岛 · 重复地域资源驻留审计</title>
+<style>html,body{margin:0;height:100%;background:#192723;color:#efe6cf;font:13px system-ui}body{display:flex;flex-direction:column}header,output{padding:8px}output{height:92px;overflow:auto;white-space:pre-wrap;font:11px monospace}canvas{flex:1;min-height:0;width:100%;display:block}</style>
+<header>无存档 · 四轮相同五地域固定镜头 · WebGL bufferData分配字节及释放。批量绘制计数，不是帧率、GPU计时或完整显存。</header>
+<output id="result">正在初始化…</output><canvas id="world" aria-label="固定生产世界的重复地域资源诊断"></canvas>
+<script type="module">
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain} from '../src/world.js';
+import {freshGame,nearest} from '../src/game.js';
+const canvas=document.querySelector('canvas'),output=document.querySelector('#result');
+const scenes=[{name:'shore',x:-90,z:140,time:240},{name:'forest',x:132,z:-26,time:240},{name:'highland',x:-75,z:-205,time:360},{name:'amber',x:190,z:248,time:120},{name:'night-camp',x:-56,z:49,time:0}];
+let view,gl,original,finished=false;
+try{
+  gl=canvas.getContext('webgl2',{antialias:true,powerPreference:'high-performance'});
+  if(!gl)throw new Error('WebGL 2不可用');
+  const bound=new Map(),buffers=new Map();let bufferDataCalls=0,bufferDeleteCalls=0,peakBufferBytes=0;
+  const bufferBytes=()=>[...buffers.values()].reduce((sum,bytes)=>sum+bytes,0);
+  original={bindBuffer:gl.bindBuffer,bufferData:gl.bufferData,deleteBuffer:gl.deleteBuffer};
+  gl.bindBuffer=function(target,buffer){bound.set(target,buffer);return original.bindBuffer.call(this,target,buffer);};
+  gl.bufferData=function(target,data,usage,srcOffset=0,length=0){
+    const response=original.bufferData.apply(this,arguments),buffer=bound.get(target);
+    if(buffer){const elementBytes=data?.BYTES_PER_ELEMENT??1;const bytes=typeof data==='number'?data:(length?length*elementBytes:Math.max(0,data.byteLength-srcOffset*elementBytes));buffers.set(buffer,bytes);bufferDataCalls++;peakBufferBytes=Math.max(peakBufferBytes,bufferBytes());}
+    return response;
+  };
+  gl.deleteBuffer=function(buffer){buffers.delete(buffer);bufferDeleteCalls++;return original.deleteBuffer.call(this,buffer);};
+  const world=createWorld();view=new WorldView(canvas,world);
+  const uploads=new Map(),watched=new WeakSet(),samples=[],initialCreatures=new Map();let index=0,draws=0,totalDraws=0,state,hidden=false;
+  function observe(){
+    const categories=new Map();
+    view.scene.traverse(o=>{if(o.isMesh)categories.set(o,'scenery');});
+    view.player.traverse(o=>{if(o.isMesh)categories.set(o,'player');});
+    for(const root of view.creatures.values()){
+      root.userData.body.traverse(o=>{if(o.isMesh)categories.set(o,'creature-body');});
+      root.userData.distant.traverse(o=>{if(o.isMesh)categories.set(o,'creature-distant');});
+    }
+    for(const root of view.buildings.values())root.traverse(o=>{if(o.isMesh)categories.set(o,'building');});
+    for(const [mesh,category] of categories){
+      if(watched.has(mesh))continue;watched.add(mesh);
+      function record(){const geometry=mesh.geometry;if(!uploads.has(geometry)){uploads.set(geometry,{category});geometry.addEventListener('dispose',()=>uploads.delete(geometry));}}
+      const before=mesh.onBeforeRender,shadow=mesh.onBeforeShadow;
+      mesh.onBeforeRender=function(...args){record();return before.apply(this,args);};
+      mesh.onBeforeShadow=function(...args){record();return shadow.apply(this,args);};
+    }
+  }
+  function configure(remove=false){
+    const point=scenes[index%scenes.length];state=freshGame();Object.assign(state.player,{x:point.x,z:point.z});state.time=point.time;
+    if(point.name==='night-camp')state.buildings=[{id:'budget-fire',type:'campfire',x:-56,z:56},{id:'budget-tent',type:'tent',x:-65,z:49},{id:'budget-bench',type:'workbench',x:-47,z:49}];
+    if(remove){state.enemies=[];state.buildings=[];}
+    view.sync(state);observe();view.yaw=.15;view.camera.position.set(point.x+5,Math.max(terrain(point.x,point.z),0)+12,point.z+20);view.player.userData.lastPosition=null;view.player.userData.worldFeet=null;
+    if(index===0&&!remove)for(const [id,model] of view.creatures)initialCreatures.set(id,model);
+  }
+  function geometryBytes(){
+    const arrays=new Set(),byCategory={};
+    for(const [geometry,{category}] of uploads){
+      const data=[...Object.values(geometry.attributes),geometry.index,...Object.values(geometry.morphAttributes).flat()].filter(Boolean);
+      for(const attribute of data){const array=attribute.isInterleavedBufferAttribute?attribute.data.array:attribute.array;if(array&&!arrays.has(array)){arrays.add(array);byCategory[category]=(byCategory[category]??0)+array.byteLength;}}
+    }
+    return {observedGeometryArrayBytes:Object.values(byCategory).reduce((a,b)=>a+b,0),byCategory};
+  }
+  function snapshot(kind='visit'){
+    const info=view.renderer.info;
+    return {kind,cycle:Math.floor(index/scenes.length),stage:scenes[index%scenes.length].name,totalDraws,hidden,viewport:[innerWidth,innerHeight],canvasBuffer:[canvas.width,canvas.height],geometries:info.memory.geometries,textures:info.memory.textures,programs:info.programs.length,calls:info.render.calls,triangles:info.render.triangles,glBufferBytes:bufferBytes(),glBufferCount:buffers.size,bufferDataCalls,bufferDeleteCalls,peakBufferBytes,observedGeometries:uploads.size,...geometryBytes(),creatures:view.creatures.size,retainedInitialCreatures:[...view.creatures].filter(([id,model])=>initialCreatures.get(id)===model).length,cacheReferences:[...view.creatureGeometryCache.values()].reduce((a,b)=>a+b.references,0),heapBytes:performance.memory?.usedJSHeapSize??null};
+  }
+  const keys=['geometries','textures','programs','glBufferBytes','glBufferCount','observedGeometryArrayBytes','cacheReferences'];
+  function results(complete=false,removal=null,afterDispose=null){
+    const repeat=samples.filter(row=>row.cycle>=1),stableAfterWarmup=repeat.length===15&&scenes.every(scene=>{const rows=repeat.filter(row=>row.stage===scene.name);return rows.every(row=>keys.every(key=>row[key]===rows[0][key]));});
+    return {complete,cycles:4,samples,stableAfterWarmup,removal,afterDispose,note:'Four repeated fixed-camera region circuits, each visit 60 draws (two per rAF). Same ID/type models retained across explicit freshGame fixtures. GL bufferData requested resident bytes tracked, not physical VRAM including textures/driver copies; observed geometry CPU array bytes are separately estimated. No saves, simulated travel, frame-rate benchmark, forced GC or GPU timing.'};
+  }
+  configure();
+  function frame(){
+    hidden||=document.hidden;
+    for(let i=0;i<2;i++){view.draw(state,nearest(state,world.objects),null,false,1/60);draws++;totalDraws++;}
+    if(draws<60){requestAnimationFrame(frame);return;}
+    if(index<20){
+      samples.push(snapshot());index++;draws=0;output.textContent=JSON.stringify(results());
+      if(index<20){configure();requestAnimationFrame(frame);return;}
+      index=0;configure(true);requestAnimationFrame(removalFrame);return;
+    }
+  }
+  function removalFrame(){
+    hidden||=document.hidden;for(let i=0;i<2;i++){view.draw(state,null,null,false,1/60);draws++;totalDraws++;}
+    if(draws<60){requestAnimationFrame(removalFrame);return;}
+    const removal=snapshot('removed-all-creatures-and-buildings'),geometries=new Set();view.scene.traverse(o=>{if(o.geometry)geometries.add(o.geometry);if(o.isInstancedMesh)o.dispose();});for(const geometry of geometries)geometry.dispose();view.renderer.dispose();
+    const afterDispose={glBufferBytes:bufferBytes(),glBufferCount:buffers.size,bufferDataCalls,bufferDeleteCalls,rendererGeometries:view.renderer.info.memory.geometries};finished=true;output.textContent=JSON.stringify(results(true,removal,afterDispose));
+  }
+  requestAnimationFrame(frame);
+}catch(error){output.textContent=JSON.stringify({complete:false,error:error.stack});console.error(error);}
+window.addEventListener('pagehide',()=>{if(view&&!finished)view.renderer.dispose();if(gl&&original)Object.assign(gl,original);});
+</script></html>

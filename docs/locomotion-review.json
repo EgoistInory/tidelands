@@ -1,0 +1,236 @@
+{
+  "date": "2026-10-04",
+  "status": "smoke_verified",
+  "fullGoalComplete": false,
+  "sha256": {
+    "src/character.js": "670c4cd837ccb13ab3944489766b0942f60c345fa5454be2e0530c55c5ac3116",
+    "src/scene.js": "ef24f7266be81533bc9a535c825478caa0c319bc8e19cbaa399604c55ad400ba",
+    "src/main.js": "4dfb26075e8a30b62e5786b2969c692f7464edc43d114a44f7e8c88b9f55980d",
+    "src/game.js": "54cb5d150120efe5ad751b5cda045d6a61a591620f45e340b33028ea71aa402e",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "tests/character.test.js": "ed999aaff9a680c01fed35b0709f8ca4c5ca8776425fc809c28d1047d693610d",
+    "tests/scene.test.js": "01b0e9f769e29b6729dba245b1eab3846af5255840c57451571a868cacf51024",
+    "tests/locomotion.html": "7b000e7f0217890eb2d02a355b59459f154a70f43b7f4c32eb69ff6a926978ab",
+    "tests/playthrough.html": "fa763bbfad540aa0d214e1fc83aa8d491edf736b447f442b7d325ce29876f6f6",
+    "vendor/three.module.min.js": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+    "tests/locomotion-audit.js": "c39336a127c033212c15aea166bb9ec1b2feca08121fe1dd62eee2368853c880"
+  },
+  "changes": [
+    "Ankle pivots and two-bone terrain IK replace swinging boots on grounded feet",
+    "Steady forward stance cancels distance traveled; swing lifts feet and idle blend settles",
+    "Boot soles follow sampled terrain normals and pelvis follows reachable leg height",
+    "Static NPC feet are initialized on their actual terrain",
+    "Swimming now leans forward at 1.25 radians instead of leaning backward; land restores grounded IK"
+  ],
+  "tests": {
+    "passed": 71,
+    "failed": 0,
+    "log": "/private/tmp/tidelands-tests-locomotion.log",
+    "syntax": [
+      "src/character.js",
+      "src/scene.js",
+      "tests/locomotion.html extracted module",
+      "tests/playthrough.html extracted module"
+    ],
+    "coverage": [
+      "Flat forward contact at 30/60/144 fps and 2.4/7/12 m/s",
+      "Sloped ground contact and boot orientation",
+      "Idle settling, teleport reset, equipment/gather/hurt regression",
+      "NPC contact on actual terrain",
+      "Swimming head height, bounded kicks and return to planted feet"
+    ]
+  },
+  "isolatedGroundedBrowser": {
+    "entry": "/tests/locomotion.html",
+    "viewport": [
+      1280,
+      602
+    ],
+    "canvasBuffer": [
+      1920,
+      903
+    ],
+    "walk": {
+      "speedMetersPerSecond": 7,
+      "slope": 0,
+      "complete": true,
+      "elapsedSeconds": 12,
+      "contacts": 692,
+      "maxStanceDriftMeters": 1.0647644463901429e-06,
+      "maxSoleHeightErrorMeters": 5.273559366969494e-16
+    },
+    "run": {
+      "speedMetersPerSecond": 12,
+      "slope": 0.12,
+      "complete": true,
+      "elapsedSeconds": 12,
+      "contacts": 519,
+      "maxStanceDriftMeters": 1.5465558708510987e-06,
+      "maxSoleHeightErrorMeters": 5.440092820663267e-15
+    },
+    "versionBoundary": "These grounded browser measurements preceded the subsequent swimming-only torso-angle correction. Final grounded behavior is rechecked by the 71-test suite and production shore return; do not treat them as a complete final-version browser regression.",
+    "measurement": "DOM rig diagnostics for settled straight stance; not motion-quality acceptance. Page frames include idle frames."
+  },
+  "finalSwimmingBrowser": {
+    "isolatedEntry": "/tests/locomotion.html",
+    "complete": true,
+    "elapsedSeconds": 12,
+    "restoredStanding": true,
+    "worldEntry": "/tests/playthrough.html?mode=swim",
+    "initialPosition": [
+      -70,
+      138
+    ],
+    "actions": "Start, drag camera, inspect forward sea pose, 24 real W key presses, inspect shore pose",
+    "shorePosition": [
+      -65.0,
+      132.7
+    ],
+    "initialRegion": "群岛海域",
+    "finalRegion": "潮汐海岸",
+    "hp": 100,
+    "consoleWarningsErrors": [],
+    "stillsReviewed": true,
+    "savedVideo": false
+  },
+  "harvestRegression": {
+    "entry": "/tests/playthrough.html?mode=fiber",
+    "viewports": [
+      [
+        1280,
+        720
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "actions": "Fresh isolated fixture, start, drag, actual harvest button, inspect disappearance and bag",
+    "fiberAfter": 2,
+    "consoleWarningsErrors": [],
+    "versionBoundary": "Collected before the subsequent swimming-only torso-angle correction; no claim of physical-phone or full final-version acceptance."
+  },
+  "performance": {
+    "complete": true,
+    "targetMs": 30000,
+    "durationMs": 38316.6,
+    "activeMs": 30016.6,
+    "frames": 1801,
+    "medianMs": 16.7,
+    "p95Ms": 17.9,
+    "maxMs": 18.7,
+    "over50Ms": 0,
+    "hidden": false,
+    "viewport": [
+      1280,
+      672
+    ],
+    "devicePixelRatio": 2,
+    "canvasBuffer": [
+      1920,
+      1008
+    ],
+    "heapSupported": true,
+    "checkpoints": [
+      {
+        "activeMs": 0,
+        "frames": 0,
+        "daytime": "第 9 天 · 清晨",
+        "save": "已就绪",
+        "hp": 100,
+        "heapBytes": 58672076,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 30016.6,
+        "frames": 1801,
+        "daytime": "第 9 天 · 清晨",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 53574085,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      }
+    ]
+  },
+  "performanceActions": {
+    "entry": "/tests/playthrough.html?mode=performance",
+    "initialPosition": [
+      -58.6,
+      103.4
+    ],
+    "finalPosition": [
+      -53.3,
+      104.9
+    ],
+    "actions": "Continue after parent-control blur, 12 S presses, camera drag, 12 D presses, select sword and miss once",
+    "continuousHeldMovement": false,
+    "liveEnemyCombat": false,
+    "otherGameTestTabsActive": false,
+    "consoleWarningsErrors": [],
+    "savedAndPausedThenClosed": true
+  },
+  "limitations": [
+    "Turning and startup/stop feet are not world-pinned; this does not prove no sliding",
+    "1.6m stride at existing 7/12m/s speeds may look too rapid; running flight/turning/settling need motion review",
+    "Sampled analytic terrain differs from interpolated visible ground; contact on irregular ground needs further review",
+    "Simple character shapes, swim strokes and head articulation remain below final quality",
+    "Stills and numeric diagnostics are not a saved motion video or AAA acceptance",
+    "30s rAF/JS heap sample is not GPU cost, no-leak proof, hour endurance, continuous exploration or full combat",
+    "The earlier 10-minute ground-cover report retains its earlier source hashes and is historical after these character edits",
+    "390x844 is a viewport smoke check, not a physical-phone or multitouch/performance test",
+    "M1-M4 final acceptance/delivery and M5 art, animation, audio and performance remain unfinished"
+  ],
+  "followupGapAudit": {
+    "command": "node tests/locomotion-audit.js",
+    "evidence": "docs/locomotion-gap-audit.json",
+    "status": "known_quality_gaps",
+    "cases": [
+      {
+        "kind": "straight",
+        "fps": 60,
+        "speedMetersPerSecond": 7,
+        "contacts": 188,
+        "maxFrameDriftMeters": 7.268712627350737e-07,
+        "maxWithinStanceTravelMeters": 2.2154199355028936e-06
+      },
+      {
+        "kind": "turn",
+        "fps": 60,
+        "speedMetersPerSecond": 7,
+        "contacts": 188,
+        "maxFrameDriftMeters": 0.2127096892407723,
+        "maxWithinStanceTravelMeters": 0.5062267477427301
+      },
+      {
+        "kind": "stop",
+        "fps": 60,
+        "speedMetersPerSecond": 7,
+        "contacts": 183,
+        "maxFrameDriftMeters": 0.014501539753215553,
+        "maxWithinStanceTravelMeters": 0.0800000000205312
+      }
+    ]
+  }
+}

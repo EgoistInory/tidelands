@@ -1,0 +1,243 @@
+{
+  "date": "2026-10-04",
+  "status": "completed_sample",
+  "sha256": {
+    "src/main.js": "4dfb26075e8a30b62e5786b2969c692f7464edc43d114a44f7e8c88b9f55980d",
+    "src/scene.js": "8e6229be4c4b5abaafaed762bc647cdcd27611248c635d1346399d13898854e8",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/game.js": "54cb5d150120efe5ad751b5cda045d6a61a591620f45e340b33028ea71aa402e",
+    "src/character.js": "a6657568e22be8222dd32a2db0ff17849b7fd7bf3e6575cea3b53444300eeec0",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "tests/playthrough.html": "7ada3d2c2722e35e24dadce3dd0e9e051d7a7db3ed9b1e7619de6f0a876c71fe",
+    "vendor/three.module.min.js": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6"
+  },
+  "entry": "/tests/playthrough.html?mode=performance&seconds=600",
+  "saveKey": "tidelands-qa-performance",
+  "startPosition": [
+    -53.1,
+    110.5
+  ],
+  "buildings": 3,
+  "sampleTargetMs": 600000,
+  "startedAroundUTC": "2026-10-03 18:33:32 UTC",
+  "note": "Actual DOM result read after completion. Static three-building camp; parent-button pause excluded. No movement or other rendering test tab during effective sample. Saved and paused before closing.",
+  "limitations": "Local rAF and available JS heap snapshots only. GPU time/memory, continuous traversal/combat, actual mobile hardware and hour-scale endurance remain unverified.",
+  "result": {
+    "complete": true,
+    "targetMs": 600000,
+    "durationMs": 607283.4,
+    "activeMs": 600000,
+    "frames": 36000,
+    "medianMs": 16.7,
+    "p95Ms": 17.8,
+    "maxMs": 18.8,
+    "over50Ms": 0,
+    "hidden": false,
+    "viewport": [
+      1280,
+      672
+    ],
+    "devicePixelRatio": 2,
+    "canvasBuffer": [
+      1920,
+      1008
+    ],
+    "heapSupported": true,
+    "checkpoints": [
+      {
+        "activeMs": 0,
+        "frames": 0,
+        "daytime": "第 7 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 92102653,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 60000,
+        "frames": 3600,
+        "daytime": "第 7 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 89639939,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 120000,
+        "frames": 7200,
+        "daytime": "第 8 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 50560753,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 180000,
+        "frames": 10800,
+        "daytime": "第 8 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 53653331,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 240016.7,
+        "frames": 14401,
+        "daytime": "第 8 天 · 清晨",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 49473543,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 300000,
+        "frames": 18000,
+        "daytime": "第 8 天 · 午后",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 53506098,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 360000,
+        "frames": 21600,
+        "daytime": "第 8 天 · 午后",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 48654835,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 420000,
+        "frames": 25200,
+        "daytime": "第 8 天 · 黄昏",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 48979191,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 480000,
+        "frames": 28800,
+        "daytime": "第 8 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 50196309,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 540000,
+        "frames": 32400,
+        "daytime": "第 8 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 56423962,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 600000,
+        "frames": 36000,
+        "daytime": "第 9 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 60655193,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      }
+    ]
+  },
+  "warnError": [],
+  "sha256CheckedAtCompletion": true
+}

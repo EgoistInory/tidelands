@@ -1,0 +1,235 @@
+{
+  "date": "2026-10-04",
+  "status": "smoke_verified",
+  "fullGoalComplete": false,
+  "sha256": {
+    "src/character.js": "7be589ee1d0e2fe7a0694569b0b92bb0c7a44fbe90128d0d23127a010b097a66",
+    "src/scene.js": "ef24f7266be81533bc9a535c825478caa0c319bc8e19cbaa399604c55ad400ba",
+    "src/main.js": "4dfb26075e8a30b62e5786b2969c692f7464edc43d114a44f7e8c88b9f55980d",
+    "src/game.js": "54cb5d150120efe5ad751b5cda045d6a61a591620f45e340b33028ea71aa402e",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "tests/character.test.js": "d6b0374496642fd472d9b85b7c50f4048968cbe151dcaa308d72dd4277d9a45d",
+    "tests/scene.test.js": "01b0e9f769e29b6729dba245b1eab3846af5255840c57451571a868cacf51024",
+    "tests/locomotion.html": "f4da05ac77b0736e01270d05c9dd397c6813d662bcd561204b5c17db42c2edfd",
+    "tests/playthrough.html": "fa763bbfad540aa0d214e1fc83aa8d491edf736b447f442b7d325ce29876f6f6",
+    "vendor/three.module.min.js": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+    "tests/locomotion-audit.js": "bfff430c158256b6ef7c56b6a67e6a086efa2237e9b4663f66d88bb0c57960ba"
+  },
+  "changes": [
+    "World-space ankle contact persists through moving turns and stopping",
+    "Startup begins with a centered stance rather than moving the idle planted boot",
+    "Swing interpolates from the last world contact to a predicted landing; touchdown retains that landing",
+    "Overextended contact above 0.82m horizontal hip distance releases into an early swing",
+    "Teleport, first placement and swimming clear the contact planner; isolated QA reset no longer reuses distant feet",
+    "Input distances that exceed the rendered-frame travel budget discard skipped-swing contacts instead of leaving the player crouched at a distant foot"
+  ],
+  "tests": {
+    "passed": 76,
+    "failed": 0,
+    "log": "/private/tmp/tidelands-tests-world-footing-final.log",
+    "syntax": [
+      "src/character.js",
+      "tests/locomotion.html extracted module",
+      "tests/playthrough.html extracted module"
+    ],
+    "coverage": [
+      "Stop and yaw settling at 30/60/144fps",
+      "Right-angle startup and travel at 2.4/7/12m/s on a gentle slope",
+      "Reverse turn early release at 30/60/144fps",
+      "Teleport, swim and distant shore reset",
+      "Existing equipment/gather/hurt/swim/NPC contact and game regressions",
+      "Batched 1/2/3/4-key distances on actual camp terrain and settled sole heights"
+    ],
+    "diagnosticFailures": [
+      "Initial turn regression found the first moving frame repositioned the idle boot; cached idle contacts and centered phase fixed this",
+      "Second turn regression found an unreachable planted leg at 144fps; changed approach to early release and continuous world swing, then full suite passed",
+      "Real camp key batches exposed a compressed stopped pose; the first 0.64m-only reset did not cover single 0.42m key events. A rendered-dt budget and actual-terrain regression fixed the reproduced case; 76 tests passed."
+    ]
+  },
+  "offlineAudit": "docs/world-footing-gap-audit.json",
+  "limitations": [
+    "Numerical ankle contact is not proof that the boot mesh or toes never slide, rotate or intersect",
+    "0.82m release prevents the reproduced overreach; irregular visible terrain and abrupt large input steps need further checks",
+    "1.6m gait at existing 7/12m/s remains too rapid; no run flight or natural torso weight shift yet",
+    "Audit still records up to 1.256m swing-foot movement per 30fps frame at 12m/s and pelvis descent around 0.627m; these are quality gaps, not acceptable final natural motion",
+    "No saved motion video, physical-phone, multitouch, GPU or current-version long endurance proof",
+    "Prior locomotion and grass 10-minute reports preserve their source hashes and are historical",
+    "Final M1-M4 delivery and M5 art, animation, audio, environment and performance remain incomplete",
+    "Batched key-event fallback replants feet; it repairs stale contacts but is not proof of natural continuous motion for instantaneous root steps",
+    "Stopped pose can retain a broad split stance; it needs a timed recovery step and weight transfer, not instant sliding to neutral"
+  ],
+  "isolatedBrowser": {
+    "entry": "/tests/locomotion.html",
+    "viewport": [
+      1280,
+      602
+    ],
+    "canvasBuffer": [
+      1920,
+      903
+    ],
+    "speedMetersPerSecond": 7,
+    "turn": {
+      "complete": true,
+      "seconds": 12,
+      "slope": 0,
+      "contacts": 688,
+      "maxStanceDriftMeters": 2.1390168887322673e-14,
+      "maxSoleHeightErrorMeters": 6.38378239159465e-16
+    },
+    "reverse": {
+      "complete": true,
+      "seconds": 12,
+      "slope": 0.12,
+      "contacts": 683,
+      "maxStanceDriftMeters": 1.4323167916492475e-14,
+      "maxSoleHeightErrorMeters": 1.6375789613221059e-15
+    },
+    "reset": {
+      "atOriginAfterPriorWalk": true,
+      "distantContactCacheDiscarded": true,
+      "measurementVersion": "Final source; after completed slope restart the actual Stand control returned root and both ankle contacts to the origin",
+      "finalAtOriginFeet": [
+        [
+          -0.22,
+          0.14604,
+          0
+        ],
+        [
+          0.22,
+          0.14604,
+          0
+        ]
+      ]
+    },
+    "consoleWarningsErrors": [],
+    "stillsReviewed": true,
+    "savedVideo": false,
+    "measurement": "Actual production rig in an isolated analytic floor scene; planned contact including early release, not full mesh/animation acceptance",
+    "restart": {
+      "complete": true,
+      "seconds": 12,
+      "slope": 0.12,
+      "contacts": 720,
+      "maxStanceDriftMeters": 1.768426294290748e-09,
+      "maxSoleHeightErrorMeters": 9.668838396592605e-09,
+      "restoredStanding": true
+    }
+  },
+  "performance": {
+    "complete": true,
+    "targetMs": 30000,
+    "durationMs": 30450,
+    "activeMs": 30016.6,
+    "frames": 1801,
+    "medianMs": 16.7,
+    "p95Ms": 17.7,
+    "maxMs": 18.7,
+    "over50Ms": 0,
+    "hidden": false,
+    "viewport": [
+      1280,
+      672
+    ],
+    "devicePixelRatio": 2,
+    "canvasBuffer": [
+      1920,
+      1008
+    ],
+    "heapSupported": true,
+    "checkpoints": [
+      {
+        "activeMs": 0,
+        "frames": 0,
+        "daytime": "第 9 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 106791846,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      },
+      {
+        "activeMs": 30016.6,
+        "frames": 1801,
+        "daytime": "第 9 天 · 夜晚",
+        "save": "已保存",
+        "hp": 100,
+        "heapBytes": 101350971,
+        "viewport": [
+          1280,
+          672
+        ],
+        "devicePixelRatio": 2,
+        "canvasBuffer": [
+          1920,
+          1008
+        ]
+      }
+    ]
+  },
+  "performanceActions": {
+    "entry": "/tests/playthrough.html?mode=performance",
+    "initialPosition": [
+      -54.0,
+      99.9
+    ],
+    "intermediatePosition": [
+      -53.3,
+      104.9
+    ],
+    "finalPosition": [
+      -49.1,
+      99.2
+    ],
+    "actions": "Continue after parent-button pause; 12 S, 12 W and 12 D actual key presses; sword already selected, one empty attack with visible miss; saved and paused before closing",
+    "continuousHeldMovement": false,
+    "liveEnemyCombat": false,
+    "otherGameTestTabsActive": false,
+    "consoleWarningsErrors": [],
+    "poseReview": "Repair rechecked full stopped legs after directional key batches; prior compressed pose was observed before the repair",
+    "savedAndPausedThenClosed": true
+  },
+  "intermediatePerformance": {
+    "characterSha256": "b767bb3ffe66e60447fc8122d0ab69427f09dce66e701997cc1aeaaeaabd9fb1",
+    "complete": true,
+    "activeMs": 30000,
+    "frames": 1800,
+    "medianMs": 16.7,
+    "p95Ms": 17.7,
+    "maxMs": 18.6,
+    "over50Ms": 0,
+    "durationMs": 37633.3,
+    "heapBytes": [
+      70472400,
+      50724331
+    ],
+    "status": "historical_after_input_budget_repair",
+    "observedGap": "Compressed player legs after repeated actual W presses; numerical straight-contact success did not reveal this world input case"
+  },
+  "browserToolLimitation": "A selector wait returned its backend deadline before the new 12-second restart could finish. The page continued advancing; final completed DOM and still were read later. No game failure was ignored.",
+  "checkpoint": {
+    "ordinaryUsageAllowed": true,
+    "fiveHourUsedPercent": 26,
+    "weeklyUsedPercent": 84,
+    "goalStatus": "historical_usageLimited",
+    "goalStatusOverwritten": false,
+    "resetCreditsUsed": 0,
+    "automationId": "2048",
+    "fullGoalComplete": false,
+    "testTabsClosed": true,
+    "productionAndJourneySavesUntouched": true
+  }
+}

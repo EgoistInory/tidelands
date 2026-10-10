@@ -1,0 +1,59 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>连续镜头隔离验收</title>
+<style>html,body{margin:0;height:100%;background:#1c302c;color:#eee8d7;font:14px system-ui}body{display:flex;flex-direction:column}header{display:flex;flex-wrap:wrap;gap:8px;padding:10px;align-items:center}select,button{padding:8px;font:inherit}output{flex-basis:100%;height:72px;overflow:auto;overflow-wrap:anywhere;font:12px monospace}canvas{width:100%;flex:1;min-height:0;display:block}</style>
+<header><strong>生产场景 · 连续镜头检查</strong>
+<label>路线 <select id="route"><option value="lighthouse">绕灯塔</option><option value="forest">树林</option><option value="camp">三建筑营地</option></select></label>
+<label>时刻 <select id="time"><option value="240">午后</option><option value="0">午夜</option></select></label>
+<button id="start" disabled>连续移动与转镜头20秒</button>
+<span>无存档读写；敌人移除，预设路径由生产移动规则执行，非真人游玩或视频。</span>
+<output id="result">加载场景…</output></header><canvas aria-label="真实生产世界和角色的连续镜头回归"></canvas>
+<script type="module">
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain} from '../src/world.js';
+import {freshGame,restore,movePlayer,tick} from '../src/game.js';
+
+const canvas=document.querySelector('canvas'),output=document.querySelector('#result'),button=document.querySelector('#start');
+const world=createWorld(),view=new WorldView(canvas,world),controls=[...document.querySelectorAll('select,button')];
+const response=await fetch('./fixtures/camp-upgraded.json');if(!response.ok)throw new Error(`HTTP ${response.status}`);const camp=await response.text();
+const routes={
+  lighthouse:{start:[-98.4,-54.3],yaw:.858,pitch:.41,points:[[-99,-47],[-87,-47],[-87,-62],[-101,-62],[-98.4,-54.3]]},
+  forest:{start:[130,-30],yaw:.15,pitch:.29,points:[[145,-30],[148,-44],[130,-45],[126,-29]]},
+  camp:{start:[-63.7,115.9],yaw:.15,pitch:.29,points:[[-72,130],[-88,121],[-82,106],[-61,110]]}
+};
+let state,route,last=null,elapsed=0,running=false,waypoint=0,stats,priorCamera=null,priorYaw=null;
+const round=n=>Number(n.toFixed(4));
+function report(complete=false){output.textContent=JSON.stringify({route:document.querySelector('#route').value,complete,elapsedSeconds:round(elapsed),position:[round(state.player.x),round(state.player.z)],waypointsReached:waypoint,stats,viewport:[canvas.clientWidth,canvas.clientHeight],canvasBuffer:[canvas.width,canvas.height],dpr:devicePixelRatio,scope:'20 seconds scripted world-coordinate movement, gradual look input during seconds 5-10, real WorldView.draw and movePlayer; enemies removed, no save reads/writes or human-play claim'});}
+function reset(){
+  route=routes[document.querySelector('#route').value];state=document.querySelector('#route').value==='camp'?restore(camp):freshGame();state.enemies=[];
+  [state.player.x,state.player.z]=route.start;state.time=Number(document.querySelector('#time').value);state.player.yaw=0;
+  elapsed=0;waypoint=0;last=null;priorCamera=null;priorYaw=null;running=false;
+  stats={frames:0,travelMeters:0,automaticTurns:0,minFocusDistance:null,maxFocusDistance:0,belowSixMetersSeconds:0,maxCameraStepMeters:0,maxCameraStepEvent:null,maxYawStepRadians:0,hidden:false};
+  view.yaw=route.yaw;view.pitch=route.pitch;view.distance=14;view.sync(state);view.player.userData.lastPosition=null;
+  const h=Math.max(terrain(state.player.x,state.player.z),-.45);
+  view.camera.position.set(state.player.x+Math.sin(view.yaw)*view.distance,h+2.4+Math.tan(view.pitch)*view.distance,state.player.z+Math.cos(view.yaw)*view.distance);
+  view.resize();view.draw(state,null,null,false,1/60);report();
+}
+button.onclick=()=>{reset();controls.forEach(c=>c.disabled=true);running=true;requestAnimationFrame(frame);};
+for(const control of document.querySelectorAll('select'))control.onchange=reset;
+window.addEventListener('resize',()=>view.resize());
+function frame(now){
+  if(!running)return;const dt=last===null?0:Math.min(.05,(now-last)/1000);last=now;
+  stats.hidden||=document.hidden;elapsed=Math.min(20,elapsed+dt);
+  const goal=route.points[waypoint%route.points.length],dx=goal[0]-state.player.x,dz=goal[1]-state.player.z;
+  const before=[state.player.x,state.player.z];
+  if(Math.hypot(dx,dz)<.4)waypoint++;else movePlayer(state,world.objects,dx,dz,dt);
+  stats.travelMeters+=Math.hypot(state.player.x-before[0],state.player.z-before[1]);
+  tick(state,dt);if(elapsed>=5&&elapsed<10)view.yaw+=dt*.8;
+  const intendedYaw=view.yaw;view.draw(state,null,null,true,dt);
+  const turn=Math.abs(Math.atan2(Math.sin(view.yaw-intendedYaw),Math.cos(view.yaw-intendedYaw)));
+  if(turn>.001)stats.automaticTurns++;
+  const h=Math.max(terrain(state.player.x,state.player.z),-.45),distance=Math.hypot(view.camera.position.x-state.player.x,view.camera.position.y-h-2.4,view.camera.position.z-state.player.z);
+  stats.minFocusDistance=Math.min(stats.minFocusDistance??distance,distance);stats.maxFocusDistance=Math.max(stats.maxFocusDistance,distance);
+  if(distance<6)stats.belowSixMetersSeconds+=dt;
+  if(priorCamera){const step=view.camera.position.distanceTo(priorCamera);if(step>stats.maxCameraStepMeters){stats.maxCameraStepMeters=step;stats.maxCameraStepEvent={elapsedSeconds:elapsed,position:[state.player.x,state.player.z],from:priorCamera.toArray(),to:view.camera.position.toArray()};}}
+  if(priorYaw!==null)stats.maxYawStepRadians=Math.max(stats.maxYawStepRadians,Math.abs(Math.atan2(Math.sin(view.yaw-priorYaw),Math.cos(view.yaw-priorYaw))));
+  priorCamera=view.camera.position.clone();priorYaw=view.yaw;stats.frames++;
+  if(stats.frames%30===0||elapsed>=20)report(elapsed>=20);
+  if(elapsed<20)requestAnimationFrame(frame);else{running=false;controls.forEach(c=>c.disabled=false);}
+}
+reset();button.disabled=false;view.groundSurface.userData.ground.loaded.then(()=>{if(!running){view.draw(state,null,null,false,1/60);report();}});
+</script></html>

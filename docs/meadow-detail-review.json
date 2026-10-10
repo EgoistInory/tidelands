@@ -1,0 +1,228 @@
+{
+  "date": "2026-10-04",
+  "status": "smoke_verified",
+  "sha256": {
+    "src/main.js": "4dfb26075e8a30b62e5786b2969c692f7464edc43d114a44f7e8c88b9f55980d",
+    "src/scene.js": "1eb4f3d51cfaabd4d168c94d10d41dc9b951c082d85fea423e92daaac8efa45e",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/meadow.js": "59c91dc00ab96e1c98c3c61aa816b20d02bf3f64ad69460b351c6539575fd5f6",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/rock.js": "abfbe74ddf5713360d397abffaa5a056229902d0e029527ae9758b1af89bd67c",
+    "tests/playthrough.html": "7ada3d2c2722e35e24dadce3dd0e9e051d7a7db3ed9b1e7619de6f0a876c71fe",
+    "tests/visual-review.html": "69f0c85e41feb7c60c6c4894e71945fee21778119527f918665848c380afe4bd",
+    "tests/meadow.test.js": "c033e94b4b99e841c0f7aa2bc1e505f5f9e8b7d73592a78c96ace4cd7b89fdf5",
+    "tests/scene.test.js": "1d165a2c5b2ff868305262c5c33c3c65c4c0c37c60019cd0830c750b0c89b6a0"
+  },
+  "changes": [
+    "Five curved, tapered, twisted grass blades replace five single triangular blades; linear vertex colours replace pale tips",
+    "Decorative cones replaced by rooted stems, leaves, five petals and a pollen disc",
+    "Collectible fibre cones replaced by five stalks with narrow leaves and seed heads",
+    "Meadow regions share geometry/materials and retain original grass transforms and random sequence",
+    "Rooted world-coherent wind uses the game clock; fibre shadows use identical displacement"
+  ],
+  "geometry": {
+    "grassTrianglesPerClump": 25,
+    "flowerTrianglesPerStem": 44,
+    "grassInstances": 22595,
+    "flowerInstances": 1200,
+    "regionMetres": 128,
+    "grassRegions": 22,
+    "flowerRegions": 18,
+    "texturesAdded": 0
+  },
+  "tests": {
+    "npmTest": {
+      "passed": 62,
+      "failed": 0
+    },
+    "log": "/private/tmp/tidelands-tests-meadow.log",
+    "syntax": [
+      "src/meadow.js",
+      "src/scene.js",
+      "tests/playthrough.html extracted module",
+      "tests/visual-review.html extracted module"
+    ]
+  },
+  "fixedView": {
+    "entry": "/tests/visual-review.html",
+    "position": [
+      -70,
+      102
+    ],
+    "time": 240,
+    "viewport": [
+      1280,
+      720
+    ],
+    "canvas": [
+      1280,
+      608
+    ],
+    "devicePixelRatio": 2,
+    "canvasBuffer": [
+      1920,
+      912
+    ],
+    "camera": {
+      "distance": 14,
+      "pitch": 0.29
+    },
+    "before": {
+      "calls": 182,
+      "triangles": 766551,
+      "geometries": 182,
+      "textures": 11
+    },
+    "after": {
+      "calls": 208,
+      "triangles": 1185197,
+      "geometries": 182,
+      "textures": 11
+    },
+    "motion": {
+      "start": 240,
+      "end": 250,
+      "seconds": 10,
+      "note": "Real QA playback control completed; native stills inspected, no video/naturalness acceptance"
+    },
+    "otherViews": [
+      {
+        "position": [
+          -77.3,
+          110.2
+        ],
+        "cameraDistance": 6,
+        "pitch": 0.65,
+        "time": 240,
+        "calls": 64,
+        "triangles": 1096782
+      },
+      {
+        "position": [
+          -82,
+          94
+        ],
+        "cameraDistance": 6,
+        "pitch": 0.65,
+        "time": 240,
+        "calls": 61,
+        "triangles": 1056108
+      }
+    ]
+  },
+  "harvest": {
+    "entry": "/tests/playthrough.html?mode=fiber",
+    "saveKey": "tidelands-qa-fiber",
+    "position": [
+      -82,
+      93.2
+    ],
+    "viewports": [
+      [
+        1280,
+        720
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "initialFiber": 0,
+    "finalFiber": 2,
+    "feedback": "纤维 +2",
+    "visual": "All stalks disappear together; desktop camera drag exposes bundle before harvest; mobile after image inspected",
+    "note": "Real production harvest/backpack buttons. Labelled fresh fixture on reload, no production or journey save operation; not physical phone/multitouch acceptance."
+  },
+  "performance": {
+    "entry": "/tests/playthrough.html?mode=performance",
+    "startPosition": [
+      -63,
+      115.8
+    ],
+    "buildings": 3,
+    "movement": "Ten actual D presses, ten W presses and a camera drag during the sample; stationary intervals also present",
+    "observedPositions": [
+      [
+        -63,
+        115.8
+      ],
+      [
+        -58.7,
+        115.1
+      ],
+      [
+        -59.3,
+        111
+      ]
+    ],
+    "result": {
+      "complete": true,
+      "targetMs": 30000,
+      "durationMs": 36333.4,
+      "activeMs": 30000.1,
+      "frames": 1800,
+      "medianMs": 16.7,
+      "p95Ms": 18,
+      "maxMs": 18.7,
+      "over50Ms": 0,
+      "hidden": false,
+      "viewport": [
+        1280,
+        672
+      ],
+      "devicePixelRatio": 2,
+      "canvasBuffer": [
+        1920,
+        1008
+      ],
+      "heapSupported": true,
+      "checkpoints": [
+        {
+          "activeMs": 0,
+          "frames": 0,
+          "daytime": "第 7 天 · 午后",
+          "save": "已就绪",
+          "hp": 100,
+          "heapBytes": 44108038,
+          "viewport": [
+            1280,
+            672
+          ],
+          "devicePixelRatio": 2,
+          "canvasBuffer": [
+            1920,
+            1008
+          ]
+        },
+        {
+          "activeMs": 30000.1,
+          "frames": 1800,
+          "daytime": "第 7 天 · 午后",
+          "save": "已保存",
+          "hp": 100,
+          "heapBytes": 58308789,
+          "viewport": [
+            1280,
+            672
+          ],
+          "devicePixelRatio": 2,
+          "canvasBuffer": [
+            1920,
+            1008
+          ]
+        }
+      ]
+    },
+    "afterSample": "Selected crystal sword, empty swing showed 未命中, stepped south and returned camera; saved QA position -56.1/113.6 and paused",
+    "limits": "This is intermittent keyboard movement at camp, not sustained traversal/combat, GPU timing/memory or endurance. Earlier ground ten-minute reports remain historical."
+  },
+  "warnError": [],
+  "screenshots": "Native tool images inspected, no saved PNG/video",
+  "limits": [
+    "Grass clumps remain sparse and repeated; flowers/reeds are simple ribbons, rocks and characters still visibly procedural",
+    "More detailed vegetation increases submitted geometry and draw calls; frame scheduling does not prove GPU performance",
+    "Natural movement video, sound listening, full final gameplay regression, real-device input and extended performance remain unfinished"
+  ],
+  "m5Complete": false,
+  "aaaComplete": false
+}

@@ -1,0 +1,5 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>浏览器帧调度基线</title><style>body{font:18px system-ui;padding:30px;background:#eee;color:#222}output{display:block}</style><h1>空白页面帧调度基线</h1><p>无 WebGL、模型或游戏循环。只记录浏览器 requestAnimationFrame。</p><output id="probe">等待采样</output><script type="module">
+let frames=0,last=performance.now(),start=last;const gaps=[];
+function frame(now){if(frames)gaps.push(now-last);frames++;last=now;requestAnimationFrame(frame);}requestAnimationFrame(frame);
+setInterval(()=>{const sorted=[...gaps].sort((a,b)=>a-b);document.getElementById('probe').textContent=JSON.stringify({frames,elapsedMs:Math.round(performance.now()-start),frameAgeMs:Math.round(performance.now()-last),medianMs:Math.round(sorted[Math.floor(sorted.length*.5)]||0),visibility:document.visibilityState});},1000);
+</script></html>

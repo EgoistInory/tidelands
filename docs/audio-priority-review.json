@@ -1,0 +1,136 @@
+{
+  "date": "2026-10-05",
+  "stage": "M5_audio_feedback_priority_batch",
+  "batchChangeVerified": true,
+  "soundQualityAccepted": false,
+  "fullGoalComplete": false,
+  "problem": "旧版12个物理音效占满后，任务/制作/食用成功提示全部被丢弃。回归先得到0种成功提示，期望3种。",
+  "productionChange": "src/audio.js仍限制总12音源，物理音效最多占到9个当前槽位，保留3个给任务/制作/食用成功提示；不抢占已播放声音，不改音色/音量、落脚同步、暂停/静音或游戏规则。",
+  "tests": {
+    "command": "npm test",
+    "passed": 96,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 1417.454,
+    "log": "docs/audio-priority-tests.txt",
+    "expectedRegressionBefore": "docs/audio-priority-test-before.txt",
+    "syntaxChecks": [
+      "node --check src/audio.js",
+      "node --check /private/tmp/tidelands-audio-priority-qa.mjs"
+    ],
+    "regressions": [
+      "忙碌时三种成功提示仍排入，总音源上限12",
+      "既有结束释放、静音/暂停菜单通道、失败重试、噪声切片/循环、接地同步保留"
+    ]
+  },
+  "sourceSha256": {
+    "src/game.js": "5f27ece647163b1e076ccbe5eaf7e5ecf8960eba765e1fb4cd9f7e7b4a0b8cb2",
+    "src/scene.js": "b9e2bce7ccc6344660752bfe2a596bc112205bc1cd460a9d9241b9ff57d4cca7",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/creature.js": "e44e4382d34df6bb37fe8af4be52062c9ac743d04f99938ce282c327349782b4",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/main.js": "be2759df76430daa74c99405efb4cbd2b65e6382583f9662cc098128be733cfb",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/audio.js": "b3ec2bff2a521932823a998fcc86eefd16ae0fead315e7d5324b064d63436ca5",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/character.js": "cbe3fac0b203391e634adeda6cf1b8a275f86b9eeef33acc970fbb29ab98d33a",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "index.html": "2245f69cea28e3ac482acf169d56ce48ab3ef8be9a1fce74af8390d29a95b15e",
+    "styles.css": "252b652e5198b084d87a41ef24e6328edbcbaf5685ad2e867cd40e4114b0b477",
+    "tests/camera.test.js": "b95a340e14b5976b3742456f3c6e00b0eb85ab662e916a34912affa76eec81db",
+    "tests/visual-review.html": "8906a292f21b9ef130d7d61d8498eed6e0aa264da9e45fb650f5785548171b82",
+    "tests/playthrough.html": "8b8d9bb7e840f3fad4caf40abe8d9e31f5c337a0c6ae6751b337e377a182ba05",
+    "tests/camera-motion.html": "e12210ba7f2f023b3696d6103666ef9bcbfc1588ad1ecc2b49f6b15771a693d4",
+    "tests/experiments/camera-motion-smoothing.mjs": "d1e2381f35e93844616029794792d665d4bc0502a75022360dd2a469ad4c7c2d",
+    "tests/experiments/camera-motion-smoothing.test.mjs": "29434a0805129b4cf4c961e99e0e8a71e767468b5367a2a841793b5d05af698f",
+    "tests/scene.test.js": "5f14168dcbc99de614d157f2cfed4040d12cc26eddb72b557222e45488eb9dd6",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "tests/sky.test.js": "0d39314c908b7dbd72db905853adc395367a38bcb0d5a940d85b4af12fc92bf0",
+    "README.md": "86da48e509780c6c754f94bd080687da7e209ec2a36c8cf8bcbaa4a3fa1c5d1d",
+    "tests/creature.test.js": "70937937aad8ec732fc1dbff9ff630e4193ae6b8edc1560a2dbd9b2a3f574503",
+    "tests/creatures.html": "8423d48dc0e728c40874005099446e7b7498f4e96fabad0603e29646cc3ce25c",
+    "tests/character.test.js": "b1d9ddb3c0b2afd6286f66111bca5d1e07d1cecda9df1713b7f85632534d98b1",
+    "tests/locomotion.html": "735882857abb1984392aa7903f8ad9660479aed84b7a7fe87b7db20dbab35826",
+    "tests/audio.test.js": "39ce2302c81b6da6feae0760b9baf165da0e0cf6746a378f34a179414411338f",
+    "tests/audio-render.html": "4487af15ddddbae01b44fff81702ddc9dd791d70d60197f970af325c34b1e120"
+  },
+  "offlineRenderReport": "docs/audio-priority-render.json",
+  "currentShortSample": "docs/audio-priority-sample.json",
+  "actualGame": {
+    "mode": "performance",
+    "newFixtureImport": false,
+    "start": {
+      "position": [
+        -38.3,
+        59.0
+      ],
+      "hp": 100,
+      "buildings": 3,
+      "kills": 0,
+      "quest": 3
+    },
+    "inputWithinSample": [
+      "8次原生Shift+W",
+      "8次原生A",
+      "空格空挥"
+    ],
+    "end": {
+      "position": [
+        -42.5,
+        53.8
+      ],
+      "hp": 100,
+      "buildings": 3,
+      "kills": 0,
+      "quest": 3
+    },
+    "visibleFeedback": "采样中/未命中/实际坐标变化；样本最后夜晚，之后实际暂停保存显示存档已保存。",
+    "audio": {
+      "attempts": 4,
+      "scheduled": 4,
+      "footfallCount": 6,
+      "context": "running",
+      "active": true,
+      "listened": false
+    },
+    "consoleWarningsErrors": [],
+    "productionJourneyM4SavesTouched": false,
+    "notContinuousHeldInputOrCombat": true
+  },
+  "offlineRenderLimits": "真实离线波形/队列证明成功提示不被物理音效占满而吞掉，不能证明音色、现场遮蔽、扬声器/耳机或完整声音品质；尚未试听。",
+  "qualityRemaining": [
+    "音色/环境混音和设备实际试听仍未通过。",
+    "角色全身自然动作/材质、骨盆下降、动物接地、镜头突转/近塔遮挡仍待分批。",
+    "代表性连续探索/战斗、真机/GPU/当前长时内存及更新的版本化M5本地包仍待验收。"
+  ],
+  "quotaCheck": {
+    "ordinaryUsageAllowed": true,
+    "primaryUsedPercent": 21,
+    "weeklyUsedPercent": 83,
+    "goalStatus": "usageLimited",
+    "historicalUsageLimitedWasForced": false,
+    "resetCreditsUsed": 0,
+    "paidCreditsUsed": 0
+  },
+  "cleanup": {
+    "tabsClosed": [
+      88,
+      89
+    ],
+    "viewportReset": true,
+    "server": "127.0.0.1:4190",
+    "originalPid": 45694
+  },
+  "archive": {
+    "file": "dist/tidelands-local.zip",
+    "sha256": "61e173d0bf869afda5cfa674a6a675780b9453a8389baabbd33948fb12bc90ac",
+    "rebuilt": false,
+    "currentSourceLongRunAccepted": false
+  },
+  "automation2048Continues": true
+}

@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-03",
+  "status": "smoke_verified",
+  "entry": "/tests/visual-review.html",
+  "browser": "Codex IAB 2",
+  "sha256": {
+    "src/main.js": "4dfb26075e8a30b62e5786b2969c692f7464edc43d114a44f7e8c88b9f55980d",
+    "src/scene.js": "f66f30ba1c64274c91f8bc55b992ea76343dba26e075264c6b790a1e50f78229",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "tests/playthrough.html": "3cdf57b2b0bea74a64bcae1914a9ef5903cfefa4d9e83c942f5554fa3c1ace9e",
+    "tests/visual-review.html": "54b33b9b758e1c23883c6c5b3d7119d155a48b75072e38cd6893f661125792c1",
+    "tests/ground-surface.test.js": "85d205608d145b2aa55c1c0b3785a83fb1cb54cd7e1c6e742721d20e47261c2e"
+  },
+  "source": "assets/ground/leafy-grass/manifest.json",
+  "downloadBytes": 3172828,
+  "tileWidthMeters": 2,
+  "changes": [
+    "Local CC0 albedo, OpenGL normal and roughness channels on existing terrain",
+    "Height/slope blend preserves low shore and steep/high terrain",
+    "Original colour/bump fallback until all three local channels load",
+    "Mipmaps and anisotropy capped at four"
+  ],
+  "tests": {
+    "npmTest": {
+      "passed": 57,
+      "failed": 0
+    },
+    "groundSceneSubset": {
+      "passed": 11,
+      "failed": 0
+    },
+    "syntax": [
+      "src/ground-surface.js",
+      "src/scene.js"
+    ]
+  },
+  "desktop": {
+    "viewport": [
+      1280,
+      720
+    ],
+    "canvas": [
+      1280,
+      608
+    ],
+    "canvasBuffer": [
+      1920,
+      912
+    ],
+    "devicePixelRatio": 2,
+    "surfaceStatus": "ready",
+    "sameConditionAB": {
+      "position": [
+        -70,
+        102
+      ],
+      "time": 240,
+      "camera": {
+        "distance": 14,
+        "pitch": 0.29
+      },
+      "calls": 182,
+      "triangles": 713751,
+      "geometries": 182,
+      "textures": 11,
+      "note": "QA toggle retains new textures/shader in both modes; not a GPU cost comparison"
+    },
+    "materialCloseup": {
+      "position": [
+        -70,
+        102
+      ],
+      "time": 240,
+      "distance": 6,
+      "pitch": 0.65,
+      "calls": 84,
+      "triangles": 707383
+    },
+    "shore": {
+      "position": [
+        -90,
+        145
+      ],
+      "time": 240,
+      "note": "Sand foreground and wet shoreline remain visible; hillside uses grass, transition is still broad"
+    },
+    "forest": {
+      "position": [
+        145,
+        -25
+      ],
+      "times": [
+        120,
+        0
+      ],
+      "calls": 127,
+      "triangles": 712915,
+      "geometries": 212
+    }
+  },
+  "productionUI": {
+    "entry": "/tests/playthrough.html?mode=menus",
+    "desktopViewport": [
+      1280,
+      720
+    ],
+    "mobileViewport": [
+      390,
+      844
+    ],
+    "mobileCanvasBuffer": [
+      585,
+      1266
+    ],
+    "note": "Viewport changed after renderer creation; retained 1.5 render scale. First mobile screenshot was transiently incomplete; later actual screenshot fully read. No physical phone/multitouch or gameplay traversal acceptance."
+  },
+  "warnError": [],
+  "screenshots": "Inspected native tool images; no image/video file saved",
+  "limits": [
+    "Texture detail is subtle at the default camera, repeating grass/flat rocks/toy character/clouds remain",
+    "Not GPU byte/timing measurement, no motion video or physical phone",
+    "Three new textures (previous foliage version eight, now eleven); geometry and drawing count unchanged for this static fixture",
+    "Long sample pending in ground-endurance-sample.json, earlier foliage samples belong to earlier source hashes"
+  ],
+  "m5Complete": false,
+  "aaaComplete": false
+}

@@ -1,0 +1,39 @@
+{
+  "recordedAt": "2026-10-07T14:28:58.370418+00:00",
+  "stage": "M5 action transition batch",
+  "milestoneAccepted": false,
+  "fullGoalAccepted": false,
+  "rootCause": "Action overlay replaced the resting arm angles with zero at both boundaries; sword idle offsets and elbow idle flex therefore snapped.",
+  "change": "Blend from the current equipment/gait arm and torso into the existing peak; preserve peak angles, action lengths and attack/swim precedence.",
+  "tests": {
+    "before": {
+      "total": 19,
+      "passed": 18,
+      "failed": 1,
+      "failure": "hand/attack start joint 2"
+    },
+    "after": {
+      "characterPassed": 19,
+      "fullPassed": 101,
+      "failed": 0,
+      "syntaxPassed": true
+    },
+    "cases": "Idle hand/axe/sword attack and gather at onset and one microsecond before/after recovery; existing peaks/precedence/contact tests."
+  },
+  "browserEvidence": [
+    "docs/action-cycle-browser-before.json",
+    "docs/action-cycle-browser-after.json"
+  ],
+  "sourceSha256": {
+    "src/character.js": "40655ad14741d5fa5ceff50a395ace8ad7472dbe0ac1ca8ef414566cf52a4327",
+    "tests/character.test.js": "45be5b4c91f6f00a779a446f9a2f9773a60c31707ac0bba4f2b6a14e8b152def",
+    "tests/locomotion.html": "8e31df1bcd057895ce2527b43076873982ee35834847b8da33844ad583bc4c6f"
+  },
+  "boundaries": [
+    "12s synthetic model checks do not verify real combat timing, whole-body natural motion, tool collision, audio impact or GPU performance.",
+    "Visible character/face/materials remain simplified; front-view gather axe is close to face and needs later motion/prop review.",
+    "No normal game saves modified. Three historical ZIP files remain unchanged and exclude this and NPC response source changes.",
+    "M1-M4 remain closed, M5 and AAA remain incomplete."
+  ],
+  "next": "Verify normal-game attack/gather and resolve stale/duplicate attack feedback; then advance environment materials and versioned delivery rather than re-polishing this joint blend."
+}

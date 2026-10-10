@@ -1,0 +1,131 @@
+{
+  "recordedAt": "2026-10-04T09:25:04.771621+00:00",
+  "milestone": "M2",
+  "status": "functional_complete",
+  "fullGoalComplete": false,
+  "sourceHashes": {
+    "index.html": "2245f69cea28e3ac482acf169d56ce48ab3ef8be9a1fce74af8390d29a95b15e",
+    "styles.css": "252b652e5198b084d87a41ef24e6328edbcbaf5685ad2e867cd40e4114b0b477",
+    "tests/playthrough.html": "bb02860b6231acf7fa2bc87ce4b7399cd54f9e6c80b3c85b4b7af0c6d7ee2c21",
+    "tests/game.test.js": "a20dbb77e2f73359111d0966312f6ff575aeb8c3b02668d9ce271e5362c11cdc",
+    "src/audio.js": "6e2cdcef0d1557515ee8f9151e66bbb1cba5c5546270e011bf31c1e0037f7fe6",
+    "src/camera.js": "eba766f996b6d841c44509196bd0f79273e6bb6d37b63aee293ce723f2e66333",
+    "src/character.js": "7e516f1cfcdd4319b54b7489290ba8fcb1e8e1fdd2d8634d016d20b9e0f213a5",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "9ec099b7f7aa8d10258dfba3af14e960c25589a4df4bacb3a806b480af7f0db6",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "54cb5d150120efe5ad751b5cda045d6a61a591620f45e340b33028ea71aa402e",
+    "src/ground-surface.js": "a4709a81dcecfb587255591c105713f42c614396732e87427f5016209333fc48",
+    "src/main.js": "be2759df76430daa74c99405efb4cbd2b65e6382583f9662cc098128be733cfb",
+    "src/meadow.js": "15d4e759aacff9ee0f024236293b9ba081585ce9b885cb141d95636d686fdd72",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "ef24f7266be81533bc9a535c825478caa0c319bc8e19cbaa399604c55ad400ba",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "tests": {
+    "command": "npm test",
+    "passed": 85,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 1567.262625,
+    "artifact": "docs/m2-tests.txt",
+    "addedCoverage": [
+      "sprint exhaustion, swimming, stamina recovery, tent rest and restored respawn",
+      "crafted food ingredients, healing cap, full-health refusal and save restore"
+    ],
+    "extendedCoverage": "wood, mineral and food depletion / recovery / no duplicate rewards"
+  },
+  "browser": {
+    "origin": "http://127.0.0.1:4190/tests/playthrough.html",
+    "fixtureModes": [
+      "menus",
+      "berry",
+      "stone",
+      "respawn"
+    ],
+    "axe": {
+      "before": {
+        "wood": 5,
+        "stone": 5,
+        "axe": 0
+      },
+      "after": {
+        "wood": 1,
+        "stone": 2,
+        "axe": 1
+      },
+      "button": "已拥有 / disabled"
+    },
+    "food": {
+      "berriesBefore": 3,
+      "berriesAfterCraft": 0,
+      "mealAfterCraft": 1,
+      "mealAfterEat": 0,
+      "hpBefore": 70,
+      "hpAfter": 100,
+      "emptyButtonDisabled": true
+    },
+    "harvesting": {
+      "berry": [
+        3,
+        5
+      ],
+      "stone": [
+        0,
+        2
+      ],
+      "depletedTargetReplaced": true
+    },
+    "campfire": {
+      "buildings": [
+        0,
+        1
+      ],
+      "wood": [
+        5,
+        0
+      ],
+      "stone": [
+        5,
+        2
+      ],
+      "hpAfterRest": 100
+    },
+    "respawn": {
+      "fixtureHp": 5,
+      "fixtureWood": 11,
+      "positionAfter": [
+        -70,
+        102
+      ],
+      "hpAfter": 100,
+      "staminaAfter": 100,
+      "woodAfter": 11,
+      "protectionMessageSeconds": 8,
+      "subsequentSprintPosition": [
+        -68.7,
+        110.5
+      ],
+      "staminaDisplayedAfterSprint": 92,
+      "hpAfterSprint": 100
+    },
+    "warnError": [],
+    "allTemporaryTabsClosed": true,
+    "productionAndJourneyUntouched": true
+  },
+  "existingBuildingEvidence": {
+    "artifact": "docs/VERIFICATION.md",
+    "type": "historical UI selected-position three buildings / respawn camp / upgraded weapon / reload, plus current automated regression",
+    "currentThreeBuildingUIReplay": false
+  },
+  "limitations": [
+    "Labelled QA fixtures are not a fresh full playthrough",
+    "150-second resource regeneration covered by deterministic rule time, not new browser waiting",
+    "Historical three-building reload stays historical; no current entire-world/endurance/GPU/device/audio-quality acceptance",
+    "M5 quality remains incomplete"
+  ],
+  "nextMilestone": "M3"
+}
