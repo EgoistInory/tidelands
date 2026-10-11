@@ -1,0 +1,186 @@
+{
+  "complete": true,
+  "elapsedMs": 10000.099999999999,
+  "frames": 600,
+  "p95Ms": 18.099999999998545,
+  "maxMs": 18.600000000002183,
+  "over50Ms": 0,
+  "hidden": false,
+  "before": {
+    "wind": {
+      "water": 1,
+      "leaf": [
+        1,
+        1
+      ],
+      "meadow": [
+        1,
+        1,
+        1
+      ]
+    },
+    "audio": {
+      "state": "running",
+      "wind": 0.09209161251783371,
+      "surf": 0.0005260476027615368,
+      "active": true,
+      "targets": {
+        "wind": 0.09297966981401824,
+        "surf": 0,
+        "master": 0.35
+      }
+    },
+    "site": {
+      "name": "林地高岸",
+      "x": 160,
+      "z": 0
+    },
+    "worldTime": 1200,
+    "viewport": [
+      1280,
+      720
+    ],
+    "canvasBuffer": [
+      1920,
+      838
+    ],
+    "cloudiness": 1,
+    "sunlight": 0.28,
+    "ambientIntensity": 1.848,
+    "sunIntensity": 0.7280000000000001,
+    "horizon": [
+      0.3625252886270167,
+      0.4359981686989157,
+      0.46883868548138924
+    ],
+    "zenith": [
+      0.2129942515039423,
+      0.29229219881973467,
+      0.3640099978394588
+    ],
+    "fog": {
+      "near": 95,
+      "far": 350,
+      "color": [
+        0.3625252886270167,
+        0.4359981686989157,
+        0.46883868548138924
+      ]
+    },
+    "water": {
+      "light": 0.88,
+      "sunlight": 0.28,
+      "fogRange": [
+        95,
+        350
+      ],
+      "skyColor": [
+        0.3625252886270167,
+        0.4359981686989157,
+        0.46883868548138924
+      ]
+    },
+    "render": {
+      "frame": 22,
+      "calls": 78,
+      "triangles": 984835,
+      "points": 0,
+      "lines": 0
+    },
+    "memory": {
+      "geometries": 186,
+      "textures": 17
+    },
+    "programs": 18,
+    "note": "Two renders per frame and explicit fixed location/time/review camera, enemies absent. No save, normal campaign, GPU timing or physical-device proof."
+  },
+  "after": {
+    "wind": {
+      "water": 0.9998393730307052,
+      "leaf": [
+        0.9998393730307052,
+        0.9998393730307052
+      ],
+      "meadow": [
+        0.9998393730307052,
+        0.9998393730307052,
+        0.9998393730307052
+      ]
+    },
+    "audio": {
+      "state": "running",
+      "wind": 0.056344568729400635,
+      "surf": 0,
+      "active": true,
+      "targets": {
+        "wind": 0.05644062964697006,
+        "surf": 0,
+        "master": 0.35
+      }
+    },
+    "site": {
+      "name": "林地高岸",
+      "x": 160,
+      "z": 0
+    },
+    "worldTime": 1210.0001,
+    "viewport": [
+      1280,
+      720
+    ],
+    "canvasBuffer": [
+      1920,
+      838
+    ],
+    "cloudiness": 0.9997322883845087,
+    "sunlight": 0.2801927523631538,
+    "ambientIntensity": 1.8422968698720286,
+    "sunIntensity": 0.7232034862205918,
+    "horizon": [
+      0.360370322781298,
+      0.4324744806218528,
+      0.4647990671760262
+    ],
+    "zenith": [
+      0.21141048268280127,
+      0.29015272492405186,
+      0.3613819235675093
+    ],
+    "fog": {
+      "near": 95.00669279038729,
+      "far": 350.03212539385896,
+      "color": [
+        0.360370322781298,
+        0.4324744806218528,
+        0.4647990671760262
+      ]
+    },
+    "water": {
+      "light": 0.8745924610491845,
+      "sunlight": 0.2781551870079199,
+      "fogRange": [
+        95.00669279038729,
+        350.03212539385896
+      ],
+      "skyColor": [
+        0.360370322781298,
+        0.4324744806218528,
+        0.4647990671760262
+      ]
+    },
+    "render": {
+      "frame": 1224,
+      "calls": 78,
+      "triangles": 984835,
+      "points": 0,
+      "lines": 0
+    },
+    "memory": {
+      "geometries": 186,
+      "textures": 17
+    },
+    "programs": 18,
+    "note": "Two renders per frame and explicit fixed location/time/review camera, enemies absent. No save, normal campaign, GPU timing or physical-device proof."
+  },
+  "note": "Fixed review camera, production time/water/foliage, two renders per frame; no player input, GPU, long-term memory or actual audio audition acceptance."
+}

@@ -1,0 +1,365 @@
+{
+  "samples": [
+    {
+      "label": "晴日",
+      "report": {
+        "wind": {
+          "water": null,
+          "leaf": [
+            null,
+            null
+          ],
+          "meadow": [
+            null,
+            null,
+            null
+          ]
+        },
+        "audio": {
+          "state": "running",
+          "wind": 0.14406193792819977,
+          "surf": 0.009493582881987095,
+          "active": true,
+          "targets": {
+            "wind": 0.19142205132429163,
+            "surf": 0.02674407376667843
+          }
+        },
+        "site": {
+          "name": "潮汐低岸",
+          "x": -90,
+          "z": 140
+        },
+        "worldTime": 240,
+        "viewport": [
+          1280,
+          720
+        ],
+        "canvasBuffer": [
+          1920,
+          838
+        ],
+        "cloudiness": 0,
+        "sunlight": 1,
+        "ambientIntensity": 2.1,
+        "sunIntensity": 2.6,
+        "horizon": [
+          0.4793201830913402,
+          0.6583748172725346,
+          0.6653872982754769
+        ],
+        "zenith": [
+          0.09084171117479915,
+          0.2704977910022518,
+          0.46207699964472876
+        ],
+        "fog": {
+          "near": 120,
+          "far": 470,
+          "color": [
+            0.4793201830913402,
+            0.6583748172725346,
+            0.6653872982754769
+          ]
+        },
+        "water": {
+          "light": 1,
+          "sunlight": 1,
+          "fogRange": [
+            120,
+            470
+          ],
+          "skyColor": [
+            0.4793201830913402,
+            0.6583748172725346,
+            0.6653872982754769
+          ]
+        },
+        "render": {
+          "frame": 6,
+          "calls": 61,
+          "triangles": 717490,
+          "points": 0,
+          "lines": 0
+        },
+        "memory": {
+          "geometries": 143,
+          "textures": 14
+        },
+        "programs": 16,
+        "note": "Two renders per frame and explicit fixed location/time/review camera, enemies absent. No save, normal campaign, GPU timing or physical-device proof."
+      }
+    },
+    {
+      "label": "阴日",
+      "report": {
+        "wind": {
+          "water": null,
+          "leaf": [
+            null,
+            null
+          ],
+          "meadow": [
+            null,
+            null,
+            null
+          ]
+        },
+        "audio": {
+          "state": "running",
+          "wind": 0.17650936543941498,
+          "surf": 0.01875983364880085,
+          "active": true,
+          "targets": {
+            "wind": 0.2231512075536438,
+            "surf": 0.08599911356934603
+          }
+        },
+        "site": {
+          "name": "潮汐低岸",
+          "x": -90,
+          "z": 140
+        },
+        "worldTime": 1200,
+        "viewport": [
+          1280,
+          720
+        ],
+        "canvasBuffer": [
+          1920,
+          838
+        ],
+        "cloudiness": 1,
+        "sunlight": 0.28,
+        "ambientIntensity": 1.848,
+        "sunIntensity": 0.7280000000000001,
+        "horizon": [
+          0.3625252886270167,
+          0.4359981686989157,
+          0.46883868548138924
+        ],
+        "zenith": [
+          0.2129942515039423,
+          0.29229219881973467,
+          0.3640099978394588
+        ],
+        "fog": {
+          "near": 95,
+          "far": 350,
+          "color": [
+            0.3625252886270167,
+            0.4359981686989157,
+            0.46883868548138924
+          ]
+        },
+        "water": {
+          "light": 0.88,
+          "sunlight": 0.28,
+          "fogRange": [
+            95,
+            350
+          ],
+          "skyColor": [
+            0.3625252886270167,
+            0.4359981686989157,
+            0.46883868548138924
+          ]
+        },
+        "render": {
+          "frame": 8,
+          "calls": 61,
+          "triangles": 717490,
+          "points": 0,
+          "lines": 0
+        },
+        "memory": {
+          "geometries": 143,
+          "textures": 14
+        },
+        "programs": 16,
+        "note": "Two renders per frame and explicit fixed location/time/review camera, enemies absent. No save, normal campaign, GPU timing or physical-device proof."
+      }
+    },
+    {
+      "label": "晴日",
+      "report": {
+        "wind": {
+          "water": null,
+          "leaf": [
+            null,
+            null
+          ],
+          "meadow": [
+            null,
+            null,
+            null
+          ]
+        },
+        "audio": {
+          "state": "running",
+          "wind": 0.12555693089962006,
+          "surf": 0.02659696713089943,
+          "active": true,
+          "targets": {
+            "wind": 0.07975918805178818,
+            "surf": 0
+          }
+        },
+        "site": {
+          "name": "林地高岸",
+          "x": 160,
+          "z": 0
+        },
+        "worldTime": 240,
+        "viewport": [
+          1280,
+          720
+        ],
+        "canvasBuffer": [
+          1920,
+          838
+        ],
+        "cloudiness": 0,
+        "sunlight": 1,
+        "ambientIntensity": 2.1,
+        "sunIntensity": 2.6,
+        "horizon": [
+          0.4793201830913402,
+          0.6583748172725346,
+          0.6653872982754769
+        ],
+        "zenith": [
+          0.09084171117479915,
+          0.2704977910022518,
+          0.46207699964472876
+        ],
+        "fog": {
+          "near": 120,
+          "far": 470,
+          "color": [
+            0.4793201830913402,
+            0.6583748172725346,
+            0.6653872982754769
+          ]
+        },
+        "water": {
+          "light": 1,
+          "sunlight": 1,
+          "fogRange": [
+            120,
+            470
+          ],
+          "skyColor": [
+            0.4793201830913402,
+            0.6583748172725346,
+            0.6653872982754769
+          ]
+        },
+        "render": {
+          "frame": 12,
+          "calls": 78,
+          "triangles": 984835,
+          "points": 0,
+          "lines": 0
+        },
+        "memory": {
+          "geometries": 186,
+          "textures": 17
+        },
+        "programs": 18,
+        "note": "Two renders per frame and explicit fixed location/time/review camera, enemies absent. No save, normal campaign, GPU timing or physical-device proof."
+      }
+    },
+    {
+      "label": "阴日",
+      "report": {
+        "wind": {
+          "water": null,
+          "leaf": [
+            null,
+            null
+          ],
+          "meadow": [
+            null,
+            null,
+            null
+          ]
+        },
+        "audio": {
+          "state": "running",
+          "wind": 0.0916188582777977,
+          "surf": 0.01080550067126751,
+          "active": true,
+          "targets": {
+            "wind": 0.09297966981401824,
+            "surf": 0
+          }
+        },
+        "site": {
+          "name": "林地高岸",
+          "x": 160,
+          "z": 0
+        },
+        "worldTime": 1200,
+        "viewport": [
+          1280,
+          720
+        ],
+        "canvasBuffer": [
+          1920,
+          838
+        ],
+        "cloudiness": 1,
+        "sunlight": 0.28,
+        "ambientIntensity": 1.848,
+        "sunIntensity": 0.7280000000000001,
+        "horizon": [
+          0.3625252886270167,
+          0.4359981686989157,
+          0.46883868548138924
+        ],
+        "zenith": [
+          0.2129942515039423,
+          0.29229219881973467,
+          0.3640099978394588
+        ],
+        "fog": {
+          "near": 95,
+          "far": 350,
+          "color": [
+            0.3625252886270167,
+            0.4359981686989157,
+            0.46883868548138924
+          ]
+        },
+        "water": {
+          "light": 0.88,
+          "sunlight": 0.28,
+          "fogRange": [
+            95,
+            350
+          ],
+          "skyColor": [
+            0.3625252886270167,
+            0.4359981686989157,
+            0.46883868548138924
+          ]
+        },
+        "render": {
+          "frame": 14,
+          "calls": 78,
+          "triangles": 984835,
+          "points": 0,
+          "lines": 0
+        },
+        "memory": {
+          "geometries": 186,
+          "textures": 17
+        },
+        "programs": 18,
+        "note": "Two renders per frame and explicit fixed location/time/review camera, enemies absent. No save, normal campaign, GPU timing or physical-device proof."
+      }
+    }
+  ],
+  "console": []
+}

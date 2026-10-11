@@ -3,21 +3,23 @@ import {randomGenerator} from './world.js';
 
 let leafMaterial,leafDepthMaterial,barkMaterial;
 const windTime={value:0};
+const windStrength={value:1};
 function leafWind(shader){
   shader.uniforms.leafWindTime=windTime;
-  shader.vertexShader='uniform float leafWindTime;\n'+shader.vertexShader.replace('#include <begin_vertex>',`#include <begin_vertex>
+  shader.uniforms.leafWindStrength=windStrength;
+  shader.vertexShader='uniform float leafWindTime,leafWindStrength;\n'+shader.vertexShader.replace('#include <begin_vertex>',`#include <begin_vertex>
     vec4 leafWorld = vec4(position, 1.0);
     #ifdef USE_INSTANCING
       leafWorld = instanceMatrix * leafWorld;
     #endif
     leafWorld = modelMatrix * leafWorld;
     float crown = clamp((position.y - 3.0) / 7.0, 0.0, 1.0);
-    transformed.x += sin(leafWindTime * 1.2 + leafWorld.x * .11 + leafWorld.z * .13) * crown * crown * .16;
-    transformed.z += sin(leafWindTime * 1.1 + leafWorld.x * .09) * crown * crown * .10;
-    transformed.y += sin(leafWindTime * 2.0 + leafWorld.x * .5 + leafWorld.z * .5) * uv.x * .03;
+    transformed.x += sin(leafWindTime * 1.2 + leafWorld.x * .11 + leafWorld.z * .13) * crown * crown * .16 * leafWindStrength;
+    transformed.z += sin(leafWindTime * 1.1 + leafWorld.x * .09) * crown * crown * .10 * leafWindStrength;
+    transformed.y += sin(leafWindTime * 2.0 + leafWorld.x * .5 + leafWorld.z * .5) * uv.x * .03 * leafWindStrength;
   `);
 }
-export function updateFoliage(time){windTime.value=time;}
+export function updateFoliage(time,strength=1){windTime.value=time;windStrength.value=Number.isFinite(strength)?THREE.MathUtils.clamp(strength,0,1):1;}
 export function barkSurface(){
   if(barkMaterial)return barkMaterial;
   const width=128,height=256,data=new Uint8Array(width*height*4),random=randomGenerator(5321);
@@ -56,7 +58,7 @@ function leaves(){
   leafMaterial=new THREE.MeshStandardMaterial({map,vertexColors:true,side:THREE.DoubleSide,alphaTest:.35,alphaToCoverage:true,roughness:.94});
   // Shadow vertices use the same displacement and clock as visible leaves.
   leafDepthMaterial=new THREE.MeshDepthMaterial({map,side:THREE.DoubleSide,alphaTest:.35,depthPacking:THREE.RGBADepthPacking});
-  for(const m of [leafMaterial,leafDepthMaterial]){m.onBeforeCompile=leafWind;m.customProgramCacheKey=()=> 'tidelands-leaf-wind-v1';}
+  for(const m of [leafMaterial,leafDepthMaterial]){m.onBeforeCompile=leafWind;m.customProgramCacheKey=()=> 'tidelands-leaf-wind-v2';}
   return leafMaterial;
 }
 

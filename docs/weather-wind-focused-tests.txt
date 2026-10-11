@@ -1,0 +1,226 @@
+TAP version 13
+# Subtest: mute prevents initialization and pause fades master to silence
+ok 1 - mute prevents initialization and pause fades master to silence
+  ---
+  duration_ms: 2.157334
+  type: 'test'
+  ...
+# Subtest: effects are bounded and disconnect on completion; footsteps follow distance
+ok 2 - effects are bounded and disconnect on completion; footsteps follow distance
+  ---
+  duration_ms: 1.142958
+  type: 'test'
+  ...
+# Subtest: partial initialization and resume failures release context and allow a retry
+ok 3 - partial initialization and resume failures release context and allow a retry
+  ---
+  duration_ms: 3.114417
+  type: 'test'
+  ...
+# Subtest: menu success cues play while world is paused, and mute silences both channels
+ok 4 - menu success cues play while world is paused, and mute silences both channels
+  ---
+  duration_ms: 0.8365
+  type: 'test'
+  ...
+# Subtest: busy physical actions leave room for quest, crafting and food confirmation cues
+ok 5 - busy physical actions leave room for quest, crafting and food confirmation cues
+  ---
+  duration_ms: 1.02025
+  type: 'test'
+  ...
+# Subtest: ambient noise loops without a sample discontinuity or DC offset
+ok 6 - ambient noise loops without a sample discontinuity or DC offset
+  ---
+  duration_ms: 0.927375
+  type: 'test'
+  ...
+# Subtest: physical actions vary noise slices without truncating tails or allocating new buffers
+ok 7 - physical actions vary noise slices without truncating tails or allocating new buffers
+  ---
+  duration_ms: 1.19825
+  type: 'test'
+  ...
+# Subtest: distance fallback uses walking spacing, coast selects sand, swimming keeps splash spacing
+ok 8 - distance fallback uses walking spacing, coast selects sand, swimming keeps splash spacing
+  ---
+  duration_ms: 0.297
+  type: 'test'
+  ...
+# Subtest: land audio follows actual rendered ankle touchdowns at walking and running speeds
+ok 9 - land audio follows actual rendered ankle touchdowns at walking and running speeds
+  ---
+  duration_ms: 133.824459
+  type: 'test'
+  ...
+# Subtest: contact counters suppress initial, replayed, paused and teleport steps while idle landings can sound
+ok 10 - contact counters suppress initial, replayed, paused and teleport steps while idle landings can sound
+  ---
+  duration_ms: 0.424209
+  type: 'test'
+  ...
+# Subtest: coastal surf fades through the shore elevation band without consuming effect voices
+ok 11 - coastal surf fades through the shore elevation band without consuming effect voices
+  ---
+  duration_ms: 0.379417
+  type: 'test'
+  ...
+# Subtest: surf shares world mute/pause and releases all persistent nodes on disposal
+ok 12 - surf shares world mute/pause and releases all persistent nodes on disposal
+  ---
+  duration_ms: 0.177209
+  type: 'test'
+  ...
+# Subtest: ecology changes with rendered daylight and island habitat, fading out at sea
+ok 13 - ecology changes with rendered daylight and island habitat, fading out at sea
+  ---
+  duration_ms: 0.175917
+  type: 'test'
+  ...
+# Subtest: ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices
+ok 14 - ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices
+  ---
+  duration_ms: 21.211667
+  type: 'test'
+  ...
+# Subtest: ecology shares world mute/pause and releases nodes on normal or failed initialization
+ok 15 - ecology shares world mute/pause and releases nodes on normal or failed initialization
+  ---
+  duration_ms: 0.751875
+  type: 'test'
+  ...
+# Subtest: leaf canopy stays finite and its wind bounds fit the tree camera clearance
+ok 16 - leaf canopy stays finite and its wind bounds fit the tree camera clearance
+  ---
+  duration_ms: 64.526917
+  type: 'test'
+  ...
+# Subtest: visible and shadow leaves use the same wind shader and advancing clock
+ok 17 - visible and shadow leaves use the same wind shader and advancing clock
+  ---
+  duration_ms: 4.404666
+  type: 'test'
+  ...
+# Subtest: canopies share a bounded mipmapped cutout texture with opaque leaves and empty edges
+ok 18 - canopies share a bounded mipmapped cutout texture with opaque leaves and empty edges
+  ---
+  duration_ms: 9.376667
+  type: 'test'
+  ...
+# Subtest: berry foliage fits the resource footprint and reuses visible and shadow leaf resources
+ok 19 - berry foliage fits the resource footprint and reuses visible and shadow leaf resources
+  ---
+  duration_ms: 4.245541
+  type: 'test'
+  ...
+# Subtest: bark texture is shared, bounded, opaque and mipmapped
+ok 20 - bark texture is shared, bounded, opaque and mipmapped
+  ---
+  duration_ms: 17.971667
+  type: 'test'
+  ...
+# Subtest: curved grass and petals have finite normals, nondegenerate faces and bounded sway
+ok 21 - curved grass and petals have finite normals, nondegenerate faces and bounded sway
+  ---
+  duration_ms: 15.711333
+  type: 'test'
+  ...
+# Subtest: region culling preserves all original grass transforms and random sequence
+ok 22 - region culling preserves all original grass transforms and random sequence
+  ---
+  duration_ms: 411.437125
+  type: 'test'
+  ...
+# Subtest: grass and flowers share the game clock for rooted vertex sway
+ok 23 - grass and flowers share the game clock for rooted vertex sway
+  ---
+  duration_ms: 0.51975
+  type: 'test'
+  ...
+# Subtest: dense patches stay on gentle land with shared geometry and per-patch tint
+ok 24 - dense patches stay on gentle land with shared geometry and per-patch tint
+  ---
+  duration_ms: 385.611
+  type: 'test'
+  ...
+# Subtest: near patch batches cull beyond the fade range and recover after the camera returns
+ok 25 - near patch batches cull beyond the fade range and recover after the camera returns
+  ---
+  duration_ms: 261.855667
+  type: 'test'
+  ...
+# Subtest: coastal tufts stay above waves on gentle sand across all islands and cull at distance
+ok 26 - coastal tufts stay above waves on gentle sand across all islands and cull at distance
+  ---
+  duration_ms: 260.534708
+  type: 'test'
+  ...
+# Subtest: sky and fog remain periodic, bounded and continuous across dawn and midnight
+ok 27 - sky and fog remain periodic, bounded and continuous across dawn and midnight
+  ---
+  duration_ms: 66.141666
+  type: 'test'
+  ...
+# Subtest: sky follows long-distance exploration without depth or shadow occlusion and reuses GPU resources
+ok 28 - sky follows long-distance exploration without depth or shadow occlusion and reuses GPU resources
+  ---
+  duration_ms: 2.6825
+  type: 'test'
+  ...
+# Subtest: water shares the changing horizon color instead of retaining daytime reflection at night
+ok 29 - water shares the changing horizon color instead of retaining daytime reflection at night
+  ---
+  duration_ms: 54.263084
+  type: 'test'
+  ...
+# Subtest: weather wind is bounded, deterministic and continuous across cycle boundaries
+ok 30 - weather wind is bounded, deterministic and continuous across cycle boundaries
+  ---
+  duration_ms: 4.164333
+  type: 'test'
+  ...
+# Subtest: leaf and grass color and shadow share stable wind strength without changing time phase
+ok 31 - leaf and grass color and shadow share stable wind strength without changing time phase
+  ---
+  duration_ms: 59.7605
+  type: 'test'
+  ...
+# Subtest: production water and atmosphere share bounded wind and reuse their uniforms
+ok 32 - production water and atmosphere share bounded wind and reuse their uniforms
+  ---
+  duration_ms: 50.008375
+  type: 'test'
+  ...
+# Subtest: wind and surf audio targets respond to weather while pause and shared buffers remain intact
+ok 33 - wind and surf audio targets respond to weather while pause and shared buffers remain intact
+  ---
+  duration_ms: 2.619833
+  type: 'test'
+  ...
+# Subtest: weather is deterministic over several days with bounded continuous transitions
+ok 34 - weather is deterministic over several days with bounded continuous transitions
+  ---
+  duration_ms: 8.961959
+  type: 'test'
+  ...
+# Subtest: sky cloud coverage and haze use the shared weather without replacing resources
+ok 35 - sky cloud coverage and haze use the shared weather without replacing resources
+  ---
+  duration_ms: 1.425542
+  type: 'test'
+  ...
+# Subtest: production atmosphere coordinates sunlight, land fog and water with stable resources
+ok 36 - production atmosphere coordinates sunlight, land fog and water with stable resources
+  ---
+  duration_ms: 68.68925
+  type: 'test'
+  ...
+1..36
+# tests 36
+# suites 0
+# pass 36
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1415.124833

@@ -1,0 +1,147 @@
+{
+  "kind": "bounded-weather-wind-review",
+  "observedAt": "2026-10-11T17:45:15.218735+00:00",
+  "passedBoundedBatch": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "6eefb0bb75d8e8c61ae8bcbc54e1b5486eb9f850e9a81f9a49b37f414f79b846",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "ef4290e2daf552d5ee73fb9f1a40f023a8cb07d9508bb7e16c1ea0ea734aa5c6",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "d7649b9b6e0d1a3496d8c8b2fa5198e1876076dc2fa3d78ebaebbea77546e4b6",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "fa13f118fd37388219febdadc0c3b1a5a19af799ff115ec429b36f7aee573c04",
+    "src/main.js": "034e4dc0291ad6ee118d24dc4f58ee992f3142c7bac432b4c75c59cf358ba3ad",
+    "src/meadow.js": "08ffc76769aa829809bd4056bfab376b73ae6c9c67a6478b3729ee7ee636badd",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "0432cd242408149b28e7def74638263ff031bfbf18c180cf13ee2e60a3a5c5f2",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "72cc7f539808b6f69d68256d311453f7cd63ad0d1932be5dbe2fa994bc699ddd",
+    "src/sky.js": "e83f0d3ce196d44b214a608f09f0763ca33caa10c2d3ed671579b508effa75d4",
+    "src/startup-textures.js": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd",
+    "src/world.js": "f9f0114982deaf69dda65b8ec44e0eba88f1cc228b1859379dc7da24b93456e1"
+  },
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-wind.zip",
+    "archiveBytes": 8177657,
+    "archiveEntries": 41,
+    "archiveSha256": "6e4bcdd96671d740274cf5f5ac37782b178d385dce6fc763a11b08531264e0a9"
+  },
+  "implementation": [
+    "Only five modules changed: world/scene/foliage/meadow/audio",
+    "Cloud cycle derives wind strength .4 to 1; existing maximum displacement and culling bounds retained",
+    "Visible and depth vegetation uniforms share strength and game time, water height and reflection normals use the same factor",
+    "Existing wind and shore-surf targets scale with strength, retain ramp, pause/mute and shared buffers"
+  ],
+  "tests": {
+    "initialRedFail": 4,
+    "focusedPass": 36,
+    "fullPass": 151,
+    "packagingPass": 4,
+    "harnessSyntaxExit": 0
+  },
+  "realUI": {
+    "desktopSamples": 8,
+    "mobileSamples": 3,
+    "shaderStrengths": [
+      0.4,
+      0.7,
+      1
+    ],
+    "audio": "Real scheduled setTargetAtTime targets: clear .4 of same-clock old wind/surf, overcast unchanged, pause master target0 and resume.35; values can still be ramping. No actual listening claim",
+    "memoryAndProgramsAtSameSiteUnchanged": true
+  },
+  "motion": {
+    "desktop": {
+      "frames": 600,
+      "p95Ms": 18.099999999998545,
+      "maxMs": 18.600000000002183,
+      "over50Ms": 0
+    },
+    "mobile": {
+      "frames": 600,
+      "p95Ms": 18.10000000000582,
+      "maxMs": 18.69999999999709,
+      "over50Ms": 0
+    }
+  },
+  "dynamicDesktop": {
+    "frames": 3597,
+    "activeMs": 60016.67,
+    "p95Ms": 17.8,
+    "maxMs": 98.07,
+    "over50Ms": 1,
+    "distanceMeters": 415.23,
+    "hitCount": 6
+  },
+  "frameSpikes": [
+    {
+      "atMs": 98.07,
+      "intervalMs": 98.07,
+      "previousFrame": {
+        "stage": "shore-exploration",
+        "transition": false,
+        "cpuMs": 92.9
+      }
+    }
+  ],
+  "ordinaryFinal": {
+    "position": "位置 X -63.5，Z 93.7；建筑 0；击败 0",
+    "inventory": {
+      "晶石": 0,
+      "晶石剑": 0,
+      "木材": 2,
+      "浆果": 3,
+      "烤浆果": 0,
+      "石料": 2,
+      "石斧": 0,
+      "纤维": 0,
+      "贝壳": 0
+    },
+    "hp": "100"
+  },
+  "historicalArchivesPreserved": 20,
+  "viewedImages": [
+    "wind-after-晴日.jpg",
+    "wind-after-阴日.jpg",
+    "wind-after-mobile.jpg",
+    "wind-package-desktop.jpg",
+    "wind-package-mobile.jpg"
+  ],
+  "visualLimits": [
+    "Small amplitude/weather coordination is visible but not a physical storm",
+    "Fixed 390 QA camera still clips the player at right edge; ordinary layout width390 and canvas390x844 fit",
+    "Ordinary face, plants and whole-world art still retain prototype gaps"
+  ],
+  "limits": [
+    "Real WebAudio scheduling targets and fade restoration, not actual listening or audio quality acceptance",
+    "Two-render fixed review camera and scripted five-stage one-minute load, not GPU/VRAM/physical-device/long-term or full campaign acceptance",
+    "Simple waves and vegetation, no physical storm or rain",
+    "Character and vegetation still retain prototype art gaps; mobile fixed QA camera clips right edge",
+    "Public origin destination question unchanged; no push or repeated question"
+  ],
+  "notes": [
+    "Initial new test assumed grass had a custom depth material; actual shadow shader belongs to the shared fiber material. Read source and corrected fixture; initial 35/36 failure log retained",
+    "Initial water RED assertion let two undefined values compare equal then raised TypeError; strengthened presence assertion before final tests",
+    "A reused DOM-read closure referred to old closed tab23 while actual UI had opened bag on27; observed current27 and rebound helper without resetting/repeating start",
+    "A guessed coastal test filename was absent; existing audio.test.js contains the relevant tests; no ignored failure",
+    "Previous weather/startup evidence remains tied to old source and package; cannot run those current-source validators as acceptance of this new batch"
+  ],
+  "processes": {
+    "4190": {
+      "exit": 0,
+      "output": "COMMAND   PID       USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nPython  21636 huxiaocong    3u  IPv4 0xfcb1e8ad25464173      0t0  TCP 127.0.0.1:4190 (LISTEN)"
+    },
+    "53929": {
+      "exit": 1,
+      "output": ""
+    }
+  },
+  "nextAction": "Natural spatial attack/gather contact and whole-scene art, then actual listening, GPU/device/long-term and final full-flow quality",
+  "auditScriptSha256": "0980dc201caa2d309ce875caea6accd10dc8737e1bf2e6af8edf784bb2bdbb9c"
+}

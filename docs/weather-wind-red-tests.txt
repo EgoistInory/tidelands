@@ -1,0 +1,100 @@
+TAP version 13
+# Subtest: weather wind is bounded, deterministic and continuous across cycle boundaries
+not ok 1 - weather wind is bounded, deterministic and continuous across cycle boundaries
+  ---
+  duration_ms: 5.288791
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/weather-wind.test.js:11:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(weatherAt(240).windStrength<weatherAt(1200).windStrength)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/weather-wind.test.js:12:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: leaf and grass color and shadow share stable wind strength without changing time phase
+not ok 2 - leaf and grass color and shadow share stable wind strength without changing time phase
+  ---
+  duration_ms: 27.969666
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/weather-wind.test.js:16:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(color.uniforms[name])
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/weather-wind.test.js:21:12)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: production water and atmosphere share bounded wind and reuse their uniforms
+not ok 3 - production water and atmosphere share bounded wind and reuse their uniforms
+  ---
+  duration_ms: 27.018667
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/weather-wind.test.js:28:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'value')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/weather-wind.test.js:32:160)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: wind and surf audio targets respond to weather while pause and shared buffers remain intact
+not ok 4 - wind and surf audio targets respond to weather while pause and shared buffers remain intact
+  ---
+  duration_ms: 1.589375
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/weather-wind.test.js:42:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(audio.wind.gain.value>clear.wind*2&&audio.surf.gain.value>clear.surf*2)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/weather-wind.test.js:48:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 0
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 134.846042

@@ -1,0 +1,104 @@
+{
+  "kind": "bounded-wind-evidence-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "pendingBatchEvidence": [],
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "6eefb0bb75d8e8c61ae8bcbc54e1b5486eb9f850e9a81f9a49b37f414f79b846",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "ef4290e2daf552d5ee73fb9f1a40f023a8cb07d9508bb7e16c1ea0ea734aa5c6",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "d7649b9b6e0d1a3496d8c8b2fa5198e1876076dc2fa3d78ebaebbea77546e4b6",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "fa13f118fd37388219febdadc0c3b1a5a19af799ff115ec429b36f7aee573c04",
+    "src/main.js": "034e4dc0291ad6ee118d24dc4f58ee992f3142c7bac432b4c75c59cf358ba3ad",
+    "src/meadow.js": "08ffc76769aa829809bd4056bfab376b73ae6c9c67a6478b3729ee7ee636badd",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "0432cd242408149b28e7def74638263ff031bfbf18c180cf13ee2e60a3a5c5f2",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "72cc7f539808b6f69d68256d311453f7cd63ad0d1932be5dbe2fa994bc699ddd",
+    "src/sky.js": "e83f0d3ce196d44b214a608f09f0763ca33caa10c2d3ed671579b508effa75d4",
+    "src/startup-textures.js": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd",
+    "src/world.js": "f9f0114982deaf69dda65b8ec44e0eba88f1cc228b1859379dc7da24b93456e1"
+  },
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-wind.zip",
+    "archiveBytes": 8177657,
+    "archiveEntries": 41,
+    "archiveSha256": "6e4bcdd96671d740274cf5f5ac37782b178d385dce6fc763a11b08531264e0a9"
+  },
+  "historicalArchivesPreserved": 20,
+  "evidenceSha256": {
+    "docs/weather-wind-after-ui.json": "4324c126b02bc9030c09ce9e3261294ec976ed0fc47eca585d00b544bab68391",
+    "docs/weather-wind-baseline-source.json": "8ba1223273d80427be67e66639f06c4b60d61b0389f68fbf082f98218c4c501e",
+    "docs/weather-wind-baseline-ui.json": "67b1e00bc38f292b9f1c08eac75d54098d658de99211d56f493dc5ce0250267f",
+    "docs/weather-wind-dynamic-desktop.json": "204cd13e00f5a370d2ddd7e5d681cc33218bd57d531e1e40fef9958ac5a6f0aa",
+    "docs/weather-wind-focused-tests.txt": "b69dc5b28c8ff14e73f3d8996deae725324f45c61ab2f2c375536a9f6cf39916",
+    "docs/weather-wind-full-tests.txt": "8238c0373a76e8c5f7af871abddf0438a7134c8ae031dfe2c345cea9e392e753",
+    "docs/weather-wind-initial-focused-tests.txt": "8e49885db3a14af607d89b3ca856f76e85a463fae28226744e75e61a59a719d7",
+    "docs/weather-wind-local-verification.json": "6d4560c8a6bf257354cf9b3610c618f28b521bcfbc45ddb7f947175f98491cc3",
+    "docs/weather-wind-mobile-ui.json": "2271146ff44ca8c7406a35e8eb7631ad130f1c9589c23c865d158d54b2d5bcf6",
+    "docs/weather-wind-motion-desktop.json": "9e9ecd0353313821e21f2630725ade226b0591665491bf035de44519f345e2f7",
+    "docs/weather-wind-motion-mobile.json": "d446797291056a0b3a0e2f82cce06fca3bf27c0de7bd90a4cfdc9d4f469740c8",
+    "docs/weather-wind-package-tests.txt": "2447fd79a71c32258513eb5b87e6bffe669db9fae096604218b20bd867a11c6e",
+    "docs/weather-wind-package-ui.json": "7c48e2cbcb86152fc2abc26f5e9ab0bb11c7b2bf41716e2a03992e27d1c0489e",
+    "docs/weather-wind-red-tests.txt": "47c32f10f0ffc3bb4d863434be3875b34ea8dffe7fd0b9f2c1b7ebf4bb31c654",
+    "docs/wind-after-mobile.jpg": "9ae88ef80828e48644b3c328b079e537dae0e8e5182c8a8f4f26fd890a6ea065",
+    "docs/wind-after-晴日.jpg": "bf4a3f43eda368493b6c46413db30006c837e3cfda58eab678c3983a3b21cc4a",
+    "docs/wind-after-阴日.jpg": "e90031e8b23e22f86335a69ab8d3c53f6530cb2ff931e4098733ac446695d2ef",
+    "docs/wind-baseline-晴日.jpg": "999a1aa2ddbe4122fa12782803ac45a8c7b170ff2299be56311b15d235601eac",
+    "docs/wind-baseline-阴日.jpg": "9245667a982d2f5ec903407075ad412ca516eca96ab350bde5ea8e4fba729609",
+    "docs/wind-package-desktop.jpg": "7205d6cb6b43412115577b4e476a7ad9f14fbb08699f5384ad7b3104eb912340",
+    "docs/wind-package-mobile.jpg": "6bb98e0ddd545f4fa02efd21e9af8f0ce0ab9b1311efcd624158f24878b56d10"
+  },
+  "motion": {
+    "desktop": {
+      "frames": 600,
+      "p95Ms": 18.099999999998545,
+      "maxMs": 18.600000000002183,
+      "over50Ms": 0
+    },
+    "mobile": {
+      "frames": 600,
+      "p95Ms": 18.10000000000582,
+      "maxMs": 18.69999999999709,
+      "over50Ms": 0
+    }
+  },
+  "dynamicDesktop": {
+    "frames": 3597,
+    "activeMs": 60016.67,
+    "p95Ms": 17.8,
+    "maxMs": 98.07,
+    "over50Ms": 1,
+    "distanceMeters": 415.23,
+    "hitCount": 6
+  },
+  "ordinaryFinal": {
+    "position": "位置 X -63.5，Z 93.7；建筑 0；击败 0",
+    "inventory": {
+      "晶石": 0,
+      "晶石剑": 0,
+      "木材": 2,
+      "浆果": 3,
+      "烤浆果": 0,
+      "石料": 2,
+      "石斧": 0,
+      "纤维": 0,
+      "贝壳": 0
+    },
+    "hp": "100"
+  },
+  "limits": [
+    "Real WebAudio scheduling targets and fade restoration, not actual listening or audio quality acceptance",
+    "Two-render fixed review camera and scripted five-stage one-minute load, not GPU/VRAM/physical-device/long-term or full campaign acceptance",
+    "Simple waves and vegetation, no physical storm or rain",
+    "Character and vegetation still retain prototype art gaps; mobile fixed QA camera clips right edge",
+    "Public origin destination question unchanged; no push or repeated question"
+  ]
+}

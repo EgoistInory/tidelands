@@ -2,12 +2,14 @@ import * as THREE from '../vendor/three.module.min.js';
 import {terrain,LANDMARKS,SPAWN,ISLANDS,randomGenerator} from './world.js';
 
 const windTime={value:0};
+const windStrength={value:1};
 let surface,depthSurface,coverSurface;
-export function updateMeadow(time){windTime.value=time;}
+export function updateMeadow(time,strength=1){windTime.value=time;windStrength.value=Number.isFinite(strength)?THREE.MathUtils.clamp(strength,0,1):1;}
 
 function meadowWind(shader){
     shader.uniforms.meadowTime=windTime;
-    shader.vertexShader='uniform float meadowTime;\n'+shader.vertexShader.replace('#include <begin_vertex>',`#include <begin_vertex>
+    shader.uniforms.meadowWindStrength=windStrength;
+    shader.vertexShader='uniform float meadowTime,meadowWindStrength;\n'+shader.vertexShader.replace('#include <begin_vertex>',`#include <begin_vertex>
       vec4 meadowWorld=vec4(position,1.0);
       #ifdef USE_INSTANCING
         meadowWorld=instanceMatrix*meadowWorld;
@@ -15,7 +17,7 @@ function meadowWind(shader){
       meadowWorld=modelMatrix*meadowWorld;
       float bend=pow(clamp(position.y/.65,0.0,1.0),2.0);
       float gust=sin(meadowTime*1.2+meadowWorld.x*.11+meadowWorld.z*.13);
-      vec3 sway=vec3(gust*.09,0.0,sin(meadowTime*1.1+meadowWorld.x*.09)*.06)*bend;
+      vec3 sway=vec3(gust*.09,0.0,sin(meadowTime*1.1+meadowWorld.x*.09)*.06)*bend*meadowWindStrength;
       #ifdef USE_INSTANCING
         // Meadow instances use equal X/Z scale; rotate the wind into local coordinates.
         transformed.x+=dot(normalize(instanceMatrix[0].xyz),sway);
@@ -30,7 +32,7 @@ function meadowSurface(){
   if(surface)return surface;
   surface=new THREE.MeshStandardMaterial({vertexColors:true,roughness:.96,side:THREE.DoubleSide});
   depthSurface=new THREE.MeshDepthMaterial({side:THREE.DoubleSide,depthPacking:THREE.RGBADepthPacking});
-  for(const material of [surface,depthSurface]){material.onBeforeCompile=meadowWind;material.customProgramCacheKey=()=> 'tidelands-meadow-wind-v1';}
+  for(const material of [surface,depthSurface]){material.onBeforeCompile=meadowWind;material.customProgramCacheKey=()=> 'tidelands-meadow-wind-v2';}
   return surface;
 }
 
@@ -44,7 +46,7 @@ function groundCoverSurface(){
       transformed.y*=coverFade;
       #include <project_vertex>`);
   };
-  coverSurface.customProgramCacheKey=()=> 'tidelands-ground-cover-v1';return coverSurface;
+  coverSurface.customProgramCacheKey=()=> 'tidelands-ground-cover-wind-v2';return coverSurface;
 }
 
 export function updateGroundCover(batches,camera){

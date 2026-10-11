@@ -1,5 +1,5 @@
 // Local synthesis: no downloads, microphone access or external audio service.
-import {ISLANDS,dayCycle,randomGenerator} from './world.js';
+import {ISLANDS,dayCycle,randomGenerator,weatherAt} from './world.js';
 const habitatDensity=[.6,1,.24,.48];
 function ecologyBuffer(ctx,kind){
   const bird=kind==='birds',seconds=bird?23:19,random=randomGenerator(bird?9971:8831);
@@ -77,9 +77,9 @@ export class GameAudio{
   }
   update(player,time,height,footfallCount=null){
     if(!this.active)return;
-    if(this.context){const now=this.context.currentTime;this.wind.gain.setTargetAtTime((height<2?.18:.075)*(1+Math.sin(time*.3)*.25),now,.3);this.filter.frequency.setTargetAtTime(height<2?850:420,now,.3);
+    if(this.context){const now=this.context.currentTime,{windStrength}=weatherAt(time);this.wind.gain.setTargetAtTime((height<2?.18:.075)*(1+Math.sin(time*.3)*.25)*windStrength,now,.3);this.filter.frequency.setTargetAtTime(height<2?850:420,now,.3);
       const shore=Math.max(0,Math.min(1,(5-height)/5)),wave=.5+.5*Math.sin(time*.65);
-      this.surf.gain.setTargetAtTime(shore*(.035+.10*wave*wave),now,.45);this.surfFilter.frequency.setTargetAtTime(460+220*wave,now,.4);
+      this.surf.gain.setTargetAtTime(shore*(.035+.10*wave*wave)*windStrength,now,.45);this.surfFilter.frequency.setTargetAtTime(460+220*wave,now,.4);
       let habitat=0;
       for(let i=0;i<ISLANDS.length;i++){const island=ISLANDS[i],inside=Math.max(0,Math.min(1,(1-Math.hypot(player.x-island.x,player.z-island.z)/island.r)/.32));habitat=Math.max(habitat,inside*habitatDensity[i]);}
       habitat*=Math.max(0,Math.min(1,height/6));

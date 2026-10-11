@@ -1,0 +1,34 @@
+{
+  "status": "in_progress",
+  "stage": "M5_quality_batches",
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-wind.zip",
+    "archiveBytes": 8177657,
+    "archiveEntries": 41,
+    "archiveSha256": "6e4bcdd96671d740274cf5f5ac37782b178d385dce6fc763a11b08531264e0a9"
+  },
+  "evidence": "docs/weather-wind-final-audit.json",
+  "nextAction": "Natural spatial attack/gather contact and whole-scene art, then actual listening, GPU/device/long-term and final full-flow quality",
+  "processes": {
+    "4190": {
+      "exit": 0,
+      "output": "COMMAND   PID       USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nPython  21636 huxiaocong    3u  IPv4 0xfcb1e8ad25464173      0t0  TCP 127.0.0.1:4190 (LISTEN)"
+    },
+    "53929": {
+      "exit": 1,
+      "output": ""
+    }
+  },
+  "quota": {
+    "ordinaryUsageAllowed": true,
+    "fiveHourUsedPercent": 94,
+    "weeklyUsedPercent": 46,
+    "goalHistoricalUsageLimitedNotForced": true,
+    "creditsOrResetsUsed": false
+  },
+  "gitPublicOriginPushPendingPriorQuestion": true,
+  "doNotRepeatWithoutNewInformation": true,
+  "automation2048": "retain hourly"
+}
