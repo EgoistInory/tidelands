@@ -1,0 +1,1185 @@
+{
+  "sample": {
+    "audioUnlockMs": 51,
+    "complete": true,
+    "fragmentTextureUnits": 16,
+    "gpuTimerQueryAvailable": true,
+    "groundStatus": "ready",
+    "note": "CPU wall timing around production calls; intercepted GL and texture calls add instrumentation. Extension availability is not a GPU timing measurement. Not continuous play or an audio-causation claim.",
+    "rockStatus": "ready",
+    "rows": [
+      {
+        "after": {
+          "calls": 405,
+          "geometries": 214,
+          "programs": 18,
+          "triangles": 1771083
+        },
+        "audioUpdateMs": 0.20000004768371585,
+        "before": {
+          "geometries": 154,
+          "programs": 14
+        },
+        "drawMs": 99.79999995231628,
+        "phase": "shore",
+        "prepareMs": 0.6000001430511475,
+        "syncMs": 0.39999985694885254,
+        "webglCpu": {
+          "bufferData": {
+            "count": 278,
+            "maxMs": 0.10000014305114746,
+            "ms": 0.7000000476837158
+          },
+          "compileShader": {
+            "count": 8,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArrays": {
+            "count": 4,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElements": {
+            "count": 477,
+            "maxMs": 0.09999990463256836,
+            "ms": 0.09999990463256836
+          },
+          "drawElementsInstanced": {
+            "count": 60,
+            "maxMs": 0.10000014305114746,
+            "ms": 0.10000014305114746
+          },
+          "generateMipmap": {
+            "count": 9,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getActiveUniform": {
+            "count": 77,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getAttribLocation": {
+            "count": 9,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getProgramParameter": {
+            "count": 12,
+            "maxMs": 0.09999990463256836,
+            "ms": 0.09999990463256836
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getUniformLocation": {
+            "count": 77,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "linkProgram": {
+            "count": 4,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texStorage2D": {
+            "count": 9,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texSubImage2D": {
+            "count": 9,
+            "maxMs": 24.100000143051147,
+            "ms": 71.10000038146973
+          },
+          "useProgram": {
+            "count": 23,
+            "maxMs": 0,
+            "ms": 0
+          }
+        }
+      },
+      {
+        "after": {
+          "calls": 424,
+          "geometries": 273,
+          "programs": 20,
+          "triangles": 1826349
+        },
+        "audioUpdateMs": 0.09999990463256836,
+        "before": {
+          "geometries": 214,
+          "programs": 18
+        },
+        "drawMs": 25.200000047683716,
+        "phase": "forest",
+        "prepareMs": 0.4000000953674317,
+        "syncMs": 0.2999999523162842,
+        "webglCpu": {
+          "bufferData": {
+            "count": 285,
+            "maxMs": 0.19999980926513672,
+            "ms": 0.5
+          },
+          "compileShader": {
+            "count": 4,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArrays": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElements": {
+            "count": 487,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElementsInstanced": {
+            "count": 62,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "generateMipmap": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getActiveUniform": {
+            "count": 18,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getAttribLocation": {
+            "count": 2,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getProgramParameter": {
+            "count": 6,
+            "maxMs": 0.10000014305114746,
+            "ms": 0.10000014305114746
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getUniformLocation": {
+            "count": 18,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "linkProgram": {
+            "count": 2,
+            "maxMs": 0.10000014305114746,
+            "ms": 0.10000014305114746
+          },
+          "texImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texStorage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texSubImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "useProgram": {
+            "count": 22,
+            "maxMs": 0,
+            "ms": 0
+          }
+        }
+      },
+      {
+        "after": {
+          "calls": 250,
+          "geometries": 273,
+          "programs": 20,
+          "triangles": 950000
+        },
+        "audioUpdateMs": 0,
+        "before": {
+          "geometries": 273,
+          "programs": 20
+        },
+        "drawMs": 4.200000047683716,
+        "phase": "highland",
+        "prepareMs": 0.4000000953674317,
+        "syncMs": 0.39999985694885254,
+        "webglCpu": {
+          "bufferData": {
+            "count": 24,
+            "maxMs": 0.2999999523162842,
+            "ms": 0.6000001430511475
+          },
+          "compileShader": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArrays": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElements": {
+            "count": 508,
+            "maxMs": 0.09999990463256836,
+            "ms": 0.09999990463256836
+          },
+          "drawElementsInstanced": {
+            "count": 34,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "generateMipmap": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getActiveUniform": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getAttribLocation": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getProgramParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getUniformLocation": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "linkProgram": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texStorage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texSubImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "useProgram": {
+            "count": 20,
+            "maxMs": 0,
+            "ms": 0
+          }
+        }
+      },
+      {
+        "after": {
+          "calls": 677,
+          "geometries": 275,
+          "programs": 20,
+          "triangles": 2158578
+        },
+        "audioUpdateMs": 0,
+        "before": {
+          "geometries": 273,
+          "programs": 20
+        },
+        "drawMs": 8.299999952316284,
+        "phase": "amber",
+        "prepareMs": 0.39999985694885254,
+        "syncMs": 0.20000004768371585,
+        "webglCpu": {
+          "bufferData": {
+            "count": 42,
+            "maxMs": 0.7000000476837158,
+            "ms": 1.7000000476837158
+          },
+          "compileShader": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArrays": {
+            "count": 2,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElements": {
+            "count": 755,
+            "maxMs": 0.09999990463256836,
+            "ms": 0.09999990463256836
+          },
+          "drawElementsInstanced": {
+            "count": 63,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "generateMipmap": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getActiveUniform": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getAttribLocation": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getProgramParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getUniformLocation": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "linkProgram": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texStorage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texSubImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "useProgram": {
+            "count": 23,
+            "maxMs": 0,
+            "ms": 0
+          }
+        }
+      },
+      {
+        "after": {
+          "calls": 358,
+          "geometries": 285,
+          "programs": 21,
+          "triangles": 1859184
+        },
+        "audioUpdateMs": 0,
+        "before": {
+          "geometries": 275,
+          "programs": 20
+        },
+        "drawMs": 25.40000009536743,
+        "phase": "first-fire-camp",
+        "prepareMs": 0.5,
+        "syncMs": 1.2999999523162842,
+        "webglCpu": {
+          "bufferData": {
+            "count": 82,
+            "maxMs": 0.10000014305114746,
+            "ms": 0.2999999523162842
+          },
+          "compileShader": {
+            "count": 2,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArrays": {
+            "count": 18,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElements": {
+            "count": 528,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElementsInstanced": {
+            "count": 62,
+            "maxMs": 0.09999990463256836,
+            "ms": 0.09999990463256836
+          },
+          "generateMipmap": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getActiveUniform": {
+            "count": 7,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getAttribLocation": {
+            "count": 3,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getProgramParameter": {
+            "count": 3,
+            "maxMs": 0.09999990463256836,
+            "ms": 0.09999990463256836
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getUniformLocation": {
+            "count": 7,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "linkProgram": {
+            "count": 1,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texStorage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texSubImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "useProgram": {
+            "count": 23,
+            "maxMs": 0,
+            "ms": 0
+          }
+        }
+      },
+      {
+        "after": {
+          "calls": 384,
+          "geometries": 311,
+          "programs": 22,
+          "triangles": 1859839
+        },
+        "audioUpdateMs": 0.10000014305114746,
+        "before": {
+          "geometries": 285,
+          "programs": 21
+        },
+        "drawMs": 20.09999990463257,
+        "phase": "first-tent-camp",
+        "prepareMs": 0.5,
+        "syncMs": 1,
+        "webglCpu": {
+          "bufferData": {
+            "count": 94,
+            "maxMs": 0.10000014305114746,
+            "ms": 0.20000028610229492
+          },
+          "compileShader": {
+            "count": 2,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArrays": {
+            "count": 28,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElements": {
+            "count": 570,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElementsInstanced": {
+            "count": 62,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "generateMipmap": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getActiveUniform": {
+            "count": 33,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getAttribLocation": {
+            "count": 2,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getProgramParameter": {
+            "count": 3,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getUniformLocation": {
+            "count": 33,
+            "maxMs": 0.10000014305114746,
+            "ms": 0.20000004768371585
+          },
+          "linkProgram": {
+            "count": 1,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texStorage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texSubImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "useProgram": {
+            "count": 25,
+            "maxMs": 0,
+            "ms": 0
+          }
+        }
+      },
+      {
+        "after": {
+          "calls": 408,
+          "geometries": 335,
+          "programs": 22,
+          "triangles": 1860331
+        },
+        "audioUpdateMs": 0.09999990463256836,
+        "before": {
+          "geometries": 311,
+          "programs": 22
+        },
+        "drawMs": 4.1000001430511475,
+        "phase": "first-night-camp",
+        "prepareMs": 0.5,
+        "syncMs": 0.7999999523162842,
+        "webglCpu": {
+          "bufferData": {
+            "count": 96,
+            "maxMs": 0.09999990463256836,
+            "ms": 0.09999990463256836
+          },
+          "compileShader": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArrays": {
+            "count": 28,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElements": {
+            "count": 618,
+            "maxMs": 0.09999990463256836,
+            "ms": 0.19999980926513672
+          },
+          "drawElementsInstanced": {
+            "count": 62,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "generateMipmap": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getActiveUniform": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getAttribLocation": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getProgramParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getUniformLocation": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "linkProgram": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texStorage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texSubImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "useProgram": {
+            "count": 25,
+            "maxMs": 0,
+            "ms": 0
+          }
+        }
+      },
+      {
+        "after": {
+          "calls": 408,
+          "geometries": 335,
+          "programs": 22,
+          "triangles": 1860331
+        },
+        "audioUpdateMs": 0.09999990463256836,
+        "before": {
+          "geometries": 335,
+          "programs": 22
+        },
+        "drawMs": 4.5,
+        "phase": "same-night-camp",
+        "prepareMs": 0.09999990463256836,
+        "syncMs": 0,
+        "webglCpu": {
+          "bufferData": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "compileShader": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArrays": {
+            "count": 28,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElements": {
+            "count": 618,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElementsInstanced": {
+            "count": 62,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "generateMipmap": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getActiveUniform": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getAttribLocation": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getProgramParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getUniformLocation": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "linkProgram": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texStorage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texSubImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "useProgram": {
+            "count": 25,
+            "maxMs": 0,
+            "ms": 0
+          }
+        }
+      },
+      {
+        "after": {
+          "calls": 408,
+          "geometries": 335,
+          "programs": 22,
+          "triangles": 1860331
+        },
+        "audioUpdateMs": 0.10000014305114746,
+        "before": {
+          "geometries": 335,
+          "programs": 22
+        },
+        "drawMs": 3.3999998569488525,
+        "phase": "fresh-night-camp",
+        "prepareMs": 0.39999985694885254,
+        "syncMs": 0.2999999523162842,
+        "webglCpu": {
+          "bufferData": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "compileShader": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArrays": {
+            "count": 28,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "maxMs": 0.09999990463256836,
+            "ms": 0.09999990463256836
+          },
+          "drawElements": {
+            "count": 618,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElementsInstanced": {
+            "count": 62,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "generateMipmap": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getActiveUniform": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getAttribLocation": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getProgramParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getUniformLocation": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "linkProgram": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texStorage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texSubImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "useProgram": {
+            "count": 25,
+            "maxMs": 0.10000014305114746,
+            "ms": 0.10000014305114746
+          }
+        }
+      },
+      {
+        "after": {
+          "calls": 405,
+          "geometries": 275,
+          "programs": 21,
+          "triangles": 1771083
+        },
+        "audioUpdateMs": 0,
+        "before": {
+          "geometries": 335,
+          "programs": 22
+        },
+        "drawMs": 4,
+        "phase": "shore-again",
+        "prepareMs": 0.4000000953674317,
+        "syncMs": 1.0999999046325684,
+        "webglCpu": {
+          "bufferData": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "compileShader": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArrays": {
+            "count": 4,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElements": {
+            "count": 477,
+            "maxMs": 0.09999990463256836,
+            "ms": 0.09999990463256836
+          },
+          "drawElementsInstanced": {
+            "count": 60,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "generateMipmap": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getActiveUniform": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getAttribLocation": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getProgramParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getUniformLocation": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "linkProgram": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texStorage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texSubImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "useProgram": {
+            "count": 23,
+            "maxMs": 0,
+            "ms": 0
+          }
+        }
+      },
+      {
+        "after": {
+          "calls": 408,
+          "geometries": 335,
+          "programs": 22,
+          "triangles": 1860331
+        },
+        "audioUpdateMs": 0,
+        "before": {
+          "geometries": 275,
+          "programs": 21
+        },
+        "drawMs": 7.200000047683716,
+        "phase": "fresh-night-camp-again",
+        "prepareMs": 0.5,
+        "syncMs": 4.599999904632568,
+        "webglCpu": {
+          "bufferData": {
+            "count": 222,
+            "maxMs": 0.10000014305114746,
+            "ms": 0.2999999523162842
+          },
+          "compileShader": {
+            "count": 2,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArrays": {
+            "count": 28,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "drawElements": {
+            "count": 618,
+            "maxMs": 0.09999990463256836,
+            "ms": 0.19999980926513672
+          },
+          "drawElementsInstanced": {
+            "count": 62,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "generateMipmap": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getActiveUniform": {
+            "count": 7,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getAttribLocation": {
+            "count": 3,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getProgramParameter": {
+            "count": 3,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "getUniformLocation": {
+            "count": 7,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "linkProgram": {
+            "count": 1,
+            "maxMs": 0.09999990463256836,
+            "ms": 0.09999990463256836
+          },
+          "texImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texStorage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "texSubImage2D": {
+            "count": 0,
+            "maxMs": 0,
+            "ms": 0
+          },
+          "useProgram": {
+            "count": 25,
+            "maxMs": 0,
+            "ms": 0
+          }
+        }
+      }
+    ],
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "console": [],
+  "scope": "Instrumented CPU stage fixture, not GPU timing or natural play.",
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "b7bc9f3e64b40f1e9d0563f5de004027a5098b220f21ed4b2b6f4af7635adffc",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "ef4290e2daf552d5ee73fb9f1a40f023a8cb07d9508bb7e16c1ea0ea734aa5c6",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "9ef6f03f8620a5592513a074b5aec022d6540d00afe8f047976a940071048d9b",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "1697ecb6c695952c9ba656c61b0e1c9852f20fc4f7f2b10b6e81d1cbbf397f0b",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "95a5cb81f480bfb5be31a9ed013eca5f3722b52eb6a34cb3bf135f9555244261",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "harnessSha256": "dab9381bdc7764b7e3bfc2147622236576f4bf0a9527a404fa5ac9ffb2ef7356"
+}

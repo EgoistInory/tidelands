@@ -214,9 +214,11 @@ export function animateCharacter(root,{x,z,yaw,time,attackAt,gatherAt=-100,hurtA
   rig.body.position.x=0;
   rig.body.position.y=swimming?Math.sin(time*1.8)*.013:0;
   rig.body.rotation.x=swimming?1.25:.12*run*rig.walkBlend;
+  rig.body.rotation.y=0;
   for(let i=0;i<2;i++){
     const stride=i?gait:-gait;rig.hips[i].rotation.x=stride;rig.knees[i].rotation.x=Math.max(0,-stride)*1.1;
     rig.shoulders[i].rotation.x=swimming?Math.sin(time*5+i*Math.PI)*.8-1:-stride*(.7+.5*run);
+    rig.shoulders[i].rotation.z=0;
     rig.elbows[i].rotation.x=-.15-.5*run*rig.walkBlend-Math.max(0,stride)*.35;
     rig.ankles[i].quaternion.identity();
   }
@@ -226,12 +228,22 @@ export function animateCharacter(root,{x,z,yaw,time,attackAt,gatherAt=-100,hurtA
     const swing=Math.sin(attackTime/ATTACK_DURATION*Math.PI);
     rig.shoulders[1].rotation.x=THREE.MathUtils.lerp(rig.shoulders[1].rotation.x,-2.1,swing);
     rig.elbows[1].rotation.x=THREE.MathUtils.lerp(rig.elbows[1].rotation.x,-.45,swing);
+    if(!swimming){
+      rig.body.rotation.y=.22*swing;
+      rig.shoulders[0].rotation.x=THREE.MathUtils.lerp(rig.shoulders[0].rotation.x,-.5,swing);
+      rig.shoulders[0].rotation.z=-.18*swing;
+      rig.elbows[0].rotation.x=THREE.MathUtils.lerp(rig.elbows[0].rotation.x,-.45,swing);
+    }
   }
   else if(!swimming&&time>=gatherAt&&time-gatherAt<GATHER_DURATION){
     const reach=Math.sin((time-gatherAt)/GATHER_DURATION*Math.PI);
     rig.body.rotation.x=THREE.MathUtils.lerp(rig.body.rotation.x,.16,reach);
     rig.shoulders[1].rotation.x=THREE.MathUtils.lerp(rig.shoulders[1].rotation.x,-1.6,reach);
     rig.elbows[1].rotation.x=THREE.MathUtils.lerp(rig.elbows[1].rotation.x,-.6,reach);
+    rig.body.rotation.y=-.14*reach;
+    rig.shoulders[0].rotation.x=THREE.MathUtils.lerp(rig.shoulders[0].rotation.x,-.35,reach);
+    rig.shoulders[0].rotation.z=-.12*reach;
+    rig.elbows[0].rotation.x=THREE.MathUtils.lerp(rig.elbows[0].rotation.x,-.35,reach);
   }
   // Recoil affects the rig only; collisions and player movement remain authoritative.
   const hurtAge=time-hurtAt,hurt=hurtAge>=0&&hurtAge<.3?1-hurtAge/.3:0;

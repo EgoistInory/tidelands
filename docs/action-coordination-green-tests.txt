@@ -1,0 +1,142 @@
+TAP version 13
+# Subtest: carried sword stays above flat ground at rest while remaining attached to the right hand
+ok 1 - carried sword stays above flat ground at rest while remaining attached to the right hand
+  ---
+  duration_ms: 18.026917
+  type: 'test'
+  ...
+# Subtest: equipment follows selection and swings on the arm holding the tool
+ok 2 - equipment follows selection and swings on the arm holding the tool
+  ---
+  duration_ms: 2.715792
+  type: 'test'
+  ...
+# Subtest: attack and gathering enter and leave each equipped resting pose without snapping
+ok 3 - attack and gathering enter and leave each equipped resting pose without snapping
+  ---
+  duration_ms: 15.526791
+  type: 'test'
+  ...
+# Subtest: tool actions recruit the torso and free hand then clear their pose when interrupted
+ok 4 - tool actions recruit the torso and free hand then clear their pose when interrupted
+  ---
+  duration_ms: 10.36425
+  type: 'test'
+  ...
+# Subtest: complete tool actions keep both planted boot soles fixed on flat and sloped ground
+ok 5 - complete tool actions keep both planted boot soles fixed on flat and sloped ground
+  ---
+  duration_ms: 49.139125
+  type: 'test'
+  ...
+# Subtest: a moving attack retains grounded contacts during a turn at production speeds
+ok 6 - a moving attack retains grounded contacts during a turn at production speeds
+  ---
+  duration_ms: 37.312958
+  type: 'test'
+  ...
+# Subtest: stride advances with distance, stays still at rest, and keeps joints attached
+ok 7 - stride advances with distance, stays still at rest, and keeps joints attached
+  ---
+  duration_ms: 1.28225
+  type: 'test'
+  ...
+# Subtest: gathering reaches forward, yields to attack or swimming, and returns to idle
+ok 8 - gathering reaches forward, yields to attack or swimming, and returns to idle
+  ---
+  duration_ms: 0.954084
+  type: 'test'
+  ...
+# Subtest: hurt recoil decays without moving the root or leaving a swimming lean behind
+ok 9 - hurt recoil decays without moving the root or leaving a swimming lean behind
+  ---
+  duration_ms: 1.229417
+  type: 'test'
+  ...
+# Subtest: steady forward stance keeps soles on a flat floor at several frame rates and production speeds
+ok 10 - steady forward stance keeps soles on a flat floor at several frame rates and production speeds
+  ---
+  duration_ms: 50.724916
+  type: 'test'
+  ...
+# Subtest: feet solve gentle terrain height, settle at rest and reset safely after a teleport
+ok 11 - feet solve gentle terrain height, settle at rest and reset safely after a teleport
+  ---
+  duration_ms: 4.979833
+  type: 'test'
+  ...
+# Subtest: shaped boot soles have a flat contact face and stay above sloped floors during planted turns
+ok 12 - shaped boot soles have a flat contact face and stay above sloped floors during planted turns
+  ---
+  duration_ms: 15.73
+  type: 'test'
+  ...
+# Subtest: swimming leans forward with the head above the water and returns to planted feet
+ok 13 - swimming leans forward with the head above the water and returns to planted feet
+  ---
+  duration_ms: 1.637375
+  type: 'test'
+  ...
+# Subtest: stopping keeps grounded boots fixed while recovery steps return them to a neutral stance
+ok 14 - stopping keeps grounded boots fixed while recovery steps return them to a neutral stance
+  ---
+  duration_ms: 11.514375
+  type: 'test'
+  ...
+# Subtest: a right-angle turn keeps stance boots fixed during startup and steady travel on a slope
+ok 15 - a right-angle turn keeps stance boots fixed during startup and steady travel on a slope
+  ---
+  duration_ms: 34.4815
+  type: 'test'
+  ...
+# Subtest: reversing releases an overextended foot instead of dragging its planted contact
+ok 16 - reversing releases an overextended foot instead of dragging its planted contact
+  ---
+  duration_ms: 11.208209
+  type: 'test'
+  ...
+# Subtest: teleport and swimming discard old world contacts before returning to a distant shore
+ok 17 - teleport and swimming discard old world contacts before returning to a distant shore
+  ---
+  duration_ms: 1.575792
+  type: 'test'
+  ...
+# Subtest: batched movement never reuses a distant landing when key presses skip a swing
+ok 18 - batched movement never reuses a distant landing when key presses skip a swing
+  ---
+  duration_ms: 13.271833
+  type: 'test'
+  ...
+# Subtest: movement and swimming can interrupt idle recovery without retaining a sideways body offset
+ok 19 - movement and swimming can interrupt idle recovery without retaining a sideways body offset
+  ---
+  duration_ms: 2.381209
+  type: 'test'
+  ...
+# Subtest: turning anticipates overextended contacts and bounds airborne targets without a deep pelvis collapse
+ok 20 - turning anticipates overextended contacts and bounds airborne targets without a deep pelvis collapse
+  ---
+  duration_ms: 71.317583
+  type: 'test'
+  ...
+# Subtest: faster travel lengthens the stride, lowers cadence and includes an airborne interval
+ok 21 - faster travel lengthens the stride, lowers cadence and includes an airborne interval
+  ---
+  duration_ms: 30.2605
+  type: 'test'
+  ...
+# Subtest: stopping holds the last stride shape while the torso and feet recover
+ok 22 - stopping holds the last stride shape while the torso and feet recover
+  ---
+  duration_ms: 3.20675
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 444.099292

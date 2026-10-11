@@ -1,0 +1,51 @@
+{
+  "kind": "hourly continuation checkpoint",
+  "trigger": "2026-10-11T09:59:59.232Z",
+  "automationId": "2048",
+  "updatedAt": "2026-10-11 11:20:02 UTC",
+  "liveQuota": {
+    "ordinaryUsageAllowed": true,
+    "primaryUsedPercent": 97,
+    "secondaryUsedPercent": 31
+  },
+  "goalHistoricalStatus": "usageLimited",
+  "goalTokensUsed": 4067269,
+  "goalLimitStateRewritten": false,
+  "completedBoundedBatches": [
+    "docs/shore-wetness-review.json",
+    "docs/action-coordination-review.json",
+    "docs/coastal-sand-review.json"
+  ],
+  "latestDelivery": "dist/tidelands-m5-2026-10-11-sand.zip",
+  "latestDeliverySha256": "b28d957d119fa0124c33b1dff2674e8f7134ef4e51dbf27260fdb8bd8a0c45a7",
+  "latestDeliveryFiles": 39,
+  "diagnosticInProgress": {
+    "review": "docs/texture-upload-review.json",
+    "productionChanged": false,
+    "next": "Expose explicit successful texture list; spread startup texture preparation across frames and diagnose remaining shader/generated-texture work; verify fallback/context loss/cancel and ordinary UI before a new delivered version."
+  },
+  "processes": {
+    "originalServer": {
+      "port": 4190,
+      "pid": 1793,
+      "loopbackOnly": true
+    },
+    "extractedServer55139Stopped": true,
+    "agentBrowserTabsClosed": true,
+    "viewportReset": true
+  },
+  "milestones": {
+    "m1ToM4FunctionallyAccepted": true,
+    "m5Accepted": false,
+    "full3AGoalComplete": false
+  },
+  "automationRetained": true,
+  "creditsPurchased": false,
+  "resetCreditsUsed": false,
+  "paidApiCalled": false,
+  "publicDeployment": false,
+  "limits": [
+    "Current sand source has 60-second dynamic samples and short GPU command intervals; earlier ten-minute evidence stays bound to earlier sources.",
+    "No final visual/action/environment/audio/physical mobile/VRAM acceptance; prototype appearance still has material gaps."
+  ]
+}

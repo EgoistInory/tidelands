@@ -1,7 +1,7 @@
 import * as THREE from '../vendor/three.module.min.js';
 import {terrain,ISLANDS,LANDMARKS,randomGenerator,dayCycle} from './world.js';
 import {isDepleted} from './game.js';
-import {unobstructedCamera} from './camera.js';
+import {unobstructedCamera,smoothCamera} from './camera.js';
 import {createCharacter,animateCharacter} from './character.js';
 import {createCreature,animateCreature,resetCreature} from './creature.js';
 import {mergeStaticParts} from './merge-parts.js';
@@ -11,6 +11,7 @@ import {createGroundSurface} from './ground-surface.js';
 import {createWeatheredRock,initializeRockSurface} from './rock.js';
 import {createMeadow,createFiberClump,updateMeadow,updateGroundCover} from './meadow.js';
 import {createSky,updateSky} from './sky.js';
+import {createFlame,updateCampfire} from './campfire.js';
 
 const palette={bark:0x65513d,leaf:0x365a42,lightLeaf:0x68815b,rock:0x858d86,sand:0xd5c8a7,cloth:0xb86636,cream:0xeee1bd};
 const materials=new Map();
@@ -59,11 +60,10 @@ export function buildingModel(type){
   if(type==='campfire'){
     for(let i=0;i<8;i++)g.add(sphere(.3,0x7b8176,Math.cos(i/4*Math.PI)*1.1,.2,Math.sin(i/4*Math.PI)*1.1));
     const log=box(1.6,.25,.3,palette.bark,0,.3,0);log.rotation.y=.7;g.add(log);
-    for(const flame of [cone(.6,1.5,0xebae44,0,.95,0),cone(.28,1.4,0xffd88c,0,.8,0)]){
-      flame.material=flame.material.clone();flame.material.emissive.copy(flame.material.color);flame.material.emissiveIntensity=2;flame.castShadow=false;g.add(flame);
-    }
+    const flame=createFlame();g.add(flame);g.userData.flame=flame;
   }else if(type==='tent'){
-    const cloth=new THREE.MeshStandardMaterial({color:0xb9a77c,roughness:1,side:THREE.DoubleSide});
+    if(!materials.has('tent-cloth'))materials.set('tent-cloth',new THREE.MeshStandardMaterial({color:0xb9a77c,roughness:1,side:THREE.DoubleSide}));
+    const cloth=materials.get('tent-cloth');
     const panel=vertices=>{const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));geo.computeVertexNormals();const m=new THREE.Mesh(geo,cloth);m.castShadow=m.receiveShadow=true;g.add(m);};
     const beam=(from,to,r,color)=>{const start=new THREE.Vector3(...from),end=new THREE.Vector3(...to),delta=end.clone().sub(start);const m=mesh(new THREE.CylinderGeometry(r,r,delta.length(),8),color);m.position.copy(start.add(end).multiplyScalar(.5));m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),delta.normalize());g.add(m);};
     // Open A-frame shelter: separate canvas slopes, stitched hems and a rear wall.
@@ -300,7 +300,7 @@ export class WorldView{
     this.sun.intensity=daylight*2.6;this.waterUniforms.time.value=state.time;this.waterUniforms.light.value=.15+daylight*.85;
     this.scene.background.set(0xb8d4d5).multiplyScalar(.08+daylight*.92);
     let fire=null,fireDistance=30;
-    for(const b of state.buildings)if(b.type==='campfire'){const distance=Math.hypot(b.x-p.x,b.z-p.z);if(distance<fireDistance){fire=b;fireDistance=distance;}}
+    for(const b of state.buildings)if(b.type==='campfire'){const model=this.buildings.get(b.id);if(model)updateCampfire(model,state.time);const distance=Math.hypot(b.x-p.x,b.z-p.z);if(distance<fireDistance){fire=b;fireDistance=distance;}}
     this.fireLight.intensity=fire?(20+Math.sin(state.time*9)*2+Math.sin(state.time*17))*(1-Math.min(1,Math.max(0,fireDistance-18)/12)):0;
     if(fire)this.fireLight.position.set(fire.x,terrain(fire.x,fire.z)+1.8,fire.z);
     if(this.lighthouse){const {lantern,beacon}=this.lighthouse.userData;const lit=state.quest===6;beacon.visible=lit;beacon.rotation.y=state.time*.3;lantern.material.emissive.set(lit?0xffce72:0x000000);lantern.material.emissiveIntensity=lit?2:0;}
@@ -315,9 +315,9 @@ export class WorldView{
     for(const o of LANDMARKS)if(['lighthouse','cottage'].includes(o.type)&&Math.hypot(o.x-p.x,o.z-p.z)<this.distance+12){const r=o.type==='lighthouse'?3.2:5,y=terrain(o.x,o.z);boxes.push(new THREE.Box3(new THREE.Vector3(o.x-r,y,o.z-r),new THREE.Vector3(o.x+r,y+(o.type==='lighthouse'?25:9),o.z+r)));}
     const safe=unobstructedCamera(focus,target,boxes,terrain,6),safeYaw=Math.atan2(safe.x-p.x,safe.z-p.z);
     if(Math.abs(Math.atan2(Math.sin(safeYaw-this.yaw),Math.cos(safeYaw-this.yaw)))>.001){
-      this.yaw=safeYaw;this.camera.position.copy(safe);
-    }else this.camera.position.lerp(safe,1-Math.exp(-dt*8));
-    this.camera.position.copy(unobstructedCamera(focus,this.camera.position,boxes,terrain));this.camera.lookAt(focus);
+      this.yaw=safeYaw;
+    }
+    this.camera.position.copy(smoothCamera(focus,this.camera.position,safe,boxes,terrain,dt,Math.min(6,safe.distanceTo(focus))));this.camera.lookAt(focus);
     updateGroundCover(this.meadow,this.camera.position);
     updateSky(this.sky,state.time,this.camera,this.scene.fog);
     this.sun.position.set(p.x-70,h+100,p.z+40);this.sun.target.position.set(p.x,h,p.z);

@@ -1,0 +1,940 @@
+{
+  "sample": {
+    "complete": true,
+    "audioUnlockMs": 51.5,
+    "rows": [
+      {
+        "phase": "shore",
+        "prepareMs": 0.5,
+        "syncMs": 0.40000009536743164,
+        "audioUpdateMs": 0.09999990463256836,
+        "drawMs": 100.60000014305115,
+        "before": {
+          "programs": 14,
+          "geometries": 152
+        },
+        "after": {
+          "programs": 18,
+          "geometries": 214,
+          "calls": 405,
+          "triangles": 1771083
+        },
+        "webglCpu": {
+          "compileShader": {
+            "count": 8,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 4,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getProgramParameter": {
+            "count": 12,
+            "ms": 0.5000002384185791,
+            "maxMs": 0.20000004768371582
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getActiveUniform": {
+            "count": 77,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getUniformLocation": {
+            "count": 77,
+            "ms": 0.09999990463256836,
+            "maxMs": 0.09999990463256836
+          },
+          "getAttribLocation": {
+            "count": 9,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "useProgram": {
+            "count": 23,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawElements": {
+            "count": 477,
+            "ms": 0.20000028610229492,
+            "maxMs": 0.10000014305114746
+          },
+          "drawElementsInstanced": {
+            "count": 60,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArrays": {
+            "count": 4,
+            "ms": 0.10000014305114746,
+            "maxMs": 0.10000014305114746
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "bufferData": {
+            "count": 300,
+            "ms": 1.1000001430511475,
+            "maxMs": 0.20000004768371582
+          }
+        }
+      },
+      {
+        "phase": "forest",
+        "prepareMs": 2.5,
+        "syncMs": 0.5999999046325684,
+        "audioUpdateMs": 0,
+        "drawMs": 17.100000143051147,
+        "before": {
+          "programs": 18,
+          "geometries": 214
+        },
+        "after": {
+          "programs": 20,
+          "geometries": 273,
+          "calls": 424,
+          "triangles": 1826349
+        },
+        "webglCpu": {
+          "compileShader": {
+            "count": 4,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 2,
+            "ms": 0.09999990463256836,
+            "maxMs": 0.09999990463256836
+          },
+          "getProgramParameter": {
+            "count": 6,
+            "ms": 0.10000014305114746,
+            "maxMs": 0.10000014305114746
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getActiveUniform": {
+            "count": 18,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getUniformLocation": {
+            "count": 18,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getAttribLocation": {
+            "count": 2,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "useProgram": {
+            "count": 22,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawElements": {
+            "count": 487,
+            "ms": 0.20000004768371582,
+            "maxMs": 0.10000014305114746
+          },
+          "drawElementsInstanced": {
+            "count": 62,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArrays": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "bufferData": {
+            "count": 285,
+            "ms": 0.8000001907348633,
+            "maxMs": 0.10000014305114746
+          }
+        }
+      },
+      {
+        "phase": "highland",
+        "prepareMs": 0.39999985694885254,
+        "syncMs": 0.6000001430511475,
+        "audioUpdateMs": 0.09999990463256836,
+        "drawMs": 3.5999999046325684,
+        "before": {
+          "programs": 20,
+          "geometries": 273
+        },
+        "after": {
+          "programs": 20,
+          "geometries": 273,
+          "calls": 251,
+          "triangles": 950512
+        },
+        "webglCpu": {
+          "compileShader": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getProgramParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getActiveUniform": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getUniformLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getAttribLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "useProgram": {
+            "count": 20,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawElements": {
+            "count": 509,
+            "ms": 0.09999990463256836,
+            "maxMs": 0.09999990463256836
+          },
+          "drawElementsInstanced": {
+            "count": 34,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArrays": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "bufferData": {
+            "count": 24,
+            "ms": 0.10000014305114746,
+            "maxMs": 0.10000014305114746
+          }
+        }
+      },
+      {
+        "phase": "amber",
+        "prepareMs": 0.2999999523162842,
+        "syncMs": 0.2999999523162842,
+        "audioUpdateMs": 0,
+        "drawMs": 5.200000047683716,
+        "before": {
+          "programs": 20,
+          "geometries": 273
+        },
+        "after": {
+          "programs": 20,
+          "geometries": 274,
+          "calls": 676,
+          "triangles": 2158530
+        },
+        "webglCpu": {
+          "compileShader": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getProgramParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getActiveUniform": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getUniformLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getAttribLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "useProgram": {
+            "count": 23,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawElements": {
+            "count": 754,
+            "ms": 0.10000014305114746,
+            "maxMs": 0.10000014305114746
+          },
+          "drawElementsInstanced": {
+            "count": 63,
+            "ms": 0.10000014305114746,
+            "maxMs": 0.10000014305114746
+          },
+          "drawArrays": {
+            "count": 2,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "bufferData": {
+            "count": 38,
+            "ms": 0,
+            "maxMs": 0
+          }
+        }
+      },
+      {
+        "phase": "first-fire-camp",
+        "prepareMs": 0.3000001907348633,
+        "syncMs": 1.3999998569488525,
+        "audioUpdateMs": 0,
+        "drawMs": 3.5,
+        "before": {
+          "programs": 20,
+          "geometries": 274
+        },
+        "after": {
+          "programs": 20,
+          "geometries": 286,
+          "calls": 359,
+          "triangles": 1859206
+        },
+        "webglCpu": {
+          "compileShader": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getProgramParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getActiveUniform": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getUniformLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getAttribLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "useProgram": {
+            "count": 22,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawElements": {
+            "count": 529,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawElementsInstanced": {
+            "count": 62,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArrays": {
+            "count": 18,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "bufferData": {
+            "count": 90,
+            "ms": 0.5999999046325684,
+            "maxMs": 0.10000014305114746
+          }
+        }
+      },
+      {
+        "phase": "first-tent-camp",
+        "prepareMs": 0.40000009536743164,
+        "syncMs": 0.8999998569488525,
+        "audioUpdateMs": 0,
+        "drawMs": 9.900000095367432,
+        "before": {
+          "programs": 20,
+          "geometries": 286
+        },
+        "after": {
+          "programs": 21,
+          "geometries": 312,
+          "calls": 385,
+          "triangles": 1859861
+        },
+        "webglCpu": {
+          "compileShader": {
+            "count": 2,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 1,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getProgramParameter": {
+            "count": 3,
+            "ms": 0.20000004768371582,
+            "maxMs": 0.20000004768371582
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getActiveUniform": {
+            "count": 33,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getUniformLocation": {
+            "count": 33,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getAttribLocation": {
+            "count": 2,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "useProgram": {
+            "count": 24,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawElements": {
+            "count": 571,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawElementsInstanced": {
+            "count": 62,
+            "ms": 0.09999990463256836,
+            "maxMs": 0.09999990463256836
+          },
+          "drawArrays": {
+            "count": 28,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "bufferData": {
+            "count": 94,
+            "ms": 0.10000014305114746,
+            "maxMs": 0.10000014305114746
+          }
+        }
+      },
+      {
+        "phase": "first-night-camp",
+        "prepareMs": 0.40000009536743164,
+        "syncMs": 0.5999999046325684,
+        "audioUpdateMs": 0,
+        "drawMs": 4,
+        "before": {
+          "programs": 21,
+          "geometries": 312
+        },
+        "after": {
+          "programs": 21,
+          "geometries": 336,
+          "calls": 409,
+          "triangles": 1860353
+        },
+        "webglCpu": {
+          "compileShader": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getProgramParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getActiveUniform": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getUniformLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getAttribLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "useProgram": {
+            "count": 24,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawElements": {
+            "count": 619,
+            "ms": 0.20000004768371582,
+            "maxMs": 0.10000014305114746
+          },
+          "drawElementsInstanced": {
+            "count": 62,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArrays": {
+            "count": 28,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "ms": 0.10000014305114746,
+            "maxMs": 0.10000014305114746
+          },
+          "bufferData": {
+            "count": 96,
+            "ms": 0.10000014305114746,
+            "maxMs": 0.10000014305114746
+          }
+        }
+      },
+      {
+        "phase": "same-night-camp",
+        "prepareMs": 0,
+        "syncMs": 0.20000004768371582,
+        "audioUpdateMs": 0,
+        "drawMs": 4.3999998569488525,
+        "before": {
+          "programs": 21,
+          "geometries": 336
+        },
+        "after": {
+          "programs": 21,
+          "geometries": 336,
+          "calls": 409,
+          "triangles": 1860353
+        },
+        "webglCpu": {
+          "compileShader": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getProgramParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getActiveUniform": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getUniformLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getAttribLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "useProgram": {
+            "count": 24,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawElements": {
+            "count": 619,
+            "ms": 0.3000001907348633,
+            "maxMs": 0.10000014305114746
+          },
+          "drawElementsInstanced": {
+            "count": 62,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArrays": {
+            "count": 28,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "bufferData": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          }
+        }
+      },
+      {
+        "phase": "fresh-night-camp",
+        "prepareMs": 0.39999985694885254,
+        "syncMs": 0.5,
+        "audioUpdateMs": 0,
+        "drawMs": 4,
+        "before": {
+          "programs": 21,
+          "geometries": 336
+        },
+        "after": {
+          "programs": 21,
+          "geometries": 336,
+          "calls": 409,
+          "triangles": 1860353
+        },
+        "webglCpu": {
+          "compileShader": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getProgramParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getActiveUniform": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getUniformLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getAttribLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "useProgram": {
+            "count": 24,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawElements": {
+            "count": 619,
+            "ms": 0.20000004768371582,
+            "maxMs": 0.10000014305114746
+          },
+          "drawElementsInstanced": {
+            "count": 62,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArrays": {
+            "count": 28,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "bufferData": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          }
+        }
+      },
+      {
+        "phase": "shore-again",
+        "prepareMs": 0.40000009536743164,
+        "syncMs": 1.3999998569488525,
+        "audioUpdateMs": 0.10000014305114746,
+        "drawMs": 2.700000047683716,
+        "before": {
+          "programs": 21,
+          "geometries": 336
+        },
+        "after": {
+          "programs": 21,
+          "geometries": 275,
+          "calls": 405,
+          "triangles": 1771083
+        },
+        "webglCpu": {
+          "compileShader": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getProgramParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getActiveUniform": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getUniformLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getAttribLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "useProgram": {
+            "count": 23,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawElements": {
+            "count": 477,
+            "ms": 0.10000014305114746,
+            "maxMs": 0.10000014305114746
+          },
+          "drawElementsInstanced": {
+            "count": 60,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArrays": {
+            "count": 4,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "bufferData": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          }
+        }
+      },
+      {
+        "phase": "fresh-night-camp-again",
+        "prepareMs": 0.40000009536743164,
+        "syncMs": 1.7000000476837158,
+        "audioUpdateMs": 0,
+        "drawMs": 3.700000047683716,
+        "before": {
+          "programs": 21,
+          "geometries": 275
+        },
+        "after": {
+          "programs": 21,
+          "geometries": 336,
+          "calls": 409,
+          "triangles": 1860353
+        },
+        "webglCpu": {
+          "compileShader": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getProgramParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getShaderParameter": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getActiveUniform": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getUniformLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "getAttribLocation": {
+            "count": 0,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "useProgram": {
+            "count": 24,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "drawElements": {
+            "count": 619,
+            "ms": 0.09999990463256836,
+            "maxMs": 0.09999990463256836
+          },
+          "drawElementsInstanced": {
+            "count": 62,
+            "ms": 0.10000014305114746,
+            "maxMs": 0.10000014305114746
+          },
+          "drawArrays": {
+            "count": 28,
+            "ms": 0.10000014305114746,
+            "maxMs": 0.10000014305114746
+          },
+          "drawArraysInstanced": {
+            "count": 10,
+            "ms": 0,
+            "maxMs": 0
+          },
+          "bufferData": {
+            "count": 226,
+            "ms": 0.20000004768371582,
+            "maxMs": 0.10000014305114746
+          }
+        }
+      }
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "groundStatus": "ready",
+    "rockStatus": "ready",
+    "note": "CPU wall timing around production calls; intercepted GL calls add instrumentation. Not GPU timing, continuous play or an audio-causation claim."
+  },
+  "console": []
+}

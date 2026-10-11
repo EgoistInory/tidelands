@@ -1,0 +1,36 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>沙粒三通道实际WebGL诊断</title>
+<style>body{background:#192723;color:#efe6cf;font:13px system-ui}button{padding:8px}pre{white-space:pre-wrap}canvas{width:160px;height:160px}</style>
+<p>生产地表在1像素合成纹理和可控平面渲染。开关沙粒时关闭湿润带以隔离效果；RGB/粗糙度/法线读回是诊断，不是实际美术或完整旅程。</p><button>运行三通道与独立回退诊断</button><pre id="result">就绪</pre><canvas></canvas>
+<script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {createGroundSurface} from '../src/ground-surface.js';
+const renderer=new THREE.WebGLRenderer({canvas:document.querySelector('canvas'),antialias:false}),scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(-2,2,2,-2,.1,20),out=document.querySelector('pre');renderer.setSize(64,64,false);scene.add(new THREE.AmbientLight(0xffffff,2));
+const target=new THREE.WebGLRenderTarget(64,64),pixels=new Uint8Array(64*64*4),geometry=new THREE.PlaneGeometry(3.9,3.9);geometry.rotateX(-Math.PI/2);geometry.setAttribute('color',new THREE.Float32BufferAttribute(Array(12).fill(.65),3));
+const texture=bytes=>{const t=new THREE.DataTexture(new Uint8Array(bytes),1,1);t.needsUpdate=true;return t;};
+async function material(mode,probe){
+  const requests=[],loader={load(url,done,_p,fail){const sand=url.includes('coastal-sand'),normal=url.includes('normal'),rough=url.includes('roughness');
+    const data=normal?(sand?[180,128,220,255]:[128,128,255,255]):sand?(rough?[64,64,64,255]:[80,80,80,255]):[255,255,255,255];
+    const t=texture(data);requests.push(t);queueMicrotask(()=>url.includes('albedo')&&(mode==='both-fallback'||mode===(sand?'sand-fallback':'grass-fallback'))?fail():done());return t;}},detail=texture([255,255,255,255]),m=createGroundSurface(detail,{loader});
+  await Promise.all([m.userData.ground.loaded,m.userData.ground.sand.loaded]);m.userData.ground.wetness.value=0;
+  if(probe!=='color'){const compile=m.onBeforeCompile;m.onBeforeCompile=shader=>{compile(shader);if(!shader.fragmentShader.includes('#include <dithering_fragment>'))throw Error('Diagnostic output hook missing');
+    shader.fragmentShader=shader.fragmentShader.replace('#include <dithering_fragment>','#include <dithering_fragment>\ngl_FragColor.rgb='+(probe==='roughness'?'vec3(roughnessFactor)':'normal*.5+.5')+';');};m.customProgramCacheKey=()=> 'coastal-sand-diagnostic-'+probe;}
+  return {m,detail,requests};
+}
+function read(mesh,height,normalY,enabled){const positions=geometry.attributes.position,normals=geometry.attributes.normal;
+  for(let i=0;i<positions.count;i++){positions.setY(i,height);normals.setXYZ(i,Math.sqrt(1-normalY*normalY),normalY,0);}positions.needsUpdate=normals.needsUpdate=true;geometry.computeBoundingSphere();mesh.material.userData.ground.sand.enabled.value=enabled;
+  camera.position.set(0,height+5,0);camera.up.set(0,0,-1);camera.lookAt(0,height,0);renderer.setRenderTarget(target);renderer.render(scene,camera);renderer.readRenderTargetPixels(target,0,0,64,64,pixels);
+  const total=[0,0,0];let count=0;for(let y=8;y<56;y++)for(let x=8;x<56;x++){const i=(y*64+x)*4;for(let c=0;c<3;c++)total[c]+=pixels[i+c];count++;}return total.map(n=>n/count);
+}
+document.querySelector('button').onclick=async()=>{document.querySelector('button').disabled=true;const rows=[];
+  try{for(const mode of ['ready','grass-fallback','sand-fallback','both-fallback'])for(const probe of ['color','roughness','normal']){
+    const {m,detail,requests}=await material(mode,probe),mesh=new THREE.Mesh(geometry,m);scene.add(mesh);
+    for(const [name,h,normalY] of [['low-shore',.3,1],['dry-shore',1.6,1],['grass-transition',4,1],['grassland',8,1],['highland',35,1],['steep-rock',.3,.65],['deep-seabed',-1,1]]){
+      const off=read(mesh,h,normalY,0),on=read(mesh,h,normalY,1);rows.push({name,height:h,normalY,mode,probe,off,on,difference:on.map((v,i)=>v-off[i]),grassStatus:m.userData.ground.state.status,sandStatus:m.userData.ground.sand.state.status,wetness:m.userData.ground.wetness.value});
+    }
+    scene.remove(mesh);m.dispose();detail.dispose();requests.forEach(t=>t.dispose());
+  }
+  renderer.setRenderTarget(null);out.textContent=JSON.stringify({complete:true,rows,expectedFallbackWarnings:12,note:'84 actual WebGL paired reads with synthetic one-pixel channels; normal and roughness probes override final RGB. Does not substitute for actual asset/game visual or GPU acceptance.'});
+  }catch(error){out.textContent=JSON.stringify({complete:false,error:error.message,rows});console.error(error);}
+};
+window.addEventListener('pagehide',()=>{target.dispose();geometry.dispose();renderer.dispose();});
+</script></html>

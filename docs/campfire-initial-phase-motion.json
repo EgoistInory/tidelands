@@ -1,0 +1,44 @@
+{
+  "sample": {
+    "complete": true,
+    "elapsedMs": 10011.399999904632,
+    "frames": 601,
+    "p95": 17.19999999999709,
+    "max": 18.700000000000728,
+    "above50": 0,
+    "hidden": false,
+    "before": {
+      "worldTime": 0,
+      "flameTime": 4088.16,
+      "viewport": [
+        1280,
+        720
+      ],
+      "angleDegrees": 0,
+      "frozen": false,
+      "programs": 20,
+      "geometries": 261,
+      "textures": 13,
+      "calls": 222,
+      "triangles": 1482271
+    },
+    "after": {
+      "worldTime": 10.0167,
+      "flameTime": 2.1766999999999825,
+      "viewport": [
+        1280,
+        720
+      ],
+      "angleDegrees": 0,
+      "frozen": true,
+      "programs": 20,
+      "geometries": 261,
+      "textures": 13,
+      "calls": 222,
+      "triangles": 1482271
+    },
+    "frozenAfter": true,
+    "note": "10 seconds camp detail frame scheduling; two renders per frame, no GPU or physical-device acceptance."
+  },
+  "console": []
+}

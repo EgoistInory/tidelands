@@ -1,0 +1,84 @@
+{
+  "sample": {
+    "actionPhase": 1,
+    "canvasBuffer": [
+      1280,
+      489
+    ],
+    "complete": true,
+    "contacts": [
+      true,
+      true
+    ],
+    "elapsedSeconds": 12,
+    "equipment": "axe",
+    "feet": [
+      [
+        -0.22,
+        0.14604,
+        0
+      ],
+      [
+        0.22,
+        0.14604,
+        0
+      ]
+    ],
+    "frames": 8805,
+    "gesture": "gather-cycle",
+    "mode": "actions",
+    "phase": 0,
+    "pose": {
+      "freeElbow": -0.15,
+      "freeShoulder": [
+        0,
+        0,
+        0
+      ],
+      "torsoYaw": 0
+    },
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "slope": 0.12,
+    "stanceFraction": 0.6,
+    "stats": {
+      "actionFrames": 720,
+      "bothFeetAirborneFrames": 0,
+      "contacts": 1322,
+      "maxArmFrameDelta": 0.22050269092042796,
+      "maxFreeArmPitch": 0.3495864001498582,
+      "maxPoseFrameDelta": 0.22050269092042796,
+      "maxSoleHeightError": 6.938893903907228e-16,
+      "maxStanceDrift": 8.899114524108741e-16,
+      "maxTorsoYaw": 0.1398345600599433,
+      "minPelvisOffset": -0.06440986274560591
+    },
+    "strideLengthMeters": 1.6,
+    "toolBounds": {
+      "max": [
+        0.521999998986721,
+        1.590882407642076,
+        0.2624509224479289
+      ],
+      "min": [
+        0.04754041790962216,
+        0.5778618019818572,
+        0.01292487383851186
+      ]
+    },
+    "viewport": [
+      1280,
+      489
+    ],
+    "walkBlend": 0,
+    "windowViewport": [
+      1280,
+      720
+    ]
+  },
+  "console": [],
+  "scope": "Production rig with synthetic one-second gather for12seconds; stationary slope, not real gathering or performance."
+}

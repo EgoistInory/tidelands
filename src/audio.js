@@ -1,4 +1,24 @@
 // Local synthesis: no downloads, microphone access or external audio service.
+import {ISLANDS,dayCycle,randomGenerator} from './world.js';
+const habitatDensity=[.6,1,.24,.48];
+function ecologyBuffer(ctx,kind){
+  const bird=kind==='birds',seconds=bird?23:19,random=randomGenerator(bird?9971:8831);
+  const buffer=ctx.createBuffer(1,ctx.sampleRate*seconds,ctx.sampleRate),samples=buffer.getChannelData(0);
+  // Sparse phrases leave quiet loop boundaries; pitch, spacing and envelopes vary per phrase.
+  for(let phrase=0;phrase<(bird?8:22);phrase++){
+    const start=(bird?.8:.4)+phrase*(bird?2.65:.78)+random()*(bird?.7:.14),frequency=(bird?1800:3100)+random()*(bird?1600:1300);
+    const notes=bird?2+Math.floor(random()*3):4+Math.floor(random()*4);
+    for(let note=0;note<notes;note++){
+      const duration=bird?.08+random()*.09:.025+random()*.025,offset=Math.round((start+note*(bird?.18:.065))*ctx.sampleRate),length=Math.round(duration*ctx.sampleRate);let phase=0;
+      for(let i=0;i<length&&offset+i<samples.length;i++){
+        const t=i/ctx.sampleRate,u=i/Math.max(1,length-1),envelope=Math.sin(Math.PI*u)**2;
+        phase+=2*Math.PI*frequency*(bird?1+.22*Math.sin(t*24)+.15*u:1+.025*Math.sin(t*190))/ctx.sampleRate;
+        samples[offset+i]+=(bird?.42:.22)*envelope*(Math.sin(phase)+.12*Math.sin(phase*2));
+      }
+    }
+  }
+  return buffer;
+}
 export class GameAudio{
   constructor({enabled=true,contextFactory=()=>new AudioContext()}={}){this.enabled=enabled;this.contextFactory=contextFactory;this.context=null;this.active=false;this.sources=new Set();this.stepDistance=0;this.lastPosition=null;}
   async unlock(){
@@ -22,6 +42,10 @@ export class GameAudio{
       this.surfFilter=ctx.createBiquadFilter();this.surfFilter.type='bandpass';this.surfFilter.frequency.value=560;this.surfFilter.Q.value=.55;
       this.surf=ctx.createGain();this.surf.gain.value=0;
       this.surfSource.connect(this.surfFilter);this.surfFilter.connect(this.surf);this.surf.connect(this.master);this.surfSource.start(0,1.173);
+      for(const kind of ['birds','insects']){
+        const source=ctx.createBufferSource();this[kind+'Source']=source;source.buffer=ecologyBuffer(ctx,kind);source.loop=true;
+        const gain=ctx.createGain();this[kind]=gain;gain.gain.value=0;source.connect(gain);gain.connect(this.master);source.start();
+      }
     }
     await this.context.resume();this.applyVolume();
     }catch(error){await this.dispose();throw error;}
@@ -56,6 +80,12 @@ export class GameAudio{
     if(this.context){const now=this.context.currentTime;this.wind.gain.setTargetAtTime((height<2?.18:.075)*(1+Math.sin(time*.3)*.25),now,.3);this.filter.frequency.setTargetAtTime(height<2?850:420,now,.3);
       const shore=Math.max(0,Math.min(1,(5-height)/5)),wave=.5+.5*Math.sin(time*.65);
       this.surf.gain.setTargetAtTime(shore*(.035+.10*wave*wave),now,.45);this.surfFilter.frequency.setTargetAtTime(460+220*wave,now,.4);
+      let habitat=0;
+      for(let i=0;i<ISLANDS.length;i++){const island=ISLANDS[i],inside=Math.max(0,Math.min(1,(1-Math.hypot(player.x-island.x,player.z-island.z)/island.r)/.32));habitat=Math.max(habitat,inside*habitatDensity[i]);}
+      habitat*=Math.max(0,Math.min(1,height/6));
+      const day=Math.max(0,Math.min(1,(dayCycle(time).daylight-.08)/.5));
+      this.birds.gain.setTargetAtTime(habitat*day*.18,now,1.8);
+      this.insects.gain.setTargetAtTime(habitat*(1-day)*.09,now,1.8);
     }
     const priorFootfalls=this.lastFootfallCount??null;this.lastFootfallCount=Number.isSafeInteger(footfallCount)&&footfallCount>=0?footfallCount:null;
     const last=this.lastPosition;this.lastPosition={x:player.x,z:player.z};if(!last)return;
@@ -75,8 +105,9 @@ export class GameAudio{
     this.sources.clear();
     if(this.ambience){try{this.ambience.stop();}catch{}this.ambience.disconnect();}
     if(this.surfSource){try{this.surfSource.stop();}catch{}this.surfSource.disconnect();}
-    for(const node of [this.filter,this.wind,this.surfFilter,this.surf,this.master,this.ui])node?.disconnect();
-    this.ambience=this.filter=this.wind=this.surfSource=this.surfFilter=this.surf=this.master=this.ui=this.noise=null;
+    for(const source of [this.birdsSource,this.insectsSource])if(source){try{source.stop();}catch{}source.disconnect();}
+    for(const node of [this.filter,this.wind,this.surfFilter,this.surf,this.birds,this.insects,this.master,this.ui])node?.disconnect();
+    this.ambience=this.filter=this.wind=this.surfSource=this.surfFilter=this.surf=this.birdsSource=this.insectsSource=this.birds=this.insects=this.master=this.ui=this.noise=null;
     this.lastPosition=null;this.lastFootfallCount=null;this.stepDistance=0;
     if(ctx&&ctx.state!=='closed'){try{await ctx.close();}catch{}}
   }

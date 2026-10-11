@@ -1,0 +1,1384 @@
+{
+  "kind": "M5 bounded coastal sand material batch",
+  "auditedAt": "2026-10-11T11:16:06.111596+00:00",
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "b7bc9f3e64b40f1e9d0563f5de004027a5098b220f21ed4b2b6f4af7635adffc",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "ef4290e2daf552d5ee73fb9f1a40f023a8cb07d9508bb7e16c1ea0ea734aa5c6",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "28d1e219f0bd804323a54d9e5a1e09c92e78e129afb797cb3ddf8ce876b3117f",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "1697ecb6c695952c9ba656c61b0e1c9852f20fc4f7f2b10b6e81d1cbbf397f0b",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "95a5cb81f480bfb5be31a9ed013eca5f3722b52eb6a34cb3bf135f9555244261",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "previousRuntimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "b7bc9f3e64b40f1e9d0563f5de004027a5098b220f21ed4b2b6f4af7635adffc",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "ef4290e2daf552d5ee73fb9f1a40f023a8cb07d9508bb7e16c1ea0ea734aa5c6",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "9ef6f03f8620a5592513a074b5aec022d6540d00afe8f047976a940071048d9b",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "1697ecb6c695952c9ba656c61b0e1c9852f20fc4f7f2b10b6e81d1cbbf397f0b",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "95a5cb81f480bfb5be31a9ed013eca5f3722b52eb6a34cb3bf135f9555244261",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "changedRuntime": [
+    "src/ground-surface.js"
+  ],
+  "assets": {
+    "asset": "Sand 03",
+    "assetId": "sand_03",
+    "author": "Charlotte Baglioni",
+    "tileWidthMeters": 2,
+    "license": "CC0-1.0",
+    "source": "https://polyhaven.com/a/sand_03",
+    "licensePage": "https://polyhaven.com/license",
+    "apiTerms": "https://github.com/Poly-Haven/Public-API/blob/master/ToS.md",
+    "verifiedDate": "2026-10-11",
+    "runtimeApi": false,
+    "meanLinearAlbedoLuminance": 0.12191464153387539,
+    "files": [
+      {
+        "path": "assets/ground/coastal-sand/albedo.jpg",
+        "channel": "Diffuse",
+        "bytes": 703132,
+        "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sand_03/sand_03_diff_1k.jpg",
+        "md5": "84bde2b8bea6351805f67a15682b36b2",
+        "sha256": "e72144f9d7b81bdb7bbdb34222b53431738dcef79346dd89412d2abd541e4d30",
+        "resolution": "1k"
+      },
+      {
+        "path": "assets/ground/coastal-sand/normal-gl.jpg",
+        "channel": "nor_gl",
+        "bytes": 884706,
+        "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sand_03/sand_03_nor_gl_1k.jpg",
+        "md5": "ad8d6ce28344b1d8f241cbd7796243dc",
+        "sha256": "1bde5f49ea78f94bcad73592696bf3949711c4ac197133b710c0c8521b6e996b",
+        "resolution": "1k"
+      },
+      {
+        "path": "assets/ground/coastal-sand/roughness.jpg",
+        "channel": "Rough",
+        "bytes": 291218,
+        "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sand_03/sand_03_rough_1k.jpg",
+        "md5": "b09beddb9981ec5fb402c12f04751c15",
+        "sha256": "5c9ead290a94913cfa2d0452a576ba527b50301fe208f2ffc4861e42a8fea45b",
+        "resolution": "1k"
+      }
+    ],
+    "note": "Official free development metadata request; raw1k JPEG channels unchanged. No runtime network or paid asset/API."
+  },
+  "tests": {
+    "focused": 8,
+    "full": 137,
+    "redFail": 3,
+    "syntax": true,
+    "webglPairs": 84,
+    "expectedFallbackWarnings": 12
+  },
+  "wetnessRegressionPairs": 28,
+  "views": [
+    {
+      "groundStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "memory": {
+        "geometries": 143,
+        "textures": 14
+      },
+      "note": "Explicit shore fixture and review camera. No save, gameplay, GPU or full wetness-quality acceptance.",
+      "programs": 16,
+      "render": {
+        "calls": 61,
+        "frame": 6,
+        "lines": 0,
+        "points": 0,
+        "triangles": 717490
+      },
+      "sandEnabled": 0,
+      "sandStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "site": {
+        "error": 0.028950560328344643,
+        "height": 1.1789505603283446,
+        "name": "潮汐海岸",
+        "x": -90,
+        "z": 140.25
+      },
+      "sites": [
+        {
+          "error": 0.028950560328344643,
+          "height": 1.1789505603283446,
+          "name": "潮汐海岸",
+          "x": -90,
+          "z": 140.25
+        },
+        {
+          "error": 0.048021679666755634,
+          "height": 1.1019783203332445,
+          "name": "苍翠林地",
+          "x": 160,
+          "z": 19.19999999999999
+        },
+        {
+          "error": 0.01805148578240856,
+          "height": 1.1680514857824085,
+          "name": "雾岬高地",
+          "x": -75,
+          "z": -124.5
+        },
+        {
+          "error": 0.020677959827092973,
+          "height": 1.129322040172907,
+          "name": "琥珀浅滩",
+          "x": 145,
+          "z": 269.5
+        }
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "wetness": 1,
+      "worldTime": 240
+    },
+    {
+      "groundStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "memory": {
+        "geometries": 143,
+        "textures": 14
+      },
+      "note": "Explicit shore fixture and review camera. No save, gameplay, GPU or full wetness-quality acceptance.",
+      "programs": 16,
+      "render": {
+        "calls": 61,
+        "frame": 8,
+        "lines": 0,
+        "points": 0,
+        "triangles": 717490
+      },
+      "sandEnabled": 1,
+      "sandStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "site": {
+        "error": 0.028950560328344643,
+        "height": 1.1789505603283446,
+        "name": "潮汐海岸",
+        "x": -90,
+        "z": 140.25
+      },
+      "sites": [
+        {
+          "error": 0.028950560328344643,
+          "height": 1.1789505603283446,
+          "name": "潮汐海岸",
+          "x": -90,
+          "z": 140.25
+        },
+        {
+          "error": 0.048021679666755634,
+          "height": 1.1019783203332445,
+          "name": "苍翠林地",
+          "x": 160,
+          "z": 19.19999999999999
+        },
+        {
+          "error": 0.01805148578240856,
+          "height": 1.1680514857824085,
+          "name": "雾岬高地",
+          "x": -75,
+          "z": -124.5
+        },
+        {
+          "error": 0.020677959827092973,
+          "height": 1.129322040172907,
+          "name": "琥珀浅滩",
+          "x": 145,
+          "z": 269.5
+        }
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "wetness": 1,
+      "worldTime": 240
+    },
+    {
+      "groundStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "memory": {
+        "geometries": 186,
+        "textures": 14
+      },
+      "note": "Explicit shore fixture and review camera. No save, gameplay, GPU or full wetness-quality acceptance.",
+      "programs": 16,
+      "render": {
+        "calls": 115,
+        "frame": 10,
+        "lines": 0,
+        "points": 0,
+        "triangles": 971900
+      },
+      "sandEnabled": 1,
+      "sandStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "site": {
+        "error": 0.048021679666755634,
+        "height": 1.1019783203332445,
+        "name": "苍翠林地",
+        "x": 160,
+        "z": 19.19999999999999
+      },
+      "sites": [
+        {
+          "error": 0.028950560328344643,
+          "height": 1.1789505603283446,
+          "name": "潮汐海岸",
+          "x": -90,
+          "z": 140.25
+        },
+        {
+          "error": 0.048021679666755634,
+          "height": 1.1019783203332445,
+          "name": "苍翠林地",
+          "x": 160,
+          "z": 19.19999999999999
+        },
+        {
+          "error": 0.01805148578240856,
+          "height": 1.1680514857824085,
+          "name": "雾岬高地",
+          "x": -75,
+          "z": -124.5
+        },
+        {
+          "error": 0.020677959827092973,
+          "height": 1.129322040172907,
+          "name": "琥珀浅滩",
+          "x": 145,
+          "z": 269.5
+        }
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "wetness": 1,
+      "worldTime": 240
+    },
+    {
+      "groundStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "memory": {
+        "geometries": 244,
+        "textures": 17
+      },
+      "note": "Explicit shore fixture and review camera. No save, gameplay, GPU or full wetness-quality acceptance.",
+      "programs": 18,
+      "render": {
+        "calls": 177,
+        "frame": 12,
+        "lines": 0,
+        "points": 0,
+        "triangles": 1334820
+      },
+      "sandEnabled": 1,
+      "sandStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "site": {
+        "error": 0.01805148578240856,
+        "height": 1.1680514857824085,
+        "name": "雾岬高地",
+        "x": -75,
+        "z": -124.5
+      },
+      "sites": [
+        {
+          "error": 0.028950560328344643,
+          "height": 1.1789505603283446,
+          "name": "潮汐海岸",
+          "x": -90,
+          "z": 140.25
+        },
+        {
+          "error": 0.048021679666755634,
+          "height": 1.1019783203332445,
+          "name": "苍翠林地",
+          "x": 160,
+          "z": 19.19999999999999
+        },
+        {
+          "error": 0.01805148578240856,
+          "height": 1.1680514857824085,
+          "name": "雾岬高地",
+          "x": -75,
+          "z": -124.5
+        },
+        {
+          "error": 0.020677959827092973,
+          "height": 1.129322040172907,
+          "name": "琥珀浅滩",
+          "x": 145,
+          "z": 269.5
+        }
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "wetness": 1,
+      "worldTime": 240
+    },
+    {
+      "groundStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "memory": {
+        "geometries": 244,
+        "textures": 17
+      },
+      "note": "Explicit shore fixture and review camera. No save, gameplay, GPU or full wetness-quality acceptance.",
+      "programs": 18,
+      "render": {
+        "calls": 51,
+        "frame": 14,
+        "lines": 0,
+        "points": 0,
+        "triangles": 570968
+      },
+      "sandEnabled": 1,
+      "sandStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "site": {
+        "error": 0.020677959827092973,
+        "height": 1.129322040172907,
+        "name": "琥珀浅滩",
+        "x": 145,
+        "z": 269.5
+      },
+      "sites": [
+        {
+          "error": 0.028950560328344643,
+          "height": 1.1789505603283446,
+          "name": "潮汐海岸",
+          "x": -90,
+          "z": 140.25
+        },
+        {
+          "error": 0.048021679666755634,
+          "height": 1.1019783203332445,
+          "name": "苍翠林地",
+          "x": 160,
+          "z": 19.19999999999999
+        },
+        {
+          "error": 0.01805148578240856,
+          "height": 1.1680514857824085,
+          "name": "雾岬高地",
+          "x": -75,
+          "z": -124.5
+        },
+        {
+          "error": 0.020677959827092973,
+          "height": 1.129322040172907,
+          "name": "琥珀浅滩",
+          "x": 145,
+          "z": 269.5
+        }
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "wetness": 1,
+      "worldTime": 240
+    },
+    {
+      "groundStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "memory": {
+        "geometries": 244,
+        "textures": 17
+      },
+      "note": "Explicit shore fixture and review camera. No save, gameplay, GPU or full wetness-quality acceptance.",
+      "programs": 18,
+      "render": {
+        "calls": 52,
+        "frame": 16,
+        "lines": 0,
+        "points": 0,
+        "triangles": 572368
+      },
+      "sandEnabled": 1,
+      "sandStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "site": {
+        "error": 0.020677959827092973,
+        "height": 1.129322040172907,
+        "name": "琥珀浅滩",
+        "x": 145,
+        "z": 269.5
+      },
+      "sites": [
+        {
+          "error": 0.028950560328344643,
+          "height": 1.1789505603283446,
+          "name": "潮汐海岸",
+          "x": -90,
+          "z": 140.25
+        },
+        {
+          "error": 0.048021679666755634,
+          "height": 1.1019783203332445,
+          "name": "苍翠林地",
+          "x": 160,
+          "z": 19.19999999999999
+        },
+        {
+          "error": 0.01805148578240856,
+          "height": 1.1680514857824085,
+          "name": "雾岬高地",
+          "x": -75,
+          "z": -124.5
+        },
+        {
+          "error": 0.020677959827092973,
+          "height": 1.129322040172907,
+          "name": "琥珀浅滩",
+          "x": 145,
+          "z": 269.5
+        }
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "wetness": 1,
+      "worldTime": 0
+    },
+    {
+      "groundStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "memory": {
+        "geometries": 244,
+        "textures": 17
+      },
+      "note": "Explicit shore fixture and review camera. No save, gameplay, GPU or full wetness-quality acceptance.",
+      "programs": 18,
+      "render": {
+        "calls": 58,
+        "frame": 1228,
+        "lines": 0,
+        "points": 0,
+        "triangles": 716846
+      },
+      "sandEnabled": 0,
+      "sandStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "site": {
+        "error": 0.028950560328344643,
+        "height": 1.1789505603283446,
+        "name": "潮汐海岸",
+        "x": -90,
+        "z": 140.25
+      },
+      "sites": [
+        {
+          "error": 0.028950560328344643,
+          "height": 1.1789505603283446,
+          "name": "潮汐海岸",
+          "x": -90,
+          "z": 140.25
+        },
+        {
+          "error": 0.048021679666755634,
+          "height": 1.1019783203332445,
+          "name": "苍翠林地",
+          "x": 160,
+          "z": 19.19999999999999
+        },
+        {
+          "error": 0.01805148578240856,
+          "height": 1.1680514857824085,
+          "name": "雾岬高地",
+          "x": -75,
+          "z": -124.5
+        },
+        {
+          "error": 0.020677959827092973,
+          "height": 1.129322040172907,
+          "name": "琥珀浅滩",
+          "x": 145,
+          "z": 269.5
+        }
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "wetness": 1,
+      "worldTime": 250.0166
+    },
+    {
+      "groundStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "memory": {
+        "geometries": 244,
+        "textures": 17
+      },
+      "note": "Explicit shore fixture and review camera. No save, gameplay, GPU or full wetness-quality acceptance.",
+      "programs": 18,
+      "render": {
+        "calls": 58,
+        "frame": 1230,
+        "lines": 0,
+        "points": 0,
+        "triangles": 716846
+      },
+      "sandEnabled": 1,
+      "sandStatus": {
+        "failed": [],
+        "loaded": 3,
+        "status": "ready"
+      },
+      "site": {
+        "error": 0.028950560328344643,
+        "height": 1.1789505603283446,
+        "name": "潮汐海岸",
+        "x": -90,
+        "z": 140.25
+      },
+      "sites": [
+        {
+          "error": 0.028950560328344643,
+          "height": 1.1789505603283446,
+          "name": "潮汐海岸",
+          "x": -90,
+          "z": 140.25
+        },
+        {
+          "error": 0.048021679666755634,
+          "height": 1.1019783203332445,
+          "name": "苍翠林地",
+          "x": 160,
+          "z": 19.19999999999999
+        },
+        {
+          "error": 0.01805148578240856,
+          "height": 1.1680514857824085,
+          "name": "雾岬高地",
+          "x": -75,
+          "z": -124.5
+        },
+        {
+          "error": 0.020677959827092973,
+          "height": 1.129322040172907,
+          "name": "琥珀浅滩",
+          "x": 145,
+          "z": 269.5
+        }
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "wetness": 1,
+      "worldTime": 250.0166
+    }
+  ],
+  "motions": {
+    "desktop": {
+      "above50": 0,
+      "after": {
+        "groundStatus": {
+          "failed": [],
+          "loaded": 3,
+          "status": "ready"
+        },
+        "memory": {
+          "geometries": 244,
+          "textures": 17
+        },
+        "programs": 18,
+        "render": {
+          "calls": 61,
+          "frame": 1224,
+          "lines": 0,
+          "points": 0,
+          "triangles": 717490
+        },
+        "sandEnabled": 1,
+        "sandStatus": {
+          "failed": [],
+          "loaded": 3,
+          "status": "ready"
+        },
+        "site": {
+          "error": 0.028950560328344643,
+          "height": 1.1789505603283446,
+          "name": "潮汐海岸",
+          "x": -90,
+          "z": 140.25
+        },
+        "sites": [
+          {
+            "error": 0.028950560328344643,
+            "height": 1.1789505603283446,
+            "name": "潮汐海岸",
+            "x": -90,
+            "z": 140.25
+          },
+          {
+            "error": 0.048021679666755634,
+            "height": 1.1019783203332445,
+            "name": "苍翠林地",
+            "x": 160,
+            "z": 19.19999999999999
+          },
+          {
+            "error": 0.01805148578240856,
+            "height": 1.1680514857824085,
+            "name": "雾岬高地",
+            "x": -75,
+            "z": -124.5
+          },
+          {
+            "error": 0.020677959827092973,
+            "height": 1.129322040172907,
+            "name": "琥珀浅滩",
+            "x": 145,
+            "z": 269.5
+          }
+        ],
+        "viewport": [
+          1280,
+          720
+        ],
+        "wetness": 1,
+        "worldTime": 250.0166
+      },
+      "before": {
+        "groundStatus": {
+          "failed": [],
+          "loaded": 3,
+          "status": "ready"
+        },
+        "memory": {
+          "geometries": 244,
+          "textures": 17
+        },
+        "programs": 18,
+        "render": {
+          "calls": 61,
+          "frame": 20,
+          "lines": 0,
+          "points": 0,
+          "triangles": 717490
+        },
+        "sandEnabled": 1,
+        "sandStatus": {
+          "failed": [],
+          "loaded": 3,
+          "status": "ready"
+        },
+        "site": {
+          "error": 0.028950560328344643,
+          "height": 1.1789505603283446,
+          "name": "潮汐海岸",
+          "x": -90,
+          "z": 140.25
+        },
+        "sites": [
+          {
+            "error": 0.028950560328344643,
+            "height": 1.1789505603283446,
+            "name": "潮汐海岸",
+            "x": -90,
+            "z": 140.25
+          },
+          {
+            "error": 0.048021679666755634,
+            "height": 1.1019783203332445,
+            "name": "苍翠林地",
+            "x": 160,
+            "z": 19.19999999999999
+          },
+          {
+            "error": 0.01805148578240856,
+            "height": 1.1680514857824085,
+            "name": "雾岬高地",
+            "x": -75,
+            "z": -124.5
+          },
+          {
+            "error": 0.020677959827092973,
+            "height": 1.129322040172907,
+            "name": "琥珀浅滩",
+            "x": 145,
+            "z": 269.5
+          }
+        ],
+        "viewport": [
+          1280,
+          720
+        ],
+        "wetness": 1,
+        "worldTime": 240
+      },
+      "complete": true,
+      "elapsedMs": 10016.599999999991,
+      "frames": 601,
+      "hidden": false,
+      "max": 18.60000000000582,
+      "note": "Fixed review camera, production time/render/water/foliage; two renders per frame. No player movement, GPU or physical mobile proof.",
+      "p95": 18.10000000000582
+    },
+    "mobile": {
+      "complete": true,
+      "elapsedMs": 10000,
+      "frames": 600,
+      "p95": 18.199999999982538,
+      "max": 18.699999999982538,
+      "above50": 0,
+      "hidden": false,
+      "before": {
+        "site": {
+          "name": "潮汐海岸",
+          "x": -90,
+          "z": 140.25,
+          "height": 1.1789505603283446,
+          "error": 0.028950560328344643
+        },
+        "sites": [
+          {
+            "name": "潮汐海岸",
+            "x": -90,
+            "z": 140.25,
+            "height": 1.1789505603283446,
+            "error": 0.028950560328344643
+          },
+          {
+            "name": "苍翠林地",
+            "x": 160,
+            "z": 19.19999999999999,
+            "height": 1.1019783203332443,
+            "error": 0.048021679666755634
+          },
+          {
+            "name": "雾岬高地",
+            "x": -75,
+            "z": -124.50000000000001,
+            "height": 1.1680514857824085,
+            "error": 0.01805148578240856
+          },
+          {
+            "name": "琥珀浅滩",
+            "x": 145,
+            "z": 269.5,
+            "height": 1.129322040172907,
+            "error": 0.020677959827092973
+          }
+        ],
+        "worldTime": 250.01659999999998,
+        "viewport": [
+          390,
+          844
+        ],
+        "wetness": 1,
+        "sandEnabled": 1,
+        "sandStatus": {
+          "status": "ready",
+          "loaded": 3,
+          "failed": []
+        },
+        "groundStatus": {
+          "status": "ready",
+          "loaded": 3,
+          "failed": []
+        },
+        "render": {
+          "frame": 1230,
+          "calls": 58,
+          "triangles": 716846,
+          "points": 0,
+          "lines": 0
+        },
+        "memory": {
+          "geometries": 244,
+          "textures": 17
+        },
+        "programs": 18
+      },
+      "after": {
+        "site": {
+          "name": "潮汐海岸",
+          "x": -90,
+          "z": 140.25,
+          "height": 1.1789505603283446,
+          "error": 0.028950560328344643
+        },
+        "sites": [
+          {
+            "name": "潮汐海岸",
+            "x": -90,
+            "z": 140.25,
+            "height": 1.1789505603283446,
+            "error": 0.028950560328344643
+          },
+          {
+            "name": "苍翠林地",
+            "x": 160,
+            "z": 19.19999999999999,
+            "height": 1.1019783203332443,
+            "error": 0.048021679666755634
+          },
+          {
+            "name": "雾岬高地",
+            "x": -75,
+            "z": -124.50000000000001,
+            "height": 1.1680514857824085,
+            "error": 0.01805148578240856
+          },
+          {
+            "name": "琥珀浅滩",
+            "x": 145,
+            "z": 269.5,
+            "height": 1.129322040172907,
+            "error": 0.020677959827092973
+          }
+        ],
+        "worldTime": 250,
+        "viewport": [
+          390,
+          844
+        ],
+        "wetness": 1,
+        "sandEnabled": 1,
+        "sandStatus": {
+          "status": "ready",
+          "loaded": 3,
+          "failed": []
+        },
+        "groundStatus": {
+          "status": "ready",
+          "loaded": 3,
+          "failed": []
+        },
+        "render": {
+          "frame": 2432,
+          "calls": 58,
+          "triangles": 716846,
+          "points": 0,
+          "lines": 0
+        },
+        "memory": {
+          "geometries": 244,
+          "textures": 17
+        },
+        "programs": 18
+      },
+      "note": "Fixed review camera, production time/render/water/foliage; two renders per frame. No player movement, GPU or physical mobile proof."
+    }
+  },
+  "gpuReview": "docs/coastal-sand-gpu-review.json",
+  "dynamic": {
+    "desktop": {
+      "complete": true,
+      "targetMs": 60000,
+      "activeMs": 60014.94,
+      "wallMs": 60020.24,
+      "frames": 3597,
+      "movingFrames": 3594,
+      "movingFraction": 1,
+      "distanceMeters": 415.08,
+      "hidden": false,
+      "medianMs": 16.7,
+      "p95Ms": 17.9,
+      "maxMs": 99.94,
+      "over50Ms": 1,
+      "frameSpikes": [
+        {
+          "atMs": 99.94,
+          "intervalMs": 99.94,
+          "previousFrame": {
+            "stage": "shore-exploration",
+            "transition": false,
+            "cpuMs": 105.4
+          }
+        }
+      ],
+      "stepAttempts": 196,
+      "stepsScheduled": 196,
+      "hitCount": 6,
+      "damageTaken": 31,
+      "respawns": 0,
+      "revivedPairs": 1,
+      "stages": [
+        {
+          "name": "shore-exploration",
+          "startPosition": [
+            -90,
+            140
+          ],
+          "frames": 715,
+          "movingFrames": 714,
+          "distance": 70.9952999999998,
+          "attackHits": 0,
+          "damageTaken": 0,
+          "revivedPairs": 0,
+          "endPosition": [
+            -87.87,
+            136.96
+          ],
+          "kills": 0
+        },
+        {
+          "name": "forest-combat",
+          "startPosition": [
+            132,
+            -26
+          ],
+          "frames": 720,
+          "movingFrames": 718,
+          "distance": 83.75429999999997,
+          "attackHits": 6,
+          "damageTaken": 7,
+          "revivedPairs": 1,
+          "endPosition": [
+            147.53,
+            -46.46
+          ],
+          "kills": 3
+        },
+        {
+          "name": "highland-movement",
+          "startPosition": [
+            -75,
+            -205
+          ],
+          "frames": 721,
+          "movingFrames": 721,
+          "distance": 114.12769999999992,
+          "attackHits": 0,
+          "damageTaken": 24,
+          "revivedPairs": 0,
+          "endPosition": [
+            -46.86,
+            -217.13
+          ],
+          "kills": 0
+        },
+        {
+          "name": "amber-swimming",
+          "startPosition": [
+            190,
+            248
+          ],
+          "frames": 720,
+          "movingFrames": 720,
+          "distance": 62.10000000000007,
+          "attackHits": 0,
+          "damageTaken": 0,
+          "revivedPairs": 0,
+          "endPosition": [
+            194.89,
+            243.59
+          ],
+          "kills": 0
+        },
+        {
+          "name": "night-camp",
+          "startPosition": [
+            -56,
+            49
+          ],
+          "frames": 721,
+          "movingFrames": 721,
+          "distance": 84.10500000000017,
+          "attackHits": 0,
+          "damageTaken": 0,
+          "revivedPairs": 0,
+          "endPosition": [
+            -46.77,
+            41.41
+          ],
+          "kills": 0
+        }
+      ],
+      "checkpoints": [
+        {
+          "activeMs": 0,
+          "stage": "shore-exploration",
+          "position": [
+            -90,
+            140
+          ],
+          "height": 1.22,
+          "time": 240,
+          "daytime": "午后",
+          "hp": 100,
+          "kills": 0,
+          "frames": 0,
+          "movingFrames": 0,
+          "distance": 0,
+          "calls": 381,
+          "triangles": 1627421,
+          "geometries": 218,
+          "textures": 8,
+          "heapBytes": 63599814,
+          "audio": {
+            "context": "running",
+            "voices": 0,
+            "stepsScheduled": 0,
+            "surfGain": 0,
+            "birdsGain": 0,
+            "insectsGain": 0,
+            "ambienceBytes": 8640000
+          },
+          "viewport": [
+            1280,
+            720
+          ],
+          "canvasBuffer": [
+            1920,
+            852
+          ]
+        },
+        {
+          "activeMs": 60014.94,
+          "stage": "night-camp",
+          "position": [
+            -46.77,
+            41.41
+          ],
+          "height": 13.38,
+          "time": 12.01,
+          "daytime": "夜晚",
+          "hp": 100,
+          "kills": 0,
+          "frames": 3597,
+          "movingFrames": 3594,
+          "distance": 415.08,
+          "calls": 309,
+          "triangles": 1726012,
+          "geometries": 341,
+          "textures": 17,
+          "heapBytes": 78491031,
+          "audio": {
+            "context": "running",
+            "voices": 1,
+            "stepsScheduled": 196,
+            "surfGain": 0,
+            "birdsGain": 0,
+            "insectsGain": 0.0538390688598156,
+            "ambienceBytes": 8640000
+          },
+          "viewport": [
+            1280,
+            720
+          ],
+          "canvasBuffer": [
+            1920,
+            852
+          ]
+        }
+      ],
+      "note": "QA scripted input and five phase teleports; production movement/tick/render/audio. Combat pair revived as labelled load fixture. Frame intervals and JS heap only; no save or campaign acceptance."
+    },
+    "mobile": {
+      "complete": true,
+      "targetMs": 60000,
+      "activeMs": 60000,
+      "wallMs": 60004.7,
+      "frames": 3602,
+      "movingFrames": 3600,
+      "movingFraction": 1,
+      "distanceMeters": 415.13,
+      "hidden": false,
+      "medianMs": 16.7,
+      "p95Ms": 18.2,
+      "maxMs": 18.7,
+      "over50Ms": 0,
+      "frameSpikes": [],
+      "stepAttempts": 195,
+      "stepsScheduled": 195,
+      "hitCount": 6,
+      "damageTaken": 31,
+      "respawns": 0,
+      "revivedPairs": 1,
+      "stages": [
+        {
+          "name": "shore-exploration",
+          "startPosition": [
+            -90,
+            140
+          ],
+          "frames": 721,
+          "movingFrames": 719,
+          "distance": 71.04831399999998,
+          "attackHits": 0,
+          "damageTaken": 0,
+          "revivedPairs": 0,
+          "endPosition": [
+            -87.92,
+            137.31
+          ],
+          "kills": 0
+        },
+        {
+          "name": "forest-combat",
+          "startPosition": [
+            132,
+            -26
+          ],
+          "frames": 720,
+          "movingFrames": 720,
+          "distance": 84.00000000000026,
+          "attackHits": 6,
+          "damageTaken": 7,
+          "revivedPairs": 1,
+          "endPosition": [
+            147.68,
+            -46.48
+          ],
+          "kills": 3
+        },
+        {
+          "name": "highland-movement",
+          "startPosition": [
+            -75,
+            -205
+          ],
+          "frames": 720,
+          "movingFrames": 720,
+          "distance": 114.00100000000013,
+          "attackHits": 0,
+          "damageTaken": 24,
+          "revivedPairs": 0,
+          "endPosition": [
+            -46.72,
+            -216.99
+          ],
+          "kills": 0
+        },
+        {
+          "name": "amber-swimming",
+          "startPosition": [
+            190,
+            248
+          ],
+          "frames": 720,
+          "movingFrames": 720,
+          "distance": 61.967600000000054,
+          "attackHits": 0,
+          "damageTaken": 0,
+          "revivedPairs": 0,
+          "endPosition": [
+            195.07,
+            243.62
+          ],
+          "kills": 0
+        },
+        {
+          "name": "night-camp",
+          "startPosition": [
+            -56,
+            49
+          ],
+          "frames": 721,
+          "movingFrames": 721,
+          "distance": 84.1169,
+          "attackHits": 0,
+          "damageTaken": 0,
+          "revivedPairs": 0,
+          "endPosition": [
+            -46.65,
+            41.56
+          ],
+          "kills": 0
+        }
+      ],
+      "checkpoints": [
+        {
+          "activeMs": 0,
+          "stage": "shore-exploration",
+          "position": [
+            -90,
+            140
+          ],
+          "height": 1.22,
+          "time": 240,
+          "daytime": "午后",
+          "hp": 100,
+          "kills": 0,
+          "frames": 0,
+          "movingFrames": 0,
+          "distance": 0,
+          "calls": 216,
+          "triangles": 1271735,
+          "geometries": 219,
+          "textures": 17,
+          "heapBytes": 64926612,
+          "audio": {
+            "context": "running",
+            "voices": 0,
+            "stepsScheduled": 0,
+            "surfGain": 0,
+            "birdsGain": 0,
+            "insectsGain": 0,
+            "ambienceBytes": 8640000
+          },
+          "viewport": [
+            390,
+            844
+          ],
+          "canvasBuffer": [
+            585,
+            930
+          ]
+        },
+        {
+          "activeMs": 60000,
+          "stage": "night-camp",
+          "position": [
+            -46.65,
+            41.56
+          ],
+          "height": 13.36,
+          "time": 12.02,
+          "daytime": "夜晚",
+          "hp": 100,
+          "kills": 0,
+          "frames": 3602,
+          "movingFrames": 3600,
+          "distance": 415.13,
+          "calls": 243,
+          "triangles": 1288041,
+          "geometries": 341,
+          "textures": 17,
+          "heapBytes": 64489941,
+          "audio": {
+            "context": "running",
+            "voices": 1,
+            "stepsScheduled": 195,
+            "surfGain": 0,
+            "birdsGain": 0,
+            "insectsGain": 0.0538390688598156,
+            "ambienceBytes": 8640000
+          },
+          "viewport": [
+            390,
+            844
+          ],
+          "canvasBuffer": [
+            585,
+            930
+          ]
+        }
+      ],
+      "note": "QA scripted input and five phase teleports; production movement/tick/render/audio. Combat pair revived as labelled load fixture. Frame intervals and JS heap only; no save or campaign acceptance."
+    }
+  },
+  "package": {
+    "kind": "local-delivery-archive-check",
+    "passed": true,
+    "archive": "tidelands-m5-2026-10-11-sand.zip",
+    "stage": "M5 coastal sand material batch; M5 and full3A incomplete",
+    "archiveSha256": "b28d957d119fa0124c33b1dff2674e8f7134ef4e51dbf27260fdb8bd8a0c45a7",
+    "checkedFiles": 39,
+    "archiveEntries": 40,
+    "extractedPath": "/private/tmp/tidelands-delivery-uame2uwh/tidelands-local",
+    "invalidPortsRejected": [
+      -1,
+      65536
+    ],
+    "browserLaunchVerified": false,
+    "fullGoalComplete": false
+  },
+  "ordinaryPackageUi": {
+    "desktopPosition": "位置 X -62.0，Z 102.4；建筑 0；击败 0",
+    "mobilePosition": "位置 X -63.1，Z 95.2；建筑 0；击败 0",
+    "fixtureImported": false,
+    "fullCampaignRetested": false,
+    "physicalMobile": false,
+    "multitouch": false,
+    "soundAudition": false
+  },
+  "limits": [
+    "Only coastal sand surface changed with three local1k CC0 channels; entire character,vegetation,shore variety,environment and materials remain below final3A target.",
+    "84 synthetic paired shader reads and28 wetness reads prove these controlled boundaries/fallbacks; eight actual-asset views are fixed review cameras. Narrow character is cropped at the right edge in that diagnostic,not production framing acceptance.",
+    "Ten-second motion uses fixed camera,two renders per frame,no player motion. Current60-second five-phase load teleports/revives enemies; CPU/rAF/heap counts do not prove GPU/VRAM/leaks or natural continuous campaign.",
+    "GPU comparison uses reduced diagnostic buffers and60 renderer command interval queries per phase; independent sequential samples have variance and differing optional-ready QA metadata. No full-game HUD or physical phone gate.",
+    "New three-channel bytes1879056 and first-shore draw123.5ms/upload93ms remain cold cost; retained initial dynamic spikes are not fixed by this batch.",
+    "Ordinary extracted-package first gather/NPC and save/reload passed; complete campaign,current long-term load,multitouch,audio audition,extreme camera,natural spatial action contact and finalM5/3A audit remain pending."
+  ],
+  "boundedBatchVerified": true,
+  "m5Accepted": false,
+  "fullGoalComplete": false
+}

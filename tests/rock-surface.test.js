@@ -9,6 +9,14 @@ import {createWeatheredRock} from '../src/rock.js';
 function fixture(){const requests=[];return {requests,loader:{load(url,success,progress,failure){const texture=new THREE.Texture();requests.push({url,success,failure,texture});return texture;}}};}
 function shaderFor(material){const shader={uniforms:{},vertexShader:'#include <begin_vertex>',fragmentShader:'#include <color_fragment>\n#include <roughnessmap_fragment>\n#include <normal_fragment_maps>'};material.onBeforeCompile(shader);return shader;}
 
+test('decoded rock texture list excludes failed channels and does not reload',async t=>{
+  t.mock.method(console,'warn',()=>{});
+  const {requests,loader}=fixture(),m=createRockSurface({loader}),r=m.userData.rock;
+  assert.deepEqual(r.textures,[]);requests[0].success();requests[1].failure();requests[2].success();await r.loaded;
+  assert.deepEqual(r.textures,[requests[0].texture,requests[2].texture]);
+  await r.load(loader,4);assert.equal(requests.length,3);assert.equal(r.textures.length,2);
+});
+
 test('rock photo channels become visible together, with correct local sampling and no repeated loads',async()=>{
   const {requests,loader}=fixture(),material=createRockSurface({loader,anisotropy:16}),shader=shaderFor(material),rock=material.userData.rock;
   assert.equal(shader.uniforms.rockReady.value,0);assert.equal(rock.state.status,'loading');

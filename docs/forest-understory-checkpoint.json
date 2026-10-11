@@ -1,6 +1,6 @@
 {
   "kind": "M5 forest understory work checkpoint",
-  "updatedAt": "2026-10-08T10:36:24.862034+00:00",
+  "updatedAt": "2026-10-11T04:55:12.758272+00:00",
   "runtimeSha256": {
     "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
     "src/audio.js": "756271e155e184a4a2b2e1faa9152f79da096d61cff64c9fcb8966f06d106a58",
@@ -63,11 +63,8 @@
     "browserLaunchVerified": false,
     "fullGoalComplete": false
   },
-  "pending": [
-    "current desktop/mobile dynamic smoke",
-    "extracted-package normal UI/save/reload",
-    "final checkpoint audit"
-  ],
+  "pending": [],
   "m5Accepted": false,
-  "fullGoalComplete": false
+  "fullGoalComplete": false,
+  "review": "docs/forest-understory-review.json"
 }

@@ -1,0 +1,149 @@
+{
+  "result": {
+    "complete": true,
+    "elapsedMs": 10000,
+    "frames": 600,
+    "p95": 18.199999999982538,
+    "max": 18.699999999982538,
+    "above50": 0,
+    "hidden": false,
+    "before": {
+      "site": {
+        "name": "潮汐海岸",
+        "x": -90,
+        "z": 140.25,
+        "height": 1.1789505603283446,
+        "error": 0.028950560328344643
+      },
+      "sites": [
+        {
+          "name": "潮汐海岸",
+          "x": -90,
+          "z": 140.25,
+          "height": 1.1789505603283446,
+          "error": 0.028950560328344643
+        },
+        {
+          "name": "苍翠林地",
+          "x": 160,
+          "z": 19.19999999999999,
+          "height": 1.1019783203332443,
+          "error": 0.048021679666755634
+        },
+        {
+          "name": "雾岬高地",
+          "x": -75,
+          "z": -124.50000000000001,
+          "height": 1.1680514857824085,
+          "error": 0.01805148578240856
+        },
+        {
+          "name": "琥珀浅滩",
+          "x": 145,
+          "z": 269.5,
+          "height": 1.129322040172907,
+          "error": 0.020677959827092973
+        }
+      ],
+      "worldTime": 250.01659999999998,
+      "viewport": [
+        390,
+        844
+      ],
+      "wetness": 1,
+      "sandEnabled": 1,
+      "sandStatus": {
+        "status": "ready",
+        "loaded": 3,
+        "failed": []
+      },
+      "groundStatus": {
+        "status": "ready",
+        "loaded": 3,
+        "failed": []
+      },
+      "render": {
+        "frame": 1230,
+        "calls": 58,
+        "triangles": 716846,
+        "points": 0,
+        "lines": 0
+      },
+      "memory": {
+        "geometries": 244,
+        "textures": 17
+      },
+      "programs": 18
+    },
+    "after": {
+      "site": {
+        "name": "潮汐海岸",
+        "x": -90,
+        "z": 140.25,
+        "height": 1.1789505603283446,
+        "error": 0.028950560328344643
+      },
+      "sites": [
+        {
+          "name": "潮汐海岸",
+          "x": -90,
+          "z": 140.25,
+          "height": 1.1789505603283446,
+          "error": 0.028950560328344643
+        },
+        {
+          "name": "苍翠林地",
+          "x": 160,
+          "z": 19.19999999999999,
+          "height": 1.1019783203332443,
+          "error": 0.048021679666755634
+        },
+        {
+          "name": "雾岬高地",
+          "x": -75,
+          "z": -124.50000000000001,
+          "height": 1.1680514857824085,
+          "error": 0.01805148578240856
+        },
+        {
+          "name": "琥珀浅滩",
+          "x": 145,
+          "z": 269.5,
+          "height": 1.129322040172907,
+          "error": 0.020677959827092973
+        }
+      ],
+      "worldTime": 250,
+      "viewport": [
+        390,
+        844
+      ],
+      "wetness": 1,
+      "sandEnabled": 1,
+      "sandStatus": {
+        "status": "ready",
+        "loaded": 3,
+        "failed": []
+      },
+      "groundStatus": {
+        "status": "ready",
+        "loaded": 3,
+        "failed": []
+      },
+      "render": {
+        "frame": 2432,
+        "calls": 58,
+        "triangles": 716846,
+        "points": 0,
+        "lines": 0
+      },
+      "memory": {
+        "geometries": 244,
+        "textures": 17
+      },
+      "programs": 18
+    },
+    "note": "Fixed review camera, production time/render/water/foliage; two renders per frame. No player movement, GPU or physical mobile proof."
+  },
+  "console": []
+}

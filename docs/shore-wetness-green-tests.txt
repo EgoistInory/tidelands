@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: ground remains on the original surface until all three channels load
+ok 1 - ground remains on the original surface until all three channels load
+  ---
+  duration_ms: 0.881375
+  type: 'test'
+  ...
+# Subtest: a missing channel keeps the fallback and settles the load status
+ok 2 - a missing channel keeps the fallback and settles the load status
+  ---
+  duration_ms: 0.566833
+  type: 'test'
+  ...
+# Subtest: shore wetness remains independent of grass loading and uses no additional texture requests
+ok 3 - shore wetness remains independent of grass loading and uses no additional texture requests
+  ---
+  duration_ms: 0.504417
+  type: 'test'
+  ...
+# Subtest: ground channels use local URLs, matching two metre tiles and appropriate colour spaces
+ok 4 - ground channels use local URLs, matching two metre tiles and appropriate colour spaces
+  ---
+  duration_ms: 0.191792
+  type: 'test'
+  ...
+# Subtest: bundled CC0 channel bytes agree with the provenance manifest
+ok 5 - bundled CC0 channel bytes agree with the provenance manifest
+  ---
+  duration_ms: 6.5085
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 56.461291

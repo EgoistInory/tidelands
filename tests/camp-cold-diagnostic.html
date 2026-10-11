@@ -1,0 +1,35 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>夜营首次绘制CPU隔离诊断</title>
+<style>html,body{height:100%;margin:0;background:#192723;color:#efe6cf;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:8px}button{padding:8px}pre{height:180px;overflow:auto;white-space:pre-wrap;font:11px monospace}canvas{flex:1;min-height:0;width:100%}</style>
+<nav>夜营首次绘制CPU隔离诊断 · 明确fixture/无存档读写/无GPU计时 <button id="run">诊断首次与重复营地绘制</button></nav><pre id="result">准备世界…</pre><canvas aria-label="营地冷场诊断的生产世界"></canvas>
+<script type="module">
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain} from '../src/world.js';
+import {freshGame,nearest} from '../src/game.js';
+import {GameAudio} from '../src/audio.js';
+const world=createWorld(),view=new WorldView(document.querySelector('canvas'),world),audio=new GameAudio(),button=document.querySelector('button'),out=document.querySelector('pre'),gl=view.renderer.getContext(),calls={};
+for(const key of ['compileShader','linkProgram','getProgramParameter','getShaderParameter','getActiveUniform','getUniformLocation','getAttribLocation','useProgram','drawElements','drawElementsInstanced','drawArrays','drawArraysInstanced','bufferData','texImage2D','texSubImage2D','texStorage2D','generateMipmap']){
+  const native=gl[key].bind(gl);calls[key]={count:0,ms:0,maxMs:0};gl[key]=(...args)=>{const start=performance.now();try{return native(...args);}finally{const elapsed=performance.now()-start;calls[key].count++;calls[key].ms+=elapsed;calls[key].maxMs=Math.max(calls[key].maxMs,elapsed);}};
+}
+let state=freshGame();Object.assign(state.player,{x:-90,z:140});state.time=240;view.sync(state);view.draw(state,nearest(state,world.objects),null,false,1/60);
+Promise.all([view.groundSurface.userData.ground.loaded,view.groundSurface.userData.ground.sand?.loaded,view.rockSurface.userData.rock.loaded]).then(()=>{out.textContent='就绪。场景创建后的首岸线已绘制；本页追踪随后营地首次/重复创建与绘制CPU，不算正常旅程验收。';});
+button.onclick=async()=>{
+  button.disabled=true;
+  try{
+    const unlockStart=performance.now();await audio.unlock();audio.setActive(true);const audioUnlockMs=performance.now()-unlockStart;
+    const rows=[],phases=['shore','forest','highland','amber','first-fire-camp','first-tent-camp','first-night-camp','same-night-camp','fresh-night-camp','shore-again','fresh-night-camp-again'];
+    for(const phase of phases){
+      await new Promise(requestAnimationFrame);const before={programs:view.renderer.info.programs.length,geometries:view.renderer.info.memory.geometries};for(const value of Object.values(calls))Object.assign(value,{count:0,ms:0,maxMs:0});
+      const prepareStart=performance.now();if(phase!=='same-night-camp')state=freshGame();
+      const place=phase.includes('camp')?[-56,49,0]:phase==='forest'?[132,-26,240]:phase==='highland'?[-75,-205,360]:phase==='amber'?[190,248,120]:[-90,140,240];
+      Object.assign(state.player,{x:place[0],z:place[1]});state.time=place[2];
+      if(phase.includes('camp')){state.buildings=[{id:'qa-fire',type:'campfire',x:-56,z:56},{id:'qa-tent',type:'tent',x:-65,z:49},{id:'qa-bench',type:'workbench',x:-47,z:49}];if(phase==='first-fire-camp')state.buildings.length=1;if(phase==='first-tent-camp')state.buildings.length=2;}
+      const prepareMs=performance.now()-prepareStart,syncStart=performance.now();view.sync(state);const syncMs=performance.now()-syncStart;
+      view.yaw=.15;view.distance=14;view.camera.position.set(state.player.x+5,Math.max(terrain(state.player.x,state.player.z),0)+12,state.player.z+20);
+      const audioStart=performance.now();audio.update(state.player,state.time,terrain(state.player.x,state.player.z),0);const audioUpdateMs=performance.now()-audioStart,drawStart=performance.now();view.draw(state,nearest(state,world.objects),null,false,1/60);const drawMs=performance.now()-drawStart;
+      rows.push({phase,prepareMs,syncMs,audioUpdateMs,drawMs,before,after:{programs:view.renderer.info.programs.length,geometries:view.renderer.info.memory.geometries,calls:view.renderer.info.render.calls,triangles:view.renderer.info.render.triangles},webglCpu:Object.fromEntries(Object.entries(calls).map(([key,value])=>[key,{...value}]))});out.textContent=JSON.stringify({complete:false,audioUnlockMs,rows});
+    }
+    audio.setActive(false);out.textContent=JSON.stringify({complete:true,audioUnlockMs,rows,viewport:[innerWidth,innerHeight],groundStatus:view.groundSurface.userData.ground.state.status,sandStatus:view.groundSurface.userData.ground.sand?.state.status??null,rockStatus:view.rockSurface.userData.rock.state.status,fragmentTextureUnits:gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS),gpuTimerQueryAvailable:Boolean(gl.getExtension('EXT_disjoint_timer_query_webgl2')),note:'CPU wall timing around production calls; intercepted GL and texture calls add instrumentation. Extension availability is not a GPU timing measurement. Not continuous play or an audio-causation claim.'});
+  }catch(error){out.textContent=JSON.stringify({complete:false,error:error.message});console.error(error);}
+};
+window.addEventListener('pagehide',()=>{audio.dispose();view.renderer.dispose();});
+</script></html>

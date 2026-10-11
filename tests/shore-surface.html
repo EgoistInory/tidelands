@@ -1,0 +1,27 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>四岛岸线表面基线</title>
+<style>html,body{margin:0;height:100%;background:#192723;color:#efe6cf;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:8px}button{padding:6px;margin:2px}pre{height:105px;overflow:auto;white-space:pre-wrap;font:11px monospace}canvas{flex:1;min-height:0;width:100%}</style>
+<nav>四岛低岸材质 · 生产世界/隔离位置/无存档读写 · 近景镜头仅供审查 <button id="next">下一座岛</button><button id="light">切换昼夜</button><button id="wetness">切换湿沙</button><button id="sand">切换沙粒</button><button id="record">记录当前基线</button><button id="motion">采样10秒运动</button></nav><pre id="result">准备实际世界…</pre><canvas aria-label="四岛生产岸线地表"></canvas>
+<script type="module">
+import {WorldView} from '../src/scene.js';
+import {ISLANDS,terrain,createWorld} from '../src/world.js';
+import {freshGame} from '../src/game.js';
+const world=createWorld(),view=new WorldView(document.querySelector('canvas'),world),state=freshGame(),out=document.querySelector('pre');state.enemies=[];view.sync(state);
+const sites=ISLANDS.map(island=>{let best=null;for(let d=island.r*1.15;d>island.r*.3;d-=.5){const x=island.x,z=island.z+d,h=terrain(x,z),error=Math.abs(h-1.15);if(!best||error<best.error)best={name:island.name,x,z,height:h,error};}return best;});
+let siteIndex=0,night=false,elapsed=0;
+function render(){const p=sites[siteIndex];Object.assign(state.player,{x:p.x,z:p.z});state.time=(night?0:240)+elapsed;view.draw(state,null,null,false,1/60);
+  view.camera.position.set(p.x+4,p.height+3.4,p.z-5);view.camera.lookAt(p.x,.25,p.z+5);view.renderer.render(view.scene,view.camera);
+}
+function stats(){return {site:sites[siteIndex],sites,worldTime:state.time,viewport:[innerWidth,innerHeight],wetness:view.groundSurface.userData.ground.wetness.value,sandEnabled:view.groundSurface.userData.ground.sand.enabled.value,sandStatus:view.groundSurface.userData.ground.sand.state,groundStatus:view.groundSurface.userData.ground.state,render:{...view.renderer.info.render},memory:{...view.renderer.info.memory},programs:view.renderer.info.programs.length};}
+function record(){requestAnimationFrame(()=>{render();out.textContent=JSON.stringify({...stats(),note:'Explicit shore fixture and review camera. No save, gameplay, GPU or full wetness-quality acceptance.'});});}
+document.querySelector('#next').onclick=()=>{siteIndex=(siteIndex+1)%sites.length;record();};document.querySelector('#light').onclick=()=>{night=!night;record();};document.querySelector('#record').onclick=record;
+document.querySelector('#wetness').onclick=()=>{const wet=view.groundSurface.userData.ground.wetness;wet.value=1-wet.value;record();};
+document.querySelector('#sand').onclick=()=>{const sand=view.groundSurface.userData.ground.sand.enabled;sand.value=1-sand.value;record();};
+document.querySelector('#motion').onclick=()=>{document.querySelectorAll('button').forEach(b=>b.disabled=true);const frames=[],before=stats();let first=null,last=null,hidden=false;
+  function frame(now){if(first===null){first=now;last=now;}const delta=now-last;last=now;if(delta>0)frames.push(delta);elapsed=(now-first)/1000;hidden||=document.hidden;render();
+    if(now-first<10000){requestAnimationFrame(frame);return;}
+    const sorted=frames.toSorted((a,b)=>a-b);out.textContent=JSON.stringify({complete:true,elapsedMs:now-first,frames:frames.length,p95:sorted[Math.floor(sorted.length*.95)],max:sorted.at(-1),above50:frames.filter(f=>f>50).length,hidden,before,after:stats(),note:'Fixed review camera, production time/render/water/foliage; two renders per frame. No player movement, GPU or physical mobile proof.'});document.querySelectorAll('button').forEach(b=>b.disabled=false);
+  }requestAnimationFrame(frame);
+};
+Promise.all([view.groundSurface.userData.ground.loaded,view.groundSurface.userData.ground.sand.loaded,view.rockSurface.userData.rock.loaded]).then(record);
+window.addEventListener('resize',()=>{view.resize();record();});window.addEventListener('pagehide',()=>view.renderer.dispose());render();
+</script></html>

@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>营火可见运动有限验收</title>
+<style>html,body{margin:0;height:100%;background:#192723;color:#efe6cf;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:8px}button{padding:7px;margin:2px}pre{height:100px;overflow:auto;white-space:pre-wrap;font:11px monospace}canvas{width:100%;flex:1;min-height:0}</style>
+<nav>营火 · 生产世界/隔离fixture/无存档读写 · 近景镜头为审查专用 <button id="night">午夜</button><button id="day">正午</button><button id="angle">换方向</button><button id="freeze">冻结时间</button><button id="run">采样10秒</button></nav><pre id="result">准备世界…</pre><canvas aria-label="生产营火材质与动画"></canvas>
+<script type="module">
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain} from '../src/world.js';
+import {freshGame,nearest} from '../src/game.js';
+const world=createWorld(),view=new WorldView(document.querySelector('canvas'),world),out=document.querySelector('pre'),state=freshGame();
+Object.assign(state.player,{x:-56,z:49});state.time=0;state.enemies=[];
+state.buildings=[{id:'qa-fire',type:'campfire',x:-56,z:56},{id:'qa-tent',type:'tent',x:-65,z:49},{id:'qa-bench',type:'workbench',x:-47,z:49}];
+view.sync(state);view.distance=10;view.pitch=.23;
+let angle=0,frozen=true,last=performance.now(),run=null;
+function stats(){const fire=view.buildings.get('qa-fire');return {worldTime:state.time,flameTime:fire.userData.flame?.material.uniforms.time.value??null,viewport:[innerWidth,innerHeight],angleDegrees:angle*180/Math.PI,frozen,programs:view.renderer.info.programs.length,geometries:view.renderer.info.memory.geometries,textures:view.renderer.info.memory.textures,calls:view.renderer.info.render.calls,triangles:view.renderer.info.render.triangles};}
+function show(){requestAnimationFrame(()=>{out.textContent=JSON.stringify({complete:!run,...stats(),note:'Explicit no-save camp fixture; camera positioned only for detail review. Frame intervals are not GPU timing or normal-play acceptance.'});});}
+function frame(now){const dt=Math.min(.1,(now-last)/1000);last=now;if(!frozen)state.time+=dt;
+  view.draw(state,nearest(state,world.objects),null,false,dt);
+  const b=state.buildings[0],h=terrain(b.x,b.z);view.camera.position.set(b.x+Math.sin(angle)*5,h+2.3,b.z+Math.cos(angle)*5);view.camera.lookAt(b.x,h+.95,b.z);view.renderer.render(view.scene,view.camera);
+  if(run){const interval=now-run.last;run.last=now;run.frames.push(interval);run.hidden||=document.hidden;
+    if(now-run.start>=10000){const finished=run;run=null;frozen=true;const sorted=finished.frames.toSorted((a,b)=>a-b);
+      out.textContent=JSON.stringify({complete:true,elapsedMs:now-finished.start,frames:sorted.length,p95:sorted[Math.floor(sorted.length*.95)],max:sorted.at(-1),above50:sorted.filter(v=>v>50).length,hidden:finished.hidden,before:finished.before,after:stats(),frozenAfter:true,note:'10 seconds camp detail frame scheduling; two renders per frame, no GPU or physical-device acceptance.'});
+    }
+  }
+  requestAnimationFrame(frame);
+}
+document.querySelector('#night').onclick=()=>{state.time=0;frozen=true;show();};
+document.querySelector('#day').onclick=()=>{state.time=240;frozen=true;show();};
+document.querySelector('#angle').onclick=()=>{angle+=Math.PI/2;show();};
+document.querySelector('#freeze').onclick=()=>{frozen=!frozen;show();};
+document.querySelector('#run').onclick=()=>{frozen=false;const now=performance.now();run={start:now,last:now,frames:[],hidden:false,before:stats()};show();};
+Promise.all([view.groundSurface.userData.ground.loaded,view.rockSurface.userData.rock.loaded]).then(show);
+window.addEventListener('resize',()=>view.resize());window.addEventListener('pagehide',()=>view.renderer.dispose());requestAnimationFrame(frame);
+</script></html>

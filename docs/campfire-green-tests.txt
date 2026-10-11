@@ -1,0 +1,106 @@
+TAP version 13
+# Subtest: fire is a bounded transparent plume with no texture or shadow allocation
+ok 1 - fire is a bounded transparent plume with no texture or shadow allocation
+  ---
+  duration_ms: 5.187667
+  type: 'test'
+  ...
+# Subtest: campfire time freezes with world time and has independent positions without rebuilding resources
+ok 2 - campfire time freezes with world time and has independent positions without rebuilding resources
+  ---
+  duration_ms: 3.277708
+  type: 'test'
+  ...
+# Subtest: negative camp positions do not wrap the flame phase near the start of a journey
+ok 3 - negative camp positions do not wrap the flame phase near the start of a journey
+  ---
+  duration_ms: 1.123958
+  type: 'test'
+  ...
+# Subtest: islanders respond to a nearby conversation target without moving or changing the save
+ok 4 - islanders respond to a nearby conversation target without moving or changing the save
+  ---
+  duration_ms: 581.204792
+  type: 'test'
+  ...
+# Subtest: tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+ok 5 - tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+  ---
+  duration_ms: 430.402833
+  type: 'test'
+  ...
+# Subtest: distant geometry is shared until the last owner leaves, while materials remain private
+ok 6 - distant geometry is shared until the last owner leaves, while materials remain private
+  ---
+  duration_ms: 28.929833
+  type: 'test'
+  ...
+# Subtest: resource bounds retain regenerating nodes after initial depletion
+ok 7 - resource bounds retain regenerating nodes after initial depletion
+  ---
+  duration_ms: 427.523667
+  type: 'test'
+  ...
+# Subtest: save replacement releases creatures and resets transient death/hit animation
+ok 8 - save replacement releases creatures and resets transient death/hit animation
+  ---
+  duration_ms: 19.84075
+  type: 'test'
+  ...
+# Subtest: boar: near geometry shares a lifetime while pose and hit materials remain private
+ok 9 - boar: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 17.512416
+  type: 'test'
+  ...
+# Subtest: crab: near geometry shares a lifetime while pose and hit materials remain private
+ok 10 - crab: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 31.379208
+  type: 'test'
+  ...
+# Subtest: same-type save replacement reuses creature models without carrying over animation or damage
+ok 11 - same-type save replacement reuses creature models without carrying over animation or damage
+  ---
+  duration_ms: 25.732
+  type: 'test'
+  ...
+# Subtest: loading a different save updates buildings even when IDs are reused
+ok 12 - loading a different save updates buildings even when IDs are reused
+  ---
+  duration_ms: 1.632042
+  type: 'test'
+  ...
+# Subtest: campfire owns its unlit flame without changing shared building materials
+ok 13 - campfire owns its unlit flame without changing shared building materials
+  ---
+  duration_ms: 3.758416
+  type: 'test'
+  ...
+# Subtest: removing tents releases their geometry but retains immutable cloth for later camps
+ok 14 - removing tents releases their geometry but retains immutable cloth for later camps
+  ---
+  duration_ms: 1.874666
+  type: 'test'
+  ...
+# Subtest: repeated build previews release their geometry and private materials
+ok 15 - repeated build previews release their geometry and private materials
+  ---
+  duration_ms: 10.334833
+  type: 'test'
+  ...
+# Subtest: tent preview retains double-sided cloth and shares replacement material safely
+ok 16 - tent preview retains double-sided cloth and shares replacement material safely
+  ---
+  duration_ms: 0.388834
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1659.708833

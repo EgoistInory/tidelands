@@ -1,0 +1,94 @@
+{
+  "trace": {
+    "mode": "normal",
+    "events": [
+      {
+        "kind": "upload",
+        "source": "/assets/ground/leafy-grass/normal-gl.jpg",
+        "frame": 4,
+        "phase": "loading",
+        "cpuMs": 11.099999904632568
+      },
+      {
+        "kind": "upload",
+        "source": "/assets/ground/leafy-grass/albedo.jpg",
+        "frame": 5,
+        "phase": "loading",
+        "cpuMs": 10.5
+      },
+      {
+        "kind": "upload",
+        "source": "/assets/ground/leafy-grass/roughness.jpg",
+        "frame": 6,
+        "phase": "loading",
+        "cpuMs": 7.199999809265137
+      },
+      {
+        "kind": "upload",
+        "source": "/assets/ground/coastal-sand/albedo.jpg",
+        "frame": 7,
+        "phase": "loading",
+        "cpuMs": 8.399999856948853
+      },
+      {
+        "kind": "upload",
+        "source": "/assets/ground/coastal-sand/roughness.jpg",
+        "frame": 8,
+        "phase": "loading",
+        "cpuMs": 5.900000095367432
+      },
+      {
+        "kind": "upload",
+        "source": "/assets/ground/coastal-sand/normal-gl.jpg",
+        "frame": 9,
+        "phase": "loading",
+        "cpuMs": 9.300000190734863
+      },
+      {
+        "kind": "upload",
+        "source": "/assets/rock/lichen-rock/normal-gl.jpg",
+        "frame": 10,
+        "phase": "loading",
+        "cpuMs": 10.099999904632568
+      },
+      {
+        "kind": "upload",
+        "source": "/assets/rock/lichen-rock/albedo.jpg",
+        "frame": 11,
+        "phase": "loading",
+        "cpuMs": 9.299999952316284
+      },
+      {
+        "kind": "upload",
+        "source": "/assets/rock/lichen-rock/roughness.jpg",
+        "frame": 12,
+        "phase": "loading",
+        "cpuMs": 6.800000190734863
+      },
+      {
+        "kind": "draw",
+        "frame": 13,
+        "cpuMs": 110.5,
+        "enabled": false
+      }
+    ],
+    "draws": 1,
+    "button": {
+      "disabled": false,
+      "text": "开始旅程"
+    },
+    "status": "群岛已就绪 · 无需联网",
+    "viewport": [
+      390,
+      844
+    ],
+    "canvasBuffer": [
+      585,
+      1266
+    ]
+  },
+  "entered": true,
+  "ax": "Browser tab: 17, Title: \"开始页地表准备隔离验收\", URL: \"http://127.0.0.1:4190/tests/startup-preparation.html?mode=normal\".\n0 AXWebArea 开始页地表准备隔离验收, URL: 127.0.0.1:4190/tests/startup-preparation.html?mode=normal\n\t1 container 开始页准备隔离游戏\n\t\t2 AXWebArea 潮生群岛 · Tidelands, URL: about:srcdoc\n\t\t\t3 container\n\t\t\t\t4 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world\n\t\t\t\t5 container hud\n\t\t\t\t\t6 container\n\t\t\t\t\t\t7 heading 潮生群岛, Value: 1\n\t\t\t\t\t\t\t8 text 潮生群岛\n\t\t\t\t\t\t9 text 潮汐海岸\n\t\t\t\t\t\t10 text 生命\n\t\t\t\t\t\t11 progress indicator Value: 100, ID: hp\n\t\t\t\t\t\t12 text 100\n\t\t\t\t\t\t13 text 体力\n\t\t\t\t\t\t14 progress indicator Value: 100, ID: stamina\n\t\t\t\t\t\t15 text 100\n\t\t\t\t\t16 container\n\t\t\t\t\t\t17 heading 归航的灯火, Value: 2, ID: quest-title\n\t\t\t\t\t\t\t18 text 归航的灯火\n\t\t\t\t\t\t19 text 与海边的守灯人交谈\n\t\t\t\t\t\t20 text 靠近人物，按 E 交谈 · 14 米\n\t\t\t\t\t21 container\n\t\t\t\t\t\t22 image Description: 群岛小地图, ID: minimap\n\t\t\t\t\t\t23 text 第 1 天 · 清晨\n\t\t\t\t\t\t24 button 地图 M, ID: map-button\n\t\t\t\t\t\t25 button 暂停, ID: pause-button\n\t\t\t\t\t26 text 欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。\n\t\t\t\t\t27 container 快捷操作\n\t\t\t\t\t\t28 button ✋ 徒手\n\t\t\t\t\t\t\t29 text ✋\n\t\t\t\t\t\t\t30 text 徒手\n\t\t\t\t\t\t31 button ⚒ 石斧\n\t\t\t\t\t\t\t32 text ⚒\n\t\t\t\t\t\t\t33 text 石斧\n\t\t\t\t\t\t34 button ◉ 食物 3\n\t\t\t\t\t\t\t35 text ◉\n\t\t\t\t\t\t\t36 text 食物 \n\t\t\t\t\t\t\t37 text 3\n\t\t\t\t\t\t38 button ♨ 营火\n\t\t\t\t\t\t\t39 text ♨\n\t\t\t\t\t\t\t40 text 营火\n\t\t\t\t\t\t41 button △ 帐篷\n\t\t\t\t\t\t\t42 text △\n\t\t\t\t\t\t\t43 text 帐篷\n\t\t\t\t\t\t44 button ▤ 工作台\n\t\t\t\t\t\t\t45 text ▤\n\t\t\t\t\t\t\t46 text 工作台\n\t\t\t\t\t47 container\n\t\t\t\t\t\t48 button 背包 B, ID: bag-button\n\t\t\t\t\t\t49 button 制作 C, ID: craft-button\n\t\t\t\t\t50 container\n\t\t\t\t\t\t51 container Description: 移动摇杆, ID: joystick\n\t\t\t\t\t\t52 button 攻击, ID: attack-button\n\t\t\t\t\t53 text 位置 X -70.0，Z 102.0；建筑 0；击败 0\n\t\t\t\t54 text {\"mode\":\"normal\",\"events\":[{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/normal-gl.jpg\",\"frame\":4,\"phase\":\"loading\",\"cpuMs\":11.099999904632568},{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/albedo.jpg\",\"frame\":5,\"phase\":\"loading\",\"cpuMs\":10.5},{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/roughness.jpg\",\"frame\":6,\"phase\":\"loading\",\"cpuMs\":7.199999809265137},{\"kind\":\"upload\",\"source\":\"/assets/ground/coastal-sand/albedo.jpg\",\"frame\":7,\"phase\":\"loading\",\"cpuMs\":8.399999856948853},{\"kind\":\"upload\",\"source\":\"/assets/ground/coastal-sand/roughness.jpg\",\"frame\":8,\"phase\":\"loading\",\"cpuMs\":5.900000095367432},{\"kind\":\"upload\",\"source\":\"/assets/ground/coastal-sand/normal-gl.jpg\",\"frame\":9,\"phase\":\"loading\",\"cpuMs\":9.300000190734863},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/normal-gl.jpg\",\"frame\":10,\"phase\":\"loading\",\"cpuMs\":10.099999904632568},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/albedo.jpg\",\"frame\":11,\"phase\":\"loading\",\"cpuMs\":9.299999952316284},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/roughness.jpg\",\"frame\":12,\"phase\":\"loading\",\"cpuMs\":6.800000190734863},{\"kind\":\"draw\",\"frame\":13,\"cpuMs\":110.5,\"enabled\":false}],\"draws\":1,\"button\":{\"disabled\":false,\"text\":\"开始旅程\"},\"status\":\"群岛已就绪 · 无需联网\",\"viewport\":[390,844],\"canvasBuffer\":[585,1266]}\n\nThe focused UI element is 4 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world",
+  "image": "/Users/huxiaocong/Codex/tidelands/docs/startup-preparation-mobile-ready.jpg",
+  "console": []
+}

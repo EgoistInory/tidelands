@@ -1,0 +1,51 @@
+TAP version 13
+# Subtest: startup waits for decoded surfaces then uploads once per frame with progress
+ok 1 - startup waits for decoded surfaces then uploads once per frame with progress
+  ---
+  duration_ms: 1.053917
+  type: 'test'
+  ...
+# Subtest: fallback surfaces upload only decoded channels and settle with zero available
+ok 2 - fallback surfaces upload only decoded channels and settle with zero available
+  ---
+  duration_ms: 0.643708
+  type: 'test'
+  ...
+# Subtest: abort interrupts an unresolved load and a pending frame without uploading
+ok 3 - abort interrupts an unresolved load and a pending frame without uploading
+  ---
+  duration_ms: 0.469875
+  type: 'test'
+  ...
+# Subtest: abort between frames stops later uploads and upload errors propagate
+ok 4 - abort between frames stops later uploads and upload errors propagate
+  ---
+  duration_ms: 0.252417
+  type: 'test'
+  ...
+# Subtest: native WebGL upload errors prevent reporting a texture as prepared
+not ok 5 - native WebGL upload errors prevent reporting a texture as prepared
+  ---
+  duration_ms: 0.352333
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/startup-textures.test.js:35:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected rejection.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'rejects'
+  stack: |-
+    async TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/startup-textures.test.js:37:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 4
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 52.941792

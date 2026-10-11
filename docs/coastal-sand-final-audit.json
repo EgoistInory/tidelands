@@ -1,0 +1,41 @@
+{
+  "kind": "bounded source/package/evidence integrity audit",
+  "passed": true,
+  "runtimeFilesChecked": 19,
+  "historicalArchivesChecked": 17,
+  "packageFilesChecked": 39,
+  "evidenceSha256": {
+    "coastal-sand-views.json": "3860b1b57041913fad9c5c29b88b4467f2f338f6e2a23e9bf276e9ee4b8c6f5d",
+    "coastal-sand-desktop-motion.json": "4862b1a0aaf45d79c9c9321f251ee969fa3616249f836e554b98d4e7dd62b647",
+    "coastal-sand-mobile-motion.json": "1a63bd947f3dc504c6902233b4e58350d27d6edd1e856fa6c903bb330bf6613a",
+    "coastal-sand-webgl-probe.json": "2e60e8bf730404ef737aade7edaac0085b6eeb96df0914b4868e95c6cf3915fb",
+    "coastal-sand-wetness-regression.json": "282415a131c3d5fb1b77c499a6cafc50b9c031fcdcedfec912b15c52fbec3a9d",
+    "coastal-sand-gpu-review.json": "efed5acbe3527818b5471e5c2206fc29a7582fec8a753fd3f20cfc12ff492114",
+    "coastal-sand-gpu-desktop-after.json": "df9da6b778298009e6ad99efb14b48c7cded244d836eb2236c27388fcac9a53d",
+    "coastal-sand-gpu-mobile-after.json": "a11435b64f102b15c61a8d1b35c242f14db5d47334f0d34e4ba608b9219e0368",
+    "coastal-sand-cold-diagnostic.json": "0103d336739855eef9f50fc894803b070bbeaad6d4b945cd14287dc84db69051",
+    "coastal-sand-desktop-dynamic.json": "512a2b0d82ae096a5cbb99f0d93a48321bf814b67b82dc51639c92dadb79470c",
+    "coastal-sand-mobile-dynamic.json": "7a08cda0fe335a01e07d3fd6b1ea5ee28b32de33cf6100eccd5ccca535f25bc1",
+    "coastal-sand-package-ui.json": "f2d06b7f387fd9db4282b6da4aecc4b22ebc8d286b360d9681ce07b430e0666f",
+    "coastal-sand-desktop-off.jpg": "cc4a13e1c47b6d27acc4595b27feb6c2ff2c2e224bf7b8b00bd584d34eeb97ae",
+    "coastal-sand-desktop-on.jpg": "0f6938f95cb8315ec8238367c4eb26a36e036b94c247579e39a0d90a286b40f1",
+    "coastal-sand-island-1.jpg": "9153c4b30ccd2b192644330025ed0622482dba21437423f1f794e20135109ef9",
+    "coastal-sand-island-2.jpg": "21daa4add15512d0e145b6955a2efc0a348d8bd8f7257c15d0feed858fcd3924",
+    "coastal-sand-island-3.jpg": "4984f34248bb5433981764a3dd88699bf4f753606037ee1779c472049f76bcde",
+    "coastal-sand-night.jpg": "24e6942faa467a1f340617885b9836214adbbbca1dd56ffa5c5fb0e5cd5cef01",
+    "coastal-sand-mobile-off.jpg": "eb2cd518a703328ec3d8400ba0bb53017e204295961e735fc9b5987d82c6230c",
+    "coastal-sand-mobile-on.jpg": "7095dfd12ea1f8e4c0f69404580f9f6c77269c132e32009d4349c30e27310430",
+    "coastal-sand-package-mobile.jpg": "38d62ca34dc4e10d4ce9bd6337603891c32327c3898de3ee761eb888847263ef"
+  },
+  "harnessSha256": {
+    "tests/ground-surface.test.js": "a1c69e161fb1a5c849790b8e756ccbe74aea56b36727a86b601aef19a2063608",
+    "tests/shore-surface.html": "11af2e92357b0a9b26df81b73e19d0167c654ca9afd4bc211867610db6e231ba",
+    "tests/coastal-sand-render.html": "331294648045844062a271da2185c4a97965b98807c79a2a81c6258149c4f717",
+    "tests/shore-wetness-render.html": "0af8bf1b2c747ea0d180a1b6eb7a97798e640bf8eb8d999b9157fbbe2575c628",
+    "tests/gpu-frame-probe.html": "620b42c10f325ba768aa137bd90456431cdb57825a1ab0a49450e30956d7a610",
+    "tests/camp-cold-diagnostic.html": "f1fdc263de125b7d7c47563081868741af5b84057906943903a5095aeacda043",
+    "tests/dynamic-endurance.html": "73c5510c05d8cb03bf071ef316629cc447c754e595a805d7d6811249c7786cc4"
+  },
+  "m5Accepted": false,
+  "fullGoalComplete": false
+}

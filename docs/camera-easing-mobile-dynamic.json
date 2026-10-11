@@ -1,0 +1,206 @@
+{
+  "sample": {
+    "complete": true,
+    "targetMs": 60000,
+    "activeMs": 60015.97,
+    "wallMs": 60021.47,
+    "frames": 3599,
+    "movingFrames": 3585,
+    "movingFraction": 1,
+    "distanceMeters": 413.84,
+    "hidden": false,
+    "medianMs": 16.7,
+    "p95Ms": 17.9,
+    "maxMs": 66.57,
+    "over50Ms": 1,
+    "frameSpikes": [
+      {
+        "atMs": 66.57,
+        "intervalMs": 66.57,
+        "previousFrame": {
+          "stage": "shore-exploration",
+          "transition": false,
+          "cpuMs": 64.1
+        }
+      }
+    ],
+    "stepAttempts": 195,
+    "stepsScheduled": 195,
+    "hitCount": 6,
+    "damageTaken": 31,
+    "respawns": 0,
+    "revivedPairs": 1,
+    "stages": [
+      {
+        "name": "shore-exploration",
+        "startPosition": [
+          -90,
+          140
+        ],
+        "frames": 718,
+        "movingFrames": 717,
+        "distance": 71.1169999999998,
+        "attackHits": 0,
+        "damageTaken": 0,
+        "revivedPairs": 0,
+        "endPosition": [
+          -88.03,
+          137.17
+        ],
+        "kills": 0
+      },
+      {
+        "name": "forest-combat",
+        "startPosition": [
+          132,
+          -26
+        ],
+        "frames": 720,
+        "movingFrames": 707,
+        "distance": 82.4767999999999,
+        "attackHits": 6,
+        "damageTaken": 7,
+        "revivedPairs": 1,
+        "endPosition": [
+          147.36,
+          -46.36
+        ],
+        "kills": 3
+      },
+      {
+        "name": "highland-movement",
+        "startPosition": [
+          -75,
+          -205
+        ],
+        "frames": 720,
+        "movingFrames": 720,
+        "distance": 114.00150000000025,
+        "attackHits": 0,
+        "damageTaken": 24,
+        "revivedPairs": 0,
+        "endPosition": [
+          -46.9,
+          -217.4
+        ],
+        "kills": 0
+      },
+      {
+        "name": "amber-swimming",
+        "startPosition": [
+          190,
+          248
+        ],
+        "frames": 719,
+        "movingFrames": 719,
+        "distance": 62.018300000000494,
+        "attackHits": 0,
+        "damageTaken": 0,
+        "revivedPairs": 0,
+        "endPosition": [
+          194.97,
+          243.6
+        ],
+        "kills": 0
+      },
+      {
+        "name": "night-camp",
+        "startPosition": [
+          -56,
+          49
+        ],
+        "frames": 722,
+        "movingFrames": 722,
+        "distance": 84.22889999999997,
+        "attackHits": 0,
+        "damageTaken": 0,
+        "revivedPairs": 0,
+        "endPosition": [
+          -46.77,
+          41.53
+        ],
+        "kills": 0
+      }
+    ],
+    "checkpoints": [
+      {
+        "activeMs": 0,
+        "stage": "shore-exploration",
+        "position": [
+          -90,
+          140
+        ],
+        "height": 1.22,
+        "time": 240,
+        "daytime": "午后",
+        "hp": 100,
+        "kills": 0,
+        "frames": 0,
+        "movingFrames": 0,
+        "distance": 0,
+        "calls": 217,
+        "triangles": 1274955,
+        "geometries": 218,
+        "textures": 5,
+        "heapBytes": 115398386,
+        "audio": {
+          "context": "running",
+          "voices": 0,
+          "stepsScheduled": 0,
+          "surfGain": 0,
+          "birdsGain": 0,
+          "insectsGain": 0,
+          "ambienceBytes": 8640000
+        },
+        "viewport": [
+          390,
+          844
+        ],
+        "canvasBuffer": [
+          390,
+          620
+        ]
+      },
+      {
+        "activeMs": 60015.97,
+        "stage": "night-camp",
+        "position": [
+          -46.77,
+          41.53
+        ],
+        "height": 13.36,
+        "time": 12.03,
+        "daytime": "夜晚",
+        "hp": 100,
+        "kills": 0,
+        "frames": 3599,
+        "movingFrames": 3585,
+        "distance": 413.84,
+        "calls": 243,
+        "triangles": 1288041,
+        "geometries": 342,
+        "textures": 11,
+        "heapBytes": 65896668,
+        "audio": {
+          "context": "running",
+          "voices": 1,
+          "stepsScheduled": 195,
+          "surfGain": 0,
+          "birdsGain": 0,
+          "insectsGain": 0.0538390688598156,
+          "ambienceBytes": 8640000
+        },
+        "viewport": [
+          390,
+          844
+        ],
+        "canvasBuffer": [
+          390,
+          620
+        ]
+      }
+    ],
+    "note": "QA scripted input and five phase teleports; production movement/tick/render/audio. Combat pair revived as labelled load fixture. Frame intervals and JS heap only; no save or campaign acceptance."
+  },
+  "console": []
+}

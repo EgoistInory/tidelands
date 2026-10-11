@@ -1,0 +1,312 @@
+{
+  "scope": "Initial iterative observations: first four modes preceded GL error check and pageshow recovery. Retained as diagnostic history, not evidence for final source.",
+  "rows": [
+    {
+      "mode": "normal",
+      "trace": {
+        "mode": "normal",
+        "events": [
+          {
+            "kind": "upload",
+            "source": "/assets/ground/leafy-grass/roughness.jpg",
+            "frame": 3,
+            "phase": "loading",
+            "cpuMs": 11.400000095367432
+          },
+          {
+            "kind": "upload",
+            "source": "/assets/ground/leafy-grass/albedo.jpg",
+            "frame": 4,
+            "phase": "loading",
+            "cpuMs": 10.600000143051147
+          },
+          {
+            "kind": "upload",
+            "source": "/assets/ground/leafy-grass/normal-gl.jpg",
+            "frame": 5,
+            "phase": "loading",
+            "cpuMs": 11.200000047683716
+          },
+          {
+            "kind": "upload",
+            "source": "/assets/ground/coastal-sand/albedo.jpg",
+            "frame": 6,
+            "phase": "loading",
+            "cpuMs": 8.200000047683716
+          },
+          {
+            "kind": "upload",
+            "source": "/assets/ground/coastal-sand/normal-gl.jpg",
+            "frame": 7,
+            "phase": "loading",
+            "cpuMs": 24.399999856948853
+          },
+          {
+            "kind": "upload",
+            "source": "/assets/ground/coastal-sand/roughness.jpg",
+            "frame": 8,
+            "phase": "loading",
+            "cpuMs": 5.5
+          },
+          {
+            "kind": "upload",
+            "source": "/assets/rock/lichen-rock/roughness.jpg",
+            "frame": 9,
+            "phase": "loading",
+            "cpuMs": 7.099999904632568
+          },
+          {
+            "kind": "upload",
+            "source": "/assets/rock/lichen-rock/albedo.jpg",
+            "frame": 10,
+            "phase": "loading",
+            "cpuMs": 9.400000095367432
+          },
+          {
+            "kind": "upload",
+            "source": "/assets/rock/lichen-rock/normal-gl.jpg",
+            "frame": 11,
+            "phase": "loading",
+            "cpuMs": 10.799999952316284
+          },
+          {
+            "kind": "draw",
+            "frame": 12,
+            "cpuMs": 149.20000004768372,
+            "enabled": false
+          }
+        ],
+        "draws": 1,
+        "button": {
+          "disabled": false,
+          "text": "开始旅程"
+        },
+        "status": "群岛已就绪 · 无需联网",
+        "viewport": [
+          1280,
+          720
+        ],
+        "canvasBuffer": [
+          1920,
+          1080
+        ]
+      },
+      "gameplayVisible": "潮生群岛\nTIDELANDS\n\n潮汐海岸\n\n生命\n100\n体力\n99\n归航的灯火\n\n与海边的守灯人交谈\n\n靠近人物，按 E 交谈 · 14 米\n西\n北\n北\n东\n南\n\n第 1 天 · 清晨\n\n地图 M\n暂停\n欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。\n1\n✋\n徒手\n2\n⚒\n石斧\n3\n◉\n食物 3\n4\n♨\n营火\n5\n△\n帐篷\n6\n▤\n工作台\nWASD 移动 · Shift 奔跑 · 空格攻击\n拖动视角 · 滚轮缩放 · 自动存档 已保存\n背包 B\n制作 C\n位置 X -70.0，Z 102.0；建筑 0；击败 0\n{\"mode\":\"normal\",\"events\":[{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/roughness.jpg\",\"frame\":3,\"phase\":\"loading\",\"cpuMs\":11.400000095367432},{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/albedo.jpg\",\"frame\":4,\"phase\":\"loading\",\"cpuMs\":10.600000143051147},{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/normal-gl.jpg\",\"frame\":5,\"phase\":\"loading\",\"cpuMs\":11.200000047683716},{\"kind\":\"upload\",\"source\":\"/assets/ground/coastal-sand/albedo.jpg\",\"frame\":6,\"phase\":\"loading\",\"cpuMs\":8.200000047683716},{\"kind\":\"upload\",\"source\":\"/assets/ground/coastal-sand/normal-gl.jpg\",\"frame\":7,\"phase\":\"loading\",\"cpuMs\":24.399999856948853},{\"kind\":\"upload\",\"source\":\"/assets/ground/coastal-sand/roughness.jpg\",\"frame\":8,\"phase\":\"loading\",\"cpuMs\":5.5},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/roughness.jpg\",\"frame\":9,\"phase\":\"loading\",\"cpuMs\":7.099999904632568},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/albedo.jpg\",\"frame\":10,\"phase\":\"loading\",\"cpuMs\":9.400000095367432},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/normal-gl.jpg\",\"frame\":11,\"phase\":\"loading\",\"cpuMs\":10.799999952316284},{\"kind\":\"draw\",\"frame\":12,\"cpuMs\":149.20000004768372,\"enabled\":false}],\"draws\":1,\"button\":{\"disabled\":false,\"text\":\"开始旅程\"},\"status\":\"群岛已就绪 · 无需联网\",\"viewport\":[1280,720],\"canvasBuffer\":[1920,1080]}",
+      "console": []
+    },
+    {
+      "mode": "fallback",
+      "trace": {
+        "mode": "fallback",
+        "events": [
+          {
+            "kind": "upload",
+            "source": "/assets/ground/leafy-grass/roughness.jpg",
+            "frame": 4,
+            "phase": "loading",
+            "cpuMs": 7.400000095367432
+          },
+          {
+            "kind": "upload",
+            "source": "/assets/ground/leafy-grass/albedo.jpg",
+            "frame": 5,
+            "phase": "loading",
+            "cpuMs": 11.700000047683716
+          },
+          {
+            "kind": "upload",
+            "source": "/assets/ground/leafy-grass/normal-gl.jpg",
+            "frame": 6,
+            "phase": "loading",
+            "cpuMs": 12.099999904632568
+          },
+          {
+            "kind": "upload",
+            "source": "/assets/rock/lichen-rock/roughness.jpg",
+            "frame": 7,
+            "phase": "loading",
+            "cpuMs": 7
+          },
+          {
+            "kind": "upload",
+            "source": "/assets/rock/lichen-rock/albedo.jpg",
+            "frame": 8,
+            "phase": "loading",
+            "cpuMs": 19.800000190734863
+          },
+          {
+            "kind": "upload",
+            "source": "/assets/rock/lichen-rock/normal-gl.jpg",
+            "frame": 9,
+            "phase": "loading",
+            "cpuMs": 11.700000047683716
+          },
+          {
+            "kind": "draw",
+            "frame": 10,
+            "cpuMs": 125.90000009536743,
+            "enabled": false
+          }
+        ],
+        "draws": 1,
+        "button": {
+          "disabled": false,
+          "text": "开始旅程"
+        },
+        "status": "部分地表使用备用素材 · 可以继续",
+        "viewport": [
+          1280,
+          720
+        ],
+        "canvasBuffer": [
+          1920,
+          1080
+        ]
+      },
+      "image": "startup-preparation-fallback.jpg",
+      "gameplayVisible": "潮生群岛\nTIDELANDS\n\n潮汐海岸\n\n生命\n100\n体力\n100\n归航的灯火\n\n与海边的守灯人交谈\n\n靠近人物，按 E 交谈 · 14 米\n西\n北\n北\n东\n南\n\n第 1 天 · 清晨\n\n地图 M\n暂停\n欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。\n1\n✋\n徒手\n2\n⚒\n石斧\n3\n◉\n食物 3\n4\n♨\n营火\n5\n△\n帐篷\n6\n▤\n工作台\nWASD 移动 · Shift 奔跑 · 空格攻击\n拖动视角 · 滚轮缩放 · 自动存档 已保存\n背包 B\n制作 C\n位置 X -70.0，Z 102.0；建筑 0；击败 0\n{\"mode\":\"fallback\",\"events\":[{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/roughness.jpg\",\"frame\":4,\"phase\":\"loading\",\"cpuMs\":7.400000095367432},{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/albedo.jpg\",\"frame\":5,\"phase\":\"loading\",\"cpuMs\":11.700000047683716},{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/normal-gl.jpg\",\"frame\":6,\"phase\":\"loading\",\"cpuMs\":12.099999904632568},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/roughness.jpg\",\"frame\":7,\"phase\":\"loading\",\"cpuMs\":7},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/albedo.jpg\",\"frame\":8,\"phase\":\"loading\",\"cpuMs\":19.800000190734863},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/normal-gl.jpg\",\"frame\":9,\"phase\":\"loading\",\"cpuMs\":11.700000047683716},{\"kind\":\"draw\",\"frame\":10,\"cpuMs\":125.90000009536743,\"enabled\":false}],\"draws\":1,\"button\":{\"disabled\":false,\"text\":\"开始旅程\"},\"status\":\"部分地表使用备用素材 · 可以继续\",\"viewport\":[1280,720],\"canvasBuffer\":[1920,1080]}",
+      "console": [
+        {
+          "level": "warn",
+          "message": "沙地贴图加载失败，保留原地表。",
+          "timestamp": "2026-10-11T15:34:22.002Z",
+          "url": "http://127.0.0.1:4190/src/ground-surface.js"
+        }
+      ]
+    },
+    {
+      "mode": "all-fallback",
+      "trace": {
+        "mode": "all-fallback",
+        "events": [
+          {
+            "kind": "draw",
+            "frame": 1,
+            "cpuMs": 114.39999985694885,
+            "enabled": false
+          }
+        ],
+        "draws": 1,
+        "button": {
+          "disabled": false,
+          "text": "开始旅程"
+        },
+        "status": "部分地表使用备用素材 · 可以继续",
+        "viewport": [
+          1280,
+          720
+        ],
+        "canvasBuffer": [
+          1920,
+          1080
+        ]
+      },
+      "gameplayVisible": "潮生群岛\nTIDELANDS\n\n潮汐海岸\n\n生命\n100\n体力\n100\n归航的灯火\n\n与海边的守灯人交谈\n\n靠近人物，按 E 交谈 · 14 米\n西\n北\n北\n东\n南\n\n第 1 天 · 清晨\n\n地图 M\n暂停\n欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。\n1\n✋\n徒手\n2\n⚒\n石斧\n3\n◉\n食物 3\n4\n♨\n营火\n5\n△\n帐篷\n6\n▤\n工作台\nWASD 移动 · Shift 奔跑 · 空格攻击\n拖动视角 · 滚轮缩放 · 自动存档 已保存\n背包 B\n制作 C\n位置 X -70.0，Z 102.0；建筑 0；击败 0\n{\"mode\":\"all-fallback\",\"events\":[{\"kind\":\"draw\",\"frame\":1,\"cpuMs\":114.39999985694885,\"enabled\":false}],\"draws\":1,\"button\":{\"disabled\":false,\"text\":\"开始旅程\"},\"status\":\"部分地表使用备用素材 · 可以继续\",\"viewport\":[1280,720],\"canvasBuffer\":[1920,1080]}",
+      "console": [
+        {
+          "level": "warn",
+          "message": "石料贴图加载失败，保留原表面。",
+          "timestamp": "2026-10-11T15:35:26.631Z",
+          "url": "http://127.0.0.1:4190/src/rock-surface.js"
+        },
+        {
+          "level": "warn",
+          "message": "草地贴图加载失败，保留原地表。",
+          "timestamp": "2026-10-11T15:35:26.631Z",
+          "url": "http://127.0.0.1:4190/src/ground-surface.js"
+        },
+        {
+          "level": "warn",
+          "message": "沙地贴图加载失败，保留原地表。",
+          "timestamp": "2026-10-11T15:35:26.631Z",
+          "url": "http://127.0.0.1:4190/src/ground-surface.js"
+        }
+      ]
+    },
+    {
+      "mode": "cancel",
+      "trace": {
+        "mode": "cancel",
+        "events": [],
+        "draws": 0,
+        "button": {
+          "disabled": true,
+          "text": "正在唤醒群岛…"
+        },
+        "status": "正在准备群岛…",
+        "viewport": [
+          1280,
+          720
+        ],
+        "canvasBuffer": [
+          1920,
+          1080
+        ]
+      },
+      "visible": "T I D E L A N D S\n潮生群岛\n\n海风带来远方的消息。\n探索群岛，建起营地，让归航的灯再次亮起。\n\n正在唤醒群岛…\n正在准备群岛…\n\n单人开放世界 · 自由探索 · 本地存档\n\n画面暂时中断\n×\n\n旅程已暂停，进度已保存。刷新页面后可继续探索。\n\n导出存档备份刷新页面\n{\"mode\":\"cancel\",\"events\":[],\"draws\":0,\"button\":{\"disabled\":true,\"text\":\"正在唤醒群岛…\"},\"status\":\"正在准备群岛…\",\"viewport\":[1280,720],\"canvasBuffer\":[1920,1080]}\n中断准备中的图形上下文",
+      "console": []
+    },
+    {
+      "mode": "upload-error",
+      "trace": {
+        "mode": "upload-error",
+        "events": [
+          {
+            "kind": "upload",
+            "source": "/assets/ground/leafy-grass/roughness.jpg",
+            "frame": 3,
+            "phase": "loading",
+            "cpuMs": 0.8999998569488525
+          }
+        ],
+        "draws": 0,
+        "button": {
+          "disabled": false,
+          "text": "重新加载"
+        },
+        "status": "画面准备失败。请刷新页面重试。",
+        "viewport": [
+          1280,
+          720
+        ],
+        "canvasBuffer": [
+          1920,
+          1080
+        ]
+      },
+      "image": "startup-preparation-error.jpg",
+      "console": [
+        {
+          "level": "error",
+          "message": "Error: 地表准备失败（WebGL 1282）\n    at prepareSurfaceTextures (http://127.0.0.1:4190/src/startup-textures.js:20:53)",
+          "timestamp": "2026-10-11T15:39:38.010Z",
+          "url": "http://127.0.0.1:4190/src/main.js"
+        }
+      ]
+    },
+    {
+      "mode": "restore",
+      "trace": {
+        "mode": "restore",
+        "events": [],
+        "draws": 0,
+        "button": {
+          "disabled": false,
+          "text": "重新加载"
+        },
+        "status": "准备已中断。重新加载可继续。",
+        "viewport": [
+          1280,
+          720
+        ],
+        "canvasBuffer": [
+          1920,
+          1080
+        ]
+      },
+      "visible": "T I D E L A N D S\n潮生群岛\n\n海风带来远方的消息。\n探索群岛，建起营地，让归航的灯再次亮起。\n\n重新加载\n准备已中断。重新加载可继续。\n\n单人开放世界 · 自由探索 · 本地存档\n\n{\"mode\":\"restore\",\"events\":[],\"draws\":0,\"button\":{\"disabled\":false,\"text\":\"重新加载\"},\"status\":\"准备已中断。重新加载可继续。\",\"viewport\":[1280,720],\"canvasBuffer\":[1920,1080]}\n模拟准备中离开并恢复",
+      "console": [],
+      "scope": "Synthetic pagehide/pageshow events,not actual browser bfcache proof"
+    }
+  ]
+}

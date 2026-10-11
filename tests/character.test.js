@@ -18,7 +18,7 @@ test('equipment follows selection and swings on the arm holding the tool',()=>{
   animateCharacter(c,{...s,selected:'hand'},.016);assert.equal(c.userData.sword.visible,false);assert.equal(c.userData.axe.visible,false);
 });
 test('attack and gathering enter and leave each equipped resting pose without snapping',()=>{
-  const pose=c=>[c.userData.body.rotation.x,c.userData.shoulders[1].rotation.x,c.userData.elbows[1].rotation.x];
+  const pose=c=>[c.userData.body.rotation.x,c.userData.body.rotation.y,c.userData.shoulders[0].rotation.x,c.userData.shoulders[0].rotation.z,c.userData.elbows[0].rotation.x,c.userData.shoulders[1].rotation.x,c.userData.elbows[1].rotation.x];
   for(const selected of ['hand','axe','sword'])for(const action of ['attack','gather']){
     const c=createCharacter(),duration=action==='attack'?.45:.42;
     const state={x:0,z:0,yaw:0,time:10,attackAt:-100,gatherAt:-100,selected};
@@ -30,6 +30,67 @@ test('attack and gathering enter and leave each equipped resting pose without sn
     pose(c).forEach((v,i)=>assert.ok(Math.abs(v-ending[i])<.00002,`${selected}/${action} end joint ${i}`));
     assert.deepEqual(c.position.toArray(),[0,0,0]);
     assert.ok(pose(c).every(Number.isFinite));
+  }
+});
+test('tool actions recruit the torso and free hand then clear their pose when interrupted',()=>{
+  for(const selected of ['hand','axe','sword'])for(const action of ['attack','gather']){
+    const c=createCharacter(),state={x:0,z:0,yaw:0,time:10,attackAt:-100,gatherAt:-100,selected};
+    animateCharacter(c,state,1/60,()=>0);
+    const resting=c.userData.shoulders[0].rotation.x;
+    state[action+'At']=10-(action==='attack'?.225:.21);
+    animateCharacter(c,state,1/60,()=>0);
+    assert.ok(Math.abs(c.userData.body.rotation.y)>.1,`${selected}/${action} torso participates`);
+    assert.ok(Math.abs(c.userData.shoulders[0].rotation.x-resting)>.2,`${selected}/${action} free hand participates`);
+    assert.deepEqual(c.position.toArray(),[0,0,0]);assert.equal(c.rotation.y,0);
+    animateCharacter(c,{...state,attackAt:-100,gatherAt:-100,selected:'hand'},1/60,()=>0);
+    assert.equal(c.userData.body.rotation.y,0);
+    assert.ok(Math.abs(c.userData.shoulders[0].rotation.x)<1e-9);
+    assert.equal(c.userData.shoulders[0].rotation.z,0);
+    animateCharacter(c,{...state,attackAt:-100,swimming:true},1/60);
+    assert.equal(c.userData.body.rotation.y,0);assert.equal(c.userData.body.rotation.x,1.25);
+  }
+});
+test('complete tool actions keep both planted boot soles fixed on flat and sloped ground',()=>{
+  for(const fps of [30,60,144])for(const slope of [0,.12])for(const action of ['attack','gather']){
+    const c=createCharacter(),dt=1/fps,ground=(x,z)=>.03*x+slope*z;
+    const state={x:0,z:0,yaw:0,time:10,attackAt:-100,gatherAt:-100,selected:'axe'};
+    animateCharacter(c,state,dt,ground);c.updateMatrixWorld(true);
+    const planted=c.userData.ankles.map(a=>a.getWorldPosition(new THREE.Vector3()));
+    state[action+'At']=10;
+    for(let frame=0;frame<=fps;frame++){
+      state.time=10+frame*dt;animateCharacter(c,state,dt,ground);c.updateMatrixWorld(true);
+      for(let side=0;side<2;side++){
+        const ankle=c.userData.ankles[side],point=ankle.getWorldPosition(new THREE.Vector3());
+        assert.ok(point.distanceTo(planted[side])<1e-7,`${fps}/${slope}/${action} foot drift`);
+        const sole=ankle.getObjectByName('boot-sole'),positions=sole.geometry.attributes.position;let lowest=Infinity;
+        for(let i=0;i<positions.count;i++){
+          const p=new THREE.Vector3().fromBufferAttribute(positions,i).applyMatrix4(sole.matrixWorld);
+          const gap=(p.y-ground(p.x,p.z))/Math.sqrt(1+.03**2+slope**2);lowest=Math.min(lowest,gap);
+          assert.ok(gap>=-1e-7,`${fps}/${slope}/${action} sole penetration ${gap}`);
+        }
+        assert.ok(Math.abs(lowest)<1e-7);
+      }
+    }
+  }
+});
+test('a moving attack retains grounded contacts during a turn at production speeds',()=>{
+  for(const fps of [30,60,144])for(const speed of [2.4,7,12]){
+    const c=createCharacter(),dt=1/fps,ground=(x,z)=>.03*x+.04*z,prior=[null,null];let x=0,z=0,checked=0;
+    animateCharacter(c,{x,z,yaw:0,time:0,attackAt:-100,selected:'sword'},dt,ground);
+    for(let frame=1;frame<=fps*3;frame++){
+      const time=frame*dt,yaw=time>=1.5?Math.PI/2:0;x+=Math.sin(yaw)*speed*dt;z+=Math.cos(yaw)*speed*dt;
+      c.position.set(x,ground(x,z),z);animateCharacter(c,{x,z,yaw,time,attackAt:1.4,selected:'sword'},dt,ground);c.updateMatrixWorld(true);
+      assert.ok(c.userData.body.position.y>-.45,`${fps}/${speed} pelvis collapse during attack`);
+      for(let side=0;side<2;side++){
+        const point=c.userData.ankles[side].getWorldPosition(new THREE.Vector3()),contact=c.userData.footContacts[side];
+        if(contact){
+          assert.ok(Math.abs((point.y-ground(point.x,point.z))/Math.sqrt(1+.03**2+.04**2)-.145)<1e-8);
+          if(prior[side]?.contact){assert.ok(point.distanceTo(prior[side].point)<1e-7,`${fps}/${speed} planted attack foot moved`);if(time>=1.4&&time<1.85)checked++;}
+        }
+        prior[side]={point,contact};
+      }
+    }
+    assert.ok(checked>0);
   }
 });
 test('stride advances with distance, stays still at rest, and keeps joints attached',()=>{

@@ -191,18 +191,32 @@ test('loading a different save updates buildings even when IDs are reused',()=>{
   assert.equal(view.scene.children.length,0);assert.equal(view.buildings.size,0);
 });
 
-test('campfire flames emit light without changing shared building materials',()=>{
+test('campfire owns its unlit flame without changing shared building materials',()=>{
   const camp=buildingModel('campfire'),bench=buildingModel('workbench');
-  const flames=camp.children.filter(o=>o.material.emissiveIntensity===2);
-  assert.equal(flames.length,2);
-  for(const flame of flames){assert.notEqual(flame.material.emissive.getHex(),0);assert.equal(flame.castShadow,false);}
+  const flames=camp.children.filter(o=>o.material.isShaderMaterial);
+  assert.equal(flames.length,1);
+  for(const flame of flames){assert.equal(flame.material.fog,true);assert.equal(flame.castShadow,false);}
   for(const part of bench.children)assert.equal(part.material.emissive.getHex(),0);
   let released=0,sharedReleased=0;
   for(const flame of flames)flame.material.addEventListener('dispose',()=>released++);
   camp.children[0].material.addEventListener('dispose',()=>sharedReleased++);
   WorldView.prototype.disposeGroup(camp);
-  assert.equal(released,2);assert.equal(sharedReleased,0);
+  assert.equal(released,1);assert.equal(sharedReleased,0);
   WorldView.prototype.disposeGroup(bench);
+});
+
+test('removing tents releases their geometry but retains immutable cloth for later camps',()=>{
+  const a=buildingModel('tent'),b=buildingModel('tent');
+  const cloth=model=>model.children.find(o=>o.isMesh&&o.material.side===THREE.DoubleSide).material;
+  assert.equal(cloth(a),cloth(b),'identical cloth must not invalidate its renderer program when a camp leaves');
+  let materialsReleased=0,geometryReleased=0;cloth(a).addEventListener('dispose',()=>materialsReleased++);
+  a.traverse(o=>{if(o.isMesh)o.geometry.addEventListener('dispose',()=>geometryReleased++);});
+  const meshes=a.children.filter(o=>o.isMesh).length;
+  WorldView.prototype.disposeGroup(a);assert.equal(geometryReleased,meshes);assert.equal(materialsReleased,0);
+  WorldView.prototype.disposeGroup(b);assert.equal(materialsReleased,0);
+  const c=buildingModel('tent');assert.equal(cloth(c),cloth(a));assert.equal(cloth(c).color.getHex(),0xb9a77c);
+  assert.equal(cloth(c).roughness,1);assert.equal(cloth(c).transparent,false);
+  WorldView.prototype.disposeGroup(c);assert.equal(materialsReleased,0);
 });
 
 test('repeated build previews release their geometry and private materials',()=>{

@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: ground remains on the original surface until all three channels load
+ok 1 - ground remains on the original surface until all three channels load
+  ---
+  duration_ms: 1.171916
+  type: 'test'
+  ...
+# Subtest: a missing channel keeps the fallback and settles the load status
+ok 2 - a missing channel keeps the fallback and settles the load status
+  ---
+  duration_ms: 1.008791
+  type: 'test'
+  ...
+# Subtest: shore wetness toggle remains independent of channel loading and requests no textures
+ok 3 - shore wetness toggle remains independent of channel loading and requests no textures
+  ---
+  duration_ms: 0.240417
+  type: 'test'
+  ...
+# Subtest: ground channels use local URLs, matching two metre tiles and appropriate colour spaces
+ok 4 - ground channels use local URLs, matching two metre tiles and appropriate colour spaces
+  ---
+  duration_ms: 0.230334
+  type: 'test'
+  ...
+# Subtest: bundled CC0 channel bytes agree with the provenance manifest
+ok 5 - bundled CC0 channel bytes agree with the provenance manifest
+  ---
+  duration_ms: 9.174709
+  type: 'test'
+  ...
+# Subtest: coastal sand waits for its own three channels while the grass can already render
+ok 6 - coastal sand waits for its own three channels while the grass can already render
+  ---
+  duration_ms: 0.185958
+  type: 'test'
+  ...
+# Subtest: grass or sand failure leaves the other surface and wetness available
+ok 7 - grass or sand failure leaves the other surface and wetness available
+  ---
+  duration_ms: 0.324
+  type: 'test'
+  ...
+# Subtest: bundled sand channels agree with their official source hashes
+ok 8 - bundled sand channels agree with their official source hashes
+  ---
+  duration_ms: 5.910083
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 72.508333

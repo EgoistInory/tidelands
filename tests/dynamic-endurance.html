@@ -24,7 +24,7 @@ function configure(i){
 }
 function checkpoint(){
   const info=view.renderer.info;
-  checkpoints.push({activeMs:round(activeMs),stage:scenes[index].name,position:[round(state.player.x),round(state.player.z)],height:round(terrain(state.player.x,state.player.z)),time:round(state.time),daytime:dayCycle(state.time).label,hp:state.player.hp,kills:state.kills,frames,movingFrames,distance:round(distance),calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures,heapBytes:performance.memory?.usedJSHeapSize??null,audio:{context:audio.context?.state,voices:audio.sources.size,stepsScheduled,surfGain:audio.surf?.gain.value??null},viewport:[innerWidth,innerHeight],canvasBuffer:[canvas.width,canvas.height]});
+  checkpoints.push({activeMs:round(activeMs),stage:scenes[index].name,position:[round(state.player.x),round(state.player.z)],height:round(terrain(state.player.x,state.player.z)),time:round(state.time),daytime:dayCycle(state.time).label,hp:state.player.hp,kills:state.kills,frames,movingFrames,distance:round(distance),calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures,heapBytes:performance.memory?.usedJSHeapSize??null,audio:{context:audio.context?.state,voices:audio.sources.size,stepsScheduled,surfGain:audio.surf?.gain.value??null,birdsGain:audio.birds?.gain.value??null,insectsGain:audio.insects?.gain.value??null,ambienceBytes:audio.noise?(audio.noise.length+audio.birdsSource.buffer.length+audio.insectsSource.buffer.length)*4:0},viewport:[innerWidth,innerHeight],canvasBuffer:[canvas.width,canvas.height]});
 }
 function result(complete=false){
   const sorted=[...intervals].sort((a,b)=>a-b);

@@ -1,0 +1,319 @@
+[
+  {
+    "mode": "normal",
+    "trace": {
+      "mode": "normal",
+      "events": [
+        {
+          "kind": "upload",
+          "source": "/assets/ground/leafy-grass/roughness.jpg",
+          "frame": 4,
+          "phase": "loading",
+          "cpuMs": 7.5
+        },
+        {
+          "kind": "upload",
+          "source": "/assets/ground/leafy-grass/albedo.jpg",
+          "frame": 5,
+          "phase": "loading",
+          "cpuMs": 9.700000047683716
+        },
+        {
+          "kind": "upload",
+          "source": "/assets/ground/leafy-grass/normal-gl.jpg",
+          "frame": 6,
+          "phase": "loading",
+          "cpuMs": 10.399999856948853
+        },
+        {
+          "kind": "upload",
+          "source": "/assets/ground/coastal-sand/albedo.jpg",
+          "frame": 7,
+          "phase": "loading",
+          "cpuMs": 8.199999809265137
+        },
+        {
+          "kind": "upload",
+          "source": "/assets/ground/coastal-sand/roughness.jpg",
+          "frame": 8,
+          "phase": "loading",
+          "cpuMs": 5.299999952316284
+        },
+        {
+          "kind": "upload",
+          "source": "/assets/ground/coastal-sand/normal-gl.jpg",
+          "frame": 9,
+          "phase": "loading",
+          "cpuMs": 9
+        },
+        {
+          "kind": "upload",
+          "source": "/assets/rock/lichen-rock/roughness.jpg",
+          "frame": 10,
+          "phase": "loading",
+          "cpuMs": 6.700000047683716
+        },
+        {
+          "kind": "upload",
+          "source": "/assets/rock/lichen-rock/albedo.jpg",
+          "frame": 11,
+          "phase": "loading",
+          "cpuMs": 8.900000095367432
+        },
+        {
+          "kind": "upload",
+          "source": "/assets/rock/lichen-rock/normal-gl.jpg",
+          "frame": 12,
+          "phase": "loading",
+          "cpuMs": 10
+        },
+        {
+          "kind": "draw",
+          "frame": 13,
+          "cpuMs": 117.59999990463257,
+          "enabled": false
+        }
+      ],
+      "draws": 1,
+      "button": {
+        "disabled": false,
+        "text": "开始旅程"
+      },
+      "status": "群岛已就绪 · 无需联网",
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    "entered": true,
+    "ax": "Browser tab: 11, Title: \"开始页地表准备隔离验收\", URL: \"http://127.0.0.1:4190/tests/startup-preparation.html?mode=normal\".\n0 AXWebArea 开始页地表准备隔离验收, URL: 127.0.0.1:4190/tests/startup-preparation.html?mode=normal\n\t1 container 开始页准备隔离游戏\n\t\t2 AXWebArea 潮生群岛 · Tidelands, URL: about:srcdoc\n\t\t\t3 container\n\t\t\t\t4 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world\n\t\t\t\t5 container start-screen\n\t\t\t\t\t6 text T I D E L A N D S\n\t\t\t\t\t7 heading 潮生群岛, Value: 2\n\t\t\t\t\t\t8 text 潮生群岛\n\t\t\t\t\t9 container\n\t\t\t\t\t\t10 text 海风带来远方的消息。\n\t\t\t\t\t\t11 text 探索群岛，建起营地，让归航的灯再次亮起。\n\t\t\t\t\t12 button 开始旅程, ID: start-button\n\t\t\t\t\t15 text 群岛已就绪 · 无需联网\n\t\t\t\t\t14 text 单人开放世界 · 自由探索 · 本地存档\n\t\t\t\t16 text {\"mode\":\"normal\",\"events\":[{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/roughness.jpg\",\"frame\":4,\"phase\":\"loading\",\"cpuMs\":7.5},{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/albedo.jpg\",\"frame\":5,\"phase\":\"loading\",\"cpuMs\":9.700000047683716},{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/normal-gl.jpg\",\"frame\":6,\"phase\":\"loading\",\"cpuMs\":10.399999856948853},{\"kind\":\"upload\",\"source\":\"/assets/ground/coastal-sand/albedo.jpg\",\"frame\":7,\"phase\":\"loading\",\"cpuMs\":8.199999809265137},{\"kind\":\"upload\",\"source\":\"/assets/ground/coastal-sand/roughness.jpg\",\"frame\":8,\"phase\":\"loading\",\"cpuMs\":5.299999952316284},{\"kind\":\"upload\",\"source\":\"/assets/ground/coastal-sand/normal-gl.jpg\",\"frame\":9,\"phase\":\"loading\",\"cpuMs\":9},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/roughness.jpg\",\"frame\":10,\"phase\":\"loading\",\"cpuMs\":6.700000047683716},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/albedo.jpg\",\"frame\":11,\"phase\":\"loading\",\"cpuMs\":8.900000095367432},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/normal-gl.jpg\",\"frame\":12,\"phase\":\"loading\",\"cpuMs\":10},{\"kind\":\"draw\",\"frame\":13,\"cpuMs\":117.59999990463257,\"enabled\":false}],\"draws\":1,\"button\":{\"disabled\":false,\"text\":\"开始旅程\"},\"status\":\"群岛已就绪 · 无需联网\",\"viewport\":[1280,720],\"canvasBuffer\":[1920,1080]}\n\nThe focused UI element is 0 AXWebArea 开始页地表准备隔离验收, URL: 127.0.0.1:4190/tests/startup-preparation.html?mode=normal\nAFTER START\nBrowser tab: 11, Title: \"开始页地表准备隔离验收\", URL: \"http://127.0.0.1:4190/tests/startup-preparation.html?mode=normal\".\nThe following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.\nRemoved element IDs: 5-12, 14-15\n+\t\t\t\t17 container hud\n+\t\t\t\t\t18 container\n+\t\t\t\t\t\t19 heading 潮生群岛, Value: 1\n+\t\t\t\t\t\t\t20 text 潮生群岛\n+\t\t\t\t\t\t21 text TIDELANDS\n+\t\t\t\t\t\t22 text 潮汐海岸\n+\t\t\t\t\t\t23 text 生命\n+\t\t\t\t\t\t24 progress indicator Value: 100, ID: hp\n+\t\t\t\t\t\t25 text 100\n+\t\t\t\t\t\t26 text 体力\n+\t\t\t\t\t\t27 progress indicator Value: 100, ID: stamina\n+\t\t\t\t\t\t28 text 100\n+\t\t\t\t\t29 container\n+\t\t\t\t\t\t30 heading 归航的灯火, Value: 2, ID: quest-title\n+\t\t\t\t\t\t\t31 text 归航的灯火\n+\t\t\t\t\t\t32 text 与海边的守灯人交谈\n+\t\t\t\t\t\t33 text 靠近人物，按 E 交谈 · 14 米\n+\t\t\t\t\t34 container 朝向\n+\t\t\t\t\t\t35 text 西 北\n+\t\t\t\t\t\t36 text 北\n+\t\t\t\t\t\t37 text 东 南\n+\t\t\t\t\t38 container\n+\t\t\t\t\t\t39 image Description: 群岛小地图, ID: minimap\n+\t\t\t\t\t\t40 text 第 1 天 · 清晨\n+\t\t\t\t\t\t41 button 地图 M, ID: map-button\n+\t\t\t\t\t\t42 button 暂停, ID: pause-button\n+\t\t\t\t\t43 text 欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。\n+\t\t\t\t\t44 container 快捷操作\n+\t\t\t\t\t\t45 button 1 ✋ 徒手\n+\t\t\t\t\t\t\t46 text 1\n+\t\t\t\t\t\t\t47 text ✋\n+\t\t\t\t\t\t\t48 text 徒手\n+\t\t\t\t\t\t49 button 2 ⚒ 石斧\n+\t\t\t\t\t\t\t50 text 2\n+\t\t\t\t\t\t\t51 text ⚒\n+\t\t\t\t\t\t\t52 text 石斧\n+\t\t\t\t\t\t53 button 3 ◉ 食物 3\n+\t\t\t\t\t\t\t54 text 3\n+\t\t\t\t\t\t\t55 text ◉\n+\t\t\t\t\t\t\t56 text 食物 \n+\t\t\t\t\t\t\t57 text 3\n+\t\t\t\t\t\t58 button 4 ♨ 营火\n+\t\t\t\t\t\t\t59 text 4\n+\t\t\t\t\t\t\t60 text ♨\n+\t\t\t\t\t\t\t61 text 营火\n+\t\t\t\t\t\t62 button 5 △ 帐篷\n+\t\t\t\t\t\t\t63 text 5\n+\t\t\t\t\t\t\t64 text △\n+\t\t\t\t\t\t\t65 text 帐篷\n+\t\t\t\t\t\t66 button 6 ▤ 工作台\n+\t\t\t\t\t\t\t67 text 6\n+\t\t\t\t\t\t\t68 text ▤\n+\t\t\t\t\t\t\t69 text 工作台\n+\t\t\t\t\t70 container\n+\t\t\t\t\t\t71 text WASD 移动 · Shift 奔跑 · 空格攻击\n+\t\t\t\t\t\t72 text 拖动视角 · 滚轮缩放 · 自动存档 \n+\t\t\t\t\t\t73 text 已就绪\n+\t\t\t\t\t74 container\n+\t\t\t\t\t\t75 button 背包 B, ID: bag-button\n+\t\t\t\t\t\t76 button 制作 C, ID: craft-button\n+\t\t\t\t\t77 text 位置 X -70.0，Z 102.0；建筑 0；击败 0\nThe focused UI element is 4 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world",
+    "console": [],
+    "image": null
+  },
+  {
+    "mode": "fallback",
+    "trace": {
+      "mode": "fallback",
+      "events": [
+        {
+          "kind": "upload",
+          "source": "/assets/ground/leafy-grass/albedo.jpg",
+          "frame": 4,
+          "phase": "loading",
+          "cpuMs": 10.900000095367432
+        },
+        {
+          "kind": "upload",
+          "source": "/assets/ground/leafy-grass/roughness.jpg",
+          "frame": 5,
+          "phase": "loading",
+          "cpuMs": 6.8999998569488525
+        },
+        {
+          "kind": "upload",
+          "source": "/assets/ground/leafy-grass/normal-gl.jpg",
+          "frame": 6,
+          "phase": "loading",
+          "cpuMs": 10.5
+        },
+        {
+          "kind": "upload",
+          "source": "/assets/rock/lichen-rock/roughness.jpg",
+          "frame": 7,
+          "phase": "loading",
+          "cpuMs": 6.700000047683716
+        },
+        {
+          "kind": "upload",
+          "source": "/assets/rock/lichen-rock/normal-gl.jpg",
+          "frame": 8,
+          "phase": "loading",
+          "cpuMs": 10.299999952316284
+        },
+        {
+          "kind": "upload",
+          "source": "/assets/rock/lichen-rock/albedo.jpg",
+          "frame": 9,
+          "phase": "loading",
+          "cpuMs": 9
+        },
+        {
+          "kind": "draw",
+          "frame": 10,
+          "cpuMs": 111,
+          "enabled": false
+        }
+      ],
+      "draws": 1,
+      "button": {
+        "disabled": false,
+        "text": "开始旅程"
+      },
+      "status": "部分地表使用备用素材 · 可以继续",
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    "entered": true,
+    "ax": "Browser tab: 12, Title: \"开始页地表准备隔离验收\", URL: \"http://127.0.0.1:4190/tests/startup-preparation.html?mode=fallback\".\n0 AXWebArea 开始页地表准备隔离验收, URL: 127.0.0.1:4190/tests/startup-preparation.html?mode=fallback\n\t1 container 开始页准备隔离游戏\n\t\t2 AXWebArea 潮生群岛 · Tidelands, URL: about:srcdoc\n\t\t\t3 container\n\t\t\t\t4 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world\n\t\t\t\t5 container start-screen\n\t\t\t\t\t6 text T I D E L A N D S\n\t\t\t\t\t7 heading 潮生群岛, Value: 2\n\t\t\t\t\t\t8 text 潮生群岛\n\t\t\t\t\t9 container\n\t\t\t\t\t\t10 text 海风带来远方的消息。\n\t\t\t\t\t\t11 text 探索群岛，建起营地，让归航的灯再次亮起。\n\t\t\t\t\t12 button 开始旅程, ID: start-button\n\t\t\t\t\t15 text 部分地表使用备用素材 · 可以继续\n\t\t\t\t\t14 text 单人开放世界 · 自由探索 · 本地存档\n\t\t\t\t16 text {\"mode\":\"fallback\",\"events\":[{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/albedo.jpg\",\"frame\":4,\"phase\":\"loading\",\"cpuMs\":10.900000095367432},{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/roughness.jpg\",\"frame\":5,\"phase\":\"loading\",\"cpuMs\":6.8999998569488525},{\"kind\":\"upload\",\"source\":\"/assets/ground/leafy-grass/normal-gl.jpg\",\"frame\":6,\"phase\":\"loading\",\"cpuMs\":10.5},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/roughness.jpg\",\"frame\":7,\"phase\":\"loading\",\"cpuMs\":6.700000047683716},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/normal-gl.jpg\",\"frame\":8,\"phase\":\"loading\",\"cpuMs\":10.299999952316284},{\"kind\":\"upload\",\"source\":\"/assets/rock/lichen-rock/albedo.jpg\",\"frame\":9,\"phase\":\"loading\",\"cpuMs\":9},{\"kind\":\"draw\",\"frame\":10,\"cpuMs\":111,\"enabled\":false}],\"draws\":1,\"button\":{\"disabled\":false,\"text\":\"开始旅程\"},\"status\":\"部分地表使用备用素材 · 可以继续\",\"viewport\":[1280,720],\"canvasBuffer\":[1920,1080]}\n\nThe focused UI element is 0 AXWebArea 开始页地表准备隔离验收, URL: 127.0.0.1:4190/tests/startup-preparation.html?mode=fallback\nAFTER START\nBrowser tab: 12, Title: \"开始页地表准备隔离验收\", URL: \"http://127.0.0.1:4190/tests/startup-preparation.html?mode=fallback\".\nThe following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.\nRemoved element IDs: 5-12, 14-15\n+\t\t\t\t17 container hud\n+\t\t\t\t\t18 container\n+\t\t\t\t\t\t19 heading 潮生群岛, Value: 1\n+\t\t\t\t\t\t\t20 text 潮生群岛\n+\t\t\t\t\t\t21 text TIDELANDS\n+\t\t\t\t\t\t22 text 潮汐海岸\n+\t\t\t\t\t\t23 text 生命\n+\t\t\t\t\t\t24 progress indicator Value: 100, ID: hp\n+\t\t\t\t\t\t25 text 100\n+\t\t\t\t\t\t26 text 体力\n+\t\t\t\t\t\t27 progress indicator Value: 100, ID: stamina\n+\t\t\t\t\t\t28 text 100\n+\t\t\t\t\t29 container\n+\t\t\t\t\t\t30 heading 归航的灯火, Value: 2, ID: quest-title\n+\t\t\t\t\t\t\t31 text 归航的灯火\n+\t\t\t\t\t\t32 text 与海边的守灯人交谈\n+\t\t\t\t\t\t33 text 靠近人物，按 E 交谈 · 14 米\n+\t\t\t\t\t34 container 朝向\n+\t\t\t\t\t\t35 text 西 北\n+\t\t\t\t\t\t36 text 北\n+\t\t\t\t\t\t37 text 东 南\n+\t\t\t\t\t38 container\n+\t\t\t\t\t\t39 image Description: 群岛小地图, ID: minimap\n+\t\t\t\t\t\t40 text 第 1 天 · 清晨\n+\t\t\t\t\t\t41 button 地图 M, ID: map-button\n+\t\t\t\t\t\t42 button 暂停, ID: pause-button\n+\t\t\t\t\t43 text 欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。\n+\t\t\t\t\t44 container 快捷操作\n+\t\t\t\t\t\t45 button 1 ✋ 徒手\n+\t\t\t\t\t\t\t46 text 1\n+\t\t\t\t\t\t\t47 text ✋\n+\t\t\t\t\t\t\t48 text 徒手\n+\t\t\t\t\t\t49 button 2 ⚒ 石斧\n+\t\t\t\t\t\t\t50 text 2\n+\t\t\t\t\t\t\t51 text ⚒\n+\t\t\t\t\t\t\t52 text 石斧\n+\t\t\t\t\t\t53 button 3 ◉ 食物 3\n+\t\t\t\t\t\t\t54 text 3\n+\t\t\t\t\t\t\t55 text ◉\n+\t\t\t\t\t\t\t56 text 食物 \n+\t\t\t\t\t\t\t57 text 3\n+\t\t\t\t\t\t58 button 4 ♨ 营火\n+\t\t\t\t\t\t\t59 text 4\n+\t\t\t\t\t\t\t60 text ♨\n+\t\t\t\t\t\t\t61 text 营火\n+\t\t\t\t\t\t62 button 5 △ 帐篷\n+\t\t\t\t\t\t\t63 text 5\n+\t\t\t\t\t\t\t64 text △\n+\t\t\t\t\t\t\t65 text 帐篷\n+\t\t\t\t\t\t66 button 6 ▤ 工作台\n+\t\t\t\t\t\t\t67 text 6\n+\t\t\t\t\t\t\t68 text ▤\n+\t\t\t\t\t\t\t69 text 工作台\n+\t\t\t\t\t70 container\n+\t\t\t\t\t\t71 text WASD 移动 · Shift 奔跑 · 空格攻击\n+\t\t\t\t\t\t72 text 拖动视角 · 滚轮缩放 · 自动存档 \n+\t\t\t\t\t\t73 text 已就绪\n+\t\t\t\t\t74 container\n+\t\t\t\t\t\t75 button 背包 B, ID: bag-button\n+\t\t\t\t\t\t76 button 制作 C, ID: craft-button\n+\t\t\t\t\t77 text 位置 X -70.0，Z 102.0；建筑 0；击败 0\nThe focused UI element is 4 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world",
+    "console": [
+      {
+        "level": "warn",
+        "message": "沙地贴图加载失败，保留原地表。",
+        "timestamp": "2026-10-11T15:47:56.013Z",
+        "url": "http://127.0.0.1:4190/src/ground-surface.js"
+      }
+    ],
+    "image": "/Users/huxiaocong/Codex/tidelands/docs/startup-preparation-final-fallback.jpg"
+  },
+  {
+    "mode": "all-fallback",
+    "trace": {
+      "mode": "all-fallback",
+      "events": [
+        {
+          "kind": "draw",
+          "frame": 1,
+          "cpuMs": 116.09999990463257,
+          "enabled": false
+        }
+      ],
+      "draws": 1,
+      "button": {
+        "disabled": false,
+        "text": "开始旅程"
+      },
+      "status": "部分地表使用备用素材 · 可以继续",
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    "entered": true,
+    "ax": "Browser tab: 13, Title: \"开始页地表准备隔离验收\", URL: \"http://127.0.0.1:4190/tests/startup-preparation.html?mode=all-fallback\".\nThere has been no change in the accessibility tree.\nThe focused UI element is 0 AXWebArea 开始页地表准备隔离验收, URL: 127.0.0.1:4190/tests/startup-preparation.html?mode=all-fallback\nAFTER START\nBrowser tab: 13, Title: \"开始页地表准备隔离验收\", URL: \"http://127.0.0.1:4190/tests/startup-preparation.html?mode=all-fallback\".\n0 AXWebArea 开始页地表准备隔离验收, URL: 127.0.0.1:4190/tests/startup-preparation.html?mode=all-fallback\n\t1 container 开始页准备隔离游戏\n\t\t2 AXWebArea 潮生群岛 · Tidelands, URL: about:srcdoc\n\t\t\t3 container\n\t\t\t\t4 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world\n\t\t\t\t16 container hud\n\t\t\t\t\t17 container\n\t\t\t\t\t\t18 heading 潮生群岛, Value: 1\n\t\t\t\t\t\t\t19 text 潮生群岛\n\t\t\t\t\t\t20 text TIDELANDS\n\t\t\t\t\t\t21 text 潮汐海岸\n\t\t\t\t\t\t22 text 生命\n\t\t\t\t\t\t23 progress indicator Value: 100, ID: hp\n\t\t\t\t\t\t24 text 100\n\t\t\t\t\t\t25 text 体力\n\t\t\t\t\t\t26 progress indicator Value: 100, ID: stamina\n\t\t\t\t\t\t27 text 100\n\t\t\t\t\t28 container\n\t\t\t\t\t\t29 heading 归航的灯火, Value: 2, ID: quest-title\n\t\t\t\t\t\t\t30 text 归航的灯火\n\t\t\t\t\t\t31 text 与海边的守灯人交谈\n\t\t\t\t\t\t32 text 靠近人物，按 E 交谈 · 14 米\n\t\t\t\t\t33 container 朝向\n\t\t\t\t\t\t34 text 西 北\n\t\t\t\t\t\t35 text 北\n\t\t\t\t\t\t36 text 东 南\n\t\t\t\t\t37 container\n\t\t\t\t\t\t38 image Description: 群岛小地图, ID: minimap\n\t\t\t\t\t\t39 text 第 1 天 · 清晨\n\t\t\t\t\t\t40 button 地图 M, ID: map-button\n\t\t\t\t\t\t41 button 暂停, ID: pause-button\n\t\t\t\t\t42 text 欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。\n\t\t\t\t\t43 container 快捷操作\n\t\t\t\t\t\t44 button 1 ✋ 徒手\n\t\t\t\t\t\t\t45 text 1\n\t\t\t\t\t\t\t46 text ✋\n\t\t\t\t\t\t\t47 text 徒手\n\t\t\t\t\t\t48 button 2 ⚒ 石斧\n\t\t\t\t\t\t\t49 text 2\n\t\t\t\t\t\t\t50 text ⚒\n\t\t\t\t\t\t\t51 text 石斧\n\t\t\t\t\t\t52 button 3 ◉ 食物 3\n\t\t\t\t\t\t\t53 text 3\n\t\t\t\t\t\t\t54 text ◉\n\t\t\t\t\t\t\t55 text 食物 \n\t\t\t\t\t\t\t56 text 3\n\t\t\t\t\t\t57 button 4 ♨ 营火\n\t\t\t\t\t\t\t58 text 4\n\t\t\t\t\t\t\t59 text ♨\n\t\t\t\t\t\t\t60 text 营火\n\t\t\t\t\t\t61 button 5 △ 帐篷\n\t\t\t\t\t\t\t62 text 5\n\t\t\t\t\t\t\t63 text △\n\t\t\t\t\t\t\t64 text 帐篷\n\t\t\t\t\t\t65 button 6 ▤ 工作台\n\t\t\t\t\t\t\t66 text 6\n\t\t\t\t\t\t\t67 text ▤\n\t\t\t\t\t\t\t68 text 工作台\n\t\t\t\t\t69 container\n\t\t\t\t\t\t70 text WASD 移动 · Shift 奔跑 · 空格攻击\n\t\t\t\t\t\t71 text 拖动视角 · 滚轮缩放 · 自动存档 \n\t\t\t\t\t\t72 text 已就绪\n\t\t\t\t\t73 container\n\t\t\t\t\t\t74 button 背包 B, ID: bag-button\n\t\t\t\t\t\t75 button 制作 C, ID: craft-button\n\t\t\t\t\t76 text 位置 X -70.0，Z 102.0；建筑 0；击败 0\n\t\t\t\t15 text {\"mode\":\"all-fallback\",\"events\":[{\"kind\":\"draw\",\"frame\":1,\"cpuMs\":116.09999990463257,\"enabled\":false}],\"draws\":1,\"button\":{\"disabled\":false,\"text\":\"开始旅程\"},\"status\":\"部分地表使用备用素材 · 可以继续\",\"viewport\":[1280,720],\"canvasBuffer\":[1920,1080]}\n\nThe focused UI element is 4 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world",
+    "console": [
+      {
+        "level": "warn",
+        "message": "石料贴图加载失败，保留原表面。",
+        "timestamp": "2026-10-11T15:47:57.934Z",
+        "url": "http://127.0.0.1:4190/src/rock-surface.js"
+      },
+      {
+        "level": "warn",
+        "message": "草地贴图加载失败，保留原地表。",
+        "timestamp": "2026-10-11T15:47:57.934Z",
+        "url": "http://127.0.0.1:4190/src/ground-surface.js"
+      },
+      {
+        "level": "warn",
+        "message": "沙地贴图加载失败，保留原地表。",
+        "timestamp": "2026-10-11T15:47:57.934Z",
+        "url": "http://127.0.0.1:4190/src/ground-surface.js"
+      }
+    ],
+    "image": null
+  },
+  {
+    "mode": "cancel",
+    "trace": {
+      "mode": "cancel",
+      "events": [],
+      "draws": 0,
+      "button": {
+        "disabled": true,
+        "text": "正在唤醒群岛…"
+      },
+      "status": "正在准备群岛…",
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    "entered": false,
+    "ax": "Browser tab: 14, Title: \"开始页地表准备隔离验收\", URL: \"http://127.0.0.1:4190/tests/startup-preparation.html?mode=cancel\".\n0 AXWebArea 开始页地表准备隔离验收, URL: 127.0.0.1:4190/tests/startup-preparation.html?mode=cancel\n\t1 container 开始页准备隔离游戏\n\t\t2 AXWebArea 潮生群岛 · Tidelands, URL: about:srcdoc\n\t\t\t3 container panel\n\t\t\t\t4 heading 画面暂时中断, Value: 2, ID: panel-title\n\t\t\t\t\t5 text 画面暂时中断\n\t\t\t\t6 button (disabled) Description: 关闭面板, ID: panel-close\n\t\t\t\t7 container panel-body\n\t\t\t\t\t8 text 旅程已暂停，进度已保存。刷新页面后可继续探索。\n\t\t\t\t\t9 button 导出存档备份\n\t\t\t\t\t10 button 刷新页面\n\nThe focused UI element is 9 button 导出存档备份",
+    "console": [],
+    "image": null
+  },
+  {
+    "mode": "restore",
+    "trace": {
+      "mode": "restore",
+      "events": [],
+      "draws": 0,
+      "button": {
+        "disabled": false,
+        "text": "重新加载"
+      },
+      "status": "准备已中断。重新加载可继续。",
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    "entered": false,
+    "ax": "Browser tab: 15, Title: \"开始页地表准备隔离验收\", URL: \"http://127.0.0.1:4190/tests/startup-preparation.html?mode=restore\".\n0 AXWebArea 开始页地表准备隔离验收, URL: 127.0.0.1:4190/tests/startup-preparation.html?mode=restore\n\t1 container 开始页准备隔离游戏\n\t\t2 AXWebArea 潮生群岛 · Tidelands, URL: about:srcdoc\n\t\t\t3 container\n\t\t\t\t4 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world\n\t\t\t\t5 container start-screen\n\t\t\t\t\t6 text T I D E L A N D S\n\t\t\t\t\t7 heading 潮生群岛, Value: 2\n\t\t\t\t\t\t8 text 潮生群岛\n\t\t\t\t\t9 container\n\t\t\t\t\t\t10 text 海风带来远方的消息。\n\t\t\t\t\t\t11 text 探索群岛，建起营地，让归航的灯再次亮起。\n\t\t\t\t\t12 button 重新加载, ID: start-button\n\t\t\t\t\t17 text 准备已中断。重新加载可继续。\n\t\t\t\t\t14 text 单人开放世界 · 自由探索 · 本地存档\n\t\t\t\t18 text {\"mode\":\"restore\",\"events\":[],\"draws\":0,\"button\":{\"disabled\":false,\"text\":\"重新加载\"},\"status\":\"准备已中断。重新加载可继续。\",\"viewport\":[1280,720],\"canvasBuffer\":[1920,1080]}\n\t\t\t\t16 button (disabled) 模拟准备中离开并恢复\n\nThe focused UI element is 2 AXWebArea 潮生群岛 · Tidelands, URL: about:srcdoc",
+    "console": [],
+    "image": null
+  },
+  {
+    "mode": "upload-error",
+    "trace": {
+      "mode": "upload-error",
+      "events": [
+        {
+          "kind": "upload",
+          "source": "/assets/ground/leafy-grass/roughness.jpg",
+          "frame": 4,
+          "phase": "loading",
+          "cpuMs": 0.6000001430511475
+        }
+      ],
+      "draws": 0,
+      "button": {
+        "disabled": false,
+        "text": "重新加载"
+      },
+      "status": "画面准备失败。请刷新页面重试。",
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    "entered": false,
+    "ax": "Browser tab: 16, Title: \"开始页地表准备隔离验收\", URL: \"http://127.0.0.1:4190/tests/startup-preparation.html?mode=upload-error\".\nThere has been no change in the accessibility tree.\nThe focused UI element is 0 AXWebArea 开始页地表准备隔离验收, URL: 127.0.0.1:4190/tests/startup-preparation.html?mode=upload-error",
+    "console": [
+      {
+        "level": "error",
+        "message": "Error: 地表准备失败（WebGL 1282）\n    at prepareSurfaceTextures (http://127.0.0.1:4190/src/startup-textures.js:20:53)",
+        "timestamp": "2026-10-11T15:48:03.138Z",
+        "url": "http://127.0.0.1:4190/src/main.js"
+      }
+    ],
+    "image": "/Users/huxiaocong/Codex/tidelands/docs/startup-preparation-final-upload-error.jpg"
+  }
+]

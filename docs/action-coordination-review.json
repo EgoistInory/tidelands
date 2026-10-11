@@ -1,0 +1,2006 @@
+{
+  "kind": "M5 bounded torso/free-hand action batch",
+  "auditedAt": "2026-10-11T10:46:28.083135+00:00",
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "b7bc9f3e64b40f1e9d0563f5de004027a5098b220f21ed4b2b6f4af7635adffc",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "ef4290e2daf552d5ee73fb9f1a40f023a8cb07d9508bb7e16c1ea0ea734aa5c6",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "9ef6f03f8620a5592513a074b5aec022d6540d00afe8f047976a940071048d9b",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "1697ecb6c695952c9ba656c61b0e1c9852f20fc4f7f2b10b6e81d1cbbf397f0b",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "95a5cb81f480bfb5be31a9ed013eca5f3722b52eb6a34cb3bf135f9555244261",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "previousRuntimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "b7bc9f3e64b40f1e9d0563f5de004027a5098b220f21ed4b2b6f4af7635adffc",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "9ef6f03f8620a5592513a074b5aec022d6540d00afe8f047976a940071048d9b",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "1697ecb6c695952c9ba656c61b0e1c9852f20fc4f7f2b10b6e81d1cbbf397f0b",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "95a5cb81f480bfb5be31a9ed013eca5f3722b52eb6a34cb3bf135f9555244261",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "changedRuntime": [
+    "src/character.js"
+  ],
+  "tests": {
+    "character": 22,
+    "full": 134,
+    "redFail": 1,
+    "syntax": true
+  },
+  "poseRows": [
+    {
+      "file": "action-coordination-axe-side-0.jpg",
+      "sample": {
+        "actionPhase": 0,
+        "canvasBuffer": [
+          1280,
+          517
+        ],
+        "complete": false,
+        "contacts": [
+          true,
+          true
+        ],
+        "elapsedSeconds": 0,
+        "equipment": "axe",
+        "feet": [
+          [
+            -0.22,
+            0.14604,
+            0
+          ],
+          [
+            0.22,
+            0.14604,
+            0
+          ]
+        ],
+        "frames": 2655,
+        "gesture": "gather",
+        "mode": "idle",
+        "phase": 0,
+        "pose": {
+          "freeElbow": -0.15,
+          "freeShoulder": [
+            0,
+            0,
+            0
+          ],
+          "torsoYaw": 0
+        },
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "slope": 0.12,
+        "stanceFraction": 0.6,
+        "stats": {
+          "actionFrames": 0,
+          "bothFeetAirborneFrames": 0,
+          "contacts": 0,
+          "maxArmFrameDelta": 0,
+          "maxFreeArmPitch": 0,
+          "maxPoseFrameDelta": 0,
+          "maxSoleHeightError": 0,
+          "maxStanceDrift": 0,
+          "maxTorsoYaw": 0,
+          "minPelvisOffset": 0
+        },
+        "strideLengthMeters": 1.6,
+        "toolBounds": {
+          "max": [
+            0.521999998986721,
+            1.5942563160346863,
+            0.2624509224479289
+          ],
+          "min": [
+            0.04754041790962216,
+            0.5812357103744675,
+            0.01292487383851186
+          ]
+        },
+        "viewport": [
+          1280,
+          517
+        ],
+        "walkBlend": 0,
+        "windowViewport": [
+          1280,
+          720
+        ]
+      }
+    },
+    {
+      "file": "action-coordination-axe-side-0.25.jpg",
+      "sample": {
+        "actionPhase": 0.25,
+        "canvasBuffer": [
+          1280,
+          517
+        ],
+        "complete": false,
+        "contacts": [
+          true,
+          true
+        ],
+        "elapsedSeconds": 0,
+        "equipment": "axe",
+        "feet": [
+          [
+            -0.22,
+            0.14604,
+            0
+          ],
+          [
+            0.22,
+            0.14604,
+            0
+          ]
+        ],
+        "frames": 2670,
+        "gesture": "gather",
+        "mode": "idle",
+        "phase": 0,
+        "pose": {
+          "freeElbow": -0.2914213562373062,
+          "freeShoulder": [
+            -0.24748737341528584,
+            0,
+            -0.08485281374238372
+          ],
+          "torsoYaw": -0.09899494936611436
+        },
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "slope": 0.12,
+        "stanceFraction": 0.6,
+        "stats": {
+          "actionFrames": 0,
+          "bothFeetAirborneFrames": 0,
+          "contacts": 0,
+          "maxArmFrameDelta": 0,
+          "maxFreeArmPitch": 0,
+          "maxPoseFrameDelta": 0,
+          "maxSoleHeightError": 0,
+          "maxStanceDrift": 0,
+          "maxTorsoYaw": 0,
+          "minPelvisOffset": 0
+        },
+        "strideLengthMeters": 1.6,
+        "toolBounds": {
+          "max": [
+            0.45392890248625567,
+            1.9435548458495129,
+            1.7736069753917032
+          ],
+          "min": [
+            -0.10129994041619932,
+            1.7584175655355168,
+            0.7537328256958493
+          ]
+        },
+        "viewport": [
+          1280,
+          517
+        ],
+        "walkBlend": 0,
+        "windowViewport": [
+          1280,
+          720
+        ]
+      }
+    },
+    {
+      "file": "action-coordination-axe-side-0.5.jpg",
+      "sample": {
+        "actionPhase": 0.5,
+        "canvasBuffer": [
+          1280,
+          517
+        ],
+        "complete": false,
+        "contacts": [
+          true,
+          true
+        ],
+        "elapsedSeconds": 0,
+        "equipment": "axe",
+        "feet": [
+          [
+            -0.22,
+            0.14604,
+            0
+          ],
+          [
+            0.22,
+            0.14604,
+            0
+          ]
+        ],
+        "frames": 2685,
+        "gesture": "gather",
+        "mode": "idle",
+        "phase": 0,
+        "pose": {
+          "freeElbow": -0.35,
+          "freeShoulder": [
+            -0.35,
+            0,
+            -0.12
+          ],
+          "torsoYaw": -0.14
+        },
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "slope": 0.12,
+        "stanceFraction": 0.6,
+        "stats": {
+          "actionFrames": 0,
+          "bothFeetAirborneFrames": 0,
+          "contacts": 0,
+          "maxArmFrameDelta": 0,
+          "maxFreeArmPitch": 0,
+          "maxPoseFrameDelta": 0,
+          "maxSoleHeightError": 0,
+          "maxStanceDrift": 0,
+          "maxTorsoYaw": 0,
+          "minPelvisOffset": 0
+        },
+        "strideLengthMeters": 1.6,
+        "toolBounds": {
+          "max": [
+            0.4350344551156847,
+            2.6188785534435985,
+            1.832697200572886
+          ],
+          "min": [
+            -0.14003019732033145,
+            2.0620699187083935,
+            0.8809308085262648
+          ]
+        },
+        "viewport": [
+          1280,
+          517
+        ],
+        "walkBlend": 0,
+        "windowViewport": [
+          1280,
+          720
+        ]
+      }
+    },
+    {
+      "file": "action-coordination-axe-side-0.75.jpg",
+      "sample": {
+        "actionPhase": 0.75,
+        "canvasBuffer": [
+          1280,
+          517
+        ],
+        "complete": false,
+        "contacts": [
+          true,
+          true
+        ],
+        "elapsedSeconds": 0,
+        "equipment": "axe",
+        "feet": [
+          [
+            -0.22,
+            0.14604,
+            0
+          ],
+          [
+            0.22,
+            0.14604,
+            0
+          ]
+        ],
+        "frames": 2700,
+        "gesture": "gather",
+        "mode": "idle",
+        "phase": 0,
+        "pose": {
+          "freeElbow": -0.2914213562373119,
+          "freeShoulder": [
+            -0.24748737341529584,
+            0,
+            -0.08485281374238715
+          ],
+          "torsoYaw": -0.09899494936611834
+        },
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "slope": 0.12,
+        "stanceFraction": 0.6,
+        "stats": {
+          "actionFrames": 0,
+          "bothFeetAirborneFrames": 0,
+          "contacts": 0,
+          "maxArmFrameDelta": 0,
+          "maxFreeArmPitch": 0,
+          "maxPoseFrameDelta": 0,
+          "maxSoleHeightError": 0,
+          "maxStanceDrift": 0,
+          "maxTorsoYaw": 0,
+          "minPelvisOffset": 0
+        },
+        "strideLengthMeters": 1.6,
+        "toolBounds": {
+          "max": [
+            0.4539289024862533,
+            1.942485641025938,
+            1.7736069753917236
+          ],
+          "min": [
+            -0.10129994041620594,
+            1.757348360711996,
+            0.7537328256958704
+          ]
+        },
+        "viewport": [
+          1280,
+          517
+        ],
+        "walkBlend": 0,
+        "windowViewport": [
+          1280,
+          720
+        ]
+      }
+    },
+    {
+      "file": "action-coordination-axe-side-1.jpg",
+      "sample": {
+        "actionPhase": 1,
+        "canvasBuffer": [
+          1280,
+          517
+        ],
+        "complete": false,
+        "contacts": [
+          true,
+          true
+        ],
+        "elapsedSeconds": 0,
+        "equipment": "axe",
+        "feet": [
+          [
+            -0.22,
+            0.14604,
+            0
+          ],
+          [
+            0.22,
+            0.14604,
+            0
+          ]
+        ],
+        "frames": 2715,
+        "gesture": "gather",
+        "mode": "idle",
+        "phase": 0,
+        "pose": {
+          "freeElbow": -0.15,
+          "freeShoulder": [
+            0,
+            0,
+            0
+          ],
+          "torsoYaw": 0
+        },
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "slope": 0.12,
+        "stanceFraction": 0.6,
+        "stats": {
+          "actionFrames": 0,
+          "bothFeetAirborneFrames": 0,
+          "contacts": 0,
+          "maxArmFrameDelta": 0,
+          "maxFreeArmPitch": 0,
+          "maxPoseFrameDelta": 0,
+          "maxSoleHeightError": 0,
+          "maxStanceDrift": 0,
+          "maxTorsoYaw": 0,
+          "minPelvisOffset": 0
+        },
+        "strideLengthMeters": 1.6,
+        "toolBounds": {
+          "max": [
+            0.521999998986721,
+            1.5923391894229948,
+            0.2624509224479289
+          ],
+          "min": [
+            0.04754041790962216,
+            0.579318583762776,
+            0.01292487383851186
+          ]
+        },
+        "viewport": [
+          1280,
+          517
+        ],
+        "walkBlend": 0,
+        "windowViewport": [
+          1280,
+          720
+        ]
+      }
+    },
+    {
+      "file": "action-coordination-sword-front-0.jpg",
+      "sample": {
+        "actionPhase": 0,
+        "canvasBuffer": [
+          1280,
+          517
+        ],
+        "complete": false,
+        "contacts": [
+          true,
+          true
+        ],
+        "elapsedSeconds": 0,
+        "equipment": "sword",
+        "feet": [
+          [
+            -0.22,
+            0.145,
+            0
+          ],
+          [
+            0.22,
+            0.145,
+            0
+          ]
+        ],
+        "frames": 3780,
+        "gesture": "attack",
+        "mode": "idle",
+        "phase": 0,
+        "pose": {
+          "freeElbow": -0.15,
+          "freeShoulder": [
+            0,
+            0,
+            0
+          ],
+          "torsoYaw": 0
+        },
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "slope": 0,
+        "stanceFraction": 0.6,
+        "stats": {
+          "actionFrames": 0,
+          "bothFeetAirborneFrames": 0,
+          "contacts": 0,
+          "maxArmFrameDelta": 0,
+          "maxFreeArmPitch": 0,
+          "maxPoseFrameDelta": 0,
+          "maxSoleHeightError": 0,
+          "maxStanceDrift": 0,
+          "maxTorsoYaw": 0,
+          "minPelvisOffset": 0
+        },
+        "strideLengthMeters": 1.6,
+        "toolBounds": {
+          "max": [
+            0.6600000029802322,
+            1.656971110986023,
+            1.5827997975781471
+          ],
+          "min": [
+            0.2599999970197678,
+            0.4445633638899845,
+            0.26731674160653845
+          ]
+        },
+        "viewport": [
+          1280,
+          517
+        ],
+        "walkBlend": 0,
+        "windowViewport": [
+          1280,
+          720
+        ]
+      }
+    },
+    {
+      "file": "action-coordination-sword-front-0.25.jpg",
+      "sample": {
+        "actionPhase": 0.25,
+        "canvasBuffer": [
+          1280,
+          517
+        ],
+        "complete": false,
+        "contacts": [
+          true,
+          true
+        ],
+        "elapsedSeconds": 0,
+        "equipment": "sword",
+        "feet": [
+          [
+            -0.22,
+            0.145,
+            0
+          ],
+          [
+            0.22,
+            0.145,
+            0
+          ]
+        ],
+        "frames": 3795,
+        "gesture": "attack",
+        "mode": "idle",
+        "phase": 0,
+        "pose": {
+          "freeElbow": -0.3621320343559601,
+          "freeShoulder": [
+            -0.35355339059326674,
+            0,
+            -0.12727922061357602
+          ],
+          "torsoYaw": 0.15556349186103738
+        },
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "slope": 0,
+        "stanceFraction": 0.6,
+        "stats": {
+          "actionFrames": 0,
+          "bothFeetAirborneFrames": 0,
+          "contacts": 0,
+          "maxArmFrameDelta": 0,
+          "maxFreeArmPitch": 0,
+          "maxPoseFrameDelta": 0,
+          "maxSoleHeightError": 0,
+          "maxStanceDrift": 0,
+          "maxTorsoYaw": 0,
+          "minPelvisOffset": 0
+        },
+        "strideLengthMeters": 1.6,
+        "toolBounds": {
+          "max": [
+            0.9492240057020054,
+            3.0419629711370035,
+            2.0263085619864496
+          ],
+          "min": [
+            0.3873458537505005,
+            2.1896374379510335,
+            0.45399479448172386
+          ]
+        },
+        "viewport": [
+          1280,
+          517
+        ],
+        "walkBlend": 0,
+        "windowViewport": [
+          1280,
+          720
+        ]
+      }
+    },
+    {
+      "file": "action-coordination-sword-front-0.5.jpg",
+      "sample": {
+        "actionPhase": 0.5,
+        "canvasBuffer": [
+          1280,
+          517
+        ],
+        "complete": false,
+        "contacts": [
+          true,
+          true
+        ],
+        "elapsedSeconds": 0,
+        "equipment": "sword",
+        "feet": [
+          [
+            -0.22,
+            0.145,
+            0
+          ],
+          [
+            0.22,
+            0.145,
+            0
+          ]
+        ],
+        "frames": 3810,
+        "gesture": "attack",
+        "mode": "idle",
+        "phase": 0,
+        "pose": {
+          "freeElbow": -0.45,
+          "freeShoulder": [
+            -0.5,
+            0,
+            -0.18
+          ],
+          "torsoYaw": 0.22
+        },
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "slope": 0,
+        "stanceFraction": 0.6,
+        "stats": {
+          "actionFrames": 0,
+          "bothFeetAirborneFrames": 0,
+          "contacts": 0,
+          "maxArmFrameDelta": 0,
+          "maxFreeArmPitch": 0,
+          "maxPoseFrameDelta": 0,
+          "maxSoleHeightError": 0,
+          "maxStanceDrift": 0,
+          "maxTorsoYaw": 0,
+          "minPelvisOffset": 0
+        },
+        "strideLengthMeters": 1.6,
+        "toolBounds": {
+          "max": [
+            0.925277902255873,
+            3.9247565267834776,
+            1.3164706691928505
+          ],
+          "min": [
+            0.3805015918803376,
+            2.460621690491894,
+            0.27475772118361486
+          ]
+        },
+        "viewport": [
+          1280,
+          517
+        ],
+        "walkBlend": 0,
+        "windowViewport": [
+          1280,
+          720
+        ]
+      }
+    },
+    {
+      "file": "action-coordination-sword-front-0.75.jpg",
+      "sample": {
+        "actionPhase": 0.75,
+        "canvasBuffer": [
+          1280,
+          517
+        ],
+        "complete": false,
+        "contacts": [
+          true,
+          true
+        ],
+        "elapsedSeconds": 0,
+        "equipment": "sword",
+        "feet": [
+          [
+            -0.22,
+            0.145,
+            0
+          ],
+          [
+            0.22,
+            0.145,
+            0
+          ]
+        ],
+        "frames": 3825,
+        "gesture": "attack",
+        "mode": "idle",
+        "phase": 0,
+        "pose": {
+          "freeElbow": -0.3621320343559664,
+          "freeShoulder": [
+            -0.3535533905932774,
+            0,
+            -0.12727922061357985
+          ],
+          "torsoYaw": 0.15556349186104204
+        },
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "slope": 0,
+        "stanceFraction": 0.6,
+        "stats": {
+          "actionFrames": 0,
+          "bothFeetAirborneFrames": 0,
+          "contacts": 0,
+          "maxArmFrameDelta": 0,
+          "maxFreeArmPitch": 0,
+          "maxPoseFrameDelta": 0,
+          "maxSoleHeightError": 0,
+          "maxStanceDrift": 0,
+          "maxTorsoYaw": 0,
+          "minPelvisOffset": 0
+        },
+        "strideLengthMeters": 1.6,
+        "toolBounds": {
+          "max": [
+            0.9492240057020096,
+            3.0409818782611553,
+            2.026308561986415
+          ],
+          "min": [
+            0.38734585375050234,
+            2.188656345075131,
+            0.4539947944817154
+          ]
+        },
+        "viewport": [
+          1280,
+          517
+        ],
+        "walkBlend": 0,
+        "windowViewport": [
+          1280,
+          720
+        ]
+      }
+    },
+    {
+      "file": "action-coordination-sword-front-1.jpg",
+      "sample": {
+        "actionPhase": 1,
+        "canvasBuffer": [
+          1280,
+          517
+        ],
+        "complete": false,
+        "contacts": [
+          true,
+          true
+        ],
+        "elapsedSeconds": 0,
+        "equipment": "sword",
+        "feet": [
+          [
+            -0.22,
+            0.145,
+            0
+          ],
+          [
+            0.22,
+            0.145,
+            0
+          ]
+        ],
+        "frames": 3840,
+        "gesture": "attack",
+        "mode": "idle",
+        "phase": 0,
+        "pose": {
+          "freeElbow": -0.15,
+          "freeShoulder": [
+            0,
+            0,
+            0
+          ],
+          "torsoYaw": 0
+        },
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "slope": 0,
+        "stanceFraction": 0.6,
+        "stats": {
+          "actionFrames": 0,
+          "bothFeetAirborneFrames": 0,
+          "contacts": 0,
+          "maxArmFrameDelta": 0,
+          "maxFreeArmPitch": 0,
+          "maxPoseFrameDelta": 0,
+          "maxSoleHeightError": 0,
+          "maxStanceDrift": 0,
+          "maxTorsoYaw": 0,
+          "minPelvisOffset": 0
+        },
+        "strideLengthMeters": 1.6,
+        "toolBounds": {
+          "max": [
+            0.6600000029802322,
+            1.655202914874787,
+            1.5827997975781471
+          ],
+          "min": [
+            0.2599999970197678,
+            0.4427951677787486,
+            0.26731674160653845
+          ]
+        },
+        "viewport": [
+          1280,
+          517
+        ],
+        "walkBlend": 0,
+        "windowViewport": [
+          1280,
+          720
+        ]
+      }
+    }
+  ],
+  "cycles": {
+    "desktop-attack": {
+      "actionPhase": 1,
+      "canvasBuffer": [
+        1280,
+        489
+      ],
+      "complete": true,
+      "contacts": [
+        true,
+        true
+      ],
+      "elapsedSeconds": 12,
+      "equipment": "sword",
+      "feet": [
+        [
+          -0.22,
+          0.145,
+          0
+        ],
+        [
+          0.22,
+          0.145,
+          0
+        ]
+      ],
+      "frames": 5325,
+      "gesture": "attack-cycle",
+      "mode": "actions",
+      "phase": 0,
+      "pose": {
+        "freeElbow": -0.15,
+        "freeShoulder": [
+          0,
+          0,
+          0
+        ],
+        "torsoYaw": 0
+      },
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "slope": 0,
+      "stanceFraction": 0.6,
+      "stats": {
+        "actionFrames": 720,
+        "bothFeetAirborneFrames": 0,
+        "contacts": 1322,
+        "maxArmFrameDelta": 0.2248468050767629,
+        "maxFreeArmPitch": 0.4993329143909002,
+        "maxPoseFrameDelta": 0.2248468050767629,
+        "maxSoleHeightError": 6.38378239159465e-16,
+        "maxStanceDrift": 7.894497640785698e-16,
+        "maxTorsoYaw": 0.2197064823319961,
+        "minPelvisOffset": -0.06199782055044324
+      },
+      "strideLengthMeters": 1.6,
+      "toolBounds": {
+        "max": [
+          0.6600000029802322,
+          1.6564009733887866,
+          1.5827997975781471
+        ],
+        "min": [
+          0.2599999970197678,
+          0.44399322629274807,
+          0.26731674160653845
+        ]
+      },
+      "viewport": [
+        1280,
+        489
+      ],
+      "walkBlend": 0,
+      "windowViewport": [
+        1280,
+        720
+      ]
+    },
+    "desktop-gather": {
+      "actionPhase": 1,
+      "canvasBuffer": [
+        1280,
+        489
+      ],
+      "complete": true,
+      "contacts": [
+        true,
+        true
+      ],
+      "elapsedSeconds": 12,
+      "equipment": "axe",
+      "feet": [
+        [
+          -0.22,
+          0.14604,
+          0
+        ],
+        [
+          0.22,
+          0.14604,
+          0
+        ]
+      ],
+      "frames": 8805,
+      "gesture": "gather-cycle",
+      "mode": "actions",
+      "phase": 0,
+      "pose": {
+        "freeElbow": -0.15,
+        "freeShoulder": [
+          0,
+          0,
+          0
+        ],
+        "torsoYaw": 0
+      },
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "slope": 0.12,
+      "stanceFraction": 0.6,
+      "stats": {
+        "actionFrames": 720,
+        "bothFeetAirborneFrames": 0,
+        "contacts": 1322,
+        "maxArmFrameDelta": 0.22050269092042796,
+        "maxFreeArmPitch": 0.3495864001498582,
+        "maxPoseFrameDelta": 0.22050269092042796,
+        "maxSoleHeightError": 6.938893903907228e-16,
+        "maxStanceDrift": 8.899114524108741e-16,
+        "maxTorsoYaw": 0.1398345600599433,
+        "minPelvisOffset": -0.06440986274560591
+      },
+      "strideLengthMeters": 1.6,
+      "toolBounds": {
+        "max": [
+          0.521999998986721,
+          1.590882407642076,
+          0.2624509224479289
+        ],
+        "min": [
+          0.04754041790962216,
+          0.5778618019818572,
+          0.01292487383851186
+        ]
+      },
+      "viewport": [
+        1280,
+        489
+      ],
+      "walkBlend": 0,
+      "windowViewport": [
+        1280,
+        720
+      ]
+    },
+    "mobile-gather": {
+      "actionPhase": 0.5,
+      "canvasBuffer": [
+        390,
+        430
+      ],
+      "complete": true,
+      "contacts": [
+        true,
+        true
+      ],
+      "elapsedSeconds": 12,
+      "equipment": "axe",
+      "feet": [
+        [
+          -0.22,
+          0.14604,
+          0
+        ],
+        [
+          0.22,
+          0.14604,
+          0
+        ]
+      ],
+      "frames": 11145,
+      "gesture": "gather-cycle",
+      "mode": "actions",
+      "phase": 0,
+      "pose": {
+        "freeElbow": -0.15,
+        "freeShoulder": [
+          0,
+          0,
+          0
+        ],
+        "torsoYaw": 0
+      },
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "slope": 0.12,
+      "stanceFraction": 0.6,
+      "stats": {
+        "actionFrames": 721,
+        "bothFeetAirborneFrames": 0,
+        "contacts": 1322,
+        "maxArmFrameDelta": 0.220039948658656,
+        "maxFreeArmPitch": 0.34965922105934116,
+        "maxPoseFrameDelta": 0.220039948658656,
+        "maxSoleHeightError": 6.938893903907228e-16,
+        "maxStanceDrift": 8.993834424997154e-16,
+        "maxTorsoYaw": 0.13986368842373648,
+        "minPelvisOffset": -0.06434232035723597
+      },
+      "strideLengthMeters": 1.6,
+      "toolBounds": {
+        "max": [
+          0.521999998986721,
+          1.5886833919033598,
+          0.2624509224479289
+        ],
+        "min": [
+          0.04754041790962216,
+          0.575662786243141,
+          0.01292487383851186
+        ]
+      },
+      "viewport": [
+        390,
+        430
+      ],
+      "walkBlend": 0,
+      "windowViewport": [
+        390,
+        844
+      ]
+    }
+  },
+  "headClearanceProxy": {
+    "kind": "action coordination current clearance diagnostic",
+    "characterSha256": "ef4290e2daf552d5ee73fb9f1a40f023a8cb07d9508bb7e16c1ea0ea734aa5c6",
+    "scriptSha256": "40261d1c90700022edc663b76ff4834b300c596aa3bfc744f23dc3f8bc1d5e89",
+    "rows": [
+      {
+        "selected": "axe",
+        "action": "attack",
+        "samples": 109,
+        "minimumNormalizedGap": 1.1892656058642292,
+        "framesInsideHeadProxy": 0,
+        "worst": {
+          "age": 0.225,
+          "part": "CapsuleGeometry",
+          "vertex": 48,
+          "world": [
+            0.5008865165061281,
+            2.478595101846175,
+            0.29069295227109027
+          ]
+        },
+        "maxFootDrift": 4.484050470211362e-16
+      },
+      {
+        "selected": "axe",
+        "action": "gather",
+        "samples": 102,
+        "minimumNormalizedGap": 1.6466633371661237,
+        "framesInsideHeadProxy": 0,
+        "worst": {
+          "age": 0.20833333333333334,
+          "part": "CapsuleGeometry",
+          "vertex": 48,
+          "world": [
+            0.35123561556535293,
+            2.136025729493535,
+            0.9177089119807025
+          ]
+        },
+        "maxFootDrift": 5.802176783577771e-16
+      },
+      {
+        "selected": "sword",
+        "action": "attack",
+        "samples": 109,
+        "minimumNormalizedGap": 1.2609158682263004,
+        "framesInsideHeadProxy": 0,
+        "worst": {
+          "age": 0.225,
+          "part": "CapsuleGeometry",
+          "vertex": 48,
+          "world": [
+            0.5081887054191921,
+            2.5283983307818043,
+            0.3233474903406016
+          ]
+        },
+        "maxFootDrift": 4.484050470211362e-16
+      },
+      {
+        "selected": "sword",
+        "action": "gather",
+        "samples": 102,
+        "minimumNormalizedGap": 1.7472808457544744,
+        "framesInsideHeadProxy": 0,
+        "worst": {
+          "age": 0.20833333333333334,
+          "part": "CapsuleGeometry",
+          "vertex": 37,
+          "world": [
+            0.350694722655704,
+            2.1540935826306704,
+            0.9620519858675247
+          ]
+        },
+        "maxFootDrift": 5.802176783577771e-16
+      }
+    ],
+    "accepted": false,
+    "note": "Explicit stationary flat-ground production poses at240Hz. Tool vertices versus scaled head bounding sphere are a clearance proxy, not exact triangle collision, real combat, visual naturalness or all-terrain acceptance."
+  },
+  "productionInput": {
+    "attack": {
+      "frames": 33,
+      "maxTorsoYaw": 0.2196,
+      "minFreeShoulder": -0.4991,
+      "enemyHp": [
+        40,
+        2
+      ]
+    },
+    "gather": {
+      "frames": 33,
+      "minTorsoYaw": -0.1398,
+      "minFreeShoulder": -0.3496,
+      "stone": [
+        0,
+        2
+      ]
+    }
+  },
+  "dynamic": {
+    "desktop": {
+      "activeMs": 600016.64,
+      "checkpoints": [
+        {
+          "activeMs": 0,
+          "audio": {
+            "ambienceBytes": 8640000,
+            "birdsGain": 0,
+            "context": "running",
+            "insectsGain": 0,
+            "stepsScheduled": 0,
+            "surfGain": 0,
+            "voices": 0
+          },
+          "calls": 381,
+          "canvasBuffer": [
+            1920,
+            852
+          ],
+          "daytime": "午后",
+          "distance": 0,
+          "frames": 0,
+          "geometries": 218,
+          "heapBytes": 69689371,
+          "height": 1.22,
+          "hp": 100,
+          "kills": 0,
+          "movingFrames": 0,
+          "position": [
+            -90,
+            140
+          ],
+          "stage": "shore-exploration",
+          "textures": 8,
+          "time": 240,
+          "triangles": 1627421,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        {
+          "activeMs": 60000.04,
+          "audio": {
+            "ambienceBytes": 8640000,
+            "birdsGain": 0.0015635094605386255,
+            "context": "running",
+            "insectsGain": 0,
+            "stepsScheduled": 146,
+            "surfGain": 0.04640526697039604,
+            "voices": 0
+          },
+          "calls": 372,
+          "canvasBuffer": [
+            1920,
+            852
+          ],
+          "daytime": "午后",
+          "distance": 361.6,
+          "frames": 3597,
+          "geometries": 223,
+          "heapBytes": 57070212,
+          "height": 1.39,
+          "hp": 100,
+          "kills": 0,
+          "movingFrames": 3596,
+          "position": [
+            -112.39,
+            146.98
+          ],
+          "stage": "shore-exploration",
+          "textures": 14,
+          "time": 299.97,
+          "triangles": 1683832,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        {
+          "activeMs": 120016.64,
+          "audio": {
+            "ambienceBytes": 8640000,
+            "birdsGain": 0.0005261006881482899,
+            "context": "running",
+            "insectsGain": 0.0009383999276906252,
+            "stepsScheduled": 301,
+            "surfGain": 0.12616515159606934,
+            "voices": 2
+          },
+          "calls": 425,
+          "canvasBuffer": [
+            1920,
+            852
+          ],
+          "daytime": "午后",
+          "distance": 725.05,
+          "frames": 7198,
+          "geometries": 281,
+          "heapBytes": 68117996,
+          "height": 16.74,
+          "hp": 100,
+          "kills": 0,
+          "movingFrames": 7197,
+          "position": [
+            132.12,
+            -25.96
+          ],
+          "stage": "forest-combat",
+          "textures": 14,
+          "time": 240.02,
+          "triangles": 1743411,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        {
+          "activeMs": 180016.64,
+          "audio": {
+            "ambienceBytes": 8640000,
+            "birdsGain": 0.17935627698898315,
+            "context": "running",
+            "insectsGain": 0,
+            "stepsScheduled": 564,
+            "surfGain": 0,
+            "voices": 2
+          },
+          "calls": 361,
+          "canvasBuffer": [
+            1920,
+            852
+          ],
+          "daytime": "午后",
+          "distance": 1143.41,
+          "frames": 10798,
+          "geometries": 281,
+          "heapBytes": 54047448,
+          "height": 21.11,
+          "hp": 93,
+          "kills": 9,
+          "movingFrames": 10783,
+          "position": [
+            150.73,
+            -32.24
+          ],
+          "stage": "forest-combat",
+          "textures": 14,
+          "time": 300.02,
+          "triangles": 1661973,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        {
+          "activeMs": 240000.04,
+          "audio": {
+            "ambienceBytes": 8640000,
+            "birdsGain": 0.032452091574668884,
+            "context": "running",
+            "insectsGain": 0.07384650409221649,
+            "stepsScheduled": 825,
+            "surfGain": 0,
+            "voices": 0
+          },
+          "calls": 254,
+          "canvasBuffer": [
+            1920,
+            852
+          ],
+          "daytime": "黄昏",
+          "distance": 1558.94,
+          "frames": 14397,
+          "geometries": 281,
+          "heapBytes": 75422860,
+          "height": 37.83,
+          "hp": 100,
+          "kills": 0,
+          "movingFrames": 14344,
+          "position": [
+            -75,
+            -204.8
+          ],
+          "stage": "highland-movement",
+          "textures": 14,
+          "time": 360.02,
+          "triangles": 947244,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        {
+          "activeMs": 300016.64,
+          "audio": {
+            "ambienceBytes": 8640000,
+            "birdsGain": 0,
+            "context": "running",
+            "insectsGain": 0.02168046683073044,
+            "stepsScheduled": 1093,
+            "surfGain": 0,
+            "voices": 1
+          },
+          "calls": 202,
+          "canvasBuffer": [
+            1920,
+            852
+          ],
+          "daytime": "夜晚",
+          "distance": 2075.45,
+          "frames": 17998,
+          "geometries": 281,
+          "heapBytes": 63476573,
+          "height": 25.48,
+          "hp": 46,
+          "kills": 0,
+          "movingFrames": 17826,
+          "position": [
+            -42.47,
+            -204.56
+          ],
+          "stage": "highland-movement",
+          "textures": 14,
+          "time": 420.03,
+          "triangles": 882423,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        {
+          "activeMs": 360000.04,
+          "audio": {
+            "ambienceBytes": 8640000,
+            "birdsGain": 0,
+            "context": "running",
+            "insectsGain": 0.02168046683073044,
+            "stepsScheduled": 1360,
+            "surfGain": 0,
+            "voices": 0
+          },
+          "calls": 679,
+          "canvasBuffer": [
+            1920,
+            852
+          ],
+          "daytime": "清晨",
+          "distance": 2582.32,
+          "frames": 21597,
+          "geometries": 281,
+          "heapBytes": 60416109,
+          "height": -0.32,
+          "hp": 100,
+          "kills": 0,
+          "movingFrames": 21357,
+          "position": [
+            190,
+            248.08
+          ],
+          "stage": "amber-swimming",
+          "textures": 14,
+          "time": 120.02,
+          "triangles": 2156418,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        {
+          "activeMs": 420016.64,
+          "audio": {
+            "ambienceBytes": 8640000,
+            "birdsGain": 0,
+            "context": "running",
+            "insectsGain": 0,
+            "stepsScheduled": 1414,
+            "surfGain": 0.044164735823869705,
+            "voices": 0
+          },
+          "calls": 645,
+          "canvasBuffer": [
+            1920,
+            852
+          ],
+          "daytime": "午后",
+          "distance": 2898.24,
+          "frames": 25198,
+          "geometries": 281,
+          "heapBytes": 54495057,
+          "height": -1.11,
+          "hp": 100,
+          "kills": 0,
+          "movingFrames": 24958,
+          "position": [
+            188.04,
+            254.19
+          ],
+          "stage": "amber-swimming",
+          "textures": 14,
+          "time": 180.03,
+          "triangles": 2156772,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        {
+          "activeMs": 480015.24,
+          "audio": {
+            "ambienceBytes": 8640000,
+            "birdsGain": 5.481260450324043e-05,
+            "context": "running",
+            "insectsGain": 0,
+            "stepsScheduled": 1465,
+            "surfGain": 0.03523024544119835,
+            "voices": 1
+          },
+          "calls": 366,
+          "canvasBuffer": [
+            1920,
+            852
+          ],
+          "daytime": "夜晚",
+          "distance": 3212.63,
+          "frames": 28798,
+          "geometries": 341,
+          "heapBytes": 57481004,
+          "height": 12.42,
+          "hp": 100,
+          "kills": 0,
+          "movingFrames": 28558,
+          "position": [
+            -56,
+            49.11
+          ],
+          "stage": "night-camp",
+          "textures": 14,
+          "time": 0.02,
+          "triangles": 1756933,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        {
+          "activeMs": 540016.64,
+          "audio": {
+            "ambienceBytes": 8640000,
+            "birdsGain": 0,
+            "context": "running",
+            "insectsGain": 0.0538390688598156,
+            "stepsScheduled": 1727,
+            "surfGain": 0,
+            "voices": 0
+          },
+          "calls": 342,
+          "canvasBuffer": [
+            1920,
+            852
+          ],
+          "daytime": "夜晚",
+          "distance": 3632.64,
+          "frames": 32397,
+          "geometries": 341,
+          "heapBytes": 77073565,
+          "height": 13.14,
+          "hp": 100,
+          "kills": 0,
+          "movingFrames": 32157,
+          "position": [
+            -41.87,
+            44.45
+          ],
+          "stage": "night-camp",
+          "textures": 14,
+          "time": 60.02,
+          "triangles": 1764144,
+          "viewport": [
+            1280,
+            720
+          ]
+        },
+        {
+          "activeMs": 600016.64,
+          "audio": {
+            "ambienceBytes": 8640000,
+            "birdsGain": 0.01095195021480322,
+            "context": "running",
+            "insectsGain": 0.048523761332035065,
+            "stepsScheduled": 1990,
+            "surfGain": 0,
+            "voices": 1
+          },
+          "calls": 390,
+          "canvasBuffer": [
+            1920,
+            852
+          ],
+          "daytime": "清晨",
+          "distance": 4052.64,
+          "frames": 35997,
+          "geometries": 341,
+          "heapBytes": 61710319,
+          "height": 11.7,
+          "hp": 100,
+          "kills": 0,
+          "movingFrames": 35757,
+          "position": [
+            -51.1,
+            56.3
+          ],
+          "stage": "night-camp",
+          "textures": 14,
+          "time": 120.02,
+          "triangles": 1848413,
+          "viewport": [
+            1280,
+            720
+          ]
+        }
+      ],
+      "complete": true,
+      "damageTaken": 343,
+      "distanceMeters": 4052.64,
+      "frameSpikes": [
+        {
+          "atMs": 83.24,
+          "intervalMs": 83.24,
+          "previousFrame": {
+            "cpuMs": 71.4,
+            "stage": "shore-exploration",
+            "transition": false
+          }
+        }
+      ],
+      "frames": 35997,
+      "hidden": false,
+      "hitCount": 34,
+      "maxMs": 83.24,
+      "medianMs": 16.7,
+      "movingFraction": 0.99,
+      "movingFrames": 35757,
+      "note": "QA scripted input and five phase teleports; production movement/tick/render/audio. Combat pair revived as labelled load fixture. Frame intervals and JS heap only; no save or campaign acceptance.",
+      "over50Ms": 1,
+      "p95Ms": 17.9,
+      "respawns": 0,
+      "revivedPairs": 8,
+      "stages": [
+        {
+          "attackHits": 0,
+          "damageTaken": 0,
+          "distance": 724.9288000000108,
+          "endPosition": [
+            -153.03,
+            137.26
+          ],
+          "frames": 7197,
+          "kills": 0,
+          "movingFrames": 7196,
+          "name": "shore-exploration",
+          "revivedPairs": 0,
+          "startPosition": [
+            -90,
+            140
+          ]
+        },
+        {
+          "attackHits": 34,
+          "damageTaken": 7,
+          "distance": 833.8134000000263,
+          "endPosition": [
+            160.65,
+            -26.16
+          ],
+          "frames": 7199,
+          "kills": 17,
+          "movingFrames": 7147,
+          "name": "forest-combat",
+          "revivedPairs": 8,
+          "startPosition": [
+            132,
+            -26
+          ]
+        },
+        {
+          "attackHits": 0,
+          "damageTaken": 336,
+          "distance": 1023.4952438092448,
+          "endPosition": [
+            -60.63,
+            -189.16
+          ],
+          "frames": 7200,
+          "kills": 0,
+          "movingFrames": 7013,
+          "name": "highland-movement",
+          "revivedPairs": 0,
+          "startPosition": [
+            -75,
+            -205
+          ]
+        },
+        {
+          "attackHits": 0,
+          "damageTaken": 0,
+          "distance": 630.2828000000118,
+          "endPosition": [
+            171.58,
+            272.54
+          ],
+          "frames": 7201,
+          "kills": 0,
+          "movingFrames": 7201,
+          "name": "amber-swimming",
+          "revivedPairs": 0,
+          "startPosition": [
+            190,
+            248
+          ]
+        },
+        {
+          "attackHits": 0,
+          "damageTaken": 0,
+          "distance": 840.1168999999345,
+          "endPosition": [
+            -51.1,
+            56.3
+          ],
+          "frames": 7200,
+          "kills": 0,
+          "movingFrames": 7200,
+          "name": "night-camp",
+          "revivedPairs": 0,
+          "startPosition": [
+            -56,
+            49
+          ]
+        }
+      ],
+      "stepAttempts": 1990,
+      "stepsScheduled": 1990,
+      "targetMs": 600000,
+      "wallMs": 600033.24
+    },
+    "mobile": {
+      "activeMs": 60000.1,
+      "checkpoints": [
+        {
+          "activeMs": 0,
+          "audio": {
+            "ambienceBytes": 8640000,
+            "birdsGain": 0,
+            "context": "running",
+            "insectsGain": 0,
+            "stepsScheduled": 0,
+            "surfGain": 0,
+            "voices": 0
+          },
+          "calls": 216,
+          "canvasBuffer": [
+            585,
+            930
+          ],
+          "daytime": "午后",
+          "distance": 0,
+          "frames": 0,
+          "geometries": 219,
+          "heapBytes": 70577461,
+          "height": 1.22,
+          "hp": 100,
+          "kills": 0,
+          "movingFrames": 0,
+          "position": [
+            -90,
+            140
+          ],
+          "stage": "shore-exploration",
+          "textures": 14,
+          "time": 240,
+          "triangles": 1271735,
+          "viewport": [
+            390,
+            844
+          ]
+        },
+        {
+          "activeMs": 60000.1,
+          "audio": {
+            "ambienceBytes": 8640000,
+            "birdsGain": 0,
+            "context": "running",
+            "insectsGain": 0.0538390688598156,
+            "stepsScheduled": 195,
+            "surfGain": 0,
+            "voices": 1
+          },
+          "calls": 243,
+          "canvasBuffer": [
+            585,
+            930
+          ],
+          "daytime": "夜晚",
+          "distance": 415.02,
+          "frames": 3601,
+          "geometries": 341,
+          "heapBytes": 68331985,
+          "height": 13.36,
+          "hp": 100,
+          "kills": 0,
+          "movingFrames": 3599,
+          "position": [
+            -46.65,
+            41.56
+          ],
+          "stage": "night-camp",
+          "textures": 14,
+          "time": 12.02,
+          "triangles": 1288041,
+          "viewport": [
+            390,
+            844
+          ]
+        }
+      ],
+      "complete": true,
+      "damageTaken": 31,
+      "distanceMeters": 415.02,
+      "frameSpikes": [],
+      "frames": 3601,
+      "hidden": false,
+      "hitCount": 6,
+      "maxMs": 33.4,
+      "medianMs": 16.7,
+      "movingFraction": 1,
+      "movingFrames": 3599,
+      "note": "QA scripted input and five phase teleports; production movement/tick/render/audio. Combat pair revived as labelled load fixture. Frame intervals and JS heap only; no save or campaign acceptance.",
+      "over50Ms": 0,
+      "p95Ms": 18.1,
+      "respawns": 0,
+      "revivedPairs": 1,
+      "stages": [
+        {
+          "attackHits": 0,
+          "damageTaken": 0,
+          "distance": 71.13111400000012,
+          "endPosition": [
+            -88.02,
+            137.32
+          ],
+          "frames": 722,
+          "kills": 0,
+          "movingFrames": 720,
+          "name": "shore-exploration",
+          "revivedPairs": 0,
+          "startPosition": [
+            -90,
+            140
+          ]
+        },
+        {
+          "attackHits": 6,
+          "damageTaken": 7,
+          "distance": 83.88589999999967,
+          "endPosition": [
+            147.78,
+            -46.53
+          ],
+          "frames": 719,
+          "kills": 3,
+          "movingFrames": 719,
+          "name": "forest-combat",
+          "revivedPairs": 1,
+          "startPosition": [
+            132,
+            -26
+          ]
+        },
+        {
+          "attackHits": 0,
+          "damageTaken": 24,
+          "distance": 113.91900000000024,
+          "endPosition": [
+            -46.79,
+            -217.05
+          ],
+          "frames": 720,
+          "kills": 0,
+          "movingFrames": 720,
+          "name": "highland-movement",
+          "revivedPairs": 0,
+          "startPosition": [
+            -75,
+            -205
+          ]
+        },
+        {
+          "attackHits": 0,
+          "damageTaken": 0,
+          "distance": 61.97020000000002,
+          "endPosition": [
+            195.07,
+            243.62
+          ],
+          "frames": 720,
+          "kills": 0,
+          "movingFrames": 720,
+          "name": "amber-swimming",
+          "revivedPairs": 0,
+          "startPosition": [
+            190,
+            248
+          ]
+        },
+        {
+          "attackHits": 0,
+          "damageTaken": 0,
+          "distance": 84.11689999999993,
+          "endPosition": [
+            -46.65,
+            41.56
+          ],
+          "frames": 720,
+          "kills": 0,
+          "movingFrames": 720,
+          "name": "night-camp",
+          "revivedPairs": 0,
+          "startPosition": [
+            -56,
+            49
+          ]
+        }
+      ],
+      "stepAttempts": 195,
+      "stepsScheduled": 195,
+      "targetMs": 60000,
+      "wallMs": 60005.4
+    }
+  },
+  "package": {
+    "kind": "local-delivery-archive-check",
+    "passed": true,
+    "archive": "tidelands-m5-2026-10-11-coordination.zip",
+    "stage": "M5 bounded torso and free-hand action checkpoint; M5 and full goal incomplete",
+    "archiveSha256": "0d011a80c18e3ab21597555d0b2226183ead97fdf5a3b65441d02827a73bddb6",
+    "checkedFiles": 35,
+    "archiveEntries": 36,
+    "extractedPath": "/private/tmp/tidelands-delivery-klvp88zc/tidelands-local",
+    "invalidPortsRejected": [
+      -1,
+      65536
+    ],
+    "browserLaunchVerified": false,
+    "fullGoalComplete": false
+  },
+  "ordinaryPackageUi": {
+    "desktopPosition": "位置 X -61.6，Z 101.4；建筑 0；击败 0",
+    "mobilePosition": "位置 X -62.7，Z 94.3；建筑 0；击败 0",
+    "fixtureImported": false,
+    "fullCampaignRetested": false,
+    "physicalMobile": false,
+    "multitouch": false,
+    "soundAudition": false
+  },
+  "limits": [
+    "Torso/free-hand participation is a bounded overlay on the existing right-arm curve; model/material/face and full natural action quality remain unfinished.",
+    "Five fixed phases and synthetic one-second stationary cycles are diagnostics, not continuous natural-play video. Attack peak still raises the sword overhead; rule impact timing does not prove spatial contact with a target.",
+    "Tool vertices against a scaled head sphere are a proxy at stationary flat poses; do not prove exact triangle collision or all-terrain/no-intersection.",
+    "Production attack/gather traces use explicit QA fixtures; two hit audio schedules include outgoing/incoming feedback, not two player damage commits or sound audition.",
+    "Current ten-minute load has five teleports and a revived combat pair; frame intervals/JS heap/counts are not GPU/VRAM, real mobile, leak proof or uninterrupted normal campaign evidence. Cold spikes retained.",
+    "Only the ordinary extracted-package first path was retested; full campaign, physical multi-touch, sound audition, whole-scene camera, environment coherence and final3A audit remain pending."
+  ],
+  "boundedBatchVerified": true,
+  "m5Accepted": false,
+  "fullGoalComplete": false
+}

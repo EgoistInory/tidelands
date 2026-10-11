@@ -1,0 +1,202 @@
+{
+  "sample": {
+    "activeMs": 60000.04,
+    "checkpoints": [
+      {
+        "activeMs": 0,
+        "audio": {
+          "ambienceBytes": 8640000,
+          "birdsGain": 0,
+          "context": "running",
+          "insectsGain": 0,
+          "stepsScheduled": 0,
+          "surfGain": 0,
+          "voices": 0
+        },
+        "calls": 216,
+        "canvasBuffer": [
+          585,
+          930
+        ],
+        "daytime": "午后",
+        "distance": 0,
+        "frames": 0,
+        "geometries": 219,
+        "heapBytes": 68854442,
+        "height": 1.22,
+        "hp": 100,
+        "kills": 0,
+        "movingFrames": 0,
+        "position": [
+          -90,
+          140
+        ],
+        "stage": "shore-exploration",
+        "textures": 14,
+        "time": 240,
+        "triangles": 1271735,
+        "viewport": [
+          390,
+          844
+        ]
+      },
+      {
+        "activeMs": 60000.04,
+        "audio": {
+          "ambienceBytes": 8640000,
+          "birdsGain": 0,
+          "context": "running",
+          "insectsGain": 0.0538390688598156,
+          "stepsScheduled": 198,
+          "surfGain": 0,
+          "voices": 0
+        },
+        "calls": 243,
+        "canvasBuffer": [
+          585,
+          930
+        ],
+        "daytime": "夜晚",
+        "distance": 414.76,
+        "frames": 3602,
+        "geometries": 341,
+        "heapBytes": 62513805,
+        "height": 13.38,
+        "hp": 100,
+        "kills": 0,
+        "movingFrames": 3595,
+        "position": [
+          -46.65,
+          41.44
+        ],
+        "stage": "night-camp",
+        "textures": 14,
+        "time": 12,
+        "triangles": 1288041,
+        "viewport": [
+          390,
+          844
+        ]
+      }
+    ],
+    "complete": true,
+    "damageTaken": 31,
+    "distanceMeters": 414.76,
+    "frameSpikes": [],
+    "frames": 3602,
+    "hidden": false,
+    "hitCount": 6,
+    "maxMs": 18.7,
+    "medianMs": 16.7,
+    "movingFraction": 1,
+    "movingFrames": 3595,
+    "note": "QA scripted input and five phase teleports; production movement/tick/render/audio. Combat pair revived as labelled load fixture. Frame intervals and JS heap only; no save or campaign acceptance.",
+    "over50Ms": 0,
+    "p95Ms": 18.1,
+    "respawns": 0,
+    "revivedPairs": 1,
+    "stages": [
+      {
+        "attackHits": 0,
+        "damageTaken": 0,
+        "distance": 71.05225200000025,
+        "endPosition": [
+          -87.92,
+          137.31
+        ],
+        "frames": 721,
+        "kills": 0,
+        "movingFrames": 719,
+        "name": "shore-exploration",
+        "revivedPairs": 0,
+        "startPosition": [
+          -90,
+          140
+        ]
+      },
+      {
+        "attackHits": 6,
+        "damageTaken": 7,
+        "distance": 83.40290000000036,
+        "endPosition": [
+          147.7,
+          -46.43
+        ],
+        "frames": 720,
+        "kills": 3,
+        "movingFrames": 715,
+        "name": "forest-combat",
+        "revivedPairs": 1,
+        "startPosition": [
+          132,
+          -26
+        ]
+      },
+      {
+        "attackHits": 0,
+        "damageTaken": 24,
+        "distance": 114.2003999999996,
+        "endPosition": [
+          -46.9,
+          -217.22
+        ],
+        "frames": 721,
+        "kills": 0,
+        "movingFrames": 721,
+        "name": "highland-movement",
+        "revivedPairs": 0,
+        "startPosition": [
+          -75,
+          -205
+        ]
+      },
+      {
+        "attackHits": 0,
+        "damageTaken": 0,
+        "distance": 62.099999999999966,
+        "endPosition": [
+          194.89,
+          243.59
+        ],
+        "frames": 720,
+        "kills": 0,
+        "movingFrames": 720,
+        "name": "amber-swimming",
+        "revivedPairs": 0,
+        "startPosition": [
+          190,
+          248
+        ]
+      },
+      {
+        "attackHits": 0,
+        "damageTaken": 0,
+        "distance": 84.00070000000011,
+        "endPosition": [
+          -46.65,
+          41.44
+        ],
+        "frames": 720,
+        "kills": 0,
+        "movingFrames": 720,
+        "name": "night-camp",
+        "revivedPairs": 0,
+        "startPosition": [
+          -56,
+          49
+        ]
+      }
+    ],
+    "stepAttempts": 198,
+    "stepsScheduled": 198,
+    "targetMs": 60000,
+    "wallMs": 60005.44
+  },
+  "console": [],
+  "singleRenderingQaPage": true,
+  "viewportVerifiedBeforeStart": [
+    390,
+    844
+  ],
+  "supersedes": "docs/shore-wetness-dynamic-initial-viewport-mismatch.json"
+}

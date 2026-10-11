@@ -12,7 +12,7 @@ button.onclick=async()=>{
     const rate=48000,ctx=new OfflineAudioContext(1,rate*8,rate);let scheduledTime=0;
     const adapter=new Proxy(ctx,{get(target,key){if(key==='state')return 'running';if(key==='currentTime')return scheduledTime;if(key==='resume'||key==='close')return async()=>{};const value=Reflect.get(target,key,target);return typeof value==='function'?value.bind(target):value;}});
     const audio=new GameAudio({contextFactory:()=>adapter});audio.setActive(true);await audio.unlock();audio.master.gain.setValueAtTime(.35,0);
-    if(kind.startsWith('surf-only'))audio.ambience.stop();
+    if(kind.startsWith('surf-only')){audio.ambience.stop();audio.birdsSource.stop();audio.insectsSource.stop();}
     if(kind==='paused-coast'){audio.setActive(false);audio.master.gain.setValueAtTime(0,0);}
     if(kind==='muted-coast'){audio.setEnabled(false);audio.master.gain.setValueAtTime(0,0);}
     let routing=null;

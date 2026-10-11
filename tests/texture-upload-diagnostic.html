@@ -1,0 +1,34 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>本地贴图分帧上传隔离实验</title>
+<style>html,body{height:100%;margin:0;background:#192723;color:#efe6cf;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:8px}button,select{padding:8px}pre{height:190px;overflow:auto;white-space:pre-wrap}canvas{flex:1;min-height:0;width:100%}</style>
+<nav>独立冷上下文 · 无音频/存档 · 仅诊断，不改正式加载
+<select id="strategy" aria-label="上传策略"><option value="cold">首次draw统一上传</option><option value="warm">每帧预上传一张本地JPG</option></select><button id="run" disabled>运行单次上传实验</button></nav>
+<pre id="result">等待地表加载…</pre><canvas aria-label="冷纹理上传实验fixture"></canvas>
+<script type="module">
+import {WorldView} from '../src/scene.js';
+import {createWorld} from '../src/world.js';
+import {freshGame,nearest} from '../src/game.js';
+const world=createWorld(),canvas=document.querySelector('canvas'),view=new WorldView(canvas,world),gl=view.renderer.getContext(),button=document.querySelector('button'),out=document.querySelector('pre');
+const state=freshGame();Object.assign(state.player,{x:-90,z:140});state.time=240;view.sync(state);
+const uploads=[];let phase='initialization';const original=gl.texSubImage2D.bind(gl);
+const sourceOf=image=>{const src=image?.currentSrc||image?.src;return src&&src.includes('/assets/')?new URL(src).pathname:'generated-or-typed-array';};
+gl.texSubImage2D=(...args)=>{const t=performance.now();try{return original(...args);}finally{uploads.push({phase,source:sourceOf(args.at(-1)),cpuMs:performance.now()-t});}};
+window.addEventListener('resize',()=>view.resize());
+Promise.all([view.groundSurface.userData.ground.loaded,view.groundSurface.userData.ground.sand.loaded,view.rockSurface.userData.rock.loaded]).then(()=>{button.disabled=false;out.textContent='就绪。每个策略使用新的页面/上下文；实验读取生产材质纹理，initTexture来自随包Three.js。';});
+button.onclick=async()=>{
+  button.disabled=true;document.querySelector('select').disabled=true;const strategy=document.querySelector('select').value,preUploads=[];
+  try{
+    view.resize();const textures=new Set();
+    for(const m of [view.groundSurface,view.rockSurface]){
+      const shader={uniforms:{},vertexShader:'',fragmentShader:''};m.onBeforeCompile(shader);
+      for(const t of [m.map,m.normalMap,m.roughnessMap,...Object.values(shader.uniforms).map(u=>u.value)])if(t?.isTexture&&sourceOf(t.image)!=='generated-or-typed-array')textures.add(t);
+    }
+    const sources=[...textures].map(t=>sourceOf(t.image));if(textures.size!==9)throw Error('期望草/沙/石料九张本地贴图，实际'+textures.size);
+    if(strategy==='warm')for(const t of textures){await new Promise(requestAnimationFrame);phase='pre-upload';const start=performance.now();view.renderer.initTexture(t);preUploads.push({source:sourceOf(t.image),cpuMs:performance.now()-start});}
+    const drawRows=[];
+    for(let i=0;i<2;i++){await new Promise(requestAnimationFrame);phase='draw-'+i;const start=performance.now();view.draw(state,nearest(state,world.objects),null,false,1/60);drawRows.push({phase,cpuMs:performance.now()-start});}
+    out.textContent=JSON.stringify({complete:true,strategy,sources,preUploads,drawRows,uploads,viewport:[innerWidth,innerHeight],canvasBuffer:[canvas.width,canvas.height],textures:view.renderer.info.memory.textures,
+      note:'Each page is a new WebGL context. Nine decoded local JPGs selected via owned diagnostic hook inspection; warm mode initTexture once per RAF before first draw. Shader compilation/generated textures remain in first draw. CPU submission timing and independent contexts,not GPU or proven production optimization; no loader behavior changed.'});
+  }catch(error){out.textContent=JSON.stringify({complete:false,strategy,error:error.message});console.error(error);}
+};
+window.addEventListener('pagehide',()=>view.renderer.dispose());
+</script></html>

@@ -1,0 +1,331 @@
+{
+  "sample": {
+    "complete": true,
+    "rows": [
+      {
+        "name": "low-shore",
+        "height": 0.3,
+        "normalY": 1,
+        "fallback": false,
+        "probe": "color",
+        "off": 106,
+        "on": 68,
+        "difference": -38,
+        "status": "ready"
+      },
+      {
+        "name": "fading-shore",
+        "height": 1.1,
+        "normalY": 1,
+        "fallback": false,
+        "probe": "color",
+        "off": 106,
+        "on": 90,
+        "difference": -16,
+        "status": "ready"
+      },
+      {
+        "name": "dry-bank",
+        "height": 1.6,
+        "normalY": 1,
+        "fallback": false,
+        "probe": "color",
+        "off": 106,
+        "on": 106,
+        "difference": 0,
+        "status": "ready"
+      },
+      {
+        "name": "grassland",
+        "height": 8,
+        "normalY": 1,
+        "fallback": false,
+        "probe": "color",
+        "off": 237,
+        "on": 237,
+        "difference": 0,
+        "status": "ready"
+      },
+      {
+        "name": "highland",
+        "height": 35,
+        "normalY": 1,
+        "fallback": false,
+        "probe": "color",
+        "off": 187,
+        "on": 187,
+        "difference": 0,
+        "status": "ready"
+      },
+      {
+        "name": "steep-low-rock",
+        "height": 0.3,
+        "normalY": 0.65,
+        "fallback": false,
+        "probe": "color",
+        "off": 106,
+        "on": 106,
+        "difference": 0,
+        "status": "ready"
+      },
+      {
+        "name": "deep-seabed",
+        "height": -1,
+        "normalY": 1,
+        "fallback": false,
+        "probe": "color",
+        "off": 106,
+        "on": 106,
+        "difference": 0,
+        "status": "ready"
+      },
+      {
+        "name": "low-shore",
+        "height": 0.3,
+        "normalY": 1,
+        "fallback": false,
+        "probe": "roughness",
+        "off": 255,
+        "on": 71,
+        "difference": -184,
+        "status": "ready"
+      },
+      {
+        "name": "fading-shore",
+        "height": 1.1,
+        "normalY": 1,
+        "fallback": false,
+        "probe": "roughness",
+        "off": 255,
+        "on": 181,
+        "difference": -74,
+        "status": "ready"
+      },
+      {
+        "name": "dry-bank",
+        "height": 1.6,
+        "normalY": 1,
+        "fallback": false,
+        "probe": "roughness",
+        "off": 255,
+        "on": 255,
+        "difference": 0,
+        "status": "ready"
+      },
+      {
+        "name": "grassland",
+        "height": 8,
+        "normalY": 1,
+        "fallback": false,
+        "probe": "roughness",
+        "off": 255,
+        "on": 255,
+        "difference": 0,
+        "status": "ready"
+      },
+      {
+        "name": "highland",
+        "height": 35,
+        "normalY": 1,
+        "fallback": false,
+        "probe": "roughness",
+        "off": 255,
+        "on": 255,
+        "difference": 0,
+        "status": "ready"
+      },
+      {
+        "name": "steep-low-rock",
+        "height": 0.3,
+        "normalY": 0.65,
+        "fallback": false,
+        "probe": "roughness",
+        "off": 255,
+        "on": 255,
+        "difference": 0,
+        "status": "ready"
+      },
+      {
+        "name": "deep-seabed",
+        "height": -1,
+        "normalY": 1,
+        "fallback": false,
+        "probe": "roughness",
+        "off": 255,
+        "on": 255,
+        "difference": 0,
+        "status": "ready"
+      },
+      {
+        "name": "low-shore",
+        "height": 0.3,
+        "normalY": 1,
+        "fallback": true,
+        "probe": "color",
+        "off": 106,
+        "on": 68,
+        "difference": -38,
+        "status": "fallback"
+      },
+      {
+        "name": "fading-shore",
+        "height": 1.1,
+        "normalY": 1,
+        "fallback": true,
+        "probe": "color",
+        "off": 106,
+        "on": 90,
+        "difference": -16,
+        "status": "fallback"
+      },
+      {
+        "name": "dry-bank",
+        "height": 1.6,
+        "normalY": 1,
+        "fallback": true,
+        "probe": "color",
+        "off": 106,
+        "on": 106,
+        "difference": 0,
+        "status": "fallback"
+      },
+      {
+        "name": "grassland",
+        "height": 8,
+        "normalY": 1,
+        "fallback": true,
+        "probe": "color",
+        "off": 106,
+        "on": 106,
+        "difference": 0,
+        "status": "fallback"
+      },
+      {
+        "name": "highland",
+        "height": 35,
+        "normalY": 1,
+        "fallback": true,
+        "probe": "color",
+        "off": 106,
+        "on": 106,
+        "difference": 0,
+        "status": "fallback"
+      },
+      {
+        "name": "steep-low-rock",
+        "height": 0.3,
+        "normalY": 0.65,
+        "fallback": true,
+        "probe": "color",
+        "off": 106,
+        "on": 106,
+        "difference": 0,
+        "status": "fallback"
+      },
+      {
+        "name": "deep-seabed",
+        "height": -1,
+        "normalY": 1,
+        "fallback": true,
+        "probe": "color",
+        "off": 106,
+        "on": 106,
+        "difference": 0,
+        "status": "fallback"
+      },
+      {
+        "name": "low-shore",
+        "height": 0.3,
+        "normalY": 1,
+        "fallback": true,
+        "probe": "roughness",
+        "off": 255,
+        "on": 71,
+        "difference": -184,
+        "status": "fallback"
+      },
+      {
+        "name": "fading-shore",
+        "height": 1.1,
+        "normalY": 1,
+        "fallback": true,
+        "probe": "roughness",
+        "off": 255,
+        "on": 181,
+        "difference": -74,
+        "status": "fallback"
+      },
+      {
+        "name": "dry-bank",
+        "height": 1.6,
+        "normalY": 1,
+        "fallback": true,
+        "probe": "roughness",
+        "off": 255,
+        "on": 255,
+        "difference": 0,
+        "status": "fallback"
+      },
+      {
+        "name": "grassland",
+        "height": 8,
+        "normalY": 1,
+        "fallback": true,
+        "probe": "roughness",
+        "off": 255,
+        "on": 255,
+        "difference": 0,
+        "status": "fallback"
+      },
+      {
+        "name": "highland",
+        "height": 35,
+        "normalY": 1,
+        "fallback": true,
+        "probe": "roughness",
+        "off": 255,
+        "on": 255,
+        "difference": 0,
+        "status": "fallback"
+      },
+      {
+        "name": "steep-low-rock",
+        "height": 0.3,
+        "normalY": 0.65,
+        "fallback": true,
+        "probe": "roughness",
+        "off": 255,
+        "on": 255,
+        "difference": 0,
+        "status": "fallback"
+      },
+      {
+        "name": "deep-seabed",
+        "height": -1,
+        "normalY": 1,
+        "fallback": true,
+        "probe": "roughness",
+        "off": 255,
+        "on": 255,
+        "difference": 0,
+        "status": "fallback"
+      }
+    ],
+    "expectedFallbackWarnings": 2,
+    "note": "Actual production shader with diagnostic textures. Roughness probe replaces final RGB after normal rendering with computed roughnessFactor. Not real-scene material acceptance."
+  },
+  "console": [
+    {
+      "level": "warn",
+      "message": "草地贴图加载失败，保留原地表。",
+      "timestamp": "2026-10-11T10:03:53.865Z",
+      "url": "http://127.0.0.1:4190/src/ground-surface.js"
+    },
+    {
+      "level": "warn",
+      "message": "草地贴图加载失败，保留原地表。",
+      "timestamp": "2026-10-11T10:03:53.874Z",
+      "url": "http://127.0.0.1:4190/src/ground-surface.js"
+    }
+  ]
+}

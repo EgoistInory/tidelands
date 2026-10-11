@@ -10,11 +10,11 @@ python3 serve.py
 
 打开 http://127.0.0.1:4190 。需要支持 WebGL 2 的现代浏览器。不需要安装 npm 依赖，Three.js 0.180.0 在 vendor 中附带，许可证随包保留。ES 模块需要本地 HTTP 服务，不能双击 HTML 代替。
 
-最近已打包的本地品质检查点在 `dist/tidelands-m5-2026-10-08-geometry.zip`，包含此前功能及生物资源占用优化。116项测试、34文件校验、独立解压普通桌面/390窄屏采集保存刷新通过；同一固定地域巡回的缓冲峰值降低46.86%，绘制计数保持，见 `docs/resident-geometry-review.json`。解压后按随包 README 启动；端口占用时运行 `python3 serve.py --port 4191`。操作和存档说明见 `docs/LOCAL-DELIVERY.md`。九个历史包保持原内容；这些包都不代表 M5/完整3A目标完成。
+最近已打包的本地品质检查点在 `dist/tidelands-m5-2026-10-11-startup.zip`，包含此前湿沙、动作协调、沙粒细节及开始页分帧准备。144项测试、40文件校验、独立解压普通桌面石料0→2、390按钮木材0→2、首NPC与保存刷新通过，见 `docs/startup-preparation-final-audit.json`。九张地表贴图和首次绘制在入口开放前完成，素材缺失可继续，准备中断或上传错误有恢复入口；准备成本仍存在。当前双视口30秒样本是静止帧调度，历史长时/GPU记录各自绑定旧来源。完整M5/3A仍待，18历史包保持。
 
 当前开发源码还增加低岸线起伏海浪层，与既有风声叠加、渐入内陆，并共享暂停/静音。112项测试、八组真实离线PCM和实际营地/海域接线验证通过，见 `docs/coastal-audio-review.json`；尚未试听或做完整声场品质验收。这批声音修改已进入coastal及最新state-reuse包，本地开发服务运行相同生产源码。
 
-用 `python3 tools/verify_local.py --name tidelands-m5-2026-10-08-geometry` 校验并单独解压当前包。后续构建使用 `python3 tools/package_local.py --name tidelands-m5-next --stage 'M5 quality batch checkpoint'`，每次改源码换新包名；已有包只允许相同来源的完全一致重建，拒绝覆盖历史检查点。打包工具回归运行 `python3 tools/test_local_delivery.py`。四岛正常旅程和实际战斗已有十分钟有效帧调度/JS堆记录，见 `docs/cross-island-review.json`：含间歇输入与较多静止时间，不能代替持续运动或GPU品质验收；该采样在两处岛民对话修正之前完成，绑定自己的源码SHA，不能作为当前包完全一致的长时证明。
+用 `python3 tools/verify_local.py --name tidelands-m5-2026-10-11-startup` 校验并单独解压当前包。后续构建使用 `python3 tools/package_local.py --name tidelands-m5-next --stage 'M5 quality batch checkpoint'`，每次改源码换新包名；已有包只允许相同来源的完全一致重建，拒绝覆盖历史检查点。打包工具回归运行 `python3 tools/test_local_delivery.py`。四岛正常旅程和实际战斗已有十分钟有效帧调度/JS堆记录，见 `docs/cross-island-review.json`：含间歇输入与较多静止时间，不能代替持续运动或GPU品质验收；该采样在两处岛民对话修正之前完成，绑定自己的源码SHA，不能作为当前包完全一致的长时证明。
 
 2026-10-07后续源码增加岛民近距交谈朝向和待机手臂轻动，以及攻击/采集从装备待机姿态进入和恢复的衔接；101项测试和桌面/窄屏12秒隔离循环通过，见 `docs/islander-response-review.json` 与 `docs/action-transition-review.json`。攻击结果统一由短时战斗提示显示，消除空挥时残留旧命中提示；桌面键盘/390窄屏攻击键已实测。上述早期包不含这些后续修改，完整动作品质与声音同步仍待验收。
 
@@ -55,6 +55,7 @@ E 与最近目标交互，空格攻击，1–6 快捷操作，B 背包、C 制�
 | `/tests/playthrough.html?mode=combat` | 固定近身战斗测试档，显示实际输入、肩部姿势、敌人生命和音效排入时序；刷新重置测试状态，不代替正常旅程或声音试听 |
 | `/tests/playthrough.html?mode=respawn` | 5生命遭受致命攻击，核对回营地和背包保留；独立测试存档 |
 | `/tests/playthrough.html?mode=performance` | 30秒有效运行帧调度采样；加 `&seconds=600` 采10分钟并记录每分钟昼夜/存档/生命/地域/坐标/敌人及可用的JS堆指标。在已有 `mode=m4` 等旅程加 `&sample=frames&seconds=600` 可观测原存档，不预填状态。暂停时段排除，2倍墙钟超时，不代表GPU耗时或完整世界性能 |
+| `/tests/startup-preparation.html?mode=normal` | 生产开始页的隔离准备诊断；fallback/all-fallback 模拟缺贴图，cancel 测原生上下文中断，restore 模拟准备中页面恢复，upload-error 注入原生GL错误；独立存档键，不代替正常旅程或实际bfcache |
 | `/tests/creatures.html` | 生产野猪/蟹的全身与近景、攻击定格及12秒行走/攻击/受击/倒地/恢复循环，输出实际模型反馈和帧调度；无存档读写，不证明真实战斗、落脚自然度或完整场景品质 |
 | `/tests/buildings.html` | 生产建筑模型的隔离审查，不证明完整场景品质 |
 | `/tests/locomotion.html` | 生产角色的平地/坡地落脚、7米/秒行走、12米/秒奔跑和泳姿隔离检查；可选徒手/石斧/剑、攻击/采集定格及12秒模拟动作循环，计数不代替自然动作和实战审查，无存档读写 |

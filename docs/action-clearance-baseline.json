@@ -1,0 +1,81 @@
+{
+  "kind": "next action batch baseline diagnostic",
+  "characterSha256": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+  "scriptSha256": "3300af29c54145a8aa1dea82f9938683995cac303b96b154711830e5517f8c9d",
+  "rows": [
+    {
+      "selected": "axe",
+      "action": "attack",
+      "samples": 109,
+      "minimumNormalizedGap": 1.1892656058642292,
+      "framesInsideHeadProxy": 0,
+      "worst": {
+        "age": 0.225,
+        "part": "CapsuleGeometry",
+        "vertex": 48,
+        "world": [
+          0.4253760604560376,
+          2.4796757938832474,
+          0.3929947863631623
+        ]
+      },
+      "maxFootDrift": 2.618455766672135e-16
+    },
+    {
+      "selected": "axe",
+      "action": "gather",
+      "samples": 102,
+      "minimumNormalizedGap": 1.646663337166126,
+      "framesInsideHeadProxy": 0,
+      "worst": {
+        "age": 0.20833333333333334,
+        "part": "CapsuleGeometry",
+        "vertex": 48,
+        "world": [
+          0.4253760604560376,
+          2.146089673762163,
+          0.8639567079844576
+        ]
+      },
+      "maxFootDrift": 4.742874840267547e-16
+    },
+    {
+      "selected": "sword",
+      "action": "attack",
+      "samples": 109,
+      "minimumNormalizedGap": 1.2609158682263004,
+      "framesInsideHeadProxy": 0,
+      "worst": {
+        "age": 0.225,
+        "part": "CapsuleGeometry",
+        "vertex": 48,
+        "world": [
+          0.42537606045603754,
+          2.529479022818877,
+          0.42645582070843085
+        ]
+      },
+      "maxFootDrift": 2.618455766672135e-16
+    },
+    {
+      "selected": "sword",
+      "action": "gather",
+      "samples": 102,
+      "minimumNormalizedGap": 1.7472808457544748,
+      "framesInsideHeadProxy": 0,
+      "worst": {
+        "age": 0.20833333333333334,
+        "part": "CapsuleGeometry",
+        "vertex": 37,
+        "world": [
+          0.43054711729288103,
+          2.164209240247289,
+          0.9079793108770426
+        ]
+      },
+      "maxFootDrift": 4.742874840267547e-16
+    }
+  ],
+  "accepted": false,
+  "note": "Explicit stationary flat-ground production poses at240Hz. Tool vertices versus scaled head bounding sphere are a clearance proxy, not exact triangle collision, real combat, visual naturalness or all-terrain acceptance."
+}

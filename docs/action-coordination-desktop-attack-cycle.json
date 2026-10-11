@@ -1,0 +1,83 @@
+{
+  "sample": {
+    "actionPhase": 1,
+    "canvasBuffer": [
+      1280,
+      489
+    ],
+    "complete": true,
+    "contacts": [
+      true,
+      true
+    ],
+    "elapsedSeconds": 12,
+    "equipment": "sword",
+    "feet": [
+      [
+        -0.22,
+        0.145,
+        0
+      ],
+      [
+        0.22,
+        0.145,
+        0
+      ]
+    ],
+    "frames": 5325,
+    "gesture": "attack-cycle",
+    "mode": "actions",
+    "phase": 0,
+    "pose": {
+      "freeElbow": -0.15,
+      "freeShoulder": [
+        0,
+        0,
+        0
+      ],
+      "torsoYaw": 0
+    },
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "slope": 0,
+    "stanceFraction": 0.6,
+    "stats": {
+      "actionFrames": 720,
+      "bothFeetAirborneFrames": 0,
+      "contacts": 1322,
+      "maxArmFrameDelta": 0.2248468050767629,
+      "maxFreeArmPitch": 0.4993329143909002,
+      "maxPoseFrameDelta": 0.2248468050767629,
+      "maxSoleHeightError": 6.38378239159465e-16,
+      "maxStanceDrift": 7.894497640785698e-16,
+      "maxTorsoYaw": 0.2197064823319961,
+      "minPelvisOffset": -0.06199782055044324
+    },
+    "strideLengthMeters": 1.6,
+    "toolBounds": {
+      "max": [
+        0.6600000029802322,
+        1.6564009733887866,
+        1.5827997975781471
+      ],
+      "min": [
+        0.2599999970197678,
+        0.44399322629274807,
+        0.26731674160653845
+      ]
+    },
+    "viewport": [
+      1280,
+      489
+    ],
+    "walkBlend": 0,
+    "windowViewport": [
+      1280,
+      720
+    ]
+  },
+  "scope": "Production rig with synthetic one-second actions for12seconds; stationary flat floor, not real combat or performance."
+}

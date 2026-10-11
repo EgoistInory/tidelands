@@ -148,3 +148,42 @@ test('surf shares world mute/pause and releases all persistent nodes on disposal
   assert.equal(filter.disconnected,true);assert.equal(gain.disconnected,true);
   assert.equal(a.surfSource,null);assert.equal(a.surfFilter,null);assert.equal(a.surf,null);
 });
+
+test('ecology changes with rendered daylight and island habitat, fading out at sea',async()=>{
+  const a=new GameAudio({contextFactory:context});a.setActive(true);await a.unlock();
+  assert.ok(a.birdsSource&&a.insectsSource,'world ambience needs distinct daytime and nocturnal habitats');
+  a.update({x:160,z:-95},240,12,0);const forest=a.birds.gain.value;
+  assert.ok(forest>0);assert.equal(a.insects.gain.value,0);
+  a.update({x:-75,z:-235},240,12,0);assert.ok(a.birds.gain.value>0&&a.birds.gain.value<forest);
+  a.update({x:160,z:-95},0,12,0);assert.equal(a.birds.gain.value,0);assert.ok(a.insects.gain.value>0);
+  a.update({x:160,z:-95},480,12,0);assert.equal(a.birds.gain.value,0);
+  for(const time of [0,240]){a.update({x:350,z:350},time,-2,0);assert.equal(a.birds.gain.value,0);assert.equal(a.insects.gain.value,0);}
+  await a.dispose();
+});
+
+test('ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices',async()=>{
+  const ctx=context(),make=ctx.createBuffer;let buffers=0;ctx.createBuffer=(...args)=>{buffers++;return make(...args);};
+  const a=new GameAudio({contextFactory:()=>ctx});a.setActive(true);await a.unlock();
+  assert.ok(a.birdsSource&&a.insectsSource);const sources=[a.birdsSource,a.insectsSource];
+  for(const source of sources){
+    assert.equal(source.loop,true);assert.equal(source.target.target,a.master);
+    const data=source.buffer.getChannelData(0);assert.ok(data.every(Number.isFinite));assert.ok(data.some(x=>Math.abs(x)>.0001));
+    assert.equal(data[0],0);assert.equal(data.at(-1),0);assert.ok(Math.max(...data.map(Math.abs))<1);
+    assert.ok(source.buffer.duration<=23);
+  }
+  const made=buffers;for(let frame=0;frame<36000;frame++)a.update({x:160,z:-95},frame/60,12,0);
+  assert.equal(buffers,made);assert.equal(a.sources.size,0);assert.equal(a.birdsSource,sources[0]);assert.equal(a.insectsSource,sources[1]);
+  await a.dispose();
+});
+
+test('ecology shares world mute/pause and releases nodes on normal or failed initialization',async()=>{
+  const a=new GameAudio({contextFactory:context});a.setActive(true);await a.unlock();
+  assert.ok(a.birdsSource&&a.insectsSource);const nodes=[a.birdsSource,a.insectsSource,a.birds,a.insects];
+  a.setActive(false);assert.equal(a.master.gain.value,0);assert.equal(a.ui.gain.value,.35);
+  a.setActive(true);a.setEnabled(false);assert.equal(a.master.gain.value,0);await a.dispose();
+  for(const node of nodes)assert.equal(node.disconnected,true);
+  assert.equal(nodes[0].stopped,true);assert.equal(nodes[1].stopped,true);assert.equal(a.birdsSource,null);assert.equal(a.insectsSource,null);
+  const broken=context(),make=broken.createBuffer;let calls=0;broken.createBuffer=(...args)=>{if(++calls===3)throw new Error('ecology buffer unavailable');return make(...args);};
+  const retry=new GameAudio({contextFactory:()=>broken});await assert.rejects(retry.unlock(),/ecology buffer unavailable/);
+  assert.equal(broken.state,'closed');assert.equal(retry.context,null);assert.equal(retry.birdsSource,null);assert.equal(retry.insectsSource,null);
+});

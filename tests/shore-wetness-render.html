@@ -1,0 +1,25 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>岸线材质实际WebGL边界诊断</title>
+<style>body{background:#192723;color:#efe6cf;font:13px system-ui}button{padding:8px}pre{white-space:pre-wrap}canvas{width:160px;height:160px}</style>
+<p>生产地表材质在可控平面/1像素诊断纹理上渲染。颜色与粗糙度输出均为实际WebGL读回，非美术或正常旅程验收。</p><button>运行高度/坡度/加载回退诊断</button><pre id="result">就绪</pre><canvas></canvas>
+<script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {createGroundSurface} from '../src/ground-surface.js';
+const canvas=document.querySelector('canvas'),renderer=new THREE.WebGLRenderer({canvas,antialias:false}),scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(-2,2,2,-2,.1,20),out=document.querySelector('pre');renderer.setSize(64,64,false);scene.add(new THREE.AmbientLight(0xffffff,2));
+const target=new THREE.WebGLRenderTarget(64,64),pixels=new Uint8Array(64*64*4),geometry=new THREE.PlaneGeometry(3.9,3.9);geometry.rotateX(-Math.PI/2);geometry.setAttribute('color',new THREE.Float32BufferAttribute(Array(12).fill(.65),3));
+const texture=bytes=>{const t=new THREE.DataTexture(new Uint8Array(bytes),1,1);t.needsUpdate=true;return t;};
+async function material(fallback,probe){const requests=[],loader={load(url,done,_p,fail){const data=url.includes('normal')?[128,128,255,255]:[255,255,255,255];const t=texture(data);requests.push(t);queueMicrotask(()=>fallback&&url.includes('albedo')?fail():done());return t;}},detail=texture([255,255,255,255]),m=createGroundSurface(detail,{loader});
+  await Promise.all([m.userData.ground.loaded,m.userData.ground.sand?.loaded]);if(probe){const compile=m.onBeforeCompile;m.onBeforeCompile=shader=>{compile(shader);if(!shader.fragmentShader.includes('#include <dithering_fragment>'))throw Error('Missing roughness output hook');shader.fragmentShader=shader.fragmentShader.replace('#include <dithering_fragment>','#include <dithering_fragment>\ngl_FragColor.rgb=vec3(roughnessFactor);');};m.customProgramCacheKey=()=> 'shore-test-roughness-output';}
+  return {m,detail,requests};
+}
+function read(mesh,height,normalY,wet){const positions=geometry.attributes.position,normals=geometry.attributes.normal;
+  for(let i=0;i<positions.count;i++){positions.setY(i,height);normals.setXYZ(i,Math.sqrt(1-normalY*normalY),normalY,0);}positions.needsUpdate=normals.needsUpdate=true;geometry.computeBoundingSphere();mesh.material.userData.ground.wetness.value=wet;camera.position.set(0,height+5,0);camera.up.set(0,0,-1);camera.lookAt(0,height,0);renderer.setRenderTarget(target);renderer.render(scene,camera);renderer.readRenderTargetPixels(target,0,0,64,64,pixels);
+  let total=0,count=0;for(let y=8;y<56;y++)for(let x=8;x<56;x++){const i=(y*64+x)*4;total+=pixels[i]+pixels[i+1]+pixels[i+2];count+=3;}return total/count;
+}
+document.querySelector('button').onclick=async()=>{document.querySelector('button').disabled=true;const rows=[];
+  try{for(const fallback of [false,true])for(const probe of [false,true]){const {m,detail,requests}=await material(fallback,probe),mesh=new THREE.Mesh(geometry,m);scene.add(mesh);
+      for(const [name,h,normalY] of [['low-shore',.3,1],['fading-shore',1.1,1],['dry-bank',1.6,1],['grassland',8,1],['highland',35,1],['steep-low-rock',.3,.65],['deep-seabed',-1,1]]){const off=read(mesh,h,normalY,0),on=read(mesh,h,normalY,1);rows.push({name,height:h,normalY,fallback,probe:probe?'roughness':'color',off,on,difference:on-off,status:m.userData.ground.state.status});}
+      scene.remove(mesh);m.dispose();detail.dispose();requests.forEach(t=>t.dispose());}
+    renderer.setRenderTarget(null);out.textContent=JSON.stringify({complete:true,rows,expectedFallbackWarnings:4,note:'Actual production shader with diagnostic textures. Both grass and sand albedo deliberately fail in fallback cases. Roughness probe replaces final RGB after normal rendering with computed roughnessFactor. Not real-scene material acceptance.'});
+  }catch(error){out.textContent=JSON.stringify({complete:false,error:error.message});console.error(error);}document.querySelector('button').disabled=false;};
+window.addEventListener('pagehide',()=>{target.dispose();geometry.dispose();renderer.dispose();});
+</script></html>

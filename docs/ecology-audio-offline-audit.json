@@ -1,0 +1,49 @@
+{
+  "kind": "bounded ecology audio offline audit",
+  "passed": true,
+  "cases": 11,
+  "sampleRate": 48000,
+  "ambienceBuffersBytes": 8640000,
+  "additionalEcologyBytes": 8064000,
+  "allUpdatesReuseNodes": true,
+  "busyVoiceBudget": {
+    "physicalQueued": 9,
+    "totalQueued": 12,
+    "successCuesQueued": 3
+  },
+  "peakMaximum": 0.1555611938238144,
+  "wavs": {
+    "ecology-audio-day-birds.wav": {
+      "bytes": 2496044,
+      "sha256": "749954a98b36e5108359d571e21aad9cb16abe65e16914a9e564309e4d7133a6",
+      "pcm16Peak": 0.02706991790520951,
+      "seconds": 26
+    },
+    "ecology-audio-night-insects.wav": {
+      "bytes": 2496044,
+      "sha256": "44569f8d39ad86ee800c4c0fe93b3ecace576689eb77b05170490dd0113404af",
+      "pcm16Peak": 0.007080294198431349,
+      "seconds": 26
+    },
+    "ecology-audio-day-to-night.wav": {
+      "bytes": 768044,
+      "sha256": "a03b30c82ab32d6a733a02f60bc91ceb0973b51be718e01ad8438a6b6af7cc81",
+      "pcm16Peak": 0.02966399121066927,
+      "seconds": 8
+    },
+    "ecology-audio-busy-forest.wav": {
+      "bytes": 768044,
+      "sha256": "a83b2eab5712bca46013742c97c04b94088b67b0c787455c2bae789308453f20",
+      "pcm16Peak": 0.15555284279915768,
+      "seconds": 8
+    }
+  },
+  "actualAudition": false,
+  "limits": [
+    "Synthetic sound, not natural field recording.",
+    "Offline AudioParam.value does not report future targets.",
+    "PCM headroom and scheduling do not prove subjective sound quality or physical mobile performance."
+  ],
+  "m5Accepted": false,
+  "fullGoalComplete": false
+}

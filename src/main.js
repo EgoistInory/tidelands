@@ -2,6 +2,7 @@ import {WorldView} from './scene.js';
 import {GameAudio} from './audio.js';
 import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_IMPACT} from './action-timing.js';
 import {bindPointerControls} from './pointer-controls.js';
+import {prepareSurfaceTextures} from './startup-textures.js';
 import {createWorld,terrain,LANDMARKS,regionAt,dayCycle} from './world.js';
 import {freshGame,QUESTS,ITEMS,RECIPES,affordable,craft,canBuild,build,interact,resolveGather,eat,attack,resolveAttack,movePlayer,tick,nearest,nearestEnemy,serialize,restore} from './game.js';
 
@@ -16,7 +17,8 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
   try{view=new WorldView($('world'),world);}catch(error){$('load-status').textContent='无法启动 3D 渲染。请使用支持 WebGL 2 的浏览器并开启硬件加速。';$('start-button').textContent='3D 渲染不可用';console.error(error);return;}
   let started=false,paused=false,last=performance.now(),uiAt=0,saveAt=0,near=null,placement=null,buildType=null,toastUntil=0,lastQuest=state.quest,panelKind='';
   const keys=new Set(),stick={x:0,z:0},panel=$('panel'),newDialog=$('new-dialog');
-  let waypoint=null,renderLost=false,pendingAttack=null,pendingGather=null;
+  let waypoint=null,renderLost=false,pendingAttack=null,pendingGather=null,prepared=false;
+  const preparation=new AbortController();
   function cancelAttack(){if(pendingAttack){pendingAttack=null;state.attackAt=-100;}}
   function cancelGather(){if(pendingGather){pendingGather=null;view.gatherAt=-100;}}
   const mapBase=document.createElement('canvas');mapBase.width=220;mapBase.height=220;
@@ -110,8 +112,8 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
   $('import-file').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;
     try{if(file.size>2_000_000)throw new Error('存档文件超过 2 MB');const imported=restore(await file.text());state=imported;waypoint=null;buildType=null;placement=null;view.setPreview(null);view.sync(state);save();closePanel();updateUI();toast('存档已导入。');}catch(error){toast(`导入失败：${error.message}`,7000);}finally{event.target.value='';}
   });
-  $('start-button').disabled=false;$('start-button').textContent=state.time>121||state.quest?'继续旅程':'开始旅程';$('load-status').textContent=loadError||'群岛已就绪 · 无需联网';
-  $('start-button').onclick=()=>{started=true;audio.setActive(true);void unlockAudio();$('start-screen').hidden=true;$('hud').hidden=false;$('world').focus();last=performance.now();updateUI();toast(state.quest?`欢迎回来。当前目标：${QUESTS[state.quest].title}`:'欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。',7000);};
+  $('load-status').textContent='正在准备群岛…';
+  $('start-button').onclick=()=>{if(!prepared||renderLost)return;started=true;audio.setActive(true);void unlockAudio();$('start-screen').hidden=true;$('hud').hidden=false;$('world').focus();last=performance.now();updateUI();toast(state.quest?`欢迎回来。当前目标：${QUESTS[state.quest].title}`:'欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。',7000);};
   $('map-button').onclick=()=>openPanel('map');$('minimap').onclick=()=>openPanel('map');$('pause-button').onclick=()=>openPanel('pause');$('bag-button').onclick=()=>openPanel('bag');$('craft-button').onclick=()=>openPanel('craft');$('panel-close').onclick=closePanel;
   panel.addEventListener('cancel',event=>{event.preventDefault();closePanel();});
   function strike(){
@@ -147,9 +149,15 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     look:(dx,dy)=>{view.yaw-=dx*.006;view.pitch=Math.max(.08,Math.min(1.15,view.pitch-dy*.004));},
     zoom:delta=>{view.distance=Math.max(12,Math.min(45,view.distance+delta*.02));}
   });
-  window.addEventListener('resize',()=>view.resize());window.addEventListener('pagehide',save);
+  window.addEventListener('resize',()=>view.resize());window.addEventListener('pagehide',()=>{preparation.abort();save();});
+  window.addEventListener('pageshow',event=>{
+    if(event.persisted&&!prepared&&!renderLost){
+      $('load-status').textContent='准备已中断。重新加载可继续。';$('start-button').textContent='重新加载';
+      $('start-button').disabled=false;$('start-button').onclick=()=>location.reload();
+    }
+  });
   $('world').addEventListener('webglcontextlost',event=>{
-    event.preventDefault();cancelAttack();cancelGather();renderLost=true;paused=true;keys.clear();resetPointers();audio.setActive(false);
+    event.preventDefault();preparation.abort();cancelAttack();cancelGather();renderLost=true;paused=true;keys.clear();resetPointers();audio.setActive(false);
     const saved=save();newDialog.close();$('start-button').disabled=true;$('panel-close').disabled=true;
     $('panel-title').textContent='画面暂时中断';const body=$('panel-body');body.replaceChildren();
     const message=document.createElement('p');message.setAttribute('role','alert');message.textContent=saved?'旅程已暂停，进度已保存。刷新页面后可继续探索。':'旅程已暂停，但进度未能保存。请先导出存档，再刷新页面。';body.append(message);
@@ -160,6 +168,19 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
   view.sync(state);near=nearest(state,world.objects);
   const startHeight=Math.max(terrain(state.player.x,state.player.z),-.45);
   view.camera.position.set(state.player.x+Math.sin(view.yaw)*view.distance,startHeight+2.4+Math.tan(view.pitch)*view.distance,state.player.z+Math.cos(view.yaw)*view.distance);
+  const surfaces=[view.groundSurface.userData.ground,view.groundSurface.userData.ground.sand,view.rockSurface.userData.rock];
+  void prepareSurfaceTextures(surfaces,view.renderer,{signal:preparation.signal,onProgress:(done,total)=>{$('load-status').textContent=`正在准备群岛 · ${done} / ${total}`;}}).then(async()=>{
+    $('load-status').textContent='正在点亮群岛…';await new Promise(requestAnimationFrame);
+    if(preparation.signal.aborted||renderLost)return;
+    // Finish the initial scene/shader draw while the start screen is still visible.
+    view.draw(state,near,null,false,1/60);prepared=true;
+    $('load-status').textContent=loadError||(surfaces.some(s=>s.state.status==='fallback')?'部分地表使用备用素材 · 可以继续':'群岛已就绪 · 无需联网');
+    $('start-button').textContent=state.time>121||state.quest?'继续旅程':'开始旅程';$('start-button').disabled=false;
+  }).catch(error=>{
+    if(error.name==='AbortError'||renderLost)return;
+    console.error(error);$('load-status').textContent='画面准备失败。请刷新页面重试。';
+    $('start-button').textContent='重新加载';$('start-button').disabled=false;$('start-button').onclick=()=>location.reload();
+  });
   function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;let moving=false;
     if(started&&!paused){let x=stick.x,z=stick.z;for(const k of keys)if(movement[k]){x+=movement[k][0];z+=movement[k][1];}moving=Math.hypot(x,z)>.08;const running=keys.has('shift')&&moving;const v=relative(x,z);movePlayer(state,world.objects,v.x,v.z,dt,running);const feedback={},message=tick(state,dt,running,feedback);
       if(feedback.damage>0){view.hurtAt=state.time;audio.effect('hit');combatFeedback('hurt',feedback.respawned?'倒下了 · 已返回营地':`受到伤害 −${Math.ceil(feedback.damage)}`);}
@@ -176,7 +197,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
       if(now-uiAt>140){view.sync(state);updateUI();uiAt=now;}if(now-saveAt>8000){save();saveAt=now;}
     }
     if(now>toastUntil)$('toast').hidden=true;
-    if(!renderLost){view.draw(state,near,placement,moving,dt);if(started&&!paused)audio.update(state.player,state.time,terrain(state.player.x,state.player.z),view.player.userData.footfallCount);}requestAnimationFrame(frame);
+    if(!renderLost&&prepared){view.draw(state,near,placement,moving,dt);if(started&&!paused)audio.update(state.player,state.time,terrain(state.player.x,state.player.z),view.player.userData.footfallCount);}requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
 }

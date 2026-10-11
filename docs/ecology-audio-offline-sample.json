@@ -1,0 +1,1618 @@
+{
+  "sample": {
+    "complete": true,
+    "reports": [
+      {
+        "kind": "day-birds",
+        "seconds": 26,
+        "sampleRate": 48000,
+        "peak": 0.027077224105596542,
+        "rms": 0.0041037930393877506,
+        "windowsRms": [
+          0.0018120621986969364,
+          0.0020381352198352186,
+          0,
+          0.00667706169344083,
+          0.000001886642267896303,
+          0,
+          0.004205031987576866,
+          0.006384351157016212,
+          0,
+          0.007680956994702965,
+          0.00001597903498477082,
+          0.003462772783066971,
+          0.006774733871367953,
+          0,
+          0.006140997825547179,
+          0.004635416366893396,
+          0.0005345097853443057,
+          0.008137279794399703,
+          0,
+          0.006551988104791405,
+          0.0017789467706631468,
+          0,
+          0,
+          0.00442342523404573,
+          0.0043773362216875614,
+          0
+        ],
+        "maxAdjacentStep": 0.01723152305930853,
+        "finite": true,
+        "unclipped": true,
+        "buffers": {
+          "bytes": 8640000,
+          "birdsSeconds": 23,
+          "insectsSeconds": 19
+        },
+        "nodesBeforeUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "nodesAfterUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "fixtureSchedule": [
+          {
+            "second": 0,
+            "fixtureWorldTime": 240,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 1,
+            "fixtureWorldTime": 241,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 2,
+            "fixtureWorldTime": 242,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 3,
+            "fixtureWorldTime": 243,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 4,
+            "fixtureWorldTime": 244,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 5,
+            "fixtureWorldTime": 245,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 6,
+            "fixtureWorldTime": 246,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 7,
+            "fixtureWorldTime": 247,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 8,
+            "fixtureWorldTime": 248,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 9,
+            "fixtureWorldTime": 249,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 10,
+            "fixtureWorldTime": 250,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 11,
+            "fixtureWorldTime": 251,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 12,
+            "fixtureWorldTime": 252,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 13,
+            "fixtureWorldTime": 253,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 14,
+            "fixtureWorldTime": 254,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 15,
+            "fixtureWorldTime": 255,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 16,
+            "fixtureWorldTime": 256,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 17,
+            "fixtureWorldTime": 257,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 18,
+            "fixtureWorldTime": 258,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 19,
+            "fixtureWorldTime": 259,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 20,
+            "fixtureWorldTime": 260,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 21,
+            "fixtureWorldTime": 261,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 22,
+            "fixtureWorldTime": 262,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 23,
+            "fixtureWorldTime": 263,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 24,
+            "fixtureWorldTime": 264,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 25,
+            "fixtureWorldTime": 265,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          }
+        ],
+        "disposed": true,
+        "note": "Offline synthesis and fixture time/location; AudioParam.value before offline rendering is not a target-gain measurement. No subjective audition or device performance claim."
+      },
+      {
+        "kind": "night-insects",
+        "seconds": 26,
+        "sampleRate": 48000,
+        "peak": 0.0070914519019424915,
+        "rms": 0.0014212212840550285,
+        "windowsRms": [
+          0.00040838067561354456,
+          0.0007699669110970278,
+          0.0014245095760166734,
+          0.0012917949496411044,
+          0.0012603290859391112,
+          0.0011889498234781244,
+          0.0019196656090078078,
+          0.0014821775498097788,
+          0.001166310149770721,
+          0.001535238778316384,
+          0.0016237779551137998,
+          0.00145085505857455,
+          0.0015930012450882322,
+          0.0018468712990966714,
+          0.001501665326093069,
+          0.0014694880463715543,
+          0.0016546689564147443,
+          0.0008046721930997136,
+          0,
+          0.0013616416917150485,
+          0.0013590027151300355,
+          0.0019153221145504224,
+          0.0015155046958754618,
+          0.001363929292088359,
+          0.0012528786271585293,
+          0.0019676325485773133
+        ],
+        "maxAdjacentStep": 0.004765622317790985,
+        "finite": true,
+        "unclipped": true,
+        "buffers": {
+          "bytes": 8640000,
+          "birdsSeconds": 23,
+          "insectsSeconds": 19
+        },
+        "nodesBeforeUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "nodesAfterUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "fixtureSchedule": [
+          {
+            "second": 0,
+            "fixtureWorldTime": 0,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 1,
+            "fixtureWorldTime": 1,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 2,
+            "fixtureWorldTime": 2,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 3,
+            "fixtureWorldTime": 3,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 4,
+            "fixtureWorldTime": 4,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 5,
+            "fixtureWorldTime": 5,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 6,
+            "fixtureWorldTime": 6,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 7,
+            "fixtureWorldTime": 7,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 8,
+            "fixtureWorldTime": 8,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 9,
+            "fixtureWorldTime": 9,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 10,
+            "fixtureWorldTime": 10,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 11,
+            "fixtureWorldTime": 11,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 12,
+            "fixtureWorldTime": 12,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 13,
+            "fixtureWorldTime": 13,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 14,
+            "fixtureWorldTime": 14,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 15,
+            "fixtureWorldTime": 15,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 16,
+            "fixtureWorldTime": 16,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 17,
+            "fixtureWorldTime": 17,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 18,
+            "fixtureWorldTime": 18,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 19,
+            "fixtureWorldTime": 19,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 20,
+            "fixtureWorldTime": 20,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 21,
+            "fixtureWorldTime": 21,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 22,
+            "fixtureWorldTime": 22,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 23,
+            "fixtureWorldTime": 23,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 24,
+            "fixtureWorldTime": 24,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 25,
+            "fixtureWorldTime": 25,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          }
+        ],
+        "disposed": true,
+        "note": "Offline synthesis and fixture time/location; AudioParam.value before offline rendering is not a target-gain measurement. No subjective audition or device performance claim."
+      },
+      {
+        "kind": "forest-day",
+        "seconds": 8,
+        "sampleRate": 48000,
+        "peak": 0.030305344611406326,
+        "rms": 0.004380852436983303,
+        "windowsRms": [
+          0.003678109109173309,
+          0.003024935691916319,
+          0.0026106610394865263,
+          0.00707879153597228,
+          0.0018063893550969877,
+          0.0021961454481471405,
+          0.004695637410454438,
+          0.006617875289156475
+        ],
+        "maxAdjacentStep": 0.017275160178542137,
+        "finite": true,
+        "unclipped": true,
+        "buffers": {
+          "bytes": 8640000,
+          "birdsSeconds": 23,
+          "insectsSeconds": 19
+        },
+        "nodesBeforeUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "nodesAfterUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "fixtureSchedule": [
+          {
+            "second": 0,
+            "fixtureWorldTime": 240,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 1,
+            "fixtureWorldTime": 241,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 2,
+            "fixtureWorldTime": 242,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 3,
+            "fixtureWorldTime": 243,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 4,
+            "fixtureWorldTime": 244,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 5,
+            "fixtureWorldTime": 245,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 6,
+            "fixtureWorldTime": 246,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 7,
+            "fixtureWorldTime": 247,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          }
+        ],
+        "disposed": true,
+        "note": "Offline synthesis and fixture time/location; AudioParam.value before offline rendering is not a target-gain measurement. No subjective audition or device performance claim."
+      },
+      {
+        "kind": "forest-night",
+        "seconds": 8,
+        "sampleRate": 48000,
+        "peak": 0.017611298710107803,
+        "rms": 0.0030927946168692157,
+        "windowsRms": [
+          0.0027368355833996866,
+          0.0026557863631420917,
+          0.003077038784183646,
+          0.00314186961707952,
+          0.0031473226770232657,
+          0.0031862613881685903,
+          0.0035255725134664224,
+          0.00318629605263125
+        ],
+        "maxAdjacentStep": 0.004771612351760268,
+        "finite": true,
+        "unclipped": true,
+        "buffers": {
+          "bytes": 8640000,
+          "birdsSeconds": 23,
+          "insectsSeconds": 19
+        },
+        "nodesBeforeUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "nodesAfterUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "fixtureSchedule": [
+          {
+            "second": 0,
+            "fixtureWorldTime": 0,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 1,
+            "fixtureWorldTime": 1,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 2,
+            "fixtureWorldTime": 2,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 3,
+            "fixtureWorldTime": 3,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 4,
+            "fixtureWorldTime": 4,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 5,
+            "fixtureWorldTime": 5,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 6,
+            "fixtureWorldTime": 6,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 7,
+            "fixtureWorldTime": 7,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          }
+        ],
+        "disposed": true,
+        "note": "Offline synthesis and fixture time/location; AudioParam.value before offline rendering is not a target-gain measurement. No subjective audition or device performance claim."
+      },
+      {
+        "kind": "highland-day",
+        "seconds": 8,
+        "sampleRate": 48000,
+        "peak": 0.011230120435357094,
+        "rms": 0.0023972447386868623,
+        "windowsRms": [
+          0.0030907178970589998,
+          0.002319592460239411,
+          0.0023676992008886347,
+          0.0027612498043115765,
+          0.0018319786579786223,
+          0.0019945437173478683,
+          0.00223824521837466,
+          0.00233808047498629
+        ],
+        "maxAdjacentStep": 0.0042023215210065246,
+        "finite": true,
+        "unclipped": true,
+        "buffers": {
+          "bytes": 8640000,
+          "birdsSeconds": 23,
+          "insectsSeconds": 19
+        },
+        "nodesBeforeUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "nodesAfterUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "fixtureSchedule": [
+          {
+            "second": 0,
+            "fixtureWorldTime": 240,
+            "position": {
+              "x": -75,
+              "z": -235
+            },
+            "height": 12
+          },
+          {
+            "second": 1,
+            "fixtureWorldTime": 241,
+            "position": {
+              "x": -75,
+              "z": -235
+            },
+            "height": 12
+          },
+          {
+            "second": 2,
+            "fixtureWorldTime": 242,
+            "position": {
+              "x": -75,
+              "z": -235
+            },
+            "height": 12
+          },
+          {
+            "second": 3,
+            "fixtureWorldTime": 243,
+            "position": {
+              "x": -75,
+              "z": -235
+            },
+            "height": 12
+          },
+          {
+            "second": 4,
+            "fixtureWorldTime": 244,
+            "position": {
+              "x": -75,
+              "z": -235
+            },
+            "height": 12
+          },
+          {
+            "second": 5,
+            "fixtureWorldTime": 245,
+            "position": {
+              "x": -75,
+              "z": -235
+            },
+            "height": 12
+          },
+          {
+            "second": 6,
+            "fixtureWorldTime": 246,
+            "position": {
+              "x": -75,
+              "z": -235
+            },
+            "height": 12
+          },
+          {
+            "second": 7,
+            "fixtureWorldTime": 247,
+            "position": {
+              "x": -75,
+              "z": -235
+            },
+            "height": 12
+          }
+        ],
+        "disposed": true,
+        "note": "Offline synthesis and fixture time/location; AudioParam.value before offline rendering is not a target-gain measurement. No subjective audition or device performance claim."
+      },
+      {
+        "kind": "shore-day",
+        "seconds": 8,
+        "sampleRate": 48000,
+        "peak": 0.02018008381128311,
+        "rms": 0.004916136359924175,
+        "windowsRms": [
+          0.005118981377308717,
+          0.005410265005375663,
+          0.005355837665958111,
+          0.005024145701149072,
+          0.004856920280733603,
+          0.004742440069036464,
+          0.004399642132690506,
+          0.004302085012791166
+        ],
+        "maxAdjacentStep": 0.0012512481771409512,
+        "finite": true,
+        "unclipped": true,
+        "buffers": {
+          "bytes": 8640000,
+          "birdsSeconds": 23,
+          "insectsSeconds": 19
+        },
+        "nodesBeforeUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "nodesAfterUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "fixtureSchedule": [
+          {
+            "second": 0,
+            "fixtureWorldTime": 240,
+            "position": {
+              "x": -90,
+              "z": 140
+            },
+            "height": 0.5
+          },
+          {
+            "second": 1,
+            "fixtureWorldTime": 241,
+            "position": {
+              "x": -90,
+              "z": 140
+            },
+            "height": 0.5
+          },
+          {
+            "second": 2,
+            "fixtureWorldTime": 242,
+            "position": {
+              "x": -90,
+              "z": 140
+            },
+            "height": 0.5
+          },
+          {
+            "second": 3,
+            "fixtureWorldTime": 243,
+            "position": {
+              "x": -90,
+              "z": 140
+            },
+            "height": 0.5
+          },
+          {
+            "second": 4,
+            "fixtureWorldTime": 244,
+            "position": {
+              "x": -90,
+              "z": 140
+            },
+            "height": 0.5
+          },
+          {
+            "second": 5,
+            "fixtureWorldTime": 245,
+            "position": {
+              "x": -90,
+              "z": 140
+            },
+            "height": 0.5
+          },
+          {
+            "second": 6,
+            "fixtureWorldTime": 246,
+            "position": {
+              "x": -90,
+              "z": 140
+            },
+            "height": 0.5
+          },
+          {
+            "second": 7,
+            "fixtureWorldTime": 247,
+            "position": {
+              "x": -90,
+              "z": 140
+            },
+            "height": 0.5
+          }
+        ],
+        "disposed": true,
+        "note": "Offline synthesis and fixture time/location; AudioParam.value before offline rendering is not a target-gain measurement. No subjective audition or device performance claim."
+      },
+      {
+        "kind": "sea-ecology-only",
+        "seconds": 8,
+        "sampleRate": 48000,
+        "peak": 0,
+        "rms": 0,
+        "windowsRms": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "maxAdjacentStep": 0,
+        "finite": true,
+        "unclipped": true,
+        "buffers": {
+          "bytes": 8640000,
+          "birdsSeconds": 23,
+          "insectsSeconds": 19
+        },
+        "nodesBeforeUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "nodesAfterUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "fixtureSchedule": [
+          {
+            "second": 0,
+            "fixtureWorldTime": 240,
+            "position": {
+              "x": 350,
+              "z": 350
+            },
+            "height": -2
+          },
+          {
+            "second": 1,
+            "fixtureWorldTime": 241,
+            "position": {
+              "x": 350,
+              "z": 350
+            },
+            "height": -2
+          },
+          {
+            "second": 2,
+            "fixtureWorldTime": 242,
+            "position": {
+              "x": 350,
+              "z": 350
+            },
+            "height": -2
+          },
+          {
+            "second": 3,
+            "fixtureWorldTime": 243,
+            "position": {
+              "x": 350,
+              "z": 350
+            },
+            "height": -2
+          },
+          {
+            "second": 4,
+            "fixtureWorldTime": 244,
+            "position": {
+              "x": 350,
+              "z": 350
+            },
+            "height": -2
+          },
+          {
+            "second": 5,
+            "fixtureWorldTime": 245,
+            "position": {
+              "x": 350,
+              "z": 350
+            },
+            "height": -2
+          },
+          {
+            "second": 6,
+            "fixtureWorldTime": 246,
+            "position": {
+              "x": 350,
+              "z": 350
+            },
+            "height": -2
+          },
+          {
+            "second": 7,
+            "fixtureWorldTime": 247,
+            "position": {
+              "x": 350,
+              "z": 350
+            },
+            "height": -2
+          }
+        ],
+        "disposed": true,
+        "note": "Offline synthesis and fixture time/location; AudioParam.value before offline rendering is not a target-gain measurement. No subjective audition or device performance claim."
+      },
+      {
+        "kind": "day-to-night",
+        "seconds": 8,
+        "sampleRate": 48000,
+        "peak": 0.029680754989385605,
+        "rms": 0.0037264650539014996,
+        "windowsRms": [
+          0.0032829672188499806,
+          0.0030665181902212327,
+          0.0020775322979175123,
+          0.006976550817688861,
+          0.002662975293009748,
+          0.002923205649970401,
+          0.0034058925469426645,
+          0.0032689221965923705
+        ],
+        "maxAdjacentStep": 0.010460638906806707,
+        "finite": true,
+        "unclipped": true,
+        "buffers": {
+          "bytes": 8640000,
+          "birdsSeconds": 23,
+          "insectsSeconds": 19
+        },
+        "nodesBeforeUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "nodesAfterUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "fixtureSchedule": [
+          {
+            "second": 0,
+            "fixtureWorldTime": 240,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 1,
+            "fixtureWorldTime": 241,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 2,
+            "fixtureWorldTime": 242,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 3,
+            "fixtureWorldTime": 243,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 4,
+            "fixtureWorldTime": 4,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 5,
+            "fixtureWorldTime": 5,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 6,
+            "fixtureWorldTime": 6,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 7,
+            "fixtureWorldTime": 7,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          }
+        ],
+        "disposed": true,
+        "note": "Offline synthesis and fixture time/location; AudioParam.value before offline rendering is not a target-gain measurement. No subjective audition or device performance claim."
+      },
+      {
+        "kind": "busy-forest",
+        "seconds": 8,
+        "sampleRate": 48000,
+        "peak": 0.1555611938238144,
+        "rms": 0.0056022865971254296,
+        "windowsRms": [
+          0.01075054384661868,
+          0.0030239098419505535,
+          0.002307375402523837,
+          0.0070005629277686545,
+          0.0018052984741459678,
+          0.0019441707052294,
+          0.004604971867598781,
+          0.006617413878041871
+        ],
+        "maxAdjacentStep": 0.01732512330636382,
+        "finite": true,
+        "unclipped": true,
+        "buffers": {
+          "bytes": 8640000,
+          "birdsSeconds": 23,
+          "insectsSeconds": 19
+        },
+        "nodesBeforeUpdates": {
+          "createGain": 18,
+          "createBuffer": 3,
+          "createBufferSource": 13,
+          "createBiquadFilter": 14,
+          "createOscillator": 3
+        },
+        "nodesAfterUpdates": {
+          "createGain": 18,
+          "createBuffer": 3,
+          "createBufferSource": 13,
+          "createBiquadFilter": 14,
+          "createOscillator": 3
+        },
+        "fixtureSchedule": [
+          {
+            "second": 0,
+            "fixtureWorldTime": 240,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 1,
+            "fixtureWorldTime": 241,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 2,
+            "fixtureWorldTime": 242,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 3,
+            "fixtureWorldTime": 243,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 4,
+            "fixtureWorldTime": 244,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 5,
+            "fixtureWorldTime": 245,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 6,
+            "fixtureWorldTime": 246,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 7,
+            "fixtureWorldTime": 247,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          }
+        ],
+        "disposed": true,
+        "routing": {
+          "physicalQueued": 9,
+          "totalQueued": 12,
+          "successCuesQueued": 3
+        },
+        "note": "Offline synthesis and fixture time/location; AudioParam.value before offline rendering is not a target-gain measurement. No subjective audition or device performance claim."
+      },
+      {
+        "kind": "paused-forest",
+        "seconds": 8,
+        "sampleRate": 48000,
+        "peak": 0,
+        "rms": 0,
+        "windowsRms": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "maxAdjacentStep": 0,
+        "finite": true,
+        "unclipped": true,
+        "buffers": {
+          "bytes": 8640000,
+          "birdsSeconds": 23,
+          "insectsSeconds": 19
+        },
+        "nodesBeforeUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "nodesAfterUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "fixtureSchedule": [
+          {
+            "second": 0,
+            "fixtureWorldTime": 240,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 1,
+            "fixtureWorldTime": 241,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 2,
+            "fixtureWorldTime": 242,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 3,
+            "fixtureWorldTime": 243,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 4,
+            "fixtureWorldTime": 244,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 5,
+            "fixtureWorldTime": 245,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 6,
+            "fixtureWorldTime": 246,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 7,
+            "fixtureWorldTime": 247,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          }
+        ],
+        "disposed": true,
+        "note": "Offline synthesis and fixture time/location; AudioParam.value before offline rendering is not a target-gain measurement. No subjective audition or device performance claim."
+      },
+      {
+        "kind": "muted-forest",
+        "seconds": 8,
+        "sampleRate": 48000,
+        "peak": 0,
+        "rms": 0,
+        "windowsRms": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "maxAdjacentStep": 0,
+        "finite": true,
+        "unclipped": true,
+        "buffers": {
+          "bytes": 8640000,
+          "birdsSeconds": 23,
+          "insectsSeconds": 19
+        },
+        "nodesBeforeUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "nodesAfterUpdates": {
+          "createGain": 6,
+          "createBuffer": 3,
+          "createBufferSource": 4,
+          "createBiquadFilter": 2
+        },
+        "fixtureSchedule": [
+          {
+            "second": 0,
+            "fixtureWorldTime": 240,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 1,
+            "fixtureWorldTime": 241,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 2,
+            "fixtureWorldTime": 242,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 3,
+            "fixtureWorldTime": 243,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 4,
+            "fixtureWorldTime": 244,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 5,
+            "fixtureWorldTime": 245,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 6,
+            "fixtureWorldTime": 246,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          },
+          {
+            "second": 7,
+            "fixtureWorldTime": 247,
+            "position": {
+              "x": 160,
+              "z": -95
+            },
+            "height": 12
+          }
+        ],
+        "disposed": true,
+        "note": "Offline synthesis and fixture time/location; AudioParam.value before offline rendering is not a target-gain measurement. No subjective audition or device performance claim."
+      }
+    ]
+  },
+  "console": []
+}

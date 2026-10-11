@@ -1,0 +1,229 @@
+{
+  "sample": {
+    "complete": true,
+    "targetMs": 60000,
+    "activeMs": 60014.94,
+    "wallMs": 60020.24,
+    "frames": 3597,
+    "movingFrames": 3594,
+    "movingFraction": 1,
+    "distanceMeters": 415.08,
+    "hidden": false,
+    "medianMs": 16.7,
+    "p95Ms": 17.9,
+    "maxMs": 99.94,
+    "over50Ms": 1,
+    "frameSpikes": [
+      {
+        "atMs": 99.94,
+        "intervalMs": 99.94,
+        "previousFrame": {
+          "stage": "shore-exploration",
+          "transition": false,
+          "cpuMs": 105.4
+        }
+      }
+    ],
+    "stepAttempts": 196,
+    "stepsScheduled": 196,
+    "hitCount": 6,
+    "damageTaken": 31,
+    "respawns": 0,
+    "revivedPairs": 1,
+    "stages": [
+      {
+        "name": "shore-exploration",
+        "startPosition": [
+          -90,
+          140
+        ],
+        "frames": 715,
+        "movingFrames": 714,
+        "distance": 70.9952999999998,
+        "attackHits": 0,
+        "damageTaken": 0,
+        "revivedPairs": 0,
+        "endPosition": [
+          -87.87,
+          136.96
+        ],
+        "kills": 0
+      },
+      {
+        "name": "forest-combat",
+        "startPosition": [
+          132,
+          -26
+        ],
+        "frames": 720,
+        "movingFrames": 718,
+        "distance": 83.75429999999997,
+        "attackHits": 6,
+        "damageTaken": 7,
+        "revivedPairs": 1,
+        "endPosition": [
+          147.53,
+          -46.46
+        ],
+        "kills": 3
+      },
+      {
+        "name": "highland-movement",
+        "startPosition": [
+          -75,
+          -205
+        ],
+        "frames": 721,
+        "movingFrames": 721,
+        "distance": 114.12769999999992,
+        "attackHits": 0,
+        "damageTaken": 24,
+        "revivedPairs": 0,
+        "endPosition": [
+          -46.86,
+          -217.13
+        ],
+        "kills": 0
+      },
+      {
+        "name": "amber-swimming",
+        "startPosition": [
+          190,
+          248
+        ],
+        "frames": 720,
+        "movingFrames": 720,
+        "distance": 62.10000000000007,
+        "attackHits": 0,
+        "damageTaken": 0,
+        "revivedPairs": 0,
+        "endPosition": [
+          194.89,
+          243.59
+        ],
+        "kills": 0
+      },
+      {
+        "name": "night-camp",
+        "startPosition": [
+          -56,
+          49
+        ],
+        "frames": 721,
+        "movingFrames": 721,
+        "distance": 84.10500000000017,
+        "attackHits": 0,
+        "damageTaken": 0,
+        "revivedPairs": 0,
+        "endPosition": [
+          -46.77,
+          41.41
+        ],
+        "kills": 0
+      }
+    ],
+    "checkpoints": [
+      {
+        "activeMs": 0,
+        "stage": "shore-exploration",
+        "position": [
+          -90,
+          140
+        ],
+        "height": 1.22,
+        "time": 240,
+        "daytime": "午后",
+        "hp": 100,
+        "kills": 0,
+        "frames": 0,
+        "movingFrames": 0,
+        "distance": 0,
+        "calls": 381,
+        "triangles": 1627421,
+        "geometries": 218,
+        "textures": 8,
+        "heapBytes": 63599814,
+        "audio": {
+          "context": "running",
+          "voices": 0,
+          "stepsScheduled": 0,
+          "surfGain": 0,
+          "birdsGain": 0,
+          "insectsGain": 0,
+          "ambienceBytes": 8640000
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "canvasBuffer": [
+          1920,
+          852
+        ]
+      },
+      {
+        "activeMs": 60014.94,
+        "stage": "night-camp",
+        "position": [
+          -46.77,
+          41.41
+        ],
+        "height": 13.38,
+        "time": 12.01,
+        "daytime": "夜晚",
+        "hp": 100,
+        "kills": 0,
+        "frames": 3597,
+        "movingFrames": 3594,
+        "distance": 415.08,
+        "calls": 309,
+        "triangles": 1726012,
+        "geometries": 341,
+        "textures": 17,
+        "heapBytes": 78491031,
+        "audio": {
+          "context": "running",
+          "voices": 1,
+          "stepsScheduled": 196,
+          "surfGain": 0,
+          "birdsGain": 0,
+          "insectsGain": 0.0538390688598156,
+          "ambienceBytes": 8640000
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "canvasBuffer": [
+          1920,
+          852
+        ]
+      }
+    ],
+    "note": "QA scripted input and five phase teleports; production movement/tick/render/audio. Combat pair revived as labelled load fixture. Frame intervals and JS heap only; no save or campaign acceptance."
+  },
+  "console": [],
+  "singleRenderingQaPage": true,
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "b7bc9f3e64b40f1e9d0563f5de004027a5098b220f21ed4b2b6f4af7635adffc",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "ef4290e2daf552d5ee73fb9f1a40f023a8cb07d9508bb7e16c1ea0ea734aa5c6",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "28d1e219f0bd804323a54d9e5a1e09c92e78e129afb797cb3ddf8ce876b3117f",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "1697ecb6c695952c9ba656c61b0e1c9852f20fc4f7f2b10b6e81d1cbbf397f0b",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "95a5cb81f480bfb5be31a9ed013eca5f3722b52eb6a34cb3bf135f9555244261",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "harnessSha256": "73c5510c05d8cb03bf071ef316629cc447c754e595a805d7d6811249c7786cc4"
+}

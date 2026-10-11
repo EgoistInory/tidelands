@@ -1,0 +1,331 @@
+{
+  "kind": "M5 bounded flowing campfire batch",
+  "auditedAt": "2026-10-11T06:10:32.180393+00:00",
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "b7bc9f3e64b40f1e9d0563f5de004027a5098b220f21ed4b2b6f4af7635adffc",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "1697ecb6c695952c9ba656c61b0e1c9852f20fc4f7f2b10b6e81d1cbbf397f0b",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "95a5cb81f480bfb5be31a9ed013eca5f3722b52eb6a34cb3bf135f9555244261",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "previousRuntimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "b7bc9f3e64b40f1e9d0563f5de004027a5098b220f21ed4b2b6f4af7635adffc",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/character.js": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "1697ecb6c695952c9ba656c61b0e1c9852f20fc4f7f2b10b6e81d1cbbf397f0b",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "ab6d3a76df34e947c4339bee2bcfd9a40362d1dde5827ba5ba75f8a0caef8432",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "changedRuntime": [
+    "src/scene.js",
+    "src/campfire.js"
+  ],
+  "tests": {
+    "focused": 16,
+    "full": 130,
+    "red": "missing module; one test file failed",
+    "phaseRedFailed": 1
+  },
+  "comparisonCounts": {
+    "calls": [
+      223,
+      222
+    ],
+    "triangles": [
+      1482293,
+      1482271
+    ],
+    "geometries": [
+      262,
+      261
+    ],
+    "textures": [
+      13,
+      13
+    ],
+    "programs": [
+      19,
+      20
+    ]
+  },
+  "detailMotion": {
+    "desktop": {
+      "complete": true,
+      "elapsedMs": 10006.7,
+      "frames": 601,
+      "p95": 17.799999999999272,
+      "max": 18.700000000000728,
+      "above50": 0,
+      "hidden": false,
+      "before": {
+        "worldTime": 0,
+        "flameTime": -7.839999999999998,
+        "viewport": [
+          1280,
+          720
+        ],
+        "angleDegrees": 0,
+        "frozen": false,
+        "programs": 20,
+        "geometries": 261,
+        "textures": 13,
+        "calls": 222,
+        "triangles": 1482271
+      },
+      "after": {
+        "worldTime": 10.016700000000016,
+        "flameTime": 2.176700000000018,
+        "viewport": [
+          1280,
+          720
+        ],
+        "angleDegrees": 0,
+        "frozen": true,
+        "programs": 20,
+        "geometries": 261,
+        "textures": 13,
+        "calls": 222,
+        "triangles": 1482271
+      },
+      "frozenAfter": true,
+      "note": "10 seconds camp detail frame scheduling; two renders per frame, no GPU or physical-device acceptance."
+    },
+    "mobile": {
+      "complete": true,
+      "elapsedMs": 10009.899999856949,
+      "frames": 601,
+      "p95": 18.09999999999991,
+      "max": 18.700000000000728,
+      "above50": 0,
+      "hidden": false,
+      "before": {
+        "worldTime": 0,
+        "flameTime": -7.839999999999998,
+        "viewport": [
+          390,
+          844
+        ],
+        "angleDegrees": 0,
+        "frozen": false,
+        "programs": 19,
+        "geometries": 260,
+        "textures": 11,
+        "calls": 147,
+        "triangles": 1177978
+      },
+      "after": {
+        "worldTime": 10.017200000000013,
+        "flameTime": 2.177200000000015,
+        "viewport": [
+          390,
+          844
+        ],
+        "angleDegrees": 0,
+        "frozen": true,
+        "programs": 19,
+        "geometries": 260,
+        "textures": 11,
+        "calls": 147,
+        "triangles": 1177978
+      },
+      "frozenAfter": true,
+      "note": "10 seconds camp detail frame scheduling; two renders per frame, no GPU or physical-device acceptance."
+    }
+  },
+  "frozenFourAnglesAndNoon": [
+    {
+      "complete": true,
+      "worldTime": 0,
+      "flameTime": -7.839999999999998,
+      "viewport": [
+        1280,
+        720
+      ],
+      "angleDegrees": 0,
+      "frozen": true,
+      "programs": 20,
+      "geometries": 261,
+      "textures": 13,
+      "calls": 222,
+      "triangles": 1482271,
+      "note": "Explicit no-save camp fixture; camera positioned only for detail review. Frame intervals are not GPU timing or normal-play acceptance."
+    },
+    {
+      "complete": true,
+      "worldTime": 0,
+      "flameTime": -7.839999999999998,
+      "viewport": [
+        1280,
+        720
+      ],
+      "angleDegrees": 90,
+      "frozen": true,
+      "programs": 20,
+      "geometries": 261,
+      "textures": 13,
+      "calls": 83,
+      "triangles": 1131334,
+      "note": "Explicit no-save camp fixture; camera positioned only for detail review. Frame intervals are not GPU timing or normal-play acceptance."
+    },
+    {
+      "complete": true,
+      "worldTime": 0,
+      "flameTime": -7.839999999999998,
+      "viewport": [
+        1280,
+        720
+      ],
+      "angleDegrees": 180,
+      "frozen": true,
+      "programs": 20,
+      "geometries": 261,
+      "textures": 14,
+      "calls": 132,
+      "triangles": 961189,
+      "note": "Explicit no-save camp fixture; camera positioned only for detail review. Frame intervals are not GPU timing or normal-play acceptance."
+    },
+    {
+      "complete": true,
+      "worldTime": 0,
+      "flameTime": -7.839999999999998,
+      "viewport": [
+        1280,
+        720
+      ],
+      "angleDegrees": 270,
+      "frozen": true,
+      "programs": 20,
+      "geometries": 304,
+      "textures": 14,
+      "calls": 143,
+      "triangles": 1283360,
+      "note": "Explicit no-save camp fixture; camera positioned only for detail review. Frame intervals are not GPU timing or normal-play acceptance."
+    },
+    {
+      "complete": true,
+      "worldTime": 240,
+      "flameTime": 232.16,
+      "viewport": [
+        1280,
+        720
+      ],
+      "angleDegrees": 270,
+      "frozen": true,
+      "programs": 20,
+      "geometries": 304,
+      "textures": 14,
+      "calls": 143,
+      "triangles": 1283360,
+      "note": "Explicit no-save camp fixture; camera positioned only for detail review. Frame intervals are not GPU timing or normal-play acceptance."
+    }
+  ],
+  "capturedPixelDifference": {
+    "kind": "captured flame-region difference",
+    "region": [
+      590,
+      350,
+      690,
+      495
+    ],
+    "changedPixelsAbove12": 5474,
+    "regionPixels": 14500,
+    "meanAbsoluteRgbDifference": [
+      14.494896551724137,
+      14.282344827586208,
+      11.965655172413793
+    ],
+    "note": "Same camera actual screenshots at world time 0 and 10. Flame region changed; light also flickers. Not isolated optical flow or physical fire proof."
+  },
+  "currentDesktopDynamic": {
+    "activeMs": 60000.47,
+    "frames": 2989,
+    "movingFrames": 2988,
+    "distanceMeters": 415.15,
+    "p95Ms": 33.4,
+    "maxMs": 317.17,
+    "over50Ms": 1,
+    "hitCount": 6,
+    "stepsScheduled": 198,
+    "frameSpikes": [
+      {
+        "atMs": 317.17,
+        "intervalMs": 317.17,
+        "previousFrame": {
+          "stage": "shore-exploration",
+          "transition": false,
+          "cpuMs": 316.2
+        }
+      }
+    ]
+  },
+  "harnessSha256": {
+    "tests/campfire-motion.html": "62b54c3daf7f8ac4410ee3e330270835baba59ca198e10fcaefd5c7dad96372b",
+    "tests/dynamic-endurance.html": "73c5510c05d8cb03bf071ef316629cc447c754e595a805d7d6811249c7786cc4"
+  },
+  "package": {
+    "kind": "local-delivery-archive-check",
+    "passed": true,
+    "archive": "tidelands-m5-2026-10-11-campfire.zip",
+    "stage": "M1-M4 functional; M5 procedural flowing campfire checkpoint",
+    "archiveSha256": "91748f999337c9f597625c6fced63d86d5b86bd47c58f4c7f44b104f7dab06f3",
+    "checkedFiles": 35,
+    "archiveEntries": 36,
+    "extractedPath": "/private/tmp/tidelands-delivery-7brjk5t3/tidelands-local",
+    "invalidPortsRejected": [
+      -1,
+      65536
+    ],
+    "browserLaunchVerified": false,
+    "fullGoalComplete": false
+  },
+  "ordinaryPackageUi": {
+    "desktopPosition": "位置 X -61.9，Z 102.4；建筑 0；击败 0",
+    "mobilePosition": "位置 X -63.0，Z 95.2；建筑 0；击败 0",
+    "fixtureImported": false,
+    "fullCampaignRetested": false,
+    "mobileMultitouch": false,
+    "actualAudition": false
+  },
+  "verificationCorrections": [
+    "Initial missing module RED failed one file. Negative camp phase wrapped at7.84s; one RED regression then phase offset moved outside world time modulo.",
+    "Initial harness button read prior frame values; final reports wait one rAF and all four frozen/time240 rows are consistent.",
+    "System Python PIL missing; bundled Python succeeded without installation.",
+    "Initial and concurrent desktop motion records are preserved separately; only latest isolated detail record is final."
+  ],
+  "limits": [
+    "Three crossed sheets and synthetic noise, no volumetric simulation, smoke or embers; repeated camp stones/logs, whole world materials and character remain prototype-like.",
+    "QA detail camera/explicit camp fixture, no campaign or all-scene camera acceptance.",
+    "Two renders per detail frame; 10-second scheduling and stable counts are not GPU timing, VRAM or long-run leak proof.",
+    "Desktop 60-second dynamic started with two other rendering QA pages and had P95 33.4/max317.17ms; not a controlled performance comparison or acceptance.",
+    "Bounded shader time wraps after4096 world seconds; full long-session transition still pending.",
+    "Actual sound audition, physical mobile/multitouch, cold first-use and global natural motion remain pending."
+  ],
+  "m5Accepted": false,
+  "fullGoalComplete": false
+}

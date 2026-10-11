@@ -1,0 +1,36 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>生态声场有限验收</title>
+<style>body{font:16px system-ui;padding:24px;max-width:850px;background:#eef0e6;color:#25382d}button{padding:12px}pre{white-space:pre-wrap}audio{display:block;margin:12px 0}</style>
+<h1>生态声场有限验收</h1><p>真实48kHz OfflineAudioContext 调用生产 GameAudio。鸟鸣/夜虫为本地合成；波形、资源与接线不能代替实际试听、真机和完整品质验收。此页无存档读写。</p>
+<button id="render">渲染昼夜、地域、切换、忙碌与静音</button><pre id="result">尚未运行</pre><div id="players"></div>
+<script type="module">
+import {GameAudio} from '../src/audio.js';
+const button=document.getElementById('render'),result=document.getElementById('result'),players=document.getElementById('players');
+function wav(samples,rate){const bytes=new ArrayBuffer(44+samples.length*2),v=new DataView(bytes),word=(offset,s)=>[...s].forEach((c,i)=>v.setUint8(offset+i,c.charCodeAt(0)));word(0,'RIFF');v.setUint32(4,bytes.byteLength-8,true);word(8,'WAVE');word(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,rate,true);v.setUint32(28,rate*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);word(36,'data');v.setUint32(40,samples.length*2,true);samples.forEach((n,i)=>v.setInt16(44+i*2,Math.max(-1,Math.min(1,n))*32767,true));const data=new Uint8Array(bytes);let binary='';for(let i=0;i<data.length;i+=8192)binary+=String.fromCharCode(...data.subarray(i,i+8192));return 'data:audio/wav;base64,'+btoa(binary);}
+button.onclick=async()=>{
+  button.disabled=true;result.textContent='渲染中';players.replaceChildren();const reports=[];
+  try{for(const kind of ['day-birds','night-insects','forest-day','forest-night','highland-day','shore-day','sea-ecology-only','day-to-night','busy-forest','paused-forest','muted-forest']){
+    const seconds=['day-birds','night-insects'].includes(kind)?26:8,rate=48000,ctx=new OfflineAudioContext(1,rate*seconds,rate),created={};let scheduledTime=0;
+    const adapter=new Proxy(ctx,{get(target,key){if(key==='state')return 'running';if(key==='currentTime')return scheduledTime;if(key==='resume'||key==='close')return async()=>{};const value=Reflect.get(target,key,target);if(typeof value!=='function')return value;return (...args)=>{if(String(key).startsWith('create'))created[key]=(created[key]??0)+1;return value.apply(target,args);};}});
+    const audio=new GameAudio({contextFactory:()=>adapter});audio.setActive(true);await audio.unlock();audio.master.gain.setValueAtTime(.35,0);
+    if(['day-birds','night-insects','sea-ecology-only'].includes(kind)){audio.ambience.stop();audio.surfSource.stop();}
+    if(kind==='paused-forest'){audio.setActive(false);audio.master.gain.setValueAtTime(0,0);}
+    if(kind==='muted-forest'){audio.setEnabled(false);audio.master.gain.setValueAtTime(0,0);}
+    let routing=null;
+    if(kind==='busy-forest'){scheduledTime=.5;for(let i=0;i<30;i++)audio.effect('hit');const physicalQueued=audio.sources.size;for(const cue of ['quest','craft','food'])audio.effect(cue);routing={physicalQueued,totalQueued:audio.sources.size,successCuesQueued:[...audio.sources].filter(node=>node.type==='sine').length};}
+    const beforeUpdate={...created},levels=[];
+    for(let frame=0;frame<seconds*10;frame++){
+      scheduledTime=frame/10;const night=kind==='forest-night'||kind==='night-insects'||kind==='day-to-night'&&scheduledTime>=4;
+      const player=kind==='highland-day'?{x:-75,z:-235}:kind==='shore-day'?{x:-90,z:140}:kind==='sea-ecology-only'?{x:350,z:350}:{x:160,z:-95};
+      audio.update(player,(night?0:240)+scheduledTime,kind==='shore-day'?.5:kind==='sea-ecology-only'?-2:12,0);
+      if(frame%10===0)levels.push({second:scheduledTime,fixtureWorldTime:(night?0:240)+scheduledTime,position:player,height:kind==='shore-day'?.5:kind==='sea-ecology-only'?-2:12});
+    }
+    const buffers={bytes:(audio.noise.length+audio.birdsSource.buffer.length+audio.insectsSource.buffer.length)*4,birdsSeconds:audio.birdsSource.buffer.duration,insectsSeconds:audio.insectsSource.buffer.duration};
+    const rendered=await ctx.startRendering(),samples=rendered.getChannelData(0);let energy=0,peak=0,nonfinite=0,maxAdjacentStep=0;
+    for(let i=0;i<samples.length;i++){const x=samples[i];if(!Number.isFinite(x))nonfinite++;energy+=x*x;peak=Math.max(peak,Math.abs(x));if(i)maxAdjacentStep=Math.max(maxAdjacentStep,Math.abs(x-samples[i-1]));}
+    const windowsRms=[];for(let window=0;window<seconds;window++){let power=0;for(let i=window*rate;i<(window+1)*rate;i++)power+=samples[i]**2;windowsRms.push(Math.sqrt(power/rate));}
+    if(['day-birds','night-insects','busy-forest','day-to-night'].includes(kind)){const label=document.createElement('p');label.textContent=kind;const link=document.createElement('a');link.textContent='保存 '+kind+' WAV';link.download='ecology-audio-'+kind+'.wav';link.href=wav(samples,rate);link.dataset.kind=kind;const player=document.createElement('audio');player.controls=true;player.src=link.href;players.append(label,player,link);}
+    const persistent=[audio.birdsSource,audio.insectsSource];await audio.dispose();
+    reports.push({kind,seconds,sampleRate:rate,peak,rms:Math.sqrt(energy/samples.length),windowsRms,maxAdjacentStep,finite:nonfinite===0,unclipped:peak<1,buffers,nodesBeforeUpdates:beforeUpdate,nodesAfterUpdates:{...created},fixtureSchedule:levels,disposed:audio.context===null&&audio.birdsSource===null&&audio.insectsSource===null,...(routing?{routing}:{}),note:'Offline synthesis and fixture time/location; AudioParam.value before offline rendering is not a target-gain measurement. No subjective audition or device performance claim.'});
+  }result.textContent=JSON.stringify({complete:true,reports},null,2);}catch(error){result.textContent=JSON.stringify({complete:false,error:error.message});}finally{button.disabled=false;}
+};
+</script></html>

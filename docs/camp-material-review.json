@@ -1,0 +1,126 @@
+{
+  "kind": "bounded immutable tent material lifetime batch",
+  "auditedAt": "2026-10-11T05:19:03.897213+00:00",
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "b7bc9f3e64b40f1e9d0563f5de004027a5098b220f21ed4b2b6f4af7635adffc",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "1697ecb6c695952c9ba656c61b0e1c9852f20fc4f7f2b10b6e81d1cbbf397f0b",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "b48abb51684b16e8ca8929b9b955ca4ed0e04433a8405999cbfd302ace7ae692",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "previousRuntimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "b7bc9f3e64b40f1e9d0563f5de004027a5098b220f21ed4b2b6f4af7635adffc",
+    "src/camera.js": "d9f2494f395bf2e334811bf8a39615f40bc01258a3aedb7d3184e856708259d1",
+    "src/character.js": "ff5b660d52aff685ff1edafa77ce78b4a0061472662bdf06cee875e36d34c9ba",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "694b474bf13a5f412fc65e460cf183ec1314b5adc7c3fdde62f7a1291c29ac26",
+    "src/main.js": "c5194bb72fb7c514c3be656e78a7d33a96802b2d9b235e897481543056f6a2f7",
+    "src/meadow.js": "1697ecb6c695952c9ba656c61b0e1c9852f20fc4f7f2b10b6e81d1cbbf397f0b",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "1262f0782262fc5eddca643b7518c231693ecef31824c29ec137e2e8e0e8b98b",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "09a5d04166e296c75b095c2af9b4d06a941c2dfe4a36e98d5de7991f2151e6d5",
+    "src/sky.js": "2046ba72e3b4ead9d0e01692f91224fc1a92e696471217069ed057f5a2103fe1",
+    "src/world.js": "08344f42518d7ca7ecdd01e17a00567077264182e16779a6d89cfa1c6dc0e585"
+  },
+  "changedRuntimeFiles": [
+    "src/scene.js"
+  ],
+  "harnessSha256": "28be5f158c1f7386987590569ac15b313ba4df03361e2d8bb11c35245dcaadca",
+  "tests": {
+    "redFailed": 1,
+    "focused": 13,
+    "full": 123
+  },
+  "programLifetimeBefore": {
+    "departure": [
+      21,
+      20
+    ],
+    "return": [
+      20,
+      21
+    ]
+  },
+  "programLifetimeAfter": {
+    "desktopDeparture": [
+      21,
+      21
+    ],
+    "desktopReturn": [
+      21,
+      21
+    ],
+    "narrowDeparture": [
+      20,
+      20
+    ],
+    "narrowReturn": [
+      20,
+      20
+    ]
+  },
+  "boundedReturnDrawMs": {
+    "beforeWarmDesktop": 11,
+    "afterDesktop": 3.700000047683716,
+    "after390": 2.700000047683716
+  },
+  "timingComparisonCaveat": "Separate warm contexts; program lifetime is direct evidence, CPU timing is a bounded observation rather than a controlled percentage improvement. Diagnostics use fresh quest0, unlike the quest6 dynamic fixture.",
+  "package": {
+    "kind": "local-delivery-archive-check",
+    "passed": true,
+    "archive": "tidelands-m5-2026-10-11-camp-material.zip",
+    "stage": "M1-M4 functional; M5 ecology audio and persistent tent material checkpoint",
+    "archiveSha256": "d6146ac310b68ef9908e78ffbb2a4ee05fcb390e79edf4056911863d40dad4dc",
+    "checkedFiles": 34,
+    "archiveEntries": 35,
+    "extractedPath": "/private/tmp/tidelands-delivery-nil53hrx/tidelands-local",
+    "invalidPortsRejected": [
+      -1,
+      65536
+    ],
+    "browserLaunchVerified": false,
+    "fullGoalComplete": false
+  },
+  "normalPackageUi": {
+    "normalNewSave": true,
+    "fixtureImported": false,
+    "mobileHarvest": false,
+    "npcTaskAdvanced": true,
+    "fullCampaignRetested": false,
+    "actualAudition": false,
+    "nativeMovement": true,
+    "multitouch": false
+  },
+  "firstUseHitchFixed": false,
+  "currentSourceLongRun": false,
+  "performanceAccepted": false,
+  "actualAudition": false,
+  "limits": [
+    "Original ecology source complete dynamic desktop 433.3ms spike remains unresolved; not reclassified as an audio regression.",
+    "First combined diagnostic draw350.9ms vs sync2.5ms/audio0.1ms locates CPU within draw; tracked GL calls did not independently attribute the stall.",
+    "Initial shore remains around100ms in current diagnostic; no full cold compilation or driver/GPU acceptance.",
+    "Current source has isolated first/repeat camp calls and ordinary UI smoke, not a new ten-minute/full-world sample.",
+    "Night vegetation and models/characters remain prototype quality; ongoing M5 model/material/action/camera/sound work."
+  ],
+  "m5Accepted": false,
+  "fullGoalComplete": false
+}

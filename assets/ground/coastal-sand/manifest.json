@@ -1,0 +1,43 @@
+{
+  "asset": "Sand 03",
+  "assetId": "sand_03",
+  "author": "Charlotte Baglioni",
+  "tileWidthMeters": 2,
+  "license": "CC0-1.0",
+  "source": "https://polyhaven.com/a/sand_03",
+  "licensePage": "https://polyhaven.com/license",
+  "apiTerms": "https://github.com/Poly-Haven/Public-API/blob/master/ToS.md",
+  "verifiedDate": "2026-10-11",
+  "runtimeApi": false,
+  "meanLinearAlbedoLuminance": 0.12191464153387539,
+  "files": [
+    {
+      "path": "assets/ground/coastal-sand/albedo.jpg",
+      "channel": "Diffuse",
+      "bytes": 703132,
+      "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sand_03/sand_03_diff_1k.jpg",
+      "md5": "84bde2b8bea6351805f67a15682b36b2",
+      "sha256": "e72144f9d7b81bdb7bbdb34222b53431738dcef79346dd89412d2abd541e4d30",
+      "resolution": "1k"
+    },
+    {
+      "path": "assets/ground/coastal-sand/normal-gl.jpg",
+      "channel": "nor_gl",
+      "bytes": 884706,
+      "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sand_03/sand_03_nor_gl_1k.jpg",
+      "md5": "ad8d6ce28344b1d8f241cbd7796243dc",
+      "sha256": "1bde5f49ea78f94bcad73592696bf3949711c4ac197133b710c0c8521b6e996b",
+      "resolution": "1k"
+    },
+    {
+      "path": "assets/ground/coastal-sand/roughness.jpg",
+      "channel": "Rough",
+      "bytes": 291218,
+      "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sand_03/sand_03_rough_1k.jpg",
+      "md5": "b09beddb9981ec5fb402c12f04751c15",
+      "sha256": "5c9ead290a94913cfa2d0452a576ba527b50301fe208f2ffc4861e42a8fea45b",
+      "resolution": "1k"
+    }
+  ],
+  "note": "Official free development metadata request; raw1k JPEG channels unchanged. No runtime network or paid asset/API."
+}

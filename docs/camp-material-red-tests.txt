@@ -1,0 +1,325 @@
+TAP version 13
+# Subtest: islanders respond to a nearby conversation target without moving or changing the save
+ok 1 - islanders respond to a nearby conversation target without moving or changing the save
+  ---
+  duration_ms: 500.316709
+  type: 'test'
+  ...
+# Subtest: tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+ok 2 - tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+  ---
+  duration_ms: 377.705458
+  type: 'test'
+  ...
+# Subtest: distant geometry is shared until the last owner leaves, while materials remain private
+ok 3 - distant geometry is shared until the last owner leaves, while materials remain private
+  ---
+  duration_ms: 24.563792
+  type: 'test'
+  ...
+# Subtest: resource bounds retain regenerating nodes after initial depletion
+ok 4 - resource bounds retain regenerating nodes after initial depletion
+  ---
+  duration_ms: 373.757583
+  type: 'test'
+  ...
+# Subtest: save replacement releases creatures and resets transient death/hit animation
+ok 5 - save replacement releases creatures and resets transient death/hit animation
+  ---
+  duration_ms: 17.032542
+  type: 'test'
+  ...
+# Subtest: boar: near geometry shares a lifetime while pose and hit materials remain private
+ok 6 - boar: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 13.449708
+  type: 'test'
+  ...
+# Subtest: crab: near geometry shares a lifetime while pose and hit materials remain private
+ok 7 - crab: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 25.283416
+  type: 'test'
+  ...
+# Subtest: same-type save replacement reuses creature models without carrying over animation or damage
+ok 8 - same-type save replacement reuses creature models without carrying over animation or damage
+  ---
+  duration_ms: 22.040792
+  type: 'test'
+  ...
+# Subtest: loading a different save updates buildings even when IDs are reused
+ok 9 - loading a different save updates buildings even when IDs are reused
+  ---
+  duration_ms: 1.465583
+  type: 'test'
+  ...
+# Subtest: campfire flames emit light without changing shared building materials
+ok 10 - campfire flames emit light without changing shared building materials
+  ---
+  duration_ms: 1.225458
+  type: 'test'
+  ...
+# Subtest: removing tents releases their geometry but retains immutable cloth for later camps
+not ok 11 - removing tents releases their geometry but retains immutable cloth for later camps
+  ---
+  duration_ms: 2.541958
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/scene.test.js:208:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    identical cloth must not invalidate its renderer program when a camp leaves
+    + actual - expected
+    ... Skipped lines
+    
+      Vl {
+        _alphaTest: 0,
+        allowOverride: true,
+        alphaHash: false,
+        alphaMap: null,
+    ...
+        userData: {},
+    +   uuid: '47ef06b9-d15b-4931-a4b0-ffda79136757',
+    -   uuid: 'a6261b8f-d02d-40a4-bb10-4736b4379448',
+        version: 0,
+        vertexColors: false,
+        visible: true,
+        wireframe: false,
+        wireframeLinecap: 'round',
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    isMaterial: true
+    uuid: 'a6261b8f-d02d-40a4-bb10-4736b4379448'
+    name: ''
+    type: 'MeshStandardMaterial'
+    blending: 1
+    side: 2
+    vertexColors: false
+    opacity: 1
+    transparent: false
+    alphaHash: false
+    blendSrc: 204
+    blendDst: 205
+    blendEquation: 100
+    blendSrcAlpha: ~
+    blendDstAlpha: ~
+    blendEquationAlpha: ~
+    blendColor:
+      isColor: true
+      r: 0
+      g: 0
+      b: 0
+    blendAlpha: 0
+    depthFunc: 3
+    depthTest: true
+    depthWrite: true
+    stencilWriteMask: 255
+    stencilFunc: 519
+    stencilRef: 0
+    stencilFuncMask: 255
+    stencilFail: 7680
+    stencilZFail: 7680
+    stencilZPass: 7680
+    stencilWrite: false
+    clippingPlanes: ~
+    clipIntersection: false
+    clipShadows: false
+    shadowSide: ~
+    colorWrite: true
+    precision: ~
+    polygonOffset: false
+    polygonOffsetFactor: 0
+    polygonOffsetUnits: 0
+    dithering: false
+    alphaToCoverage: false
+    premultipliedAlpha: false
+    forceSinglePass: false
+    allowOverride: true
+    visible: true
+    toneMapped: true
+    userData:
+    version: 0
+    _alphaTest: 0
+    isMeshStandardMaterial: true
+    defines:
+      STANDARD: ''
+    color:
+      isColor: true
+      r: 0.48514994004665124
+      g: 0.3864294337766795
+      b: 0.20155625378383743
+    roughness: 1
+    metalness: 0
+    map: ~
+    lightMap: ~
+    lightMapIntensity: 1
+    aoMap: ~
+    aoMapIntensity: 1
+    emissive:
+      isColor: true
+      r: 0
+      g: 0
+      b: 0
+    emissiveIntensity: 1
+    emissiveMap: ~
+    bumpMap: ~
+    bumpScale: 1
+    normalMap: ~
+    normalMapType: 0
+    normalScale:
+      x: 1
+      y: 1
+    displacementMap: ~
+    displacementScale: 1
+    displacementBias: 0
+    roughnessMap: ~
+    metalnessMap: ~
+    alphaMap: ~
+    envMap: ~
+    envMapRotation:
+      isEuler: true
+      _x: 0
+      _y: 0
+      _z: 0
+      _order: 'XYZ'
+    envMapIntensity: 1
+    wireframe: false
+    wireframeLinewidth: 1
+    wireframeLinecap: 'round'
+    wireframeLinejoin: 'round'
+    flatShading: false
+    fog: true
+  actual:
+    isMaterial: true
+    uuid: '47ef06b9-d15b-4931-a4b0-ffda79136757'
+    name: ''
+    type: 'MeshStandardMaterial'
+    blending: 1
+    side: 2
+    vertexColors: false
+    opacity: 1
+    transparent: false
+    alphaHash: false
+    blendSrc: 204
+    blendDst: 205
+    blendEquation: 100
+    blendSrcAlpha: ~
+    blendDstAlpha: ~
+    blendEquationAlpha: ~
+    blendColor:
+      isColor: true
+      r: 0
+      g: 0
+      b: 0
+    blendAlpha: 0
+    depthFunc: 3
+    depthTest: true
+    depthWrite: true
+    stencilWriteMask: 255
+    stencilFunc: 519
+    stencilRef: 0
+    stencilFuncMask: 255
+    stencilFail: 7680
+    stencilZFail: 7680
+    stencilZPass: 7680
+    stencilWrite: false
+    clippingPlanes: ~
+    clipIntersection: false
+    clipShadows: false
+    shadowSide: ~
+    colorWrite: true
+    precision: ~
+    polygonOffset: false
+    polygonOffsetFactor: 0
+    polygonOffsetUnits: 0
+    dithering: false
+    alphaToCoverage: false
+    premultipliedAlpha: false
+    forceSinglePass: false
+    allowOverride: true
+    visible: true
+    toneMapped: true
+    userData:
+    version: 0
+    _alphaTest: 0
+    isMeshStandardMaterial: true
+    defines:
+      STANDARD: ''
+    color:
+      isColor: true
+      r: 0.48514994004665124
+      g: 0.3864294337766795
+      b: 0.20155625378383743
+    roughness: 1
+    metalness: 0
+    map: ~
+    lightMap: ~
+    lightMapIntensity: 1
+    aoMap: ~
+    aoMapIntensity: 1
+    emissive:
+      isColor: true
+      r: 0
+      g: 0
+      b: 0
+    emissiveIntensity: 1
+    emissiveMap: ~
+    bumpMap: ~
+    bumpScale: 1
+    normalMap: ~
+    normalMapType: 0
+    normalScale:
+      x: 1
+      y: 1
+    displacementMap: ~
+    displacementScale: 1
+    displacementBias: 0
+    roughnessMap: ~
+    metalnessMap: ~
+    alphaMap: ~
+    envMap: ~
+    envMapRotation:
+      isEuler: true
+      _x: 0
+      _y: 0
+      _z: 0
+      _order: 'XYZ'
+    envMapIntensity: 1
+    wireframe: false
+    wireframeLinewidth: 1
+    wireframeLinecap: 'round'
+    wireframeLinejoin: 'round'
+    flatShading: false
+    fog: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/scene.test.js:211:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: repeated build previews release their geometry and private materials
+ok 12 - repeated build previews release their geometry and private materials
+  ---
+  duration_ms: 8.917
+  type: 'test'
+  ...
+# Subtest: tent preview retains double-sided cloth and shares replacement material safely
+ok 13 - tent preview retains double-sided cloth and shares replacement material safely
+  ---
+  duration_ms: 0.332959
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 12
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1447.00475

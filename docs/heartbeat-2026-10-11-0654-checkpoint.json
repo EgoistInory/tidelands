@@ -1,0 +1,34 @@
+{
+  "kind": "hourly continuation checkpoint",
+  "automationId": "2048",
+  "triggerAt": "2026-10-11T06:54:58.428Z",
+  "checkedAt": "2026-10-11 06:58:01 UTC",
+  "goalStatusObserved": "usageLimited",
+  "ordinaryUsageAllowed": true,
+  "primaryUsedPercent": 100,
+  "secondaryUsedPercent": 16,
+  "goalStatusManuallyChanged": false,
+  "workPerformed": "M5 shoreline material design and six actual four-island/day/night/narrow baseline observations",
+  "latestCheckpoint": "docs/shore-surface-checkpoint.json",
+  "latestPlayableArchive": "dist/tidelands-m5-2026-10-11-campfire.zip",
+  "productionChanged": false,
+  "priorTestsPassed": 130,
+  "testsRepeated": false,
+  "runtimeFilesUnchanged": 19,
+  "archivesUnchanged": 15,
+  "temporaryTabsClosed": true,
+  "viewportReset": true,
+  "projectServer": {
+    "port": 4190,
+    "pid": 1793,
+    "bind": "127.0.0.1"
+  },
+  "pending": [
+    "wet-sand shader implementation and loading/fallback regression tests",
+    "same-position visual/motion and versioned package verification"
+  ],
+  "m5Accepted": false,
+  "fullGoalComplete": false,
+  "automationDeleted": false,
+  "resetsOrCreditsUsed": false
+}

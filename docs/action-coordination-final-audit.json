@@ -1,0 +1,39 @@
+{
+  "kind": "bounded evidence/source integrity audit",
+  "passed": true,
+  "runtimeFilesChecked": 19,
+  "historicalArchivesChecked": 16,
+  "packageFilesChecked": 35,
+  "evidenceSha256": {
+    "action-coordination-poses.json": "01654889e433ceda9beac07ebe007f14117b433c9b1d052ef2cfd80056b4b283",
+    "action-coordination-desktop-attack-cycle.json": "db8e7acf8bd1ca2966f719a30b4b361759a1f2e766568adf0108a4030377f289",
+    "action-coordination-desktop-gather-cycle.json": "e594e384c01a403c532810d88890d9525d48599c3ac53f0b627b229873451ee6",
+    "action-coordination-mobile-gather-cycle.json": "a8e07a9dd2eefeb3e44ee2c9004bd77fbc5202ab1f2feeef2c2a05606afa1e7d",
+    "action-clearance-after.json": "a7ac91084fa21406dcadf45ad9fe50676673fdcefc8fa1859d70d9fc866db78c",
+    "action-coordination-production-attack.json": "5205b9a7b11f823738c26fdd6f232492daf68383bd5957f85f232a1683d252a6",
+    "action-coordination-production-gather.json": "69e10e19bcc4e049d36f573094ae505293f6a8e3615630512ae67bcf4103e7a5",
+    "action-coordination-desktop-dynamic.json": "74696c26e426537bfaa82bdc8c6dc1eed5933c396f12e3c6de7732020b8592cb",
+    "action-coordination-mobile-dynamic.json": "b4897632aa351721990946d2c7b0e3a81cf358971b995c8620113ef567d518f1",
+    "action-coordination-package-ui.json": "dfc3ce9e0b597a1bc2afcd938e669113452e3351142b2fd4202b53add7f5ecab",
+    "action-coordination-package-mobile.jpg": "bacc61cc7a06fdb54541d43ec16ca423418c4805561e514bb1922e1701cbf034",
+    "action-coordination-axe-side-0.jpg": "ac8513391e82bd698b90715b2fa08f31392114909d45cca2214c499f017a8b24",
+    "action-coordination-axe-side-0.25.jpg": "bea49c5d2fd5b777da2bcfaa349bceb47be4ffee21eb62f18413873b631b1746",
+    "action-coordination-axe-side-0.5.jpg": "17e3e97dc8fadbb680168f85c44e01cab4f001795cbcb59e29bac9edb91e298d",
+    "action-coordination-axe-side-0.75.jpg": "fb3ddff36a746425762e8882f16a3805a9b0fe50e1f38c89027d20ecdf7f4ba3",
+    "action-coordination-axe-side-1.jpg": "e244fc862589dd97a807d453a61a124bc7033ac2a211dc3276791e6188a089ec",
+    "action-coordination-sword-front-0.jpg": "f27b18b9dc058f23cf18c6df784f088655f061306f6609b2b62d86bbba7378e4",
+    "action-coordination-sword-front-0.25.jpg": "d899315cd07f7b755b2c7fd8cb3a85809593a370c8edbb15bacc72e1b4e2e945",
+    "action-coordination-sword-front-0.5.jpg": "817b57e1dd2d24ac26bdc6580ea3517c9a17a55830e864d43673c6002cd5a365",
+    "action-coordination-sword-front-0.75.jpg": "5e1e56f6c8b982b88e41586ba54dec5c63f96372726f0340cdd182bbadaaf839",
+    "action-coordination-sword-front-1.jpg": "c11a7193d57680757dd660c9137865731688a39d8c3d80567984ef1b90eccb26",
+    "action-coordination-mobile-gather.jpg": "ce1a63adeb25c9fbeb52c0981fbcd1b34a08a3e9d8270c886ea0dabd54483074"
+  },
+  "harnessSha256": {
+    "tests/character.test.js": "14a70f8638c4291172cdfb84a4651ad89b91783432a2f104a5b9df8a361ee39f",
+    "tests/locomotion.html": "b4805952d7465eecbd2bb7453d831fd07aa0b0c3b75abd2d3c775d4a873fbc37",
+    "tests/playthrough.html": "45b032e48fabf689c9ced4bcf3a2dd1b892b6cce02411b70c8e344a9ce1e113e",
+    "tests/dynamic-endurance.html": "73c5510c05d8cb03bf071ef316629cc447c754e595a805d7d6811249c7786cc4"
+  },
+  "m5Accepted": false,
+  "fullGoalComplete": false
+}

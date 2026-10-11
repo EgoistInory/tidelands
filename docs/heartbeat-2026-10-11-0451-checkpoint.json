@@ -1,0 +1,38 @@
+{
+  "kind": "hourly continuation checkpoint",
+  "automationId": "2048",
+  "triggerAt": "2026-10-11T04:51:27.890Z",
+  "checkedAt": "2026-10-11T05:35:09.614954+00:00",
+  "goalStatusObserved": "usageLimited",
+  "ordinaryUsageAllowed": true,
+  "primaryUsedPercent": 75,
+  "secondaryUsedPercent": 12,
+  "goalStatusManuallyChanged": false,
+  "completedBoundedBatches": [
+    "forest-understory evidence consolidation",
+    "daylight/habitat ecology audio",
+    "immutable tent material lifetime",
+    "automatic camera orbit easing"
+  ],
+  "latestCheckpoint": "docs/camera-easing-checkpoint.json",
+  "latestArchive": "dist/tidelands-m5-2026-10-11-camera-easing.zip",
+  "testsPassed": 127,
+  "historicalArchivesUnchanged": 13,
+  "temporaryPortsStopped": [
+    50303,
+    52042,
+    53180
+  ],
+  "projectServer": {
+    "port": 4190,
+    "pid": 1793,
+    "bind": "127.0.0.1"
+  },
+  "temporaryTabsClosed": true,
+  "viewportReset": true,
+  "actualAudition": false,
+  "m5Accepted": false,
+  "fullGoalComplete": false,
+  "automationDeleted": false,
+  "nextAction": "整体模型材质和自然动作；冷场首用、全场景镜头、实际试听、真机/GPU继续品质待办。"
+}

@@ -1,0 +1,85 @@
+{
+  "accepted": false,
+  "reason": "Three.js catches injected texSubImage2D JavaScript exceptions,so initTexture does not reject; ready screen incorrectly appears in this diagnostic.",
+  "trace": {
+    "mode": "upload-error",
+    "events": [
+      {
+        "kind": "draw",
+        "frame": 13,
+        "cpuMs": 143,
+        "enabled": false
+      }
+    ],
+    "draws": 1,
+    "button": {
+      "disabled": false,
+      "text": "开始旅程"
+    },
+    "status": "群岛已就绪 · 无需联网",
+    "viewport": [
+      1280,
+      720
+    ],
+    "canvasBuffer": [
+      1920,
+      1080
+    ]
+  },
+  "console": [
+    {
+      "level": "error",
+      "message": "THREE.WebGLState: Error: QA texture upload failure\n    at gl.texSubImage2D (about:srcdoc:30:334)\n    at Object.texSubImage2D (http://127.0.0.1:4190/vendor/three.module.min.js:6:250656)\n    at V (http://127.0.0.1:4190/vendor/three.module.min.js:6:266078)\n    at ta.w [as setTexture2D] (http://127.0.0.1:4190/vendor/three.module.min.js:6:258173)\n    at ca.initTexture (http://127.0.0.1:4190/vendor/three.module.min.js:6:334161)\n    at prepareSurfaceTextures (http://127.0.0.1:4190/src/startup-textures.js:18:14)",
+      "timestamp": "2026-10-11T15:36:07.718Z",
+      "url": "http://127.0.0.1:4190/vendor/three.module.min.js"
+    },
+    {
+      "level": "error",
+      "message": "THREE.WebGLState: Error: QA texture upload failure\n    at gl.texSubImage2D (about:srcdoc:30:334)\n    at Object.texSubImage2D (http://127.0.0.1:4190/vendor/three.module.min.js:6:250656)\n    at V (http://127.0.0.1:4190/vendor/three.module.min.js:6:266078)\n    at ta.w [as setTexture2D] (http://127.0.0.1:4190/vendor/three.module.min.js:6:258173)\n    at ca.initTexture (http://127.0.0.1:4190/vendor/three.module.min.js:6:334161)\n    at prepareSurfaceTextures (http://127.0.0.1:4190/src/startup-textures.js:18:14)",
+      "timestamp": "2026-10-11T15:36:07.735Z",
+      "url": "http://127.0.0.1:4190/vendor/three.module.min.js"
+    },
+    {
+      "level": "error",
+      "message": "THREE.WebGLState: Error: QA texture upload failure\n    at gl.texSubImage2D (about:srcdoc:30:334)\n    at Object.texSubImage2D (http://127.0.0.1:4190/vendor/three.module.min.js:6:250656)\n    at V (http://127.0.0.1:4190/vendor/three.module.min.js:6:266078)\n    at ta.w [as setTexture2D] (http://127.0.0.1:4190/vendor/three.module.min.js:6:258173)\n    at ca.initTexture (http://127.0.0.1:4190/vendor/three.module.min.js:6:334161)\n    at prepareSurfaceTextures (http://127.0.0.1:4190/src/startup-textures.js:18:14)",
+      "timestamp": "2026-10-11T15:36:07.752Z",
+      "url": "http://127.0.0.1:4190/vendor/three.module.min.js"
+    },
+    {
+      "level": "error",
+      "message": "THREE.WebGLState: Error: QA texture upload failure\n    at gl.texSubImage2D (about:srcdoc:30:334)\n    at Object.texSubImage2D (http://127.0.0.1:4190/vendor/three.module.min.js:6:250656)\n    at V (http://127.0.0.1:4190/vendor/three.module.min.js:6:266078)\n    at ta.w [as setTexture2D] (http://127.0.0.1:4190/vendor/three.module.min.js:6:258173)\n    at ca.initTexture (http://127.0.0.1:4190/vendor/three.module.min.js:6:334161)\n    at prepareSurfaceTextures (http://127.0.0.1:4190/src/startup-textures.js:18:14)",
+      "timestamp": "2026-10-11T15:36:07.794Z",
+      "url": "http://127.0.0.1:4190/vendor/three.module.min.js"
+    },
+    {
+      "level": "error",
+      "message": "THREE.WebGLState: Error: QA texture upload failure\n    at gl.texSubImage2D (about:srcdoc:30:334)\n    at Object.texSubImage2D (http://127.0.0.1:4190/vendor/three.module.min.js:6:250656)\n    at V (http://127.0.0.1:4190/vendor/three.module.min.js:6:266078)\n    at ta.w [as setTexture2D] (http://127.0.0.1:4190/vendor/three.module.min.js:6:258173)\n    at ca.initTexture (http://127.0.0.1:4190/vendor/three.module.min.js:6:334161)\n    at prepareSurfaceTextures (http://127.0.0.1:4190/src/startup-textures.js:18:14)",
+      "timestamp": "2026-10-11T15:36:07.795Z",
+      "url": "http://127.0.0.1:4190/vendor/three.module.min.js"
+    },
+    {
+      "level": "error",
+      "message": "THREE.WebGLState: Error: QA texture upload failure\n    at gl.texSubImage2D (about:srcdoc:30:334)\n    at Object.texSubImage2D (http://127.0.0.1:4190/vendor/three.module.min.js:6:250656)\n    at V (http://127.0.0.1:4190/vendor/three.module.min.js:6:266078)\n    at ta.w [as setTexture2D] (http://127.0.0.1:4190/vendor/three.module.min.js:6:258173)\n    at ca.initTexture (http://127.0.0.1:4190/vendor/three.module.min.js:6:334161)\n    at prepareSurfaceTextures (http://127.0.0.1:4190/src/startup-textures.js:18:14)",
+      "timestamp": "2026-10-11T15:36:07.801Z",
+      "url": "http://127.0.0.1:4190/vendor/three.module.min.js"
+    },
+    {
+      "level": "error",
+      "message": "THREE.WebGLState: Error: QA texture upload failure\n    at gl.texSubImage2D (about:srcdoc:30:334)\n    at Object.texSubImage2D (http://127.0.0.1:4190/vendor/three.module.min.js:6:250656)\n    at V (http://127.0.0.1:4190/vendor/three.module.min.js:6:266078)\n    at ta.w [as setTexture2D] (http://127.0.0.1:4190/vendor/three.module.min.js:6:258173)\n    at ca.initTexture (http://127.0.0.1:4190/vendor/three.module.min.js:6:334161)\n    at prepareSurfaceTextures (http://127.0.0.1:4190/src/startup-textures.js:18:14)",
+      "timestamp": "2026-10-11T15:36:07.822Z",
+      "url": "http://127.0.0.1:4190/vendor/three.module.min.js"
+    },
+    {
+      "level": "error",
+      "message": "THREE.WebGLState: Error: QA texture upload failure\n    at gl.texSubImage2D (about:srcdoc:30:334)\n    at Object.texSubImage2D (http://127.0.0.1:4190/vendor/three.module.min.js:6:250656)\n    at V (http://127.0.0.1:4190/vendor/three.module.min.js:6:266078)\n    at ta.w [as setTexture2D] (http://127.0.0.1:4190/vendor/three.module.min.js:6:258173)\n    at ca.initTexture (http://127.0.0.1:4190/vendor/three.module.min.js:6:334161)\n    at prepareSurfaceTextures (http://127.0.0.1:4190/src/startup-textures.js:18:14)",
+      "timestamp": "2026-10-11T15:36:07.841Z",
+      "url": "http://127.0.0.1:4190/vendor/three.module.min.js"
+    },
+    {
+      "level": "error",
+      "message": "THREE.WebGLState: Error: QA texture upload failure\n    at gl.texSubImage2D (about:srcdoc:30:334)\n    at Object.texSubImage2D (http://127.0.0.1:4190/vendor/three.module.min.js:6:250656)\n    at V (http://127.0.0.1:4190/vendor/three.module.min.js:6:266078)\n    at ta.w [as setTexture2D] (http://127.0.0.1:4190/vendor/three.module.min.js:6:258173)\n    at ca.initTexture (http://127.0.0.1:4190/vendor/three.module.min.js:6:334161)\n    at prepareSurfaceTextures (http://127.0.0.1:4190/src/startup-textures.js:18:14)",
+      "timestamp": "2026-10-11T15:36:07.852Z",
+      "url": "http://127.0.0.1:4190/vendor/three.module.min.js"
+    }
+  ]
+}

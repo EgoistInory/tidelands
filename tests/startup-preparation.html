@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>开始页地表准备隔离验收</title>
+<style>html,body,iframe{width:100%;height:100%;margin:0;border:0}body{overflow:hidden}</style>
+<iframe title="开始页准备隔离游戏"></iframe>
+<script type="module">
+const mode=new URL(location.href).searchParams.get('mode')||'normal';
+if(!['normal','fallback','all-fallback','cancel','restore','upload-error'].includes(mode))throw Error('Unknown startup QA mode');
+const response=await fetch('../index.html',{cache:'no-store'});if(!response.ok)throw Error('index HTTP '+response.status);
+const doc=new DOMParser().parseFromString(await response.text(),'text/html'),base=doc.createElement('base');base.href=new URL('../',location.href).href;doc.head.prepend(base);doc.body.dataset.testHarness='true';doc.querySelectorAll('script').forEach(s=>s.remove());
+const setup=doc.createElement('script');setup.type='module';setup.textContent=`
+  import * as THREE from './vendor/three.module.min.js';
+  import {WorldView} from './src/scene.js';
+  import {boot} from './src/main.js';
+  const mode=${JSON.stringify(mode)},events=[],out=document.createElement('output');out.id='startup-result';out.style.cssText='position:fixed;bottom:0;left:0;max-width:100%;max-height:110px;overflow:auto;background:#fff;color:#111;font:10px monospace;z-index:100;pointer-events:none';document.body.append(out);
+  let glRef,phase='loading',frame=0,draws=0;requestAnimationFrame(function count(){frame++;requestAnimationFrame(count);});
+  const context=HTMLCanvasElement.prototype.getContext;
+  HTMLCanvasElement.prototype.getContext=function(type,...args){const gl=context.call(this,type,...args);if(type==='webgl2'&&gl&&this.id==='world'&&!glRef){glRef=gl;const native=gl.texSubImage2D.bind(gl);gl.texSubImage2D=(...a)=>{const source=a.at(-1)?.src||'',local=source.includes('/assets/');const start=performance.now();let binding;if(mode==='upload-error'&&local){binding=gl.getParameter(gl.TEXTURE_BINDING_2D);gl.bindTexture(gl.TEXTURE_2D,null);}try{return native(...a);}finally{if(mode==='upload-error'&&local)gl.bindTexture(gl.TEXTURE_2D,binding);if(local)events.push({kind:'upload',source:new URL(source).pathname,frame,phase,cpuMs:performance.now()-start});}};}return gl;};
+  const draw=WorldView.prototype.draw;WorldView.prototype.draw=function(...a){phase='draw';const start=performance.now();try{return draw.apply(this,a);}finally{draws++;events.push({kind:'draw',frame,cpuMs:performance.now()-start,enabled:!document.getElementById('start-button').disabled});phase='loading';}};
+  const load=THREE.TextureLoader.prototype.load;
+  if(mode!=='normal'&&mode!=='upload-error')THREE.TextureLoader.prototype.load=function(url,success,progress,fail){
+    if(mode==='cancel'||mode==='restore')return new THREE.Texture();
+    if(mode==='all-fallback'||url.includes('/coastal-sand/')){queueMicrotask(()=>fail?.(Error('QA missing local texture')));return new THREE.Texture();}
+    return load.call(this,url,success,progress,fail);
+  };
+  const start=document.getElementById('start-button'),status=document.getElementById('load-status');
+  const report=()=>out.textContent=JSON.stringify({mode,events,draws,button:{disabled:start.disabled,text:start.textContent},status:status.textContent,viewport:[innerWidth,innerHeight],canvasBuffer:[document.getElementById('world').width,document.getElementById('world').height]});
+  new MutationObserver(report).observe(start,{attributes:true,childList:true});new MutationObserver(report).observe(status,{childList:true,subtree:true});
+  boot({storageKey:'tidelands-qa-startup-'+mode});report();
+  if(mode==='cancel'){const button=document.createElement('button');button.textContent='中断准备中的图形上下文';button.style.cssText='position:fixed;top:0;left:0;z-index:101';document.body.append(button);button.onclick=()=>{glRef.getExtension('WEBGL_lose_context').loseContext();button.disabled=true;setTimeout(report,100);};}
+  if(mode==='restore'){const button=document.createElement('button');button.textContent='模拟准备中离开并恢复';button.style.cssText='position:fixed;top:0;left:0;z-index:101';document.body.append(button);button.onclick=()=>{dispatchEvent(new PageTransitionEvent('pagehide'));dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true}));button.disabled=true;report();};}
+`;
+doc.body.append(setup);document.querySelector('iframe').srcdoc='<!doctype html>'+doc.documentElement.outerHTML;
+</script></html>

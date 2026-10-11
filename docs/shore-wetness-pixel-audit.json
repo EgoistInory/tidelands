@@ -1,0 +1,44 @@
+{
+  "kind": "same-position captured wet-shore comparison",
+  "rows": [
+    {
+      "viewport": "desktop",
+      "imageSize": [
+        1280,
+        720
+      ],
+      "sampleRegion": [
+        50,
+        480,
+        650,
+        710
+      ],
+      "changedPixelsAbove8": 93993,
+      "meanAbsoluteRgbDifference": [
+        13.012753623188406,
+        14.34540579710145,
+        18.505514492753623
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "imageSize": [
+        390,
+        844
+      ],
+      "sampleRegion": [
+        0,
+        490,
+        260,
+        820
+      ],
+      "changedPixelsAbove8": 70566,
+      "meanAbsoluteRgbDifference": [
+        13.976468531468532,
+        15.067365967365967,
+        20.186853146853146
+      ]
+    }
+  ],
+  "note": "Actual paired screenshots with only material wetness uniform toggled. Pixel differences verify visible output, not material realism, GPU timing or physical-device quality."
+}

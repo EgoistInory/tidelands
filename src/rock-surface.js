@@ -3,6 +3,7 @@ import * as THREE from '../vendor/three.module.min.js';
 // Geometry scales spherical UVs by radius; these repeats approximate the source's 2m tile.
 const repeat=new THREE.Vector2(Math.PI,Math.PI/2);
 export function createRockSurface({loader,anisotropy=1}={}){
+  const textures=[];
   const ready={value:0},enabled={value:1},state={status:'unloaded',loaded:0,failed:[]};
   const material=new THREE.MeshStandardMaterial({vertexColors:true,roughness:.93});
   let finish;
@@ -16,7 +17,7 @@ export function createRockSurface({loader,anisotropy=1}={}){
       if(completed===3){state.status=state.failed.length?'fallback':'ready';ready.value=state.failed.length?0:1;finish(state);}
     };
     const texture=(file,colorSpace)=>{
-      const map=textureLoader.load(new URL(`../assets/rock/lichen-rock/${file}`,import.meta.url).href,()=>complete(file),undefined,()=>complete(file,true));
+      const map=textureLoader.load(new URL(`../assets/rock/lichen-rock/${file}`,import.meta.url).href,()=>{textures.push(map);complete(file);},undefined,()=>complete(file,true));
       map.colorSpace=colorSpace;map.wrapS=map.wrapT=THREE.RepeatWrapping;map.repeat.copy(repeat);
       map.anisotropy=Math.max(1,Math.min(4,maxAnisotropy));map.generateMipmaps=true;
       map.minFilter=THREE.LinearMipmapLinearFilter;map.magFilter=THREE.LinearFilter;map.updateMatrix();return map;
@@ -40,7 +41,7 @@ export function createRockSurface({loader,anisotropy=1}={}){
     material.customProgramCacheKey=()=> 'tidelands-rock-cc0-v1';material.needsUpdate=true;
     return loaded;
   };
-  material.userData.rock={state,loaded,load,enabled};
+  material.userData.rock={state,loaded,textures,load,enabled};
   if(loader)load(loader,anisotropy);
   return material;
 }

@@ -24,3 +24,13 @@ export function unobstructedCamera(focus,desired,boxes,heightAt,minimumDistance=
   }
   return safe;
 }
+
+export function smoothCamera(focus,current,desired,boxes,heightAt,dt,minimumDistance=0){
+  const from=new THREE.Spherical().setFromVector3(current.clone().sub(focus)),to=new THREE.Spherical().setFromVector3(desired.clone().sub(focus));
+  if(from.radius<.001)return unobstructedCamera(focus,desired,boxes,heightAt,minimumDistance);
+  const blend=1-Math.exp(-Math.max(0,Math.min(.1,dt))*8);
+  const turn=Math.atan2(Math.sin(to.theta-from.theta),Math.cos(to.theta-from.theta));
+  from.theta+=turn*blend;from.phi=THREE.MathUtils.lerp(from.phi,to.phi,blend);from.radius=THREE.MathUtils.lerp(from.radius,to.radius,blend);
+  const next=new THREE.Vector3().setFromSpherical(from).add(focus);
+  return unobstructedCamera(focus,next,boxes,heightAt,minimumDistance);
+}

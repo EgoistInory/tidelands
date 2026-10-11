@@ -1,0 +1,75 @@
+{
+  "kind": "next coastal sand material preparation, not runtime integration",
+  "asset": "Sand 03",
+  "assetId": "sand_03",
+  "author": "Charlotte Baglioni",
+  "tileWidthMeters": 2,
+  "sourceUrl": "https://polyhaven.com/a/sand_03",
+  "license": "CC0-1.0",
+  "licenseUrl": "https://polyhaven.com/license",
+  "apiTermsUrl": "https://github.com/Poly-Haven/Public-API/blob/master/ToS.md",
+  "freeApiDocumentation": "https://polyhaven.com/our-api",
+  "verifiedAt": "2026-10-11T10:35:43.588156+00:00",
+  "developmentOnlyMetadataApi": true,
+  "runtimeApi": false,
+  "apiUserAgent": "Tidelands-Local-Asset-Preparation/0.1",
+  "paidApiUsed": false,
+  "metadataSha256": "d75439136556011e5d09f3e39fd8041b79064af1abb3426e033e4b1a309e776f",
+  "files": [
+    {
+      "path": "docs/material-preparation/sand03/albedo.jpg",
+      "channel": "Diffuse",
+      "bytes": 703132,
+      "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sand_03/sand_03_diff_1k.jpg",
+      "md5": "84bde2b8bea6351805f67a15682b36b2",
+      "sha256": "e72144f9d7b81bdb7bbdb34222b53431738dcef79346dd89412d2abd541e4d30",
+      "resolution": [
+        1024,
+        1024
+      ],
+      "meanSrgbByte": [
+        107.95635223388672,
+        96.12157154083252,
+        78.72633457183838
+      ]
+    },
+    {
+      "path": "docs/material-preparation/sand03/normal-gl.jpg",
+      "channel": "nor_gl",
+      "bytes": 884706,
+      "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sand_03/sand_03_nor_gl_1k.jpg",
+      "md5": "ad8d6ce28344b1d8f241cbd7796243dc",
+      "sha256": "1bde5f49ea78f94bcad73592696bf3949711c4ac197133b710c0c8521b6e996b",
+      "resolution": [
+        1024,
+        1024
+      ],
+      "meanSrgbByte": [
+        128.03009128570557,
+        127.57980060577393,
+        250.001314163208
+      ]
+    },
+    {
+      "path": "docs/material-preparation/sand03/roughness.jpg",
+      "channel": "Rough",
+      "bytes": 291218,
+      "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sand_03/sand_03_rough_1k.jpg",
+      "md5": "b09beddb9981ec5fb402c12f04751c15",
+      "sha256": "5c9ead290a94913cfa2d0452a576ba527b50301fe208f2ffc4861e42a8fea45b",
+      "resolution": [
+        1024,
+        1024
+      ],
+      "meanSrgbByte": [
+        212.742769241333,
+        212.742769241333,
+        212.742769241333
+      ]
+    }
+  ],
+  "totalBytes": 1879056,
+  "integrated": false,
+  "visualAccepted": false,
+  "note": "Official asset/license/free API terms checked2026-10-11; three1k JPEG channels match official byte count and MD5 and decode1024x1024. Prepared outside runtime assets so the current coordination package remains source-bound. No live game, shader, new package or shore acceptance is implied. Agent-reach Jina route failed DNS in sandbox; built-in search primary sources and approved official read-only curl used."
+}

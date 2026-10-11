@@ -1,0 +1,96 @@
+{
+  "sample": {
+    "complete": false,
+    "targetMs": 60000,
+    "activeMs": 23066.6,
+    "wallMs": 23070.8,
+    "frames": 1380,
+    "movingFrames": 1379,
+    "movingFraction": 1,
+    "distanceMeters": 148.61,
+    "hidden": false,
+    "medianMs": 16.7,
+    "p95Ms": 17,
+    "maxMs": 82.4,
+    "over50Ms": 1,
+    "frameSpikes": [
+      {
+        "atMs": 82.4,
+        "intervalMs": 82.4,
+        "previousFrame": {
+          "stage": "shore-exploration",
+          "transition": false,
+          "cpuMs": 87.4
+        }
+      }
+    ],
+    "stepAttempts": 77,
+    "stepsScheduled": 77,
+    "hitCount": 6,
+    "damageTaken": 7,
+    "respawns": 0,
+    "revivedPairs": 1,
+    "stages": [
+      {
+        "name": "shore-exploration",
+        "startPosition": [
+          -90,
+          140
+        ],
+        "frames": 715,
+        "movingFrames": 714,
+        "distance": 71.0229000000003,
+        "attackHits": 0,
+        "damageTaken": 0,
+        "revivedPairs": 0,
+        "endPosition": [
+          -87.9,
+          137.07
+        ],
+        "kills": 0
+      }
+    ],
+    "checkpoints": [
+      {
+        "activeMs": 0,
+        "stage": "shore-exploration",
+        "position": [
+          -90,
+          140
+        ],
+        "height": 1.22,
+        "time": 240,
+        "daytime": "午后",
+        "hp": 100,
+        "kills": 0,
+        "frames": 0,
+        "movingFrames": 0,
+        "distance": 0,
+        "calls": 381,
+        "triangles": 1627421,
+        "geometries": 218,
+        "textures": 8,
+        "heapBytes": 140180254,
+        "audio": {
+          "context": "running",
+          "voices": 0,
+          "stepsScheduled": 0,
+          "surfGain": 0,
+          "birdsGain": 0,
+          "insectsGain": 0,
+          "ambienceBytes": 8640000
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "canvasBuffer": [
+          1280,
+          568
+        ]
+      }
+    ],
+    "note": "QA scripted input and five phase teleports; production movement/tick/render/audio. Combat pair revived as labelled load fixture. Frame intervals and JS heap only; no save or campaign acceptance."
+  },
+  "console": []
+}
