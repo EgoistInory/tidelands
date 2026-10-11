@@ -1,0 +1,140 @@
+{
+  "complete": true,
+  "elapsedMs": 10016.599999999999,
+  "frames": 601,
+  "p95Ms": 18.200000000004366,
+  "maxMs": 18.69999999999709,
+  "over50Ms": 0,
+  "hidden": false,
+  "before": {
+    "site": {
+      "name": "林地高岸",
+      "x": 160,
+      "z": 0
+    },
+    "worldTime": 1200,
+    "viewport": [
+      390,
+      844
+    ],
+    "canvasBuffer": [
+      585,
+      964
+    ],
+    "cloudiness": 1,
+    "sunlight": 0.28,
+    "ambientIntensity": 1.848,
+    "sunIntensity": 0.7280000000000001,
+    "horizon": [
+      0.3625252886270167,
+      0.4359981686989157,
+      0.46883868548138924
+    ],
+    "zenith": [
+      0.2129942515039423,
+      0.29229219881973467,
+      0.3640099978394588
+    ],
+    "fog": {
+      "near": 95,
+      "far": 350,
+      "color": [
+        0.3625252886270167,
+        0.4359981686989157,
+        0.46883868548138924
+      ]
+    },
+    "water": {
+      "light": 0.88,
+      "sunlight": 0.28,
+      "fogRange": [
+        95,
+        350
+      ],
+      "skyColor": [
+        0.3625252886270167,
+        0.4359981686989157,
+        0.46883868548138924
+      ]
+    },
+    "render": {
+      "frame": 1234,
+      "calls": 73,
+      "triangles": 904110,
+      "points": 0,
+      "lines": 0
+    },
+    "memory": {
+      "geometries": 186,
+      "textures": 17
+    },
+    "programs": 18,
+    "note": "Two renders per frame and explicit fixed location/time/review camera, enemies absent. No save, normal campaign, GPU timing or physical-device proof."
+  },
+  "after": {
+    "site": {
+      "name": "林地高岸",
+      "x": 160,
+      "z": 0
+    },
+    "worldTime": 1210.0166,
+    "viewport": [
+      390,
+      844
+    ],
+    "canvasBuffer": [
+      585,
+      964
+    ],
+    "cloudiness": 0.9997314042953513,
+    "sunlight": 0.280193388907347,
+    "ambientIntensity": 1.8422780244317079,
+    "sunIntensity": 0.723187657675329,
+    "horizon": [
+      0.36036322423780415,
+      0.4324628917436417,
+      0.4647857825404088
+    ],
+    "zenith": [
+      0.21140526011278987,
+      0.2901456691060145,
+      0.36137325574130996
+    ],
+    "fog": {
+      "near": 95.00671489261622,
+      "far": 350.0322314845578,
+      "color": [
+        0.36036322423780415,
+        0.4324628917436417,
+        0.4647857825404088
+      ]
+    },
+    "water": {
+      "light": 0.8745746267053384,
+      "sunlight": 0.27814909910589575,
+      "fogRange": [
+        95.00671489261622,
+        350.0322314845578
+      ],
+      "skyColor": [
+        0.36036322423780415,
+        0.4324628917436417,
+        0.4647857825404088
+      ]
+    },
+    "render": {
+      "frame": 2438,
+      "calls": 73,
+      "triangles": 904110,
+      "points": 0,
+      "lines": 0
+    },
+    "memory": {
+      "geometries": 186,
+      "textures": 17
+    },
+    "programs": 18,
+    "note": "Two renders per frame and explicit fixed location/time/review camera, enemies absent. No save, normal campaign, GPU timing or physical-device proof."
+  },
+  "note": "Fixed review camera, production time/water/foliage, two renders per frame; no player input, GPU or long-term memory acceptance."
+}

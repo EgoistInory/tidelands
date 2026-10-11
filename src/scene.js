@@ -1,5 +1,5 @@
 import * as THREE from '../vendor/three.module.min.js';
-import {terrain,ISLANDS,LANDMARKS,randomGenerator,dayCycle} from './world.js';
+import {terrain,ISLANDS,LANDMARKS,randomGenerator,dayCycle,weatherAt} from './world.js';
 import {isDepleted} from './game.js';
 import {unobstructedCamera,smoothCamera} from './camera.js';
 import {createCharacter,animateCharacter} from './character.js';
@@ -187,12 +187,12 @@ export class WorldView{
       heights[i]=heights[i+1]=heights[i+2]=encoded;heights[i+3]=255;
     }
     const depthMap=new THREE.DataTexture(heights,size,size);depthMap.magFilter=depthMap.minFilter=THREE.LinearFilter;depthMap.needsUpdate=true;
-    this.waterUniforms={time:{value:0},light:{value:1},terrainMap:{value:depthMap},skyColor:{value:this.scene.fog.color},fogRange:{value:new THREE.Vector2(this.scene.fog.near,this.scene.fog.far)}};
+    this.waterUniforms={time:{value:0},light:{value:1},sunlight:{value:1},terrainMap:{value:depthMap},skyColor:{value:this.scene.fog.color},fogRange:{value:new THREE.Vector2(this.scene.fog.near,this.scene.fog.far)}};
     const waterMaterial=new THREE.ShaderMaterial({uniforms:this.waterUniforms,transparent:true,depthWrite:false,
       vertexShader:`varying vec3 world;uniform float time;
         void main(){vec3 p=position;p.y+=sin(p.x*.13+time*.6)*.10+cos(p.z*.17+time*.8)*.10;
         world=(modelMatrix*vec4(p,1.)).xyz;gl_Position=projectionMatrix*viewMatrix*vec4(world,1.);}`,
-      fragmentShader:`varying vec3 world;uniform float time;uniform float light;uniform sampler2D terrainMap;uniform vec3 skyColor;uniform vec2 fogRange;
+      fragmentShader:`varying vec3 world;uniform float time;uniform float light;uniform float sunlight;uniform sampler2D terrainMap;uniform vec3 skyColor;uniform vec2 fogRange;
         void main(){
           vec2 uv=world.xz/800.+.5;
           float inside=step(0.,uv.x)*step(uv.x,1.)*step(0.,uv.y)*step(uv.y,1.);
@@ -208,7 +208,7 @@ export class WorldView{
           float glint=pow(max(dot(reflect(-normalize(vec3(-.7,1.,.4)),normal),eye),0.),110.);
           float foam=(1.-smoothstep(.1,1.25,depth))*smoothstep(.48,.8,sin(depth*7.-time*1.7+sin(world.x*.6+world.z*.7))*.5+.5);
           col=mix(col,vec3(.77,.86,.77),foam*.65);
-          col=col*light+vec3(1.,.84,.61)*glint*light*.45;
+          col=col*light+vec3(1.,.84,.61)*glint*sunlight*.45;
           col=mix(col,skyColor,smoothstep(fogRange.x,fogRange.y,length(cameraPosition-world)));
           gl_FragColor=vec4(col,mix(.46,.94,1.-exp(-depth*.35)));
           #include <tonemapping_fragment>
@@ -291,14 +291,21 @@ export class WorldView{
     this.preview.add(model);
   }
   resize(){const w=this.canvas.clientWidth,h=this.canvas.clientHeight;this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.updateProjectionMatrix();}
+  updateAtmosphere(time){
+    const {daylight}=dayCycle(time),weather=weatherAt(time);
+    this.ambient.intensity=(.372+Math.sqrt((daylight-.04)/.96)*1.728)*weather.skylight;
+    this.sun.intensity=daylight*2.6*weather.sunlight;
+    this.scene.fog.near=weather.fogNear;this.scene.fog.far=weather.fogFar;
+    updateSky(this.sky,time,this.camera,this.scene.fog,weather);
+    this.scene.background.copy(this.scene.fog.color);
+    this.waterUniforms.time.value=time;this.waterUniforms.light.value=(.15+daylight*.85)*weather.skylight;
+    this.waterUniforms.sunlight.value=daylight*weather.sunlight;
+    this.waterUniforms.fogRange.value.set(weather.fogNear,weather.fogFar);
+  }
   draw(state,near,placement,moving,dt){
-    const p=state.player,h=Math.max(terrain(p.x,p.z),-.45),{daylight}=dayCycle(state.time);
+    const p=state.player,h=Math.max(terrain(p.x,p.z),-.45);
     updateFoliage(state.time);
     updateMeadow(state.time);
-    // Skylight rises before direct sunlight; preserve the existing midnight/noon endpoints.
-    this.ambient.intensity=.372+Math.sqrt((daylight-.04)/.96)*1.728;
-    this.sun.intensity=daylight*2.6;this.waterUniforms.time.value=state.time;this.waterUniforms.light.value=.15+daylight*.85;
-    this.scene.background.set(0xb8d4d5).multiplyScalar(.08+daylight*.92);
     let fire=null,fireDistance=30;
     for(const b of state.buildings)if(b.type==='campfire'){const model=this.buildings.get(b.id);if(model)updateCampfire(model,state.time);const distance=Math.hypot(b.x-p.x,b.z-p.z);if(distance<fireDistance){fire=b;fireDistance=distance;}}
     this.fireLight.intensity=fire?(20+Math.sin(state.time*9)*2+Math.sin(state.time*17))*(1-Math.min(1,Math.max(0,fireDistance-18)/12)):0;
@@ -319,7 +326,7 @@ export class WorldView{
     }
     this.camera.position.copy(smoothCamera(focus,this.camera.position,safe,boxes,terrain,dt,Math.min(6,safe.distanceTo(focus))));this.camera.lookAt(focus);
     updateGroundCover(this.meadow,this.camera.position);
-    updateSky(this.sky,state.time,this.camera,this.scene.fog);
+    this.updateAtmosphere(state.time);
     this.sun.position.set(p.x-70,h+100,p.z+40);this.sun.target.position.set(p.x,h,p.z);
     this.marker.visible=Boolean(near)&&!placement;if(near)this.marker.position.set(near.x,Math.max(.3,terrain(near.x,near.z))+.08,near.z);
     if(placement){this.preview.visible=true;this.preview.position.set(placement.x,terrain(placement.x,placement.z),placement.z);this.preview.traverse(o=>{if(o.isMesh)o.material.color.set(placement.error?0xe08568:0xa6dd9b);});}else this.preview.visible=false;

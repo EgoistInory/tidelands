@@ -1,0 +1,136 @@
+{
+  "kind": "bounded-weather-review",
+  "observedAt": "2026-10-11T16:51:22.240020+00:00",
+  "passedBoundedBatch": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "implementation": [
+    "Only src/world.js, src/sky.js and src/scene.js changed among 20 production modules",
+    "1920-second deterministic cloud cycle from saved time; same weather drives cloud coverage/color, direct and ambient light, land fog, water reflection/fog/glint",
+    "No new texture, dependency, terrain or game/save rule"
+  ],
+  "tests": {
+    "red": {
+      "expectedMissingWeatherFunctionAndAtmosphereMethod": 3,
+      "log": "weather-coordination-red-tests.txt"
+    },
+    "focusedPass": 6,
+    "fullPass": 147,
+    "packagingPass": 4,
+    "harnessSyntaxExit": 0
+  },
+  "visualReview": {
+    "actuallyViewed": [
+      "weather-after-desktop-阴日.jpg",
+      "weather-after-desktop-forest.jpg",
+      "weather-after-desktop-阴夜.jpg",
+      "weather-after-mobile-阴日.jpg",
+      "weather-after-mobile-阴夜.jpg",
+      "weather-package-desktop.jpg",
+      "weather-package-mobile.jpg"
+    ],
+    "observations": [
+      "Overcast coastal sky is greyer with denser cover and reduced ground shadow; water/fog share the new horizon",
+      "Forest overcast foreground retains contrast; midnight land/sea silhouettes remain visible but full night combat readability has not been accepted",
+      "Fixed 390 QA camera cuts character at the right edge; ordinary 390 layout fits 390 with 390x844 canvas",
+      "The ordinary player face and vegetation still visibly have prototype quality; this batch does not meet complete 3A"
+    ],
+    "baselineSameHarness": true
+  },
+  "samples": {
+    "motion": {
+      "desktop": {
+        "frames": 600,
+        "p95Ms": 18.299999999999272,
+        "maxMs": 18.600000000002183,
+        "over50Ms": 0
+      },
+      "mobile": {
+        "frames": 601,
+        "p95Ms": 18.200000000004366,
+        "maxMs": 18.69999999999709,
+        "over50Ms": 0
+      }
+    },
+    "dynamic": {
+      "desktop": {
+        "activeMs": 60016.67,
+        "frames": 3596,
+        "p95Ms": 18,
+        "maxMs": 116.67,
+        "over50Ms": 1,
+        "distanceMeters": 415.43,
+        "hitCount": 6
+      },
+      "mobile": {
+        "activeMs": 60000,
+        "frames": 3602,
+        "p95Ms": 18,
+        "maxMs": 18.8,
+        "over50Ms": 0,
+        "distanceMeters": 415.27,
+        "hitCount": 6
+      }
+    },
+    "desktopColdSpike": [
+      {
+        "atMs": 116.67,
+        "intervalMs": 116.67,
+        "previousFrame": {
+          "stage": "shore-exploration",
+          "transition": false,
+          "cpuMs": 103.3
+        }
+      }
+    ],
+    "scope": "Fixed review camera has two draws per frame; 60-second production dynamic samples use five teleports and labelled fixtures. CPU/rAF/JS heap only, no GPU/VRAM/physical device/full campaign acceptance"
+  },
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-weather.zip",
+    "archiveBytes": 8177433,
+    "archiveEntries": 41,
+    "archiveSha256": "aabc0db1d4dac91f19270357fc59b4188d32d93a58b09bc73057c294d519d63a"
+  },
+  "ordinaryFinal": {
+    "position": "位置 X -63.6，Z 93.6；建筑 0；击败 0",
+    "inventory": {
+      "晶石": 0,
+      "晶石剑": 0,
+      "木材": 2,
+      "浆果": 3,
+      "烤浆果": 0,
+      "石料": 2,
+      "石斧": 0,
+      "纤维": 0,
+      "贝壳": 0
+    },
+    "hp": "100"
+  },
+  "historicalArchivesPreserved": 19,
+  "limits": [
+    "No rain or weather-driven wind/waves/vegetation/audio yet",
+    "Fixed QA camera clips the character at the 390 right edge; composition not accepted",
+    "One-minute scripted fixtures and two-render fixed camera samples are not a full campaign, GPU, physical-device or long-term memory gate",
+    "Character, vegetation and overall material quality still show prototype gaps",
+    "Existing public origin push remains pending the prior destination question; no new request or push"
+  ],
+  "auditScript": "tools/verify_weather_evidence.py",
+  "auditScriptSha256": "a932e788a40b3034277e6d572f51265e5553666c7113a975c4018a3d87d65828",
+  "verificationNotes": [
+    "One read-only archive check initially used bare historical ZIP names and raised FileNotFoundError; corrected to dist/name and verified all 19 SHA values",
+    "A combined documentation patch failed on a partial README line; no files changed, then applied exact read lines and one checked substring",
+    "Removed a vacuous unit save assertion that never passed state to the time-only atmosphere helper; real package save/reload is independently verified",
+    "Three intentional RED failures and raw log whitespace retained byte-for-byte",
+    "No public push: previous destination question remains pending; no repeated question, visibility change, credits or resets"
+  ],
+  "processes": {
+    "4190": {
+      "exit": 0,
+      "output": "COMMAND   PID       USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nPython  21636 huxiaocong    3u  IPv4 0xfcb1e8ad25464173      0t0  TCP 127.0.0.1:4190 (LISTEN)"
+    },
+    "53928": {
+      "exit": 1,
+      "output": ""
+    }
+  }
+}

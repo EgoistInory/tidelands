@@ -1,0 +1,26 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>晴阴与海天协调隔离验收</title>
+<style>html,body{margin:0;height:100%;background:#192723;color:#efe6cf;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:6px;display:flex;gap:5px;flex-wrap:wrap;align-items:center}button{font:inherit;padding:6px}output{height:105px;overflow:auto;overflow-wrap:anywhere;padding:5px;font:11px monospace}canvas{flex:1;min-height:0;width:100%;display:block}</style>
+<nav>生产场景 · 固定天气时刻/镜头 · 无存档<button data-time="240">晴日</button><button data-time="720">过渡日</button><button data-time="1200">阴日</button><button data-time="1440">阴夜</button><button id="next">下一地域</button><button id="record">记录当前</button><button id="motion">采样10秒运动</button></nav><output id="result">等待本地地表…</output><canvas aria-label="天气时刻的生产场景"></canvas>
+<script type="module">
+import {WorldView} from '../src/scene.js';
+import {createWorld,ISLANDS,terrain} from '../src/world.js';
+import {freshGame,serialize} from '../src/game.js';
+const view=new WorldView(document.querySelector('canvas'),createWorld()),state=freshGame(),out=document.querySelector('output');state.enemies=[];
+const sites=[{name:'潮汐低岸',x:-90,z:140},{name:'林地高岸',x:160,z:0}];
+let siteIndex=0,time=240,elapsed=0;view.sync(state);
+function render(){const p=sites[siteIndex],h=Math.max(terrain(p.x,p.z),0);Object.assign(state.player,{x:p.x,z:p.z});state.time=time+elapsed;
+  view.draw(state,null,null,false,1/60);view.camera.position.set(p.x+6,h+7,p.z-13);view.camera.lookAt(p.x,h+1.8,p.z+28);view.sky.position.copy(view.camera.position);view.renderer.render(view.scene,view.camera);
+}
+function stats(){return {site:sites[siteIndex],worldTime:state.time,viewport:[innerWidth,innerHeight],canvasBuffer:[view.canvas.width,view.canvas.height],cloudiness:view.sky.material.uniforms.cloudiness?.value??null,sunlight:view.sky.material.uniforms.sunlight?.value??null,ambientIntensity:view.ambient.intensity,sunIntensity:view.sun.intensity,horizon:view.sky.material.uniforms.horizon.value.toArray(),zenith:view.sky.material.uniforms.zenith.value.toArray(),fog:{near:view.scene.fog.near,far:view.scene.fog.far,color:view.scene.fog.color.toArray()},water:{light:view.waterUniforms.light.value,sunlight:view.waterUniforms.sunlight?.value??null,fogRange:view.waterUniforms.fogRange.value.toArray(),skyColor:view.waterUniforms.skyColor.value.toArray()},render:{...view.renderer.info.render},memory:{...view.renderer.info.memory},programs:view.renderer.info.programs.length,note:'Two renders per frame and explicit fixed location/time/review camera, enemies absent. No save, normal campaign, GPU timing or physical-device proof.'};}
+function record(){requestAnimationFrame(()=>{elapsed=0;render();out.textContent=JSON.stringify(stats());});}
+for(const b of document.querySelectorAll('[data-time]'))b.onclick=()=>{time=Number(b.dataset.time);record();};
+document.querySelector('#next').onclick=()=>{siteIndex=(siteIndex+1)%sites.length;record();};document.querySelector('#record').onclick=record;
+document.querySelector('#motion').onclick=()=>{document.querySelectorAll('button').forEach(b=>b.disabled=true);const before=stats(),frames=[];let start,last,hidden=false;
+  function frame(now){if(start===undefined){start=last=now;}const dt=now-last;last=now;if(dt>0)frames.push(dt);elapsed=(now-start)/1000;hidden||=document.hidden;render();
+    if(now-start<10000){requestAnimationFrame(frame);return;}
+    const sorted=frames.toSorted((a,b)=>a-b);out.textContent=JSON.stringify({complete:true,elapsedMs:now-start,frames:frames.length,p95Ms:sorted[Math.floor(sorted.length*.95)],maxMs:sorted.at(-1),over50Ms:frames.filter(v=>v>50).length,hidden,before,after:stats(),note:'Fixed review camera, production time/water/foliage, two renders per frame; no player input, GPU or long-term memory acceptance.'});document.querySelectorAll('button').forEach(b=>b.disabled=false);
+  }requestAnimationFrame(frame);
+};
+Promise.all([view.groundSurface.userData.ground.loaded,view.groundSurface.userData.ground.sand.loaded,view.rockSurface.userData.rock.loaded]).then(record);
+window.addEventListener('resize',()=>{view.resize();record();});window.addEventListener('pagehide',()=>view.renderer.dispose());
+</script></html>

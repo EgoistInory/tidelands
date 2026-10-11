@@ -1,0 +1,123 @@
+{
+  "kind": "bounded-weather-evidence-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "pendingBatchEvidence": [],
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "b7bc9f3e64b40f1e9d0563f5de004027a5098b220f21ed4b2b6f4af7635adffc",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "ef4290e2daf552d5ee73fb9f1a40f023a8cb07d9508bb7e16c1ea0ea734aa5c6",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "a4000652df31eb43c207a0cfb5a8b82ffff38f98b1b40ae80c5c70cef291870a",
+    "src/game.js": "995c9dfd1b6166144abf0afe85ea51a1d86db6b05ce97f1b9d9dc4e9c92d151c",
+    "src/ground-surface.js": "fa13f118fd37388219febdadc0c3b1a5a19af799ff115ec429b36f7aee573c04",
+    "src/main.js": "034e4dc0291ad6ee118d24dc4f58ee992f3142c7bac432b4c75c59cf358ba3ad",
+    "src/meadow.js": "1697ecb6c695952c9ba656c61b0e1c9852f20fc4f7f2b10b6e81d1cbbf397f0b",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "0432cd242408149b28e7def74638263ff031bfbf18c180cf13ee2e60a3a5c5f2",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "6d73d3a231da15f9c33d0fa47713c7755e1dd9f11d0b621c0ea56aae2ed597d3",
+    "src/sky.js": "e83f0d3ce196d44b214a608f09f0763ca33caa10c2d3ed671579b508effa75d4",
+    "src/startup-textures.js": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd",
+    "src/world.js": "10af506fd4ee24c4b6be22f74f280db0414c5f968e7f81adee4adc1d4fe852fa"
+  },
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-weather.zip",
+    "archiveBytes": 8177433,
+    "archiveEntries": 41,
+    "archiveSha256": "aabc0db1d4dac91f19270357fc59b4188d32d93a58b09bc73057c294d519d63a"
+  },
+  "historicalArchivesPreserved": 19,
+  "evidenceSha256": {
+    "docs/weather-after-desktop-forest.jpg": "6129d63fcf63e8f77ba1666aa97db636cf25e1adf8599061e6a6f402a18dff2c",
+    "docs/weather-after-desktop-晴日.jpg": "0b081c2242291eae22d71605e9789a78b0a2e45048cafdc876316e6addf04d45",
+    "docs/weather-after-desktop-过渡日.jpg": "669cf18ede19078bb5978274b34ceb63436fb89d4b9ebb62e3471281b397f116",
+    "docs/weather-after-desktop-阴夜.jpg": "c14e6491cea953a844cd3b42f427da64ea0c8eea5d092fcc2e046fb1373caa2d",
+    "docs/weather-after-desktop-阴日.jpg": "d0ba93ff484859b61da6e4af0c532f0c973fa5adc19b170025afb1e0ff934eed",
+    "docs/weather-after-mobile-阴夜.jpg": "9da829437dfce285e3305a39310cd7e08dacebb48c1e6089f8ad366dcb597cc2",
+    "docs/weather-after-mobile-阴日.jpg": "0731122ba8f10e468e8babb775cfbab3d306fd30d7646f28be1b8321f5f11215",
+    "docs/weather-baseline-desktop-晴日.jpg": "7cdbc874939c875725ab269fc887e79c47f42ff353a05a7c7a652f6e5023ed6b",
+    "docs/weather-baseline-desktop-阴日.jpg": "6c9a93cc088b7be1c32a6e225e4678056997abb252b57bde0a8db2c95295b0dd",
+    "docs/weather-baseline-mobile-晴日.jpg": "3cac387c71433990ecd7b9a8c667d1a03a1bbc8131dafc8d67c7dc783910b82e",
+    "docs/weather-baseline-mobile-阴日.jpg": "0e9272d10f3dec45f1fbd9a49d814b64a1b2d344e60b96268ca4f3f3b63bc189",
+    "docs/weather-coordination-after-mobile.json": "c9eae374a3f0c759a31b3dcf59338f2e8c413ad7dbaec2a863786e4c4dcd69ba",
+    "docs/weather-coordination-after-ui.json": "a4a18eea27c087a4070716bea5c93dab59550cf12f2d62f6bbf3a24e38ebc0ab",
+    "docs/weather-coordination-baseline-mobile.json": "1eb52fff780de413f1df1854e131e8db97b3b930da8c0c38aa85336f02d3b250",
+    "docs/weather-coordination-baseline-source.json": "330d1d99c1eb91aa097c5b37abb87e8bb48d9309df13ddf8a1441be6efc546d7",
+    "docs/weather-coordination-baseline-ui.json": "e45f8997b2f0b1b0bd339997a4e61c05c181af1c4da9ca1e63b372c0a52de92b",
+    "docs/weather-coordination-focused-tests.txt": "10d568463db6537eafe029f44a936fab7be41ab1668f6ed9ca4374a075c7dfd7",
+    "docs/weather-coordination-full-tests.txt": "686390953ef4036df14b292a2b0534d135cb839015d775b45d502690413c83e7",
+    "docs/weather-coordination-local-verification.json": "cbbfc104ca6c281ca441fd4a474dd7c5e023a14cb7644f5c5184c952e8fc6dd2",
+    "docs/weather-coordination-package-tests.txt": "2447fd79a71c32258513eb5b87e6bffe669db9fae096604218b20bd867a11c6e",
+    "docs/weather-coordination-processes.json": "fdcbd561ebf23598faadd4c8331844ebfcabb8ff2e6860235fbb61de406501e2",
+    "docs/weather-coordination-red-tests.txt": "741a02169b60e23175479ae7affa8265b6b8808c48cf58fa7ca7643cb33148bc",
+    "docs/weather-dynamic-desktop.json": "5cb6bbf2f12c2eb4d4b2508ce6faec45eac7bb5b28e85243b0976a7308c669c4",
+    "docs/weather-dynamic-mobile.json": "a1642836f060de4c3fe4f6c7e5b1bcc8368203317272675de3eebb5a14546fc5",
+    "docs/weather-motion-desktop.json": "a77f3872ad4728a2ac189683242c602791d3f7d738ccb9986c2e23436938ec40",
+    "docs/weather-motion-mobile.json": "1d5c7fc6e950d0ac0db6082b243d376a7828540c6a86e617588b19ce07652a50",
+    "docs/weather-package-desktop.jpg": "4c8cebf3e85857479355c333bcc65b21ff2f92a5fda0351f68385270e3ad5fe4",
+    "docs/weather-package-mobile.jpg": "6c1a71c9f2220690cda2946d8fdfe70df4b7330b20163ea4453a3ae71e589585",
+    "docs/weather-package-ui.json": "be56d1caf4cf8690bfa587221ba2a412b7e5de65fc0dcc896fb876c95884d84a"
+  },
+  "motion": {
+    "desktop": {
+      "frames": 600,
+      "p95Ms": 18.299999999999272,
+      "maxMs": 18.600000000002183,
+      "over50Ms": 0
+    },
+    "mobile": {
+      "frames": 601,
+      "p95Ms": 18.200000000004366,
+      "maxMs": 18.69999999999709,
+      "over50Ms": 0
+    }
+  },
+  "dynamic": {
+    "desktop": {
+      "activeMs": 60016.67,
+      "frames": 3596,
+      "p95Ms": 18,
+      "maxMs": 116.67,
+      "over50Ms": 1,
+      "distanceMeters": 415.43,
+      "hitCount": 6
+    },
+    "mobile": {
+      "activeMs": 60000,
+      "frames": 3602,
+      "p95Ms": 18,
+      "maxMs": 18.8,
+      "over50Ms": 0,
+      "distanceMeters": 415.27,
+      "hitCount": 6
+    }
+  },
+  "ordinaryFinal": {
+    "position": "位置 X -63.6，Z 93.6；建筑 0；击败 0",
+    "inventory": {
+      "晶石": 0,
+      "晶石剑": 0,
+      "木材": 2,
+      "浆果": 3,
+      "烤浆果": 0,
+      "石料": 2,
+      "石斧": 0,
+      "纤维": 0,
+      "贝壳": 0
+    },
+    "hp": "100"
+  },
+  "limits": [
+    "No rain or weather-driven wind/waves/vegetation/audio yet",
+    "Fixed QA camera clips the character at the 390 right edge; composition not accepted",
+    "One-minute scripted fixtures and two-render fixed camera samples are not a full campaign, GPU, physical-device or long-term memory gate",
+    "Character, vegetation and overall material quality still show prototype gaps",
+    "Existing public origin push remains pending the prior destination question; no new request or push"
+  ]
+}

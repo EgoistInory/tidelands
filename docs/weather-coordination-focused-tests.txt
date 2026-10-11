@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: sky and fog remain periodic, bounded and continuous across dawn and midnight
+ok 1 - sky and fog remain periodic, bounded and continuous across dawn and midnight
+  ---
+  duration_ms: 31.058792
+  type: 'test'
+  ...
+# Subtest: sky follows long-distance exploration without depth or shadow occlusion and reuses GPU resources
+ok 2 - sky follows long-distance exploration without depth or shadow occlusion and reuses GPU resources
+  ---
+  duration_ms: 2.715584
+  type: 'test'
+  ...
+# Subtest: water shares the changing horizon color instead of retaining daytime reflection at night
+ok 3 - water shares the changing horizon color instead of retaining daytime reflection at night
+  ---
+  duration_ms: 32.267666
+  type: 'test'
+  ...
+# Subtest: weather is deterministic over several days with bounded continuous transitions
+ok 4 - weather is deterministic over several days with bounded continuous transitions
+  ---
+  duration_ms: 5.541083
+  type: 'test'
+  ...
+# Subtest: sky cloud coverage and haze use the shared weather without replacing resources
+ok 5 - sky cloud coverage and haze use the shared weather without replacing resources
+  ---
+  duration_ms: 1.676875
+  type: 'test'
+  ...
+# Subtest: production atmosphere coordinates sunlight, land fog and water with stable resources
+ok 6 - production atmosphere coordinates sunlight, land fog and water with stable resources
+  ---
+  duration_ms: 35.571417
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 139.875791

@@ -35,6 +35,11 @@ export function dayCycle(time){
   const daylight=Math.max(.04,Math.min(1,Math.sin((phase-.25)*Math.PI*2)*.85+.15));
   return {label,daylight,day:Math.floor(time/480)+1};
 }
+export function weatherAt(time){
+  const phase=(((Number.isFinite(time)?time:0)%1920)+1920)%1920;
+  const cloudiness=(1-Math.cos((phase-240)*Math.PI/960))/2;
+  return {cloudiness,sunlight:1-cloudiness*.72,skylight:1-cloudiness*.12,fogNear:120-cloudiness*25,fogFar:470-cloudiness*120};
+}
 export function createWorld(){
   const random=randomGenerator(),objects=[];
   for(let i=0;i<1800;i++){

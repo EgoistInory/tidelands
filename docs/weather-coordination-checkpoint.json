@@ -1,0 +1,38 @@
+{
+  "status": "in_progress",
+  "stage": "M5_quality_batches",
+  "fullGoalComplete": false,
+  "currentArchive": {
+    "archive": "tidelands-m5-2026-10-12-weather.zip",
+    "archiveBytes": 8177433,
+    "archiveEntries": 41,
+    "archiveSha256": "aabc0db1d4dac91f19270357fc59b4188d32d93a58b09bc73057c294d519d63a"
+  },
+  "evidence": "docs/weather-coordination-final-audit.json",
+  "nextAction": "Wind/waves/vegetation/sound coordination, then natural spatial actions, whole-scene art, actual audio/device/GPU/long-term regression",
+  "git": {
+    "lastAcceptedCommit": "05ff9c2c35e55d8603ce36381f81911c8ed0eb3a",
+    "originVisibility": "PUBLIC",
+    "pushPendingPriorDestinationQuestion": true,
+    "doNotRepeatWithoutNewInformation": true
+  },
+  "quota": {
+    "ordinaryUsageAllowed": true,
+    "fiveHourUsedPercent": 74,
+    "weeklyUsedPercent": 43,
+    "historicalGoalStatus": "usageLimited",
+    "statusNotForced": true,
+    "creditsOrResetUsed": false
+  },
+  "processes": {
+    "4190": {
+      "exit": 0,
+      "output": "COMMAND   PID       USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nPython  21636 huxiaocong    3u  IPv4 0xfcb1e8ad25464173      0t0  TCP 127.0.0.1:4190 (LISTEN)"
+    },
+    "53928": {
+      "exit": 1,
+      "output": ""
+    }
+  },
+  "automation2048": "retain hourly"
+}
