@@ -1,0 +1,1567 @@
+{
+  "url": "http://127.0.0.1:4190/tests/gather-contact.html",
+  "title": "近距采集与低位动作隔离验收",
+  "samples": [
+    {
+      "node": {
+        "id": "starter-0",
+        "type": "tree",
+        "x": -73,
+        "z": 91
+      },
+      "selected": "axe",
+      "distance": 2.4,
+      "nearestId": "starter-0",
+      "age": 0.2050000000000125,
+      "result": null,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 0,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "depleted": null,
+      "relativeBladeHeight": [
+        0.7696416199840286,
+        1.1923468091163851
+      ],
+      "yaw": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression.",
+      "frames": []
+    },
+    {
+      "node": {
+        "id": "starter-0",
+        "type": "tree",
+        "x": -73,
+        "z": 91
+      },
+      "selected": "axe",
+      "distance": 2.4,
+      "nearestId": null,
+      "age": 0.21000000000000796,
+      "result": "木材 +3",
+      "inventory": {
+        "wood": 3,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 0,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "depleted": 390.21000000000004,
+      "relativeBladeHeight": [
+        0.7698445252625934,
+        1.1925068320194097
+      ],
+      "yaw": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression.",
+      "frames": []
+    },
+    {
+      "node": {
+        "id": "starter-0",
+        "type": "tree",
+        "x": -73,
+        "z": 91
+      },
+      "selected": "axe",
+      "distance": 5,
+      "nearestId": null,
+      "age": 340,
+      "result": "靠近资源后再采集。",
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 0,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "depleted": null,
+      "relativeBladeHeight": [
+        0.5812122223478013,
+        1.0227899124256101
+      ],
+      "yaw": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression.",
+      "frames": []
+    },
+    {
+      "node": {
+        "id": "starter-1",
+        "type": "stone",
+        "x": -81,
+        "z": 101
+      },
+      "selected": "sword",
+      "distance": 2.4,
+      "nearestId": "starter-1",
+      "age": 0.2050000000000125,
+      "result": null,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 0,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "depleted": null,
+      "relativeBladeHeight": [
+        0.5258544228544082,
+        1.4093228257256065
+      ],
+      "yaw": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression.",
+      "frames": []
+    },
+    {
+      "node": {
+        "id": "starter-1",
+        "type": "stone",
+        "x": -81,
+        "z": 101
+      },
+      "selected": "sword",
+      "distance": 2.4,
+      "nearestId": null,
+      "age": 0.21000000000000796,
+      "result": "石料 +3",
+      "inventory": {
+        "wood": 0,
+        "stone": 3,
+        "fiber": 0,
+        "berry": 0,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "depleted": 390.21000000000004,
+      "relativeBladeHeight": [
+        0.5259020572189712,
+        1.4093364671616246
+      ],
+      "yaw": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression.",
+      "frames": []
+    },
+    {
+      "node": {
+        "id": "starter-2",
+        "type": "berry",
+        "x": -64,
+        "z": 110
+      },
+      "selected": "hand",
+      "distance": 2.4,
+      "nearestId": null,
+      "age": 0.21000000000000796,
+      "result": "浆果 +2",
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 2,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "depleted": 390.21000000000004,
+      "relativeBladeHeight": [
+        0.1560461928612913,
+        1.2534346790346955
+      ],
+      "yaw": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression.",
+      "frames": []
+    },
+    {
+      "node": {
+        "id": "starter-3",
+        "type": "fiber",
+        "x": -82,
+        "z": 91
+      },
+      "selected": "hand",
+      "distance": 2.4,
+      "nearestId": null,
+      "age": 0.21000000000000796,
+      "result": "纤维 +2",
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 2,
+        "berry": 0,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "depleted": 390.21000000000004,
+      "relativeBladeHeight": [
+        0.1578163447386931,
+        1.2552048309120973
+      ],
+      "yaw": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression.",
+      "frames": []
+    },
+    {
+      "node": {
+        "id": "starter-3",
+        "type": "fiber",
+        "x": -82,
+        "z": 91
+      },
+      "selected": "hand",
+      "distance": 2.4,
+      "nearestId": null,
+      "age": 0.5333000000001107,
+      "result": "纤维 +2",
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 2,
+        "berry": 0,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "depleted": 390.21670000000006,
+      "relativeBladeHeight": [
+        -0.18652367872936537,
+        1.1180598313093366
+      ],
+      "yaw": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression.",
+      "frames": [
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": "starter-3",
+          "age": 0,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "relativeBladeHeight": [
+            -0.18516880689165127,
+            1.1194147031470507
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": "starter-3",
+          "age": 0.01660000000001105,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "relativeBladeHeight": [
+            -0.16459639742244292,
+            1.129977406099309
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": "starter-3",
+          "age": 0.03340000000000032,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "relativeBladeHeight": [
+            -0.13773498532063577,
+            1.1423550569087357
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": "starter-3",
+          "age": 0.05000000000001137,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "relativeBladeHeight": [
+            -0.10614843959793951,
+            1.15589928431881
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": "starter-3",
+          "age": 0.06670000000002574,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "relativeBladeHeight": [
+            -0.07057735668966103,
+            1.1703949288475872
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": "starter-3",
+          "age": 0.08330000000003679,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "relativeBladeHeight": [
+            -0.03295938135785015,
+            1.1851575919410404
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": "starter-3",
+          "age": 0.10000000000002274,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "relativeBladeHeight": [
+            0.005466189894768547,
+            1.1998110920945262
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": "starter-3",
+          "age": 0.11670000000003711,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "relativeBladeHeight": [
+            0.04270744174191776,
+            1.2137010347535107
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": "starter-3",
+          "age": 0.13320000000004484,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "relativeBladeHeight": [
+            0.0766382792280389,
+            1.2261409325404884
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": "starter-3",
+          "age": 0.1500000000000341,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "relativeBladeHeight": [
+            0.10664666106777787,
+            1.2369971877481163
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": "starter-3",
+          "age": 0.16660000000004516,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "relativeBladeHeight": [
+            0.1304106939950067,
+            1.2455067148808538
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": "starter-3",
+          "age": 0.18330000000005953,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "relativeBladeHeight": [
+            0.1472932802922049,
+            1.2515047651813642
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": "starter-3",
+          "age": 0.19940000000005398,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "relativeBladeHeight": [
+            0.15615742779483988,
+            1.2546311831336343
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.21670000000005984,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            0.1571294581261764,
+            1.2549519756127445
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.2333000000000709,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            0.14968977563984787,
+            1.2522876932796496
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.25010000000006016,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            0.13416314832428355,
+            1.246732645569388
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.2651000000000465,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            0.11408962579040072,
+            1.2395189851925235
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.28340000000005716,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            0.08281579396516392,
+            1.2281861200064679
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.3000000000000682,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            0.049389109954136146,
+            1.2159225702346959
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.3167000000000826,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            0.012519756505453117,
+            1.2021785996169356
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.33330000000009363,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            -0.025651765549028482,
+            1.187650168107261
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.3500000000000796,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            -0.0638218566203328,
+            1.1727237225487936
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.36660000000009063,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            -0.09983238797256355,
+            1.1581319467700677
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.3834000000000799,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            -0.1327342391748907,
+            1.144144266776438
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.39820000000008804,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            -0.1576881104949006,
+            1.1328488754040276
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.4167000000000769,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            -0.18245048159890942,
+            1.1205017729441753
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.43330000000008795,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            -0.1861009347033331,
+            1.1184825753353689
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.4483000000000743,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            -0.18616040103588283,
+            1.1184231090028192
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.46670000000005984,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            -0.18623533982753493,
+            1.118348170211167
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.4834000000000742,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            -0.18630519163738413,
+            1.1182783184013179
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.5000000000000853,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            -0.18637629275703027,
+            1.1182072172816717
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.5167000000000996,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            -0.18644943551919013,
+            1.1181340745195119
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        },
+        {
+          "node": {
+            "id": "starter-3",
+            "type": "fiber",
+            "x": -82,
+            "z": 91
+          },
+          "selected": "hand",
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.5333000000001107,
+          "result": "纤维 +2",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 2,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21670000000006,
+          "relativeBladeHeight": [
+            -0.18652367872936537,
+            1.1180598313093366
+          ],
+          "yaw": 0,
+          "viewport": [
+            1280,
+            720
+          ],
+          "glError": 0,
+          "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression."
+        }
+      ]
+    },
+    {
+      "node": {
+        "id": "starter-3",
+        "type": "fiber",
+        "x": -82,
+        "z": 91
+      },
+      "selected": "hand",
+      "distance": 2.4,
+      "nearestId": "starter-3",
+      "age": 0.2050000000000125,
+      "result": null,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 0,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "depleted": null,
+      "relativeBladeHeight": [
+        0.15745245275965658,
+        1.2550827314408188
+      ],
+      "yaw": 0,
+      "viewport": [
+        390,
+        844
+      ],
+      "glError": 0,
+      "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression.",
+      "frames": []
+    },
+    {
+      "node": {
+        "id": "starter-3",
+        "type": "fiber",
+        "x": -82,
+        "z": 91
+      },
+      "selected": "hand",
+      "distance": 2.4,
+      "nearestId": null,
+      "age": 0.21000000000000796,
+      "result": "纤维 +2",
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 2,
+        "berry": 0,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "depleted": 390.21000000000004,
+      "relativeBladeHeight": [
+        0.1578163447386931,
+        1.2552048309120973
+      ],
+      "yaw": 0,
+      "viewport": [
+        390,
+        844
+      ],
+      "glError": 0,
+      "note": "Production scene with fixed resource position/camera and tool fixture. Range and mesh bounds are not exact physical contact; no save or ordinary inventory progression.",
+      "frames": []
+    }
+  ],
+  "console": [],
+  "note": "When selected=hand the recorded blade bounds refer to the hidden sword; they do not represent a visible hand or ground-contact test."
+}

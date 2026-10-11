@@ -101,7 +101,7 @@ test('stride advances with distance, stays still at rest, and keeps joints attac
 });
 test('gathering reaches forward, yields to attack or swimming, and returns to idle',()=>{
   const c=createCharacter(),s={x:0,z:0,yaw:0,time:10,attackAt:-100,gatherAt:9.79,selected:'axe'};
-  animateCharacter(c,s,.016);assert.ok(c.userData.body.rotation.x>0);assert.equal(c.userData.shoulders[1].rotation.x,-1.6);
+  animateCharacter(c,s,.016);assert.ok(c.userData.body.rotation.x>0);assert.ok(c.userData.shoulders[1].rotation.x<-.3);
   animateCharacter(c,{...s,attackAt:9.775},.016);assert.ok(c.userData.shoulders[1].rotation.x<-.3&&c.userData.shoulders[1].rotation.x>-1);assert.equal(c.userData.body.rotation.x,0);
   animateCharacter(c,{...s,swimming:true},.016);assert.equal(c.userData.body.rotation.x,1.25);
   animateCharacter(c,{...s,time:11},.016);assert.equal(c.userData.body.rotation.x,0);assert.ok(Math.abs(c.userData.shoulders[1].rotation.x)<1e-9);

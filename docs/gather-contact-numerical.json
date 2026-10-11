@@ -1,0 +1,147 @@
+{
+  "kind": "numerical-gather-contact-review",
+  "scope": "Stationary flat-ground mesh-vertex bounds and isolated rule fixtures. No real creature hull/triangle collision, rendered UI, weapon sweep collision or normal campaign acceptance.",
+  "fullGoalComplete": false,
+  "samples": [
+    {
+      "selected": "axe",
+      "action": "attack",
+      "time": 0.225,
+      "bladeBounds": {
+        "min": [
+          0.17046180963424656,
+          0.816203642434123,
+          0.4408983664953219
+        ],
+        "max": [
+          0.7099966217584024,
+          1.227003841258698,
+          0.8865874095031829
+        ]
+      },
+      "maximumHorizontalAttackReach": 0.9923622352572962
+    },
+    {
+      "selected": "axe",
+      "action": "gather",
+      "time": 0.21,
+      "bladeBounds": {
+        "min": [
+          -0.10527618891992924,
+          0.7669277207540122,
+          0.9044377273219799
+        ],
+        "max": [
+          0.4186045708790408,
+          1.189590027510829,
+          1.3139099947071686
+        ]
+      },
+      "maximumHorizontalAttackReach": 0.9923622352572962
+    },
+    {
+      "selected": "sword",
+      "action": "attack",
+      "time": 0.225,
+      "bladeBounds": {
+        "min": [
+          0.45642105685061685,
+          0.8809979607253544,
+          0.6465831265607417
+        ],
+        "max": [
+          1.0475496430612146,
+          1.5921560403987338,
+          1.8632556486680132
+        ]
+      },
+      "maximumHorizontalAttackReach": 2.0207426443117145
+    },
+    {
+      "selected": "sword",
+      "action": "gather",
+      "time": 0.21,
+      "bladeBounds": {
+        "min": [
+          0.009699124012946758,
+          0.5456627797050736,
+          1.0792532353979778
+        ],
+        "max": [
+          0.5137107467514161,
+          1.4290971896477263,
+          2.1759578045102907
+        ]
+      },
+      "maximumHorizontalAttackReach": 2.0207426443117145
+    }
+  ],
+  "rules": [
+    {
+      "targetXZ": [
+        0,
+        2.5
+      ],
+      "distance": 2.5,
+      "hits": [
+        "contact-fixture"
+      ],
+      "remainingHp": 2
+    },
+    {
+      "targetXZ": [
+        0,
+        5.1
+      ],
+      "distance": 5.1,
+      "hits": [],
+      "remainingHp": 40
+    },
+    {
+      "targetXZ": [
+        0,
+        -5.1
+      ],
+      "distance": 5.1,
+      "hits": [],
+      "remainingHp": 40
+    },
+    {
+      "targetXZ": [
+        5.1,
+        0
+      ],
+      "distance": 5.1,
+      "hits": [],
+      "remainingHp": 40
+    }
+  ],
+  "gatherRules": [
+    {
+      "distance": 2.4,
+      "walkAway": false,
+      "pendingStarted": true,
+      "result": "石料 +2",
+      "stone": 2
+    },
+    {
+      "distance": 5,
+      "walkAway": false,
+      "pendingStarted": false,
+      "result": "靠近资源后再采集。",
+      "stone": 0
+    },
+    {
+      "distance": 2,
+      "walkAway": true,
+      "pendingStarted": true,
+      "result": "离资源太远，靠近后再采集。",
+      "stone": 0
+    }
+  ],
+  "sourceSha256": {
+    "src/character.js": "8d610e728b0f982a081b8f0b4752af4e00b79b11abdcb3c1218b72bc4131d320",
+    "src/game.js": "6f90fea0c8f32696832f53cccd35373dbae14e5310011a89db350c0ce312d223",
+    "src/action-timing.js": "43628f890216ab5678e9887598b9cb8176daa68e9a9176c79f64dcf07f344dc5"
+  }
+}

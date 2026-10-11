@@ -1,6 +1,7 @@
 import {SPAWN,LANDMARKS,terrain,regionAt,createWorld} from './world.js';
-import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_DURATION,GATHER_IMPACT} from './action-timing.js';
+import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_DURATION,GATHER_IMPACT,GATHER_RANGE} from './action-timing.js';
 export const ITEMS={wood:'木材',stone:'石料',fiber:'纤维',berry:'浆果',shell:'贝壳',crystal:'晶石',axe:'石斧',sword:'晶石剑',meal:'烤浆果'};
+const RESOURCE_ITEMS={tree:'wood',stone:'stone',fiber:'fiber',berry:'berry',shell:'shell',crystal:'crystal'};
 export const RECIPES={axe:{name:'石斧',cost:{wood:4,stone:3},description:'提高采集数量和攻击伤害'},meal:{name:'烤浆果',cost:{berry:3},description:'恢复 45 点生命'},sword:{name:'晶石剑',cost:{wood:4,stone:4,crystal:3},description:'伤害提升至 38'},campfire:{name:'营火',cost:{wood:5,stone:3},description:'靠近按 E 休息，恢复生命'},tent:{name:'帐篷',cost:{wood:8,fiber:5},description:'设置重生点，恢复体力'},workbench:{name:'工作台',cost:{wood:8,stone:5},description:'解锁晶石剑制作'}};
 export const QUESTS=[
   {title:'归航的灯火',text:'与海边的守灯人交谈',hint:'靠近人物，按 E 交谈'},
@@ -50,16 +51,16 @@ export function interact(state,object,{defer=false}={}){if(!object)return '靠�
   if(object.type==='cottage')return '门口挂着一盏小灯。守灯人正在海边等你。';
   if(object.type==='ruin')return '石碑上刻着：群岛不因海峡而分离，只因灯火而相连。';
   if(isDepleted(state,object))return '这里的资源还在恢复。';
-  const item={tree:'wood',stone:'stone',fiber:'fiber',berry:'berry',shell:'shell',crystal:'crystal'}[object.type];if(!item)return '';
+  const item=RESOURCE_ITEMS[object.type];if(!item)return '';
   const count=['wood','stone'].includes(item)?(state.inventory.axe?3:2):item==='crystal'?1:2;
-  if(defer){if(terrain(state.player.x,state.player.z)<.15)return '请先靠岸，再采集附近资源。';return {message:'',pending:{state,at:state.time,object:{id:object.id,x:object.x,z:object.z},item,count,resolved:false}};}
+  if(defer){if(terrain(state.player.x,state.player.z)<.15)return '请先靠岸，再采集附近资源。';if(Math.hypot(object.x-state.player.x,object.z-state.player.z)>=GATHER_RANGE)return '靠近资源后再采集。';return {message:'',pending:{state,at:state.time,object:{id:object.id,x:object.x,z:object.z},item,count,resolved:false}};}
   return applyGather(state,object,item,count);
 }
 export function resolveGather(state,pending){
   if(!pending||pending.state!==state||pending.resolved||pending.at!==state.interactAt||state.time<pending.at+GATHER_IMPACT||state.time>=pending.at+GATHER_DURATION)return null;
   pending.resolved=true;
   if(terrain(state.player.x,state.player.z)<.15)return '请先靠岸，再采集附近资源。';
-  if(Math.hypot(pending.object.x-state.player.x,pending.object.z-state.player.z)>=7)return '离资源太远，靠近后再采集。';
+  if(Math.hypot(pending.object.x-state.player.x,pending.object.z-state.player.z)>=GATHER_RANGE)return '离资源太远，靠近后再采集。';
   if(isDepleted(state,pending.object))return '这里的资源还在恢复。';
   return applyGather(state,pending.object,pending.item,pending.count);
 }
@@ -108,7 +109,7 @@ export function tick(state,dt,running=false,feedback=null){if(feedback){feedback
   if(state.player.hp<=0){if(feedback)feedback.respawned=true;Object.assign(state.player,state.respawn,{hp:100,stamina:100});state.protectedUntil=state.time+8;message='你在营地醒来。背包已保留，获得 8 秒保护，趁现在重新出发吧。';}
   return message;
 }
-export function nearest(state,objects){const options=[...LANDMARKS,...state.buildings,...objects.filter(o=>!isDepleted(state,o))];let best=null,d=7;for(const o of options){const dist=Math.hypot(o.x-state.player.x,o.z-state.player.z);if(dist<d){d=dist;best=o;}}return best;}
+export function nearest(state,objects){const options=[...LANDMARKS,...state.buildings,...objects.filter(o=>!isDepleted(state,o))];let best=null,d=7;for(const o of options){const dist=Math.hypot(o.x-state.player.x,o.z-state.player.z);if(RESOURCE_ITEMS[o.type]&&dist>=GATHER_RANGE)continue;if(dist<d){d=dist;best=o;}}return best;}
 export function nearestEnemy(state){let best=null,d=15;for(const e of state.enemies){if(e.hp<=0)continue;const distance=Math.hypot(e.x-state.player.x,e.z-state.player.z);if(distance<d){d=distance;best=e;}}return best;}
 export function serialize(state){return JSON.stringify(state);}
 export function restore(raw){const v=JSON.parse(raw);const fresh=freshGame();

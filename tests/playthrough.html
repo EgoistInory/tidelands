@@ -114,7 +114,7 @@ try{
       const nativeDraw=WorldView.prototype.draw,nativeEffect=GameAudio.prototype.effect,round=n=>Math.round(n*10000)/10000;
       WorldView.prototype.draw=function(state,...args){
         latestState=state;latestView=this;nativeDraw.call(this,state,...args);
-        if(trace&&performance.now()-trace.inputAt<550){trace.frames.push({wallMs:round(performance.now()-trace.inputAt),age:round(state.time-this.gatherAt),inventory:{...state.inventory},depleted:{...state.depleted},shoulder:round(this.player.userData.shoulders[1].rotation.x),torsoYaw:round(this.player.userData.body.rotation.y),freeShoulder:round(this.player.userData.shoulders[0].rotation.x)});timing.textContent=JSON.stringify(trace);}
+        if(trace&&performance.now()-trace.inputAt<550){trace.frames.push({wallMs:round(performance.now()-trace.inputAt),age:round(state.time-this.gatherAt),inventory:{...state.inventory},depleted:{...state.depleted},rootYaw:round(this.player.rotation.y),targetYaw:round(state.player.yaw),shoulder:round(this.player.userData.shoulders[1].rotation.x),torsoYaw:round(this.player.userData.body.rotation.y),freeShoulder:round(this.player.userData.shoulders[0].rotation.x)});timing.textContent=JSON.stringify(trace);}
       };
       GameAudio.prototype.effect=function(kind,options){const before=this.sources.size;nativeEffect.call(this,kind,options);if(trace&&performance.now()-trace.inputAt<550){trace.effects.push({kind,wallMs:round(performance.now()-trace.inputAt),age:latestState&&latestView?round(latestState.time-latestView.gatherAt):null,scheduled:this.sources.size>before});timing.textContent=JSON.stringify(trace);}};
     }

@@ -238,8 +238,8 @@ export function animateCharacter(root,{x,z,yaw,time,attackAt,gatherAt=-100,hurtA
   else if(!swimming&&time>=gatherAt&&time-gatherAt<GATHER_DURATION){
     const reach=Math.sin((time-gatherAt)/GATHER_DURATION*Math.PI);
     rig.body.rotation.x=THREE.MathUtils.lerp(rig.body.rotation.x,.16,reach);
-    rig.shoulders[1].rotation.x=THREE.MathUtils.lerp(rig.shoulders[1].rotation.x,-1.6,reach);
-    rig.elbows[1].rotation.x=THREE.MathUtils.lerp(rig.elbows[1].rotation.x,-.6,reach);
+    rig.shoulders[1].rotation.x=THREE.MathUtils.lerp(rig.shoulders[1].rotation.x,selected==='sword'?-.8:-.55,reach);
+    rig.elbows[1].rotation.x=THREE.MathUtils.lerp(rig.elbows[1].rotation.x,-.25,reach);
     rig.body.rotation.y=-.14*reach;
     rig.shoulders[0].rotation.x=THREE.MathUtils.lerp(rig.shoulders[0].rotation.x,-.35,reach);
     rig.shoulders[0].rotation.z=-.12*reach;

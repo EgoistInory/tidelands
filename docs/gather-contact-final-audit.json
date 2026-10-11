@@ -1,0 +1,81 @@
+{
+  "kind": "bounded-gather-evidence-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "pendingBatchEvidence": [],
+  "changedProduction": [
+    "src/action-timing.js",
+    "src/character.js",
+    "src/game.js"
+  ],
+  "runtimeSha256": {
+    "src/action-timing.js": "43628f890216ab5678e9887598b9cb8176daa68e9a9176c79f64dcf07f344dc5",
+    "src/audio.js": "6eefb0bb75d8e8c61ae8bcbc54e1b5486eb9f850e9a81f9a49b37f414f79b846",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "8d610e728b0f982a081b8f0b4752af4e00b79b11abdcb3c1218b72bc4131d320",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "d7649b9b6e0d1a3496d8c8b2fa5198e1876076dc2fa3d78ebaebbea77546e4b6",
+    "src/game.js": "6f90fea0c8f32696832f53cccd35373dbae14e5310011a89db350c0ce312d223",
+    "src/ground-surface.js": "fa13f118fd37388219febdadc0c3b1a5a19af799ff115ec429b36f7aee573c04",
+    "src/main.js": "14d85c4c818c483c80b98fd2a6454899851a9ba9478285eba48eb0ac43cf5436",
+    "src/meadow.js": "08ffc76769aa829809bd4056bfab376b73ae6c9c67a6478b3729ee7ee636badd",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "0432cd242408149b28e7def74638263ff031bfbf18c180cf13ee2e60a3a5c5f2",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "72cc7f539808b6f69d68256d311453f7cd63ad0d1932be5dbe2fa994bc699ddd",
+    "src/sky.js": "e83f0d3ce196d44b214a608f09f0763ca33caa10c2d3ed671579b508effa75d4",
+    "src/startup-textures.js": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd",
+    "src/world.js": "f9f0114982deaf69dda65b8ec44e0eba88f1cc228b1859379dc7da24b93456e1"
+  },
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-gather.zip",
+    "archiveBytes": 8178215,
+    "archiveEntries": 41,
+    "archiveSha256": "a280ca5752f8aec56259b82518aabaae216dd026a9a22ebc52a12a7d14c37d06"
+  },
+  "historicalArchivesPreserved": 22,
+  "ordinaryFinal": {
+    "coordinates": "位置 X -64.0，Z 96.2；建筑 0；击败 0",
+    "hp": "100",
+    "quest": "在岛上安一个家",
+    "inventory": {
+      "木材": 0,
+      "石料": 1,
+      "纤维": 2,
+      "浆果": 3,
+      "贝壳": 0,
+      "晶石": 0,
+      "石斧": 1,
+      "晶石剑": 0,
+      "烤浆果": 0
+    }
+  },
+  "evidenceSha256": {
+    "docs/gather-contact-focused-tests.txt": "898ecababdcb4226ad4292d3090b831c1458fad75e16483658a0263323016b4f",
+    "docs/gather-contact-full-tests.txt": "fef4d13ebb7b2e559d48409cf8271c6da1a92806f896cb6c795e461ae572027f",
+    "docs/gather-contact-mobile-before.jpg": "74ecc7d1d169bb9280a257c8f8dec60ba28009511f2c4b76597ce2e0b54151d4",
+    "docs/gather-contact-native-ui.json": "c20fa9e31c002cfc91dcf39b6a15d6df07bc820885c40c8645b79aa0d42842cc",
+    "docs/gather-contact-numerical.json": "14a788112bfa9f4833ae64c980dffc928072b9b902f6c96623cffd1c91747d9c",
+    "docs/gather-contact-package-tests.txt": "3aff259811a27216a5b846571190403f0ec586ac73e1f9fb79fef0c25fde1bb7",
+    "docs/gather-contact-package-ui.json": "a504dd6410da17f51281278c5f12bf77c5283c436cb0c2ecb6d1de9dc9bbdc39",
+    "docs/gather-contact-red-tests.txt": "83b571130fca280feea6fe2a03fc50902a0abd620c4a0b292907f6a3f5a5fb90",
+    "docs/gather-contact-soak.json": "a275ec2272efe6e8cadfa588851afbbafa418bda9320c7c8fd439183428b3fb5",
+    "docs/gather-contact-stone-before.jpg": "b5283ae097763c380d2b177e5478591f0640c74c55fecefb09f60e702b1d6101",
+    "docs/gather-contact-tree-before.jpg": "dd1dcff977014d6ed1df70abceb34b23d98c85a75d5c71114247d28fa0f838c4",
+    "docs/gather-contact-ui.json": "8fbda890ccd5611966b28ceb9a3d6f8098b0f59b1862e239df5118a142c732e7",
+    "docs/gather-package-desktop.jpg": "79533a1edbc71318d584fbf5828f579a55f6b61ae7fd825b0888374b79ae363b",
+    "docs/gather-package-mobile.jpg": "9fa8d50a99fb095d0aeefba9e8395faeb5ad894cf7d0860c5017e0f5b3b48079",
+    "docs/tidelands-m5-2026-10-12-gather-verification.json": "0325e135b3955b87862c43ec98b50e55f890090707ee1a47ef1428e8a9b9bcbf"
+  },
+  "limits": [
+    "按资源类型和高度分组的采集动作仍待：低植物/贝壳蹲身，树木砍切，石/晶石工具适配；剑采石只是现有装备姿势覆盖，不能视作合适采矿动作。",
+    "3m是资源中心代理，手/斧仍与树皮存在间隔；未实现表面定位、坡地接触或实际网格碰撞。",
+    "攻击短前伸和低蟹适配、完整角色/建筑/植被美术、夜间细节、镜头绕障和390攻击说明末字换行仍在品质待办。",
+    "新包未重走整条主线、当前长期渲染/显存/GPU或真机多指；旧性能与主线证据保留自身源码绑定，不能继承为当前质量证明。",
+    "音效只验证真实调度，未试听；M5五项与完整3A目标均未通过。"
+  ]
+}

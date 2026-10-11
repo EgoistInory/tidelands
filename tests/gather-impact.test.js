@@ -17,7 +17,7 @@ test('gather commits inventory and depletion once at the rendered reach peak',()
   state.time=at+.21-1e-6;assert.equal(game.resolveGather(state,started.pending),null);
   state.time=at+.21;
   animateCharacter(rig,{...state.player,time:state.time,attackAt:-100,gatherAt:at,selected:'hand'},0,()=>0);
-  assert.ok(Math.abs(rig.userData.shoulders[1].rotation.x+1.6)<1e-8);
+  assert.ok(rig.userData.shoulders[1].rotation.x<-.3,'gather reaches forward at impact');
   assert.equal(game.resolveGather(state,started.pending),'石料 +2');
   assert.equal(state.inventory.stone,2);assert.equal(state.depleted[object.id],state.time+150);
   assert.equal(game.resolveGather(state,started.pending),null);assert.equal(state.inventory.stone,2);
