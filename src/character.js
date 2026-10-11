@@ -100,7 +100,7 @@ function footStep(phase,strideLength,stanceFraction){
 function resetFeet(rig){rig.worldFeet=null;rig.footCycles=null;rig.footContacts=null;rig.swingStarts=null;rig.landingFeet=null;rig.earlyLift=null;rig.idleStep=null;rig.idleTime=0;}
 function floorNormal(ground,x,z){return ground?new THREE.Vector3(-(ground(x+.15,z)-ground(x-.15,z))/.3,1,-(ground(x,z+.15)-ground(x,z-.15))/.3).normalize():up.clone();}
 
-function placeFeet(root,ground,time,dt,yaw){
+function placeFeet(root,ground,time,dt,yaw,crouch=0){
   const rig=root.userData,body=rig.body,strideLength=rig.strideLength,stanceFraction=rig.stanceFraction;
   body.updateMatrix();root.updateMatrixWorld(true);
   const nextTravel=rig.travelDirection.clone().multiplyScalar(rig.stepDistance).applyQuaternion(root.quaternion.clone().invert()),nextTurn=Math.atan2(Math.sin(yaw-root.rotation.y),Math.cos(yaw-root.rotation.y))*(1-Math.exp(-dt*16));
@@ -167,7 +167,7 @@ function placeFeet(root,ground,time,dt,yaw){
   body.position.y=Math.min(...targets.map(({target},i)=>{
     const hip=rig.hips[i].position.clone().applyQuaternion(body.quaternion),dx=target.x-hip.x-body.position.x,dz=target.z-hip.z-body.position.z;
     return target.y+Math.sqrt(Math.max(.01,(legLength-.01)**2-dx*dx-dz*dz))-hip.y;
-  }))-.003*(1+Math.sin(time*1.8));
+  }))-.003*(1+Math.sin(time*1.8))-crouch;
   const inverseBody=body.quaternion.clone().invert();
   for(let i=0;i<2;i++){
     const hip=rig.hips[i],knee=rig.knees[i],ankle=rig.ankles[i];
@@ -185,7 +185,7 @@ function placeFeet(root,ground,time,dt,yaw){
   }
 }
 
-export function animateCharacter(root,{x,z,yaw,time,attackAt,gatherAt=-100,hurtAt=-100,selected,swimming=false},dt,ground=null){
+export function animateCharacter(root,{x,z,yaw,time,attackAt,gatherAt=-100,gatherKind=null,gatherTool=null,hurtAt=-100,selected,swimming=false},dt,ground=null){
   const rig=root.userData,last=rig.lastPosition;
   const traveled=last?Math.hypot(x-last.x,z-last.z):0;rig.lastPosition={x,z};
   if(!last)resetFeet(rig);
@@ -223,7 +223,7 @@ export function animateCharacter(root,{x,z,yaw,time,attackAt,gatherAt=-100,hurtA
     rig.ankles[i].quaternion.identity();
   }
   if(!swimming&&selected==='sword'){rig.shoulders[1].rotation.x-=.35*(1-.3*rig.walkBlend);rig.elbows[1].rotation.x-=.33;}
-  const attackTime=time-attackAt;
+  const attackTime=time-attackAt;let crouch=0,equipped=selected;
   if(attackTime>=0&&attackTime<ATTACK_DURATION){
     const swing=Math.sin(attackTime/ATTACK_DURATION*Math.PI);
     rig.shoulders[1].rotation.x=THREE.MathUtils.lerp(rig.shoulders[1].rotation.x,selected==='axe'?-.4:-.8,swing);
@@ -237,8 +237,11 @@ export function animateCharacter(root,{x,z,yaw,time,attackAt,gatherAt=-100,hurtA
   }
   else if(!swimming&&time>=gatherAt&&time-gatherAt<GATHER_DURATION){
     const reach=Math.sin((time-gatherAt)/GATHER_DURATION*Math.PI);
-    rig.body.rotation.x=THREE.MathUtils.lerp(rig.body.rotation.x,.16,reach);
-    rig.shoulders[1].rotation.x=THREE.MathUtils.lerp(rig.shoulders[1].rotation.x,selected==='sword'?-.8:-.55,reach);
+    const low=['berry','fiber','shell'].includes(gatherKind),shell=gatherKind==='shell';
+    equipped=low?'hand':(gatherTool??selected);
+    crouch=low?(shell?.5:.35)*reach:0;
+    rig.body.rotation.x=THREE.MathUtils.lerp(rig.body.rotation.x,low?(shell?.6:.44):.16,reach);
+    rig.shoulders[1].rotation.x=THREE.MathUtils.lerp(rig.shoulders[1].rotation.x,equipped==='sword'?-.8:-.55,reach);
     rig.elbows[1].rotation.x=THREE.MathUtils.lerp(rig.elbows[1].rotation.x,-.25,reach);
     rig.body.rotation.y=-.14*reach;
     rig.shoulders[0].rotation.x=THREE.MathUtils.lerp(rig.shoulders[0].rotation.x,-.35,reach);
@@ -250,6 +253,6 @@ export function animateCharacter(root,{x,z,yaw,time,attackAt,gatherAt=-100,hurtA
   rig.body.position.z=-.12*hurt;
   rig.body.rotation.x-=.18*hurt;
   rig.body.rotation.z=.08*hurt;
-  if(!swimming)placeFeet(root,ground,time,dt,yaw);
-  rig.axe.visible=selected==='axe';rig.sword.visible=selected==='sword';
+  if(!swimming)placeFeet(root,ground,time,dt,yaw,crouch);
+  rig.axe.visible=equipped==='axe';rig.sword.visible=equipped==='sword';
 }

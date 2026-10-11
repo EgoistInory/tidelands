@@ -1,0 +1,81 @@
+{
+  "kind": "bounded-harvest-evidence-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "pendingBatchEvidence": [],
+  "changedProduction": [
+    "src/character.js",
+    "src/main.js",
+    "src/scene.js"
+  ],
+  "runtimeSha256": {
+    "src/action-timing.js": "43628f890216ab5678e9887598b9cb8176daa68e9a9176c79f64dcf07f344dc5",
+    "src/audio.js": "6eefb0bb75d8e8c61ae8bcbc54e1b5486eb9f850e9a81f9a49b37f414f79b846",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "275fed1af9140412ea440ba6287429d186f59040b11757af0b87cb6cb643b59c",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "d7649b9b6e0d1a3496d8c8b2fa5198e1876076dc2fa3d78ebaebbea77546e4b6",
+    "src/game.js": "6f90fea0c8f32696832f53cccd35373dbae14e5310011a89db350c0ce312d223",
+    "src/ground-surface.js": "fa13f118fd37388219febdadc0c3b1a5a19af799ff115ec429b36f7aee573c04",
+    "src/main.js": "4a25aece95e35ced258b40c1754105428f65c0ca5aabf07d73c92698a9283dc1",
+    "src/meadow.js": "08ffc76769aa829809bd4056bfab376b73ae6c9c67a6478b3729ee7ee636badd",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "0432cd242408149b28e7def74638263ff031bfbf18c180cf13ee2e60a3a5c5f2",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "8bd41e9a7dbbfda4551529929f9ebb123ff3af538eb65d265a1201ed0d2cd452",
+    "src/sky.js": "e83f0d3ce196d44b214a608f09f0763ca33caa10c2d3ed671579b508effa75d4",
+    "src/startup-textures.js": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd",
+    "src/world.js": "f9f0114982deaf69dda65b8ec44e0eba88f1cc228b1859379dc7da24b93456e1"
+  },
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-harvest.zip",
+    "archiveBytes": 8178518,
+    "archiveEntries": 41,
+    "archiveSha256": "84b41994c737e9b827da74f8ba2aad8f84b3128c31de4edc695c33627966c81d"
+  },
+  "historicalArchivesPreserved": 23,
+  "ordinaryFinal": {
+    "coordinates": "位置 X -80.5，Z 93.2；建筑 0；击败 0",
+    "hp": "100",
+    "quest": "荒野的第一把工具",
+    "inventory": {
+      "木材": 0,
+      "石料": 0,
+      "纤维": 2,
+      "浆果": 5,
+      "贝壳": 0,
+      "晶石": 0,
+      "石斧": 0,
+      "晶石剑": 0,
+      "烤浆果": 0
+    }
+  },
+  "evidenceSha256": {
+    "docs/gather-kind-berry-before.jpg": "89d2e865c9f8d1f432c87aef3ba587a4a594dcb9d8727f84c62da3355034f3ae",
+    "docs/gather-kind-crystal-before.jpg": "86caeed79373e123ec9c6ce79ff15caaa33d852922d3d821e997f92ed4ae5c79",
+    "docs/gather-kind-first-tests.txt": "8fe7f5df1a4e278a44aa1205da66cb58842dd653437b7a3408fb216929f444d1",
+    "docs/gather-kind-focused-tests.txt": "c5ab63bc19126e5f8d36de8ccb5b0b64ba321dbfd454218eb5945075cfb404d6",
+    "docs/gather-kind-full-tests.txt": "6e2db780736fdd6574820732360815ea0509a7c529f7522cabef32819f332573",
+    "docs/gather-kind-mobile-before.jpg": "6117cb61fcbf55e08ada518c8c4d94601a633f381782f3d044260dca2c98bc6c",
+    "docs/gather-kind-native-ui.json": "bb402d20f5dbd4b56c55464003b9bcf30b64039bbae08b477545452682b15881",
+    "docs/gather-kind-numerical.json": "1439128ae8ffdfb3e29cf3c794d24a8428b077678cfde725b0ae2da776d9be41",
+    "docs/gather-kind-package-desktop.jpg": "f6101ca0aee79f8b006b81490042f8f990076094adc830dc302592e3efb09d88",
+    "docs/gather-kind-package-mobile.jpg": "82d8e734cdde2ea088f2ee02e7149c2ce4238872274faebaae999980d592081f",
+    "docs/gather-kind-package-tests.txt": "931ee622acb24d582aa0e2442389b49137ce32c07e9412d1969bff1cbd11a562",
+    "docs/gather-kind-package-ui.json": "0a872de7a020eb55757699bee3996222f66bd7384f274714d7206305b9e465a3",
+    "docs/gather-kind-red-tests.txt": "9319c54340711b3cde28b9e6416a8d2b35dc7b9c50c4c44859d84ad3be3d56b8",
+    "docs/gather-kind-shell-before.jpg": "788299cbc6e4677591871613ae0ecb2d3a5bf21c3ffd273ee63a333e19977ca3",
+    "docs/gather-kind-syntax.json": "f477d02b8b6314aeee4c986a81f4009cfe9f38dbbb9db97d289235c313e7e032",
+    "docs/gather-kind-ui.json": "03f3488544c09efccb1e64de57b07f3d29cd67fcd5fca48587d6b954d82aae45"
+  },
+  "limits": [
+    "中心3m距离仍与真实手/工具表面存在间隔，浆果手部低于部分果实；分组姿势只是有限改进，不是IK目标接触或完整自然砍/挖动作。",
+    "掌部安全间隙只对平地数值验证；坡地转向、移动中低身、外套/腿部及全部资源高度组合仍需自然动作和穿插审查。",
+    "角色/晶石/植被/天空和整体材质仍需统一品质批次；旧390攻击说明换行、镜头绕障仍保留。",
+    "音效仅调度未试听；本包无新长期/GPU/显存/真机多指或从零完整主线。旧证据冻结于各自源码SHA。M5五项/完整3A仍未完成。"
+  ]
+}

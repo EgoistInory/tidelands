@@ -5,6 +5,7 @@
 <script type="module">
 // Production UI and modules with separate save keys. Combat and menus seed labelled QA fixtures.
 const mode=new URL(location.href).searchParams.get('mode')||'journey';
+const harvestEquipment=new URL(location.href).searchParams.get('equipment')==='both';
 if(!['journey','m1','m3','m4','render-blocked','blocked','corrupt','imports','performance','audio-blocked','combat','menus','berry','stone','fiber','swim','respawn','context-lost','context-lost-blocked'].includes(mode))throw new Error('Unknown QA mode');
 // Optional observation controls reuse the selected save; they do not seed inventory or input.
 if(mode==='performance'||new URL(location.href).searchParams.get('sample')==='frames'){
@@ -50,11 +51,12 @@ try{
   doc.body.dataset.testHarness='true';
   for(const script of doc.querySelectorAll('script'))script.remove();
   const setup=doc.createElement('script');setup.type='module';
-  setup.textContent=`import {boot} from './src/main.js';
+  setup.textContent=`import * as THREE from './vendor/three.module.min.js';
+    import {boot} from './src/main.js';
     import {WorldView} from './src/scene.js';
     import {freshGame,restore} from './src/game.js';
     import {GameAudio} from './src/audio.js';
-    const mode=${JSON.stringify(mode)},key='tidelands-qa-'+mode;
+    const mode=${JSON.stringify(mode)},harvestEquipment=${JSON.stringify(harvestEquipment)},key='tidelands-qa-'+mode;
     if(mode==='performance'||mode==='swim'){
       const result=document.createElement('output');result.id='audio-diagnostic';
       result.style.cssText='position:fixed;top:0;left:320px;font:10px monospace;background:#fff;color:#111;z-index:100;pointer-events:none';document.body.append(result);
@@ -87,6 +89,8 @@ try{
     if(mode==='stone'){initialState=freshGame();initialState.player.x=-67;initialState.player.z=115.5;initialState.enemies.forEach(e=>e.hp=0);}
     if(mode==='fiber'){initialState=freshGame();initialState.player.x=-82;initialState.player.z=93.2;initialState.enemies.forEach(e=>e.hp=0);}
     if(mode==='swim'){initialState=freshGame();initialState.player.x=-70;initialState.player.z=138;initialState.enemies.forEach(e=>e.hp=0);}
+    // Explicit harvesting fixture: both tools owned, sword selected before input.
+    if(harvestEquipment&&['berry','stone','fiber'].includes(mode)){initialState.inventory.axe=initialState.inventory.sword=1;initialState.selected='sword';}
     boot({storageKey:key,initialState});
     if(mode==='imports'||mode==='context-lost'||mode==='context-lost-blocked'){
       const nativeClick=HTMLAnchorElement.prototype.click;
@@ -114,7 +118,7 @@ try{
       const nativeDraw=WorldView.prototype.draw,nativeEffect=GameAudio.prototype.effect,round=n=>Math.round(n*10000)/10000;
       WorldView.prototype.draw=function(state,...args){
         latestState=state;latestView=this;nativeDraw.call(this,state,...args);
-        if(trace&&performance.now()-trace.inputAt<550){trace.frames.push({wallMs:round(performance.now()-trace.inputAt),age:round(state.time-this.gatherAt),inventory:{...state.inventory},depleted:{...state.depleted},rootYaw:round(this.player.rotation.y),targetYaw:round(state.player.yaw),shoulder:round(this.player.userData.shoulders[1].rotation.x),torsoYaw:round(this.player.userData.body.rotation.y),freeShoulder:round(this.player.userData.shoulders[0].rotation.x)});timing.textContent=JSON.stringify(trace);}
+        if(trace&&performance.now()-trace.inputAt<550){trace.frames.push({wallMs:round(performance.now()-trace.inputAt),age:round(state.time-this.gatherAt),inventory:{...state.inventory},depleted:{...state.depleted},rootYaw:round(this.player.rotation.y),targetYaw:round(state.player.yaw),gatherKind:this.gatherKind,gatherTool:this.gatherTool,visibleTool:this.player.userData.axe.visible?'axe':this.player.userData.sword.visible?'sword':'hand',pelvisOffset:round(this.player.userData.body.position.y),palmHeight:(()=>{const b=new THREE.Box3().setFromObject(this.player.userData.elbows[1].children[1]),h=this.player.position.y;return [round(b.min.y-h),round(b.max.y-h)];})(),shoulder:round(this.player.userData.shoulders[1].rotation.x),torsoYaw:round(this.player.userData.body.rotation.y),freeShoulder:round(this.player.userData.shoulders[0].rotation.x)});timing.textContent=JSON.stringify(trace);}
       };
       GameAudio.prototype.effect=function(kind,options){const before=this.sources.size;nativeEffect.call(this,kind,options);if(trace&&performance.now()-trace.inputAt<550){trace.effects.push({kind,wallMs:round(performance.now()-trace.inputAt),age:latestState&&latestView?round(latestState.time-latestView.gatherAt):null,scheduled:this.sources.size>before});timing.textContent=JSON.stringify(trace);}};
     }

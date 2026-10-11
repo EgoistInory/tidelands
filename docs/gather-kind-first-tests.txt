@@ -1,0 +1,71 @@
+TAP version 13
+# Subtest: plant and shell gathering lowers the visible bare palm and restores carried equipment
+not ok 1 - plant and shell gathering lowers the visible bare palm and restores carried equipment
+  ---
+  duration_ms: 10.492667
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/gather-kind.test.js:10:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot access 'selected' before initialization"
+  code: 'ERR_TEST_FAILURE'
+  name: 'ReferenceError'
+  stack: |-
+    animateCharacter (file:///Users/huxiaocong/Codex/tidelands/src/character.js:188:103)
+    createCharacter (file:///Users/huxiaocong/Codex/tidelands/src/character.js:88:3)
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/gather-kind.test.js:12:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: a crouching gathering cycle keeps planted soles on flat and sloped ground
+not ok 2 - a crouching gathering cycle keeps planted soles on flat and sloped ground
+  ---
+  duration_ms: 2.887167
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/gather-kind.test.js:24:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot access 'selected' before initialization"
+  code: 'ERR_TEST_FAILURE'
+  name: 'ReferenceError'
+  stack: |-
+    animateCharacter (file:///Users/huxiaocong/Codex/tidelands/src/character.js:188:103)
+    createCharacter (file:///Users/huxiaocong/Codex/tidelands/src/character.js:88:3)
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/gather-kind.test.js:26:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: hard resource gathering uses the supplied harvesting tool while attacks keep the selected weapon
+not ok 3 - hard resource gathering uses the supplied harvesting tool while attacks keep the selected weapon
+  ---
+  duration_ms: 2.290458
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/gather-kind.test.js:48:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot access 'selected' before initialization"
+  code: 'ERR_TEST_FAILURE'
+  name: 'ReferenceError'
+  stack: |-
+    animateCharacter (file:///Users/huxiaocong/Codex/tidelands/src/character.js:188:103)
+    createCharacter (file:///Users/huxiaocong/Codex/tidelands/src/character.js:88:3)
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/gather-kind.test.js:49:14)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 0
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 69.357166
