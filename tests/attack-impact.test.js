@@ -6,7 +6,7 @@ import {createCharacter,animateCharacter} from '../src/character.js';
 function encounter(){
   const state=game.freshGame();state.enemies.forEach(e=>e.hp=0);
   const enemy=state.enemies[0];Object.assign(enemy,{type:'crab',hp:40,x:state.player.x+2.5,z:state.player.z});
-  state.inventory.sword=1;state.selected='sword';return {state,enemy};
+  state.player.yaw=Math.PI/2;state.inventory.sword=1;state.selected='sword';return {state,enemy};
 }
 
 test('deferred attack commits damage at the rendered swing peak and only once',()=>{
@@ -18,7 +18,7 @@ test('deferred attack commits damage at the rendered swing peak and only once',(
   assert.equal(game.resolveAttack(state,started.pending),null);assert.equal(enemy.hp,40);
   state.time=at+.225;
   animateCharacter(rig,{...state.player,time:state.time,attackAt:at,selected:'sword'},0,()=>0);
-  assert.ok(Math.abs(rig.userData.shoulders[1].rotation.x+2.1)<1e-8);
+  assert.ok(rig.userData.shoulders[1].rotation.x<-.5,'impact reaches forward');
   const result=game.resolveAttack(state,started.pending);
   assert.deepEqual(result.hits,[enemy.id]);assert.equal(enemy.hp,2);
   assert.equal(game.resolveAttack(state,started.pending),null);assert.equal(enemy.hp,2);

@@ -1,0 +1,56 @@
+TAP version 13
+# Subtest: a strike cannot damage a target behind, to the side or beyond the blade reach
+ok 1 - a strike cannot damage a target behind, to the side or beyond the blade reach
+  ---
+  duration_ms: 6.192833
+  type: 'test'
+  ...
+# Subtest: weapon reach preserves close combat while a longer sword reaches farther
+ok 2 - weapon reach preserves close combat while a longer sword reaches farther
+  ---
+  duration_ms: 5.673167
+  type: 'test'
+  ...
+# Subtest: impact keeps starting weapon reach but checks current position and facing
+ok 3 - impact keeps starting weapon reach but checks current position and facing
+  ---
+  duration_ms: 1.049875
+  type: 'test'
+  ...
+# Subtest: turning toward the target makes side combat possible without changing cooldown or rewards
+ok 4 - turning toward the target makes side combat possible without changing cooldown or rewards
+  ---
+  duration_ms: 0.655458
+  type: 'test'
+  ...
+# Subtest: each equipped weapon blade passes through low target height at impact and stays above flat ground
+not ok 5 - each equipped weapon blade passes through low target height at impact and stays above flat ground
+  ---
+  duration_ms: 18.368083
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/attack-contact.test.js:45:1'
+  failureType: 'testCodeFailure'
+  error: 'axe must reach the crab shell: 1.2408931028305825..1.553417960361635'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/attack-contact.test.js:57:32)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 4
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 83.280375

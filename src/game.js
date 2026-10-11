@@ -68,19 +68,26 @@ function applyGather(state,object,item,count){
   return `${ITEMS[item]} +${count}`;
 }
 export function eat(state){const key=state.inventory.meal?'meal':state.inventory.berry?'berry':null;if(!key)return '没有食物，去采些浆果吧。';if(state.player.hp>=100)return '现在生命是满的，先留着食物吧。';state.inventory[key]--;state.player.hp=Math.min(100,state.player.hp+(key==='meal'?45:18));return `吃掉${ITEMS[key]}，恢复生命。`;}
+export function attackRange(state){return state.selected==='sword'&&state.inventory.sword?3.2:state.selected==='axe'&&state.inventory.axe?2.6:2.4;}
 export function attack(state,{defer=false}={}){
   if(state.time-state.attackAt<.6)return {message:'',hits:[]};
   state.attackAt=state.time;
-  const damage=state.selected==='sword'&&state.inventory.sword?38:state.selected==='axe'&&state.inventory.axe?23:12;
-  if(defer)return {message:'',hits:[],pending:{state,at:state.time,damage,resolved:false}};
-  return applyAttackDamage(state,damage);
+  const weapon=state.selected==='sword'&&state.inventory.sword?'sword':state.selected==='axe'&&state.inventory.axe?'axe':'hand';
+  const damage={hand:12,axe:23,sword:38}[weapon],range=attackRange(state);
+  if(defer)return {message:'',hits:[],pending:{state,at:state.time,damage,range,resolved:false}};
+  return applyAttackDamage(state,damage,range);
 }
 export function resolveAttack(state,pending){
   if(!pending||pending.state!==state||pending.resolved||pending.at!==state.attackAt||state.time<pending.at+ATTACK_IMPACT||state.time>=pending.at+ATTACK_DURATION)return null;
-  pending.resolved=true;return applyAttackDamage(state,pending.damage);
+  pending.resolved=true;return applyAttackDamage(state,pending.damage,pending.range);
 }
-function applyAttackDamage(state,damage){const hits=[];
-  for(const e of state.enemies){if(e.hp<=0||Math.hypot(e.x-state.player.x,e.z-state.player.z)>5.2)continue;e.hp-=damage;hits.push(e.id);if(e.hp<=0){state.kills++;state.inventory.fiber+=2;state.inventory.berry++;}}
+function applyAttackDamage(state,damage,range){const hits=[],p=state.player,forwardX=Math.sin(p.yaw),forwardZ=Math.cos(p.yaw);
+  for(const e of state.enemies){
+    const dx=e.x-p.x,dz=e.z-p.z,distance=Math.hypot(dx,dz);
+    // Centres include the creature body radius; this is a frontal gameplay arc, not mesh collision.
+    if(e.hp<=0||distance>range||(distance>.01&&(dx*forwardX+dz*forwardZ)/distance<.35))continue;
+    e.hp-=damage;hits.push(e.id);if(e.hp<=0){state.kills++;state.inventory.fiber+=2;state.inventory.berry++;}
+  }
   return {message:hits.length?`命中 ${hits.length} 个目标${state.kills?' · 累计击败 '+state.kills:''}`:'',hits};
 }
 export function movePlayer(state,objects,dx,dz,dt,running=false){

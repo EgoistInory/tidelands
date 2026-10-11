@@ -1,0 +1,37 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>攻击方向与刃部高度隔离验收</title>
+<style>html,body{margin:0;height:100%;background:#192723;color:#eee7d4;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:6px;display:flex;gap:5px;flex-wrap:wrap}button{font:inherit;padding:6px}output{height:100px;overflow:auto;overflow-wrap:anywhere;font:11px monospace;padding:5px}canvas{flex:1;min-height:0;width:100%;display:block}</style>
+<nav>明确隔离fixture · 敌人不追击 · 无存档<button data-case="front">近距正前</button><button data-case="back">近距身后</button><button data-case="far">远距正前</button><button id="weapon">换石斧/晶石剑</button><button id="type">换蟹/野猪</button><button id="impact">定格判定帧</button><button id="swing">播放完整挥击</button></nav><output id="result">准备本地场景…</output><canvas aria-label="攻击判定的生产场景"></canvas>
+<script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain} from '../src/world.js';
+import {freshGame,attack,resolveAttack,attackRange} from '../src/game.js';
+import {ATTACK_IMPACT,ATTACK_DURATION} from '../src/action-timing.js';
+const view=new WorldView(document.querySelector('canvas'),createWorld()),state=freshGame(),out=document.querySelector('output');
+Object.assign(state.player,{x:-70,z:102,yaw:0});Object.assign(state.inventory,{axe:1,sword:1});
+let selected='sword',type='crab',scenario='front',pending=null,playing=false,last=null,trace=[],result=null;
+function reset(){playing=false;pending=null;trace=[];result=null;state.selected=selected;state.time=240;state.attackAt=-100;state.kills=0;
+  const z=scenario==='back'?-2.3:scenario==='far'?5.1:2.3;
+  state.enemies=[{id:'contact-qa',type,hp:type==='crab'?40:70,x:state.player.x,z:state.player.z+z,attackAt:-100}];
+  view.player.userData.lastPosition=null;view.player.rotation.y=0;view.sync(state);draw();record();
+}
+function draw(dt=1/60){const p=state.player,h=Math.max(terrain(p.x,p.z),0);view.draw(state,null,null,false,dt);
+  view.camera.position.set(p.x+7,h+5,p.z-8);view.camera.lookAt(p.x,h+1.2,p.z+1);view.sky.position.copy(view.camera.position);view.renderer.render(view.scene,view.camera);
+}
+function snapshot(){view.player.updateMatrixWorld(true);const blade=view.player.getObjectByName(selected==='axe'?'axe-head':'sword-blade'),box=new THREE.Box3().setFromObject(blade),h=Math.max(terrain(state.player.x,state.player.z),0);
+  return {scenario,selected,type,time:state.time,age:state.time-state.attackAt,enemyHp:state.enemies[0].hp,kills:state.kills,range:attackRange(state),result,bladeBounds:{min:box.min.toArray(),max:box.max.toArray(),relativeHeight:[box.min.y-h,box.max.y-h]},root:view.player.position.toArray(),yaw:view.player.rotation.y,render:{...view.renderer.info.render},memory:{...view.renderer.info.memory},viewport:[innerWidth,innerHeight],glError:view.renderer.getContext().getError(),note:'Actual production scene, fixed review camera and explicit enemy/weapon fixture. AABB is numerical evidence, not triangle collision or a normal encounter.'};
+}
+function record(){out.textContent=JSON.stringify({...snapshot(),frames:trace});}
+function begin(){reset();pending=attack(state,{defer:true}).pending;}
+document.querySelector('#impact').onclick=()=>{begin();state.time=pending.at+ATTACK_IMPACT;result=resolveAttack(state,pending);draw();record();};
+document.querySelector('#swing').onclick=()=>{begin();playing=true;last=null;requestAnimationFrame(frame);};
+function frame(now){if(!playing)return;const dt=last===null?0:Math.min((now-last)/1000,.05);last=now;state.time+=dt;
+  if(pending&&!pending.resolved&&state.time>=pending.at+ATTACK_IMPACT)result=resolveAttack(state,pending);
+  draw(dt);trace.push(snapshot());if(state.time-state.attackAt<ATTACK_DURATION+.1)requestAnimationFrame(frame);else{playing=false;record();}
+}
+for(const b of document.querySelectorAll('[data-case]'))b.onclick=()=>{scenario=b.dataset.case;reset();};
+document.querySelector('#weapon').onclick=()=>{selected=selected==='sword'?'axe':'sword';reset();};
+document.querySelector('#type').onclick=()=>{type=type==='crab'?'boar':'crab';reset();};
+Promise.all([view.groundSurface.userData.ground.loaded,view.groundSurface.userData.ground.sand.loaded,view.rockSurface.userData.rock.loaded]).then(reset);
+window.addEventListener('resize',()=>{view.resize();draw();record();});window.addEventListener('pagehide',()=>view.renderer.dispose());
+</script></html>

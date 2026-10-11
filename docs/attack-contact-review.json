@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-12",
+  "stage": "M5 bounded frontal attack/low blade batch",
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "changes": [
+    "Three production modules: game frontal arc and equipment reach (hand 2.4m, axe 2.6m, sword 3.2m centre-distance); starting weapon reach retained during deferred impact; current position and yaw checked at impact.",
+    "Character axe/sword impact lowered, existing sine timing/stance support/recovery kept; gathering unchanged.",
+    "HUD distance uses shared attackRange; miss explicitly explains facing and distance. No dependency, asset, terrain, save schema or damage/reward changes."
+  ],
+  "validation": {
+    "red": "Four expected failures of five tests before implementation; an extra low crab-shell test failed against the initial low pose.",
+    "focused": 55,
+    "full": 156,
+    "packageTests": 4,
+    "soak": "3600 simulated seconds / 216000 accelerated steps / 60 restores / 16 hits / one kill; not real-time endurance.",
+    "realGL": "7 rendered samples, axe complete 35-frame swing, desktop and 390x844; actual GL error 0, no warn/error.",
+    "productionInput": "Two native Space strikes on explicit sword/crab fixture: 40→2→-36 HP, hit voice age .2313/.2330; 390 attack button on dead target leaves HP/rewards and no hit voice. Scheduling only, no listening.",
+    "ordinaryPackage": "Fresh new game with no imports/fixtures: walked to ordinary boar, six native hand strikes 70→58→46→34→22→10→dead, kills1, HP52, fibre2/berry4; saved/reloaded in 390, empty strike no extra reward, food HP52→70/berry4→3, second reload same position/HP/inventory."
+  },
+  "failuresRetained": [
+    "Initial focused test failed because an old axe fixture put a side target at4m; moved fixture to2.5m and faced it, while dedicated far/side tests protect new behavior.",
+    "Initial .8-radian low axe still had height1.24–1.55m above shell; tightened RED, .55 shoulder gave max1.335, then .4 gave .816–1.227.",
+    "Full-suite intermediate failure and forward-bound assumption are retained; base AABB edge .441 did not meet arbitrary .5m all-edge threshold. Test now checks the blade spans positive forward space (min>.2,max>.8), with all ground/height constraints kept.",
+    "First production-fixture click used outer-frame locator; read AX then selected iframe.",
+    "First ordinary encounter was left running between decisions and respawned before test strikes; raw miss/respawn steps retained, no kill claimed. Second encounter decisions paused the game. Early gather was cancelled after moving outside range and yielded no wood."
+  ],
+  "historicalArchives": {
+    "tidelands-m5-2026-10-08-state-reuse.zip": "9df94bc69a2cf34e5e9d73b38d247e505f492bf6ba297b9ee3cb0721d9860f46",
+    "tidelands-m5-2026-10-11-startup.zip": "4dabc2d8e41c3c1ab46a9051e25661fc00a162cfe40a4d1bb58159f2f303107a",
+    "tidelands-m5-2026-10-08-impact.zip": "2e14043826237e907b7ba7bcfac79655a6eb10ba38e0cb220462cc2b6553a4cd",
+    "tidelands-m5-2026-10-11-campfire.zip": "91748f999337c9f597625c6fced63d86d5b86bd47c58f4c7f44b104f7dab06f3",
+    "tidelands-m5-2026-10-11-camera-easing.zip": "b57af3b327ddf5d72faef3fce3545e708e5b8fd9d11ecd8541f7954e6067489b",
+    "tidelands-m5-2026-10-08-coastal.zip": "4151c774820b95a8a7f2047f8d04e3d3ce7f3fce506f25b6de361bea8190487e",
+    "tidelands-m5-2026-10-11-ecology-audio.zip": "dca399dd5035234091d02e3acf816041467691f6dc1d9f07bfa197c6a4b559c7",
+    "tidelands-m5-2026-10-11-camp-material.zip": "d6146ac310b68ef9908e78ffbb2a4ee05fcb390e79edf4056911863d40dad4dc",
+    "tidelands-local.zip": "61e173d0bf869afda5cfa674a6a675780b9453a8389baabbd33948fb12bc90ac",
+    "tidelands-m5-2026-10-08-understory.zip": "e7d58cce5e5dcd94b0aeb43af859c339225bf53cd0a1f44e00e3a62a75f81728",
+    "tidelands-m5-2026-10-08-geometry.zip": "71c01deb02da8c3bb52b6e964a923889c66a87de16d8175da2336b6d9e2e7951",
+    "tidelands-m5-2026-10-11-sand.zip": "b28d957d119fa0124c33b1dff2674e8f7134ef4e51dbf27260fdb8bd8a0c45a7",
+    "tidelands-m5-2026-10-08-gather.zip": "85652535f557cd969a0187bab03a828df6182250160442fb7ec23192c8df6aab",
+    "tidelands-m5-2026-10-07.zip": "96afc2db4479ff52507b4d9401a4923a63b330f2cda2a852d92d08979b8c47f3",
+    "tidelands-m5-2026-10-12-wind.zip": "6e4bcdd96671d740274cf5f5ac37782b178d385dce6fc763a11b08531264e0a9",
+    "tidelands-m5-2026-10-05.zip": "02c7cc719a0a48608813e46c2d34075e12d280b42ae7c239acaba34f0a870d57",
+    "tidelands-m5-2026-10-12-weather.zip": "aabc0db1d4dac91f19270357fc59b4188d32d93a58b09bc73057c294d519d63a",
+    "tidelands-m5-2026-10-11-coordination.zip": "0d011a80c18e3ab21597555d0b2226183ead97fdf5a3b65441d02827a73bddb6",
+    "tidelands-m5-2026-10-08-environment.zip": "425e9c09c15e972db5f92a47f50d53b9a11e6a68c9c76d712a83c3bb880a2b27",
+    "tidelands-m5-2026-10-11-wetshore.zip": "57ffe88bcc5a4a17065d325cb01815553ee5ecef02bfe79762f876a97f55f889",
+    "tidelands-m5-2026-10-07-actions.zip": "6185ccc117cade308691fe9cafbf816f2ccb924a4b5e593077708de593e4be03"
+  },
+  "imagesViewedSha256": {
+    "docs/attack-contact-sword-desktop.jpg": "ec0a2bf3263074445c98cab5242fec1439dc016bbda3a417f8ab2f98f3938c1b",
+    "docs/attack-contact-axe-desktop.jpg": "60074782961ec1d63a6ac796baf532e7e278b1fa708e9e290c2570f3c50b5d23",
+    "docs/attack-contact-mobile.jpg": "12a7ee46009f314d5eec00e35cfb8963a85c157dd39763799a26622743cfa46a",
+    "docs/attack-package-desktop.jpg": "e259ec3d1d8b67b7c3f40f496476299f1aa7da869b117ca7131e613722c08a97",
+    "docs/attack-package-mobile.jpg": "aaa48288320cf27e121cbf0da5f4f64c99cf12ab35b4074a085d7b8654fa3caa"
+  },
+  "remainingQuality": [
+    "Frontal centre-distance rule is not physical weapon sweep or triangle collision. Axe still uses a short forward jab; adaptive target heights, full swing contact, hand attacks against low crabs and slope/edge combinations remain.",
+    "Gather pose/range remain unchanged and its previous above-target gap remains the next action batch.",
+    "Character face/coat, creature materials, sparse repetitive plants and overall art retain prototype gaps; cannot claim 3A.",
+    "390 miss copy wraps its final character awkwardly; non-blocking copy/layout follow-up.",
+    "No fresh full campaign, long-term/GPU/VRAM/physical-device or audio audition acceptance; previous wind/weather performance hashes remain historical.",
+    "Public origin destination authorization still pending; local only, no push or repeated question."
+  ],
+  "cleanup": {
+    "tabsClosed": [
+      28,
+      29,
+      30
+    ],
+    "viewportReset": true,
+    "extracted53930Stopped": true,
+    "source4190": "127.0.0.1 PID21636 retained"
+  },
+  "quota": {
+    "ordinaryUsageAllowed": true,
+    "startPrimaryPercent": 4,
+    "latestPrimaryPercent": 25,
+    "latestWeeklyPercent": 51,
+    "resetCouponsConsumed": 0,
+    "creditsPurchased": false,
+    "goalHistoricalStatusUnchanged": "usageLimited"
+  },
+  "nextAction": "Gather target height/range and facing, then broader actions/art/audio and representative current campaign/device/GPU quality; keep hourly2048.",
+  "validationSourceSha256": {
+    "tests/attack-contact.html": "5eba8e61558a0a2919f11b495b6b41c399598a7b3ef3ae9f6a122bce3d8c93da",
+    "tests/playthrough.html": "04c9f08d4b517db29eb16dacb6ae47561a82e836256bd3b23e2bbc0fce2619f1",
+    "tests/attack-contact.test.js": "b7de1453ec2e280549962653a519e633a4671fbbb8ec58b07e48f9c78ca3ee47",
+    "tools/attack_contact_review.mjs": "9a8d295703e131776bc3ff963a2c637d7c7e5eef84be2d4a084692db5f092609",
+    "tools/verify_attack_evidence.py": "e4a39a1ef7a3db8c842770cc8b10bf0b0630a17668a8c851ad1319fa2dcc05fb"
+  }
+}

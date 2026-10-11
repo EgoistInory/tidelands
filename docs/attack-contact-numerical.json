@@ -1,0 +1,124 @@
+{
+  "kind": "numerical-attack-contact-review",
+  "scope": "Stationary flat-ground mesh-vertex bounds and isolated rule fixtures. No real creature hull/triangle collision, rendered UI, weapon sweep collision or normal campaign acceptance.",
+  "fullGoalComplete": false,
+  "samples": [
+    {
+      "selected": "axe",
+      "action": "attack",
+      "time": 0.225,
+      "bladeBounds": {
+        "min": [
+          0.17046180963424656,
+          0.816203642434123,
+          0.4408983664953219
+        ],
+        "max": [
+          0.7099966217584024,
+          1.227003841258698,
+          0.8865874095031829
+        ]
+      },
+      "maximumHorizontalAttackReach": 0.9923622352572962
+    },
+    {
+      "selected": "axe",
+      "action": "gather",
+      "time": 0.21,
+      "bladeBounds": {
+        "min": [
+          -0.14003019732033145,
+          2.3071824423680836,
+          1.3368270550414323
+        ],
+        "max": [
+          0.3875898774627938,
+          2.613994636220292,
+          1.832697200572886
+        ]
+      },
+      "maximumHorizontalAttackReach": 0.9923622352572962
+    },
+    {
+      "selected": "sword",
+      "action": "attack",
+      "time": 0.225,
+      "bladeBounds": {
+        "min": [
+          0.45642105685061685,
+          0.8809979607253544,
+          0.6465831265607417
+        ],
+        "max": [
+          1.0475496430612146,
+          1.5921560403987338,
+          1.8632556486680132
+        ]
+      },
+      "maximumHorizontalAttackReach": 2.0207426443117145
+    },
+    {
+      "selected": "sword",
+      "action": "gather",
+      "time": 0.21,
+      "bladeBounds": {
+        "min": [
+          0.013823485649422873,
+          2.2716952128835413,
+          1.2764771683148646
+        ],
+        "max": [
+          0.5079471805574014,
+          2.934360919006409,
+          2.5119812059687288
+        ]
+      },
+      "maximumHorizontalAttackReach": 2.0207426443117145
+    }
+  ],
+  "rules": [
+    {
+      "targetXZ": [
+        0,
+        2.5
+      ],
+      "distance": 2.5,
+      "hits": [
+        "contact-fixture"
+      ],
+      "remainingHp": 2
+    },
+    {
+      "targetXZ": [
+        0,
+        5.1
+      ],
+      "distance": 5.1,
+      "hits": [],
+      "remainingHp": 40
+    },
+    {
+      "targetXZ": [
+        0,
+        -5.1
+      ],
+      "distance": 5.1,
+      "hits": [],
+      "remainingHp": 40
+    },
+    {
+      "targetXZ": [
+        5.1,
+        0
+      ],
+      "distance": 5.1,
+      "hits": [],
+      "remainingHp": 40
+    }
+  ],
+  "sourceSha256": {
+    "src/character.js": "9b4db768780d50e8646017981319283ce69e496765b7a5964339eb034016f580",
+    "src/game.js": "3ccab9d04aa5b4d3ebacb9d175ce1acbc014c1f6c337c57c2dd78406495d05e6",
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60"
+  }
+}

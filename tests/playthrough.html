@@ -73,6 +73,7 @@ try{
     let initialState=null;
     if(mode==='combat'){
       initialState=freshGame();initialState.inventory.sword=1;initialState.selected='sword';
+      initialState.player.yaw=Math.PI/2;
       initialState.enemies.forEach(e=>e.hp=0);
       Object.assign(initialState.enemies[0],{type:'crab',x:initialState.player.x+2.5,z:initialState.player.z,hp:40,attackAt:initialState.time});
     }

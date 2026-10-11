@@ -226,8 +226,8 @@ export function animateCharacter(root,{x,z,yaw,time,attackAt,gatherAt=-100,hurtA
   const attackTime=time-attackAt;
   if(attackTime>=0&&attackTime<ATTACK_DURATION){
     const swing=Math.sin(attackTime/ATTACK_DURATION*Math.PI);
-    rig.shoulders[1].rotation.x=THREE.MathUtils.lerp(rig.shoulders[1].rotation.x,-2.1,swing);
-    rig.elbows[1].rotation.x=THREE.MathUtils.lerp(rig.elbows[1].rotation.x,-.45,swing);
+    rig.shoulders[1].rotation.x=THREE.MathUtils.lerp(rig.shoulders[1].rotation.x,selected==='axe'?-.4:-.8,swing);
+    rig.elbows[1].rotation.x=THREE.MathUtils.lerp(rig.elbows[1].rotation.x,-.25,swing);
     if(!swimming){
       rig.body.rotation.y=.22*swing;
       rig.shoulders[0].rotation.x=THREE.MathUtils.lerp(rig.shoulders[0].rotation.x,-.5,swing);

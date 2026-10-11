@@ -4,7 +4,7 @@ import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_IMPACT} from './action-timing.js';
 import {bindPointerControls} from './pointer-controls.js';
 import {prepareSurfaceTextures} from './startup-textures.js';
 import {createWorld,terrain,LANDMARKS,regionAt,dayCycle} from './world.js';
-import {freshGame,QUESTS,ITEMS,RECIPES,affordable,craft,canBuild,build,interact,resolveGather,eat,attack,resolveAttack,movePlayer,tick,nearest,nearestEnemy,serialize,restore} from './game.js';
+import {freshGame,QUESTS,ITEMS,RECIPES,affordable,craft,canBuild,build,interact,resolveGather,eat,attack,attackRange,resolveAttack,movePlayer,tick,nearest,nearestEnemy,serialize,restore} from './game.js';
 
 const $=id=>document.getElementById(id);
 export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
@@ -49,7 +49,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
       const name=enemy.type==='boar'?'野猪':'海岸蟹',distance=Math.hypot(enemy.x-state.player.x,enemy.z-state.player.z),hp=Math.ceil(enemy.hp),max=Math.max(enemy.type==='boar'?70:40,hp);
       $('enemy-name').textContent=name;$('enemy-hp').max=max;$('enemy-hp').value=hp;$('enemy-hp').setAttribute('aria-label',`${name}生命`);$('enemy-hp-value').textContent=`${hp} / ${max}`;
       $('enemy-status').dataset.danger=distance<2.9?'close':'near';
-      $('enemy-hint').textContent=`${Math.ceil(distance)} 米 · ${distance<2.9?'近身威胁 · 反击或退开':distance<=5.2?'可攻击 · 空格 / 攻击':'正在靠近 · 迎战或拉开距离'}`;
+      $('enemy-hint').textContent=`${Math.ceil(distance)} 米 · ${distance<=attackRange(state)?'面向目标 · 空格 / 攻击':distance<2.9?'近身威胁 · 靠近反击或退开':'正在靠近 · 迎战或拉开距离'}`;
     }
     $('region').textContent=regionAt(state.player.x,state.player.z);$('coordinates').textContent=`位置 X ${state.player.x.toFixed(1)}，Z ${state.player.z.toFixed(1)}；建筑 ${state.buildings.length}；击败 ${state.kills}`;
     const q=QUESTS[state.quest];$('quest-title').textContent=q.title;$('quest-text').textContent=q.text;
@@ -125,7 +125,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     const r=resolveAttack(state,pendingAttack);pendingAttack=null;if(!r)return;
     if(r.hits.length)audio.effect('hit');
     const defeated=r.hits.filter(id=>state.enemies.find(e=>e.id===id)?.hp<=0).length;
-    combatFeedback(r.hits.length?'hit':'miss',defeated?`击败 ${defeated} 个目标`:r.hits.length?`命中 ${r.hits.length} 个目标`:'未命中 · 靠近目标再攻击');
+    combatFeedback(r.hits.length?'hit':'miss',defeated?`击败 ${defeated} 个目标`:r.hits.length?`命中 ${r.hits.length} 个目标`:'未命中 · 面向目标并靠近再攻击');
     view.sync(state);updateUI();
   }
   $('interact-button').onclick=action;$('attack-button').onclick=()=>{if(started&&!paused)strike();};

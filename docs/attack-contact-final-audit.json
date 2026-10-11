@@ -1,0 +1,87 @@
+{
+  "kind": "bounded-attack-evidence-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "pendingBatchEvidence": [],
+  "changedProduction": [
+    "src/character.js",
+    "src/game.js",
+    "src/main.js"
+  ],
+  "runtimeSha256": {
+    "src/action-timing.js": "f05fbec561149dc24eba54199ca6751740adae236552e9e0abe7df944af05b60",
+    "src/audio.js": "6eefb0bb75d8e8c61ae8bcbc54e1b5486eb9f850e9a81f9a49b37f414f79b846",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "9b4db768780d50e8646017981319283ce69e496765b7a5964339eb034016f580",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/foliage.js": "d7649b9b6e0d1a3496d8c8b2fa5198e1876076dc2fa3d78ebaebbea77546e4b6",
+    "src/game.js": "3ccab9d04aa5b4d3ebacb9d175ce1acbc014c1f6c337c57c2dd78406495d05e6",
+    "src/ground-surface.js": "fa13f118fd37388219febdadc0c3b1a5a19af799ff115ec429b36f7aee573c04",
+    "src/main.js": "14d85c4c818c483c80b98fd2a6454899851a9ba9478285eba48eb0ac43cf5436",
+    "src/meadow.js": "08ffc76769aa829809bd4056bfab376b73ae6c9c67a6478b3729ee7ee636badd",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "0432cd242408149b28e7def74638263ff031bfbf18c180cf13ee2e60a3a5c5f2",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "72cc7f539808b6f69d68256d311453f7cd63ad0d1932be5dbe2fa994bc699ddd",
+    "src/sky.js": "e83f0d3ce196d44b214a608f09f0763ca33caa10c2d3ed671579b508effa75d4",
+    "src/startup-textures.js": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd",
+    "src/world.js": "f9f0114982deaf69dda65b8ec44e0eba88f1cc228b1859379dc7da24b93456e1"
+  },
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-attack.zip",
+    "archiveBytes": 8178047,
+    "archiveEntries": 41,
+    "archiveSha256": "0ae077178963c698057b61a0cc05ff30ccd366b3856e873616c8b301e2a79f9f"
+  },
+  "historicalArchivesPreserved": 21,
+  "ordinaryFinal": {
+    "coordinates": "位置 X -92.8，Z 81.8；建筑 0；击败 1",
+    "hp": "70",
+    "inventory": {
+      "木材": 0,
+      "石料": 0,
+      "纤维": 2,
+      "浆果": 3,
+      "贝壳": 0,
+      "晶石": 0,
+      "石斧": 0,
+      "晶石剑": 0,
+      "烤浆果": 0
+    }
+  },
+  "evidenceSha256": {
+    "docs/attack-contact-axe-desktop.jpg": "60074782961ec1d63a6ac796baf532e7e278b1fa708e9e290c2570f3c50b5d23",
+    "docs/attack-contact-axe-initial.jpg": "b33b41b398b7fec54507a5f2bff73fbadca177af8399e709ba969233b1d6b4bd",
+    "docs/attack-contact-focused-tests.txt": "3a56bdc777c485d8ba7faf7f626f49dae5dbf8f4188372464ea23da7dc013b46",
+    "docs/attack-contact-front-initial-tests.txt": "177502033113360c7759e526f047c7311f1b2f45a35bac64950103e15d2e9d3b",
+    "docs/attack-contact-full-tests.txt": "d434137533595d2945b0714f8dedc429b86123b52706d1acc6206ec87efabc86",
+    "docs/attack-contact-initial-focused-tests.txt": "9730c70da539fd22fc06123f9ba662a98488e57826a1f8e89194b4290b4500c5",
+    "docs/attack-contact-initial-full-tests.txt": "5295a4ae4cbd46e2ee8a05cd274b37460ca036935c7b4a67416220db725bb114",
+    "docs/attack-contact-initial-ui.json": "a6282b23858c3d847355a67371f93574f4bcdc4a28fe7c868127dadbd21781da",
+    "docs/attack-contact-mobile.jpg": "12a7ee46009f314d5eec00e35cfb8963a85c157dd39763799a26622743cfa46a",
+    "docs/attack-contact-native-ui.json": "a96a758f062fb6b2a54c4a127da823008e7e292472d6dd353122158a1958e61b",
+    "docs/attack-contact-numerical.json": "e0380bfe511538fc779b92c2301bc0e84549e646acb5a3a559b43011478db64b",
+    "docs/attack-contact-package-tests.txt": "8c65747c728631a818fd78cdef126990ec91530afaabd97338fc7fc135d2803d",
+    "docs/attack-contact-package-ui.json": "f8001ed4ac4d1c8521b4ad646b2c0846b3ab4caef8149f7898cfaeb1fd0cccf7",
+    "docs/attack-contact-red-tests.txt": "550ee717f23681ebf501d134885c50ec11a48ef02c01eb13a822a98add31bf49",
+    "docs/attack-contact-shell-initial-tests.txt": "8ba43ee191a26d5ca9bb06049b44c030a667d519e05d21e5aec90fa26f7f4533",
+    "docs/attack-contact-shell-red-tests.txt": "812a6691c86fb51e1f8362e27fa2e72fdd8f42fdbc871484b18d1804efefb76f",
+    "docs/attack-contact-soak.json": "86866147cef1454fb51de51f64e08fb769665f7a0b4bb5e9fb2c95a6ab1baaa5",
+    "docs/attack-contact-sword-desktop.jpg": "ec0a2bf3263074445c98cab5242fec1439dc016bbda3a417f8ab2f98f3938c1b",
+    "docs/attack-contact-ui.json": "11f04fb44590c9e0dfced0b3efeee41f530b42697ee3d6cde7e36da13e183930",
+    "docs/attack-package-desktop.jpg": "e259ec3d1d8b67b7c3f40f496476299f1aa7da869b117ca7131e613722c08a97",
+    "docs/attack-package-mobile.jpg": "aaa48288320cf27e121cbf0da5f4f64c99cf12ab35b4074a085d7b8654fa3caa"
+  },
+  "limits": [
+    "Frontal centre-distance rule is not physical weapon sweep or triangle collision. Axe still uses a short forward jab; adaptive target heights, full swing contact, hand attacks against low crabs and slope/edge combinations remain.",
+    "Gather pose/range remain unchanged and its previous above-target gap remains the next action batch.",
+    "Character face/coat, creature materials, sparse repetitive plants and overall art retain prototype gaps; cannot claim 3A.",
+    "390 miss copy wraps its final character awkwardly; non-blocking copy/layout follow-up.",
+    "No fresh full campaign, long-term/GPU/VRAM/physical-device or audio audition acceptance; previous wind/weather performance hashes remain historical.",
+    "Public origin destination authorization still pending; local only, no push or repeated question."
+  ]
+}

@@ -1,0 +1,356 @@
+TAP version 13
+# Subtest: a strike cannot damage a target behind, to the side or beyond the blade reach
+ok 1 - a strike cannot damage a target behind, to the side or beyond the blade reach
+  ---
+  duration_ms: 8.060166
+  type: 'test'
+  ...
+# Subtest: weapon reach preserves close combat while a longer sword reaches farther
+ok 2 - weapon reach preserves close combat while a longer sword reaches farther
+  ---
+  duration_ms: 9.888041
+  type: 'test'
+  ...
+# Subtest: impact keeps starting weapon reach but checks current position and facing
+ok 3 - impact keeps starting weapon reach but checks current position and facing
+  ---
+  duration_ms: 1.148458
+  type: 'test'
+  ...
+# Subtest: turning toward the target makes side combat possible without changing cooldown or rewards
+ok 4 - turning toward the target makes side combat possible without changing cooldown or rewards
+  ---
+  duration_ms: 0.731042
+  type: 'test'
+  ...
+# Subtest: each equipped weapon blade passes through low target height at impact and stays above flat ground
+not ok 5 - each equipped weapon blade passes through low target height at impact and stays above flat ground
+  ---
+  duration_ms: 25.765292
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/attack-contact.test.js:45:1'
+  failureType: 'testCodeFailure'
+  error: 'axe impact must extend in front'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/attack-contact.test.js:58:12)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: deferred attack commits damage at the rendered swing peak and only once
+ok 6 - deferred attack commits damage at the rendered swing peak and only once
+  ---
+  duration_ms: 19.410792
+  type: 'test'
+  ...
+# Subtest: wind-up reserves the cooldown and kill rewards are committed once at impact
+ok 7 - wind-up reserves the cooldown and kill rewards are committed once at impact
+  ---
+  duration_ms: 1.759834
+  type: 'test'
+  ...
+# Subtest: impact uses the starting weapon but the current target distance
+ok 8 - impact uses the starting weapon but the current target distance
+  ---
+  duration_ms: 1.0355
+  type: 'test'
+  ...
+# Subtest: cancelled, expired and replaced-save swings cannot damage or survive serialization
+ok 9 - cancelled, expired and replaced-save swings cannot damage or survive serialization
+  ---
+  duration_ms: 6.720625
+  type: 'test'
+  ...
+# Subtest: carried sword stays above flat ground at rest while remaining attached to the right hand
+ok 10 - carried sword stays above flat ground at rest while remaining attached to the right hand
+  ---
+  duration_ms: 27.0525
+  type: 'test'
+  ...
+# Subtest: equipment follows selection and swings on the arm holding the tool
+ok 11 - equipment follows selection and swings on the arm holding the tool
+  ---
+  duration_ms: 4.551083
+  type: 'test'
+  ...
+# Subtest: attack and gathering enter and leave each equipped resting pose without snapping
+ok 12 - attack and gathering enter and leave each equipped resting pose without snapping
+  ---
+  duration_ms: 20.12975
+  type: 'test'
+  ...
+# Subtest: tool actions recruit the torso and free hand then clear their pose when interrupted
+ok 13 - tool actions recruit the torso and free hand then clear their pose when interrupted
+  ---
+  duration_ms: 11.001958
+  type: 'test'
+  ...
+# Subtest: complete tool actions keep both planted boot soles fixed on flat and sloped ground
+ok 14 - complete tool actions keep both planted boot soles fixed on flat and sloped ground
+  ---
+  duration_ms: 50.695625
+  type: 'test'
+  ...
+# Subtest: a moving attack retains grounded contacts during a turn at production speeds
+ok 15 - a moving attack retains grounded contacts during a turn at production speeds
+  ---
+  duration_ms: 37.521667
+  type: 'test'
+  ...
+# Subtest: stride advances with distance, stays still at rest, and keeps joints attached
+ok 16 - stride advances with distance, stays still at rest, and keeps joints attached
+  ---
+  duration_ms: 1.223
+  type: 'test'
+  ...
+# Subtest: gathering reaches forward, yields to attack or swimming, and returns to idle
+ok 17 - gathering reaches forward, yields to attack or swimming, and returns to idle
+  ---
+  duration_ms: 1.018125
+  type: 'test'
+  ...
+# Subtest: hurt recoil decays without moving the root or leaving a swimming lean behind
+ok 18 - hurt recoil decays without moving the root or leaving a swimming lean behind
+  ---
+  duration_ms: 1.329375
+  type: 'test'
+  ...
+# Subtest: steady forward stance keeps soles on a flat floor at several frame rates and production speeds
+ok 19 - steady forward stance keeps soles on a flat floor at several frame rates and production speeds
+  ---
+  duration_ms: 47.469167
+  type: 'test'
+  ...
+# Subtest: feet solve gentle terrain height, settle at rest and reset safely after a teleport
+ok 20 - feet solve gentle terrain height, settle at rest and reset safely after a teleport
+  ---
+  duration_ms: 6.053791
+  type: 'test'
+  ...
+# Subtest: shaped boot soles have a flat contact face and stay above sloped floors during planted turns
+ok 21 - shaped boot soles have a flat contact face and stay above sloped floors during planted turns
+  ---
+  duration_ms: 15.837667
+  type: 'test'
+  ...
+# Subtest: swimming leans forward with the head above the water and returns to planted feet
+ok 22 - swimming leans forward with the head above the water and returns to planted feet
+  ---
+  duration_ms: 1.627542
+  type: 'test'
+  ...
+# Subtest: stopping keeps grounded boots fixed while recovery steps return them to a neutral stance
+ok 23 - stopping keeps grounded boots fixed while recovery steps return them to a neutral stance
+  ---
+  duration_ms: 12.267834
+  type: 'test'
+  ...
+# Subtest: a right-angle turn keeps stance boots fixed during startup and steady travel on a slope
+ok 24 - a right-angle turn keeps stance boots fixed during startup and steady travel on a slope
+  ---
+  duration_ms: 34.680791
+  type: 'test'
+  ...
+# Subtest: reversing releases an overextended foot instead of dragging its planted contact
+ok 25 - reversing releases an overextended foot instead of dragging its planted contact
+  ---
+  duration_ms: 11.317125
+  type: 'test'
+  ...
+# Subtest: teleport and swimming discard old world contacts before returning to a distant shore
+ok 26 - teleport and swimming discard old world contacts before returning to a distant shore
+  ---
+  duration_ms: 1.597833
+  type: 'test'
+  ...
+# Subtest: batched movement never reuses a distant landing when key presses skip a swing
+ok 27 - batched movement never reuses a distant landing when key presses skip a swing
+  ---
+  duration_ms: 13.476125
+  type: 'test'
+  ...
+# Subtest: movement and swimming can interrupt idle recovery without retaining a sideways body offset
+ok 28 - movement and swimming can interrupt idle recovery without retaining a sideways body offset
+  ---
+  duration_ms: 2.246625
+  type: 'test'
+  ...
+# Subtest: turning anticipates overextended contacts and bounds airborne targets without a deep pelvis collapse
+ok 29 - turning anticipates overextended contacts and bounds airborne targets without a deep pelvis collapse
+  ---
+  duration_ms: 69.896667
+  type: 'test'
+  ...
+# Subtest: faster travel lengthens the stride, lowers cadence and includes an airborne interval
+ok 30 - faster travel lengthens the stride, lowers cadence and includes an airborne interval
+  ---
+  duration_ms: 30.607041
+  type: 'test'
+  ...
+# Subtest: stopping holds the last stride shape while the torso and feet recover
+ok 31 - stopping holds the last stride shape while the torso and feet recover
+  ---
+  duration_ms: 3.084834
+  type: 'test'
+  ...
+# Subtest: starter clearing provides enough materials for the first tool without waiting for respawn
+ok 32 - starter clearing provides enough materials for the first tool without waiting for respawn
+  ---
+  duration_ms: 2.2125
+  type: 'test'
+  ...
+# Subtest: day labels and lighting share a continuous repeating day cycle
+ok 33 - day labels and lighting share a continuous repeating day cycle
+  ---
+  duration_ms: 0.526791
+  type: 'test'
+  ...
+# Subtest: deterministic, populated world with safe start and diverse regions
+ok 34 - deterministic, populated world with safe start and diverse regions
+  ---
+  duration_ms: 2.146042
+  type: 'test'
+  ...
+# Subtest: wood, mineral and food nodes deplete and recover without duplicate rewards
+ok 35 - wood, mineral and food nodes deplete and recover without duplicate rewards
+  ---
+  duration_ms: 4.018792
+  type: 'test'
+  ...
+# Subtest: craft consumes exact materials, never negative or repeated unique tools
+ok 36 - craft consumes exact materials, never negative or repeated unique tools
+  ---
+  duration_ms: 1.308375
+  type: 'test'
+  ...
+# Subtest: building location checks, material use, persistence and overlap
+ok 37 - building location checks, material use, persistence and overlap
+  ---
+  duration_ms: 2.262417
+  type: 'test'
+  ...
+# Subtest: movement normalizes diagonal speed, respects trees and bounds
+ok 38 - movement normalizes diagonal speed, respects trees and bounds
+  ---
+  duration_ms: 2.284083
+  type: 'test'
+  ...
+# Subtest: attack cooldown and kill rewards happen only once
+ok 39 - attack cooldown and kill rewards happen only once
+  ---
+  duration_ms: 1.582542
+  type: 'test'
+  ...
+# Subtest: food consumes only when healing; camp heals and defeat preserves inventory
+ok 40 - food consumes only when healing; camp heals and defeat preserves inventory
+  ---
+  duration_ms: 1.6875
+  type: 'test'
+  ...
+# Subtest: entire six-step quest chain reaches conclusion with no repeat reward
+ok 41 - entire six-step quest chain reaches conclusion with no repeat reward
+  ---
+  duration_ms: 1.648291
+  type: 'test'
+  ...
+# Subtest: save roundtrip preserves all world changes
+ok 42 - save roundtrip preserves all world changes
+  ---
+  duration_ms: 3.847666
+  type: 'test'
+  ...
+# Subtest: invalid imports rejected without changing running state
+ok 43 - invalid imports rejected without changing running state
+  ---
+  duration_ms: 14.980625
+  type: 'test'
+  ...
+# Subtest: nearest target respects interaction distance
+ok 44 - nearest target respects interaction distance
+  ---
+  duration_ms: 1.21075
+  type: 'test'
+  ...
+# Subtest: respawn protection survives reload and expires without granting permanent immunity
+ok 45 - respawn protection survives reload and expires without granting permanent immunity
+  ---
+  duration_ms: 3.722708
+  type: 'test'
+  ...
+# Subtest: tick reports lethal damage before healing and clears feedback during protection
+ok 46 - tick reports lethal damage before healing and clears feedback during protection
+  ---
+  duration_ms: 0.913333
+  type: 'test'
+  ...
+# Subtest: damage follows equipped weapon instead of the strongest item in the bag
+ok 47 - damage follows equipped weapon instead of the strongest item in the bag
+  ---
+  duration_ms: 7.642
+  type: 'test'
+  ...
+# Subtest: duplicate building IDs and malformed entries are rejected with actionable messages
+ok 48 - duplicate building IDs and malformed entries are rejected with actionable messages
+  ---
+  duration_ms: 6.570583
+  type: 'test'
+  ...
+# Subtest: enemy cooldowns cannot be frozen by malformed or future saved attack times
+ok 49 - enemy cooldowns cannot be frozen by malformed or future saved attack times
+  ---
+  duration_ms: 7.216833
+  type: 'test'
+  ...
+# Subtest: sprint exhaustion, swimming and rest preserve a recoverable stamina cycle
+ok 50 - sprint exhaustion, swimming and rest preserve a recoverable stamina cycle
+  ---
+  duration_ms: 1.528291
+  type: 'test'
+  ...
+# Subtest: crafted food consumes its ingredients once and never consumes food at full health
+ok 51 - crafted food consumes its ingredients once and never consumes food at full health
+  ---
+  duration_ms: 1.787958
+  type: 'test'
+  ...
+# Subtest: botanist dialogue matches quest prerequisites and a one-time gift
+ok 52 - botanist dialogue matches quest prerequisites and a one-time gift
+  ---
+  duration_ms: 0.62575
+  type: 'test'
+  ...
+# Subtest: all islanders acknowledge the lit lighthouse after completion without repeating gifts or objectives
+ok 53 - all islanders acknowledge the lit lighthouse after completion without repeating gifts or objectives
+  ---
+  duration_ms: 0.712375
+  type: 'test'
+  ...
+# Subtest: combat target ignores corpses and distant enemies without changing the save
+ok 54 - combat target ignores corpses and distant enemies without changing the save
+  ---
+  duration_ms: 1.02925
+  type: 'test'
+  ...
+# Subtest: combat target reflects actual weapon damage, cooldown and defeat
+ok 55 - combat target reflects actual weapon damage, cooldown and defeat
+  ---
+  duration_ms: 1.289333
+  type: 'test'
+  ...
+1..55
+# tests 55
+# suites 0
+# pass 54
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 466.978708

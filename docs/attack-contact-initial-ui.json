@@ -1,0 +1,225 @@
+{
+  "scope": "Intermediate pose; superseded by the final axe height adjustment.",
+  "samples": [
+    {
+      "scenario": "front",
+      "selected": "sword",
+      "type": "crab",
+      "time": 240.225,
+      "age": 0.22499999999999432,
+      "enemyHp": 2,
+      "kills": 0,
+      "range": 3.2,
+      "result": {
+        "message": "命中 1 个目标",
+        "hits": [
+          "contact-qa"
+        ]
+      },
+      "bladeBounds": {
+        "min": [
+          -69.54357894314938,
+          9.949559018615487,
+          102.64658312656073
+        ],
+        "max": [
+          -68.95245035693878,
+          10.660717098288867,
+          103.863255648668
+        ],
+        "relativeHeight": [
+          0.8832674462268901,
+          1.5944255259002702
+        ]
+      },
+      "root": [
+        -70,
+        9.066291572388597,
+        102
+      ],
+      "yaw": 0,
+      "render": {
+        "frame": 6,
+        "calls": 92,
+        "triangles": 867336,
+        "points": 0,
+        "lines": 0
+      },
+      "memory": {
+        "geometries": 161,
+        "textures": 17
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "note": "Actual production scene, fixed review camera and explicit enemy/weapon fixture. AABB is numerical evidence, not triangle collision or a normal encounter.",
+      "frames": []
+    },
+    {
+      "scenario": "back",
+      "selected": "sword",
+      "type": "crab",
+      "time": 240.225,
+      "age": 0.22499999999999432,
+      "enemyHp": 40,
+      "kills": 0,
+      "range": 3.2,
+      "result": {
+        "message": "",
+        "hits": []
+      },
+      "bladeBounds": {
+        "min": [
+          -69.54357894314938,
+          9.949559018615487,
+          102.64658312656073
+        ],
+        "max": [
+          -68.95245035693878,
+          10.660717098288867,
+          103.863255648668
+        ],
+        "relativeHeight": [
+          0.8832674462268901,
+          1.5944255259002702
+        ]
+      },
+      "root": [
+        -70,
+        9.066291572388597,
+        102
+      ],
+      "yaw": 0,
+      "render": {
+        "frame": 12,
+        "calls": 92,
+        "triangles": 867336,
+        "points": 0,
+        "lines": 0
+      },
+      "memory": {
+        "geometries": 161,
+        "textures": 17
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "note": "Actual production scene, fixed review camera and explicit enemy/weapon fixture. AABB is numerical evidence, not triangle collision or a normal encounter.",
+      "frames": []
+    },
+    {
+      "scenario": "far",
+      "selected": "sword",
+      "type": "crab",
+      "time": 240.225,
+      "age": 0.22499999999999432,
+      "enemyHp": 40,
+      "kills": 0,
+      "range": 3.2,
+      "result": {
+        "message": "",
+        "hits": []
+      },
+      "bladeBounds": {
+        "min": [
+          -69.54357894314938,
+          9.949559018615487,
+          102.64658312656073
+        ],
+        "max": [
+          -68.95245035693878,
+          10.660717098288867,
+          103.863255648668
+        ],
+        "relativeHeight": [
+          0.8832674462268901,
+          1.5944255259002702
+        ]
+      },
+      "root": [
+        -70,
+        9.066291572388597,
+        102
+      ],
+      "yaw": 0,
+      "render": {
+        "frame": 18,
+        "calls": 92,
+        "triangles": 867336,
+        "points": 0,
+        "lines": 0
+      },
+      "memory": {
+        "geometries": 161,
+        "textures": 17
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "note": "Actual production scene, fixed review camera and explicit enemy/weapon fixture. AABB is numerical evidence, not triangle collision or a normal encounter.",
+      "frames": []
+    },
+    {
+      "scenario": "front",
+      "selected": "axe",
+      "type": "crab",
+      "time": 240.225,
+      "age": 0.22499999999999432,
+      "enemyHp": 17,
+      "kills": 0,
+      "range": 2.6,
+      "result": {
+        "message": "命中 1 个目标",
+        "hits": [
+          "contact-qa"
+        ]
+      },
+      "bladeBounds": {
+        "min": [
+          -69.75845188148925,
+          10.309454160720714,
+          102.7587880578009
+        ],
+        "max": [
+          -69.2017720026698,
+          10.621979018251768,
+          103.28114784156485
+        ],
+        "relativeHeight": [
+          1.2431625883321171,
+          1.555687445863171
+        ]
+      },
+      "root": [
+        -70,
+        9.066291572388597,
+        102
+      ],
+      "yaw": 0,
+      "render": {
+        "frame": 26,
+        "calls": 92,
+        "triangles": 867348,
+        "points": 0,
+        "lines": 0
+      },
+      "memory": {
+        "geometries": 164,
+        "textures": 17
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "note": "Actual production scene, fixed review camera and explicit enemy/weapon fixture. AABB is numerical evidence, not triangle collision or a normal encounter.",
+      "frames": []
+    }
+  ]
+}

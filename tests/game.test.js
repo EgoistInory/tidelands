@@ -50,7 +50,7 @@ test('movement normalizes diagonal speed, respects trees and bounds',()=>{
   const t=world.objects.find(o=>o.type==='tree');a.player.x=t.x-2;a.player.z=t.z;movePlayer(a,[t],1,0,.2);assert.ok(a.player.x<t.x-1.4);
 });
 test('attack cooldown and kill rewards happen only once',()=>{
-  const s=freshGame(),e=s.enemies[0];e.x=s.player.x+1;e.z=s.player.z;e.hp=10;
+  const s=freshGame(),e=s.enemies[0];s.player.yaw=Math.PI/2;e.x=s.player.x+1;e.z=s.player.z;e.hp=10;
   const r=attack(s);assert.ok(r.hits.includes(e.id));assert.equal(s.kills,1);assert.equal(s.inventory.fiber,2);
   attack(s);assert.equal(s.kills,1);s.time+=1;attack(s);assert.equal(s.kills,1);
 });
@@ -195,7 +195,7 @@ test('combat target ignores corpses and distant enemies without changing the sav
 
 test('combat target reflects actual weapon damage, cooldown and defeat',()=>{
   const s=freshGame();s.enemies.forEach(e=>e.hp=0);
-  const e=s.enemies[0];Object.assign(e,{x:s.player.x+4,z:s.player.z,hp:70});
+  const e=s.enemies[0];s.player.yaw=Math.PI/2;Object.assign(e,{x:s.player.x+2.5,z:s.player.z,hp:70});
   s.inventory.axe=1;s.selected='axe';
   attack(s);assert.equal(nearestEnemy(s).hp,47);
   attack(s);assert.equal(nearestEnemy(s).hp,47);
