@@ -1,0 +1,95 @@
+{
+  "kind": "bounded-build-save-count-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "changedProduction": [
+    "src/game.js"
+  ],
+  "archive": "tidelands-m5-2026-10-12-buildlimit.zip",
+  "archiveBytes": 8182020,
+  "archiveSha256": "00e70db6ee6aafeafe0ac49d6b1700ad2ee5a57e2b6f6c27aa1bbf73583f9c93",
+  "historicalArchivesPreserved": 28,
+  "actualUiBoundary": {
+    "before": 499,
+    "after": 500,
+    "nextRejected": true,
+    "fixtureImported": true,
+    "normalPlaythrough": false
+  },
+  "formalSaveUnchangedSha256": "f767902f43847fc33de4d52d7231cc67ba9196332e6593e75311dd4767154561",
+  "ordinaryFinal": {
+    "coordinates": "位置 X -73.0，Z 93.5；建筑 0；击败 0",
+    "hp": "100",
+    "inventory": [
+      {
+        "count": "2",
+        "name": "木材"
+      },
+      {
+        "count": "0",
+        "name": "石料"
+      },
+      {
+        "count": "0",
+        "name": "纤维"
+      },
+      {
+        "count": "3",
+        "name": "浆果"
+      },
+      {
+        "count": "0",
+        "name": "贝壳"
+      },
+      {
+        "count": "0",
+        "name": "晶石"
+      },
+      {
+        "count": "0",
+        "name": "石斧"
+      },
+      {
+        "count": "0",
+        "name": "晶石剑"
+      },
+      {
+        "count": "0",
+        "name": "烤浆果"
+      }
+    ],
+    "quest": "归航的灯火",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "evidenceSha256": {
+    "docs/build-limit-desktop-rejected.jpg": "4f9c7e0d3be2647d3e75283570e1293de1429baa492c84b1a5701ff4982d73fe",
+    "docs/build-limit-fixtures.json": "5dafec50cb55f72240367b839409a4b10a18b88c59f37377cc6a53a1c356e04e",
+    "docs/build-limit-focused-tests.txt": "b956cc7340eca02bdba56ad73532e95abf4faeb112dde1a2789730a948e4d7ce",
+    "docs/build-limit-formal-save-after.json": "d1c2a8b7c39ef45379a061a77e1cdafe66404c12d8758283af6e4d264939c0a2",
+    "docs/build-limit-formal-save-before.json": "d1c2a8b7c39ef45379a061a77e1cdafe66404c12d8758283af6e4d264939c0a2",
+    "docs/build-limit-full-tests.txt": "27aa80ba3bb898ed85e1b8fa25a999ace94444ec2da9e0859473cbb71874190a",
+    "docs/build-limit-mobile-rejected.jpg": "88ea08867af2ab980ae4f2e4c777a7a1320386c720862d2e45812a54b07a4709",
+    "docs/build-limit-package-desktop.jpg": "7993ca8bc80871dcf0f019818c93f35694638ecbed83de16394583ee553caa18",
+    "docs/build-limit-package-mobile.jpg": "58c4120b852c9de71397e3b18a2b1ab0cd81fa72fc217584005ec635a9dd7db3",
+    "docs/build-limit-package-tests.txt": "f260b934ce0649c1c72a6ab8b524db4b0a81ee2f281f8b71ea110c500614eb17",
+    "docs/build-limit-package-ui.json": "ac298f6946a613e2e7a787cd3d543f05b9c9e4e09479e833f011233fda6593ca",
+    "docs/build-limit-red-tests.txt": "0f051425d9efebd11f41acc2589c672f5684309d74ed2594f82f18ce58ed4af0",
+    "docs/build-limit-review.md": "e84b4aa2407326a7235d4d6befa686e9ee9fb381e4579bc78a8451307ad16283",
+    "docs/build-limit-ui.json": "e6fd98cf6901ba38c0b79579c82c1e19d32cd73b555a35f6e04b791702015f80",
+    "tests/fixtures/build-limit-499.json": "c7d5e83d82c35c0672619f34e272be115335379662531c88188035983df44f15",
+    "tests/fixtures/build-limit-500.json": "b91d3ec2ef98cb71f2b53624d9f45b4f95c03e237213b2f53e838ec365536576",
+    "tests/fixtures/build-limit-501-invalid.json": "698851366e5d74b285f198348db1bf1633d9208c93b52f29ab38f241b8eb68eb",
+    "tests/build-limit.html": "2f7c0b732b348cfaef88ea2764f8a7ce34e564c39aad4307211c2cdda7444ab1",
+    "tests/build-limit.test.js": "0f0829996d2ffd7acbe87b02f8c9c9a0b617ebc117fd2678190ae76f42dbe4a7",
+    "tools/build_limit_fixtures.mjs": "796a94ed8ce848b3cd7dad213f4f357f0ea2815210b41ea63ff413c1b4a1bc9a"
+  },
+  "limits": [
+    "Count fixtures are explicit stress states, not ordinary resource gathering or full campaign.",
+    "No 500-building performance, device, GPU or final visual/audio quality gate.",
+    "Earlier guardless QA isolation claims remain withdrawn; only this run has before/after equality.",
+    "Full current campaign, unified character/environment art, natural contact and audition remain.",
+    "Public origin destination remains awaiting the existing human choice; no fetch/push."
+  ]
+}

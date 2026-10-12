@@ -10,13 +10,13 @@ python3 serve.py
 
 打开 http://127.0.0.1:4190 。需要支持 WebGL 2 的现代浏览器。不需要安装 npm 依赖，Three.js 0.180.0 在 vendor 中附带，许可证随包保留。ES 模块需要本地 HTTP 服务，不能双击 HTML 代替。
 
-最近已打包的本地品质检查点在 `dist/tidelands-m5-2026-10-12-campclear.zip`，营地占地装饰草丛会避让，载入其他建筑位置时恢复。173测试、42文件校验、桌面/390实景、明确材料档的真实建造扣料与独立包普通采木保存恢复通过，见 `docs/camp-clearance-final-audit.json`。27旧包保持；脸部/轮廓、植被与坡地营地衔接、自然接触、实际试听、当前完整流程/长期/GPU/真机品质仍待，M5与完整3A未完成。
+最近已打包的本地品质检查点在 `dist/tidelands-m5-2026-10-12-buildlimit.zip`，包含营地草丛避让，并使建造与存档共同遵守500座上限。176测试、42文件校验、明确计数材料档的真实499→500建造/拒绝501/390恢复及独立包普通采木保存恢复通过，见 `docs/build-limit-final-audit.json`。28旧包保持；脸部/轮廓、植被与坡地营地衔接、自然接触、实际试听、当前完整流程/长期/GPU/真机品质仍待，M5与完整3A未完成。
 
 验收更正：两个隔离页漏防自动启动标记导致双实例，现已修正；旧极早存档隔离诊断撤回，原独立包直接页面记录保留。修正后单实例极早存档重验通过、正式存档在这轮前后SHA不变；此前历史影响无法追溯，详见 `docs/harness-isolation-correction.json`。
 
 当前开发源码还增加低岸线起伏海浪层，与既有风声叠加、渐入内陆，并共享暂停/静音。112项测试、八组真实离线PCM和实际营地/海域接线验证通过，见 `docs/coastal-audio-review.json`；尚未试听或做完整声场品质验收。这批声音修改已进入coastal及最新state-reuse包，本地开发服务运行相同生产源码。
 
-用 `python3 tools/verify_local.py --name tidelands-m5-2026-10-12-campclear` 校验并单独解压当前包。后续构建使用 `python3 tools/package_local.py --name tidelands-m5-next --stage 'M5 quality batch checkpoint'`，每次改源码换新包名；已有包只允许相同来源的完全一致重建，拒绝覆盖历史检查点。打包工具回归运行 `python3 tools/test_local_delivery.py`。四岛正常旅程和实际战斗已有十分钟有效帧调度/JS堆记录，见 `docs/cross-island-review.json`：含间歇输入与较多静止时间，不能代替持续运动或GPU品质验收；该采样在两处岛民对话修正之前完成，绑定自己的源码SHA，不能作为当前包完全一致的长时证明。
+用 `python3 tools/verify_local.py --name tidelands-m5-2026-10-12-buildlimit` 校验并单独解压当前包。后续构建使用 `python3 tools/package_local.py --name tidelands-m5-next --stage 'M5 quality batch checkpoint'`，每次改源码换新包名；已有包只允许相同来源的完全一致重建，拒绝覆盖历史检查点。打包工具回归运行 `python3 tools/test_local_delivery.py`。四岛正常旅程和实际战斗已有十分钟有效帧调度/JS堆记录，见 `docs/cross-island-review.json`：含间歇输入与较多静止时间，不能代替持续运动或GPU品质验收；该采样在两处岛民对话修正之前完成，绑定自己的源码SHA，不能作为当前包完全一致的长时证明。
 
 2026-10-07后续源码增加岛民近距交谈朝向和待机手臂轻动，以及攻击/采集从装备待机姿态进入和恢复的衔接；101项测试和桌面/窄屏12秒隔离循环通过，见 `docs/islander-response-review.json` 与 `docs/action-transition-review.json`。攻击结果统一由短时战斗提示显示，消除空挥时残留旧命中提示；桌面键盘/390窄屏攻击键已实测。上述早期包不含这些后续修改，完整动作品质与声音同步仍待验收。
 

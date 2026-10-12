@@ -2,6 +2,7 @@ import {SPAWN,LANDMARKS,terrain,regionAt,createWorld} from './world.js';
 import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_DURATION,GATHER_IMPACT,GATHER_RANGE} from './action-timing.js';
 export const ITEMS={wood:'木材',stone:'石料',fiber:'纤维',berry:'浆果',shell:'贝壳',crystal:'晶石',axe:'石斧',sword:'晶石剑',meal:'烤浆果'};
 const RESOURCE_ITEMS={tree:'wood',stone:'stone',fiber:'fiber',berry:'berry',shell:'shell',crystal:'crystal'};
+const MAX_BUILDINGS=500;
 export const RECIPES={axe:{name:'石斧',cost:{wood:4,stone:3},description:'提高采集数量和攻击伤害'},meal:{name:'烤浆果',cost:{berry:3},description:'恢复 45 点生命'},sword:{name:'晶石剑',cost:{wood:4,stone:4,crystal:3},description:'伤害提升至 38'},campfire:{name:'营火',cost:{wood:5,stone:3},description:'靠近按 E 休息，恢复生命'},tent:{name:'帐篷',cost:{wood:8,fiber:5},description:'设置重生点，恢复体力'},workbench:{name:'工作台',cost:{wood:8,stone:5},description:'解锁晶石剑制作'}};
 export const QUESTS=[
   {title:'归航的灯火',text:'与海边的守灯人交谈',hint:'靠近人物，按 E 交谈'},
@@ -24,6 +25,7 @@ export function craft(state,key){const recipe=RECIPES[key];if(!recipe)return '�
 }
 export function canBuild(state,objects,key,x,z){
   if(!['campfire','tent','workbench'].includes(key))return '未知建筑。';
+  if(state.buildings.length>=MAX_BUILDINGS)return `建筑已达 ${MAX_BUILDINGS} 座上限，无法继续建造。`;
   if(!affordable(state,RECIPES[key].cost))return '建筑材料不足。';
   if(Math.hypot(x-state.player.x,z-state.player.z)>9)return '请靠近建造位置。';
   const h=terrain(x,z);if(h<1)return '不能建在水里或潮间带。';
@@ -116,7 +118,7 @@ export function restore(raw){const v=JSON.parse(raw);const fresh=freshGame();
   if(v?.version!==1||!v.player||!['x','z','hp','stamina','yaw'].every(k=>Number.isFinite(v.player[k]))||Math.abs(v.player.x)>390||Math.abs(v.player.z)>390||v.player.hp<0||v.player.hp>100||v.player.stamina<0||v.player.stamina>100)throw new Error('存档角色数据无效');
   if(!Number.isInteger(v.quest)||v.quest<0||v.quest>6||!Number.isFinite(v.time)||v.time<0||!Number.isSafeInteger(v.kills)||v.kills<0)throw new Error('存档进度无效');
   if(!v.inventory||Object.keys(ITEMS).some(k=>!Number.isSafeInteger(v.inventory[k])||v.inventory[k]<0))throw new Error('存档背包数据无效');
-  if(!Array.isArray(v.buildings)||v.buildings.length>500||v.buildings.some(b=>!b||!['campfire','tent','workbench'].includes(b.type)||!Number.isFinite(b.x)||!Number.isFinite(b.z)||Math.abs(b.x)>390||Math.abs(b.z)>390||typeof b.id!=='string'||b.id.length===0||b.id.length>128)||new Set(v.buildings.map(b=>b.id)).size!==v.buildings.length)throw new Error('存档建筑数据无效');
+  if(!Array.isArray(v.buildings)||v.buildings.length>MAX_BUILDINGS||v.buildings.some(b=>!b||!['campfire','tent','workbench'].includes(b.type)||!Number.isFinite(b.x)||!Number.isFinite(b.z)||Math.abs(b.x)>390||Math.abs(b.z)>390||typeof b.id!=='string'||b.id.length===0||b.id.length>128)||new Set(v.buildings.map(b=>b.id)).size!==v.buildings.length)throw new Error('存档建筑数据无效');
   if(!v.depleted||Array.isArray(v.depleted)||typeof v.depleted!=='object'||Object.entries(v.depleted).some(([k,n])=>!/^resource-\d+$|^starter-\d+$/.test(k)||!Number.isFinite(n)||n<0))throw new Error('存档资源数据无效');
   if(!Array.isArray(v.enemies)||v.enemies.length!==fresh.enemies.length||v.enemies.some((e,i)=>!e||e.id!==fresh.enemies[i].id||!['crab','boar'].includes(e.type)||!['x','z','hp'].every(k=>Number.isFinite(e[k]))||Math.abs(e.x)>390||Math.abs(e.z)>390||e.hp>100))throw new Error('存档生物数据无效');
   if(!v.respawn||!Number.isFinite(v.respawn.x)||!Number.isFinite(v.respawn.z)||Math.abs(v.respawn.x)>390||Math.abs(v.respawn.z)>390)throw new Error('存档营地数据无效');

@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: the last allowed building consumes materials once and survives restore
+ok 1 - the last allowed building consumes materials once and survives restore
+  ---
+  duration_ms: 7.850625
+  type: 'test'
+  ...
+# Subtest: full camps reject every building without spending, quest or respawn changes
+ok 2 - full camps reject every building without spending, quest or respawn changes
+  ---
+  duration_ms: 8.532917
+  type: 'test'
+  ...
+# Subtest: oversized imported saves remain rejected and cannot grow through direct build
+ok 3 - oversized imported saves remain rejected and cannot grow through direct build
+  ---
+  duration_ms: 3.163375
+  type: 'test'
+  ...
+# Subtest: starter clearing provides enough materials for the first tool without waiting for respawn
+ok 4 - starter clearing provides enough materials for the first tool without waiting for respawn
+  ---
+  duration_ms: 3.027166
+  type: 'test'
+  ...
+# Subtest: day labels and lighting share a continuous repeating day cycle
+ok 5 - day labels and lighting share a continuous repeating day cycle
+  ---
+  duration_ms: 0.61275
+  type: 'test'
+  ...
+# Subtest: deterministic, populated world with safe start and diverse regions
+ok 6 - deterministic, populated world with safe start and diverse regions
+  ---
+  duration_ms: 2.561667
+  type: 'test'
+  ...
+# Subtest: wood, mineral and food nodes deplete and recover without duplicate rewards
+ok 7 - wood, mineral and food nodes deplete and recover without duplicate rewards
+  ---
+  duration_ms: 2.8945
+  type: 'test'
+  ...
+# Subtest: craft consumes exact materials, never negative or repeated unique tools
+ok 8 - craft consumes exact materials, never negative or repeated unique tools
+  ---
+  duration_ms: 1.107958
+  type: 'test'
+  ...
+# Subtest: building location checks, material use, persistence and overlap
+ok 9 - building location checks, material use, persistence and overlap
+  ---
+  duration_ms: 1.59
+  type: 'test'
+  ...
+# Subtest: movement normalizes diagonal speed, respects trees and bounds
+ok 10 - movement normalizes diagonal speed, respects trees and bounds
+  ---
+  duration_ms: 1.865125
+  type: 'test'
+  ...
+# Subtest: attack cooldown and kill rewards happen only once
+ok 11 - attack cooldown and kill rewards happen only once
+  ---
+  duration_ms: 1.132458
+  type: 'test'
+  ...
+# Subtest: food consumes only when healing; camp heals and defeat preserves inventory
+ok 12 - food consumes only when healing; camp heals and defeat preserves inventory
+  ---
+  duration_ms: 1.4415
+  type: 'test'
+  ...
+# Subtest: entire six-step quest chain reaches conclusion with no repeat reward
+ok 13 - entire six-step quest chain reaches conclusion with no repeat reward
+  ---
+  duration_ms: 1.432541
+  type: 'test'
+  ...
+# Subtest: save roundtrip preserves all world changes
+ok 14 - save roundtrip preserves all world changes
+  ---
+  duration_ms: 3.057541
+  type: 'test'
+  ...
+# Subtest: invalid imports rejected without changing running state
+ok 15 - invalid imports rejected without changing running state
+  ---
+  duration_ms: 11.566708
+  type: 'test'
+  ...
+# Subtest: nearest target respects interaction distance
+ok 16 - nearest target respects interaction distance
+  ---
+  duration_ms: 0.982209
+  type: 'test'
+  ...
+# Subtest: respawn protection survives reload and expires without granting permanent immunity
+ok 17 - respawn protection survives reload and expires without granting permanent immunity
+  ---
+  duration_ms: 3.352583
+  type: 'test'
+  ...
+# Subtest: tick reports lethal damage before healing and clears feedback during protection
+ok 18 - tick reports lethal damage before healing and clears feedback during protection
+  ---
+  duration_ms: 0.8555
+  type: 'test'
+  ...
+# Subtest: damage follows equipped weapon instead of the strongest item in the bag
+ok 19 - damage follows equipped weapon instead of the strongest item in the bag
+  ---
+  duration_ms: 7.180625
+  type: 'test'
+  ...
+# Subtest: duplicate building IDs and malformed entries are rejected with actionable messages
+ok 20 - duplicate building IDs and malformed entries are rejected with actionable messages
+  ---
+  duration_ms: 4.922167
+  type: 'test'
+  ...
+# Subtest: enemy cooldowns cannot be frozen by malformed or future saved attack times
+ok 21 - enemy cooldowns cannot be frozen by malformed or future saved attack times
+  ---
+  duration_ms: 6.864375
+  type: 'test'
+  ...
+# Subtest: sprint exhaustion, swimming and rest preserve a recoverable stamina cycle
+ok 22 - sprint exhaustion, swimming and rest preserve a recoverable stamina cycle
+  ---
+  duration_ms: 1.499084
+  type: 'test'
+  ...
+# Subtest: crafted food consumes its ingredients once and never consumes food at full health
+ok 23 - crafted food consumes its ingredients once and never consumes food at full health
+  ---
+  duration_ms: 1.377709
+  type: 'test'
+  ...
+# Subtest: botanist dialogue matches quest prerequisites and a one-time gift
+ok 24 - botanist dialogue matches quest prerequisites and a one-time gift
+  ---
+  duration_ms: 0.665834
+  type: 'test'
+  ...
+# Subtest: all islanders acknowledge the lit lighthouse after completion without repeating gifts or objectives
+ok 25 - all islanders acknowledge the lit lighthouse after completion without repeating gifts or objectives
+  ---
+  duration_ms: 0.843125
+  type: 'test'
+  ...
+# Subtest: combat target ignores corpses and distant enemies without changing the save
+ok 26 - combat target ignores corpses and distant enemies without changing the save
+  ---
+  duration_ms: 0.796542
+  type: 'test'
+  ...
+# Subtest: combat target reflects actual weapon damage, cooldown and defeat
+ok 27 - combat target reflects actual weapon damage, cooldown and defeat
+  ---
+  duration_ms: 1.879167
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 115.034584

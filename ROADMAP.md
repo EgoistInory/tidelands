@@ -266,3 +266,6 @@ resume包8179826bytes/42项/41文件，SHA53d0adffee951882f6b20a3b3120737dad1674
 - 真实材料fixture通过UI建帐篷/精确扣8木5纤维、59隐实例/390恢复；另有独立campclear包普通采木+2/保存390恢复。8181842bytes/43项/42文件/SHA2ba8070bbb08153c6d94afc56a836fd5ef3fab6042f9189ae9eae7d1aa5b87ac，27旧包保持，见docs/camp-clearance-final-audit.json。
 - 发现并修正early-resume/本轮建造clone双boot，旧极早存档隔离诊断撤回而原独立包直接页面证据保留；修正轮单实例与time<121恢复重验，正式原始存档SHA前后不变，快照前历史影响不能追溯，不回滚。更正见docs/harness-isolation-correction.json。M1–M4既有playthrough标记存在，不能把问题页的旧结论继续用于最终审计。
 - 脸部/人物轮廓/植被方向、坡面营地接地/自然表面接触、实际试听、当前完整主路径和长期设备GPU品质继续待；十秒双draw与Node计时不替代品质门槛，M5五项/3A不勾选，2048继续。建造数量与500存档上限另需边界核对。
+
+
+2026-10-12建造/存档边界：仅game.js共用500上限，27 focused/176全量/4打包通过；真实499材料计数fixture建500/拒绝501/390保存恢复，独立包普通采木+2与390恢复通过，见docs/build-limit-final-audit.json。新buildlimit ZIP SHA00e70db6ee6aafeafe0ac49d6b1700ad2ee5a57e2b6f6c27aa1bbf73583f9c93、42运行文件/28旧包保持。正式key本轮前后SHA不变，不撤销此前旧early隔离更正。有限功能修复，M5五项/3A仍未完成；接整体角色脸部/轮廓、植被/自然接触/试听及当前全流程/长期设备GPU品质，不将500 fixture当普通玩法或性能证据。2048保留，无券/付费/推送，原公开origin去向仍待原问题答复。
