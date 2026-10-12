@@ -1,0 +1,101 @@
+{
+  "kind": "bounded-resume-evidence-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "pendingBatchEvidence": [],
+  "changedProduction": [
+    "src/main.js"
+  ],
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-resume.zip",
+    "archiveBytes": 8179826,
+    "archiveEntries": 42,
+    "archiveSha256": "53d0adffee951882f6b20a3b3120737dad1674ea9a353a73d8dca8b27b8f1b4a"
+  },
+  "runtimeSha256": {
+    "src/action-timing.js": "43628f890216ab5678e9887598b9cb8176daa68e9a9176c79f64dcf07f344dc5",
+    "src/audio.js": "6eefb0bb75d8e8c61ae8bcbc54e1b5486eb9f850e9a81f9a49b37f414f79b846",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "275fed1af9140412ea440ba6287429d186f59040b11757af0b87cb6cb643b59c",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/crystal.js": "1f4191077b07bc551dd5bb59397f404e0d0cde15c7aa2f30bc27e1f098d4c3cb",
+    "src/foliage.js": "d7649b9b6e0d1a3496d8c8b2fa5198e1876076dc2fa3d78ebaebbea77546e4b6",
+    "src/game.js": "6f90fea0c8f32696832f53cccd35373dbae14e5310011a89db350c0ce312d223",
+    "src/ground-surface.js": "fa13f118fd37388219febdadc0c3b1a5a19af799ff115ec429b36f7aee573c04",
+    "src/main.js": "06ed33246edbeedaf0a8007aad1b74142e2712848fd8102484b2534558cfe422",
+    "src/meadow.js": "08ffc76769aa829809bd4056bfab376b73ae6c9c67a6478b3729ee7ee636badd",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "0432cd242408149b28e7def74638263ff031bfbf18c180cf13ee2e60a3a5c5f2",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "2539f10edd6412aae407f36af385bf4255d1d65ea78a4e8e17ecb8b68c483040",
+    "src/sky.js": "e83f0d3ce196d44b214a608f09f0763ca33caa10c2d3ed671579b508effa75d4",
+    "src/startup-textures.js": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd",
+    "src/world.js": "f9f0114982deaf69dda65b8ec44e0eba88f1cc228b1859379dc7da24b93456e1"
+  },
+  "historicalArchivesPreserved": 25,
+  "savedTime": 120.03819999999999,
+  "restoredTime": 120.22840000004766,
+  "ordinaryFinal": {
+    "coordinates": "位置 X -70.0，Z 102.0；建筑 0；击败 0",
+    "hp": "100",
+    "inventory": [
+      {
+        "count": "0",
+        "name": "木材"
+      },
+      {
+        "count": "0",
+        "name": "石料"
+      },
+      {
+        "count": "0",
+        "name": "纤维"
+      },
+      {
+        "count": "3",
+        "name": "浆果"
+      },
+      {
+        "count": "0",
+        "name": "贝壳"
+      },
+      {
+        "count": "0",
+        "name": "晶石"
+      },
+      {
+        "count": "0",
+        "name": "石斧"
+      },
+      {
+        "count": "0",
+        "name": "晶石剑"
+      },
+      {
+        "count": "0",
+        "name": "烤浆果"
+      }
+    ],
+    "quest": "归航的灯火",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "evidenceSha256": {
+    "docs/early-resume-continue.jpg": "e140d3926b6095f9dac6b7948d6ff519be89984083dd59c436c1caf525ee0e5b",
+    "docs/early-resume-corrupt.json": "a7c188a96e9521d664c8b3ad98ac08323faf7808179799f36a773accbb003438",
+    "docs/early-resume-full-tests.txt": "6648655eb56f40d28207a2d049bcf4f29c912d15c15c27c0afc4335d8d22dd46",
+    "docs/early-resume-green.json": "c97fa7a79cf19e2ea3c30df5f7d2cf0d32a2c2d55ca186727b8292f27fb68dd2",
+    "docs/early-resume-package-ui.json": "59bab3d4a95d97b0b9137bdaeeae6250b19821a5a939eca0f7415e3cd58171fa",
+    "docs/early-resume-package.jpg": "0a5b6453250b5ecf495461de4a586891cd247884da9571009370bd2884c03ceb",
+    "docs/early-resume-red.json": "1db2173a190e5da0448492b6e0b12c1f06040e90bc02c712826a0c9b36c862dd",
+    "docs/early-resume-saved-blob.json": "cc514eae25fdf94129f62ae951dd2f416c83fe9ac346d6d705573fba06d35e16"
+  },
+  "limits": [
+    "该局部问题修复不代表M5完成；整体角色/环境美术、自然动作/实际接触、声音试听及当前代表性完整主路径/长期GPU/真机品质仍待。",
+    "此次普通包只覆盖起点极早保存和继续，不替代完整主线或原有版本所有存储/导入异常的重新验收。"
+  ]
+}

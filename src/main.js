@@ -8,8 +8,8 @@ import {freshGame,QUESTS,ITEMS,RECIPES,affordable,craft,canBuild,build,interact,
 
 const $=id=>document.getElementById(id);
 export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
-  let state=initialState||freshGame(),storage=null,loadError='';
-  try{storage=localStorage;const saved=storage.getItem(storageKey);if(saved&&!initialState)state=restore(saved);}catch(error){loadError='旧存档未能读取；你可以开始新旅程或导入备份。';}
+  let state=initialState||freshGame(),storage=null,loadError='',hasSavedGame=false;
+  try{storage=localStorage;const saved=storage.getItem(storageKey);if(saved&&!initialState){state=restore(saved);hasSavedGame=true;}}catch(error){loadError='旧存档未能读取；你可以开始新旅程或导入备份。';}
   let audioEnabled=true;try{audioEnabled=storage?.getItem(storageKey+'-audio')!=='off';}catch{}
   const audio=new GameAudio({enabled:audioEnabled});let audioUnavailable=false;
   async function unlockAudio(){try{await audio.unlock();}catch{audioUnavailable=true;audio.setEnabled(false);toast('声音暂不可用；游戏可以继续。');}}
@@ -175,7 +175,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     // Finish the initial scene/shader draw while the start screen is still visible.
     view.draw(state,near,null,false,1/60);prepared=true;
     $('load-status').textContent=loadError||(surfaces.some(s=>s.state.status==='fallback')?'部分地表使用备用素材 · 可以继续':'群岛已就绪 · 无需联网');
-    $('start-button').textContent=state.time>121||state.quest?'继续旅程':'开始旅程';$('start-button').disabled=false;
+    $('start-button').textContent=hasSavedGame||state.time>121||state.quest?'继续旅程':'开始旅程';$('start-button').disabled=false;
   }).catch(error=>{
     if(error.name==='AbortError'||renderLost)return;
     console.error(error);$('load-status').textContent='画面准备失败。请刷新页面重试。';

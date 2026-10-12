@@ -1,0 +1,19 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>早期保存与继续入口隔离验收</title>
+<style>html,body,iframe{margin:0;width:100%;height:100%;border:0}output{position:fixed;bottom:0;left:0;max-height:90px;overflow:auto;background:white;color:#111;font:11px monospace;z-index:100;pointer-events:none}</style>
+<iframe title="正常新游戏与真实保存入口"></iframe><output id="result">独立存档键；不预填状态。导出仅检查真实Blob，不写Downloads。</output>
+<script type="module">
+const run=new URL(location.href).searchParams.get('run')||'fixed';
+if(!/^[a-z0-9-]{1,64}$/.test(run))throw new Error('Invalid QA run key');
+const response=await fetch('../index.html');if(!response.ok)throw new Error('index HTTP '+response.status);
+const doc=new DOMParser().parseFromString(await response.text(),'text/html'),base=doc.createElement('base');base.href=new URL('../',location.href).href;doc.head.prepend(base);
+for(const script of doc.querySelectorAll('script'))script.remove();
+const setup=doc.createElement('script');setup.type='module';setup.textContent=`
+  import {boot} from './src/main.js';import {restore} from './src/game.js';
+  const nativeClick=HTMLAnchorElement.prototype.click;
+  HTMLAnchorElement.prototype.click=function(){
+    if(!this.download||!this.href.startsWith('blob:'))return nativeClick.call(this);
+    fetch(this.href).then(r=>r.text()).then(raw=>{const saved=restore(raw);parent.document.querySelector('#result').textContent=JSON.stringify({time:saved.time,quest:saved.quest,position:[saved.player.x,saved.player.z],inventory:saved.inventory,bytes:new TextEncoder().encode(raw).length,scope:'Actual production export Blob; no download file or state injection.'});});
+  };
+  boot({storageKey:${JSON.stringify('tidelands-qa-early-resume-'+run)}});
+`;doc.body.append(setup);document.querySelector('iframe').srcdoc='<!doctype html>'+doc.documentElement.outerHTML;
+</script></html>
