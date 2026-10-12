@@ -1,0 +1,137 @@
+{
+  "archive": "tidelands-m5-2026-10-12-lighthouse.zip",
+  "archiveSha256": "cbe314d99fb07eb8c7f92b8ac28c6e6cbdb22372add11c9532524b7142e30a19",
+  "url": "http://127.0.0.1:53940/",
+  "normalFreshGame": true,
+  "continuedStarterWoodAcceptance": true,
+  "importedFixture": false,
+  "runtimeStateEdited": false,
+  "fullCampaignComplete": false,
+  "steps": [
+    {
+      "label": "keeper",
+      "ui": {
+        "coordinates": "位置 X -63.6，Z 92.1；建筑 0；击败 0",
+        "hp": "100",
+        "inventory": [],
+        "objective": "采集 4 木材和 3 石料，制作石斧",
+        "quest": "荒野的第一把工具",
+        "region": "潮汐海岸",
+        "viewport": [
+          1280,
+          720
+        ]
+      },
+      "screenshot": "/Users/huxiaocong/Codex/tidelands/docs/current-journey-keeper.jpg"
+    },
+    {
+      "label": "first-stone",
+      "ui": {
+        "coordinates": "位置 X -80.0，Z 100.6；建筑 0；击败 0",
+        "hp": "100",
+        "inventory": [],
+        "objective": "采集 4 木材和 3 石料，制作石斧",
+        "quest": "荒野的第一把工具",
+        "region": "潮汐海岸",
+        "viewport": [
+          1280,
+          720
+        ]
+      },
+      "screenshot": "/Users/huxiaocong/Codex/tidelands/docs/current-journey-first-stone.jpg"
+    },
+    {
+      "label": "second-tree",
+      "ui": {
+        "coordinates": "位置 X -90.5，Z 102.1；建筑 0；击败 0",
+        "hp": "100",
+        "inventory": [],
+        "objective": "采集 4 木材和 3 石料，制作石斧",
+        "quest": "荒野的第一把工具",
+        "region": "潮汐海岸",
+        "viewport": [
+          1280,
+          720
+        ]
+      },
+      "screenshot": "/Users/huxiaocong/Codex/tidelands/docs/current-journey-second-tree.jpg"
+    },
+    {
+      "label": "checkpoint-bag",
+      "ui": {
+        "coordinates": "位置 X -64.6，Z 96.2；建筑 0；击败 0",
+        "hp": "100",
+        "inventory": [
+          {
+            "count": "4",
+            "name": "木材"
+          },
+          {
+            "count": "2",
+            "name": "石料"
+          },
+          {
+            "count": "0",
+            "name": "纤维"
+          },
+          {
+            "count": "3",
+            "name": "浆果"
+          },
+          {
+            "count": "0",
+            "name": "贝壳"
+          },
+          {
+            "count": "0",
+            "name": "晶石"
+          },
+          {
+            "count": "0",
+            "name": "石斧"
+          },
+          {
+            "count": "0",
+            "name": "晶石剑"
+          },
+          {
+            "count": "0",
+            "name": "烤浆果"
+          }
+        ],
+        "objective": "采集 4 木材和 3 石料，制作石斧",
+        "quest": "荒野的第一把工具",
+        "region": "潮汐海岸",
+        "viewport": [
+          1280,
+          720
+        ]
+      },
+      "screenshot": "/Users/huxiaocong/Codex/tidelands/docs/current-journey-checkpoint-bag.jpg"
+    }
+  ],
+  "saveMenuConfirmed": true,
+  "consoleReadThisTurn": false,
+  "closedOwnedTab": "73",
+  "packageServerStopped": true,
+  "packageServerExitCode": 130,
+  "previousGoalTurnClassification": "progress",
+  "currentVersionMainPathComplete": false,
+  "navigationObservation": "Near starter scenery, automatic camera avoidance changed bearing North→West→South during held movement. main.relative uses view.yaw every frame while scene.draw adopts safeYaw. This is a likely control-basis coupling; intra-hold angle trace/regression still required, no production fix yet.",
+  "remaining": [
+    "Second stone, axe/campfire, cross-island quests/combat, real lighthouse repair and save restoration",
+    "Diagnose held-input basis versus automatic camera turn before further full main-path quality claim"
+  ],
+  "sourceSha256": {
+    "src/main.js": "06ed33246edbeedaf0a8007aad1b74142e2712848fd8102484b2534558cfe422",
+    "src/scene.js": "4a3398c509d45b06ddd7941837d58f7a2a928b58ddee3de4b3a0ee45d8b1603f",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c"
+  },
+  "imagesViewedSha256": {
+    "docs/current-journey-checkpoint-bag.jpg": "d15ff8c619032dc35b0553a38f1be5f3a9255a9177e156263b6da3d9128b57d7",
+    "docs/current-journey-control-drift.jpg": "63bd1bfc49e387e3ae5e11981d51bcdd27a9955996498a8b6b9f6d26faebba2f",
+    "docs/current-journey-first-stone.jpg": "5fd4a185bca2d85f7fd797bca7eb08800121c2e3f9b02fd1a0728c1b93d68ec1",
+    "docs/current-journey-keeper.jpg": "40d8b9761455c8c840c67c99c71bca04ad5e5512430e703b4dec32418d4ecbef",
+    "docs/current-journey-second-tree.jpg": "964414b2a4592c5b6cd1ec33b2645c7ad5ffd3cd3d7ff0e199512a2f3ba6ed16"
+  }
+}
