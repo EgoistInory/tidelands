@@ -1,0 +1,70 @@
+{
+  "kind": "production-adult-character-numerical-review",
+  "passed": true,
+  "baselineArchive": "tidelands-m5-2026-10-12-buildlimit.zip",
+  "baselineArchiveSha256": "00e70db6ee6aafeafe0ac49d6b1700ad2ee5a57e2b6f6c27aa1bbf73583f9c93",
+  "baselineCharacterSha256": "ba4ec4953469ab564dfc7d1d9234684afe83df31834b3c7b4a2e7c94a4087228",
+  "models": [
+    {
+      "color": 12084790,
+      "poses": 279,
+      "boneToolBootTransformsAndGeometryUnchanged": true
+    },
+    {
+      "color": 6259062,
+      "poses": 279,
+      "boneToolBootTransformsAndGeometryUnchanged": true
+    }
+  ],
+  "before": {
+    "meshes": 43,
+    "triangles": 5808,
+    "uniqueGeometries": 43,
+    "geometryArrayBytes": 154912,
+    "height": 2.9890529601429106,
+    "bounds": {
+      "min": [
+        -0.595000005364418,
+        4.17232504101861e-9,
+        -0.5877641350030899
+      ],
+      "max": [
+        0.595000005364418,
+        2.9890529643152357,
+        0.38499999046325684
+      ]
+    }
+  },
+  "after": {
+    "meshes": 55,
+    "triangles": 15401,
+    "uniqueGeometries": 55,
+    "geometryArrayBytes": 393506,
+    "height": 2.902252943978131,
+    "bounds": {
+      "min": [
+        -0.588925010561943,
+        4.17232504101861e-9,
+        -0.5877641350030899
+      ],
+      "max": [
+        0.588925010561943,
+        2.902252948150456,
+        0.38499999046325684
+      ]
+    }
+  },
+  "headHeight": 0.48000000417232513,
+  "headHeightsPerVisibleHeight": 6.046360247397396,
+  "fullGoalComplete": false,
+  "limits": [
+    "Bone/tool/boot equality at 279 declared gathering poses per color does not prove all moving contacts or visual naturalness.",
+    "Head/body geometry changes intentionally; CPU array counts are not GPU memory or device performance."
+  ],
+  "sharedTextureCount": 2,
+  "sourceSha256": {
+    "src/character.js": "135d0e8ed644a55a4581e06510688e129380f492cb9747f31eaf4780f12d966f",
+    "src/character-head.js": "081f3f9a67c3b8c264004b3c9d5352e9a23a75262e20d6e179e48927b9b3d413",
+    "tests/character-art.test.js": "560098ea879ea6ffb8fb72b159ff9db48297777a6baae09f89db12abffdbf9dd"
+  }
+}

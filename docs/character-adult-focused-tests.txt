@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: continuous head surface is closed, outward and finite without degenerate triangles
+ok 1 - continuous head surface is closed, outward and finite without degenerate triangles
+  ---
+  duration_ms: 48.608958
+  type: 'test'
+  ...
+# Subtest: face features and hair follow the head during complete production gestures
+ok 2 - face features and hair follow the head during complete production gestures
+  ---
+  duration_ms: 45.005
+  type: 'test'
+  ...
+# Subtest: carried sword stays above flat ground at rest while remaining attached to the right hand
+ok 3 - carried sword stays above flat ground at rest while remaining attached to the right hand
+  ---
+  duration_ms: 53.932166
+  type: 'test'
+  ...
+# Subtest: equipment follows selection and swings on the arm holding the tool
+ok 4 - equipment follows selection and swings on the arm holding the tool
+  ---
+  duration_ms: 22.079292
+  type: 'test'
+  ...
+# Subtest: attack and gathering enter and leave each equipped resting pose without snapping
+ok 5 - attack and gathering enter and leave each equipped resting pose without snapping
+  ---
+  duration_ms: 47.347583
+  type: 'test'
+  ...
+# Subtest: tool actions recruit the torso and free hand then clear their pose when interrupted
+ok 6 - tool actions recruit the torso and free hand then clear their pose when interrupted
+  ---
+  duration_ms: 25.692209
+  type: 'test'
+  ...
+# Subtest: complete tool actions keep both planted boot soles fixed on flat and sloped ground
+ok 7 - complete tool actions keep both planted boot soles fixed on flat and sloped ground
+  ---
+  duration_ms: 75.1895
+  type: 'test'
+  ...
+# Subtest: a moving attack retains grounded contacts during a turn at production speeds
+ok 8 - a moving attack retains grounded contacts during a turn at production speeds
+  ---
+  duration_ms: 57.679458
+  type: 'test'
+  ...
+# Subtest: stride advances with distance, stays still at rest, and keeps joints attached
+ok 9 - stride advances with distance, stays still at rest, and keeps joints attached
+  ---
+  duration_ms: 3.1105
+  type: 'test'
+  ...
+# Subtest: gathering reaches forward, yields to attack or swimming, and returns to idle
+ok 10 - gathering reaches forward, yields to attack or swimming, and returns to idle
+  ---
+  duration_ms: 3.3985
+  type: 'test'
+  ...
+# Subtest: hurt recoil decays without moving the root or leaving a swimming lean behind
+ok 11 - hurt recoil decays without moving the root or leaving a swimming lean behind
+  ---
+  duration_ms: 3.343208
+  type: 'test'
+  ...
+# Subtest: steady forward stance keeps soles on a flat floor at several frame rates and production speeds
+ok 12 - steady forward stance keeps soles on a flat floor at several frame rates and production speeds
+  ---
+  duration_ms: 68.943917
+  type: 'test'
+  ...
+# Subtest: feet solve gentle terrain height, settle at rest and reset safely after a teleport
+ok 13 - feet solve gentle terrain height, settle at rest and reset safely after a teleport
+  ---
+  duration_ms: 6.613416
+  type: 'test'
+  ...
+# Subtest: shaped boot soles have a flat contact face and stay above sloped floors during planted turns
+ok 14 - shaped boot soles have a flat contact face and stay above sloped floors during planted turns
+  ---
+  duration_ms: 21.489375
+  type: 'test'
+  ...
+# Subtest: swimming leans forward with the head above the water and returns to planted feet
+ok 15 - swimming leans forward with the head above the water and returns to planted feet
+  ---
+  duration_ms: 4.068958
+  type: 'test'
+  ...
+# Subtest: stopping keeps grounded boots fixed while recovery steps return them to a neutral stance
+ok 16 - stopping keeps grounded boots fixed while recovery steps return them to a neutral stance
+  ---
+  duration_ms: 19.825333
+  type: 'test'
+  ...
+# Subtest: a right-angle turn keeps stance boots fixed during startup and steady travel on a slope
+ok 17 - a right-angle turn keeps stance boots fixed during startup and steady travel on a slope
+  ---
+  duration_ms: 56.833584
+  type: 'test'
+  ...
+# Subtest: reversing releases an overextended foot instead of dragging its planted contact
+ok 18 - reversing releases an overextended foot instead of dragging its planted contact
+  ---
+  duration_ms: 19.360417
+  type: 'test'
+  ...
+# Subtest: teleport and swimming discard old world contacts before returning to a distant shore
+ok 19 - teleport and swimming discard old world contacts before returning to a distant shore
+  ---
+  duration_ms: 3.708375
+  type: 'test'
+  ...
+# Subtest: batched movement never reuses a distant landing when key presses skip a swing
+ok 20 - batched movement never reuses a distant landing when key presses skip a swing
+  ---
+  duration_ms: 22.278417
+  type: 'test'
+  ...
+# Subtest: movement and swimming can interrupt idle recovery without retaining a sideways body offset
+ok 21 - movement and swimming can interrupt idle recovery without retaining a sideways body offset
+  ---
+  duration_ms: 4.522375
+  type: 'test'
+  ...
+# Subtest: turning anticipates overextended contacts and bounds airborne targets without a deep pelvis collapse
+ok 22 - turning anticipates overextended contacts and bounds airborne targets without a deep pelvis collapse
+  ---
+  duration_ms: 114.9415
+  type: 'test'
+  ...
+# Subtest: faster travel lengthens the stride, lowers cadence and includes an airborne interval
+ok 23 - faster travel lengthens the stride, lowers cadence and includes an airborne interval
+  ---
+  duration_ms: 53.397833
+  type: 'test'
+  ...
+# Subtest: stopping holds the last stride shape while the torso and feet recover
+ok 24 - stopping holds the last stride shape while the torso and feet recover
+  ---
+  duration_ms: 5.477458
+  type: 'test'
+  ...
+# Subtest: plant and shell gathering lowers the visible bare palm and restores carried equipment
+ok 25 - plant and shell gathering lowers the visible bare palm and restores carried equipment
+  ---
+  duration_ms: 71.112791
+  type: 'test'
+  ...
+# Subtest: a crouching gathering cycle keeps planted soles on flat and sloped ground
+ok 26 - a crouching gathering cycle keeps planted soles on flat and sloped ground
+  ---
+  duration_ms: 42.47125
+  type: 'test'
+  ...
+# Subtest: hard resource gathering uses the supplied harvesting tool while attacks keep the selected weapon
+ok 27 - hard resource gathering uses the supplied harvesting tool while attacks keep the selected weapon
+  ---
+  duration_ms: 5.629417
+  type: 'test'
+  ...
+# Subtest: shared woven textures keep tint and linear relief separate, tile smoothly and use mipmaps
+ok 28 - shared woven textures keep tint and linear relief separate, tile smoothly and use mipmaps
+  ---
+  duration_ms: 16.644375
+  type: 'test'
+  ...
+# Subtest: only named cloth parts share the textile maps across people and shelter
+ok 29 - only named cloth parts share the textile maps across people and shelter
+  ---
+  duration_ms: 58.182959
+  type: 'test'
+  ...
+# Subtest: tent canvas UV measures local panel distances and survives preview disposal
+ok 30 - tent canvas UV measures local panel distances and survives preview disposal
+  ---
+  duration_ms: 3.581208
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 769.078125

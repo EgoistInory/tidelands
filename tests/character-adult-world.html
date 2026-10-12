@@ -1,0 +1,28 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>成年旅人实景与动作定格</title>
+<style>html,body{margin:0;height:100%;background:#192723;color:#eee7d4;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:6px;display:flex;gap:5px;flex-wrap:wrap}select{font:inherit;padding:6px}output{flex:0 0 85px;box-sizing:border-box;overflow:auto;overflow-wrap:anywhere;font:11px monospace;padding:5px}canvas{flex:1;min-height:0;width:100%;display:block}</style>
+<nav>明确营地/角色fixture · 无敌人/存档
+<label>画面<select id="subject"><option value="character">角色全身</option><option value="camp">营地全景</option></select></label>
+<label>光照<select id="time"><option value="240">正午</option><option value="0">午夜</option></select></label>
+<label>姿态<select id="gesture"><option value="idle">站立</option><option value="attack">攻击峰值</option><option value="gather">采植物峰值</option></select></label>
+<label>装备<select id="tool"><option value="hand">徒手</option><option value="axe">石斧</option><option value="sword">晶石剑</option></select></label></nav>
+<output>等待本地贴图…</output><canvas aria-label="生产世界中的角色营地动作定格"></canvas>
+<script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {WorldView} from '../src/scene.js';import {freshGame} from '../src/game.js';import {createWorld,terrain} from '../src/world.js';import {updateGroundCover} from '../src/meadow.js';
+import {ATTACK_DURATION,GATHER_DURATION} from '../src/action-timing.js';
+const state=freshGame(),view=new WorldView(document.querySelector('canvas'),createWorld());
+state.enemies=[];state.buildings=[{id:'adult-tent',type:'tent',x:-74,z:105},{id:'adult-fire',type:'campfire',x:-70,z:107}];view.sync(state);let ready=false;
+function draw(){
+  state.time=Number(document.querySelector('#time').value);state.selected=document.querySelector('#tool').value;
+  const gesture=document.querySelector('#gesture').value,subject=document.querySelector('#subject').value;
+  state.attackAt=gesture==='attack'?state.time-ATTACK_DURATION/2:-100;
+  view.gatherAt=gesture==='gather'?state.time-GATHER_DURATION/2:-100;view.gatherKind=gesture==='gather'?'berry':null;view.gatherTool='hand';
+  view.player.userData.lastPosition=null;view.player.rotation.y=0;view.draw(state,null,null,false,1/60);
+  const x=subject==='camp'?-72:-70,z=subject==='camp'?104:102,y=terrain(x,z)+(subject==='camp'?1.4:1.5),d=subject==='camp'?(innerWidth<600?17:12):(innerWidth<600?8:6);
+  view.camera.position.set(x+Math.sin(.30)*d,y+d*.18,z+Math.cos(.30)*d);view.camera.lookAt(x,y,z);view.sky.position.copy(view.camera.position);updateGroundCover(view.meadow,view.camera.position);view.renderer.render(view.scene,view.camera);
+  document.querySelector('output').textContent=JSON.stringify({ready,subject,gesture,tool:state.selected,time:state.time,viewport:[innerWidth,innerHeight],render:{calls:view.renderer.info.render.calls,triangles:view.renderer.info.render.triangles,geometries:view.renderer.info.memory.geometries,textures:view.renderer.info.memory.textures},glError:view.renderer.getContext().getError(),scope:'Fixed production WorldView and declared camp/material-free fixture; static peak poses, no save or gameplay/performance claim.'});
+}
+for(const input of document.querySelectorAll('select'))input.onchange=draw;
+Promise.all([view.groundSurface.userData.ground.loaded,view.groundSurface.userData.ground.sand.loaded,view.rockSurface.userData.rock.loaded]).then(()=>{ready=true;draw();});
+window.addEventListener('resize',()=>{view.resize();draw();});window.addEventListener('pagehide',()=>view.renderer.dispose());
+</script></html>

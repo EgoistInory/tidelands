@@ -1,0 +1,83 @@
+{
+  "result": {
+    "mode": "actions",
+    "complete": true,
+    "elapsedSeconds": 12,
+    "frames": 3975,
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "equipment": "axe",
+    "gesture": "gather-cycle",
+    "actionPhase": 0.5,
+    "pose": {
+      "torsoYaw": 0,
+      "freeShoulder": [
+        0,
+        0,
+        0
+      ],
+      "freeElbow": -0.15
+    },
+    "toolBounds": {
+      "min": [
+        0.04754041790962216,
+        0.5779091420608283,
+        0.01292487383851186
+      ],
+      "max": [
+        0.521999998986721,
+        1.5909297477210471,
+        0.2624509224479289
+      ]
+    },
+    "slope": 0,
+    "phase": 0,
+    "walkBlend": 0,
+    "strideLengthMeters": 1.6,
+    "stanceFraction": 0.6,
+    "feet": [
+      [
+        -0.22,
+        0.145,
+        0
+      ],
+      [
+        0.22,
+        0.145,
+        0
+      ]
+    ],
+    "contacts": [
+      true,
+      true
+    ],
+    "stats": {
+      "contacts": 1322,
+      "maxStanceDrift": 8.925046918636119e-16,
+      "maxSoleHeightError": 7.494005416219807e-16,
+      "minPelvisOffset": -0.0653859386650362,
+      "bothFeetAirborneFrames": 0,
+      "actionFrames": 720,
+      "maxArmFrameDelta": 0.07627359913490765,
+      "maxPoseFrameDelta": 0.07627359913490765,
+      "maxTorsoYaw": 0.1398135763622295,
+      "maxFreeArmPitch": 0.3495339409055737
+    },
+    "windowViewport": [
+      1280,
+      720
+    ],
+    "viewport": [
+      1280,
+      489
+    ],
+    "canvasBuffer": [
+      1920,
+      733
+    ]
+  },
+  "console": []
+}

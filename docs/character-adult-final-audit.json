@@ -1,0 +1,174 @@
+{
+  "kind": "bounded-adult-character-evidence-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "pendingBatchEvidence": [],
+  "changedProduction": [
+    "src/character.js",
+    "src/character-head.js"
+  ],
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-character.zip",
+    "archiveBytes": 8184877,
+    "archiveEntries": 44,
+    "archiveSha256": "b60e6a8389dfef41c43925fc13c19f12a908d1549bdcb14c62093d7c9ab61a66"
+  },
+  "historicalArchivesPreserved": 29,
+  "geometryBudget": {
+    "before": {
+      "meshes": 43,
+      "triangles": 5808,
+      "uniqueGeometries": 43,
+      "geometryArrayBytes": 154912,
+      "height": 2.9890529601429106,
+      "bounds": {
+        "min": [
+          -0.595000005364418,
+          4.17232504101861e-09,
+          -0.5877641350030899
+        ],
+        "max": [
+          0.595000005364418,
+          2.9890529643152357,
+          0.38499999046325684
+        ]
+      }
+    },
+    "after": {
+      "meshes": 55,
+      "triangles": 15401,
+      "uniqueGeometries": 55,
+      "geometryArrayBytes": 393506,
+      "height": 2.902252943978131,
+      "bounds": {
+        "min": [
+          -0.588925010561943,
+          4.17232504101861e-09,
+          -0.5877641350030899
+        ],
+        "max": [
+          0.588925010561943,
+          2.902252948150456,
+          0.38499999046325684
+        ]
+      }
+    },
+    "headHeightsPerVisibleHeight": 6.046360247397396
+  },
+  "dynamicSamples": [
+    {
+      "device": "desktop",
+      "activeMs": 60016.67,
+      "frames": 3586,
+      "p95Ms": 17.9,
+      "maxMs": 183.3,
+      "over50Ms": 2
+    },
+    {
+      "device": "mobile",
+      "activeMs": 60001.64,
+      "frames": 3602,
+      "p95Ms": 18,
+      "maxMs": 18.8,
+      "over50Ms": 0
+    }
+  ],
+  "ordinaryFinal": {
+    "coordinates": "位置 X -73.0，Z 93.3；建筑 0；击败 0",
+    "height": 844,
+    "hp": "100",
+    "inventory": [
+      {
+        "count": "2",
+        "name": "木材"
+      },
+      {
+        "count": "0",
+        "name": "石料"
+      },
+      {
+        "count": "0",
+        "name": "纤维"
+      },
+      {
+        "count": "3",
+        "name": "浆果"
+      },
+      {
+        "count": "0",
+        "name": "贝壳"
+      },
+      {
+        "count": "0",
+        "name": "晶石"
+      },
+      {
+        "count": "0",
+        "name": "石斧"
+      },
+      {
+        "count": "0",
+        "name": "晶石剑"
+      },
+      {
+        "count": "0",
+        "name": "烤浆果"
+      }
+    ],
+    "quest": "归航的灯火",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "limits": [
+    "Procedural head remains stylized; mitten hands, trousers, pack and repeated NPC face need later cohesive character art.",
+    "Static peaks, declared cycles and equal rig/tool/boot arrays at selected poses do not prove all moving surface contacts, slopes or natural motion.",
+    "Desktop scripted 60-second sample has 2 frame spikes (99.97/183.3 ms); 390 sample has none. No same-version before/after GPU or real-device/long-session performance gate.",
+    "Vegetation, coastal environment, camp-ground transitions, audio audition and current full ordinary campaign quality remain unfinished.",
+    "Prior early-resume isolation assertions remain withdrawn; pre-snapshot formal-save history is unknown. This batch does not read or alter the source-origin formal save."
+  ],
+  "evidenceSha256": {
+    "docs/character-adult-attack-cycle.json": "7db36e90508217fa25338ca28cdd9350dad088677914c42a00301c4ab17f918d",
+    "docs/character-adult-camp-day.jpg": "aaf70f73e4840a58160d5c9795e60c8546c259527e9f74faacdd13ccf8b9c78c",
+    "docs/character-adult-camp-night.jpg": "b437e5d330b404248ecce4729c3c5589413259a8ddae49f79d751c4e833bc516",
+    "docs/character-adult-crown-candidate-back.jpg": "f917e3fda2f10d7ce8d0a49765c3b0f0014e202396a16ff41c55a4a4602db5aa",
+    "docs/character-adult-crown-candidate-face.jpg": "4828ecaedf94a3f80887ba30d8b79fa5b36c0ce4a68fcd4a8ad0cfe8ab2dd1f7",
+    "docs/character-adult-crown-candidate-front.jpg": "db8783d353587c54dc8d2221b0661cff0a1a5aa43f7946227b73852f501d04cd",
+    "docs/character-adult-crown-candidate-mobile.jpg": "61019d457a2b40c14a43b7de59409c7d8818661cfaccc8ee1bbe8466603ec478",
+    "docs/character-adult-crown-candidate-profile.jpg": "8c727e8e7a1217e639655315a07db59d966485d1690ff3c74bfd05b09b8c1907",
+    "docs/character-adult-crown-candidate-side.jpg": "7305608da995235e28cb6551a615b6c6078181d5e172ec3466b9000d65533e7d",
+    "docs/character-adult-crown-candidate-views.json": "96187749930aeac8e50a3971994e35eb1a23540de7f52b26685d4bb19a9989bb",
+    "docs/character-adult-crown-red-tests.txt": "b25a2eedfefdf0fda1c25f03085f85a14d90a292ee67eee309cfd843b90fbe6f",
+    "docs/character-adult-desktop-dynamic.json": "1db5e002c52c7bf8eb3a01a77f692c4efe0a0c7d8b8b6081905f490c3ef6b602",
+    "docs/character-adult-final-back.jpg": "f704d65c2b6805f5250de0fc750cacd36d9e87e240f2163465f99706f3a3a40b",
+    "docs/character-adult-final-face.jpg": "8d008825fc01b7d6f4e652041b48e9261b342e9d3425378fbd1bc4c3c10330b0",
+    "docs/character-adult-final-focused-tests.txt": "533d7a1955e80e0127731968d2b4b8a77a1b2d2a2956138d6918336acec31dab",
+    "docs/character-adult-final-front.jpg": "eb6449edf499500136525b176286ab4fa39ab0d7243332254ecece1156cd9c00",
+    "docs/character-adult-final-full-tests.txt": "c20bf718f8d531cf4fe845f6fe1685838f5fc7fda20e1619bdd5b3542fbcb991",
+    "docs/character-adult-final-mobile.jpg": "0e67ada8d28dd5a1f2e46662e2242169361d2c331bc8b9f52245b0b529f0dd15",
+    "docs/character-adult-final-profile.jpg": "df3b6cad013494d6ef2dd8622743e1653c5954cc6b1de23242d2a9c62988bdc7",
+    "docs/character-adult-final-side.jpg": "cc3cd2f6ee0b4d08832dcf1853edea9543d0263e850d8a4ac96a0a39911cc8bd",
+    "docs/character-adult-focused-tests.txt": "d0e7dca8b049e1ab5537363427d197fa4e5be6de29430d491e35d59992ea05e9",
+    "docs/character-adult-full-tests.txt": "5787a5a27e8c2153292e2ad8b7055df2b7d6c5682bc142a17424b52fcf6e9cca",
+    "docs/character-adult-gather-cycle.json": "9c89af859e7397fa55cfc28c53cdafa059c08d5de0b5c8fa2ea22dac5a4f7c8b",
+    "docs/character-adult-initial-face.jpg": "e6f1f539f894486ef8a2da90a068c445d202b4e4370103fe9f10fa21c24aca6f",
+    "docs/character-adult-initial-front.jpg": "397068b384f3a33c205434df6721a1296836f364fed2bd6073a7e8bb0b7e6ed9",
+    "docs/character-adult-initial-profile.jpg": "30b5e8ec4fd1b9ea6fcb6b969e50b4b10cfe463d052595effba8af130b6fcfa8",
+    "docs/character-adult-mobile-dynamic.json": "a83a22751694ee08b40019ff7a1ee49b4d1637b1e0868654e365b9731662a0d0",
+    "docs/character-adult-numerical.json": "f979f64de02c318135257b4ef67c9692f546eacef351f4ce0fee2cdd633c9fc9",
+    "docs/character-adult-package-desktop.jpg": "49b31fc545e70273037ea0dc2f8d4c5d15222b9fa12bfe4892fc47f3199fd373",
+    "docs/character-adult-package-mobile.jpg": "c9555a166bc9d7bec5227a4ec00299a0c1a54d2a49e6827d242bb78d6a925aa9",
+    "docs/character-adult-package-tests.txt": "79f6ffed9512f6739b9551e74607731e4894812206b41cf1bf2679b7dae48c3e",
+    "docs/character-adult-package-ui.json": "999a75062baf9df326be6271a97752e9e8f724c33da3383779d8dcce3a9d0777",
+    "docs/character-adult-package-world-mobile.jpg": "de7e0d483a8a79bc7de70bcd654e057caae5c0f440cdeb6ca60c8d7941f8d262",
+    "docs/character-adult-red-tests.txt": "4fac7551c0605e87f205dc9009ff548049ca7a577e59627e0b0985d2894c8b56",
+    "docs/character-adult-review.json": "76ecf6b92e79a415bcd268b571e3a773584d45c36dd5ba933fe9d9491d98931a",
+    "docs/character-adult-review.md": "2d2748cf036dfc771ba86c80b8ac2bd560cb47f1abffd2a11ce20a5cc818ed40",
+    "docs/character-adult-views.json": "4ef52248cedceb42aadfb4e2c9a091e26c19b7fdf2590aff2da9f55f082071d0",
+    "docs/character-adult-world-attack.jpg": "806637f9722907909d71895929dbb9123d7d93ed83645eb6cfc9f9c98dfb9b6a",
+    "docs/character-adult-world-day.jpg": "8183f00eb06f24eaca82754b14b7024ea0b5436c86659585bec99e85d13f4a03",
+    "docs/character-adult-world-gather.jpg": "707235b564002732ac365c6b471995df202c9a74aad2f5c98d14ffc88c5c090a",
+    "docs/character-adult-world-mobile.jpg": "f6ae68ac552c25e60900a03eb050eada31519516ddfc7f74bafe98be3b77b2ad",
+    "docs/character-adult-world-ui.json": "c126fd99fb97669eee4c6bc7aaebb22b477c8f37fd4a3c1baff20f3040cc8010"
+  }
+}

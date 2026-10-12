@@ -1,0 +1,83 @@
+{
+  "result": {
+    "mode": "actions",
+    "complete": true,
+    "elapsedSeconds": 12,
+    "frames": 2205,
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "equipment": "sword",
+    "gesture": "attack-cycle",
+    "actionPhase": 0.5,
+    "pose": {
+      "torsoYaw": 0,
+      "freeShoulder": [
+        0,
+        0,
+        0
+      ],
+      "freeElbow": -0.15
+    },
+    "toolBounds": {
+      "min": [
+        0.2599999970197678,
+        0.44594499501329354,
+        0.26731674160653845
+      ],
+      "max": [
+        0.6600000029802322,
+        1.658352742109332,
+        1.5827997975781471
+      ]
+    },
+    "slope": 0,
+    "phase": 0,
+    "walkBlend": 0,
+    "strideLengthMeters": 1.6,
+    "stanceFraction": 0.6,
+    "feet": [
+      [
+        -0.22,
+        0.145,
+        0
+      ],
+      [
+        0.22,
+        0.145,
+        0
+      ]
+    ],
+    "contacts": [
+      true,
+      true
+    ],
+    "stats": {
+      "contacts": 1322,
+      "maxStanceDrift": 6.6973807122470445e-16,
+      "maxSoleHeightError": 5.273559366969494e-16,
+      "minPelvisOffset": -0.06207202988614711,
+      "bothFeetAirborneFrames": 0,
+      "actionFrames": 720,
+      "maxArmFrameDelta": 0.05702326397552521,
+      "maxPoseFrameDelta": 0.06335918219502794,
+      "maxTorsoYaw": 0.21975937661899325,
+      "maxFreeArmPitch": 0.4994531286795301
+    },
+    "windowViewport": [
+      1280,
+      720
+    ],
+    "viewport": [
+      1280,
+      489
+    ],
+    "canvasBuffer": [
+      1920,
+      733
+    ]
+  },
+  "console": []
+}
