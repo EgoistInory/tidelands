@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: leaf canopy stays finite and its wind bounds fit the tree camera clearance
+ok 1 - leaf canopy stays finite and its wind bounds fit the tree camera clearance
+  ---
+  duration_ms: 52.803125
+  type: 'test'
+  ...
+# Subtest: visible and shadow leaves use the same wind shader and advancing clock
+ok 2 - visible and shadow leaves use the same wind shader and advancing clock
+  ---
+  duration_ms: 4.473166
+  type: 'test'
+  ...
+# Subtest: canopies share a bounded mipmapped cutout texture with opaque leaves and empty edges
+ok 3 - canopies share a bounded mipmapped cutout texture with opaque leaves and empty edges
+  ---
+  duration_ms: 6.751375
+  type: 'test'
+  ...
+# Subtest: berry foliage fits the resource footprint and reuses visible and shadow leaf resources
+ok 4 - berry foliage fits the resource footprint and reuses visible and shadow leaf resources
+  ---
+  duration_ms: 8.05775
+  type: 'test'
+  ...
+# Subtest: bark texture is shared, bounded, opaque and mipmapped
+ok 5 - bark texture is shared, bounded, opaque and mipmapped
+  ---
+  duration_ms: 15.581792
+  type: 'test'
+  ...
+# Subtest: islanders respond to a nearby conversation target without moving or changing the save
+ok 6 - islanders respond to a nearby conversation target without moving or changing the save
+  ---
+  duration_ms: 603.434916
+  type: 'test'
+  ...
+# Subtest: tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+ok 7 - tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+  ---
+  duration_ms: 398.083083
+  type: 'test'
+  ...
+# Subtest: distant geometry is shared until the last owner leaves, while materials remain private
+ok 8 - distant geometry is shared until the last owner leaves, while materials remain private
+  ---
+  duration_ms: 21.553959
+  type: 'test'
+  ...
+# Subtest: resource bounds retain regenerating nodes after initial depletion
+ok 9 - resource bounds retain regenerating nodes after initial depletion
+  ---
+  duration_ms: 380.833834
+  type: 'test'
+  ...
+# Subtest: save replacement releases creatures and resets transient death/hit animation
+ok 10 - save replacement releases creatures and resets transient death/hit animation
+  ---
+  duration_ms: 15.140833
+  type: 'test'
+  ...
+# Subtest: boar: near geometry shares a lifetime while pose and hit materials remain private
+ok 11 - boar: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 15.778375
+  type: 'test'
+  ...
+# Subtest: crab: near geometry shares a lifetime while pose and hit materials remain private
+ok 12 - crab: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 23.924375
+  type: 'test'
+  ...
+# Subtest: same-type save replacement reuses creature models without carrying over animation or damage
+ok 13 - same-type save replacement reuses creature models without carrying over animation or damage
+  ---
+  duration_ms: 21.194209
+  type: 'test'
+  ...
+# Subtest: loading a different save updates buildings even when IDs are reused
+ok 14 - loading a different save updates buildings even when IDs are reused
+  ---
+  duration_ms: 1.548709
+  type: 'test'
+  ...
+# Subtest: campfire owns its unlit flame without changing shared building materials
+ok 15 - campfire owns its unlit flame without changing shared building materials
+  ---
+  duration_ms: 0.921208
+  type: 'test'
+  ...
+# Subtest: removing tents releases their geometry but retains immutable cloth for later camps
+ok 16 - removing tents releases their geometry but retains immutable cloth for later camps
+  ---
+  duration_ms: 1.714292
+  type: 'test'
+  ...
+# Subtest: repeated build previews release their geometry and private materials
+ok 17 - repeated build previews release their geometry and private materials
+  ---
+  duration_ms: 8.820291
+  type: 'test'
+  ...
+# Subtest: tent preview retains double-sided cloth and shares replacement material safely
+ok 18 - tent preview retains double-sided cloth and shares replacement material safely
+  ---
+  duration_ms: 0.800834
+  type: 'test'
+  ...
+# Subtest: organic tree keeps a narrow rooted trunk and finite nondegenerate branching geometry
+ok 19 - organic tree keeps a narrow rooted trunk and finite nondegenerate branching geometry
+  ---
+  duration_ms: 73.045791
+  type: 'test'
+  ...
+# Subtest: branching tree is deterministic and retains two shared instanced surfaces after merging
+ok 20 - branching tree is deterministic and retains two shared instanced surfaces after merging
+  ---
+  duration_ms: 28.454334
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1581.517375

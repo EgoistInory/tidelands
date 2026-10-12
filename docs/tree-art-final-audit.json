@@ -1,0 +1,167 @@
+{
+  "kind": "bounded-tree-art-evidence-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "pendingBatchEvidence": [],
+  "changedProduction": [
+    "src/tree.js",
+    "src/foliage.js",
+    "src/scene.js"
+  ],
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-trees.zip",
+    "archiveBytes": 8186516,
+    "archiveEntries": 45,
+    "archiveSha256": "2508d889a8ce5038a87d2dd51a4d1eb700b9802a14274b62c7603e613a21aa4f"
+  },
+  "historicalArchivesPreserved": 30,
+  "geometryBudget": {
+    "before": [
+      {
+        "kind": "leaves",
+        "instances": 181,
+        "triangles": 1344,
+        "geometryArrayBytes": 177408
+      },
+      {
+        "kind": "wood",
+        "instances": 181,
+        "triangles": 156,
+        "geometryArrayBytes": 9192
+      }
+    ],
+    "after": [
+      {
+        "kind": "leaves",
+        "instances": 181,
+        "triangles": 1344,
+        "geometryArrayBytes": 177408
+      },
+      {
+        "kind": "wood",
+        "instances": 181,
+        "triangles": 1392,
+        "geometryArrayBytes": 40352
+      }
+    ],
+    "modelBounds": {
+      "min": [
+        -3.6526784610748293,
+        -0.039999980479478836,
+        -2.9929411125183107
+      ],
+      "max": [
+        3.5222425174713137,
+        10.004579277038575,
+        2.889848442077637
+      ]
+    }
+  },
+  "dynamicSamples": [
+    {
+      "device": "desktop",
+      "activeMs": 60016.64,
+      "frames": 3596,
+      "p95Ms": 17.7,
+      "maxMs": 99.94,
+      "over50Ms": 1
+    },
+    {
+      "device": "mobile",
+      "activeMs": 60016.74,
+      "frames": 3603,
+      "p95Ms": 18.1,
+      "maxMs": 18.7,
+      "over50Ms": 0
+    }
+  ],
+  "ordinaryFinal": {
+    "coordinates": "位置 X -73.0，Z 93.5；建筑 0；击败 0",
+    "height": 844,
+    "hp": "100",
+    "inventory": [
+      {
+        "count": "2",
+        "name": "木材"
+      },
+      {
+        "count": "0",
+        "name": "石料"
+      },
+      {
+        "count": "0",
+        "name": "纤维"
+      },
+      {
+        "count": "3",
+        "name": "浆果"
+      },
+      {
+        "count": "0",
+        "name": "贝壳"
+      },
+      {
+        "count": "0",
+        "name": "晶石"
+      },
+      {
+        "count": "0",
+        "name": "石斧"
+      },
+      {
+        "count": "0",
+        "name": "晶石剑"
+      },
+      {
+        "count": "0",
+        "name": "烤浆果"
+      }
+    ],
+    "quest": "归航的灯火",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "limits": [
+    "One shared procedural tree shape remains; leaf cards, species/age variety and bark detail still need cohesive art review.",
+    "Roots on steep slopes and all branch/leaf camera paths or gathering surface contacts are not fully verified.",
+    "The tree wood geometry grows from 156 to 1392 triangles, with unchanged two instanced surfaces. CPU arrays and rAF samples are not GPU or real-device/long-term proof.",
+    "Fixed-world views, five-phase QA teleports/enemy fixtures and ordinary starter gathering do not prove current full campaign quality; audio scheduling is not audition.",
+    "Prior early-resume isolation claims stay withdrawn, and pre-snapshot formal-save history remains unknown; this batch does not operate on the source-origin formal key."
+  ],
+  "evidenceSha256": {
+    "docs/tree-art-baseline-forest.jpg": "3aad118115b020d7d6f03135b9162c58271af277aad1be3f0f72b2cd404369b2",
+    "docs/tree-art-baseline-spawn.jpg": "aa3049da5f0aa5bb1a64cdfd56d74e846746fead5839f20248c43896f63593f8",
+    "docs/tree-art-baseline-world.json": "c8956a332c6ab23ecba5541d0f37c74da4e2c85ffb3d32757511ca746fa2f0cf",
+    "docs/tree-art-desktop-dynamic.json": "a4e697a123f568dde7787fd6a6bf37324776752ef477358f65498ecbbc7ecde8",
+    "docs/tree-art-focused-tests.txt": "87715336d0949a0d55ead641933e7cb744909c3f60e3d86feefb9b31153035fb",
+    "docs/tree-art-full-tests.txt": "f0b848726796e8a9614d5cfe7cf14a75fe606eecebcef0704eb845ce0a892fd9",
+    "docs/tree-art-mobile-dynamic.json": "5af5e27191a40285e131594c6b48fc195cd1bd807e5c7b51182f1f756d2842fa",
+    "docs/tree-art-model-bark.jpg": "5894674e2ca79165bcf23461e24ec5da0e20c819be15f6fe8f8e1d2e5dff35cf",
+    "docs/tree-art-model-branches.jpg": "34cc3e9b0de665d65267f475aaf148c488f073128fc2e9bf39323f04db4c5d14",
+    "docs/tree-art-model-crown.jpg": "757d4cf95b3bd2738e7f85501d2188c37e4190fd6263f65c310e08ee1e38ccb6",
+    "docs/tree-art-model-front.jpg": "36b6248f884e1379ffb7ba3ccb5b545ad21bac22b03c0867a5bc65dd361c7d75",
+    "docs/tree-art-model-mobile.jpg": "cb74590b8a3412c2782525005c34afd17f61bad547c9a1844d7a303fad394fc2",
+    "docs/tree-art-model-side.jpg": "3037ab9c80306ab3ab49079dfd9f3eb4cba0373a51ef058612810dd5698fa98f",
+    "docs/tree-art-model-ui.json": "6baf5188cf4fd82187886933d2398c23ebea6de8777e592b6eee9b204979212f",
+    "docs/tree-art-numerical-command.txt": "b67f9a8c8da8710c471c05659b4c7070dd896173e59c7c779a5fcb17276cd286",
+    "docs/tree-art-numerical.json": "015011f41a0ba0098dab45e8e0bd62774c636a2d155e89ca3332b3b3a3cc605e",
+    "docs/tree-art-package-after-gather.jpg": "190d2308f84a43006f89a93a59bb560213afd2287bebbb708493dcdbcf49b37e",
+    "docs/tree-art-package-before-gather.jpg": "9c12f2bb3e88a71fcebb28de2b8bf65395a271a27975ece8f36ddf9ca1b9baa9",
+    "docs/tree-art-package-mobile-bag.jpg": "2a54310201af0a8afd58de59e738a99272b49c1f568960b5228619ea9d2a3f74",
+    "docs/tree-art-package-mobile-world.jpg": "b787a0ba244917733d25167e20380335d2e143de02b9ee9787a9baf69d645a6c",
+    "docs/tree-art-package-tests.txt": "25bf088f3bdab31f7799a114bf452d53fa384a8b14c0a064dd8a6d036c5ee49e",
+    "docs/tree-art-package-ui.json": "27cc3bd72cdc7773299129b0f66dd78702dadcdc99af656e354f4f884673c5a9",
+    "docs/tree-art-plan.md": "c04791bae2ca45b625eb442d9a9278a8ff3ab33e9dd4aee34fb68347cb3ded92",
+    "docs/tree-art-red-tests.txt": "e4dafe42e124e84580b215f4ee9a0947cf4939f66a28192b6074f31340993982",
+    "docs/tree-art-review.json": "47d7759d9e0ffc44ba85abfca1fd1e9b53a7c3a5e601ca59ea0d63b4b7b1efff",
+    "docs/tree-art-review.md": "ec84eda20cc9b5bd996fae8cd84f55e6125816fa5874c3c9acf617423b1b24d6",
+    "docs/tree-art-world-forest.jpg": "48f41d6c8d8ffd000844178c01da62c8df107dff40e3becbd2767a243aa0bb32",
+    "docs/tree-art-world-mobile.jpg": "dfaa089f9bab07d6df4c3ad72d38f31ee8d01d2cacbae00135e4948e49982f74",
+    "docs/tree-art-world-night.jpg": "b3661260401ec5ae2c80d03bfe69878c290d4357a57643ceb8fc56feba954567",
+    "docs/tree-art-world-shore.jpg": "7803c569defaceb462054c9e1ebd5d86af096105fb7c290a6d5e10e872b091df",
+    "docs/tree-art-world-spawn.jpg": "6db0570eeaacd0a1ffbb4d30d3e71e449924c9a07a220da071c6fb75e0f408fb",
+    "docs/tree-art-world-ui.json": "4592f8f02f1769d16fcca9b2a3dc3e2df967e053a5a4623dc9a505171605813c",
+    "docs/tree-art-world-understory.jpg": "5ca1814d7066936ef8322395e30ab568dc4ea451fae439aa0082f857b8db29d8"
+  }
+}

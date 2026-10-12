@@ -1,0 +1,24 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>潮生群岛 · 生产树木轮廓验收</title>
+<style>html,body{margin:0;height:100%;background:#27392f;color:#eee7d6;font:14px system-ui}body{display:flex;flex-direction:column}nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px}select{font:inherit;padding:6px}output{display:block;flex:0 0 76px;overflow:auto;overflow-wrap:anywhere;padding:8px;font:12px monospace}canvas{display:block;width:100%;flex:1;min-height:0}</style>
+<nav><strong>生产树木 · 无boot/存档</strong><label>镜头 <select id="view"><option value="front">正面整树</option><option value="side">侧面整树</option><option value="bark">根颈与树皮</option><option value="crown">枝叶近景</option></select></label><label>叶片 <select id="leaves"><option value="on">显示</option><option value="off">只看枝干</option></select></label><span>模型定格，不是普通玩法、GPU或最终品质验收。</span></nav>
+<output id="result">加载生产模型…</output><canvas aria-label="生产树木及同尺度旅人对照"></canvas>
+<script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {createTree} from '../src/tree.js';
+import {mergeStaticParts} from '../src/merge-parts.js';
+import {createCharacter,animateCharacter} from '../src/character.js';
+import {updateFoliage} from '../src/foliage.js';
+const canvas=document.querySelector('canvas'),renderer=new THREE.WebGLRenderer({canvas,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setClearColor(0x536960);renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(42,1,.1,100);
+scene.add(new THREE.HemisphereLight(0xe1ebe3,0x5f5c42,2));const sun=new THREE.DirectionalLight(0xffe3b5,3);sun.position.set(-7,13,8);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-7,right:7,top:12,bottom:-4});sun.shadow.bias=-.001;scene.add(sun);
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(30,30),new THREE.MeshStandardMaterial({color:0x747663,roughness:1}));floor.rotation.x=-Math.PI/2;floor.position.y=-.045;floor.receiveShadow=true;scene.add(floor);
+const tree=createTree();tree.updateMatrixWorld(true);mergeStaticParts(tree);scene.add(tree);const leaf=tree.children.find(m=>m.material.alphaTest>0);
+const traveler=createCharacter();traveler.position.set(-1.5,0,1.8);animateCharacter(traveler,{x:-1.5,z:1.8,yaw:0,time:240,attackAt:-100,selected:'hand'},0,()=>0);scene.add(traveler);
+function draw(){
+  renderer.setSize(canvas.clientWidth,canvas.clientHeight,false);camera.aspect=canvas.clientWidth/canvas.clientHeight;camera.zoom=Math.min(1,camera.aspect);camera.updateProjectionMatrix();
+  const mode=document.querySelector('#view').value,poses={front:[[0,6.5,18],[0,4.4,0]],side:[[18,6.5,0],[0,4.4,0]],bark:[[1.6,1.5,3],[0,1.2,0]],crown:[[0,6.5,7],[0,6.8,0]]},[position,target]=poses[mode];camera.position.set(...position);camera.lookAt(...target);
+  leaf.visible=document.querySelector('#leaves').value==='on';traveler.visible=mode==='front'||mode==='side';updateFoliage(240);renderer.render(scene,camera);
+  const info=renderer.info;document.querySelector('#result').textContent=JSON.stringify({view:mode,leaves:leaf.visible,treeParts:tree.children.length,treeTriangles:tree.children.reduce((n,m)=>n+(m.geometry.index?.count??m.geometry.attributes.position.count)/3,0),viewport:[innerWidth,innerHeight],canvasViewport:[canvas.clientWidth,canvas.clientHeight],render:{calls:info.render.calls,triangles:info.render.triangles,textures:info.memory.textures},glError:renderer.getContext().getError(),scope:'Fixed production model and same-scale traveler; no boot/storage/gameplay/performance gate.'});
+}
+document.querySelectorAll('select').forEach(e=>e.onchange=draw);window.addEventListener('resize',draw);draw();
+</script></html>

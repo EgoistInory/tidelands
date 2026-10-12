@@ -1,0 +1,59 @@
+{
+  "kind": "bounded-tree-art-numerical-review",
+  "passed": true,
+  "baselineArchive": "tidelands-m5-2026-10-12-character.zip",
+  "baselineArchiveSha256": "b60e6a8389dfef41c43925fc13c19f12a908d1549bdcb14c62093d7c9ab61a66",
+  "resourceNodesAndTreeInstanceTransformsUnchanged": true,
+  "berryGeometryAndSharedTexturesUnchanged": true,
+  "before": [
+    {
+      "kind": "leaves",
+      "instances": 181,
+      "triangles": 1344,
+      "geometryArrayBytes": 177408
+    },
+    {
+      "kind": "wood",
+      "instances": 181,
+      "triangles": 156,
+      "geometryArrayBytes": 9192
+    }
+  ],
+  "after": [
+    {
+      "kind": "leaves",
+      "instances": 181,
+      "triangles": 1344,
+      "geometryArrayBytes": 177408
+    },
+    {
+      "kind": "wood",
+      "instances": 181,
+      "triangles": 1392,
+      "geometryArrayBytes": 40352
+    }
+  ],
+  "modelBounds": {
+    "min": [
+      -3.6526784610748293,
+      -0.039999980479478836,
+      -2.9929411125183107
+    ],
+    "max": [
+      3.5222425174713137,
+      10.004579277038575,
+      2.889848442077637
+    ]
+  },
+  "fullGoalComplete": false,
+  "limits": [
+    "CPU arrays and static triangle/instance counts are not GPU memory or performance.",
+    "Same resource transforms do not prove all camera paths, gathering contacts, slopes or natural appearance."
+  ],
+  "sourceSha256": {
+    "src/tree.js": "9c4cfb933cbede389d1646fd66b8db3ec3bce25f57d337191714ec2f97c7d786",
+    "src/foliage.js": "2dec804872d4bd8e0e8fb573cf59fc66cc8b71afb3659cc418021ab947b58500",
+    "src/scene.js": "9487cdc05bc2afdd93907436cb3bf8d4d5f208986574e441a3993aa986b07c02",
+    "tests/tree.test.js": "4ae6c1eab3fd57aea5e38af24947cf4e7225c74514e972ced4349741b4fa9239"
+  }
+}

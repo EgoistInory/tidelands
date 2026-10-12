@@ -7,7 +7,8 @@ import {createTextileMaterial} from './textile.js';
 import {createCreature,animateCreature,resetCreature} from './creature.js';
 import {mergeStaticParts} from './merge-parts.js';
 import {cottageSurfaces,cottageRoof} from './cottage-surfaces.js';
-import {createCanopy,createBerryFoliage,barkSurface,updateFoliage} from './foliage.js';
+import {createBerryFoliage,barkSurface,updateFoliage} from './foliage.js';
+import {createTree} from './tree.js';
 import {createGroundSurface} from './ground-surface.js';
 import {createWeatheredRock,initializeRockSurface} from './rock.js';
 import {createMeadow,createFiberClump,updateMeadow,updateGroundCover,updateCampClearance} from './meadow.js';
@@ -30,11 +31,7 @@ function resourceModel(type){
   const g=new THREE.Group();
   const branch=(geometry,x=0,y=0,z=0)=>{const m=new THREE.Mesh(geometry,barkSurface());m.position.set(x,y,z);m.castShadow=m.receiveShadow=true;return m;};
   if(type==='tree'){
-    g.add(branch(new THREE.CylinderGeometry(.19,.52,6.8,9),0,3.4,0),createCanopy());
-    for(let i=0;i<7;i++){
-      const angle=i*2.399,r=i===6?0:1.35,y=5.4+(i%3)*1.15;
-      if(i<5){const limb=branch(new THREE.CylinderGeometry(.07,.16,2.3,6),Math.cos(angle)*.65,y-1.2,Math.sin(angle)*.65);limb.rotation.z=Math.sin(angle)*.6;limb.rotation.x=Math.cos(angle)*.6;g.add(limb);}
-    }
+    return createTree();
   }else if(type==='stone'){
     const rock=createWeatheredRock(1.8),small=createWeatheredRock(.8);
     rock.position.y=1;rock.scale.set(1.4,.9,1);rock.rotation.z=.3;small.position.set(1.6,.4,1);g.add(rock,small);

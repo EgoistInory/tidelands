@@ -10,13 +10,13 @@ python3 serve.py
 
 打开 http://127.0.0.1:4190 。需要支持 WebGL 2 的现代浏览器。不需要安装 npm 依赖，Three.js 0.180.0 在 vendor 中附带，许可证随包保留。ES 模块需要本地 HTTP 服务，不能双击 HTML 代替。
 
-最近已打包的本地品质检查点在 `dist/tidelands-m5-2026-10-12-character.zip`，旅人与岛民采用较成熟的头身、连续脸部和分区发型，衣袖、腰带和背带更贴合身体，仍保留营地草丛避让与500座建造上限。179测试、43运行文件校验、双视口实景和独立普通采木/保存/390继续恢复通过，见 `docs/character-adult-final-audit.json`。29旧包保持；模型仍有程序化感，绘制预算增加，桌面60秒脚本样本仍有两次大于50ms尖峰。可信植被、自然接触、实际试听、当前完整流程/长期/GPU/真机品质仍待，M5与完整3A未完成。
+最近已打包的本地品质检查点在 `dist/tidelands-m5-2026-10-12-trees.zip`，树木增加根颈、渐细弯曲主干和连贯分叉枝组，并保留上一批成年旅人/岛民轮廓、营地草丛避让与500座建造上限。181测试、44运行文件校验、双视口树林/岸线/昼夜与独立普通采木/保存/390继续恢复通过，见 `docs/tree-art-final-audit.json`。30旧包保持；树木仍有程序化感，几何预算增加，当前桌面60秒脚本样本有一次99.94ms起始尖峰。树种与岸线层次、自然接触、实际试听、当前完整流程/长期/GPU/真机品质仍待，M5与完整3A未完成。
 
 验收更正：两个隔离页漏防自动启动标记导致双实例，现已修正；旧极早存档隔离诊断撤回，原独立包直接页面记录保留。修正后单实例极早存档重验通过、正式存档在这轮前后SHA不变；此前历史影响无法追溯，详见 `docs/harness-isolation-correction.json`。
 
 当前开发源码还增加低岸线起伏海浪层，与既有风声叠加、渐入内陆，并共享暂停/静音。112项测试、八组真实离线PCM和实际营地/海域接线验证通过，见 `docs/coastal-audio-review.json`；尚未试听或做完整声场品质验收。这批声音修改已进入coastal及最新state-reuse包，本地开发服务运行相同生产源码。
 
-用 `python3 tools/verify_local.py --name tidelands-m5-2026-10-12-character` 校验并单独解压当前包。后续构建使用 `python3 tools/package_local.py --name tidelands-m5-next --stage 'M5 quality batch checkpoint'`，每次改源码换新包名；已有包只允许相同来源的完全一致重建，拒绝覆盖历史检查点。打包工具回归运行 `python3 tools/test_local_delivery.py`。四岛正常旅程和实际战斗已有十分钟有效帧调度/JS堆记录，见 `docs/cross-island-review.json`：含间歇输入与较多静止时间，不能代替持续运动或GPU品质验收；该采样在两处岛民对话修正之前完成，绑定自己的源码SHA，不能作为当前包完全一致的长时证明。
+用 `python3 tools/verify_local.py --name tidelands-m5-2026-10-12-trees` 校验并单独解压当前包。后续构建使用 `python3 tools/package_local.py --name tidelands-m5-next --stage 'M5 quality batch checkpoint'`，每次改源码换新包名；已有包只允许相同来源的完全一致重建，拒绝覆盖历史检查点。打包工具回归运行 `python3 tools/test_local_delivery.py`。四岛正常旅程和实际战斗已有十分钟有效帧调度/JS堆记录，见 `docs/cross-island-review.json`：含间歇输入与较多静止时间，不能代替持续运动或GPU品质验收；该采样在两处岛民对话修正之前完成，绑定自己的源码SHA，不能作为当前包完全一致的长时证明。
 
 2026-10-07后续源码增加岛民近距交谈朝向和待机手臂轻动，以及攻击/采集从装备待机姿态进入和恢复的衔接；101项测试和桌面/窄屏12秒隔离循环通过，见 `docs/islander-response-review.json` 与 `docs/action-transition-review.json`。攻击结果统一由短时战斗提示显示，消除空挥时残留旧命中提示；桌面键盘/390窄屏攻击键已实测。上述早期包不含这些后续修改，完整动作品质与声音同步仍待验收。
 
@@ -64,6 +64,7 @@ E 与最近目标交互，空格攻击，1–6 快捷操作，B 背包、C 制�
 | `/tests/locomotion.html` | 生产角色的平地/坡地落脚、7米/秒行走、12米/秒奔跑和泳姿隔离检查；可选徒手/石斧/剑、攻击/采集定格及12秒模拟动作循环，计数不代替自然动作和实战审查，无存档读写 |
 | `/tests/character-art-review.html` | 生产人物正侧背全身、面部双角度与两色衣装的固定模型检查，无存档读写；旧基线报告绑定旧源码 |
 | `/tests/character-adult-world.html` | 新人物与明确营地fixture的昼夜实景、攻击/采集峰值姿势检查，无boot或存档，不代替正常流程/自然动作或性能验收 |
+| `/tests/tree-art-review.html` | 生产树木正侧、根颈/树皮、枝叶近景和裸枝轮廓，带同尺度旅人；无boot/存档，固定模型不代替实景/普通采木或最终品质 |
 | `/tests/gather-contact.html` | 生产世界树/石/浆果/纤维的固定位置、工具与镜头fixture；核对近距提示、判定前后增量和33帧采集，hand样本的刃部范围是隐藏剑，不能视作手部或实际表面接触；无存档读写 |
 | `/tests/gather-kind.html` | 六种资源/有斧无斧/选中剑的明确位置与装备fixture，观察可见掌部、低身、工具切换和完整恢复，无存档；`playthrough?mode=berry` 或 `stone` 加 `&equipment=both` 以显式双工具fixture验生产入口，不代替普通进度 |
 | `/tests/render-load.html` | 固定起点60次绘制后输出渲染计数；加 `?suite=1` 采四岛固定视角，加 `&profile=1` 分类统计并重复巡回（每回调10次绘制），不代表帧率 |
@@ -96,4 +97,4 @@ Three.js 使用官方 npm 包构建文件（MIT，vendor/THREE-LICENSE），安�
 
 历史state-reuse源码的同一脚本重新测量，阶段切换均无大于50ms尖峰；桌面十分钟P95 17.8ms，初始热身仍66.67ms。驻留几何数增加，后续仍需重复地域稳定性与字节预算审计，见 `docs/state-switch-desktop-sample.json` 与 `docs/state-switch-mobile-sample.json`；帧调度改善不代表M5性能/完整品质通过。
 
-当前geometry版的四轮固定地域驻留审计与桌面十分钟/390窄屏60秒动态样本已保存。固定巡回热身后稳定，完整QA清理缓冲归零；动态P95 17.7/17.8ms，仍保留起始热身、驱动显存/GPU和实际设备等品质边界，详见 `docs/resident-geometry-review.json`。M5完整品质尚未通过。
+历史geometry检查点的四轮固定地域驻留审计与桌面十分钟/390窄屏60秒动态样本已保存。固定巡回热身后稳定，完整QA清理缓冲归零；动态P95 17.7/17.8ms，仍保留起始热身、驱动显存/GPU和实际设备等品质边界，详见 `docs/resident-geometry-review.json`。这些记录绑定当时源码，不能作为当前人物/树木版本的长时证明，M5完整品质尚未通过。
