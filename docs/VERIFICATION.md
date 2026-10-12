@@ -970,3 +970,16 @@ character包8184877bytes/44项/43运行文件/23模块，SHA b60e6a8389dfef41c43
 证据docs/tree-art-review.md/review.json/final-audit.json与tools/verify_tree_art_evidence.py，绑定61验证输入。63–67关闭/标签列表空/viewport reset，53939主动Ctrl-C退出130且无监听，lsof仅原127.0.0.1:4190/PID21636（部分指定端口无匹配exit1按表解释）。当前QA不boot或读写存档，普通验收是独立来源，不操作4190正式key；旧early隔离更正/撤回和快照前影响未知保留。前轮角色生产改造与本轮树木改造均为progress，M5五项/3A仍未完成，不删除2048。
 
 实时普通额度39%/周84%→58%/周87%允许，goal active未强改、2048 ACTIVE；无付费API/券/购买/公网发布或推送，原public origin去向待答不重复问。下一岸线/海岸地标整体层次，再自然接触/实际试听/当前完整普通旅程和长期设备GPU，不反复细调单树/单脸；README当前包/旧长时来源已对齐，旧包/用户内容保持。
+
+
+## 2026-10-12 灯塔建筑与透明灯室批次
+
+新增src/lighthouse.js与scene工厂接线：圆润塔身/石脚腰线、拱门窄窗、环廊护栏、带框玻璃灯室/瓦顶和私有发光光芯；原入口塔身穿门改善。任务/存档/资源几何实例/地形、镜头包围盒和点灯更新/光束点光参数保持。旧trees包44运行SHA先核对；9模型网格保持、232→8656三角面/14608→533440CPU数组字节，复用小屋三图使固定正面贴图驻留16→19、调用+1，非显存/性能改善。
+
+预期缺模块RED后17 focused/183全量/4打包/4语法通过；16初末与普通JPEG逐一查看，最终八GL0/素材ready/console空，点亮q6为明示fixture，不替代普通修复。墙纹/门板阶梯黑角/静态窗、坡地基脚和海岸生态仍程序化，记非阻断品质待办继续下一步。当前五场景脚本60秒桌面3591帧/P95 17.6/max99.9/超50起始两次，实际390×844为3601/P95 18.1/max18.7/超50零，hidden=false/console空；明确传送/材料/敌人复活/音频队列，非普通主线/试听/GPU/真机/长时证明。
+
+lighthouse包8188410bytes/46项/45运行文件/25模块，SHAcbe314d99fb07eb8c7f92b8ac28c6e6cbdb22372add11c9532524b7142e30a19，31旧包SHA保持。独立53940普通E采木+2/实际树干树冠消失/保存390继续恢复(-73.0,93.5)/HP100/q0/木2浆果3，无fixture/导入/状态编辑，console空无溢出。证据docs/lighthouse-art-review.md/review.json/final-audit.json与tools/verify_lighthouse_art_evidence.py绑定62输入，有限批次实际交付为progress，M5五项/3A未完成，2048保留。
+
+68–72关闭/标签列表空/viewport reset；53940主动Ctrl-C退出130/KeyboardInterrupt，无监听；lsof仅原127.0.0.1:4190/PID21636（部分指定端口无匹配exit1按表解释）。QA不boot/读写存档，普通档独立来源不操作4190正式key；旧early隔离撤回/快照前历史未知保持。普通额度66%/周89%→89%/周92%允许，goal active未强改，2048 ACTIVE；无券/付费/购买/公开推送，原origin待答不重复问。
+
+下一优先当前完整普通主路径的体验和画面验收，再代表性海岸层次、自然接触/实际试听/长期设备GPU，不反复单塔/单树/单脸；所有M5待办保留。新包与运行指南/README对齐，历史检查点不重写。

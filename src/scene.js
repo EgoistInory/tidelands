@@ -9,6 +9,7 @@ import {mergeStaticParts} from './merge-parts.js';
 import {cottageSurfaces,cottageRoof} from './cottage-surfaces.js';
 import {createBerryFoliage,barkSurface,updateFoliage} from './foliage.js';
 import {createTree} from './tree.js';
+import {createLighthouse} from './lighthouse.js';
 import {createGroundSurface} from './ground-surface.js';
 import {createWeatheredRock,initializeRockSurface} from './rock.js';
 import {createMeadow,createFiberClump,updateMeadow,updateGroundCover,updateCampClearance} from './meadow.js';
@@ -110,18 +111,7 @@ function landmarkModel(o){
   const g=new THREE.Group();
   if(o.type==='npc')return person(o.color);
   if(o.type==='lighthouse'){
-    g.add(mesh(new THREE.CylinderGeometry(2.1,3.2,20,12),palette.cream,0,10,0));
-    g.add(mesh(new THREE.CylinderGeometry(2.9,2.9,.7,12),0x686f66,0,19.8,0));
-    const lantern=mesh(new THREE.CylinderGeometry(1.8,1.8,3.2,10),0xb9d7c7,0,21.7,0);
-    lantern.material=lantern.material.clone();g.add(lantern);
-    const beacon=new THREE.Group();beacon.position.y=21.7;
-    const beam=new THREE.Mesh(new THREE.ConeGeometry(7,90,24,1,true),new THREE.MeshBasicMaterial({color:0xffe6a3,transparent:true,opacity:.12,depthWrite:false,side:THREE.DoubleSide}));
-    beam.rotation.z=Math.PI/2;beam.position.x=45;beacon.add(beam);
-    const light=new THREE.PointLight(0xffd98a,65,55,1.5);beacon.add(light);beacon.visible=false;g.add(beacon);
-    g.userData={lantern,beacon};
-    g.add(cone(3,2.5,0xb1744b,0,24,0,12));
-    for(let y=4;y<18;y+=5)g.add(box(.6,1,.15,0x374c48,0,y,2.65-(y/25)));
-    g.add(box(1.1,2.3,.2,0x6f5339,0,1.15,3.02));
+    return createLighthouse();
   }else if(o.type==='cottage'){
     const walls=box(8,5,6,palette.cream,0,2.5,0);walls.material=cottageSurfaces().plaster;g.add(walls,cottageRoof());
     // Raised stone footing, timber corners and recessed-looking framed openings.

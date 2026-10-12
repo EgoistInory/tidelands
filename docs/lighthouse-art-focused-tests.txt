@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: roof slope faces have upward finite normals and UVs with physical tile scale
+ok 1 - roof slope faces have upward finite normals and UVs with physical tile scale
+  ---
+  duration_ms: 44.749042
+  type: 'test'
+  ...
+# Subtest: architectural materials reuse bounded mipmapped surface textures
+ok 2 - architectural materials reuse bounded mipmapped surface textures
+  ---
+  duration_ms: 24.049209
+  type: 'test'
+  ...
+# Subtest: lighthouse details fit the existing camera envelope while the beam stays separate
+ok 3 - lighthouse details fit the existing camera envelope while the beam stays separate
+  ---
+  duration_ms: 77.600709
+  type: 'test'
+  ...
+# Subtest: lighthouse optical emission is private and static architectural parts are batched
+ok 4 - lighthouse optical emission is private and static architectural parts are batched
+  ---
+  duration_ms: 20.410875
+  type: 'test'
+  ...
+# Subtest: islanders respond to a nearby conversation target without moving or changing the save
+ok 5 - islanders respond to a nearby conversation target without moving or changing the save
+  ---
+  duration_ms: 614.493458
+  type: 'test'
+  ...
+# Subtest: tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+ok 6 - tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+  ---
+  duration_ms: 414.349083
+  type: 'test'
+  ...
+# Subtest: distant geometry is shared until the last owner leaves, while materials remain private
+ok 7 - distant geometry is shared until the last owner leaves, while materials remain private
+  ---
+  duration_ms: 20.513709
+  type: 'test'
+  ...
+# Subtest: resource bounds retain regenerating nodes after initial depletion
+ok 8 - resource bounds retain regenerating nodes after initial depletion
+  ---
+  duration_ms: 387.222542
+  type: 'test'
+  ...
+# Subtest: save replacement releases creatures and resets transient death/hit animation
+ok 9 - save replacement releases creatures and resets transient death/hit animation
+  ---
+  duration_ms: 15.250375
+  type: 'test'
+  ...
+# Subtest: boar: near geometry shares a lifetime while pose and hit materials remain private
+ok 10 - boar: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 15.636833
+  type: 'test'
+  ...
+# Subtest: crab: near geometry shares a lifetime while pose and hit materials remain private
+ok 11 - crab: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 24.730584
+  type: 'test'
+  ...
+# Subtest: same-type save replacement reuses creature models without carrying over animation or damage
+ok 12 - same-type save replacement reuses creature models without carrying over animation or damage
+  ---
+  duration_ms: 21.22875
+  type: 'test'
+  ...
+# Subtest: loading a different save updates buildings even when IDs are reused
+ok 13 - loading a different save updates buildings even when IDs are reused
+  ---
+  duration_ms: 1.212
+  type: 'test'
+  ...
+# Subtest: campfire owns its unlit flame without changing shared building materials
+ok 14 - campfire owns its unlit flame without changing shared building materials
+  ---
+  duration_ms: 0.855917
+  type: 'test'
+  ...
+# Subtest: removing tents releases their geometry but retains immutable cloth for later camps
+ok 15 - removing tents releases their geometry but retains immutable cloth for later camps
+  ---
+  duration_ms: 0.918667
+  type: 'test'
+  ...
+# Subtest: repeated build previews release their geometry and private materials
+ok 16 - repeated build previews release their geometry and private materials
+  ---
+  duration_ms: 6.97025
+  type: 'test'
+  ...
+# Subtest: tent preview retains double-sided cloth and shares replacement material safely
+ok 17 - tent preview retains double-sided cloth and shares replacement material safely
+  ---
+  duration_ms: 0.39625
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1608.154333

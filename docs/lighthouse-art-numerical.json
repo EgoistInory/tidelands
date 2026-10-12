@@ -1,0 +1,94 @@
+{
+  "kind": "bounded-lighthouse-art-numerical-review",
+  "passed": true,
+  "baselineArchive": "tidelands-m5-2026-10-12-trees.zip",
+  "baselineArchiveSha256": "2508d889a8ce5038a87d2dd51a4d1eb700b9802a14274b62c7603e613a21aa4f",
+  "baselineRuntimeInputsVerified": 44,
+  "worldAndResourceGeometryTransformsUnchanged": true,
+  "beaconParametersAndUpdateUnchanged": true,
+  "cameraEnvelopeUnchanged": true,
+  "cottageMapsReused": true,
+  "before": {
+    "meshes": 9,
+    "triangles": 232,
+    "geometryArrayBytes": 14608,
+    "mapCount": 0,
+    "staticBounds": {
+      "min": [
+        -96.20000004768372,
+        13.151589565498803,
+        -57.200000047683716
+      ],
+      "max": [
+        -89.79999995231628,
+        38.4015895654988,
+        -50.799999952316284
+      ]
+    }
+  },
+  "after": {
+    "meshes": 9,
+    "triangles": 8656,
+    "geometryArrayBytes": 533440,
+    "mapCount": 3,
+    "staticBounds": {
+      "min": [
+        -96.07999992370605,
+        13.131589558495259,
+        -57.079999923706055
+      ],
+      "max": [
+        -89.92000007629395,
+        38.151589541656946,
+        -50.84999990463257
+      ]
+    }
+  },
+  "beacon": {
+    "y": 21.7,
+    "visible": false,
+    "beamPosition": [
+      45,
+      0,
+      0
+    ],
+    "beamRotation": [
+      0,
+      0,
+      1.5707963267948966,
+      "XYZ"
+    ],
+    "geometry": {
+      "radius": 7,
+      "height": 90,
+      "radialSegments": 24,
+      "heightSegments": 1,
+      "openEnded": true,
+      "thetaStart": 0,
+      "thetaLength": 6.283185307179586
+    },
+    "material": {
+      "color": 16770723,
+      "opacity": 0.12,
+      "depthWrite": false,
+      "side": 2
+    },
+    "light": {
+      "color": 16767370,
+      "intensity": 65,
+      "distance": 55,
+      "decay": 1.5
+    }
+  },
+  "fullGoalComplete": false,
+  "limits": [
+    "Geometry arrays are CPU bytes, not GPU memory or timing.",
+    "Cottage maps are reused but become resident here: browser textures increased from 16 to 19.",
+    "Static bounds and unchanged updates do not prove natural contacts, complete main-line quality or all camera paths."
+  ],
+  "sourceSha256": {
+    "src/lighthouse.js": "baf9c8cfcee518a6f21b964d5aefe60ae40516a5ccdfc70ff1033b9c96d98577",
+    "src/scene.js": "4a3398c509d45b06ddd7941837d58f7a2a928b58ddee3de4b3a0ee45d8b1603f",
+    "tests/lighthouse.test.js": "dcd271956a0931161ffe833b078ff9fda6dadb5b304e674ae34e9f6a61ce1b55"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "kind": "bounded-lighthouse-art-evidence-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "pendingBatchEvidence": [],
+  "changedProduction": [
+    "src/lighthouse.js",
+    "src/scene.js"
+  ],
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-lighthouse.zip",
+    "archiveBytes": 8188410,
+    "archiveEntries": 46,
+    "archiveSha256": "cbe314d99fb07eb8c7f92b8ac28c6e6cbdb22372add11c9532524b7142e30a19"
+  },
+  "historicalArchivesPreserved": 31,
+  "geometryBudget": {
+    "before": {
+      "meshes": 9,
+      "triangles": 232,
+      "geometryArrayBytes": 14608,
+      "mapCount": 0,
+      "staticBounds": {
+        "min": [
+          -96.20000004768372,
+          13.151589565498803,
+          -57.200000047683716
+        ],
+        "max": [
+          -89.79999995231628,
+          38.4015895654988,
+          -50.799999952316284
+        ]
+      }
+    },
+    "after": {
+      "meshes": 9,
+      "triangles": 8656,
+      "geometryArrayBytes": 533440,
+      "mapCount": 3,
+      "staticBounds": {
+        "min": [
+          -96.07999992370605,
+          13.131589558495259,
+          -57.079999923706055
+        ],
+        "max": [
+          -89.92000007629395,
+          38.151589541656946,
+          -50.84999990463257
+        ]
+      }
+    }
+  },
+  "dynamicSamples": [
+    {
+      "device": "desktop",
+      "activeMs": 60000,
+      "frames": 3591,
+      "p95Ms": 17.6,
+      "maxMs": 99.9,
+      "over50Ms": 2
+    },
+    {
+      "device": "mobile",
+      "activeMs": 60000,
+      "frames": 3601,
+      "p95Ms": 18.1,
+      "maxMs": 18.7,
+      "over50Ms": 0
+    }
+  ],
+  "ordinaryFinal": {
+    "coordinates": "位置 X -73.0，Z 93.5；建筑 0；击败 0",
+    "height": 844,
+    "hp": "100",
+    "inventory": [
+      {
+        "count": "2",
+        "name": "木材"
+      },
+      {
+        "count": "0",
+        "name": "石料"
+      },
+      {
+        "count": "0",
+        "name": "纤维"
+      },
+      {
+        "count": "3",
+        "name": "浆果"
+      },
+      {
+        "count": "0",
+        "name": "贝壳"
+      },
+      {
+        "count": "0",
+        "name": "晶石"
+      },
+      {
+        "count": "0",
+        "name": "石斧"
+      },
+      {
+        "count": "0",
+        "name": "晶石剑"
+      },
+      {
+        "count": "0",
+        "name": "烤浆果"
+      }
+    ],
+    "quest": "归航的灯火",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "limits": [
+    "Tower plaster repetition and the stepped door-board arch remain stylized; static windows have no interior, and ground/shore integration is not complete.",
+    "One shared procedural tree shape, leaf cards, actor hands/cloth and repeated NPC faces remain visible quality debt.",
+    "The q6 model view is a declared fixture, not an actual repair or complete current-version ordinary main-line acceptance.",
+    "Only 60-second scripted rAF/JS-heap samples; desktop warm-up spikes remain, and no current long-term GPU or real-device quality result.",
+    "Natural locomotion/gathering/attack contacts, representative complete ordinary journey and actual audio audition still pending.",
+    "All five M5 gates and the full 3A goal remain incomplete; hourly automation retained."
+  ],
+  "evidenceSha256": {
+    "docs/lighthouse-art-baseline-entry.jpg": "095e4c8eb914c9f69dba15efc3db037c79806b2d45e1725296b0833810b45a13",
+    "docs/lighthouse-art-baseline-front.jpg": "cc37da9998779bedf36cb6d747f5ac1c932603782058d6c88ef19cf78efb312c",
+    "docs/lighthouse-art-baseline-lantern.jpg": "9bb4d4c90314019468e238b259220207a1370879cfbac821ba1b32ec92d5e4c0",
+    "docs/lighthouse-art-baseline-lit-night.jpg": "6fd4d904b7b7dde27fa8c5b6c0f5fc1eac26ade604964c0107745cc25c04361e",
+    "docs/lighthouse-art-baseline-ui.json": "a80c4ed6c5a4f8851be04f9fef2ef93b9a69c35e3940e1ce59fcb86b39ab8e4a",
+    "docs/lighthouse-art-desktop-dynamic.json": "d2c68afc1ba091d48858c05e6bc33b948b48251200b12f6c88689e811f286885",
+    "docs/lighthouse-art-final-entry.jpg": "30f55e97dc3cd738ba7cc2954afe7b4a00f6f486344efd9fb29f22e2e5f39dfe",
+    "docs/lighthouse-art-final-front.jpg": "6994254361fc99ef086c2d2cca0f35e7fe0412511f75962428fdcc6bbba5e3af",
+    "docs/lighthouse-art-final-lantern.jpg": "3d8c2673a0c64ccf8426e3abd1950ca14b3fc49e3e787ccee38b14d07e817f1f",
+    "docs/lighthouse-art-final-lit-night.jpg": "a0b42f2242ce6c5ea7831aea75e703d9fedd2c3e494f881a272d470e6d612ff5",
+    "docs/lighthouse-art-final-mobile-day.jpg": "c361707b341c8fb58895f69ef2efdc9364c94f90a2e3e7acbd6201e01bf5dbbd",
+    "docs/lighthouse-art-final-mobile-night.jpg": "98d1a100b94ee6c065c96d88e50f7763f3f0fe4d65e954ecd18f0cb971069ac7",
+    "docs/lighthouse-art-final-side.jpg": "49ee808287ba10a9ba7abab767ec161e3ad648c29dd799ade55ab073343ba227",
+    "docs/lighthouse-art-final-unlit-night.jpg": "e76ce892ec67fbc99e56a3b7f068b0e59072b888335a91f22642b88be39b5d92",
+    "docs/lighthouse-art-focused-tests.txt": "743aa5d4eef3eed7c440ad4f834a3dcb192fc966f010dca81b8aa91ade14e720",
+    "docs/lighthouse-art-full-tests.txt": "7ae724d1fef92f313ac21c1a5820f1cbcfd268bf0726c2f6d0c2a427ec586f01",
+    "docs/lighthouse-art-mobile-dynamic.json": "689ef4957ff2e3ec0100da57d08cdf56f74aea2725d10e4418a131bb6e129620",
+    "docs/lighthouse-art-numerical.json": "3eabb655aa8ab5bd681dbdea6ff153701af2bcd74c065f381e62a134fd8ae217",
+    "docs/lighthouse-art-package-after-gather.jpg": "c15c12f39ced202b46d0f38e300c63172df12902aff21a2f63fe7ff8fb8f2a99",
+    "docs/lighthouse-art-package-before-gather.jpg": "ff03b7f66785a5fc70bb5cda13ba99534691d57d0f84542697c1889f276cbd0b",
+    "docs/lighthouse-art-package-mobile-bag.jpg": "ad983178bb5c43e5edcec47a3a26fbff3c7a0d72d2b530a55d50b6f730ccd917",
+    "docs/lighthouse-art-package-mobile-world.jpg": "bb9d49f259dfa046d5df4184dd6a3b909e815b8aa55777906cde4f3dc49c6042",
+    "docs/lighthouse-art-package-tests.txt": "0cf57cbf8729980143491e1e90cf89ca373c60c2f055a0e4aa49946257c29314",
+    "docs/lighthouse-art-package-ui.json": "ded6119f2ee1ead9e1cb7138cca0141d6c65fbd1e3dcab0db652389deee48a0a",
+    "docs/lighthouse-art-red-tests.txt": "9113ee6dc3c58591849ecefed6a7b5595131c15b523e88c86e501f37cfcb4ff5",
+    "docs/lighthouse-art-review.json": "054457915eaa3e5f07fc25750cd18e3b5f7275ff8c7c33de9b3bbbc8bda5a384",
+    "docs/lighthouse-art-review.md": "1394e52e0547fbc43f65f28505056384f7db4a574271b6f8566fb98dc99d0b17",
+    "docs/lighthouse-art-syntax.json": "a36709ce4b420e40fe2c9756d4f78134167d79450feb511242cb3cbc63962d00",
+    "docs/lighthouse-art-ui.json": "7335e063d9d37fdf569770e1770de32d00a8aa3af59e2cc860548f2a8ec07360"
+  }
+}

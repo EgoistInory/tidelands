@@ -1,0 +1,19 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>潮生群岛 · 灯塔实景验收</title>
+<style>html,body{margin:0;height:100%;background:#20332f;color:#f1e9d7;font:14px system-ui}body{display:flex;flex-direction:column}nav{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px}select{font:inherit;padding:6px}output{display:block;flex:0 0 75px;overflow:auto;overflow-wrap:anywhere;padding:8px;font:12px monospace}canvas{display:block;width:100%;flex:1;min-height:0}</style>
+<nav><strong>灯塔生产实景 · 无boot/存档</strong><label>镜头 <select id="view"><option value="front">全塔正面</option><option value="side">全塔侧面</option><option value="entry">入口近景</option><option value="lantern">灯室近景</option></select></label><label>时刻 <select id="time"><option value="240">正午</option><option value="0">午夜</option></select></label><label>声明任务状态 <select id="quest"><option value="0">未修复</option><option value="6">主线完成fixture</option></select></label><span>固定镜头与声明任务值，不是实际修复、主线或GPU验收。</span></nav>
+<output id="result">准备世界…</output><canvas id="world" aria-label="真实生产灯塔、地表与声明任务状态"></canvas>
+<script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {WorldView} from '../src/scene.js';
+import {createWorld,LANDMARKS,terrain} from '../src/world.js';
+import {freshGame} from '../src/game.js';
+const canvas=document.querySelector('canvas'),view=new WorldView(canvas,createWorld()),state=freshGame(),site=LANDMARKS.find(o=>o.type==='lighthouse');state.enemies=[];state.player.x=site.x-5;state.player.z=site.z+8;view.sync(state);
+function draw(){
+  state.quest=Number(document.querySelector('#quest').value);state.time=Number(document.querySelector('#time').value);view.resize();view.draw(state,null,null,false,0);
+  const base=terrain(site.x,site.z),mode=document.querySelector('#view').value,poses={front:[[0,15,43],[0,11,0]],side:[[43,15,0],[0,11,0]],entry:[[4,3.2,9],[0,2.1,1]],lantern:[[7,22.5,10],[0,21.7,0]]},[position,target]=poses[mode];
+  view.camera.position.set(site.x+position[0],base+position[1],site.z+position[2]);view.camera.lookAt(site.x+target[0],base+target[1],site.z+target[2]);view.renderer.render(view.scene,view.camera);
+  const {lantern,beacon}=view.lighthouse.userData,info=view.renderer.info;let meshes=0,triangles=0;view.lighthouse.traverse(m=>{if(m.isMesh){meshes++;triangles+=(m.geometry.index?.count??m.geometry.attributes.position.count)/3;}});
+  document.querySelector('#result').textContent=JSON.stringify({view:mode,time:state.time,quest:state.quest,beaconVisible:beacon.visible,beaconYaw:beacon.rotation.y,lanternEmissive:lantern.material.emissive.getHex(),lanternIntensity:lantern.material.emissiveIntensity,modelMeshes:meshes,modelTriangles:triangles,ready:view.groundSurface.userData.ground.state.status==='ready'&&view.rockSurface.userData.rock.state.status==='ready',viewport:[innerWidth,innerHeight],render:{calls:info.render.calls,triangles:info.render.triangles,textures:info.memory.textures},glError:view.renderer.getContext().getError(),scope:'Fixed WorldView camera and declared quest0/6 fixture; no boot/storage/actual repair or full quality gate.'});
+}
+document.querySelectorAll('select').forEach(e=>e.onchange=draw);window.addEventListener('resize',draw);Promise.all([view.groundSurface.userData.ground.loaded,view.rockSurface.userData.rock.loaded]).then(draw);draw();
+</script></html>
