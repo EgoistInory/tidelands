@@ -1,11 +1,12 @@
 import * as THREE from '../vendor/three.module.min.js';
 import {ATTACK_DURATION,GATHER_DURATION} from './action-timing.js';
+import {createTextileMaterial} from './textile.js';
 
 const fabrics=new Map();
-function surface(color,metal=false){const key=`${color}-${metal}`;if(!fabrics.has(key))fabrics.set(key,new THREE.MeshStandardMaterial({color,roughness:metal?.36:.88,metalness:metal?.55:0}));return fabrics.get(key);}
-function part(geometry,color,x,y,z,metal=false){const m=new THREE.Mesh(geometry,surface(color,metal));m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;return m;}
-const rounded=(r,length,color,x,y,z)=>part(new THREE.CapsuleGeometry(r,length,5,10),color,x,y,z);
-const block=(w,h,d,color,x,y,z,metal=false)=>part(new THREE.BoxGeometry(w,h,d),color,x,y,z,metal);
+function surface(color,metal=false,cloth=false){const key=`${color}-${metal}-${cloth}`;if(!fabrics.has(key))fabrics.set(key,cloth?createTextileMaterial(color):new THREE.MeshStandardMaterial({color,roughness:metal?.36:.88,metalness:metal?.55:0}));return fabrics.get(key);}
+function part(geometry,color,x,y,z,metal=false,cloth=false){const m=new THREE.Mesh(geometry,surface(color,metal,cloth));m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;return m;}
+const rounded=(r,length,color,x,y,z,cloth=false)=>part(new THREE.CapsuleGeometry(r,length,5,10),color,x,y,z,false,cloth);
+const block=(w,h,d,color,x,y,z,metal=false,cloth=false)=>part(new THREE.BoxGeometry(w,h,d),color,x,y,z,metal,cloth);
 function shapedPart(points,depth,color,x,y,z,metal=false){
   const shape=new THREE.Shape(points.map(([px,py])=>new THREE.Vector2(px,py)));
   return part(new THREE.ExtrudeGeometry(shape,{depth,bevelEnabled:true,bevelThickness:.012,bevelSize:.012,bevelSegments:2,steps:1}),color,x,y,z-depth/2,metal);
@@ -37,7 +38,7 @@ function trailBoot(side){
 export function createCharacter(color=0xb86636){
   const root=new THREE.Group(),body=new THREE.Group();root.add(body);
   const coatProfile=[[.43,0],[.44,.08],[.42,.28],[.36,.52],[.35,.65],[.42,.79],[.49,.90],[.46,.95],[.30,1.02]].map(([r,y])=>new THREE.Vector2(r,y));
-  const coat=part(new THREE.LatheGeometry(coatProfile,24),color,0,1.25,0);coat.scale.z=.63;body.add(coat);
+  const coat=part(new THREE.LatheGeometry(coatProfile,24),color,0,1.25,0,false,true);coat.scale.z=.63;body.add(coat);
   const trim=new THREE.Color(color).multiplyScalar(.66).getHex();
   const coatPanel=(points,panelColor)=>{
     const shape=new THREE.Shape(points.map(([x,y])=>new THREE.Vector2(x,y))),geometry=new THREE.ShapeGeometry(shape);
@@ -47,7 +48,7 @@ export function createCharacter(color=0xb86636){
       for(let j=1;j<coatProfile.length;j++)if(y<=coatProfile[j].y){radius=THREE.MathUtils.lerp(coatProfile[j-1].x,coatProfile[j].x,(y-coatProfile[j-1].y)/(coatProfile[j].y-coatProfile[j-1].y));break;}
       positions.setZ(i,Math.sqrt(Math.max(0,radius*radius-positions.getX(i)**2))*.63+.025);
     }
-    geometry.computeVertexNormals();body.add(part(geometry,panelColor,0,0,0));
+    geometry.computeVertexNormals();body.add(part(geometry,panelColor,0,0,0,false,true));
   };
   for(const side of [-1,1]){
     coatPanel([[side*.10,2.25],[side*.32,2.10],[side*.17,1.96],[side*.05,2.14]],trim);
@@ -60,23 +61,23 @@ export function createCharacter(color=0xb86636){
   body.add(rounded(.065,.03,0xc79878,-.27,2.64,0),rounded(.065,.03,0xc79878,.27,2.64,0));
   for(const x of [-.105,.105])body.add(block(.055,.038,.025,0x302c26,x,2.67,.254));
   body.add(rounded(.052,.045,0xbd8968,0,2.6,.274));
-  const scarf=part(new THREE.TorusGeometry(.22,.075,6,16),0xb2b7a1,0,2.31,0);scarf.rotation.x=Math.PI/2;body.add(scarf,block(.16,.34,.05,0xb2b7a1,.12,2.13,.31));
-  body.add(rounded(.25,.38,0x555747,0,1.97,-.35));
-  const bedroll=part(new THREE.CylinderGeometry(.10,.10,.72,12),0x9e9275,0,2.35,-.40);bedroll.rotation.z=Math.PI/2;body.add(bedroll);
+  const scarf=part(new THREE.TorusGeometry(.22,.075,6,16),0xb2b7a1,0,2.31,0,false,true);scarf.rotation.x=Math.PI/2;body.add(scarf,block(.16,.34,.05,0xb2b7a1,.12,2.13,.31,false,true));
+  body.add(rounded(.25,.38,0x555747,0,1.97,-.35,true));
+  const bedroll=part(new THREE.CylinderGeometry(.10,.10,.72,12),0x9e9275,0,2.35,-.40,false,true);bedroll.rotation.z=Math.PI/2;body.add(bedroll);
   for(const x of [-.22,.22]){const binding=part(new THREE.TorusGeometry(.102,.018,6,12),0x514239,x,2.35,-.40);binding.rotation.y=Math.PI/2;body.add(binding);}
   for(const x of [-.24,.24])body.add(block(.065,.71,.06,0x927955,x,1.98,.3));
   const hips=[],knees=[],ankles=[],shoulders=[],elbows=[];
   for(const side of [-1,1]){
     const hip=new THREE.Group();hip.position.set(side*.22,1.28,0);body.add(hip);hips.push(hip);
-    hip.add(rounded(.145,.32,0x343e3b,0,-.25,0));
+    hip.add(rounded(.145,.32,0x343e3b,0,-.25,0,true));
     const knee=new THREE.Group();knee.position.y=-.54;hip.add(knee);knees.push(knee);
-    knee.add(rounded(.12,.3,0x343e3b,0,-.22,0),rounded(.145,.18,0x423a30,0,-.42,0));
+    knee.add(rounded(.12,.3,0x343e3b,0,-.22,0,true),rounded(.145,.18,0x423a30,0,-.42,0));
     const ankle=new THREE.Group();ankle.position.y=-.55;knee.add(ankle);ankles.push(ankle);
     ankle.add(trailBoot(side));
     const shoulder=new THREE.Group();shoulder.position.set(side*.46,2.17,0);body.add(shoulder);shoulders.push(shoulder);
-    shoulder.add(rounded(.135,.27,color,0,-.20,0));
+    shoulder.add(rounded(.135,.27,color,0,-.20,0,true));
     const elbow=new THREE.Group();elbow.position.y=-.43;shoulder.add(elbow);elbows.push(elbow);
-    elbow.add(rounded(.11,.25,color,0,-.18,0),rounded(.105,.12,0xc79878,0,-.43,0));
+    elbow.add(rounded(.11,.25,color,0,-.18,0,true),rounded(.105,.12,0xc79878,0,-.43,0));
   }
   const tools=new THREE.Group();tools.position.set(0,-.46,.04);tools.rotation.z=Math.PI;elbows[1].add(tools);
   const axe=new THREE.Group();axe.add(rounded(.045,.78,0x6d5136,0,.08,0));

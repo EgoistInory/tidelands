@@ -1,0 +1,150 @@
+{
+  "kind": "bounded-textile-evidence-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "pendingBatchEvidence": [],
+  "changedProduction": [
+    "src/textile.js",
+    "src/character.js",
+    "src/scene.js"
+  ],
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-textile.zip",
+    "archiveBytes": 8181015,
+    "archiveEntries": 43,
+    "archiveSha256": "cef080d993f71b61455facb098a76b3117ecac4172ea1406c2768122865c4e04"
+  },
+  "runtimeSha256": {
+    "src/action-timing.js": "43628f890216ab5678e9887598b9cb8176daa68e9a9176c79f64dcf07f344dc5",
+    "src/audio.js": "6eefb0bb75d8e8c61ae8bcbc54e1b5486eb9f850e9a81f9a49b37f414f79b846",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "ba4ec4953469ab564dfc7d1d9234684afe83df31834b3c7b4a2e7c94a4087228",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/crystal.js": "1f4191077b07bc551dd5bb59397f404e0d0cde15c7aa2f30bc27e1f098d4c3cb",
+    "src/foliage.js": "d7649b9b6e0d1a3496d8c8b2fa5198e1876076dc2fa3d78ebaebbea77546e4b6",
+    "src/game.js": "6f90fea0c8f32696832f53cccd35373dbae14e5310011a89db350c0ce312d223",
+    "src/ground-surface.js": "fa13f118fd37388219febdadc0c3b1a5a19af799ff115ec429b36f7aee573c04",
+    "src/main.js": "06ed33246edbeedaf0a8007aad1b74142e2712848fd8102484b2534558cfe422",
+    "src/meadow.js": "08ffc76769aa829809bd4056bfab376b73ae6c9c67a6478b3729ee7ee636badd",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "0432cd242408149b28e7def74638263ff031bfbf18c180cf13ee2e60a3a5c5f2",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "c9571aebd4c6352b3278af90f21226a4ecb9621e81dd80ff8f7af49cd7334b0c",
+    "src/sky.js": "e83f0d3ce196d44b214a608f09f0763ca33caa10c2d3ed671579b508effa75d4",
+    "src/startup-textures.js": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd",
+    "src/textile.js": "409b2ccf20dcbd8005e2d220404c358d5d39e1a7c6533db0bb80692cc85a69fb",
+    "src/world.js": "f9f0114982deaf69dda65b8ec44e0eba88f1cc228b1859379dc7da24b93456e1"
+  },
+  "historicalArchivesPreserved": 26,
+  "motions": [
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "elapsedMs": 10000,
+      "p95Ms": 17.69999999999709,
+      "maxMs": 18.69999999999709,
+      "over50ms": 0,
+      "frames": 601
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "elapsedMs": 10000,
+      "p95Ms": 18.099999999976717,
+      "maxMs": 18.60000000000582,
+      "over50ms": 0,
+      "frames": 601
+    }
+  ],
+  "ordinaryFinal": {
+    "bearing": "北",
+    "coordinates": "位置 X -73.0，Z 93.4；建筑 0；击败 0",
+    "hp": "100",
+    "inventory": [
+      {
+        "count": "2",
+        "name": "木材"
+      },
+      {
+        "count": "0",
+        "name": "石料"
+      },
+      {
+        "count": "0",
+        "name": "纤维"
+      },
+      {
+        "count": "3",
+        "name": "浆果"
+      },
+      {
+        "count": "0",
+        "name": "贝壳"
+      },
+      {
+        "count": "0",
+        "name": "晶石"
+      },
+      {
+        "count": "0",
+        "name": "石斧"
+      },
+      {
+        "count": "0",
+        "name": "晶石剑"
+      },
+      {
+        "count": "0",
+        "name": "烤浆果"
+      }
+    ],
+    "quest": "归航的灯火",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "limits": [
+    "Character face/hair and body silhouette still toy-like; texture addition does not establish final model quality.",
+    "Vegetation silhouette, grass through tent floor, building/terrain contact and unified scene art remain.",
+    "Close desktop QA intentionally cuts feet; not a default gameplay composition acceptance.",
+    "Dual draw fixture motion is not GPU/device/full gameplay performance; new small maps upload during render, cold cost unmeasured.",
+    "Actual audio audition, current complete ordinary main path, long performance/actual GPU/device quality and natural surface contact remain.",
+    "Public origin destination awaits the previously asked human choice; no repeated question/fetch/push."
+  ],
+  "evidenceSha256": {
+    "docs/textile-back-final.jpg": "7faefe46a0b9d7d02a75b1e2f1f628426482900e86ef141553a883de0effabe7",
+    "docs/textile-baseline.json": "090619223f44d31ab2ee2032f407627f4ad472ced973b188d07728721d0ce7cb",
+    "docs/textile-camp-night.jpg": "6cfbbbdeff5c240d8c6bd7bd3cab710ad2bc12c0ebf68d63b3f027d3c2b0a9a9",
+    "docs/textile-coat-final-off.jpg": "a7566eae557b539b9b088f7719be1740c5ef00a1f5609aa2102202b749bfe46d",
+    "docs/textile-coat-final.jpg": "4e12903b61a043ee8e13935341720f827be97184c34f08aed8c2fd1fc694dd0c",
+    "docs/textile-coat-mobile.jpg": "00f89d1f688d694c5c1a55f6f09e43da77df9b13576116d6e022ea71af14e4bb",
+    "docs/textile-coat-off.jpg": "a7566eae557b539b9b088f7719be1740c5ef00a1f5609aa2102202b749bfe46d",
+    "docs/textile-coat-on.jpg": "34bc5219c9379f84354060a4e96028955509dc8f7a415b4e31da276f5de95057",
+    "docs/textile-desktop-motion.json": "c41ebce89c66cb9d29f4f88c0d57d977ab89f9b1662a88cec8857ea6217b4124",
+    "docs/textile-final-focused-tests.txt": "b3cf94a9b5e219dd12fe64d11cc21b3af1c7dbee41028d2c6532b55c990d3415",
+    "docs/textile-final-full-tests.txt": "822a7844cde4a6e55397ac53b27e9cf3203e0f11f1ed17f94bc9441331dc1085",
+    "docs/textile-full-tests.txt": "42fd54c3db14a0ff2d2a4d2738c7d53e6c77383a635ca12042a990d03e35f4bf",
+    "docs/textile-green-tests.txt": "50e5e5260ef30eb31f5a0187d2419ff1341fd1cd65abb3f3a1ee32e4faed8a81",
+    "docs/textile-initial-full-tests.txt": "69b61b39b371501a44f087735f9027055869dba11497028ac3bb3d4a7e7a1897",
+    "docs/textile-material-design.md": "740c4ec18406b395f4cafe28eab66ec04fcdc2a70c77ffc3f26a0581e79c6cdf",
+    "docs/textile-mobile-motion.json": "91672b979c322758bbf2f057e8bf45e0427554219409324e780c4385d899660e",
+    "docs/textile-numerical.json": "0cd645e3eadbba3e259dcdd0e3eb5f0a3985031266b619df35afddbd1ce193d0",
+    "docs/textile-package-desktop.jpg": "f6e8500248e376074074ba139917bb67aa710320a06c373e41c4af2332ef6313",
+    "docs/textile-package-mobile.jpg": "b1d64cdcb4b3d673b96db3a2699ddde785465ce102cb0dbd22df34aca1432d56",
+    "docs/textile-package-tests.txt": "a405de326cbba434c19b13cd859da280fa16936eeb0d3bbc5a7bc0ebf0b86865",
+    "docs/textile-package-ui.json": "110b5bbdd1170124022b87f4885fbacd57bb020bc490c485bd53dcaf1d894657",
+    "docs/textile-red-tests.txt": "034c71ab4edf803c3667c4bc8acafb9eb9f2e0f86965293091746e292f3a8289",
+    "docs/textile-tent-final-off.jpg": "58b1bc554f99f64afe0fc92397d11cfe4b453bd417cbabd99b006f94c48d6170",
+    "docs/textile-tent-final.jpg": "7b2e638c39b135277894c9e05c3648a49653bce356ef2446b29c47b3c37a0108",
+    "docs/textile-tent-mobile.jpg": "b4a8920cedd5d17551c73fd88ba51b250d874d981a68f001d0ae7ccf3db63459",
+    "docs/textile-ui-initial.json": "cf62aa81f855d257a372d714bab417a3cee600346f3840acb3ac773c5df9b391",
+    "docs/textile-ui.json": "e2d305b8c49b109324fb9076950154a0e0e2f24c2a36d7e84f0d9322d84bbe9c"
+  }
+}

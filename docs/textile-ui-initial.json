@@ -1,0 +1,59 @@
+{
+  "samples": [
+    {
+      "ready": true,
+      "enabled": true,
+      "subject": "coat",
+      "time": 240,
+      "angle": 0,
+      "position": [
+        -70,
+        102
+      ],
+      "textileMeshes": 73,
+      "textileMaps": 2,
+      "render": {
+        "calls": 160,
+        "triangles": 1419401,
+        "geometries": 238,
+        "textures": 19,
+        "programs": 21
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "stats": null,
+      "note": "Production WorldView with declared camp and scripted movement fixture; off simulates prior flat cloth, no save. Dual draw is not gameplay GPU performance."
+    },
+    {
+      "ready": true,
+      "enabled": false,
+      "subject": "coat",
+      "time": 240,
+      "angle": 0,
+      "position": [
+        -70,
+        102
+      ],
+      "textileMeshes": 73,
+      "textileMaps": 0,
+      "render": {
+        "calls": 157,
+        "triangles": 1326021,
+        "geometries": 281,
+        "textures": 19,
+        "programs": 23
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "stats": null,
+      "note": "Production WorldView with declared camp and scripted movement fixture; off simulates prior flat cloth, no save. Dual draw is not gameplay GPU performance."
+    }
+  ],
+  "revision": "First weave had a visibly coarse checker pattern and camera-dependent cover not updated for final QA camera; retained, superseded."
+}

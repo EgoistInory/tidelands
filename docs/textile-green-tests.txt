@@ -1,0 +1,28 @@
+TAP version 13
+# Subtest: shared woven textures keep tint and linear relief separate, tile smoothly and use mipmaps
+ok 1 - shared woven textures keep tint and linear relief separate, tile smoothly and use mipmaps
+  ---
+  duration_ms: 11.9295
+  type: 'test'
+  ...
+# Subtest: only named cloth parts share the textile maps across people and shelter
+ok 2 - only named cloth parts share the textile maps across people and shelter
+  ---
+  duration_ms: 14.081375
+  type: 'test'
+  ...
+# Subtest: tent canvas UV measures local panel distances and survives preview disposal
+ok 3 - tent canvas UV measures local panel distances and survives preview disposal
+  ---
+  duration_ms: 1.528
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 88.207792

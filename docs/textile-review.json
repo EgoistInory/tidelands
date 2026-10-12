@@ -1,0 +1,102 @@
+{
+  "stage": "M5_shared_clothing_and_shelter_textile_batch",
+  "batchComplete": true,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "validationSourceSha256": {
+    "src/textile.js": "409b2ccf20dcbd8005e2d220404c358d5d39e1a7c6533db0bb80692cc85a69fb",
+    "src/character.js": "ba4ec4953469ab564dfc7d1d9234684afe83df31834b3c7b4a2e7c94a4087228",
+    "src/scene.js": "c9571aebd4c6352b3278af90f21226a4ecb9621e81dd80ff8f7af49cd7334b0c",
+    "tests/textile.test.js": "5450ae8b72ef9c69a8aa77b5191dd926fc7e2bd6b04723f4dd5344e81f7f7b89",
+    "tests/textile-review.html": "55f91d174af01454c68eefe4ae035648f151c3956db92147711720cc93a9187c",
+    "tools/textile_review.mjs": "17417064caa9f3209e77f3549c8e4a62b9a037405acf6b4b9d3e3fa317803226",
+    "tools/verify_textile_evidence.py": "4e97ecc142daf3642ac430bbcb2c550f59628686b6250fbabccaa72bf85cb522",
+    "tools/package_local.py": "7456d293ce4b0787a1a071a2fb79a582b17ba49113f64fee1c3da616bb79a3db",
+    "tools/verify_local.py": "4dd43e52e32c4c4625626338bcffb4b3e02689b1b54cd95bb26791e13a367436"
+  },
+  "historicalArchives": {
+    "tidelands-local.zip": "61e173d0bf869afda5cfa674a6a675780b9453a8389baabbd33948fb12bc90ac",
+    "tidelands-m5-2026-10-05.zip": "02c7cc719a0a48608813e46c2d34075e12d280b42ae7c239acaba34f0a870d57",
+    "tidelands-m5-2026-10-07-actions.zip": "6185ccc117cade308691fe9cafbf816f2ccb924a4b5e593077708de593e4be03",
+    "tidelands-m5-2026-10-07.zip": "96afc2db4479ff52507b4d9401a4923a63b330f2cda2a852d92d08979b8c47f3",
+    "tidelands-m5-2026-10-08-coastal.zip": "4151c774820b95a8a7f2047f8d04e3d3ce7f3fce506f25b6de361bea8190487e",
+    "tidelands-m5-2026-10-08-environment.zip": "425e9c09c15e972db5f92a47f50d53b9a11e6a68c9c76d712a83c3bb880a2b27",
+    "tidelands-m5-2026-10-08-gather.zip": "85652535f557cd969a0187bab03a828df6182250160442fb7ec23192c8df6aab",
+    "tidelands-m5-2026-10-08-geometry.zip": "71c01deb02da8c3bb52b6e964a923889c66a87de16d8175da2336b6d9e2e7951",
+    "tidelands-m5-2026-10-08-impact.zip": "2e14043826237e907b7ba7bcfac79655a6eb10ba38e0cb220462cc2b6553a4cd",
+    "tidelands-m5-2026-10-08-state-reuse.zip": "9df94bc69a2cf34e5e9d73b38d247e505f492bf6ba297b9ee3cb0721d9860f46",
+    "tidelands-m5-2026-10-08-understory.zip": "e7d58cce5e5dcd94b0aeb43af859c339225bf53cd0a1f44e00e3a62a75f81728",
+    "tidelands-m5-2026-10-11-camera-easing.zip": "b57af3b327ddf5d72faef3fce3545e708e5b8fd9d11ecd8541f7954e6067489b",
+    "tidelands-m5-2026-10-11-camp-material.zip": "d6146ac310b68ef9908e78ffbb2a4ee05fcb390e79edf4056911863d40dad4dc",
+    "tidelands-m5-2026-10-11-campfire.zip": "91748f999337c9f597625c6fced63d86d5b86bd47c58f4c7f44b104f7dab06f3",
+    "tidelands-m5-2026-10-11-coordination.zip": "0d011a80c18e3ab21597555d0b2226183ead97fdf5a3b65441d02827a73bddb6",
+    "tidelands-m5-2026-10-11-ecology-audio.zip": "dca399dd5035234091d02e3acf816041467691f6dc1d9f07bfa197c6a4b559c7",
+    "tidelands-m5-2026-10-11-sand.zip": "b28d957d119fa0124c33b1dff2674e8f7134ef4e51dbf27260fdb8bd8a0c45a7",
+    "tidelands-m5-2026-10-11-startup.zip": "4dabc2d8e41c3c1ab46a9051e25661fc00a162cfe40a4d1bb58159f2f303107a",
+    "tidelands-m5-2026-10-11-wetshore.zip": "57ffe88bcc5a4a17065d325cb01815553ee5ecef02bfe79762f876a97f55f889",
+    "tidelands-m5-2026-10-12-attack.zip": "0ae077178963c698057b61a0cc05ff30ccd366b3856e873616c8b301e2a79f9f",
+    "tidelands-m5-2026-10-12-crystal.zip": "bf30cbb81e6a531f5e90fd8d1d5c26e4e376c5fe78a53d01f359181b67cbcd29",
+    "tidelands-m5-2026-10-12-gather.zip": "a280ca5752f8aec56259b82518aabaae216dd026a9a22ebc52a12a7d14c37d06",
+    "tidelands-m5-2026-10-12-harvest.zip": "84b41994c737e9b827da74f8ba2aad8f84b3128c31de4edc695c33627966c81d",
+    "tidelands-m5-2026-10-12-resume.zip": "53d0adffee951882f6b20a3b3120737dad1674ea9a353a73d8dca8b27b8f1b4a",
+    "tidelands-m5-2026-10-12-weather.zip": "aabc0db1d4dac91f19270357fc59b4188d32d93a58b09bc73057c294d519d63a",
+    "tidelands-m5-2026-10-12-wind.zip": "6e4bcdd96671d740274cf5f5ac37782b178d385dce6fc763a11b08531264e0a9"
+  },
+  "imagesViewedSha256": {
+    "docs/textile-tent-mobile.jpg": "b4a8920cedd5d17551c73fd88ba51b250d874d981a68f001d0ae7ccf3db63459",
+    "docs/textile-coat-off.jpg": "a7566eae557b539b9b088f7719be1740c5ef00a1f5609aa2102202b749bfe46d",
+    "docs/textile-tent-final-off.jpg": "58b1bc554f99f64afe0fc92397d11cfe4b453bd417cbabd99b006f94c48d6170",
+    "docs/textile-coat-final-off.jpg": "a7566eae557b539b9b088f7719be1740c5ef00a1f5609aa2102202b749bfe46d",
+    "docs/textile-coat-on.jpg": "34bc5219c9379f84354060a4e96028955509dc8f7a415b4e31da276f5de95057",
+    "docs/textile-coat-final.jpg": "4e12903b61a043ee8e13935341720f827be97184c34f08aed8c2fd1fc694dd0c",
+    "docs/textile-camp-night.jpg": "6cfbbbdeff5c240d8c6bd7bd3cab710ad2bc12c0ebf68d63b3f027d3c2b0a9a9",
+    "docs/textile-package-mobile.jpg": "b1d64cdcb4b3d673b96db3a2699ddde785465ce102cb0dbd22df34aca1432d56",
+    "docs/textile-back-final.jpg": "7faefe46a0b9d7d02a75b1e2f1f628426482900e86ef141553a883de0effabe7",
+    "docs/textile-coat-mobile.jpg": "00f89d1f688d694c5c1a55f6f09e43da77df9b13576116d6e022ea71af14e4bb",
+    "docs/textile-tent-final.jpg": "7b2e638c39b135277894c9e05c3648a49653bce356ef2446b29c47b3c37a0108",
+    "docs/textile-package-desktop.jpg": "f6e8500248e376074074ba139917bb67aa710320a06c373e41c4af2332ef6313"
+  },
+  "validation": [
+    "3 expected missing-module RED; 3 focused pass",
+    "initial full 168/169 failed tent roughness invariant; preserved tent roughness=1 and final 169/169 pass",
+    "two original-color character models match prior extracted vertices/normals/indices/transforms at 279 poses each; tent geometry unchanged except new UV",
+    "8 explicit GL fixture samples and desktop/390 ten-second scripted movement; no save",
+    "independent local ZIP ordinary harvest +2 wood, save/reload390 retains (-73.0,93.4), HP100/q0/wood2/berry3, no injected state"
+  ],
+  "failuresRetained": [
+    "initial coarse checkered weave reduced to finer and gentler variation; initial images retained",
+    "QA ground cover culling updated for fixed final camera; initial count differences not a version performance comparison",
+    "画面 exact label selector unavailable; used observed #subject",
+    "backpack exact 背包 unavailable and I key had no effect; read actual buttons and used 背包 B",
+    "sandbox socket connect_ex=1 for both local ports is not listener evidence; approved lsof shows original4190 only",
+    "git cached whitespace check flags two whitespace-only original TAP diagnostic lines; kept raw failure log verbatim, all other staged files checked clean."
+  ],
+  "cleanup": {
+    "tabsClosed": [
+      "44",
+      "45"
+    ],
+    "viewportReset": true,
+    "packagePort": 53935,
+    "packageStopExitCode": 1,
+    "stopReason": "intentional Ctrl-C/KeyboardInterrupt",
+    "packageListenerAbsent": true,
+    "sourceListener": "127.0.0.1:4190/PID21636"
+  },
+  "quota": {
+    "initialOrdinaryUsageAllowed": true,
+    "initial5h": 25,
+    "initialWeek": 67,
+    "evidenceRead5h": 34,
+    "evidenceReadWeek": 68,
+    "creditsOrCouponsUsed": false
+  },
+  "remainingQuality": [
+    "Character face/hair and body silhouette still toy-like; texture addition does not establish final model quality.",
+    "Vegetation silhouette, grass through tent floor, building/terrain contact and unified scene art remain.",
+    "Close desktop QA intentionally cuts feet; not a default gameplay composition acceptance.",
+    "Dual draw fixture motion is not GPU/device/full gameplay performance; new small maps upload during render, cold cost unmeasured.",
+    "Actual audio audition, current complete ordinary main path, long performance/actual GPU/device quality and natural surface contact remain.",
+    "Public origin destination awaits the previously asked human choice; no repeated question/fetch/push."
+  ]
+}

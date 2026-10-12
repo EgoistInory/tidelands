@@ -3,6 +3,7 @@ import {terrain,ISLANDS,LANDMARKS,randomGenerator,dayCycle,weatherAt} from './wo
 import {isDepleted} from './game.js';
 import {unobstructedCamera,smoothCamera} from './camera.js';
 import {createCharacter,animateCharacter} from './character.js';
+import {createTextileMaterial} from './textile.js';
 import {createCreature,animateCreature,resetCreature} from './creature.js';
 import {mergeStaticParts} from './merge-parts.js';
 import {cottageSurfaces,cottageRoof} from './cottage-surfaces.js';
@@ -63,9 +64,16 @@ export function buildingModel(type){
     const log=box(1.6,.25,.3,palette.bark,0,.3,0);log.rotation.y=.7;g.add(log);
     const flame=createFlame();g.add(flame);g.userData.flame=flame;
   }else if(type==='tent'){
-    if(!materials.has('tent-cloth'))materials.set('tent-cloth',new THREE.MeshStandardMaterial({color:0xb9a77c,roughness:1,side:THREE.DoubleSide}));
+    if(!materials.has('tent-cloth'))materials.set('tent-cloth',createTextileMaterial(0xb9a77c,{side:THREE.DoubleSide,roughness:1}));
     const cloth=materials.get('tent-cloth');
-    const panel=vertices=>{const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));geo.computeVertexNormals();const m=new THREE.Mesh(geo,cloth);m.castShadow=m.receiveShadow=true;g.add(m);};
+    const panel=vertices=>{
+      const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));
+      const origin=new THREE.Vector3(...vertices.slice(0,3)),along=new THREE.Vector3(...vertices.slice(3,6)).sub(origin).normalize();
+      const normal=along.clone().cross(new THREE.Vector3(...vertices.slice(6,9)).sub(origin)).normalize(),across=normal.clone().cross(along),uv=[];
+      for(let i=0;i<vertices.length;i+=3){const p=new THREE.Vector3(...vertices.slice(i,i+3)).sub(origin);uv.push(p.dot(along),p.dot(across));}
+      geo.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));geo.computeVertexNormals();
+      const m=new THREE.Mesh(geo,cloth);m.castShadow=m.receiveShadow=true;g.add(m);
+    };
     const beam=(from,to,r,color)=>{const start=new THREE.Vector3(...from),end=new THREE.Vector3(...to),delta=end.clone().sub(start);const m=mesh(new THREE.CylinderGeometry(r,r,delta.length(),8),color);m.position.copy(start.add(end).multiplyScalar(.5));m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),delta.normalize());g.add(m);};
     // Open A-frame shelter: separate canvas slopes, stitched hems and a rear wall.
     for(const side of [-1,1]){

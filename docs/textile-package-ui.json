@@ -1,0 +1,157 @@
+{
+  "url": "http://127.0.0.1:53935/",
+  "freshLabel": "开始旅程",
+  "resumedLabel": "继续旅程",
+  "fixtureImported": false,
+  "stateInjected": false,
+  "steps": [
+    {
+      "action": "start then 8 W",
+      "state": {
+        "bearing": "北",
+        "coordinates": "位置 X -70.5，Z 98.7；建筑 0；击败 0",
+        "hp": "100",
+        "inventory": [],
+        "quest": "归航的灯火",
+        "scrollWidth": 1280,
+        "width": 1280
+      }
+    },
+    {
+      "action": "4 A and 10 W toward first tree",
+      "state": {
+        "bearing": "北",
+        "coordinates": "位置 X -72.8，Z 94.8；建筑 0；击败 0",
+        "hp": "100",
+        "inventory": [],
+        "quest": "归航的灯火",
+        "scrollWidth": 1280,
+        "width": 1280
+      }
+    },
+    {
+      "action": "3 W",
+      "state": {
+        "bearing": "北",
+        "coordinates": "位置 X -73.0，Z 93.4；建筑 0；击败 0",
+        "hp": "100",
+        "inventory": [],
+        "quest": "归航的灯火",
+        "scrollWidth": 1280,
+        "width": 1280
+      }
+    },
+    {
+      "action": "E harvest then I backpack",
+      "state": {
+        "bearing": "北",
+        "coordinates": "位置 X -73.0，Z 93.4；建筑 0；击败 0",
+        "hp": "100",
+        "inventory": [],
+        "quest": "归航的灯火",
+        "scrollWidth": 1280,
+        "width": 1280
+      }
+    },
+    {
+      "action": "actual backpack B",
+      "state": {
+        "bearing": "北",
+        "coordinates": "位置 X -73.0，Z 93.4；建筑 0；击败 0",
+        "hp": "100",
+        "inventory": [
+          {
+            "count": "2",
+            "name": "木材"
+          },
+          {
+            "count": "0",
+            "name": "石料"
+          },
+          {
+            "count": "0",
+            "name": "纤维"
+          },
+          {
+            "count": "3",
+            "name": "浆果"
+          },
+          {
+            "count": "0",
+            "name": "贝壳"
+          },
+          {
+            "count": "0",
+            "name": "晶石"
+          },
+          {
+            "count": "0",
+            "name": "石斧"
+          },
+          {
+            "count": "0",
+            "name": "晶石剑"
+          },
+          {
+            "count": "0",
+            "name": "烤浆果"
+          }
+        ],
+        "quest": "归航的灯火",
+        "scrollWidth": 1280,
+        "width": 1280
+      }
+    }
+  ],
+  "restored": {
+    "bearing": "北",
+    "coordinates": "位置 X -73.0，Z 93.4；建筑 0；击败 0",
+    "hp": "100",
+    "inventory": [
+      {
+        "count": "2",
+        "name": "木材"
+      },
+      {
+        "count": "0",
+        "name": "石料"
+      },
+      {
+        "count": "0",
+        "name": "纤维"
+      },
+      {
+        "count": "3",
+        "name": "浆果"
+      },
+      {
+        "count": "0",
+        "name": "贝壳"
+      },
+      {
+        "count": "0",
+        "name": "晶石"
+      },
+      {
+        "count": "0",
+        "name": "石斧"
+      },
+      {
+        "count": "0",
+        "name": "晶石剑"
+      },
+      {
+        "count": "0",
+        "name": "烤浆果"
+      }
+    ],
+    "quest": "归航的灯火",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "console": [],
+  "notes": [
+    "Backpack locator 背包 exact timed out; current UI is 背包 B. I key did not open it; read actual buttons then clicked 背包 B.",
+    "Only visible backpack assertions are authoritative. Ordinary harvest/save/restore; not a full campaign or actual tent construction."
+  ]
+}

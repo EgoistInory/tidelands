@@ -1,0 +1,227 @@
+{
+  "samples": [
+    {
+      "ready": true,
+      "enabled": true,
+      "subject": "coat",
+      "time": 240,
+      "angle": 0,
+      "position": [
+        -70,
+        102
+      ],
+      "textileMeshes": 73,
+      "textileMaps": 2,
+      "render": {
+        "calls": 157,
+        "triangles": 1326021,
+        "geometries": 238,
+        "textures": 19,
+        "programs": 21
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "stats": null,
+      "note": "Production WorldView with declared camp and scripted movement fixture; off simulates prior flat cloth, no save. Dual draw is not gameplay GPU performance."
+    },
+    {
+      "ready": true,
+      "enabled": false,
+      "subject": "coat",
+      "time": 240,
+      "angle": 0,
+      "position": [
+        -70,
+        102
+      ],
+      "textileMeshes": 73,
+      "textileMaps": 0,
+      "render": {
+        "calls": 157,
+        "triangles": 1326021,
+        "geometries": 281,
+        "textures": 19,
+        "programs": 23
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "stats": null,
+      "note": "Production WorldView with declared camp and scripted movement fixture; off simulates prior flat cloth, no save. Dual draw is not gameplay GPU performance."
+    },
+    {
+      "ready": true,
+      "enabled": true,
+      "subject": "coat",
+      "time": 240,
+      "angle": 3.141592653589793,
+      "position": [
+        -70,
+        102
+      ],
+      "textileMeshes": 73,
+      "textileMaps": 2,
+      "render": {
+        "calls": 95,
+        "triangles": 824276,
+        "geometries": 281,
+        "textures": 19,
+        "programs": 23
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "stats": null,
+      "note": "Production WorldView with declared camp and scripted movement fixture; off simulates prior flat cloth, no save. Dual draw is not gameplay GPU performance."
+    },
+    {
+      "ready": true,
+      "enabled": true,
+      "subject": "tent",
+      "time": 240,
+      "angle": 3.141592653589793,
+      "position": [
+        -70,
+        102
+      ],
+      "textileMeshes": 73,
+      "textileMaps": 2,
+      "render": {
+        "calls": 98,
+        "triangles": 823812,
+        "geometries": 281,
+        "textures": 19,
+        "programs": 23
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "stats": null,
+      "note": "Production WorldView with declared camp and scripted movement fixture; off simulates prior flat cloth, no save. Dual draw is not gameplay GPU performance."
+    },
+    {
+      "ready": true,
+      "enabled": false,
+      "subject": "tent",
+      "time": 240,
+      "angle": 3.141592653589793,
+      "position": [
+        -70,
+        102
+      ],
+      "textileMeshes": 73,
+      "textileMaps": 0,
+      "render": {
+        "calls": 98,
+        "triangles": 823812,
+        "geometries": 281,
+        "textures": 19,
+        "programs": 23
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "stats": null,
+      "note": "Production WorldView with declared camp and scripted movement fixture; off simulates prior flat cloth, no save. Dual draw is not gameplay GPU performance."
+    },
+    {
+      "ready": true,
+      "enabled": true,
+      "subject": "camp",
+      "time": 0,
+      "angle": 3.141592653589793,
+      "position": [
+        -70,
+        102
+      ],
+      "textileMeshes": 73,
+      "textileMaps": 2,
+      "render": {
+        "calls": 107,
+        "triangles": 834798,
+        "geometries": 281,
+        "textures": 19,
+        "programs": 23
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "stats": null,
+      "note": "Production WorldView with declared camp and scripted movement fixture; off simulates prior flat cloth, no save. Dual draw is not gameplay GPU performance."
+    },
+    {
+      "ready": true,
+      "enabled": true,
+      "subject": "coat",
+      "time": 240,
+      "angle": 0,
+      "position": [
+        -70,
+        102
+      ],
+      "textileMeshes": 73,
+      "textileMaps": 2,
+      "render": {
+        "calls": 92,
+        "triangles": 1126179,
+        "geometries": 281,
+        "textures": 19,
+        "programs": 23
+      },
+      "viewport": [
+        390,
+        844
+      ],
+      "glError": 0,
+      "stats": null,
+      "note": "Production WorldView with declared camp and scripted movement fixture; off simulates prior flat cloth, no save. Dual draw is not gameplay GPU performance."
+    },
+    {
+      "ready": true,
+      "enabled": true,
+      "subject": "tent",
+      "time": 240,
+      "angle": 0,
+      "position": [
+        -70,
+        102
+      ],
+      "textileMeshes": 73,
+      "textileMaps": 2,
+      "render": {
+        "calls": 70,
+        "triangles": 1100037,
+        "geometries": 281,
+        "textures": 19,
+        "programs": 23
+      },
+      "viewport": [
+        390,
+        844
+      ],
+      "glError": 0,
+      "stats": null,
+      "note": "Production WorldView with declared camp and scripted movement fixture; off simulates prior flat cloth, no save. Dual draw is not gameplay GPU performance."
+    }
+  ],
+  "console": [],
+  "fixture": true,
+  "notes": [
+    "73 woven meshes: player, three NPCs and five canvas panels.",
+    "Initial lazy geometry uploads and QA flat material variants increase cache counts; not a source-version performance comparison.",
+    "Images reviewed as bounded texture work; face, vegetation and grass through shelter remain quality gaps."
+  ]
+}
