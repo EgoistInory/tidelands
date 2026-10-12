@@ -1,0 +1,36 @@
+{
+  "kind": "bounded-character-art-baseline-audit",
+  "passed": true,
+  "productionChanged": false,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "nextImplementation": "成年旅人头身与面部/发型/衣装轮廓一批，保留骨架/脚底/工具/玩法",
+  "currentPackagePreservedSha256": "00e70db6ee6aafeafe0ac49d6b1700ad2ee5a57e2b6f6c27aa1bbf73583f9c93",
+  "runtimeFilesUnchanged": 42,
+  "closedTabs": [
+    55,
+    56
+  ],
+  "screenshotReview": "All four final and four initial images actually viewed; final view diagnostics consistent.",
+  "limits": [
+    "Baseline/design only; no new character production model or quality acceptance.",
+    "Fixed desktop model views, not gameplay/device/GPU/animation validation.",
+    "Initial UI stats lagged selected views; initial files retained, final synchronous drawing supersedes them."
+  ],
+  "evidenceSha256": {
+    "docs/character-art-baseline-face.jpg": "0427c656ec44e073dc361491cad1d7d7c68f1b0247bbab13c891bafaca39f7b4",
+    "docs/character-art-baseline-front.jpg": "3abe40cce0e6a90b0ae243e3d4fd881237d30590a6c1c2a406890a65839ae78f",
+    "docs/character-art-baseline-initial-face.jpg": "76570a21cf57a487a6a9e6c2f017ec6be99b209361e5905b0e687c99fe0709d6",
+    "docs/character-art-baseline-initial-front.jpg": "072e096bf999c3e13abb4496699d7d66a44b5f0a8747b1ac0ebd3b2f4413fe29",
+    "docs/character-art-baseline-initial-profile.jpg": "1cc06a9008e784d5a240ff25ec0af12abf692d900b826bbd8fa90dccb5cb2fd3",
+    "docs/character-art-baseline-initial-side.jpg": "981a4ad0c67f2f7f7f251f3fbd28647deb92933a691f7d361056a7051d4d8fc7",
+    "docs/character-art-baseline-initial-ui.json": "4cf99758dd97287ad1c36fe8c0a132debe7fe81cbfb1243a12db40557683dc43",
+    "docs/character-art-baseline-numerical.json": "7fe1045718ef14f51e027d64c3c8f85d6ae86e2e9a9d4b0d3722bfceb8468343",
+    "docs/character-art-baseline-profile.jpg": "d2d4bdcc99ad26dee1dac74589587cb83bcafd32eae728d59593aa730822d31d",
+    "docs/character-art-baseline-side.jpg": "7417122a0722ccc8e0d6f931595de0ec1f7c1faca6ef4f36e380b971e24eee3f",
+    "docs/character-art-baseline-ui.json": "4c670309aec0637c82156a240ad3af9832fa5615e57f27b9a0035cb447f70c6d",
+    "docs/character-art-next-batch.md": "d7042e55baab2cf1896822278fa1a802e19cfad1be6938db44f2e3994f86c8c5",
+    "tests/character-art-review.html": "831a68ef7cf4d7474521eafe50e31f6383d3b21a8b785de46d0bd0a0a6d9f2a0",
+    "tools/character_art_baseline.mjs": "918d604fcaa0616ee545830cb565db29d3a281619dff8a14505aaf2fb34a8f69"
+  }
+}

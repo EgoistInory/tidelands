@@ -1,0 +1,24 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>角色整体美术基线</title>
+<style>html,body{margin:0;height:100%;background:#263630;color:#eee7d4;font:14px system-ui}body{display:flex;flex-direction:column}nav{display:flex;flex-wrap:wrap;gap:8px;padding:10px}button,select{font:inherit;padding:6px}canvas{display:block;flex:1;min-height:0;width:100%}output{padding:8px;flex:0 0 85px;box-sizing:border-box;max-height:85px;overflow:auto;overflow-wrap:anywhere;font:12px monospace}</style>
+<nav><strong>生产角色整体美术基线 · 无存档</strong><label>取景 <select id="view"><option value="front">全身正面</option><option value="side">全身侧面</option><option value="back">全身背面</option><option value="portrait">面部正面</option><option value="profile">面部侧面</option></select></label><label>衣装 <select id="color"><option value="traveler">旅人</option><option value="keeper">守灯人配色</option></select></label><span>固定站立，仅检查当前模型；不证明正常游戏、自然动作或3A品质。</span></nav>
+<canvas aria-label="实际生产角色模型"></canvas><output>准备模型…</output>
+<script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {createCharacter,animateCharacter} from '../src/character.js';
+const canvas=document.querySelector('canvas'),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(40,1,.1,100);
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setClearColor(0x263630);renderer.toneMapping=THREE.ACESFilmicToneMapping;
+scene.add(new THREE.HemisphereLight(0xc5dcdf,0x6e6751,2));const sun=new THREE.DirectionalLight(0xffe9cc,3);sun.position.set(-4,8,5);scene.add(sun);
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(20,20),new THREE.MeshStandardMaterial({color:0x6e7568,roughness:1}));floor.rotation.x=-Math.PI/2;scene.add(floor);
+const roots={traveler:createCharacter(),keeper:createCharacter(0xd7ac55)};scene.add(...Object.values(roots));
+const viewpoints={front:[0,2.1,5.5,1.5],side:[5.5,2.1,0,1.5],back:[0,2.1,-5.5,1.5],portrait:[0,2.65,1.4,2.65],profile:[1.4,2.65,0,2.65]};
+function visibleBounds(root){const bounds=new THREE.Box3();root.traverseVisible(mesh=>{if(!mesh.isMesh)return;mesh.geometry.computeBoundingBox();bounds.union(mesh.geometry.boundingBox.clone().applyMatrix4(mesh.matrixWorld));});return {min:bounds.min.toArray(),max:bounds.max.toArray()};}
+function draw(){
+  const view=document.querySelector('#view').value,color=document.querySelector('#color').value,root=roots[color];
+  for(const [key,model] of Object.entries(roots))model.visible=key===color;
+  animateCharacter(root,{x:0,z:0,yaw:0,time:10,attackAt:-100,selected:'hand'},0,()=>0);root.updateMatrixWorld(true);
+  const width=canvas.clientWidth,height=canvas.clientHeight;renderer.setSize(width,height,false);camera.aspect=width/height;camera.zoom=Math.min(1,camera.aspect);camera.updateProjectionMatrix();
+  const [x,y,z,targetY]=viewpoints[view];camera.position.set(x,y,z);camera.lookAt(0,targetY,0);renderer.render(scene,camera);
+  let meshes=0;root.traverseVisible(mesh=>{if(mesh.isMesh)meshes++;});document.querySelector('output').textContent=JSON.stringify({view,color,visibleCharacterMeshes:meshes,visibleBounds:visibleBounds(root),calls:renderer.info.render.calls,triangles:renderer.info.render.triangles,windowViewport:[innerWidth,innerHeight],canvasViewport:[width,height],glError:renderer.getContext().getError(),scope:'Fixed production model baseline; no boot, saves, runtime game edits or quality completion claim.'});
+}
+document.querySelector('#view').onchange=draw;document.querySelector('#color').onchange=draw;window.addEventListener('resize',draw);draw();
+</script></html>

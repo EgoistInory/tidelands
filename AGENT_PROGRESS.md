@@ -3,7 +3,7 @@
 更新时间：2026-10-12
 status: in_progress
 stage: M5_quality_batches
-next_action: buildlimit包00e70db6/176测试/真实499→500建造与拒绝501和独立普通390恢复已本地收口，见docs/build-limit-final-audit.json。下一整体角色脸部/轮廓与可信植被视觉、自然动作/接触、实际试听及当前完整主路径/长期设备GPU品质；M5/3A未完，2048保留。旧early隔离结论撤回/历史正式档影响不可追溯继续保留，公开origin不重复问/推送，旧goal限额不强改。
+next_action: 已完成角色实际全身/面部基线与实施边界，见docs/character-art-next-batch.md和character-art-baseline-audit.json。下一直接实现成年旅人头身/连续面部/分区发型/衣装轮廓一批，保持骨架脚底工具规则，动作与实景验证后继续植被/试听/当前完整品质。生产和buildlimit包保持，M5/3A未完，2048保留，旧early隔离更正与公开origin待答继续，无付费/券/推送，旧goal不强改。
 
 ## 已完成
 - 前置小游戏 `/Users/huxiaocong/Codex/tide-2048` 已完成，验收见其 docs/VERIFICATION.md。
@@ -993,3 +993,6 @@ campclear包8181842bytes/43项/42文件，SHA2ba8070bbb08153c6d94afc56a836fd5ef3
 buildlimit ZIP 8182020bytes/43项/42文件/SHA00e70db6ee6aafeafe0ac49d6b1700ad2ee5a57e2b6f6c27aa1bbf73583f9c93，28旧包保持；除game.js与包内README外运行内容与campclear一致。独立53937普通新档E采木0→2/保存390继续恢复(-73.0,93.5)/HP100/q0/木2浆果3，无fixture导入或状态注入。证据docs/build-limit-review.md/final-audit.json、tools/verify_build_limit_evidence.py，非当前全主线/试听/真机/GPU/长期500负载。
 
 52/53/54本轮页关闭、视口reset、53937主动Ctrl-C退出130/KeyboardInterrupt且无监听，原4190/PID21636仅本地保留。普通额度78%/周75%→84%/周76%允许、历史goal usageLimited不强改，2048ACTIVE继续，无付费/券/公网发布/推送，原公开origin去向问题不重复问。功能边界有限收口，M5五项/3A仍未完成；下一整体角色脸部/轮廓与可信植被、自然接触/实际试听和当前完整主路径/长期设备GPU品质，不反复小材质细节。
+
+
+2026-10-12角色整体美术基线：实际全身正侧/面部双角度审查仍有大头、方眼/胶囊鼻、无嘴眉和半球发型的玩具感；43可见网格/5808三角形、排除隐藏工具后约4.2946头高，CPU数组154912bytes非显存。新增无存档静态QA与可重放数字诊断，初版15帧文字滞后原样保留，最终四镜头同步/GL0/console空、八张初末JPEG实际查看。见docs/character-art-baseline-audit.json与character-art-next-batch.md。生产22模块/42运行内容和buildlimit包保持；55/56关闭、无新服务/视口变化/存档读写。下一直接实现成年旅人头身与连续面部/分区发型/衣装轮廓一批，保留骨架脚底工具规则并验动作和实景，再推进植被/试听；设计不是新增生产模型或3A完成，M5五项/2048继续，无券/付费/公开推送。
