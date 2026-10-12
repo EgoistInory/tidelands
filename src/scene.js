@@ -12,6 +12,7 @@ import {createWeatheredRock,initializeRockSurface} from './rock.js';
 import {createMeadow,createFiberClump,updateMeadow,updateGroundCover} from './meadow.js';
 import {createSky,updateSky} from './sky.js';
 import {createFlame,updateCampfire} from './campfire.js';
+import {createCrystalDeposit} from './crystal.js';
 
 const palette={bark:0x65513d,leaf:0x365a42,lightLeaf:0x68815b,rock:0x858d86,sand:0xd5c8a7,cloth:0xb86636,cream:0xeee1bd};
 const materials=new Map();
@@ -37,7 +38,7 @@ function resourceModel(type){
     const rock=createWeatheredRock(1.8),small=createWeatheredRock(.8);
     rock.position.y=1;rock.scale.set(1.4,.9,1);rock.rotation.z=.3;small.position.set(1.6,.4,1);g.add(rock,small);
   }else if(type==='crystal'){
-    for(let i=0;i<3;i++){const s=mesh(new THREE.OctahedronGeometry(.65+i*.15),0x78c3c2,i*.65-.7,.9+i*.3,0);s.scale.y=2.6;g.add(s);}
+    return createCrystalDeposit();
   }else if(type==='berry'){
     g.add(createBerryFoliage());
     for(let i=0;i<5;i++){

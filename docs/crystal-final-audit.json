@@ -1,0 +1,105 @@
+{
+  "kind": "bounded-crystal-evidence-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "pendingBatchEvidence": [],
+  "changedProduction": [
+    "src/crystal.js",
+    "src/scene.js"
+  ],
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-crystal.zip",
+    "archiveBytes": 8179728,
+    "archiveEntries": 42,
+    "archiveSha256": "bf30cbb81e6a531f5e90fd8d1d5c26e4e376c5fe78a53d01f359181b67cbcd29"
+  },
+  "runtimeSha256": {
+    "src/action-timing.js": "43628f890216ab5678e9887598b9cb8176daa68e9a9176c79f64dcf07f344dc5",
+    "src/audio.js": "6eefb0bb75d8e8c61ae8bcbc54e1b5486eb9f850e9a81f9a49b37f414f79b846",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "275fed1af9140412ea440ba6287429d186f59040b11757af0b87cb6cb643b59c",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/crystal.js": "1f4191077b07bc551dd5bb59397f404e0d0cde15c7aa2f30bc27e1f098d4c3cb",
+    "src/foliage.js": "d7649b9b6e0d1a3496d8c8b2fa5198e1876076dc2fa3d78ebaebbea77546e4b6",
+    "src/game.js": "6f90fea0c8f32696832f53cccd35373dbae14e5310011a89db350c0ce312d223",
+    "src/ground-surface.js": "fa13f118fd37388219febdadc0c3b1a5a19af799ff115ec429b36f7aee573c04",
+    "src/main.js": "4a25aece95e35ced258b40c1754105428f65c0ca5aabf07d73c92698a9283dc1",
+    "src/meadow.js": "08ffc76769aa829809bd4056bfab376b73ae6c9c67a6478b3729ee7ee636badd",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "0432cd242408149b28e7def74638263ff031bfbf18c180cf13ee2e60a3a5c5f2",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "2539f10edd6412aae407f36af385bf4255d1d65ea78a4e8e17ecb8b68c483040",
+    "src/sky.js": "e83f0d3ce196d44b214a608f09f0763ca33caa10c2d3ed671579b508effa75d4",
+    "src/startup-textures.js": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd",
+    "src/world.js": "f9f0114982deaf69dda65b8ec44e0eba88f1cc228b1859379dc7da24b93456e1"
+  },
+  "historicalArchivesPreserved": 24,
+  "ordinaryFinal": {
+    "coordinates": "位置 X -66.6，Z 101.5；建筑 0；击败 0",
+    "hp": "100",
+    "inventory": [
+      {
+        "count": "0",
+        "name": "木材"
+      },
+      {
+        "count": "0",
+        "name": "石料"
+      },
+      {
+        "count": "0",
+        "name": "纤维"
+      },
+      {
+        "count": "3",
+        "name": "浆果"
+      },
+      {
+        "count": "0",
+        "name": "贝壳"
+      },
+      {
+        "count": "0",
+        "name": "晶石"
+      },
+      {
+        "count": "0",
+        "name": "石斧"
+      },
+      {
+        "count": "0",
+        "name": "晶石剑"
+      },
+      {
+        "count": "0",
+        "name": "烤浆果"
+      }
+    ],
+    "quest": "归航的灯火",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "evidenceSha256": {
+    "docs/crystal-depleted.jpg": "23df1e6056c0e31801bbd001651a5d9b7f506f77eb50e967bff545bea4663bc9",
+    "docs/crystal-desktop.jpg": "b3eb0816d85d4ffff442306de08d2f09aeb71e69f7c6964f04211ae54de835ec",
+    "docs/crystal-focused-tests.txt": "25a3f1db14c5e6a64efee0997e19a69591865522d5a283ce844d44d9d00c566b",
+    "docs/crystal-full-tests.txt": "106a1a977e33871b49f57211b30ccc4153684e8744d751e0383fc707bc4e3c9a",
+    "docs/crystal-mobile.jpg": "cc51441e2eb6f7b2fb93a30b41ef286d9f9ae7da9953ab1a2565643fd28ea440",
+    "docs/crystal-numerical.json": "aef5f368fb7daf9a420d1b388dbefbc97b3d239c97f42450e7dd828e14da456a",
+    "docs/crystal-package-tests.txt": "13c574e1cadac4cc73dc4f4bcd97b8e71f120ec674899e36c0f0eb5a09ff2f4a",
+    "docs/crystal-package-ui.json": "b4d03bccaed879f5386b3236369888859fbe35679b4a97a7fde99df26e0dce30",
+    "docs/crystal-red-tests.txt": "869993e0b3d0d1f1c932f136297b1835f29623583c4c579b8f47c005b69f9915",
+    "docs/crystal-ui-initial.json": "afcc6427f2316c5dde871a0c1d916bd59c5602cf2c7e09c568e2aa0254ab45f6",
+    "docs/crystal-ui.json": "b8f2b43800ef371afd549932a8d224afb44ad0a0fef4be5ef9f14d00903d92ef"
+  },
+  "limits": [
+    "矿物表面/地形坡面接地与整体光照材质协调、角色/植被/天空和自然接触仍需批次验收；本次不继续反复打磨单矿簇。",
+    "两实例化部件、更多三角面与顶点色shader的冷编译/世界GPU成本尚未对照，渲染调用计数不是性能证明。",
+    "早期真实存档的入口错标已记录：time<121且quest0仍显示开始旅程，数据实际保留；下一局部修复。",
+    "本包无新的完整主线、长期/GPU/显存、真机多指或声音试听；旧证据绑定自己的版本，M5五项与完整3A未完成。"
+  ]
+}

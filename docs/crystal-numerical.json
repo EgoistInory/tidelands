@@ -1,0 +1,47 @@
+{
+  "kind": "static-crystal-review",
+  "fullGoalComplete": false,
+  "scope": "Local fixed mineral geometry, two instanced parts. No GPU/driver memory or full world performance proof.",
+  "bounds": {
+    "min": [
+      -1.3246450443472582,
+      -0.09500000208616256,
+      -1.284104290594468
+    ],
+    "max": [
+      1.338423450085209,
+      3.049999952316284,
+      1.3520753000384542
+    ]
+  },
+  "parts": [
+    {
+      "name": "mineral-prisms",
+      "triangles": 288,
+      "vertices": 864,
+      "attributeBytes": 38016,
+      "indexBytes": 0,
+      "vertexColors": true,
+      "transparent": false,
+      "roughness": 0.32,
+      "metalness": 0.08
+    },
+    {
+      "name": "rocky-matrix",
+      "triangles": 36,
+      "vertices": 58,
+      "attributeBytes": 1856,
+      "indexBytes": 216,
+      "vertexColors": false,
+      "transparent": false,
+      "roughness": 0.94,
+      "metalness": 0
+    }
+  ],
+  "totalTriangles": 324,
+  "totalGeometryBytes": 40088,
+  "sourceSha256": {
+    "src/crystal.js": "1f4191077b07bc551dd5bb59397f404e0d0cde15c7aa2f30bc27e1f098d4c3cb",
+    "src/scene.js": "2539f10edd6412aae407f36af385bf4255d1d65ea78a4e8e17ecb8b68c483040"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "url": "http://127.0.0.1:53933/",
+  "freshOrigin": true,
+  "fixtureImported": false,
+  "savedCoordinates": "位置 X -66.6，Z 101.5；建筑 0；击败 0",
+  "saveAx": "Browser tab: 39, Title: \"潮生群岛 · Tidelands\", URL: \"http://127.0.0.1:53933/\".\n0 AXWebArea 潮生群岛 · Tidelands, URL: 127.0.0.1:53933/\n\t1 container panel\n\t\t2 heading 旅途小憩, Value: 2, ID: panel-title\n\t\t\t3 text 旅途小憩\n\t\t4 button Description: 关闭面板, ID: panel-close\n\t\t5 container panel-body\n\t\t\t6 button 继续探索\n\t\t\t7 button 保存进度\n\t\t\t8 button 导出存档\n\t\t\t9 button 导入存档\n\t\t\t10 button 开始新旅程\n\t\t\t11 checkbox 声音：开, Value: 1\n\t\t\t12 text WASD / 方向键移动，Shift 奔跑，E 交互，空格攻击，B 背包，C 制作，M 地图。手机左侧摇杆移动，拖动空白场景旋转镜头。进度只保存于当前浏览器。\n\t\t\t13 text 存档已保存。\n\nThe focused UI element is 7 button 保存进度",
+  "restored": {
+    "coordinates": "位置 X -66.6，Z 101.5；建筑 0；击败 0",
+    "hp": "100",
+    "inventory": [
+      {
+        "count": "0",
+        "name": "木材"
+      },
+      {
+        "count": "0",
+        "name": "石料"
+      },
+      {
+        "count": "0",
+        "name": "纤维"
+      },
+      {
+        "count": "3",
+        "name": "浆果"
+      },
+      {
+        "count": "0",
+        "name": "贝壳"
+      },
+      {
+        "count": "0",
+        "name": "晶石"
+      },
+      {
+        "count": "0",
+        "name": "石斧"
+      },
+      {
+        "count": "0",
+        "name": "晶石剑"
+      },
+      {
+        "count": "0",
+        "name": "烤浆果"
+      }
+    ],
+    "quest": "归航的灯火",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "console": [],
+  "scope": "Ordinary package start/movement/save/390 reload, no normal journey to crystals. Resume button mislabelled 开始旅程 for an early saved time; continued through the observed button and verified actual retained state."
+}

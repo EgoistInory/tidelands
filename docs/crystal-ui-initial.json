@@ -1,0 +1,1791 @@
+{
+  "scope": "Fixed production resource, camera and both-tools fixture; no ordinary save or whole-world performance claim.",
+  "samples": [
+    {
+      "label": "desktop-before",
+      "node": {
+        "id": "resource-124",
+        "type": "crystal",
+        "x": -115.21215058863163,
+        "z": -245.5468827020377
+      },
+      "selected": "sword",
+      "owned": true,
+      "distance": 2.4,
+      "nearestId": "resource-124",
+      "age": 0.2050000000000125,
+      "result": null,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 0,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "depleted": null,
+      "palmHeight": [
+        1.0188343055793005,
+        1.407304396748632
+      ],
+      "pelvisOffset": -0.17728694063879014,
+      "gatherKind": "crystal",
+      "gatherTool": "axe",
+      "crystalParts": 2,
+      "render": {
+        "calls": 184,
+        "triangles": 1091320,
+        "geometries": 251,
+        "textures": 17
+      },
+      "visibleTool": "axe",
+      "yaw": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact.",
+      "frames": []
+    },
+    {
+      "label": "desktop-depleted",
+      "node": {
+        "id": "resource-124",
+        "type": "crystal",
+        "x": -115.21215058863163,
+        "z": -245.5468827020377
+      },
+      "selected": "sword",
+      "owned": true,
+      "distance": 2.4,
+      "nearestId": null,
+      "age": 0.21000000000000796,
+      "result": "晶石 +1",
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 0,
+        "shell": 0,
+        "crystal": 1,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "depleted": 390.21000000000004,
+      "palmHeight": [
+        1.0187338737398868,
+        1.4072150408426047
+      ],
+      "pelvisOffset": -0.17730123213693866,
+      "gatherKind": "crystal",
+      "gatherTool": "axe",
+      "crystalParts": 2,
+      "render": {
+        "calls": 184,
+        "triangles": 1091320,
+        "geometries": 251,
+        "textures": 17
+      },
+      "visibleTool": "axe",
+      "yaw": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact.",
+      "frames": []
+    },
+    {
+      "label": "mobile-before",
+      "node": {
+        "id": "resource-124",
+        "type": "crystal",
+        "x": -115.21215058863163,
+        "z": -245.5468827020377
+      },
+      "selected": "sword",
+      "owned": true,
+      "distance": 2.4,
+      "nearestId": "resource-124",
+      "age": 0.2050000000000125,
+      "result": null,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 0,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "depleted": null,
+      "palmHeight": [
+        1.0188343055793005,
+        1.407304396748632
+      ],
+      "pelvisOffset": -0.17728694063879014,
+      "gatherKind": "crystal",
+      "gatherTool": "axe",
+      "crystalParts": 2,
+      "render": {
+        "calls": 77,
+        "triangles": 871248,
+        "geometries": 251,
+        "textures": 17
+      },
+      "visibleTool": "axe",
+      "yaw": 0,
+      "viewport": [
+        390,
+        844
+      ],
+      "glError": 0,
+      "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact.",
+      "frames": []
+    },
+    {
+      "label": "mobile-cycle",
+      "node": {
+        "id": "resource-124",
+        "type": "crystal",
+        "x": -115.21215058863163,
+        "z": -245.5468827020377
+      },
+      "selected": "sword",
+      "owned": true,
+      "distance": 2.4,
+      "nearestId": null,
+      "age": 0.5316680000003089,
+      "result": "晶石 +1",
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 0,
+        "shell": 0,
+        "crystal": 1,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "depleted": 390.21656800000017,
+      "palmHeight": [
+        1.115016341007177,
+        1.4851063861211387
+      ],
+      "pelvisOffset": -0.1758117930808208,
+      "gatherKind": "crystal",
+      "gatherTool": "axe",
+      "crystalParts": 2,
+      "render": {
+        "calls": 77,
+        "triangles": 871236,
+        "geometries": 251,
+        "textures": 17
+      },
+      "visibleTool": "sword",
+      "yaw": 0,
+      "viewport": [
+        390,
+        844
+      ],
+      "glError": 0,
+      "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact.",
+      "frames": [
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": "resource-124",
+          "age": 0,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "palmHeight": [
+            1.1163638476268076,
+            1.4864538927407693
+          ],
+          "pelvisOffset": -0.17446428646119247,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": "resource-124",
+          "age": 0.016568000000006577,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "palmHeight": [
+            1.1078410269092345,
+            1.4804539692247758
+          ],
+          "pelvisOffset": -0.17450752669819958,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": "resource-124",
+          "age": 0.03326800000002095,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "palmHeight": [
+            1.0983646807060055,
+            1.473418366419061
+          ],
+          "pelvisOffset": -0.17463065684908155,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": "resource-124",
+          "age": 0.04996800000003532,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "palmHeight": [
+            1.088231735071652,
+            1.4655868982617974
+          ],
+          "pelvisOffset": -0.17482665943729145,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": "resource-124",
+          "age": 0.06656800000004637,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "palmHeight": [
+            1.077788941357344,
+            1.4572629472104701
+          ],
+          "pelvisOffset": -0.17508257105651834,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": "resource-124",
+          "age": 0.08326800000006074,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "palmHeight": [
+            1.067229115419721,
+            1.4486396842125373
+          ],
+          "pelvisOffset": -0.17538664720464608,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": "resource-124",
+          "age": 0.09986800000007179,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "palmHeight": [
+            1.0570160165687454,
+            1.4401384593797815
+          ],
+          "pelvisOffset": -0.1757177743190087,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": "resource-124",
+          "age": 0.11656800000008616,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "palmHeight": [
+            1.047371568770373,
+            1.4319878566865327
+          ],
+          "pelvisOffset": -0.17606056615844162,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": "resource-124",
+          "age": 0.13326800000010053,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "palmHeight": [
+            1.0386936349739955,
+            1.4245654647620967
+          ],
+          "pelvisOffset": -0.17639301852259434,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": "resource-124",
+          "age": 0.1499680000001149,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "palmHeight": [
+            1.0312899744168362,
+            1.4181735695070259
+          ],
+          "pelvisOffset": -0.17669569519084039,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": "resource-124",
+          "age": 0.16656800000012595,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "palmHeight": [
+            1.0254568294522883,
+            1.4131018909073845
+          ],
+          "pelvisOffset": -0.17694969523626417,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": "resource-124",
+          "age": 0.18326800000014032,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "palmHeight": [
+            1.0213355955444108,
+            1.4095001009558565
+          ],
+          "pelvisOffset": -0.17714365243604036,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": "resource-124",
+          "age": 0.19986800000015137,
+          "result": null,
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 0,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": null,
+          "palmHeight": [
+            1.0191236261666035,
+            1.407559310998387
+          ],
+          "pelvisOffset": -0.1772649039601922,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.21656800000016574,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.0188745087941058,
+            1.4073365637570134
+          ],
+          "pelvisOffset": -0.1773092072916006,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.2332680000001801,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.020615270692275,
+            1.4088565381876208
+          ],
+          "pelvisOffset": -0.1772750163480117,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.24996800000019448,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.0242805084817483,
+            1.4120536563907216
+          ],
+          "pelvisOffset": -0.17716693455488638,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.26496800000018084,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.0291027093766019,
+            1.4162444757498065
+          ],
+          "pelvisOffset": -0.17701457322873282,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.2832680000001915,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.0367298885334613,
+            1.4228317454358397
+          ],
+          "pelvisOffset": -0.17677265265010048,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.29996800000020585,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.045096671735255,
+            1.4299932103930892
+          ],
+          "pelvisOffset": -0.17651577728619483,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.3165680000002169,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.0544381813336514,
+            1.437899033539594
+          ],
+          "pelvisOffset": -0.17624572005008596,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.33326800000023127,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.0645380212480653,
+            1.4463238929597715
+          ],
+          "pelvisOffset": -0.17597911278590259,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.34996800000024564,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.0749971456384273,
+            1.4548896494166073
+          ],
+          "pelvisOffset": -0.17573719480169925,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.3665680000002567,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.0854094014871443,
+            1.4632215309050345
+          ],
+          "pelvisOffset": -0.17553909438271356,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.38326800000027106,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.0955759082992067,
+            1.471119542739256
+          ],
+          "pelvisOffset": -0.1753978450840421,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.3998680000002821,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.1050865367753566,
+            1.4782302991018632
+          ],
+          "pelvisOffset": -0.17532700231481627,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.4157680000002699,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.1134167975832732,
+            1.48415870113622
+          ],
+          "pelvisOffset": -0.17533138736079376,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871248,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "axe",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.4332680000002824,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.115431845081666,
+            1.4855218901956277
+          ],
+          "pelvisOffset": -0.17539628900633283,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871236,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "sword",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.4499680000002968,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.1153655496351718,
+            1.4854555947491335
+          ],
+          "pelvisOffset": -0.17546258445282878,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871236,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "sword",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.46666800000028275,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.11529744688292,
+            1.4853874919968817
+          ],
+          "pelvisOffset": -0.17553068720507709,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871236,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "sword",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.4832680000002938,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.1152280216843167,
+            1.4853180667982784
+          ],
+          "pelvisOffset": -0.1756001124036874,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871236,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "sword",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.49996800000030817,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.1151565003826605,
+            1.4852465454966222
+          ],
+          "pelvisOffset": -0.17567163370533687,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871236,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "sword",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.5165680000003192,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.1150838033076624,
+            1.4851738484216241
+          ],
+          "pelvisOffset": -0.1757443307803386,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871236,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "sword",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        },
+        {
+          "node": {
+            "id": "resource-124",
+            "type": "crystal",
+            "x": -115.21215058863163,
+            "z": -245.5468827020377
+          },
+          "selected": "sword",
+          "owned": true,
+          "distance": 2.4,
+          "nearestId": null,
+          "age": 0.5316680000003089,
+          "result": "晶石 +1",
+          "inventory": {
+            "wood": 0,
+            "stone": 0,
+            "fiber": 0,
+            "berry": 0,
+            "shell": 0,
+            "crystal": 1,
+            "axe": 1,
+            "sword": 1,
+            "meal": 0
+          },
+          "depleted": 390.21656800000017,
+          "palmHeight": [
+            1.115016341007177,
+            1.4851063861211387
+          ],
+          "pelvisOffset": -0.1758117930808208,
+          "gatherKind": "crystal",
+          "gatherTool": "axe",
+          "crystalParts": 2,
+          "render": {
+            "calls": 77,
+            "triangles": 871236,
+            "geometries": 251,
+            "textures": 17
+          },
+          "visibleTool": "sword",
+          "yaw": 0,
+          "viewport": [
+            390,
+            844
+          ],
+          "glError": 0,
+          "note": "Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact."
+        }
+      ]
+    }
+  ],
+  "console": []
+}

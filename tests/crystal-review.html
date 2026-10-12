@@ -1,0 +1,37 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>晶石矿簇实景隔离验收</title>
+<style>html,body{margin:0;height:100%;background:#192723;color:#eee7d4;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:6px;display:flex;gap:5px;flex-wrap:wrap}button{font:inherit;padding:6px}output{height:105px;overflow:auto;overflow-wrap:anywhere;font:11px monospace;padding:5px}canvas{flex:1;min-height:0;width:100%;display:block}</style>
+<nav>明确位置/装备fixture · 敌人移除 · 无存档<button id="distance">近距/远距</button><button id="weapon">换装备</button><button id="owned">切换石斧拥有状态</button><button id="type">下一资源</button><button id="before">判定前一帧</button><button id="impact">定格采集中段</button><button id="motion">播放完整采集</button></nav><output id="result">准备本地场景…</output><canvas aria-label="采集的生产场景"></canvas>
+<script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain} from '../src/world.js';
+import {freshGame,interact,resolveGather,nearest} from '../src/game.js';
+import {GATHER_DURATION,GATHER_IMPACT} from '../src/action-timing.js';
+const world=createWorld(),view=new WorldView(document.querySelector('canvas'),world),state=freshGame(),out=document.querySelector('output');
+const nodes=['starter-0','starter-1','starter-2','starter-3'].map(id=>world.objects.find(o=>o.id===id));
+for(const type of ['shell','crystal'])nodes.push(world.objects.find(o=>o.type===type&&terrain(o.x,o.z-2.4)>.15));
+let nodeIndex=5,selected='sword',owned=true,distance=2.4,pending=null,result=null,playing=false,last=null,trace=[];state.enemies=[];
+function reset(){playing=false;pending=null;result=null;trace=[];const node=nodes[nodeIndex];state.time=240;state.interactAt=-100;state.attackAt=-100;state.depleted={};
+  for(const key of Object.keys(state.inventory))state.inventory[key]=0;state.inventory.axe=Number(owned);state.inventory.sword=1;state.selected=selected;
+  Object.assign(state.player,{x:node.x,z:node.z-distance,yaw:0});view.player.rotation.y=0;view.player.userData.lastPosition=null;view.gatherAt=-100;view.gatherKind=view.gatherTool=null;view.sync(state);draw();record();
+}
+function draw(dt=1/60){view.sync(state);const p=state.player,h=Math.max(terrain(p.x,p.z),0);view.draw(state,nodes[nodeIndex],null,false,dt);
+  view.camera.position.set(p.x+6,h+5,p.z-8);view.camera.lookAt(p.x,h+1.3,p.z+1);view.sky.position.copy(view.camera.position);view.renderer.render(view.scene,view.camera);
+}
+function snapshot(){const node=nodes[nodeIndex],rig=view.player.userData,bounds=new THREE.Box3().setFromObject(rig.elbows[1].children[1]),h=Math.max(terrain(state.player.x,state.player.z),0);
+  return {node:{id:node.id,type:node.type,x:node.x,z:node.z},selected,owned,distance,nearestId:nearest(state,world.objects)?.id??null,age:state.time-view.gatherAt,result,inventory:{...state.inventory},depleted:state.depleted[node.id]??null,palmHeight:[bounds.min.y-h,bounds.max.y-h],pelvisOffset:rig.body.position.y,gatherKind:view.gatherKind,gatherTool:view.gatherTool,nodeVisibleParts:view.batches.filter(b=>b.entries.some(e=>e.id===node.id)).filter(b=>{const m=new THREE.Matrix4();b.batch.getMatrixAt(b.entries.findIndex(e=>e.id===node.id),m);return m.determinant()>0;}).length,crystalParts:view.batches.filter(b=>b.entries[0]?.type==='crystal').length,render:{calls:view.renderer.info.render.calls,triangles:view.renderer.info.render.triangles,geometries:view.renderer.info.memory.geometries,textures:view.renderer.info.memory.textures},visibleTool:rig.axe.visible?'axe':rig.sword.visible?'sword':'hand',yaw:view.player.rotation.y,viewport:[innerWidth,innerHeight],glError:view.renderer.getContext().getError(),note:'Declared resource/tool/camera fixture, no save. Palm is the visible skin mesh; centre range and height are not actual surface contact.'};
+}
+function record(){out.textContent=JSON.stringify({...snapshot(),frames:trace});}
+function begin(){reset();const started=interact(state,nodes[nodeIndex],{defer:true});if(!started?.pending){result=started;record();return false;}pending=started.pending;view.gatherAt=pending.at;view.gatherKind=nodes[nodeIndex].type;view.gatherTool=['tree','stone','crystal'].includes(view.gatherKind)&&owned?'axe':'hand';state.player.yaw=Math.atan2(nodes[nodeIndex].x-state.player.x,nodes[nodeIndex].z-state.player.z);return true;}
+document.querySelector('#impact').onclick=()=>{if(!begin())return;state.time=pending.at+GATHER_IMPACT;result=resolveGather(state,pending);draw();record();};
+document.querySelector('#before').onclick=()=>{if(!begin())return;state.time=pending.at+GATHER_IMPACT-.005;draw();record();};
+document.querySelector('#motion').onclick=()=>{if(!begin())return;playing=true;last=null;requestAnimationFrame(frame);};
+function frame(now){if(!playing)return;const dt=last===null?0:Math.min((now-last)/1000,.05);last=now;state.time+=dt;if(!pending.resolved&&state.time>=pending.at+GATHER_IMPACT)result=resolveGather(state,pending);draw(dt);trace.push(snapshot());
+  if(state.time-view.gatherAt<GATHER_DURATION+.1)requestAnimationFrame(frame);else{playing=false;record();}
+}
+document.querySelector('#distance').onclick=()=>{distance=distance===2.4?5:2.4;reset();};document.querySelector('#weapon').onclick=()=>{selected=selected==='axe'?'sword':selected==='sword'?'hand':'axe';reset();};
+document.querySelector('#type').onclick=()=>{nodeIndex=(nodeIndex+1)%nodes.length;reset();};
+document.querySelector('#owned').onclick=()=>{owned=!owned;reset();};
+Promise.all([view.groundSurface.userData.ground.loaded,view.groundSurface.userData.ground.sand.loaded,view.rockSurface.userData.rock.loaded]).then(reset);
+window.addEventListener('resize',()=>{view.resize();draw();record();});window.addEventListener('pagehide',()=>view.renderer.dispose());
+</script></html>
