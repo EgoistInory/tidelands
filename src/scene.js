@@ -10,7 +10,7 @@ import {cottageSurfaces,cottageRoof} from './cottage-surfaces.js';
 import {createCanopy,createBerryFoliage,barkSurface,updateFoliage} from './foliage.js';
 import {createGroundSurface} from './ground-surface.js';
 import {createWeatheredRock,initializeRockSurface} from './rock.js';
-import {createMeadow,createFiberClump,updateMeadow,updateGroundCover} from './meadow.js';
+import {createMeadow,createFiberClump,updateMeadow,updateGroundCover,updateCampClearance} from './meadow.js';
 import {createSky,updateSky} from './sky.js';
 import {createFlame,updateCampfire} from './campfire.js';
 import {createCrystalDeposit} from './crystal.js';
@@ -278,6 +278,7 @@ export class WorldView{
     const definitions=new Map(state.buildings.map(b=>[b.id,b]));
     for(const [id,g]of this.buildings){const b=definitions.get(id);if(!b||g.userData.buildingType!==b.type){this.scene.remove(g);this.disposeGroup(g);this.buildings.delete(id);}}
     for(const b of state.buildings){if(!this.buildings.has(b.id)){const g=buildingModel(b.type);g.userData.buildingType=b.type;this.scene.add(g);this.buildings.set(b.id,g);}this.buildings.get(b.id).position.set(b.x,terrain(b.x,b.z),b.z);}
+    updateCampClearance(this.meadow??[],state.buildings);
     const enemies=new Map(state.enemies.map(e=>[e.id,e]));
     for(const [id,g]of this.creatures){if(!enemies.has(id)||g.userData.type!==enemies.get(id).type){this.scene.remove(g);this.disposeGroup(g);this.creatures.delete(id);}}
     this.creatureGeometryCache??=new Map();

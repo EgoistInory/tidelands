@@ -1,0 +1,54 @@
+TAP version 13
+# Subtest: camp hides only overlapping landscape instances and restores exact transforms after moving or removal
+ok 1 - camp hides only overlapping landscape instances and restores exact transforms after moving or removal
+  ---
+  duration_ms: 2.055625
+  type: 'test'
+  ...
+# Subtest: overlapping camps, type replacements and the 500th building have no fixed shader-slot limit
+ok 2 - overlapping camps, type replacements and the 500th building have no fixed shader-slot limit
+  ---
+  duration_ms: 0.664375
+  type: 'test'
+  ...
+# Subtest: production sync applies and restores clearance during same-ID camp relocation and save replacement
+ok 3 - production sync applies and restores clearance during same-ID camp relocation and save replacement
+  ---
+  duration_ms: 8.14375
+  type: 'test'
+  ...
+# Subtest: removing a camp uploads only changed near buffers and keeps distant buffers untouched
+not ok 4 - removing a camp uploads only changed near buffers and keeps distant buffers untouched
+  ---
+  duration_ms: 0.551875
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/camp-clearance.test.js:43:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/camp-clearance.test.js:46:45)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 3
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 66.198458

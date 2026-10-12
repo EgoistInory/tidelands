@@ -1,0 +1,115 @@
+{
+  "url": "http://127.0.0.1:53936/",
+  "freshLabel": "开始旅程",
+  "resumedLabel": "继续旅程",
+  "fixtureImported": false,
+  "stateInjected": false,
+  "steps": [
+    {
+      "action": "fresh start, 8 W, 4 A, 13 W",
+      "state": {
+        "coordinates": "位置 X -73.0，Z 93.5；建筑 0；击败 0",
+        "hp": "100",
+        "inventory": [],
+        "quest": "归航的灯火",
+        "scrollWidth": 1280,
+        "width": 1280
+      }
+    },
+    {
+      "action": "ordinary E harvest, visible backpack B",
+      "state": {
+        "coordinates": "位置 X -73.0，Z 93.5；建筑 0；击败 0",
+        "hp": "100",
+        "inventory": [
+          {
+            "count": "2",
+            "name": "木材"
+          },
+          {
+            "count": "0",
+            "name": "石料"
+          },
+          {
+            "count": "0",
+            "name": "纤维"
+          },
+          {
+            "count": "3",
+            "name": "浆果"
+          },
+          {
+            "count": "0",
+            "name": "贝壳"
+          },
+          {
+            "count": "0",
+            "name": "晶石"
+          },
+          {
+            "count": "0",
+            "name": "石斧"
+          },
+          {
+            "count": "0",
+            "name": "晶石剑"
+          },
+          {
+            "count": "0",
+            "name": "烤浆果"
+          }
+        ],
+        "quest": "归航的灯火",
+        "scrollWidth": 1280,
+        "width": 1280
+      }
+    }
+  ],
+  "restored": {
+    "coordinates": "位置 X -73.0，Z 93.5；建筑 0；击败 0",
+    "hp": "100",
+    "inventory": [
+      {
+        "count": "2",
+        "name": "木材"
+      },
+      {
+        "count": "0",
+        "name": "石料"
+      },
+      {
+        "count": "0",
+        "name": "纤维"
+      },
+      {
+        "count": "3",
+        "name": "浆果"
+      },
+      {
+        "count": "0",
+        "name": "贝壳"
+      },
+      {
+        "count": "0",
+        "name": "晶石"
+      },
+      {
+        "count": "0",
+        "name": "石斧"
+      },
+      {
+        "count": "0",
+        "name": "晶石剑"
+      },
+      {
+        "count": "0",
+        "name": "烤浆果"
+      }
+    ],
+    "quest": "归航的灯火",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "console": [],
+  "note": "Ordinary starting resource and save/restore; actual build UI was separately tested with explicitly imported material fixture."
+}

@@ -1,0 +1,110 @@
+{
+  "stage": "M5_camp_clearance_and_QA_isolation",
+  "batchComplete": true,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "validationSourceSha256": {
+    "src/meadow.js": "4ff40deefe0e7bf06572547411024a2c24b1c799fd201263ed85c5abba8b3ef4",
+    "src/scene.js": "1b203aaea12f08a2c23568a12ea9cd0c6bcfc95df34d57503c1414e477b10421",
+    "tests/camp-clearance.test.js": "b08a02fed44713a074938bef0370b73ba447812283806a63e8ca0ed3f0d7a7cf",
+    "tests/camp-clearance.html": "edceaa839f84d83b1918dfb0c4dd63780753676c48effa400808effcf150c2a2",
+    "tests/camp-clearance-build.html": "32a14315499a945274d10c82ba9559d977099a08a453f03fdce1f95deba742ef",
+    "tests/early-resume.html": "9b06365034cc66294d52df184717c565cefaa14c18047121fa92769331e43080",
+    "tests/save-isolation-audit.html": "91cc23510f1e4224936c160e3da6cb49a94c9cbdaee1086579c07ed78a13491f",
+    "tests/fixtures/build-ready.json": "4a213da208000af70061e11f345c14ce7e89c751eb6ee3baa4890ec4b6e467ef",
+    "tools/camp_clearance_review.mjs": "e4d9c3f6e0b8b24d5f276900929152233608045eecd5fbb019e036223a72abcf",
+    "tools/verify_camp_clearance_evidence.py": "ffc4fadcaf83362266db5155ad00e5cba44914795676a6e95c8047aafaabfdd3"
+  },
+  "imagesViewedSha256": {
+    "docs/camp-clearance-workbench.jpg": "54e19a4d4aec53cdc403d4c2671a90f399f54026a3cc1b274618efc2dd38ce6d",
+    "docs/camp-clearance-second-desktop-on.jpg": "b5f420d2b66d9d353d4f61d11935847036a513ae3ac0409a83dcbb9b32b45c8e",
+    "docs/camp-clearance-tent-on.jpg": "4bd0ac3e7d82c176051c3a7690a38a2ccb85cb24d5a998ca67fca30c083b532e",
+    "docs/camp-clearance-removed.jpg": "cff4e4abc27a69ca23af2207bab7d05418a5e8f1e33b0cc7101832a33b9beec1",
+    "docs/camp-clearance-package-desktop.jpg": "3c58b622a00d45b6c54e887904a6d36f9fe9c73b86b7adfb4a2afe7c7bb037f9",
+    "docs/camp-clearance-mobile-off.jpg": "2f8aeac8688db494aadde833c2d60e69c494deb6e315f8f2ca6948792e159a27",
+    "docs/camp-clearance-fire-night.jpg": "e63ca91f3913bd05fff2814d845636baca1f62d28ffcfd6ac948a9bcce834191",
+    "docs/camp-clearance-mobile-on.jpg": "31c7a48c6e3bb4c00b7af0a2abf6d91bc52fb272c70c310491db20b3a05171a7",
+    "docs/camp-clearance-build-mobile.jpg": "4d94937724482c58c9aa1e692dc1c79d038024c939420d68a3afb525cd429c8e",
+    "docs/camp-clearance-package-mobile.jpg": "c536111e0657c38a419449c81f33fa8c838ff10971f6a018637f8d0e112c367c",
+    "docs/camp-clearance-tent-off.jpg": "01e0a49635b529a8523cbdd87a80813410dd9950a137d71a65b0868c069a63e8",
+    "docs/camp-clearance-second-desktop-off.jpg": "3a85ab19272ace6ed9ff52c569b49385a0c4abbc90749617edeb758c7fc5a763",
+    "docs/harness-early-resume-continue.jpg": "6be9ebccdf6a85b417b86fa0175a439ad9202587efffb05a3bd1cc95677fb865"
+  },
+  "historicalArchives": {
+    "tidelands-local.zip": "61e173d0bf869afda5cfa674a6a675780b9453a8389baabbd33948fb12bc90ac",
+    "tidelands-m5-2026-10-05.zip": "02c7cc719a0a48608813e46c2d34075e12d280b42ae7c239acaba34f0a870d57",
+    "tidelands-m5-2026-10-07-actions.zip": "6185ccc117cade308691fe9cafbf816f2ccb924a4b5e593077708de593e4be03",
+    "tidelands-m5-2026-10-07.zip": "96afc2db4479ff52507b4d9401a4923a63b330f2cda2a852d92d08979b8c47f3",
+    "tidelands-m5-2026-10-08-coastal.zip": "4151c774820b95a8a7f2047f8d04e3d3ce7f3fce506f25b6de361bea8190487e",
+    "tidelands-m5-2026-10-08-environment.zip": "425e9c09c15e972db5f92a47f50d53b9a11e6a68c9c76d712a83c3bb880a2b27",
+    "tidelands-m5-2026-10-08-gather.zip": "85652535f557cd969a0187bab03a828df6182250160442fb7ec23192c8df6aab",
+    "tidelands-m5-2026-10-08-geometry.zip": "71c01deb02da8c3bb52b6e964a923889c66a87de16d8175da2336b6d9e2e7951",
+    "tidelands-m5-2026-10-08-impact.zip": "2e14043826237e907b7ba7bcfac79655a6eb10ba38e0cb220462cc2b6553a4cd",
+    "tidelands-m5-2026-10-08-state-reuse.zip": "9df94bc69a2cf34e5e9d73b38d247e505f492bf6ba297b9ee3cb0721d9860f46",
+    "tidelands-m5-2026-10-08-understory.zip": "e7d58cce5e5dcd94b0aeb43af859c339225bf53cd0a1f44e00e3a62a75f81728",
+    "tidelands-m5-2026-10-11-camera-easing.zip": "b57af3b327ddf5d72faef3fce3545e708e5b8fd9d11ecd8541f7954e6067489b",
+    "tidelands-m5-2026-10-11-camp-material.zip": "d6146ac310b68ef9908e78ffbb2a4ee05fcb390e79edf4056911863d40dad4dc",
+    "tidelands-m5-2026-10-11-campfire.zip": "91748f999337c9f597625c6fced63d86d5b86bd47c58f4c7f44b104f7dab06f3",
+    "tidelands-m5-2026-10-11-coordination.zip": "0d011a80c18e3ab21597555d0b2226183ead97fdf5a3b65441d02827a73bddb6",
+    "tidelands-m5-2026-10-11-ecology-audio.zip": "dca399dd5035234091d02e3acf816041467691f6dc1d9f07bfa197c6a4b559c7",
+    "tidelands-m5-2026-10-11-sand.zip": "b28d957d119fa0124c33b1dff2674e8f7134ef4e51dbf27260fdb8bd8a0c45a7",
+    "tidelands-m5-2026-10-11-startup.zip": "4dabc2d8e41c3c1ab46a9051e25661fc00a162cfe40a4d1bb58159f2f303107a",
+    "tidelands-m5-2026-10-11-wetshore.zip": "57ffe88bcc5a4a17065d325cb01815553ee5ecef02bfe79762f876a97f55f889",
+    "tidelands-m5-2026-10-12-attack.zip": "0ae077178963c698057b61a0cc05ff30ccd366b3856e873616c8b301e2a79f9f",
+    "tidelands-m5-2026-10-12-crystal.zip": "bf30cbb81e6a531f5e90fd8d1d5c26e4e376c5fe78a53d01f359181b67cbcd29",
+    "tidelands-m5-2026-10-12-gather.zip": "a280ca5752f8aec56259b82518aabaae216dd026a9a22ebc52a12a7d14c37d06",
+    "tidelands-m5-2026-10-12-harvest.zip": "84b41994c737e9b827da74f8ba2aad8f84b3128c31de4edc695c33627966c81d",
+    "tidelands-m5-2026-10-12-resume.zip": "53d0adffee951882f6b20a3b3120737dad1674ea9a353a73d8dca8b27b8f1b4a",
+    "tidelands-m5-2026-10-12-textile.zip": "cef080d993f71b61455facb098a76b3117ecac4172ea1406c2768122865c4e04",
+    "tidelands-m5-2026-10-12-weather.zip": "aabc0db1d4dac91f19270357fc59b4188d32d93a58b09bc73057c294d519d63a",
+    "tidelands-m5-2026-10-12-wind.zip": "6e4bcdd96671d740274cf5f5ac37782b178d385dce6fc763a11b08531264e0a9"
+  },
+  "validation": [
+    "4 focused,173 full,4 package; missing export and distant buffer RED retained",
+    "335 batches/115135 instances, three camp types139/93/92 hidden, exact matrix restoration and cache skip,500th building respected; Node CPU sample only",
+    "9 actual GL samples with explicit on/off/remove/type fixtures, desktop and actual390 motions; no GPU/performance acceptance",
+    "real imported-material build UI after natural fixture respawn: 5 then E creates tent at(-70,108), wood40->32/fiber15->10,59 hidden;390save/reload retains it, viewCount1",
+    "corrected early actual saved120.1767->continued120.3943 below121 with viewCount1, q0/coords/inventory retained; formal raw save hash before/after identical only during corrected tests",
+    "independent ordinary package harvest+2 wood, save/reload390(-73.0,93.5),HP100/q0/berry3, no fixture/state injection"
+  ],
+  "importantFailure": "Both early-resume clone and initial build clone omitted testHarness flag, allowing default and isolated boots. Initial page stopped immediately on contradictory existing camp state. Old isolated early diagnostics withdrawn; direct independent-package evidence retained. Historical formal-save impact before current read-only snapshot cannot be reconstructed; no rollback.",
+  "failuresRetained": [
+    "distant unmodified instance buffers were needlessly marked dirty on camp removal; RED then only changed buffers upload",
+    "initial erroneous double-boot clone stopped and fixed; current single-view proof and formal hash snapshot retained",
+    "first desktop motion overlapped faulty clone startup; not controlled performance",
+    "first attempted mobile records actually1280 after other tab closed; retained as second-desktop and repeated actual390",
+    "raw failing TAP lines include whitespace preserved verbatim"
+  ],
+  "cleanup": {
+    "tabsClosed": [
+      "46",
+      "47",
+      "48",
+      "49",
+      "50",
+      "51"
+    ],
+    "viewportReset": true,
+    "packagePort": 53936,
+    "packageStopExitCode": 1,
+    "stopReason": "intentional Ctrl-C/KeyboardInterrupt",
+    "packageListenerAbsent": true,
+    "sourceListener": "127.0.0.1:4190/PID21636"
+  },
+  "quota": {
+    "initialOrdinaryUsageAllowed": true,
+    "initial5h": 49,
+    "initialWeek": 70,
+    "lastRead5h": 69,
+    "lastReadWeek": 73,
+    "couponsOrCreditsUsed": false
+  },
+  "remainingQuality": [
+    "Prior isolation run history and any formal-save side effects cannot be retrospectively proven; this corrected run has exact before/after raw hash equality.",
+    "Whole plant clusters clear conservatively around fixed-orientation footprints; slope/building contact and organic ground transition remain.",
+    "Character face/hair/body and vegetation still procedural/toy-like; no final unified art acceptance.",
+    "Actual audio audition, full current ordinary campaign, natural surface contact and long device/GPU quality remain.",
+    "Ten-second dual draw and Node timings/raw bytes are not gameplay/GPU/device or final performance.",
+    "Public origin choice still awaits the existing human question; no repeat question/fetch/push."
+  ]
+}

@@ -1,0 +1,28 @@
+TAP version 13
+# Subtest: camp hides only overlapping landscape instances and restores exact transforms after moving or removal
+ok 1 - camp hides only overlapping landscape instances and restores exact transforms after moving or removal
+  ---
+  duration_ms: 4.1445
+  type: 'test'
+  ...
+# Subtest: overlapping camps, type replacements and the 500th building have no fixed shader-slot limit
+ok 2 - overlapping camps, type replacements and the 500th building have no fixed shader-slot limit
+  ---
+  duration_ms: 0.7995
+  type: 'test'
+  ...
+# Subtest: production sync applies and restores clearance during same-ID camp relocation and save replacement
+ok 3 - production sync applies and restores clearance during same-ID camp relocation and save replacement
+  ---
+  duration_ms: 10.046083
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 72.746042

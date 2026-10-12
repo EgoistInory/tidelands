@@ -1,0 +1,4 @@
+{
+  "state": "{\"buildings\":[],\"inventory\":{\"wood\":0,\"stone\":0,\"fiber\":0,\"berry\":3,\"shell\":0,\"crystal\":0,\"axe\":0,\"sword\":0,\"meal\":0},\"position\":[-70,102],\"hiddenInstances\":0,\"glError\":0,\"scope\":\"Actual production build/import/save UI. Imported material fixture is explicit; no runtime state edits.\"}",
+  "explanation": "Contradictory preexisting three-building state appeared on a new isolated key. main.js auto-boots unless data-test-harness=true. This clone omitted it, so two boots could attach to the same UI. No further actions performed."
+}

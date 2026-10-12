@@ -6,13 +6,16 @@ const run=new URL(location.href).searchParams.get('run')||'fixed';
 if(!/^[a-z0-9-]{1,64}$/.test(run))throw new Error('Invalid QA run key');
 const response=await fetch('../index.html');if(!response.ok)throw new Error('index HTTP '+response.status);
 const doc=new DOMParser().parseFromString(await response.text(),'text/html'),base=doc.createElement('base');base.href=new URL('../',location.href).href;doc.head.prepend(base);
+doc.body.dataset.testHarness='true';
 for(const script of doc.querySelectorAll('script'))script.remove();
 const setup=doc.createElement('script');setup.type='module';setup.textContent=`
-  import {boot} from './src/main.js';import {restore} from './src/game.js';
+  import {boot} from './src/main.js';import {restore} from './src/game.js';import {WorldView} from './src/scene.js';
+  const draw=WorldView.prototype.draw,seen=new Set();
+  WorldView.prototype.draw=function(...args){seen.add(this);return draw.apply(this,args);};
   const nativeClick=HTMLAnchorElement.prototype.click;
   HTMLAnchorElement.prototype.click=function(){
     if(!this.download||!this.href.startsWith('blob:'))return nativeClick.call(this);
-    fetch(this.href).then(r=>r.text()).then(raw=>{const saved=restore(raw);parent.document.querySelector('#result').textContent=JSON.stringify({time:saved.time,quest:saved.quest,position:[saved.player.x,saved.player.z],inventory:saved.inventory,bytes:new TextEncoder().encode(raw).length,scope:'Actual production export Blob; no download file or state injection.'});});
+    fetch(this.href).then(r=>r.text()).then(raw=>{const saved=restore(raw);parent.document.querySelector('#result').textContent=JSON.stringify({viewCount:seen.size,time:saved.time,quest:saved.quest,position:[saved.player.x,saved.player.z],inventory:saved.inventory,bytes:new TextEncoder().encode(raw).length,scope:'Actual production export Blob; no download file or state injection.'});});
   };
   boot({storageKey:${JSON.stringify('tidelands-qa-early-resume-'+run)}});
 `;doc.body.append(setup);document.querySelector('iframe').srcdoc='<!doctype html>'+doc.documentElement.outerHTML;

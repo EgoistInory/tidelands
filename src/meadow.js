@@ -57,6 +57,37 @@ export function updateGroundCover(batches,camera){
   }
 }
 
+const campFootprints={tent:[2.15,1.85],workbench:[1.65,1.2],campfire:[1.4,1.4]};
+const landscapeNames=new Set(['meadow-grass','meadow-flowers','meadow-cover','meadow-shore','meadow-fern']);
+export function updateCampClearance(batches,buildings){
+  const footprints=buildings.filter(b=>campFootprints[b.type]).map(b=>[b.x,b.z,...campFootprints[b.type]]),key=JSON.stringify(footprints);
+  let changed=0;
+  for(const batch of batches){
+    if(!landscapeNames.has(batch.name)||batch.userData.campKey===key)continue;
+    const hidden=batch.userData.campHidden??=new Map(),data=batch.instanceMatrix.array;
+    const bounds=batch.boundingBox,candidates=footprints.filter(([x,z,w,d])=>x+w>=bounds.min.x&&x-w<=bounds.max.x&&z+d>=bounds.min.z&&z-d<=bounds.max.z);
+    if(!candidates.length){
+      if(hidden.size){for(const [i,original]of hidden){data.set(original,i*16);changed++;}hidden.clear();batch.instanceMatrix.needsUpdate=true;}
+      batch.userData.campKey=key;continue;
+    }
+    const box=batch.geometry.boundingBox,radius=Math.hypot(Math.max(Math.abs(box.min.x),Math.abs(box.max.x)),Math.max(Math.abs(box.min.z),Math.abs(box.max.z)));
+    let dirty=false;
+    for(let i=0;i<batch.count;i++){
+      const offset=i*16,original=hidden.get(i)??data.subarray(offset,offset+16),x=original[12],z=original[14];
+      const padding=radius*Math.max(Math.hypot(original[0],original[1],original[2]),Math.hypot(original[8],original[9],original[10]))+.1;
+      const occupied=candidates.some(([cx,cz,w,d])=>Math.abs(x-cx)<=w+padding&&Math.abs(z-cz)<=d+padding);
+      if(occupied&&!hidden.has(i)){
+        hidden.set(i,original.slice());
+        // Keep a nonsingular wind basis; zero scales would normalize a zero shader vector.
+        data[offset+13]=-10000;dirty=true;changed++;
+      }else if(!occupied&&hidden.has(i)){data.set(original,offset);hidden.delete(i);dirty=true;changed++;}
+    }
+    if(dirty)batch.instanceMatrix.needsUpdate=true;
+    batch.userData.campKey=key;
+  }
+  return changed;
+}
+
 function geometryBuilder(){
   const positions=[],colors=[],indices=[];
   return {

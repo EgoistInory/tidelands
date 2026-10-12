@@ -1,0 +1,49 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>营地植被净空实景诊断</title>
+<style>html,body{margin:0;height:100%;background:#192723;color:#eee7d4;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:6px;display:flex;gap:5px;flex-wrap:wrap}button,select{font:inherit;padding:6px}output{height:90px;overflow:auto;overflow-wrap:anywhere;font:11px monospace;padding:5px}canvas{flex:1;min-height:0;width:100%;display:block}</style>
+<nav>明确营地/移动fixture · 无敌人/存档
+<label for="type">建筑</label><select id="type"><option value="tent">帐篷</option><option value="workbench">工作台</option><option value="campfire">营火</option></select>
+<label for="time">光照</label><select id="time"><option value="240">正午</option><option value="0">午夜</option></select>
+<button id="clear">切换净空</button><button id="present">移除/恢复建筑</button><button id="angle">换方向</button><button id="motion">播放10秒移动</button></nav>
+<output>等待地表贴图…</output><canvas aria-label="生产营地与植被的净空场景"></canvas>
+<script type="module">
+import {WorldView} from '../src/scene.js';
+import {freshGame} from '../src/game.js';
+import {createWorld,terrain} from '../src/world.js';
+import {updateCampClearance,updateGroundCover} from '../src/meadow.js';
+const state=freshGame(),view=new WorldView(document.querySelector('canvas'),createWorld());state.enemies=[];
+let cleared=true,present=true,angle=.35,ready=false,stats=null;
+function sync(){state.buildings=present?[{id:'clearance-camp',type:document.querySelector('#type').value,x:-74,z:105}]:[];view.sync(state);updateCampClearance(view.meadow,cleared?state.buildings:[]);}
+function draw(elapsed=0,dt=1/60,moving=false){
+  state.time=Number(document.querySelector('#time').value)+elapsed;state.player.x=-70+(moving?Math.sin(elapsed*.8)*1.6:0);state.player.z=102;
+  state.player.yaw=moving?(Math.cos(elapsed*.8)>=0?Math.PI/2:-Math.PI/2):0;
+  if(!moving){view.player.userData.lastPosition=null;view.player.rotation.y=0;}
+  view.draw(state,null,null,moving,dt);
+  const x=-74,z=105,y=terrain(x,z)+1.35,d=innerWidth<600?8:5.5;
+  view.camera.position.set(x+Math.sin(angle)*d,y+d*.45,z+Math.cos(angle)*d);view.camera.lookAt(x,y,z);
+  view.sky.position.copy(view.camera.position);updateGroundCover(view.meadow,view.camera.position);view.renderer.render(view.scene,view.camera);
+}
+function report(){const info=view.renderer.info;document.querySelector('output').textContent=JSON.stringify({
+  ready,cleared,present,type:document.querySelector('#type').value,time:state.time,angle,
+  hiddenInstances:view.meadow.reduce((n,b)=>n+(b.userData.campHidden?.size??0),0),
+  batches:view.meadow.filter(b=>b.userData.campHidden?.size).map(b=>({name:b.name,hidden:b.userData.campHidden.size})),
+  render:{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures,programs:info.programs.length},
+  viewport:[innerWidth,innerHeight],glError:view.renderer.getContext().getError(),stats,
+  note:'Production WorldView, declared building and scripted movement fixture, no save. Off explicitly restores original matrices. Dual draw is not ordinary gameplay GPU performance.'});}
+function reset(){stats=null;sync();draw();report();}
+document.querySelector('#clear').onclick=()=>{cleared=!cleared;reset();};document.querySelector('#present').onclick=()=>{present=!present;reset();};
+document.querySelector('#angle').onclick=()=>{angle=(angle+Math.PI/2)%(Math.PI*2);reset();};
+for(const input of document.querySelectorAll('select'))input.onchange=reset;
+document.querySelector('#motion').onclick=()=>{
+  const controls=[...document.querySelectorAll('button,select')];controls.forEach(c=>c.disabled=true);
+  const frames=[];let start=null,last=null;stats={complete:false};
+  function frame(now){start??=now;const elapsed=Math.min(10,(now-start)/1000),dt=last===null?0:(now-last)/1000;last=now;
+    draw(elapsed,dt,true);frames.push({elapsed,dt,position:[state.player.x,state.player.z],textures:view.renderer.info.memory.textures,geometries:view.renderer.info.memory.geometries,hidden:view.meadow.reduce((n,b)=>n+(b.userData.campHidden?.size??0),0)});
+    if(elapsed<10)requestAnimationFrame(frame);else{const intervals=frames.slice(1).map(f=>f.dt*1000).sort((a,b)=>a-b);
+      stats={complete:true,frames,elapsedMs:now-start,p95Ms:intervals[Math.floor(intervals.length*.95)],maxMs:Math.max(...intervals),over50ms:intervals.filter(v=>v>50).length,hidden:document.hidden};
+      controls.forEach(c=>c.disabled=false);report();}
+  }
+  requestAnimationFrame(frame);
+};
+Promise.all([view.groundSurface.userData.ground.loaded,view.groundSurface.userData.ground.sand.loaded,view.rockSurface.userData.rock.loaded]).then(()=>{ready=true;reset();});
+window.addEventListener('resize',()=>{view.resize();reset();});window.addEventListener('pagehide',()=>view.renderer.dispose());
+</script></html>

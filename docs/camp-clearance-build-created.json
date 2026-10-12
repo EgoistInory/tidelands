@@ -1,0 +1,36 @@
+{
+  "state": {
+    "viewCount": 1,
+    "buildings": [
+      {
+        "id": "built-0-16289",
+        "type": "tent",
+        "x": -70,
+        "z": 108
+      }
+    ],
+    "inventory": {
+      "wood": 32,
+      "stone": 30,
+      "fiber": 10,
+      "berry": 3,
+      "shell": 0,
+      "crystal": 8,
+      "axe": 0,
+      "sword": 0,
+      "meal": 0
+    },
+    "position": [
+      -70,
+      102
+    ],
+    "hiddenInstances": 59,
+    "glError": 0,
+    "scope": "Actual production build/import/save UI. Imported material fixture is explicit; no runtime state edits."
+  },
+  "fixtureImported": "tests/fixtures/build-ready.json",
+  "notes": [
+    "Imported fixture initially stood near a boar at (-110,60), then naturally respawned at (-70,102) before building; inventory stayed40wood/15fiber. No runtime repositioning.",
+    "Actual 5 selection and E confirm should consume8wood/5fiber."
+  ]
+}

@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>正式存档只读隔离审计</title>
+<style>body{background:#192723;color:#eee7d4;font:14px system-ui}output{white-space:pre-wrap;overflow-wrap:anywhere}</style>
+<p>只读tidelands-save-v1，不调用boot、不写存档、不恢复历史内容。</p><output>读取中…</output>
+<script type="module">
+import {restore} from '../src/game.js';
+const raw=localStorage.getItem('tidelands-save-v1');
+const digest=raw?await crypto.subtle.digest('SHA-256',new TextEncoder().encode(raw)):null;
+const sha256=digest?[...new Uint8Array(digest)].map(n=>n.toString(16).padStart(2,'0')).join(''):null;
+let result={exists:Boolean(raw),sha256,readOnly:true};
+if(raw)try{const s=restore(raw);result={...result,valid:true,time:s.time,position:[s.player.x,s.player.z],quest:s.quest,buildings:s.buildings.length,inventory:s.inventory};}catch{result.valid=false;}
+document.querySelector('output').textContent=JSON.stringify(result,null,2);
+</script></html>

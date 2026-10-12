@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "batches": 335,
+  "instances": 115135,
+  "timings": [
+    {
+      "type": "tent",
+      "changed": 139,
+      "hidden": 139,
+      "updateCpuMs": 1.7126250000000027,
+      "cached1000CpuMs": 14.595290999999975,
+      "savedMatrixBytes": 8896
+    },
+    {
+      "type": "workbench",
+      "changed": 46,
+      "hidden": 93,
+      "updateCpuMs": 1.0724579999999833,
+      "cached1000CpuMs": 14.19358299999999,
+      "savedMatrixBytes": 5952
+    },
+    {
+      "type": "campfire",
+      "changed": 19,
+      "hidden": 92,
+      "updateCpuMs": 1.1264169999999467,
+      "cached1000CpuMs": 13.692665999999917,
+      "savedMatrixBytes": 5888
+    }
+  ],
+  "tail500CpuMs": 4.458624999999984,
+  "tail500Hidden": 139,
+  "exactMatricesRestored": true,
+  "unchangedBuffersSkipUploads": true,
+  "fullGoalComplete": false,
+  "note": "Node CPU timings and raw saved matrix bytes; not browser/GPU/device/whole-world performance. Geometry, textures and shaders are reused.",
+  "sourceSha256": {
+    "src/meadow.js": "4ff40deefe0e7bf06572547411024a2c24b1c799fd201263ed85c5abba8b3ef4",
+    "src/scene.js": "1b203aaea12f08a2c23568a12ea9cd0c6bcfc95df34d57503c1414e477b10421",
+    "tests/camp-clearance.test.js": "b08a02fed44713a074938bef0370b73ba447812283806a63e8ca0ed3f0d7a7cf",
+    "tests/camp-clearance.html": "edceaa839f84d83b1918dfb0c4dd63780753676c48effa400808effcf150c2a2",
+    "tests/camp-clearance-build.html": "32a14315499a945274d10c82ba9559d977099a08a453f03fdce1f95deba742ef"
+  }
+}

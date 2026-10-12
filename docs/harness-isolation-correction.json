@@ -1,0 +1,29 @@
+{
+  "affected": [
+    "tests/early-resume.html",
+    "tests/camp-clearance-build.html"
+  ],
+  "cause": "Cloned index body omitted data-test-harness=true before importing main.js; its module auto-boot and explicit boot both attached listeners/render loops.",
+  "oldEarlyResumeDiagnosticWithdrawn": [
+    "docs/early-resume-red.json",
+    "docs/early-resume-green.json",
+    "their isolation assertions in docs/early-resume-final-audit.json"
+  ],
+  "oldIndependentPackageEvidenceRetained": "docs/early-resume-package-ui.json used direct independent package URL, no QA clone. Main.js hasSavedGame fix is unchanged.",
+  "olderArchivesAndEvidenceUntouched": true,
+  "currentFormalSaveHistoricalImpact": "Cannot reconstruct prior localStorage value from these old logs; do not roll back or assert no impact. Read-only current snapshot before/after corrected QA will establish only this new run.",
+  "otherBootCloneGuardsPresent": [
+    "tests/playthrough.html",
+    "tests/startup-preparation.html"
+  ],
+  "fixedGuard": "doc.body.dataset.testHarness=true before importing main in srcdoc",
+  "revalidationPending": false,
+  "revalidation": {
+    "singleViewCount": 1,
+    "earlySavedTime": 120.17669999980926,
+    "earlyContinuedTime": 120.39429999966622,
+    "label": "继续旅程",
+    "formalSaveSha256UnchangedDuringCorrectedTests": "f767902f43847fc33de4d52d7231cc67ba9196332e6593e75311dd4767154561",
+    "historyBeforeReadOnlySnapshotStillUncertain": true
+  }
+}

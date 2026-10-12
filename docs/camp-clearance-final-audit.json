@@ -1,0 +1,189 @@
+{
+  "kind": "bounded-camp-clearance-and-isolation-evidence-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "pendingBatchEvidence": [],
+  "changedProduction": [
+    "src/meadow.js",
+    "src/scene.js"
+  ],
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-campclear.zip",
+    "archiveBytes": 8181842,
+    "archiveEntries": 43,
+    "archiveSha256": "2ba8070bbb08153c6d94afc56a836fd5ef3fab6042f9189ae9eae7d1aa5b87ac"
+  },
+  "runtimeSha256": {
+    "src/action-timing.js": "43628f890216ab5678e9887598b9cb8176daa68e9a9176c79f64dcf07f344dc5",
+    "src/audio.js": "6eefb0bb75d8e8c61ae8bcbc54e1b5486eb9f850e9a81f9a49b37f414f79b846",
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character.js": "ba4ec4953469ab564dfc7d1d9234684afe83df31834b3c7b4a2e7c94a4087228",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "d6ab5bbbc05b97c6f3dad1ea24826b5d243c7af95f2e93a2d58cd7e5e9a76fe5",
+    "src/crystal.js": "1f4191077b07bc551dd5bb59397f404e0d0cde15c7aa2f30bc27e1f098d4c3cb",
+    "src/foliage.js": "d7649b9b6e0d1a3496d8c8b2fa5198e1876076dc2fa3d78ebaebbea77546e4b6",
+    "src/game.js": "6f90fea0c8f32696832f53cccd35373dbae14e5310011a89db350c0ce312d223",
+    "src/ground-surface.js": "fa13f118fd37388219febdadc0c3b1a5a19af799ff115ec429b36f7aee573c04",
+    "src/main.js": "06ed33246edbeedaf0a8007aad1b74142e2712848fd8102484b2534558cfe422",
+    "src/meadow.js": "4ff40deefe0e7bf06572547411024a2c24b1c799fd201263ed85c5abba8b3ef4",
+    "src/merge-parts.js": "58c35dd60c592417906ab2e13b18e2b9daab244602f3508aef94dadb6454c272",
+    "src/pointer-controls.js": "284d0aa6c8bad1337c5c76722a9f308cb446e41670a58b9feeb732bce0d13974",
+    "src/rock-surface.js": "0432cd242408149b28e7def74638263ff031bfbf18c180cf13ee2e60a3a5c5f2",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/scene.js": "1b203aaea12f08a2c23568a12ea9cd0c6bcfc95df34d57503c1414e477b10421",
+    "src/sky.js": "e83f0d3ce196d44b214a608f09f0763ca33caa10c2d3ed671579b508effa75d4",
+    "src/startup-textures.js": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd",
+    "src/textile.js": "409b2ccf20dcbd8005e2d220404c358d5d39e1a7c6533db0bb80692cc85a69fb",
+    "src/world.js": "f9f0114982deaf69dda65b8ec44e0eba88f1cc228b1859379dc7da24b93456e1"
+  },
+  "historicalArchivesPreserved": 27,
+  "motions": [
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "frames": 585,
+      "p95Ms": 18.29999999998836,
+      "maxMs": 33.69999999998254,
+      "over50ms": 0
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "frames": 601,
+      "p95Ms": 18.099999999976717,
+      "maxMs": 18.800000000046566,
+      "over50ms": 0
+    }
+  ],
+  "actualBuild": {
+    "viewCount": 1,
+    "buildings": [
+      {
+        "id": "built-0-16289",
+        "type": "tent",
+        "x": -70,
+        "z": 108
+      }
+    ],
+    "inventory": {
+      "wood": 32,
+      "stone": 30,
+      "fiber": 10,
+      "berry": 3,
+      "shell": 0,
+      "crystal": 8,
+      "axe": 0,
+      "sword": 0,
+      "meal": 0
+    },
+    "position": [
+      -70,
+      102
+    ],
+    "hiddenInstances": 59,
+    "glError": 0,
+    "scope": "Actual production build/import/save UI. Imported material fixture is explicit; no runtime state edits."
+  },
+  "ordinaryFinal": {
+    "coordinates": "位置 X -73.0，Z 93.5；建筑 0；击败 0",
+    "hp": "100",
+    "inventory": [
+      {
+        "count": "2",
+        "name": "木材"
+      },
+      {
+        "count": "0",
+        "name": "石料"
+      },
+      {
+        "count": "0",
+        "name": "纤维"
+      },
+      {
+        "count": "3",
+        "name": "浆果"
+      },
+      {
+        "count": "0",
+        "name": "贝壳"
+      },
+      {
+        "count": "0",
+        "name": "晶石"
+      },
+      {
+        "count": "0",
+        "name": "石斧"
+      },
+      {
+        "count": "0",
+        "name": "晶石剑"
+      },
+      {
+        "count": "0",
+        "name": "烤浆果"
+      }
+    ],
+    "quest": "归航的灯火",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "correctedTestsFormalSaveUnchanged": "f767902f43847fc33de4d52d7231cc67ba9196332e6593e75311dd4767154561",
+  "priorIsolationDiagnosticWithdrawn": [
+    "docs/early-resume-red.json",
+    "docs/early-resume-green.json",
+    "their isolation assertions in docs/early-resume-final-audit.json"
+  ],
+  "limits": [
+    "Prior isolation run history and any formal-save side effects cannot be retrospectively proven; this corrected run has exact before/after raw hash equality.",
+    "Whole plant clusters clear conservatively around fixed-orientation footprints; slope/building contact and organic ground transition remain.",
+    "Character face/hair/body and vegetation still procedural/toy-like; no final unified art acceptance.",
+    "Actual audio audition, full current ordinary campaign, natural surface contact and long device/GPU quality remain.",
+    "Ten-second dual draw and Node timings/raw bytes are not gameplay/GPU/device or final performance.",
+    "Public origin choice still awaits the existing human question; no repeat question/fetch/push."
+  ],
+  "evidenceSha256": {
+    "docs/camp-clearance-buffer-red-tests.txt": "9212784b6c5c4e680eaf578807b6618be4ab5fdcdf69ee4f95f79737202f2e9b",
+    "docs/camp-clearance-build-created.json": "b0a5a337b50d95a774a9c57247f97688da1d1185748959145b879998eeb27967",
+    "docs/camp-clearance-build-initial-failure.json": "90d60e38a186de79b98e3b99333b1f5a859b4a6908b9d70d3bb256f8bc247f3d",
+    "docs/camp-clearance-build-mobile.jpg": "4d94937724482c58c9aa1e692dc1c79d038024c939420d68a3afb525cd429c8e",
+    "docs/camp-clearance-build-restored.json": "af776300b0c0c0b9de16aeb0f9137040324ca8485863bd50923cbec6a6e1ca65",
+    "docs/camp-clearance-design.md": "4d2ecb4987e32812a1866ee1cf206ea0ac4eea55bc196dbafb48bca5c2762458",
+    "docs/camp-clearance-desktop-motion.json": "3fcf5c450b2d03b309153e26d366c645d2b1785bd01af46904163f85b66cbf48",
+    "docs/camp-clearance-final-focused-tests.txt": "124c668baeb5f57e864035f62111e1e80e3815715bc554498740d333ee13260a",
+    "docs/camp-clearance-final-full-tests.txt": "6bfc6dc2c42eec6fc59272c853eb7801a1992d93ef19cfdc80c70f0dda8e6a01",
+    "docs/camp-clearance-fire-night.jpg": "e63ca91f3913bd05fff2814d845636baca1f62d28ffcfd6ac948a9bcce834191",
+    "docs/camp-clearance-full-tests.txt": "7cc8a6a9ecdc1200f10eb0f3947b4745d4a38f0e48037d53f5d02ee79ac68ecf",
+    "docs/camp-clearance-green-tests.txt": "6ad50ce29a222fd95849663f62f8a23fb7ab1ce74b802e4616cf0849f74f2e0b",
+    "docs/camp-clearance-mobile-motion.json": "ae7c451de54a08d902dfca15acaa5bdcb0279a8d9d17af5d2565c199dffb79e3",
+    "docs/camp-clearance-mobile-off.jpg": "2f8aeac8688db494aadde833c2d60e69c494deb6e315f8f2ca6948792e159a27",
+    "docs/camp-clearance-mobile-on.jpg": "31c7a48c6e3bb4c00b7af0a2abf6d91bc52fb272c70c310491db20b3a05171a7",
+    "docs/camp-clearance-numerical.json": "439f7db24f85fcf4e40f90cffd07c4be110daebfcb7eabd73e3900e37a663d3f",
+    "docs/camp-clearance-package-desktop.jpg": "3c58b622a00d45b6c54e887904a6d36f9fe9c73b86b7adfb4a2afe7c7bb037f9",
+    "docs/camp-clearance-package-mobile.jpg": "c536111e0657c38a419449c81f33fa8c838ff10971f6a018637f8d0e112c367c",
+    "docs/camp-clearance-package-tests.txt": "a2574fc08d0a2610b9dff9b5486a2b69e3424bfacd717932ea70ad623c616bda",
+    "docs/camp-clearance-package-ui.json": "2b558d281a01eb597a3b1e8fc5156e74be1cbc2ca53eb0f078013af8cd093f17",
+    "docs/camp-clearance-red-tests.txt": "6b9a286e17949848a262fe65f9ada44d7a6358d7095c681f5f8a778a856c1e53",
+    "docs/camp-clearance-removed.jpg": "cff4e4abc27a69ca23af2207bab7d05418a5e8f1e33b0cc7101832a33b9beec1",
+    "docs/camp-clearance-second-desktop-motion.json": "26030394ab13288f303a4cf9df7f71441608cc533e841d2fe61a2bd3e5bc76a3",
+    "docs/camp-clearance-second-desktop-off.jpg": "3a85ab19272ace6ed9ff52c569b49385a0c4abbc90749617edeb758c7fc5a763",
+    "docs/camp-clearance-second-desktop-on.jpg": "b5f420d2b66d9d353d4f61d11935847036a513ae3ac0409a83dcbb9b32b45c8e",
+    "docs/camp-clearance-tent-off.jpg": "01e0a49635b529a8523cbdd87a80813410dd9950a137d71a65b0868c069a63e8",
+    "docs/camp-clearance-tent-on.jpg": "4bd0ac3e7d82c176051c3a7690a38a2ccb85cb24d5a998ca67fca30c083b532e",
+    "docs/camp-clearance-ui.json": "dc6c7a2c250c3af9c1a034da1c80dbe42319c79d716a8fbdc3601112cfe2a8b2",
+    "docs/camp-clearance-workbench.jpg": "54e19a4d4aec53cdc403d4c2671a90f399f54026a3cc1b274618efc2dd38ce6d",
+    "docs/harness-early-resume-continue.jpg": "6be9ebccdf6a85b417b86fa0175a439ad9202587efffb05a3bd1cc95677fb865",
+    "docs/harness-early-resume-revalidated.json": "36ba8c2efc2ff8e6a092815a374ed2d8e3be187f1871784e04edc0b4a540d74f",
+    "docs/harness-early-resume-saved.json": "58d3aa925e5e9307302abec13a581a664e6560cc549e1a125c337b972932652d",
+    "docs/harness-formal-save-after.json": "96474a5dc801ab4bd1b6aa760162c8b3c45f44045bce5a1450ea899bd328f4bb",
+    "docs/harness-formal-save-before.json": "96474a5dc801ab4bd1b6aa760162c8b3c45f44045bce5a1450ea899bd328f4bb",
+    "docs/harness-isolation-correction.json": "64b39b20af3f1e6c63d159bf5b238d10a970f688c2b72ab45f36b3043703da08"
+  }
+}
