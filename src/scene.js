@@ -318,10 +318,9 @@ export class WorldView{
     const focus=new THREE.Vector3(p.x,h+2.4,p.z),boxes=this.cameraObstacles.filter(({object:o})=>Math.hypot(o.x-p.x,o.z-p.z)<this.distance+12&&!isDepleted(state,o)).flatMap(o=>o.boxes??[o.box]);
     for(const g of this.buildings.values())if(g.position.distanceTo(focus)<this.distance+12)boxes.push(new THREE.Box3().setFromObject(g));
     for(const o of LANDMARKS)if(['lighthouse','cottage'].includes(o.type)&&Math.hypot(o.x-p.x,o.z-p.z)<this.distance+12){const r=o.type==='lighthouse'?3.2:5,y=terrain(o.x,o.z);boxes.push(new THREE.Box3(new THREE.Vector3(o.x-r,y,o.z-r),new THREE.Vector3(o.x+r,y+(o.type==='lighthouse'?25:9),o.z+r)));}
-    const safe=unobstructedCamera(focus,target,boxes,terrain,6),safeYaw=Math.atan2(safe.x-p.x,safe.z-p.z);
-    if(Math.abs(Math.atan2(Math.sin(safeYaw-this.yaw),Math.cos(safeYaw-this.yaw)))>.001){
-      this.yaw=safeYaw;
-    }
+    // Avoidance may move the rendered camera; retain the player's requested orbit for the next gesture.
+    const renderedYaw=Math.atan2(this.camera.position.x-p.x,this.camera.position.z-p.z);
+    const safe=unobstructedCamera(focus,target,boxes,terrain,6,renderedYaw);
     this.camera.position.copy(smoothCamera(focus,this.camera.position,safe,boxes,terrain,dt,Math.min(6,safe.distanceTo(focus))));this.camera.lookAt(focus);
     updateGroundCover(this.meadow,this.camera.position);
     this.updateAtmosphere(state.time,weather);

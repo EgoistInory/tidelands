@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: an orbit turn follows an arc without cutting through the player or snapping to the target
+ok 1 - an orbit turn follows an arc without cutting through the player or snapping to the target
+  ---
+  duration_ms: 1.766167
+  type: 'test'
+  ...
+# Subtest: angle wrapping follows the short arc and easing has equivalent results at different frame rates
+ok 2 - angle wrapping follows the short arc and easing has equivalent results at different frame rates
+  ---
+  duration_ms: 3.062875
+  type: 'test'
+  ...
+# Subtest: smoothing still retracts before solid scenery and terrain, including a zero-distance prior pose
+ok 3 - smoothing still retracts before solid scenery and terrain, including a zero-distance prior pose
+  ---
+  duration_ms: 0.211208
+  type: 'test'
+  ...
+# Subtest: an open side of a nearby tower keeps framing while a smoothed arc crosses its blocked side
+ok 4 - an open side of a nearby tower keeps framing while a smoothed arc crosses its blocked side
+  ---
+  duration_ms: 0.320166
+  type: 'test'
+  ...
+# Subtest: temporary landmark avoidance cannot overwrite manual orbit or steer the next released gesture
+ok 5 - temporary landmark avoidance cannot overwrite manual orbit or steer the next released gesture
+  ---
+  duration_ms: 141.921792
+  type: 'test'
+  ...
+# Subtest: an orbit temporarily moved around a tower returns to manual direction when the obstruction clears
+ok 6 - an orbit temporarily moved around a tower returns to manual direction when the obstruction clears
+  ---
+  duration_ms: 42.716584
+  type: 'test'
+  ...
+# Subtest: temporary avoidance retains an already clear side instead of jumping across the player
+ok 7 - temporary avoidance retains an already clear side instead of jumping across the player
+  ---
+  duration_ms: 0.500583
+  type: 'test'
+  ...
+# Subtest: camera retracts before a blocking rock and returns to requested distance when clear
+ok 8 - camera retracts before a blocking rock and returns to requested distance when clear
+  ---
+  duration_ms: 2.037375
+  type: 'test'
+  ...
+# Subtest: camera avoids intervening terrain even when its destination is above ground
+ok 9 - camera avoids intervening terrain even when its destination is above ground
+  ---
+  duration_ms: 0.113917
+  type: 'test'
+  ...
+# Subtest: close scenery turns the framed camera into clear space instead of the player head
+ok 10 - close scenery turns the framed camera into clear space instead of the player head
+  ---
+  duration_ms: 1.056666
+  type: 'test'
+  ...
+# Subtest: automatic scenery avoidance cannot steer a held forward input
+ok 11 - automatic scenery avoidance cannot steer a held forward input
+  ---
+  duration_ms: 1.950542
+  type: 'test'
+  ...
+# Subtest: adding another direction or adjusting an active stick retains the captured view basis
+ok 12 - adding another direction or adjusting an active stick retains the captured view basis
+  ---
+  duration_ms: 0.087667
+  type: 'test'
+  ...
+# Subtest: an intentional camera drag steers held movement while release or pause resets its basis
+ok 13 - an intentional camera drag steers held movement while release or pause resets its basis
+  ---
+  duration_ms: 0.076292
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 373.101

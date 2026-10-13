@@ -1,0 +1,67 @@
+{
+  "kind": "fixed-input-camera-origin-boundary-diagnostic",
+  "object": {
+    "id": "resource-944",
+    "type": "crystal",
+    "x": 137.5406773481518,
+    "z": -44.6254082582891,
+    "y": 22.7027176080753,
+    "scale": 0.8196343977004289,
+    "rotation": 4.595755482679926
+  },
+  "box": {
+    "min": [
+      136.31122575160117,
+      22.4027176080753,
+      -45.854859854839745
+    ],
+    "max": [
+      138.77012894470244,
+      25.571438000026802,
+      -43.39595666173845
+    ]
+  },
+  "previousPlayerInferredFromDeclaredFixedInput": {
+    "x": 137.65247466220103,
+    "z": -45.85428799064065
+  },
+  "currentPlayerFromExposedSample": {
+    "x": 137.76783128796023,
+    "z": -45.871722439429234
+  },
+  "previousFocus": [
+    137.65247466220103,
+    25.36179274544177,
+    -45.85428799064065
+  ],
+  "currentFocus": [
+    137.76783128796023,
+    25.399543013797906,
+    -45.871722439429234
+  ],
+  "previousFocusInside": true,
+  "currentFocusInside": false,
+  "jump": {
+    "frame": 50,
+    "stepDegrees": 101.34999165957596,
+    "player": [
+      137.76783128796023,
+      -45.871722439429234
+    ],
+    "camera": [
+      151.31905465810826,
+      29.30392239008297,
+      -49.680934021923136
+    ],
+    "previousCamera": [
+      138.72038984017317,
+      29.264811302833035,
+      -31.81707394443517
+    ],
+    "focusDistance": 14.607872056593724
+  },
+  "limits": [
+    "Previous player point inferred from explicit pre-turn fixed direction .15 and production7m/s for1/60s; not hidden browser state.",
+    "Exact crystal box formula from scene.createScenery. This proves the containsPoint skip boundary only, not a final collision/motion repair."
+  ]
+}

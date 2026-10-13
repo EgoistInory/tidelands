@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "kind": "candidate-camera-intent-progress-audit",
+  "intentRegressionPassed": true,
+  "physicalMotionQualityPassed": false,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "newDeliveryPackageProduced": false,
+  "priorOrdinarySaveAndPackagePreserved": true,
+  "changedRuntimeFiles": [
+    "src/camera.js",
+    "src/scene.js"
+  ],
+  "unitTests": {
+    "focused": 13,
+    "full": 190,
+    "baselineExpectedFailures": 3
+  },
+  "sourceAndEvidenceSha256": {
+    "src/camera.js": "50bd54c5b158802a8d7e2f029865ec531e621782d1037abf30637396ddb0e90b",
+    "src/scene.js": "96e16546b1d87d21730aa7610750fd37b2120f907e5cc3111c71e3a3531be795",
+    "tests/camera-intent.test.js": "9cf22a56e45ea75024a02c5ab5e68a1aece90dd32e50a0c9573757a6dad5c246",
+    "tests/camera-intent.html": "05fbffc94bbc58f8c557cc02c1e846540bb109c83c838afa9229a0c9421b4640",
+    "tools/diagnose_camera_intent.mjs": "611222d1f7a8b6d193f7deda203e1fe46fe5418704634e7d4c310d0c0a7d261d",
+    "tools/diagnose_camera_intent_boundary.mjs": "8957c11697ba1ed329cf86d3fcf55576929fa62b00e8e9dab5ac375f745ae9d3",
+    "docs/camera-intent-ui.json": "2c88d4af6fea4a70c6bc3a1e4a249d6d8a483a9210fe1e511e8eb45b7bec677b",
+    "docs/camera-intent-final-ui.json": "d1c53ef62f58936cf2ee309961e197ff6223670d55819480e5313bde003bd00f",
+    "docs/camera-intent-before-routes.json": "55db06772d710ebdbab6ba8422599a70e5a41978b87ca1d65f75af4f47247752",
+    "docs/camera-intent-boundary.json": "7756fe0fe9599e0a68b8a27d89bf01d1242ee35c3a2da2e436545aa7260c19cc",
+    "docs/M5-WHOLE-REVIEW.md": "c8ab51f3177d2f6a1771b5bfead5d38695b733b0886f7a66483dd6daf6705b83",
+    "docs/camera-intent-tests-final.txt": "7153f1b5aff4cc3d4a8054b61ce599c3720bbc4be92c3d85c6a6be1441279a01",
+    "docs/camera-intent-tests-focused.txt": "7fa5840c975d7f4b79dc0bc488356d18bcb4357f3bd6aee829e0fc11b9e7a5e3",
+    "docs/camera-intent-tests-baseline.txt": "d2dec844ec560090444889bf8660f478d1ecf842e4bfcf771c269c5a88251822"
+  },
+  "imagesViewedSha256": {
+    "docs/camera-intent-day-camp.jpg": "0b04d2fed1eb7934f049882be744a1d82806b5e27e3274843f84eb5ec0031a3e",
+    "docs/camera-intent-day-coast.jpg": "a275d8a99482f2ac30696ec9d125085f208ca96e4d33d6f5d87212429a707ff4",
+    "docs/camera-intent-day-forest.jpg": "d1cae1fccae176071dd0b34a3ef42bfd484a7eb5266f6972d92fad7c502bfeb3",
+    "docs/camera-intent-day-highland.jpg": "c0d13add82c7de8edb187f3d79d8a15894c70ffe04196272ec7c405c935782b0",
+    "docs/camera-intent-day-lamp.jpg": "1679b2be38fd3e831c94e59c1942bbde5339a287a6a485e68291a8e3747c3ef9",
+    "docs/camera-intent-day-shoal.jpg": "38eab71ff7a0ebfce07f929d019999f96dfaca100578ca0f22109497549e73c0",
+    "docs/camera-intent-final-forest.jpg": "0d3f62964a1cc7a8ba8b8cab3016b2a0e0c1a83db23653b8bcb807f5b50dcd21",
+    "docs/camera-intent-mobile-forest.jpg": "104a848b54c03ec3f7a1d2ab565343f0892793909158aeb92435db0da19d0630",
+    "docs/camera-intent-mobile-lamp.jpg": "7f49bb95a3ad56ea6762e53a0808393f33612aa34d82f12d170668a5bbf5d14f",
+    "docs/camera-intent-night-camp.jpg": "63476a5c56491cbf9800073da56f9dae3b0d9fda7d289c98d721ea4e7039d360",
+    "docs/camera-intent-night-coast.jpg": "27b247587a668ae3cc8ce08b247df6196eac9cd674ec88773089808129e4295b",
+    "docs/camera-intent-night-forest.jpg": "b6fd74896620ba67d6ecf3fcd7dd2f55b12b24ddd4d496fc56fb2384213f76bf",
+    "docs/camera-intent-night-highland.jpg": "a8ecc767561f1ad49ceaf341fdd2008f2a07d51b5ceddb76bde87a574f5a3c6f",
+    "docs/camera-intent-night-lamp.jpg": "0b648de76bb04450d5c6c6fd5314d0aaa3163b341e03b0387dd46c50a88da86e",
+    "docs/camera-intent-night-shoal.jpg": "688bb0b9265c9e91b2e075d6c414b9b8bd1d725e3b28cf4370123deacc9f2f65"
+  },
+  "finalRenderedForestJumpDegrees": 101.34999165957596,
+  "nextAction": "Reproduce frame50 origin leaving crystal944 box before collision repair; keep requested yaw and safety-side progress, then complete the whole motion/contact group before new package or M5 acceptance.",
+  "limits": [
+    "Initial14 rendered pictures and UI data predate preferred-side addition; final forest image/data use candidate camera and scene.",
+    "Old-version movement paths differ because old yaw steered input; no all-route physical comparison or performance inference.",
+    "Fixed-dt no-enemies/quest6/camp fixtures; no browser save access, native input, listening, GPU, real device or new long-time result."
+  ]
+}

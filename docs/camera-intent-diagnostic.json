@@ -1,0 +1,267 @@
+{
+  "kind": "offline-camera-request-overwrite-diagnostic",
+  "sourceSha256": {
+    "src/camera.js": "be61d93f82564fad040d22dbb3272927d5e94bd784afbc1e465ffd9c6bfeb06c",
+    "src/scene.js": "4a3398c509d45b06ddd7941837d58f7a2a928b58ddee3de4b3a0ee45d8b1603f",
+    "src/main.js": "77d6808c9f3d139c67277157c0d1ed86833c6216b8b6b739190d5c402e4ab162",
+    "src/movement-heading.js": "338f5d4063575847e9c17a60b9e6999b21744012b95e6096cfae531136ddd976",
+    "src/world.js": "f9f0114982deaf69dda65b8ec44e0eba88f1cc228b1859379dc7da24b93456e1",
+    "docs/current-journey-final-handoff-save.json": "f952e9e77675ae6cf301d01464e2aed6fa920647f5e929610dc2cd3ca45e0e4c"
+  },
+  "cases": [
+    {
+      "name": "ordinary-ending-export",
+      "x": -53.08507002880365,
+      "z": -53.48181936810796
+    },
+    {
+      "name": "ordinary-lamp-hand-in",
+      "x": -86.9,
+      "z": -51.9
+    },
+    {
+      "name": "ordinary-highland-tree",
+      "x": -86.5,
+      "z": -176.2
+    },
+    {
+      "name": "forest-botanist",
+      "x": 132,
+      "z": -26
+    }
+  ],
+  "totalSamples": 288,
+  "changedSamples": 17,
+  "maxChangeDegrees": 60.00000000000003,
+  "rows": [
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.08,
+      "requestedYaw": 3.665191429188092,
+      "resolvedYaw": 3.141592653589793,
+      "changeDegrees": 29.999999999999993,
+      "framingDistance": 14.04491977840749,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.08,
+      "requestedYaw": 3.926990816987241,
+      "resolvedYaw": -2.879793265790644,
+      "changeDegrees": 29.999999999999954,
+      "framingDistance": 14.0449197784075,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.08,
+      "requestedYaw": 4.1887902047863905,
+      "resolvedYaw": 3.1415926535897922,
+      "changeDegrees": 60.00000000000003,
+      "framingDistance": 14.04491977840749,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.08,
+      "requestedYaw": 4.4505895925855405,
+      "resolvedYaw": -2.8797932657906435,
+      "changeDegrees": 60.00000000000002,
+      "framingDistance": 14.044919778407488,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.08,
+      "requestedYaw": 4.71238898038469,
+      "resolvedYaw": -1.0471975511965979,
+      "changeDegrees": 29.99999999999998,
+      "framingDistance": 14.0449197784075,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.08,
+      "requestedYaw": 4.974188368183839,
+      "resolvedYaw": -0.7853981633974483,
+      "changeDegrees": 30.00000000000003,
+      "framingDistance": 14.06704260653072,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.29,
+      "requestedYaw": 3.665191429188092,
+      "resolvedYaw": 3.141592653589793,
+      "changeDegrees": 29.999999999999993,
+      "framingDistance": 14.610059461647442,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.29,
+      "requestedYaw": 3.926990816987241,
+      "resolvedYaw": -2.879793265790644,
+      "changeDegrees": 29.999999999999954,
+      "framingDistance": 14.61005946164745,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.29,
+      "requestedYaw": 4.1887902047863905,
+      "resolvedYaw": 3.1415926535897922,
+      "changeDegrees": 60.00000000000003,
+      "framingDistance": 14.610059461647442,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.29,
+      "requestedYaw": 4.4505895925855405,
+      "resolvedYaw": -2.8797932657906435,
+      "changeDegrees": 60.00000000000002,
+      "framingDistance": 14.610059461647438,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.29,
+      "requestedYaw": 4.71238898038469,
+      "resolvedYaw": -1.0471975511965979,
+      "changeDegrees": 29.99999999999998,
+      "framingDistance": 14.610059461647452,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.29,
+      "requestedYaw": 4.974188368183839,
+      "resolvedYaw": -0.7853981633974483,
+      "changeDegrees": 30.00000000000003,
+      "framingDistance": 14.61005946164744,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.88,
+      "requestedYaw": 3.926990816987241,
+      "resolvedYaw": -2.879793265790644,
+      "changeDegrees": 29.999999999999954,
+      "framingDistance": 21.97280837910045,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.88,
+      "requestedYaw": 4.1887902047863905,
+      "resolvedYaw": -2.617993877991495,
+      "changeDegrees": 30.000000000000004,
+      "framingDistance": 8.603020614198742,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.88,
+      "requestedYaw": 4.4505895925855405,
+      "resolvedYaw": -2.8797932657906435,
+      "changeDegrees": 60.00000000000002,
+      "framingDistance": 21.972808379100442,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.88,
+      "requestedYaw": 4.71238898038469,
+      "resolvedYaw": -1.0471975511965979,
+      "changeDegrees": 29.99999999999998,
+      "framingDistance": 21.97280837910045,
+      "landmarkBoxes": 1
+    },
+    {
+      "case": "ordinary-lamp-hand-in",
+      "position": [
+        -86.9,
+        -51.9
+      ],
+      "pitch": 0.88,
+      "requestedYaw": 4.974188368183839,
+      "resolvedYaw": -0.7853981633974483,
+      "changeDegrees": 30.00000000000003,
+      "framingDistance": 21.972808379100442,
+      "landmarkBoxes": 1
+    }
+  ],
+  "productionChanged": false,
+  "fullGoalComplete": false,
+  "limits": [
+    "Production solver with terrain and exact nearby landmark boxes; excludes resource/building obstacles, interpolation and rendered frames.",
+    "These are deliberate offline angle samples, not normal browser inputs or a performance/quality pass.",
+    "scene.draw writes resolvedYaw to view.yaw; main reads view.yaw for compass and next gesture, so this diagnostic identifies intent overwrite, not a complete fix."
+  ],
+  "next": "Keep manual requested yaw separate from collision orbit; compare retraction/elevation/temporary orbit strategies in the existing isolated continuous camera QA before changing production. Preserve visibility/collision tests and ordinary completed save; no starter/main-path replay."
+}
