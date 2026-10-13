@@ -1,0 +1,85 @@
+{
+  "passed": true,
+  "kind": "ordinary-current-version-functional-main-path-closure",
+  "fullCurrentJourneyFunctionalComplete": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "productionSourceBindingsVerified": 66,
+  "packageSha256": "9f9e6361db8d4a988ae29234ad91c00152305ec78c94b78b43e0cb45eacf7a6a",
+  "exactDebits": {
+    "wood": 12,
+    "stone": 8,
+    "crystal": 3
+  },
+  "rawOrdinaryExportsRestored": {
+    "docs/current-journey-final-handoff-save.json": {
+      "bytes": 13441,
+      "sha256": "f952e9e77675ae6cf301d01464e2aed6fa920647f5e929610dc2cd3ca45e0e4c",
+      "player": {
+        "x": -53.08507002880365,
+        "z": -53.48181936810796,
+        "hp": 61,
+        "stamina": 100,
+        "yaw": 1.5569908169872781
+      },
+      "inventory": {
+        "wood": 4,
+        "stone": 2,
+        "fiber": 4,
+        "berry": 0,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      }
+    },
+    "docs/current-journey-final-camp-save.json": {
+      "bytes": 13482,
+      "sha256": "0dc650a3ac8a83b62ea3e33c8797607f50d7f60b49b9a07e941e9040a196655e",
+      "player": {
+        "x": -70,
+        "z": 102,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 2.0007906405402904
+      },
+      "inventory": {
+        "wood": 4,
+        "stone": 2,
+        "fiber": 4,
+        "berry": 2,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      }
+    }
+  },
+  "imagesViewedSha256": {
+    "docs/current-journey-final-debit.jpg": "e8f726db945d260103f519beb9ee607879509dbdbf0969aeca907eba0e6520c7",
+    "docs/current-journey-final-ending-camp.jpg": "693905cb3144a28e2810ab060c44bc211bbdc797acfd4c195b6cdb3899258059",
+    "docs/current-journey-final-lamp-elevated.jpg": "994cab9e113ae032607d5cd2f800e7dc4b7584c82129542e29b14aaddba9abbb",
+    "docs/current-journey-final-lamp-far.jpg": "bed4dbbdf391f4a839545c428e74dd64e7f1ae30374fac5ff77badb1c968df63",
+    "docs/current-journey-final-lamp-restored.jpg": "9bb33f265b49fb4c676ea66b865d5339240f49db95186ad5ec9e9ec3e6ed0774",
+    "docs/current-journey-final-lamp-wide.jpg": "c1dedc165e7d31f4d88660b2928274ad87d2437d295263d558fe8d740e23d39f",
+    "docs/current-journey-final-lamp.jpg": "69630d1a3ae878cd93efbc392c56c72335335ef5459ffb12c19b9877a84208c6",
+    "docs/current-journey-final-materials.jpg": "3c96febd90a94346a403a833811da7aa6fc235ebaa41522d7355ef96aba979ee",
+    "docs/current-journey-final-mobile.jpg": "d2414dbcc63477e59697c1b383fd4d53a9f34eb685b0a300b1d39d82e7e5528a",
+    "docs/current-journey-final-reload.jpg": "3db30ac4e9c82bb7d5518726484ee7224662b8aa23e173f0d4fb6c48dadadd5c"
+  },
+  "limits": [
+    "Actual crystal yield1; previous route assumption+3 corrected using production rule and actual1-to2-to3 inventory.",
+    "Natural enemy damage throughout, including post-ending death/respawn. No state rollback or invented successful combat.",
+    "First desktop reload hp61 export-to49 displayed reflects immediate nearby enemy damage before backpack pause, not exact HP restore proof.",
+    "Whole lamp/light beam not framed in this run; actual ending HUD/debits/normal save are functional evidence, not complete environment presentation.",
+    "M5 camera adapts yaw between different key gestures, close enemies cross the player model, terrain/grass still repetitive.",
+    "390x844 is browser viewport, not a real phone; no new long-time/GPU/listening proof."
+  ],
+  "previousEvidence": [
+    "docs/movement-heading-final-audit.json",
+    "docs/current-journey-heading-audit.json"
+  ],
+  "uiSha256": "9bb7835e59e881647cb09c13297797511d351b8e8b8573152acd9c297d700a59"
+}
