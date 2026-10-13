@@ -1,0 +1,150 @@
+{
+  "kind": "held-movement-direction-evidence-audit",
+  "passed": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "trajectory": {
+    "baseline": {
+      "frames": 36,
+      "start": [
+        -80.56909445221844,
+        95.22585944048355
+      ],
+      "end": [
+        -78.58300313289588,
+        97.85902358753702
+      ],
+      "cameraTurnRadians": 1.5707963267948968,
+      "maxMovementDeviationRadians": 1.5707963267949243
+    },
+    "fixed": {
+      "frames": 37,
+      "start": [
+        -80.5906954983969,
+        95.22346052322906
+      ],
+      "end": [
+        -79.96305534200776,
+        99.37629905056045
+      ],
+      "cameraTurnRadians": 1.5707963267948968,
+      "maxMovementDeviationRadians": 1.4901161193847656e-08
+    },
+    "mobile": {
+      "frames": 45,
+      "start": [
+        -80.8237073683379,
+        94.4452428361604
+      ],
+      "end": [
+        -80.0566264905377,
+        99.52070365631391
+      ],
+      "cameraTurnRadians": 1.5707963267948968,
+      "maxMovementDeviationRadians": 1.4901161193847656e-08
+    },
+    "releasedNewInput": {
+      "frames": 12,
+      "start": [
+        -80.50361649031544,
+        99.45799687758377
+      ],
+      "end": [
+        -81.77230866041519,
+        99.64974094536063
+      ],
+      "cameraTurnRadians": 0.0,
+      "maxMovementDeviationRadians": 1.4901161193847656e-08
+    }
+  },
+  "archive": {
+    "archive": "tidelands-m5-2026-10-12-movement-heading.zip",
+    "archiveBytes": 8189105,
+    "archiveEntries": 47,
+    "archiveSha256": "9f9e6361db8d4a988ae29234ad91c00152305ec78c94b78b43e0cb45eacf7a6a"
+  },
+  "historicalArchivesPreserved": 32,
+  "ordinaryFinal": {
+    "coordinates": "位置 X -82.9，Z 99.0；建筑 1；击败 0",
+    "height": 844,
+    "hp": "100",
+    "inventory": [
+      {
+        "count": "1",
+        "name": "木材"
+      },
+      {
+        "count": "1",
+        "name": "石料"
+      },
+      {
+        "count": "0",
+        "name": "纤维"
+      },
+      {
+        "count": "3",
+        "name": "浆果"
+      },
+      {
+        "count": "0",
+        "name": "贝壳"
+      },
+      {
+        "count": "0",
+        "name": "晶石"
+      },
+      {
+        "count": "1",
+        "name": "石斧"
+      },
+      {
+        "count": "0",
+        "name": "晶石剑"
+      },
+      {
+        "count": "0",
+        "name": "烤浆果"
+      }
+    ],
+    "quest": "林间的来信",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "limits": [
+    "M5 and full 3A goal remain incomplete; this current ordinary journey has reached quest 3, not its ending.",
+    "Current world still has procedural character, campfire, vegetation and shoreline details; all five M5 criteria remain unchecked.",
+    "Automatic camera orbit still turns sharply in the reproduced scenery; holding input no longer curves with it, but complete camera quality is not certified.",
+    "390 x 844 pointer hold and reload are browser evidence, not a physical phone or true multi-touch test.",
+    "Manual camera drag steering is covered by input-unit tests; this batch does not certify simultaneous physical touch gestures.",
+    "No new current-package long-run performance, GPU, actual sound audition or complete motion-quality evidence.",
+    "Fresh baseline A-only trace is a negative control; the continued ordinary baseline route reproduces the 90 degree steering defect.",
+    "The old export and import browser tool calls returned after abnormal host wall latency, spanning October 12 to 13; that latency is not gameplay or performance evidence.",
+    "Prior harness-isolation correction and unknown pre-snapshot history remain disclosed; no rollback of user data.",
+    "Public Git origin was not fetched or pushed; its destination remains awaiting the earlier decision."
+  ],
+  "evidenceSha256": {
+    "docs/movement-heading-baseline-harness.html": "32f12b9c84695d26f2c8e6b38dde1872b6dbc62b2c29f4839a8dbd297e7e768f",
+    "docs/movement-heading-baseline-route-ui.json": "36979af054b1661a232c4bd8133a214b01afb2711fa69d6d368360371627deb5",
+    "docs/movement-heading-baseline-route.jpg": "99b53e0a32a0b396804ba25696ceaab08687bd5e951aeebc975b6b58c283bf49",
+    "docs/movement-heading-baseline-source.json": "74e30f87109938e7e5d8f69d2bfed026a0e58a2e48eb2b2fc074d9ae7f24c6ba",
+    "docs/movement-heading-baseline-ui.json": "aedd591d32ec525da1f1ee5f0bbe45c307e14f6cdc8cc33ec960b846bf9d9376",
+    "docs/movement-heading-baseline.jpg": "8b77a8208be7955c0b0a17ea42167316746b3cb4a9cf418a68ee29e6b5acd868",
+    "docs/movement-heading-fixed-ui.json": "6c541745ad2d2e9cfc2ff82102c8117e66decc212d39d28ae681f829a32636c6",
+    "docs/movement-heading-fixed.jpg": "0873c56bef5ddcde01bab218b919388239033d66e181e1601bd743b70035e1ba",
+    "docs/movement-heading-focused-tests.txt": "b1a50d729c67643039a439b07ac80e6d733e2a25e59e118b0b71d1b6059361e3",
+    "docs/movement-heading-full-tests.txt": "8c149ac815a90a58724a962572c6fd626d3c662005fb9605846947b84d937dc5",
+    "docs/movement-heading-mobile-ui.json": "f76d461c941a4a11258f5040152b28263233a5b2718ffcb73a7618fca87504fe",
+    "docs/movement-heading-mobile.jpg": "22c3c7bb130fbe1db3249ee28385d8902049370c1605248de6f736bf2bb859e1",
+    "docs/movement-heading-package-axe.jpg": "b7ad55115b635390ae900a85932a2d1fc8c88162a8b6eb4b41e59b9cebfeb0c7",
+    "docs/movement-heading-package-camp.jpg": "602b4a7ffcb460a99a09e5bdeb2577d8d1b7d980153d2ca68e93196b12ff5e2f",
+    "docs/movement-heading-package-desktop.jpg": "2fd6cbcf734a980d655fdb5f735f6afb1ac65cd35db5704c731129adc725b201",
+    "docs/movement-heading-package-mobile-world.jpg": "56424b470e574c858a0a217f0d810ac1b0f4c513be6a64e124a4d49cdc11f9e1",
+    "docs/movement-heading-package-mobile.jpg": "acb246918ad491f9076722ad425f3350aeef04ebc8832506b62c7de7c7d57d89",
+    "docs/movement-heading-package-tests.txt": "913c18e247d3de9be031506782674b98d8fecdfef02adb8cbeda455ac5273fca",
+    "docs/movement-heading-package-ui.json": "ab793ed93fadadb1e756f87a74ee4624bf4ddf48881392c11d84f3906588e1ba",
+    "docs/movement-heading-red-tests.txt": "2d0ec093d72d4c3b745f10a8787f4e83da5e5b40f4abe946305a906b0dc429b3",
+    "docs/movement-heading-release-ui.json": "4ec9ba00a27d3539d08afcce58d0e194aa25d363374d01033fc053b96586d646",
+    "docs/movement-heading-review.json": "f9bdfdaf220558f962e9154caa4d9ccc24af546cff30bcd8c4dadcf4749872e9",
+    "docs/movement-heading-syntax.json": "3922a7d26a5b4d358a61ed46514c8ae314332ee6972fc8574ec9e72e480d5f6a"
+  }
+}

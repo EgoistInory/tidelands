@@ -1,0 +1,27 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>普通输入与避障转镜诊断</title>
+<style>html,body,iframe{margin:0;width:100%;height:100%;border:0}body{overflow:hidden}#error{font:18px system-ui}</style>
+<iframe title="普通新档输入诊断"></iframe><p id="error" hidden></p>
+<script type="module">
+const name=new URL(location.href).searchParams.get('case')||'baseline';
+if(!['baseline','fixed','mobile'].includes(name))throw new Error('Unknown QA case');
+try{
+ const response=await fetch('../index.html',{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);
+ const doc=new DOMParser().parseFromString(await response.text(),'text/html');
+ const base=doc.createElement('base');base.href=new URL('../',location.href).href;doc.head.prepend(base);
+ doc.body.dataset.testHarness='true';for(const script of doc.querySelectorAll('script'))script.remove();
+ const setup=doc.createElement('script');setup.type='module';setup.textContent=`
+ import {boot} from './src/main.js';import {WorldView} from './src/scene.js';
+ const output=document.createElement('output');output.id='movement-diagnostic';output.style.cssText='position:fixed;top:0;left:320px;max-width:calc(100% - 330px);max-height:92px;overflow:auto;font:10px monospace;background:#fff;color:#111;z-index:100;pointer-events:none';document.body.append(output);
+ const keys=new Set(),gestures=new Set(),traces=[];let trace=null;
+ const begin=input=>{trace={input,viewport:[innerWidth,innerHeight],frames:[]};traces.push(trace);};
+ const render=()=>{output.textContent=JSON.stringify({ordinaryFreshGame:true,stateSeeded:false,inputInjected:false,traces});};
+ document.addEventListener('keydown',event=>{const key=event.key.toLowerCase();if(!['w','a','s','d'].includes(key)||event.repeat||document.getElementById('panel').open||!document.getElementById('start-screen').hidden)return;if(!keys.size)begin('keyboard:'+key);keys.add(key);},true);
+ document.addEventListener('keyup',event=>{keys.delete(event.key.toLowerCase());if(!keys.size){if(trace)trace.released=true;trace=null;render();}},true);
+ document.getElementById('joystick').addEventListener('pointerdown',event=>{if(!gestures.size)begin('joystick');gestures.add(event.pointerId);},true);
+ for(const kind of ['pointerup','pointercancel','lostpointercapture'])document.getElementById('joystick').addEventListener(kind,event=>{gestures.delete(event.pointerId);if(!gestures.size){if(trace)trace.released=true;trace=null;render();}},true);
+ const nativeDraw=WorldView.prototype.draw;
+ WorldView.prototype.draw=function(state,...args){const yawBefore=this.yaw;nativeDraw.call(this,state,...args);if(trace&&trace.frames.length<1200){trace.frames.push({x:state.player.x,z:state.player.z,yawBefore,yawAfter:this.yaw,hp:state.player.hp,moving:args[2]});render();}};
+ boot({storageKey:'tidelands-qa-movement-heading-'+${JSON.stringify(name)}});render();`;
+ doc.body.append(setup);document.querySelector('iframe').srcdoc='<!doctype html>'+doc.documentElement.outerHTML;
+}catch(error){document.getElementById('error').hidden=false;document.getElementById('error').textContent=error.message;}
+</script></html>

@@ -2,6 +2,7 @@ import {WorldView} from './scene.js';
 import {GameAudio} from './audio.js';
 import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_IMPACT} from './action-timing.js';
 import {bindPointerControls} from './pointer-controls.js';
+import {createMovementHeading} from './movement-heading.js';
 import {prepareSurfaceTextures} from './startup-textures.js';
 import {createWorld,terrain,LANDMARKS,regionAt,dayCycle} from './world.js';
 import {freshGame,QUESTS,ITEMS,RECIPES,affordable,craft,canBuild,build,interact,resolveGather,eat,attack,attackRange,resolveAttack,movePlayer,tick,nearest,nearestEnemy,serialize,restore} from './game.js';
@@ -79,8 +80,8 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     updateUI();
   }
   function beginBuild(type){if(!affordable(state,RECIPES[type].cost)){toast('材料不足。按 C 查看制作所需材料。');return;}buildType=type;view.setPreview(type);closePanel();toast('走到合适的位置，按 E 确认建造；Esc 取消。');}
-  function closePanel(){if(renderLost)return;panel.close();panelKind='';paused=false;audio.setActive(true);void unlockAudio();keys.clear();$('world').focus({preventScroll:true});}
-  function openPanel(kind){if(!started||renderLost)return;cancelAttack();cancelGather();panelKind=kind;paused=true;$('combat-feedback').hidden=true;$('damage-feedback').hidden=true;audio.setActive(false);keys.clear();resetPointers();
+  function closePanel(){if(renderLost)return;panel.close();panelKind='';paused=false;audio.setActive(true);void unlockAudio();keys.clear();movementHeading.end();$('world').focus({preventScroll:true});}
+  function openPanel(kind){if(!started||renderLost)return;cancelAttack();cancelGather();panelKind=kind;paused=true;$('combat-feedback').hidden=true;$('damage-feedback').hidden=true;audio.setActive(false);keys.clear();movementHeading.end();resetPointers();
     const titles={bag:'旅人的背包',craft:'制作与建造',map:'群岛地图',pause:'旅途小憩'};$('panel-title').textContent=titles[kind];const body=$('panel-body');body.replaceChildren();
     if(kind==='bag'){
       const inventory=document.createElement('div');inventory.className='inventory';
@@ -132,21 +133,24 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
   for(const button of document.querySelectorAll('[data-slot]'))button.onclick=()=>select(button.dataset.slot);
   $('cancel-new').onclick=()=>newDialog.close();$('confirm-new').onclick=()=>{state=freshGame();waypoint=null;buildType=null;placement=null;view.setPreview(null);view.sync(state);newDialog.close();save();closePanel();updateUI();toast('新的旅程开始了。');};
   const movement={w:[0,-1],a:[-1,0],s:[0,1],d:[1,0],arrowup:[0,-1],arrowleft:[-1,0],arrowdown:[0,1],arrowright:[1,0]};
-  function relative(x,z){return {x:x*Math.cos(view.yaw)+z*Math.sin(view.yaw),z:-x*Math.sin(view.yaw)+z*Math.cos(view.yaw)};}
+  const movementHeading=createMovementHeading();let stickActive=false;
+  const keyboardMoving=()=>[...keys].some(k=>movement[k]);
+  function relative(x,z){return movementHeading.relative(x,z,view.yaw);}
   document.addEventListener('keydown',event=>{
     if(event.ctrlKey||event.metaKey||event.altKey||/INPUT|TEXTAREA|SELECT/.test(event.target.tagName))return;const k=event.key.toLowerCase();
     if(k==='escape'){if(newDialog.open)return;if(buildType){buildType=null;placement=null;view.setPreview(null);updateUI();event.preventDefault();}else if(started&&!panel.open){openPanel('pause');event.preventDefault();}return;}
     if(!started||paused)return;
-    if(movement[k]){event.preventDefault();if(!keys.has(k)){const [x,z]=movement[k],v=relative(x,z);movePlayer(state,world.objects,v.x,v.z,.06,event.shiftKey);}keys.add(k);return;}
+    if(movement[k]){event.preventDefault();movementHeading.begin(view.yaw);if(!keys.has(k)){const [x,z]=movement[k],v=relative(x,z);movePlayer(state,world.objects,v.x,v.z,.06,event.shiftKey);}keys.add(k);return;}
     keys.add(k);if(event.repeat)return;
     if(k==='e')action();else if(k===' '){event.preventDefault();strike();}else if(k==='b')openPanel('bag');else if(k==='c')openPanel('craft');else if(k==='m')openPanel('map');else if(/^[1-6]$/.test(k))select(['hand',state.inventory.sword?'sword':'axe','food','campfire','tent','workbench'][Number(k)-1]);
   });
-  document.addEventListener('keyup',event=>keys.delete(event.key.toLowerCase()));
-  window.addEventListener('blur',()=>{keys.clear();resetPointers();if(started&&!panel.open)openPanel('pause');});
-  document.addEventListener('visibilitychange',()=>{if(document.hidden){keys.clear();resetPointers();save();if(started&&!panel.open)openPanel('pause');}});
+  document.addEventListener('keyup',event=>{keys.delete(event.key.toLowerCase());movementHeading.end(stickActive||keyboardMoving());});
+  window.addEventListener('blur',()=>{keys.clear();movementHeading.end();resetPointers();if(started&&!panel.open)openPanel('pause');});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden){keys.clear();movementHeading.end();resetPointers();save();if(started&&!panel.open)openPanel('pause');}});
   const resetPointers=bindPointerControls($('world'),$('joystick'),{
     enabled:()=>started&&!paused,stick,
-    look:(dx,dy)=>{view.yaw-=dx*.006;view.pitch=Math.max(.08,Math.min(1.15,view.pitch-dy*.004));},
+    onStickActive:active=>{stickActive=active;if(active)movementHeading.begin(view.yaw);else movementHeading.end(keyboardMoving());},
+    look:(dx,dy)=>{const turn=-dx*.006;view.yaw+=turn;movementHeading.turn(turn);view.pitch=Math.max(.08,Math.min(1.15,view.pitch-dy*.004));},
     zoom:delta=>{view.distance=Math.max(12,Math.min(45,view.distance+delta*.02));}
   });
   window.addEventListener('resize',()=>view.resize());window.addEventListener('pagehide',()=>{preparation.abort();save();});
@@ -157,7 +161,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     }
   });
   $('world').addEventListener('webglcontextlost',event=>{
-    event.preventDefault();preparation.abort();cancelAttack();cancelGather();renderLost=true;paused=true;keys.clear();resetPointers();audio.setActive(false);
+    event.preventDefault();preparation.abort();cancelAttack();cancelGather();renderLost=true;paused=true;keys.clear();movementHeading.end();resetPointers();audio.setActive(false);
     const saved=save();newDialog.close();$('start-button').disabled=true;$('panel-close').disabled=true;
     $('panel-title').textContent='画面暂时中断';const body=$('panel-body');body.replaceChildren();
     const message=document.createElement('p');message.setAttribute('role','alert');message.textContent=saved?'旅程已暂停，进度已保存。刷新页面后可继续探索。':'旅程已暂停，但进度未能保存。请先导出存档，再刷新页面。';body.append(message);
@@ -182,10 +186,10 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     $('start-button').textContent='重新加载';$('start-button').disabled=false;$('start-button').onclick=()=>location.reload();
   });
   function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;let moving=false;
-    if(started&&!paused){let x=stick.x,z=stick.z;for(const k of keys)if(movement[k]){x+=movement[k][0];z+=movement[k][1];}moving=Math.hypot(x,z)>.08;const running=keys.has('shift')&&moving;const v=relative(x,z);movePlayer(state,world.objects,v.x,v.z,dt,running);const feedback={},message=tick(state,dt,running,feedback);
+    if(started&&!paused){let x=stick.x,z=stick.z;for(const k of keys)if(movement[k]){x+=movement[k][0];z+=movement[k][1];}movementHeading.end(stickActive||keyboardMoving());moving=Math.hypot(x,z)>.08;const running=keys.has('shift')&&moving;const v=relative(x,z);movePlayer(state,world.objects,v.x,v.z,dt,running);const feedback={},message=tick(state,dt,running,feedback);
       if(feedback.damage>0){view.hurtAt=state.time;audio.effect('hit');combatFeedback('hurt',feedback.respawned?'倒下了 · 已返回营地':`受到伤害 −${Math.ceil(feedback.damage)}`);}
       if(feedback.respawned){
-        cancelAttack();cancelGather();keys.clear();resetPointers();moving=false;buildType=null;placement=null;view.setPreview(null);
+        cancelAttack();cancelGather();keys.clear();movementHeading.end();resetPointers();moving=false;buildType=null;placement=null;view.setPreview(null);
         view.gatherAt=-100;view.player.userData.lastPosition=null;
         view.camera.position.set(state.player.x+Math.sin(view.yaw)*view.distance,terrain(state.player.x,state.player.z)+2.4+Math.tan(view.pitch)*view.distance,state.player.z+Math.cos(view.yaw)*view.distance);
         save();updateUI();

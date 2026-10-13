@@ -19,3 +19,11 @@ test('pause clears captured gestures; stale and secondary pointers cannot resume
  joy.send('pointerdown',4);joy.send('pointercancel',4);assert.equal(stick.x,0);
  enabled=false;world.send('wheel',0);assert.equal(turns,1);
 });
+
+test('stick lifecycle notifies once for its owner and clears an active heading on reset',()=>{
+ const world=new Surface(),joy=new Surface(),stick={x:0,z:0},events=[];
+ const reset=bindPointerControls(world,joy,{enabled:()=>true,stick,look:()=>{},zoom:()=>{},onStickActive:active=>events.push(active)});
+ joy.send('pointerdown',1);joy.send('pointerdown',2);joy.send('pointerup',2);assert.deepEqual(events,[true]);
+ reset();assert.deepEqual(events,[true,false]);joy.send('lostpointercapture',1);assert.deepEqual(events,[true,false]);
+ joy.send('pointerdown',3);joy.send('pointercancel',3);assert.deepEqual(events,[true,false,true,false]);
+});

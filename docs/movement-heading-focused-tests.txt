@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: an orbit turn follows an arc without cutting through the player or snapping to the target
+ok 1 - an orbit turn follows an arc without cutting through the player or snapping to the target
+  ---
+  duration_ms: 0.877375
+  type: 'test'
+  ...
+# Subtest: angle wrapping follows the short arc and easing has equivalent results at different frame rates
+ok 2 - angle wrapping follows the short arc and easing has equivalent results at different frame rates
+  ---
+  duration_ms: 7.092833
+  type: 'test'
+  ...
+# Subtest: smoothing still retracts before solid scenery and terrain, including a zero-distance prior pose
+ok 3 - smoothing still retracts before solid scenery and terrain, including a zero-distance prior pose
+  ---
+  duration_ms: 0.273459
+  type: 'test'
+  ...
+# Subtest: an open side of a nearby tower keeps framing while a smoothed arc crosses its blocked side
+ok 4 - an open side of a nearby tower keeps framing while a smoothed arc crosses its blocked side
+  ---
+  duration_ms: 0.146416
+  type: 'test'
+  ...
+# Subtest: camera retracts before a blocking rock and returns to requested distance when clear
+ok 5 - camera retracts before a blocking rock and returns to requested distance when clear
+  ---
+  duration_ms: 0.9245
+  type: 'test'
+  ...
+# Subtest: camera avoids intervening terrain even when its destination is above ground
+ok 6 - camera avoids intervening terrain even when its destination is above ground
+  ---
+  duration_ms: 0.083375
+  type: 'test'
+  ...
+# Subtest: close scenery turns the framed camera into clear space instead of the player head
+ok 7 - close scenery turns the framed camera into clear space instead of the player head
+  ---
+  duration_ms: 0.675083
+  type: 'test'
+  ...
+# Subtest: automatic scenery avoidance cannot steer a held forward input
+ok 8 - automatic scenery avoidance cannot steer a held forward input
+  ---
+  duration_ms: 1.093166
+  type: 'test'
+  ...
+# Subtest: adding another direction or adjusting an active stick retains the captured view basis
+ok 9 - adding another direction or adjusting an active stick retains the captured view basis
+  ---
+  duration_ms: 0.082583
+  type: 'test'
+  ...
+# Subtest: an intentional camera drag steers held movement while release or pause resets its basis
+ok 10 - an intentional camera drag steers held movement while release or pause resets its basis
+  ---
+  duration_ms: 0.074458
+  type: 'test'
+  ...
+# Subtest: pause clears captured gestures; stale and secondary pointers cannot resume movement
+ok 11 - pause clears captured gestures; stale and secondary pointers cannot resume movement
+  ---
+  duration_ms: 1.510292
+  type: 'test'
+  ...
+# Subtest: stick lifecycle notifies once for its owner and clears an active heading on reset
+ok 12 - stick lifecycle notifies once for its owner and clears an active heading on reset
+  ---
+  duration_ms: 0.593292
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 79.136083
