@@ -1,0 +1,84 @@
+{
+  "kind": "ordinary-main-path-crossing-botanist",
+  "date": "2026-10-13",
+  "sourcePackage": "tidelands-m5-2026-10-12-movement-heading",
+  "priorCommit": "929e90b407096377dfb169af0591919ca22a310d",
+  "sameOrigin": "http://127.0.0.1:53941/",
+  "sameOrdinarySave": true,
+  "newFixtureImported": false,
+  "runtimeStateEdited": false,
+  "start": {
+    "coordinates": "位置 X -82.9，Z 99.0；建筑 1；击败 0",
+    "daytime": "第 3 天 · 黄昏",
+    "hp": "100",
+    "quest": "林间的来信"
+  },
+  "crossing": {
+    "coordinates": "位置 X 38.1，Z -62.7；建筑 1；击败 0",
+    "daytime": "第 26 天 · 黄昏",
+    "hp": "74",
+    "quest": "林间的来信",
+    "region": "群岛海域"
+  },
+  "botanist": {
+    "coordinates": "位置 X 130.4，Z -26.7；建筑 1；击败 0",
+    "daytime": "第 26 天 · 夜晚",
+    "height": 720,
+    "hp": "74",
+    "inventory": [
+      {
+        "count": "4",
+        "name": "木材"
+      },
+      {
+        "count": "1",
+        "name": "石料"
+      },
+      {
+        "count": "0",
+        "name": "纤维"
+      },
+      {
+        "count": "8",
+        "name": "浆果"
+      },
+      {
+        "count": "0",
+        "name": "贝壳"
+      },
+      {
+        "count": "0",
+        "name": "晶石"
+      },
+      {
+        "count": "1",
+        "name": "石斧"
+      },
+      {
+        "count": "0",
+        "name": "晶石剑"
+      },
+      {
+        "count": "0",
+        "name": "烤浆果"
+      }
+    ],
+    "quest": "雾岬的回声",
+    "region": "苍翠林地",
+    "width": 1280
+  },
+  "console": [],
+  "operations": [
+    "restore existing normal camp save",
+    "actual manual look and native held keys",
+    "skirt cottage collision",
+    "actual sea crossing",
+    "harvest ordinary tree +3 wood",
+    "talk to botanist and receive normal gift"
+  ],
+  "hostQuotaInterruption": true,
+  "gameRemainedRunningDuringQuotaGap": true,
+  "day3To26IsNotControlledLongRunEvidence": true,
+  "currentFullJourneyComplete": false,
+  "fullGoalComplete": false
+}
