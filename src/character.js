@@ -166,6 +166,15 @@ function placeFeet(root,ground,time,dt,yaw,crouch=0){
     }
     const normal=floorNormal(ground,world.x,world.z);
     target.y=(ground?ground(world.x,world.z):root.position.y)-root.position.y+.145/normal.y+lift*rig.walkBlend;
+    // Shorten downhill airborne steps before forcing the whole body down to reach them.
+    if(ground&&rig.moving&&!stance&&lift*rig.walkBlend>1e-8)for(let attempt=0;attempt<12;attempt++){
+      const dx=target.x-reachCenter.x,dz=target.z-reachCenter.z;
+      const reachablePelvis=target.y+Math.sqrt(Math.max(.01,(legLength-.01)**2-dx*dx-dz*dz))-reachCenter.y;
+      if(reachablePelvis>=-.38)break;
+      target.x=THREE.MathUtils.lerp(reachCenter.x,target.x,.85);target.z=THREE.MathUtils.lerp(reachCenter.z,target.z,.85);
+      world.copy(root.localToWorld(target.clone()));normal.copy(floorNormal(ground,world.x,world.z));
+      target.y=ground(world.x,world.z)-root.position.y+.145/normal.y+lift*rig.walkBlend;
+    }
     contacts[i]=stance||lift*rig.walkBlend<1e-8;
     if(rig.idleStep?.side===i){
       const recovery=rig.idleStep,t=recovery.elapsed/.32,ease=t*t*(3-2*t),landing=root.localToWorld(new THREE.Vector3(hip.position.x,0,0));

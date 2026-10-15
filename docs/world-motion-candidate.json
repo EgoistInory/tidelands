@@ -1,0 +1,365 @@
+{
+  "rows": [
+    {
+      "ready": true,
+      "route": "highland",
+      "viewport": [
+        1280,
+        720
+      ],
+      "player": {
+        "x": -44.999999999999574,
+        "z": -264.9999999999983,
+        "hp": 100,
+        "stamina": 81.00000000000193,
+        "yaw": 1.5707963267948966
+      },
+      "ground": 27.41787943368226,
+      "glError": 0,
+      "row": {
+        "frames": 360,
+        "distance": 59.99999999999872,
+        "movingFrames": 300,
+        "blockedFrames": 0,
+        "swimmingFrames": 0,
+        "landFrames": 360,
+        "plantedSamples": 203,
+        "continuousPlantedSamples": 175,
+        "maxPlantedDrift": 1.7171041084785901e-13,
+        "minPlantedSoleGap": -0.0005794067190123542,
+        "minPelvisOffset": -0.5385392079890337,
+        "maxPelvisOffset": 0.02493778704674978,
+        "bothFeetAirborneFrames": 159,
+        "footfalls": 27,
+        "commanded": false,
+        "worstPelvis": {
+          "frame": 21,
+          "player": [
+            -75,
+            -239.19999999999976
+          ],
+          "phase": 9.450675146203048,
+          "walkBlend": 0.9850044231795223,
+          "rotation": 3.141592653589793
+        }
+      },
+      "scope": "Explicit position/no-enemies/axe fixture; production movement, terrain and WorldView at fixed1/60 after60 stationary warmup frames; no native input, save, listening, frame/GPU performance or full motion-quality acceptance."
+    },
+    {
+      "ready": true,
+      "route": "forest",
+      "viewport": [
+        1280,
+        720
+      ],
+      "player": {
+        "x": 135.85000000000025,
+        "z": -45,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 1.5707963267948966
+      },
+      "ground": 22.244932080616135,
+      "glError": 0,
+      "row": {
+        "frames": 360,
+        "distance": 3.85000000000025,
+        "movingFrames": 33,
+        "blockedFrames": 267,
+        "swimmingFrames": 0,
+        "landFrames": 360,
+        "plantedSamples": 585,
+        "continuousPlantedSamples": 578,
+        "maxPlantedDrift": 1.7380550332291023e-9,
+        "minPlantedSoleGap": 0.000017311079300696974,
+        "minPelvisOffset": -0.5458200909013307,
+        "maxPelvisOffset": 0.02299778377045711,
+        "bothFeetAirborneFrames": 23,
+        "footfalls": 6,
+        "commanded": false,
+        "worstPelvis": {
+          "frame": 23,
+          "player": [
+            134.6833333333335,
+            -45
+          ],
+          "phase": 8.676099349975782,
+          "walkBlend": 0.9899481642553664,
+          "rotation": 1.5707963267948966
+        }
+      },
+      "scope": "Explicit position/no-enemies/axe fixture; production movement, terrain and WorldView at fixed1/60 after60 stationary warmup frames; no native input, save, listening, frame/GPU performance or full motion-quality acceptance."
+    },
+    {
+      "ready": true,
+      "route": "camp",
+      "viewport": [
+        1280,
+        720
+      ],
+      "player": {
+        "x": -70,
+        "z": 102,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -1.5707963267948966
+      },
+      "ground": 9.066291572388597,
+      "glError": 0,
+      "row": {
+        "frames": 360,
+        "distance": 27.99999999999939,
+        "movingFrames": 240,
+        "blockedFrames": 0,
+        "swimmingFrames": 0,
+        "landFrames": 360,
+        "plantedSamples": 236,
+        "continuousPlantedSamples": 211,
+        "maxPlantedDrift": 4.2780337774645346e-14,
+        "minPlantedSoleGap": 0.000041137554036119184,
+        "minPelvisOffset": -0.5369061433252529,
+        "maxPelvisOffset": 0.01004207108468732,
+        "bothFeetAirborneFrames": 128,
+        "footfalls": 24,
+        "commanded": false,
+        "worstPelvis": {
+          "frame": 133,
+          "player": [
+            -56.000000000000306,
+            102
+          ],
+          "phase": 30.89754962298015,
+          "walkBlend": 0.07427357821152988,
+          "rotation": 1.5707963267948966
+        }
+      },
+      "scope": "Explicit position/no-enemies/axe fixture; production movement, terrain and WorldView at fixed1/60 after60 stationary warmup frames; no native input, save, listening, frame/GPU performance or full motion-quality acceptance."
+    },
+    {
+      "ready": true,
+      "route": "mineral",
+      "viewport": [
+        1280,
+        720
+      ],
+      "player": {
+        "x": 135.9240106814855,
+        "z": -44.6254082582891,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 1.5707963267948966
+      },
+      "ground": 22.202632523311276,
+      "glError": 0,
+      "row": {
+        "frames": 360,
+        "distance": 10.383333333333695,
+        "movingFrames": 89,
+        "blockedFrames": 211,
+        "swimmingFrames": 0,
+        "landFrames": 360,
+        "plantedSamples": 518,
+        "continuousPlantedSamples": 507,
+        "maxPlantedDrift": 1.6073933295501774e-9,
+        "minPlantedSoleGap": -0.00012067087502387608,
+        "minPelvisOffset": -0.5848760866131492,
+        "maxPelvisOffset": 0.023045194335482994,
+        "bothFeetAirborneFrames": 34,
+        "footfalls": 10,
+        "commanded": false,
+        "worstPelvis": {
+          "frame": 78,
+          "player": [
+            134.64067734815208,
+            -44.6254082582891
+          ],
+          "phase": 21.276422121348965,
+          "walkBlend": 0.999999832117247,
+          "rotation": 1.5707963267948966
+        }
+      },
+      "scope": "Explicit position/no-enemies/axe fixture; production movement, terrain and WorldView at fixed1/60 after60 stationary warmup frames; no native input, save, listening, frame/GPU performance or full motion-quality acceptance."
+    },
+    {
+      "ready": true,
+      "route": "water",
+      "viewport": [
+        1280,
+        720
+      ],
+      "player": {
+        "x": 59.10000000000059,
+        "z": 5,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 1.5707963267948966
+      },
+      "ground": -3,
+      "glError": 0,
+      "row": {
+        "frames": 360,
+        "distance": 27.10000000000059,
+        "movingFrames": 300,
+        "blockedFrames": 0,
+        "swimmingFrames": 291,
+        "landFrames": 69,
+        "plantedSamples": 59,
+        "continuousPlantedSamples": 52,
+        "maxPlantedDrift": 1.4300775841839746e-14,
+        "minPlantedSoleGap": -0.0005445985780173079,
+        "minPelvisOffset": -0.3777396419585044,
+        "maxPelvisOffset": 0.012999907722611684,
+        "bothFeetAirborneFrames": 12,
+        "footfalls": 6,
+        "commanded": false,
+        "worstPelvis": {
+          "frame": 25,
+          "player": [
+            34.91666666666668,
+            5
+          ],
+          "phase": 9.134842905923412,
+          "walkBlend": 0.9932620530009144,
+          "rotation": 1.5707963267948966
+        }
+      },
+      "scope": "Explicit position/no-enemies/axe fixture; production movement, terrain and WorldView at fixed1/60 after60 stationary warmup frames; no native input, save, listening, frame/GPU performance or full motion-quality acceptance."
+    },
+    {
+      "ready": true,
+      "route": "shore",
+      "viewport": [
+        1280,
+        720
+      ],
+      "player": {
+        "x": 29.916666666666323,
+        "z": 5,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -1.5707963267948966
+      },
+      "ground": 2.8620488995856173,
+      "glError": 0,
+      "row": {
+        "frames": 360,
+        "distance": 20.083333333333677,
+        "movingFrames": 209,
+        "blockedFrames": 91,
+        "swimmingFrames": 121,
+        "landFrames": 239,
+        "plantedSamples": 277,
+        "continuousPlantedSamples": 266,
+        "maxPlantedDrift": 1.5065908520781301e-9,
+        "minPlantedSoleGap": -0.0007845310945072126,
+        "minPelvisOffset": -0.5667458990423175,
+        "maxPelvisOffset": 0.01299942352648587,
+        "bothFeetAirborneFrames": 35,
+        "footfalls": 10,
+        "commanded": false,
+        "worstPelvis": {
+          "frame": 151,
+          "player": [
+            36.68333333333302,
+            5
+          ],
+          "phase": 49.635598400894914,
+          "walkBlend": 0.9975212478233336,
+          "rotation": -1.5707963267948966
+        }
+      },
+      "scope": "Explicit position/no-enemies/axe fixture; production movement, terrain and WorldView at fixed1/60 after60 stationary warmup frames; no native input, save, listening, frame/GPU performance or full motion-quality acceptance."
+    }
+  ],
+  "peak": {
+    "ready": true,
+    "route": "highland",
+    "viewport": [
+      1280,
+      720
+    ],
+    "player": {
+      "x": -75,
+      "z": -241.19999999999965,
+      "hp": 100,
+      "stamina": 96.90000000000018,
+      "yaw": 3.141592653589793
+    },
+    "ground": 44.552596853684115,
+    "glError": 0,
+    "row": {
+      "frames": 31,
+      "distance": 6.199999999999648,
+      "movingFrames": 31,
+      "blockedFrames": 0,
+      "swimmingFrames": 0,
+      "landFrames": 31,
+      "plantedSamples": 20,
+      "continuousPlantedSamples": 16,
+      "maxPlantedDrift": 2.929642751054232e-14,
+      "minPlantedSoleGap": -0.00010091545396306856,
+      "minPelvisOffset": -0.5385392079890337,
+      "maxPelvisOffset": -0.04148021687958639,
+      "bothFeetAirborneFrames": 12,
+      "footfalls": 3,
+      "commanded": true,
+      "worstPelvis": {
+        "frame": 21,
+        "player": [
+          -75,
+          -239.19999999999976
+        ],
+        "phase": 9.450675146203048,
+        "walkBlend": 0.9850044231795223,
+        "rotation": 3.141592653589793
+      }
+    },
+    "scope": "Explicit position/no-enemies/axe fixture; production movement, terrain and WorldView at fixed1/60 after60 stationary warmup frames; no native input, save, listening, frame/GPU performance or full motion-quality acceptance."
+  },
+  "mobile": {
+    "ready": true,
+    "route": "shore",
+    "viewport": [
+      390,
+      844
+    ],
+    "player": {
+      "x": 29.916666666666323,
+      "z": 5,
+      "hp": 100,
+      "stamina": 100,
+      "yaw": -1.5707963267948966
+    },
+    "ground": 2.8620488995856173,
+    "glError": 0,
+    "row": {
+      "frames": 360,
+      "distance": 20.083333333333677,
+      "movingFrames": 209,
+      "blockedFrames": 91,
+      "swimmingFrames": 121,
+      "landFrames": 239,
+      "plantedSamples": 277,
+      "continuousPlantedSamples": 266,
+      "maxPlantedDrift": 1.5065908520781301e-9,
+      "minPlantedSoleGap": -0.0007845310945072126,
+      "minPelvisOffset": -0.5667458990423175,
+      "maxPelvisOffset": 0.01299942352648587,
+      "bothFeetAirborneFrames": 35,
+      "footfalls": 10,
+      "commanded": false,
+      "worstPelvis": {
+        "frame": 151,
+        "player": [
+          36.68333333333302,
+          5
+        ],
+        "phase": 49.635598400894914,
+        "walkBlend": 0.9975212478233336,
+        "rotation": -1.5707963267948966
+      }
+    },
+    "scope": "Explicit position/no-enemies/axe fixture; production movement, terrain and WorldView at fixed1/60 after60 stationary warmup frames; no native input, save, listening, frame/GPU performance or full motion-quality acceptance."
+  },
+  "console": []
+}

@@ -1,0 +1,340 @@
+TAP version 13
+# Subtest: mute prevents initialization and pause fades master to silence
+ok 1 - mute prevents initialization and pause fades master to silence
+  ---
+  duration_ms: 2.208292
+  type: 'test'
+  ...
+# Subtest: effects are bounded and disconnect on completion; footsteps follow distance
+ok 2 - effects are bounded and disconnect on completion; footsteps follow distance
+  ---
+  duration_ms: 2.173958
+  type: 'test'
+  ...
+# Subtest: partial initialization and resume failures release context and allow a retry
+ok 3 - partial initialization and resume failures release context and allow a retry
+  ---
+  duration_ms: 2.585125
+  type: 'test'
+  ...
+# Subtest: menu success cues play while world is paused, and mute silences both channels
+ok 4 - menu success cues play while world is paused, and mute silences both channels
+  ---
+  duration_ms: 0.34825
+  type: 'test'
+  ...
+# Subtest: busy physical actions leave room for quest, crafting and food confirmation cues
+ok 5 - busy physical actions leave room for quest, crafting and food confirmation cues
+  ---
+  duration_ms: 0.640708
+  type: 'test'
+  ...
+# Subtest: ambient noise loops without a sample discontinuity or DC offset
+ok 6 - ambient noise loops without a sample discontinuity or DC offset
+  ---
+  duration_ms: 0.809583
+  type: 'test'
+  ...
+# Subtest: physical actions vary noise slices without truncating tails or allocating new buffers
+ok 7 - physical actions vary noise slices without truncating tails or allocating new buffers
+  ---
+  duration_ms: 0.776667
+  type: 'test'
+  ...
+# Subtest: distance fallback uses walking spacing, coast selects sand, swimming keeps splash spacing
+ok 8 - distance fallback uses walking spacing, coast selects sand, swimming keeps splash spacing
+  ---
+  duration_ms: 0.257042
+  type: 'test'
+  ...
+# Subtest: land audio follows actual rendered ankle touchdowns at walking and running speeds
+ok 9 - land audio follows actual rendered ankle touchdowns at walking and running speeds
+  ---
+  duration_ms: 260.449
+  type: 'test'
+  ...
+# Subtest: contact counters suppress initial, replayed, paused and teleport steps while idle landings can sound
+ok 10 - contact counters suppress initial, replayed, paused and teleport steps while idle landings can sound
+  ---
+  duration_ms: 0.448125
+  type: 'test'
+  ...
+# Subtest: coastal surf fades through the shore elevation band without consuming effect voices
+ok 11 - coastal surf fades through the shore elevation band without consuming effect voices
+  ---
+  duration_ms: 0.455334
+  type: 'test'
+  ...
+# Subtest: surf shares world mute/pause and releases all persistent nodes on disposal
+ok 12 - surf shares world mute/pause and releases all persistent nodes on disposal
+  ---
+  duration_ms: 1.1785
+  type: 'test'
+  ...
+# Subtest: ecology changes with rendered daylight and island habitat, fading out at sea
+ok 13 - ecology changes with rendered daylight and island habitat, fading out at sea
+  ---
+  duration_ms: 0.226333
+  type: 'test'
+  ...
+# Subtest: ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices
+ok 14 - ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices
+  ---
+  duration_ms: 22.814083
+  type: 'test'
+  ...
+# Subtest: ecology shares world mute/pause and releases nodes on normal or failed initialization
+ok 15 - ecology shares world mute/pause and releases nodes on normal or failed initialization
+  ---
+  duration_ms: 0.576125
+  type: 'test'
+  ...
+# Subtest: enemy warnings distinguish body types and reuse bounded, pausable local noise
+ok 16 - enemy warnings distinguish body types and reuse bounded, pausable local noise
+  ---
+  duration_ms: 0.495292
+  type: 'test'
+  ...
+# Subtest: carried sword stays above flat ground at rest while remaining attached to the right hand
+ok 17 - carried sword stays above flat ground at rest while remaining attached to the right hand
+  ---
+  duration_ms: 68.544583
+  type: 'test'
+  ...
+# Subtest: equipment follows selection and swings on the arm holding the tool
+ok 18 - equipment follows selection and swings on the arm holding the tool
+  ---
+  duration_ms: 26.860417
+  type: 'test'
+  ...
+# Subtest: attack and gathering enter and leave each equipped resting pose without snapping
+ok 19 - attack and gathering enter and leave each equipped resting pose without snapping
+  ---
+  duration_ms: 82.600291
+  type: 'test'
+  ...
+# Subtest: tool actions recruit the torso and free hand then clear their pose when interrupted
+ok 20 - tool actions recruit the torso and free hand then clear their pose when interrupted
+  ---
+  duration_ms: 44.017458
+  type: 'test'
+  ...
+# Subtest: complete tool actions keep both planted boot soles fixed on flat and sloped ground
+ok 21 - complete tool actions keep both planted boot soles fixed on flat and sloped ground
+  ---
+  duration_ms: 110.016541
+  type: 'test'
+  ...
+# Subtest: a moving attack retains grounded contacts during a turn at production speeds
+ok 22 - a moving attack retains grounded contacts during a turn at production speeds
+  ---
+  duration_ms: 67.203
+  type: 'test'
+  ...
+# Subtest: stride advances with distance, stays still at rest, and keeps joints attached
+ok 23 - stride advances with distance, stays still at rest, and keeps joints attached
+  ---
+  duration_ms: 3.5395
+  type: 'test'
+  ...
+# Subtest: gathering reaches forward, yields to attack or swimming, and returns to idle
+ok 24 - gathering reaches forward, yields to attack or swimming, and returns to idle
+  ---
+  duration_ms: 3.740417
+  type: 'test'
+  ...
+# Subtest: hurt recoil decays without moving the root or leaving a swimming lean behind
+ok 25 - hurt recoil decays without moving the root or leaving a swimming lean behind
+  ---
+  duration_ms: 3.5835
+  type: 'test'
+  ...
+# Subtest: steady forward stance keeps soles on a flat floor at several frame rates and production speeds
+ok 26 - steady forward stance keeps soles on a flat floor at several frame rates and production speeds
+  ---
+  duration_ms: 80.0275
+  type: 'test'
+  ...
+# Subtest: feet solve gentle terrain height, settle at rest and reset safely after a teleport
+ok 27 - feet solve gentle terrain height, settle at rest and reset safely after a teleport
+  ---
+  duration_ms: 7.285125
+  type: 'test'
+  ...
+# Subtest: shaped boot soles have a flat contact face and stay above sloped floors during planted turns
+ok 28 - shaped boot soles have a flat contact face and stay above sloped floors during planted turns
+  ---
+  duration_ms: 23.635542
+  type: 'test'
+  ...
+# Subtest: swimming leans forward with the head above the water and returns to planted feet
+ok 29 - swimming leans forward with the head above the water and returns to planted feet
+  ---
+  duration_ms: 4.772667
+  type: 'test'
+  ...
+# Subtest: stopping keeps grounded boots fixed while recovery steps return them to a neutral stance
+ok 30 - stopping keeps grounded boots fixed while recovery steps return them to a neutral stance
+  ---
+  duration_ms: 21.718
+  type: 'test'
+  ...
+# Subtest: a right-angle turn keeps stance boots fixed during startup and steady travel on a slope
+ok 31 - a right-angle turn keeps stance boots fixed during startup and steady travel on a slope
+  ---
+  duration_ms: 66.255833
+  type: 'test'
+  ...
+# Subtest: reversing releases an overextended foot instead of dragging its planted contact
+ok 32 - reversing releases an overextended foot instead of dragging its planted contact
+  ---
+  duration_ms: 20.52725
+  type: 'test'
+  ...
+# Subtest: teleport and swimming discard old world contacts before returning to a distant shore
+ok 33 - teleport and swimming discard old world contacts before returning to a distant shore
+  ---
+  duration_ms: 4.071666
+  type: 'test'
+  ...
+# Subtest: batched movement never reuses a distant landing when key presses skip a swing
+ok 34 - batched movement never reuses a distant landing when key presses skip a swing
+  ---
+  duration_ms: 24.687875
+  type: 'test'
+  ...
+# Subtest: movement and swimming can interrupt idle recovery without retaining a sideways body offset
+ok 35 - movement and swimming can interrupt idle recovery without retaining a sideways body offset
+  ---
+  duration_ms: 4.933291
+  type: 'test'
+  ...
+# Subtest: turning anticipates overextended contacts and bounds airborne targets without a deep pelvis collapse
+ok 36 - turning anticipates overextended contacts and bounds airborne targets without a deep pelvis collapse
+  ---
+  duration_ms: 132.832083
+  type: 'test'
+  ...
+# Subtest: faster travel lengthens the stride, lowers cadence and includes an airborne interval
+ok 37 - faster travel lengthens the stride, lowers cadence and includes an airborne interval
+  ---
+  duration_ms: 61.643583
+  type: 'test'
+  ...
+# Subtest: stopping holds the last stride shape while the torso and feet recover
+ok 38 - stopping holds the last stride shape while the torso and feet recover
+  ---
+  duration_ms: 6.396792
+  type: 'test'
+  ...
+# Subtest: plant and shell gathering lowers the visible bare palm and restores carried equipment
+ok 39 - plant and shell gathering lowers the visible bare palm and restores carried equipment
+  ---
+  duration_ms: 102.768667
+  type: 'test'
+  ...
+# Subtest: a crouching gathering cycle keeps planted soles on flat and sloped ground
+ok 40 - a crouching gathering cycle keeps planted soles on flat and sloped ground
+  ---
+  duration_ms: 59.542584
+  type: 'test'
+  ...
+# Subtest: hard resource gathering uses the supplied harvesting tool while attacks keep the selected weapon
+ok 41 - hard resource gathering uses the supplied harvesting tool while attacks keep the selected weapon
+  ---
+  duration_ms: 15.609875
+  type: 'test'
+  ...
+# Subtest: islanders respond to a nearby conversation target without moving or changing the save
+ok 42 - islanders respond to a nearby conversation target without moving or changing the save
+  ---
+  duration_ms: 753.319
+  type: 'test'
+  ...
+# Subtest: tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+ok 43 - tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+  ---
+  duration_ms: 440.646833
+  type: 'test'
+  ...
+# Subtest: distant geometry is shared until the last owner leaves, while materials remain private
+ok 44 - distant geometry is shared until the last owner leaves, while materials remain private
+  ---
+  duration_ms: 18.301208
+  type: 'test'
+  ...
+# Subtest: resource bounds retain regenerating nodes after initial depletion
+ok 45 - resource bounds retain regenerating nodes after initial depletion
+  ---
+  duration_ms: 405.717
+  type: 'test'
+  ...
+# Subtest: save replacement releases creatures and resets transient death/hit animation
+ok 46 - save replacement releases creatures and resets transient death/hit animation
+  ---
+  duration_ms: 15.599208
+  type: 'test'
+  ...
+# Subtest: boar: near geometry shares a lifetime while pose and hit materials remain private
+ok 47 - boar: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 13.461583
+  type: 'test'
+  ...
+# Subtest: crab: near geometry shares a lifetime while pose and hit materials remain private
+ok 48 - crab: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 26.487792
+  type: 'test'
+  ...
+# Subtest: same-type save replacement reuses creature models without carrying over animation or damage
+ok 49 - same-type save replacement reuses creature models without carrying over animation or damage
+  ---
+  duration_ms: 22.214833
+  type: 'test'
+  ...
+# Subtest: loading a different save updates buildings even when IDs are reused
+ok 50 - loading a different save updates buildings even when IDs are reused
+  ---
+  duration_ms: 1.21825
+  type: 'test'
+  ...
+# Subtest: campfire owns its unlit flame without changing shared building materials
+ok 51 - campfire owns its unlit flame without changing shared building materials
+  ---
+  duration_ms: 0.817875
+  type: 'test'
+  ...
+# Subtest: removing tents releases their geometry but retains immutable cloth for later camps
+ok 52 - removing tents releases their geometry but retains immutable cloth for later camps
+  ---
+  duration_ms: 0.898458
+  type: 'test'
+  ...
+# Subtest: repeated build previews release their geometry and private materials
+ok 53 - repeated build previews release their geometry and private materials
+  ---
+  duration_ms: 6.871333
+  type: 'test'
+  ...
+# Subtest: tent preview retains double-sided cloth and shares replacement material safely
+ok 54 - tent preview retains double-sided cloth and shares replacement material safely
+  ---
+  duration_ms: 0.3295
+  type: 'test'
+  ...
+# Subtest: sprinting down the exposed highland slope does not collapse the pelvis to reach an airborne foot
+ok 55 - sprinting down the exposed highland slope does not collapse the pelvis to reach an airborne foot
+  ---
+  duration_ms: 272.704333
+  type: 'test'
+  ...
+1..55
+# tests 55
+# suites 0
+# pass 55
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1799.985709

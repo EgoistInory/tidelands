@@ -1,0 +1,41 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>当前世界全身运动检查</title>
+<style>html,body{margin:0;height:100%;background:#192723;color:#efe6cf;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:6px;display:flex;gap:8px;flex-wrap:wrap}select,button{padding:6px;font:inherit}output{height:110px;overflow:auto;overflow-wrap:anywhere;font:10px monospace;padding:4px}canvas{flex:1;min-height:0;width:100%;display:block}</style>
+<nav>声明位置/任务6/无敌人 fixture · 不读写存档
+<label>运动<select id="route"><option value="forest">林地行走</option><option value="highland">高地冲刺转向</option><option value="camp">营地起停折返</option><option value="mineral">矿物抵靠</option><option value="water">岸边入水</option><option value="shore">游泳上岸</option></select></label>
+<button id="run" disabled>连续运行360帧</button><button id="peak" disabled>高地下坡第31帧</button></nav><output>准备生产世界…</output><canvas aria-label="生产世界全身运动与落脚检查"></canvas>
+<script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain} from '../src/world.js';
+import {freshGame,movePlayer,tick,nearest} from '../src/game.js';
+const world=createWorld(),view=new WorldView(document.querySelector('canvas'),world),out=document.querySelector('output'),button=document.querySelector('#run');
+const mineral=world.objects.find(o=>o.id==='resource-944');
+const routes={forest:{x:132,z:-45,dx:1,dz:0},highland:{x:-75,z:-235,dx:0,dz:-1,run:true},camp:{x:-70,z:102,dx:1,dz:0},mineral:{x:mineral.x-12,z:mineral.z,dx:1,dz:0},water:{x:32,z:5,dx:1,dz:0},shore:{x:50,z:5,dx:-1,dz:0}};
+let state,row,prior,ready=false;
+function reset(){const p=routes[document.querySelector('#route').value];state=freshGame();state.enemies=[];state.quest=6;state.inventory.axe=1;state.selected='axe';Object.assign(state.player,{x:p.x,z:p.z,yaw:Math.atan2(p.dx,p.dz)});state.time=240;view.sync(state);view.yaw=state.player.yaw+1.8;view.pitch=.22;view.distance=8;view.camera.position.set(p.x+Math.sin(view.yaw)*8,terrain(p.x,p.z)+4.2,p.z+Math.cos(view.yaw)*8);Object.assign(view.player.userData,{lastPosition:null,phase:0,walkBlend:0,footfallCount:0});view.player.rotation.y=state.player.yaw;row=null;prior=[null,null];for(let warmup=0;warmup<60;warmup++){tick(state,1/60,false);view.draw(state,nearest(state,world.objects),null,false,1/60);}publish();}
+function publish(){out.textContent=JSON.stringify({ready,route:document.querySelector('#route').value,viewport:[innerWidth,innerHeight],player:state.player,ground:terrain(state.player.x,state.player.z),glError:view.renderer.getContext().getError(),row,scope:'Explicit position/no-enemies/axe fixture; production movement, terrain and WorldView at fixed1/60 after60 stationary warmup frames; no native input, save, listening, frame/GPU performance or full motion-quality acceptance.'});}
+function sample(moved){
+ const rig=view.player.userData;view.player.updateMatrixWorld(true);row.frames++;row.distance+=moved;row.movingFrames+=Number(moved>.00001);row.blockedFrames+=Number(moved<.00001&&row.commanded);
+ if(rig.body.position.y<row.minPelvisOffset)row.worstPelvis={frame:row.frames,player:[state.player.x,state.player.z],phase:rig.phase,walkBlend:rig.walkBlend,rotation:view.player.rotation.y};row.minPelvisOffset=Math.min(row.minPelvisOffset,rig.body.position.y);row.maxPelvisOffset=Math.max(row.maxPelvisOffset,rig.body.position.y);
+ if(terrain(state.player.x,state.player.z)<0){row.swimmingFrames++;prior=[null,null];return;}
+ row.landFrames++;row.bothFeetAirborneFrames+=Number(rig.footContacts.every(c=>!c));
+ for(let side=0;side<2;side++){
+  const stance=rig.footContacts[side],cycle=Math.floor((rig.phase+side*Math.PI)/(Math.PI*2)),point=rig.ankles[side].getWorldPosition(new THREE.Vector3());
+  if(stance){row.plantedSamples++;const sole=rig.ankles[side].getObjectByName('boot-sole'),positions=sole.geometry.attributes.position;
+   for(let vertex=0;vertex<positions.count;vertex++){const v=new THREE.Vector3().fromBufferAttribute(positions,vertex).applyMatrix4(sole.matrixWorld);row.minPlantedSoleGap=Math.min(row.minPlantedSoleGap,v.y-terrain(v.x,v.z));}
+   if(prior[side]?.stance&&prior[side].cycle===cycle){row.continuousPlantedSamples++;row.maxPlantedDrift=Math.max(row.maxPlantedDrift,point.distanceTo(prior[side].point));}
+  }
+  prior[side]={stance,cycle,point};
+ }
+ row.footfalls=rig.footfallCount;
+}
+document.querySelector('#route').onchange=reset;
+function run(maxFrames=360){button.disabled=true;document.querySelector('#peak').disabled=true;row={frames:0,distance:0,movingFrames:0,blockedFrames:0,swimmingFrames:0,landFrames:0,plantedSamples:0,continuousPlantedSamples:0,maxPlantedDrift:0,minPlantedSoleGap:Infinity,minPelvisOffset:Infinity,maxPelvisOffset:-Infinity,bothFeetAirborneFrames:0,footfalls:0};
+ function frame(){const route=document.querySelector('#route').value,p=routes[route],f=row.frames,stopped=f>=300||(route==='camp'&&f>=120&&f<180);let dx=p.dx,dz=p.dz;if(route==='highland'&&f>=150){dx=1;dz=0;}if(route==='camp'&&f>=180){dx=-1;dz=0;}row.commanded=!stopped;
+  const x=state.player.x,z=state.player.z;if(!stopped)movePlayer(state,world.objects,dx,dz,1/60,Boolean(p.run));tick(state,1/60,false);const moved=Math.hypot(state.player.x-x,state.player.z-z);view.draw(state,nearest(state,world.objects),null,moved>.00001,1/60);sample(moved);publish();if(row.frames<maxFrames)requestAnimationFrame(frame);else{button.disabled=false;document.querySelector('#peak').disabled=false;}
+ }requestAnimationFrame(frame);
+}
+button.onclick=()=>run();document.querySelector('#peak').onclick=()=>{document.querySelector('#route').value='highland';reset();run(31);};
+Promise.all([view.groundSurface.userData.ground.loaded,view.groundSurface.userData.ground.sand.loaded,view.rockSurface.userData.rock.loaded]).then(()=>{ready=true;button.disabled=false;document.querySelector('#peak').disabled=false;reset();});
+window.addEventListener('resize',()=>{view.resize();if(state)publish();});window.addEventListener('pagehide',()=>view.renderer.dispose());
+</script></html>

@@ -1,0 +1,97 @@
+{
+  "candidateVerified": true,
+  "delivered": false,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "physicalMotionQualityPassed": false,
+  "changedRuntime": {
+    "src/camera.js": "4831cf9b945caad3af81e4f9955285e4711339979fd261ea2d071741771270dd",
+    "src/character.js": "6fdb6926a091de0a3f90ec5f679a04d75e1cf59454389b55d9ae35fedbbf64c5"
+  },
+  "unchangedRuntimeFiles": 49,
+  "fullTests": 223,
+  "focusedTests": 55,
+  "baselineCharacterSha256": "135d0e8ed644a55a4581e06510688e129380f492cb9747f31eaf4780f12d966f",
+  "comparison": [
+    {
+      "route": "forest",
+      "distance": 3.85000000000025,
+      "oldPelvisMinimum": -0.5714579814655124,
+      "candidatePelvisMinimum": -0.5458200909013307,
+      "candidateMinPlantedSoleGap": 1.7311079300696974e-05,
+      "candidateMaxPlantedDrift": 1.7380550332291023e-09,
+      "swimmingFrames": 0,
+      "landFrames": 360
+    },
+    {
+      "route": "highland",
+      "distance": 59.99999999999872,
+      "oldPelvisMinimum": -0.8646183348581518,
+      "candidatePelvisMinimum": -0.5385392079890337,
+      "candidateMinPlantedSoleGap": -0.0005794067190123542,
+      "candidateMaxPlantedDrift": 1.7171041084785901e-13,
+      "swimmingFrames": 0,
+      "landFrames": 360
+    },
+    {
+      "route": "camp",
+      "distance": 27.99999999999939,
+      "oldPelvisMinimum": -0.5369061433252529,
+      "candidatePelvisMinimum": -0.5369061433252529,
+      "candidateMinPlantedSoleGap": 4.1137554036119184e-05,
+      "candidateMaxPlantedDrift": 4.2780337774645346e-14,
+      "swimmingFrames": 0,
+      "landFrames": 360
+    },
+    {
+      "route": "mineral",
+      "distance": 10.383333333333695,
+      "oldPelvisMinimum": -0.61631411159917,
+      "candidatePelvisMinimum": -0.5848760866131492,
+      "candidateMinPlantedSoleGap": -0.00012067087502387608,
+      "candidateMaxPlantedDrift": 1.6073933295501774e-09,
+      "swimmingFrames": 0,
+      "landFrames": 360
+    },
+    {
+      "route": "water",
+      "distance": 27.10000000000059,
+      "oldPelvisMinimum": -0.44019692818836786,
+      "candidatePelvisMinimum": -0.3777396419585044,
+      "candidateMinPlantedSoleGap": -0.0005445985780173079,
+      "candidateMaxPlantedDrift": 1.4300775841839746e-14,
+      "swimmingFrames": 291,
+      "landFrames": 69
+    },
+    {
+      "route": "shore",
+      "distance": 20.083333333333677,
+      "oldPelvisMinimum": -0.5667458990423175,
+      "candidatePelvisMinimum": -0.5667458990423175,
+      "candidateMinPlantedSoleGap": -0.0007845310945072126,
+      "candidateMaxPlantedDrift": 1.5065908520781301e-09,
+      "swimmingFrames": 121,
+      "landFrames": 239
+    }
+  ],
+  "imagesReviewedSha256": {
+    "docs/world-motion-highland.png": "0e62422b56ec9e7f87cb6c6f10d5ff1afe2298e5d92e2cd0c69d4e8d1b6d7b40",
+    "docs/world-motion-mineral.png": "3b73a1cefeb507b0c6ef95236a501ae3972e76c4c0e25ba9850c98356521e76d",
+    "docs/world-motion-water.png": "12188e66fc591f1ed455832e41929b8bdf32419a29c6ad47b13563a211f97fd5",
+    "docs/world-motion-shore.png": "fab45a54a5db7562358b635ca4c9f25bb74d86c4addf0b5d382f61147283a5ef",
+    "docs/world-motion-candidate-peak.png": "9779d99c8584043eefeb082aa00325caeaa6dfef60dd09b2282db70bac5d66f3",
+    "docs/world-motion-candidate-shore.png": "fab45a54a5db7562358b635ca4c9f25bb74d86c4addf0b5d382f61147283a5ef",
+    "docs/world-motion-candidate-mobile.png": "24e358d2e8cc86efc7c6543548989cca0f28b3d8d5f2e202b844f3e28de79122"
+  },
+  "evidenceSha256": {
+    "docs/world-motion-baseline.json": "76851c4b6427f4be62b6314fb2b125a1ad1c42fb74c0755c1ce8353f3a062c08",
+    "docs/world-motion-candidate.json": "fca41f31aa6a39a35f6b93a2627f85fd1f83524a41e7cdb4f9c4e83e8765ced1",
+    "docs/world-motion-highland-probes.json": "701ce7d80d81b30dc2800e37f574d229032174a7bd75dd41c2406b9a5ebc7731",
+    "docs/world-motion-highland-candidate-probes.json": "3439995e2d54513f368b0595840a24bb357ae9cd6b7e9d25efcaa115545b8ca6",
+    "docs/terrain-locomotion-tests.txt": "04609c02cdf0ae97bd8f7cf84cf436bb9f461fad023ac2df090081470696764c",
+    "docs/terrain-locomotion-focused.txt": "4330c04fbf6fe75dc681ce6697dfe4af50420549a6d8712f5e5b5da68d5603df",
+    "docs/terrain-locomotion-red.txt": "3ab64bfac3244e2c6f1e3475f417451d54c27152d686ed93ce54f8cb8b12fa8d"
+  },
+  "scope": "Production movePlayer, terrain and WorldView; explicit no-enemies/axe fixtures,60stationary warmup plus360fixed-dt frames per case. Endpoint/body/contact comparison and390 sample; no native-save, GPU/rAF performance, listening or full-quality acceptance. Camera six-route audit belongs to prior dabe3d1 source; same camera module retained. Existing7dd/e750 delivery unchanged.",
+  "remaining": "Planted downhill reach, residual pelvis lowering, sub-millimetre curved-terrain sole gaps, abrupt camera radial corrections, natural animation/visual style and listening remain whole-quality tasks. This group corrects a specific downhill airborne reach failure only; no isolated-model perfection loop."
+}
