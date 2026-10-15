@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "kind": "actor-body-contact-functional-checkpoint",
+  "localDeliveryVerified": true,
+  "actorBodyContactAccepted": true,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "newPackageFullMainPathReplayed": false,
+  "package": "tidelands-m5-2026-10-15-actor-contact.zip",
+  "packageSha256": "86027c28d1b72d345eed9bc3ba450bd5ef1155dbee89a0678f125dcf1ad67d14",
+  "runtimeFiles": 49,
+  "unitTests": {
+    "focused": 44,
+    "full": 208,
+    "oldPackageExpectedFailures": 8
+  },
+  "imagesActuallyViewedSha256": {
+    "docs/actor-contact-boar-impact.png": "b51b3fc19038704ab8351d2ba0d8a00963c683ddecfd03ce6daab0648a6d379d",
+    "docs/actor-contact-boar.png": "3ec9a94241fe078ee3e2017be74b653aba193e759039e2a2c0fc48d5745aab04",
+    "docs/actor-contact-crab-impact.png": "223853e56c57d3ab899784d07d1af06e2051669b108542397f3cbf39c293f9e9",
+    "docs/actor-contact-crab.png": "c23a1aa0455496426f4c1629ad71c8fd722858e86ac801c0dffcb71c3e6224c4",
+    "docs/actor-contact-crowd.png": "aecf2cfc7d05315f22763a7c03ef64dfaf05ca7e5f3f02f0d6b0f34eb4488091",
+    "docs/actor-contact-mobile-boar.png": "660e7ffb559d7951a7d4c2c8b87a45b02a0e5c27516fa67ad04977b6da0d3b7b",
+    "docs/actor-contact-normal-mobile.png": "dba314319e685f4cd35d5d62a6821a314dd8a41ed020f507ad4d5b7954132475",
+    "docs/actor-contact-normal-npc.png": "ede281d2a50fe22dbe124d38a5b3628755f8d0b8d7c4e55d9f0fc58b1362abd5",
+    "docs/actor-contact-npc.png": "e6eef578c80cef61ebd9847c0583f61e38acfa5d201e956f1588d9a693ee5afa"
+  },
+  "sourceAndEvidenceSha256": {
+    "src/game.js": "404b4c1e35c7188e3308e1b96cec7d3393553968cf5f11daefc6444046b41df3",
+    "src/main.js": "999d2686f9c63150684c52cb8f4ed2f8be78ec9e85df18b254ed20fcdab46eff",
+    "src/actor-contact.js": "76eced7c3ac2bb41ea28011ee324ae0842775bc1dca1377e72963644cbfcba4f",
+    "src/resource-contact.js": "c08203f3ae4b52c71d87898f279522d1a49d0fb625a3151223db4ec02ee7dd0b",
+    "tests/actor-contact.test.js": "a9e235287c41c055ac87c615f0a470ca3fddcc748734887878d82c8fd0bfab07",
+    "tests/actor-contact.html": "06a25ec470e8d5062ac4a073025f2db565ef4bf3fa79ae520052ad62d746d8dc",
+    "docs/actor-contact-render-ui.json": "d3a0c09a201be0e54af38a34322d34b678d500257879c64e32eb843516aa61eb",
+    "docs/actor-contact-normal-ui.json": "30142eb363d591d1f6e7de1c91d23d72ccc120d02aedebfe14d22b9b0eee6d04",
+    "docs/actor-contact-normal-save.json": "2c693edcfe58ba734942007c073cf8d890da03aac226072608b21fe0692a6af7",
+    "docs/actor-contact-focused.txt": "2a4c4a5de4ce4cba5ad24000ffbc5d5290eb584b7372caf26b39fc6dc72f6a9a",
+    "docs/actor-contact-full.txt": "99044cd8193939be05e60877ff93d88d0d57ae8e5023ffa76d67993efc703492",
+    "docs/actor-contact-baseline.txt": "8d1fb9addc68a69545a8393dea4f2e7e101d4844ebb76a7049eb4050398caa4c"
+  },
+  "ordinarySave": {
+    "path": "docs/actor-contact-normal-save.json",
+    "bytes": 13510,
+    "sha256": "2c693edcfe58ba734942007c073cf8d890da03aac226072608b21fe0692a6af7",
+    "player": {
+      "x": -59.88716349367085,
+      "z": 93.38496293195533,
+      "hp": 100,
+      "stamina": 100,
+      "yaw": 1.5707963267948966
+    },
+    "quest": 6,
+    "inventory": {
+      "wood": 4,
+      "stone": 5,
+      "fiber": 4,
+      "berry": 2,
+      "shell": 0,
+      "crystal": 0,
+      "axe": 1,
+      "sword": 0,
+      "meal": 0
+    }
+  },
+  "limits": [
+    "Circles/expanded mineral boxes are conservative horizontal footprints, not triangle collision or whole-body animation acceptance.",
+    "Seven rendered rows use explicit enemy/weapon/position fixtures and fixed-dt; actual ordinary native check is NPC blocking/dialogue/save recovery, not a new ordinary combat journey.",
+    "390x844 is browser viewport only; no real-device, listening, final performance or GPU proof.",
+    "Crowd recovery is bounded movement near the player, not world-wide navigation/pathfinding; complex corners remain for final quality review.",
+    "Enemy damage still precedes the middle of its rendered lunge; telegraph/timing and audio feedback remain next, alongside residual camera and environment quality."
+  ]
+}

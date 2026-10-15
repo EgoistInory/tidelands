@@ -1,6 +1,7 @@
 import {SPAWN,LANDMARKS,terrain,regionAt,createWorld} from './world.js';
 import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_DURATION,GATHER_IMPACT,GATHER_RANGE} from './action-timing.js';
 import {resourceReachDistance,resourceBlocksMove} from './resource-contact.js';
+import {actorRadius,actorBlocksMove,targetReachPadding} from './actor-contact.js';
 export const ITEMS={wood:'木材',stone:'石料',fiber:'纤维',berry:'浆果',shell:'贝壳',crystal:'晶石',axe:'石斧',sword:'晶石剑',meal:'烤浆果'};
 const RESOURCE_ITEMS={tree:'wood',stone:'stone',fiber:'fiber',berry:'berry',shell:'shell',crystal:'crystal'};
 const MAX_BUILDINGS=500;
@@ -32,6 +33,7 @@ export function canBuild(state,objects,key,x,z){
   const h=terrain(x,z);if(h<1)return '不能建在水里或潮间带。';
   if(Math.abs(terrain(x+2,z)-terrain(x-2,z))+Math.abs(terrain(x,z+2)-terrain(x,z-2))>3)return '这里太陡，换一块平地吧。';
   if(state.buildings.some(b=>Math.hypot(x-b.x,z-b.z)<6)||LANDMARKS.some(b=>Math.hypot(x-b.x,z-b.z)<7))return '与现有建筑或人物太近。';
+  if(state.enemies.some(e=>e.hp>0&&Math.hypot(x-e.x,z-e.z)<actorRadius(e)+2))return '附近有野兽，请先清理建造位置。';
   if(objects.some(o=>['tree','stone','crystal'].includes(o.type)&&!isDepleted(state,o)&&Math.hypot(x-o.x,z-o.z)<3))return '这里被树木或岩石占据。';
   return '';
 }
@@ -72,7 +74,7 @@ function applyGather(state,object,item,count){
   return `${ITEMS[item]} +${count}`;
 }
 export function eat(state){const key=state.inventory.meal?'meal':state.inventory.berry?'berry':null;if(!key)return '没有食物，去采些浆果吧。';if(state.player.hp>=100)return '现在生命是满的，先留着食物吧。';state.inventory[key]--;state.player.hp=Math.min(100,state.player.hp+(key==='meal'?45:18));return `吃掉${ITEMS[key]}，恢复生命。`;}
-export function attackRange(state){return state.selected==='sword'&&state.inventory.sword?3.2:state.selected==='axe'&&state.inventory.axe?2.6:2.4;}
+export function attackRange(state,target){return (state.selected==='sword'&&state.inventory.sword?3.2:state.selected==='axe'&&state.inventory.axe?2.6:2.4)+targetReachPadding(target);}
 export function attack(state,{defer=false}={}){
   if(state.time-state.attackAt<.6)return {message:'',hits:[]};
   state.attackAt=state.time;
@@ -89,26 +91,46 @@ function applyAttackDamage(state,damage,range){const hits=[],p=state.player,forw
   for(const e of state.enemies){
     const dx=e.x-p.x,dz=e.z-p.z,distance=Math.hypot(dx,dz);
     // Centres include the creature body radius; this is a frontal gameplay arc, not mesh collision.
-    if(e.hp<=0||distance>range||(distance>.01&&(dx*forwardX+dz*forwardZ)/distance<.35))continue;
+    if(e.hp<=0||distance>range+targetReachPadding(e)||(distance>.01&&(dx*forwardX+dz*forwardZ)/distance<.35))continue;
     e.hp-=damage;hits.push(e.id);if(e.hp<=0){state.kills++;state.inventory.fiber+=2;state.inventory.berry++;}
   }
   return {message:hits.length?`命中 ${hits.length} 个目标${state.kills?' · 累计击败 '+state.kills:''}`:'',hits};
+}
+function canActorMove(state,objects,from,to,mover){
+  const {x,z}=to,radius=actorRadius(mover);
+  if(Math.abs(x)>390||Math.abs(z)>390||terrain(x,z)-terrain(from.x,from.z)>1.9)return false;
+  if(objects.some(o=>!isDepleted(state,o)&&(o.type==='tree'?actorBlocksMove(from,to,o,radius,1.15):resourceBlocksMove(from,to,o,radius))))return false;
+  if(state.buildings.some(o=>o.type!=='campfire'&&actorBlocksMove(from,to,o,radius,1.65)))return false;
+  if(LANDMARKS.some(o=>o.type==='npc'?actorBlocksMove(from,to,o,radius):['cottage','lighthouse'].includes(o.type)&&actorBlocksMove(from,to,o,radius,o.type==='cottage'?3.65:2.65)))return false;
+  if(mover!==state.player&&actorBlocksMove(from,to,state.player,radius))return false;
+  return !state.enemies.some(o=>o!==mover&&o.hp>0&&actorBlocksMove(from,to,o,radius));
 }
 export function movePlayer(state,objects,dx,dz,dt,running=false){
   const p=state.player,length=Math.hypot(dx,dz);if(length<.01)return;
   const swimming=terrain(p.x,p.z)<.15,sprint=running&&!swimming&&p.stamina>2,speed=swimming?5:sprint?12:7;
   if(sprint)p.stamina=Math.max(0,p.stamina-dt*17);
   dx=dx/length*speed*dt;dz=dz/length*speed*dt;p.yaw=Math.atan2(dx,dz);
-  const allowed=(x,z)=>{if(Math.abs(x)>390||Math.abs(z)>390)return false;const old=terrain(p.x,p.z),next=terrain(x,z);if(next-old>1.9)return false;
-    if(objects.some(o=>o.type==='tree'&&!isDepleted(state,o)&&Math.hypot(x-o.x,z-o.z)<1.5))return false;
-    if(objects.some(o=>!isDepleted(state,o)&&resourceBlocksMove(p,{x,z},o)))return false;
-    if(state.buildings.some(o=>o.type!=='campfire'&&Math.hypot(x-o.x,z-o.z)<2))return false;
-    return !LANDMARKS.some(o=>['cottage','lighthouse'].includes(o.type)&&Math.hypot(x-o.x,z-o.z)<(o.type==='cottage'?4:3));};
+  const allowed=(x,z)=>canActorMove(state,objects,p,{x,z},p);
   if(allowed(p.x+dx,p.z))p.x+=dx;if(allowed(p.x,p.z+dz))p.z+=dz;
   const region=regionAt(p.x,p.z);if(!state.discovered.includes(region))state.discovered.push(region);
 }
-export function tick(state,dt,running=false,feedback=null){if(feedback){feedback.damage=0;feedback.respawned=false;}state.time+=dt;if(!running)state.player.stamina=Math.min(100,state.player.stamina+dt*11);let message='';
-  for(const e of state.enemies){if(e.hp<=0)continue;const distance=Math.hypot(e.x-state.player.x,e.z-state.player.z);if(distance<15&&distance>2.3){const speed=e.type==='boar'?4.2:2.5,nx=e.x+(state.player.x-e.x)/distance*speed*dt,nz=e.z+(state.player.z-e.z)/distance*speed*dt;if(terrain(nx,nz)>.3){e.x=nx;e.z=nz;}}
+function stepEnemy(state,objects,enemy,dx,dz){
+  for(const axis of ['x','z']){const next={x:enemy.x,z:enemy.z};next[axis]+=axis==='x'?dx:dz;if(terrain(next.x,next.z)>.3&&canActorMove(state,objects,enemy,next,enemy)){enemy.x=next.x;enemy.z=next.z;}}
+}
+export function tick(state,dt,running=false,feedback=null,objects=[]){if(feedback){feedback.damage=0;feedback.respawned=false;}state.time+=dt;if(!running)state.player.stamina=Math.min(100,state.player.stamina+dt*11);let message='';
+  for(const e of state.enemies){if(e.hp<=0)continue;
+    const speed=e.type==='boar'?4.2:2.5;let travel=speed*dt;
+    if(Math.hypot(e.x-state.player.x,e.z-state.player.z)<25){
+      let crowded=null,depth=0;
+      for(const other of [...LANDMARKS.filter(o=>o.type==='npc'),...state.enemies]){if(other===e||other.hp<=0)continue;const d=Math.hypot(e.x-other.x,e.z-other.z),overlap=actorRadius(e)+actorRadius(other)-d;if(overlap>depth){depth=overlap;crowded=other;}}
+      if(crowded){const before={x:e.x,z:e.z},d=Math.hypot(e.x-crowded.x,e.z-crowded.z),angle=d>1e-8?Math.atan2(e.x-crowded.x,e.z-crowded.z):[...e.id].reduce((n,c)=>n+c.charCodeAt(0),0),step=Math.min(depth+.001,travel);stepEnemy(state,objects,e,Math.sin(angle)*step,Math.cos(angle)*step);travel=Math.max(0,travel-Math.hypot(e.x-before.x,e.z-before.z));}
+    }
+    const distance=Math.hypot(e.x-state.player.x,e.z-state.player.z),contact=actorRadius(e)+actorRadius(state.player);if(distance<15&&Math.abs(distance-contact)>1e-8){
+    const step=Math.min(Math.abs(distance-contact),travel)*(distance>contact?-1:1);
+    const angle=distance>1e-8?Math.atan2(e.x-state.player.x,e.z-state.player.z):[...e.id].reduce((n,c)=>n+c.charCodeAt(0),0);
+    const dx=Math.sin(angle)*step,dz=Math.cos(angle)*step;
+    stepEnemy(state,objects,e,dx,dz);
+  }
     if(distance<2.9&&state.time>=(state.protectedUntil||0)&&state.time-(e.attackAt||0)>1.3){const damage=Math.min(state.player.hp,e.type==='boar'?12:7);state.player.hp-=damage;if(feedback)feedback.damage+=damage;e.attackAt=state.time;message='受到攻击！空格反击，或拉开距离。';}}
   if(state.player.hp<=0){if(feedback)feedback.respawned=true;Object.assign(state.player,state.respawn,{hp:100,stamina:100});state.protectedUntil=state.time+8;message='你在营地醒来。背包已保留，获得 8 秒保护，趁现在重新出发吧。';}
   return message;

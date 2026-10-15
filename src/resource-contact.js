@@ -9,9 +9,9 @@ export function resourceReachDistance(player,object){
   const r=resourceHalfSize(object),dx=Math.abs(player.x-object.x),dz=Math.abs(player.z-object.z);
   return r?Math.hypot(Math.max(0,dx-r),Math.max(0,dz-r))+GATHER_RANGE-1.2:Math.hypot(dx,dz);
 }
-export function resourceBlocksMove(from,to,object){
+export function resourceBlocksMove(from,to,object,margin=.35){
   const half=resourceHalfSize(object);if(!half)return false;
-  const r=half+.35,minX=object.x-r,maxX=object.x+r,minZ=object.z-r,maxZ=object.z+r;
+  const r=half+margin,minX=object.x-r,maxX=object.x+r,minZ=object.z-r,maxZ=object.z+r;
   if(from.x>minX&&from.x<maxX&&from.z>minZ&&from.z<maxZ){
     // Old saves may be inside scenery. Permit outward escape without moving them during restore.
     return Math.hypot(to.x-object.x,to.z-object.z)<Math.hypot(from.x-object.x,from.z-object.z)-1e-10;

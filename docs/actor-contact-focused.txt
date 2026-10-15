@@ -1,0 +1,274 @@
+TAP version 13
+# Subtest: walking and long steps cannot cross an islander, but talking and walking around still work
+ok 1 - walking and long steps cannot cross an islander, but talking and walking around still work
+  ---
+  duration_ms: 5.840417
+  type: 'test'
+  ...
+# Subtest: chasing boar stops before touching the body and never overshoots on a large tick
+ok 2 - chasing boar stops before touching the body and never overshoots on a large tick
+  ---
+  duration_ms: 3.931625
+  type: 'test'
+  ...
+# Subtest: living creatures block player traversal; a defeated creature releases the path
+ok 3 - living creatures block player traversal; a defeated creature releases the path
+  ---
+  duration_ms: 0.914125
+  type: 'test'
+  ...
+# Subtest: legacy overlapping saves stay intact on restore and allow walking out
+ok 4 - legacy overlapping saves stay intact on restore and allow walking out
+  ---
+  duration_ms: 2.83825
+  type: 'test'
+  ...
+# Subtest: boar contact remains reachable with every owned weapon and keeps exact damage and rewards
+ok 5 - boar contact remains reachable with every owned weapon and keeps exact damage and rewards
+  ---
+  duration_ms: 4.765709
+  type: 'test'
+  ...
+# Subtest: enemy steps respect mineral and islander occupancy without mutating either
+ok 6 - enemy steps respect mineral and islander occupancy without mutating either
+  ---
+  duration_ms: 3.474666
+  type: 'test'
+  ...
+# Subtest: an old exact overlap separates gradually during simulation without teleporting the player
+ok 7 - an old exact overlap separates gradually during simulation without teleporting the player
+  ---
+  duration_ms: 1.607125
+  type: 'test'
+  ...
+# Subtest: larger body reach is frontal and cannot hit beyond contact allowance
+ok 8 - larger body reach is frontal and cannot hit beyond contact allowance
+  ---
+  duration_ms: 1.630875
+  type: 'test'
+  ...
+# Subtest: construction cannot spawn a solid building on a living creature or spend rejected materials
+ok 9 - construction cannot spawn a solid building on a living creature or spend rejected materials
+  ---
+  duration_ms: 1.879
+  type: 'test'
+  ...
+# Subtest: nearby pre-existing creature overlaps separate without placing both bodies on the player
+ok 10 - nearby pre-existing creature overlaps separate without placing both bodies on the player
+  ---
+  duration_ms: 6.860959
+  type: 'test'
+  ...
+# Subtest: a strike cannot damage a target behind, to the side or beyond the blade reach
+ok 11 - a strike cannot damage a target behind, to the side or beyond the blade reach
+  ---
+  duration_ms: 8.692958
+  type: 'test'
+  ...
+# Subtest: weapon reach preserves close combat while a longer sword reaches farther
+ok 12 - weapon reach preserves close combat while a longer sword reaches farther
+  ---
+  duration_ms: 9.222333
+  type: 'test'
+  ...
+# Subtest: impact keeps starting weapon reach but checks current position and facing
+ok 13 - impact keeps starting weapon reach but checks current position and facing
+  ---
+  duration_ms: 0.751167
+  type: 'test'
+  ...
+# Subtest: turning toward the target makes side combat possible without changing cooldown or rewards
+ok 14 - turning toward the target makes side combat possible without changing cooldown or rewards
+  ---
+  duration_ms: 1.578125
+  type: 'test'
+  ...
+# Subtest: each equipped weapon blade passes through low target height at impact and stays above flat ground
+ok 15 - each equipped weapon blade passes through low target height at impact and stays above flat ground
+  ---
+  duration_ms: 59.332833
+  type: 'test'
+  ...
+# Subtest: starter clearing provides enough materials for the first tool without waiting for respawn
+ok 16 - starter clearing provides enough materials for the first tool without waiting for respawn
+  ---
+  duration_ms: 2.871167
+  type: 'test'
+  ...
+# Subtest: day labels and lighting share a continuous repeating day cycle
+ok 17 - day labels and lighting share a continuous repeating day cycle
+  ---
+  duration_ms: 0.589625
+  type: 'test'
+  ...
+# Subtest: deterministic, populated world with safe start and diverse regions
+ok 18 - deterministic, populated world with safe start and diverse regions
+  ---
+  duration_ms: 2.162709
+  type: 'test'
+  ...
+# Subtest: wood, mineral and food nodes deplete and recover without duplicate rewards
+ok 19 - wood, mineral and food nodes deplete and recover without duplicate rewards
+  ---
+  duration_ms: 4.900416
+  type: 'test'
+  ...
+# Subtest: craft consumes exact materials, never negative or repeated unique tools
+ok 20 - craft consumes exact materials, never negative or repeated unique tools
+  ---
+  duration_ms: 1.630167
+  type: 'test'
+  ...
+# Subtest: building location checks, material use, persistence and overlap
+ok 21 - building location checks, material use, persistence and overlap
+  ---
+  duration_ms: 2.436709
+  type: 'test'
+  ...
+# Subtest: movement normalizes diagonal speed, respects trees and bounds
+ok 22 - movement normalizes diagonal speed, respects trees and bounds
+  ---
+  duration_ms: 2.322375
+  type: 'test'
+  ...
+# Subtest: attack cooldown and kill rewards happen only once
+ok 23 - attack cooldown and kill rewards happen only once
+  ---
+  duration_ms: 3.014167
+  type: 'test'
+  ...
+# Subtest: food consumes only when healing; camp heals and defeat preserves inventory
+ok 24 - food consumes only when healing; camp heals and defeat preserves inventory
+  ---
+  duration_ms: 2.81725
+  type: 'test'
+  ...
+# Subtest: entire six-step quest chain reaches conclusion with no repeat reward
+ok 25 - entire six-step quest chain reaches conclusion with no repeat reward
+  ---
+  duration_ms: 3.305208
+  type: 'test'
+  ...
+# Subtest: save roundtrip preserves all world changes
+ok 26 - save roundtrip preserves all world changes
+  ---
+  duration_ms: 3.705542
+  type: 'test'
+  ...
+# Subtest: invalid imports rejected without changing running state
+ok 27 - invalid imports rejected without changing running state
+  ---
+  duration_ms: 14.900208
+  type: 'test'
+  ...
+# Subtest: nearest target respects interaction distance
+ok 28 - nearest target respects interaction distance
+  ---
+  duration_ms: 1.242125
+  type: 'test'
+  ...
+# Subtest: respawn protection survives reload and expires without granting permanent immunity
+ok 29 - respawn protection survives reload and expires without granting permanent immunity
+  ---
+  duration_ms: 3.209
+  type: 'test'
+  ...
+# Subtest: tick reports lethal damage before healing and clears feedback during protection
+ok 30 - tick reports lethal damage before healing and clears feedback during protection
+  ---
+  duration_ms: 0.793292
+  type: 'test'
+  ...
+# Subtest: damage follows equipped weapon instead of the strongest item in the bag
+ok 31 - damage follows equipped weapon instead of the strongest item in the bag
+  ---
+  duration_ms: 7.458209
+  type: 'test'
+  ...
+# Subtest: duplicate building IDs and malformed entries are rejected with actionable messages
+ok 32 - duplicate building IDs and malformed entries are rejected with actionable messages
+  ---
+  duration_ms: 5.511625
+  type: 'test'
+  ...
+# Subtest: enemy cooldowns cannot be frozen by malformed or future saved attack times
+ok 33 - enemy cooldowns cannot be frozen by malformed or future saved attack times
+  ---
+  duration_ms: 7.762
+  type: 'test'
+  ...
+# Subtest: sprint exhaustion, swimming and rest preserve a recoverable stamina cycle
+ok 34 - sprint exhaustion, swimming and rest preserve a recoverable stamina cycle
+  ---
+  duration_ms: 1.640041
+  type: 'test'
+  ...
+# Subtest: crafted food consumes its ingredients once and never consumes food at full health
+ok 35 - crafted food consumes its ingredients once and never consumes food at full health
+  ---
+  duration_ms: 1.452834
+  type: 'test'
+  ...
+# Subtest: botanist dialogue matches quest prerequisites and a one-time gift
+ok 36 - botanist dialogue matches quest prerequisites and a one-time gift
+  ---
+  duration_ms: 0.640375
+  type: 'test'
+  ...
+# Subtest: all islanders acknowledge the lit lighthouse after completion without repeating gifts or objectives
+ok 37 - all islanders acknowledge the lit lighthouse after completion without repeating gifts or objectives
+  ---
+  duration_ms: 0.74075
+  type: 'test'
+  ...
+# Subtest: combat target ignores corpses and distant enemies without changing the save
+ok 38 - combat target ignores corpses and distant enemies without changing the save
+  ---
+  duration_ms: 0.741666
+  type: 'test'
+  ...
+# Subtest: combat target reflects actual weapon damage, cooldown and defeat
+ok 39 - combat target reflects actual weapon damage, cooldown and defeat
+  ---
+  duration_ms: 1.527625
+  type: 'test'
+  ...
+# Subtest: the recorded forest route cannot walk through crystal944 or cross its camera origin box
+ok 40 - the recorded forest route cannot walk through crystal944 or cross its camera origin box
+  ---
+  duration_ms: 27.136042
+  type: 'test'
+  ...
+# Subtest: scaled stone remains reachable at its surface and grants the original yield once
+ok 41 - scaled stone remains reachable at its surface and grants the original yield once
+  ---
+  duration_ms: 2.271625
+  type: 'test'
+  ...
+# Subtest: surface gathering cannot finish after moving out of arm reach
+ok 42 - surface gathering cannot finish after moving out of arm reach
+  ---
+  duration_ms: 1.862792
+  type: 'test'
+  ...
+# Subtest: legacy saves inside a deposit can move outward without losing progress or being teleported
+ok 43 - legacy saves inside a deposit can move outward without losing progress or being teleported
+  ---
+  duration_ms: 6.095708
+  type: 'test'
+  ...
+# Subtest: a large movement step cannot tunnel across a live deposit
+ok 44 - a large movement step cannot tunnel across a live deposit
+  ---
+  duration_ms: 1.927709
+  type: 'test'
+  ...
+1..44
+# tests 44
+# suites 0
+# pass 44
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 139.106

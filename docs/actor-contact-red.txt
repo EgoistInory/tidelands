@@ -1,0 +1,140 @@
+TAP version 13
+# Subtest: walking and long steps cannot cross an islander, but talking and walking around still work
+not ok 1 - walking and long steps cannot cross an islander, but talking and walking around still work
+  ---
+  duration_ms: 10.641125
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/actor-contact.test.js:10:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(s.player.z<npc.z-1)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/actor-contact.test.js:13:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: chasing boar stops before touching the body and never overshoots on a large tick
+not ok 2 - chasing boar stops before touching the body and never overshoots on a large tick
+  ---
+  duration_ms: 1.711417
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/actor-contact.test.js:16:1'
+  failureType: 'testCodeFailure'
+  error: '0.016666666666666666: 2.240000000000464'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/actor-contact.test.js:20:12)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: living creatures block player traversal; a defeated creature releases the path
+not ok 3 - living creatures block player traversal; a defeated creature releases the path
+  ---
+  duration_ms: 3.616417
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/actor-contact.test.js:23:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(state.player.z<enemy.z-2.2)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/actor-contact.test.js:24:77)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: legacy overlapping saves stay intact on restore and allow walking out
+ok 4 - legacy overlapping saves stay intact on restore and allow walking out
+  ---
+  duration_ms: 2.374209
+  type: 'test'
+  ...
+# Subtest: boar contact remains reachable with every owned weapon and keeps exact damage and rewards
+not ok 5 - boar contact remains reachable with every owned weapon and keeps exact damage and rewards
+  ---
+  duration_ms: 1.396334
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/actor-contact.test.js:32:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(attackRange(state,enemy)>=2.55)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/actor-contact.test.js:35:12)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: enemy steps respect mineral and islander occupancy without mutating either
+not ok 6 - enemy steps respect mineral and islander occupancy without mutating either
+  ---
+  duration_ms: 1.071
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/actor-contact.test.js:39:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(enemy.z>=107+2.8+2.2-.01)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/actor-contact.test.js:42:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 1
+# fail 5
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 73.901667

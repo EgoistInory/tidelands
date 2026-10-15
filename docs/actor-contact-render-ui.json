@@ -1,0 +1,224 @@
+{
+  "rows": [
+    {
+      "scenario": "npc",
+      "frames": 240,
+      "player": [
+        -59,
+        92.9166666666665
+      ],
+      "hp": 100,
+      "enemies": [],
+      "npcDistance": 1.0833333333334991,
+      "minDistance": null,
+      "maxEnemyStep": 0,
+      "result": null,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Explicit enemy/weapon/position fixture, fixed-dt production movement and combat; no save/native input/performance/GPU/full-quality proof."
+    },
+    {
+      "scenario": "boar",
+      "frames": 240,
+      "player": [
+        -70,
+        102
+      ],
+      "hp": 64,
+      "enemies": [
+        {
+          "id": "contact-review-a",
+          "type": "boar",
+          "x": -70,
+          "z": 104.55,
+          "hp": 70,
+          "distance": 2.549999999999997,
+          "contactDistance": 2.5500000000000003
+        }
+      ],
+      "npcDistance": 13.601470508735444,
+      "minDistance": 2.549999999999997,
+      "maxEnemyStep": 0.06999999999999318,
+      "result": null,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Explicit enemy/weapon/position fixture, fixed-dt production movement and combat; no save/native input/performance/GPU/full-quality proof."
+    },
+    {
+      "scenario": "boar",
+      "frames": 240,
+      "player": [
+        -70,
+        102
+      ],
+      "hp": 64,
+      "enemies": [
+        {
+          "id": "contact-review-a",
+          "type": "boar",
+          "x": -70,
+          "z": 104.55,
+          "hp": 47,
+          "distance": 2.549999999999997,
+          "contactDistance": 2.5500000000000003
+        }
+      ],
+      "npcDistance": 13.601470508735444,
+      "minDistance": 2.549999999999997,
+      "maxEnemyStep": 0.06999999999999318,
+      "result": {
+        "message": "命中 1 个目标",
+        "hits": [
+          "contact-review-a"
+        ]
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Explicit enemy/weapon/position fixture, fixed-dt production movement and combat; no save/native input/performance/GPU/full-quality proof."
+    },
+    {
+      "scenario": "crab",
+      "frames": 240,
+      "player": [
+        -70,
+        102
+      ],
+      "hp": 86,
+      "enemies": [
+        {
+          "id": "contact-review-a",
+          "type": "crab",
+          "x": -70,
+          "z": 104.3,
+          "hp": 70,
+          "distance": 2.299999999999997,
+          "contactDistance": 2.3
+        }
+      ],
+      "npcDistance": 13.601470508735444,
+      "minDistance": 2.299999999999997,
+      "maxEnemyStep": 0.041666666666671404,
+      "result": null,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Explicit enemy/weapon/position fixture, fixed-dt production movement and combat; no save/native input/performance/GPU/full-quality proof."
+    },
+    {
+      "scenario": "crab",
+      "frames": 240,
+      "player": [
+        -70,
+        102
+      ],
+      "hp": 86,
+      "enemies": [
+        {
+          "id": "contact-review-a",
+          "type": "crab",
+          "x": -70,
+          "z": 104.3,
+          "hp": 47,
+          "distance": 2.299999999999997,
+          "contactDistance": 2.3
+        }
+      ],
+      "npcDistance": 13.601470508735444,
+      "minDistance": 2.299999999999997,
+      "maxEnemyStep": 0.041666666666671404,
+      "result": {
+        "message": "命中 1 个目标",
+        "hits": [
+          "contact-review-a"
+        ]
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Explicit enemy/weapon/position fixture, fixed-dt production movement and combat; no save/native input/performance/GPU/full-quality proof."
+    },
+    {
+      "scenario": "crowd",
+      "frames": 240,
+      "player": [
+        -70,
+        102
+      ],
+      "hp": 76,
+      "enemies": [
+        {
+          "id": "contact-review-a",
+          "type": "boar",
+          "x": -71.71147688929936,
+          "z": 103.89032982767405,
+          "hp": 70,
+          "distance": 2.550000000000006,
+          "contactDistance": 2.5500000000000003
+        },
+        {
+          "id": "contact-review-b",
+          "type": "boar",
+          "x": -67.32000000000016,
+          "z": 104.17942822854553,
+          "hp": 70,
+          "distance": 3.4543172123272408,
+          "contactDistance": 2.5500000000000003
+        }
+      ],
+      "npcDistance": 13.601470508735444,
+      "minDistance": 2.550000000000006,
+      "maxEnemyStep": 0.06999999999999318,
+      "result": null,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Explicit enemy/weapon/position fixture, fixed-dt production movement and combat; no save/native input/performance/GPU/full-quality proof."
+    },
+    {
+      "scenario": "boar",
+      "frames": 240,
+      "player": [
+        -70,
+        102
+      ],
+      "hp": 64,
+      "enemies": [
+        {
+          "id": "contact-review-a",
+          "type": "boar",
+          "x": -70,
+          "z": 104.55,
+          "hp": 70,
+          "distance": 2.549999999999997,
+          "contactDistance": 2.5500000000000003
+        }
+      ],
+      "npcDistance": 13.601470508735444,
+      "minDistance": 2.549999999999997,
+      "maxEnemyStep": 0.06999999999999318,
+      "result": null,
+      "viewport": [
+        390,
+        844
+      ],
+      "glError": 0,
+      "scope": "Explicit enemy/weapon/position fixture, fixed-dt production movement and combat; no save/native input/performance/GPU/full-quality proof."
+    }
+  ],
+  "console": []
+}

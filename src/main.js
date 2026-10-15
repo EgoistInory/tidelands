@@ -50,7 +50,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
       const name=enemy.type==='boar'?'野猪':'海岸蟹',distance=Math.hypot(enemy.x-state.player.x,enemy.z-state.player.z),hp=Math.ceil(enemy.hp),max=Math.max(enemy.type==='boar'?70:40,hp);
       $('enemy-name').textContent=name;$('enemy-hp').max=max;$('enemy-hp').value=hp;$('enemy-hp').setAttribute('aria-label',`${name}生命`);$('enemy-hp-value').textContent=`${hp} / ${max}`;
       $('enemy-status').dataset.danger=distance<2.9?'close':'near';
-      $('enemy-hint').textContent=`${Math.ceil(distance)} 米 · ${distance<=attackRange(state)?'面向目标 · 空格 / 攻击':distance<2.9?'近身威胁 · 靠近反击或退开':'正在靠近 · 迎战或拉开距离'}`;
+      $('enemy-hint').textContent=`${Math.ceil(distance)} 米 · ${distance<=attackRange(state,enemy)?'面向目标 · 空格 / 攻击':distance<2.9?'近身威胁 · 靠近反击或退开':'正在靠近 · 迎战或拉开距离'}`;
     }
     $('region').textContent=regionAt(state.player.x,state.player.z);$('coordinates').textContent=`位置 X ${state.player.x.toFixed(1)}，Z ${state.player.z.toFixed(1)}；建筑 ${state.buildings.length}；击败 ${state.kills}`;
     const q=QUESTS[state.quest];$('quest-title').textContent=q.title;$('quest-text').textContent=q.text;
@@ -186,7 +186,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     $('start-button').textContent='重新加载';$('start-button').disabled=false;$('start-button').onclick=()=>location.reload();
   });
   function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;let moving=false;
-    if(started&&!paused){let x=stick.x,z=stick.z;for(const k of keys)if(movement[k]){x+=movement[k][0];z+=movement[k][1];}movementHeading.end(stickActive||keyboardMoving());moving=Math.hypot(x,z)>.08;const running=keys.has('shift')&&moving;const v=relative(x,z);movePlayer(state,world.objects,v.x,v.z,dt,running);const feedback={},message=tick(state,dt,running,feedback);
+    if(started&&!paused){let x=stick.x,z=stick.z;for(const k of keys)if(movement[k]){x+=movement[k][0];z+=movement[k][1];}movementHeading.end(stickActive||keyboardMoving());moving=Math.hypot(x,z)>.08;const running=keys.has('shift')&&moving;const v=relative(x,z);movePlayer(state,world.objects,v.x,v.z,dt,running);const feedback={},message=tick(state,dt,running,feedback,world.objects);
       if(feedback.damage>0){view.hurtAt=state.time;audio.effect('hit');combatFeedback('hurt',feedback.respawned?'倒下了 · 已返回营地':`受到伤害 −${Math.ceil(feedback.damage)}`);}
       if(feedback.respawned){
         cancelAttack();cancelGather();keys.clear();movementHeading.end();resetPointers();moving=false;buildType=null;placement=null;view.setPreview(null);
