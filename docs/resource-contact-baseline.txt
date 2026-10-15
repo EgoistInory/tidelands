@@ -1,0 +1,109 @@
+TAP version 13
+# Subtest: the recorded forest route cannot walk through crystal944 or cross its camera origin box
+not ok 1 - the recorded forest route cannot walk through crystal944 or cross its camera origin box
+  ---
+  duration_ms: 9.589333
+  type: 'test'
+  location: '/private/tmp/tidelands-delivery-m1fh7fma/tidelands-local/tests/resource-contact.test.js:7:1'
+  failureType: 'testCodeFailure'
+  error: 'character must stay outside the crystal camera box'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///private/tmp/tidelands-delivery-m1fh7fma/tidelands-local/tests/resource-contact.test.js:13:12)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: scaled stone remains reachable at its surface and grants the original yield once
+not ok 2 - scaled stone remains reachable at its surface and grants the original yield once
+  ---
+  duration_ms: 1.891917
+  type: 'test'
+  location: '/private/tmp/tidelands-delivery-m1fh7fma/tidelands-local/tests/resource-contact.test.js:17:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    large deposits must be gathered from their edge
+    + actual - expected
+    
+    + null
+    - {
+    -   id: 'resource-contact-rock',
+    -   scale: 1.6,
+    -   type: 'stone',
+    -   x: -70,
+    -   y: 9.066291572388597,
+    -   z: 102
+    - }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    id: 'resource-contact-rock'
+    type: 'stone'
+    x: -70
+    z: 102
+    y: 9.066291572388597
+    scale: 1.6
+  actual: ~
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///private/tmp/tidelands-delivery-m1fh7fma/tidelands-local/tests/resource-contact.test.js:20:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: surface gathering cannot finish after moving out of arm reach
+ok 3 - surface gathering cannot finish after moving out of arm reach
+  ---
+  duration_ms: 1.142208
+  type: 'test'
+  ...
+# Subtest: legacy saves inside a deposit can move outward without losing progress or being teleported
+ok 4 - legacy saves inside a deposit can move outward without losing progress or being teleported
+  ---
+  duration_ms: 3.075792
+  type: 'test'
+  ...
+# Subtest: a large movement step cannot tunnel across a live deposit
+not ok 5 - a large movement step cannot tunnel across a live deposit
+  ---
+  duration_ms: 1.308167
+  type: 'test'
+  location: '/private/tmp/tidelands-delivery-m1fh7fma/tidelands-local/tests/resource-contact.test.js:38:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    -65 !== -72
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: -72
+  actual: -65
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///private/tmp/tidelands-delivery-m1fh7fma/tidelands-local/tests/resource-contact.test.js:40:58)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 2
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 84.9995

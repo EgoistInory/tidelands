@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "kind": "mineral-contact-functional-checkpoint",
+  "mineralContactFunctionalAccepted": true,
+  "physicalMotionQualityPassed": false,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "completeNewPackageStarterToEndingReplayed": false,
+  "ordinaryCompletedSaveMigrated": true,
+  "package": "tidelands-m5-2026-10-14-resource-contact.zip",
+  "packageSha256": "93435904a68797ea5e7a9ce503cc3a7099a11d5991f27375fb6b5e6f4ce9e269",
+  "runtimeFiles": 47,
+  "sourceModules": 27,
+  "unitTests": {
+    "focused": 27,
+    "full": 195,
+    "baselineExpectedFailures": 3
+  },
+  "viewedImagesSha256": {
+    "docs/resource-contact-forest.jpg": "2690be4be98579beb9f8cab8c0d39bdcafe2d8179ee1526bb25567e01f3213a3",
+    "docs/resource-contact-normal-blocked.jpg": "74c4754adc1119ee61d4736b11cc38dbc139269d76eb3c0c2e45e63c77167279",
+    "docs/resource-contact-normal-cleared.jpg": "7167d873fc51bc5e9320a801958fe8e964d8cd60d4d67270d11aaf46b7f901aa",
+    "docs/resource-contact-normal-edge.jpg": "7e5e0750e67aeed440e92d28e79e1bed741651185c088f8c6bdd49b317cbe635",
+    "docs/resource-contact-normal-mobile.jpg": "e4260766432e7d3c847c670aa86b26aa65e9216f11dccecb493a75c7d3a090e9"
+  },
+  "evidenceSha256": {
+    "docs/resource-contact-ui.json": "915fce74bd4953caa81855cd102832f25b6b960c9bbec6dcfa9ad2a827e7f3e9",
+    "docs/resource-contact-normal-save.json": "f0aec7080fd1e63b6c81d25b3c3e251420b6240fa4b4158949e733e9816a4649",
+    "docs/resource-contact-focused.txt": "3194fef4db83779d350f18110e479b28167e954dab13ca230506bd70d58b015e",
+    "docs/resource-contact-full.txt": "7da535e944b5a72f6ba12e9d3cc636ce59fe156077e5ff2b96dcdb892f3603db",
+    "docs/resource-contact-baseline.txt": "67c1188046dbe656b1dbc178e846fd19debaf810384a952b64af7eb5bad4fdcd",
+    "tests/resource-contact.test.js": "3423ffd8292fdea67e5d15ca06d4c8213ef933ec466bd8d22714cf4c0bcd64db",
+    "src/game.js": "cde6a849e7ab1a67057cd1f10ea6a17036140ea26e61adaae315f47f9e0a6513",
+    "src/resource-contact.js": "642e3c06f39cbf58ef238165381b6b82141431c0698b89c6d9f920802c723089",
+    "src/camera.js": "50bd54c5b158802a8d7e2f029865ec531e621782d1037abf30637396ddb0e90b",
+    "src/scene.js": "177a1e400f26531f6945866961be6d53cfea1a504464f9aae7c92a2480dcb24b"
+  },
+  "finalSave": {
+    "bytes": 13513,
+    "sha256": "f0aec7080fd1e63b6c81d25b3c3e251420b6240fa4b4158949e733e9816a4649",
+    "player": {
+      "x": -83.80293924344862,
+      "z": 100.02950457568552,
+      "hp": 100,
+      "stamina": 100,
+      "yaw": -1.4207963267948966
+    },
+    "inventory": {
+      "wood": 4,
+      "stone": 5,
+      "fiber": 4,
+      "berry": 2,
+      "shell": 0,
+      "crystal": 0,
+      "axe": 1,
+      "sword": 0,
+      "meal": 0
+    },
+    "quest": 6
+  },
+  "limits": [
+    "Import tool call reported103294.5857 seconds wall latency; no deliberate wait or endurance/performance inference. Game state was inspected and immediately paused when it returned.",
+    "New package normal journey starts from the real completed q6 backup; no starter/main-path replay or material fixture.",
+    "Forest camera trace is a declared no-enemies fixed-dt fixture, not native input. Worst jump reduced101.35 to32.55 degrees; motion quality still unaccepted.",
+    "390 browser dimensions are not a real phone. No new listening/GPU/long-term acceptance.",
+    "Unscaled synthetic resource nodes keep center-based range for existing pure API contracts; production world nodes all have explicit scales."
+  ],
+  "remainingQuality": "Residual32.55-degree forest orbit, actors/NPC contact, whole environment identity, listening and final-source long-term/device/GPU review remain. Advance environment group while tracking non-blocking motion detail; fullM5 requires final audit."
+}

@@ -2,6 +2,7 @@ import * as THREE from '../vendor/three.module.min.js';
 import {terrain,ISLANDS,LANDMARKS,randomGenerator,dayCycle,weatherAt} from './world.js';
 import {isDepleted} from './game.js';
 import {unobstructedCamera,smoothCamera} from './camera.js';
+import {resourceHalfSize} from './resource-contact.js';
 import {createCharacter,animateCharacter} from './character.js';
 import {createTextileMaterial} from './textile.js';
 import {createCreature,animateCreature,resetCreature} from './creature.js';
@@ -215,7 +216,7 @@ export class WorldView{
   createScenery(){
     // Shared geometries/materials through instancing keep hundreds of resource nodes inexpensive.
     this.cameraObstacles=this.world.objects.filter(o=>['stone','crystal'].includes(o.type)).map(o=>{
-      const radius=(o.type==='stone'?2.8:1.5)*o.scale,height=3.5*o.scale;
+      const radius=resourceHalfSize(o),height=3.5*o.scale;
       return {object:o,box:new THREE.Box3(new THREE.Vector3(o.x-radius,o.y-.3,o.z-radius),new THREE.Vector3(o.x+radius,o.y+height,o.z+radius))};
     });
     const types=['tree','stone','crystal','berry','fiber','shell'];this.batches=[];

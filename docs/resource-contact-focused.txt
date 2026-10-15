@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: an orbit turn follows an arc without cutting through the player or snapping to the target
+ok 1 - an orbit turn follows an arc without cutting through the player or snapping to the target
+  ---
+  duration_ms: 2.037791
+  type: 'test'
+  ...
+# Subtest: angle wrapping follows the short arc and easing has equivalent results at different frame rates
+ok 2 - angle wrapping follows the short arc and easing has equivalent results at different frame rates
+  ---
+  duration_ms: 5.542583
+  type: 'test'
+  ...
+# Subtest: smoothing still retracts before solid scenery and terrain, including a zero-distance prior pose
+ok 3 - smoothing still retracts before solid scenery and terrain, including a zero-distance prior pose
+  ---
+  duration_ms: 0.42275
+  type: 'test'
+  ...
+# Subtest: an open side of a nearby tower keeps framing while a smoothed arc crosses its blocked side
+ok 4 - an open side of a nearby tower keeps framing while a smoothed arc crosses its blocked side
+  ---
+  duration_ms: 0.658167
+  type: 'test'
+  ...
+# Subtest: temporary landmark avoidance cannot overwrite manual orbit or steer the next released gesture
+ok 5 - temporary landmark avoidance cannot overwrite manual orbit or steer the next released gesture
+  ---
+  duration_ms: 58.589917
+  type: 'test'
+  ...
+# Subtest: an orbit temporarily moved around a tower returns to manual direction when the obstruction clears
+ok 6 - an orbit temporarily moved around a tower returns to manual direction when the obstruction clears
+  ---
+  duration_ms: 29.937292
+  type: 'test'
+  ...
+# Subtest: temporary avoidance retains an already clear side instead of jumping across the player
+ok 7 - temporary avoidance retains an already clear side instead of jumping across the player
+  ---
+  duration_ms: 0.158084
+  type: 'test'
+  ...
+# Subtest: camera retracts before a blocking rock and returns to requested distance when clear
+ok 8 - camera retracts before a blocking rock and returns to requested distance when clear
+  ---
+  duration_ms: 1.009625
+  type: 'test'
+  ...
+# Subtest: camera avoids intervening terrain even when its destination is above ground
+ok 9 - camera avoids intervening terrain even when its destination is above ground
+  ---
+  duration_ms: 0.087166
+  type: 'test'
+  ...
+# Subtest: close scenery turns the framed camera into clear space instead of the player head
+ok 10 - close scenery turns the framed camera into clear space instead of the player head
+  ---
+  duration_ms: 1.262791
+  type: 'test'
+  ...
+# Subtest: production deferred gathering cannot begin five metres from a resource
+ok 11 - production deferred gathering cannot begin five metres from a resource
+  ---
+  duration_ms: 6.54025
+  type: 'test'
+  ...
+# Subtest: walking just outside close gathering range before impact awards nothing
+ok 12 - walking just outside close gathering range before impact awards nothing
+  ---
+  duration_ms: 1.20475
+  type: 'test'
+  ...
+# Subtest: resource prompts use close range while islanders and camp interactions keep their existing reach
+ok 13 - resource prompts use close range while islanders and camp interactions keep their existing reach
+  ---
+  duration_ms: 2.152208
+  type: 'test'
+  ...
+# Subtest: equipped gathering lowers the blade into low resource height without crossing flat ground
+ok 14 - equipped gathering lowers the blade into low resource height without crossing flat ground
+  ---
+  duration_ms: 62.930416
+  type: 'test'
+  ...
+# Subtest: gather commits inventory and depletion once at the rendered reach peak
+ok 15 - gather commits inventory and depletion once at the rendered reach peak
+  ---
+  duration_ms: 47.963791
+  type: 'test'
+  ...
+# Subtest: gather reserves interaction cooldown and locks the starting tool yield
+ok 16 - gather reserves interaction cooldown and locks the starting tool yield
+  ---
+  duration_ms: 1.876083
+  type: 'test'
+  ...
+# Subtest: leaving range or losing the resource before impact awards nothing
+ok 17 - leaving range or losing the resource before impact awards nothing
+  ---
+  duration_ms: 1.819208
+  type: 'test'
+  ...
+# Subtest: expired, cancelled and replaced-save gathers never commit; NPCs remain immediate
+ok 18 - expired, cancelled and replaced-save gathers never commit; NPCs remain immediate
+  ---
+  duration_ms: 9.256167
+  type: 'test'
+  ...
+# Subtest: swimming cannot start or finish a hidden gathering animation
+ok 19 - swimming cannot start or finish a hidden gathering animation
+  ---
+  duration_ms: 0.841292
+  type: 'test'
+  ...
+# Subtest: automatic scenery avoidance cannot steer a held forward input
+ok 20 - automatic scenery avoidance cannot steer a held forward input
+  ---
+  duration_ms: 1.278084
+  type: 'test'
+  ...
+# Subtest: adding another direction or adjusting an active stick retains the captured view basis
+ok 21 - adding another direction or adjusting an active stick retains the captured view basis
+  ---
+  duration_ms: 0.104334
+  type: 'test'
+  ...
+# Subtest: an intentional camera drag steers held movement while release or pause resets its basis
+ok 22 - an intentional camera drag steers held movement while release or pause resets its basis
+  ---
+  duration_ms: 0.081792
+  type: 'test'
+  ...
+# Subtest: the recorded forest route cannot walk through crystal944 or cross its camera origin box
+ok 23 - the recorded forest route cannot walk through crystal944 or cross its camera origin box
+  ---
+  duration_ms: 38.905417
+  type: 'test'
+  ...
+# Subtest: scaled stone remains reachable at its surface and grants the original yield once
+ok 24 - scaled stone remains reachable at its surface and grants the original yield once
+  ---
+  duration_ms: 1.258
+  type: 'test'
+  ...
+# Subtest: surface gathering cannot finish after moving out of arm reach
+ok 25 - surface gathering cannot finish after moving out of arm reach
+  ---
+  duration_ms: 1.871959
+  type: 'test'
+  ...
+# Subtest: legacy saves inside a deposit can move outward without losing progress or being teleported
+ok 26 - legacy saves inside a deposit can move outward without losing progress or being teleported
+  ---
+  duration_ms: 3.733667
+  type: 'test'
+  ...
+# Subtest: a large movement step cannot tunnel across a live deposit
+ok 27 - a large movement step cannot tunnel across a live deposit
+  ---
+  duration_ms: 2.037458
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 166.604083

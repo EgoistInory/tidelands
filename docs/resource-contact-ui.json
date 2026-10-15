@@ -1,0 +1,255 @@
+{
+  "ordinaryPackage": "dist/tidelands-m5-2026-10-14-resource-contact.zip",
+  "ordinaryOrigin": "http://127.0.0.1:53942",
+  "importedRealSave": "docs/current-journey-final-camp-save.json",
+  "newFixtureImported": false,
+  "runtimeStateEdited": false,
+  "nativeInput": true,
+  "normal": [
+    {
+      "step": "real q6 import restored completed camp",
+      "bearing": "北",
+      "coordinates": "位置 X -70.0，Z 102.0；建筑 1；击败 2",
+      "hp": "100",
+      "inventory": [
+        {
+          "count": "4",
+          "name": "木材"
+        },
+        {
+          "count": "2",
+          "name": "石料"
+        },
+        {
+          "count": "4",
+          "name": "纤维"
+        },
+        {
+          "count": "2",
+          "name": "浆果"
+        },
+        {
+          "count": "0",
+          "name": "贝壳"
+        },
+        {
+          "count": "0",
+          "name": "晶石"
+        },
+        {
+          "count": "1",
+          "name": "石斧"
+        },
+        {
+          "count": "0",
+          "name": "晶石剑"
+        },
+        {
+          "count": "0",
+          "name": "烤浆果"
+        }
+      ],
+      "quest": "群岛，再次相连"
+    },
+    {
+      "step": "native movement toward live starter stone",
+      "bearing": "北",
+      "coordinates": "位置 X -77.8，Z 103.2；建筑 1；击败 2",
+      "hp": "100",
+      "inventory": [],
+      "quest": "群岛，再次相连"
+    },
+    {
+      "step": "continued native input blocked outside live stone, sliding allowed",
+      "bearing": "北",
+      "coordinates": "位置 X -77.8，Z 104.0；建筑 1；击败 2",
+      "hp": "100",
+      "inventory": [],
+      "quest": "群岛，再次相连"
+    },
+    {
+      "step": "native E gathered stone from solid edge after moving away from camp interaction",
+      "bearing": "北",
+      "coordinates": "位置 X -77.8，Z 99.1；建筑 1；击败 2",
+      "hp": "100",
+      "inventory": [
+        {
+          "count": "4",
+          "name": "木材"
+        },
+        {
+          "count": "5",
+          "name": "石料"
+        },
+        {
+          "count": "4",
+          "name": "纤维"
+        },
+        {
+          "count": "2",
+          "name": "浆果"
+        },
+        {
+          "count": "0",
+          "name": "贝壳"
+        },
+        {
+          "count": "0",
+          "name": "晶石"
+        },
+        {
+          "count": "1",
+          "name": "石斧"
+        },
+        {
+          "count": "0",
+          "name": "晶石剑"
+        },
+        {
+          "count": "0",
+          "name": "烤浆果"
+        }
+      ],
+      "quest": "群岛，再次相连"
+    },
+    {
+      "step": "native movement crossed previously blocked footprint after depletion",
+      "bearing": "北",
+      "coordinates": "位置 X -83.8，Z 100.0；建筑 1；击败 2",
+      "hp": "100",
+      "inventory": [],
+      "quest": "群岛，再次相连"
+    },
+    {
+      "step": "390 browser reload retained actual completed quest, inventory and position",
+      "bearing": "北",
+      "coordinates": "位置 X -83.8，Z 100.0；建筑 1；击败 2",
+      "hp": "100",
+      "inventory": [
+        {
+          "count": "4",
+          "name": "木材"
+        },
+        {
+          "count": "5",
+          "name": "石料"
+        },
+        {
+          "count": "4",
+          "name": "纤维"
+        },
+        {
+          "count": "2",
+          "name": "浆果"
+        },
+        {
+          "count": "0",
+          "name": "贝壳"
+        },
+        {
+          "count": "0",
+          "name": "晶石"
+        },
+        {
+          "count": "1",
+          "name": "石斧"
+        },
+        {
+          "count": "0",
+          "name": "晶石剑"
+        },
+        {
+          "count": "0",
+          "name": "烤浆果"
+        }
+      ],
+      "quest": "群岛，再次相连",
+      "layout": {
+        "height": 844,
+        "scrollWidth": 390,
+        "width": 390
+      }
+    }
+  ],
+  "forestScriptedFixture": {
+    "ready": true,
+    "route": "forest",
+    "time": 243.0000000000024,
+    "viewport": [
+      1280,
+      720
+    ],
+    "player": [
+      147.06304761048145,
+      -52.831559451897014
+    ],
+    "requestedYaw": 0.6300000000000003,
+    "resolvedRequestYaw": 0.6300000000000003,
+    "renderedBearing": 0.5719027795439844,
+    "initialIntentOverwriteDegrees": 0,
+    "glError": 0,
+    "row": {
+      "frames": 180,
+      "maxIntentOverwriteDegrees": 0,
+      "maxRenderedBearingStepDegrees": 32.553929711141926,
+      "jumpSamples": [
+        {
+          "frame": 72,
+          "stepDegrees": 32.553929711141926,
+          "player": [
+            136.37605557715017,
+            -46.326840521710785
+          ],
+          "camera": [
+            129.0461332377208,
+            29.08484321028836,
+            -34.236909506038636
+          ],
+          "previousCamera": [
+            136.58997409291834,
+            29.065225202497764,
+            -32.170426941029234
+          ],
+          "focusDistance": 14.704758292778967
+        },
+        {
+          "frame": 75,
+          "stepDegrees": 31.855996949148576,
+          "player": [
+            136.71410422493827,
+            -46.41749307349838
+          ],
+          "camera": [
+            123.89991301565027,
+            29.159559081180525,
+            -40.09360241631354
+          ],
+          "previousCamera": [
+            129.0789473249527,
+            29.132351758466257,
+            -34.2899678678607
+          ],
+          "focusDistance": 14.836849674405098
+        }
+      ],
+      "previousBearing": 0.5719027795439844,
+      "previousCamera": [
+        154.66861735045717,
+        32.60309610728685,
+        -41.015363250100215
+      ]
+    },
+    "scope": "Declared position/camp/quest6/no-enemies fixture; fixed-dt movement and manual orbit increments; no save/input/performance/full-quality acceptance."
+  },
+  "download": "/Users/huxiaocong/Downloads/tidelands-day-27 (5).json",
+  "console": [],
+  "fullGoalComplete": false,
+  "physicalMotionQualityPassed": false,
+  "limits": [
+    "Import tool call reported103294.5857 seconds wall latency; no deliberate wait or endurance/performance inference. Game state was inspected and immediately paused when it returned.",
+    "New package normal journey starts from the real completed q6 backup; no starter/main-path replay or material fixture.",
+    "Forest camera trace is a declared no-enemies fixed-dt fixture, not native input. Worst jump reduced101.35 to32.55 degrees; motion quality still unaccepted.",
+    "390 browser dimensions are not a real phone. No new listening/GPU/long-term acceptance.",
+    "Unscaled synthetic resource nodes keep center-based range for existing pure API contracts; production world nodes all have explicit scales."
+  ]
+}

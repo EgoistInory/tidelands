@@ -353,3 +353,18 @@ M5主要差距进一步确认：镜头在不同输入手势之间仍自动改变
 源码仅camera.js/scene.js候选变化，其余旧包运行输入/两份普通q6备份和movement-heading ZIP保持；没有新交付包或普通新包验证。docs/camera-intent-progress-audit.json通过来源/15已查看图/原始RED与13/190结果、完整保存包SHA和普通档SHA，但physicalMotionQualityPassed=false/M5=false/fullGoal=false。此前普通版本审核按旧SHA保留，不能对当前候选重跑旧验证器当结论。
 
 82–85关闭/标签空/viewport reset，旧包53941两次有限对照session5754与28402均主动Ctrl-C130，原4190/PID21636保留、临时端口无监听。上轮98%允许时离线诊断后触100%限额，未消费券或强改goal；本次实时恢复31%/周52%起步、末检查72%/周59%仍允许。2048/完整3A继续，无付费API/额度购买/重置券/公开推送，原origin问题待原先答复不重复问。本轮有代码/实际渲染/精确失败帧，归类progress，未将候选品质或全目标标完成。
+
+
+## 2026-10-15 资源实体接触与表面采集交付（14日批次）
+
+从resource-944精确focus边界诊断接续，game之前不阻挡石料/晶石，人物穿入矿物后focus从相机盒内移出导致大转镜。本轮新增resource-contact.js，以现有镜头简化矩形范围/0.35角色余量阻挡进入、轴向整段检查防大步穿越；game提示/采集开始/中段按表面1.2米一致验证，pending保留type/scale，scene共用同一半径。耗尽解除阻挡；旧档内部位置可向外走出，不在restore传送。收益、冷却、节点/存档schema不改，无scale合成逻辑节点保留旧中心距离。只是简化范围接触，不声称逐三角形或所有演员接触完成。
+
+旧规则5项中穿晶石/大矿表面不可达/大步穿越3项RED，旧内部逃离与离开采集范围已有行为保留；新27针对性/195全量/三模块语法、4打包通过。首个新测试误要求滑动后180帧始终停在矿物一侧，读取结果发现已合法沿边走绕过，改为检查原第50帧被阻挡、全180帧均未入盒，非禁止绕行。当前隔离林地180帧实际最坏转镜101.35°→32.55°，手动意图0，GL0；剩余30度级侧移保留品质待办，完整物理运动组不判通过。按用户里程碑优先策略继续环境整体组，不为单角度无限停留。
+
+新resource-contact ZIP8190467bytes/48项/47运行文件/27源模块，SHA93435904a68797ea5e7a9ce503cc3a7099a11d5991f27375fb6b5e6f4ce9e269，独立解压路径/private/tmp/tidelands-delivery-j2y1h55b/tidelands-local。原已完成普通q6档通过实际文件选择器迁移53942，未导入材料fixture/编辑运行状态；原生A1100ms到(-77.8,103.2)，再A700ms X仍-77.8/Z104.0（活矿阻挡/允许侧滑），近营火E优先休息属原规则，向北650ms远离营火后可见“采集石料”并E取得2→5。耗尽后A800ms穿过原矿物到(-83.8,100.0)。390×844刷新q6/同坐标/库存/HP100/建筑1/击败2保持，无横向溢出。5张实际查看图（脚本林地/普通阻挡/采前/采后/390）与docs/resource-contact-ui.json保留，不冒充真机或新普通全主线。
+
+普通真实下载13513bytes，docs/resource-contact-normal-save.json SHA f0aec7080fd1e63b6c81d25b3c3e251420b6240fa4b4158949e733e9816a4649，production restore逐字段回读通过；木4石5纤维4浆果2晶石0斧1。原q6完成备份SHA0dc650a3ac8a83b62ea3e33c8797607f50d7f60b49b9a07e941e9040a196655e/旧movement-headingZIP SHA9f9e6361db8d4a988ae29234ad91c00152305ec78c94b78b43e0cb45eacf7a6a保持。此前完整普通链与新包迁移/接触证据分别说明，未重复首树或从零主线；冻结最终来源时统一补主路径。
+
+文档/README/随包指南已对齐；docs/resource-contact-audit.json与tools/verify_resource_contact.py核对47运行SHA、195/27/原3失败、5已查看图、真实采集/耗尽/390恢复与备份，mineralContactFunctionalAccepted=true但physicalMotionQualityPassed/M5/fullGoal=false。老camera-intent和ordinary-main报告按f8/87对应旧SHA历史保留，不重跑旧验证器套作新证明。四岛同形植被/地表、裸坡/遗迹方块、自然岸线层次、NPC/生物穿插、夜间层次、实际试听及当前最终长时/设备GPU均待，下一整体环境组见docs/M5-WHOLE-REVIEW.md。
+
+导入工具一次报告103294.5857秒墙钟延迟，外部日期由14→15；返回后q6/第27天/HP100及原坐标被实际核对并立即暂停，此后真实输入及保存恢复成功。没有主动睡眠，下载另39.5秒工具延迟；不能当长时/性能证据。实时额度开始12%/周65%允许；工具恢复后再检查42%/周7%允许，未使用两张重置券、购买或强改历史usageLimited。86/87已关闭/标签空/viewport reset，53942/session8181主动Ctrl-C130无监听，原4190/PID21636保留。M5/完整3A未完不删2048；无付费API/公网发布或推送，origin原问题待原先答复不重复问。此轮有生产修复、实际玩法/包交付与证据，归类progress。

@@ -1,5 +1,6 @@
 import {SPAWN,LANDMARKS,terrain,regionAt,createWorld} from './world.js';
 import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_DURATION,GATHER_IMPACT,GATHER_RANGE} from './action-timing.js';
+import {resourceReachDistance,resourceBlocksMove} from './resource-contact.js';
 export const ITEMS={wood:'木材',stone:'石料',fiber:'纤维',berry:'浆果',shell:'贝壳',crystal:'晶石',axe:'石斧',sword:'晶石剑',meal:'烤浆果'};
 const RESOURCE_ITEMS={tree:'wood',stone:'stone',fiber:'fiber',berry:'berry',shell:'shell',crystal:'crystal'};
 const MAX_BUILDINGS=500;
@@ -55,14 +56,14 @@ export function interact(state,object,{defer=false}={}){if(!object)return '靠�
   if(isDepleted(state,object))return '这里的资源还在恢复。';
   const item=RESOURCE_ITEMS[object.type];if(!item)return '';
   const count=['wood','stone'].includes(item)?(state.inventory.axe?3:2):item==='crystal'?1:2;
-  if(defer){if(terrain(state.player.x,state.player.z)<.15)return '请先靠岸，再采集附近资源。';if(Math.hypot(object.x-state.player.x,object.z-state.player.z)>=GATHER_RANGE)return '靠近资源后再采集。';return {message:'',pending:{state,at:state.time,object:{id:object.id,x:object.x,z:object.z},item,count,resolved:false}};}
+  if(defer){if(terrain(state.player.x,state.player.z)<.15)return '请先靠岸，再采集附近资源。';if(resourceReachDistance(state.player,object)>=GATHER_RANGE)return '靠近资源后再采集。';return {message:'',pending:{state,at:state.time,object:{id:object.id,x:object.x,z:object.z,type:object.type,scale:object.scale},item,count,resolved:false}};}
   return applyGather(state,object,item,count);
 }
 export function resolveGather(state,pending){
   if(!pending||pending.state!==state||pending.resolved||pending.at!==state.interactAt||state.time<pending.at+GATHER_IMPACT||state.time>=pending.at+GATHER_DURATION)return null;
   pending.resolved=true;
   if(terrain(state.player.x,state.player.z)<.15)return '请先靠岸，再采集附近资源。';
-  if(Math.hypot(pending.object.x-state.player.x,pending.object.z-state.player.z)>=GATHER_RANGE)return '离资源太远，靠近后再采集。';
+  if(resourceReachDistance(state.player,pending.object)>=GATHER_RANGE)return '离资源太远，靠近后再采集。';
   if(isDepleted(state,pending.object))return '这里的资源还在恢复。';
   return applyGather(state,pending.object,pending.item,pending.count);
 }
@@ -100,6 +101,7 @@ export function movePlayer(state,objects,dx,dz,dt,running=false){
   dx=dx/length*speed*dt;dz=dz/length*speed*dt;p.yaw=Math.atan2(dx,dz);
   const allowed=(x,z)=>{if(Math.abs(x)>390||Math.abs(z)>390)return false;const old=terrain(p.x,p.z),next=terrain(x,z);if(next-old>1.9)return false;
     if(objects.some(o=>o.type==='tree'&&!isDepleted(state,o)&&Math.hypot(x-o.x,z-o.z)<1.5))return false;
+    if(objects.some(o=>!isDepleted(state,o)&&resourceBlocksMove(p,{x,z},o)))return false;
     if(state.buildings.some(o=>o.type!=='campfire'&&Math.hypot(x-o.x,z-o.z)<2))return false;
     return !LANDMARKS.some(o=>['cottage','lighthouse'].includes(o.type)&&Math.hypot(x-o.x,z-o.z)<(o.type==='cottage'?4:3));};
   if(allowed(p.x+dx,p.z))p.x+=dx;if(allowed(p.x,p.z+dz))p.z+=dz;
@@ -111,7 +113,7 @@ export function tick(state,dt,running=false,feedback=null){if(feedback){feedback
   if(state.player.hp<=0){if(feedback)feedback.respawned=true;Object.assign(state.player,state.respawn,{hp:100,stamina:100});state.protectedUntil=state.time+8;message='你在营地醒来。背包已保留，获得 8 秒保护，趁现在重新出发吧。';}
   return message;
 }
-export function nearest(state,objects){const options=[...LANDMARKS,...state.buildings,...objects.filter(o=>!isDepleted(state,o))];let best=null,d=7;for(const o of options){const dist=Math.hypot(o.x-state.player.x,o.z-state.player.z);if(RESOURCE_ITEMS[o.type]&&dist>=GATHER_RANGE)continue;if(dist<d){d=dist;best=o;}}return best;}
+export function nearest(state,objects){const options=[...LANDMARKS,...state.buildings,...objects.filter(o=>!isDepleted(state,o))];let best=null,d=7;for(const o of options){const dist=RESOURCE_ITEMS[o.type]?resourceReachDistance(state.player,o):Math.hypot(o.x-state.player.x,o.z-state.player.z);if(RESOURCE_ITEMS[o.type]&&dist>=GATHER_RANGE)continue;if(dist<d){d=dist;best=o;}}return best;}
 export function nearestEnemy(state){let best=null,d=15;for(const e of state.enemies){if(e.hp<=0)continue;const distance=Math.hypot(e.x-state.player.x,e.z-state.player.z);if(distance<d){d=distance;best=e;}}return best;}
 export function serialize(state){return JSON.stringify(state);}
 export function restore(raw){const v=JSON.parse(raw);const fresh=freshGame();
