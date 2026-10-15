@@ -51,7 +51,7 @@ test('production atmosphere coordinates sunlight, land fog and water with stable
   assert.ok(scene.fog.far<clear.far);assert.deepEqual(waterUniforms.fogRange.value.toArray(),[scene.fog.near,scene.fog.far]);
   for(let i=0;i<200;i++)WorldView.prototype.updateAtmosphere.call(view,i*12);
   WorldView.prototype.updateAtmosphere.call(view,1440);
-  assert.ok(view.ambient.intensity>.3&&waterUniforms.light.value>.1,'midnight remains readable');
+  assert.ok(view.ambient.intensity>.5&&view.ambient.intensity<clear.ambient*.35&&waterUniforms.light.value>.1,'midnight foreground stays lit while preserving a strong day/night difference');
   WorldView.prototype.updateAtmosphere.call(view,240);
   assert.equal(view.sun.intensity,clear.sun);assert.equal(waterUniforms.sunlight.value,clear.glint);
   assert.equal(view.waterUniforms,waterUniforms);assert.equal(reflection,scene.fog.color);

@@ -25,6 +25,7 @@ export function createRockSurface({loader,anisotropy=1}={}){
     const albedo=texture('albedo.jpg',THREE.SRGBColorSpace);
     material.normalMap=texture('normal-gl.jpg',THREE.NoColorSpace);material.normalScale.set(.65,.65);
     material.roughnessMap=texture('roughness.jpg',THREE.NoColorSpace);
+    material.userData.rock.channels={albedo,normal:material.normalMap,roughness:material.roughnessMap};
     material.onBeforeCompile=shader=>{
       Object.assign(shader.uniforms,{rockAlbedo:{value:albedo},rockReady:ready,rockEnabled:enabled,rockRepeat:{value:repeat}});
       shader.vertexShader='varying vec2 rockUV;uniform vec2 rockRepeat;\n'+shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nrockUV=uv*rockRepeat;');
@@ -41,7 +42,7 @@ export function createRockSurface({loader,anisotropy=1}={}){
     material.customProgramCacheKey=()=> 'tidelands-rock-cc0-v1';material.needsUpdate=true;
     return loaded;
   };
-  material.userData.rock={state,loaded,textures,load,enabled};
+  material.userData.rock={state,loaded,textures,load,enabled,ready};
   if(loader)load(loader,anisotropy);
   return material;
 }

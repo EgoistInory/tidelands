@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: landscape shares decoded rock channels and keeps preprocessor directives separated
+ok 1 - landscape shares decoded rock channels and keeps preprocessor directives separated
+  ---
+  duration_ms: 2.291875
+  type: 'test'
+  ...
+# Subtest: decoded texture lists exclude failed and pending channels and remain per surface
+ok 2 - decoded texture lists exclude failed and pending channels and remain per surface
+  ---
+  duration_ms: 0.891583
+  type: 'test'
+  ...
+# Subtest: ground remains on the original surface until all three channels load
+ok 3 - ground remains on the original surface until all three channels load
+  ---
+  duration_ms: 0.129791
+  type: 'test'
+  ...
+# Subtest: a missing channel keeps the fallback and settles the load status
+ok 4 - a missing channel keeps the fallback and settles the load status
+  ---
+  duration_ms: 0.163
+  type: 'test'
+  ...
+# Subtest: shore wetness toggle remains independent of channel loading and requests no textures
+ok 5 - shore wetness toggle remains independent of channel loading and requests no textures
+  ---
+  duration_ms: 0.265958
+  type: 'test'
+  ...
+# Subtest: ground channels use local URLs, matching two metre tiles and appropriate colour spaces
+ok 6 - ground channels use local URLs, matching two metre tiles and appropriate colour spaces
+  ---
+  duration_ms: 0.271708
+  type: 'test'
+  ...
+# Subtest: bundled CC0 channel bytes agree with the provenance manifest
+ok 7 - bundled CC0 channel bytes agree with the provenance manifest
+  ---
+  duration_ms: 10.229792
+  type: 'test'
+  ...
+# Subtest: coastal sand waits for its own three channels while the grass can already render
+ok 8 - coastal sand waits for its own three channels while the grass can already render
+  ---
+  duration_ms: 0.520417
+  type: 'test'
+  ...
+# Subtest: grass or sand failure leaves the other surface and wetness available
+ok 9 - grass or sand failure leaves the other surface and wetness available
+  ---
+  duration_ms: 0.559792
+  type: 'test'
+  ...
+# Subtest: bundled sand channels agree with their official source hashes
+ok 10 - bundled sand channels agree with their official source hashes
+  ---
+  duration_ms: 7.170791
+  type: 'test'
+  ...
+# Subtest: four island surfaces distinguish warm dunes, woodland litter and exposed upland rock
+ok 11 - four island surfaces distinguish warm dunes, woodland litter and exposed upland rock
+  ---
+  duration_ms: 13.15475
+  type: 'test'
+  ...
+# Subtest: shore stones are deterministic shallow dressing and preserve resources, enemies and routes
+ok 12 - shore stones are deterministic shallow dressing and preserve resources, enemies and routes
+  ---
+  duration_ms: 94.794792
+  type: 'test'
+  ...
+# Subtest: decoded rock texture list excludes failed channels and does not reload
+ok 13 - decoded rock texture list excludes failed channels and does not reload
+  ---
+  duration_ms: 1.121042
+  type: 'test'
+  ...
+# Subtest: rock photo channels become visible together, with correct local sampling and no repeated loads
+ok 14 - rock photo channels become visible together, with correct local sampling and no repeated loads
+  ---
+  duration_ms: 0.567833
+  type: 'test'
+  ...
+# Subtest: missing rock channels preserve original colour, normal and roughness and settle readiness
+ok 15 - missing rock channels preserve original colour, normal and roughness and settle readiness
+  ---
+  duration_ms: 0.675417
+  type: 'test'
+  ...
+# Subtest: spherical UVs remain finite with whole longitude tiles and radius-scaled vertical density
+ok 16 - spherical UVs remain finite with whole longitude tiles and radius-scaled vertical density
+  ---
+  duration_ms: 13.113458
+  type: 'test'
+  ...
+# Subtest: bundled rock channels match the official metadata and saved SHA256 manifest
+ok 17 - bundled rock channels match the official metadata and saved SHA256 manifest
+  ---
+  duration_ms: 9.585334
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 174.708458

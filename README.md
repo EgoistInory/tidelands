@@ -10,13 +10,15 @@ python3 serve.py
 
 打开 http://127.0.0.1:4190 。需要支持 WebGL 2 的现代浏览器。不需要安装 npm 依赖，Three.js 0.180.0 在 vendor 中附带，许可证随包保留。ES 模块需要本地 HTTP 服务，不能双击 HTML 代替。
 
-最近已打包的本地检查点在 `dist/tidelands-m5-2026-10-14-resource-contact.zip`。保留手动镜头方向、优先已有避障安全侧，并让石料/晶石按与镜头一致的保守实体范围阻挡角色；大矿物可以从表面附近采集，耗尽后解除阻挡，旧档在矿物内部可正常向外走出。27项针对性、195项全量、4项打包测试通过；47运行文件校验通过。旧包已完成的普通q6旅程实际导入新包，原生按键证明石料阻挡、E从边缘采矿2→5、耗尽后穿过原位置，390刷新恢复同位置/库存/任务6，见 `docs/resource-contact-audit.json`。不重复首树或基础主线烟测；当前新包尚未重跑完整新手至结尾流程，最终冻结时统一验收。林地101.35度物理转镜已降到32.55度，仍属运动品质待办；整体环境、角色接触、试听和长期品质未完成，M5与完整3A未完成。
+当前本地包：`dist/tidelands-m5-2026-10-15-environment.zip`。四岛地表按海拔、坡度和水线分层，林地底色与高地岩质、浅滩暖沙区分；岸线增加4783处可走过的低矮卵石，夜间近景环境光提高。复用已有石料三通道，不增加贴图请求。198项全量测试、48运行文件/49包项校验通过；四岛昼夜、岸线与180帧运动及390尺寸实景已检查。新包同地址接续真实普通任务6进度、W移动、实际导出和390刷新恢复通过，详见 `docs/environment-progress-audit.json`。该批次不等于整体美术或M5完成，重复植被、遗迹占位、演员接触、镜头余量、试听和最终性能/设备验收仍待；最终冻结时统一补新包完整主路径。
+
+上一批资源接触检查点在 `dist/tidelands-m5-2026-10-14-resource-contact.zip`。保留手动镜头方向、优先已有避障安全侧，并让石料/晶石按与镜头一致的保守实体范围阻挡角色；大矿物可以从表面附近采集，耗尽后解除阻挡，旧档在矿物内部可正常向外走出。27项针对性、195项全量、4项打包测试通过；47运行文件校验通过。旧包已完成的普通q6旅程实际导入新包，原生按键证明石料阻挡、E从边缘采矿2→5、耗尽后穿过原位置，390刷新恢复同位置/库存/任务6，见 `docs/resource-contact-audit.json`。不重复首树或基础主线烟测；当前新包尚未重跑完整新手至结尾流程，最终冻结时统一验收。林地101.35度物理转镜已降到32.55度，仍属运动品质待办；整体环境、角色接触、试听和长期品质未完成，M5与完整3A未完成。
 
 验收更正：两个隔离页漏防自动启动标记导致双实例，现已修正；旧极早存档隔离诊断撤回，原独立包直接页面记录保留。修正后单实例极早存档重验通过、正式存档在这轮前后SHA不变；此前历史影响无法追溯，详见 `docs/harness-isolation-correction.json`。
 
 当前开发源码还增加低岸线起伏海浪层，与既有风声叠加、渐入内陆，并共享暂停/静音。112项测试、八组真实离线PCM和实际营地/海域接线验证通过，见 `docs/coastal-audio-review.json`；尚未试听或做完整声场品质验收。这批声音修改已进入coastal及最新state-reuse包，本地开发服务运行相同生产源码。
 
-用 `python3 tools/verify_local.py --name tidelands-m5-2026-10-14-resource-contact` 校验并单独解压当前包；`python3 tools/verify_resource_contact.py` 重放本次资源接触、普通进度迁移与证据审计。后续构建使用 `python3 tools/package_local.py --name tidelands-m5-next --stage 'M5 quality batch checkpoint'`，每次改源码换新包名；已有包只允许相同来源的完全一致重建，拒绝覆盖历史检查点。打包工具回归运行 `python3 tools/test_local_delivery.py`。四岛正常旅程和实际战斗已有十分钟有效帧调度/JS堆记录，见 `docs/cross-island-review.json`：含间歇输入与较多静止时间，不能代替持续运动或GPU品质验收；该采样在两处岛民对话修正之前完成，绑定自己的源码SHA，不能作为当前包完全一致的长时证明。
+用 `python3 tools/verify_local.py --name tidelands-m5-2026-10-15-environment` 校验并单独解压当前包；`python3 tools/verify_environment_progress.py` 核对本次环境批次、真实普通进度恢复与来源证据。旧资源/镜头审计继续绑定各自历史源码，不对新源码套用旧通过结论。后续构建使用 `python3 tools/package_local.py --name tidelands-m5-next --stage 'M5 quality batch checkpoint'`，每次改源码换新包名；已有包只允许相同来源的完全一致重建，拒绝覆盖历史检查点。打包工具回归运行 `python3 tools/test_local_delivery.py`。四岛正常旅程和实际战斗已有十分钟有效帧调度/JS堆记录，见 `docs/cross-island-review.json`：含间歇输入与较多静止时间，不能代替持续运动或GPU品质验收；该采样在两处岛民对话修正之前完成，绑定自己的源码SHA，不能作为当前包完全一致的长时证明。
 
 2026-10-07后续源码增加岛民近距交谈朝向和待机手臂轻动，以及攻击/采集从装备待机姿态进入和恢复的衔接；101项测试和桌面/窄屏12秒隔离循环通过，见 `docs/islander-response-review.json` 与 `docs/action-transition-review.json`。攻击结果统一由短时战斗提示显示，消除空挥时残留旧命中提示；桌面键盘/390窄屏攻击键已实测。上述早期包不含这些后续修改，完整动作品质与声音同步仍待验收。
 

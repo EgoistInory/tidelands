@@ -1,5 +1,5 @@
 import * as THREE from '../vendor/three.module.min.js';
-import {terrain,ISLANDS,LANDMARKS,randomGenerator,dayCycle,weatherAt} from './world.js';
+import {terrain,LANDMARKS,randomGenerator,dayCycle,weatherAt} from './world.js';
 import {isDepleted} from './game.js';
 import {unobstructedCamera,smoothCamera} from './camera.js';
 import {resourceHalfSize} from './resource-contact.js';
@@ -17,6 +17,7 @@ import {createMeadow,createFiberClump,updateMeadow,updateGroundCover,updateCampC
 import {createSky,updateSky} from './sky.js';
 import {createFlame,updateCampfire} from './campfire.js';
 import {createCrystalDeposit} from './crystal.js';
+import {landscapeSample,createShoreStones} from './landscape.js';
 
 const palette={bark:0x65513d,leaf:0x365a42,lightLeaf:0x68815b,rock:0x858d86,sand:0xd5c8a7,cloth:0xb86636,cream:0xeee1bd};
 const materials=new Map();
@@ -156,23 +157,17 @@ export class WorldView{
   }
   createTerrain(){
     const geometry=new THREE.PlaneGeometry(800,800,320,320);geometry.rotateX(-Math.PI/2);const positions=geometry.attributes.position;
-    const colors=[];
+    const colors=[],layers=[];
     for(let i=0;i<positions.count;i++){
       const x=positions.getX(i),z=positions.getZ(i),y=terrain(x,z);positions.setY(i,y);
-      const island=[...ISLANDS].sort((a,b)=>Math.hypot(x-a.x,z-a.z)/a.r-Math.hypot(x-b.x,z-b.z)/b.r)[0];
-      const slope=Math.hypot(terrain(x+1,z)-terrain(x-1,z),terrain(x,z+1)-terrain(x,z-1));
-      const patch=(Math.sin(x*.13+Math.cos(z*.08)*2)+Math.cos(z*.17+x*.035))*.5;
-      const grass=new THREE.Color([0x647259,0x476751,0x7d8476,0x8c8965][ISLANDS.indexOf(island)]);
-      grass.lerp(new THREE.Color(0x96866b),Math.max(0,patch)*.32);
-      const c=grass.lerp(new THREE.Color(palette.sand),Math.max(0,Math.min(1,(3.8-y)/2.8)));
-      c.lerp(new THREE.Color(0x8b8b80),Math.max(0,Math.min(.8,(slope-.6)*.65+(y>30?.3:0))));
-      c.multiplyScalar(.92+Math.sin(x*.83+z*.71)*.065);colors.push(c.r,c.g,c.b);
+      const sample=landscapeSample(x,z);colors.push(...sample.color.toArray());layers.push(sample.rock,sample.litter);
     }
     geometry.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));geometry.computeVertexNormals();
+    geometry.setAttribute('groundLayers',new THREE.Float32BufferAttribute(layers,2));
     const random=randomGenerator(835),pixels=new Uint8Array(256*256*4);
     for(let i=0;i<pixels.length;i+=4){const grain=185+Math.floor(random()*70);pixels[i]=pixels[i+1]=pixels[i+2]=grain;pixels[i+3]=255;}
     const detail=new THREE.DataTexture(pixels,256,256);detail.wrapS=detail.wrapT=THREE.RepeatWrapping;detail.repeat.set(80,80);detail.magFilter=THREE.LinearFilter;detail.minFilter=THREE.LinearMipmapLinearFilter;detail.generateMipmaps=true;detail.needsUpdate=true;
-    this.groundSurface=createGroundSurface(detail,{anisotropy:this.renderer.capabilities.getMaxAnisotropy()});
+    this.groundSurface=createGroundSurface(detail,{anisotropy:this.renderer.capabilities.getMaxAnisotropy(),landscape:true,rockSurface:this.rockSurface});
     const ground=new THREE.Mesh(geometry,this.groundSurface);ground.receiveShadow=true;this.scene.add(ground);
   }
   createWater(){
@@ -242,7 +237,7 @@ export class WorldView{
     this.islanders=[];
     for(const o of LANDMARKS){const g=landmarkModel(o);g.position.set(o.x,terrain(o.x,o.z),o.z);if(o.type==='npc'){animateCharacter(g,{x:o.x,z:o.z,yaw:0,time:0,attackAt:-100,selected:'hand'},0,terrain);this.islanders.push({object:o,model:g});}this.scene.add(g);if(o.type==='lighthouse')this.lighthouse=g;}
     const random=randomGenerator(4321);
-    this.meadow=createMeadow(random,this.world.objects);this.scene.add(...this.meadow);
+    this.meadow=[...createMeadow(random,this.world.objects),...createShoreStones()];this.scene.add(...this.meadow);
     this.sky=createSky();this.scene.add(this.sky);
   }
   updateIslanders(state,near,dt){
@@ -291,7 +286,7 @@ export class WorldView{
   resize(){const w=this.canvas.clientWidth,h=this.canvas.clientHeight;this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.updateProjectionMatrix();}
   updateAtmosphere(time,weather=weatherAt(time)){
     const {daylight}=dayCycle(time);
-    this.ambient.intensity=(.372+Math.sqrt((daylight-.04)/.96)*1.728)*weather.skylight;
+    this.ambient.intensity=(.6+Math.sqrt((daylight-.04)/.96)*1.5)*weather.skylight;
     this.sun.intensity=daylight*2.6*weather.sunlight;
     this.scene.fog.near=weather.fogNear;this.scene.fog.far=weather.fogFar;
     updateSky(this.sky,time,this.camera,this.scene.fog,weather);

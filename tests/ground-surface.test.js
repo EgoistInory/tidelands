@@ -4,6 +4,21 @@ import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import * as THREE from '../vendor/three.module.min.js';
 import {createGroundSurface} from '../src/ground-surface.js';
+import {createRockSurface} from '../src/rock-surface.js';
+
+test('landscape shares decoded rock channels and keeps preprocessor directives separated',async()=>{
+  const requests=[],loader={load(url,done,_p,fail){const texture=new THREE.Texture();requests.push({url,done,fail,texture});return texture;}};
+  const rock=createRockSurface({loader}),material=createGroundSurface(new THREE.Texture(),{loader,landscape:true,rockSurface:rock});
+  const shader={uniforms:{},vertexShader:'#include <begin_vertex>',fragmentShader:'#include <map_fragment>\n#include <color_fragment>\n#include <normal_fragment_maps>\n#include <roughnessmap_fragment>'};
+  material.onBeforeCompile(shader);assert.equal(requests.length,9,'rock maps reused, not loaded a second time');
+  assert.equal(shader.uniforms.groundRockAlbedo.value,requests[0].texture);assert.equal(shader.uniforms.groundRockNormal.value,rock.normalMap);
+  assert.equal(shader.uniforms.groundRockRoughness.value,rock.roughnessMap);assert.equal(shader.uniforms.groundRockReady,rock.userData.rock.ready);
+  assert.equal(shader.uniforms.groundRockReady.value,0);requests.forEach(r=>r.done());await rock.userData.rock.loaded;
+  assert.equal(shader.uniforms.groundRockReady.value,1);
+  for(const source of [shader.vertexShader,shader.fragmentShader])assert.ok(!/#endif\S/.test(source),'preprocessor line must not swallow the following expression');
+  const failed=createRockSurface({loader});const warning=console.warn;console.warn=()=>{};
+  try{requests[9].fail();requests[10].done();requests[11].done();await failed.userData.rock.loaded;assert.equal(failed.userData.rock.ready.value,0);}finally{console.warn=warning;}
+});
 
 function fixture(){
   const requests=[],detail=new THREE.DataTexture(new Uint8Array([220,220,220,255]),1,1);

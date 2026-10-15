@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "kind": "island-surface-and-shoreline-batch-progress",
+  "localDeliveryVerified": true,
+  "ordinaryCompletedStatePreserved": true,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "newPackageFullMainPathReplayed": false,
+  "package": "tidelands-m5-2026-10-15-environment.zip",
+  "packageSha256": "498f0cca4e62508468c42757d438a6b78282115624fff53be26954ec3394a405",
+  "runtimeFiles": 48,
+  "unitTests": {
+    "focused": 17,
+    "full": 198
+  },
+  "imagesActuallyViewedSha256": {
+    "docs/environment-final-amber.png": "f2259864dfdaa66afbf735b1f2cd2bdf7fae6151281a9a489f1570c21677d0a4",
+    "docs/environment-final-coast.png": "91c1c504c09e1830c7a7aa51dafd5e82c6738f4426fac742f54a64584b1e91ee",
+    "docs/environment-final-forest.png": "eb2e345430fe4b4748663bb880585a51ebdb298b1d1e0a96975d2242073e103b",
+    "docs/environment-final-highland.png": "2cdd9eb5e2919d24dd5dbceee3e87357f991ca7b77485f5c9edb286e8af3c259",
+    "docs/environment-final-mobile-highland.png": "5ceef61a6010fd07c02f9125a0d7a7fa7a28900b0e8a453b833a88aa264e9b34",
+    "docs/environment-final-mobile-shore.png": "fccf84b37e0f76427140b776a40618e1980e13e671f6608d1c2bfb23ec503505",
+    "docs/environment-final-motion-forest.png": "9f7adb54cfca6fa3befc741e81abddbfa1d15222447aed4f67c3ff6b8db97c2c",
+    "docs/environment-final-motion-shore.png": "36e7f4d324a516e583f18456b00a4fb65b909a9f416376a86becec4856be6913",
+    "docs/environment-final-night-camp.png": "ea02b44f5978adc809a6f4c19f54d84dddb8055186906479534a61887f83f527",
+    "docs/environment-final-night-coast.png": "27b4d6d0980519c021271b0e9b79b5e878b414e63f8748b6c68ac7cd78259634",
+    "docs/environment-final-night-forest.png": "0fa343bbe5c8d8e99f5d29080e82461ab76e1765fee7390767f9564317ccc3e6",
+    "docs/environment-final-night-highland.png": "2ea916a038c814bf2b273c38c0913aaecef49adcd7a99c9698e24e2282819e08",
+    "docs/environment-final-night-shoal.png": "966799ca832c63c1122307935f7a78a59330607b5b93745d7b8b88a049b23e8a",
+    "docs/environment-final-shoal.png": "b747c8790f5bc56e06e6252eb7af36c6749cfb392873f1c3e861090e7ac2cadf",
+    "docs/environment-final-shore.png": "2e582981f1d347fd58df1e2c99b4bc22a3a958161b2809726457379cf6bac226",
+    "docs/environment-package-mobile.png": "c0737de2bf162cac03b6a04adc15adeed19e8581d5db3377529c0fdd8e8fb2b4",
+    "docs/environment-package-play.png": "452cf2b372bcfd856bbf38848f142f7163ee7fd94a6aaf1300d1e4153191b38f",
+    "docs/environment-package-restored.png": "4151a67d84a7c5f51b9595cd02794cdc9be9a5d5447438f3e31ea7e4e67803e0"
+  },
+  "sourceAndEvidenceSha256": {
+    "src/landscape.js": "dbdedc3b9b97f49bc5402ee5c9aed33d687c5f81366f87d62c5c669b47044699",
+    "src/scene.js": "cd445ec3b557c4fee12c6ff59d0fdc4747170316bf4d419cf14c7916ada33801",
+    "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+    "src/meadow.js": "027735713a4d963a7aee39688bc7b54c32d690f53df81c8986c1fde88e523a20",
+    "src/rock-surface.js": "ba43c2ab8ac270e4eb1048b1c62dbf9ddc887bdffecde8b932ae4afb8690d9fe",
+    "tests/landscape.test.js": "b27b9a42877405240da35277ad944ccc1a03affea62c338ca060b2cb14677e93",
+    "tests/ground-surface.test.js": "0c0c121daa6a9499dc9fda7b62593485dfc842c0223f28b37848b04be838eafd",
+    "tests/weather.test.js": "b120b2f900730b161032d07860a89aff4746e41b849a1c90afd65659dc8207ae",
+    "tests/environment-review.html": "ab63998d2d0843f90472b0c5cab30ea9a69037a02f92a793d77999821bcb273a",
+    "docs/environment-before-ui.json": "6ac1ef58bf25777dca6825b67cf7a2fd2595741e386f82729670ec1445b27af3",
+    "docs/environment-initial-ui.json": "0825f2a551175cdf3f5754247a8b264aa8f721f1b343e2c7521fbc42186a8b68",
+    "docs/environment-final-ui.json": "915e6a16e22ac90f631d94ab7c58bb79c4e521b79d5400499bd4cc828b5dda0d",
+    "docs/environment-package-ui.json": "ef3bdf2a88cb95f2cfbf40dc7ba5e5f473d5f05b6a5b5245f89fa0327e075902",
+    "docs/environment-normal-save.json": "4e99396f1228d5cbff11bada479a4b6f4f10a3cd7d4fbc54c612b75a47534914",
+    "docs/environment-focused.txt": "98c7464ba507bd3de387eaee691c19eddb631884207a862a67c2c46d7e94956b",
+    "docs/environment-full.txt": "131a22491a8421708f11cc4ec9902ea6b88d0c016f7340712002632146059794",
+    "docs/environment-red.txt": "48079a42c5c9615dd2a26788add35421862bf84d2c9c1c049dd6eeb2a43a94c5"
+  },
+  "finalSave": {
+    "path": "docs/environment-normal-save.json",
+    "bytes": 13495,
+    "sha256": "4e99396f1228d5cbff11bada479a4b6f4f10a3cd7d4fbc54c612b75a47534914",
+    "player": {
+      "x": -84.80716349367121,
+      "z": 93.38496293195533,
+      "hp": 100,
+      "stamina": 100,
+      "yaw": -2.991592653589793
+    },
+    "inventory": {
+      "wood": 4,
+      "stone": 5,
+      "fiber": 4,
+      "berry": 2,
+      "shell": 0,
+      "crystal": 0,
+      "axe": 1,
+      "sword": 0,
+      "meal": 0
+    },
+    "quest": 6
+  },
+  "limits": [
+    "Visual fixtures explicitly declare positions, camp and no enemies; no browser storage or runtime edits.",
+    "180-frame movement is scripted fixed-dt, not native input or performance evidence.",
+    "390x844 is browser viewport, not real device, touch or GPU evidence.",
+    "UI before pause may lag raw position by its 140ms refresh; final download matches post-reload visible coordinates.",
+    "Initial shader directive concatenation failed WebGL compilation and was repaired; final 15 fixture rows and ordinary package console are clear.",
+    "Resource geometry and save/game/camera rules are unchanged; residual orbit, actor overlap, repeated vegetation/placeholder ruin, listening and final long-run quality remain."
+  ]
+}
