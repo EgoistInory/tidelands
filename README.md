@@ -10,9 +10,11 @@ python3 serve.py
 
 打开 http://127.0.0.1:4190 。需要支持 WebGL 2 的现代浏览器。不需要安装 npm 依赖，Three.js 0.180.0 在 vendor 中附带，许可证随包保留。ES 模块需要本地 HTTP 服务，不能双击 HTML 代替。
 
-当前本地包：`dist/tidelands-m5-2026-10-16-enemy-windup.zip`。敌人先蓄力0.3秒，在动作冲击中段判定伤害；锁定方向与身体位置，可以退开或绕后闪避。面板暂停、画面中断、死亡和重载不会续打旧攻击。增加野猪/蟹两类预警声，并同步受击生命与HUD反馈。215全量/53针对性/4打包、49运行文件通过；原有普通q6档真实行走、蟹战斗受伤与转身击败2→3、奖励、实际下载和390刷新恢复已验证。见 `docs/enemy-windup-audit.json`。当前只是M5反馈批次；整体现代美术、自然动作/镜头、试听、持续长时/设备GPU和最终冻结主路径尚未全部验收。
+当前本地包：`dist/tidelands-m5-2026-10-16-island-spaces.zip`。四岛树冠比例/叶色和夜间侧光候选已与雾岬遗迹空间一起交付：纹理石拱、分层柱、残柱和刻纹石碑替换旧立柱；柱基/石碑实体阻挡、中央通道可通过，镜头避让保留拱下空间。复用已有石料贴图，2合并表面/2268三角形。221全量/29针对性/4打包、51运行文件验证；生产界面隔离位置原生S/E读碑、同普通q6档原生移动/实际下载/390恢复和新全画布GPU对照已通过，见 `docs/island-spaces-audit.json`。树种/密度、角色与营地自然度、镜头运动/试听和最终统一主路径仍待，M5及完整3A目标未完成。
 
-当前包另有600秒桌面/60秒390连续移动、战斗、营地/昼夜、JS堆及完整画布五阶段GPU计时。通过 `python3 tools/verify_quality_endurance.py` 核对；详见 `docs/QUALITY-ENDURANCE-REVIEW.md`。连续样本的诊断栏缩小了画布，GPU另用1920×1080/390×844全画布计时，真实设备/VRAM/试听与整体美术自然度仍未通过。普通q6存档不受隔离负载影响。
+上一批反馈包：`dist/tidelands-m5-2026-10-16-enemy-windup.zip`。敌人先蓄力0.3秒，在动作冲击中段判定伤害；锁定方向与身体位置，可以退开或绕后闪避。面板暂停、画面中断、死亡和重载不会续打旧攻击。增加野猪/蟹两类预警声，并同步受击生命与HUD反馈。215全量/53针对性/4打包、49运行文件通过；原有普通q6档真实行走、蟹战斗受伤与转身击败2→3、奖励、实际下载和390刷新恢复已验证。见 `docs/enemy-windup-audit.json`。当前只是M5反馈批次；整体现代美术、自然动作/镜头、试听、持续长时/设备GPU和最终冻结主路径尚未全部验收。
+
+前一c1a9反馈包另有600秒桌面/60秒390连续移动、战斗、营地/昼夜、JS堆及完整画布五阶段GPU计时。通过 `python3 tools/verify_quality_endurance.py` 核对；详见 `docs/QUALITY-ENDURANCE-REVIEW.md`。连续样本的诊断栏缩小了画布，GPU另用1920×1080/390×844全画布计时，真实设备/VRAM/试听与整体美术自然度仍未通过。普通q6存档不受隔离负载影响。
 
 上一批演员接触包：`dist/tidelands-m5-2026-10-15-actor-contact.zip`。人物/岛民/活着的生物按身体范围阻挡穿过，追击不再越过停止距离；近处旧重叠逐步分离，角色可走出旧档重叠位置。野猪较大的身体有近身攻击补偿，方向、伤害、奖励和冷却保持；清理野兽后才可在其位置建造。208全量/44针对性/4打包测试和49运行文件校验通过；旧包10回归中8项失败，新包普通q6原生按键抵住阿岚、正常交谈、真实下载和390刷新保持，见 `docs/actor-contact-audit.json`。保守身体范围不代表逐三角形或自然动作全部通过；敌人前摇与命中时序/声音、复杂角落导航和最终品质验收继续推进。
 
@@ -24,7 +26,7 @@ python3 serve.py
 
 当前开发源码还增加低岸线起伏海浪层，与既有风声叠加、渐入内陆，并共享暂停/静音。112项测试、八组真实离线PCM和实际营地/海域接线验证通过，见 `docs/coastal-audio-review.json`；尚未试听或做完整声场品质验收。这批声音修改已进入coastal及最新state-reuse包，本地开发服务运行相同生产源码。
 
-用 `python3 tools/verify_local.py --name tidelands-m5-2026-10-16-enemy-windup` 校验并单独解压当前包；`python3 tools/verify_enemy_windup.py` 核对本次前摇、反馈、真实普通战斗/恢复与来源证据。旧资源/镜头审计继续绑定各自历史源码，不对新源码套用旧通过结论。后续构建使用 `python3 tools/package_local.py --name tidelands-m5-next --stage 'M5 quality batch checkpoint'`，每次改源码换新包名；已有包只允许相同来源的完全一致重建，拒绝覆盖历史检查点。打包工具回归运行 `python3 tools/test_local_delivery.py`。四岛正常旅程和实际战斗已有十分钟有效帧调度/JS堆记录，见 `docs/cross-island-review.json`：含间歇输入与较多静止时间，不能代替持续运动或GPU品质验收；该采样在两处岛民对话修正之前完成，绑定自己的源码SHA，不能作为当前包完全一致的长时证明。
+用 `python3 tools/verify_local.py --name tidelands-m5-2026-10-16-island-spaces` 校验并单独解压当前包；`python3 tools/verify_island_spaces.py` 核对本次环境空间、隔离原生读碑、普通继续/恢复与来源证据。旧资源/镜头审计继续绑定各自历史源码，不对新源码套用旧通过结论。后续构建使用 `python3 tools/package_local.py --name tidelands-m5-next --stage 'M5 quality batch checkpoint'`，每次改源码换新包名；已有包只允许相同来源的完全一致重建，拒绝覆盖历史检查点。打包工具回归运行 `python3 tools/test_local_delivery.py`。四岛正常旅程和实际战斗已有十分钟有效帧调度/JS堆记录，见 `docs/cross-island-review.json`：含间歇输入与较多静止时间，不能代替持续运动或GPU品质验收；该采样在两处岛民对话修正之前完成，绑定自己的源码SHA，不能作为当前包完全一致的长时证明。
 
 2026-10-07后续源码增加岛民近距交谈朝向和待机手臂轻动，以及攻击/采集从装备待机姿态进入和恢复的衔接；101项测试和桌面/窄屏12秒隔离循环通过，见 `docs/islander-response-review.json` 与 `docs/action-transition-review.json`。攻击结果统一由短时战斗提示显示，消除空挥时残留旧命中提示；桌面键盘/390窄屏攻击键已实测。上述早期包不含这些后续修改，完整动作品质与声音同步仍待验收。
 

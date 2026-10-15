@@ -1,12 +1,12 @@
 import * as THREE from '../vendor/three.module.min.js';
 
 // Only direct, static children with privately owned geometries; joint groups stay intact.
-export function mergeStaticParts(group){
+export function mergeStaticParts(group,{attributes=['normal','position','uv']}={}){
   const buckets=new Map();
   for(const part of group.children){
     if(!part.isMesh||part.isSkinnedMesh||part.isInstancedMesh||Array.isArray(part.material)||part.children.length)continue;
     const names=Object.keys(part.geometry.attributes).sort();
-    if(names.join(',')!=='normal,position,uv')continue;
+    if(names.join(',')!==[...attributes].sort().join(','))continue;
     const key=`${part.material.uuid}:${part.castShadow}:${part.receiveShadow}:${part.visible}:${part.renderOrder}:${part.layers.mask}`;
     if(!buckets.has(key))buckets.set(key,[]);buckets.get(key).push(part);
   }
@@ -14,7 +14,7 @@ export function mergeStaticParts(group){
     if(parts.length<2)continue;
     const transformed=parts.map(part=>{part.updateMatrix();return part.geometry.clone().applyMatrix4(part.matrix);});
     const geometry=new THREE.BufferGeometry();
-    for(const name of ['position','normal','uv']){
+    for(const name of attributes){
       const size=transformed[0].attributes[name].itemSize;
       const values=new Float32Array(transformed.reduce((n,g)=>n+g.attributes[name].array.length,0));let offset=0;
       for(const g of transformed){values.set(g.attributes[name].array,offset);offset+=g.attributes[name].array.length;}

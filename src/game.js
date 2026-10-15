@@ -1,6 +1,7 @@
 import {SPAWN,LANDMARKS,terrain,regionAt,createWorld} from './world.js';
 import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_DURATION,GATHER_IMPACT,GATHER_RANGE,ENEMY_ATTACK_DURATION,ENEMY_ATTACK_IMPACT} from './action-timing.js';
 import {resourceReachDistance,resourceBlocksMove} from './resource-contact.js';
+import {ruinBlocksMove} from './ruin-layout.js';
 import {actorRadius,actorBlocksMove,targetReachPadding} from './actor-contact.js';
 export const ITEMS={wood:'木材',stone:'石料',fiber:'纤维',berry:'浆果',shell:'贝壳',crystal:'晶石',axe:'石斧',sword:'晶石剑',meal:'烤浆果'};
 const RESOURCE_ITEMS={tree:'wood',stone:'stone',fiber:'fiber',berry:'berry',shell:'shell',crystal:'crystal'};
@@ -36,7 +37,7 @@ export function canBuild(state,objects,key,x,z){
   if(Math.hypot(x-state.player.x,z-state.player.z)>9)return '请靠近建造位置。';
   const h=terrain(x,z);if(h<1)return '不能建在水里或潮间带。';
   if(Math.abs(terrain(x+2,z)-terrain(x-2,z))+Math.abs(terrain(x,z+2)-terrain(x,z-2))>3)return '这里太陡，换一块平地吧。';
-  if(state.buildings.some(b=>Math.hypot(x-b.x,z-b.z)<6)||LANDMARKS.some(b=>Math.hypot(x-b.x,z-b.z)<7))return '与现有建筑或人物太近。';
+  if(state.buildings.some(b=>Math.hypot(x-b.x,z-b.z)<6)||LANDMARKS.some(b=>Math.hypot(x-b.x,z-b.z)<(b.type==='ruin'?9:7)))return '与现有建筑或人物太近。';
   if(state.enemies.some(e=>e.hp>0&&Math.hypot(x-e.x,z-e.z)<actorRadius(e)+2))return '附近有野兽，请先清理建造位置。';
   if(objects.some(o=>['tree','stone','crystal'].includes(o.type)&&!isDepleted(state,o)&&Math.hypot(x-o.x,z-o.z)<3))return '这里被树木或岩石占据。';
   return '';
@@ -105,7 +106,7 @@ function canActorMove(state,objects,from,to,mover){
   if(Math.abs(x)>390||Math.abs(z)>390||terrain(x,z)-terrain(from.x,from.z)>1.9)return false;
   if(objects.some(o=>!isDepleted(state,o)&&(o.type==='tree'?actorBlocksMove(from,to,o,radius,1.15):resourceBlocksMove(from,to,o,radius))))return false;
   if(state.buildings.some(o=>o.type!=='campfire'&&actorBlocksMove(from,to,o,radius,1.65)))return false;
-  if(LANDMARKS.some(o=>o.type==='npc'?actorBlocksMove(from,to,o,radius):['cottage','lighthouse'].includes(o.type)&&actorBlocksMove(from,to,o,radius,o.type==='cottage'?3.65:2.65)))return false;
+  if(LANDMARKS.some(o=>o.type==='ruin'?ruinBlocksMove(from,to,o,radius):o.type==='npc'?actorBlocksMove(from,to,o,radius):['cottage','lighthouse'].includes(o.type)&&actorBlocksMove(from,to,o,radius,o.type==='cottage'?3.65:2.65)))return false;
   if(mover!==state.player&&actorBlocksMove(from,to,state.player,radius))return false;
   return !state.enemies.some(o=>o!==mover&&o.hp>0&&actorBlocksMove(from,to,o,radius));
 }

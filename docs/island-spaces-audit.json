@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "archive": "tidelands-m5-2026-10-16-island-spaces.zip",
+  "archiveSha256": "7dd57eb6ff17462948d245e0f5cef000472cafa81b0c648726973b31b0f70dfb",
+  "runtimeFiles": 51,
+  "fullTests": 221,
+  "focusedTests": 29,
+  "historicalBaselineFailures": 3,
+  "currentImagesReviewed": [
+    "docs/ruin-space-day.png",
+    "docs/ruin-space-night.png",
+    "docs/ruin-space-support.png",
+    "docs/ruin-space-opening.png",
+    "docs/ruin-space-mobile.png",
+    "docs/ruin-space-native.png",
+    "docs/island-spaces-normal.png",
+    "docs/island-spaces-normal-mobile.png"
+  ],
+  "evidenceSha256": {
+    "docs/ruin-space-render.json": "d59fcec027e60e7e68401ba3aa35532142bca962676b461ed4929e96151fdb22",
+    "docs/ruin-space-native.json": "3d9f31e2faca0d2299f1d1fbb7a708d82b0d943d05dc709b15334e801c70fc80",
+    "docs/island-spaces-normal-ui.json": "ca731294fadb316b93061bdfd31fa73917f6f83f9ef82a8f47dc30eb72d2c32f",
+    "docs/island-spaces-normal-save.json": "e750698e0f888933e089bf8b0e76ebd9890c36d9bd8fcc1b3f5188f80709439c",
+    "docs/island-spaces-gpu-desktop.json": "4e4ec5291a7be2b5d0cac829ff783dedbf3a608d9cd5a3aff8691ee72546ff3b",
+    "docs/island-spaces-gpu-mobile.json": "870ac778dd3854ba35b2b7feeafb5cd8b15a5abae2c9116ea4e8d1c1f46fe687",
+    "docs/ruin-space-day.png": "8f0672d04bae1f478068c1fb3644c478c02d5850955229ce8777707f529ec92d",
+    "docs/ruin-space-night.png": "fe199a2b318eda478ec5e5221880cad567b6592f874e6433f3cd3710b96463bf",
+    "docs/ruin-space-support.png": "3eb009b8bc0c85a916e646a3579a7c9d1fc2c1bee88c1a4b836a2312015f2551",
+    "docs/ruin-space-opening.png": "77b3fffd3f52a50114df821db3f5cda7b8ecd017b0d9c222c5c8c93272342ef4",
+    "docs/ruin-space-mobile.png": "fa56360f767ceb34249a6ce1f1711029ecc7f958eaa5e5920af97305f530fd83",
+    "docs/ruin-space-native.png": "65d209f60526384e0490591f9a5e1bc61dda5489bbc68391dd0ffa2772ed70c2",
+    "docs/island-spaces-normal.png": "53aad2f365deb25c6754eabe1f598ca78f6c67cdf7dc8d999ae4eddc0c789551",
+    "docs/island-spaces-normal-mobile.png": "cd8b275bf81472ac0cbc744e4b8b3e28375abe533ce6eb6aa7f6aa9a35668336",
+    "docs/ruin-space-focused.txt": "7533135d5e5cec95c39d24b47307f79942b8dbdc68a9aa9b634e0325328774f6",
+    "docs/ruin-space-full.txt": "88c3354b72fcb96f9606cca284455b1dbacfdad8a22c2d38508c5b3265486c26",
+    "docs/ruin-space-baseline.txt": "c5a30673feed75df5f3f3c42de2cc788ecf249ade3687500a0e1229d601ec583",
+    "docs/ruin-space-pack-tests.txt": "8d379d39725f95239b0a97dc648a411bfb0be3005348ec44b86d6f415248bf14"
+  },
+  "ordinarySaveSha256": "e750698e0f888933e089bf8b0e76ebd9890c36d9bd8fcc1b3f5188f80709439c",
+  "currentFullCanvasGpuP95Ms": {
+    "desktop": {
+      "shore": 13.809,
+      "forest-combat": 13.9871,
+      "highland": 10.2246,
+      "amber-swim": 15.3183,
+      "night-camp": 14.5456
+    },
+    "mobile": {
+      "shore": 6.2744,
+      "forest-combat": 5.8405,
+      "highland": 4.7707,
+      "amber-swim": 6.8991,
+      "night-camp": 6.4095
+    }
+  },
+  "previousTreeNightCandidate": "docs/island-night-candidate.json (historical source762355e, ten prior reviewed images; not current ruin pictures)",
+  "ordinaryRuinVisit": false,
+  "nativeRuinFixtureInteraction": true,
+  "newFullMainPathReplayed": false,
+  "newEnduranceReplayed": false,
+  "audioListening": false,
+  "realMobileHardware": false,
+  "m5Complete": false,
+  "fullGoalComplete": false,
+  "limits": "Merged stone ruin access/body/camera, prior tree/night subgroup, native isolated stele and ordinary q6 move/download/390 restore. Full-canvas GPU queries are fixture samples without audio/HUD, not endurance/VRAM/physical mobile or complete 3A acceptance."
+}

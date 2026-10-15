@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: walking and long steps cannot cross an islander, but talking and walking around still work
+ok 1 - walking and long steps cannot cross an islander, but talking and walking around still work
+  ---
+  duration_ms: 11.822792
+  type: 'test'
+  ...
+# Subtest: chasing boar stops before touching the body and never overshoots on a large tick
+ok 2 - chasing boar stops before touching the body and never overshoots on a large tick
+  ---
+  duration_ms: 3.453583
+  type: 'test'
+  ...
+# Subtest: living creatures block player traversal; a defeated creature releases the path
+ok 3 - living creatures block player traversal; a defeated creature releases the path
+  ---
+  duration_ms: 1.035959
+  type: 'test'
+  ...
+# Subtest: legacy overlapping saves stay intact on restore and allow walking out
+ok 4 - legacy overlapping saves stay intact on restore and allow walking out
+  ---
+  duration_ms: 2.033917
+  type: 'test'
+  ...
+# Subtest: boar contact remains reachable with every owned weapon and keeps exact damage and rewards
+ok 5 - boar contact remains reachable with every owned weapon and keeps exact damage and rewards
+  ---
+  duration_ms: 3.928625
+  type: 'test'
+  ...
+# Subtest: enemy steps respect mineral and islander occupancy without mutating either
+ok 6 - enemy steps respect mineral and islander occupancy without mutating either
+  ---
+  duration_ms: 2.124791
+  type: 'test'
+  ...
+# Subtest: an old exact overlap separates gradually during simulation without teleporting the player
+ok 7 - an old exact overlap separates gradually during simulation without teleporting the player
+  ---
+  duration_ms: 2.33025
+  type: 'test'
+  ...
+# Subtest: larger body reach is frontal and cannot hit beyond contact allowance
+ok 8 - larger body reach is frontal and cannot hit beyond contact allowance
+  ---
+  duration_ms: 1.87175
+  type: 'test'
+  ...
+# Subtest: construction cannot spawn a solid building on a living creature or spend rejected materials
+ok 9 - construction cannot spawn a solid building on a living creature or spend rejected materials
+  ---
+  duration_ms: 1.237541
+  type: 'test'
+  ...
+# Subtest: nearby pre-existing creature overlaps separate without placing both bodies on the player
+ok 10 - nearby pre-existing creature overlaps separate without placing both bodies on the player
+  ---
+  duration_ms: 7.13725
+  type: 'test'
+  ...
+# Subtest: ruin supports block swept movement, while old overlaps still permit escape
+ok 11 - ruin supports block swept movement, while old overlaps still permit escape
+  ---
+  duration_ms: 8.906792
+  type: 'test'
+  ...
+# Subtest: the arch opening and stele approach stay traversable and readable
+ok 12 - the arch opening and stele approach stay traversable and readable
+  ---
+  duration_ms: 2.201875
+  type: 'test'
+  ...
+# Subtest: sculpted ruin keeps individual camera boxes, an open arch and a bounded merged budget
+ok 13 - sculpted ruin keeps individual camera boxes, an open arch and a bounded merged budget
+  ---
+  duration_ms: 31.921917
+  type: 'test'
+  ...
+# Subtest: construction leaves clearance around expanded ruin footings and does not spend rejected materials
+ok 14 - construction leaves clearance around expanded ruin footings and does not spend rejected materials
+  ---
+  duration_ms: 1.412834
+  type: 'test'
+  ...
+# Subtest: islanders respond to a nearby conversation target without moving or changing the save
+ok 15 - islanders respond to a nearby conversation target without moving or changing the save
+  ---
+  duration_ms: 592.791041
+  type: 'test'
+  ...
+# Subtest: tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+ok 16 - tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+  ---
+  duration_ms: 423.286167
+  type: 'test'
+  ...
+# Subtest: distant geometry is shared until the last owner leaves, while materials remain private
+ok 17 - distant geometry is shared until the last owner leaves, while materials remain private
+  ---
+  duration_ms: 18.113667
+  type: 'test'
+  ...
+# Subtest: resource bounds retain regenerating nodes after initial depletion
+ok 18 - resource bounds retain regenerating nodes after initial depletion
+  ---
+  duration_ms: 401.216083
+  type: 'test'
+  ...
+# Subtest: save replacement releases creatures and resets transient death/hit animation
+ok 19 - save replacement releases creatures and resets transient death/hit animation
+  ---
+  duration_ms: 14.768083
+  type: 'test'
+  ...
+# Subtest: boar: near geometry shares a lifetime while pose and hit materials remain private
+ok 20 - boar: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 13.502542
+  type: 'test'
+  ...
+# Subtest: crab: near geometry shares a lifetime while pose and hit materials remain private
+ok 21 - crab: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 26.563084
+  type: 'test'
+  ...
+# Subtest: same-type save replacement reuses creature models without carrying over animation or damage
+ok 22 - same-type save replacement reuses creature models without carrying over animation or damage
+  ---
+  duration_ms: 21.844917
+  type: 'test'
+  ...
+# Subtest: loading a different save updates buildings even when IDs are reused
+ok 23 - loading a different save updates buildings even when IDs are reused
+  ---
+  duration_ms: 1.491042
+  type: 'test'
+  ...
+# Subtest: campfire owns its unlit flame without changing shared building materials
+ok 24 - campfire owns its unlit flame without changing shared building materials
+  ---
+  duration_ms: 0.828125
+  type: 'test'
+  ...
+# Subtest: removing tents releases their geometry but retains immutable cloth for later camps
+ok 25 - removing tents releases their geometry but retains immutable cloth for later camps
+  ---
+  duration_ms: 0.901709
+  type: 'test'
+  ...
+# Subtest: repeated build previews release their geometry and private materials
+ok 26 - repeated build previews release their geometry and private materials
+  ---
+  duration_ms: 7.41475
+  type: 'test'
+  ...
+# Subtest: tent preview retains double-sided cloth and shares replacement material safely
+ok 27 - tent preview retains double-sided cloth and shares replacement material safely
+  ---
+  duration_ms: 0.318625
+  type: 'test'
+  ...
+# Subtest: organic tree keeps a narrow rooted trunk and finite nondegenerate branching geometry
+ok 28 - organic tree keeps a narrow rooted trunk and finite nondegenerate branching geometry
+  ---
+  duration_ms: 58.545125
+  type: 'test'
+  ...
+# Subtest: branching tree is deterministic and retains two shared instanced surfaces after merging
+ok 29 - branching tree is deterministic and retains two shared instanced surfaces after merging
+  ---
+  duration_ms: 29.868916
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1605.6905

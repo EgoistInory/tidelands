@@ -10,6 +10,7 @@ import {mergeStaticParts} from './merge-parts.js';
 import {cottageSurfaces,cottageRoof} from './cottage-surfaces.js';
 import {createBerryFoliage,barkSurface,updateFoliage} from './foliage.js';
 import {createTree} from './tree.js';
+import {createRuin} from './ruin.js';
 import {createLighthouse} from './lighthouse.js';
 import {createGroundSurface} from './ground-surface.js';
 import {createWeatheredRock,initializeRockSurface} from './rock.js';
@@ -114,7 +115,7 @@ export function buildingModel(type){
   }
   return g;
 }
-function landmarkModel(o){
+function landmarkModel(o,stoneSurface){
   const g=new THREE.Group();
   if(o.type==='npc')return person(o.color);
   if(o.type==='lighthouse'){
@@ -136,9 +137,7 @@ function landmarkModel(o){
     }
     for(const z of [-3.08,3.08])g.add(box(8.45,.2,.22,0x69543e,0,4.9,z));
     g.add(box(.85,2.7,.85,0x79776c,2.3,7.1,-.9),box(1.05,.18,1.05,0x53554f,2.3,8.48,-.9));
-  }else{
-    for(let i=0;i<6;i++){g.add(box(1.6,4+i%3,1.6,0x8d9787,Math.cos(i/3*Math.PI)*5,2,Math.sin(i/3*Math.PI)*5));}g.add(box(2.2,3,.6,0xb5b69b,0,1.5,0));
-  }
+  }else if(o.type==='ruin'){return createRuin(o,terrain,stoneSurface);}
   return g;
 }
 
@@ -241,7 +240,7 @@ export class WorldView{
       }
     }
     this.islanders=[];
-    for(const o of LANDMARKS){const g=landmarkModel(o);g.position.set(o.x,terrain(o.x,o.z),o.z);if(o.type==='npc'){animateCharacter(g,{x:o.x,z:o.z,yaw:0,time:0,attackAt:-100,selected:'hand'},0,terrain);this.islanders.push({object:o,model:g});}this.scene.add(g);if(o.type==='lighthouse')this.lighthouse=g;}
+    for(const o of LANDMARKS){const g=landmarkModel(o,this.rockSurface);g.position.set(o.x,terrain(o.x,o.z),o.z);if(o.type==='ruin')this.cameraObstacles.push({object:o,boxes:g.userData.cameraBoxes.map(box=>box.clone().translate(g.position))});if(o.type==='npc'){animateCharacter(g,{x:o.x,z:o.z,yaw:0,time:0,attackAt:-100,selected:'hand'},0,terrain);this.islanders.push({object:o,model:g});}this.scene.add(g);if(o.type==='lighthouse')this.lighthouse=g;}
     const random=randomGenerator(4321);
     this.meadow=[...createMeadow(random,this.world.objects),...createShoreStones()];this.scene.add(...this.meadow);
     this.sky=createSky();this.scene.add(this.sky);
