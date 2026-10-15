@@ -4,3 +4,5 @@ export const ATTACK_IMPACT=ATTACK_DURATION/2;
 export const GATHER_DURATION=.42;
 export const GATHER_IMPACT=GATHER_DURATION/2;
 export const GATHER_RANGE=3;
+export const ENEMY_ATTACK_DURATION=.6;
+export const ENEMY_ATTACK_IMPACT=.3;

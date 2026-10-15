@@ -1,10 +1,14 @@
 import {SPAWN,LANDMARKS,terrain,regionAt,createWorld} from './world.js';
-import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_DURATION,GATHER_IMPACT,GATHER_RANGE} from './action-timing.js';
+import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_DURATION,GATHER_IMPACT,GATHER_RANGE,ENEMY_ATTACK_DURATION,ENEMY_ATTACK_IMPACT} from './action-timing.js';
 import {resourceReachDistance,resourceBlocksMove} from './resource-contact.js';
 import {actorRadius,actorBlocksMove,targetReachPadding} from './actor-contact.js';
 export const ITEMS={wood:'木材',stone:'石料',fiber:'纤维',berry:'浆果',shell:'贝壳',crystal:'晶石',axe:'石斧',sword:'晶石剑',meal:'烤浆果'};
 const RESOURCE_ITEMS={tree:'wood',stone:'stone',fiber:'fiber',berry:'berry',shell:'shell',crystal:'crystal'};
 const MAX_BUILDINGS=500;
+// Windups belong to the current simulation, never to serialized save data.
+const enemyAttacks=new WeakMap();
+export function cancelEnemyAttacks(state){enemyAttacks.delete(state);}
+export function enemyAttackPose(state,enemy){return enemyAttacks.get(state)?.get(enemy.id)??null;}
 export const RECIPES={axe:{name:'石斧',cost:{wood:4,stone:3},description:'提高采集数量和攻击伤害'},meal:{name:'烤浆果',cost:{berry:3},description:'恢复 45 点生命'},sword:{name:'晶石剑',cost:{wood:4,stone:4,crystal:3},description:'伤害提升至 38'},campfire:{name:'营火',cost:{wood:5,stone:3},description:'靠近按 E 休息，恢复生命'},tent:{name:'帐篷',cost:{wood:8,fiber:5},description:'设置重生点，恢复体力'},workbench:{name:'工作台',cost:{wood:8,stone:5},description:'解锁晶石剑制作'}};
 export const QUESTS=[
   {title:'归航的灯火',text:'与海边的守灯人交谈',hint:'靠近人物，按 E 交谈'},
@@ -117,8 +121,20 @@ export function movePlayer(state,objects,dx,dz,dt,running=false){
 function stepEnemy(state,objects,enemy,dx,dz){
   for(const axis of ['x','z']){const next={x:enemy.x,z:enemy.z};next[axis]+=axis==='x'?dx:dz;if(terrain(next.x,next.z)>.3&&canActorMove(state,objects,enemy,next,enemy)){enemy.x=next.x;enemy.z=next.z;}}
 }
-export function tick(state,dt,running=false,feedback=null,objects=[]){if(feedback){feedback.damage=0;feedback.respawned=false;}state.time+=dt;if(!running)state.player.stamina=Math.min(100,state.player.stamina+dt*11);let message='';
-  for(const e of state.enemies){if(e.hp<=0)continue;
+export function tick(state,dt,running=false,feedback=null,objects=[]){if(feedback){feedback.damage=0;feedback.respawned=false;delete feedback.enemyWindups;}state.time+=dt;if(!running)state.player.stamina=Math.min(100,state.player.stamina+dt*11);let message='';
+  let plans=enemyAttacks.get(state);if(!plans){plans=new Map();enemyAttacks.set(state,plans);}
+  for(const e of state.enemies){if(e.hp<=0){plans.delete(e.id);continue;}
+    let plan=plans.get(e.id);
+    if(plan){
+      const age=state.time-plan.at,dx=state.player.x-e.x,dz=state.player.z-e.z,distance=Math.hypot(dx,dz);
+      if(!plan.resolved&&age>=ENEMY_ATTACK_IMPACT){plan.resolved=true;
+        if(distance<2.9&&(distance<.01||(dx*Math.sin(plan.yaw)+dz*Math.cos(plan.yaw))/distance>=.35)&&state.time>=(state.protectedUntil||0)){
+          const damage=Math.min(state.player.hp,e.type==='boar'?12:7);state.player.hp-=damage;if(feedback)feedback.damage+=damage;message='受到攻击！空格反击，或拉开距离。';
+        }
+      }
+      if(age>=ENEMY_ATTACK_DURATION){plans.delete(e.id);plan=null;}
+    }
+    if(plan)continue;
     const speed=e.type==='boar'?4.2:2.5;let travel=speed*dt;
     if(Math.hypot(e.x-state.player.x,e.z-state.player.z)<25){
       let crowded=null,depth=0;
@@ -131,8 +147,8 @@ export function tick(state,dt,running=false,feedback=null,objects=[]){if(feedbac
     const dx=Math.sin(angle)*step,dz=Math.cos(angle)*step;
     stepEnemy(state,objects,e,dx,dz);
   }
-    if(distance<2.9&&state.time>=(state.protectedUntil||0)&&state.time-(e.attackAt||0)>1.3){const damage=Math.min(state.player.hp,e.type==='boar'?12:7);state.player.hp-=damage;if(feedback)feedback.damage+=damage;e.attackAt=state.time;message='受到攻击！空格反击，或拉开距离。';}}
-  if(state.player.hp<=0){if(feedback)feedback.respawned=true;Object.assign(state.player,state.respawn,{hp:100,stamina:100});state.protectedUntil=state.time+8;message='你在营地醒来。背包已保留，获得 8 秒保护，趁现在重新出发吧。';}
+    if(distance<2.9&&state.time>=(state.protectedUntil||0)&&state.time-(e.attackAt||0)>1.3){e.attackAt=state.time;plans.set(e.id,{at:state.time,yaw:Math.atan2(state.player.x-e.x,state.player.z-e.z),resolved:false});if(feedback)(feedback.enemyWindups??=[]).push({id:e.id,type:e.type});}}
+  if(state.player.hp<=0){if(feedback)feedback.respawned=true;Object.assign(state.player,state.respawn,{hp:100,stamina:100});state.protectedUntil=state.time+8;cancelEnemyAttacks(state);message='你在营地醒来。背包已保留，获得 8 秒保护，趁现在重新出发吧。';}
   return message;
 }
 export function nearest(state,objects){const options=[...LANDMARKS,...state.buildings,...objects.filter(o=>!isDepleted(state,o))];let best=null,d=7;for(const o of options){const dist=RESOURCE_ITEMS[o.type]?resourceReachDistance(state.player,o):Math.hypot(o.x-state.player.x,o.z-state.player.z);if(RESOURCE_ITEMS[o.type]&&dist>=GATHER_RANGE)continue;if(dist<d){d=dist;best=o;}}return best;}

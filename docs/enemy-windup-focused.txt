@@ -1,0 +1,328 @@
+TAP version 13
+# Subtest: mute prevents initialization and pause fades master to silence
+ok 1 - mute prevents initialization and pause fades master to silence
+  ---
+  duration_ms: 2.477458
+  type: 'test'
+  ...
+# Subtest: effects are bounded and disconnect on completion; footsteps follow distance
+ok 2 - effects are bounded and disconnect on completion; footsteps follow distance
+  ---
+  duration_ms: 0.748958
+  type: 'test'
+  ...
+# Subtest: partial initialization and resume failures release context and allow a retry
+ok 3 - partial initialization and resume failures release context and allow a retry
+  ---
+  duration_ms: 2.90775
+  type: 'test'
+  ...
+# Subtest: menu success cues play while world is paused, and mute silences both channels
+ok 4 - menu success cues play while world is paused, and mute silences both channels
+  ---
+  duration_ms: 0.348625
+  type: 'test'
+  ...
+# Subtest: busy physical actions leave room for quest, crafting and food confirmation cues
+ok 5 - busy physical actions leave room for quest, crafting and food confirmation cues
+  ---
+  duration_ms: 0.529833
+  type: 'test'
+  ...
+# Subtest: ambient noise loops without a sample discontinuity or DC offset
+ok 6 - ambient noise loops without a sample discontinuity or DC offset
+  ---
+  duration_ms: 1.633375
+  type: 'test'
+  ...
+# Subtest: physical actions vary noise slices without truncating tails or allocating new buffers
+ok 7 - physical actions vary noise slices without truncating tails or allocating new buffers
+  ---
+  duration_ms: 0.797
+  type: 'test'
+  ...
+# Subtest: distance fallback uses walking spacing, coast selects sand, swimming keeps splash spacing
+ok 8 - distance fallback uses walking spacing, coast selects sand, swimming keeps splash spacing
+  ---
+  duration_ms: 0.258667
+  type: 'test'
+  ...
+# Subtest: land audio follows actual rendered ankle touchdowns at walking and running speeds
+ok 9 - land audio follows actual rendered ankle touchdowns at walking and running speeds
+  ---
+  duration_ms: 149.136291
+  type: 'test'
+  ...
+# Subtest: contact counters suppress initial, replayed, paused and teleport steps while idle landings can sound
+ok 10 - contact counters suppress initial, replayed, paused and teleport steps while idle landings can sound
+  ---
+  duration_ms: 0.45275
+  type: 'test'
+  ...
+# Subtest: coastal surf fades through the shore elevation band without consuming effect voices
+ok 11 - coastal surf fades through the shore elevation band without consuming effect voices
+  ---
+  duration_ms: 0.439084
+  type: 'test'
+  ...
+# Subtest: surf shares world mute/pause and releases all persistent nodes on disposal
+ok 12 - surf shares world mute/pause and releases all persistent nodes on disposal
+  ---
+  duration_ms: 0.172917
+  type: 'test'
+  ...
+# Subtest: ecology changes with rendered daylight and island habitat, fading out at sea
+ok 13 - ecology changes with rendered daylight and island habitat, fading out at sea
+  ---
+  duration_ms: 0.177209
+  type: 'test'
+  ...
+# Subtest: ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices
+ok 14 - ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices
+  ---
+  duration_ms: 18.155292
+  type: 'test'
+  ...
+# Subtest: ecology shares world mute/pause and releases nodes on normal or failed initialization
+ok 15 - ecology shares world mute/pause and releases nodes on normal or failed initialization
+  ---
+  duration_ms: 0.490625
+  type: 'test'
+  ...
+# Subtest: enemy warnings distinguish body types and reuse bounded, pausable local noise
+ok 16 - enemy warnings distinguish body types and reuse bounded, pausable local noise
+  ---
+  duration_ms: 0.350417
+  type: 'test'
+  ...
+# Subtest: crab has eight walking legs and its articulated pincers close during a strike
+ok 17 - crab has eight walking legs and its articulated pincers close during a strike
+  ---
+  duration_ms: 49.712041
+  type: 'test'
+  ...
+# Subtest: boar: sculpted surfaces stay finite and retain the same distant silhouette
+ok 18 - boar: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 19.913042
+  type: 'test'
+  ...
+# Subtest: crab: sculpted surfaces stay finite and retain the same distant silhouette
+ok 19 - crab: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 20.32975
+  type: 'test'
+  ...
+# Subtest: boar: distance gait, bounded turn, hit isolation and death recovery
+ok 20 - boar: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 18.388667
+  type: 'test'
+  ...
+# Subtest: crab: distance gait, bounded turn, hit isolation and death recovery
+ok 21 - crab: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 38.61575
+  type: 'test'
+  ...
+# Subtest: boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 22 - boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 6.008375
+  type: 'test'
+  ...
+# Subtest: crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 23 - crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 8.2095
+  type: 'test'
+  ...
+# Subtest: enemy shows windup first and applies exactly one hit at the rendered impact time
+ok 24 - enemy shows windup first and applies exactly one hit at the rendered impact time
+  ---
+  duration_ms: 7.955083
+  type: 'test'
+  ...
+# Subtest: leaving range or circling behind the committed direction makes the attack miss
+ok 25 - leaving range or circling behind the committed direction makes the attack miss
+  ---
+  duration_ms: 6.591666
+  type: 'test'
+  ...
+# Subtest: defeated enemies cannot finish their pending windup
+ok 26 - defeated enemies cannot finish their pending windup
+  ---
+  duration_ms: 1.145375
+  type: 'test'
+  ...
+# Subtest: pause cancellation and save restoration do not resume a stale enemy strike
+ok 27 - pause cancellation and save restoration do not resume a stale enemy strike
+  ---
+  duration_ms: 2.952708
+  type: 'test'
+  ...
+# Subtest: respawn protection prevents even starting a windup until it has expired
+ok 28 - respawn protection prevents even starting a windup until it has expired
+  ---
+  duration_ms: 1.978375
+  type: 'test'
+  ...
+# Subtest: 30, 60 and 144 fps deliver the same single damage event per attack
+ok 29 - 30, 60 and 144 fps deliver the same single damage event per attack
+  ---
+  duration_ms: 6.656459
+  type: 'test'
+  ...
+# Subtest: starter clearing provides enough materials for the first tool without waiting for respawn
+ok 30 - starter clearing provides enough materials for the first tool without waiting for respawn
+  ---
+  duration_ms: 5.373667
+  type: 'test'
+  ...
+# Subtest: day labels and lighting share a continuous repeating day cycle
+ok 31 - day labels and lighting share a continuous repeating day cycle
+  ---
+  duration_ms: 0.539875
+  type: 'test'
+  ...
+# Subtest: deterministic, populated world with safe start and diverse regions
+ok 32 - deterministic, populated world with safe start and diverse regions
+  ---
+  duration_ms: 3.598167
+  type: 'test'
+  ...
+# Subtest: wood, mineral and food nodes deplete and recover without duplicate rewards
+ok 33 - wood, mineral and food nodes deplete and recover without duplicate rewards
+  ---
+  duration_ms: 3.265958
+  type: 'test'
+  ...
+# Subtest: craft consumes exact materials, never negative or repeated unique tools
+ok 34 - craft consumes exact materials, never negative or repeated unique tools
+  ---
+  duration_ms: 1.201709
+  type: 'test'
+  ...
+# Subtest: building location checks, material use, persistence and overlap
+ok 35 - building location checks, material use, persistence and overlap
+  ---
+  duration_ms: 2.405208
+  type: 'test'
+  ...
+# Subtest: movement normalizes diagonal speed, respects trees and bounds
+ok 36 - movement normalizes diagonal speed, respects trees and bounds
+  ---
+  duration_ms: 2.320792
+  type: 'test'
+  ...
+# Subtest: attack cooldown and kill rewards happen only once
+ok 37 - attack cooldown and kill rewards happen only once
+  ---
+  duration_ms: 3.23075
+  type: 'test'
+  ...
+# Subtest: food consumes only when healing; camp heals and defeat preserves inventory
+ok 38 - food consumes only when healing; camp heals and defeat preserves inventory
+  ---
+  duration_ms: 2.366
+  type: 'test'
+  ...
+# Subtest: entire six-step quest chain reaches conclusion with no repeat reward
+ok 39 - entire six-step quest chain reaches conclusion with no repeat reward
+  ---
+  duration_ms: 1.3695
+  type: 'test'
+  ...
+# Subtest: save roundtrip preserves all world changes
+ok 40 - save roundtrip preserves all world changes
+  ---
+  duration_ms: 3.796459
+  type: 'test'
+  ...
+# Subtest: invalid imports rejected without changing running state
+ok 41 - invalid imports rejected without changing running state
+  ---
+  duration_ms: 18.055417
+  type: 'test'
+  ...
+# Subtest: nearest target respects interaction distance
+ok 42 - nearest target respects interaction distance
+  ---
+  duration_ms: 1.087625
+  type: 'test'
+  ...
+# Subtest: respawn protection survives reload and expires without granting permanent immunity
+ok 43 - respawn protection survives reload and expires without granting permanent immunity
+  ---
+  duration_ms: 3.524166
+  type: 'test'
+  ...
+# Subtest: tick reports lethal damage before healing and clears feedback during protection
+ok 44 - tick reports lethal damage before healing and clears feedback during protection
+  ---
+  duration_ms: 1.512792
+  type: 'test'
+  ...
+# Subtest: damage follows equipped weapon instead of the strongest item in the bag
+ok 45 - damage follows equipped weapon instead of the strongest item in the bag
+  ---
+  duration_ms: 8.747333
+  type: 'test'
+  ...
+# Subtest: duplicate building IDs and malformed entries are rejected with actionable messages
+ok 46 - duplicate building IDs and malformed entries are rejected with actionable messages
+  ---
+  duration_ms: 5.289542
+  type: 'test'
+  ...
+# Subtest: enemy cooldowns cannot be frozen by malformed or future saved attack times
+ok 47 - enemy cooldowns cannot be frozen by malformed or future saved attack times
+  ---
+  duration_ms: 7.445958
+  type: 'test'
+  ...
+# Subtest: sprint exhaustion, swimming and rest preserve a recoverable stamina cycle
+ok 48 - sprint exhaustion, swimming and rest preserve a recoverable stamina cycle
+  ---
+  duration_ms: 1.431875
+  type: 'test'
+  ...
+# Subtest: crafted food consumes its ingredients once and never consumes food at full health
+ok 49 - crafted food consumes its ingredients once and never consumes food at full health
+  ---
+  duration_ms: 1.719375
+  type: 'test'
+  ...
+# Subtest: botanist dialogue matches quest prerequisites and a one-time gift
+ok 50 - botanist dialogue matches quest prerequisites and a one-time gift
+  ---
+  duration_ms: 0.601125
+  type: 'test'
+  ...
+# Subtest: all islanders acknowledge the lit lighthouse after completion without repeating gifts or objectives
+ok 51 - all islanders acknowledge the lit lighthouse after completion without repeating gifts or objectives
+  ---
+  duration_ms: 0.720333
+  type: 'test'
+  ...
+# Subtest: combat target ignores corpses and distant enemies without changing the save
+ok 52 - combat target ignores corpses and distant enemies without changing the save
+  ---
+  duration_ms: 1.015334
+  type: 'test'
+  ...
+# Subtest: combat target reflects actual weapon damage, cooldown and defeat
+ok 53 - combat target reflects actual weapon damage, cooldown and defeat
+  ---
+  duration_ms: 1.466583
+  type: 'test'
+  ...
+1..53
+# tests 53
+# suites 0
+# pass 53
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 248.4285

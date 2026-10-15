@@ -1,0 +1,146 @@
+TAP version 13
+# Subtest: enemy shows windup first and applies exactly one hit at the rendered impact time
+not ok 1 - enemy shows windup first and applies exactly one hit at the rendered impact time
+  ---
+  duration_ms: 5.025417
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/enemy-windup.test.js:6:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    88 !== 100
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 100
+  actual: 88
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/enemy-windup.test.js:7:78)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: leaving range or circling behind the committed direction makes the attack miss
+not ok 2 - leaving range or circling behind the committed direction makes the attack miss
+  ---
+  duration_ms: 1.334875
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/enemy-windup.test.js:13:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    88 !== 100
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 100
+  actual: 88
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/enemy-windup.test.js:16:29)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: defeated enemies cannot finish their pending windup
+not ok 3 - defeated enemies cannot finish their pending windup
+  ---
+  duration_ms: 1.160042
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/enemy-windup.test.js:19:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    88 !== 100
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 100
+  actual: 88
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/enemy-windup.test.js:20:75)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: pause cancellation and save restoration do not resume a stale enemy strike
+not ok 4 - pause cancellation and save restoration do not resume a stale enemy strike
+  ---
+  duration_ms: 2.439
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/enemy-windup.test.js:22:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'undefined'
+    - 'function'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'function'
+  actual: 'undefined'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/enemy-windup.test.js:24:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: respawn protection prevents even starting a windup until it has expired
+not ok 5 - respawn protection prevents even starting a windup until it has expired
+  ---
+  duration_ms: 0.8055
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/enemy-windup.test.js:28:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    88 !== 100
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 100
+  actual: 88
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/enemy-windup.test.js:30:27)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 30, 60 and 144 fps deliver the same single damage event per attack
+ok 6 - 30, 60 and 144 fps deliver the same single damage event per attack
+  ---
+  duration_ms: 3.970167
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 1
+# fail 5
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 66.238708

@@ -85,7 +85,7 @@ test('respawn protection survives reload and expires without granting permanent 
   const s=freshGame(),e=s.enemies[0];e.x=s.respawn.x;e.z=s.respawn.z;s.player.hp=0;
   tick(s,.01);assert.equal(s.player.hp,100);
   const loaded=restore(serialize(s));tick(loaded,1);assert.equal(loaded.player.hp,100);
-  tick(loaded,7.1);assert.ok(loaded.player.hp<100);
+  tick(loaded,7.1);assert.equal(loaded.player.hp,100);tick(loaded,.31);assert.ok(loaded.player.hp<100);
   s.protectedUntil=s.time+10000;assert.equal(restore(serialize(s)).protectedUntil,s.time+8);
   delete s.protectedUntil;assert.equal(restore(serialize(s)).protectedUntil,0);
 });
@@ -93,12 +93,13 @@ test('tick reports lethal damage before healing and clears feedback during prote
   const s=freshGame(),feedback={};s.enemies.forEach(e=>e.hp=0);
   const e=s.enemies[0];Object.assign(e,{type:'boar',hp:70,x:s.player.x,z:s.player.z,attackAt:0});
   s.player.hp=5;s.inventory.wood=11;
-  assert.match(tick(s,.01,false,feedback),/营地醒来/);
+  tick(s,.01,false,feedback);assert.equal(s.player.hp,5);
+  assert.match(tick(s,.31,false,feedback),/营地醒来/);
   assert.deepEqual(feedback,{damage:5,respawned:true});assert.equal(s.player.hp,100);assert.equal(s.inventory.wood,11);
   assert.equal(Object.hasOwn(s,'damage'),false);assert.equal(Object.hasOwn(s,'respawned'),false);
   tick(s,.01,false,feedback);assert.deepEqual(feedback,{damage:0,respawned:false});
   s.protectedUntil=0;e.attackAt=0;e.x=s.player.x;e.z=s.player.z;
-  tick(s,.01,false,feedback);assert.deepEqual(feedback,{damage:12,respawned:false});assert.equal(s.player.hp,88);
+  tick(s,.01,false,feedback);assert.equal(s.player.hp,100);tick(s,.31,false,feedback);assert.deepEqual(feedback,{damage:12,respawned:false});assert.equal(s.player.hp,88);
 });
 test('damage follows equipped weapon instead of the strongest item in the bag',()=>{
   for(const [selected,damage]of [['hand',12],['axe',23],['sword',38]]){
@@ -124,7 +125,7 @@ test('enemy cooldowns cannot be frozen by malformed or future saved attack times
     Object.assign(s.enemies[0],{x:s.player.x+1,z:s.player.z,hp:40,type:'crab',attackAt:bad});
     const restored=restore(serialize(s));assert.ok(Number.isFinite(restored.enemies[0].attackAt));
     assert.ok(restored.enemies[0].attackAt<=restored.time);
-    tick(restored,1.31);assert.equal(restored.player.hp,93);
+    tick(restored,1.31);assert.equal(restored.player.hp,100);tick(restored,.31);assert.equal(restored.player.hp,93);
   }
   const s=freshGame();s.enemies[0].attackAt=s.time-.5;
   assert.equal(restore(serialize(s)).enemies[0].attackAt,s.time-.5);

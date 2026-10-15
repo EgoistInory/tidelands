@@ -2,6 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import * as THREE from '../vendor/three.module.min.js';
 import {createCreature,animateCreature} from '../src/creature.js';
+import {ENEMY_ATTACK_IMPACT} from '../src/action-timing.js';
 
 test('crab has eight walking legs and its articulated pincers close during a strike',()=>{
   const crab=createCreature('crab'),u=crab.userData;
@@ -17,7 +18,7 @@ test('crab has eight walking legs and its articulated pincers close during a str
   const enemy={x:0,z:0,hp:70,attackAt:-100};
   animateCreature(crab,enemy,10,1/60,0,{x:0,z:10});crab.updateMatrixWorld(true);
   const open=tips();assert.ok(open.every(gap=>gap>.18));
-  animateCreature(crab,{...enemy,attackAt:10},10.175,1/60,0,{x:0,z:10});crab.updateMatrixWorld(true);
+  animateCreature(crab,{...enemy,attackAt:10},10+ENEMY_ATTACK_IMPACT,1/60,0,{x:0,z:10});crab.updateMatrixWorld(true);
   const closed=tips();assert.ok(closed.every((gap,i)=>gap<open[i]*.25));
   animateCreature(crab,enemy,11,1/60,0,{x:0,z:10});crab.updateMatrixWorld(true);
   assert.ok(tips().every((gap,i)=>Math.abs(gap-open[i])<1e-6));

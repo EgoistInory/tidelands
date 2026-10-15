@@ -1,4 +1,5 @@
 import * as THREE from '../vendor/three.module.min.js';
+import {ENEMY_ATTACK_DURATION} from './action-timing.js';
 import {mergeStaticParts} from './merge-parts.js';
 
 function profiledHide(sections){
@@ -115,7 +116,7 @@ export function resetCreature(root){
   for(const claw of u.claws)claw.userData.pincer.rotation.set(0,0,0);
 }
 
-export function animateCreature(root,enemy,time,dt,height,target){
+export function animateCreature(root,enemy,time,dt,height,target,attackPose=undefined){
   const u=root.userData,last=u.last;
   if(u.hp!==null&&enemy.hp<u.hp)u.hitAt=time;
   if(enemy.hp<=0&&u.deadAt===null)u.deadAt=u.hp===null?time-.5:time;
@@ -124,10 +125,11 @@ export function animateCreature(root,enemy,time,dt,height,target){
   const moving=distance>.0001&&distance<4;
   if(moving)u.phase+=distance*(u.type==='crab'?5:3.2);
   if(moving||Math.hypot(target.x-enemy.x,target.z-enemy.z)<15){
-    const angle=moving?Math.atan2(enemy.x-last.x,enemy.z-last.z):Math.atan2(target.x-enemy.x,target.z-enemy.z);
+    const angle=attackPose?.yaw??(moving?Math.atan2(enemy.x-last.x,enemy.z-last.z):Math.atan2(target.x-enemy.x,target.z-enemy.z));
     const delta=Math.atan2(Math.sin(angle-root.rotation.y),Math.cos(angle-root.rotation.y));root.rotation.y+=delta*(1-Math.exp(-dt*10));
   }
-  const attackAge=time-(enemy.attackAt??-100),attack=attackAge>=0&&attackAge<.35?Math.sin(attackAge/.35*Math.PI):0;
+  const attackAt=attackPose===undefined?enemy.attackAt:attackPose?.at;
+  const attackAge=time-(attackAt??-100),attack=attackAge>=0&&attackAge<ENEMY_ATTACK_DURATION?Math.sin(attackAge/ENEMY_ATTACK_DURATION*Math.PI):0;
   const hurt=Math.max(0,1-(time-u.hitAt)/.24),death=u.deadAt===null?0:Math.min(1,Math.max(0,(time-u.deadAt)/.5));
   u.legs.forEach((leg,i)=>{const stride=moving?Math.sin(u.phase+(i%2)*Math.PI)*.55:0;leg.rotation.x=u.type==='boar'?stride:0;leg.rotation.z=u.type==='crab'?stride*.45:0;});
   u.claws.forEach((claw,i)=>{claw.rotation.x=-attack*.9;claw.rotation.y=(i?1:-1)*attack*.35;claw.userData.pincer.rotation.y=-claw.userData.side*attack*.43;});

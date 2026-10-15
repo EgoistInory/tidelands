@@ -1,0 +1,343 @@
+{
+  "rows": [
+    {
+      "type": "boar",
+      "phase": "warning",
+      "hp": 100,
+      "enemyHp": 70,
+      "pose": {
+        "at": 240.01,
+        "yaw": 3.141592653589793,
+        "resolved": false
+      },
+      "bodyOffset": 0.2199969842944353,
+      "events": [
+        {
+          "damage": 0,
+          "respawned": false,
+          "enemyWindups": [
+            {
+              "id": "warning-fixture",
+              "type": "boar"
+            }
+          ]
+        },
+        {
+          "damage": 0,
+          "respawned": false
+        }
+      ],
+      "glError": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "scope": "Explicit fixed-dt production tick and WorldView; no ordinary-save, native movement, sound listening or performance claim."
+    },
+    {
+      "type": "boar",
+      "phase": "impact",
+      "hp": 88,
+      "enemyHp": 70,
+      "pose": {
+        "at": 240.01,
+        "yaw": 3.141592653589793,
+        "resolved": true
+      },
+      "bodyOffset": 0.21999698429443243,
+      "events": [
+        {
+          "damage": 0,
+          "respawned": false,
+          "enemyWindups": [
+            {
+              "id": "warning-fixture",
+              "type": "boar"
+            }
+          ]
+        },
+        {
+          "damage": 12,
+          "respawned": false
+        },
+        {
+          "damage": 0,
+          "respawned": false
+        }
+      ],
+      "glError": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "scope": "Explicit fixed-dt production tick and WorldView; no ordinary-save, native movement, sound listening or performance claim."
+    },
+    {
+      "type": "boar",
+      "phase": "dodge",
+      "hp": 100,
+      "enemyHp": 70,
+      "pose": {
+        "at": 240.01,
+        "yaw": 3.141592653589793,
+        "resolved": true
+      },
+      "bodyOffset": 0.21999698429443243,
+      "events": [
+        {
+          "damage": 0,
+          "respawned": false,
+          "enemyWindups": [
+            {
+              "id": "warning-fixture",
+              "type": "boar"
+            }
+          ]
+        },
+        {
+          "damage": 0,
+          "respawned": false
+        }
+      ],
+      "glError": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "scope": "Explicit fixed-dt production tick and WorldView; no ordinary-save, native movement, sound listening or performance claim."
+    },
+    {
+      "type": "boar",
+      "phase": "cancel",
+      "hp": 100,
+      "enemyHp": 70,
+      "pose": null,
+      "bodyOffset": 0,
+      "events": [
+        {
+          "damage": 0,
+          "respawned": false,
+          "enemyWindups": [
+            {
+              "id": "warning-fixture",
+              "type": "boar"
+            }
+          ]
+        },
+        {
+          "damage": 0,
+          "respawned": false
+        }
+      ],
+      "glError": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "scope": "Explicit fixed-dt production tick and WorldView; no ordinary-save, native movement, sound listening or performance claim."
+    },
+    {
+      "type": "boar",
+      "phase": "defeated",
+      "hp": 100,
+      "enemyHp": 0,
+      "pose": null,
+      "bodyOffset": 0,
+      "events": [
+        {
+          "damage": 0,
+          "respawned": false,
+          "enemyWindups": [
+            {
+              "id": "warning-fixture",
+              "type": "boar"
+            }
+          ]
+        },
+        {
+          "damage": 0,
+          "respawned": false
+        }
+      ],
+      "glError": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "scope": "Explicit fixed-dt production tick and WorldView; no ordinary-save, native movement, sound listening or performance claim."
+    },
+    {
+      "type": "crab",
+      "phase": "warning",
+      "hp": 100,
+      "enemyHp": 70,
+      "pose": {
+        "at": 240.01,
+        "yaw": 3.141592653589793,
+        "resolved": false
+      },
+      "bodyOffset": 0.2199969842944353,
+      "events": [
+        {
+          "damage": 0,
+          "respawned": false,
+          "enemyWindups": [
+            {
+              "id": "warning-fixture",
+              "type": "crab"
+            }
+          ]
+        },
+        {
+          "damage": 0,
+          "respawned": false
+        }
+      ],
+      "glError": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "scope": "Explicit fixed-dt production tick and WorldView; no ordinary-save, native movement, sound listening or performance claim."
+    },
+    {
+      "type": "crab",
+      "phase": "impact",
+      "hp": 93,
+      "enemyHp": 70,
+      "pose": {
+        "at": 240.01,
+        "yaw": 3.141592653589793,
+        "resolved": true
+      },
+      "bodyOffset": 0.21999698429443243,
+      "events": [
+        {
+          "damage": 0,
+          "respawned": false,
+          "enemyWindups": [
+            {
+              "id": "warning-fixture",
+              "type": "crab"
+            }
+          ]
+        },
+        {
+          "damage": 7,
+          "respawned": false
+        },
+        {
+          "damage": 0,
+          "respawned": false
+        }
+      ],
+      "glError": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "scope": "Explicit fixed-dt production tick and WorldView; no ordinary-save, native movement, sound listening or performance claim."
+    },
+    {
+      "type": "crab",
+      "phase": "dodge",
+      "hp": 100,
+      "enemyHp": 70,
+      "pose": {
+        "at": 240.01,
+        "yaw": 3.141592653589793,
+        "resolved": true
+      },
+      "bodyOffset": 0.21999698429443243,
+      "events": [
+        {
+          "damage": 0,
+          "respawned": false,
+          "enemyWindups": [
+            {
+              "id": "warning-fixture",
+              "type": "crab"
+            }
+          ]
+        },
+        {
+          "damage": 0,
+          "respawned": false
+        }
+      ],
+      "glError": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "scope": "Explicit fixed-dt production tick and WorldView; no ordinary-save, native movement, sound listening or performance claim."
+    },
+    {
+      "type": "crab",
+      "phase": "cancel",
+      "hp": 100,
+      "enemyHp": 70,
+      "pose": null,
+      "bodyOffset": 0,
+      "events": [
+        {
+          "damage": 0,
+          "respawned": false,
+          "enemyWindups": [
+            {
+              "id": "warning-fixture",
+              "type": "crab"
+            }
+          ]
+        },
+        {
+          "damage": 0,
+          "respawned": false
+        }
+      ],
+      "glError": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "scope": "Explicit fixed-dt production tick and WorldView; no ordinary-save, native movement, sound listening or performance claim."
+    },
+    {
+      "type": "crab",
+      "phase": "defeated",
+      "hp": 100,
+      "enemyHp": 0,
+      "pose": null,
+      "bodyOffset": 0,
+      "events": [
+        {
+          "damage": 0,
+          "respawned": false,
+          "enemyWindups": [
+            {
+              "id": "warning-fixture",
+              "type": "crab"
+            }
+          ]
+        },
+        {
+          "damage": 0,
+          "respawned": false
+        }
+      ],
+      "glError": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "scope": "Explicit fixed-dt production tick and WorldView; no ordinary-save, native movement, sound listening or performance claim."
+    }
+  ],
+  "images": [
+    "/Users/huxiaocong/Codex/tidelands/docs/enemy-windup-boar-warning.png",
+    "/Users/huxiaocong/Codex/tidelands/docs/enemy-windup-boar-impact.png",
+    "/Users/huxiaocong/Codex/tidelands/docs/enemy-windup-crab-warning.png",
+    "/Users/huxiaocong/Codex/tidelands/docs/enemy-windup-crab-impact.png"
+  ],
+  "console": []
+}

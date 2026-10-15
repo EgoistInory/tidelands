@@ -1,11 +1,11 @@
 import {WorldView} from './scene.js';
 import {GameAudio} from './audio.js';
-import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_IMPACT} from './action-timing.js';
+import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_IMPACT,ENEMY_ATTACK_IMPACT} from './action-timing.js';
 import {bindPointerControls} from './pointer-controls.js';
 import {createMovementHeading} from './movement-heading.js';
 import {prepareSurfaceTextures} from './startup-textures.js';
 import {createWorld,terrain,LANDMARKS,regionAt,dayCycle} from './world.js';
-import {freshGame,QUESTS,ITEMS,RECIPES,affordable,craft,canBuild,build,interact,resolveGather,eat,attack,attackRange,resolveAttack,movePlayer,tick,nearest,nearestEnemy,serialize,restore} from './game.js';
+import {freshGame,QUESTS,ITEMS,RECIPES,affordable,craft,canBuild,build,interact,resolveGather,eat,attack,attackRange,resolveAttack,movePlayer,tick,cancelEnemyAttacks,enemyAttackPose,nearest,nearestEnemy,serialize,restore} from './game.js';
 
 const $=id=>document.getElementById(id);
 export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
@@ -49,8 +49,9 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     if(enemy){
       const name=enemy.type==='boar'?'野猪':'海岸蟹',distance=Math.hypot(enemy.x-state.player.x,enemy.z-state.player.z),hp=Math.ceil(enemy.hp),max=Math.max(enemy.type==='boar'?70:40,hp);
       $('enemy-name').textContent=name;$('enemy-hp').max=max;$('enemy-hp').value=hp;$('enemy-hp').setAttribute('aria-label',`${name}生命`);$('enemy-hp-value').textContent=`${hp} / ${max}`;
-      $('enemy-status').dataset.danger=distance<2.9?'close':'near';
-      $('enemy-hint').textContent=`${Math.ceil(distance)} 米 · ${distance<=attackRange(state,enemy)?'面向目标 · 空格 / 攻击':distance<2.9?'近身威胁 · 靠近反击或退开':'正在靠近 · 迎战或拉开距离'}`;
+      const pose=enemyAttackPose(state,enemy),winding=pose&&!pose.resolved&&state.time-pose.at<ENEMY_ATTACK_IMPACT;
+      $('enemy-status').dataset.danger=winding?'windup':distance<2.9?'close':'near';
+      $('enemy-hint').textContent=winding?'蓄力 · 移动闪避':`${Math.ceil(distance)} 米 · ${distance<=attackRange(state,enemy)?'面向目标 · 空格 / 攻击':distance<2.9?'近身威胁 · 靠近反击或退开':'正在靠近 · 迎战或拉开距离'}`;
     }
     $('region').textContent=regionAt(state.player.x,state.player.z);$('coordinates').textContent=`位置 X ${state.player.x.toFixed(1)}，Z ${state.player.z.toFixed(1)}；建筑 ${state.buildings.length}；击败 ${state.kills}`;
     const q=QUESTS[state.quest];$('quest-title').textContent=q.title;$('quest-text').textContent=q.text;
@@ -81,7 +82,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
   }
   function beginBuild(type){if(!affordable(state,RECIPES[type].cost)){toast('材料不足。按 C 查看制作所需材料。');return;}buildType=type;view.setPreview(type);closePanel();toast('走到合适的位置，按 E 确认建造；Esc 取消。');}
   function closePanel(){if(renderLost)return;panel.close();panelKind='';paused=false;audio.setActive(true);void unlockAudio();keys.clear();movementHeading.end();$('world').focus({preventScroll:true});}
-  function openPanel(kind){if(!started||renderLost)return;cancelAttack();cancelGather();panelKind=kind;paused=true;$('combat-feedback').hidden=true;$('damage-feedback').hidden=true;audio.setActive(false);keys.clear();movementHeading.end();resetPointers();
+  function openPanel(kind){if(!started||renderLost)return;cancelAttack();cancelGather();cancelEnemyAttacks(state);panelKind=kind;paused=true;$('combat-feedback').hidden=true;$('damage-feedback').hidden=true;audio.setActive(false);keys.clear();movementHeading.end();resetPointers();
     const titles={bag:'旅人的背包',craft:'制作与建造',map:'群岛地图',pause:'旅途小憩'};$('panel-title').textContent=titles[kind];const body=$('panel-body');body.replaceChildren();
     if(kind==='bag'){
       const inventory=document.createElement('div');inventory.className='inventory';
@@ -161,7 +162,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     }
   });
   $('world').addEventListener('webglcontextlost',event=>{
-    event.preventDefault();preparation.abort();cancelAttack();cancelGather();renderLost=true;paused=true;keys.clear();movementHeading.end();resetPointers();audio.setActive(false);
+    event.preventDefault();preparation.abort();cancelAttack();cancelGather();cancelEnemyAttacks(state);renderLost=true;paused=true;keys.clear();movementHeading.end();resetPointers();audio.setActive(false);
     const saved=save();newDialog.close();$('start-button').disabled=true;$('panel-close').disabled=true;
     $('panel-title').textContent='画面暂时中断';const body=$('panel-body');body.replaceChildren();
     const message=document.createElement('p');message.setAttribute('role','alert');message.textContent=saved?'旅程已暂停，进度已保存。刷新页面后可继续探索。':'旅程已暂停，但进度未能保存。请先导出存档，再刷新页面。';body.append(message);
@@ -187,7 +188,8 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
   });
   function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;let moving=false;
     if(started&&!paused){let x=stick.x,z=stick.z;for(const k of keys)if(movement[k]){x+=movement[k][0];z+=movement[k][1];}movementHeading.end(stickActive||keyboardMoving());moving=Math.hypot(x,z)>.08;const running=keys.has('shift')&&moving;const v=relative(x,z);movePlayer(state,world.objects,v.x,v.z,dt,running);const feedback={},message=tick(state,dt,running,feedback,world.objects);
-      if(feedback.damage>0){view.hurtAt=state.time;audio.effect('hit');combatFeedback('hurt',feedback.respawned?'倒下了 · 已返回营地':`受到伤害 −${Math.ceil(feedback.damage)}`);}
+      if(feedback.enemyWindups?.length){for(const enemy of feedback.enemyWindups)audio.effect('enemy-windup',{enemyType:enemy.type});updateUI();}
+      if(feedback.damage>0){view.hurtAt=state.time;audio.effect('hit');combatFeedback('hurt',feedback.respawned?'倒下了 · 已返回营地':`受到伤害 −${Math.ceil(feedback.damage)}`);updateUI();}
       if(feedback.respawned){
         cancelAttack();cancelGather();keys.clear();movementHeading.end();resetPointers();moving=false;buildType=null;placement=null;view.setPreview(null);
         view.gatherAt=-100;view.player.userData.lastPosition=null;

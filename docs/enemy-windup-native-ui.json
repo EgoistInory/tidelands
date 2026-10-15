@@ -1,0 +1,279 @@
+{
+  "rows": [
+    {
+      "type": "boar",
+      "records": [
+        {
+          "at": 875.7999999523163,
+          "hp": "100",
+          "enemyHp": "",
+          "hint": "",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 1327.4000000953674,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "3 米 · 面向目标 · 空格 / 攻击",
+          "danger": "close",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 1335.2999999523163,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "蓄力 · 移动闪避",
+          "danger": "windup",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 1605.7000000476837,
+          "hp": "88",
+          "enemyHp": "70 / 70",
+          "hint": "3 米 · 面向目标 · 空格 / 攻击",
+          "danger": "close",
+          "combat": "受到伤害 −12",
+          "paused": false
+        },
+        {
+          "at": 1739.7000000476837,
+          "hp": "88",
+          "enemyHp": "47 / 70",
+          "hint": "3 米 · 面向目标 · 空格 / 攻击",
+          "danger": "close",
+          "combat": "命中 1 个目标",
+          "paused": false
+        },
+        {
+          "at": 2427.7000000476837,
+          "hp": "88",
+          "enemyHp": "47 / 70",
+          "hint": "3 米 · 面向目标 · 空格 / 攻击",
+          "danger": "close",
+          "combat": "",
+          "paused": true
+        }
+      ],
+      "cues": [
+        {
+          "kind": "enemy-windup",
+          "at": 1328.4000000953674,
+          "options": {
+            "enemyType": "boar"
+          }
+        },
+        {
+          "kind": "swing",
+          "at": 1514.0999999046326
+        },
+        {
+          "kind": "hit",
+          "at": 1602.9000000953674
+        },
+        {
+          "kind": "hit",
+          "at": 1736.2000000476837
+        }
+      ],
+      "scope": "Production boot, native UI input; explicit enemy/weapon/position fixture, separate QA storage. Cue calls are not listening proof."
+    },
+    {
+      "type": "crab",
+      "records": [
+        {
+          "at": 873.0999999046326,
+          "hp": "100",
+          "enemyHp": "",
+          "hint": "",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 12925.599999904633,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "3 米 · 面向目标 · 空格 / 攻击",
+          "danger": "close",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 12933.099999904633,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "蓄力 · 移动闪避",
+          "danger": "windup",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 13151.299999952316,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "蓄力 · 移动闪避",
+          "danger": "windup",
+          "combat": "",
+          "paused": true
+        }
+      ],
+      "cues": [
+        {
+          "kind": "enemy-windup",
+          "at": 12927.700000047684,
+          "options": {
+            "enemyType": "crab"
+          }
+        }
+      ],
+      "scope": "Production boot, native UI input; explicit enemy/weapon/position fixture, separate QA storage. Cue calls are not listening proof."
+    },
+    {
+      "type": "crab",
+      "records": [
+        {
+          "at": 873.0999999046326,
+          "hp": "100",
+          "enemyHp": "",
+          "hint": "",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 12925.599999904633,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "3 米 · 面向目标 · 空格 / 攻击",
+          "danger": "close",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 12933.099999904633,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "蓄力 · 移动闪避",
+          "danger": "windup",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 13151.299999952316,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "蓄力 · 移动闪避",
+          "danger": "windup",
+          "combat": "",
+          "paused": true
+        },
+        {
+          "at": 21230,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "蓄力 · 移动闪避",
+          "danger": "windup",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 21236,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "3 米 · 近身威胁 · 靠近反击或退开",
+          "danger": "close",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 21384.5,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "3 米 · 面向目标 · 空格 / 攻击",
+          "danger": "close",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 21535.39999985695,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "4 米 · 正在靠近 · 迎战或拉开距离",
+          "danger": "near",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 21835.200000047684,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "5 米 · 正在靠近 · 迎战或拉开距离",
+          "danger": "near",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 21986,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "6 米 · 正在靠近 · 迎战或拉开距离",
+          "danger": "near",
+          "combat": "",
+          "paused": false
+        },
+        {
+          "at": 22122.39999985695,
+          "hp": "100",
+          "enemyHp": "70 / 70",
+          "hint": "6 米 · 正在靠近 · 迎战或拉开距离",
+          "danger": "near",
+          "combat": "",
+          "paused": true
+        }
+      ],
+      "cues": [
+        {
+          "kind": "enemy-windup",
+          "at": 12927.700000047684,
+          "options": {
+            "enemyType": "crab"
+          }
+        },
+        {
+          "kind": "step",
+          "at": 21568.39999985695,
+          "options": {
+            "surface": "grass"
+          }
+        },
+        {
+          "kind": "step",
+          "at": 21785.599999904633,
+          "options": {
+            "surface": "grass"
+          }
+        },
+        {
+          "kind": "step",
+          "at": 22018.39999985695,
+          "options": {
+            "surface": "grass"
+          }
+        }
+      ],
+      "scope": "Production boot, native UI input; explicit enemy/weapon/position fixture, separate QA storage. Cue calls are not listening proof."
+    }
+  ],
+  "console": [],
+  "nativeInput": true,
+  "ordinarySave": false,
+  "mobileViewport": [
+    390,
+    844
+  ],
+  "images": [
+    "docs/enemy-windup-native-boar.png",
+    "docs/enemy-windup-native-mobile.png"
+  ]
+}

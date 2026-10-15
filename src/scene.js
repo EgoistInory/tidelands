@@ -1,6 +1,6 @@
 import * as THREE from '../vendor/three.module.min.js';
 import {terrain,LANDMARKS,randomGenerator,dayCycle,weatherAt} from './world.js';
-import {isDepleted} from './game.js';
+import {isDepleted,enemyAttackPose} from './game.js';
 import {unobstructedCamera,smoothCamera} from './camera.js';
 import {resourceHalfSize} from './resource-contact.js';
 import {createCharacter,animateCharacter} from './character.js';
@@ -306,7 +306,7 @@ export class WorldView{
     if(fire)this.fireLight.position.set(fire.x,terrain(fire.x,fire.z)+1.8,fire.z);
     if(this.lighthouse){const {lantern,beacon}=this.lighthouse.userData;const lit=state.quest===6;beacon.visible=lit;beacon.rotation.y=state.time*.3;lantern.material.emissive.set(lit?0xffce72:0x000000);lantern.material.emissiveIntensity=lit?2:0;}
     this.updateIslanders(state,near,dt);
-    for(const e of state.enemies){const g=this.creatures.get(e.id);if(g)animateCreature(g,e,state.time,dt,terrain(e.x,e.z),p);}
+    for(const e of state.enemies){const g=this.creatures.get(e.id);if(g)animateCreature(g,e,state.time,dt,terrain(e.x,e.z),p,enemyAttackPose(state,e));}
     this.player.position.set(p.x,h,p.z);
     animateCharacter(this.player,{...p,time:state.time,attackAt:state.attackAt,gatherAt:this.gatherAt,gatherKind:this.gatherKind,gatherTool:this.gatherTool??state.selected,hurtAt:this.hurtAt,selected:state.selected,swimming:terrain(p.x,p.z)<0},dt,terrain);
     const target=new THREE.Vector3(p.x+Math.sin(this.yaw)*this.distance,h+2.4+Math.tan(this.pitch)*this.distance,p.z+Math.cos(this.yaw)*this.distance);

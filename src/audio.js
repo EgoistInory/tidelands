@@ -53,17 +53,17 @@ export class GameAudio{
   applyVolume(){if(this.context){this.master.gain.setTargetAtTime(this.enabled&&this.active?.35:0,this.context.currentTime,.08);this.ui.gain.setTargetAtTime(this.enabled?.35:0,this.context.currentTime,.02);}}
   setActive(active){this.active=active;this.applyVolume();if(!active){this.lastPosition=null;this.lastFootfallCount=null;this.stepDistance=0;}}
   setEnabled(enabled){this.enabled=enabled;this.applyVolume();}
-  effect(kind,{menu=false,surface='grass'}={}){
+  effect(kind,{menu=false,surface='grass',enemyType='boar'}={}){
     const ui=menu&&['craft','food'].includes(kind);
     const tone=['quest','craft','food'].includes(kind),ctx=this.context;
     // Keep three slots available for success cues during crowded physical actions.
     if(!ctx||ctx.state!=='running'||!this.enabled||(!this.active&&!ui)||this.sources.size>=12||(!tone&&this.sources.size>=9))return;
     const node=tone?ctx.createOscillator():ctx.createBufferSource(),gain=ctx.createGain(),filter=ctx.createBiquadFilter(),now=ctx.currentTime;
-    const sandy=kind==='step'&&surface==='sand';
-    const length=kind==='quest'?.65:kind==='swing'?.16:kind==='step'?(sandy?.13:.09):.22;
+    const sandy=kind==='step'&&surface==='sand',windup=kind==='enemy-windup';
+    const length=windup?.3:kind==='quest'?.65:kind==='swing'?.16:kind==='step'?(sandy?.13:.09):.22;
     if(tone){node.type='sine';node.frequency.setValueAtTime(kind==='quest'?440:kind==='craft'?660:330,now);node.frequency.exponentialRampToValueAtTime(kind==='quest'?880:440,now+length);}else node.buffer=this.noise;
-    filter.type=tone?'lowpass':'bandpass';filter.frequency.value=tone?2800:kind==='splash'?1200:kind==='swing'?1600:kind==='hit'?260:kind==='gather'?700:sandy?520:140;filter.Q.value=.7;
-    gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(kind==='step'?.16:tone?.13:.45,now+.008);gain.gain.exponentialRampToValueAtTime(.0001,now+length);
+    filter.type=tone?'lowpass':'bandpass';filter.frequency.value=windup?(enemyType==='crab'?720:180):tone?2800:kind==='splash'?1200:kind==='swing'?1600:kind==='hit'?260:kind==='gather'?700:sandy?520:140;filter.Q.value=.7;
+    gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(windup?.22:kind==='step'?.16:tone?.13:.45,now+(windup?.04:.008));gain.gain.exponentialRampToValueAtTime(.0001,now+length);
     node.connect(filter);filter.connect(gain);gain.connect(ui?this.ui:this.master);this.sources.add(node);
     node.onended=()=>{node.disconnect();filter.disconnect();gain.disconnect();this.sources.delete(node);};
     if(tone)node.start(now);

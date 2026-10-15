@@ -187,3 +187,18 @@ test('ecology shares world mute/pause and releases nodes on normal or failed ini
   const retry=new GameAudio({contextFactory:()=>broken});await assert.rejects(retry.unlock(),/ecology buffer unavailable/);
   assert.equal(broken.state,'closed');assert.equal(retry.context,null);assert.equal(retry.birdsSource,null);assert.equal(retry.insectsSource,null);
 });
+
+
+test('enemy warnings distinguish body types and reuse bounded, pausable local noise',async()=>{
+  const a=new GameAudio({contextFactory:context});a.setActive(true);await a.unlock();
+  for(const [enemyType,frequency]of [['boar',180],['crab',720]]){
+    a.effect('enemy-windup',{enemyType});const source=[...a.sources][0];
+    assert.equal(source.buffer,a.noise);assert.equal(source.target.frequency.value,frequency);
+    source.onended();
+  }
+  a.setActive(false);a.effect('enemy-windup');assert.equal(a.sources.size,0);
+  a.setActive(true);a.setEnabled(false);a.effect('enemy-windup');assert.equal(a.sources.size,0);
+  a.setEnabled(true);for(let i=0;i<30;i++)a.effect('enemy-windup');assert.equal(a.sources.size,9);
+  for(const kind of ['quest','craft','food'])a.effect(kind);assert.equal(a.sources.size,12);
+  await a.dispose();
+});
