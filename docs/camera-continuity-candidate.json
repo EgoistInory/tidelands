@@ -1,0 +1,68 @@
+{
+  "candidateVerified": true,
+  "delivered": false,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "physicalMotionQualityPassed": false,
+  "changedRuntime": {
+    "src/camera.js": "4831cf9b945caad3af81e4f9955285e4711339979fd261ea2d071741771270dd"
+  },
+  "unchangedRuntimeFiles": 50,
+  "fullTests": 222,
+  "focusedTests": 23,
+  "comparison": [
+    {
+      "route": "forest",
+      "oldMaxDegrees": 32.553929711141926,
+      "candidateMaxDegrees": 10.969521838107255,
+      "candidateMaxRadialStep": 0.04445093402521927
+    },
+    {
+      "route": "coast",
+      "oldMaxDegrees": 1.107890637262371,
+      "candidateMaxDegrees": 1.107890637262371,
+      "candidateMaxRadialStep": 1.2200702577260394
+    },
+    {
+      "route": "highland",
+      "oldMaxDegrees": 0.4582208317071937,
+      "candidateMaxDegrees": 0.4582208317071937,
+      "candidateMaxRadialStep": 0.017894505991353782
+    },
+    {
+      "route": "shoal",
+      "oldMaxDegrees": 30.56447561462497,
+      "candidateMaxDegrees": 9.324069907129413,
+      "candidateMaxRadialStep": 5.283201125220818
+    },
+    {
+      "route": "camp",
+      "oldMaxDegrees": 32.72451237065978,
+      "candidateMaxDegrees": 11.598222372993911,
+      "candidateMaxRadialStep": 9.373104682964915
+    },
+    {
+      "route": "lamp",
+      "oldMaxDegrees": 33.91925468415589,
+      "candidateMaxDegrees": 12.467722658081227,
+      "candidateMaxRadialStep": 7.396204532610443
+    }
+  ],
+  "renderedRows": 10,
+  "baselineRows": 6,
+  "imagesReviewedSha256": {
+    "docs/camera-continuity-forest.png": "5f908f270c603d321330ff3f67046eb19d70e4eb8de7a2036dfad8f043a63605",
+    "docs/camera-continuity-lamp.png": "0bcad4acc3d3b89a4f3d9f3454a471673e3b9405c5cb189fec96a526269f67f4",
+    "docs/camera-continuity-night-camp.png": "e18af5d560abce7320312fa019f6d3006239b8b36558381ddecf1a9318f5acc3",
+    "docs/camera-continuity-mobile.png": "4ebcff37cb09bf3cee80ab8eb07773b562e8370e9cd1691d5e690ecccedf04bb"
+  },
+  "evidenceSha256": {
+    "docs/camera-continuity-tests.txt": "1d7f45fc389990f0de97f8db28f3266a0108812e0ca6de02804c68aee2279132",
+    "docs/camera-continuity-focused.txt": "19e35d62106b17f9ac678f57fe6ab40f6d84310b73357e09cbfcc17121a05fb9",
+    "docs/camera-continuity-red.txt": "2305eeeec731d0a641c548057a0e19f0f0c3dc6fbe38f508d1d381092566a26e",
+    "docs/camera-continuity-probes.json": "cccf3591e30c6a8b5e2216298300800fbd972d0433737a32b10c56fab6a9e14a",
+    "docs/camera-continuity-render.json": "4ac5e1b2f2e4b9759dc6d5db7a187b08f080e189b6bb80414fb544528fcb2a3f"
+  },
+  "scope": "Fixed-dt production WorldView fixtures, six old/new desktop routes plus night camp and three390 routes; no ordinary save/input, listening, GPU, real-device or continuous endurance acceptance. Only camera fallback angle changed. Existing7dd delivery remains authoritative.",
+  "remaining": "Residual lamp12.4677degree turn and camp9.3731m radial correction remain; do not claim smooth physical framing or3A acceptance. Continue whole-body/ground/sound review as a group before packaging and final unified main path."
+}

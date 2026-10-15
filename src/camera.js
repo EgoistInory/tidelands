@@ -15,7 +15,7 @@ export function unobstructedCamera(focus,desired,boxes,heightAt,minimumDistance=
   if(distance<minimumDistance){
     const offset=desired.clone().sub(focus),up=new THREE.Vector3(0,1,0);
     // Retain an already clear side while blocked; a clear manual request still wins above.
-    const turns=[];for(let step=1;step<=6;step++)for(const side of [-1,1])turns.push(side*step*Math.PI/6);
+    const turns=[];for(const degrees of [2,4,6,8,10,12,16,20,24,30,45,60,90,120,150,180])for(const side of [-1,1])turns.push(side*degrees*Math.PI/180);
     if(Number.isFinite(preferredYaw)){
       const yaw=Math.atan2(offset.x,offset.z),preferred=Math.atan2(Math.sin(preferredYaw-yaw),Math.cos(preferredYaw-yaw));
       turns.unshift(preferred);turns.sort((a,b)=>Math.abs(Math.atan2(Math.sin(a-preferred),Math.cos(a-preferred)))-Math.abs(Math.atan2(Math.sin(b-preferred),Math.cos(b-preferred))));
