@@ -1,0 +1,141 @@
+{
+  "passed": true,
+  "archive": "tidelands-m5-2026-10-16-enemy-windup.zip",
+  "archiveSha256": "c1a9a657e5d2f7adb7ddb825026fb5e6260b8ce6778ad9b8161a0adad1d3c434",
+  "runtimeFileHashesMatched": 49,
+  "continuousSamples": {
+    "desktop": {
+      "activeMs": 600000,
+      "frames": 35601,
+      "movingFraction": 0.97,
+      "distanceMeters": 3896.57,
+      "hitCount": 34,
+      "damageTaken": 197,
+      "medianMs": 16.7,
+      "p95Ms": 18,
+      "maxMs": 98.5,
+      "over50Ms": 2,
+      "heapMiB": [
+        89.22,
+        66.07,
+        80.23,
+        65.82,
+        55.73,
+        53.57,
+        64.72,
+        58.03,
+        75.76,
+        77.01,
+        61.83
+      ],
+      "canvasBuffer": [
+        1920,
+        852
+      ],
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    "mobile": {
+      "activeMs": 60000,
+      "frames": 3597,
+      "movingFraction": 0.92,
+      "distanceMeters": 358.22,
+      "hitCount": 4,
+      "damageTaken": 115,
+      "medianMs": 16.7,
+      "p95Ms": 18.1,
+      "maxMs": 83.3,
+      "over50Ms": 1,
+      "heapMiB": [
+        105.93,
+        57.15
+      ],
+      "canvasBuffer": [
+        390,
+        620
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  },
+  "fullCanvasGpuSamples": {
+    "desktop": {
+      "canvasBuffer": [
+        1920,
+        1080
+      ],
+      "p95GpuMs": {
+        "shore": 14.603,
+        "forest-combat": 14.0692,
+        "highland": 9.9706,
+        "amber-swim": 15.5043,
+        "night-camp": 13.6109
+      },
+      "p95CpuFrameMs": {
+        "shore": 3.6,
+        "forest-combat": 3.9,
+        "highland": 5,
+        "amber-swim": 4.6,
+        "night-camp": 4
+      }
+    },
+    "mobile": {
+      "canvasBuffer": [
+        390,
+        844
+      ],
+      "p95GpuMs": {
+        "shore": 6.2917,
+        "forest-combat": 5.7726,
+        "highland": 4.5798,
+        "amber-swim": 6.8026,
+        "night-camp": 6.3312
+      },
+      "p95CpuFrameMs": {
+        "shore": 3.5,
+        "forest-combat": 3.9,
+        "highland": 3.7,
+        "amber-swim": 4.5,
+        "night-camp": 4.1
+      }
+    }
+  },
+  "imagesReviewed": [
+    "docs/quality-endurance-desktop-forest.png",
+    "docs/quality-endurance-desktop-highland.png",
+    "docs/quality-endurance-desktop-swim.png",
+    "docs/quality-endurance-desktop-camp.png",
+    "docs/quality-endurance-mobile-camp.png"
+  ],
+  "harnessSha256": {
+    "tests/quality-endurance.html": "9fddd5c6ac4c368ffb387ce764d17f02cb2a8040bd26f5473c0b3970172cc9ec",
+    "tests/quality-gpu.html": "3881b9a5ac2dfb355a31b1cd49d477a4427879fe48e21ded291c921935c98b9c"
+  },
+  "evidenceSha256": {
+    "docs/quality-endurance-desktop.json": "ce5588275fecc2009de63a7d3c22f43af9da7a5c087ca0d1552974872933f4c7",
+    "docs/quality-endurance-mobile.json": "20e41c4095531868d1da7603ab113977194fac390083341ec30b8c58fbf36113",
+    "docs/quality-gpu-desktop.json": "1eabab4360a287b5ec0789b033a7bf748a1cb71f4711416a561a662ce5ef9b64",
+    "docs/quality-gpu-mobile.json": "67e4103098b526067acb2bffb0667d390cf381aa418ab60352ea3cc7ee0e5cbe",
+    "docs/quality-gpu-desktop-panel.json": "9a306657dd2088e4abb7bcb917cfa2720690cab1bf1d3c47e6746af5e0128a94",
+    "docs/quality-gpu-mobile-panel.json": "ccdf87a21f6d6a8d3e176f210a01e8cdb2becfd368097e01b74fa7a7ea85ee2b",
+    "docs/quality-endurance-desktop-forest.png": "a09155866b70736ab4727decb420923ddf5efbda0fb8d0029293a2c41ce5c245",
+    "docs/quality-endurance-desktop-highland.png": "b813acab8ead8851df3ca9e6fea1bdbd0ca4df8b2427b3177bdd7df3eb0923f7",
+    "docs/quality-endurance-desktop-swim.png": "b054728cc51cbe946c109543be5007d2654a2242cf4c1c55c2581c1ece02fbaa",
+    "docs/quality-endurance-desktop-camp.png": "a1f49e2d671536bcc229e4b0ce081a1310380cda4364d9ac5bfbcba44e10dfe6",
+    "docs/quality-endurance-mobile-camp.png": "aa818dc0cdb31c47182e9f36a3dbf7b3e5416e74f102cd3bc0e8596cf47b16fc"
+  },
+  "stabilityEvidenceAccepted": true,
+  "continuousCanvasIsFullViewport": false,
+  "nativeInput": false,
+  "realMobileDevice": false,
+  "vramMeasured": false,
+  "audioListened": false,
+  "fullMainPathReplayed": false,
+  "m5Complete": false,
+  "fullGoalComplete": false,
+  "limits": "600s desktop and60s390 scripted five-phase teleports and revived enemy/weapon/food/building fixtures, bounded adaptive movement. Endurance canvas is reduced by diagnostic panels. Separate 60-query-per-phase GPU timing uses full viewport canvas, excludes audio/HUD and is not whole frame or VRAM. Heap samples are natural GC snapshots, not a proof of leak freedom. Visual/naturalness/camera/night/listening gaps remain."
+}

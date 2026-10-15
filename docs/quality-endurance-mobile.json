@@ -1,0 +1,212 @@
+{
+  "sourceUrl": "http://127.0.0.1:4190/tests/quality-endurance.html",
+  "sample": {
+    "complete": true,
+    "targetMs": 60000,
+    "activeMs": 60000,
+    "wallMs": 60005.8,
+    "frames": 3597,
+    "movingFrames": 3308,
+    "movingFraction": 0.92,
+    "distanceMeters": 358.22,
+    "hidden": false,
+    "medianMs": 16.7,
+    "p95Ms": 18.1,
+    "maxMs": 83.3,
+    "over50Ms": 1,
+    "frameSpikes": [
+      {
+        "atMs": 83.3,
+        "intervalMs": 83.3,
+        "previousFrame": {
+          "stage": "shore-exploration",
+          "transition": false,
+          "cpuMs": 96.8
+        }
+      }
+    ],
+    "stepAttempts": 180,
+    "stepsScheduled": 180,
+    "hitCount": 4,
+    "damageTaken": 115,
+    "respawns": 0,
+    "revivedPairs": 1,
+    "stages": [
+      {
+        "name": "shore-exploration",
+        "startPosition": [
+          -90,
+          140
+        ],
+        "frames": 716,
+        "movingFrames": 715,
+        "distance": 71.04980000000013,
+        "attackHits": 0,
+        "damageTaken": 0,
+        "revivedPairs": 0,
+        "endPosition": [
+          -87.92,
+          137.03
+        ],
+        "kills": 0
+      },
+      {
+        "name": "forest-combat",
+        "startPosition": [
+          132,
+          -26
+        ],
+        "frames": 721,
+        "movingFrames": 623,
+        "distance": 72.60305337165225,
+        "attackHits": 4,
+        "damageTaken": 7,
+        "revivedPairs": 1,
+        "endPosition": [
+          119.88,
+          -25.45
+        ],
+        "kills": 2
+      },
+      {
+        "name": "highland-movement",
+        "startPosition": [
+          -75,
+          -205
+        ],
+        "frames": 720,
+        "movingFrames": 530,
+        "distance": 68.4332075654298,
+        "attackHits": 0,
+        "damageTaken": 108,
+        "revivedPairs": 0,
+        "endPosition": [
+          -51.43,
+          -196.93
+        ],
+        "kills": 0
+      },
+      {
+        "name": "amber-swimming",
+        "startPosition": [
+          190,
+          248
+        ],
+        "frames": 719,
+        "movingFrames": 719,
+        "distance": 62.01700000000019,
+        "attackHits": 0,
+        "damageTaken": 0,
+        "revivedPairs": 0,
+        "endPosition": [
+          194.97,
+          243.6
+        ],
+        "kills": 0
+      },
+      {
+        "name": "night-camp",
+        "startPosition": [
+          -56,
+          49
+        ],
+        "frames": 721,
+        "movingFrames": 721,
+        "distance": 84.1168999999999,
+        "attackHits": 0,
+        "damageTaken": 0,
+        "revivedPairs": 0,
+        "endPosition": [
+          -46.65,
+          41.56
+        ],
+        "kills": 0
+      }
+    ],
+    "checkpoints": [
+      {
+        "activeMs": 0,
+        "stage": "shore-exploration",
+        "position": [
+          -90,
+          140
+        ],
+        "height": 1.22,
+        "time": 240,
+        "daytime": "午后",
+        "hp": 100,
+        "kills": 0,
+        "frames": 0,
+        "movingFrames": 0,
+        "distance": 0,
+        "calls": 253,
+        "triangles": 1615117,
+        "geometries": 257,
+        "textures": 9,
+        "glError": 0,
+        "heapBytes": 111076854,
+        "audio": {
+          "context": "running",
+          "voices": 0,
+          "stepsScheduled": 0,
+          "surfGain": 0,
+          "birdsGain": 0,
+          "insectsGain": 0,
+          "ambienceBytes": 8640000
+        },
+        "viewport": [
+          390,
+          844
+        ],
+        "canvasBuffer": [
+          390,
+          620
+        ]
+      },
+      {
+        "activeMs": 60000,
+        "stage": "night-camp",
+        "position": [
+          -46.65,
+          41.56
+        ],
+        "height": 13.36,
+        "time": 12.02,
+        "daytime": "夜晚",
+        "hp": 100,
+        "kills": 0,
+        "frames": 3597,
+        "movingFrames": 3308,
+        "distance": 358.22,
+        "calls": 281,
+        "triangles": 1650351,
+        "geometries": 391,
+        "textures": 19,
+        "glError": 0,
+        "heapBytes": 59923618,
+        "audio": {
+          "context": "running",
+          "voices": 1,
+          "stepsScheduled": 180,
+          "surfGain": 0,
+          "birdsGain": 0,
+          "insectsGain": 0.0538390688598156,
+          "ambienceBytes": 8640000
+        },
+        "viewport": [
+          390,
+          844
+        ],
+        "canvasBuffer": [
+          390,
+          620
+        ]
+      }
+    ],
+    "note": "Current candidate: swept actor/resource movement and tick with production objects; local windup/hit audio. Adaptive steering after blocked inputs. QA scripted input and five phase teleports; production movement/tick/render/audio. Combat pair revived as labelled load fixture. Frame intervals and JS heap only; no save or campaign acceptance."
+  },
+  "console": [],
+  "images": [
+    "docs/quality-endurance-mobile-camp.png"
+  ]
+}
