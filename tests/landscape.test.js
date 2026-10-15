@@ -32,3 +32,12 @@ test('shore stones are deterministic shallow dressing and preserve resources, en
   }
   assert.equal(regions.size,4);assert.ok(count>1500&&count<6500);
 });
+
+test('regional tree presentation varies crowns without widening resource contact footprints',async()=>{
+  const {islandTreeAppearance}=await import('../src/landscape.js');
+  assert.equal(typeof islandTreeAppearance,'function');
+  const forms=ISLANDS.map(o=>islandTreeAppearance({x:o.x,z:o.z,scale:1}));
+  assert.ok(forms[1].height>forms[0].height&&forms[2].height<forms[0].height);
+  assert.equal(new Set(forms.map(f=>f.tint.getHex())).size,4);
+  for(const [i,o]of ISLANDS.entries()){const f=islandTreeAppearance({...o,scale:1});assert.deepEqual(f,forms[i]);assert.ok(f.height>.65&&f.height<1.35);}
+});

@@ -57,3 +57,12 @@ test('production atmosphere coordinates sunlight, land fog and water with stable
   assert.equal(view.waterUniforms,waterUniforms);assert.equal(reflection,scene.fog.color);
   view.water.geometry.dispose();view.water.material.dispose();waterUniforms.terrainMap.value.dispose();view.sky.geometry.dispose();view.sky.material.dispose();
 });
+
+test('night side light adds silhouette depth, fades by daylight and follows weather without a second shadow map',()=>{
+  const scene=new THREE.Scene();scene.fog=new THREE.Fog(0,120,470);scene.background=new THREE.Color();
+  const view={scene,camera:new THREE.PerspectiveCamera(),sky:createSky(),ambient:new THREE.AmbientLight(),sun:new THREE.DirectionalLight(),nightLight:new THREE.DirectionalLight(0x9aadd4,0)};
+  WorldView.prototype.createWater.call(view);WorldView.prototype.updateAtmosphere.call(view,0);
+  const night=view.nightLight.intensity;assert.ok(night>.5&&night<1);assert.equal(view.nightLight.castShadow,false);
+  WorldView.prototype.updateAtmosphere.call(view,240);assert.equal(view.nightLight.intensity,0);
+  const weather={...world.weatherAt(0),skylight:.5};WorldView.prototype.updateAtmosphere.call(view,0,weather);assert.ok(view.nightLight.intensity<night);
+});

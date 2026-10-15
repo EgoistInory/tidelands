@@ -83,6 +83,7 @@ test('resource bounds retain regenerating nodes after initial depletion',()=>{
     entries.forEach(e=>ids.add(e.id));
   }
   assert.equal(ids.size,world.objects.length);
+  const originalTreeMatrices=view.batches.filter(({entries})=>entries[0]?.type==='tree').map(({batch})=>new Float32Array(batch.instanceMatrix.array));
   const nodes=['tree','berry','stone','fiber'].map(type=>world.objects.find(o=>o.type===type)),state={buildings:[],enemies:[],time:100,depleted:Object.fromEntries(nodes.map(node=>[node.id,200]))};
   WorldView.prototype.sync.call(view,state);
   const matrix=new THREE.Matrix4();
@@ -92,6 +93,7 @@ test('resource bounds retain regenerating nodes after initial depletion',()=>{
   }
   state.time=201;WorldView.prototype.sync.call(view,state);
   view.batches.forEach(({batch},i)=>assert.ok(batch.boundingSphere.equals(bounds[i])));
+  view.batches.filter(({entries})=>entries[0]?.type==='tree').forEach(({batch},i)=>assert.deepEqual(batch.instanceMatrix.array,originalTreeMatrices[i]));
   for(const node of nodes)for(const {batch,entries} of view.batches){
     const index=entries.findIndex(e=>e.id===node.id);if(index<0)continue;
     batch.getMatrixAt(index,matrix);assert.ok(matrix.determinant()>0);

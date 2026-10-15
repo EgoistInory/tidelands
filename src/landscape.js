@@ -41,3 +41,12 @@ export function createShoreStones(){
     entries.forEach((e,i)=>{batch.setMatrixAt(i,e.matrix);batch.setColorAt(i,e.color);});batch.computeBoundingBox();batch.computeBoundingSphere();return batch;
   });
 }
+
+
+export function islandTreeAppearance(node){
+  const biome=ISLANDS.reduce((best,o,i)=>Math.hypot(node.x-o.x,node.z-o.z)/o.r<Math.hypot(node.x-ISLANDS[best].x,node.z-ISLANDS[best].z)/ISLANDS[best].r?i:best,0);
+  const variation=1+Math.sin(node.x*1.37+node.z*.91)*.05;
+  const height=[.96,1.22,.78,.87][biome]*variation;
+  const tint=new THREE.Color().setRGB(...[[.98,.95,.86],[.84,.98,.89],[.90,.95,.95],[1,.90,.72]][biome]);
+  return {height,tint};
+}

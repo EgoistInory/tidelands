@@ -17,7 +17,7 @@ import {createMeadow,createFiberClump,updateMeadow,updateGroundCover,updateCampC
 import {createSky,updateSky} from './sky.js';
 import {createFlame,updateCampfire} from './campfire.js';
 import {createCrystalDeposit} from './crystal.js';
-import {landscapeSample,createShoreStones} from './landscape.js';
+import {landscapeSample,createShoreStones,islandTreeAppearance} from './landscape.js';
 
 const palette={bark:0x65513d,leaf:0x365a42,lightLeaf:0x68815b,rock:0x858d86,sand:0xd5c8a7,cloth:0xb86636,cream:0xeee1bd};
 const materials=new Map();
@@ -26,6 +26,11 @@ function mesh(geometry,color,x=0,y=0,z=0){const o=new THREE.Mesh(geometry,materi
 function box(w,h,d,color,x=0,y=0,z=0){return mesh(new THREE.BoxGeometry(w,h,d),color,x,y,z);}
 function cone(r,h,color,x=0,y=0,z=0,n=7){return mesh(new THREE.ConeGeometry(r,h,n),color,x,y,z);}
 function sphere(r,color,x=0,y=0,z=0){return mesh(new THREE.IcosahedronGeometry(r,0),color,x,y,z);}
+
+function resourceTransform(dummy,o,depleted=false){
+  const scale=depleted?0:o.scale,height=o.type==='tree'?islandTreeAppearance(o).height:1;
+  dummy.position.set(o.x,o.y,o.z);dummy.scale.set(scale,scale*height,scale);dummy.rotation.set(0,o.rotation,0);dummy.updateMatrix();
+}
 
 function person(color=palette.cloth){
   return createCharacter(color);
@@ -146,6 +151,7 @@ export class WorldView{
     this.scene=new THREE.Scene();this.scene.background=new THREE.Color(0xb8d4d5);this.scene.fog=new THREE.Fog(0xb8d4d5,120,470);
     this.camera=new THREE.PerspectiveCamera(55,1,.2,1000);
     this.ambient=new THREE.HemisphereLight(0xe2f1df,0x697346,2.2);this.scene.add(this.ambient);
+    this.nightLight=new THREE.DirectionalLight(0x9aadd4,0);this.scene.add(this.nightLight,this.nightLight.target);
     this.sun=new THREE.DirectionalLight(0xffe3ad,3);this.sun.castShadow=true;this.sun.shadow.mapSize.set(2048,2048);Object.assign(this.sun.shadow.camera,{left:-70,right:70,top:70,bottom:-70,near:1,far:240});this.sun.shadow.bias=-.0005;this.scene.add(this.sun,this.sun.target);
     this.rockSurface=initializeRockSurface({anisotropy:this.renderer.capabilities.getMaxAnisotropy()});
     this.createTerrain();this.createWater();this.createScenery();
@@ -222,14 +228,14 @@ export class WorldView{
         // Separate tree parts leave the open space below the crown available to the camera.
         const bounds=model.children.map(part=>new THREE.Box3().setFromObject(part));
         for(const o of entries){
-          dummy.position.set(o.x,o.y,o.z);dummy.scale.setScalar(o.scale);dummy.rotation.set(0,o.rotation,0);dummy.updateMatrix();
+          resourceTransform(dummy,o);
           this.cameraObstacles.push({object:o,boxes:bounds.map(box=>box.clone().applyMatrix4(dummy.matrix))});
         }
       }
       mergeStaticParts(model);model.updateMatrixWorld(true);
       for(const part of model.children){
         const batch=new THREE.InstancedMesh(part.geometry,part.material,entries.length);batch.customDepthMaterial=part.customDepthMaterial;batch.castShadow=true;batch.receiveShadow=true;
-        for(let i=0;i<entries.length;i++){const o=entries[i];dummy.position.set(o.x,o.y,o.z);dummy.scale.setScalar(o.scale);dummy.rotation.set(0,o.rotation,0);dummy.updateMatrix();batch.setMatrixAt(i,dummy.matrix.clone().multiply(part.matrix));}
+        for(let i=0;i<entries.length;i++){const o=entries[i];resourceTransform(dummy,o);batch.setMatrixAt(i,dummy.matrix.clone().multiply(part.matrix));if(type==='tree'&&part.material.alphaTest>0)batch.setColorAt(i,islandTreeAppearance(o).tint);}
         batch.computeBoundingSphere(); // Include all nodes before depletion hides any instance.
         batch.instanceMatrix.setUsage(THREE.DynamicDrawUsage);this.scene.add(batch);this.batches.push({batch,entries,part:part.matrix.clone(),hidden:new Set()});
       }
@@ -257,7 +263,7 @@ export class WorldView{
     const switched=this.syncedState!==state;
     if(switched){this.gatherAt=this.hurtAt=-100;this.gatherKind=this.gatherTool=null;}
     const dummy=new THREE.Object3D();
-    for(const {batch,entries,part,hidden}of this.batches){let changed=false;entries.forEach((o,i)=>{const depleted=isDepleted(state,o);if(depleted===hidden.has(i))return;depleted?hidden.add(i):hidden.delete(i);dummy.position.set(o.x,o.y,o.z);dummy.scale.setScalar(depleted?0:o.scale);dummy.rotation.set(0,o.rotation,0);dummy.updateMatrix();batch.setMatrixAt(i,dummy.matrix.clone().multiply(part));changed=true;});if(changed)batch.instanceMatrix.needsUpdate=true;}
+    for(const {batch,entries,part,hidden}of this.batches){let changed=false;entries.forEach((o,i)=>{const depleted=isDepleted(state,o);if(depleted===hidden.has(i))return;depleted?hidden.add(i):hidden.delete(i);resourceTransform(dummy,o,depleted);batch.setMatrixAt(i,dummy.matrix.clone().multiply(part));changed=true;});if(changed)batch.instanceMatrix.needsUpdate=true;}
     const definitions=new Map(state.buildings.map(b=>[b.id,b]));
     for(const [id,g]of this.buildings){const b=definitions.get(id);if(!b||g.userData.buildingType!==b.type){this.scene.remove(g);this.disposeGroup(g);this.buildings.delete(id);}}
     for(const b of state.buildings){if(!this.buildings.has(b.id)){const g=buildingModel(b.type);g.userData.buildingType=b.type;this.scene.add(g);this.buildings.set(b.id,g);}this.buildings.get(b.id).position.set(b.x,terrain(b.x,b.z),b.z);}
@@ -288,6 +294,7 @@ export class WorldView{
     const {daylight}=dayCycle(time);
     this.ambient.intensity=(.6+Math.sqrt((daylight-.04)/.96)*1.5)*weather.skylight;
     this.sun.intensity=daylight*2.6*weather.sunlight;
+    if(this.nightLight)this.nightLight.intensity=.7*(1-THREE.MathUtils.smoothstep(daylight,.12,.65))*weather.skylight;
     this.scene.fog.near=weather.fogNear;this.scene.fog.far=weather.fogFar;
     updateSky(this.sky,time,this.camera,this.scene.fog,weather);
     this.scene.background.copy(this.scene.fog.color);
@@ -321,6 +328,7 @@ export class WorldView{
     updateGroundCover(this.meadow,this.camera.position);
     this.updateAtmosphere(state.time,weather);
     this.sun.position.set(p.x-70,h+100,p.z+40);this.sun.target.position.set(p.x,h,p.z);
+    if(this.nightLight){this.nightLight.position.set(p.x+70,h+90,p.z-40);this.nightLight.target.position.set(p.x,h,p.z);}
     this.marker.visible=Boolean(near)&&!placement;if(near)this.marker.position.set(near.x,Math.max(.3,terrain(near.x,near.z))+.08,near.z);
     if(placement){this.preview.visible=true;this.preview.position.set(placement.x,terrain(placement.x,placement.z),placement.z);this.preview.traverse(o=>{if(o.isMesh)o.material.color.set(placement.error?0xe08568:0xa6dd9b);});}else this.preview.visible=false;
     this.renderer.render(this.scene,this.camera);

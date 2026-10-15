@@ -1,0 +1,160 @@
+TAP version 13
+# Subtest: fern fronds remain rooted, deterministic and finite with bounded leaf geometry
+ok 1 - fern fronds remain rooted, deterministic and finite with bounded leaf geometry
+  ---
+  duration_ms: 6.81675
+  type: 'test'
+  ...
+# Subtest: forest cover clusters beside trees without changing resources, routes or deterministic placement
+ok 2 - forest cover clusters beside trees without changing resources, routes or deterministic placement
+  ---
+  duration_ms: 304.22675
+  type: 'test'
+  ...
+# Subtest: production scenery includes nearby ferns and recovers them after distance culling
+ok 3 - production scenery includes nearby ferns and recovers them after distance culling
+  ---
+  duration_ms: 584.085542
+  type: 'test'
+  ...
+# Subtest: four island surfaces distinguish warm dunes, woodland litter and exposed upland rock
+ok 4 - four island surfaces distinguish warm dunes, woodland litter and exposed upland rock
+  ---
+  duration_ms: 16.154917
+  type: 'test'
+  ...
+# Subtest: shore stones are deterministic shallow dressing and preserve resources, enemies and routes
+ok 5 - shore stones are deterministic shallow dressing and preserve resources, enemies and routes
+  ---
+  duration_ms: 147.405
+  type: 'test'
+  ...
+# Subtest: regional tree presentation varies crowns without widening resource contact footprints
+ok 6 - regional tree presentation varies crowns without widening resource contact footprints
+  ---
+  duration_ms: 0.317417
+  type: 'test'
+  ...
+# Subtest: islanders respond to a nearby conversation target without moving or changing the save
+ok 7 - islanders respond to a nearby conversation target without moving or changing the save
+  ---
+  duration_ms: 668.531083
+  type: 'test'
+  ...
+# Subtest: tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+ok 8 - tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+  ---
+  duration_ms: 439.038709
+  type: 'test'
+  ...
+# Subtest: distant geometry is shared until the last owner leaves, while materials remain private
+ok 9 - distant geometry is shared until the last owner leaves, while materials remain private
+  ---
+  duration_ms: 17.8515
+  type: 'test'
+  ...
+# Subtest: resource bounds retain regenerating nodes after initial depletion
+ok 10 - resource bounds retain regenerating nodes after initial depletion
+  ---
+  duration_ms: 399.959875
+  type: 'test'
+  ...
+# Subtest: save replacement releases creatures and resets transient death/hit animation
+ok 11 - save replacement releases creatures and resets transient death/hit animation
+  ---
+  duration_ms: 14.385209
+  type: 'test'
+  ...
+# Subtest: boar: near geometry shares a lifetime while pose and hit materials remain private
+ok 12 - boar: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 13.777625
+  type: 'test'
+  ...
+# Subtest: crab: near geometry shares a lifetime while pose and hit materials remain private
+ok 13 - crab: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 23.609666
+  type: 'test'
+  ...
+# Subtest: same-type save replacement reuses creature models without carrying over animation or damage
+ok 14 - same-type save replacement reuses creature models without carrying over animation or damage
+  ---
+  duration_ms: 20.906584
+  type: 'test'
+  ...
+# Subtest: loading a different save updates buildings even when IDs are reused
+ok 15 - loading a different save updates buildings even when IDs are reused
+  ---
+  duration_ms: 1.174292
+  type: 'test'
+  ...
+# Subtest: campfire owns its unlit flame without changing shared building materials
+ok 16 - campfire owns its unlit flame without changing shared building materials
+  ---
+  duration_ms: 0.974625
+  type: 'test'
+  ...
+# Subtest: removing tents releases their geometry but retains immutable cloth for later camps
+ok 17 - removing tents releases their geometry but retains immutable cloth for later camps
+  ---
+  duration_ms: 0.909375
+  type: 'test'
+  ...
+# Subtest: repeated build previews release their geometry and private materials
+ok 18 - repeated build previews release their geometry and private materials
+  ---
+  duration_ms: 6.387625
+  type: 'test'
+  ...
+# Subtest: tent preview retains double-sided cloth and shares replacement material safely
+ok 19 - tent preview retains double-sided cloth and shares replacement material safely
+  ---
+  duration_ms: 0.354333
+  type: 'test'
+  ...
+# Subtest: organic tree keeps a narrow rooted trunk and finite nondegenerate branching geometry
+ok 20 - organic tree keeps a narrow rooted trunk and finite nondegenerate branching geometry
+  ---
+  duration_ms: 81.505917
+  type: 'test'
+  ...
+# Subtest: branching tree is deterministic and retains two shared instanced surfaces after merging
+ok 21 - branching tree is deterministic and retains two shared instanced surfaces after merging
+  ---
+  duration_ms: 43.047084
+  type: 'test'
+  ...
+# Subtest: weather is deterministic over several days with bounded continuous transitions
+ok 22 - weather is deterministic over several days with bounded continuous transitions
+  ---
+  duration_ms: 9.147666
+  type: 'test'
+  ...
+# Subtest: sky cloud coverage and haze use the shared weather without replacing resources
+ok 23 - sky cloud coverage and haze use the shared weather without replacing resources
+  ---
+  duration_ms: 2.276542
+  type: 'test'
+  ...
+# Subtest: production atmosphere coordinates sunlight, land fog and water with stable resources
+ok 24 - production atmosphere coordinates sunlight, land fog and water with stable resources
+  ---
+  duration_ms: 56.803458
+  type: 'test'
+  ...
+# Subtest: night side light adds silhouette depth, fades by daylight and follows weather without a second shadow map
+ok 25 - night side light adds silhouette depth, fades by daylight and follows weather without a second shadow map
+  ---
+  duration_ms: 37.349917
+  type: 'test'
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1687.459375
