@@ -9,7 +9,7 @@ import {createCreature,animateCreature,resetCreature} from './creature.js';
 import {mergeStaticParts} from './merge-parts.js';
 import {cottageSurfaces,cottageRoof} from './cottage-surfaces.js';
 import {createBerryFoliage,barkSurface,updateFoliage} from './foliage.js';
-import {createTree} from './tree.js';
+import {createTree,TREE_FORMS} from './tree.js';
 import {createRuin} from './ruin.js';
 import {createLighthouse} from './lighthouse.js';
 import {createGroundSurface} from './ground-surface.js';
@@ -30,17 +30,18 @@ function sphere(r,color,x=0,y=0,z=0){return mesh(new THREE.IcosahedronGeometry(r
 
 function resourceTransform(dummy,o,depleted=false){
   const scale=depleted?0:o.scale,height=o.type==='tree'?islandTreeAppearance(o).height:1;
-  dummy.position.set(o.x,o.y,o.z);dummy.scale.set(scale,scale*height,scale);dummy.rotation.set(0,o.rotation,0);dummy.updateMatrix();
+  const vertical=scale===0?0:o.type==='tree'?Math.max(.95,scale*height):scale;
+  dummy.position.set(o.x,o.y,o.z);dummy.scale.set(scale,vertical,scale);dummy.rotation.set(0,o.rotation,0);dummy.updateMatrix();
 }
 
 function person(color=palette.cloth){
   return createCharacter(color);
 }
-function resourceModel(type){
+function resourceModel(type,treeForm='coast'){
   const g=new THREE.Group();
   const branch=(geometry,x=0,y=0,z=0)=>{const m=new THREE.Mesh(geometry,barkSurface());m.position.set(x,y,z);m.castShadow=m.receiveShadow=true;return m;};
   if(type==='tree'){
-    return createTree();
+    return createTree(treeForm);
   }else if(type==='stone'){
     const rock=createWeatheredRock(1.8),small=createWeatheredRock(.8);
     rock.position.y=1;rock.scale.set(1.4,.9,1);rock.rotation.z=.3;small.position.set(1.6,.4,1);g.add(rock,small);
@@ -222,7 +223,8 @@ export class WorldView{
     const types=['tree','stone','crystal','berry','fiber','shell'];this.batches=[];
     const dummy=new THREE.Object3D();
     for(const type of types){
-      const entries=this.world.objects.filter(o=>o.type===type),model=resourceModel(type);model.updateMatrixWorld(true);
+      for(const form of type==='tree'?TREE_FORMS:[null]){
+      const entries=this.world.objects.filter(o=>o.type===type&&(type!=='tree'||islandTreeAppearance(o).form===form)),model=resourceModel(type,form);model.updateMatrixWorld(true);
       if(type==='tree'){
         // Separate tree parts leave the open space below the crown available to the camera.
         const bounds=model.children.map(part=>new THREE.Box3().setFromObject(part));
@@ -234,9 +236,11 @@ export class WorldView{
       mergeStaticParts(model);model.updateMatrixWorld(true);
       for(const part of model.children){
         const batch=new THREE.InstancedMesh(part.geometry,part.material,entries.length);batch.customDepthMaterial=part.customDepthMaterial;batch.castShadow=true;batch.receiveShadow=true;
+        if(type==='tree')batch.userData.treeForm=form;
         for(let i=0;i<entries.length;i++){const o=entries[i];resourceTransform(dummy,o);batch.setMatrixAt(i,dummy.matrix.clone().multiply(part.matrix));if(type==='tree'&&part.material.alphaTest>0)batch.setColorAt(i,islandTreeAppearance(o).tint);}
         batch.computeBoundingSphere(); // Include all nodes before depletion hides any instance.
         batch.instanceMatrix.setUsage(THREE.DynamicDrawUsage);this.scene.add(batch);this.batches.push({batch,entries,part:part.matrix.clone(),hidden:new Set()});
+      }
       }
     }
     this.islanders=[];

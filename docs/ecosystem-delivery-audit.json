@@ -1,0 +1,68 @@
+{
+  "batchDelivered": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "archive": "tidelands-m5-2026-10-16-ecosystem.zip",
+  "archiveSha256": "d6729974ece0130498c8a92779faa72e7e4551ac93b108cacbf402ad941eb285",
+  "archiveBytes": 8200360,
+  "changedInputs": [
+    "README.md",
+    "src/camera.js",
+    "src/foliage.js",
+    "src/landscape.js",
+    "src/scene.js",
+    "src/tree.js",
+    "src/world.js"
+  ],
+  "checkedFiles": 51,
+  "fullTests": 230,
+  "focusedTests": 33,
+  "groveAdded": 128,
+  "worldTrees": 309,
+  "gpuP95Ms": {
+    "desktop": {
+      "shore": 11.5438,
+      "forest-combat": 12.5945,
+      "highland": 9.5842,
+      "amber-swim": 13.1861,
+      "night-camp": 13.5164
+    },
+    "mobile": {
+      "shore": 6.228,
+      "forest-combat": 6.7265,
+      "highland": 3.8969,
+      "amber-swim": 8.3181,
+      "night-camp": 6.9041
+    }
+  },
+  "ordinaryOrigin": "http://127.0.0.1:53942",
+  "ordinaryNewJsonDownloaded": false,
+  "currentSourceEnduranceAccepted": false,
+  "fullCurrentJourneyReplayed": false,
+  "realMobileDevice": false,
+  "audioListened": false,
+  "physicalCameraQualityComplete": false,
+  "imageSha256": {
+    "docs/ecosystem-final-coast.png": "da17c6a7718c2f8e93ec375e064e0682ba0222c172c7881861b28d923654c12a",
+    "docs/ecosystem-final-dusk.png": "cc54214097125e64721a80c36d40af2231412a6562c95e7751ba62d4f49a1686",
+    "docs/ecosystem-final-forest-mobile.png": "dffb9a46ca1274de03acf9ea121ff719475b866c7cc17c00605f808d8906ed49",
+    "docs/ecosystem-final-forest.png": "be9bde2f9d6b35de601c43017051edc071a93aa398372374957df3aff6537d34",
+    "docs/ecosystem-final-highland.png": "0bd6cf737a5bc066403a90c540084b63c608846a74a8b986e307d22bed631217",
+    "docs/ecosystem-final-motion.png": "900500e69984e2a78240b0a9a68ff3b4f62cf9e02b1ff8ba723a01110e7afa81",
+    "docs/ecosystem-final-night.png": "0e7d57e15716682ee4bb605a47ce6657b0d625cfa15318d8e9214d2f346052db",
+    "docs/ecosystem-final-shoal-mobile.png": "7ec335aa79404e02d5113a489e457ee762cfebfe46367918733c7049ac79fd7d",
+    "docs/ecosystem-final-shoal.png": "7af63748ce86617539aed8e08d9bca836ab592f339e6217e75e0577937093bd0",
+    "docs/ecosystem-grove-after.png": "c880d3c7fd0b1cb5e76fb07737ed6494ac68e17fa74e5eedb2ef667bdb200437",
+    "docs/ecosystem-grove-before.png": "352b8ebfde9226df446c588bfc5b8db70022af8c266ea7e35b7ceec29891c8e2",
+    "docs/ecosystem-grove-restored.png": "2e5b276c25b718244276f2b9b2b2386f68209dc4e57127cd591c52167904ec61",
+    "docs/ecosystem-package-bag.png": "7e55aab4817f8aa73626579a288f3c3c827ea81327a5ad039b641a6046f55d95",
+    "docs/ecosystem-package-mobile.png": "a6990057d4686ef4b9babf734f4f94fd0849649901ded4489063dd8b53b75bab"
+  },
+  "evidence": [
+    "docs/ecosystem-final-render.json",
+    "docs/ecosystem-camera-render.json",
+    "docs/ecosystem-grove-ui.json",
+    "docs/ecosystem-package-ui.json"
+  ],
+  "scope": "Regional ecosystem batch only; current GPU queries are bounded fixtures without audio/HUD. Prior source endurance/campaign reports remain historical."
+}

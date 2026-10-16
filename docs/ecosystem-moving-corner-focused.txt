@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: four regional tree forms have distinct geometry with rooted trunks and open walking space
+ok 1 - four regional tree forms have distinct geometry with rooted trunks and open walking space
+  ---
+  duration_ms: 183.444334
+  type: 'test'
+  ...
+# Subtest: leaf mip chains retain a visible subpixel crown and share the exact shadow map
+ok 2 - leaf mip chains retain a visible subpixel crown and share the exact shadow map
+  ---
+  duration_ms: 3.966125
+  type: 'test'
+  ...
+# Subtest: grove resources preserve every existing node and enemy and keep landmark approaches open
+ok 3 - grove resources preserve every existing node and enemy and keep landmark approaches open
+  ---
+  duration_ms: 13.138042
+  type: 'test'
+  ...
+# Subtest: regional instance batches use their own bounds, and new grove nodes gather and survive save restore
+ok 4 - regional instance batches use their own bounds, and new grove nodes gather and survive save restore
+  ---
+  duration_ms: 765.244875
+  type: 'test'
+  ...
+# Subtest: the exposed shoal grove keeps subject distance by finding clear space below the crown
+ok 5 - the exposed shoal grove keeps subject distance by finding clear space below the crown
+  ---
+  duration_ms: 653.2975
+  type: 'test'
+  ...
+# Subtest: low shoal crowns leave a six metre ray at the exposed moving corner
+ok 6 - low shoal crowns leave a six metre ray at the exposed moving corner
+  ---
+  duration_ms: 607.037875
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2312.492709

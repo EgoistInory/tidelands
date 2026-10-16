@@ -55,5 +55,20 @@ export function createWorld(){
     const island=ISLANDS[i%4],angle=random()*Math.PI*2,r=island.r*(.38+random()*.4),x=island.x+Math.cos(angle)*r,z=island.z+Math.sin(angle)*r;
     if(terrain(x,z)>.3&&Math.hypot(x-SPAWN.x,z-SPAWN.z)>30)enemies.push({id:`enemy-${i}`,type:i%3===0?'boar':'crab',x,z,hp:i%3===0?70:40,homeX:x,homeZ:z});
   }
+  // Reserve resource1800-2199 for grove additions; old save validation remains unchanged.
+  const groveRandom=randomGenerator(27183),anchors=objects.filter(o=>o.type==='tree');
+  for(const [region,island] of ISLANDS.entries()){
+    const nearby=anchors.filter(o=>Math.hypot(o.x-island.x,o.z-island.z)<island.r*.85&&o.y>3&&o.y<28),budget=[24,68,16,20][region];let placed=0;
+    if(!nearby.length)continue;
+    for(let attempt=0;attempt<budget*80&&placed<budget;attempt++){
+      const anchor=nearby[Math.floor(groveRandom()*nearby.length)],angle=groveRandom()*Math.PI*2,radius=5.5+groveRandom()*14;
+      const x=anchor.x+Math.cos(angle)*radius,z=anchor.z+Math.sin(angle)*radius,y=terrain(x,z),scale=.7+groveRandom()*.45;
+      const closest=ISLANDS.reduce((best,o)=>Math.hypot(x-o.x,z-o.z)/o.r<Math.hypot(x-best.x,z-best.z)/best.r?o:best);
+      const slope=Math.hypot(terrain(x+.5,z)-terrain(x-.5,z),terrain(x,z+.5)-terrain(x,z-.5));
+      if(closest!==island||y<3||y>28||slope>.7||Math.hypot(x-SPAWN.x,z-SPAWN.z)<12||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<14))continue;
+      if(objects.some(o=>['tree','stone','crystal'].includes(o.type)&&Math.hypot(x-o.x,z-o.z)<Math.max(4.2,(o.type==='stone'?2.8:o.type==='crystal'?1.5:1.1)*o.scale+scale*1.1+.9)))continue;
+      objects.push({id:`resource-${1800+region*100+placed++}`,type:'tree',x,z,y,scale,rotation:groveRandom()*Math.PI*2});
+    }
+  }
   return {objects,enemies};
 }

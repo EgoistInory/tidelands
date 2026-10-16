@@ -26,6 +26,13 @@ export function unobstructedCamera(focus,desired,boxes,heightAt,minimumDistance=
       if(candidateDistance>distance){safe=candidate;distance=candidateDistance;}
       if(distance>=minimumDistance)return safe;
     }
+    // If every side is covered, seek a lower clear ray below the crown before moving into the subject.
+    if(offset.y>0)for(const ratio of [.75,.5,.25,0]){
+      const lowered=new THREE.Vector3(offset.x,offset.y*ratio,offset.z).add(focus);
+      const candidate=unobstructedCamera(focus,lowered,boxes,heightAt),candidateDistance=candidate.distanceTo(focus);
+      if(candidateDistance>distance){safe=candidate;distance=candidateDistance;}
+      if(distance>=minimumDistance)return safe;
+    }
   }
   return safe;
 }

@@ -1,0 +1,249 @@
+{
+  "rows": [
+    {
+      "ready": true,
+      "region": "coast",
+      "time": 240,
+      "frames": 0,
+      "player": [
+        -126,
+        69
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "trees": 309,
+      "treeBatches": [
+        {
+          "form": "coast",
+          "count": 93,
+          "triangles": 1344
+        },
+        {
+          "form": "coast",
+          "count": 93,
+          "triangles": 1392
+        },
+        {
+          "form": "forest",
+          "count": 126,
+          "triangles": 2016
+        },
+        {
+          "form": "forest",
+          "count": 126,
+          "triangles": 1656
+        },
+        {
+          "form": "highland",
+          "count": 47,
+          "triangles": 1344
+        },
+        {
+          "form": "highland",
+          "count": 47,
+          "triangles": 1692
+        },
+        {
+          "form": "shoal",
+          "count": 43,
+          "triangles": 1344
+        },
+        {
+          "form": "shoal",
+          "count": 43,
+          "triangles": 1392
+        }
+      ],
+      "drawCalls": 206,
+      "triangles": 2185623,
+      "glError": 0,
+      "scope": "Declared region/no enemies/quest6; production WorldView, fixed-dt180frame movement. No ordinary save/input, full-quality or frame-performance acceptance."
+    },
+    {
+      "ready": true,
+      "region": "forest",
+      "time": 240,
+      "frames": 0,
+      "player": [
+        96,
+        -127
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "trees": 309,
+      "treeBatches": [
+        {
+          "form": "coast",
+          "count": 93,
+          "triangles": 1344
+        },
+        {
+          "form": "coast",
+          "count": 93,
+          "triangles": 1392
+        },
+        {
+          "form": "forest",
+          "count": 126,
+          "triangles": 2016
+        },
+        {
+          "form": "forest",
+          "count": 126,
+          "triangles": 1656
+        },
+        {
+          "form": "highland",
+          "count": 47,
+          "triangles": 1344
+        },
+        {
+          "form": "highland",
+          "count": 47,
+          "triangles": 1692
+        },
+        {
+          "form": "shoal",
+          "count": 43,
+          "triangles": 1344
+        },
+        {
+          "form": "shoal",
+          "count": 43,
+          "triangles": 1392
+        }
+      ],
+      "drawCalls": 116,
+      "triangles": 1657403,
+      "glError": 0,
+      "scope": "Declared region/no enemies/quest6; production WorldView, fixed-dt180frame movement. No ordinary save/input, full-quality or frame-performance acceptance."
+    },
+    {
+      "ready": true,
+      "region": "highland",
+      "time": 240,
+      "frames": 0,
+      "player": [
+        -39,
+        -262
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "trees": 309,
+      "treeBatches": [
+        {
+          "form": "coast",
+          "count": 93,
+          "triangles": 1344
+        },
+        {
+          "form": "coast",
+          "count": 93,
+          "triangles": 1392
+        },
+        {
+          "form": "forest",
+          "count": 126,
+          "triangles": 2016
+        },
+        {
+          "form": "forest",
+          "count": 126,
+          "triangles": 1656
+        },
+        {
+          "form": "highland",
+          "count": 47,
+          "triangles": 1344
+        },
+        {
+          "form": "highland",
+          "count": 47,
+          "triangles": 1692
+        },
+        {
+          "form": "shoal",
+          "count": 43,
+          "triangles": 1344
+        },
+        {
+          "form": "shoal",
+          "count": 43,
+          "triangles": 1392
+        }
+      ],
+      "drawCalls": 96,
+      "triangles": 783822,
+      "glError": 0,
+      "scope": "Declared region/no enemies/quest6; production WorldView, fixed-dt180frame movement. No ordinary save/input, full-quality or frame-performance acceptance."
+    },
+    {
+      "ready": true,
+      "region": "shoal",
+      "time": 240,
+      "frames": 0,
+      "player": [
+        107,
+        193
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "trees": 309,
+      "treeBatches": [
+        {
+          "form": "coast",
+          "count": 93,
+          "triangles": 1344
+        },
+        {
+          "form": "coast",
+          "count": 93,
+          "triangles": 1392
+        },
+        {
+          "form": "forest",
+          "count": 126,
+          "triangles": 2016
+        },
+        {
+          "form": "forest",
+          "count": 126,
+          "triangles": 1656
+        },
+        {
+          "form": "highland",
+          "count": 47,
+          "triangles": 1344
+        },
+        {
+          "form": "highland",
+          "count": 47,
+          "triangles": 1692
+        },
+        {
+          "form": "shoal",
+          "count": 43,
+          "triangles": 1344
+        },
+        {
+          "form": "shoal",
+          "count": 43,
+          "triangles": 1392
+        }
+      ],
+      "drawCalls": 372,
+      "triangles": 2517872,
+      "glError": 0,
+      "scope": "Declared region/no enemies/quest6; production WorldView, fixed-dt180frame movement. No ordinary save/input, full-quality or frame-performance acceptance."
+    }
+  ],
+  "note": "Intermediate regional forms before vertical clearance floor and under-crown camera fallback; shoal close framing is a rejected regression."
+}

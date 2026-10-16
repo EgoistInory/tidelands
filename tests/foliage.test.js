@@ -37,7 +37,7 @@ test('canopies share a bounded mipmapped cutout texture with opaque leaves and e
   const a=createCanopy(),b=createCanopy(),map=a.material.map;
   assert.equal(a.material,b.material);assert.equal(map,b.material.map);
   assert.equal(map.image.data.byteLength,128*128*4);
-  assert.equal(map.generateMipmaps,true);
+  assert.equal(map.generateMipmaps,false);
   const alpha=map.image.data.filter((_,i)=>i%4===3);
   assert.ok(alpha.some(v=>v===0));assert.ok(alpha.some(v=>v===255));
   assert.equal(map.image.data[3],0);

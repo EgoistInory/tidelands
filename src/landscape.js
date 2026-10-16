@@ -48,5 +48,5 @@ export function islandTreeAppearance(node){
   const variation=1+Math.sin(node.x*1.37+node.z*.91)*.05;
   const height=[.96,1.22,.78,.87][biome]*variation;
   const tint=new THREE.Color().setRGB(...[[.98,.95,.86],[.84,.98,.89],[.90,.95,.95],[1,.90,.72]][biome]);
-  return {height,tint};
+  return {height,tint,form:['coast','forest','highland','shoal'][biome]};
 }

@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: four regional tree forms have distinct geometry with rooted trunks and open walking space
+not ok 1 - four regional tree forms have distinct geometry with rooted trunks and open walking space
+  ---
+  duration_ms: 211.689792
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/ecosystem.test.js:13:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    height/tint alone is not a regional silhouette
+    
+    1 !== 4
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 4
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/ecosystem.test.js:22:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: leaf mip chains retain a visible subpixel crown and share the exact shadow map
+not ok 2 - leaf mip chains retain a visible subpixel crown and share the exact shadow map
+  ---
+  duration_ms: 0.923334
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/ecosystem.test.js:25:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/ecosystem.test.js:27:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: grove resources preserve every existing node and enemy and keep landmark approaches open
+not ok 3 - grove resources preserve every existing node and enemy and keep landmark approaches open
+  ---
+  duration_ms: 15.545125
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/ecosystem.test.js:33:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(extra.length>=80&&extra.length<=140)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/ecosystem.test.js:36:73)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: regional instance batches use their own bounds, and new grove nodes gather and survive save restore
+not ok 4 - regional instance batches use their own bounds, and new grove nodes gather and survive save restore
+  ---
+  duration_ms: 1380.238958
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/ecosystem.test.js:47:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 8
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 8
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/ecosystem.test.js:49:76)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 0
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1792.728917
