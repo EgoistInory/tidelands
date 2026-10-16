@@ -8,9 +8,9 @@ not ok 1 - four regional tree forms have distinct geometry with rooted trunks an
   failureType: 'testCodeFailure'
   error: |-
     height/tint alone is not a regional silhouette
-    
+
     1 !== 4
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected: 4
@@ -32,9 +32,9 @@ not ok 2 - leaf mip chains retain a visible subpixel crown and share the exact s
   failureType: 'testCodeFailure'
   error: |-
     Expected values to be strictly equal:
-    
+
     true !== false
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected: false
@@ -58,9 +58,9 @@ not ok 3 - grove resources preserve every existing node and enemy and keep landm
   failureType: 'testCodeFailure'
   error: |-
     The expression evaluated to a falsy value:
-    
+
       assert.ok(extra.length>=80&&extra.length<=140)
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected: true
@@ -84,9 +84,9 @@ not ok 4 - regional instance batches use their own bounds, and new grove nodes g
   failureType: 'testCodeFailure'
   error: |-
     Expected values to be strictly equal:
-    
+
     2 !== 8
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected: 8
