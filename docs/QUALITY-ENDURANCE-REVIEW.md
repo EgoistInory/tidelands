@@ -1,4 +1,6 @@
-# 当前候选持续负载与整体审查（2026-10-16）
+最新当前来源审查见 [ECOSYSTEM-ENDURANCE-REVIEW.md](ECOSYSTEM-ENDURANCE-REVIEW.md)；下文c1a9为历史来源。
+
+# 历史前摇版本持续负载审查（2026-10-16）
 
 本轮关闭当前源码缺少持续运动、战斗、内存和GPU计时证据的缺口。整体美术与自然动作仍未通过，M5及完整3A目标保持未完成。运行源码与 `tidelands-m5-2026-10-16-enemy-windup.zip` 的49运行文件完全一致，包SHA `c1a9a657e5d2f7adb7ddb825026fb5e6260b8ce6778ad9b8161a0adad1d3c434`。本轮仅新增验收页面、数据和审计，未改变游戏源码或普通存档。
 

@@ -45,14 +45,14 @@ function frame(now){
     for(const [j,e] of state.enemies.slice(0,2).entries())Object.assign(e,{x:state.player.x+3+j,z:state.player.z+1,hp:e.type==='boar'?70:40,attackAt:state.time,homeX:state.player.x+3+j,homeZ:state.player.z+1});
     cancelEnemyAttacks(state);phase.revivedPairs++;revivedPairs++;view.sync(state);
   }
-  const enemy=index===1?nearestEnemy(state):null,dx=enemy?enemy.x-state.player.x:Math.sin(angle),dz=enemy?enemy.z-state.player.z:Math.cos(angle),before={x:state.player.x,z:state.player.z};
+  const enemy=index===1||blockedFrames>=8||pending?nearestEnemy(state):null,dx=enemy?enemy.x-state.player.x:Math.sin(angle),dz=enemy?enemy.z-state.player.z:Math.cos(angle),before={x:state.player.x,z:state.player.z};
   movePlayer(state,world.objects,dx,dz,dt,index===2&&phaseTime%8<3);
   const moved=Math.hypot(state.player.x-before.x,state.player.z-before.z),moving=moved>.001;
   if(!moving){blockedFrames++;if(blockedFrames%8===0)steer+=.65;}else blockedFrames=0;distance+=moved;phase.distance+=moved;frames++;phase.frames++;if(moving){movingFrames++;phase.movingFrames++;}
   const feedback={};tick(state,dt,index===2&&phaseTime%8<3,feedback,world.objects);damageTaken+=feedback.damage;phase.damageTaken+=feedback.damage;
   if(feedback.damage){view.hurtAt=state.time;audio.effect('hit');}if(feedback.enemyWindups)for(const enemy of feedback.enemyWindups)audio.effect('enemy-windup',{enemyType:enemy.type});if(feedback.respawned){respawns++;pending=null;view.sync(state);}
   if(state.player.hp<40)eat(state);
-  if(index===1&&!pending&&enemy&&Math.hypot(enemy.x-state.player.x,enemy.z-state.player.z)<5.2){const a=attack(state,{defer:true});if(a.pending){pending=a.pending;audio.effect('swing');}}
+  if(!pending&&enemy&&Math.hypot(enemy.x-state.player.x,enemy.z-state.player.z)<5.2){const a=attack(state,{defer:true});if(a.pending){pending=a.pending;audio.effect('swing');}}
   if(pending&&state.time-pending.at>=ATTACK_IMPACT){const hit=resolveAttack(state,pending);pending=null;if(hit){hitCount+=hit.hits.length;phase.attackHits+=hit.hits.length;if(hit.hits.length)audio.effect('hit');view.sync(state);}}
   if(state.time-syncAt>.15){view.sync(state);syncAt=state.time;}view.draw(state,nearest(state,world.objects),null,moving,dt);audio.update(state.player,state.time,terrain(state.player.x,state.player.z),view.player.userData.footfallCount);
   if(activeMs>=nextCheckpoint){checkpoint();nextCheckpoint+=60000;}
