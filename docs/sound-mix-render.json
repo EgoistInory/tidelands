@@ -1,0 +1,1062 @@
+{
+  "data": {
+    "complete": true,
+    "reports": [
+      {
+        "kind": "forest-day",
+        "seconds": 10,
+        "sampleRate": 48000,
+        "player": {
+          "x": 160,
+          "z": -95
+        },
+        "height": 33.66832248929425,
+        "worldTime": 240,
+        "peak": 0.15225966274738312,
+        "rms": 0.006090949657207522,
+        "finite": true,
+        "unclipped": true,
+        "windows": [
+          {
+            "peak": 0.012384527362883091,
+            "rms": 0.0023580752942385223,
+            "finite": true
+          },
+          {
+            "peak": 0.014741551131010056,
+            "rms": 0.0023774505122122146,
+            "finite": true
+          },
+          {
+            "peak": 0.01594666950404644,
+            "rms": 0.001497602858848537,
+            "finite": true
+          },
+          {
+            "peak": 0.049921706318855286,
+            "rms": 0.008097956749630101,
+            "finite": true
+          },
+          {
+            "peak": 0.04648224636912346,
+            "rms": 0.008345456050323457,
+            "finite": true
+          },
+          {
+            "peak": 0.15225966274738312,
+            "rms": 0.010134644102202075,
+            "finite": true
+          },
+          {
+            "peak": 0.028217826038599014,
+            "rms": 0.004272463656449574,
+            "finite": true
+          },
+          {
+            "peak": 0.02802100218832493,
+            "rms": 0.00642203738777557,
+            "finite": true
+          },
+          {
+            "peak": 0.00257907435297966,
+            "rms": 0.0007032114216433408,
+            "finite": true
+          },
+          {
+            "peak": 0.02910219132900238,
+            "rms": 0.007721107784375153,
+            "finite": true
+          }
+        ],
+        "tail": {
+          "peak": 0.02910219132900238,
+          "rms": 0.009444199796904673,
+          "finite": true
+        },
+        "events": [
+          {
+            "scheduled": 0.5,
+            "actualTime": 0.5013333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "step"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 1,
+            "actualTime": 1,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "step"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 1.5,
+            "actualTime": 1.5013333333333334,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "enemy-windup"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 2,
+            "actualTime": 2,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "hit"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 2.5,
+            "actualTime": 2.501333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "swing"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 3,
+            "actualTime": 3,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "gather"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 3.5,
+            "actualTime": 3.501333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "craft"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 4,
+            "actualTime": 4,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "food"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 4.5,
+            "actualTime": 4.501333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "quest"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 5,
+            "actualTime": 5,
+            "before": 1,
+            "after": 12,
+            "action": [
+              "crowd30",
+              "quest",
+              "craft",
+              "food"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 5.5,
+            "actualTime": 5.501333333333333,
+            "before": 1,
+            "after": 1,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 6,
+            "actualTime": 6,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 6.5,
+            "actualTime": 6.501333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "step"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 7,
+            "actualTime": 7,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 7.5,
+            "actualTime": 7.501333333333333,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 8,
+            "actualTime": 8,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 8.5,
+            "actualTime": 8.501333333333333,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 9,
+            "actualTime": 9,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          }
+        ],
+        "maxQueued": 12,
+        "remainingBeforeDispose": 0,
+        "disposed": true,
+        "note": "Real offline clock/nodes, explicit fixture events; no audition/native gameplay/real-device/performance claim."
+      },
+      {
+        "kind": "forest-night",
+        "seconds": 10,
+        "sampleRate": 48000,
+        "player": {
+          "x": 160,
+          "z": -95
+        },
+        "height": 33.66832248929425,
+        "worldTime": 0,
+        "peak": 0.16990351676940918,
+        "rms": 0.004794664518789186,
+        "finite": true,
+        "unclipped": true,
+        "windows": [
+          {
+            "peak": 0.007038081996142864,
+            "rms": 0.001818178659896751,
+            "finite": true
+          },
+          {
+            "peak": 0.012331807054579258,
+            "rms": 0.001724128283799124,
+            "finite": true
+          },
+          {
+            "peak": 0.013829291798174381,
+            "rms": 0.0023212439629633477,
+            "finite": true
+          },
+          {
+            "peak": 0.047534652054309845,
+            "rms": 0.0048798788557167,
+            "finite": true
+          },
+          {
+            "peak": 0.05122753977775574,
+            "rms": 0.008474219397982586,
+            "finite": true
+          },
+          {
+            "peak": 0.16990351676940918,
+            "rms": 0.010220626198657741,
+            "finite": true
+          },
+          {
+            "peak": 0.010098723694682121,
+            "rms": 0.002485310021378396,
+            "finite": true
+          },
+          {
+            "peak": 0.009814404882490635,
+            "rms": 0.0020436310078262186,
+            "finite": true
+          },
+          {
+            "peak": 0.009636398404836655,
+            "rms": 0.001853596859126821,
+            "finite": true
+          },
+          {
+            "peak": 0.010259595699608326,
+            "rms": 0.0020846309276391596,
+            "finite": true
+          }
+        ],
+        "tail": {
+          "peak": 0.009854605421423912,
+          "rms": 0.0018245762105705817,
+          "finite": true
+        },
+        "events": [
+          {
+            "scheduled": 0.5,
+            "actualTime": 0.5013333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "step"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 1,
+            "actualTime": 1,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "step"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 1.5,
+            "actualTime": 1.5013333333333334,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "enemy-windup"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 2,
+            "actualTime": 2,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "hit"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 2.5,
+            "actualTime": 2.501333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "swing"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 3,
+            "actualTime": 3,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "gather"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 3.5,
+            "actualTime": 3.501333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "craft"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 4,
+            "actualTime": 4,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "food"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 4.5,
+            "actualTime": 4.501333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "quest"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 5,
+            "actualTime": 5,
+            "before": 1,
+            "after": 12,
+            "action": [
+              "crowd30",
+              "quest",
+              "craft",
+              "food"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 5.5,
+            "actualTime": 5.501333333333333,
+            "before": 1,
+            "after": 1,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 6,
+            "actualTime": 6,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 6.5,
+            "actualTime": 6.501333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "step"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 7,
+            "actualTime": 7,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 7.5,
+            "actualTime": 7.501333333333333,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 8,
+            "actualTime": 8,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 8.5,
+            "actualTime": 8.501333333333333,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 9,
+            "actualTime": 9,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          }
+        ],
+        "maxQueued": 12,
+        "remainingBeforeDispose": 0,
+        "disposed": true,
+        "note": "Real offline clock/nodes, explicit fixture events; no audition/native gameplay/real-device/performance claim."
+      },
+      {
+        "kind": "shore-combat",
+        "seconds": 10,
+        "sampleRate": 48000,
+        "player": {
+          "x": -90,
+          "z": 140
+        },
+        "height": 1.2171783651859152,
+        "worldTime": 960,
+        "peak": 0.10094223916530609,
+        "rms": 0.0071991788962192235,
+        "finite": true,
+        "unclipped": true,
+        "windows": [
+          {
+            "peak": 0.01467056106775999,
+            "rms": 0.003962030534014083,
+            "finite": true
+          },
+          {
+            "peak": 0.02002425491809845,
+            "rms": 0.004394944431289476,
+            "finite": true
+          },
+          {
+            "peak": 0.023419326171278954,
+            "rms": 0.005151144902841679,
+            "finite": true
+          },
+          {
+            "peak": 0.05857547000050545,
+            "rms": 0.006996104206135648,
+            "finite": true
+          },
+          {
+            "peak": 0.05374700576066971,
+            "rms": 0.009891826119535076,
+            "finite": true
+          },
+          {
+            "peak": 0.10094223916530609,
+            "rms": 0.011470316224661744,
+            "finite": true
+          },
+          {
+            "peak": 0.02298135496675968,
+            "rms": 0.006446051534786494,
+            "finite": true
+          },
+          {
+            "peak": 0.020925650373101234,
+            "rms": 0.006166641664263163,
+            "finite": true
+          },
+          {
+            "peak": 0.024664800614118576,
+            "rms": 0.007027673915598356,
+            "finite": true
+          },
+          {
+            "peak": 0.024571513757109642,
+            "rms": 0.00702887961743945,
+            "finite": true
+          }
+        ],
+        "tail": {
+          "peak": 0.02302977442741394,
+          "rms": 0.006993040190061389,
+          "finite": true
+        },
+        "events": [
+          {
+            "scheduled": 0.5,
+            "actualTime": 0.5013333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "step"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 1,
+            "actualTime": 1,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "step"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 1.5,
+            "actualTime": 1.5013333333333334,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "enemy-windup"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 2,
+            "actualTime": 2,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "hit"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 2.5,
+            "actualTime": 2.501333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "swing"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 3,
+            "actualTime": 3,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "gather"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 3.5,
+            "actualTime": 3.501333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "craft"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 4,
+            "actualTime": 4,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "food"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 4.5,
+            "actualTime": 4.501333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "quest"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 5,
+            "actualTime": 5,
+            "before": 1,
+            "after": 12,
+            "action": [
+              "crowd30",
+              "quest",
+              "craft",
+              "food"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 5.5,
+            "actualTime": 5.501333333333333,
+            "before": 1,
+            "after": 1,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 6,
+            "actualTime": 6,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 6.5,
+            "actualTime": 6.501333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "step"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 7,
+            "actualTime": 7,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 7.5,
+            "actualTime": 7.501333333333333,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 8,
+            "actualTime": 8,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 8.5,
+            "actualTime": 8.501333333333333,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 9,
+            "actualTime": 9,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": true
+          }
+        ],
+        "maxQueued": 12,
+        "remainingBeforeDispose": 0,
+        "disposed": true,
+        "note": "Real offline clock/nodes, explicit fixture events; no audition/native gameplay/real-device/performance claim."
+      },
+      {
+        "kind": "pause-mute",
+        "seconds": 10,
+        "sampleRate": 48000,
+        "player": {
+          "x": 160,
+          "z": -95
+        },
+        "height": 33.66832248929425,
+        "worldTime": 240,
+        "peak": 0.04534561187028885,
+        "rms": 0.00250879357121356,
+        "finite": true,
+        "unclipped": true,
+        "windows": [
+          {
+            "peak": 0.013422809541225433,
+            "rms": 0.0023621707111096315,
+            "finite": true
+          },
+          {
+            "peak": 0.02380797080695629,
+            "rms": 0.002656099661028649,
+            "finite": true
+          },
+          {
+            "peak": 0.04534561187028885,
+            "rms": 0.004290193923980849,
+            "finite": true
+          },
+          {
+            "peak": 0.025376800447702408,
+            "rms": 0.005645828883475457,
+            "finite": true
+          },
+          {
+            "peak": 0.001571680884808302,
+            "rms": 0.00015680645724695848,
+            "finite": true
+          },
+          {
+            "peak": 0,
+            "rms": 0,
+            "finite": true
+          },
+          {
+            "peak": 0,
+            "rms": 0,
+            "finite": true
+          },
+          {
+            "peak": 0,
+            "rms": 0,
+            "finite": true
+          },
+          {
+            "peak": 0,
+            "rms": 0,
+            "finite": true
+          },
+          {
+            "peak": 0,
+            "rms": 0,
+            "finite": true
+          }
+        ],
+        "tail": {
+          "peak": 0,
+          "rms": 0,
+          "finite": true
+        },
+        "events": [
+          {
+            "scheduled": 0.5,
+            "actualTime": 0.5013333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "step"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 1,
+            "actualTime": 1,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "enemy-windup"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 1.5,
+            "actualTime": 1.5013333333333334,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "hit"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 2,
+            "actualTime": 2,
+            "before": 0,
+            "after": 0,
+            "action": [
+              "hit",
+              "pause"
+            ],
+            "active": false,
+            "enabled": true
+          },
+          {
+            "scheduled": 2.5,
+            "actualTime": 2.501333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "food"
+            ],
+            "active": false,
+            "enabled": true
+          },
+          {
+            "scheduled": 3,
+            "actualTime": 3,
+            "before": 0,
+            "after": 0,
+            "action": [
+              "swing"
+            ],
+            "active": false,
+            "enabled": true
+          },
+          {
+            "scheduled": 3.5,
+            "actualTime": 3.501333333333333,
+            "before": 0,
+            "after": 1,
+            "action": [
+              "step",
+              "resume"
+            ],
+            "active": true,
+            "enabled": true
+          },
+          {
+            "scheduled": 4,
+            "actualTime": 4,
+            "before": 0,
+            "after": 0,
+            "action": [
+              "quest",
+              "mute"
+            ],
+            "active": true,
+            "enabled": false
+          },
+          {
+            "scheduled": 4.5,
+            "actualTime": 4.501333333333333,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": false
+          },
+          {
+            "scheduled": 5,
+            "actualTime": 5,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": false
+          },
+          {
+            "scheduled": 5.5,
+            "actualTime": 5.501333333333333,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": false
+          },
+          {
+            "scheduled": 6,
+            "actualTime": 6,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": false
+          },
+          {
+            "scheduled": 6.5,
+            "actualTime": 6.501333333333333,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": false
+          },
+          {
+            "scheduled": 7,
+            "actualTime": 7,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": false
+          },
+          {
+            "scheduled": 7.5,
+            "actualTime": 7.501333333333333,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": false
+          },
+          {
+            "scheduled": 8,
+            "actualTime": 8,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": false
+          },
+          {
+            "scheduled": 8.5,
+            "actualTime": 8.501333333333333,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": false
+          },
+          {
+            "scheduled": 9,
+            "actualTime": 9,
+            "before": 0,
+            "after": 0,
+            "action": [],
+            "active": true,
+            "enabled": false
+          }
+        ],
+        "maxQueued": 1,
+        "remainingBeforeDispose": 0,
+        "disposed": true,
+        "note": "Real offline clock/nodes, explicit fixture events; no audition/native gameplay/real-device/performance claim."
+      }
+    ]
+  },
+  "console": []
+}

@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "archive": "tidelands-m5-2026-10-16-motion-sound.zip",
+  "archiveSha256": "0033d21e9fdd3e12ac39ee75fc3670b6072ff98f13cec17e160f9eaf3fe2cadc",
+  "runtimeFiles": 51,
+  "fullTests": 224,
+  "audioContactFocusedTests": 17,
+  "packageTests": 4,
+  "changedFromIslandSpaces": [
+    "README.md",
+    "src/camera.js",
+    "src/character.js"
+  ],
+  "audioSourceUnchanged": true,
+  "soundMixes": {
+    "forest-day": {
+      "sha256": "ed2df6dd3e14a7cf4791d7fe4cb6d96cfa405d050d18f925623b17cacbbc78f7",
+      "bytes": 960044,
+      "peak": 0.15225966274738312,
+      "maxVoices": 12
+    },
+    "forest-night": {
+      "sha256": "d9a5c51fe41c91166d8e2bed0c972d5320fe0c7c924d84c720340a21ec9f1e15",
+      "bytes": 960044,
+      "peak": 0.16990351676940918,
+      "maxVoices": 12
+    },
+    "shore-combat": {
+      "sha256": "efe93351947bfba8408333a2ae0a3edec3ef6245526147fb05634bca283d4e4d",
+      "bytes": 960044,
+      "peak": 0.10094223916530609,
+      "maxVoices": 12
+    },
+    "pause-mute": {
+      "sha256": "40a7b309537bec721639d14068908bc7d854170a116dbb27f83fc2809b6cc563",
+      "bytes": 960044,
+      "peak": 0.04534561187028885,
+      "maxVoices": 1
+    }
+  },
+  "currentImagesReviewed": [
+    "docs/sound-mix-review.png",
+    "docs/motion-sound-normal.png",
+    "docs/motion-sound-normal-mobile.png"
+  ],
+  "evidenceSha256": {
+    "docs/sound-mix-render.json": "1348690a36a67c9cc3970c656c2da00bb7f7480693ec0ae807cacf7ebaaf57c2",
+    "docs/sound-mix-media.json": "6ecff153f33eb75192cd5f935bb27207ff4f4e383485daaa1d25464588d3fccd",
+    "docs/sound-mix-downloads.json": "c05109b4c38a95517d4b2c4786c09fdd6c8eb589dd658d1e5802bb5d241e8300",
+    "docs/motion-sound-normal-ui.json": "5fbdf0ff38eb68eded9851224e08587cc630006ecef21b1d3ed60e8b8bfea24c",
+    "docs/sound-mix-tests.txt": "a9e0e125c6275044a4b1364e0454be0f7db105d076f9011ca8aa404566ab1628",
+    "docs/world-contact-audio-focused.txt": "f2b4e3898ac9a6a6daeb8557fb7f468afbecbc33a133b035c4605c7c9939241a",
+    "docs/motion-sound-pack-tests.txt": "7a44a7f20a90ac3d47cbb3978674d310e946fcbe295c9cb03953198542ffcaf9",
+    "docs/sound-mix-review.png": "e73020a21f00f8b6381e99549edcbf6b5e722b2305e5cc87cf92df2ce8606f56",
+    "docs/motion-sound-normal.png": "a8fdb7a9a8ab9a79fd4445cb6ed76b5fb1b7b33546de03083070576029bf91ea",
+    "docs/motion-sound-normal-mobile.png": "9943cb1fa154718f775b07f083d14c97484fa4cac03d35f346529cf6d419070b"
+  },
+  "motionEvidence": "docs/terrain-locomotion-candidate.json (same camera/character modules, six old/new world routes; initial camera-only audit predates character correction)",
+  "ordinaryRestoresStable": true,
+  "newOrdinaryJsonDownloaded": false,
+  "ordinaryLastUiCoordinates": "位置 X 10.8，Z 77.4；建筑 1；击败 3",
+  "newFullMainPathReplayed": false,
+  "newEnduranceReplayed": false,
+  "newGpuReplayed": false,
+  "audioListening": false,
+  "realMobileHardware": false,
+  "m5Complete": false,
+  "fullGoalComplete": false,
+  "limits": "Mixed mono offline fixtures and actual WAV files; native ordinary continuation/save/two restores. Prior7ddGPU/c1a9endurance are historical. The pre-pause HUD coordinate sample is not an exact saved-position measurement; the two no-input restores agree at displayed precision. Numerical/contact evidence does not establish audio aesthetics or complete3Aquality."
+}

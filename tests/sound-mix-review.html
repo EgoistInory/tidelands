@@ -1,0 +1,52 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>当前声场与动作混音检查</title>
+<style>body{font:15px system-ui;background:#eef0e6;color:#25382d;max-width:900px;margin:24px auto;padding:12px}button{padding:12px}pre{white-space:pre-wrap;max-height:360px;overflow:auto}audio{display:block;width:100%;margin:10px 0}</style>
+<h1>生产声场与动作混音</h1><p>本地48kHz离线渲染。使用真实音频时钟暂停/恢复，观察自然结束回收；不把整段未来事件挤入同一时刻。声明的地点、事件和暂停/静音fixture，不读写游戏存档。波形不是实际试听、游戏主路径或性能验收。</p>
+<button id="render">渲染四组完整混音</button><pre id="result">尚未运行</pre><div id="players"></div>
+<script type="module">
+import {GameAudio} from '../src/audio.js';
+import {terrain} from '../src/world.js';
+const button=document.querySelector('button'),result=document.querySelector('pre'),players=document.querySelector('#players'),urls=[];
+function wav(samples,rate){const bytes=new ArrayBuffer(44+samples.length*2),v=new DataView(bytes),word=(offset,s)=>[...s].forEach((c,i)=>v.setUint8(offset+i,c.charCodeAt(0)));word(0,'RIFF');v.setUint32(4,bytes.byteLength-8,true);word(8,'WAVE');word(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,rate,true);v.setUint32(28,rate*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);word(36,'data');v.setUint32(40,samples.length*2,true);samples.forEach((n,i)=>v.setInt16(44+i*2,Math.max(-1,Math.min(1,n))*32767,true));return new Blob([bytes],{type:'audio/wav'});}
+function stats(samples,from=0,to=samples.length){let peak=0,energy=0,finite=true;for(let i=from;i<to;i++){const x=samples[i];finite&&=Number.isFinite(x);peak=Math.max(peak,Math.abs(x));energy+=x*x;}return {peak,rms:Math.sqrt(energy/(to-from)),finite};}
+button.onclick=async()=>{
+ button.disabled=true;urls.forEach(URL.revokeObjectURL);urls.length=0;players.replaceChildren();const reports=[];
+ try{for(const kind of ['forest-day','forest-night','shore-combat','pause-mute']){
+  result.textContent=JSON.stringify({complete:false,rendering:kind,reports});
+  const rate=48000,seconds=10,ctx=new OfflineAudioContext(1,rate*seconds,rate);
+  // Adapt only the initial lifecycle/state check; scheduling uses the real render clock.
+  const adapter=new Proxy(ctx,{get(target,key){if(key==='state')return 'running';if(key==='resume'||key==='close')return async()=>{};const value=Reflect.get(target,key,target);return typeof value==='function'?value.bind(target):value;}});
+  const audio=new GameAudio({contextFactory:()=>adapter}),player=kind==='shore-combat'?{x:-90,z:140}:{x:160,z:-95},height=terrain(player.x,player.z),worldTime=kind==='forest-night'?0:kind==='shore-combat'?960:240;
+  audio.setActive(true);await audio.unlock();audio.update(player,worldTime,height,0);
+  const events=[];let maxQueued=0;
+  const suspensions=[];
+  for(let tick=1;tick<=18;tick++){
+   const scheduled=tick*.5;
+   suspensions.push(ctx.suspend(scheduled).then(async()=>{
+    const before=audio.sources.size,action=[];audio.update(player,worldTime+ctx.currentTime,height,0);
+    const cue=(name,options={})=>{audio.effect(name,options);action.push(name);};
+    if(kind==='pause-mute'){
+     if(tick===1)cue('step');if(tick===2)cue('enemy-windup');if(tick===3)cue('hit');
+     if(tick===4){audio.setActive(false);cue('hit');action.push('pause');}
+     if(tick===5)cue('food',{menu:true});
+     if(tick===6)cue('swing');
+     if(tick===7){audio.setActive(true);cue('step');action.push('resume');}
+     if(tick===8){audio.setEnabled(false);cue('quest');action.push('mute');}
+    }else{
+     const sequence=['step','step','enemy-windup','hit','swing','gather','craft','food','quest'];
+     if(tick<=sequence.length)cue(sequence[tick-1],{surface:height<2?'sand':'grass',enemyType:kind==='shore-combat'?'crab':'boar'});
+     if(tick===10){for(let i=0;i<30;i++)audio.effect('hit');action.push('crowd30');for(const name of ['quest','craft','food'])cue(name);}
+     if(tick===13)cue('step',{surface:height<2?'sand':'grass'});
+    }
+    maxQueued=Math.max(maxQueued,audio.sources.size);events.push({scheduled,actualTime:ctx.currentTime,before,after:audio.sources.size,action,active:audio.active,enabled:audio.enabled});await ctx.resume();
+   }));
+  }
+  const rendered=await ctx.startRendering();await Promise.all(suspensions);const samples=rendered.getChannelData(0),summary=stats(samples),windows=[];
+  for(let i=0;i<seconds;i++)windows.push(stats(samples,i*rate,(i+1)*rate));
+  const remainingBeforeDispose=audio.sources.size;await audio.dispose();
+  const url=URL.createObjectURL(wav(samples,rate));urls.push(url);const heading=document.createElement('h2');heading.textContent=kind;const media=document.createElement('audio');media.controls=true;media.src=url;const link=document.createElement('a');link.textContent='保存 '+kind+' WAV';link.href=url;link.download='tidelands-sound-mix-'+kind+'.wav';link.dataset.kind=kind;players.append(heading,media,link);
+  reports.push({kind,seconds,sampleRate:rate,player,height,worldTime,...summary,unclipped:summary.peak<1,windows,tail:stats(samples,rate*9.5),events,maxQueued,remainingBeforeDispose,disposed:audio.context===null&&audio.sources.size===0,note:'Real offline clock/nodes, explicit fixture events; no audition/native gameplay/real-device/performance claim.'});
+ }result.textContent=JSON.stringify({complete:true,reports},null,2);
+ }catch(error){result.textContent=JSON.stringify({complete:false,error:error.stack,reports},null,2);}finally{button.disabled=false;}
+};
+window.addEventListener('pagehide',()=>urls.forEach(URL.revokeObjectURL));
+</script></html>

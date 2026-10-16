@@ -1,0 +1,1358 @@
+
+> tidelands@0.1.0 test
+> node --test tests/*.test.js
+
+TAP version 13
+# Subtest: walking and long steps cannot cross an islander, but talking and walking around still work
+ok 1 - walking and long steps cannot cross an islander, but talking and walking around still work
+  ---
+  duration_ms: 8.239166
+  type: 'test'
+  ...
+# Subtest: chasing boar stops before touching the body and never overshoots on a large tick
+ok 2 - chasing boar stops before touching the body and never overshoots on a large tick
+  ---
+  duration_ms: 7.388417
+  type: 'test'
+  ...
+# Subtest: living creatures block player traversal; a defeated creature releases the path
+ok 3 - living creatures block player traversal; a defeated creature releases the path
+  ---
+  duration_ms: 3.240667
+  type: 'test'
+  ...
+# Subtest: legacy overlapping saves stay intact on restore and allow walking out
+ok 4 - legacy overlapping saves stay intact on restore and allow walking out
+  ---
+  duration_ms: 3.528291
+  type: 'test'
+  ...
+# Subtest: boar contact remains reachable with every owned weapon and keeps exact damage and rewards
+ok 5 - boar contact remains reachable with every owned weapon and keeps exact damage and rewards
+  ---
+  duration_ms: 4.63975
+  type: 'test'
+  ...
+# Subtest: enemy steps respect mineral and islander occupancy without mutating either
+ok 6 - enemy steps respect mineral and islander occupancy without mutating either
+  ---
+  duration_ms: 1.84
+  type: 'test'
+  ...
+# Subtest: an old exact overlap separates gradually during simulation without teleporting the player
+ok 7 - an old exact overlap separates gradually during simulation without teleporting the player
+  ---
+  duration_ms: 1.567458
+  type: 'test'
+  ...
+# Subtest: larger body reach is frontal and cannot hit beyond contact allowance
+ok 8 - larger body reach is frontal and cannot hit beyond contact allowance
+  ---
+  duration_ms: 2.357792
+  type: 'test'
+  ...
+# Subtest: construction cannot spawn a solid building on a living creature or spend rejected materials
+ok 9 - construction cannot spawn a solid building on a living creature or spend rejected materials
+  ---
+  duration_ms: 2.230167
+  type: 'test'
+  ...
+# Subtest: nearby pre-existing creature overlaps separate without placing both bodies on the player
+ok 10 - nearby pre-existing creature overlaps separate without placing both bodies on the player
+  ---
+  duration_ms: 8.945125
+  type: 'test'
+  ...
+# Subtest: a strike cannot damage a target behind, to the side or beyond the blade reach
+ok 11 - a strike cannot damage a target behind, to the side or beyond the blade reach
+  ---
+  duration_ms: 10.46425
+  type: 'test'
+  ...
+# Subtest: weapon reach preserves close combat while a longer sword reaches farther
+ok 12 - weapon reach preserves close combat while a longer sword reaches farther
+  ---
+  duration_ms: 10.656792
+  type: 'test'
+  ...
+# Subtest: impact keeps starting weapon reach but checks current position and facing
+ok 13 - impact keeps starting weapon reach but checks current position and facing
+  ---
+  duration_ms: 0.767333
+  type: 'test'
+  ...
+# Subtest: turning toward the target makes side combat possible without changing cooldown or rewards
+ok 14 - turning toward the target makes side combat possible without changing cooldown or rewards
+  ---
+  duration_ms: 2.117125
+  type: 'test'
+  ...
+# Subtest: each equipped weapon blade passes through low target height at impact and stays above flat ground
+ok 15 - each equipped weapon blade passes through low target height at impact and stays above flat ground
+  ---
+  duration_ms: 437.19575
+  type: 'test'
+  ...
+# Subtest: deferred attack commits damage at the rendered swing peak and only once
+ok 16 - deferred attack commits damage at the rendered swing peak and only once
+  ---
+  duration_ms: 51.28925
+  type: 'test'
+  ...
+# Subtest: wind-up reserves the cooldown and kill rewards are committed once at impact
+ok 17 - wind-up reserves the cooldown and kill rewards are committed once at impact
+  ---
+  duration_ms: 2.005292
+  type: 'test'
+  ...
+# Subtest: impact uses the starting weapon but the current target distance
+ok 18 - impact uses the starting weapon but the current target distance
+  ---
+  duration_ms: 2.18775
+  type: 'test'
+  ...
+# Subtest: cancelled, expired and replaced-save swings cannot damage or survive serialization
+ok 19 - cancelled, expired and replaced-save swings cannot damage or survive serialization
+  ---
+  duration_ms: 271.395583
+  type: 'test'
+  ...
+# Subtest: mute prevents initialization and pause fades master to silence
+ok 20 - mute prevents initialization and pause fades master to silence
+  ---
+  duration_ms: 9.274833
+  type: 'test'
+  ...
+# Subtest: effects are bounded and disconnect on completion; footsteps follow distance
+ok 21 - effects are bounded and disconnect on completion; footsteps follow distance
+  ---
+  duration_ms: 0.742709
+  type: 'test'
+  ...
+# Subtest: partial initialization and resume failures release context and allow a retry
+ok 22 - partial initialization and resume failures release context and allow a retry
+  ---
+  duration_ms: 10.852291
+  type: 'test'
+  ...
+# Subtest: menu success cues play while world is paused, and mute silences both channels
+ok 23 - menu success cues play while world is paused, and mute silences both channels
+  ---
+  duration_ms: 0.758375
+  type: 'test'
+  ...
+# Subtest: busy physical actions leave room for quest, crafting and food confirmation cues
+ok 24 - busy physical actions leave room for quest, crafting and food confirmation cues
+  ---
+  duration_ms: 1.169667
+  type: 'test'
+  ...
+# Subtest: ambient noise loops without a sample discontinuity or DC offset
+ok 25 - ambient noise loops without a sample discontinuity or DC offset
+  ---
+  duration_ms: 1.15675
+  type: 'test'
+  ...
+# Subtest: physical actions vary noise slices without truncating tails or allocating new buffers
+ok 26 - physical actions vary noise slices without truncating tails or allocating new buffers
+  ---
+  duration_ms: 1.717125
+  type: 'test'
+  ...
+# Subtest: distance fallback uses walking spacing, coast selects sand, swimming keeps splash spacing
+ok 27 - distance fallback uses walking spacing, coast selects sand, swimming keeps splash spacing
+  ---
+  duration_ms: 0.4495
+  type: 'test'
+  ...
+# Subtest: land audio follows actual rendered ankle touchdowns at walking and running speeds
+ok 28 - land audio follows actual rendered ankle touchdowns at walking and running speeds
+  ---
+  duration_ms: 1264.880667
+  type: 'test'
+  ...
+# Subtest: contact counters suppress initial, replayed, paused and teleport steps while idle landings can sound
+ok 29 - contact counters suppress initial, replayed, paused and teleport steps while idle landings can sound
+  ---
+  duration_ms: 0.685917
+  type: 'test'
+  ...
+# Subtest: coastal surf fades through the shore elevation band without consuming effect voices
+ok 30 - coastal surf fades through the shore elevation band without consuming effect voices
+  ---
+  duration_ms: 0.901708
+  type: 'test'
+  ...
+# Subtest: surf shares world mute/pause and releases all persistent nodes on disposal
+ok 31 - surf shares world mute/pause and releases all persistent nodes on disposal
+  ---
+  duration_ms: 0.193875
+  type: 'test'
+  ...
+# Subtest: ecology changes with rendered daylight and island habitat, fading out at sea
+ok 32 - ecology changes with rendered daylight and island habitat, fading out at sea
+  ---
+  duration_ms: 0.186
+  type: 'test'
+  ...
+# Subtest: ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices
+ok 33 - ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices
+  ---
+  duration_ms: 146.312958
+  type: 'test'
+  ...
+# Subtest: ecology shares world mute/pause and releases nodes on normal or failed initialization
+ok 34 - ecology shares world mute/pause and releases nodes on normal or failed initialization
+  ---
+  duration_ms: 0.5915
+  type: 'test'
+  ...
+# Subtest: enemy warnings distinguish body types and reuse bounded, pausable local noise
+ok 35 - enemy warnings distinguish body types and reuse bounded, pausable local noise
+  ---
+  duration_ms: 3.654583
+  type: 'test'
+  ...
+# Subtest: the last allowed building consumes materials once and survives restore
+ok 36 - the last allowed building consumes materials once and survives restore
+  ---
+  duration_ms: 16.13175
+  type: 'test'
+  ...
+# Subtest: full camps reject every building without spending, quest or respawn changes
+ok 37 - full camps reject every building without spending, quest or respawn changes
+  ---
+  duration_ms: 12.916167
+  type: 'test'
+  ...
+# Subtest: oversized imported saves remain rejected and cannot grow through direct build
+ok 38 - oversized imported saves remain rejected and cannot grow through direct build
+  ---
+  duration_ms: 3.626667
+  type: 'test'
+  ...
+# Subtest: the exposed forest corner uses a nearby clear angle while preserving subject distance
+ok 39 - the exposed forest corner uses a nearby clear angle while preserving subject distance
+  ---
+  duration_ms: 4902.242833
+  type: 'test'
+  ...
+# Subtest: an orbit turn follows an arc without cutting through the player or snapping to the target
+ok 40 - an orbit turn follows an arc without cutting through the player or snapping to the target
+  ---
+  duration_ms: 4.025666
+  type: 'test'
+  ...
+# Subtest: angle wrapping follows the short arc and easing has equivalent results at different frame rates
+ok 41 - angle wrapping follows the short arc and easing has equivalent results at different frame rates
+  ---
+  duration_ms: 6.784792
+  type: 'test'
+  ...
+# Subtest: smoothing still retracts before solid scenery and terrain, including a zero-distance prior pose
+ok 42 - smoothing still retracts before solid scenery and terrain, including a zero-distance prior pose
+  ---
+  duration_ms: 0.2075
+  type: 'test'
+  ...
+# Subtest: an open side of a nearby tower keeps framing while a smoothed arc crosses its blocked side
+ok 43 - an open side of a nearby tower keeps framing while a smoothed arc crosses its blocked side
+  ---
+  duration_ms: 1.032667
+  type: 'test'
+  ...
+# Subtest: temporary landmark avoidance cannot overwrite manual orbit or steer the next released gesture
+ok 44 - temporary landmark avoidance cannot overwrite manual orbit or steer the next released gesture
+  ---
+  duration_ms: 342.691416
+  type: 'test'
+  ...
+# Subtest: an orbit temporarily moved around a tower returns to manual direction when the obstruction clears
+ok 45 - an orbit temporarily moved around a tower returns to manual direction when the obstruction clears
+  ---
+  duration_ms: 219.871125
+  type: 'test'
+  ...
+# Subtest: temporary avoidance retains an already clear side instead of jumping across the player
+ok 46 - temporary avoidance retains an already clear side instead of jumping across the player
+  ---
+  duration_ms: 0.168958
+  type: 'test'
+  ...
+# Subtest: camera retracts before a blocking rock and returns to requested distance when clear
+ok 47 - camera retracts before a blocking rock and returns to requested distance when clear
+  ---
+  duration_ms: 1.7715
+  type: 'test'
+  ...
+# Subtest: camera avoids intervening terrain even when its destination is above ground
+ok 48 - camera avoids intervening terrain even when its destination is above ground
+  ---
+  duration_ms: 0.091292
+  type: 'test'
+  ...
+# Subtest: close scenery turns the framed camera into clear space instead of the player head
+ok 49 - close scenery turns the framed camera into clear space instead of the player head
+  ---
+  duration_ms: 0.992375
+  type: 'test'
+  ...
+# Subtest: camp hides only overlapping landscape instances and restores exact transforms after moving or removal
+ok 50 - camp hides only overlapping landscape instances and restores exact transforms after moving or removal
+  ---
+  duration_ms: 3.430666
+  type: 'test'
+  ...
+# Subtest: overlapping camps, type replacements and the 500th building have no fixed shader-slot limit
+ok 51 - overlapping camps, type replacements and the 500th building have no fixed shader-slot limit
+  ---
+  duration_ms: 105.239792
+  type: 'test'
+  ...
+# Subtest: production sync applies and restores clearance during same-ID camp relocation and save replacement
+ok 52 - production sync applies and restores clearance during same-ID camp relocation and save replacement
+  ---
+  duration_ms: 14.213041
+  type: 'test'
+  ...
+# Subtest: removing a camp uploads only changed near buffers and keeps distant buffers untouched
+ok 53 - removing a camp uploads only changed near buffers and keeps distant buffers untouched
+  ---
+  duration_ms: 0.294083
+  type: 'test'
+  ...
+# Subtest: fire is a bounded transparent plume with no texture or shadow allocation
+ok 54 - fire is a bounded transparent plume with no texture or shadow allocation
+  ---
+  duration_ms: 7.379667
+  type: 'test'
+  ...
+# Subtest: campfire time freezes with world time and has independent positions without rebuilding resources
+ok 55 - campfire time freezes with world time and has independent positions without rebuilding resources
+  ---
+  duration_ms: 4.994625
+  type: 'test'
+  ...
+# Subtest: negative camp positions do not wrap the flame phase near the start of a journey
+ok 56 - negative camp positions do not wrap the flame phase near the start of a journey
+  ---
+  duration_ms: 0.98025
+  type: 'test'
+  ...
+# Subtest: continuous head surface is closed, outward and finite without degenerate triangles
+ok 57 - continuous head surface is closed, outward and finite without degenerate triangles
+  ---
+  duration_ms: 306.485375
+  type: 'test'
+  ...
+# Subtest: face features and hair follow the head during complete production gestures
+ok 58 - face features and hair follow the head during complete production gestures
+  ---
+  duration_ms: 224.770291
+  type: 'test'
+  ...
+# Subtest: hair covers the upper cranium rather than exposing a skin cap at the crown
+ok 59 - hair covers the upper cranium rather than exposing a skin cap at the crown
+  ---
+  duration_ms: 222.307083
+  type: 'test'
+  ...
+# Subtest: carried sword stays above flat ground at rest while remaining attached to the right hand
+ok 60 - carried sword stays above flat ground at rest while remaining attached to the right hand
+  ---
+  duration_ms: 372.307833
+  type: 'test'
+  ...
+# Subtest: equipment follows selection and swings on the arm holding the tool
+ok 61 - equipment follows selection and swings on the arm holding the tool
+  ---
+  duration_ms: 15.564542
+  type: 'test'
+  ...
+# Subtest: attack and gathering enter and leave each equipped resting pose without snapping
+ok 62 - attack and gathering enter and leave each equipped resting pose without snapping
+  ---
+  duration_ms: 452.329667
+  type: 'test'
+  ...
+# Subtest: tool actions recruit the torso and free hand then clear their pose when interrupted
+ok 63 - tool actions recruit the torso and free hand then clear their pose when interrupted
+  ---
+  duration_ms: 234.411583
+  type: 'test'
+  ...
+# Subtest: complete tool actions keep both planted boot soles fixed on flat and sloped ground
+ok 64 - complete tool actions keep both planted boot soles fixed on flat and sloped ground
+  ---
+  duration_ms: 281.851375
+  type: 'test'
+  ...
+# Subtest: a moving attack retains grounded contacts during a turn at production speeds
+ok 65 - a moving attack retains grounded contacts during a turn at production speeds
+  ---
+  duration_ms: 709.401625
+  type: 'test'
+  ...
+# Subtest: stride advances with distance, stays still at rest, and keeps joints attached
+ok 66 - stride advances with distance, stays still at rest, and keeps joints attached
+  ---
+  duration_ms: 25.867542
+  type: 'test'
+  ...
+# Subtest: gathering reaches forward, yields to attack or swimming, and returns to idle
+ok 67 - gathering reaches forward, yields to attack or swimming, and returns to idle
+  ---
+  duration_ms: 5.667167
+  type: 'test'
+  ...
+# Subtest: hurt recoil decays without moving the root or leaving a swimming lean behind
+ok 68 - hurt recoil decays without moving the root or leaving a swimming lean behind
+  ---
+  duration_ms: 24.634375
+  type: 'test'
+  ...
+# Subtest: steady forward stance keeps soles on a flat floor at several frame rates and production speeds
+ok 69 - steady forward stance keeps soles on a flat floor at several frame rates and production speeds
+  ---
+  duration_ms: 871.533292
+  type: 'test'
+  ...
+# Subtest: feet solve gentle terrain height, settle at rest and reset safely after a teleport
+ok 70 - feet solve gentle terrain height, settle at rest and reset safely after a teleport
+  ---
+  duration_ms: 24.711333
+  type: 'test'
+  ...
+# Subtest: shaped boot soles have a flat contact face and stay above sloped floors during planted turns
+ok 71 - shaped boot soles have a flat contact face and stay above sloped floors during planted turns
+  ---
+  duration_ms: 192.529292
+  type: 'test'
+  ...
+# Subtest: swimming leans forward with the head above the water and returns to planted feet
+ok 72 - swimming leans forward with the head above the water and returns to planted feet
+  ---
+  duration_ms: 14.7175
+  type: 'test'
+  ...
+# Subtest: stopping keeps grounded boots fixed while recovery steps return them to a neutral stance
+ok 73 - stopping keeps grounded boots fixed while recovery steps return them to a neutral stance
+  ---
+  duration_ms: 311.519541
+  type: 'test'
+  ...
+# Subtest: a right-angle turn keeps stance boots fixed during startup and steady travel on a slope
+ok 74 - a right-angle turn keeps stance boots fixed during startup and steady travel on a slope
+  ---
+  duration_ms: 588.857666
+  type: 'test'
+  ...
+# Subtest: reversing releases an overextended foot instead of dragging its planted contact
+ok 75 - reversing releases an overextended foot instead of dragging its planted contact
+  ---
+  duration_ms: 263.283167
+  type: 'test'
+  ...
+# Subtest: teleport and swimming discard old world contacts before returning to a distant shore
+ok 76 - teleport and swimming discard old world contacts before returning to a distant shore
+  ---
+  duration_ms: 8.437125
+  type: 'test'
+  ...
+# Subtest: batched movement never reuses a distant landing when key presses skip a swing
+ok 77 - batched movement never reuses a distant landing when key presses skip a swing
+  ---
+  duration_ms: 402.206792
+  type: 'test'
+  ...
+# Subtest: movement and swimming can interrupt idle recovery without retaining a sideways body offset
+ok 78 - movement and swimming can interrupt idle recovery without retaining a sideways body offset
+  ---
+  duration_ms: 22.319584
+  type: 'test'
+  ...
+# Subtest: turning anticipates overextended contacts and bounds airborne targets without a deep pelvis collapse
+ok 79 - turning anticipates overextended contacts and bounds airborne targets without a deep pelvis collapse
+  ---
+  duration_ms: 803.519
+  type: 'test'
+  ...
+# Subtest: faster travel lengthens the stride, lowers cadence and includes an airborne interval
+ok 80 - faster travel lengthens the stride, lowers cadence and includes an airborne interval
+  ---
+  duration_ms: 88.788042
+  type: 'test'
+  ...
+# Subtest: stopping holds the last stride shape while the torso and feet recover
+ok 81 - stopping holds the last stride shape while the torso and feet recover
+  ---
+  duration_ms: 11.953333
+  type: 'test'
+  ...
+# Subtest: roof slope faces have upward finite normals and UVs with physical tile scale
+ok 82 - roof slope faces have upward finite normals and UVs with physical tile scale
+  ---
+  duration_ms: 265.670458
+  type: 'test'
+  ...
+# Subtest: architectural materials reuse bounded mipmapped surface textures
+ok 83 - architectural materials reuse bounded mipmapped surface textures
+  ---
+  duration_ms: 313.357334
+  type: 'test'
+  ...
+# Subtest: crab has eight walking legs and its articulated pincers close during a strike
+ok 84 - crab has eight walking legs and its articulated pincers close during a strike
+  ---
+  duration_ms: 456.508917
+  type: 'test'
+  ...
+# Subtest: boar: sculpted surfaces stay finite and retain the same distant silhouette
+ok 85 - boar: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 213.879333
+  type: 'test'
+  ...
+# Subtest: crab: sculpted surfaces stay finite and retain the same distant silhouette
+ok 86 - crab: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 41.524542
+  type: 'test'
+  ...
+# Subtest: boar: distance gait, bounded turn, hit isolation and death recovery
+ok 87 - boar: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 26.218875
+  type: 'test'
+  ...
+# Subtest: crab: distance gait, bounded turn, hit isolation and death recovery
+ok 88 - crab: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 117.126667
+  type: 'test'
+  ...
+# Subtest: boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 89 - boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 165.175792
+  type: 'test'
+  ...
+# Subtest: crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 90 - crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 54.677958
+  type: 'test'
+  ...
+# Subtest: crystal cluster has grounded mineral prisms within the existing camera volume
+ok 91 - crystal cluster has grounded mineral prisms within the existing camera volume
+  ---
+  duration_ms: 13.18425
+  type: 'test'
+  ...
+# Subtest: crystal facets have finite lit surfaces and local colour variation within a bounded mesh budget
+ok 92 - crystal facets have finite lit surfaces and local colour variation within a bounded mesh budget
+  ---
+  duration_ms: 3.530292
+  type: 'test'
+  ...
+# Subtest: crystal instancing input stays deterministic and survives static merging without losing colours
+ok 93 - crystal instancing input stays deterministic and survives static merging without losing colours
+  ---
+  duration_ms: 10.204917
+  type: 'test'
+  ...
+# Subtest: enemy shows windup first and applies exactly one hit at the rendered impact time
+ok 94 - enemy shows windup first and applies exactly one hit at the rendered impact time
+  ---
+  duration_ms: 21.657666
+  type: 'test'
+  ...
+# Subtest: leaving range or circling behind the committed direction makes the attack miss
+ok 95 - leaving range or circling behind the committed direction makes the attack miss
+  ---
+  duration_ms: 29.61075
+  type: 'test'
+  ...
+# Subtest: defeated enemies cannot finish their pending windup
+ok 96 - defeated enemies cannot finish their pending windup
+  ---
+  duration_ms: 2.300542
+  type: 'test'
+  ...
+# Subtest: pause cancellation and save restoration do not resume a stale enemy strike
+ok 97 - pause cancellation and save restoration do not resume a stale enemy strike
+  ---
+  duration_ms: 6.927792
+  type: 'test'
+  ...
+# Subtest: respawn protection prevents even starting a windup until it has expired
+ok 98 - respawn protection prevents even starting a windup until it has expired
+  ---
+  duration_ms: 2.86975
+  type: 'test'
+  ...
+# Subtest: 30, 60 and 144 fps deliver the same single damage event per attack
+ok 99 - 30, 60 and 144 fps deliver the same single damage event per attack
+  ---
+  duration_ms: 6.49575
+  type: 'test'
+  ...
+# Subtest: leaf canopy stays finite and its wind bounds fit the tree camera clearance
+ok 100 - leaf canopy stays finite and its wind bounds fit the tree camera clearance
+  ---
+  duration_ms: 320.851875
+  type: 'test'
+  ...
+# Subtest: visible and shadow leaves use the same wind shader and advancing clock
+ok 101 - visible and shadow leaves use the same wind shader and advancing clock
+  ---
+  duration_ms: 8.617583
+  type: 'test'
+  ...
+# Subtest: canopies share a bounded mipmapped cutout texture with opaque leaves and empty edges
+ok 102 - canopies share a bounded mipmapped cutout texture with opaque leaves and empty edges
+  ---
+  duration_ms: 8.721166
+  type: 'test'
+  ...
+# Subtest: berry foliage fits the resource footprint and reuses visible and shadow leaf resources
+ok 103 - berry foliage fits the resource footprint and reuses visible and shadow leaf resources
+  ---
+  duration_ms: 9.61425
+  type: 'test'
+  ...
+# Subtest: bark texture is shared, bounded, opaque and mipmapped
+ok 104 - bark texture is shared, bounded, opaque and mipmapped
+  ---
+  duration_ms: 193.912458
+  type: 'test'
+  ...
+# Subtest: fern fronds remain rooted, deterministic and finite with bounded leaf geometry
+ok 105 - fern fronds remain rooted, deterministic and finite with bounded leaf geometry
+  ---
+  duration_ms: 9.147709
+  type: 'test'
+  ...
+# Subtest: forest cover clusters beside trees without changing resources, routes or deterministic placement
+ok 106 - forest cover clusters beside trees without changing resources, routes or deterministic placement
+  ---
+  duration_ms: 1564.665333
+  type: 'test'
+  ...
+# Subtest: production scenery includes nearby ferns and recovers them after distance culling
+ok 107 - production scenery includes nearby ferns and recovers them after distance culling
+  ---
+  duration_ms: 3784.510917
+  type: 'test'
+  ...
+# Subtest: starter clearing provides enough materials for the first tool without waiting for respawn
+ok 108 - starter clearing provides enough materials for the first tool without waiting for respawn
+  ---
+  duration_ms: 2.181625
+  type: 'test'
+  ...
+# Subtest: day labels and lighting share a continuous repeating day cycle
+ok 109 - day labels and lighting share a continuous repeating day cycle
+  ---
+  duration_ms: 0.732666
+  type: 'test'
+  ...
+# Subtest: deterministic, populated world with safe start and diverse regions
+ok 110 - deterministic, populated world with safe start and diverse regions
+  ---
+  duration_ms: 2.521708
+  type: 'test'
+  ...
+# Subtest: wood, mineral and food nodes deplete and recover without duplicate rewards
+ok 111 - wood, mineral and food nodes deplete and recover without duplicate rewards
+  ---
+  duration_ms: 4.77775
+  type: 'test'
+  ...
+# Subtest: craft consumes exact materials, never negative or repeated unique tools
+ok 112 - craft consumes exact materials, never negative or repeated unique tools
+  ---
+  duration_ms: 2.223625
+  type: 'test'
+  ...
+# Subtest: building location checks, material use, persistence and overlap
+ok 113 - building location checks, material use, persistence and overlap
+  ---
+  duration_ms: 3.218833
+  type: 'test'
+  ...
+# Subtest: movement normalizes diagonal speed, respects trees and bounds
+ok 114 - movement normalizes diagonal speed, respects trees and bounds
+  ---
+  duration_ms: 4.42725
+  type: 'test'
+  ...
+# Subtest: attack cooldown and kill rewards happen only once
+ok 115 - attack cooldown and kill rewards happen only once
+  ---
+  duration_ms: 1.507958
+  type: 'test'
+  ...
+# Subtest: food consumes only when healing; camp heals and defeat preserves inventory
+ok 116 - food consumes only when healing; camp heals and defeat preserves inventory
+  ---
+  duration_ms: 3.096292
+  type: 'test'
+  ...
+# Subtest: entire six-step quest chain reaches conclusion with no repeat reward
+ok 117 - entire six-step quest chain reaches conclusion with no repeat reward
+  ---
+  duration_ms: 2.621875
+  type: 'test'
+  ...
+# Subtest: save roundtrip preserves all world changes
+ok 118 - save roundtrip preserves all world changes
+  ---
+  duration_ms: 2.366541
+  type: 'test'
+  ...
+# Subtest: invalid imports rejected without changing running state
+ok 119 - invalid imports rejected without changing running state
+  ---
+  duration_ms: 104.668708
+  type: 'test'
+  ...
+# Subtest: nearest target respects interaction distance
+ok 120 - nearest target respects interaction distance
+  ---
+  duration_ms: 1.696542
+  type: 'test'
+  ...
+# Subtest: respawn protection survives reload and expires without granting permanent immunity
+ok 121 - respawn protection survives reload and expires without granting permanent immunity
+  ---
+  duration_ms: 5.46525
+  type: 'test'
+  ...
+# Subtest: tick reports lethal damage before healing and clears feedback during protection
+ok 122 - tick reports lethal damage before healing and clears feedback during protection
+  ---
+  duration_ms: 2.307208
+  type: 'test'
+  ...
+# Subtest: damage follows equipped weapon instead of the strongest item in the bag
+ok 123 - damage follows equipped weapon instead of the strongest item in the bag
+  ---
+  duration_ms: 12.111292
+  type: 'test'
+  ...
+# Subtest: duplicate building IDs and malformed entries are rejected with actionable messages
+ok 124 - duplicate building IDs and malformed entries are rejected with actionable messages
+  ---
+  duration_ms: 5.531375
+  type: 'test'
+  ...
+# Subtest: enemy cooldowns cannot be frozen by malformed or future saved attack times
+ok 125 - enemy cooldowns cannot be frozen by malformed or future saved attack times
+  ---
+  duration_ms: 179.060125
+  type: 'test'
+  ...
+# Subtest: sprint exhaustion, swimming and rest preserve a recoverable stamina cycle
+ok 126 - sprint exhaustion, swimming and rest preserve a recoverable stamina cycle
+  ---
+  duration_ms: 12.011
+  type: 'test'
+  ...
+# Subtest: crafted food consumes its ingredients once and never consumes food at full health
+ok 127 - crafted food consumes its ingredients once and never consumes food at full health
+  ---
+  duration_ms: 1.337208
+  type: 'test'
+  ...
+# Subtest: botanist dialogue matches quest prerequisites and a one-time gift
+ok 128 - botanist dialogue matches quest prerequisites and a one-time gift
+  ---
+  duration_ms: 2.071583
+  type: 'test'
+  ...
+# Subtest: all islanders acknowledge the lit lighthouse after completion without repeating gifts or objectives
+ok 129 - all islanders acknowledge the lit lighthouse after completion without repeating gifts or objectives
+  ---
+  duration_ms: 1.668792
+  type: 'test'
+  ...
+# Subtest: combat target ignores corpses and distant enemies without changing the save
+ok 130 - combat target ignores corpses and distant enemies without changing the save
+  ---
+  duration_ms: 0.788958
+  type: 'test'
+  ...
+# Subtest: combat target reflects actual weapon damage, cooldown and defeat
+ok 131 - combat target reflects actual weapon damage, cooldown and defeat
+  ---
+  duration_ms: 4.968542
+  type: 'test'
+  ...
+# Subtest: production deferred gathering cannot begin five metres from a resource
+ok 132 - production deferred gathering cannot begin five metres from a resource
+  ---
+  duration_ms: 15.959541
+  type: 'test'
+  ...
+# Subtest: walking just outside close gathering range before impact awards nothing
+ok 133 - walking just outside close gathering range before impact awards nothing
+  ---
+  duration_ms: 2.592208
+  type: 'test'
+  ...
+# Subtest: resource prompts use close range while islanders and camp interactions keep their existing reach
+ok 134 - resource prompts use close range while islanders and camp interactions keep their existing reach
+  ---
+  duration_ms: 29.500833
+  type: 'test'
+  ...
+# Subtest: equipped gathering lowers the blade into low resource height without crossing flat ground
+ok 135 - equipped gathering lowers the blade into low resource height without crossing flat ground
+  ---
+  duration_ms: 362.551291
+  type: 'test'
+  ...
+# Subtest: gather commits inventory and depletion once at the rendered reach peak
+ok 136 - gather commits inventory and depletion once at the rendered reach peak
+  ---
+  duration_ms: 65.513958
+  type: 'test'
+  ...
+# Subtest: gather reserves interaction cooldown and locks the starting tool yield
+ok 137 - gather reserves interaction cooldown and locks the starting tool yield
+  ---
+  duration_ms: 1.201083
+  type: 'test'
+  ...
+# Subtest: leaving range or losing the resource before impact awards nothing
+ok 138 - leaving range or losing the resource before impact awards nothing
+  ---
+  duration_ms: 3.869458
+  type: 'test'
+  ...
+# Subtest: expired, cancelled and replaced-save gathers never commit; NPCs remain immediate
+ok 139 - expired, cancelled and replaced-save gathers never commit; NPCs remain immediate
+  ---
+  duration_ms: 12.152042
+  type: 'test'
+  ...
+# Subtest: swimming cannot start or finish a hidden gathering animation
+ok 140 - swimming cannot start or finish a hidden gathering animation
+  ---
+  duration_ms: 1.224375
+  type: 'test'
+  ...
+# Subtest: plant and shell gathering lowers the visible bare palm and restores carried equipment
+ok 141 - plant and shell gathering lowers the visible bare palm and restores carried equipment
+  ---
+  duration_ms: 120.928042
+  type: 'test'
+  ...
+# Subtest: a crouching gathering cycle keeps planted soles on flat and sloped ground
+ok 142 - a crouching gathering cycle keeps planted soles on flat and sloped ground
+  ---
+  duration_ms: 314.895
+  type: 'test'
+  ...
+# Subtest: hard resource gathering uses the supplied harvesting tool while attacks keep the selected weapon
+ok 143 - hard resource gathering uses the supplied harvesting tool while attacks keep the selected weapon
+  ---
+  duration_ms: 29.417541
+  type: 'test'
+  ...
+# Subtest: landscape shares decoded rock channels and keeps preprocessor directives separated
+ok 144 - landscape shares decoded rock channels and keeps preprocessor directives separated
+  ---
+  duration_ms: 2.16975
+  type: 'test'
+  ...
+# Subtest: decoded texture lists exclude failed and pending channels and remain per surface
+ok 145 - decoded texture lists exclude failed and pending channels and remain per surface
+  ---
+  duration_ms: 0.892125
+  type: 'test'
+  ...
+# Subtest: ground remains on the original surface until all three channels load
+ok 146 - ground remains on the original surface until all three channels load
+  ---
+  duration_ms: 0.132667
+  type: 'test'
+  ...
+# Subtest: a missing channel keeps the fallback and settles the load status
+ok 147 - a missing channel keeps the fallback and settles the load status
+  ---
+  duration_ms: 0.154959
+  type: 'test'
+  ...
+# Subtest: shore wetness toggle remains independent of channel loading and requests no textures
+ok 148 - shore wetness toggle remains independent of channel loading and requests no textures
+  ---
+  duration_ms: 0.250584
+  type: 'test'
+  ...
+# Subtest: ground channels use local URLs, matching two metre tiles and appropriate colour spaces
+ok 149 - ground channels use local URLs, matching two metre tiles and appropriate colour spaces
+  ---
+  duration_ms: 0.266166
+  type: 'test'
+  ...
+# Subtest: bundled CC0 channel bytes agree with the provenance manifest
+ok 150 - bundled CC0 channel bytes agree with the provenance manifest
+  ---
+  duration_ms: 9.822125
+  type: 'test'
+  ...
+# Subtest: coastal sand waits for its own three channels while the grass can already render
+ok 151 - coastal sand waits for its own three channels while the grass can already render
+  ---
+  duration_ms: 0.408042
+  type: 'test'
+  ...
+# Subtest: grass or sand failure leaves the other surface and wetness available
+ok 152 - grass or sand failure leaves the other surface and wetness available
+  ---
+  duration_ms: 0.539042
+  type: 'test'
+  ...
+# Subtest: bundled sand channels agree with their official source hashes
+ok 153 - bundled sand channels agree with their official source hashes
+  ---
+  duration_ms: 6.474458
+  type: 'test'
+  ...
+# Subtest: four island surfaces distinguish warm dunes, woodland litter and exposed upland rock
+ok 154 - four island surfaces distinguish warm dunes, woodland litter and exposed upland rock
+  ---
+  duration_ms: 29.189
+  type: 'test'
+  ...
+# Subtest: shore stones are deterministic shallow dressing and preserve resources, enemies and routes
+ok 155 - shore stones are deterministic shallow dressing and preserve resources, enemies and routes
+  ---
+  duration_ms: 427.790333
+  type: 'test'
+  ...
+# Subtest: regional tree presentation varies crowns without widening resource contact footprints
+ok 156 - regional tree presentation varies crowns without widening resource contact footprints
+  ---
+  duration_ms: 0.3285
+  type: 'test'
+  ...
+# Subtest: lighthouse details fit the existing camera envelope while the beam stays separate
+ok 157 - lighthouse details fit the existing camera envelope while the beam stays separate
+  ---
+  duration_ms: 324.019333
+  type: 'test'
+  ...
+# Subtest: lighthouse optical emission is private and static architectural parts are batched
+ok 158 - lighthouse optical emission is private and static architectural parts are batched
+  ---
+  duration_ms: 163.643083
+  type: 'test'
+  ...
+# Subtest: curved grass and petals have finite normals, nondegenerate faces and bounded sway
+ok 159 - curved grass and petals have finite normals, nondegenerate faces and bounded sway
+  ---
+  duration_ms: 42.025042
+  type: 'test'
+  ...
+# Subtest: region culling preserves all original grass transforms and random sequence
+ok 160 - region culling preserves all original grass transforms and random sequence
+  ---
+  duration_ms: 3178.243291
+  type: 'test'
+  ...
+# Subtest: grass and flowers share the game clock for rooted vertex sway
+ok 161 - grass and flowers share the game clock for rooted vertex sway
+  ---
+  duration_ms: 7.423584
+  type: 'test'
+  ...
+# Subtest: dense patches stay on gentle land with shared geometry and per-patch tint
+ok 162 - dense patches stay on gentle land with shared geometry and per-patch tint
+  ---
+  duration_ms: 1316.449958
+  type: 'test'
+  ...
+# Subtest: near patch batches cull beyond the fade range and recover after the camera returns
+ok 163 - near patch batches cull beyond the fade range and recover after the camera returns
+  ---
+  duration_ms: 539.766209
+  type: 'test'
+  ...
+# Subtest: coastal tufts stay above waves on gentle sand across all islands and cull at distance
+ok 164 - coastal tufts stay above waves on gentle sand across all islands and cull at distance
+  ---
+  duration_ms: 722.738208
+  type: 'test'
+  ...
+# Subtest: merging retains transformed vertices, normals, UVs, joints and material ownership
+ok 165 - merging retains transformed vertices, normals, UVs, joints and material ownership
+  ---
+  duration_ms: 5.299958
+  type: 'test'
+  ...
+# Subtest: different materials and shadow flags never merge
+ok 166 - different materials and shadow flags never merge
+  ---
+  duration_ms: 0.522708
+  type: 'test'
+  ...
+# Subtest: indexed and non-indexed parts keep their triangle order after concatenation
+ok 167 - indexed and non-indexed parts keep their triangle order after concatenation
+  ---
+  duration_ms: 0.628916
+  type: 'test'
+  ...
+# Subtest: automatic scenery avoidance cannot steer a held forward input
+ok 168 - automatic scenery avoidance cannot steer a held forward input
+  ---
+  duration_ms: 2.283834
+  type: 'test'
+  ...
+# Subtest: adding another direction or adjusting an active stick retains the captured view basis
+ok 169 - adding another direction or adjusting an active stick retains the captured view basis
+  ---
+  duration_ms: 0.1845
+  type: 'test'
+  ...
+# Subtest: an intentional camera drag steers held movement while release or pause resets its basis
+ok 170 - an intentional camera drag steers held movement while release or pause resets its basis
+  ---
+  duration_ms: 0.083958
+  type: 'test'
+  ...
+# Subtest: pause clears captured gestures; stale and secondary pointers cannot resume movement
+ok 171 - pause clears captured gestures; stale and secondary pointers cannot resume movement
+  ---
+  duration_ms: 2.430791
+  type: 'test'
+  ...
+# Subtest: stick lifecycle notifies once for its owner and clears an active heading on reset
+ok 172 - stick lifecycle notifies once for its owner and clears an active heading on reset
+  ---
+  duration_ms: 0.84575
+  type: 'test'
+  ...
+# Subtest: the recorded forest route cannot walk through crystal944 or cross its camera origin box
+ok 173 - the recorded forest route cannot walk through crystal944 or cross its camera origin box
+  ---
+  duration_ms: 61.787292
+  type: 'test'
+  ...
+# Subtest: scaled stone remains reachable at its surface and grants the original yield once
+ok 174 - scaled stone remains reachable at its surface and grants the original yield once
+  ---
+  duration_ms: 37.674584
+  type: 'test'
+  ...
+# Subtest: surface gathering cannot finish after moving out of arm reach
+ok 175 - surface gathering cannot finish after moving out of arm reach
+  ---
+  duration_ms: 12.655375
+  type: 'test'
+  ...
+# Subtest: legacy saves inside a deposit can move outward without losing progress or being teleported
+ok 176 - legacy saves inside a deposit can move outward without losing progress or being teleported
+  ---
+  duration_ms: 24.731584
+  type: 'test'
+  ...
+# Subtest: a large movement step cannot tunnel across a live deposit
+ok 177 - a large movement step cannot tunnel across a live deposit
+  ---
+  duration_ms: 2.759125
+  type: 'test'
+  ...
+# Subtest: decoded rock texture list excludes failed channels and does not reload
+ok 178 - decoded rock texture list excludes failed channels and does not reload
+  ---
+  duration_ms: 12.521208
+  type: 'test'
+  ...
+# Subtest: rock photo channels become visible together, with correct local sampling and no repeated loads
+ok 179 - rock photo channels become visible together, with correct local sampling and no repeated loads
+  ---
+  duration_ms: 2.408667
+  type: 'test'
+  ...
+# Subtest: missing rock channels preserve original colour, normal and roughness and settle readiness
+ok 180 - missing rock channels preserve original colour, normal and roughness and settle readiness
+  ---
+  duration_ms: 25.060125
+  type: 'test'
+  ...
+# Subtest: spherical UVs remain finite with whole longitude tiles and radius-scaled vertical density
+ok 181 - spherical UVs remain finite with whole longitude tiles and radius-scaled vertical density
+  ---
+  duration_ms: 79.020042
+  type: 'test'
+  ...
+# Subtest: bundled rock channels match the official metadata and saved SHA256 manifest
+ok 182 - bundled rock channels match the official metadata and saved SHA256 manifest
+  ---
+  duration_ms: 10.252833
+  type: 'test'
+  ...
+# Subtest: weathered rock geometry is deterministic, finite and stays inside the original sphere
+ok 183 - weathered rock geometry is deterministic, finite and stays inside the original sphere
+  ---
+  duration_ms: 25.227458
+  type: 'test'
+  ...
+# Subtest: rock uses smooth shared material and the transformed large stone fits camera clearance
+ok 184 - rock uses smooth shared material and the transformed large stone fits camera clearance
+  ---
+  duration_ms: 11.283791
+  type: 'test'
+  ...
+# Subtest: ruin supports block swept movement, while old overlaps still permit escape
+ok 185 - ruin supports block swept movement, while old overlaps still permit escape
+  ---
+  duration_ms: 10.818625
+  type: 'test'
+  ...
+# Subtest: the arch opening and stele approach stay traversable and readable
+ok 186 - the arch opening and stele approach stay traversable and readable
+  ---
+  duration_ms: 3.9045
+  type: 'test'
+  ...
+# Subtest: sculpted ruin keeps individual camera boxes, an open arch and a bounded merged budget
+ok 187 - sculpted ruin keeps individual camera boxes, an open arch and a bounded merged budget
+  ---
+  duration_ms: 217.663041
+  type: 'test'
+  ...
+# Subtest: construction leaves clearance around expanded ruin footings and does not spend rejected materials
+ok 188 - construction leaves clearance around expanded ruin footings and does not spend rejected materials
+  ---
+  duration_ms: 1.321
+  type: 'test'
+  ...
+# Subtest: islanders respond to a nearby conversation target without moving or changing the save
+ok 189 - islanders respond to a nearby conversation target without moving or changing the save
+  ---
+  duration_ms: 3477.56425
+  type: 'test'
+  ...
+# Subtest: tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+ok 190 - tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+  ---
+  duration_ms: 1186.553
+  type: 'test'
+  ...
+# Subtest: distant geometry is shared until the last owner leaves, while materials remain private
+ok 191 - distant geometry is shared until the last owner leaves, while materials remain private
+  ---
+  duration_ms: 41.439875
+  type: 'test'
+  ...
+# Subtest: resource bounds retain regenerating nodes after initial depletion
+ok 192 - resource bounds retain regenerating nodes after initial depletion
+  ---
+  duration_ms: 1227.837625
+  type: 'test'
+  ...
+# Subtest: save replacement releases creatures and resets transient death/hit animation
+ok 193 - save replacement releases creatures and resets transient death/hit animation
+  ---
+  duration_ms: 20.276167
+  type: 'test'
+  ...
+# Subtest: boar: near geometry shares a lifetime while pose and hit materials remain private
+ok 194 - boar: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 22.559708
+  type: 'test'
+  ...
+# Subtest: crab: near geometry shares a lifetime while pose and hit materials remain private
+ok 195 - crab: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 128.502291
+  type: 'test'
+  ...
+# Subtest: same-type save replacement reuses creature models without carrying over animation or damage
+ok 196 - same-type save replacement reuses creature models without carrying over animation or damage
+  ---
+  duration_ms: 108.792041
+  type: 'test'
+  ...
+# Subtest: loading a different save updates buildings even when IDs are reused
+ok 197 - loading a different save updates buildings even when IDs are reused
+  ---
+  duration_ms: 1.40675
+  type: 'test'
+  ...
+# Subtest: campfire owns its unlit flame without changing shared building materials
+ok 198 - campfire owns its unlit flame without changing shared building materials
+  ---
+  duration_ms: 1.541709
+  type: 'test'
+  ...
+# Subtest: removing tents releases their geometry but retains immutable cloth for later camps
+ok 199 - removing tents releases their geometry but retains immutable cloth for later camps
+  ---
+  duration_ms: 1.854875
+  type: 'test'
+  ...
+# Subtest: repeated build previews release their geometry and private materials
+ok 200 - repeated build previews release their geometry and private materials
+  ---
+  duration_ms: 11.01375
+  type: 'test'
+  ...
+# Subtest: tent preview retains double-sided cloth and shares replacement material safely
+ok 201 - tent preview retains double-sided cloth and shares replacement material safely
+  ---
+  duration_ms: 1.671125
+  type: 'test'
+  ...
+# Subtest: sky and fog remain periodic, bounded and continuous across dawn and midnight
+ok 202 - sky and fog remain periodic, bounded and continuous across dawn and midnight
+  ---
+  duration_ms: 269.424875
+  type: 'test'
+  ...
+# Subtest: sky follows long-distance exploration without depth or shadow occlusion and reuses GPU resources
+ok 203 - sky follows long-distance exploration without depth or shadow occlusion and reuses GPU resources
+  ---
+  duration_ms: 2.502584
+  type: 'test'
+  ...
+# Subtest: water shares the changing horizon color instead of retaining daytime reflection at night
+ok 204 - water shares the changing horizon color instead of retaining daytime reflection at night
+  ---
+  duration_ms: 53.178584
+  type: 'test'
+  ...
+# Subtest: startup waits for decoded surfaces then uploads once per frame with progress
+ok 205 - startup waits for decoded surfaces then uploads once per frame with progress
+  ---
+  duration_ms: 1.021042
+  type: 'test'
+  ...
+# Subtest: fallback surfaces upload only decoded channels and settle with zero available
+ok 206 - fallback surfaces upload only decoded channels and settle with zero available
+  ---
+  duration_ms: 4.82975
+  type: 'test'
+  ...
+# Subtest: abort interrupts an unresolved load and a pending frame without uploading
+ok 207 - abort interrupts an unresolved load and a pending frame without uploading
+  ---
+  duration_ms: 0.88625
+  type: 'test'
+  ...
+# Subtest: abort between frames stops later uploads and upload errors propagate
+ok 208 - abort between frames stops later uploads and upload errors propagate
+  ---
+  duration_ms: 0.297625
+  type: 'test'
+  ...
+# Subtest: native WebGL upload errors prevent reporting a texture as prepared
+ok 209 - native WebGL upload errors prevent reporting a texture as prepared
+  ---
+  duration_ms: 0.198417
+  type: 'test'
+  ...
+# Subtest: sprinting down the exposed highland slope does not collapse the pelvis to reach an airborne foot
+ok 210 - sprinting down the exposed highland slope does not collapse the pelvis to reach an airborne foot
+  ---
+  duration_ms: 1274.360458
+  type: 'test'
+  ...
+# Subtest: shared woven textures keep tint and linear relief separate, tile smoothly and use mipmaps
+ok 211 - shared woven textures keep tint and linear relief separate, tile smoothly and use mipmaps
+  ---
+  duration_ms: 21.014459
+  type: 'test'
+  ...
+# Subtest: only named cloth parts share the textile maps across people and shelter
+ok 212 - only named cloth parts share the textile maps across people and shelter
+  ---
+  duration_ms: 350.44925
+  type: 'test'
+  ...
+# Subtest: tent canvas UV measures local panel distances and survives preview disposal
+ok 213 - tent canvas UV measures local panel distances and survives preview disposal
+  ---
+  duration_ms: 2.412417
+  type: 'test'
+  ...
+# Subtest: organic tree keeps a narrow rooted trunk and finite nondegenerate branching geometry
+ok 214 - organic tree keeps a narrow rooted trunk and finite nondegenerate branching geometry
+  ---
+  duration_ms: 299.696417
+  type: 'test'
+  ...
+# Subtest: branching tree is deterministic and retains two shared instanced surfaces after merging
+ok 215 - branching tree is deterministic and retains two shared instanced surfaces after merging
+  ---
+  duration_ms: 255.273875
+  type: 'test'
+  ...
+# Subtest: weather wind is bounded, deterministic and continuous across cycle boundaries
+ok 216 - weather wind is bounded, deterministic and continuous across cycle boundaries
+  ---
+  duration_ms: 55.792625
+  type: 'test'
+  ...
+# Subtest: leaf and grass color and shadow share stable wind strength without changing time phase
+ok 217 - leaf and grass color and shadow share stable wind strength without changing time phase
+  ---
+  duration_ms: 352.737833
+  type: 'test'
+  ...
+# Subtest: production water and atmosphere share bounded wind and reuse their uniforms
+ok 218 - production water and atmosphere share bounded wind and reuse their uniforms
+  ---
+  duration_ms: 244.755
+  type: 'test'
+  ...
+# Subtest: wind and surf audio targets respond to weather while pause and shared buffers remain intact
+ok 219 - wind and surf audio targets respond to weather while pause and shared buffers remain intact
+  ---
+  duration_ms: 2.19625
+  type: 'test'
+  ...
+# Subtest: weather is deterministic over several days with bounded continuous transitions
+ok 220 - weather is deterministic over several days with bounded continuous transitions
+  ---
+  duration_ms: 107.310875
+  type: 'test'
+  ...
+# Subtest: sky cloud coverage and haze use the shared weather without replacing resources
+ok 221 - sky cloud coverage and haze use the shared weather without replacing resources
+  ---
+  duration_ms: 7.809167
+  type: 'test'
+  ...
+# Subtest: production atmosphere coordinates sunlight, land fog and water with stable resources
+ok 222 - production atmosphere coordinates sunlight, land fog and water with stable resources
+  ---
+  duration_ms: 152.284208
+  type: 'test'
+  ...
+# Subtest: night side light adds silhouette depth, fades by daylight and follows weather without a second shadow map
+ok 223 - night side light adds silhouette depth, fades by daylight and follows weather without a second shadow map
+  ---
+  duration_ms: 214.42
+  type: 'test'
+  ...
+# Subtest: world terrain footsteps follow visible contacts across downhill turns, blocking and shore transitions
+ok 224 - world terrain footsteps follow visible contacts across downhill turns, blocking and shore transitions
+  ---
+  duration_ms: 728.82325
+  type: 'test'
+  ...
+1..224
+# tests 224
+# suites 0
+# pass 224
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9630.537417
