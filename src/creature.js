@@ -1,6 +1,7 @@
 import * as THREE from '../vendor/three.module.min.js';
 import {ENEMY_ATTACK_DURATION} from './action-timing.js';
 import {mergeStaticParts} from './merge-parts.js';
+import {placeCreatureFeet,resetCreatureFeet} from './creature-footing.js';
 
 function profiledHide(sections){
   const vertices=[],uv=[],indices=[],sides=24;
@@ -48,7 +49,9 @@ export function createCreature(type,geometryCache=null){
         const joint=new THREE.Group();joint.position.set(side*.76,.66,(i-1.5)*.38);body.add(joint);
         const spread=(i-1.5)*.22;
         form(joint,taperedCurve([[0,0,0],[side*.48,.06,spread],[side*.85,-.13,spread*1.5]],.105,.5));
-        form(joint,taperedCurve([[side*.84,-.13,spread*1.5],[side*1.02,-.39,spread*1.7],[side*.97,-.62,spread*1.9]],.075));legs.push(joint);
+        const knee=new THREE.Group();knee.position.set(side*.85,-.13,spread*1.5);joint.add(knee);
+        form(knee,taperedCurve([[-side*.01,0,0],[side*.17,-.26,spread*.2],[side*.12,-.49,spread*.4]],.075));
+        joint.userData={knee,foot:new THREE.Vector3(side*.12,-.49,spread*.4)};legs.push(joint);
       }
       const claw=new THREE.Group();claw.position.set(side*.8,.75,.65);body.add(claw);
       form(claw,taperedCurve([[0,0,0],[side*.26,-.1,.23],[side*.24,0,.46]],.12,.85));
@@ -73,7 +76,12 @@ export function createCreature(type,geometryCache=null){
       form(body,taperedCurve([[side*.30,.89,1.69],[side*.40,.94,1.82],[side*.45,1.13,1.91],[side*.41,1.32,1.88]],.085),ivory);
       for(const z of [-.8,.8]){
         const joint=new THREE.Group();joint.position.set(side*.53,.95,z);body.add(joint);
-        shape(joint,[.19,.39,.2],[0,-.31,0]);shape(joint,[.2,.16,.26],[0,-.76,.04],dark);legs.push(joint);
+        const knee=new THREE.Group();knee.position.set(0,-.48,-.12);joint.add(knee);
+        const thigh=shape(joint,[.19,.29,.2],[0,-.24,-.06]);thigh.rotation.x=Math.atan2(.12,.48);
+        const shin=shape(knee,[.13,.25,.14],[0,-.22,.08]);shin.rotation.x=-Math.atan2(.16,.44);
+        for(const part of [thigh,shin]){part.updateMatrix();part.geometry.applyMatrix4(part.matrix);part.position.set(0,0,0);part.quaternion.identity();part.scale.set(1,1,1);}
+        const ankle=new THREE.Group();ankle.position.set(0,-.44,.16);knee.add(ankle);shape(ankle,[.2,.16,.26],[0,.16,0],dark);
+        joint.userData={knee,ankle,foot:ankle.position.clone()};legs.push(joint);
       }
     }
     form(body,profiledHide([[-1.06,1.87,0,0],[-.84,1.95,.065,.10],[-.5,2.06,.07,.16],[0,2.18,.075,.19],[.44,2.23,.085,.22],[.73,2.04,.065,.16],[.94,1.88,0,0]]),dark);
@@ -101,9 +109,14 @@ export function createCreature(type,geometryCache=null){
     cached.references++;let released=false;const geometries=new Set([...cached.nearParts,...cached.parts.map(p=>p.geometry)]);
     releaseDistant=()=>{if(!released){released=true;if(--cached.references===0){geometries.forEach(g=>g.dispose());geometryCache.delete(type);}}return geometries;};
   }
-  const contacts=legs.map(leg=>{const box=new THREE.Box3().setFromObject(leg);return {leg,point:leg.worldToLocal(new THREE.Vector3((box.min.x+box.max.x)/2,box.min.y,(box.min.z+box.max.z)/2))};});
+  const contacts=legs.map(hip=>{
+    const {knee,ankle,foot}=hip.userData,upper=knee.position.clone(),lower=foot.clone(),end=upper.clone().add(lower);
+    const pole=upper.clone().addScaledVector(end,-upper.dot(end)/end.lengthSq()).normalize();
+    return {hip,knee,ankle,upper,lower,pole,rest:hip.position.clone().add(end),leg:ankle??knee,point:ankle?new THREE.Vector3():lower.clone()};
+  });
   distant.visible=false;ground.add(distant);
   root.userData={type,ground,contacts,body,distant,releaseDistant,far:false,legs,claws,hide,phase:0,last:null,hp:null,hitAt:-100,deadAt:null};
+  resetCreatureFeet(root.userData);
   return root;
 }
 
@@ -115,6 +128,7 @@ export function resetCreature(root){
   for(const g of [u.body,u.distant]){g.position.set(0,0,0);g.rotation.set(0,0,0);}
   u.body.visible=true;u.distant.visible=false;u.hide.emissive.setRGB(0,0,0);
   for(const g of [...u.legs,...u.claws])g.rotation.set(0,0,0);
+  for(const c of u.contacts){c.knee.quaternion.identity();c.ankle?.quaternion.identity();}resetCreatureFeet(u);
   for(const claw of u.claws)claw.userData.pincer.rotation.set(0,0,0);
 }
 
@@ -125,7 +139,8 @@ export function animateCreature(root,enemy,time,dt,height,target,attackPose=unde
   if(enemy.hp>0)u.deadAt=null;
   const distance=last?Math.hypot(enemy.x-last.x,enemy.z-last.z):0;
   const moving=distance>.0001&&distance<4;
-  if(moving)u.phase+=distance*(u.type==='crab'?5:3.2);
+  if(!last||distance>=4||enemy.hp<=0||u.deadAt!==null)resetCreatureFeet(u);
+  if(moving)u.phase+=distance*Math.PI*2/(u.type==='crab'?1.05:1.5);
   if(moving||Math.hypot(target.x-enemy.x,target.z-enemy.z)<15){
     const angle=attackPose?.yaw??(moving?Math.atan2(enemy.x-last.x,enemy.z-last.z):Math.atan2(target.x-enemy.x,target.z-enemy.z));
     const delta=Math.atan2(Math.sin(angle-root.rotation.y),Math.cos(angle-root.rotation.y));root.rotation.y+=delta*(1-Math.exp(-dt*10));
@@ -146,7 +161,7 @@ export function animateCreature(root,enemy,time,dt,height,target,attackPose=unde
   u.hide.emissive.setRGB(hurt*.28,hurt*.045,hurt*.015);
   root.position.set(enemy.x,height,enemy.z);root.visible=death<1;
   u.ground.position.y=0;u.ground.quaternion.identity();
-  if(heightAt&&death===0){
+  if(heightAt&&death===0&&enemy.hp>0){
     const c=Math.cos(root.rotation.y),s=Math.sin(root.rotation.y);
     const sx=(heightAt(enemy.x+c,enemy.z-s)-heightAt(enemy.x-c,enemy.z+s))/2;
     const sz=(heightAt(enemy.x+s,enemy.z+c)-heightAt(enemy.x-s,enemy.z-c))/2;
@@ -154,10 +169,14 @@ export function animateCreature(root,enemy,time,dt,height,target,attackPose=unde
     const angle=2*Math.acos(THREE.MathUtils.clamp(tilt.w,-1,1));
     if(angle>.65)tilt.slerp(new THREE.Quaternion(),1-.65/angle);
     u.ground.quaternion.copy(tilt);root.updateMatrixWorld(true);
-    let lift=-Infinity;
-    for(const {leg,point}of u.contacts){const foot=point.clone().applyMatrix4(leg.matrixWorld);lift=Math.max(lift,heightAt(foot.x,foot.z)-foot.y);}
-    // Keep the lowest supporting foot on the real surface; retain the authored gait and yaw.
-    u.ground.position.y=THREE.MathUtils.clamp(lift,-.6,.6);
+    if(!distant){
+      u.ground.position.y=u.type==='boar'?-.16:-.04;
+      placeCreatureFeet(root,heightAt,dt,moving);
+    }else{
+      resetCreatureFeet(u);for(const c of u.contacts){c.hip.quaternion.identity();c.knee.quaternion.identity();c.ankle?.quaternion.identity();}root.updateMatrixWorld(true);let lift=-Infinity;
+      for(const c of u.contacts){const foot=c.point.clone().applyMatrix4(c.leg.matrixWorld);lift=Math.max(lift,heightAt(foot.x,foot.z)-foot.y);}
+      u.ground.position.y=THREE.MathUtils.clamp(lift,-.6,.6);
+    }
   }
   u.last={x:enemy.x,z:enemy.z};u.hp=enemy.hp;
 }

@@ -1,0 +1,108 @@
+TAP version 13
+# Subtest: boar: actual articulated contacts remain planted through travel, turning and stopping (flat)
+not ok 1 - boar: actual articulated contacts remain planted through travel, turning and stopping (flat)
+  ---
+  duration_ms: 38.710417
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/creature-footing.test.js:4:67'
+  failureType: 'testCodeFailure'
+  error: |-
+    a root lift is not a stance solver
+    
+    undefined !== 4
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 4
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/creature-footing.test.js:11:36)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: boar: actual articulated contacts remain planted through travel, turning and stopping (slope)
+not ok 2 - boar: actual articulated contacts remain planted through travel, turning and stopping (slope)
+  ---
+  duration_ms: 9.098875
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/creature-footing.test.js:4:67'
+  failureType: 'testCodeFailure'
+  error: |-
+    a root lift is not a stance solver
+    
+    undefined !== 4
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 4
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/creature-footing.test.js:11:36)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: crab: actual articulated contacts remain planted through travel, turning and stopping (flat)
+not ok 3 - crab: actual articulated contacts remain planted through travel, turning and stopping (flat)
+  ---
+  duration_ms: 14.135209
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/creature-footing.test.js:4:67'
+  failureType: 'testCodeFailure'
+  error: |-
+    a root lift is not a stance solver
+    
+    undefined !== 8
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 8
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/creature-footing.test.js:11:36)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: crab: actual articulated contacts remain planted through travel, turning and stopping (slope)
+not ok 4 - crab: actual articulated contacts remain planted through travel, turning and stopping (slope)
+  ---
+  duration_ms: 11.962375
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/creature-footing.test.js:4:67'
+  failureType: 'testCodeFailure'
+  error: |-
+    a root lift is not a stance solver
+    
+    undefined !== 8
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 8
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/creature-footing.test.js:11:36)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 0
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 147.525875

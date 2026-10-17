@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: boar: actual articulated contacts remain planted through travel, turning and stopping (flat)
+ok 1 - boar: actual articulated contacts remain planted through travel, turning and stopping (flat)
+  ---
+  duration_ms: 68.601209
+  type: 'test'
+  ...
+# Subtest: boar: actual articulated contacts remain planted through travel, turning and stopping (slope)
+ok 2 - boar: actual articulated contacts remain planted through travel, turning and stopping (slope)
+  ---
+  duration_ms: 26.6265
+  type: 'test'
+  ...
+# Subtest: crab: actual articulated contacts remain planted through travel, turning and stopping (flat)
+ok 3 - crab: actual articulated contacts remain planted through travel, turning and stopping (flat)
+  ---
+  duration_ms: 38.845542
+  type: 'test'
+  ...
+# Subtest: crab: actual articulated contacts remain planted through travel, turning and stopping (slope)
+ok 4 - crab: actual articulated contacts remain planted through travel, turning and stopping (slope)
+  ---
+  duration_ms: 24.281292
+  type: 'test'
+  ...
+# Subtest: articulated geometry stays shared while joints, reset and revived contacts stay private
+ok 5 - articulated geometry stays shared while joints, reset and revived contacts stay private
+  ---
+  duration_ms: 14.782125
+  type: 'test'
+  ...
+# Subtest: boar: resting foot surfaces follow a sloped plane at multiple headings
+ok 6 - boar: resting foot surfaces follow a sloped plane at multiple headings
+  ---
+  duration_ms: 83.431292
+  type: 'test'
+  ...
+# Subtest: crab: resting foot surfaces follow a sloped plane at multiple headings
+ok 7 - crab: resting foot surfaces follow a sloped plane at multiple headings
+  ---
+  duration_ms: 67.806875
+  type: 'test'
+  ...
+# Subtest: crab has eight walking legs and its articulated pincers close during a strike
+ok 8 - crab has eight walking legs and its articulated pincers close during a strike
+  ---
+  duration_ms: 54.510917
+  type: 'test'
+  ...
+# Subtest: boar: sculpted surfaces stay finite and retain the same distant silhouette
+ok 9 - boar: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 29.237959
+  type: 'test'
+  ...
+# Subtest: crab: sculpted surfaces stay finite and retain the same distant silhouette
+ok 10 - crab: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 27.30025
+  type: 'test'
+  ...
+# Subtest: boar: distance gait, bounded turn, hit isolation and death recovery
+ok 11 - boar: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 31.535333
+  type: 'test'
+  ...
+# Subtest: crab: distance gait, bounded turn, hit isolation and death recovery
+ok 12 - crab: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 37.366041
+  type: 'test'
+  ...
+# Subtest: boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 13 - boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 4.670167
+  type: 'test'
+  ...
+# Subtest: crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 14 - crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 10.062375
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 255.737208

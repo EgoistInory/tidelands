@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "currentSourceFullCanvasGpuAccepted": true,
+  "archiveSha256": "2d922da8581be03234e0b721cf7f5561b8d0612a5093ac55f82b5330b33ae5ca",
+  "runtimeInputs": 53,
+  "devices": {
+    "desktop": {
+      "gpuP95Range": [
+        9.5235,
+        13.2614
+      ],
+      "viewport": [
+        1920,
+        1080
+      ]
+    },
+    "mobile": {
+      "gpuP95Range": [
+        3.7453,
+        8.3479
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  },
+  "currentSourceLongRunAccepted": false,
+  "candidateDelivered": false,
+  "realDeviceVerified": false,
+  "fullGoalComplete": false,
+  "scope": "Five teleported movement/combat/camp fixtures, 40 warmup and 60 native GPU queries each; no ordinary campaign, VRAM, real phone or full quality acceptance."
+}

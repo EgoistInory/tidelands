@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "boundedCreatureFootingAccepted": true,
+  "tests": 247,
+  "sourceSha256": {
+    "src/creature.js": "f2700947499cd56eb0d67675f7fc461849994fe8eda3d7370cee8222a8be00ed",
+    "src/creature-footing.js": "71707700f33b00c293c660cb958b4c83c97b8b74086064fbaccccec05cfa615b",
+    "src/scene.js": "079e292b4b3ffefcb700dbdbed57d8d426506eb8033c8e1d159654d6f23f0c00",
+    "tests/creature-footing.test.js": "e31eed65b16bc7aa5cf4158ab63a29c2f0988ce86b4b46398d57bd3510cc8007",
+    "tests/creature-grounding.test.js": "5428c93e563fbbafa8d899c31fbdfb6191ea3f783ee25da20369b1981b1827fb",
+    "tests/creature-footing-review.html": "b34c591e45aa9d8228e99058224e0cea4d244f3572ca71a1dfcd7a109e9cfedc"
+  },
+  "imageSha256": {
+    "docs/creature-footing-current-chase-boar.jpg": "65e58613a411ce24cbc73820dbea3480e4f843239a6c5d83bb82a1d3ba0dac20",
+    "docs/creature-footing-current-chase-crab.jpg": "c17a52f6f5a677e01cd42257bee3a0568ef632f7ba6e975c66182ef7a32ebc8d",
+    "docs/creature-footing-current-coast-boar.jpg": "7fd3317c6c94cbc5054c7ca2e9c7eb243a19cf5cd7771fd4da5686164d0517fb",
+    "docs/creature-footing-current-coast-crab.jpg": "c20da8e13ddad72a9a6d58c79fc62166e0717713423abb5a6ca5a4292bd3923c",
+    "docs/creature-footing-current-forest-boar.jpg": "27d1f17db8f07f236bb9a4a312b39f9886045d75a4a7b9ce30061e0cc33b1044",
+    "docs/creature-footing-current-forest-crab.jpg": "61f5f65078bae3765885899aa6703ec7abd4ba9f668b75652c45cd34ff43e713",
+    "docs/creature-footing-current-highland-boar.jpg": "01310749a2072a55e2924fc13c9aec33b40a03298ae52ccfac0fa57e32db820f",
+    "docs/creature-footing-current-highland-crab.jpg": "51b4f9821d3d2e831993de2abe68817e123759b00416b95ebd5404baed9d7150",
+    "docs/creature-footing-current-mobile-boar.jpg": "062b6379b802a7b8fa8f7dbbfa9dfd0ee01d85d1132a9cd4a357ad75594d0082",
+    "docs/creature-footing-current-mobile-crab.jpg": "88b4aa2fbd6054434dcd484a2a0f53e11610dd7275007b1365944640ca58c013",
+    "docs/creature-footing-current-shoal-boar.jpg": "91352f81482e6fb15468cfd6fab02e2651c6df59fde85472c7ac3aa5bb1f09e9",
+    "docs/creature-footing-current-shoal-crab.jpg": "8e8288ca002545fc32da9510830e2c7bf71736a25feb4ae908cbc4a6d62a12d1"
+  },
+  "maxPlantedSlide": 1.1718571004216928e-13,
+  "maxAnalyticGap": 0.0031201546153347692,
+  "maxRenderedMeshGap": 0.03308169005336126,
+  "rafP95Range": [
+    17.39999999999418,
+    18.399999999999636
+  ],
+  "maxRafInterval": 298,
+  "candidateDelivered": false,
+  "physicalWholeFootQualityAccepted": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "limits": [
+    "Articulated endpoint support, not complete sole collision, biomechanics or whole-body naturalness.",
+    "Scripted paths ignore obstacles; only chase fixtures use production AI/collision/damage.",
+    "Forest inspection camera/vegetation partly obscures bodies; its image is diagnostic, not full forest visual acceptance.",
+    "Short controlled-browser motion, no continuous video, current-source long run, real device or ordinary campaign."
+  ]
+}

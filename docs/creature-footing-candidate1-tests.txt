@@ -1,0 +1,154 @@
+TAP version 13
+# Subtest: boar: actual articulated contacts remain planted through travel, turning and stopping (flat)
+ok 1 - boar: actual articulated contacts remain planted through travel, turning and stopping (flat)
+  ---
+  duration_ms: 74.462209
+  type: 'test'
+  ...
+# Subtest: boar: actual articulated contacts remain planted through travel, turning and stopping (slope)
+ok 2 - boar: actual articulated contacts remain planted through travel, turning and stopping (slope)
+  ---
+  duration_ms: 23.3345
+  type: 'test'
+  ...
+# Subtest: crab: actual articulated contacts remain planted through travel, turning and stopping (flat)
+ok 3 - crab: actual articulated contacts remain planted through travel, turning and stopping (flat)
+  ---
+  duration_ms: 29.350208
+  type: 'test'
+  ...
+# Subtest: crab: actual articulated contacts remain planted through travel, turning and stopping (slope)
+ok 4 - crab: actual articulated contacts remain planted through travel, turning and stopping (slope)
+  ---
+  duration_ms: 23.549791
+  type: 'test'
+  ...
+# Subtest: boar: resting foot surfaces follow a sloped plane at multiple headings
+not ok 5 - boar: resting foot surfaces follow a sloped plane at multiple headings
+  ---
+  duration_ms: 49.260167
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/creature-grounding.test.js:6:35'
+  failureType: 'testCodeFailure'
+  error: 'boar foot floats above the slope'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/creature-grounding.test.js:13:232)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: crab: resting foot surfaces follow a sloped plane at multiple headings
+not ok 6 - crab: resting foot surfaces follow a sloped plane at multiple headings
+  ---
+  duration_ms: 35.467625
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/creature-grounding.test.js:6:35'
+  failureType: 'testCodeFailure'
+  error: 'crab foot floats above the slope'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/creature-grounding.test.js:13:232)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: crab has eight walking legs and its articulated pincers close during a strike
+ok 7 - crab has eight walking legs and its articulated pincers close during a strike
+  ---
+  duration_ms: 57.872167
+  type: 'test'
+  ...
+# Subtest: boar: sculpted surfaces stay finite and retain the same distant silhouette
+not ok 8 - boar: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 23.587875
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/creature.test.js:27:35'
+  failureType: 'testCodeFailure'
+  error: 'model must fit its established ground/height scale'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/creature.test.js:29:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: crab: sculpted surfaces stay finite and retain the same distant silhouette
+ok 9 - crab: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 20.643667
+  type: 'test'
+  ...
+# Subtest: boar: distance gait, bounded turn, hit isolation and death recovery
+ok 10 - boar: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 21.605833
+  type: 'test'
+  ...
+# Subtest: crab: distance gait, bounded turn, hit isolation and death recovery
+ok 11 - crab: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 39.37925
+  type: 'test'
+  ...
+# Subtest: boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+not ok 12 - boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 11.467709
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/creature.test.js:53:35'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(nearBounds.min.distanceTo(farBounds.min)<1e-5)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/creature.test.js:56:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 13 - crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 9.204584
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 9
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 244.4805

@@ -1,0 +1,72 @@
+{
+  "complete": false,
+  "targetMs": 600000,
+  "activeMs": 52983.44,
+  "wallMs": 52989.14,
+  "frames": 3180,
+  "movingFrames": 3178,
+  "movingFraction": 1,
+  "distanceMeters": 318.25,
+  "hidden": false,
+  "medianMs": 16.7,
+  "p95Ms": 17.8,
+  "maxMs": 35.1,
+  "over50Ms": 0,
+  "frameSpikes": [],
+  "pannersPeak": 0,
+  "spatialAttempts": 0,
+  "spatialScheduled": 0,
+  "pannersCreated": 0,
+  "pannersReleased": 0,
+  "stepAttempts": 131,
+  "stepsScheduled": 131,
+  "hitCount": 0,
+  "damageTaken": 0,
+  "respawns": 0,
+  "revivedPairs": 0,
+  "stages": [],
+  "checkpoints": [
+    {
+      "activeMs": 0,
+      "stage": "shore-exploration",
+      "position": [
+        -90,
+        140
+      ],
+      "height": 1.22,
+      "time": 240,
+      "daytime": "午后",
+      "hp": 100,
+      "kills": 0,
+      "frames": 0,
+      "movingFrames": 0,
+      "distance": 0,
+      "calls": 450,
+      "triangles": 2500110,
+      "geometries": 257,
+      "textures": 21,
+      "glError": 0,
+      "heapBytes": 112083821,
+      "audio": {
+        "context": "running",
+        "voices": 0,
+        "stepsScheduled": 0,
+        "pannersCreated": 0,
+        "pannersReleased": 0,
+        "surfGain": 0,
+        "birdsGain": 0,
+        "insectsGain": 0,
+        "ambienceBytes": 8640000
+      },
+      "viewport": [
+        1920,
+        1080
+      ],
+      "canvasBuffer": [
+        1920,
+        928
+      ]
+    }
+  ],
+  "note": "Current candidate: swept actor/resource movement and tick with production objects; camera-relative stereo windup/hit audio; native panner creation/release observed. Adaptive steering after blocked inputs. QA scripted input and five phase teleports; production movement/tick/render/audio. Combat pair revived as labelled load fixture. Frame intervals and JS heap only; no save or campaign acceptance."
+}
