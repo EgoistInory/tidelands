@@ -1,0 +1,154 @@
+TAP version 13
+# Subtest: mute prevents initialization and pause fades master to silence
+ok 1 - mute prevents initialization and pause fades master to silence
+  ---
+  duration_ms: 2.17725
+  type: 'test'
+  ...
+# Subtest: effects are bounded and disconnect on completion; footsteps follow distance
+ok 2 - effects are bounded and disconnect on completion; footsteps follow distance
+  ---
+  duration_ms: 0.733042
+  type: 'test'
+  ...
+# Subtest: partial initialization and resume failures release context and allow a retry
+ok 3 - partial initialization and resume failures release context and allow a retry
+  ---
+  duration_ms: 1.525459
+  type: 'test'
+  ...
+# Subtest: menu success cues play while world is paused, and mute silences both channels
+ok 4 - menu success cues play while world is paused, and mute silences both channels
+  ---
+  duration_ms: 0.329583
+  type: 'test'
+  ...
+# Subtest: busy physical actions leave room for quest, crafting and food confirmation cues
+ok 5 - busy physical actions leave room for quest, crafting and food confirmation cues
+  ---
+  duration_ms: 0.5835
+  type: 'test'
+  ...
+# Subtest: ambient noise loops without a sample discontinuity or DC offset
+ok 6 - ambient noise loops without a sample discontinuity or DC offset
+  ---
+  duration_ms: 0.543292
+  type: 'test'
+  ...
+# Subtest: physical actions vary noise slices without truncating tails or allocating new buffers
+ok 7 - physical actions vary noise slices without truncating tails or allocating new buffers
+  ---
+  duration_ms: 0.780083
+  type: 'test'
+  ...
+# Subtest: distance fallback uses walking spacing, coast selects sand, swimming keeps splash spacing
+ok 8 - distance fallback uses walking spacing, coast selects sand, swimming keeps splash spacing
+  ---
+  duration_ms: 0.265125
+  type: 'test'
+  ...
+# Subtest: land audio follows actual rendered ankle touchdowns at walking and running speeds
+ok 9 - land audio follows actual rendered ankle touchdowns at walking and running speeds
+  ---
+  duration_ms: 135.69175
+  type: 'test'
+  ...
+# Subtest: contact counters suppress initial, replayed, paused and teleport steps while idle landings can sound
+ok 10 - contact counters suppress initial, replayed, paused and teleport steps while idle landings can sound
+  ---
+  duration_ms: 0.421583
+  type: 'test'
+  ...
+# Subtest: coastal surf fades through the shore elevation band without consuming effect voices
+ok 11 - coastal surf fades through the shore elevation band without consuming effect voices
+  ---
+  duration_ms: 0.417417
+  type: 'test'
+  ...
+# Subtest: surf shares world mute/pause and releases all persistent nodes on disposal
+ok 12 - surf shares world mute/pause and releases all persistent nodes on disposal
+  ---
+  duration_ms: 0.165917
+  type: 'test'
+  ...
+# Subtest: ecology changes with rendered daylight and island habitat, fading out at sea
+ok 13 - ecology changes with rendered daylight and island habitat, fading out at sea
+  ---
+  duration_ms: 0.1685
+  type: 'test'
+  ...
+# Subtest: ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices
+ok 14 - ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices
+  ---
+  duration_ms: 17.611209
+  type: 'test'
+  ...
+# Subtest: ecology shares world mute/pause and releases nodes on normal or failed initialization
+ok 15 - ecology shares world mute/pause and releases nodes on normal or failed initialization
+  ---
+  duration_ms: 0.513834
+  type: 'test'
+  ...
+# Subtest: enemy warnings distinguish body types and reuse bounded, pausable local noise
+ok 16 - enemy warnings distinguish body types and reuse bounded, pausable local noise
+  ---
+  duration_ms: 0.51475
+  type: 'test'
+  ...
+# Subtest: enemy shows windup first and applies exactly one hit at the rendered impact time
+ok 17 - enemy shows windup first and applies exactly one hit at the rendered impact time
+  ---
+  duration_ms: 12.058458
+  type: 'test'
+  ...
+# Subtest: leaving range or circling behind the committed direction makes the attack miss
+ok 18 - leaving range or circling behind the committed direction makes the attack miss
+  ---
+  duration_ms: 8.949417
+  type: 'test'
+  ...
+# Subtest: defeated enemies cannot finish their pending windup
+ok 19 - defeated enemies cannot finish their pending windup
+  ---
+  duration_ms: 3.90075
+  type: 'test'
+  ...
+# Subtest: pause cancellation and save restoration do not resume a stale enemy strike
+ok 20 - pause cancellation and save restoration do not resume a stale enemy strike
+  ---
+  duration_ms: 8.707416
+  type: 'test'
+  ...
+# Subtest: respawn protection prevents even starting a windup until it has expired
+ok 21 - respawn protection prevents even starting a windup until it has expired
+  ---
+  duration_ms: 4.503292
+  type: 'test'
+  ...
+# Subtest: 30, 60 and 144 fps deliver the same single damage event per attack
+ok 22 - 30, 60 and 144 fps deliver the same single damage event per attack
+  ---
+  duration_ms: 14.56975
+  type: 'test'
+  ...
+# Subtest: enemy sound direction follows screen right and distance fades continuously
+ok 23 - enemy sound direction follows screen right and distance fades continuously
+  ---
+  duration_ms: 4.620375
+  type: 'test'
+  ...
+# Subtest: spatial effect routes and releases one bounded panner; muted cues allocate none
+ok 24 - spatial effect routes and releases one bounded panner; muted cues allocate none
+  ---
+  duration_ms: 0.365958
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 223.552417

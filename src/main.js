@@ -1,5 +1,5 @@
 import {WorldView} from './scene.js';
-import {GameAudio} from './audio.js';
+import {GameAudio,enemySoundCue} from './audio.js';
 import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_IMPACT,ENEMY_ATTACK_IMPACT} from './action-timing.js';
 import {bindPointerControls} from './pointer-controls.js';
 import {createMovementHeading} from './movement-heading.js';
@@ -188,7 +188,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
   });
   function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;let moving=false;
     if(started&&!paused){let x=stick.x,z=stick.z;for(const k of keys)if(movement[k]){x+=movement[k][0];z+=movement[k][1];}movementHeading.end(stickActive||keyboardMoving());moving=Math.hypot(x,z)>.08;const running=keys.has('shift')&&moving;const v=relative(x,z);movePlayer(state,world.objects,v.x,v.z,dt,running);const feedback={},message=tick(state,dt,running,feedback,world.objects);
-      if(feedback.enemyWindups?.length){for(const enemy of feedback.enemyWindups)audio.effect('enemy-windup',{enemyType:enemy.type});updateUI();}
+      if(feedback.enemyWindups?.length){for(const enemy of feedback.enemyWindups)audio.effect('enemy-windup',{enemyType:enemy.type,...enemySoundCue(state.player,state.enemies.find(e=>e.id===enemy.id),Math.atan2(view.camera.position.x-state.player.x,view.camera.position.z-state.player.z))});updateUI();}
       if(feedback.damage>0){view.hurtAt=state.time;audio.effect('hit');combatFeedback('hurt',feedback.respawned?'倒下了 · 已返回营地':`受到伤害 −${Math.ceil(feedback.damage)}`);updateUI();}
       if(feedback.respawned){
         cancelAttack();cancelGather();keys.clear();movementHeading.end();resetPointers();moving=false;buildType=null;placement=null;view.setPreview(null);
