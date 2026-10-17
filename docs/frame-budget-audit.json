@@ -1,0 +1,105 @@
+{
+  "finiteFrameBudgetAccepted": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "delivered": false,
+  "currentSourceLongRunAccepted": false,
+  "sourceSha256": {
+    "src/creature.js": "a0099d86975f07b3fceeb9125742aa1bc4edb8a0504c97e51ef00fd2e4ad081e",
+    "src/scene.js": "0ecdbce6439e9092f3c5c4475ea3967062b7a23ed847da49823268c0126b3713"
+  },
+  "unchangedRuntimeFiles": 49,
+  "comparisonGpuP95Ms": {
+    "15": {
+      "ecosystem": [
+        19.1297,
+        18.2526,
+        13.9384,
+        21.1908,
+        17.2969
+      ],
+      "creatureBeforeCap": [
+        19.1038,
+        18.1217,
+        15.3869,
+        21.2112,
+        17.6275
+      ]
+    },
+    "1": {
+      "ecosystem": [
+        12.7395,
+        13.0916,
+        9.5781,
+        14.8468,
+        13.5144
+      ],
+      "creatureBeforeCap": [
+        13.1559,
+        13.1581,
+        9.4637,
+        13.2354,
+        13.0369
+      ]
+    }
+  },
+  "finalGpu": {
+    "gpu": {
+      "gpuP95Ms": [
+        11.4486,
+        12.2285,
+        9.4841,
+        13.3325,
+        13.294
+      ],
+      "pixelRatio": 1,
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    "mobile-gpu": {
+      "gpuP95Ms": [
+        6.1561,
+        6.6836,
+        3.9143,
+        8.504,
+        6.7055
+      ],
+      "pixelRatio": 1,
+      "canvasBuffer": [
+        390,
+        844
+      ]
+    }
+  },
+  "finalLoad": {
+    "activeMs": 60014.94,
+    "frames": 3590,
+    "movingFraction": 0.91,
+    "hitCount": 12,
+    "damageTaken": 62,
+    "respawns": 0,
+    "p95Ms": 18.1,
+    "maxMs": 116.64,
+    "over50Ms": 2
+  },
+  "evidenceSha256": {
+    "docs/frame-budget-baseline-15.json": "687f36bd341bba3397d1945ad7bcf54f9f92f36ec9db5068ffc998c106b9279a",
+    "docs/frame-budget-current-15.json": "9c43bcd68cb92bd24b84b9acdde9859ffe70f602b36325a5b41fa68678a1c42d",
+    "docs/frame-budget-baseline-1.json": "07604cff73eb0c726ff032d25ddcbb2feff3e9c8b721b5ac15384d3a853716cd",
+    "docs/frame-budget-current-1.json": "e49427111627327a2c15e55f1f8336aaaa2b928e568c86bebd198220f45dc0ae",
+    "docs/frame-budget-final-gpu.json": "a5e5547c2784b0c5f03dd86ce5b50e491d16a907e24d1c6302c59fabeb536ece",
+    "docs/frame-budget-final-mobile-gpu.json": "cae964b8105e218fbb4b45f05c2d1612f7f91e9295f9ad9d90d5dc9349ea2a48",
+    "docs/frame-budget-final-load.json": "8136396de1a647eb834e586f0cb7671539960a21f51b30265a7e445c4de6b79e",
+    "tests/quality-gpu.html": "3881b9a5ac2dfb355a31b1cd49d477a4427879fe48e21ded291c921935c98b9c",
+    "tests/quality-endurance.html": "80f9e0b7ad44677569d36c251422302e6edd9ffaf6e011ca527c5d4c07854a2b",
+    "docs/frame-budget-baseline-prepared.json": "100ea648171903c63f29b6bd500cf97221121d72027b60506b1353fa6710030e",
+    "docs/frame-budget-tests.txt": "8b547f68fdaf3bf550438468d26b9e7ddf761d60d9e99bc560485417b49d8b28",
+    "docs/frame-budget-focused.txt": "6559ec85787fdc128f0aa6673abd89aea66d36b16e3fb80c2563d7acc03daa8b",
+    "docs/frame-budget-red.txt": "2979f4985ba94e1135a9503ad81ad5c8a63e4fa06bd697c30cd1c0787eaf41fe",
+    "docs/frame-budget-final-desktop.png": "5b048c41b0c1497f933449b0ccf97947ffbdf0bbe7dd0e4b797c295d567118d5",
+    "docs/frame-budget-final-mobile.png": "514efef2eaece8bd9a9242a752d4fa41feb9d7e479712b3e342aa7e7378f638e"
+  },
+  "limits": "QA fixed-dt comparison preserves endpoints; final production GPU fixture uses real rAF dt and no audio/HUD.60s actual tick/render/audio sample excludes HUD/save. Drawing capped at2073600 pixels; high-DPI sharpness tradeoff, no model/detail removal. Final mobile viewport exposes DPR1, buffer390x844; DPR2 mobile1.5ceiling covered by resize unit test, not physical phone. Old ratio1 baseline partly overlapped Node tests and is not an isolated CPU/rAF comparison. No600s/current whole-campaign/phone/VRAM/listening or3A quality acceptance."
+}

@@ -292,7 +292,12 @@ export class WorldView{
     }});
     this.preview.add(model);
   }
-  resize(){const w=this.canvas.clientWidth,h=this.canvas.clientHeight;this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.updateProjectionMatrix();}
+  resize(){
+    const w=Math.max(1,this.canvas.clientWidth),h=Math.max(1,this.canvas.clientHeight);
+    // Bound fragment work at1080p while retaining the existing mobile detail ceiling.
+    this.renderer.setPixelRatio(Math.min(globalThis.devicePixelRatio||1,1.5,Math.sqrt(1920*1080/(w*h))));
+    this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.updateProjectionMatrix();
+  }
   updateAtmosphere(time,weather=weatherAt(time)){
     const {daylight}=dayCycle(time);
     this.ambient.intensity=(.6+Math.sqrt((daylight-.04)/.96)*1.5)*weather.skylight;
