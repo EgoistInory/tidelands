@@ -1,0 +1,193 @@
+{
+  "passed": true,
+  "boundedBatchDelivered": true,
+  "archive": "tidelands-m5-2026-10-17-grounding-budget-night.zip",
+  "archiveSha256": "23156d79fcac9f7905f730a40fa73cc2fdb76f8b6a2778f2415e24011a53e5ba",
+  "runtimeFiles": 51,
+  "extractedPath": "/private/tmp/tidelands-delivery-npwtot6t/tidelands-local",
+  "fullTests": 234,
+  "packageTests": 4,
+  "ordinaryNativeMove": {
+    "key": "w",
+    "durationMs": 750
+  },
+  "ordinaryCoordinates": {
+    "before": [
+      9.9,
+      71.8
+    ],
+    "after": [
+      9.1,
+      66.2
+    ],
+    "mobileHud": [
+      9.1,
+      66.2
+    ],
+    "secondHud": [
+      9.1,
+      66.2
+    ]
+  },
+  "ordinaryBackup": {
+    "passed": true,
+    "sha256": "7a61b0ebbd67a8a9cd8e778b40148dea0d36acbddccb011c78ebfa971d05c4ce",
+    "bytes": 13512,
+    "player": {
+      "x": 9.087976445005083,
+      "z": 66.20464111708174,
+      "hp": 79,
+      "stamina": 100,
+      "yaw": -2.991592653589793
+    },
+    "inventory": {
+      "wood": 4,
+      "stone": 5,
+      "fiber": 6,
+      "berry": 3,
+      "shell": 0,
+      "crystal": 0,
+      "axe": 1,
+      "sword": 0,
+      "meal": 0
+    },
+    "quest": 6,
+    "kills": 3,
+    "buildings": 1,
+    "allFieldsPreserved": true,
+    "scope": "Actual ordinary UI download, file-based production restore. No runtime injection or new campaign replay."
+  },
+  "ordinaryRestoresStable": true,
+  "gpuP95Ms": {
+    "desktop": [
+      11.7678,
+      13.1802,
+      9.5749,
+      14.0364,
+      12.5948
+    ],
+    "mobile": [
+      6.0535,
+      6.5301,
+      3.8479,
+      8.5484,
+      6.7563
+    ]
+  },
+  "currentImagesReviewed": [
+    "docs/grounding-budget-night-normal-desktop.png",
+    "docs/grounding-budget-night-normal-mobile.png",
+    "docs/grounding-budget-night-normal-world.png",
+    "docs/grounding-budget-night-endurance-phase-0.png",
+    "docs/grounding-budget-night-endurance-phase-1.png",
+    "docs/grounding-budget-night-endurance-phase-2.png",
+    "docs/grounding-budget-night-endurance-phase-3.png",
+    "docs/grounding-budget-night-endurance-phase-4.png"
+  ],
+  "sourceSha256": {
+    "README.md": "ba8d2141f0cb6d87b358181bdc55988abdfe5c412ebcdb6e97ff0e0517c954c3",
+    "assets/ground/coastal-sand/albedo.jpg": "e72144f9d7b81bdb7bbdb34222b53431738dcef79346dd89412d2abd541e4d30",
+    "assets/ground/coastal-sand/manifest.json": "645c20f5bbe691dacd7fde8daafde9ef851b5900c94b616103604c77932c4399",
+    "assets/ground/coastal-sand/normal-gl.jpg": "1bde5f49ea78f94bcad73592696bf3949711c4ac197133b710c0c8521b6e996b",
+    "assets/ground/coastal-sand/roughness.jpg": "5c9ead290a94913cfa2d0452a576ba527b50301fe208f2ffc4861e42a8fea45b",
+    "assets/ground/leafy-grass/albedo.jpg": "cfa40bc9d9417d1852db8753a8d5917f110c40101179f63543c382e39bc05e4a",
+    "assets/ground/leafy-grass/manifest.json": "f49abbcbc4a709048e10e6c3355337ab9753473825f1176bfebe6eb060eba513",
+    "assets/ground/leafy-grass/normal-gl.jpg": "832328216adc0a7e1f70a31d5ee48c9ab7f2152d83816122736cf42ac4b2ebd6",
+    "assets/ground/leafy-grass/roughness.jpg": "0c2a1d91aacb8e54a496051b59854e51e456fe858abeade778e308359ef16463",
+    "assets/rock/lichen-rock/albedo.jpg": "780128a5757920a7e30c50042e8975e8333ef4ae5809b30bb5be6a2f9fec3ec5",
+    "assets/rock/lichen-rock/manifest.json": "3099a12429d3ca75bc837223242cb9a4bec4022e22f8071b899d0d56dc3fd17c",
+    "assets/rock/lichen-rock/normal-gl.jpg": "a3510a296030a1e312ef589a872ae416f2d23203a7b7c0c9e3646e8109c6a61c",
+    "assets/rock/lichen-rock/roughness.jpg": "13a12b95d951f6fa4407d210fc97244274ff73583b60208eff651f3779c01a2e",
+    "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+    "serve.py": "15a7ff5096fd6b8c33c14591065d184ba7e643f9efd3f4c036e4c4058f349e45",
+    "src/action-timing.js": "fb94324d1ff0675e88b44ed241fa9ce4667cf9a1e944ca56c10a79cb0ea7099d",
+    "src/actor-contact.js": "76eced7c3ac2bb41ea28011ee324ae0842775bc1dca1377e72963644cbfcba4f",
+    "src/audio.js": "cc7b369d440a5ea542e0d530f3773c5a84a6141beb721b5f68e960b08e6ff53b",
+    "src/camera.js": "a2f696abdc34ac0e2cfdb8cbed02b40e0823398f593f13c9ab58e2bd21204aac",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character-head.js": "081f3f9a67c3b8c264004b3c9d5352e9a23a75262e20d6e179e48927b9b3d413",
+    "src/character.js": "6fdb6926a091de0a3f90ec5f679a04d75e1cf59454389b55d9ae35fedbbf64c5",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature.js": "a0099d86975f07b3fceeb9125742aa1bc4edb8a0504c97e51ef00fd2e4ad081e",
+    "src/crystal.js": "1f4191077b07bc551dd5bb59397f404e0d0cde15c7aa2f30bc27e1f098d4c3cb",
+    "src/foliage.js": "ab73866004c1744571f13b9290d6690b7de795cb29884967e696960acf79492e",
+    "src/game.js": "1f409fb864f13677d57e5aa9f4d9afa727e01794951b295f94fd978be8a34274",
+    "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+    "src/landscape.js": "2da378df008317a0a9d3c6bc53430067c3b57a5439515bf0080ac408476f4108",
+    "src/lighthouse.js": "baf9c8cfcee518a6f21b964d5aefe60ae40516a5ccdfc70ff1033b9c96d98577",
+    "src/main.js": "f55d84766a4c35da24070b358ca87ed44ec23204c21c5b9e195f11c835d5f123",
+    "src/meadow.js": "027735713a4d963a7aee39688bc7b54c32d690f53df81c8986c1fde88e523a20",
+    "src/merge-parts.js": "fa67b9162fcbb07d7f177a8855d42d56f8faf4f087c938c5997af0c87eac802f",
+    "src/movement-heading.js": "338f5d4063575847e9c17a60b9e6999b21744012b95e6096cfae531136ddd976",
+    "src/pointer-controls.js": "b92d43d36099f1a444b1635a050c9dc3dd67709fcaebe33d4fca09501cdd650f",
+    "src/resource-contact.js": "c08203f3ae4b52c71d87898f279522d1a49d0fb625a3151223db4ec02ee7dd0b",
+    "src/rock-surface.js": "ba43c2ab8ac270e4eb1048b1c62dbf9ddc887bdffecde8b932ae4afb8690d9fe",
+    "src/rock.js": "a409c5f7f73a07a6d954eebc69ebe94e957a56cdb677a59358bcf03938c183a7",
+    "src/ruin-layout.js": "546990987a222bd223d8a489c75054340f5b829518805eb562fd0493a8e38240",
+    "src/ruin.js": "a246871499788f118c41aa5b8a31c08c3e9c7f9a7cd32a3e8dd4ed2a4b75414c",
+    "src/scene.js": "6f6d72a8d134a06025e92a92d944b12ac1de4ba85b39aaba1ab013c0f2e345e2",
+    "src/sky.js": "e83f0d3ce196d44b214a608f09f0763ca33caa10c2d3ed671579b508effa75d4",
+    "src/startup-textures.js": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd",
+    "src/textile.js": "409b2ccf20dcbd8005e2d220404c358d5d39e1a7c6533db0bb80692cc85a69fb",
+    "src/tree.js": "2a74ce682a6b566458965656b98df17e135e23a656c768894c0cb689de3aaffe",
+    "src/world.js": "1a75cec458f0594f98ebca5d6162a31d825d9cf5f0daf902c9e912242b035392",
+    "styles.css": "8dad268e069b3ecf3a901ee234739ca16b26b16a484a29f75e55de4b4465826b",
+    "vendor/README.md": "ba420a3a87fdd72cd14ec0251ee69a1971e52f2e2150b25ed208396c6e225c6d",
+    "vendor/THREE-LICENSE": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+    "vendor/three.core.min.js": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+    "vendor/three.module.min.js": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6"
+  },
+  "evidenceSha256": {
+    "docs/grounding-budget-night-package-ui.json": "52892341a74a1b49accb0445c31119dbd28e4aa4c881729d669703f9c4e02894",
+    "docs/grounding-budget-night-backup-audit.json": "910c3fbd6b49699075cef5831e5de3bcfb6ad79ae1b165cf3ec13cfc4c47eb43",
+    "docs/grounding-budget-night-normal-save.json": "7a61b0ebbd67a8a9cd8e778b40148dea0d36acbddccb011c78ebfa971d05c4ce",
+    "docs/grounding-budget-night-tests.txt": "e03dbedc88d60cb240320e035fefb9c3ab761e2e47d32f99980ef0baeb054f4c",
+    "docs/night-palette-audit.json": "2c539e1ab20fa0aba67e17dcc8a8ecb1c5af1dc8d98fe0125781dbc29f6b8152",
+    "tests/quality-gpu.html": "3881b9a5ac2dfb355a31b1cd49d477a4427879fe48e21ded291c921935c98b9c",
+    "docs/grounding-budget-night-gpu-desktop.json": "da599a71401cedf0764b955e0ef13236dc2b0a3b1dec36704af017366840db12",
+    "docs/grounding-budget-night-gpu-mobile.json": "17ce50b9721a43402bbe560c694042f4b1d4cc8ec60f7acfae42217b42ff5e47",
+    "docs/grounding-budget-night-normal-desktop.png": "3f5f8fa69f379230d1bbaa8e62337216eb1d3c776861229dc7c649e5bcc45429",
+    "docs/grounding-budget-night-normal-mobile.png": "c50bda1a01d7fb405d6449ef2a3771f721664a1f128413fde55ffeebf6136a45",
+    "docs/grounding-budget-night-normal-world.png": "a3bb9a2ee88365a94095c5de0614b414c7aa57e6973eb48e7bb3daf9cec79e03",
+    "docs/grounding-budget-night-endurance.json": "09969c8d4d457251e47d8949eecae93e7c15c4f921190c90a7d8fa0e05a6b8c2",
+    "tests/quality-endurance.html": "80f9e0b7ad44677569d36c251422302e6edd9ffaf6e011ca527c5d4c07854a2b",
+    "docs/grounding-budget-night-endurance-phase-0.png": "5f599519b2524d2cb2c000dd8465e39f602a05ae84a675400f0d379465204328",
+    "docs/grounding-budget-night-endurance-phase-1.png": "92e6ecd5a5df3fb0f9dd323105f8ff1291b31b52d81c4f55dd8b55d9e15b7b7b",
+    "docs/grounding-budget-night-endurance-phase-2.png": "ecd7640903fe480870fec2ba755145eeebe05dd525bd35c03c876e5096c3cfd2",
+    "docs/grounding-budget-night-endurance-phase-3.png": "5ae9615d06111e6c0b4556a0fdc8003b8da491c14460a0bdb7f22773ca5b583f",
+    "docs/grounding-budget-night-endurance-phase-4.png": "d93df2a47bd8050ef6219916b4a44756eb469338fb3ba59d1b108c5f55e61b01"
+  },
+  "fullCurrentJourneyReplayed": false,
+  "currentSourceLongRunAccepted": true,
+  "audioListened": false,
+  "physicalMobileDevice": false,
+  "m5Complete": false,
+  "fullGoalComplete": false,
+  "limits": "Independent package launched on existing53942 origin; ordinary native continuation/save/download and390/two restores, not from-zero campaign. GPU fixtures use identical runtime sources with phase teleports, no live HUD/audio/VRAM/phone proof. Night hue correction is bounded; dark faces, model naturalness, foot sliding and camera residuals remain. New JSON is exact at export; subsequent no-input time progression is not claimed identical whole-save state.",
+  "endurance": {
+    "activeMs": 600001,
+    "frames": 35946,
+    "movingFraction": 0.97,
+    "distanceMeters": 3916.91,
+    "hitCount": 42,
+    "damageTaken": 171,
+    "respawns": 0,
+    "p95Ms": 18.1,
+    "maxMs": 50,
+    "over50Ms": 0,
+    "heapMiB": [
+      99.0,
+      104.1,
+      53.46,
+      65.45,
+      57.76,
+      70.69,
+      68.27,
+      81.42,
+      72.16,
+      70.04,
+      78.14
+    ],
+    "limits": "600s scripted teleports/weapon/food/revived enemy fixtures; no native campaign or VRAM/leak-freedom/audio audition claim. Browser performance.memory snapshots may include other diagnostics/contexts."
+  }
+}
