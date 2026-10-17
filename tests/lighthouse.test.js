@@ -33,3 +33,15 @@ test('lighthouse optical emission is private and static architectural parts are 
   let triangles=0;a.traverse(m=>{if(m.isMesh)triangles+=(m.geometry.index?.count??m.geometry.attributes.position.count)/3;});
   assert.ok(triangles>1000&&triangles<10000,'bounded single landmark budget');
 });
+
+test('beacon fades its shell edges and distant end without double blending or new textures',()=>{
+  const a=createLighthouse().userData.beacon.children.find(m=>m.isMesh);
+  const b=createLighthouse().userData.beacon.children.find(m=>m.isMesh);
+  assert.ok(a.material.isShaderMaterial,'uniform opacity shell has no edge or length attenuation');
+  assert.equal(a.material.side,THREE.BackSide,'one exit surface, including from inside the beam');
+  assert.equal(a.geometry.parameters.openEnded,false,'exit surface also exists along the beam axis');
+  assert.equal(a.material.fog,true);assert.equal(a.material.depthWrite,false);
+  assert.ok(a.material.uniforms.fogNear&&a.material.uniforms.fogFar);
+  assert.notEqual(a.material.uniforms,b.material.uniforms);
+  assert.ok(!Object.values(a.material.uniforms).some(u=>u.value?.isTexture));
+});

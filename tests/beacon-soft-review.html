@@ -1,0 +1,33 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>夜间光束边界与运动审查</title>
+<style>html,body{height:100%;margin:0;background:#192723;color:#eee;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:8px}output{height:115px;overflow:auto;overflow-wrap:anywhere;font:11px monospace}canvas{flex:1;min-height:0;width:100%}</style>
+<nav>声明任务6/检视镜头 · 无存档 <select id="pose"><option value="front">全场正面</option><option value="side">全场斜侧</option><option value="axis">正对束轴</option><option value="inside">光束内部</option></select><select id="time"><option value="0">午夜</option><option value="240">正午</option></select><button id="run" disabled>旋转240帧</button></nav>
+<output>准备…</output><canvas aria-label="生产夜间光束及声明旋转镜头"></canvas><script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {WorldView} from '../src/scene.js';import {createWorld,terrain,LANDMARKS} from '../src/world.js';import {freshGame} from '../src/game.js';
+const out=document.querySelector('output'),view=new WorldView(document.querySelector('canvas'),createWorld()),state=freshGame(),site=LANDMARKS.find(o=>o.type==='lighthouse');
+Object.assign(state.player,{x:site.x-5,z:site.z+8});state.quest=6;state.enemies=[];view.sync(state);
+let frames=0,running=false,probe=null,intervals=[],previous=null,hidden=false;
+const poses={front:[[0,15,43],[0,11,0]],side:[[43,15,43],[0,15,0]],axis:[[105,21.7,0],[0,21.7,0]],inside:[[30,21.7,0],[90,21.7,0]]};
+function draw(){
+  state.time=Number(document.querySelector('#time').value);view.draw(state,null,null,false,0);
+  const [p,t]=poses[document.querySelector('#pose').value],y=terrain(site.x,site.z);
+  view.camera.position.set(site.x+p[0],y+p[1],site.z+p[2]);view.camera.lookAt(site.x+t[0],y+t[1],site.z+t[2]);view.sky.position.copy(view.camera.position);
+  view.lighthouse.userData.beacon.rotation.y=running?frames/240*Math.PI*2:0;view.renderer.render(view.scene,view.camera);
+  const sorted=[...intervals].sort((a,b)=>a-b),info=view.renderer.info;
+  out.textContent=JSON.stringify({ready:true,pose:document.querySelector('#pose').value,time:state.time,frames,running,hidden,raf:sorted.length?{samples:sorted.length,p95:sorted[Math.floor(sorted.length*.95)],max:sorted.at(-1)}:null,probe,render:{calls:info.render.calls,triangles:info.render.triangles,textures:info.memory.textures},viewport:[innerWidth,innerHeight],buffer:[view.renderer.domElement.width,view.renderer.domElement.height],glError:view.renderer.getContext().getError(),scope:'Production WorldView fixed/rotating quest6 fixture; isolated same-material GPU alpha probes; no save, campaign, physical phone, long-run or complete environment acceptance.'});
+}
+function alphaProbe(){
+  const production=view.lighthouse.userData.beacon.children.find(o=>o.isMesh),scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(-5,95,10,-10,.1,200),target=new THREE.WebGLRenderTarget(1000,200),beam=new THREE.Mesh(production.geometry,production.material);
+  beam.rotation.copy(production.rotation);beam.position.x=45;scene.add(beam);camera.position.set(0,0,100);camera.lookAt(0,0,0);
+  const oldColor=view.renderer.getClearColor(new THREE.Color()),oldAlpha=view.renderer.getClearAlpha();view.renderer.setClearColor(0,0);view.renderer.setRenderTarget(target);view.renderer.render(scene,camera);
+  const read=()=>{const samples={};for(const [name,x,y]of [['center',25,0],['middle',25,.97],['edge',25,1.84],['nearEdge',25,1.92],['far',88,0],['outside',25,2.4]]){const bytes=new Uint8Array(4);view.renderer.readRenderTargetPixels(target,Math.round((x+5)*10),Math.round((y+10)*10),1,1,bytes);samples[name]=Array.from(bytes);}return samples;};
+  const current=read();camera.position.set(30,0,0);camera.lookAt(90,0,0);view.renderer.render(scene,camera);const cap=new Uint8Array(4);view.renderer.readRenderTargetPixels(target,50,100,1,1,cap);camera.position.set(0,0,100);camera.lookAt(0,0,0);
+  const legacyGeometry=new THREE.ConeGeometry(7,90,24,1,true),legacyMaterial=new THREE.MeshBasicMaterial({color:0xffe6a3,transparent:true,opacity:.12,depthWrite:false,side:THREE.DoubleSide});
+  beam.geometry=legacyGeometry;beam.material=legacyMaterial;view.renderer.render(scene,camera);const legacy=read();legacyGeometry.dispose();legacyMaterial.dispose();
+  view.renderer.setRenderTarget(null);view.renderer.setClearColor(oldColor,oldAlpha);target.dispose();return {target:[1000,200],rgba:current,legacy,insideCapRgba:Array.from(cap),method:'Native WebGLRenderTarget readback, production material/geometry versus exact prior 24-sided open .12 DoubleSide shell, transparent black, orthographic side view and inside cap center. No image editing.'};
+}
+Promise.all([view.groundSurface.userData.ground.loaded,view.rockSurface.userData.rock.loaded]).then(()=>{probe=alphaProbe();draw();document.querySelector('#run').disabled=false;});
+for(const s of document.querySelectorAll('select'))s.onchange=()=>{frames=0;draw();};
+document.querySelector('#run').onclick=()=>{running=true;frames=0;previous=null;intervals=[];document.querySelectorAll('button,select').forEach(b=>b.disabled=true);function frame(now){hidden||=document.hidden;if(previous!==null)intervals.push(now-previous);previous=now;frames++;draw();if(frames<240)requestAnimationFrame(frame);else{running=false;draw();document.querySelectorAll('button,select').forEach(b=>b.disabled=false);}}requestAnimationFrame(frame);};
+window.addEventListener('resize',()=>{view.resize();draw();});window.addEventListener('pagehide',()=>{view.contactShade.dispose();view.renderer.dispose();});
+</script></html>

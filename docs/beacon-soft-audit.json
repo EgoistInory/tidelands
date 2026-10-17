@@ -1,0 +1,128 @@
+{
+  "passed": true,
+  "boundedBeamSofteningAccepted": true,
+  "candidateDelivered": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "sourceSha256": {
+    "src/lighthouse.js": "b134e4d6a593723b93267c8963ed1ab77d6a6112e31523689451333481ff8091",
+    "tests/lighthouse.test.js": "1b3fb13af50dbc53ac849347c193e447663ff618370bdef4f3ebdd1ef41c144e",
+    "tests/beacon-soft-review.html": "06b029e8bd1ce14b1f0c0eea4b00550ecc795f90bcba008a8ffa9ebe557a5148"
+  },
+  "gpuAlphaProbe": {
+    "target": [
+      1000,
+      200
+    ],
+    "rgba": {
+      "center": [
+        28,
+        22,
+        10,
+        28
+      ],
+      "middle": [
+        28,
+        22,
+        10,
+        28
+      ],
+      "edge": [
+        15,
+        12,
+        6,
+        15
+      ],
+      "nearEdge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "far": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "outside": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "legacy": {
+      "center": [
+        58,
+        45,
+        21,
+        58
+      ],
+      "middle": [
+        58,
+        45,
+        21,
+        58
+      ],
+      "edge": [
+        58,
+        45,
+        21,
+        58
+      ],
+      "nearEdge": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "far": [
+        58,
+        45,
+        21,
+        58
+      ],
+      "outside": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "insideCapRgba": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "method": "Native WebGLRenderTarget readback, production material/geometry versus exact prior 24-sided open .12 DoubleSide shell, transparent black, orthographic side view and inside cap center. No image editing."
+  },
+  "imageSha256": {
+    "docs/beacon-soft-baseline-front.jpg": "8ea1d009893fbf168c910ca38263e6574f406dffdfdf07f83b54c6b016c7dac7",
+    "docs/beacon-soft-final-front.jpg": "f3cb9b6732a9c2455cf72b63b9bb4861279621d970568784994da767b9315922",
+    "docs/beacon-soft-current-front.jpg": "0d6ac84b72bb754528c83ef3af5d2c3368ffc2a8478182afdd05bf1da7cead1b",
+    "docs/beacon-soft-current-side.jpg": "a079d92590862f552a753fb61f78b5b0e6cc9c4006e8e085cc7f06ee569588b2",
+    "docs/beacon-soft-current-axis.jpg": "1be9bed2a12ecd137cbd07aa90cacbb309c784d12fd0ea233918a3723d5f8f0b",
+    "docs/beacon-soft-inside.jpg": "a9ecd76d3f381989f0833067c70000c2fb34277ea1d088ee94d06f8aa1ce2295",
+    "docs/beacon-soft-day.jpg": "8ebc8e268a5bb23677fc8e655a01d91166d7503c5b3b5adde190b54891b6d5fa",
+    "docs/beacon-soft-mobile.jpg": "8fa85c24cfcd737b155f9705a34882f055060cf1b86ca50fa983731404a2c4a1"
+  },
+  "tests": 242,
+  "desktopRaf": {
+    "samples": 239,
+    "p95": 17.900000000001455,
+    "max": 18.700000000000728
+  },
+  "mobileRaf": {
+    "samples": 239,
+    "p95": 17.80000000000291,
+    "max": 18.69999999999709
+  },
+  "limits": [
+    "Soft cone shell, not volumetric scattering; axial/interior beam can disappear.",
+    "Fixed quest6/inspection camera and 240-frame rotation fixtures; no ordinary campaign.",
+    "Pixel readback proves shader attenuation, not GPU frame time. No current-source long run, package or real phone.",
+    "The initial UV-cap disk artifact was observed and fixed by axial position attenuation; initial screenshot retained."
+  ]
+}

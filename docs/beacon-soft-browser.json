@@ -1,0 +1,815 @@
+{
+  "sourceSha256": {
+    "src/lighthouse.js": "b134e4d6a593723b93267c8963ed1ab77d6a6112e31523689451333481ff8091",
+    "tests/lighthouse.test.js": "1b3fb13af50dbc53ac849347c193e447663ff618370bdef4f3ebdd1ef41c144e",
+    "tests/beacon-soft-review.html": "06b029e8bd1ce14b1f0c0eea4b00550ecc795f90bcba008a8ffa9ebe557a5148"
+  },
+  "poses": [
+    {
+      "ready": true,
+      "pose": "front",
+      "time": 0,
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "probe": {
+        "target": [
+          1000,
+          200
+        ],
+        "rgba": {
+          "center": [
+            28,
+            22,
+            10,
+            28
+          ],
+          "middle": [
+            28,
+            22,
+            10,
+            28
+          ],
+          "edge": [
+            15,
+            12,
+            6,
+            15
+          ],
+          "nearEdge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "far": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "outside": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "legacy": {
+          "center": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "middle": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "edge": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "nearEdge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "far": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "outside": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "insideCapRgba": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "method": "Native WebGLRenderTarget readback, production material/geometry versus exact prior 24-sided open .12 DoubleSide shell, transparent black, orthographic side view and inside cap center. No image editing."
+      },
+      "render": {
+        "calls": 212,
+        "triangles": 2212151,
+        "textures": 21
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        847
+      ],
+      "glError": 0,
+      "scope": "Production WorldView fixed/rotating quest6 fixture; isolated same-material GPU alpha probes; no save, campaign, physical phone, long-run or complete environment acceptance."
+    },
+    {
+      "ready": true,
+      "pose": "side",
+      "time": 0,
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "probe": {
+        "target": [
+          1000,
+          200
+        ],
+        "rgba": {
+          "center": [
+            28,
+            22,
+            10,
+            28
+          ],
+          "middle": [
+            28,
+            22,
+            10,
+            28
+          ],
+          "edge": [
+            15,
+            12,
+            6,
+            15
+          ],
+          "nearEdge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "far": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "outside": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "legacy": {
+          "center": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "middle": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "edge": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "nearEdge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "far": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "outside": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "insideCapRgba": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "method": "Native WebGLRenderTarget readback, production material/geometry versus exact prior 24-sided open .12 DoubleSide shell, transparent black, orthographic side view and inside cap center. No image editing."
+      },
+      "render": {
+        "calls": 191,
+        "triangles": 1671025,
+        "textures": 21
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        847
+      ],
+      "glError": 0,
+      "scope": "Production WorldView fixed/rotating quest6 fixture; isolated same-material GPU alpha probes; no save, campaign, physical phone, long-run or complete environment acceptance."
+    },
+    {
+      "ready": true,
+      "pose": "axis",
+      "time": 0,
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "probe": {
+        "target": [
+          1000,
+          200
+        ],
+        "rgba": {
+          "center": [
+            28,
+            22,
+            10,
+            28
+          ],
+          "middle": [
+            28,
+            22,
+            10,
+            28
+          ],
+          "edge": [
+            15,
+            12,
+            6,
+            15
+          ],
+          "nearEdge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "far": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "outside": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "legacy": {
+          "center": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "middle": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "edge": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "nearEdge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "far": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "outside": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "insideCapRgba": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "method": "Native WebGLRenderTarget readback, production material/geometry versus exact prior 24-sided open .12 DoubleSide shell, transparent black, orthographic side view and inside cap center. No image editing."
+      },
+      "render": {
+        "calls": 141,
+        "triangles": 1720620,
+        "textures": 21
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        847
+      ],
+      "glError": 0,
+      "scope": "Production WorldView fixed/rotating quest6 fixture; isolated same-material GPU alpha probes; no save, campaign, physical phone, long-run or complete environment acceptance."
+    },
+    {
+      "ready": true,
+      "pose": "inside",
+      "time": 0,
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "probe": {
+        "target": [
+          1000,
+          200
+        ],
+        "rgba": {
+          "center": [
+            28,
+            22,
+            10,
+            28
+          ],
+          "middle": [
+            28,
+            22,
+            10,
+            28
+          ],
+          "edge": [
+            15,
+            12,
+            6,
+            15
+          ],
+          "nearEdge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "far": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "outside": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "legacy": {
+          "center": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "middle": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "edge": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "nearEdge": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "far": [
+            58,
+            45,
+            21,
+            58
+          ],
+          "outside": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "insideCapRgba": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "method": "Native WebGLRenderTarget readback, production material/geometry versus exact prior 24-sided open .12 DoubleSide shell, transparent black, orthographic side view and inside cap center. No image editing."
+      },
+      "render": {
+        "calls": 155,
+        "triangles": 2327396,
+        "textures": 21
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        847
+      ],
+      "glError": 0,
+      "scope": "Production WorldView fixed/rotating quest6 fixture; isolated same-material GPU alpha probes; no save, campaign, physical phone, long-run or complete environment acceptance."
+    }
+  ],
+  "day": {
+    "ready": true,
+    "pose": "front",
+    "time": 240,
+    "frames": 0,
+    "running": false,
+    "hidden": false,
+    "raf": {
+      "samples": 239,
+      "p95": 17.900000000001455,
+      "max": 18.700000000000728
+    },
+    "probe": {
+      "target": [
+        1000,
+        200
+      ],
+      "rgba": {
+        "center": [
+          28,
+          22,
+          10,
+          28
+        ],
+        "middle": [
+          28,
+          22,
+          10,
+          28
+        ],
+        "edge": [
+          15,
+          12,
+          6,
+          15
+        ],
+        "nearEdge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "far": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "outside": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "legacy": {
+        "center": [
+          58,
+          45,
+          21,
+          58
+        ],
+        "middle": [
+          58,
+          45,
+          21,
+          58
+        ],
+        "edge": [
+          58,
+          45,
+          21,
+          58
+        ],
+        "nearEdge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "far": [
+          58,
+          45,
+          21,
+          58
+        ],
+        "outside": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "insideCapRgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "method": "Native WebGLRenderTarget readback, production material/geometry versus exact prior 24-sided open .12 DoubleSide shell, transparent black, orthographic side view and inside cap center. No image editing."
+    },
+    "render": {
+      "calls": 195,
+      "triangles": 2008627,
+      "textures": 21
+    },
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      847
+    ],
+    "glError": 0,
+    "scope": "Production WorldView fixed/rotating quest6 fixture; isolated same-material GPU alpha probes; no save, campaign, physical phone, long-run or complete environment acceptance."
+  },
+  "desktopMotion": {
+    "ready": true,
+    "pose": "front",
+    "time": 0,
+    "frames": 240,
+    "running": false,
+    "hidden": false,
+    "raf": {
+      "samples": 239,
+      "p95": 17.900000000001455,
+      "max": 18.700000000000728
+    },
+    "probe": {
+      "target": [
+        1000,
+        200
+      ],
+      "rgba": {
+        "center": [
+          28,
+          22,
+          10,
+          28
+        ],
+        "middle": [
+          28,
+          22,
+          10,
+          28
+        ],
+        "edge": [
+          15,
+          12,
+          6,
+          15
+        ],
+        "nearEdge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "far": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "outside": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "legacy": {
+        "center": [
+          58,
+          45,
+          21,
+          58
+        ],
+        "middle": [
+          58,
+          45,
+          21,
+          58
+        ],
+        "edge": [
+          58,
+          45,
+          21,
+          58
+        ],
+        "nearEdge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "far": [
+          58,
+          45,
+          21,
+          58
+        ],
+        "outside": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "insideCapRgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "method": "Native WebGLRenderTarget readback, production material/geometry versus exact prior 24-sided open .12 DoubleSide shell, transparent black, orthographic side view and inside cap center. No image editing."
+    },
+    "render": {
+      "calls": 199,
+      "triangles": 2137719,
+      "textures": 21
+    },
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      847
+    ],
+    "glError": 0,
+    "scope": "Production WorldView fixed/rotating quest6 fixture; isolated same-material GPU alpha probes; no save, campaign, physical phone, long-run or complete environment acceptance."
+  },
+  "mobileMotion": {
+    "ready": true,
+    "pose": "front",
+    "time": 0,
+    "frames": 240,
+    "running": false,
+    "hidden": false,
+    "raf": {
+      "samples": 239,
+      "p95": 17.80000000000291,
+      "max": 18.69999999999709
+    },
+    "probe": {
+      "target": [
+        1000,
+        200
+      ],
+      "rgba": {
+        "center": [
+          28,
+          22,
+          10,
+          28
+        ],
+        "middle": [
+          28,
+          22,
+          10,
+          28
+        ],
+        "edge": [
+          15,
+          12,
+          6,
+          15
+        ],
+        "nearEdge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "far": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "outside": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "legacy": {
+        "center": [
+          58,
+          45,
+          21,
+          58
+        ],
+        "middle": [
+          58,
+          45,
+          21,
+          58
+        ],
+        "edge": [
+          58,
+          45,
+          21,
+          58
+        ],
+        "nearEdge": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "far": [
+          58,
+          45,
+          21,
+          58
+        ],
+        "outside": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "insideCapRgba": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "method": "Native WebGLRenderTarget readback, production material/geometry versus exact prior 24-sided open .12 DoubleSide shell, transparent black, orthographic side view and inside cap center. No image editing."
+    },
+    "render": {
+      "calls": 170,
+      "triangles": 1332652,
+      "textures": 21
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "buffer": [
+      390,
+      689
+    ],
+    "glError": 0,
+    "scope": "Production WorldView fixed/rotating quest6 fixture; isolated same-material GPU alpha probes; no save, campaign, physical phone, long-run or complete environment acceptance."
+  },
+  "console": [],
+  "fullGoalComplete": false,
+  "realDeviceVerified": false
+}

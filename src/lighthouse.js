@@ -19,6 +19,34 @@ function arch(width,height,bottom=0){
 function openingFrame(width,height){const shape=arch(width+.28,height+.2);shape.holes.push(arch(width,height,.1));return new THREE.ExtrudeGeometry(shape,{depth:.11,bevelEnabled:true,bevelThickness:.018,bevelSize:.018,bevelSegments:2,curveSegments:12,steps:1});}
 const wallRadius=y=>2.96-(y-.55)/19.2*.91;
 
+function beaconMaterial(){
+  // A soft shell approximation: one exit surface, no extra lights or volume buffers.
+  return new THREE.ShaderMaterial({transparent:true,opacity:.12,depthWrite:false,side:THREE.BackSide,fog:true,
+    uniforms:THREE.UniformsUtils.merge([THREE.UniformsLib.fog,{beamColor:{value:new THREE.Color(0xffe6a3)},opacity:{value:.12}}]),
+    vertexShader:`
+      varying vec3 beamNormal;varying vec3 beamEye;varying float beamTravel;
+      #include <fog_pars_vertex>
+      void main(){
+        vec4 mvPosition=modelViewMatrix*vec4(position,1.);
+        beamNormal=normalize(normalMatrix*normal);beamEye=-mvPosition.xyz;beamTravel=(45.-position.y)/90.;
+        gl_Position=projectionMatrix*mvPosition;
+        #include <fog_vertex>
+      }`,
+    fragmentShader:`
+      uniform vec3 beamColor;uniform float opacity;
+      varying vec3 beamNormal;varying vec3 beamEye;varying float beamTravel;
+      #include <fog_pars_fragment>
+      void main(){
+        float facing=abs(dot(normalize(beamNormal),normalize(beamEye)));
+        float edge=smoothstep(0.,.65,facing);
+        float lengthFade=smoothstep(0.,.02,beamTravel)*(1.-smoothstep(.12,1.,beamTravel));
+        gl_FragColor=vec4(beamColor,opacity*edge*lengthFade);
+        #include <tonemapping_fragment>
+        #include <colorspace_fragment>
+        #include <fog_fragment>
+      }`});
+}
+
 export function createLighthouse(){
   const group=new THREE.Group(),m=surfaces();
   const add=(geometry,material,x=0,y=0,z=0)=>{const mesh=new THREE.Mesh(geometry,material);mesh.position.set(x,y,z);mesh.castShadow=mesh.receiveShadow=true;group.add(mesh);return mesh;};
@@ -57,7 +85,7 @@ export function createLighthouse(){
   opticGeometry.computeVertexNormals();
   const lantern=add(opticGeometry,new THREE.MeshStandardMaterial({color:0xe7d49d,roughness:.26,metalness:.08,emissive:0x000000}),0,21.7,0);
   const beacon=new THREE.Group();beacon.position.y=21.7;
-  const beam=new THREE.Mesh(new THREE.ConeGeometry(7,90,24,1,true),new THREE.MeshBasicMaterial({color:0xffe6a3,transparent:true,opacity:.12,depthWrite:false,side:THREE.DoubleSide}));
+  const beam=new THREE.Mesh(new THREE.ConeGeometry(7,90,48,1,false),beaconMaterial());
   beam.rotation.z=Math.PI/2;beam.position.x=45;beacon.add(beam,new THREE.PointLight(0xffd98a,65,55,1.5));beacon.visible=false;group.add(beacon);
   group.userData={lantern,beacon};group.updateMatrixWorld(true);mergeStaticParts(group);return group;
 }
