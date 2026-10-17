@@ -1,0 +1,242 @@
+{
+  "static": [
+    {
+      "site": "coast",
+      "time": 240,
+      "frames": 0,
+      "shadeEnabled": true,
+      "actorPatches": 6,
+      "actorVertices": 96,
+      "resourceVertices": 13122,
+      "campVertices": 0,
+      "resource": "resource-36",
+      "depleted": false,
+      "player": [
+        -57,
+        100,
+        100
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Declared positions/quest6/enemy/camp/depletion fixture. Production WorldView/tick/movement; no ordinary campaign,performance,physical AO or complete contact acceptance."
+    },
+    {
+      "site": "forest",
+      "time": 240,
+      "frames": 0,
+      "shadeEnabled": true,
+      "actorPatches": 6,
+      "actorVertices": 102,
+      "resourceVertices": 13122,
+      "campVertices": 0,
+      "resource": "resource-36",
+      "depleted": false,
+      "player": [
+        134,
+        -20,
+        100
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Declared positions/quest6/enemy/camp/depletion fixture. Production WorldView/tick/movement; no ordinary campaign,performance,physical AO or complete contact acceptance."
+    },
+    {
+      "site": "mineral",
+      "time": 240,
+      "frames": 0,
+      "shadeEnabled": true,
+      "actorPatches": 4,
+      "actorVertices": 96,
+      "resourceVertices": 13122,
+      "campVertices": 0,
+      "resource": "resource-36",
+      "depleted": false,
+      "player": [
+        -114.8502714857459,
+        -52.73315184377134,
+        100
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Declared positions/quest6/enemy/camp/depletion fixture. Production WorldView/tick/movement; no ordinary campaign,performance,physical AO or complete contact acceptance."
+    },
+    {
+      "site": "camp",
+      "time": 240,
+      "frames": 0,
+      "shadeEnabled": true,
+      "actorPatches": 6,
+      "actorVertices": 84,
+      "resourceVertices": 13122,
+      "campVertices": 114,
+      "resource": "resource-36",
+      "depleted": false,
+      "player": [
+        -54,
+        55,
+        100
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Declared positions/quest6/enemy/camp/depletion fixture. Production WorldView/tick/movement; no ordinary campaign,performance,physical AO or complete contact acceptance."
+    },
+    {
+      "site": "camp",
+      "time": 0,
+      "frames": 0,
+      "shadeEnabled": true,
+      "actorPatches": 6,
+      "actorVertices": 84,
+      "resourceVertices": 13122,
+      "campVertices": 114,
+      "resource": "resource-36",
+      "depleted": false,
+      "player": [
+        -54,
+        55,
+        100
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Declared positions/quest6/enemy/camp/depletion fixture. Production WorldView/tick/movement; no ordinary campaign,performance,physical AO or complete contact acceptance."
+    }
+  ],
+  "interactions": [
+    {
+      "case": "mineral-active",
+      "site": "mineral",
+      "time": 240,
+      "frames": 0,
+      "shadeEnabled": true,
+      "actorPatches": 4,
+      "actorVertices": 96,
+      "resourceVertices": 13122,
+      "campVertices": 0,
+      "resource": "resource-36",
+      "depleted": false,
+      "player": [
+        -114.8502714857459,
+        -52.73315184377134,
+        100
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Declared positions/quest6/enemy/camp/depletion fixture. Production WorldView/tick/movement; no ordinary campaign,performance,physical AO or complete contact acceptance."
+    },
+    {
+      "case": "mineral-depleted",
+      "site": "mineral",
+      "time": 240,
+      "frames": 0,
+      "shadeEnabled": true,
+      "actorPatches": 4,
+      "actorVertices": 96,
+      "resourceVertices": 13122,
+      "campVertices": 0,
+      "resource": "resource-36",
+      "depleted": true,
+      "player": [
+        -114.8502714857459,
+        -52.73315184377134,
+        100
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Declared positions/quest6/enemy/camp/depletion fixture. Production WorldView/tick/movement; no ordinary campaign,performance,physical AO or complete contact acceptance."
+    },
+    {
+      "case": "mineral-restored",
+      "site": "mineral",
+      "time": 240,
+      "frames": 0,
+      "shadeEnabled": true,
+      "actorPatches": 4,
+      "actorVertices": 96,
+      "resourceVertices": 13122,
+      "campVertices": 0,
+      "resource": "resource-36",
+      "depleted": false,
+      "player": [
+        -114.8502714857459,
+        -52.73315184377134,
+        100
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Declared positions/quest6/enemy/camp/depletion fixture. Production WorldView/tick/movement; no ordinary campaign,performance,physical AO or complete contact acceptance."
+    },
+    {
+      "case": "coast-motion120",
+      "site": "coast",
+      "time": 242.0000000000016,
+      "frames": 120,
+      "shadeEnabled": true,
+      "actorPatches": 6,
+      "actorVertices": 96,
+      "resourceVertices": 13122,
+      "campVertices": 0,
+      "resource": "resource-36",
+      "depleted": false,
+      "player": [
+        -57,
+        97.31666666666682,
+        74
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Declared positions/quest6/enemy/camp/depletion fixture. Production WorldView/tick/movement; no ordinary campaign,performance,physical AO or complete contact acceptance."
+    },
+    {
+      "case": "mobile-night-camp",
+      "site": "camp",
+      "time": 0,
+      "frames": 0,
+      "shadeEnabled": true,
+      "actorPatches": 6,
+      "actorVertices": 84,
+      "resourceVertices": 13122,
+      "campVertices": 114,
+      "resource": "resource-36",
+      "depleted": false,
+      "player": [
+        -54,
+        55,
+        100
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "glError": 0,
+      "scope": "Declared positions/quest6/enemy/camp/depletion fixture. Production WorldView/tick/movement; no ordinary campaign,performance,physical AO or complete contact acceptance."
+    }
+  ],
+  "console": []
+}

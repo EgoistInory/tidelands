@@ -19,6 +19,7 @@ import {createSky,updateSky} from './sky.js';
 import {createFlame,updateCampfire} from './campfire.js';
 import {createCrystalDeposit} from './crystal.js';
 import {landscapeSample,createShoreStones,islandTreeAppearance} from './landscape.js';
+import {createContactShade} from './contact-shade.js';
 
 const palette={bark:0x65513d,leaf:0x365a42,lightLeaf:0x68815b,rock:0x858d86,sand:0xd5c8a7,cloth:0xb86636,cream:0xeee1bd};
 const nightSkyBounce=new THREE.Color(0xd4e1f5),daySkyBounce=new THREE.Color(0xe2f1df),nightGroundBounce=new THREE.Color(0x8796af),dayGroundBounce=new THREE.Color(0x697346);
@@ -157,6 +158,7 @@ export class WorldView{
     this.rockSurface=initializeRockSurface({anisotropy:this.renderer.capabilities.getMaxAnisotropy()});
     this.createTerrain();this.createWater();this.createScenery();
     this.player=person();this.scene.add(this.player);
+    this.contactShade=createContactShade(world);this.scene.add(this.contactShade.group);
     // One nearby fire light keeps the lighting cost bounded as camps grow.
     this.fireLight=new THREE.PointLight(0xffac52,0,18,1.5);this.scene.add(this.fireLight);
     this.marker=new THREE.Mesh(new THREE.RingGeometry(1.8,2,40),new THREE.MeshBasicMaterial({color:0xf2d58f,side:THREE.DoubleSide,transparent:true,opacity:.85}));this.marker.rotation.x=-Math.PI/2;this.scene.add(this.marker);
@@ -277,6 +279,7 @@ export class WorldView{
     this.creatureGeometryCache??=new Map();
     for(const e of state.enemies){if(!this.creatures.has(e.id)){const g=createCreature(e.type,this.creatureGeometryCache);this.scene.add(g);this.creatures.set(e.id,g);}else if(switched)resetCreature(this.creatures.get(e.id));}
     this.syncedState=state;
+    this.contactShade?.sync(state);
   }
   disposeGroup(group){const shared=new Set(materials.values()),released=new Set(),sharedGeometry=group.userData.releaseDistant?.()??new Set();group.traverse(o=>{if(o.isMesh){if(!sharedGeometry.has(o.geometry))o.geometry.dispose();for(const m of [o.material].flat())if(!shared.has(m)&&!released.has(m)){m.dispose();released.add(m);}}});}
   setPreview(type){
@@ -328,6 +331,7 @@ export class WorldView{
     for(const e of state.enemies){const g=this.creatures.get(e.id);if(g)animateCreature(g,e,state.time,dt,terrain(e.x,e.z),p,enemyAttackPose(state,e),terrain);}
     this.player.position.set(p.x,h,p.z);
     animateCharacter(this.player,{...p,time:state.time,attackAt:state.attackAt,gatherAt:this.gatherAt,gatherKind:this.gatherKind,gatherTool:this.gatherTool??state.selected,hurtAt:this.hurtAt,selected:state.selected,swimming:terrain(p.x,p.z)<0},dt,terrain);
+    this.contactShade?.updateActors(this.player,this.islanders,this.creatures);
     const target=new THREE.Vector3(p.x+Math.sin(this.yaw)*this.distance,h+2.4+Math.tan(this.pitch)*this.distance,p.z+Math.cos(this.yaw)*this.distance);
     target.y=Math.max(target.y,terrain(target.x,target.z)+1.5);
     const focus=new THREE.Vector3(p.x,h+2.4,p.z),boxes=this.cameraObstacles.filter(({object:o})=>Math.hypot(o.x-p.x,o.z-p.z)<this.distance+12&&!isDepleted(state,o)).flatMap(o=>o.boxes??[o.box]);

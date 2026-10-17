@@ -1,0 +1,106 @@
+TAP version 13
+# Subtest: contact patches share the production terrain grid and preserve depletion/recovery without reallocating
+ok 1 - contact patches share the production terrain grid and preserve depletion/recovery without reallocating
+  ---
+  duration_ms: 6.571625
+  type: 'test'
+  ...
+# Subtest: moving feet fade with lift, omit swimmers, stay bounded and retain GPU resources
+ok 2 - moving feet fade with lift, omit swimmers, stay bounded and retain GPU resources
+  ---
+  duration_ms: 2.381667
+  type: 'test'
+  ...
+# Subtest: camp footprints rebuild only when definitions change and release replaced geometry
+ok 3 - camp footprints rebuild only when definitions change and release replaced geometry
+  ---
+  duration_ms: 1.690958
+  type: 'test'
+  ...
+# Subtest: islanders respond to a nearby conversation target without moving or changing the save
+ok 4 - islanders respond to a nearby conversation target without moving or changing the save
+  ---
+  duration_ms: 835.097959
+  type: 'test'
+  ...
+# Subtest: tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+ok 5 - tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+  ---
+  duration_ms: 573.548
+  type: 'test'
+  ...
+# Subtest: distant geometry is shared until the last owner leaves, while materials remain private
+ok 6 - distant geometry is shared until the last owner leaves, while materials remain private
+  ---
+  duration_ms: 17.660333
+  type: 'test'
+  ...
+# Subtest: resource bounds retain regenerating nodes after initial depletion
+ok 7 - resource bounds retain regenerating nodes after initial depletion
+  ---
+  duration_ms: 539.58525
+  type: 'test'
+  ...
+# Subtest: save replacement releases creatures and resets transient death/hit animation
+ok 8 - save replacement releases creatures and resets transient death/hit animation
+  ---
+  duration_ms: 12.347709
+  type: 'test'
+  ...
+# Subtest: boar: near geometry shares a lifetime while pose and hit materials remain private
+ok 9 - boar: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 10.669167
+  type: 'test'
+  ...
+# Subtest: crab: near geometry shares a lifetime while pose and hit materials remain private
+ok 10 - crab: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 22.531292
+  type: 'test'
+  ...
+# Subtest: same-type save replacement reuses creature models without carrying over animation or damage
+ok 11 - same-type save replacement reuses creature models without carrying over animation or damage
+  ---
+  duration_ms: 20.397875
+  type: 'test'
+  ...
+# Subtest: loading a different save updates buildings even when IDs are reused
+ok 12 - loading a different save updates buildings even when IDs are reused
+  ---
+  duration_ms: 1.205458
+  type: 'test'
+  ...
+# Subtest: campfire owns its unlit flame without changing shared building materials
+ok 13 - campfire owns its unlit flame without changing shared building materials
+  ---
+  duration_ms: 0.847166
+  type: 'test'
+  ...
+# Subtest: removing tents releases their geometry but retains immutable cloth for later camps
+ok 14 - removing tents releases their geometry but retains immutable cloth for later camps
+  ---
+  duration_ms: 0.938875
+  type: 'test'
+  ...
+# Subtest: repeated build previews release their geometry and private materials
+ok 15 - repeated build previews release their geometry and private materials
+  ---
+  duration_ms: 6.268125
+  type: 'test'
+  ...
+# Subtest: tent preview retains double-sided cloth and shares replacement material safely
+ok 16 - tent preview retains double-sided cloth and shares replacement material safely
+  ---
+  duration_ms: 0.317666
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2124.019125
