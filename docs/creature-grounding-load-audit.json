@@ -1,0 +1,64 @@
+{
+  "metricsCaptured": true,
+  "allFrameBudgetsMet": false,
+  "samples": {
+    "desktop": {
+      "activeMs": 60000.17,
+      "frames": 2903,
+      "movingFraction": 0.93,
+      "hitCount": 10,
+      "damageTaken": 38,
+      "respawns": 0,
+      "p95Ms": 33.4,
+      "maxMs": 100,
+      "over50Ms": 2,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "canvasBuffer": [
+        2880,
+        1392
+      ],
+      "p95Within20ms": false
+    },
+    "mobile": {
+      "activeMs": 60000.14,
+      "frames": 3601,
+      "movingFraction": 0.92,
+      "hitCount": 12,
+      "damageTaken": 62,
+      "respawns": 0,
+      "p95Ms": 17.8,
+      "maxMs": 33.2,
+      "over50Ms": 0,
+      "viewport": [
+        390,
+        844
+      ],
+      "canvasBuffer": [
+        585,
+        930
+      ],
+      "p95Within20ms": true
+    }
+  },
+  "changedRuntime": {
+    "src/creature.js": "a0099d86975f07b3fceeb9125742aa1bc4edb8a0504c97e51ef00fd2e4ad081e",
+    "src/scene.js": "eb4bff3f484e0201a5c403c1385be776f5f2bba96488e853031f482e540e1488"
+  },
+  "evidenceSha256": {
+    "docs/creature-grounding-load-desktop.json": "5a5d0cc09c6a95ab80e132b4d32ade871834c7df4e48f6d89d9323a80721122e",
+    "docs/creature-grounding-load-desktop.png": "d67c26a4491c7c534ea92b545a3a1feaa5272509053d995a9a22f472b5d1a0c1",
+    "docs/creature-grounding-load-mobile.json": "fa9f3aedf2459b2202050404559e4cd501e2eed24b2c851dccb979daf3a78eab",
+    "docs/creature-grounding-load-mobile.png": "5bcfb85718830a65d6f61a0ebe1badb56da63589c8b1115eba9883238fa4ddc5",
+    "docs/creature-grounding-load-wrong-viewport.json": "a97216f979d18c9920fe5af379a0d709508f6da571f7290dfafc94e3019c7ac2",
+    "docs/creature-grounding-load-wrong-viewport.png": "1a44977733d7461eff9b3503debe56f6b7841fc3bba745713520de508c0732b4",
+    "tests/quality-endurance.html": "80f9e0b7ad44677569d36c251422302e6edd9ffaf6e011ca527c5d4c07854a2b"
+  },
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "currentSourceLongRunAccepted": false,
+  "currentSourceGpuAccepted": false,
+  "scope": "Two60s scripted five-phase samples, not600s/native campaign/GPU/real phone/listening. Canvas height excludes diagnostic panel. Initial mobile request actually1280 and rejected; retained. Desktop2880x1392 is2.25 times prior1920x928 pixels, so old17.8ms and current33.4ms are not a controlled regression comparison. High-resolution frame budget remains open; no cause inferred."
+}
