@@ -26,7 +26,7 @@ function taperedCurve(points,radius,tip=.04){
 
 // Each creature owns its materials so hit feedback never changes its neighbours.
 export function createCreature(type,geometryCache=null){
-  const root=new THREE.Group(),body=new THREE.Group(),legs=[],claws=[];
+  const root=new THREE.Group(),ground=new THREE.Group(),body=new THREE.Group(),legs=[],claws=[];
   const hide=new THREE.MeshStandardMaterial({color:type==='crab'?0x9f5037:0x675444,roughness:type==='crab'?.68:.95});
   const dark=new THREE.MeshStandardMaterial({color:0x302b27,roughness:.8});
   const ivory=new THREE.MeshStandardMaterial({color:0xe7d6ad,roughness:.7});
@@ -37,7 +37,7 @@ export function createCreature(type,geometryCache=null){
     const mesh=form(parent,new THREE.SphereGeometry(1,16,12),mat);
     mesh.scale.set(...scale);mesh.position.set(...position);return mesh;
   };
-  root.add(body);
+  root.add(ground);ground.add(body);
   if(type==='crab'){
     form(body,profiledHide([[-.86,.69,0,0],[-.74,.71,.58,.15],[-.45,.74,.97,.29],[0,.77,1.07,.34],[.42,.77,.93,.29],[.72,.72,.66,.17],[.8,.69,0,0]]));
     shape(body,[.93,.13,.69],[0,.51,0],dark);
@@ -101,8 +101,9 @@ export function createCreature(type,geometryCache=null){
     cached.references++;let released=false;const geometries=new Set([...cached.nearParts,...cached.parts.map(p=>p.geometry)]);
     releaseDistant=()=>{if(!released){released=true;if(--cached.references===0){geometries.forEach(g=>g.dispose());geometryCache.delete(type);}}return geometries;};
   }
-  distant.visible=false;root.add(distant);
-  root.userData={type,body,distant,releaseDistant,far:false,legs,claws,hide,phase:0,last:null,hp:null,hitAt:-100,deadAt:null};
+  const contacts=legs.map(leg=>{const box=new THREE.Box3().setFromObject(leg);return {leg,point:leg.worldToLocal(new THREE.Vector3((box.min.x+box.max.x)/2,box.min.y,(box.min.z+box.max.z)/2))};});
+  distant.visible=false;ground.add(distant);
+  root.userData={type,ground,contacts,body,distant,releaseDistant,far:false,legs,claws,hide,phase:0,last:null,hp:null,hitAt:-100,deadAt:null};
   return root;
 }
 
@@ -110,13 +111,14 @@ export function resetCreature(root){
   const u=root.userData;
   Object.assign(u,{phase:0,last:null,hp:null,hitAt:-100,deadAt:null,far:false});
   root.position.set(0,0,0);root.rotation.set(0,0,0);root.visible=true;
+  u.ground.position.set(0,0,0);u.ground.quaternion.identity();
   for(const g of [u.body,u.distant]){g.position.set(0,0,0);g.rotation.set(0,0,0);}
   u.body.visible=true;u.distant.visible=false;u.hide.emissive.setRGB(0,0,0);
   for(const g of [...u.legs,...u.claws])g.rotation.set(0,0,0);
   for(const claw of u.claws)claw.userData.pincer.rotation.set(0,0,0);
 }
 
-export function animateCreature(root,enemy,time,dt,height,target,attackPose=undefined){
+export function animateCreature(root,enemy,time,dt,height,target,attackPose=undefined,heightAt=null){
   const u=root.userData,last=u.last;
   if(u.hp!==null&&enemy.hp<u.hp)u.hitAt=time;
   if(enemy.hp<=0&&u.deadAt===null)u.deadAt=u.hp===null?time-.5:time;
@@ -143,5 +145,19 @@ export function animateCreature(root,enemy,time,dt,height,target,attackPose=unde
   u.distant.position.copy(u.body.position);u.distant.rotation.copy(u.body.rotation);
   u.hide.emissive.setRGB(hurt*.28,hurt*.045,hurt*.015);
   root.position.set(enemy.x,height,enemy.z);root.visible=death<1;
+  u.ground.position.y=0;u.ground.quaternion.identity();
+  if(heightAt&&death===0){
+    const c=Math.cos(root.rotation.y),s=Math.sin(root.rotation.y);
+    const sx=(heightAt(enemy.x+c,enemy.z-s)-heightAt(enemy.x-c,enemy.z+s))/2;
+    const sz=(heightAt(enemy.x+s,enemy.z+c)-heightAt(enemy.x-s,enemy.z-c))/2;
+    const normal=new THREE.Vector3(-sx,1,-sz).normalize(),tilt=new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0,1,0),normal);
+    const angle=2*Math.acos(THREE.MathUtils.clamp(tilt.w,-1,1));
+    if(angle>.65)tilt.slerp(new THREE.Quaternion(),1-.65/angle);
+    u.ground.quaternion.copy(tilt);root.updateMatrixWorld(true);
+    let lift=-Infinity;
+    for(const {leg,point}of u.contacts){const foot=point.clone().applyMatrix4(leg.matrixWorld);lift=Math.max(lift,heightAt(foot.x,foot.z)-foot.y);}
+    // Keep the lowest supporting foot on the real surface; retain the authored gait and yaw.
+    u.ground.position.y=THREE.MathUtils.clamp(lift,-.6,.6);
+  }
   u.last={x:enemy.x,z:enemy.z};u.hp=enemy.hp;
 }

@@ -1,0 +1,39 @@
+{
+  "candidateVerified": true,
+  "candidateDelivered": false,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "physicalMotionQualityPassed": false,
+  "changedRuntime": {
+    "src/creature.js": "a0099d86975f07b3fceeb9125742aa1bc4edb8a0504c97e51ef00fd2e4ad081e",
+    "src/scene.js": "eb4bff3f484e0201a5c403c1385be776f5f2bba96488e853031f482e540e1488"
+  },
+  "unchangedRuntimeFiles": 49,
+  "fullTests": 232,
+  "focusedTests": 22,
+  "correctedBaselineFailures": 2,
+  "renderRows": 12,
+  "console": [],
+  "imagesReviewedSha256": {
+    "docs/creature-grounding-coast-boar.png": "297bfdf59274b54cdfecf920f2a6914d4e5c00b42d505cf071f1e8eafb3f9b64",
+    "docs/creature-grounding-coast-crab.png": "b4857608a23c12c9024a1bcb58bac16ff3ad00aa7f43b1a25dbfd831641cf2e2",
+    "docs/creature-grounding-forest-boar.png": "d1bded1b6b03c0515ac7c4e484548b0ba0fec4242889f54194893ed349f1f408",
+    "docs/creature-grounding-forest-crab.png": "55865fc0131400e6a6ac9da39d1cea51d0f739c02fe80f3a5df4c2a49bed1caa",
+    "docs/creature-grounding-highland-boar.png": "c42d0439ec119065731defdaaae37e68d8295631044d8b02a910febe8eec9727",
+    "docs/creature-grounding-highland-crab.png": "363f8cd92a9dd0efa95dfce3327f6581dbdf7897096e6ceb6cbfdd10a48b527a",
+    "docs/creature-grounding-shoal-boar.png": "1b8236089cb2701ce480398911753506cd49c06cb9b1a168db20eacf9004585f",
+    "docs/creature-grounding-shoal-crab.png": "3fb4069feb8d059d5448f78de10fd311472bcfe59a1be4514bb06af17e2f7c7e",
+    "docs/creature-grounding-motion-boar.png": "2828d098a3d480fb6af8cc0ded39d9d06bd77b55a484534b7262a0733ed451a1",
+    "docs/creature-grounding-motion-crab.png": "1430f75414c4b252d728d65b57ac99138c95cee4beaaa8bca5e21d0db5d2a149",
+    "docs/creature-grounding-mobile-boar.png": "6aea5965e039aac434fd1bca279ceabaf090c325bc9ac28fd3e022abda1e3208",
+    "docs/creature-grounding-mobile-crab.png": "52d37fe355ff1646e819eeab358e17767ada902164d1a664e4b97394127f5363"
+  },
+  "evidenceSha256": {
+    "docs/creature-grounding-render.json": "d2c2bb3d3cd5cede2fbb80fcf0e7eb9837fbba50f0903d8f8fcc2f1c9f6cef90",
+    "docs/creature-grounding-tests.txt": "3542091b489b3f85388f81fb870308586f51f66a129acef6e08eb407291fe342",
+    "docs/creature-grounding-focused.txt": "395fb400c43b9287177aef3ea97596b7260ee298a29710c2d46532f380c16308",
+    "docs/creature-grounding-corrected-red.txt": "84f7c81211d38fb8e939fcf1c48780553d85178f3b42c997e0267c30c9c4d9ee"
+  },
+  "scope": "Both species: real terrain/WorldView at four declared locations, two 180-frame tick pursuits, two mobile-size stills. Flat-plane vertex tests cover three yaw angles. No ordinary-save writes, current-source GPU/endurance acceptance, real device or foot-locking claim.",
+  "remaining": "Whole-body tilt and lift only; no per-foot IK. Curved/steep terrain and gait retain visible contact/slide gaps; tilt capped at .65rad and lift at .6m. Procedural model style/night readability and full-source performance still pending. Prior d672997 delivery/endurance remain historical, not current candidate evidence."
+}
