@@ -1,0 +1,105 @@
+{
+  "rows": [
+    {
+      "case": "idle",
+      "ready": true,
+      "subject": "character",
+      "gesture": "idle",
+      "tool": "hand",
+      "time": 240,
+      "viewport": [
+        1280,
+        720
+      ],
+      "render": {
+        "calls": 229,
+        "triangles": 2158695,
+        "geometries": 271,
+        "textures": 21
+      },
+      "glError": 0,
+      "scope": "Fixed production WorldView and declared camp/material-free fixture; static peak poses, no save or gameplay/performance claim."
+    },
+    {
+      "case": "attack",
+      "ready": true,
+      "subject": "character",
+      "gesture": "attack",
+      "tool": "sword",
+      "time": 240,
+      "viewport": [
+        1280,
+        720
+      ],
+      "render": {
+        "calls": 232,
+        "triangles": 2159007,
+        "geometries": 274,
+        "textures": 21
+      },
+      "glError": 0,
+      "scope": "Fixed production WorldView and declared camp/material-free fixture; static peak poses, no save or gameplay/performance claim."
+    },
+    {
+      "case": "gather",
+      "ready": true,
+      "subject": "character",
+      "gesture": "gather",
+      "tool": "hand",
+      "time": 240,
+      "viewport": [
+        1280,
+        720
+      ],
+      "render": {
+        "calls": 229,
+        "triangles": 2158695,
+        "geometries": 274,
+        "textures": 21
+      },
+      "glError": 0,
+      "scope": "Fixed production WorldView and declared camp/material-free fixture; static peak poses, no save or gameplay/performance claim."
+    },
+    {
+      "case": "night",
+      "ready": true,
+      "subject": "camp",
+      "gesture": "idle",
+      "tool": "hand",
+      "time": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "render": {
+        "calls": 312,
+        "triangles": 2178970,
+        "geometries": 274,
+        "textures": 21
+      },
+      "glError": 0,
+      "scope": "Fixed production WorldView and declared camp/material-free fixture; static peak poses, no save or gameplay/performance claim."
+    },
+    {
+      "case": "mobile-night",
+      "ready": true,
+      "subject": "camp",
+      "gesture": "idle",
+      "tool": "hand",
+      "time": 0,
+      "viewport": [
+        390,
+        844
+      ],
+      "render": {
+        "calls": 152,
+        "triangles": 1365645,
+        "geometries": 274,
+        "textures": 21
+      },
+      "glError": 0,
+      "scope": "Fixed production WorldView and declared camp/material-free fixture; static peak poses, no save or gameplay/performance claim."
+    }
+  ],
+  "console": []
+}

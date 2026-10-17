@@ -8,13 +8,28 @@ function surface(color,metal=false,cloth=false){const key=`${color}-${metal}-${c
 function part(geometry,color,x,y,z,metal=false,cloth=false){const m=new THREE.Mesh(geometry,surface(color,metal,cloth));m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;return m;}
 const rounded=(r,length,color,x,y,z,cloth=false)=>part(new THREE.CapsuleGeometry(r,length,5,10),color,x,y,z,false,cloth);
 const block=(w,h,d,color,x,y,z,metal=false,cloth=false)=>part(new THREE.BoxGeometry(w,h,d),color,x,y,z,metal,cloth);
-function sleeve(radius,length,color,y){
-  const mesh=rounded(radius,length,color,0,y,0,true),positions=mesh.geometry.attributes.position;
-  for(let i=0;i<positions.count;i++){
-    const t=THREE.MathUtils.clamp((positions.getY(i)+length/2+radius)/(length+radius*2),0,1),width=THREE.MathUtils.lerp(.82,1,t);
-    positions.setX(i,positions.getX(i)*width);positions.setZ(i,positions.getZ(i)*(.94+.06*t));
+// Shaped sections keep cloth volume at the joints instead of pinching each capsule to a point.
+function clothShell(name,rings,color,{segments=24,square=1,fold=.025}={}){
+  const vertices=[],uv=[],indices=[],columns=segments+1,bottom=rings[0][0],height=rings.at(-1)[0]-bottom;
+  for(let row=0;row<rings.length;row++){
+    const [y,rx,rz,centerZ=0]=rings[row],t=(y-bottom)/height;
+    for(let col=0;col<=segments;col++){
+      const a=col/segments*Math.PI*2,s=Math.sin(a),c=Math.cos(a),crease=1+fold*Math.sin(t*Math.PI)*Math.sin(a*5+t*9);
+      vertices.push(Math.sign(s)*Math.abs(s)**square*rx*crease,y,centerZ+Math.sign(c)*Math.abs(c)**square*rz*crease);uv.push(col/segments,t);
+      if(row<rings.length-1&&col<segments){const i=row*columns+col;indices.push(i,i+1,i+columns,i+1,i+columns+1,i+columns);}
+    }
   }
-  mesh.geometry.computeVertexNormals();return mesh;
+  for(const [row,reverse]of [[0,true],[rings.length-1,false]]){
+    const [y,,,z=0]=rings[row],cap=vertices.length/3;vertices.push(0,y,z);uv.push(.5,(y-bottom)/height);
+    for(let col=0;col<segments;col++){const a=row*columns+col,b=a+1;indices.push(cap,reverse?b:a,reverse?a:b);}
+  }
+  const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));geometry.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));geometry.setIndex(indices);geometry.computeVertexNormals();
+  const mesh=part(geometry,color,0,0,0,false,true);mesh.name=name;return mesh;
+}
+function sleeve(radius,length,color,y){
+  const half=length/2+radius;
+  const mesh=clothShell('tailored-sleeve',[[-half,radius*.89,radius*.82],[-half*.77,radius*.92,radius*.88],[-half*.3,radius*1.03,radius*.97],[half*.35,radius*1.08,radius],[half*.72,radius*.94,radius*.87],[half,radius*.66,radius*.63]],color);
+  mesh.position.y=y;return mesh;
 }
 function shapedPart(points,depth,color,x,y,z,metal=false){
   const shape=new THREE.Shape(points.map(([px,py])=>new THREE.Vector2(px,py)));
@@ -47,7 +62,7 @@ function trailBoot(side){
 export function createCharacter(color=0xb86636){
   const root=new THREE.Group(),body=new THREE.Group();root.add(body);
   const coatProfile=[[.43,0],[.44,.08],[.42,.28],[.36,.52],[.35,.65],[.42,.79],[.49,.90],[.46,.95],[.30,1.02]].map(([r,y])=>new THREE.Vector2(r,y));
-  const coat=part(new THREE.LatheGeometry(coatProfile,24),color,0,1.25,0,false,true);coat.scale.z=.63;body.add(coat);
+  const coat=clothShell('travel-coat',coatProfile.map(p=>[p.y+1.25,p.x,p.x*.63]),color,{segments:32,fold:.018});body.add(coat);
   const trim=new THREE.Color(color).multiplyScalar(.66).getHex();
   const coatPanel=(points,panelColor)=>{
     const shape=new THREE.Shape(points.map(([x,y])=>new THREE.Vector2(x,y))),geometry=new THREE.ShapeGeometry(shape);
@@ -69,7 +84,7 @@ export function createCharacter(color=0xb86636){
   body.add(createTravelerHead(color=>surface(color)));
   const scarf=part(new THREE.TorusGeometry(.168,.043,8,24),0xb2b7a1,0,2.34,0,false,true);scarf.rotation.x=Math.PI/2;body.add(scarf);
   coatPanel([[.06,2.30],[.16,2.28],[.13,2.17],[.17,2.03],[.115,1.96],[.058,2.02],[.09,2.16]],0xb2b7a1);
-  body.add(rounded(.25,.38,0x555747,0,1.97,-.35,true));
+  body.add(clothShell('travel-pack',[[1.57,.17,.08,-.37],[1.61,.25,.13,-.39],[1.74,.29,.16,-.39],[2.10,.28,.17,-.39],[2.23,.23,.14,-.39],[2.28,.15,.09,-.39]],0x555747,{square:.65,fold:.018}));
   const bedroll=part(new THREE.CylinderGeometry(.10,.10,.72,12),0x9e9275,0,2.35,-.40,false,true);bedroll.rotation.z=Math.PI/2;body.add(bedroll);
   for(const x of [-.22,.22]){const binding=part(new THREE.TorusGeometry(.102,.018,6,12),0x514239,x,2.35,-.40);binding.rotation.y=Math.PI/2;body.add(binding);}
   for(const x of [-.24,.24]){
@@ -86,9 +101,9 @@ export function createCharacter(color=0xb86636){
   const hips=[],knees=[],ankles=[],shoulders=[],elbows=[];
   for(const side of [-1,1]){
     const hip=new THREE.Group();hip.position.set(side*.22,1.28,0);body.add(hip);hips.push(hip);
-    hip.add(rounded(.145,.32,0x343e3b,0,-.25,0,true));
+    hip.add(clothShell('trouser-thigh',[[-.58,.12,.11],[-.51,.126,.119],[-.37,.145,.132,.008],[-.18,.161,.148],[.04,.159,.147]],0x343e3b));
     const knee=new THREE.Group();knee.position.y=-.54;hip.add(knee);knees.push(knee);
-    knee.add(rounded(.12,.3,0x343e3b,0,-.22,0,true),rounded(.145,.18,0x423a30,0,-.42,0));
+    knee.add(clothShell('trouser-shin',[[-.50,.103,.104],[-.41,.113,.115],[-.25,.132,.129,-.008],[-.12,.127,.122],[.04,.12,.11]],0x343e3b));
     const ankle=new THREE.Group();ankle.position.y=-.55;knee.add(ankle);ankles.push(ankle);
     ankle.add(trailBoot(side));
     const shoulder=new THREE.Group();shoulder.position.set(side*.46,2.17,0);body.add(shoulder);shoulders.push(shoulder);

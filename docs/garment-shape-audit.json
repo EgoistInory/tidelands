@@ -1,0 +1,117 @@
+{
+  "passed": true,
+  "candidateOnly": true,
+  "sourceSha256": {
+    "src/character.js": "290e2e33daf59fa6c0717ca6162ff989919cae3b947a6c21c9005e098e19649f",
+    "src/scene.js": "079e292b4b3ffefcb700dbdbed57d8d426506eb8033c8e1d159654d6f23f0c00",
+    "src/contact-shade.js": "850e369efa536ffae51afc404734459502362bb05875bb3a510a223dbc9029dc",
+    "tests/garment-shape.test.js": "b8773ec6e75f50fa88ac93ae86d0d0ff6c4581f89f1fb3d627d919adcb0d497f",
+    "tests/character-art-review.html": "831a68ef7cf4d7474521eafe50e31f6383d3b21a8b785de46d0bd0a0a6d9f2a0",
+    "tests/character-adult-world.html": "a56771cc896fa9a165bdd8df4665f0671db8b76e4df2016f0cacebdf6a78217f",
+    "tests/quality-gpu.html": "3881b9a5ac2dfb355a31b1cd49d477a4427879fe48e21ded291c921935c98b9c"
+  },
+  "fullTests": 239,
+  "focusedTests": 30,
+  "imagesReviewed": [
+    "docs/garment-before-front.jpg",
+    "docs/garment-before-side.jpg",
+    "docs/garment-before-back.jpg",
+    "docs/garment-after-front.jpg",
+    "docs/garment-after-side.jpg",
+    "docs/garment-after-back.jpg",
+    "docs/garment-after-keeper.jpg",
+    "docs/garment-world-idle.jpg",
+    "docs/garment-world-attack.jpg",
+    "docs/garment-world-gather.jpg",
+    "docs/garment-world-night.jpg",
+    "docs/garment-world-mobile.jpg"
+  ],
+  "evidenceSha256": {
+    "docs/garment-before.json": "e04840de2e75c0ed4420ad108d7b67e2e7dd86859d6e6d1b5a9178ffa90eb40e",
+    "docs/garment-after.json": "838678ead7b35973a4916e468fdbed803912d06810831e507370014bfcf0ee07",
+    "docs/garment-world.json": "5d58e3b5a491392eafbe5bab0167dadf4699f87919c3d03b1f115fb1c2d517bc",
+    "docs/garment-gpu-desktop.json": "0c6206129ec2e9ba3c01e3c0b3b09e2ce0663052659fa74bd4a25b015979e443",
+    "docs/garment-gpu-mobile.json": "ad4a8f093f0ad717ae86eeae977fc1792150fc4ee3cfc0cc7bed40e4cd1cc924",
+    "docs/garment-shape-red.txt": "6d5baee95d6a859d4bf8a77b55d49ca47a4d21b94817181d5cc7e843c6d8ebf1",
+    "docs/garment-shape-focused.txt": "309bc843ee415676819ea46695c9aa5a7c1060e12c0b3026ae276b48d79c449b",
+    "docs/garment-shape-tests.txt": "4c7a1213cb82e5838a4df2c0820b33728800c70d3e4d9e0f91276ce2462d448d",
+    "docs/garment-before-front.jpg": "eb6449edf499500136525b176286ab4fa39ab0d7243332254ecece1156cd9c00",
+    "docs/garment-before-side.jpg": "cc3cd2f6ee0b4d08832dcf1853edea9543d0263e850d8a4ac96a0a39911cc8bd",
+    "docs/garment-before-back.jpg": "f704d65c2b6805f5250de0fc750cacd36d9e87e240f2163465f99706f3a3a40b",
+    "docs/garment-after-front.jpg": "4642379ed230ab3c769a2f0af29958de708a9f0b8b0e4104e49bb63c3e9f6006",
+    "docs/garment-after-side.jpg": "5b0a224f20e6a80d4446e9fdd828d452db049b95c79b2123e7a9bbf7dbcd068d",
+    "docs/garment-after-back.jpg": "5c597516b5e7f0df0303d75bbb5504809639c40c321f4b245d5403f30c7682d0",
+    "docs/garment-after-keeper.jpg": "e4127a90ee870440040fb4e8b762827ee4dab7073b5550d4c2c0ca97711593cb",
+    "docs/garment-world-idle.jpg": "60cb1cdc40f589cb4be856328b947488cf1eeb1f154674ff93679d808bb65e94",
+    "docs/garment-world-attack.jpg": "f0fb8c2a74b58e4c4513f80313ecb3f805c30d5b8206b70284ed641407564c45",
+    "docs/garment-world-gather.jpg": "ae3956c172ae22712113f9b3dd417c950ae2030f5217b5c5d507ca13fd683b58",
+    "docs/garment-world-night.jpg": "ddd9ee69dcb66518f53180e6b87e2b1d7b3ef29a757b82e335d74c3df26a34d8",
+    "docs/garment-world-mobile.jpg": "36ac39be5ecd1075ad62367da859ea984faeb7b3e0ad5078f595c4851712952f"
+  },
+  "gpu": {
+    "desktop": {
+      "shore": {
+        "gpuP95Ms": 12.6491,
+        "cpuP95Ms": 4.4,
+        "rafP95Ms": 18.6
+      },
+      "forest-combat": {
+        "gpuP95Ms": 13.204,
+        "cpuP95Ms": 5,
+        "rafP95Ms": 17.7
+      },
+      "highland": {
+        "gpuP95Ms": 9.5941,
+        "cpuP95Ms": 4.8,
+        "rafP95Ms": 16.8
+      },
+      "amber-swim": {
+        "gpuP95Ms": 13.2671,
+        "cpuP95Ms": 4.6,
+        "rafP95Ms": 18.4
+      },
+      "night-camp": {
+        "gpuP95Ms": 13.2092,
+        "cpuP95Ms": 4.7,
+        "rafP95Ms": 18
+      }
+    },
+    "mobile": {
+      "shore": {
+        "gpuP95Ms": 6.0725,
+        "cpuP95Ms": 4.4,
+        "rafP95Ms": 18.3
+      },
+      "forest-combat": {
+        "gpuP95Ms": 6.7819,
+        "cpuP95Ms": 4.4,
+        "rafP95Ms": 18.3
+      },
+      "highland": {
+        "gpuP95Ms": 3.9475,
+        "cpuP95Ms": 4.4,
+        "rafP95Ms": 18.4
+      },
+      "amber-swim": {
+        "gpuP95Ms": 8.4608,
+        "cpuP95Ms": 4.5,
+        "rafP95Ms": 18.1
+      },
+      "night-camp": {
+        "gpuP95Ms": 6.7592,
+        "cpuP95Ms": 4.7,
+        "rafP95Ms": 18.3
+      }
+    }
+  },
+  "boundedGarmentShapeAccepted": true,
+  "restJointCoverageAccepted": true,
+  "candidateDelivered": false,
+  "currentSourceLongRunAccepted": false,
+  "completePhysicalContactAccepted": false,
+  "audioListened": false,
+  "realDevice": false,
+  "m5Complete": false,
+  "fullGoalComplete": false,
+  "limits": "Shared coat/sleeves/trousers/pack shells, unchanged rig/face/boots/gameplay. Initial test probe was too broad and passed old seam, then narrowed to parent limb and outer seam; final RED one real rest-coverage failure and one absent new-surface contract, not two reproduced gameplay bugs. Static poses/camera fixture and short GPU movement/combat/swim only. Modular joint creases, blocky shoulders, mitten hands, dark faces and creature contact remain. Not physical cloth, whole journey, long-run, audio audition or phone proof. Old contact-shade audit locks previous character source and is historical for this combined candidate."
+}
