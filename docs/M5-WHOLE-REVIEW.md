@@ -128,3 +128,6 @@ src/scene.js保持手动yaw，src/camera.js在需要绕行时优先既有安全�
 
 
 2026-10-17 共享人物衣装轮廓有限组完成：30针对性/239全量、12图与双尺寸GPU通过，详情见docs/GARMENT-SHAPE-REVIEW.md和garment-shape-audit.json。当前为源码候选，旧包/普通档保持；造型细节记录待办，下一声音空间方向/距离和战斗提示，不循环袖口/单脸/单蹄。M5/完整3A仍未完成，2048继续。
+
+
+2026-10-18 接触暗部、共享衣装与空间预警三组本地交付：e14e4865独立ZIP/52输入SHA、241测试/4打包、原生双声道+主循环、普通下载/390恢复、当前600秒及完整画布GPU通过；细节见docs/CONTACT-CLOTH-SPATIAL-DELIVERY.md和contact-cloth-spatial-delivery-audit.json。M5/完整3A仍false；下一整场光束/生物移动接触主要差距，3.01dB中心声像差为非阻断混音待办，不回单模型细磨，2048继续。

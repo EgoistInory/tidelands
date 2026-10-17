@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "sourceSha256": {
+    "src/audio.js": "a6a2389758c10f73fc1b4e912b65c2d5ddaf271f2240cc1c6c79fa9859be5837",
+    "src/main.js": "9b3fd782512a39a1eb1d565129f156241778d9be0f135acb72fdf7e737d065ac",
+    "tests/spatial-audio-review.html": "6f89f1335d3fd15347440ad13eed4de73fe7096457552def487d26b075cf247d",
+    "tests/spatial-game-review.html": "08f5d07a88cc0ccbdf4b2e0369e38d6c34aae287ca675410436017daeb16253b"
+  },
+  "evidenceSha256": {
+    "docs/spatial-audio-native.wav": "f2db2c02f5b3fb64e9c974e211dc0ae318238afb555652a890ab4e8e3f5ec717",
+    "docs/spatial-audio-native.json": "e2acdc6e3564d99c4afbc909828a66d34a9cfcda8e4723bfd34eed4bf4e38eb2",
+    "docs/spatial-audio-native.jpg": "521f4b3752cea80b41f4177e0144a4de44089cc781c80a6bc8dcd9048961c219",
+    "docs/spatial-game-current.json": "3e224c05168b6343ba4bdeca69072985a488dcaeb6bf52e082e43c47b2bdce5e",
+    "docs/spatial-game-current.jpg": "6bcd7e05711f45efad4fc6e1412ba02df86b7e6d1f5df4e6825c4587c864dd8c",
+    "docs/spatial-game-initial-observation.json": "a01221b7574f967a896ffcb8bf27d04e707bb51f4fbd4a027a45cbc72d205702"
+  },
+  "nativeStereoVerified": true,
+  "mainLoopSpatialCueVerified": true,
+  "wavBytes": 2112044,
+  "centerVsNearStereoEnergyDb": 3.010299932271623,
+  "equalPowerAcrossPanAccepted": false,
+  "createdAndReleased": 5,
+  "gameCreatedAndReleased": 4,
+  "nativeDraggedCamera": true,
+  "ordinarySaveChanged": false,
+  "candidateDelivered": false,
+  "audioListened": false,
+  "m5Complete": false,
+  "fullGoalComplete": false,
+  "limits": "11s isolated stereo cue with muted background/same noise slice and proxy lifecycle; PCM quantization checked, not overall mix/audition. Native main loop starts declared one-crab fixture/own key, user-like drag, then harness auto-pauses through UI at negative pan. Immediate AudioParam.value observation returned0 before audio quantum;80ms native read proves applied value. No production changes this verification batch; ordinary journey, phone and combined long-run remain separate."
+}

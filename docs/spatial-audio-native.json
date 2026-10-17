@@ -1,0 +1,294 @@
+{
+  "sample": {
+    "complete": true,
+    "sampleRate": 48000,
+    "seconds": 11,
+    "channels": 2,
+    "bytes": 2112044,
+    "events": [
+      {
+        "name": "left",
+        "enemy": {
+          "x": -3,
+          "z": 0
+        },
+        "actualTime": 0.5013333333333333,
+        "before": 0,
+        "createdBefore": 0,
+        "options": {
+          "enemyType": "boar",
+          "pan": -0.85,
+          "volume": 0.98
+        },
+        "after": 1,
+        "createdAfter": 1,
+        "channels": [
+          {
+            "peak": 0.0083569111302495,
+            "rms": 0.0010605509371288918
+          },
+          {
+            "peak": 0.0009891054360195994,
+            "rms": 0.00012552445525062988
+          }
+        ]
+      },
+      {
+        "name": "right",
+        "enemy": {
+          "x": 3,
+          "z": 0
+        },
+        "actualTime": 1.5013333333333334,
+        "before": 0,
+        "createdBefore": 1,
+        "options": {
+          "enemyType": "boar",
+          "pan": 0.85,
+          "volume": 0.98
+        },
+        "after": 1,
+        "createdAfter": 2,
+        "channels": [
+          {
+            "peak": 0.0009900032309815288,
+            "rms": 0.0001256561927585602
+          },
+          {
+            "peak": 0.008364495821297169,
+            "rms": 0.0010616639841541174
+          }
+        ]
+      },
+      {
+        "name": "turn",
+        "enemy": {
+          "x": -3,
+          "z": 0
+        },
+        "yaw": 3.141592653589793,
+        "actualTime": 2.501333333333333,
+        "before": 0,
+        "createdBefore": 2,
+        "options": {
+          "enemyType": "boar",
+          "pan": 0.85,
+          "volume": 0.98
+        },
+        "after": 1,
+        "createdAfter": 3,
+        "channels": [
+          {
+            "peak": 0.0009900032309815288,
+            "rms": 0.00012565619276002661
+          },
+          {
+            "peak": 0.008364495821297169,
+            "rms": 0.0010616639841665068
+          }
+        ]
+      },
+      {
+        "name": "near",
+        "enemy": {
+          "x": 3,
+          "z": 0
+        },
+        "actualTime": 3.501333333333333,
+        "before": 0,
+        "createdBefore": 3,
+        "options": {
+          "enemyType": "boar",
+          "pan": 0.85,
+          "volume": 0.98
+        },
+        "after": 1,
+        "createdAfter": 4,
+        "channels": [
+          {
+            "peak": 0.0009900032309815288,
+            "rms": 0.0001256561927585602
+          },
+          {
+            "peak": 0.008364495821297169,
+            "rms": 0.0010616639841541174
+          }
+        ]
+      },
+      {
+        "name": "far",
+        "enemy": {
+          "x": 14,
+          "z": 0
+        },
+        "actualTime": 4.501333333333333,
+        "before": 0,
+        "createdBefore": 4,
+        "options": {
+          "enemyType": "boar",
+          "pan": 0.85,
+          "volume": 0.2538860103626943
+        },
+        "after": 1,
+        "createdAfter": 5,
+        "channels": [
+          {
+            "peak": 0.00028397381538525224,
+            "rms": 0.00003520772336545947
+          },
+          {
+            "peak": 0.002399282995611429,
+            "rms": 0.0002974686010434403
+          }
+        ]
+      },
+      {
+        "name": "paused",
+        "enemy": {
+          "x": 3,
+          "z": 0
+        },
+        "actualTime": 5.501333333333333,
+        "before": 0,
+        "createdBefore": 5,
+        "options": {
+          "enemyType": "boar",
+          "pan": 0.85,
+          "volume": 0.98
+        },
+        "after": 0,
+        "createdAfter": 5,
+        "channels": [
+          {
+            "peak": 0,
+            "rms": 0
+          },
+          {
+            "peak": 0,
+            "rms": 0
+          }
+        ]
+      },
+      {
+        "name": "menu",
+        "kind": "food",
+        "menu": true,
+        "actualTime": 6.501333333333333,
+        "before": 0,
+        "createdBefore": 5,
+        "options": {
+          "menu": true
+        },
+        "after": 1,
+        "createdAfter": 5,
+        "channels": [
+          {
+            "peak": 0.04534299671649933,
+            "rms": 0.006775844139494484
+          },
+          {
+            "peak": 0.04534299671649933,
+            "rms": 0.006775844139494484
+          }
+        ]
+      },
+      {
+        "name": "muted",
+        "enemy": {
+          "x": 3,
+          "z": 0
+        },
+        "actualTime": 7.501333333333333,
+        "before": 0,
+        "createdBefore": 5,
+        "options": {
+          "enemyType": "boar",
+          "pan": 0.85,
+          "volume": 0.98
+        },
+        "after": 0,
+        "createdAfter": 5,
+        "channels": [
+          {
+            "peak": 0,
+            "rms": 0
+          },
+          {
+            "peak": 0,
+            "rms": 0
+          }
+        ]
+      },
+      {
+        "name": "fallback",
+        "enemy": {
+          "x": 3,
+          "z": 0
+        },
+        "actualTime": 8.501333333333333,
+        "before": 0,
+        "createdBefore": 5,
+        "options": {
+          "enemyType": "boar",
+          "pan": 0.85,
+          "volume": 0.98
+        },
+        "after": 1,
+        "createdAfter": 5,
+        "channels": [
+          {
+            "peak": 0.004424451384693384,
+            "rms": 0.0005008055862947342
+          },
+          {
+            "peak": 0.004424451384693384,
+            "rms": 0.0005008055862947342
+          }
+        ]
+      },
+      {
+        "name": "center",
+        "enemy": {
+          "x": 0,
+          "z": 3
+        },
+        "actualTime": 9.501333333333333,
+        "before": 0,
+        "createdBefore": 5,
+        "options": {
+          "enemyType": "boar",
+          "pan": 0,
+          "volume": 0.98
+        },
+        "after": 1,
+        "createdAfter": 5,
+        "channels": [
+          {
+            "peak": 0.008422879502177238,
+            "rms": 0.0010690743134205715
+          },
+          {
+            "peak": 0.008422879502177238,
+            "rms": 0.0010690743134205715
+          }
+        ]
+      }
+    ],
+    "summary": [
+      {
+        "peak": 0.04534299671649933,
+        "rms": 0.0013277344509415273
+      },
+      {
+        "peak": 0.04534299671649933,
+        "rms": 0.0013590294013656932
+      }
+    ],
+    "created": 5,
+    "disconnected": 5,
+    "remaining": 0,
+    "disposed": true,
+    "scope": "Native OfflineAudioContext/nodes, isolated cue fixture, same noise slice. WAV copied from DOM artifact, no ordinary save/campaign/audio audition/VRAM/device proof."
+  },
+  "console": []
+}
