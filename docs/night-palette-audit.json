@@ -1,0 +1,40 @@
+{
+  "boundedPaletteVerified": true,
+  "nightReadabilityFullyAccepted": false,
+  "delivered": false,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "sourceSha256": {
+    "src/scene.js": "6f6d72a8d134a06025e92a92d944b12ac1de4ba85b39aaba1ab013c0f2e345e2",
+    "src/creature.js": "a0099d86975f07b3fceeb9125742aa1bc4edb8a0504c97e51ef00fd2e4ad081e"
+  },
+  "fullTests": 234,
+  "focusedTests": 9,
+  "beforeRows": 5,
+  "afterRows": 6,
+  "preparedArchive": "tidelands-m5-2026-10-17-grounding-budget-night.zip",
+  "preparedArchiveSha256": "23156d79fcac9f7905f730a40fa73cc2fdb76f8b6a2778f2415e24011a53e5ba",
+  "archiveVerifiedFiles": 51,
+  "extractedPath": "/private/tmp/tidelands-delivery-npwtot6t/tidelands-local",
+  "browserLaunchVerified": false,
+  "evidenceSha256": {
+    "docs/night-subject-before.json": "6a03b6885ffe0a369916a1f2f211f55e455a00c5a0fcc32b5d314f1992d3a95b",
+    "docs/night-subject-after.json": "eab020f243985d61dd7bf8f1381e193cbd3f07aac07fc2105f5f682b435e5488",
+    "tests/night-subject-review.html": "1e98abd7e64eb083a069a2a78463f6e9a73ccf2f8224a37291bd8a43fcc2e1f2",
+    "docs/night-palette-tests.txt": "60e89d500621824a10876429b2aabfab637a4a1d6c17ab2b5ed4aec3a7b049fd",
+    "docs/night-palette-focused.txt": "f4620d0495763bc06aae9797fc96572ccf294b98286c924bda688a555eb96c9c",
+    "docs/night-palette-red.txt": "bde1559fd31c6613d40f77fc696e56ee7bc1a14d260901a572c5f9161860df4f",
+    "docs/night-subject-before-coast-0.png": "311b278c47f72a8e89c0baf1ecbbda87d3b867c6c79c6b4fda0d294801b655bc",
+    "docs/night-subject-before-forest-0.png": "cf8747f7472ea43e05a4d3193da854df2984320fe6c3eba355f9738fe6660714",
+    "docs/night-subject-before-highland-1440.png": "f9ca214cbf8a22819139dac0ae609bdad73d08a046c41ecafcaa5a76ea56ef47",
+    "docs/night-subject-before-camp-0.png": "bddef16cfd3dc5244a896a4817e63fa012d96760f12f558d9c4926f95d4cb646",
+    "docs/night-subject-before-coast-240.png": "7e915b22fd29a4ce01e87569c9e46228aead042a02af6664b253f19c6f4c803b",
+    "docs/night-subject-after-coast-0.png": "b2bf923cc92e703e87af508724ba6ecad3602ea9c8987d5831bd1e7bef03266a",
+    "docs/night-subject-after-forest-0.png": "30066d2368c572a3cd3fc47df172d2805fb93f58bef157598e01d0b4d1eba257",
+    "docs/night-subject-after-highland-1440.png": "e8969a0032597bcce50f74e0f1c9b81220f517c6cf75b23fcb66dd87c969fc7b",
+    "docs/night-subject-after-camp-0.png": "90d1edb66165eee9ee5bc5c4a45226e1de19679f7cf67366a4bd548d633d457f",
+    "docs/night-subject-after-coast-240.png": "7e915b22fd29a4ce01e87569c9e46228aead042a02af6664b253f19c6f4c803b",
+    "docs/night-subject-after-mobile.png": "96c8025b95a52010b5370379758ec728db08ff3cc9620261100b0f9906ed96a2"
+  },
+  "scope": "Frozen declared player/three NPC/two enemy/camp positions.11 images reviewed; sky/ground bounce hue becomes cool at night, light intensities and noon colors unchanged. No new light/material/shadow pass. Remaining dark faces, model style and posture/contact gaps persist. Not movement/native campaign/GPU/endurance/listening/phone proof. Prior be4848c GPU/load source remains historical after this scene change."
+}

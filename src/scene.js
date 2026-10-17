@@ -21,6 +21,7 @@ import {createCrystalDeposit} from './crystal.js';
 import {landscapeSample,createShoreStones,islandTreeAppearance} from './landscape.js';
 
 const palette={bark:0x65513d,leaf:0x365a42,lightLeaf:0x68815b,rock:0x858d86,sand:0xd5c8a7,cloth:0xb86636,cream:0xeee1bd};
+const nightSkyBounce=new THREE.Color(0xd4e1f5),daySkyBounce=new THREE.Color(0xe2f1df),nightGroundBounce=new THREE.Color(0x8796af),dayGroundBounce=new THREE.Color(0x697346);
 const materials=new Map();
 function material(color){if(!materials.has(color))materials.set(color,new THREE.MeshStandardMaterial({color,roughness:1,flatShading:true}));return materials.get(color);}
 function mesh(geometry,color,x=0,y=0,z=0){const o=new THREE.Mesh(geometry,material(color));o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;return o;}
@@ -300,6 +301,9 @@ export class WorldView{
   }
   updateAtmosphere(time,weather=weatherAt(time)){
     const {daylight}=dayCycle(time);
+    const bounceDay=THREE.MathUtils.smoothstep(daylight,.04,.65);
+    this.ambient.color.copy(daySkyBounce).lerp(nightSkyBounce,1-bounceDay);
+    if(this.ambient.groundColor)this.ambient.groundColor.copy(dayGroundBounce).lerp(nightGroundBounce,1-bounceDay);
     this.ambient.intensity=(.6+Math.sqrt((daylight-.04)/.96)*1.5)*weather.skylight;
     this.sun.intensity=daylight*2.6*weather.sunlight;
     if(this.nightLight)this.nightLight.intensity=.7*(1-THREE.MathUtils.smoothstep(daylight,.12,.65))*weather.skylight;
