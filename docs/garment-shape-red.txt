@@ -27,9 +27,9 @@ not ok 2 - tailored cloth surfaces are finite, closed after UV seam welding and 
   failureType: 'testCodeFailure'
   error: |-
     Expected values to be strictly equal:
-    
+
     0 !== 10
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected: 10
