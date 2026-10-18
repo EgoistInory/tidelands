@@ -1,0 +1,244 @@
+TAP version 13
+# Subtest: traveler recruits the torso into moving turns, settles, and clears inertia on swim/teleport
+ok 1 - traveler recruits the torso into moving turns, settles, and clears inertia on swim/teleport
+  ---
+  duration_ms: 147.331375
+  type: 'test'
+  ...
+# Subtest: boar turns with its trunk while keeping death/revive/reset independent
+ok 2 - boar turns with its trunk while keeping death/revive/reset independent
+  ---
+  duration_ms: 69.340791
+  type: 'test'
+  ...
+# Subtest: crab turns with its trunk while keeping death/revive/reset independent
+ok 3 - crab turns with its trunk while keeping death/revive/reset independent
+  ---
+  duration_ms: 90.238916
+  type: 'test'
+  ...
+# Subtest: carried sword stays above flat ground at rest while remaining attached to the right hand
+ok 4 - carried sword stays above flat ground at rest while remaining attached to the right hand
+  ---
+  duration_ms: 94.46125
+  type: 'test'
+  ...
+# Subtest: equipment follows selection and swings on the arm holding the tool
+ok 5 - equipment follows selection and swings on the arm holding the tool
+  ---
+  duration_ms: 31.861917
+  type: 'test'
+  ...
+# Subtest: attack and gathering enter and leave each equipped resting pose without snapping
+ok 6 - attack and gathering enter and leave each equipped resting pose without snapping
+  ---
+  duration_ms: 147.664334
+  type: 'test'
+  ...
+# Subtest: tool actions recruit the torso and free hand then clear their pose when interrupted
+ok 7 - tool actions recruit the torso and free hand then clear their pose when interrupted
+  ---
+  duration_ms: 50.360208
+  type: 'test'
+  ...
+# Subtest: complete tool actions keep both planted boot soles fixed on flat and sloped ground
+ok 8 - complete tool actions keep both planted boot soles fixed on flat and sloped ground
+  ---
+  duration_ms: 96.762583
+  type: 'test'
+  ...
+# Subtest: a moving attack retains grounded contacts during a turn at production speeds
+ok 9 - a moving attack retains grounded contacts during a turn at production speeds
+  ---
+  duration_ms: 72.090334
+  type: 'test'
+  ...
+# Subtest: stride advances with distance, stays still at rest, and keeps joints attached
+ok 10 - stride advances with distance, stays still at rest, and keeps joints attached
+  ---
+  duration_ms: 4.061583
+  type: 'test'
+  ...
+# Subtest: gathering reaches forward, yields to attack or swimming, and returns to idle
+ok 11 - gathering reaches forward, yields to attack or swimming, and returns to idle
+  ---
+  duration_ms: 3.743125
+  type: 'test'
+  ...
+# Subtest: hurt recoil decays without moving the root or leaving a swimming lean behind
+ok 12 - hurt recoil decays without moving the root or leaving a swimming lean behind
+  ---
+  duration_ms: 4.497125
+  type: 'test'
+  ...
+# Subtest: steady forward stance keeps soles on a flat floor at several frame rates and production speeds
+ok 13 - steady forward stance keeps soles on a flat floor at several frame rates and production speeds
+  ---
+  duration_ms: 78.164583
+  type: 'test'
+  ...
+# Subtest: feet solve gentle terrain height, settle at rest and reset safely after a teleport
+ok 14 - feet solve gentle terrain height, settle at rest and reset safely after a teleport
+  ---
+  duration_ms: 7.252375
+  type: 'test'
+  ...
+# Subtest: shaped boot soles have a flat contact face and stay above sloped floors during planted turns
+ok 15 - shaped boot soles have a flat contact face and stay above sloped floors during planted turns
+  ---
+  duration_ms: 26.661292
+  type: 'test'
+  ...
+# Subtest: swimming leans forward with the head above the water and returns to planted feet
+ok 16 - swimming leans forward with the head above the water and returns to planted feet
+  ---
+  duration_ms: 5.194084
+  type: 'test'
+  ...
+# Subtest: stopping keeps grounded boots fixed while recovery steps return them to a neutral stance
+ok 17 - stopping keeps grounded boots fixed while recovery steps return them to a neutral stance
+  ---
+  duration_ms: 22.781
+  type: 'test'
+  ...
+# Subtest: a right-angle turn keeps stance boots fixed during startup and steady travel on a slope
+ok 18 - a right-angle turn keeps stance boots fixed during startup and steady travel on a slope
+  ---
+  duration_ms: 65.784458
+  type: 'test'
+  ...
+# Subtest: reversing releases an overextended foot instead of dragging its planted contact
+ok 19 - reversing releases an overextended foot instead of dragging its planted contact
+  ---
+  duration_ms: 20.949125
+  type: 'test'
+  ...
+# Subtest: teleport and swimming discard old world contacts before returning to a distant shore
+ok 20 - teleport and swimming discard old world contacts before returning to a distant shore
+  ---
+  duration_ms: 4.274417
+  type: 'test'
+  ...
+# Subtest: batched movement never reuses a distant landing when key presses skip a swing
+ok 21 - batched movement never reuses a distant landing when key presses skip a swing
+  ---
+  duration_ms: 26.048166
+  type: 'test'
+  ...
+# Subtest: movement and swimming can interrupt idle recovery without retaining a sideways body offset
+ok 22 - movement and swimming can interrupt idle recovery without retaining a sideways body offset
+  ---
+  duration_ms: 5.199375
+  type: 'test'
+  ...
+# Subtest: turning anticipates overextended contacts and bounds airborne targets without a deep pelvis collapse
+ok 23 - turning anticipates overextended contacts and bounds airborne targets without a deep pelvis collapse
+  ---
+  duration_ms: 130.439417
+  type: 'test'
+  ...
+# Subtest: faster travel lengthens the stride, lowers cadence and includes an airborne interval
+ok 24 - faster travel lengthens the stride, lowers cadence and includes an airborne interval
+  ---
+  duration_ms: 58.7805
+  type: 'test'
+  ...
+# Subtest: stopping holds the last stride shape while the torso and feet recover
+ok 25 - stopping holds the last stride shape while the torso and feet recover
+  ---
+  duration_ms: 6.07625
+  type: 'test'
+  ...
+# Subtest: boar: actual articulated contacts remain planted through travel, turning and stopping (flat)
+ok 26 - boar: actual articulated contacts remain planted through travel, turning and stopping (flat)
+  ---
+  duration_ms: 132.938458
+  type: 'test'
+  ...
+# Subtest: boar: actual articulated contacts remain planted through travel, turning and stopping (slope)
+ok 27 - boar: actual articulated contacts remain planted through travel, turning and stopping (slope)
+  ---
+  duration_ms: 47.491541
+  type: 'test'
+  ...
+# Subtest: crab: actual articulated contacts remain planted through travel, turning and stopping (flat)
+ok 28 - crab: actual articulated contacts remain planted through travel, turning and stopping (flat)
+  ---
+  duration_ms: 56.263584
+  type: 'test'
+  ...
+# Subtest: crab: actual articulated contacts remain planted through travel, turning and stopping (slope)
+ok 29 - crab: actual articulated contacts remain planted through travel, turning and stopping (slope)
+  ---
+  duration_ms: 60.186083
+  type: 'test'
+  ...
+# Subtest: articulated geometry stays shared while joints, reset and revived contacts stay private
+ok 30 - articulated geometry stays shared while joints, reset and revived contacts stay private
+  ---
+  duration_ms: 17.183875
+  type: 'test'
+  ...
+# Subtest: boar: resting foot surfaces follow a sloped plane at multiple headings
+ok 31 - boar: resting foot surfaces follow a sloped plane at multiple headings
+  ---
+  duration_ms: 149.080209
+  type: 'test'
+  ...
+# Subtest: crab: resting foot surfaces follow a sloped plane at multiple headings
+ok 32 - crab: resting foot surfaces follow a sloped plane at multiple headings
+  ---
+  duration_ms: 123.441042
+  type: 'test'
+  ...
+# Subtest: crab has eight walking legs and its articulated pincers close during a strike
+ok 33 - crab has eight walking legs and its articulated pincers close during a strike
+  ---
+  duration_ms: 101.995083
+  type: 'test'
+  ...
+# Subtest: boar: sculpted surfaces stay finite and retain the same distant silhouette
+ok 34 - boar: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 59.889958
+  type: 'test'
+  ...
+# Subtest: crab: sculpted surfaces stay finite and retain the same distant silhouette
+ok 35 - crab: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 37.440875
+  type: 'test'
+  ...
+# Subtest: boar: distance gait, bounded turn, hit isolation and death recovery
+ok 36 - boar: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 41.336458
+  type: 'test'
+  ...
+# Subtest: crab: distance gait, bounded turn, hit isolation and death recovery
+ok 37 - crab: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 70.690917
+  type: 'test'
+  ...
+# Subtest: boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 38 - boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 5.753833
+  type: 'test'
+  ...
+# Subtest: crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 39 - crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 11.691458
+  type: 'test'
+  ...
+1..39
+# tests 39
+# suites 0
+# pass 39
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1038.151541

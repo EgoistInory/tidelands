@@ -1,4 +1,5 @@
 import * as THREE from '../vendor/three.module.min.js';
+import {updateBodyMotion} from './body-motion.js';
 import {ENEMY_ATTACK_DURATION} from './action-timing.js';
 import {mergeStaticParts} from './merge-parts.js';
 import {placeCreatureFeet,resetCreatureFeet} from './creature-footing.js';
@@ -122,7 +123,7 @@ export function createCreature(type,geometryCache=null){
 
 export function resetCreature(root){
   const u=root.userData;
-  Object.assign(u,{phase:0,last:null,hp:null,hitAt:-100,deadAt:null,far:false});
+  Object.assign(u,{phase:0,last:null,hp:null,hitAt:-100,deadAt:null,far:false,bodyMotion:null});
   root.position.set(0,0,0);root.rotation.set(0,0,0);root.visible=true;
   u.ground.position.set(0,0,0);u.ground.quaternion.identity();
   for(const g of [u.body,u.distant]){g.position.set(0,0,0);g.rotation.set(0,0,0);}
@@ -134,6 +135,7 @@ export function resetCreature(root){
 
 export function animateCreature(root,enemy,time,dt,height,target,attackPose=undefined,heightAt=null){
   const u=root.userData,last=u.last;
+  const revived=u.hp!==null&&u.hp<=0&&enemy.hp>0;
   if(u.hp!==null&&enemy.hp<u.hp)u.hitAt=time;
   if(enemy.hp<=0&&u.deadAt===null)u.deadAt=u.hp===null?time-.5:time;
   if(enemy.hp>0)u.deadAt=null;
@@ -146,12 +148,14 @@ export function animateCreature(root,enemy,time,dt,height,target,attackPose=unde
     const delta=Math.atan2(Math.sin(angle-root.rotation.y),Math.cos(angle-root.rotation.y));root.rotation.y+=delta*(1-Math.exp(-dt*10));
   }
   const attackAt=attackPose===undefined?enemy.attackAt:attackPose?.at;
+  const motion=updateBodyMotion(u,enemy.x,enemy.z,root.rotation.y,dt,!last||distance>=4||enemy.hp<=0||revived);
   const attackAge=time-(attackAt??-100),attack=attackAge>=0&&attackAge<ENEMY_ATTACK_DURATION?Math.sin(attackAge/ENEMY_ATTACK_DURATION*Math.PI):0;
   const hurt=Math.max(0,1-(time-u.hitAt)/.24),death=u.deadAt===null?0:Math.min(1,Math.max(0,(time-u.deadAt)/.5));
   u.legs.forEach((leg,i)=>{const stride=moving?Math.sin(u.phase+(i%2)*Math.PI)*.55:0;leg.rotation.x=u.type==='boar'?stride:0;leg.rotation.z=u.type==='crab'?stride*.45:0;});
   u.claws.forEach((claw,i)=>{claw.rotation.x=-attack*.9;claw.rotation.y=(i?1:-1)*attack*.35;claw.userData.pincer.rotation.y=-claw.userData.side*attack*.43;});
   u.body.position.y=(moving?Math.abs(Math.sin(u.phase))*.07:Math.sin(time*2)*.015)-death*.45;
-  u.body.position.z=attack*.22-hurt*.18;u.body.rotation.x=u.type==='boar'?-attack*.18:0;u.body.rotation.z=death*1.3+hurt*.1;
+  u.body.position.z=attack*.22-hurt*.18;u.body.rotation.x=(u.type==='boar'?-attack*.18:0)+(u.type==='boar'?.035:.02)*motion.drive;
+  u.body.rotation.y=.05*motion.turn;u.body.rotation.z=death*1.3+hurt*.1-(u.type==='boar'?.07:.045)*motion.turn*Math.min(1,motion.speed/2.5);
   const range=Math.hypot(target.x-enemy.x,target.z-enemy.z);
   if(range>120)u.far=true;else if(range<100)u.far=false;
   // Combat and any actual travel always use animated limbs, even at a distance.

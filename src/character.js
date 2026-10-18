@@ -2,6 +2,7 @@ import * as THREE from '../vendor/three.module.min.js';
 import {ATTACK_DURATION,GATHER_DURATION} from './action-timing.js';
 import {createTextileMaterial} from './textile.js';
 import {createTravelerHead} from './character-head.js';
+import {updateBodyMotion} from './body-motion.js';
 
 const fabrics=new Map();
 function surface(color,metal=false,cloth=false){const key=`${color}-${metal}-${cloth}`;if(!fabrics.has(key))fabrics.set(key,cloth?createTextileMaterial(color):new THREE.MeshStandardMaterial({color,roughness:metal?.36:.88,metalness:metal?.55:0}));return fabrics.get(key);}
@@ -253,10 +254,11 @@ export function animateCharacter(root,{x,z,yaw,time,attackAt,gatherAt=-100,gathe
   rig.walkBlend+=(Number(moving&&!swimming)-rig.walkBlend)*(1-Math.exp(-Math.max(0,dt)*12));
   const gait=swimming?Math.sin(time*5)*.4:Math.sin(rig.phase)*.55*rig.walkBlend;
   root.rotation.y+=Math.atan2(Math.sin(yaw-root.rotation.y),Math.cos(yaw-root.rotation.y))*(1-Math.exp(-dt*16));
+  const motion=updateBodyMotion(rig,x,z,root.rotation.y,dt,!last||traveled>5||swimming);
   rig.body.position.x=0;
   rig.body.position.y=swimming?Math.sin(time*1.8)*.013:0;
-  rig.body.rotation.x=swimming?1.25:.12*run*rig.walkBlend;
-  rig.body.rotation.y=0;
+  rig.body.rotation.x=swimming?1.25:.12*run*rig.walkBlend+.04*motion.drive;
+  rig.body.rotation.y=swimming?0:.08*motion.turn;
   for(let i=0;i<2;i++){
     const stride=i?gait:-gait;rig.hips[i].rotation.x=stride;rig.knees[i].rotation.x=Math.max(0,-stride)*1.1;
     rig.shoulders[i].rotation.x=swimming?Math.sin(time*5+i*Math.PI)*.8-1:-stride*(.7+.5*run);
@@ -271,7 +273,7 @@ export function animateCharacter(root,{x,z,yaw,time,attackAt,gatherAt=-100,gathe
     rig.shoulders[1].rotation.x=THREE.MathUtils.lerp(rig.shoulders[1].rotation.x,selected==='axe'?-.4:-.8,swing);
     rig.elbows[1].rotation.x=THREE.MathUtils.lerp(rig.elbows[1].rotation.x,-.25,swing);
     if(!swimming){
-      rig.body.rotation.y=.22*swing;
+      rig.body.rotation.y=THREE.MathUtils.lerp(rig.body.rotation.y,.22,swing);
       rig.shoulders[0].rotation.x=THREE.MathUtils.lerp(rig.shoulders[0].rotation.x,-.5,swing);
       rig.shoulders[0].rotation.z=-.18*swing;
       rig.elbows[0].rotation.x=THREE.MathUtils.lerp(rig.elbows[0].rotation.x,-.45,swing);
@@ -285,7 +287,7 @@ export function animateCharacter(root,{x,z,yaw,time,attackAt,gatherAt=-100,gathe
     rig.body.rotation.x=THREE.MathUtils.lerp(rig.body.rotation.x,low?(shell?.6:.44):.16,reach);
     rig.shoulders[1].rotation.x=THREE.MathUtils.lerp(rig.shoulders[1].rotation.x,equipped==='sword'?-.8:-.55,reach);
     rig.elbows[1].rotation.x=THREE.MathUtils.lerp(rig.elbows[1].rotation.x,-.25,reach);
-    rig.body.rotation.y=-.14*reach;
+    rig.body.rotation.y=THREE.MathUtils.lerp(rig.body.rotation.y,-.14,reach);
     rig.shoulders[0].rotation.x=THREE.MathUtils.lerp(rig.shoulders[0].rotation.x,-.35,reach);
     rig.shoulders[0].rotation.z=-.12*reach;
     rig.elbows[0].rotation.x=THREE.MathUtils.lerp(rig.elbows[0].rotation.x,-.35,reach);
@@ -294,7 +296,7 @@ export function animateCharacter(root,{x,z,yaw,time,attackAt,gatherAt=-100,gathe
   const hurtAge=time-hurtAt,hurt=hurtAge>=0&&hurtAge<.3?1-hurtAge/.3:0;
   rig.body.position.z=-.12*hurt;
   rig.body.rotation.x-=.18*hurt;
-  rig.body.rotation.z=.08*hurt;
+  rig.body.rotation.z=.08*hurt-(swimming?0:.10*motion.turn*Math.min(1,rig.speed/3));
   if(!swimming)placeFeet(root,ground,time,dt,yaw,crouch);
   rig.axe.visible=equipped==='axe';rig.sword.visible=equipped==='sword';
 }
