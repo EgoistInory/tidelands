@@ -1,0 +1,142 @@
+TAP version 13
+# Subtest: four regional tree forms have distinct geometry with rooted trunks and open walking space
+ok 1 - four regional tree forms have distinct geometry with rooted trunks and open walking space
+  ---
+  duration_ms: 237.131125
+  type: 'test'
+  ...
+# Subtest: leaf mip chains retain a visible subpixel crown and share the exact shadow map
+ok 2 - leaf mip chains retain a visible subpixel crown and share the exact shadow map
+  ---
+  duration_ms: 3.544959
+  type: 'test'
+  ...
+# Subtest: grove resources preserve every existing node and enemy and keep landmark approaches open
+ok 3 - grove resources preserve every existing node and enemy and keep landmark approaches open
+  ---
+  duration_ms: 10.974417
+  type: 'test'
+  ...
+# Subtest: regional instance batches use their own bounds, and new grove nodes gather and survive save restore
+ok 4 - regional instance batches use their own bounds, and new grove nodes gather and survive save restore
+  ---
+  duration_ms: 723.618708
+  type: 'test'
+  ...
+# Subtest: the exposed shoal grove keeps subject distance by finding clear space below the crown
+ok 5 - the exposed shoal grove keeps subject distance by finding clear space below the crown
+  ---
+  duration_ms: 589.4255
+  type: 'test'
+  ...
+# Subtest: low shoal crowns leave a six metre ray at the exposed moving corner
+ok 6 - low shoal crowns leave a six metre ray at the exposed moving corner
+  ---
+  duration_ms: 560.300083
+  type: 'test'
+  ...
+# Subtest: resource boulders have a broad mineral face rather than a continuously rounded dome
+ok 7 - resource boulders have a broad mineral face rather than a continuously rounded dome
+  ---
+  duration_ms: 24.541166
+  type: 'test'
+  ...
+# Subtest: all regional crowns carry coherent lower-to-upper value masses within the existing mesh budget
+ok 8 - all regional crowns carry coherent lower-to-upper value masses within the existing mesh budget
+  ---
+  duration_ms: 201.279333
+  type: 'test'
+  ...
+# Subtest: leaf canopy stays finite and its wind bounds fit the tree camera clearance
+ok 9 - leaf canopy stays finite and its wind bounds fit the tree camera clearance
+  ---
+  duration_ms: 92.142875
+  type: 'test'
+  ...
+# Subtest: visible and shadow leaves use the same wind shader and advancing clock
+ok 10 - visible and shadow leaves use the same wind shader and advancing clock
+  ---
+  duration_ms: 4.339708
+  type: 'test'
+  ...
+# Subtest: canopies share a bounded mipmapped cutout texture with opaque leaves and empty edges
+ok 11 - canopies share a bounded mipmapped cutout texture with opaque leaves and empty edges
+  ---
+  duration_ms: 10.648625
+  type: 'test'
+  ...
+# Subtest: berry foliage fits the resource footprint and reuses visible and shadow leaf resources
+ok 12 - berry foliage fits the resource footprint and reuses visible and shadow leaf resources
+  ---
+  duration_ms: 5.271333
+  type: 'test'
+  ...
+# Subtest: bark texture is shared, bounded, opaque and mipmapped
+ok 13 - bark texture is shared, bounded, opaque and mipmapped
+  ---
+  duration_ms: 15.371334
+  type: 'test'
+  ...
+# Subtest: decoded rock texture list excludes failed channels and does not reload
+ok 14 - decoded rock texture list excludes failed channels and does not reload
+  ---
+  duration_ms: 3.836375
+  type: 'test'
+  ...
+# Subtest: rock photo channels become visible together, with correct local sampling and no repeated loads
+ok 15 - rock photo channels become visible together, with correct local sampling and no repeated loads
+  ---
+  duration_ms: 1.395125
+  type: 'test'
+  ...
+# Subtest: missing rock channels preserve original colour, normal and roughness and settle readiness
+ok 16 - missing rock channels preserve original colour, normal and roughness and settle readiness
+  ---
+  duration_ms: 0.388375
+  type: 'test'
+  ...
+# Subtest: spherical UVs remain finite with whole longitude tiles and radius-scaled vertical density
+ok 17 - spherical UVs remain finite with whole longitude tiles and radius-scaled vertical density
+  ---
+  duration_ms: 58.867209
+  type: 'test'
+  ...
+# Subtest: bundled rock channels match the official metadata and saved SHA256 manifest
+ok 18 - bundled rock channels match the official metadata and saved SHA256 manifest
+  ---
+  duration_ms: 14.642041
+  type: 'test'
+  ...
+# Subtest: weathered rock geometry is deterministic, finite and stays inside the original sphere
+ok 19 - weathered rock geometry is deterministic, finite and stays inside the original sphere
+  ---
+  duration_ms: 44.4125
+  type: 'test'
+  ...
+# Subtest: rock uses smooth shared material and the transformed large stone fits camera clearance
+ok 20 - rock uses smooth shared material and the transformed large stone fits camera clearance
+  ---
+  duration_ms: 18.45325
+  type: 'test'
+  ...
+# Subtest: organic tree keeps a narrow rooted trunk and finite nondegenerate branching geometry
+ok 21 - organic tree keeps a narrow rooted trunk and finite nondegenerate branching geometry
+  ---
+  duration_ms: 108.587916
+  type: 'test'
+  ...
+# Subtest: branching tree is deterministic and retains two shared instanced surfaces after merging
+ok 22 - branching tree is deterministic and retains two shared instanced surfaces after merging
+  ---
+  duration_ms: 32.085834
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2222.950291

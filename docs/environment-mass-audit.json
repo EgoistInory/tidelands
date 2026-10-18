@@ -1,0 +1,501 @@
+{
+  "verified": true,
+  "boundedEnvironmentSurfaceVerified": true,
+  "wholeArtDirectionAccepted": false,
+  "fullM5Complete": false,
+  "fullGoalComplete": false,
+  "candidateDelivered": false,
+  "currentSourceGpuOrLongRunAccepted": false,
+  "changedRuntimeInputs": [
+    "src/foliage.js",
+    "src/rock-surface.js",
+    "src/rock.js"
+  ],
+  "sources": {
+    "src/action-timing.js": "fb94324d1ff0675e88b44ed241fa9ce4667cf9a1e944ca56c10a79cb0ea7099d",
+    "src/actor-contact.js": "76eced7c3ac2bb41ea28011ee324ae0842775bc1dca1377e72963644cbfcba4f",
+    "src/audio.js": "a6a2389758c10f73fc1b4e912b65c2d5ddaf271f2240cc1c6c79fa9859be5837",
+    "src/camera.js": "a2f696abdc34ac0e2cfdb8cbed02b40e0823398f593f13c9ab58e2bd21204aac",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character-head.js": "081f3f9a67c3b8c264004b3c9d5352e9a23a75262e20d6e179e48927b9b3d413",
+    "src/character.js": "290e2e33daf59fa6c0717ca6162ff989919cae3b947a6c21c9005e098e19649f",
+    "src/contact-shade.js": "850e369efa536ffae51afc404734459502362bb05875bb3a510a223dbc9029dc",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature-footing.js": "71707700f33b00c293c660cb958b4c83c97b8b74086064fbaccccec05cfa615b",
+    "src/creature.js": "f2700947499cd56eb0d67675f7fc461849994fe8eda3d7370cee8222a8be00ed",
+    "src/crystal.js": "1f4191077b07bc551dd5bb59397f404e0d0cde15c7aa2f30bc27e1f098d4c3cb",
+    "src/foliage.js": "28a688f2939d62f5b26ca66fd5e144e695a25a9da61b40e4785bab50ec425893",
+    "src/game.js": "1f409fb864f13677d57e5aa9f4d9afa727e01794951b295f94fd978be8a34274",
+    "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+    "src/landscape.js": "2da378df008317a0a9d3c6bc53430067c3b57a5439515bf0080ac408476f4108",
+    "src/lighthouse.js": "b134e4d6a593723b93267c8963ed1ab77d6a6112e31523689451333481ff8091",
+    "src/main.js": "9b3fd782512a39a1eb1d565129f156241778d9be0f135acb72fdf7e737d065ac",
+    "src/meadow.js": "027735713a4d963a7aee39688bc7b54c32d690f53df81c8986c1fde88e523a20",
+    "src/merge-parts.js": "fa67b9162fcbb07d7f177a8855d42d56f8faf4f087c938c5997af0c87eac802f",
+    "src/movement-heading.js": "338f5d4063575847e9c17a60b9e6999b21744012b95e6096cfae531136ddd976",
+    "src/pointer-controls.js": "b92d43d36099f1a444b1635a050c9dc3dd67709fcaebe33d4fca09501cdd650f",
+    "src/resource-contact.js": "c08203f3ae4b52c71d87898f279522d1a49d0fb625a3151223db4ec02ee7dd0b",
+    "src/rock-surface.js": "65854c61dec285c8c9ae1e010610b47d8ddeb31c428fd7fd1358983002182673",
+    "src/rock.js": "35a9e37e71c4c92efc2e4914839873ad7e3a9a822b38531d843945ba156a3a9a",
+    "src/ruin-layout.js": "546990987a222bd223d8a489c75054340f5b829518805eb562fd0493a8e38240",
+    "src/ruin.js": "a246871499788f118c41aa5b8a31c08c3e9c7f9a7cd32a3e8dd4ed2a4b75414c",
+    "src/scene.js": "079e292b4b3ffefcb700dbdbed57d8d426506eb8033c8e1d159654d6f23f0c00",
+    "src/sky.js": "e83f0d3ce196d44b214a608f09f0763ca33caa10c2d3ed671579b508effa75d4",
+    "src/startup-textures.js": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd",
+    "src/textile.js": "409b2ccf20dcbd8005e2d220404c358d5d39e1a7c6533db0bb80692cc85a69fb",
+    "src/tree.js": "2a74ce682a6b566458965656b98df17e135e23a656c768894c0cb689de3aaffe",
+    "src/world.js": "1a75cec458f0594f98ebca5d6162a31d825d9cf5f0daf902c9e912242b035392"
+  },
+  "evidenceSha256": {
+    "docs/whole-art-baseline-camp-motion.jpg": "d3bccf9a60fad1d0aa602cb884d5850285c79f517679e7f47350ff60b7c475ba",
+    "docs/whole-art-baseline-camp-night.jpg": "36cca7f2479fd55744a635cf805084e9dde0429ae211f1f76653409ea4a02598",
+    "docs/whole-art-baseline-camp.jpg": "4fda71b04685be2d3bee2845e03e548dd6ba702299e5de3ed0df81c7c7e774d8",
+    "docs/whole-art-baseline-coast.jpg": "22bcf7a5c807893082830ac454c7f202571dda4c4910242fc9775775f5d06c8e",
+    "docs/whole-art-baseline-forest.jpg": "fb7b58d7d5709514ae705919fa847634455b87f4275a88bc132e106b6a99b62e",
+    "docs/whole-art-baseline-highland.jpg": "db939edb89aadd9a326d2aae193d2e9ff74b2a043279e65d5b27e276362f6e87",
+    "docs/whole-art-baseline-mobile.jpg": "40ee8ac49484f79be4db753f5ef7470539db20e1d590d9e69f5c9a03ca4a1e66",
+    "docs/whole-art-baseline-shoal.jpg": "0d277f438aecad9cb372b6eca9807454a8a04e4ed25d852d1e35a29b9eb0f20b",
+    "docs/environment-mass-current-camp-motion.jpg": "18fe7629e672d34c60f992f2f4d3c5a936ab781a3a1d9146399c8a3e248a9d22",
+    "docs/environment-mass-current-camp-night.jpg": "f84efc3aa222f9a305cdc1ad5490b660a8d933d7c4660c7333e72663e8c9b12e",
+    "docs/environment-mass-current-camp.jpg": "3f3d28289049b28d171daf889b25c963b7dae80a3dd90d1d183bfcde07f08f1f",
+    "docs/environment-mass-current-coast.jpg": "117c6b4ba6df46d430e71b400ea979924fa7877c3a9ddc9bc715bfd9591cd890",
+    "docs/environment-mass-current-forest-motion.jpg": "57d61196699c2971c25a4b05261e7413b7d7c217d916b9ca2f3307cdd560b359",
+    "docs/environment-mass-current-forest.jpg": "3c76fa5093e55578f10a96b19815516620b6c11b5ec62de893bc40eaf4c85ee1",
+    "docs/environment-mass-current-highland.jpg": "ba3d2f417ebb3af6a3fe32a89038b3ff1109c82f286fecb7edf132500cfd7e84",
+    "docs/environment-mass-current-mobile-motion.jpg": "e5712b6bb5e0c901f5e0ea2483989d26d0a9a553c057d5ce402670ffc78cd08e",
+    "docs/environment-mass-current-mobile.jpg": "e2081f6f457f41b3258d8b076357446200548d53f192dff7423ee405d67ff800",
+    "docs/environment-mass-current-shoal.jpg": "2233a492c8d9e6cf6d7ad5bc07b53bb3320d4e71af409625bcab6e9ec8232cf3",
+    "tests/whole-world-art-review.html": "fd0bc10e9a27137aff032558b266dd4acbe9006d43cef4e40edbc1770b16a215",
+    "tests/environment-mass.test.js": "5ef7179ac97bf4e05774785a2d8e3a496e0ddf22e4c3e15b8057695e46cf7835",
+    "tools/probe_environment_mass.mjs": "c8cb12e2abf1db9ce0a38400673fd54d11ab087494cdbf2fb1f4ffc8eef49f92",
+    "docs/whole-art-baseline-browser.json": "26bcde5a50261cafa9ca1f3e01433b97fe30a8749e25464e320a4fd282dee4c1",
+    "docs/environment-mass-browser.json": "7689776cca08d478934cc22f74f473a34bc64cc449200c7fed2da8915b7c39ca",
+    "docs/environment-mass-baseline.json": "23ac8af5e7aa2f224e3e740b150accb740d53ce6565952963281116a67c65d91",
+    "docs/environment-mass-candidate.json": "cc658c7878459cdb687fbc37d46e20bb23a10639fc586e32b43d43fb4ca277a3"
+  },
+  "sameConditionPairs": 8,
+  "motion": [
+    {
+      "ready": true,
+      "scene": "camp",
+      "startTime": 0,
+      "time": 2.9999999999999942,
+      "weather": {
+        "cloudiness": 0.14299270097436584,
+        "windStrength": 0.4857956205846195,
+        "sunlight": 0.8970452552984566,
+        "skylight": 0.9828408758830761,
+        "fogNear": 116.42518247564085,
+        "fogFar": 452.8408758830761
+      },
+      "frames": 180,
+      "running": false,
+      "hidden": false,
+      "start": [
+        -56,
+        49
+      ],
+      "position": [
+        -45.49999999999996,
+        59.50000000000004
+      ],
+      "height": 11.546264250728537,
+      "distance": 21.000000000000085,
+      "hp": 100,
+      "camera": [
+        -44.25366690817352,
+        17.849878843137795,
+        72.52305334705987
+      ],
+      "poses": [
+        {
+          "frame": 30,
+          "player": [
+            -56,
+            52.500000000000014,
+            0
+          ],
+          "camera": [
+            -53.90032641364368,
+            18.731250964179274,
+            65.53780321348118
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 60,
+          "player": [
+            -56,
+            56.00000000000003,
+            0
+          ],
+          "camera": [
+            -53.89900408295016,
+            18.40979675410415,
+            69.02260273180411
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 90,
+          "player": [
+            -56,
+            59.50000000000004,
+            0
+          ],
+          "camera": [
+            -53.89896466115512,
+            18.15377216645474,
+            72.52219908673035
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 120,
+          "player": [
+            -52.499999999999986,
+            59.50000000000004,
+            1.5707963267948966
+          ],
+          "camera": [
+            -51.26283408979438,
+            17.899517026114676,
+            72.91829873761566
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 150,
+          "player": [
+            -48.99999999999997,
+            59.50000000000004,
+            1.5707963267948966
+          ],
+          "camera": [
+            -47.854669061429206,
+            17.77856668876743,
+            72.52282950569699
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 180,
+          "player": [
+            -45.49999999999996,
+            59.50000000000004,
+            1.5707963267948966
+          ],
+          "camera": [
+            -44.355949018753755,
+            17.846932973359415,
+            72.52271186462666
+          ],
+          "hp": 100
+        }
+      ],
+      "raf": {
+        "samples": 179,
+        "p95": 18.200000000000728,
+        "max": 18.700000000000728
+      },
+      "render": {
+        "calls": 440,
+        "triangles": 2566090,
+        "textures": 21
+      },
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        758
+      ],
+      "glError": 0,
+      "scope": "Declared locations/quest6/camp fixture; production movePlayer/tick/draw and unmodified follow camera. No saves/audio/normal journey, full cast closeups, GPU, physical device or quality acceptance. Fixed 1/60 simulation step; measured rAF is only scheduling."
+    },
+    {
+      "ready": true,
+      "scene": "forest",
+      "startTime": 240,
+      "time": 243.0000000000024,
+      "weather": {
+        "cloudiness": 2.4095520336053777e-05,
+        "windStrength": 0.40001445731220164,
+        "sunlight": 0.999982651225358,
+        "skylight": 0.9999971085375596,
+        "fogNear": 119.9993976119916,
+        "fogFar": 469.99710853755965
+      },
+      "frames": 180,
+      "running": false,
+      "hidden": false,
+      "start": [
+        132,
+        -26
+      ],
+      "position": [
+        142.50000000000068,
+        -15.499999999999957
+      ],
+      "height": 13.64551850761066,
+      "distance": 21.000000000000725,
+      "hp": 100,
+      "camera": [
+        143.8745489343542,
+        20.202431310659435,
+        -1.6303679405776244
+      ],
+      "poses": [
+        {
+          "frame": 30,
+          "player": [
+            132,
+            -22.499999999999986,
+            0
+          ],
+          "camera": [
+            134.10002078734263,
+            22.5306688047486,
+            -9.459930338377056
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 60,
+          "player": [
+            132,
+            -18.99999999999997,
+            0
+          ],
+          "camera": [
+            134.10148753693178,
+            21.434518328981618,
+            -5.974144028833596
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 90,
+          "player": [
+            132,
+            -15.499999999999957,
+            0
+          ],
+          "camera": [
+            134.10160282961593,
+            20.267841274366116,
+            -2.4740368097495953
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 120,
+          "player": [
+            135.50000000000023,
+            -15.499999999999957,
+            1.5707963267948966
+          ],
+          "camera": [
+            136.78463565130843,
+            20.030906313214885,
+            -1.6481765038310776
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 150,
+          "player": [
+            139.00000000000045,
+            -15.499999999999957,
+            1.5707963267948966
+          ],
+          "camera": [
+            140.27251540289296,
+            20.10680783360361,
+            -1.6299491229659164
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 180,
+          "player": [
+            142.50000000000068,
+            -15.499999999999957,
+            1.5707963267948966
+          ],
+          "camera": [
+            143.77237919157335,
+            20.199456654230172,
+            -1.629563301602337
+          ],
+          "hp": 100
+        }
+      ],
+      "raf": {
+        "samples": 179,
+        "p95": 17.5,
+        "max": 18.599999999998545
+      },
+      "render": {
+        "calls": 462,
+        "triangles": 2262832,
+        "textures": 21
+      },
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        758
+      ],
+      "glError": 0,
+      "scope": "Declared locations/quest6/camp fixture; production movePlayer/tick/draw and unmodified follow camera. No saves/audio/normal journey, full cast closeups, GPU, physical device or quality acceptance. Fixed 1/60 simulation step; measured rAF is only scheduling."
+    },
+    {
+      "ready": true,
+      "scene": "coast",
+      "startTime": 240,
+      "time": 243.0000000000024,
+      "weather": {
+        "cloudiness": 2.4095520336053777e-05,
+        "windStrength": 0.40001445731220164,
+        "sunlight": 0.999982651225358,
+        "skylight": 0.9999971085375596,
+        "fogNear": 119.9993976119916,
+        "fogFar": 469.99710853755965
+      },
+      "frames": 180,
+      "running": false,
+      "hidden": false,
+      "start": [
+        -90,
+        140
+      ],
+      "position": [
+        -82.50000000000043,
+        149.33333333333408
+      ],
+      "height": -1.192268259511762,
+      "distance": 16.833333333333655,
+      "hp": 100,
+      "camera": [
+        -80.9203956468268,
+        6.1278595223810175,
+        163.18981463575136
+      ],
+      "poses": [
+        {
+          "frame": 30,
+          "player": [
+            -90,
+            143.50000000000023,
+            0
+          ],
+          "camera": [
+            -87.9002598562312,
+            7.387137840828087,
+            156.53823614346805
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 60,
+          "player": [
+            -90,
+            146.8333333333338,
+            0
+          ],
+          "camera": [
+            -87.89969147898648,
+            6.799370749505071,
+            159.97066735539272
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 90,
+          "player": [
+            -90,
+            149.33333333333408,
+            0
+          ],
+          "camera": [
+            -87.9031886360344,
+            6.303502016291692,
+            162.5889076141748
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 120,
+          "player": [
+            -87.50000000000014,
+            149.33333333333408,
+            1.5707963267948966
+          ],
+          "camera": [
+            -85.98395595734844,
+            6.131808229485986,
+            163.17757104717296
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 150,
+          "player": [
+            -85.00000000000028,
+            149.33333333333408,
+            1.5707963267948966
+          ],
+          "camera": [
+            -83.49323761182582,
+            6.127936484380116,
+            163.1899704952323
+          ],
+          "hp": 100
+        },
+        {
+          "frame": 180,
+          "player": [
+            -82.50000000000043,
+            149.33333333333408,
+            1.5707963267948966
+          ],
+          "camera": [
+            -80.99336796085397,
+            6.1278620871038205,
+            163.1902250647553
+          ],
+          "hp": 100
+        }
+      ],
+      "raf": {
+        "samples": 179,
+        "p95": 16.799999999995634,
+        "max": 18.099999999998545
+      },
+      "render": {
+        "calls": 263,
+        "triangles": 1593422,
+        "textures": 21
+      },
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        675
+      ],
+      "glError": 0,
+      "scope": "Declared locations/quest6/camp fixture; production movePlayer/tick/draw and unmodified follow camera. No saves/audio/normal journey, full cast closeups, GPU, physical device or quality acceptance. Fixed 1/60 simulation step; measured rAF is only scheduling."
+    }
+  ],
+  "tests": {
+    "focused": 22,
+    "full": 249
+  },
+  "scope": "Same production follow camera, state, draw counts and CPU geometry budget. Four biome noon stills, camp day/night, bounded 180-frame motion. No terrain/actor redesign, complete art quality, audition, physical phone, current-source GPU/endurance or new package delivery claim."
+}

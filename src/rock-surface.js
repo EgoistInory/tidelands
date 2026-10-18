@@ -32,14 +32,18 @@ export function createRockSurface({loader,anisotropy=1}={}){
       shader.fragmentShader='varying vec2 rockUV;uniform sampler2D rockAlbedo;uniform float rockReady;uniform float rockEnabled;\n'+shader.fragmentShader
         .replace('#include <color_fragment>',`#include <color_fragment>
           float rockBlend=rockReady*rockEnabled;
-          diffuseColor.rgb=mix(diffuseColor.rgb,texture2D(rockAlbedo,rockUV).rgb,rockBlend);`)
+          vec3 rockDetail=texture2D(rockAlbedo,rockUV).rgb;
+          float rockValue=dot(rockDetail,vec3(.2126,.7152,.0722));
+          vec3 rockChroma=rockDetail/max(rockValue,.025);
+          vec3 stoneColor=diffuseColor.rgb*mix(vec3(1.),rockChroma,.18)*clamp(.70+rockValue*.75,.70,1.25);
+          diffuseColor.rgb=mix(diffuseColor.rgb,stoneColor,rockBlend);`)
         .replace('#include <roughnessmap_fragment>',THREE.ShaderChunk.roughnessmap_fragment.replace('roughnessFactor *= texelRoughness.g;','roughnessFactor *= mix(1.,texelRoughness.g,rockBlend);'))
         .replace('#include <normal_fragment_maps>',`
           vec3 rockNormal=texture2D(normalMap,vNormalMapUv).xyz*2.-1.;
           rockNormal.xy*=normalScale;
           normal=normalize(mix(normal,normalize(tbn*rockNormal),rockBlend));`);
     };
-    material.customProgramCacheKey=()=> 'tidelands-rock-cc0-v1';material.needsUpdate=true;
+    material.customProgramCacheKey=()=> 'tidelands-rock-cc0-value-v2';material.needsUpdate=true;
     return loaded;
   };
   material.userData.rock={state,loaded,textures,load,enabled,ready};

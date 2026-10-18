@@ -3,6 +3,10 @@ import {createRockSurface} from './rock-surface.js';
 
 const surface=createRockSurface();
 const dark=new THREE.Color(0x7f847c),light=new THREE.Color(0xb3afa0),moss=new THREE.Color(0x657554);
+const faces=[
+  [1,0,0,.84],[-1,0,0,.89],[0,1,0,.82],[0,-1,0,.86],[0,0,1,.81],[0,0,-1,.90],
+  ...[-1,1].flatMap(x=>[-1,1].flatMap(y=>[-1,1].map(z=>[x/Math.sqrt(3),y/Math.sqrt(3),z/Math.sqrt(3),.91+(x*z>0?.02:0)]))),
+];
 
 export function initializeRockSurface({loader=new THREE.TextureLoader(),anisotropy=1}={}){
   surface.userData.rock.load(loader,anisotropy);return surface;
@@ -13,7 +17,16 @@ export function createWeatheredRock(radius){
   // Whole tiles meet across the longitude seam; vertical density follows radius.
   const uvWidth=Math.max(1,Math.round(Math.PI*radius))/Math.PI;
   const colors=[],direction=new THREE.Vector3(),axis=new THREE.Vector3(),a=new THREE.Vector3(),b=new THREE.Vector3();
-  const point=n=>n.clone().multiplyScalar(radius*(.88+.05*Math.sin(n.x*4.3+n.z*2.7)+.04*Math.cos(n.y*5.1-n.x*1.9)));
+  const point=n=>{
+    let reach=.97;
+    for(const [x,y,z,offset] of faces){
+      const facing=n.x*x+n.y*y+n.z*z;if(facing<=0)continue;
+      const limit=offset/facing,blend=THREE.MathUtils.clamp(.5+.5*(limit-reach)/.025,0,1);
+      // A narrow bevel joins broad mineral faces without changing the enclosing sphere.
+      reach=THREE.MathUtils.lerp(limit,reach,blend)-.025*blend*(1-blend);
+    }
+    return n.clone().multiplyScalar(radius*reach);
+  };
   for(let i=0;i<positions.count;i++){
     direction.fromBufferAttribute(positions,i).normalize();
     const p=point(direction);

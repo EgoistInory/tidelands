@@ -86,6 +86,7 @@ export const TREE_CROWN_ANCHORS=Array.from({length:7},(_,i)=>[Math.cos(i*2.399)*
 // One mesh is instanced across the world; individual leaves add no draw calls.
 export function createCanopy({anchors=TREE_CROWN_ANCHORS,seed=3517,leavesPerCluster=96,spread=1,verticalScale=1,leafScale=1,needles=false}={}){
   const random=randomGenerator(seed),positions=[],uv=[],colors=[],point=new THREE.Vector3(),rotation=new THREE.Quaternion();
+  const low=Math.min(...anchors.map(a=>a[1]))-1.5*verticalScale,high=Math.max(...anchors.map(a=>a[1]))+1.5*verticalScale;
   for(let cluster=0;cluster<anchors.length;cluster++){
     const angle=cluster*2.399,[ax,cy,az]=anchors[cluster];
     for(let leaf=0;leaf<leavesPerCluster;leaf++){
@@ -94,7 +95,7 @@ export function createCanopy({anchors=TREE_CROWN_ANCHORS,seed=3517,leavesPerClus
       const cx=ax+Math.cos(phi)*horizontal*radius*1.1*spread;
       const y=cy+height*radius*(.77+(cluster%2)*.2)*verticalScale,cz=az+Math.sin(phi)*horizontal*radius*.95*spread;
       rotation.setFromEuler(new THREE.Euler(-.35-random()*1.15,angle+(random()-.5)*1.8,(random()-.5)*1.4));
-      const w=(.65+random()*.35)*leafScale,h=(.35+random()*.2)*leafScale,tone=.65+random()*.30+.07*THREE.MathUtils.clamp((y-3)/7,0,1);
+      const w=(.65+random()*.35)*leafScale,h=(.35+random()*.2)*leafScale,tone=.52+random()*.14+.40*THREE.MathUtils.clamp((y-low)/(high-low),0,1);
       for(const [x,z,s,t] of [[-.5,-.5,0,0],[.5,-.5,1,0],[.5,.5,1,1],[-.5,-.5,0,0],[.5,.5,1,1],[-.5,.5,0,1]]){
         point.set(x*w,z*h,0).applyQuaternion(rotation).add(new THREE.Vector3(cx,y,cz));
         positions.push(point.x,point.y,point.z);uv.push(s,t);colors.push(tone*.9,tone,tone*.88);

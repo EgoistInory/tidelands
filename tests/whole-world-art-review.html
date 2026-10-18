@@ -1,0 +1,36 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>整场美术与全身动作对照</title>
+<style>html,body{margin:0;height:100%;background:#192723;color:#eee;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:8px;display:flex;gap:8px;flex-wrap:wrap}button,select{font:inherit;padding:6px}output{height:92px;overflow:auto;overflow-wrap:anywhere}canvas{flex:1;min-height:0;width:100%}</style>
+<nav>生产世界/生产跟随镜头 · 声明位置及三建筑fixture · 无存档 <select id="scene"><option value="coast">海岸</option><option value="forest">林地</option><option value="highland">高地</option><option value="shoal">浅滩</option><option value="camp">营地</option></select><select id="light"><option value="240">正午</option><option value="360">黄昏</option><option value="0">午夜</option></select><button id="run" disabled>生产移动与转向180帧</button></nav>
+<output>准备…</output><canvas aria-label="整场构图和全身运动诊断，不是主线验收"></canvas>
+<script type="module">
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain,weatherAt} from '../src/world.js';
+import {freshGame,movePlayer,tick,nearest} from '../src/game.js';
+const world=createWorld(),canvas=document.querySelector('canvas'),view=new WorldView(canvas,world),out=document.querySelector('output');
+const places={coast:[-90,140],forest:[132,-26],highland:[-75,-205],shoal:[190,248],camp:[-56,49]};
+let state,frames=0,running=false,moving=false,hidden=false,previous=null,intervals=[],distance=0,start,poses=[];
+function draw(){
+  view.draw(state,nearest(state,world.objects),null,moving,1/60);
+  const sorted=[...intervals].sort((a,b)=>a-b),p=state.player,info=view.renderer.info;
+  out.textContent=JSON.stringify({ready:true,scene:document.querySelector('#scene').value,startTime:Number(document.querySelector('#light').value),time:state.time,weather:weatherAt(state.time),frames,running,hidden,start,position:[p.x,p.z],height:terrain(p.x,p.z),distance,hp:p.hp,camera:view.camera.position.toArray(),poses,raf:sorted.length?{samples:sorted.length,p95:sorted[Math.floor(sorted.length*.95)],max:sorted.at(-1)}:null,render:{calls:info.render.calls,triangles:info.render.triangles,textures:info.memory.textures},viewport:[innerWidth,innerHeight],buffer:[canvas.width,canvas.height],glError:view.renderer.getContext().getError(),scope:'Declared locations/quest6/camp fixture; production movePlayer/tick/draw and unmodified follow camera. No saves/audio/normal journey, full cast closeups, GPU, physical device or quality acceptance. Fixed 1/60 simulation step; measured rAF is only scheduling.'});
+}
+function reset(){
+  const [x,z]=places[document.querySelector('#scene').value];state=freshGame();Object.assign(state.player,{x,z});state.time=Number(document.querySelector('#light').value);state.quest=6;
+  if(document.querySelector('#scene').value==='camp')state.buildings=[{id:'art-fire',type:'campfire',x:-56,z:56},{id:'art-tent',type:'tent',x:-65,z:49},{id:'art-bench',type:'workbench',x:-47,z:49}];
+  start=[x,z];frames=0;moving=false;hidden=false;previous=null;intervals=[];distance=0;poses=[];view.yaw=.15;view.player.userData.lastPosition=null;view.player.userData.worldFeet=null;view.camera.position.set(x+5,Math.max(terrain(x,z),0)+12,z+20);view.sync(state);for(let i=0;i<60;i++)draw();
+}
+document.querySelector('#run').onclick=()=>{
+  running=true;document.querySelectorAll('button,select').forEach(e=>e.disabled=true);
+  function frame(now){
+    if(previous!==null)intervals.push(now-previous);previous=now;hidden||=document.hidden;
+    const p=state.player,before=[p.x,p.z],angle=frames<90?0:Math.PI/2;
+    movePlayer(state,world.objects,Math.sin(angle),Math.cos(angle),1/60,false);const moved=Math.hypot(p.x-before[0],p.z-before[1]);moving=moved>.001;distance+=moved;tick(state,1/60,false,null,world.objects);view.sync(state);frames++;draw();
+    if(frames%30===0)poses.push({frame:frames,player:[p.x,p.z,p.yaw],camera:view.camera.position.toArray(),hp:p.hp});
+    if(frames<180)requestAnimationFrame(frame);else{running=false;moving=false;draw();document.querySelectorAll('button,select').forEach(e=>e.disabled=false);}
+  }requestAnimationFrame(frame);
+};
+for(const s of document.querySelectorAll('select'))s.onchange=reset;
+Promise.all([view.groundSurface.userData.ground.loaded,view.groundSurface.userData.ground.sand.loaded,view.rockSurface.userData.rock.loaded]).then(()=>{reset();document.querySelector('#run').disabled=false;}).catch(error=>{out.textContent='加载失败：'+error.message;console.error(error);});
+window.addEventListener('resize',()=>{view.resize();if(state&&!running)draw();});
+window.addEventListener('pagehide',()=>{view.contactShade.dispose();view.renderer.dispose();});
+</script></html>

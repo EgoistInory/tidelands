@@ -1,0 +1,134 @@
+{
+  "sources": {
+    "src/action-timing.js": "fb94324d1ff0675e88b44ed241fa9ce4667cf9a1e944ca56c10a79cb0ea7099d",
+    "src/actor-contact.js": "76eced7c3ac2bb41ea28011ee324ae0842775bc1dca1377e72963644cbfcba4f",
+    "src/audio.js": "a6a2389758c10f73fc1b4e912b65c2d5ddaf271f2240cc1c6c79fa9859be5837",
+    "src/camera.js": "a2f696abdc34ac0e2cfdb8cbed02b40e0823398f593f13c9ab58e2bd21204aac",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character-head.js": "081f3f9a67c3b8c264004b3c9d5352e9a23a75262e20d6e179e48927b9b3d413",
+    "src/character.js": "290e2e33daf59fa6c0717ca6162ff989919cae3b947a6c21c9005e098e19649f",
+    "src/contact-shade.js": "850e369efa536ffae51afc404734459502362bb05875bb3a510a223dbc9029dc",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature-footing.js": "71707700f33b00c293c660cb958b4c83c97b8b74086064fbaccccec05cfa615b",
+    "src/creature.js": "f2700947499cd56eb0d67675f7fc461849994fe8eda3d7370cee8222a8be00ed",
+    "src/crystal.js": "1f4191077b07bc551dd5bb59397f404e0d0cde15c7aa2f30bc27e1f098d4c3cb",
+    "src/foliage.js": "28a688f2939d62f5b26ca66fd5e144e695a25a9da61b40e4785bab50ec425893",
+    "src/game.js": "1f409fb864f13677d57e5aa9f4d9afa727e01794951b295f94fd978be8a34274",
+    "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+    "src/landscape.js": "2da378df008317a0a9d3c6bc53430067c3b57a5439515bf0080ac408476f4108",
+    "src/lighthouse.js": "b134e4d6a593723b93267c8963ed1ab77d6a6112e31523689451333481ff8091",
+    "src/main.js": "9b3fd782512a39a1eb1d565129f156241778d9be0f135acb72fdf7e737d065ac",
+    "src/meadow.js": "027735713a4d963a7aee39688bc7b54c32d690f53df81c8986c1fde88e523a20",
+    "src/merge-parts.js": "fa67b9162fcbb07d7f177a8855d42d56f8faf4f087c938c5997af0c87eac802f",
+    "src/movement-heading.js": "338f5d4063575847e9c17a60b9e6999b21744012b95e6096cfae531136ddd976",
+    "src/pointer-controls.js": "b92d43d36099f1a444b1635a050c9dc3dd67709fcaebe33d4fca09501cdd650f",
+    "src/resource-contact.js": "c08203f3ae4b52c71d87898f279522d1a49d0fb625a3151223db4ec02ee7dd0b",
+    "src/rock-surface.js": "65854c61dec285c8c9ae1e010610b47d8ddeb31c428fd7fd1358983002182673",
+    "src/rock.js": "35a9e37e71c4c92efc2e4914839873ad7e3a9a822b38531d843945ba156a3a9a",
+    "src/ruin-layout.js": "546990987a222bd223d8a489c75054340f5b829518805eb562fd0493a8e38240",
+    "src/ruin.js": "a246871499788f118c41aa5b8a31c08c3e9c7f9a7cd32a3e8dd4ed2a4b75414c",
+    "src/scene.js": "079e292b4b3ffefcb700dbdbed57d8d426506eb8033c8e1d159654d6f23f0c00",
+    "src/sky.js": "e83f0d3ce196d44b214a608f09f0763ca33caa10c2d3ed671579b508effa75d4",
+    "src/startup-textures.js": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd",
+    "src/textile.js": "409b2ccf20dcbd8005e2d220404c358d5d39e1a7c6533db0bb80692cc85a69fb",
+    "src/tree.js": "2a74ce682a6b566458965656b98df17e135e23a656c768894c0cb689de3aaffe",
+    "src/world.js": "1a75cec458f0594f98ebca5d6162a31d825d9cf5f0daf902c9e912242b035392"
+  },
+  "worldSha256": "0511368ee8ba264043545b63749eda9cbb2084ba342d4ea4c365ff151d1582ec",
+  "trees": {
+    "coast": {
+      "triangles": 2736,
+      "bytes": 217760,
+      "leafVertices": 4032,
+      "lowerValue": 0.6865899334587748,
+      "upperValue": 0.892091529591689,
+      "bounds": [
+        [
+          -3.6526784610748293,
+          3.368388681411743,
+          -2.9929411125183107
+        ],
+        [
+          3.5222425174713137,
+          10.004579277038575,
+          2.889848442077637
+        ]
+      ]
+    },
+    "forest": {
+      "triangles": 3672,
+      "bytes": 314256,
+      "leafVertices": 6048,
+      "lowerValue": 0.672587123260927,
+      "upperValue": 0.90688692632491,
+      "bounds": [
+        [
+          -4.992266864776611,
+          3.893147735595703,
+          -4.5240366172790525
+        ],
+        [
+          4.710949153900146,
+          9.962982864379883,
+          4.66339370727539
+        ]
+      ]
+    },
+    "highland": {
+      "triangles": 3036,
+      "bytes": 225864,
+      "leafVertices": 4032,
+      "lowerValue": 0.6426572864727368,
+      "upperValue": 0.9414966686495713,
+      "bounds": [
+        [
+          -3.25110408782959,
+          3.7678113269805906,
+          -3.643874378204346
+        ],
+        [
+          3.7790267181396486,
+          9.09614917755127,
+          2.953982086181641
+        ]
+      ]
+    },
+    "shoal": {
+      "triangles": 2736,
+      "bytes": 217760,
+      "leafVertices": 4032,
+      "lowerValue": 0.7079518208546298,
+      "upperValue": 0.8632179633492515,
+      "bounds": [
+        [
+          -3.2153742027282717,
+          5.298035411834717,
+          -3.974812240600586
+        ],
+        [
+          5.349520893096924,
+          8.473398895263673,
+          3.8357658100128176
+        ]
+      ]
+    }
+  },
+  "rock": {
+    "triangles": 320,
+    "upperFaceSamples": 30,
+    "upperFaceHeightRange": 0,
+    "bounds": [
+      [
+        -1.6019999980926514,
+        -1.5479999780654907,
+        -1.6200000047683716
+      ],
+      [
+        1.5119999647140503,
+        1.4759999513626099,
+        1.4579999446868896
+      ]
+    ]
+  },
+  "scope": "CPU geometry/value probes and exact source fingerprints, not rendered appearance, GPU, physical contact or full quality acceptance."
+}
