@@ -1,0 +1,154 @@
+TAP version 13
+# Subtest: four regional tree forms have distinct geometry with rooted trunks and open walking space
+ok 1 - four regional tree forms have distinct geometry with rooted trunks and open walking space
+  ---
+  duration_ms: 290.152208
+  type: 'test'
+  ...
+# Subtest: leaf mip chains retain a visible subpixel crown and share the exact shadow map
+ok 2 - leaf mip chains retain a visible subpixel crown and share the exact shadow map
+  ---
+  duration_ms: 2.795917
+  type: 'test'
+  ...
+# Subtest: grove resources preserve every existing node and enemy and keep landmark approaches open
+ok 3 - grove resources preserve every existing node and enemy and keep landmark approaches open
+  ---
+  duration_ms: 12.327167
+  type: 'test'
+  ...
+# Subtest: regional instance batches use their own bounds, and new grove nodes gather and survive save restore
+ok 4 - regional instance batches use their own bounds, and new grove nodes gather and survive save restore
+  ---
+  duration_ms: 963.549292
+  type: 'test'
+  ...
+# Subtest: the exposed shoal grove keeps subject distance by finding clear space below the crown
+ok 5 - the exposed shoal grove keeps subject distance by finding clear space below the crown
+  ---
+  duration_ms: 802.147541
+  type: 'test'
+  ...
+# Subtest: low shoal crowns leave a six metre ray at the exposed moving corner
+ok 6 - low shoal crowns leave a six metre ray at the exposed moving corner
+  ---
+  duration_ms: 706.987125
+  type: 'test'
+  ...
+# Subtest: fern fronds remain rooted, deterministic and finite with bounded leaf geometry
+ok 7 - fern fronds remain rooted, deterministic and finite with bounded leaf geometry
+  ---
+  duration_ms: 6.885708
+  type: 'test'
+  ...
+# Subtest: forest cover clusters beside trees without changing resources, routes or deterministic placement
+ok 8 - forest cover clusters beside trees without changing resources, routes or deterministic placement
+  ---
+  duration_ms: 742.919292
+  type: 'test'
+  ...
+# Subtest: production scenery includes nearby ferns and recovers them after distance culling
+ok 9 - production scenery includes nearby ferns and recovers them after distance culling
+  ---
+  duration_ms: 1060.739708
+  type: 'test'
+  ...
+# Subtest: highland summit becomes an asymmetric saddle with two distinct shoulders
+ok 10 - highland summit becomes an asymmetric saddle with two distinct shoulders
+  ---
+  duration_ms: 0.61175
+  type: 'test'
+  ...
+# Subtest: ridge shape keeps shorelines, other islands and landmark foundations exact
+ok 11 - ridge shape keeps shorelines, other islands and landmark foundations exact
+  ---
+  duration_ms: 36.005542
+  type: 'test'
+  ...
+# Subtest: ridge height changes remain continuous and resource placement stays on authoritative ground
+ok 12 - ridge height changes remain continuous and resource placement stays on authoritative ground
+  ---
+  duration_ms: 168.810333
+  type: 'test'
+  ...
+# Subtest: landform preparation preserves every existing resource and enemy identity
+ok 13 - landform preparation preserves every existing resource and enemy identity
+  ---
+  duration_ms: 17.649167
+  type: 'test'
+  ...
+# Subtest: an isolated highland height change cannot reshuffle saved resource IDs
+ok 14 - an isolated highland height change cannot reshuffle saved resource IDs
+  ---
+  duration_ms: 283.433791
+  type: 'test'
+  ...
+# Subtest: four island surfaces distinguish warm dunes, woodland litter and exposed upland rock
+ok 15 - four island surfaces distinguish warm dunes, woodland litter and exposed upland rock
+  ---
+  duration_ms: 26.207958
+  type: 'test'
+  ...
+# Subtest: shore stones are deterministic shallow dressing and preserve resources, enemies and routes
+ok 16 - shore stones are deterministic shallow dressing and preserve resources, enemies and routes
+  ---
+  duration_ms: 193.980708
+  type: 'test'
+  ...
+# Subtest: regional tree presentation varies crowns without widening resource contact footprints
+ok 17 - regional tree presentation varies crowns without widening resource contact footprints
+  ---
+  duration_ms: 0.365875
+  type: 'test'
+  ...
+# Subtest: curved grass and petals have finite normals, nondegenerate faces and bounded sway
+ok 18 - curved grass and petals have finite normals, nondegenerate faces and bounded sway
+  ---
+  duration_ms: 15.737959
+  type: 'test'
+  ...
+# Subtest: region culling preserves all original grass transforms and random sequence
+ok 19 - region culling preserves all original grass transforms and random sequence
+  ---
+  duration_ms: 659.956667
+  type: 'test'
+  ...
+# Subtest: grass and flowers share the game clock for rooted vertex sway
+ok 20 - grass and flowers share the game clock for rooted vertex sway
+  ---
+  duration_ms: 0.742041
+  type: 'test'
+  ...
+# Subtest: dense patches stay on gentle land with shared geometry and per-patch tint
+ok 21 - dense patches stay on gentle land with shared geometry and per-patch tint
+  ---
+  duration_ms: 594.010625
+  type: 'test'
+  ...
+# Subtest: near patch batches cull beyond the fade range and recover after the camera returns
+ok 22 - near patch batches cull beyond the fade range and recover after the camera returns
+  ---
+  duration_ms: 454.157833
+  type: 'test'
+  ...
+# Subtest: coastal tufts stay above waves on gentle sand across all islands and cull at distance
+ok 23 - coastal tufts stay above waves on gentle sand across all islands and cull at distance
+  ---
+  duration_ms: 431.098875
+  type: 'test'
+  ...
+# Subtest: sprinting down the exposed highland slope does not collapse the pelvis to reach an airborne foot
+ok 24 - sprinting down the exposed highland slope does not collapse the pelvis to reach an airborne foot
+  ---
+  duration_ms: 309.792917
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2869.506666

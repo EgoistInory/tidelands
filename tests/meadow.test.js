@@ -34,11 +34,15 @@ test('region culling preserves all original grass transforms and random sequence
       assert.ok(batch.boundingBox.containsBox(bounds));
       const sphere=batch.geometry.boundingSphere.clone().applyMatrix4(matrix);
       assert.ok(sphere.center.distanceTo(batch.boundingSphere.center)+sphere.radius<=batch.boundingSphere.radius+1e-4);
-      if(batch.name==='meadow-grass')grass.push([...matrix.elements]);
+      if(batch.name==='meadow-grass'){
+        const row=[...matrix.elements];
+        assert.ok(Math.abs(row[13]-(terrain(row[12],row[14])-.04))<.0001,'grass roots follow current authoritative ground');
+        row[13]=0;grass.push(row);
+      }
     }
   }
   assert.equal(grass.length,22595);grass.sort((a,b)=>a[12]-b[12]||a[14]-b[14]);
-  assert.equal(createHash('sha256').update(JSON.stringify(grass)).digest('hex'),'edd3e9c7927a4a6a072e80bc9add5d20230288837ceac1d15aa468ee7766fad2');
+  assert.equal(createHash('sha256').update(JSON.stringify(grass)).digest('hex'),'249083de872bcaadb2ce1162c8c5d4635b2d11871df73d73205619922116e44e');
   assert.equal(random(),.67249841010198);
   for(const name of ['meadow-grass','meadow-flowers'])assert.equal(new Set(batches.filter(b=>b.name===name).map(b=>b.geometry)).size,1);
 });

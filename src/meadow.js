@@ -1,5 +1,5 @@
 import * as THREE from '../vendor/three.module.min.js';
-import {terrain,LANDMARKS,SPAWN,ISLANDS,randomGenerator} from './world.js';
+import {terrain,layoutTerrain,LANDMARKS,SPAWN,ISLANDS,randomGenerator} from './world.js';
 
 const windTime={value:0};
 const windStrength={value:1};
@@ -210,16 +210,19 @@ function createGroundCover(){
   const random=randomGenerator(19541),dummy=new THREE.Object3D(),matrices=[],colors=[],keeper=LANDMARKS.find(o=>o.id==='keeper'),cottage=LANDMARKS.find(o=>o.id==='cottage');
   for(let patch=0;patch<850;patch++){
     const cx=random()*590-295,cz=random()*650-325,radius=3+random()*4;
-    if(terrain(cx,cz)<3.5||terrain(cx,cz)>30)continue;
+    if(layoutTerrain(cx,cz)<3.5||layoutTerrain(cx,cz)>30)continue;
     const tone=new THREE.Color().setRGB(.78+random()*.22,.82+random()*.18,.68+random()*.2);
     for(let i=0;i<600;i++){
-      const angle=random()*Math.PI*2,r=Math.pow(random(),.65)*radius,x=cx+Math.cos(angle)*r,z=cz+Math.sin(angle)*r,y=terrain(x,z);
+      const angle=random()*Math.PI*2,r=Math.pow(random(),.65)*radius,x=cx+Math.cos(angle)*r,z=cz+Math.sin(angle)*r,y=layoutTerrain(x,z);
       if(random()<Math.pow(r/radius,3))continue;
-      const slope=Math.hypot(terrain(x+.5,z)-terrain(x-.5,z),terrain(x,z+.5)-terrain(x,z-.5));
+      const slope=Math.hypot(layoutTerrain(x+.5,z)-layoutTerrain(x-.5,z),layoutTerrain(x,z+.5)-layoutTerrain(x,z-.5));
       if(y<3.5||y>30||slope>.55||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<(o.id==='cottage'?8:6))||pathDistance(x,z,SPAWN,keeper)<1.7||pathDistance(x,z,keeper,cottage)<1.7)continue;
       const scale=.5+random()*.65;
-      dummy.position.set(x,y-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);dummy.scale.set(scale,scale*(.7+random()*.6),scale);dummy.updateMatrix();
-      matrices.push(dummy.matrix.clone());colors.push(tone.clone().multiplyScalar(.85+random()*.15));
+      dummy.position.set(x,terrain(x,z)-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);dummy.scale.set(scale,scale*(.7+random()*.6),scale);dummy.updateMatrix();
+      const color=tone.clone().multiplyScalar(.85+random()*.15),currentHeight=terrain(x,z);
+      // Consume the original draws before clipping new steep ground, preserving distant patches.
+      if(currentHeight<3.5||currentHeight>30||Math.hypot(terrain(x+.5,z)-terrain(x-.5,z),terrain(x,z+.5)-terrain(x,z-.5))>.55)continue;
+      matrices.push(dummy.matrix.clone());colors.push(color);
     }
   }
   const model=createGrassClump();model.material=groundCoverSurface();
@@ -231,14 +234,14 @@ function createShoreCover(){
   const random=randomGenerator(26081),dummy=new THREE.Object3D(),matrices=[],colors=[];
   for(let patch=0;patch<2400;patch++){
     const cx=random()*590-295,cz=random()*650-325,radius=1.5+random()*2.5;
-    if(terrain(cx,cz)<.55||terrain(cx,cz)>2.4)continue;
+    if(layoutTerrain(cx,cz)<.55||layoutTerrain(cx,cz)>2.4)continue;
     const tone=new THREE.Color().setRGB(.85+random()*.15,.85+random()*.15,.78+random()*.16);
     for(let i=0;i<24;i++){
-      const angle=random()*Math.PI*2,r=Math.sqrt(random())*radius,x=cx+Math.cos(angle)*r,z=cz+Math.sin(angle)*r,y=terrain(x,z);
-      const slope=Math.hypot(terrain(x+.5,z)-terrain(x-.5,z),terrain(x,z+.5)-terrain(x,z-.5));
+      const angle=random()*Math.PI*2,r=Math.sqrt(random())*radius,x=cx+Math.cos(angle)*r,z=cz+Math.sin(angle)*r,y=layoutTerrain(x,z);
+      const slope=Math.hypot(layoutTerrain(x+.5,z)-layoutTerrain(x-.5,z),layoutTerrain(x,z+.5)-layoutTerrain(x,z-.5));
       if(y<.55||y>2.4||slope>.45||random()<r/radius*.5||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<8))continue;
       const scale=.65+random()*.65;
-      dummy.position.set(x,y-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);dummy.scale.set(scale,scale*(.7+random()*.4),scale);dummy.updateMatrix();
+      dummy.position.set(x,terrain(x,z)-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);dummy.scale.set(scale,scale*(.7+random()*.4),scale);dummy.updateMatrix();
       matrices.push(dummy.matrix.clone());colors.push(tone);
     }
   }
@@ -249,16 +252,16 @@ function createShoreCover(){
 export function createForestCover(objects){
   const random=randomGenerator(48271),dummy=new THREE.Object3D(),matrices=[],colors=[],occupied=new Map();
   const keeper=LANDMARKS.find(o=>o.id==='keeper'),cottage=LANDMARKS.find(o=>o.id==='cottage');
-  for(const tree of objects.filter(o=>o.type==='tree'&&o.y>=3.5&&o.y<=28)){
+  for(const tree of objects.filter(o=>o.type==='tree'&&layoutTerrain(o.x,o.z)>=3.5&&layoutTerrain(o.x,o.z)<=28)){
     const biome=ISLANDS.reduce((a,b)=>Math.hypot(tree.x-a.x,tree.z-a.z)/a.r<Math.hypot(tree.x-b.x,tree.z-b.z)/b.r?a:b);
     const kind=ISLANDS.indexOf(biome),density=[9,18,5,6][kind],tone=new THREE.Color([0xa2b39a,0x91ae91,0xacae9d,0xc3b58c][kind]);
     for(let patch=0;patch<4;patch++){
       const angle=random()*Math.PI*2,distance=2.3+random()*3.8*tree.scale;
       const cx=tree.x+Math.cos(angle)*distance,cz=tree.z+Math.sin(angle)*distance,radius=1.5+random()*1.5;
       for(let plant=0;plant<density;plant++){
-        const a=random()*Math.PI*2,r=Math.sqrt(random())*radius,x=cx+Math.cos(a)*r,z=cz+Math.sin(a)*r,y=terrain(x,z);
+        const a=random()*Math.PI*2,r=Math.sqrt(random())*radius,x=cx+Math.cos(a)*r,z=cz+Math.sin(a)*r,y=layoutTerrain(x,z);
         const gx=Math.floor(x),gz=Math.floor(z);
-        const slope=Math.hypot(terrain(x+.5,z)-terrain(x-.5,z),terrain(x,z+.5)-terrain(x,z-.5));
+        const slope=Math.hypot(layoutTerrain(x+.5,z)-layoutTerrain(x-.5,z),layoutTerrain(x,z+.5)-layoutTerrain(x,z-.5));
         if(y<3.5||y>28||slope>.6||Math.hypot(x-SPAWN.x,z-SPAWN.z)<7||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<(o.id==='cottage'?9:7))||pathDistance(x,z,SPAWN,keeper)<2.5||pathDistance(x,z,keeper,cottage)<2.5)continue;
         if(objects.some(o=>['tree','stone','crystal'].includes(o.type)&&Math.hypot(x-o.x,z-o.z)<(o.type==='tree'?1.1:2.8)*o.scale+.4))continue;
         let crowded=false;
@@ -266,8 +269,10 @@ export function createForestCover(objects){
         if(crowded)continue;
         const cell=`${gx},${gz}`;if(!occupied.has(cell))occupied.set(cell,[]);occupied.get(cell).push([x,z]);
         const scale=.8+random()*.6;
-        dummy.position.set(x,y-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);dummy.scale.set(scale,scale*(.75+random()*.25),scale);dummy.updateMatrix();
-        matrices.push(dummy.matrix.clone());colors.push(tone.clone().multiplyScalar(.88+random()*.12));
+        dummy.position.set(x,terrain(x,z)-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);dummy.scale.set(scale,scale*(.75+random()*.25),scale);dummy.updateMatrix();
+        const color=tone.clone().multiplyScalar(.88+random()*.12),currentHeight=terrain(x,z);
+        if(currentHeight<3.5||currentHeight>28||Math.hypot(terrain(x+.5,z)-terrain(x-.5,z),terrain(x,z+.5)-terrain(x,z-.5))>.6)continue;
+        matrices.push(dummy.matrix.clone());colors.push(color);
       }
     }
   }
@@ -277,13 +282,13 @@ export function createForestCover(objects){
 export function createMeadow(random=randomGenerator(4321),objects=[]){
   const dummy=new THREE.Object3D(),flowers=[],grass=[];
   for(let i=0;i<3000&&flowers.length<1200;i++){
-    const x=random()*440-260,z=random()*450-290,y=terrain(x,z);if(y<2||y>28)continue;
-    dummy.position.set(x,y-.035,z);dummy.rotation.set(0,random()*6,0);dummy.scale.setScalar(.6+random()*.8);dummy.updateMatrix();flowers.push(dummy.matrix.clone());
+    const x=random()*440-260,z=random()*450-290,y=layoutTerrain(x,z);if(y<2||y>28)continue;
+    dummy.position.set(x,terrain(x,z)-.035,z);dummy.rotation.set(0,random()*6,0);dummy.scale.setScalar(.6+random()*.8);dummy.updateMatrix();flowers.push(dummy.matrix.clone());
   }
   for(let i=0;i<85000&&grass.length<26000;i++){
-    const x=random()*590-295,z=random()*650-325,y=terrain(x,z);
+    const x=random()*590-295,z=random()*650-325,y=layoutTerrain(x,z);
     if(y<2.4||y>33||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<5)||Math.sin(x*.11)*Math.cos(z*.13)<-.5)continue;
-    dummy.position.set(x,y-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);dummy.scale.setScalar(.7+random()*.9);dummy.updateMatrix();grass.push(dummy.matrix.clone());
+    dummy.position.set(x,terrain(x,z)-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);dummy.scale.setScalar(.7+random()*.9);dummy.updateMatrix();grass.push(dummy.matrix.clone());
   }
   return [...regionBatches(createWildflower(),flowers,'meadow-flowers'),...regionBatches(createGrassClump(),grass,'meadow-grass'),...createGroundCover(),...createShoreCover(),...createForestCover(objects)];
 }

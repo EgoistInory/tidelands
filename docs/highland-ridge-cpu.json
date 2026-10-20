@@ -1,0 +1,110 @@
+{
+  "reference": "67b9cc5",
+  "sources": {
+    "src/action-timing.js": "fb94324d1ff0675e88b44ed241fa9ce4667cf9a1e944ca56c10a79cb0ea7099d",
+    "src/actor-contact.js": "76eced7c3ac2bb41ea28011ee324ae0842775bc1dca1377e72963644cbfcba4f",
+    "src/audio.js": "a6a2389758c10f73fc1b4e912b65c2d5ddaf271f2240cc1c6c79fa9859be5837",
+    "src/body-motion.js": "48952cd92f0856612830dc4fb72ec17d433b1df6572188a483b948fd65cf5c4e",
+    "src/camera.js": "a2f696abdc34ac0e2cfdb8cbed02b40e0823398f593f13c9ab58e2bd21204aac",
+    "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d",
+    "src/character-head.js": "081f3f9a67c3b8c264004b3c9d5352e9a23a75262e20d6e179e48927b9b3d413",
+    "src/character.js": "9fe5c38508ef05aac8d02487f206bc4b48afe14dd7b518d4dd9483cb802d39a1",
+    "src/contact-shade.js": "850e369efa536ffae51afc404734459502362bb05875bb3a510a223dbc9029dc",
+    "src/cottage-surfaces.js": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a",
+    "src/creature-footing.js": "71707700f33b00c293c660cb958b4c83c97b8b74086064fbaccccec05cfa615b",
+    "src/creature.js": "399a7d89f6a047807a42658e4d1e0e6a771051becafe39ca700eb16b7223c863",
+    "src/crystal.js": "1f4191077b07bc551dd5bb59397f404e0d0cde15c7aa2f30bc27e1f098d4c3cb",
+    "src/foliage.js": "28a688f2939d62f5b26ca66fd5e144e695a25a9da61b40e4785bab50ec425893",
+    "src/game.js": "1f409fb864f13677d57e5aa9f4d9afa727e01794951b295f94fd978be8a34274",
+    "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+    "src/landscape.js": "2da378df008317a0a9d3c6bc53430067c3b57a5439515bf0080ac408476f4108",
+    "src/lighthouse.js": "b134e4d6a593723b93267c8963ed1ab77d6a6112e31523689451333481ff8091",
+    "src/main.js": "9b3fd782512a39a1eb1d565129f156241778d9be0f135acb72fdf7e737d065ac",
+    "src/meadow.js": "db48887ff8539dcd1fbbc77b3e9cd5d8d9771d4e5dd283e22fb0f74b65b37a9a",
+    "src/merge-parts.js": "fa67b9162fcbb07d7f177a8855d42d56f8faf4f087c938c5997af0c87eac802f",
+    "src/movement-heading.js": "338f5d4063575847e9c17a60b9e6999b21744012b95e6096cfae531136ddd976",
+    "src/pointer-controls.js": "b92d43d36099f1a444b1635a050c9dc3dd67709fcaebe33d4fca09501cdd650f",
+    "src/resource-contact.js": "c08203f3ae4b52c71d87898f279522d1a49d0fb625a3151223db4ec02ee7dd0b",
+    "src/rock-surface.js": "65854c61dec285c8c9ae1e010610b47d8ddeb31c428fd7fd1358983002182673",
+    "src/rock.js": "35a9e37e71c4c92efc2e4914839873ad7e3a9a822b38531d843945ba156a3a9a",
+    "src/ruin-layout.js": "546990987a222bd223d8a489c75054340f5b829518805eb562fd0493a8e38240",
+    "src/ruin.js": "a246871499788f118c41aa5b8a31c08c3e9c7f9a7cd32a3e8dd4ed2a4b75414c",
+    "src/scene.js": "079e292b4b3ffefcb700dbdbed57d8d426506eb8033c8e1d159654d6f23f0c00",
+    "src/sky.js": "e83f0d3ce196d44b214a608f09f0763ca33caa10c2d3ed671579b508effa75d4",
+    "src/startup-textures.js": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd",
+    "src/textile.js": "409b2ccf20dcbd8005e2d220404c358d5d39e1a7c6533db0bb80692cc85a69fb",
+    "src/tree.js": "2a74ce682a6b566458965656b98df17e135e23a656c768894c0cb689de3aaffe",
+    "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d"
+  },
+  "identitiesPreserved": true,
+  "counts": {
+    "resources": 573,
+    "enemies": 79
+  },
+  "changedResourceHeights": 49,
+  "oldPlants": {
+    "outsideCount": 111082,
+    "outsideSha256": "4d564287bb2964154bd2d42f4ac40a23650bb593bf095e68bb56072739978e3f",
+    "counts": {
+      "meadow-flowers": 1200,
+      "meadow-grass": 22595,
+      "meadow-cover": 86957,
+      "meadow-shore": 1167,
+      "meadow-fern": 5676
+    }
+  },
+  "newPlants": {
+    "outsideCount": 111082,
+    "outsideSha256": "4d564287bb2964154bd2d42f4ac40a23650bb593bf095e68bb56072739978e3f",
+    "counts": {
+      "meadow-flowers": 1200,
+      "meadow-grass": 22595,
+      "meadow-cover": 86548,
+      "meadow-shore": 1167,
+      "meadow-fern": 5649
+    }
+  },
+  "oldWorldSha256": "0511368ee8ba264043545b63749eda9cbb2084ba342d4ea4c365ff151d1582ec",
+  "currentWorldSha256": "bfa8d2c0d7ec4e212d58ceb202f9a62e4213502c6df29cb3465658e752104bc9",
+  "sampledPoints": 17161,
+  "maxHeightDelta": 12.033322397042369,
+  "maxDeltaGradient": 0.9480176697132244,
+  "maxRiseAt30fps": 0.33431634201534166,
+  "minInterior": 8.246939928644316,
+  "changedWater": 0,
+  "landmarkHeights": [
+    {
+      "id": "keeper",
+      "before": 9.756434524460861,
+      "current": 9.756434524460861
+    },
+    {
+      "id": "botanist",
+      "before": 16.731652729473826,
+      "current": 16.731652729473826
+    },
+    {
+      "id": "explorer",
+      "before": 27.578868734397954,
+      "current": 27.578868734397954
+    },
+    {
+      "id": "lighthouse",
+      "before": 13.151589565498805,
+      "current": 13.151589565498805
+    },
+    {
+      "id": "cottage",
+      "before": 9.4317237636206,
+      "current": 9.4317237636206
+    },
+    {
+      "id": "ruin",
+      "before": 30.575485717714667,
+      "current": 30.575485717714667
+    }
+  ],
+  "renderedSuitabilityVerified": false,
+  "fullGoalComplete": false,
+  "scope": "CPU identity/plant placement/height checks only. 0.4m cardinal steps sample a 30fps sprint bound; this is not a real mainline route, GPU, physical device, audio or M5 acceptance."
+}

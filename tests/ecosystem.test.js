@@ -4,7 +4,7 @@ import {createHash} from 'node:crypto';
 import * as THREE from '../vendor/three.module.min.js';
 import {createTree} from '../src/tree.js';
 import {createCanopy} from '../src/foliage.js';
-import {createWorld,terrain,LANDMARKS,SPAWN} from '../src/world.js';
+import {createWorld,terrain,layoutTerrain,LANDMARKS,SPAWN} from '../src/world.js';
 import {islandTreeAppearance} from '../src/landscape.js';
 import {WorldView} from '../src/scene.js';
 import {freshGame,interact,serialize,restore} from '../src/game.js';
@@ -33,7 +33,7 @@ test('leaf mip chains retain a visible subpixel crown and share the exact shadow
 });
 
 test('grove resources preserve every existing node and enemy and keep landmark approaches open',()=>{
-  const world=createWorld(),original={objects:world.objects.filter(o=>!grove(o)),enemies:world.enemies};
+  const world=createWorld(),original={objects:world.objects.filter(o=>!grove(o)).map(o=>({...o,y:layoutTerrain(o.x,o.z)})),enemies:world.enemies};
   assert.equal(createHash('sha256').update(JSON.stringify(original)).digest('hex'),'2099862062ee73f7175d2567899b306f975053e0546ee2b6cc0714b3e518462b');
   const extra=world.objects.filter(grove);assert.ok(extra.length>=80&&extra.length<=140);
   const regions=new Set();

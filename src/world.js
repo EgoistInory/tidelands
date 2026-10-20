@@ -16,7 +16,7 @@ export const LANDMARKS = [
 ];
 export function randomGenerator(seed=72191){return()=>((seed=(Math.imul(seed,1664525)+1013904223)>>>0)/4294967296);}
 // Keep placement sampling stable: height-field art changes must not reshuffle save IDs.
-function layoutTerrain(x,z){
+export function layoutTerrain(x,z){
   let value=-5;
   for(const island of ISLANDS){
     const dx=x-island.x,dz=z-island.z;
@@ -26,7 +26,20 @@ function layoutTerrain(x,z){
   }
   return value;
 }
-export function terrain(x,z){return layoutTerrain(x,z);}
+export function terrain(x,z){
+  const base=layoutTerrain(x,z),u=(x+75)/65,v=(z+235)/65,edge=1-u*u-v*v;
+  if(edge<=0)return base;
+  // Interior saddle and unequal shoulders replace the single radial summit.
+  let weight=edge*edge;
+  for(const landmark of LANDMARKS){
+    const t=Math.max(0,Math.min(1,(Math.hypot(x-landmark.x,z-landmark.z)-12)/20));
+    weight*=t*t*(3-2*t);
+  }
+  const shoulders=8*Math.exp(-((u+.38)**2*11+(v-.12)**2*4))
+    +6*Math.exp(-((u-.4)**2*13+(v+.28)**2*5))
+    -16*Math.exp(-(u*u*9+(v-.2)**2*5));
+  return base+.9*weight*shoulders;
+}
 export function regionAt(x,z){
   if(terrain(x,z)<0)return '群岛海域';
   return [...ISLANDS].sort((a,b)=>Math.hypot(x-a.x,z-a.z)/a.r-Math.hypot(x-b.x,z-b.z)/b.r)[0].name;
