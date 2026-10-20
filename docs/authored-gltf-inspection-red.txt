@@ -1,0 +1,24 @@
+E
+======================================================================
+ERROR: test_authored_gltf_inspection (unittest.loader._FailedTest.test_authored_gltf_inspection)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_authored_gltf_inspection
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 426, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 367, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/Users/huxiaocong/Codex/tidelands/tests/test_authored_gltf_inspection.py", line 11, in <module>
+    spec.loader.exec_module(module)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 892, in get_code
+  File "<frozen importlib._bootstrap_external>", line 950, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/huxiaocong/Codex/tidelands/tools/inspect_authored_gltf.py'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
