@@ -15,7 +15,8 @@ export const LANDMARKS = [
   {id:'ruin',type:'ruin',name:'雾岬遗迹',x:-88,z:-267}
 ];
 export function randomGenerator(seed=72191){return()=>((seed=(Math.imul(seed,1664525)+1013904223)>>>0)/4294967296);}
-export function terrain(x,z){
+// Keep placement sampling stable: height-field art changes must not reshuffle save IDs.
+function layoutTerrain(x,z){
   let value=-5;
   for(const island of ISLANDS){
     const dx=x-island.x,dz=z-island.z;
@@ -25,6 +26,7 @@ export function terrain(x,z){
   }
   return value;
 }
+export function terrain(x,z){return layoutTerrain(x,z);}
 export function regionAt(x,z){
   if(terrain(x,z)<0)return '群岛海域';
   return [...ISLANDS].sort((a,b)=>Math.hypot(x-a.x,z-a.z)/a.r-Math.hypot(x-b.x,z-b.z)/b.r)[0].name;
@@ -43,17 +45,17 @@ export function weatherAt(time){
 export function createWorld(){
   const random=randomGenerator(),objects=[];
   for(let i=0;i<1800;i++){
-    const x=random()*760-380,z=random()*760-380,y=terrain(x,z);
+    const x=random()*760-380,z=random()*760-380,y=layoutTerrain(x,z);
     if(y<.8||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<10)||Math.hypot(x-SPAWN.x,z-SPAWN.z)<8)continue;
     const r=random(),type=y>22&&r>.50?'crystal':y<2.6?'shell':r<.47?'tree':r<.74?'stone':r<.90?'berry':'fiber';
     objects.push({id:`resource-${i}`,type,x,z,y,scale:.7+random()*.9,rotation:random()*Math.PI*2});
   }
   // A legible first loop around spawn, independent of world density.
-  [['tree',-73,91],['stone',-81,101],['berry',-64,110],['fiber',-82,91],['tree',-92,101],['stone',-67,118]].forEach(([type,x,z],i)=>objects.push({id:`starter-${i}`,type,x,z,y:terrain(x,z),scale:1,rotation:i}));
+  [['tree',-73,91],['stone',-81,101],['berry',-64,110],['fiber',-82,91],['tree',-92,101],['stone',-67,118]].forEach(([type,x,z],i)=>objects.push({id:`starter-${i}`,type,x,z,y:layoutTerrain(x,z),scale:1,rotation:i}));
   const enemies=[];
   for(let i=0;i<80;i++){
     const island=ISLANDS[i%4],angle=random()*Math.PI*2,r=island.r*(.38+random()*.4),x=island.x+Math.cos(angle)*r,z=island.z+Math.sin(angle)*r;
-    if(terrain(x,z)>.3&&Math.hypot(x-SPAWN.x,z-SPAWN.z)>30)enemies.push({id:`enemy-${i}`,type:i%3===0?'boar':'crab',x,z,hp:i%3===0?70:40,homeX:x,homeZ:z});
+    if(layoutTerrain(x,z)>.3&&Math.hypot(x-SPAWN.x,z-SPAWN.z)>30)enemies.push({id:`enemy-${i}`,type:i%3===0?'boar':'crab',x,z,hp:i%3===0?70:40,homeX:x,homeZ:z});
   }
   // Reserve resource1800-2199 for grove additions; old save validation remains unchanged.
   const groveRandom=randomGenerator(27183),anchors=objects.filter(o=>o.type==='tree');
@@ -62,13 +64,14 @@ export function createWorld(){
     if(!nearby.length)continue;
     for(let attempt=0;attempt<budget*80&&placed<budget;attempt++){
       const anchor=nearby[Math.floor(groveRandom()*nearby.length)],angle=groveRandom()*Math.PI*2,radius=5.5+groveRandom()*14;
-      const x=anchor.x+Math.cos(angle)*radius,z=anchor.z+Math.sin(angle)*radius,y=terrain(x,z),scale=.7+groveRandom()*.45;
+      const x=anchor.x+Math.cos(angle)*radius,z=anchor.z+Math.sin(angle)*radius,y=layoutTerrain(x,z),scale=.7+groveRandom()*.45;
       const closest=ISLANDS.reduce((best,o)=>Math.hypot(x-o.x,z-o.z)/o.r<Math.hypot(x-best.x,z-best.z)/best.r?o:best);
-      const slope=Math.hypot(terrain(x+.5,z)-terrain(x-.5,z),terrain(x,z+.5)-terrain(x,z-.5));
+      const slope=Math.hypot(layoutTerrain(x+.5,z)-layoutTerrain(x-.5,z),layoutTerrain(x,z+.5)-layoutTerrain(x,z-.5));
       if(closest!==island||y<3||y>28||slope>.7||Math.hypot(x-SPAWN.x,z-SPAWN.z)<12||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<14))continue;
       if(objects.some(o=>['tree','stone','crystal'].includes(o.type)&&Math.hypot(x-o.x,z-o.z)<Math.max(4.2,(o.type==='stone'?2.8:o.type==='crystal'?1.5:1.1)*o.scale+scale*1.1+.9)))continue;
       objects.push({id:`resource-${1800+region*100+placed++}`,type:'tree',x,z,y,scale,rotation:groveRandom()*Math.PI*2});
     }
   }
+  for(const object of objects)object.y=terrain(object.x,object.z);
   return {objects,enemies};
 }
