@@ -1,0 +1,688 @@
+{
+  "archives": {
+    "base": {
+      "filename": "Universal Base Characters[Standard].zip",
+      "sha256": "fdbf1804c90dfc1ea03e992bff7da2dfd1a79318e13270a660180f9308455f40"
+    },
+    "animations": {
+      "filename": "Universal Animation Library[Standard].zip",
+      "sha256": "cc73fc4e495b82958207316596317a3f40b9fa38065bde1027937452da537724"
+    }
+  },
+  "licenses": {
+    "base": "0f4beaf0fe360a7732e58bbe3dbf60a2422367fbea60cb9ea4add968f383268e",
+    "animations": "6d01f55c6e4c49a2c9963e147e561945ae2c83958c8ca667d90a6bffdbfac061"
+  },
+  "models": {
+    "male": {
+      "bytes": 20633626,
+      "sha256": "d108fa7cb342213ba18cc3faff40edcfc38b9fc69fa0d64df16131b0891795e0",
+      "format": "gltf",
+      "meshCount": 3,
+      "triangles": 14318,
+      "skins": [
+        {
+          "jointCount": 65,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ]
+        }
+      ],
+      "animations": [],
+      "materialCount": 3,
+      "imageCount": 7,
+      "embeddedBufferBytes": 720076,
+      "externalResourcesFetched": false,
+      "licenseVerified": true,
+      "renderedSuitabilityVerified": false,
+      "scope": "Bounded embedded-file inventory and basic structural checks; not full Khronos validation, actual skin quality, license or animation/render acceptance.",
+      "sourceMember": "Universal Base Characters[Standard]/Base Characters/Godot - UE/Superhero_Male_FullBody.gltf",
+      "sourceGltfSha256": "e7fcea214ecf8855afbf910b50de6f9c7d1decfb71ca28bad8a4481452dafeb4",
+      "textureRemaps": [
+        {
+          "sourceUri": "T_Hair_1_Normal_png.png",
+          "actualArchiveFile": "T_Hair_1_Normal.png"
+        },
+        {
+          "sourceUri": "T_Eye_Normal_png.png",
+          "actualArchiveFile": "T_Eye_Normal.png"
+        }
+      ],
+      "textures": [
+        {
+          "file": "T_Hair_1_Normal.png",
+          "width": 2048,
+          "height": 2048,
+          "sha256": "57fd0ad8c96a4d01b38769637e066cecaa285b456f6e48ce00863754a457affb"
+        },
+        {
+          "file": "T_Hair_1_BaseColor.png",
+          "width": 2048,
+          "height": 2048,
+          "sha256": "bc7aa863bd22ab0a995cd838cceb4d3a5186ee54ee2fb0108fad85d20c057e6e"
+        },
+        {
+          "file": "T_Eye_Normal.png",
+          "width": 256,
+          "height": 256,
+          "sha256": "9ed61f7726a54fe346a78b9e5a18905d8e2b88f86235d97f53cd207a26f3f8c7"
+        },
+        {
+          "file": "T_Eye_Brown.png",
+          "width": 256,
+          "height": 256,
+          "sha256": "d08e3356a83211bc6ca21fe3a8e39f4b5c1a3b8f85457fc2c0fb57be09935025"
+        },
+        {
+          "file": "T_Superhero_Male_Normal.png",
+          "width": 2048,
+          "height": 2048,
+          "sha256": "9b25cf9200216eb754b79cf4c63b5380c419780788322f3c57cdd2b3e02679a6"
+        },
+        {
+          "file": "T_Superhero_Male_Dark.png",
+          "width": 2048,
+          "height": 2048,
+          "sha256": "df680cbc1967a61e85998bfafb8f7bc0a36dd604bb3266486c4b06b1a184bb45"
+        },
+        {
+          "file": "T_Superhero_Male_Roughness.png",
+          "width": 2048,
+          "height": 2048,
+          "sha256": "c70dabf48574cda55644d556beae1ee7cf1bdcf68a50d259d20f2f2358f27991"
+        }
+      ],
+      "sourceHasAnimations": false
+    },
+    "female": {
+      "bytes": 21382626,
+      "sha256": "981e09c8e90ca4f06ee9129344fe5d306c61e131ef5f15bc27b2087dd713934f",
+      "format": "gltf",
+      "meshCount": 3,
+      "triangles": 15060,
+      "skins": [
+        {
+          "jointCount": 65,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ]
+        }
+      ],
+      "animations": [],
+      "materialCount": 3,
+      "imageCount": 7,
+      "embeddedBufferBytes": 990808,
+      "externalResourcesFetched": false,
+      "licenseVerified": true,
+      "renderedSuitabilityVerified": false,
+      "scope": "Bounded embedded-file inventory and basic structural checks; not full Khronos validation, actual skin quality, license or animation/render acceptance.",
+      "sourceMember": "Universal Base Characters[Standard]/Base Characters/Godot - UE/Superhero_Female_FullBody.gltf",
+      "sourceGltfSha256": "adedf28000a0716f689b009a70314506fc62f827498f77ba852acb5610f3f3f4",
+      "textureRemaps": [
+        {
+          "sourceUri": "T_Eye_Normal_png.png",
+          "actualArchiveFile": "T_Eye_Normal.png"
+        }
+      ],
+      "textures": [
+        {
+          "file": "T_Hair_2_Normal.png",
+          "width": 2048,
+          "height": 2048,
+          "sha256": "172f230aae0d4366c3cfc0402b2e6d1811b11f8487344bff28605eeacac1558d"
+        },
+        {
+          "file": "T_Hair_2_BaseColor.png",
+          "width": 2048,
+          "height": 2048,
+          "sha256": "f9f4f2fb3eeeefb0b6f0fdef38b0770fd6607640c1c680b8139dd76697e9f9b3"
+        },
+        {
+          "file": "T_Eye_Normal.png",
+          "width": 256,
+          "height": 256,
+          "sha256": "9ed61f7726a54fe346a78b9e5a18905d8e2b88f86235d97f53cd207a26f3f8c7"
+        },
+        {
+          "file": "T_Eye_Brown.png",
+          "width": 256,
+          "height": 256,
+          "sha256": "d08e3356a83211bc6ca21fe3a8e39f4b5c1a3b8f85457fc2c0fb57be09935025"
+        },
+        {
+          "file": "T_Superhero_Female_Normal.png",
+          "width": 2048,
+          "height": 2048,
+          "sha256": "cf922460b43ccd31e983e34db05514c9d451dd2f9cdd01a843978e797719f859"
+        },
+        {
+          "file": "T_Superhero_Female_Dark_BaseColor.png",
+          "width": 2048,
+          "height": 2048,
+          "sha256": "d366843ee7d9e9f37ec87a0e1c98c7f2e45573c08eeb80a51a6d9344e68cf288"
+        },
+        {
+          "file": "T_Superhero_Female_Roughness.png",
+          "width": 2048,
+          "height": 2048,
+          "sha256": "d2beabf2bd0313e32c68dcdbb80dca371a6e994fabf96efa97128bf9f14fa57b"
+        }
+      ],
+      "sourceHasAnimations": false
+    },
+    "animations": {
+      "bytes": 7618436,
+      "sha256": "69591853d817488edaa8fd9bf8fc1d821eaeaf789f8627b3cd23b41c4ed67997",
+      "format": "glb",
+      "meshCount": 1,
+      "triangles": 13744,
+      "skins": [
+        {
+          "jointCount": 65,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ]
+        }
+      ],
+      "animations": [
+        {
+          "name": "A_TPose",
+          "channels": 195,
+          "durationSeconds": 2.5
+        },
+        {
+          "name": "Crouch_Fwd_Loop",
+          "channels": 195,
+          "durationSeconds": 2.0
+        },
+        {
+          "name": "Crouch_Idle_Loop",
+          "channels": 195,
+          "durationSeconds": 2.933333396911621
+        },
+        {
+          "name": "Dance_Loop",
+          "channels": 195,
+          "durationSeconds": 1.0
+        },
+        {
+          "name": "Death01",
+          "channels": 195,
+          "durationSeconds": 2.4000000953674316
+        },
+        {
+          "name": "Driving_Loop",
+          "channels": 195,
+          "durationSeconds": 1.6666666269302368
+        },
+        {
+          "name": "Fixing_Kneeling",
+          "channels": 195,
+          "durationSeconds": 5.199999809265137
+        },
+        {
+          "name": "Hit_Chest",
+          "channels": 195,
+          "durationSeconds": 0.3333333432674408
+        },
+        {
+          "name": "Hit_Head",
+          "channels": 195,
+          "durationSeconds": 0.4333333373069763
+        },
+        {
+          "name": "Idle_Loop",
+          "channels": 195,
+          "durationSeconds": 2.5
+        },
+        {
+          "name": "Idle_Talking_Loop",
+          "channels": 195,
+          "durationSeconds": 2.933333396911621
+        },
+        {
+          "name": "Idle_Torch_Loop",
+          "channels": 195,
+          "durationSeconds": 1.2666666507720947
+        },
+        {
+          "name": "Interact",
+          "channels": 195,
+          "durationSeconds": 2.0
+        },
+        {
+          "name": "Jog_Fwd_Loop",
+          "channels": 195,
+          "durationSeconds": 0.9333333373069763
+        },
+        {
+          "name": "Jump_Land",
+          "channels": 195,
+          "durationSeconds": 1.2666666507720947
+        },
+        {
+          "name": "Jump_Loop",
+          "channels": 195,
+          "durationSeconds": 2.5
+        },
+        {
+          "name": "Jump_Start",
+          "channels": 195,
+          "durationSeconds": 1.3333333730697632
+        },
+        {
+          "name": "PickUp_Table",
+          "channels": 195,
+          "durationSeconds": 0.8333333134651184
+        },
+        {
+          "name": "Pistol_Aim_Down",
+          "channels": 195,
+          "durationSeconds": 0.1666666716337204
+        },
+        {
+          "name": "Pistol_Aim_Neutral",
+          "channels": 195,
+          "durationSeconds": 0.1666666716337204
+        },
+        {
+          "name": "Pistol_Aim_Up",
+          "channels": 195,
+          "durationSeconds": 0.1666666716337204
+        },
+        {
+          "name": "Pistol_Idle_Loop",
+          "channels": 195,
+          "durationSeconds": 1.6666666269302368
+        },
+        {
+          "name": "Pistol_Reload",
+          "channels": 195,
+          "durationSeconds": 1.6666666269302368
+        },
+        {
+          "name": "Pistol_Shoot",
+          "channels": 195,
+          "durationSeconds": 0.6333333253860474
+        },
+        {
+          "name": "Punch_Cross",
+          "channels": 195,
+          "durationSeconds": 1.0
+        },
+        {
+          "name": "Punch_Jab",
+          "channels": 195,
+          "durationSeconds": 0.8666666746139526
+        },
+        {
+          "name": "Push_Loop",
+          "channels": 195,
+          "durationSeconds": 2.6666667461395264
+        },
+        {
+          "name": "Roll",
+          "channels": 195,
+          "durationSeconds": 1.4666666984558105
+        },
+        {
+          "name": "Sitting_Enter",
+          "channels": 195,
+          "durationSeconds": 1.2999999523162842
+        },
+        {
+          "name": "Sitting_Exit",
+          "channels": 195,
+          "durationSeconds": 1.0333333015441895
+        },
+        {
+          "name": "Sitting_Idle_Loop",
+          "channels": 195,
+          "durationSeconds": 1.6666666269302368
+        },
+        {
+          "name": "Sitting_Talking_Loop",
+          "channels": 195,
+          "durationSeconds": 2.933333396911621
+        },
+        {
+          "name": "Spell_Simple_Enter",
+          "channels": 195,
+          "durationSeconds": 0.5333333611488342
+        },
+        {
+          "name": "Spell_Simple_Exit",
+          "channels": 195,
+          "durationSeconds": 0.4333333373069763
+        },
+        {
+          "name": "Spell_Simple_Idle_Loop",
+          "channels": 195,
+          "durationSeconds": 2.0999999046325684
+        },
+        {
+          "name": "Spell_Simple_Shoot",
+          "channels": 195,
+          "durationSeconds": 0.5
+        },
+        {
+          "name": "Sprint_Loop",
+          "channels": 195,
+          "durationSeconds": 0.6666666865348816
+        },
+        {
+          "name": "Swim_Fwd_Loop",
+          "channels": 195,
+          "durationSeconds": 1.3333333730697632
+        },
+        {
+          "name": "Swim_Idle_Loop",
+          "channels": 195,
+          "durationSeconds": 3.3333332538604736
+        },
+        {
+          "name": "Sword_Attack",
+          "channels": 195,
+          "durationSeconds": 1.5333333015441895
+        },
+        {
+          "name": "Sword_Idle",
+          "channels": 195,
+          "durationSeconds": 1.6666666269302368
+        },
+        {
+          "name": "Walk_Formal_Loop",
+          "channels": 195,
+          "durationSeconds": 1.3333333730697632
+        },
+        {
+          "name": "Walk_Loop",
+          "channels": 195,
+          "durationSeconds": 1.3333333730697632
+        }
+      ],
+      "materialCount": 2,
+      "imageCount": 0,
+      "embeddedBufferBytes": 5750336,
+      "externalResourcesFetched": false,
+      "licenseVerified": true,
+      "renderedSuitabilityVerified": false,
+      "scope": "Bounded embedded-file inventory and basic structural checks; not full Khronos validation, actual skin quality, license or animation/render acceptance."
+    }
+  },
+  "stagedDirectory": "dist/authored-review",
+  "files": {
+    "Base-LICENSE.txt": {
+      "bytes": 806,
+      "sha256": "0f4beaf0fe360a7732e58bbe3dbf60a2422367fbea60cb9ea4add968f383268e"
+    },
+    "Superhero_Male_FullBody.bin": {
+      "bytes": 720076,
+      "sha256": "459003f9745853ae562a85506a2b94dd56515c1f37728f9fa3d2ce1a3e4cd92f"
+    },
+    "T_Hair_1_Normal.png": {
+      "bytes": 4326126,
+      "sha256": "57fd0ad8c96a4d01b38769637e066cecaa285b456f6e48ce00863754a457affb"
+    },
+    "T_Hair_1_BaseColor.png": {
+      "bytes": 1570376,
+      "sha256": "bc7aa863bd22ab0a995cd838cceb4d3a5186ee54ee2fb0108fad85d20c057e6e"
+    },
+    "T_Eye_Normal.png": {
+      "bytes": 15099,
+      "sha256": "9ed61f7726a54fe346a78b9e5a18905d8e2b88f86235d97f53cd207a26f3f8c7"
+    },
+    "T_Eye_Brown.png": {
+      "bytes": 35958,
+      "sha256": "d08e3356a83211bc6ca21fe3a8e39f4b5c1a3b8f85457fc2c0fb57be09935025"
+    },
+    "T_Superhero_Male_Normal.png": {
+      "bytes": 4252937,
+      "sha256": "9b25cf9200216eb754b79cf4c63b5380c419780788322f3c57cdd2b3e02679a6"
+    },
+    "T_Superhero_Male_Dark.png": {
+      "bytes": 1384380,
+      "sha256": "df680cbc1967a61e85998bfafb8f7bc0a36dd604bb3266486c4b06b1a184bb45"
+    },
+    "T_Superhero_Male_Roughness.png": {
+      "bytes": 3152049,
+      "sha256": "c70dabf48574cda55644d556beae1ee7cf1bdcf68a50d259d20f2f2358f27991"
+    },
+    "Superhero_Male_FullBody.gltf": {
+      "bytes": 38235,
+      "sha256": "49059ba5189df4c49630a95bdf8ba6d38ca8b8fa259d0105c219bcd6f786c314"
+    },
+    "Superhero_Female_FullBody.bin": {
+      "bytes": 990808,
+      "sha256": "3a8220a485b33d05d879115a50697728b45a151781106033afb8b8c243fca208"
+    },
+    "T_Hair_2_Normal.png": {
+      "bytes": 4710013,
+      "sha256": "172f230aae0d4366c3cfc0402b2e6d1811b11f8487344bff28605eeacac1558d"
+    },
+    "T_Hair_2_BaseColor.png": {
+      "bytes": 1729467,
+      "sha256": "f9f4f2fb3eeeefb0b6f0fdef38b0770fd6607640c1c680b8139dd76697e9f9b3"
+    },
+    "T_Superhero_Female_Normal.png": {
+      "bytes": 3940537,
+      "sha256": "cf922460b43ccd31e983e34db05514c9d451dd2f9cdd01a843978e797719f859"
+    },
+    "T_Superhero_Female_Dark_BaseColor.png": {
+      "bytes": 1319410,
+      "sha256": "d366843ee7d9e9f37ec87a0e1c98c7f2e45573c08eeb80a51a6d9344e68cf288"
+    },
+    "T_Superhero_Female_Roughness.png": {
+      "bytes": 3277022,
+      "sha256": "d2beabf2bd0313e32c68dcdbb80dca371a6e994fabf96efa97128bf9f14fa57b"
+    },
+    "Superhero_Female_FullBody.gltf": {
+      "bytes": 39041,
+      "sha256": "5ab0d4ae5ce17f4f4c4319655d82a4c882b559d6bb8c592b4dbb76d4f2ff1906"
+    },
+    "Animation-LICENSE.txt": {
+      "bytes": 332,
+      "sha256": "6d01f55c6e4c49a2c9963e147e561945ae2c83958c8ca667d90a6bffdbfac061"
+    },
+    "UAL1_Standard.glb": {
+      "bytes": 7618436,
+      "sha256": "69591853d817488edaa8fd9bf8fc1d821eaeaf789f8627b3cd23b41c4ed67997"
+    }
+  },
+  "rawArchivesModified": false,
+  "runtimeIntegrated": false,
+  "renderedSuitabilityVerified": false,
+  "scope": "Fixed author CC0 models/animations, archive-only local-reference resolution and explicit texture filename repairs. No production character adoption, outfit or animation retarget acceptance."
+}

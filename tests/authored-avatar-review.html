@@ -1,0 +1,52 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>作者蒙皮与同名骨骼动作隔离审查</title>
+<style>html,body{margin:0;height:100%;background:#263238;color:#eee;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:8px;display:flex;gap:6px;flex-wrap:wrap}button,select{font:inherit;padding:6px}output{height:110px;overflow:auto;overflow-wrap:anywhere}canvas{flex:1;min-height:0;width:100%}</style>
+<nav>CC0原始基础人体 · 无旅人衣装/游戏接入 <select id="model" disabled><option value="male">男性基础</option><option value="female">女性基础</option><option value="library">动作库参考</option></select><select id="clip" disabled></select><select id="angle" disabled><option value="0">正面</option><option value="1.5707963267948966">侧面</option><option value="3.141592653589793">背面</option></select><button id="play" disabled>试播180帧</button></nav>
+<output>准备隔离资产…</output><canvas aria-label="仅作者模型和同名骨骼动作试播，不是游戏或重定向验收"></canvas>
+<script type="importmap">{"imports":{"three":"../vendor/three.module.min.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {GLTFLoader} from './vendor/r180/loaders/GLTFLoader.js';
+const out=document.querySelector('output'),canvas=document.querySelector('canvas'),modelSelect=document.querySelector('#model'),clipSelect=document.querySelector('#clip');
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x53616b);
+const camera=new THREE.PerspectiveCamera(38,1,.05,50);camera.position.set(0,1.05,3.6);camera.lookAt(0,.93,0);
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;renderer.shadowMap.enabled=true;
+scene.add(new THREE.HemisphereLight(0xe8efff,0x716c60,2));const light=new THREE.DirectionalLight(0xffead8,3);light.position.set(3,5,4);light.castShadow=true;scene.add(light);
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(20,20),new THREE.MeshStandardMaterial({color:0x666b6b,roughness:1}));floor.rotation.x=-Math.PI/2;floor.receiveShadow=true;scene.add(floor);
+const grid=new THREE.GridHelper(4,20,0x7e898b,0x737d7e);grid.position.y=.001;scene.add(grid);
+const manager=new THREE.LoadingManager();manager.setURLModifier(url=>{if(url.startsWith('data:')||url.startsWith('blob:'))return url;const parsed=new URL(url,location.href);if(parsed.origin!==location.origin||!parsed.pathname.startsWith('/dist/authored-review/'))throw Error('Only staged same-origin assets are allowed');return url;});
+const loader=new GLTFLoader(manager),prefix='../dist/authored-review/';
+let avatar,wrapper,mixer,clips=[],frames=0,running=false,poses=[],intervals=[],previous=null,hidden=false,metadata={};
+function dispose(root){const geometries=new Set(),materials=new Set(),textures=new Set();root.traverse(o=>{if(o.geometry)geometries.add(o.geometry);for(const m of o.material?(Array.isArray(o.material)?o.material:[o.material]):[])materials.add(m);});for(const m of materials){for(const v of Object.values(m))if(v?.isTexture)textures.add(v);m.dispose();}for(const t of textures){t.dispose();t.source?.data?.close?.();}for(const g of geometries)g.dispose();}
+function controls(disabled){document.querySelectorAll('button,select').forEach(e=>e.disabled=disabled);}
+function draw(){
+  wrapper.rotation.y=Number(document.querySelector('#angle').value);avatar.updateMatrixWorld(true);renderer.render(scene,camera);
+  const joints={};for(const name of ['pelvis','Head','hand_l','hand_r','foot_l','foot_r']){const bone=avatar.getObjectByName(name);if(bone)joints[name]=bone.getWorldPosition(new THREE.Vector3()).toArray();}
+  if(running&&frames%30===0)poses.push({frame:frames,joints});
+  const sorted=[...intervals].sort((a,b)=>a-b);
+  out.textContent=JSON.stringify({ready:true,model:modelSelect.value,clip:clipSelect.value,angle:wrapper.rotation.y,frames,running,hidden,metadata,joints,poses,raf:sorted.length?{samples:sorted.length,p95:sorted[Math.floor(sorted.length*.95)],max:sorted.at(-1)}:null,render:{calls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures},viewport:[innerWidth,innerHeight],buffer:[canvas.width,canvas.height],glError:renderer.getContext().getError(),scope:'Author CC0 base bodies on neutral floor; 43 actual Standard clips played by matching bone names. No island outfit, production rules/IK/equipment, retarget correction, final character, motion quality or game performance acceptance.'});
+}
+function selectClip(){
+  mixer.stopAllAction();avatar.traverse(o=>{if(o.isSkinnedMesh)o.skeleton.pose();});
+  const clip=clips.find(c=>c.name===clipSelect.value);if(clip)mixer.clipAction(clip).reset().play();mixer.update(0);
+  frames=0;poses=[];intervals=[];previous=null;hidden=false;draw();
+}
+async function load(){
+  controls(true);out.textContent='加载本地基础模型…';
+  if(avatar){mixer.stopAllAction();mixer.uncacheRoot(avatar);scene.remove(wrapper);dispose(avatar);}
+  const filename={male:'Superhero_Male_FullBody.gltf',female:'Superhero_Female_FullBody.gltf',library:'UAL1_Standard.glb'}[modelSelect.value];
+  const gltf=await loader.loadAsync(prefix+filename);avatar=gltf.scene;avatar.updateMatrixWorld(true);
+  const box=new THREE.Box3().setFromObject(avatar,true),size=box.getSize(new THREE.Vector3());
+  wrapper=new THREE.Group();wrapper.add(avatar);const scale=1.8/size.y;wrapper.scale.setScalar(scale);wrapper.position.y=-box.min.y*scale;scene.add(wrapper);
+  let skins=0,triangles=0;const bones=new Set();avatar.traverse(o=>{if(o.isSkinnedMesh){skins++;o.skeleton.bones.forEach(b=>bones.add(b.name));}if(o.isMesh){triangles+=(o.geometry.index?.count??o.geometry.attributes.position.count)/3;o.castShadow=true;}});
+  metadata={file:filename,originalBounds:[box.min.toArray(),box.max.toArray()],originalHeight:size.y,displayScale:scale,skins,jointNames:[...bones],triangles,ownClipCount:gltf.animations.length,offeredClips:clips.map(c=>c.name),directNameTrial:true};
+  mixer=new THREE.AnimationMixer(avatar);selectClip();controls(false);
+}
+function resize(){const width=canvas.clientWidth,height=canvas.clientHeight;renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();if(avatar)draw();}
+clipSelect.onchange=()=>selectClip();modelSelect.onchange=()=>load().catch(fail);document.querySelector('#angle').onchange=draw;
+document.querySelector('#play').onclick=()=>{controls(true);running=true;frames=0;poses=[];intervals=[];previous=null;hidden=false;
+  const step=now=>{if(previous!==null)intervals.push(now-previous);previous=now;hidden||=document.hidden;mixer.update(1/60);frames++;draw();if(frames<180)requestAnimationFrame(step);else{running=false;draw();controls(false);}};requestAnimationFrame(step);
+};
+function fail(error){out.textContent='隔离加载失败：'+error.message;console.error(error);}
+window.addEventListener('resize',resize);window.addEventListener('pagehide',()=>{if(avatar)dispose(avatar);dispose(floor);grid.geometry.dispose();grid.material.dispose();renderer.dispose();});
+resize();loader.loadAsync(prefix+'UAL1_Standard.glb').then(async gltf=>{clips=gltf.animations;dispose(gltf.scene);clipSelect.replaceChildren(...clips.map(c=>new Option(c.name,c.name)));clipSelect.value='Idle_Loop';await load();}).catch(fail);
+</script></html>
