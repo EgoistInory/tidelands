@@ -1,0 +1,4787 @@
+{
+  "rows": [
+    {
+      "image": "docs/wardrobe-rig-traveler-front.jpg",
+      "kind": "still",
+      "state": {
+        "ready": true,
+        "model": "traveler",
+        "clip": "Idle_Loop",
+        "angle": 0,
+        "frames": 0,
+        "running": false,
+        "hidden": false,
+        "metadata": {
+          "restRetargeted": true,
+          "referenceHeight": 1.8287167448388175,
+          "wardrobe": {
+            "role": "traveler",
+            "label": "旅人",
+            "body": "SuperHero_Male",
+            "height": 1.8195863831788301,
+            "sourceTriangles": 12566,
+            "skinTriangles": 5906,
+            "clothTriangles": 6660,
+            "productionIntegrated": false
+          },
+          "style": {
+            "coat": 10245943,
+            "trousers": 3423803,
+            "scarf": 13944998,
+            "pack": 6114104,
+            "sex": "male",
+            "hair": "Hair_SimpleParted",
+            "label": "旅人",
+            "cargo": "bedroll"
+          },
+          "productionIntegrated": false,
+          "file": "Superhero_Male_FullBody.gltf",
+          "originalBounds": [
+            [
+              -0.9294323991218112,
+              -0.009509849888516313,
+              -0.16345080095368408
+            ],
+            [
+              0.9294324424934728,
+              1.8100766650860056,
+              0.12803739335794287
+            ]
+          ],
+          "originalHeight": 1.8195865149745218,
+          "displayScale": 0.9892357330562015,
+          "skins": 9,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ],
+          "triangles": 31097,
+          "ownClipCount": 0,
+          "offeredClips": [
+            "A_TPose",
+            "Crouch_Fwd_Loop",
+            "Crouch_Idle_Loop",
+            "Dance_Loop",
+            "Death01",
+            "Driving_Loop",
+            "Fixing_Kneeling",
+            "Hit_Chest",
+            "Hit_Head",
+            "Idle_Loop",
+            "Idle_Talking_Loop",
+            "Idle_Torch_Loop",
+            "Interact",
+            "Jog_Fwd_Loop",
+            "Jump_Land",
+            "Jump_Loop",
+            "Jump_Start",
+            "PickUp_Table",
+            "Pistol_Aim_Down",
+            "Pistol_Aim_Neutral",
+            "Pistol_Aim_Up",
+            "Pistol_Idle_Loop",
+            "Pistol_Reload",
+            "Pistol_Shoot",
+            "Punch_Cross",
+            "Punch_Jab",
+            "Push_Loop",
+            "Roll",
+            "Sitting_Enter",
+            "Sitting_Exit",
+            "Sitting_Idle_Loop",
+            "Sitting_Talking_Loop",
+            "Spell_Simple_Enter",
+            "Spell_Simple_Exit",
+            "Spell_Simple_Idle_Loop",
+            "Spell_Simple_Shoot",
+            "Sprint_Loop",
+            "Swim_Fwd_Loop",
+            "Swim_Idle_Loop",
+            "Sword_Attack",
+            "Sword_Idle",
+            "Walk_Formal_Loop",
+            "Walk_Loop"
+          ],
+          "directNameTrial": true
+        },
+        "joints": {
+          "pelvis": [
+            0.0052334511138609425,
+            0.9093841650240375,
+            -0.07835995842304744
+          ],
+          "Head": [
+            -0.008937516794984427,
+            1.5582735482528867,
+            0.0019332745728920311
+          ],
+          "hand_l": [
+            0.3445309559793568,
+            0.9624278050778485,
+            0.020585363476398673
+          ],
+          "hand_r": [
+            -0.2997328681457905,
+            0.9904637485313325,
+            -0.1783552803226102
+          ],
+          "foot_l": [
+            0.23110769255710825,
+            0.09111873435578527,
+            0.09301298496333932
+          ],
+          "foot_r": [
+            -0.18168445132963557,
+            0.09788854695466342,
+            -0.33139582711062054
+          ]
+        },
+        "poses": [],
+        "raf": null,
+        "render": {
+          "calls": 19,
+          "triangles": 18533,
+          "geometries": 19,
+          "textures": 13
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "buffer": [
+          1920,
+          840
+        ],
+        "glError": 0,
+        "scope": "Dressed four-role candidate on author rig, rest-corrected author animation. Production game, IK, gameplay equipment, swim height, world support and final quality not accepted."
+      }
+    },
+    {
+      "image": "docs/wardrobe-rig-traveler-walk.jpg",
+      "kind": "motion",
+      "state": {
+        "ready": true,
+        "model": "traveler",
+        "clip": "Walk_Loop",
+        "angle": 0,
+        "frames": 180,
+        "running": false,
+        "hidden": false,
+        "metadata": {
+          "restRetargeted": true,
+          "referenceHeight": 1.8287167448388175,
+          "wardrobe": {
+            "role": "traveler",
+            "label": "旅人",
+            "body": "SuperHero_Male",
+            "height": 1.8195863831788301,
+            "sourceTriangles": 12566,
+            "skinTriangles": 5906,
+            "clothTriangles": 6660,
+            "productionIntegrated": false
+          },
+          "style": {
+            "coat": 10245943,
+            "trousers": 3423803,
+            "scarf": 13944998,
+            "pack": 6114104,
+            "sex": "male",
+            "hair": "Hair_SimpleParted",
+            "label": "旅人",
+            "cargo": "bedroll"
+          },
+          "productionIntegrated": false,
+          "file": "Superhero_Male_FullBody.gltf",
+          "originalBounds": [
+            [
+              -0.9294323991218112,
+              -0.009509849888516313,
+              -0.16345080095368408
+            ],
+            [
+              0.9294324424934728,
+              1.8100766650860056,
+              0.12803739335794287
+            ]
+          ],
+          "originalHeight": 1.8195865149745218,
+          "displayScale": 0.9892357330562015,
+          "skins": 9,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ],
+          "triangles": 31097,
+          "ownClipCount": 0,
+          "offeredClips": [
+            "A_TPose",
+            "Crouch_Fwd_Loop",
+            "Crouch_Idle_Loop",
+            "Dance_Loop",
+            "Death01",
+            "Driving_Loop",
+            "Fixing_Kneeling",
+            "Hit_Chest",
+            "Hit_Head",
+            "Idle_Loop",
+            "Idle_Talking_Loop",
+            "Idle_Torch_Loop",
+            "Interact",
+            "Jog_Fwd_Loop",
+            "Jump_Land",
+            "Jump_Loop",
+            "Jump_Start",
+            "PickUp_Table",
+            "Pistol_Aim_Down",
+            "Pistol_Aim_Neutral",
+            "Pistol_Aim_Up",
+            "Pistol_Idle_Loop",
+            "Pistol_Reload",
+            "Pistol_Shoot",
+            "Punch_Cross",
+            "Punch_Jab",
+            "Push_Loop",
+            "Roll",
+            "Sitting_Enter",
+            "Sitting_Exit",
+            "Sitting_Idle_Loop",
+            "Sitting_Talking_Loop",
+            "Spell_Simple_Enter",
+            "Spell_Simple_Exit",
+            "Spell_Simple_Idle_Loop",
+            "Spell_Simple_Shoot",
+            "Sprint_Loop",
+            "Swim_Fwd_Loop",
+            "Swim_Idle_Loop",
+            "Sword_Attack",
+            "Sword_Idle",
+            "Walk_Formal_Loop",
+            "Walk_Loop"
+          ],
+          "directNameTrial": true
+        },
+        "joints": {
+          "pelvis": [
+            0.029992363683275156,
+            0.9439353707831811,
+            -0.0425377862456108
+          ],
+          "Head": [
+            0.03187042048221107,
+            1.5839358736695044,
+            0.09100209853203098
+          ],
+          "hand_l": [
+            0.34189851523727344,
+            1.0086459425780556,
+            0.014136075558172048
+          ],
+          "hand_r": [
+            -0.2714150008080647,
+            1.0153887673664865,
+            0.0507806576982964
+          ],
+          "foot_l": [
+            0.11108894665918337,
+            0.1026302084186933,
+            -0.10827603510635347
+          ],
+          "foot_r": [
+            -0.11476768916709132,
+            0.362997469179566,
+            -0.19495809246600448
+          ]
+        },
+        "poses": [
+          {
+            "frame": 30,
+            "joints": {
+              "pelvis": [
+                0.03845419772954553,
+                0.9381943907812832,
+                -0.04244479439085936
+              ],
+              "Head": [
+                0.014349386873462704,
+                1.5799528010792177,
+                0.07695859905688948
+              ],
+              "hand_l": [
+                0.3542564160697001,
+                1.0391105317032352,
+                0.13868659241168388
+              ],
+              "hand_r": [
+                -0.252189839181147,
+                0.9899930009283399,
+                -0.046717046137792595
+              ],
+              "foot_l": [
+                0.11506676714659128,
+                0.14242098004575715,
+                -0.25079725133100594
+              ],
+              "foot_r": [
+                -0.1151657322497606,
+                0.2426309547646499,
+                0.11319398917608242
+              ]
+            }
+          },
+          {
+            "frame": 60,
+            "joints": {
+              "pelvis": [
+                -0.022707910333727176,
+                0.9439354453385702,
+                -0.042534922889925976
+              ],
+              "Head": [
+                -0.030737311812754187,
+                1.5838934875299133,
+                0.0908852108467059
+              ],
+              "hand_l": [
+                0.27686636663201336,
+                1.0172777992031063,
+                0.06730295710621326
+              ],
+              "hand_r": [
+                -0.33041336406339666,
+                1.0056194846108624,
+                -0.015270560129346744
+              ],
+              "foot_l": [
+                0.11469587550260316,
+                0.36304171447870504,
+                -0.19489262776232547
+              ],
+              "foot_r": [
+                -0.11443904181539641,
+                0.1220074556216364,
+                -0.09578783838839333
+              ]
+            }
+          },
+          {
+            "frame": 90,
+            "joints": {
+              "pelvis": [
+                0.006803944170111245,
+                0.9086934039813486,
+                -0.04238500313341218
+              ],
+              "Head": [
+                0.03420488655430539,
+                1.5488924835272588,
+                0.08630481275027484
+              ],
+              "hand_l": [
+                0.29700079288676184,
+                0.9576589121700279,
+                -0.07873965007816193
+              ],
+              "hand_r": [
+                -0.29463233393382127,
+                1.026209687939587,
+                0.19854647134380365
+              ],
+              "foot_l": [
+                0.11205104480905644,
+                0.09990664077987277,
+                0.06058186229140902
+              ],
+              "foot_r": [
+                -0.11562910505303622,
+                0.25055082933298806,
+                -0.4276725855323695
+              ]
+            }
+          },
+          {
+            "frame": 120,
+            "joints": {
+              "pelvis": [
+                0.025890681528035735,
+                0.9029665187134033,
+                -0.04226185911598987
+              ],
+              "Head": [
+                -0.012000860700542942,
+                1.5445898111547245,
+                0.07282164483638859
+              ],
+              "hand_l": [
+                0.3301157598205679,
+                1.0431417953115443,
+                0.2278190958089999
+              ],
+              "hand_r": [
+                -0.2529908209596416,
+                0.9478524931130817,
+                -0.0970005000328974
+              ],
+              "foot_l": [
+                0.12055916043614598,
+                0.16712138159184226,
+                -0.3978462621160609
+              ],
+              "foot_r": [
+                -0.1145087754097498,
+                0.09473517128934172,
+                0.2329075315668459
+              ]
+            }
+          },
+          {
+            "frame": 150,
+            "joints": {
+              "pelvis": [
+                -0.03088330781055461,
+                0.9381865486958292,
+                -0.04242118337781682
+              ],
+              "Head": [
+                -0.01216018493545147,
+                1.5799387180591729,
+                0.07847919002034293
+              ],
+              "hand_l": [
+                0.26378887005078805,
+                0.9900756396127213,
+                -0.02848533640846701
+              ],
+              "hand_r": [
+                -0.345260907156261,
+                1.0282125317037893,
+                0.11304344268265284
+              ],
+              "foot_l": [
+                0.11473633695656033,
+                0.24269901229906393,
+                0.1131142282471452
+              ],
+              "foot_r": [
+                -0.11785495954019404,
+                0.1386525038554784,
+                -0.25477822670996664
+              ]
+            }
+          },
+          {
+            "frame": 180,
+            "joints": {
+              "pelvis": [
+                0.029992363683275156,
+                0.9439353707831811,
+                -0.0425377862456108
+              ],
+              "Head": [
+                0.03187042048221107,
+                1.5839358736695044,
+                0.09100209853203098
+              ],
+              "hand_l": [
+                0.34189851523727344,
+                1.0086459425780556,
+                0.014136075558172048
+              ],
+              "hand_r": [
+                -0.2714150008080647,
+                1.0153887673664865,
+                0.0507806576982964
+              ],
+              "foot_l": [
+                0.11108894665918337,
+                0.1026302084186933,
+                -0.10827603510635347
+              ],
+              "foot_r": [
+                -0.11476768916709132,
+                0.362997469179566,
+                -0.19495809246600448
+              ]
+            }
+          }
+        ],
+        "raf": {
+          "samples": 179,
+          "p95": 18.200000000000728,
+          "max": 18.69999999999709
+        },
+        "render": {
+          "calls": 19,
+          "triangles": 18533,
+          "geometries": 19,
+          "textures": 13
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "buffer": [
+          1920,
+          840
+        ],
+        "glError": 0,
+        "scope": "Dressed four-role candidate on author rig, rest-corrected author animation. Production game, IK, gameplay equipment, swim height, world support and final quality not accepted."
+      }
+    },
+    {
+      "image": "docs/wardrobe-rig-traveler-back.jpg",
+      "kind": "still",
+      "state": {
+        "ready": true,
+        "model": "traveler",
+        "clip": "Walk_Loop",
+        "angle": 3.141592653589793,
+        "frames": 180,
+        "running": false,
+        "hidden": false,
+        "metadata": {
+          "restRetargeted": true,
+          "referenceHeight": 1.8287167448388175,
+          "wardrobe": {
+            "role": "traveler",
+            "label": "旅人",
+            "body": "SuperHero_Male",
+            "height": 1.8195863831788301,
+            "sourceTriangles": 12566,
+            "skinTriangles": 5906,
+            "clothTriangles": 6660,
+            "productionIntegrated": false
+          },
+          "style": {
+            "coat": 10245943,
+            "trousers": 3423803,
+            "scarf": 13944998,
+            "pack": 6114104,
+            "sex": "male",
+            "hair": "Hair_SimpleParted",
+            "label": "旅人",
+            "cargo": "bedroll"
+          },
+          "productionIntegrated": false,
+          "file": "Superhero_Male_FullBody.gltf",
+          "originalBounds": [
+            [
+              -0.9294323991218112,
+              -0.009509849888516313,
+              -0.16345080095368408
+            ],
+            [
+              0.9294324424934728,
+              1.8100766650860056,
+              0.12803739335794287
+            ]
+          ],
+          "originalHeight": 1.8195865149745218,
+          "displayScale": 0.9892357330562015,
+          "skins": 9,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ],
+          "triangles": 31097,
+          "ownClipCount": 0,
+          "offeredClips": [
+            "A_TPose",
+            "Crouch_Fwd_Loop",
+            "Crouch_Idle_Loop",
+            "Dance_Loop",
+            "Death01",
+            "Driving_Loop",
+            "Fixing_Kneeling",
+            "Hit_Chest",
+            "Hit_Head",
+            "Idle_Loop",
+            "Idle_Talking_Loop",
+            "Idle_Torch_Loop",
+            "Interact",
+            "Jog_Fwd_Loop",
+            "Jump_Land",
+            "Jump_Loop",
+            "Jump_Start",
+            "PickUp_Table",
+            "Pistol_Aim_Down",
+            "Pistol_Aim_Neutral",
+            "Pistol_Aim_Up",
+            "Pistol_Idle_Loop",
+            "Pistol_Reload",
+            "Pistol_Shoot",
+            "Punch_Cross",
+            "Punch_Jab",
+            "Push_Loop",
+            "Roll",
+            "Sitting_Enter",
+            "Sitting_Exit",
+            "Sitting_Idle_Loop",
+            "Sitting_Talking_Loop",
+            "Spell_Simple_Enter",
+            "Spell_Simple_Exit",
+            "Spell_Simple_Idle_Loop",
+            "Spell_Simple_Shoot",
+            "Sprint_Loop",
+            "Swim_Fwd_Loop",
+            "Swim_Idle_Loop",
+            "Sword_Attack",
+            "Sword_Idle",
+            "Walk_Formal_Loop",
+            "Walk_Loop"
+          ],
+          "directNameTrial": true
+        },
+        "joints": {
+          "pelvis": [
+            -0.029992363683275163,
+            0.9439353707831811,
+            0.04253778624561079
+          ],
+          "Head": [
+            -0.031870420482211066,
+            1.5839358736695044,
+            -0.09100209853203098
+          ],
+          "hand_l": [
+            -0.34189851523727344,
+            1.0086459425780556,
+            -0.014136075558172145
+          ],
+          "hand_r": [
+            0.2714150008080647,
+            1.0153887673664865,
+            -0.05078065769829636
+          ],
+          "foot_l": [
+            -0.11108894665918335,
+            0.1026302084186933,
+            0.10827603510635346
+          ],
+          "foot_r": [
+            0.11476768916709129,
+            0.362997469179566,
+            0.1949580924660045
+          ]
+        },
+        "poses": [
+          {
+            "frame": 30,
+            "joints": {
+              "pelvis": [
+                0.03845419772954553,
+                0.9381943907812832,
+                -0.04244479439085936
+              ],
+              "Head": [
+                0.014349386873462704,
+                1.5799528010792177,
+                0.07695859905688948
+              ],
+              "hand_l": [
+                0.3542564160697001,
+                1.0391105317032352,
+                0.13868659241168388
+              ],
+              "hand_r": [
+                -0.252189839181147,
+                0.9899930009283399,
+                -0.046717046137792595
+              ],
+              "foot_l": [
+                0.11506676714659128,
+                0.14242098004575715,
+                -0.25079725133100594
+              ],
+              "foot_r": [
+                -0.1151657322497606,
+                0.2426309547646499,
+                0.11319398917608242
+              ]
+            }
+          },
+          {
+            "frame": 60,
+            "joints": {
+              "pelvis": [
+                -0.022707910333727176,
+                0.9439354453385702,
+                -0.042534922889925976
+              ],
+              "Head": [
+                -0.030737311812754187,
+                1.5838934875299133,
+                0.0908852108467059
+              ],
+              "hand_l": [
+                0.27686636663201336,
+                1.0172777992031063,
+                0.06730295710621326
+              ],
+              "hand_r": [
+                -0.33041336406339666,
+                1.0056194846108624,
+                -0.015270560129346744
+              ],
+              "foot_l": [
+                0.11469587550260316,
+                0.36304171447870504,
+                -0.19489262776232547
+              ],
+              "foot_r": [
+                -0.11443904181539641,
+                0.1220074556216364,
+                -0.09578783838839333
+              ]
+            }
+          },
+          {
+            "frame": 90,
+            "joints": {
+              "pelvis": [
+                0.006803944170111245,
+                0.9086934039813486,
+                -0.04238500313341218
+              ],
+              "Head": [
+                0.03420488655430539,
+                1.5488924835272588,
+                0.08630481275027484
+              ],
+              "hand_l": [
+                0.29700079288676184,
+                0.9576589121700279,
+                -0.07873965007816193
+              ],
+              "hand_r": [
+                -0.29463233393382127,
+                1.026209687939587,
+                0.19854647134380365
+              ],
+              "foot_l": [
+                0.11205104480905644,
+                0.09990664077987277,
+                0.06058186229140902
+              ],
+              "foot_r": [
+                -0.11562910505303622,
+                0.25055082933298806,
+                -0.4276725855323695
+              ]
+            }
+          },
+          {
+            "frame": 120,
+            "joints": {
+              "pelvis": [
+                0.025890681528035735,
+                0.9029665187134033,
+                -0.04226185911598987
+              ],
+              "Head": [
+                -0.012000860700542942,
+                1.5445898111547245,
+                0.07282164483638859
+              ],
+              "hand_l": [
+                0.3301157598205679,
+                1.0431417953115443,
+                0.2278190958089999
+              ],
+              "hand_r": [
+                -0.2529908209596416,
+                0.9478524931130817,
+                -0.0970005000328974
+              ],
+              "foot_l": [
+                0.12055916043614598,
+                0.16712138159184226,
+                -0.3978462621160609
+              ],
+              "foot_r": [
+                -0.1145087754097498,
+                0.09473517128934172,
+                0.2329075315668459
+              ]
+            }
+          },
+          {
+            "frame": 150,
+            "joints": {
+              "pelvis": [
+                -0.03088330781055461,
+                0.9381865486958292,
+                -0.04242118337781682
+              ],
+              "Head": [
+                -0.01216018493545147,
+                1.5799387180591729,
+                0.07847919002034293
+              ],
+              "hand_l": [
+                0.26378887005078805,
+                0.9900756396127213,
+                -0.02848533640846701
+              ],
+              "hand_r": [
+                -0.345260907156261,
+                1.0282125317037893,
+                0.11304344268265284
+              ],
+              "foot_l": [
+                0.11473633695656033,
+                0.24269901229906393,
+                0.1131142282471452
+              ],
+              "foot_r": [
+                -0.11785495954019404,
+                0.1386525038554784,
+                -0.25477822670996664
+              ]
+            }
+          },
+          {
+            "frame": 180,
+            "joints": {
+              "pelvis": [
+                0.029992363683275156,
+                0.9439353707831811,
+                -0.0425377862456108
+              ],
+              "Head": [
+                0.03187042048221107,
+                1.5839358736695044,
+                0.09100209853203098
+              ],
+              "hand_l": [
+                0.34189851523727344,
+                1.0086459425780556,
+                0.014136075558172048
+              ],
+              "hand_r": [
+                -0.2714150008080647,
+                1.0153887673664865,
+                0.0507806576982964
+              ],
+              "foot_l": [
+                0.11108894665918337,
+                0.1026302084186933,
+                -0.10827603510635347
+              ],
+              "foot_r": [
+                -0.11476768916709132,
+                0.362997469179566,
+                -0.19495809246600448
+              ]
+            }
+          }
+        ],
+        "raf": {
+          "samples": 179,
+          "p95": 18.200000000000728,
+          "max": 18.69999999999709
+        },
+        "render": {
+          "calls": 19,
+          "triangles": 18533,
+          "geometries": 19,
+          "textures": 13
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "buffer": [
+          1920,
+          840
+        ],
+        "glError": 0,
+        "scope": "Dressed four-role candidate on author rig, rest-corrected author animation. Production game, IK, gameplay equipment, swim height, world support and final quality not accepted."
+      }
+    },
+    {
+      "image": "docs/wardrobe-rig-keeper-front.jpg",
+      "kind": "still",
+      "state": {
+        "ready": true,
+        "model": "keeper",
+        "clip": "Idle_Loop",
+        "angle": 0,
+        "frames": 0,
+        "running": false,
+        "hidden": false,
+        "metadata": {
+          "restRetargeted": true,
+          "referenceHeight": 1.8287167448388175,
+          "wardrobe": {
+            "role": "keeper",
+            "label": "守灯人 · 阿岚",
+            "body": "SuperHero_Male",
+            "height": 1.8195863831788301,
+            "sourceTriangles": 12566,
+            "skinTriangles": 5906,
+            "clothTriangles": 6660,
+            "productionIntegrated": false
+          },
+          "style": {
+            "coat": 9730882,
+            "trousers": 3948864,
+            "scarf": 7627598,
+            "pack": 5260083,
+            "sex": "male",
+            "hair": "Hair_Buzzed",
+            "label": "守灯人 · 阿岚",
+            "cargo": "lantern"
+          },
+          "productionIntegrated": false,
+          "file": "Superhero_Male_FullBody.gltf",
+          "originalBounds": [
+            [
+              -0.9294323991218112,
+              -0.009509849888516313,
+              -0.16345080095368408
+            ],
+            [
+              0.9294324424934728,
+              1.8100766650860056,
+              0.12803739335794287
+            ]
+          ],
+          "originalHeight": 1.8195865149745218,
+          "displayScale": 0.9892357330562015,
+          "skins": 9,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ],
+          "triangles": 30658,
+          "ownClipCount": 0,
+          "offeredClips": [
+            "A_TPose",
+            "Crouch_Fwd_Loop",
+            "Crouch_Idle_Loop",
+            "Dance_Loop",
+            "Death01",
+            "Driving_Loop",
+            "Fixing_Kneeling",
+            "Hit_Chest",
+            "Hit_Head",
+            "Idle_Loop",
+            "Idle_Talking_Loop",
+            "Idle_Torch_Loop",
+            "Interact",
+            "Jog_Fwd_Loop",
+            "Jump_Land",
+            "Jump_Loop",
+            "Jump_Start",
+            "PickUp_Table",
+            "Pistol_Aim_Down",
+            "Pistol_Aim_Neutral",
+            "Pistol_Aim_Up",
+            "Pistol_Idle_Loop",
+            "Pistol_Reload",
+            "Pistol_Shoot",
+            "Punch_Cross",
+            "Punch_Jab",
+            "Push_Loop",
+            "Roll",
+            "Sitting_Enter",
+            "Sitting_Exit",
+            "Sitting_Idle_Loop",
+            "Sitting_Talking_Loop",
+            "Spell_Simple_Enter",
+            "Spell_Simple_Exit",
+            "Spell_Simple_Idle_Loop",
+            "Spell_Simple_Shoot",
+            "Sprint_Loop",
+            "Swim_Fwd_Loop",
+            "Swim_Idle_Loop",
+            "Sword_Attack",
+            "Sword_Idle",
+            "Walk_Formal_Loop",
+            "Walk_Loop"
+          ],
+          "directNameTrial": true
+        },
+        "joints": {
+          "pelvis": [
+            0.0052334511138609425,
+            0.9093841650240375,
+            -0.07835995842304744
+          ],
+          "Head": [
+            -0.008937516794984427,
+            1.5582735482528867,
+            0.0019332745728920311
+          ],
+          "hand_l": [
+            0.3445309559793568,
+            0.9624278050778485,
+            0.020585363476398673
+          ],
+          "hand_r": [
+            -0.2997328681457905,
+            0.9904637485313325,
+            -0.1783552803226102
+          ],
+          "foot_l": [
+            0.23110769255710825,
+            0.09111873435578527,
+            0.09301298496333932
+          ],
+          "foot_r": [
+            -0.18168445132963557,
+            0.09788854695466342,
+            -0.33139582711062054
+          ]
+        },
+        "poses": [],
+        "raf": null,
+        "render": {
+          "calls": 20,
+          "triangles": 18094,
+          "geometries": 20,
+          "textures": 14
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "buffer": [
+          1920,
+          840
+        ],
+        "glError": 0,
+        "scope": "Dressed four-role candidate on author rig, rest-corrected author animation. Production game, IK, gameplay equipment, swim height, world support and final quality not accepted."
+      }
+    },
+    {
+      "image": "docs/wardrobe-rig-keeper-interact.jpg",
+      "kind": "motion",
+      "state": {
+        "ready": true,
+        "model": "keeper",
+        "clip": "Interact",
+        "angle": 0,
+        "frames": 180,
+        "running": false,
+        "hidden": false,
+        "metadata": {
+          "restRetargeted": true,
+          "referenceHeight": 1.8287167448388175,
+          "wardrobe": {
+            "role": "keeper",
+            "label": "守灯人 · 阿岚",
+            "body": "SuperHero_Male",
+            "height": 1.8195863831788301,
+            "sourceTriangles": 12566,
+            "skinTriangles": 5906,
+            "clothTriangles": 6660,
+            "productionIntegrated": false
+          },
+          "style": {
+            "coat": 9730882,
+            "trousers": 3948864,
+            "scarf": 7627598,
+            "pack": 5260083,
+            "sex": "male",
+            "hair": "Hair_Buzzed",
+            "label": "守灯人 · 阿岚",
+            "cargo": "lantern"
+          },
+          "productionIntegrated": false,
+          "file": "Superhero_Male_FullBody.gltf",
+          "originalBounds": [
+            [
+              -0.9294323991218112,
+              -0.009509849888516313,
+              -0.16345080095368408
+            ],
+            [
+              0.9294324424934728,
+              1.8100766650860056,
+              0.12803739335794287
+            ]
+          ],
+          "originalHeight": 1.8195865149745218,
+          "displayScale": 0.9892357330562015,
+          "skins": 9,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ],
+          "triangles": 30658,
+          "ownClipCount": 0,
+          "offeredClips": [
+            "A_TPose",
+            "Crouch_Fwd_Loop",
+            "Crouch_Idle_Loop",
+            "Dance_Loop",
+            "Death01",
+            "Driving_Loop",
+            "Fixing_Kneeling",
+            "Hit_Chest",
+            "Hit_Head",
+            "Idle_Loop",
+            "Idle_Talking_Loop",
+            "Idle_Torch_Loop",
+            "Interact",
+            "Jog_Fwd_Loop",
+            "Jump_Land",
+            "Jump_Loop",
+            "Jump_Start",
+            "PickUp_Table",
+            "Pistol_Aim_Down",
+            "Pistol_Aim_Neutral",
+            "Pistol_Aim_Up",
+            "Pistol_Idle_Loop",
+            "Pistol_Reload",
+            "Pistol_Shoot",
+            "Punch_Cross",
+            "Punch_Jab",
+            "Push_Loop",
+            "Roll",
+            "Sitting_Enter",
+            "Sitting_Exit",
+            "Sitting_Idle_Loop",
+            "Sitting_Talking_Loop",
+            "Spell_Simple_Enter",
+            "Spell_Simple_Exit",
+            "Spell_Simple_Idle_Loop",
+            "Spell_Simple_Shoot",
+            "Sprint_Loop",
+            "Swim_Fwd_Loop",
+            "Swim_Idle_Loop",
+            "Sword_Attack",
+            "Sword_Idle",
+            "Walk_Formal_Loop",
+            "Walk_Loop"
+          ],
+          "directNameTrial": true
+        },
+        "joints": {
+          "pelvis": [
+            -0.00241564268869462,
+            0.9093869362876071,
+            -0.07837674077890984
+          ],
+          "Head": [
+            -0.01636902994607193,
+            1.558371807648463,
+            0.000996343619784755
+          ],
+          "hand_l": [
+            0.1881346808558043,
+            1.3248833576616739,
+            0.45213558139682875
+          ],
+          "hand_r": [
+            -0.3075797652393638,
+            0.990335594430794,
+            -0.17823407494160665
+          ],
+          "foot_l": [
+            0.2316846824341364,
+            0.09097137535559269,
+            0.09299705629915114
+          ],
+          "foot_r": [
+            -0.18112823648643084,
+            0.09792983707978237,
+            -0.33133042522630024
+          ]
+        },
+        "poses": [
+          {
+            "frame": 30,
+            "joints": {
+              "pelvis": [
+                0.0017803536577529519,
+                0.900995493028686,
+                -0.07993671153946832
+              ],
+              "Head": [
+                -0.016270897226107157,
+                1.5475799483755381,
+                0.016676676523976277
+              ],
+              "hand_l": [
+                0.17032229272592994,
+                1.2611289051950645,
+                0.41400401416816
+              ],
+              "hand_r": [
+                -0.28695517886818145,
+                0.9685368010768511,
+                -0.16739293007424097
+              ],
+              "foot_l": [
+                0.23113793788737302,
+                0.09364748364560266,
+                0.09319125209211096
+              ],
+              "foot_r": [
+                -0.1810046821587098,
+                0.10040024422259808,
+                -0.3304050888097605
+              ]
+            }
+          },
+          {
+            "frame": 60,
+            "joints": {
+              "pelvis": [
+                -0.0024156426886946213,
+                0.9093869362876071,
+                -0.07837674077890984
+              ],
+              "Head": [
+                -0.01636903098691618,
+                1.5583718065242227,
+                0.0009963480227000304
+              ],
+              "hand_l": [
+                0.1881346750391127,
+                1.3248833571134517,
+                0.4521355916689097
+              ],
+              "hand_r": [
+                -0.30757976766468453,
+                0.9903355678141659,
+                -0.17823406697762217
+              ],
+              "foot_l": [
+                0.2316846705503376,
+                0.09097145911632087,
+                0.0929970581444409
+              ],
+              "foot_r": [
+                -0.18112823648643087,
+                0.09792983707978126,
+                -0.3313304252263011
+              ]
+            }
+          },
+          {
+            "frame": 90,
+            "joints": {
+              "pelvis": [
+                0.0017803541184017305,
+                0.9096643574557283,
+                -0.0799367038723654
+              ],
+              "Head": [
+                -0.014882434412643433,
+                1.5570064579073513,
+                0.01081342668999545
+              ],
+              "hand_l": [
+                0.23070202422915456,
+                0.9873343032963188,
+                0.21379238484459642
+              ],
+              "hand_r": [
+                -0.30441467939014066,
+                0.9904709292324312,
+                -0.17543073802987402
+              ],
+              "foot_l": [
+                0.2313840323421139,
+                0.09223902197879774,
+                0.09317082513067132
+              ],
+              "foot_r": [
+                -0.18142896432087083,
+                0.09913584153236721,
+                -0.33111753653532794
+              ]
+            }
+          },
+          {
+            "frame": 120,
+            "joints": {
+              "pelvis": [
+                0.0052374292767673886,
+                0.9093869362876069,
+                -0.07837673340852955
+              ],
+              "Head": [
+                -0.011534375933470516,
+                1.556903816835576,
+                0.012901673526223352
+              ],
+              "hand_l": [
+                0.31085140776926073,
+                0.9704955058233593,
+                0.01838432733349954
+              ],
+              "hand_r": [
+                -0.2979988238134248,
+                0.9928303482771046,
+                -0.18634161048458076
+              ],
+              "foot_l": [
+                0.2311074954264385,
+                0.09113146747224382,
+                0.09301466125752823
+              ],
+              "foot_r": [
+                -0.18168447820330075,
+                0.09790162812156061,
+                -0.33139326400097013
+              ]
+            }
+          },
+          {
+            "frame": 150,
+            "joints": {
+              "pelvis": [
+                0.0017803536577529764,
+                0.900995493028686,
+                -0.07993671153946831
+              ],
+              "Head": [
+                -0.016270897226107056,
+                1.5475799483755381,
+                0.016676676523975847
+              ],
+              "hand_l": [
+                0.17032229272593052,
+                1.2611289051950616,
+                0.4140040141681591
+              ],
+              "hand_r": [
+                -0.2869551788681814,
+                0.9685368010768511,
+                -0.1673929300742409
+              ],
+              "foot_l": [
+                0.231137937887373,
+                0.09364748364560277,
+                0.09319125209211127
+              ],
+              "foot_r": [
+                -0.18100468215870996,
+                0.10040024422259819,
+                -0.33040508880976016
+              ]
+            }
+          },
+          {
+            "frame": 180,
+            "joints": {
+              "pelvis": [
+                -0.00241564268869462,
+                0.9093869362876071,
+                -0.07837674077890984
+              ],
+              "Head": [
+                -0.01636902994607193,
+                1.558371807648463,
+                0.000996343619784755
+              ],
+              "hand_l": [
+                0.1881346808558043,
+                1.3248833576616739,
+                0.45213558139682875
+              ],
+              "hand_r": [
+                -0.3075797652393638,
+                0.990335594430794,
+                -0.17823407494160665
+              ],
+              "foot_l": [
+                0.2316846824341364,
+                0.09097137535559269,
+                0.09299705629915114
+              ],
+              "foot_r": [
+                -0.18112823648643084,
+                0.09792983707978237,
+                -0.33133042522630024
+              ]
+            }
+          }
+        ],
+        "raf": {
+          "samples": 179,
+          "p95": 18.100000000002183,
+          "max": 18.599999999998545
+        },
+        "render": {
+          "calls": 20,
+          "triangles": 18094,
+          "geometries": 20,
+          "textures": 14
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "buffer": [
+          1920,
+          840
+        ],
+        "glError": 0,
+        "scope": "Dressed four-role candidate on author rig, rest-corrected author animation. Production game, IK, gameplay equipment, swim height, world support and final quality not accepted."
+      }
+    },
+    {
+      "image": "docs/wardrobe-rig-botanist-front.jpg",
+      "kind": "still",
+      "state": {
+        "ready": true,
+        "model": "botanist",
+        "clip": "Idle_Loop",
+        "angle": 0,
+        "frames": 0,
+        "running": false,
+        "hidden": false,
+        "metadata": {
+          "restRetargeted": true,
+          "referenceHeight": 1.8287167448388175,
+          "wardrobe": {
+            "role": "botanist",
+            "label": "药草师 · 林栖",
+            "body": "Superhero_Female",
+            "height": 1.7750510573387146,
+            "sourceTriangles": 12812,
+            "skinTriangles": 5754,
+            "clothTriangles": 7058,
+            "productionIntegrated": false
+          },
+          "style": {
+            "coat": 5666139,
+            "trousers": 4345154,
+            "scarf": 12893329,
+            "pack": 7231036,
+            "sex": "female",
+            "hair": "Hair_Buns",
+            "label": "药草师 · 林栖",
+            "cargo": "herbs"
+          },
+          "productionIntegrated": false,
+          "file": "Superhero_Female_FullBody.gltf",
+          "originalBounds": [
+            [
+              -0.8344331101674881,
+              -0.00840710894944254,
+              -0.16246949431349073
+            ],
+            [
+              0.8344329878487169,
+              1.766643851798447,
+              0.14022762239328995
+            ]
+          ],
+          "originalHeight": 1.7750509607478897,
+          "displayScale": 1.0140553932274703,
+          "skins": 9,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ],
+          "triangles": 34148,
+          "ownClipCount": 0,
+          "offeredClips": [
+            "A_TPose",
+            "Crouch_Fwd_Loop",
+            "Crouch_Idle_Loop",
+            "Dance_Loop",
+            "Death01",
+            "Driving_Loop",
+            "Fixing_Kneeling",
+            "Hit_Chest",
+            "Hit_Head",
+            "Idle_Loop",
+            "Idle_Talking_Loop",
+            "Idle_Torch_Loop",
+            "Interact",
+            "Jog_Fwd_Loop",
+            "Jump_Land",
+            "Jump_Loop",
+            "Jump_Start",
+            "PickUp_Table",
+            "Pistol_Aim_Down",
+            "Pistol_Aim_Neutral",
+            "Pistol_Aim_Up",
+            "Pistol_Idle_Loop",
+            "Pistol_Reload",
+            "Pistol_Shoot",
+            "Punch_Cross",
+            "Punch_Jab",
+            "Push_Loop",
+            "Roll",
+            "Sitting_Enter",
+            "Sitting_Exit",
+            "Sitting_Idle_Loop",
+            "Sitting_Talking_Loop",
+            "Spell_Simple_Enter",
+            "Spell_Simple_Exit",
+            "Spell_Simple_Idle_Loop",
+            "Spell_Simple_Shoot",
+            "Sprint_Loop",
+            "Swim_Fwd_Loop",
+            "Swim_Idle_Loop",
+            "Sword_Attack",
+            "Sword_Idle",
+            "Walk_Formal_Loop",
+            "Walk_Loop"
+          ],
+          "directNameTrial": true
+        },
+        "joints": {
+          "pelvis": [
+            0.005233451058974128,
+            0.9145151077055776,
+            -0.08216518392657138
+          ],
+          "Head": [
+            -0.016107290952880014,
+            1.5436623488275834,
+            0.0017227340110220202
+          ],
+          "hand_l": [
+            0.2879964659351323,
+            0.9550209112105116,
+            0.009562868814275385
+          ],
+          "hand_r": [
+            -0.25427582030031065,
+            0.9735625563868302,
+            -0.1529486767770455
+          ],
+          "foot_l": [
+            0.236196503846654,
+            0.0836938489346199,
+            0.09970727633730277
+          ],
+          "foot_r": [
+            -0.17395598544482377,
+            0.0760999317113924,
+            -0.3244164226810123
+          ]
+        },
+        "poses": [],
+        "raf": null,
+        "render": {
+          "calls": 23,
+          "triangles": 21338,
+          "geometries": 23,
+          "textures": 15
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "buffer": [
+          1920,
+          840
+        ],
+        "glError": 0,
+        "scope": "Dressed four-role candidate on author rig, rest-corrected author animation. Production game, IK, gameplay equipment, swim height, world support and final quality not accepted."
+      }
+    },
+    {
+      "image": "docs/wardrobe-rig-botanist-walk.jpg",
+      "kind": "motion",
+      "state": {
+        "ready": true,
+        "model": "botanist",
+        "clip": "Walk_Loop",
+        "angle": 0,
+        "frames": 180,
+        "running": false,
+        "hidden": false,
+        "metadata": {
+          "restRetargeted": true,
+          "referenceHeight": 1.8287167448388175,
+          "wardrobe": {
+            "role": "botanist",
+            "label": "药草师 · 林栖",
+            "body": "Superhero_Female",
+            "height": 1.7750510573387146,
+            "sourceTriangles": 12812,
+            "skinTriangles": 5754,
+            "clothTriangles": 7058,
+            "productionIntegrated": false
+          },
+          "style": {
+            "coat": 5666139,
+            "trousers": 4345154,
+            "scarf": 12893329,
+            "pack": 7231036,
+            "sex": "female",
+            "hair": "Hair_Buns",
+            "label": "药草师 · 林栖",
+            "cargo": "herbs"
+          },
+          "productionIntegrated": false,
+          "file": "Superhero_Female_FullBody.gltf",
+          "originalBounds": [
+            [
+              -0.8344331101674881,
+              -0.00840710894944254,
+              -0.16246949431349073
+            ],
+            [
+              0.8344329878487169,
+              1.766643851798447,
+              0.14022762239328995
+            ]
+          ],
+          "originalHeight": 1.7750509607478897,
+          "displayScale": 1.0140553932274703,
+          "skins": 9,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ],
+          "triangles": 34148,
+          "ownClipCount": 0,
+          "offeredClips": [
+            "A_TPose",
+            "Crouch_Fwd_Loop",
+            "Crouch_Idle_Loop",
+            "Dance_Loop",
+            "Death01",
+            "Driving_Loop",
+            "Fixing_Kneeling",
+            "Hit_Chest",
+            "Hit_Head",
+            "Idle_Loop",
+            "Idle_Talking_Loop",
+            "Idle_Torch_Loop",
+            "Interact",
+            "Jog_Fwd_Loop",
+            "Jump_Land",
+            "Jump_Loop",
+            "Jump_Start",
+            "PickUp_Table",
+            "Pistol_Aim_Down",
+            "Pistol_Aim_Neutral",
+            "Pistol_Aim_Up",
+            "Pistol_Idle_Loop",
+            "Pistol_Reload",
+            "Pistol_Shoot",
+            "Punch_Cross",
+            "Punch_Jab",
+            "Push_Loop",
+            "Roll",
+            "Sitting_Enter",
+            "Sitting_Exit",
+            "Sitting_Idle_Loop",
+            "Sitting_Talking_Loop",
+            "Spell_Simple_Enter",
+            "Spell_Simple_Exit",
+            "Spell_Simple_Idle_Loop",
+            "Spell_Simple_Shoot",
+            "Sprint_Loop",
+            "Swim_Fwd_Loop",
+            "Swim_Idle_Loop",
+            "Sword_Attack",
+            "Sword_Idle",
+            "Walk_Formal_Loop",
+            "Walk_Loop"
+          ],
+          "directNameTrial": true
+        },
+        "joints": {
+          "pelvis": [
+            0.02999236387290036,
+            0.9490663293695999,
+            -0.0463430103484329
+          ],
+          "Head": [
+            0.03225067400690738,
+            1.5692024951453134,
+            0.09034133518528796
+          ],
+          "hand_l": [
+            0.2870594146712607,
+            0.992128306000945,
+            0.02506781171568183
+          ],
+          "hand_r": [
+            -0.21518200896389628,
+            0.9984830395245371,
+            0.06004136720841575
+          ],
+          "foot_l": [
+            0.11060301842501129,
+            0.08885331160004589,
+            -0.10261907178931903
+          ],
+          "foot_r": [
+            -0.1146280335433321,
+            0.3599866087770552,
+            -0.21121539070846723
+          ]
+        },
+        "poses": [
+          {
+            "frame": 30,
+            "joints": {
+              "pelvis": [
+                0.03845419883557687,
+                0.9433253435841077,
+                -0.04625001993509947
+              ],
+              "Head": [
+                0.014657254619421045,
+                1.5654562461625718,
+                0.07723143585229815
+              ],
+              "hand_l": [
+                0.297268129397531,
+                1.0217220353185859,
+                0.1468989496418486
+              ],
+              "hand_r": [
+                -0.19926951007792892,
+                0.9753652202444643,
+                -0.03111288061245622
+              ],
+              "foot_l": [
+                0.1156315740666444,
+                0.1269935413350679,
+                -0.24993064265540638
+              ],
+              "foot_r": [
+                -0.11422128032030547,
+                0.23854332050789862,
+                0.10447523733439296
+              ]
+            }
+          },
+          {
+            "frame": 60,
+            "joints": {
+              "pelvis": [
+                -0.022707909898124077,
+                0.9490664054042103,
+                -0.04634014692634818
+              ],
+              "Head": [
+                -0.030955332731691834,
+                1.5691581149366227,
+                0.09022629086586283
+              ],
+              "hand_l": [
+                0.21945116568868242,
+                1.000126531647965,
+                0.0737441083188227
+              ],
+              "hand_r": [
+                -0.276977731761663,
+                0.989265815162131,
+                -0.002001566119720785
+              ],
+              "foot_l": [
+                0.11471972267364845,
+                0.36004948943786036,
+                -0.2111495374313418
+              ],
+              "foot_r": [
+                -0.1139745337793983,
+                0.11032122021356339,
+                -0.09352668154790919
+              ]
+            }
+          },
+          {
+            "frame": 90,
+            "joints": {
+              "pelvis": [
+                0.0068039442834056715,
+                0.9138243628501996,
+                -0.04619022823435939
+              ],
+              "Head": [
+                0.03454990812870289,
+                1.5342049733987324,
+                0.08591727764568907
+              ],
+              "hand_l": [
+                0.24426750628718924,
+                0.9432753588836045,
+                -0.06372832460944139
+              ],
+              "hand_r": [
+                -0.23585975575816703,
+                1.0087724413409336,
+                0.2035442288900949
+              ],
+              "foot_l": [
+                0.11076349235695496,
+                0.09238668761270502,
+                0.06226669671432182
+              ],
+              "foot_r": [
+                -0.11657470466193831,
+                0.23694221195204918,
+                -0.43506234004300887
+              ]
+            }
+          },
+          {
+            "frame": 120,
+            "joints": {
+              "pelvis": [
+                0.025890680040468014,
+                0.9080974627131384,
+                -0.046067084677191256
+              ],
+              "Head": [
+                -0.012004844008366959,
+                1.5301372363343868,
+                0.07333120284469025
+              ],
+              "hand_l": [
+                0.2714510845983928,
+                1.0255289800075655,
+                0.23336979806344352
+              ],
+              "hand_r": [
+                -0.2026502533465257,
+                0.9342745532698106,
+                -0.07767012598983408
+              ],
+              "foot_l": [
+                0.12180083221155065,
+                0.14906465445692774,
+                -0.3998552133359396
+              ],
+              "foot_r": [
+                -0.11338294407234457,
+                0.09035904323972177,
+                0.2413579992879206
+              ]
+            }
+          },
+          {
+            "frame": 150,
+            "joints": {
+              "pelvis": [
+                -0.030883307034075064,
+                0.9433174860700739,
+                -0.04622640961918599
+              ],
+              "Head": [
+                -0.012115170603327048,
+                1.565407238464282,
+                0.07864826403783658
+              ],
+              "hand_l": [
+                0.20865694933277412,
+                0.9753925237319566,
+                -0.016518266209634216
+              ],
+              "hand_r": [
+                -0.28867533754612296,
+                1.011382026698913,
+                0.1221130870206502
+              ],
+              "foot_l": [
+                0.11362136887997863,
+                0.23859934238088998,
+                0.10439698125634034
+              ],
+              "foot_r": [
+                -0.11853967127090684,
+                0.12272416231850891,
+                -0.25335144626732187
+              ]
+            }
+          },
+          {
+            "frame": 180,
+            "joints": {
+              "pelvis": [
+                0.02999236387290036,
+                0.9490663293695999,
+                -0.0463430103484329
+              ],
+              "Head": [
+                0.03225067400690738,
+                1.5692024951453134,
+                0.09034133518528796
+              ],
+              "hand_l": [
+                0.2870594146712607,
+                0.992128306000945,
+                0.02506781171568183
+              ],
+              "hand_r": [
+                -0.21518200896389628,
+                0.9984830395245371,
+                0.06004136720841575
+              ],
+              "foot_l": [
+                0.11060301842501129,
+                0.08885331160004589,
+                -0.10261907178931903
+              ],
+              "foot_r": [
+                -0.1146280335433321,
+                0.3599866087770552,
+                -0.21121539070846723
+              ]
+            }
+          }
+        ],
+        "raf": {
+          "samples": 179,
+          "p95": 18.19999999999709,
+          "max": 18.599999999998545
+        },
+        "render": {
+          "calls": 23,
+          "triangles": 21338,
+          "geometries": 23,
+          "textures": 15
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "buffer": [
+          1920,
+          840
+        ],
+        "glError": 0,
+        "scope": "Dressed four-role candidate on author rig, rest-corrected author animation. Production game, IK, gameplay equipment, swim height, world support and final quality not accepted."
+      }
+    },
+    {
+      "image": "docs/wardrobe-rig-botanist-side.jpg",
+      "kind": "still",
+      "state": {
+        "ready": true,
+        "model": "botanist",
+        "clip": "Walk_Loop",
+        "angle": 1.5707963267948966,
+        "frames": 180,
+        "running": false,
+        "hidden": false,
+        "metadata": {
+          "restRetargeted": true,
+          "referenceHeight": 1.8287167448388175,
+          "wardrobe": {
+            "role": "botanist",
+            "label": "药草师 · 林栖",
+            "body": "Superhero_Female",
+            "height": 1.7750510573387146,
+            "sourceTriangles": 12812,
+            "skinTriangles": 5754,
+            "clothTriangles": 7058,
+            "productionIntegrated": false
+          },
+          "style": {
+            "coat": 5666139,
+            "trousers": 4345154,
+            "scarf": 12893329,
+            "pack": 7231036,
+            "sex": "female",
+            "hair": "Hair_Buns",
+            "label": "药草师 · 林栖",
+            "cargo": "herbs"
+          },
+          "productionIntegrated": false,
+          "file": "Superhero_Female_FullBody.gltf",
+          "originalBounds": [
+            [
+              -0.8344331101674881,
+              -0.00840710894944254,
+              -0.16246949431349073
+            ],
+            [
+              0.8344329878487169,
+              1.766643851798447,
+              0.14022762239328995
+            ]
+          ],
+          "originalHeight": 1.7750509607478897,
+          "displayScale": 1.0140553932274703,
+          "skins": 9,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ],
+          "triangles": 34148,
+          "ownClipCount": 0,
+          "offeredClips": [
+            "A_TPose",
+            "Crouch_Fwd_Loop",
+            "Crouch_Idle_Loop",
+            "Dance_Loop",
+            "Death01",
+            "Driving_Loop",
+            "Fixing_Kneeling",
+            "Hit_Chest",
+            "Hit_Head",
+            "Idle_Loop",
+            "Idle_Talking_Loop",
+            "Idle_Torch_Loop",
+            "Interact",
+            "Jog_Fwd_Loop",
+            "Jump_Land",
+            "Jump_Loop",
+            "Jump_Start",
+            "PickUp_Table",
+            "Pistol_Aim_Down",
+            "Pistol_Aim_Neutral",
+            "Pistol_Aim_Up",
+            "Pistol_Idle_Loop",
+            "Pistol_Reload",
+            "Pistol_Shoot",
+            "Punch_Cross",
+            "Punch_Jab",
+            "Push_Loop",
+            "Roll",
+            "Sitting_Enter",
+            "Sitting_Exit",
+            "Sitting_Idle_Loop",
+            "Sitting_Talking_Loop",
+            "Spell_Simple_Enter",
+            "Spell_Simple_Exit",
+            "Spell_Simple_Idle_Loop",
+            "Spell_Simple_Shoot",
+            "Sprint_Loop",
+            "Swim_Fwd_Loop",
+            "Swim_Idle_Loop",
+            "Sword_Attack",
+            "Sword_Idle",
+            "Walk_Formal_Loop",
+            "Walk_Loop"
+          ],
+          "directNameTrial": true
+        },
+        "joints": {
+          "pelvis": [
+            -0.04634301034843289,
+            0.9490663293695999,
+            -0.02999236387290037
+          ],
+          "Head": [
+            0.09034133518528797,
+            1.5692024951453134,
+            -0.03225067400690736
+          ],
+          "hand_l": [
+            0.025067811715681898,
+            0.992128306000945,
+            -0.2870594146712607
+          ],
+          "hand_r": [
+            0.06004136720841572,
+            0.9984830395245371,
+            0.21518200896389628
+          ],
+          "foot_l": [
+            -0.10261907178931899,
+            0.08885331160004589,
+            -0.11060301842501134
+          ],
+          "foot_r": [
+            -0.21121539070846723,
+            0.3599866087770552,
+            0.11462803354333206
+          ]
+        },
+        "poses": [
+          {
+            "frame": 30,
+            "joints": {
+              "pelvis": [
+                0.03845419883557687,
+                0.9433253435841077,
+                -0.04625001993509947
+              ],
+              "Head": [
+                0.014657254619421045,
+                1.5654562461625718,
+                0.07723143585229815
+              ],
+              "hand_l": [
+                0.297268129397531,
+                1.0217220353185859,
+                0.1468989496418486
+              ],
+              "hand_r": [
+                -0.19926951007792892,
+                0.9753652202444643,
+                -0.03111288061245622
+              ],
+              "foot_l": [
+                0.1156315740666444,
+                0.1269935413350679,
+                -0.24993064265540638
+              ],
+              "foot_r": [
+                -0.11422128032030547,
+                0.23854332050789862,
+                0.10447523733439296
+              ]
+            }
+          },
+          {
+            "frame": 60,
+            "joints": {
+              "pelvis": [
+                -0.022707909898124077,
+                0.9490664054042103,
+                -0.04634014692634818
+              ],
+              "Head": [
+                -0.030955332731691834,
+                1.5691581149366227,
+                0.09022629086586283
+              ],
+              "hand_l": [
+                0.21945116568868242,
+                1.000126531647965,
+                0.0737441083188227
+              ],
+              "hand_r": [
+                -0.276977731761663,
+                0.989265815162131,
+                -0.002001566119720785
+              ],
+              "foot_l": [
+                0.11471972267364845,
+                0.36004948943786036,
+                -0.2111495374313418
+              ],
+              "foot_r": [
+                -0.1139745337793983,
+                0.11032122021356339,
+                -0.09352668154790919
+              ]
+            }
+          },
+          {
+            "frame": 90,
+            "joints": {
+              "pelvis": [
+                0.0068039442834056715,
+                0.9138243628501996,
+                -0.04619022823435939
+              ],
+              "Head": [
+                0.03454990812870289,
+                1.5342049733987324,
+                0.08591727764568907
+              ],
+              "hand_l": [
+                0.24426750628718924,
+                0.9432753588836045,
+                -0.06372832460944139
+              ],
+              "hand_r": [
+                -0.23585975575816703,
+                1.0087724413409336,
+                0.2035442288900949
+              ],
+              "foot_l": [
+                0.11076349235695496,
+                0.09238668761270502,
+                0.06226669671432182
+              ],
+              "foot_r": [
+                -0.11657470466193831,
+                0.23694221195204918,
+                -0.43506234004300887
+              ]
+            }
+          },
+          {
+            "frame": 120,
+            "joints": {
+              "pelvis": [
+                0.025890680040468014,
+                0.9080974627131384,
+                -0.046067084677191256
+              ],
+              "Head": [
+                -0.012004844008366959,
+                1.5301372363343868,
+                0.07333120284469025
+              ],
+              "hand_l": [
+                0.2714510845983928,
+                1.0255289800075655,
+                0.23336979806344352
+              ],
+              "hand_r": [
+                -0.2026502533465257,
+                0.9342745532698106,
+                -0.07767012598983408
+              ],
+              "foot_l": [
+                0.12180083221155065,
+                0.14906465445692774,
+                -0.3998552133359396
+              ],
+              "foot_r": [
+                -0.11338294407234457,
+                0.09035904323972177,
+                0.2413579992879206
+              ]
+            }
+          },
+          {
+            "frame": 150,
+            "joints": {
+              "pelvis": [
+                -0.030883307034075064,
+                0.9433174860700739,
+                -0.04622640961918599
+              ],
+              "Head": [
+                -0.012115170603327048,
+                1.565407238464282,
+                0.07864826403783658
+              ],
+              "hand_l": [
+                0.20865694933277412,
+                0.9753925237319566,
+                -0.016518266209634216
+              ],
+              "hand_r": [
+                -0.28867533754612296,
+                1.011382026698913,
+                0.1221130870206502
+              ],
+              "foot_l": [
+                0.11362136887997863,
+                0.23859934238088998,
+                0.10439698125634034
+              ],
+              "foot_r": [
+                -0.11853967127090684,
+                0.12272416231850891,
+                -0.25335144626732187
+              ]
+            }
+          },
+          {
+            "frame": 180,
+            "joints": {
+              "pelvis": [
+                0.02999236387290036,
+                0.9490663293695999,
+                -0.0463430103484329
+              ],
+              "Head": [
+                0.03225067400690738,
+                1.5692024951453134,
+                0.09034133518528796
+              ],
+              "hand_l": [
+                0.2870594146712607,
+                0.992128306000945,
+                0.02506781171568183
+              ],
+              "hand_r": [
+                -0.21518200896389628,
+                0.9984830395245371,
+                0.06004136720841575
+              ],
+              "foot_l": [
+                0.11060301842501129,
+                0.08885331160004589,
+                -0.10261907178931903
+              ],
+              "foot_r": [
+                -0.1146280335433321,
+                0.3599866087770552,
+                -0.21121539070846723
+              ]
+            }
+          }
+        ],
+        "raf": {
+          "samples": 179,
+          "p95": 18.19999999999709,
+          "max": 18.599999999998545
+        },
+        "render": {
+          "calls": 23,
+          "triangles": 21338,
+          "geometries": 23,
+          "textures": 15
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "buffer": [
+          1920,
+          840
+        ],
+        "glError": 0,
+        "scope": "Dressed four-role candidate on author rig, rest-corrected author animation. Production game, IK, gameplay equipment, swim height, world support and final quality not accepted."
+      }
+    },
+    {
+      "image": "docs/wardrobe-rig-explorer-front.jpg",
+      "kind": "still",
+      "state": {
+        "ready": true,
+        "model": "explorer",
+        "clip": "Idle_Loop",
+        "angle": 0,
+        "frames": 0,
+        "running": false,
+        "hidden": false,
+        "metadata": {
+          "restRetargeted": true,
+          "referenceHeight": 1.8287167448388175,
+          "wardrobe": {
+            "role": "explorer",
+            "label": "航海家 · 远舟",
+            "body": "SuperHero_Male",
+            "height": 1.8195863831788301,
+            "sourceTriangles": 12566,
+            "skinTriangles": 5906,
+            "clothTriangles": 6660,
+            "productionIntegrated": false
+          },
+          "style": {
+            "coat": 5007481,
+            "trousers": 3424074,
+            "scarf": 12957331,
+            "pack": 7033153,
+            "sex": "male",
+            "hair": "Hair_Long",
+            "label": "航海家 · 远舟",
+            "cargo": "chart"
+          },
+          "productionIntegrated": false,
+          "file": "Superhero_Male_FullBody.gltf",
+          "originalBounds": [
+            [
+              -0.9294323991218112,
+              -0.009509849888516313,
+              -0.16345080095368408
+            ],
+            [
+              0.9294324424934728,
+              1.8100766650860056,
+              0.12803739335794287
+            ]
+          ],
+          "originalHeight": 1.8195865149745218,
+          "displayScale": 0.9892357330562015,
+          "skins": 9,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ],
+          "triangles": 32702,
+          "ownClipCount": 0,
+          "offeredClips": [
+            "A_TPose",
+            "Crouch_Fwd_Loop",
+            "Crouch_Idle_Loop",
+            "Dance_Loop",
+            "Death01",
+            "Driving_Loop",
+            "Fixing_Kneeling",
+            "Hit_Chest",
+            "Hit_Head",
+            "Idle_Loop",
+            "Idle_Talking_Loop",
+            "Idle_Torch_Loop",
+            "Interact",
+            "Jog_Fwd_Loop",
+            "Jump_Land",
+            "Jump_Loop",
+            "Jump_Start",
+            "PickUp_Table",
+            "Pistol_Aim_Down",
+            "Pistol_Aim_Neutral",
+            "Pistol_Aim_Up",
+            "Pistol_Idle_Loop",
+            "Pistol_Reload",
+            "Pistol_Shoot",
+            "Punch_Cross",
+            "Punch_Jab",
+            "Push_Loop",
+            "Roll",
+            "Sitting_Enter",
+            "Sitting_Exit",
+            "Sitting_Idle_Loop",
+            "Sitting_Talking_Loop",
+            "Spell_Simple_Enter",
+            "Spell_Simple_Exit",
+            "Spell_Simple_Idle_Loop",
+            "Spell_Simple_Shoot",
+            "Sprint_Loop",
+            "Swim_Fwd_Loop",
+            "Swim_Idle_Loop",
+            "Sword_Attack",
+            "Sword_Idle",
+            "Walk_Formal_Loop",
+            "Walk_Loop"
+          ],
+          "directNameTrial": true
+        },
+        "joints": {
+          "pelvis": [
+            0.0052334511138609425,
+            0.9093841650240375,
+            -0.07835995842304744
+          ],
+          "Head": [
+            -0.008937516794984427,
+            1.5582735482528867,
+            0.0019332745728920311
+          ],
+          "hand_l": [
+            0.3445309559793568,
+            0.9624278050778485,
+            0.020585363476398673
+          ],
+          "hand_r": [
+            -0.2997328681457905,
+            0.9904637485313325,
+            -0.1783552803226102
+          ],
+          "foot_l": [
+            0.23110769255710825,
+            0.09111873435578527,
+            0.09301298496333932
+          ],
+          "foot_r": [
+            -0.18168445132963557,
+            0.09788854695466342,
+            -0.33139582711062054
+          ]
+        },
+        "poses": [],
+        "raf": null,
+        "render": {
+          "calls": 19,
+          "triangles": 20138,
+          "geometries": 19,
+          "textures": 16
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "buffer": [
+          1920,
+          840
+        ],
+        "glError": 0,
+        "scope": "Dressed four-role candidate on author rig, rest-corrected author animation. Production game, IK, gameplay equipment, swim height, world support and final quality not accepted."
+      }
+    },
+    {
+      "image": "docs/wardrobe-rig-explorer-sprint.jpg",
+      "kind": "motion",
+      "state": {
+        "ready": true,
+        "model": "explorer",
+        "clip": "Sprint_Loop",
+        "angle": 0,
+        "frames": 180,
+        "running": false,
+        "hidden": false,
+        "metadata": {
+          "restRetargeted": true,
+          "referenceHeight": 1.8287167448388175,
+          "wardrobe": {
+            "role": "explorer",
+            "label": "航海家 · 远舟",
+            "body": "SuperHero_Male",
+            "height": 1.8195863831788301,
+            "sourceTriangles": 12566,
+            "skinTriangles": 5906,
+            "clothTriangles": 6660,
+            "productionIntegrated": false
+          },
+          "style": {
+            "coat": 5007481,
+            "trousers": 3424074,
+            "scarf": 12957331,
+            "pack": 7033153,
+            "sex": "male",
+            "hair": "Hair_Long",
+            "label": "航海家 · 远舟",
+            "cargo": "chart"
+          },
+          "productionIntegrated": false,
+          "file": "Superhero_Male_FullBody.gltf",
+          "originalBounds": [
+            [
+              -0.9294323991218112,
+              -0.009509849888516313,
+              -0.16345080095368408
+            ],
+            [
+              0.9294324424934728,
+              1.8100766650860056,
+              0.12803739335794287
+            ]
+          ],
+          "originalHeight": 1.8195865149745218,
+          "displayScale": 0.9892357330562015,
+          "skins": 9,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ],
+          "triangles": 32702,
+          "ownClipCount": 0,
+          "offeredClips": [
+            "A_TPose",
+            "Crouch_Fwd_Loop",
+            "Crouch_Idle_Loop",
+            "Dance_Loop",
+            "Death01",
+            "Driving_Loop",
+            "Fixing_Kneeling",
+            "Hit_Chest",
+            "Hit_Head",
+            "Idle_Loop",
+            "Idle_Talking_Loop",
+            "Idle_Torch_Loop",
+            "Interact",
+            "Jog_Fwd_Loop",
+            "Jump_Land",
+            "Jump_Loop",
+            "Jump_Start",
+            "PickUp_Table",
+            "Pistol_Aim_Down",
+            "Pistol_Aim_Neutral",
+            "Pistol_Aim_Up",
+            "Pistol_Idle_Loop",
+            "Pistol_Reload",
+            "Pistol_Shoot",
+            "Punch_Cross",
+            "Punch_Jab",
+            "Push_Loop",
+            "Roll",
+            "Sitting_Enter",
+            "Sitting_Exit",
+            "Sitting_Idle_Loop",
+            "Sitting_Talking_Loop",
+            "Spell_Simple_Enter",
+            "Spell_Simple_Exit",
+            "Spell_Simple_Idle_Loop",
+            "Spell_Simple_Shoot",
+            "Sprint_Loop",
+            "Swim_Fwd_Loop",
+            "Swim_Idle_Loop",
+            "Sword_Attack",
+            "Sword_Idle",
+            "Walk_Formal_Loop",
+            "Walk_Loop"
+          ],
+          "directNameTrial": true
+        },
+        "joints": {
+          "pelvis": [
+            -0.01678641378937857,
+            0.8996337749533386,
+            -0.06638146190907623
+          ],
+          "Head": [
+            -0.026823935195686745,
+            1.415395216920337,
+            0.3330440499766805
+          ],
+          "hand_l": [
+            0.24948329052614637,
+            1.0233361015391995,
+            0.5079259038871957
+          ],
+          "hand_r": [
+            -0.3736186324637981,
+            1.18228965048983,
+            -0.08568717772800519
+          ],
+          "foot_l": [
+            0.11381647643583473,
+            0.577626376021048,
+            -0.5158723616504679
+          ],
+          "foot_r": [
+            -0.10964194580397359,
+            0.14736217666975704,
+            0.3276160095371542
+          ]
+        },
+        "poses": [
+          {
+            "frame": 30,
+            "joints": {
+              "pelvis": [
+                0.0038525119677118346,
+                0.93227338184845,
+                -0.06660372934683056
+              ],
+              "Head": [
+                -0.007305555645988981,
+                1.4447977763987387,
+                0.33921329795626814
+              ],
+              "hand_l": [
+                0.30557178469016444,
+                1.1311542182454506,
+                0.13634988607026538
+              ],
+              "hand_r": [
+                -0.3434388905080724,
+                1.0033859565501293,
+                0.35357833072476463
+              ],
+              "foot_l": [
+                0.1125418736515474,
+                0.3664454641482392,
+                0.25294126084354895
+              ],
+              "foot_r": [
+                -0.11307212492372037,
+                0.24183705559946944,
+                -0.5745533078275983
+              ]
+            }
+          },
+          {
+            "frame": 60,
+            "joints": {
+              "pelvis": [
+                -0.0167864138805824,
+                0.8996337130753069,
+                -0.06638146190645569
+              ],
+              "Head": [
+                -0.026823922441955264,
+                1.4153951704857999,
+                0.33304403191294785
+              ],
+              "hand_l": [
+                0.249483294037972,
+                1.0233360622365997,
+                0.507925906868537
+              ],
+              "hand_r": [
+                -0.3736186446345754,
+                1.1822896020565963,
+                -0.08568718707564651
+              ],
+              "foot_l": [
+                0.113816476556221,
+                0.5776264056636233,
+                -0.5158722017271905
+              ],
+              "foot_r": [
+                -0.10964194576070327,
+                0.147362053598858,
+                0.3276158680731087
+              ]
+            }
+          },
+          {
+            "frame": 90,
+            "joints": {
+              "pelvis": [
+                -0.007863179453626742,
+                0.9323699451466061,
+                -0.06656759980935494
+              ],
+              "Head": [
+                -0.02533685677242503,
+                1.4217469398016238,
+                0.36375806303137914
+              ],
+              "hand_l": [
+                0.34736536853906186,
+                1.012010875591534,
+                0.34984356341370326
+              ],
+              "hand_r": [
+                -0.3386088772643103,
+                1.1172411439458774,
+                0.10211433372877043
+              ],
+              "foot_l": [
+                0.11346593584680408,
+                0.28045512220985525,
+                -0.6264191534911017
+              ],
+              "foot_r": [
+                -0.11174393509306485,
+                0.4049185093651302,
+                0.07686592098893108
+              ]
+            }
+          },
+          {
+            "frame": 120,
+            "joints": {
+              "pelvis": [
+                0.018548587821945337,
+                0.8997599838052671,
+                -0.0663286973847298
+              ],
+              "Head": [
+                0.01183548367936014,
+                1.4014914068562918,
+                0.3504116377925372
+              ],
+              "hand_l": [
+                0.36975215270624645,
+                1.2043006027860261,
+                -0.07444333370116843
+              ],
+              "hand_r": [
+                -0.2680006952000237,
+                0.9923610767442106,
+                0.5000246876300346
+              ],
+              "foot_l": [
+                0.10932473435562906,
+                0.11883501552645243,
+                0.2949268480732965
+              ],
+              "foot_r": [
+                -0.11348077197532505,
+                0.4368464514619325,
+                -0.5745522983601721
+              ]
+            }
+          },
+          {
+            "frame": 150,
+            "joints": {
+              "pelvis": [
+                0.003852505078854382,
+                0.9322732791850136,
+                -0.0666037293756835
+              ],
+              "Head": [
+                -0.007305571176806873,
+                1.444797680795073,
+                0.3392132891813156
+              ],
+              "hand_l": [
+                0.3055717571071491,
+                1.1311540737144854,
+                0.13635000139082207
+              ],
+              "hand_r": [
+                -0.3434389684800498,
+                1.0033858778724867,
+                0.3535782002949499
+              ],
+              "foot_l": [
+                0.112541877752068,
+                0.3664454660828864,
+                0.2529409182066126
+              ],
+              "foot_r": [
+                -0.11307212482705101,
+                0.24183666190867442,
+                -0.5745528730455416
+              ]
+            }
+          },
+          {
+            "frame": 180,
+            "joints": {
+              "pelvis": [
+                -0.01678641378937857,
+                0.8996337749533386,
+                -0.06638146190907623
+              ],
+              "Head": [
+                -0.026823935195686745,
+                1.415395216920337,
+                0.3330440499766805
+              ],
+              "hand_l": [
+                0.24948329052614637,
+                1.0233361015391995,
+                0.5079259038871957
+              ],
+              "hand_r": [
+                -0.3736186324637981,
+                1.18228965048983,
+                -0.08568717772800519
+              ],
+              "foot_l": [
+                0.11381647643583473,
+                0.577626376021048,
+                -0.5158723616504679
+              ],
+              "foot_r": [
+                -0.10964194580397359,
+                0.14736217666975704,
+                0.3276160095371542
+              ]
+            }
+          }
+        ],
+        "raf": {
+          "samples": 179,
+          "p95": 17.900000000001455,
+          "max": 18.700000000004366
+        },
+        "render": {
+          "calls": 19,
+          "triangles": 20138,
+          "geometries": 19,
+          "textures": 16
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "buffer": [
+          1920,
+          840
+        ],
+        "glError": 0,
+        "scope": "Dressed four-role candidate on author rig, rest-corrected author animation. Production game, IK, gameplay equipment, swim height, world support and final quality not accepted."
+      }
+    },
+    {
+      "image": "docs/wardrobe-rig-botanist-mobile-walk.jpg",
+      "kind": "motion",
+      "state": {
+        "ready": true,
+        "model": "botanist",
+        "clip": "Walk_Loop",
+        "angle": 0,
+        "frames": 180,
+        "running": false,
+        "hidden": false,
+        "metadata": {
+          "restRetargeted": true,
+          "referenceHeight": 1.8287167448388175,
+          "wardrobe": {
+            "role": "botanist",
+            "label": "药草师 · 林栖",
+            "body": "Superhero_Female",
+            "height": 1.7750510573387146,
+            "sourceTriangles": 12812,
+            "skinTriangles": 5754,
+            "clothTriangles": 7058,
+            "productionIntegrated": false
+          },
+          "style": {
+            "coat": 5666139,
+            "trousers": 4345154,
+            "scarf": 12893329,
+            "pack": 7231036,
+            "sex": "female",
+            "hair": "Hair_Buns",
+            "label": "药草师 · 林栖",
+            "cargo": "herbs"
+          },
+          "productionIntegrated": false,
+          "file": "Superhero_Female_FullBody.gltf",
+          "originalBounds": [
+            [
+              -0.8344331101674881,
+              -0.00840710894944254,
+              -0.16246949431349073
+            ],
+            [
+              0.8344329878487169,
+              1.766643851798447,
+              0.14022762239328995
+            ]
+          ],
+          "originalHeight": 1.7750509607478897,
+          "displayScale": 1.0140553932274703,
+          "skins": 9,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ],
+          "triangles": 34148,
+          "ownClipCount": 0,
+          "offeredClips": [
+            "A_TPose",
+            "Crouch_Fwd_Loop",
+            "Crouch_Idle_Loop",
+            "Dance_Loop",
+            "Death01",
+            "Driving_Loop",
+            "Fixing_Kneeling",
+            "Hit_Chest",
+            "Hit_Head",
+            "Idle_Loop",
+            "Idle_Talking_Loop",
+            "Idle_Torch_Loop",
+            "Interact",
+            "Jog_Fwd_Loop",
+            "Jump_Land",
+            "Jump_Loop",
+            "Jump_Start",
+            "PickUp_Table",
+            "Pistol_Aim_Down",
+            "Pistol_Aim_Neutral",
+            "Pistol_Aim_Up",
+            "Pistol_Idle_Loop",
+            "Pistol_Reload",
+            "Pistol_Shoot",
+            "Punch_Cross",
+            "Punch_Jab",
+            "Push_Loop",
+            "Roll",
+            "Sitting_Enter",
+            "Sitting_Exit",
+            "Sitting_Idle_Loop",
+            "Sitting_Talking_Loop",
+            "Spell_Simple_Enter",
+            "Spell_Simple_Exit",
+            "Spell_Simple_Idle_Loop",
+            "Spell_Simple_Shoot",
+            "Sprint_Loop",
+            "Swim_Fwd_Loop",
+            "Swim_Idle_Loop",
+            "Sword_Attack",
+            "Sword_Idle",
+            "Walk_Formal_Loop",
+            "Walk_Loop"
+          ],
+          "directNameTrial": true
+        },
+        "joints": {
+          "pelvis": [
+            0.02999236387290036,
+            0.9490663293695999,
+            -0.0463430103484329
+          ],
+          "Head": [
+            0.03225067400690738,
+            1.5692024951453134,
+            0.09034133518528796
+          ],
+          "hand_l": [
+            0.2870594146712607,
+            0.992128306000945,
+            0.02506781171568183
+          ],
+          "hand_r": [
+            -0.21518200896389628,
+            0.9984830395245371,
+            0.06004136720841575
+          ],
+          "foot_l": [
+            0.11060301842501129,
+            0.08885331160004589,
+            -0.10261907178931903
+          ],
+          "foot_r": [
+            -0.1146280335433321,
+            0.3599866087770552,
+            -0.21121539070846723
+          ]
+        },
+        "poses": [
+          {
+            "frame": 30,
+            "joints": {
+              "pelvis": [
+                0.03845419883557687,
+                0.9433253435841077,
+                -0.04625001993509947
+              ],
+              "Head": [
+                0.014657254619421045,
+                1.5654562461625718,
+                0.07723143585229815
+              ],
+              "hand_l": [
+                0.297268129397531,
+                1.0217220353185859,
+                0.1468989496418486
+              ],
+              "hand_r": [
+                -0.19926951007792892,
+                0.9753652202444643,
+                -0.03111288061245622
+              ],
+              "foot_l": [
+                0.1156315740666444,
+                0.1269935413350679,
+                -0.24993064265540638
+              ],
+              "foot_r": [
+                -0.11422128032030547,
+                0.23854332050789862,
+                0.10447523733439296
+              ]
+            }
+          },
+          {
+            "frame": 60,
+            "joints": {
+              "pelvis": [
+                -0.022707909898124077,
+                0.9490664054042103,
+                -0.04634014692634818
+              ],
+              "Head": [
+                -0.030955332731691834,
+                1.5691581149366227,
+                0.09022629086586283
+              ],
+              "hand_l": [
+                0.21945116568868242,
+                1.000126531647965,
+                0.0737441083188227
+              ],
+              "hand_r": [
+                -0.276977731761663,
+                0.989265815162131,
+                -0.002001566119720785
+              ],
+              "foot_l": [
+                0.11471972267364845,
+                0.36004948943786036,
+                -0.2111495374313418
+              ],
+              "foot_r": [
+                -0.1139745337793983,
+                0.11032122021356339,
+                -0.09352668154790919
+              ]
+            }
+          },
+          {
+            "frame": 90,
+            "joints": {
+              "pelvis": [
+                0.0068039442834056715,
+                0.9138243628501996,
+                -0.04619022823435939
+              ],
+              "Head": [
+                0.03454990812870289,
+                1.5342049733987324,
+                0.08591727764568907
+              ],
+              "hand_l": [
+                0.24426750628718924,
+                0.9432753588836045,
+                -0.06372832460944139
+              ],
+              "hand_r": [
+                -0.23585975575816703,
+                1.0087724413409336,
+                0.2035442288900949
+              ],
+              "foot_l": [
+                0.11076349235695496,
+                0.09238668761270502,
+                0.06226669671432182
+              ],
+              "foot_r": [
+                -0.11657470466193831,
+                0.23694221195204918,
+                -0.43506234004300887
+              ]
+            }
+          },
+          {
+            "frame": 120,
+            "joints": {
+              "pelvis": [
+                0.025890680040468014,
+                0.9080974627131384,
+                -0.046067084677191256
+              ],
+              "Head": [
+                -0.012004844008366959,
+                1.5301372363343868,
+                0.07333120284469025
+              ],
+              "hand_l": [
+                0.2714510845983928,
+                1.0255289800075655,
+                0.23336979806344352
+              ],
+              "hand_r": [
+                -0.2026502533465257,
+                0.9342745532698106,
+                -0.07767012598983408
+              ],
+              "foot_l": [
+                0.12180083221155065,
+                0.14906465445692774,
+                -0.3998552133359396
+              ],
+              "foot_r": [
+                -0.11338294407234457,
+                0.09035904323972177,
+                0.2413579992879206
+              ]
+            }
+          },
+          {
+            "frame": 150,
+            "joints": {
+              "pelvis": [
+                -0.030883307034075064,
+                0.9433174860700739,
+                -0.04622640961918599
+              ],
+              "Head": [
+                -0.012115170603327048,
+                1.565407238464282,
+                0.07864826403783658
+              ],
+              "hand_l": [
+                0.20865694933277412,
+                0.9753925237319566,
+                -0.016518266209634216
+              ],
+              "hand_r": [
+                -0.28867533754612296,
+                1.011382026698913,
+                0.1221130870206502
+              ],
+              "foot_l": [
+                0.11362136887997863,
+                0.23859934238088998,
+                0.10439698125634034
+              ],
+              "foot_r": [
+                -0.11853967127090684,
+                0.12272416231850891,
+                -0.25335144626732187
+              ]
+            }
+          },
+          {
+            "frame": 180,
+            "joints": {
+              "pelvis": [
+                0.02999236387290036,
+                0.9490663293695999,
+                -0.0463430103484329
+              ],
+              "Head": [
+                0.03225067400690738,
+                1.5692024951453134,
+                0.09034133518528796
+              ],
+              "hand_l": [
+                0.2870594146712607,
+                0.992128306000945,
+                0.02506781171568183
+              ],
+              "hand_r": [
+                -0.21518200896389628,
+                0.9984830395245371,
+                0.06004136720841575
+              ],
+              "foot_l": [
+                0.11060301842501129,
+                0.08885331160004589,
+                -0.10261907178931903
+              ],
+              "foot_r": [
+                -0.1146280335433321,
+                0.3599866087770552,
+                -0.21121539070846723
+              ]
+            }
+          }
+        ],
+        "raf": {
+          "samples": 179,
+          "p95": 18.099999999998545,
+          "max": 18.60000000000582
+        },
+        "render": {
+          "calls": 23,
+          "triangles": 21338,
+          "geometries": 23,
+          "textures": 17
+        },
+        "viewport": [
+          390,
+          844
+        ],
+        "buffer": [
+          585,
+          970
+        ],
+        "glError": 0,
+        "scope": "Dressed four-role candidate on author rig, rest-corrected author animation. Production game, IK, gameplay equipment, swim height, world support and final quality not accepted."
+      }
+    },
+    {
+      "image": "docs/wardrobe-rig-traveler-sword-unadapted.jpg",
+      "kind": "motion",
+      "state": {
+        "ready": true,
+        "model": "traveler",
+        "clip": "Sword_Attack",
+        "angle": 0,
+        "frames": 180,
+        "running": false,
+        "hidden": false,
+        "metadata": {
+          "restRetargeted": true,
+          "referenceHeight": 1.8287167448388175,
+          "wardrobe": {
+            "role": "traveler",
+            "label": "旅人",
+            "body": "SuperHero_Male",
+            "height": 1.8195863831788301,
+            "sourceTriangles": 12566,
+            "skinTriangles": 5906,
+            "clothTriangles": 6660,
+            "productionIntegrated": false
+          },
+          "style": {
+            "coat": 10245943,
+            "trousers": 3423803,
+            "scarf": 13944998,
+            "pack": 6114104,
+            "sex": "male",
+            "hair": "Hair_SimpleParted",
+            "label": "旅人",
+            "cargo": "bedroll"
+          },
+          "productionIntegrated": false,
+          "file": "Superhero_Male_FullBody.gltf",
+          "originalBounds": [
+            [
+              -0.9294323991218112,
+              -0.009509849888516313,
+              -0.16345080095368408
+            ],
+            [
+              0.9294324424934728,
+              1.8100766650860056,
+              0.12803739335794287
+            ]
+          ],
+          "originalHeight": 1.8195865149745218,
+          "displayScale": 0.9892357330562015,
+          "skins": 9,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ],
+          "triangles": 31097,
+          "ownClipCount": 0,
+          "offeredClips": [
+            "A_TPose",
+            "Crouch_Fwd_Loop",
+            "Crouch_Idle_Loop",
+            "Dance_Loop",
+            "Death01",
+            "Driving_Loop",
+            "Fixing_Kneeling",
+            "Hit_Chest",
+            "Hit_Head",
+            "Idle_Loop",
+            "Idle_Talking_Loop",
+            "Idle_Torch_Loop",
+            "Interact",
+            "Jog_Fwd_Loop",
+            "Jump_Land",
+            "Jump_Loop",
+            "Jump_Start",
+            "PickUp_Table",
+            "Pistol_Aim_Down",
+            "Pistol_Aim_Neutral",
+            "Pistol_Aim_Up",
+            "Pistol_Idle_Loop",
+            "Pistol_Reload",
+            "Pistol_Shoot",
+            "Punch_Cross",
+            "Punch_Jab",
+            "Push_Loop",
+            "Roll",
+            "Sitting_Enter",
+            "Sitting_Exit",
+            "Sitting_Idle_Loop",
+            "Sitting_Talking_Loop",
+            "Spell_Simple_Enter",
+            "Spell_Simple_Exit",
+            "Spell_Simple_Idle_Loop",
+            "Spell_Simple_Shoot",
+            "Sprint_Loop",
+            "Swim_Fwd_Loop",
+            "Swim_Idle_Loop",
+            "Sword_Attack",
+            "Sword_Idle",
+            "Walk_Formal_Loop",
+            "Walk_Loop"
+          ],
+          "directNameTrial": true
+        },
+        "joints": {
+          "pelvis": [
+            0.03760312146050503,
+            0.7773850177774567,
+            -0.1009313693691931
+          ],
+          "Head": [
+            -0.05058451054790859,
+            1.3944772872181435,
+            0.02456863230401537
+          ],
+          "hand_l": [
+            0.33299567212939657,
+            0.9272304296208562,
+            0.35482758405028286
+          ],
+          "hand_r": [
+            -0.2685252536135704,
+            0.9526341929599242,
+            -0.4408679844217905
+          ],
+          "foot_l": [
+            0.2313316231324326,
+            0.09561582473156371,
+            0.10103950885206633
+          ],
+          "foot_r": [
+            -0.17230992580813145,
+            0.10251541644792023,
+            -0.32203794905285216
+          ]
+        },
+        "poses": [
+          {
+            "frame": 30,
+            "joints": {
+              "pelvis": [
+                -0.06360700333175506,
+                0.5708739770027413,
+                -0.06597148838319758
+              ],
+              "Head": [
+                0.19328014674730482,
+                1.1244210839942184,
+                0.10737115844680063
+              ],
+              "hand_l": [
+                -0.21692894706757548,
+                1.2052832234220467,
+                -0.4699890791638435
+              ],
+              "hand_r": [
+                0.48243543924111243,
+                0.6291633615047827,
+                0.38882676399399047
+              ],
+              "foot_l": [
+                0.21002755864431372,
+                0.21514841014835875,
+                -0.760267593737735
+              ],
+              "foot_r": [
+                -0.18950300667397713,
+                0.1295868268440038,
+                0.2754057769105879
+              ]
+            }
+          },
+          {
+            "frame": 60,
+            "joints": {
+              "pelvis": [
+                0.028592611958926692,
+                0.8266543000921903,
+                -0.09789056987984239
+              ],
+              "Head": [
+                0.035490039618592956,
+                1.4479747824292344,
+                0.06234974945848513
+              ],
+              "hand_l": [
+                0.5381431761743847,
+                1.0747040594523354,
+                -0.13002040063193315
+              ],
+              "hand_r": [
+                -0.36115466830055404,
+                1.1087019295803786,
+                0.4562270127719633
+              ],
+              "foot_l": [
+                0.19742974173190317,
+                0.3343937462054826,
+                -0.3784556258576495
+              ],
+              "foot_r": [
+                -0.19409167213774123,
+                0.10090535005146983,
+                0.0002915294846308203
+              ]
+            }
+          },
+          {
+            "frame": 90,
+            "joints": {
+              "pelvis": [
+                0.037604249128730484,
+                0.7772527636736634,
+                -0.10094367790883134
+              ],
+              "Head": [
+                -0.048575128559347355,
+                1.3944410402243985,
+                0.025623944688210436
+              ],
+              "hand_l": [
+                0.3378680044607432,
+                0.9260414740513756,
+                0.35115478784015863
+              ],
+              "hand_r": [
+                -0.2696829433145984,
+                0.9512527639608177,
+                -0.43662105556989433
+              ],
+              "foot_l": [
+                0.23133149555710725,
+                0.09562809276158257,
+                0.1010419075954409
+              ],
+              "foot_r": [
+                -0.17230522555845637,
+                0.10252698890045436,
+                -0.32203031613815347
+              ]
+            }
+          },
+          {
+            "frame": 120,
+            "joints": {
+              "pelvis": [
+                -0.06323898581874204,
+                0.5778848533410764,
+                -0.06509952133993793
+              ],
+              "Head": [
+                0.13646354976777283,
+                1.1492356503274799,
+                0.144641446303108
+              ],
+              "hand_l": [
+                -0.020915175708961356,
+                1.1595634648145832,
+                -0.5023954461314238
+              ],
+              "hand_r": [
+                0.36786587297778006,
+                0.7478436934190925,
+                0.5970270328608138
+              ],
+              "foot_l": [
+                0.21452762666499425,
+                0.21611639267749666,
+                -0.7554829943654082
+              ],
+              "foot_r": [
+                -0.19388694500671994,
+                0.12548333718333454,
+                0.27270549037548125
+              ]
+            }
+          },
+          {
+            "frame": 150,
+            "joints": {
+              "pelvis": [
+                0.02536485169478265,
+                0.8025550272764982,
+                -0.09316982107843971
+              ],
+              "Head": [
+                0.06108115845769187,
+                1.418230633777188,
+                0.08414686051872416
+              ],
+              "hand_l": [
+                0.5119985278832042,
+                1.057903812061586,
+                -0.24704788002976355
+              ],
+              "hand_r": [
+                -0.2688647577836495,
+                1.2031494264300016,
+                0.5740354641388414
+              ],
+              "foot_l": [
+                0.19385441853169175,
+                0.32536292431153624,
+                -0.4857286184647377
+              ],
+              "foot_r": [
+                -0.19745442973802696,
+                0.10423164891966669,
+                0.038727480422673155
+              ]
+            }
+          },
+          {
+            "frame": 180,
+            "joints": {
+              "pelvis": [
+                0.03760312146050503,
+                0.7773850177774567,
+                -0.1009313693691931
+              ],
+              "Head": [
+                -0.05058451054790859,
+                1.3944772872181435,
+                0.02456863230401537
+              ],
+              "hand_l": [
+                0.33299567212939657,
+                0.9272304296208562,
+                0.35482758405028286
+              ],
+              "hand_r": [
+                -0.2685252536135704,
+                0.9526341929599242,
+                -0.4408679844217905
+              ],
+              "foot_l": [
+                0.2313316231324326,
+                0.09561582473156371,
+                0.10103950885206633
+              ],
+              "foot_r": [
+                -0.17230992580813145,
+                0.10251541644792023,
+                -0.32203794905285216
+              ]
+            }
+          }
+        ],
+        "raf": {
+          "samples": 179,
+          "p95": 18.09999999999127,
+          "max": 18.59999999999127
+        },
+        "render": {
+          "calls": 19,
+          "triangles": 18533,
+          "geometries": 19,
+          "textures": 18
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "buffer": [
+          1920,
+          840
+        ],
+        "glError": 0,
+        "scope": "Dressed four-role candidate on author rig, rest-corrected author animation. Production game, IK, gameplay equipment, swim height, world support and final quality not accepted."
+      }
+    },
+    {
+      "image": "docs/wardrobe-rig-traveler-swim-floor-failure.jpg",
+      "kind": "motion",
+      "state": {
+        "ready": true,
+        "model": "traveler",
+        "clip": "Swim_Fwd_Loop",
+        "angle": 0,
+        "frames": 180,
+        "running": false,
+        "hidden": false,
+        "metadata": {
+          "restRetargeted": true,
+          "referenceHeight": 1.8287167448388175,
+          "wardrobe": {
+            "role": "traveler",
+            "label": "旅人",
+            "body": "SuperHero_Male",
+            "height": 1.8195863831788301,
+            "sourceTriangles": 12566,
+            "skinTriangles": 5906,
+            "clothTriangles": 6660,
+            "productionIntegrated": false
+          },
+          "style": {
+            "coat": 10245943,
+            "trousers": 3423803,
+            "scarf": 13944998,
+            "pack": 6114104,
+            "sex": "male",
+            "hair": "Hair_SimpleParted",
+            "label": "旅人",
+            "cargo": "bedroll"
+          },
+          "productionIntegrated": false,
+          "file": "Superhero_Male_FullBody.gltf",
+          "originalBounds": [
+            [
+              -0.9294323991218112,
+              -0.009509849888516313,
+              -0.16345080095368408
+            ],
+            [
+              0.9294324424934728,
+              1.8100766650860056,
+              0.12803739335794287
+            ]
+          ],
+          "originalHeight": 1.8195865149745218,
+          "displayScale": 0.9892357330562015,
+          "skins": 9,
+          "jointNames": [
+            "root",
+            "pelvis",
+            "spine_01",
+            "spine_02",
+            "spine_03",
+            "neck_01",
+            "Head",
+            "clavicle_l",
+            "upperarm_l",
+            "lowerarm_l",
+            "hand_l",
+            "index_01_l",
+            "index_02_l",
+            "index_03_l",
+            "index_04_leaf_l",
+            "middle_01_l",
+            "middle_02_l",
+            "middle_03_l",
+            "middle_04_leaf_l",
+            "pinky_01_l",
+            "pinky_02_l",
+            "pinky_03_l",
+            "pinky_04_leaf_l",
+            "ring_01_l",
+            "ring_02_l",
+            "ring_03_l",
+            "ring_04_leaf_l",
+            "thumb_01_l",
+            "thumb_02_l",
+            "thumb_03_l",
+            "thumb_04_leaf_l",
+            "clavicle_r",
+            "upperarm_r",
+            "lowerarm_r",
+            "hand_r",
+            "index_01_r",
+            "index_02_r",
+            "index_03_r",
+            "index_04_leaf_r",
+            "middle_01_r",
+            "middle_02_r",
+            "middle_03_r",
+            "middle_04_leaf_r",
+            "pinky_01_r",
+            "pinky_02_r",
+            "pinky_03_r",
+            "pinky_04_leaf_r",
+            "ring_01_r",
+            "ring_02_r",
+            "ring_03_r",
+            "ring_04_leaf_r",
+            "thumb_01_r",
+            "thumb_02_r",
+            "thumb_03_r",
+            "thumb_04_leaf_r",
+            "thigh_l",
+            "calf_l",
+            "foot_l",
+            "ball_l",
+            "ball_leaf_l",
+            "thigh_r",
+            "calf_r",
+            "foot_r",
+            "ball_r",
+            "ball_leaf_r"
+          ],
+          "triangles": 31097,
+          "ownClipCount": 0,
+          "offeredClips": [
+            "A_TPose",
+            "Crouch_Fwd_Loop",
+            "Crouch_Idle_Loop",
+            "Dance_Loop",
+            "Death01",
+            "Driving_Loop",
+            "Fixing_Kneeling",
+            "Hit_Chest",
+            "Hit_Head",
+            "Idle_Loop",
+            "Idle_Talking_Loop",
+            "Idle_Torch_Loop",
+            "Interact",
+            "Jog_Fwd_Loop",
+            "Jump_Land",
+            "Jump_Loop",
+            "Jump_Start",
+            "PickUp_Table",
+            "Pistol_Aim_Down",
+            "Pistol_Aim_Neutral",
+            "Pistol_Aim_Up",
+            "Pistol_Idle_Loop",
+            "Pistol_Reload",
+            "Pistol_Shoot",
+            "Punch_Cross",
+            "Punch_Jab",
+            "Push_Loop",
+            "Roll",
+            "Sitting_Enter",
+            "Sitting_Exit",
+            "Sitting_Idle_Loop",
+            "Sitting_Talking_Loop",
+            "Spell_Simple_Enter",
+            "Spell_Simple_Exit",
+            "Spell_Simple_Idle_Loop",
+            "Spell_Simple_Shoot",
+            "Sprint_Loop",
+            "Swim_Fwd_Loop",
+            "Swim_Idle_Loop",
+            "Sword_Attack",
+            "Sword_Idle",
+            "Walk_Formal_Loop",
+            "Walk_Loop"
+          ],
+          "directNameTrial": true
+        },
+        "joints": {
+          "pelvis": [
+            0.0007795733855279769,
+            -0.027681245220909683,
+            -0.09328317547729251
+          ],
+          "Head": [
+            0.000021334653492945957,
+            0.05668861671897882,
+            0.5400636008637324
+          ],
+          "hand_l": [
+            0.18343750037014278,
+            -0.18543990223830856,
+            0.8680960277981338
+          ],
+          "hand_r": [
+            -0.14054000515436738,
+            -0.17815285347897863,
+            0.8643644590762847
+          ],
+          "foot_l": [
+            0.09749490327058563,
+            -0.0400152972264383,
+            -0.9469627468516599
+          ],
+          "foot_r": [
+            -0.08809440710499968,
+            -0.04053249529367616,
+            -0.9478062813834713
+          ]
+        },
+        "poses": [
+          {
+            "frame": 30,
+            "joints": {
+              "pelvis": [
+                0.0006804130342890766,
+                -0.024229300357390227,
+                -0.0929167789288824
+              ],
+              "Head": [
+                0.00001619718023058156,
+                0.05823686866211051,
+                0.538443147183353
+              ],
+              "hand_l": [
+                0.1905494234068935,
+                -0.06895816896494654,
+                0.9483861493618047
+              ],
+              "hand_r": [
+                -0.1929265025934842,
+                -0.07021422094035346,
+                0.9490366821126633
+              ],
+              "foot_l": [
+                0.0985752792233803,
+                -0.018742181909489508,
+                -0.9412703667267215
+              ],
+              "foot_r": [
+                -0.0905812467563367,
+                -0.029379208937234058,
+                -0.9421079562022059
+              ]
+            }
+          },
+          {
+            "frame": 60,
+            "joints": {
+              "pelvis": [
+                0.0000343349934069267,
+                -0.020702741108378258,
+                -0.09141627993353264
+              ],
+              "Head": [
+                -1.3500385855321056e-7,
+                0.1311464338886626,
+                0.5055358064575856
+              ],
+              "hand_l": [
+                0.3972083709430725,
+                -0.11425895078251362,
+                -0.0987139305965094
+              ],
+              "hand_r": [
+                -0.39776033511742226,
+                -0.11454375951384282,
+                -0.09806866884454118
+              ],
+              "foot_l": [
+                0.20748977743417607,
+                -0.10529560388676742,
+                -0.5514688571847413
+              ],
+              "foot_r": [
+                -0.19174006458798057,
+                -0.10083572969920845,
+                -0.5549130374349553
+              ]
+            }
+          },
+          {
+            "frame": 90,
+            "joints": {
+              "pelvis": [
+                0.0007684141580808996,
+                -0.030230765593545667,
+                -0.09339185910058939
+              ],
+              "Head": [
+                0.000020169317540268703,
+                0.07263850437443015,
+                0.5364978623977744
+              ],
+              "hand_l": [
+                0.19914562029613567,
+                -0.26601958949874643,
+                0.5833010067842852
+              ],
+              "hand_r": [
+                -0.17119630293885324,
+                -0.2581595265482355,
+                0.5843475942909441
+              ],
+              "foot_l": [
+                0.14065130384563299,
+                -0.07893673837537812,
+                -0.9414869263808278
+              ],
+              "foot_r": [
+                -0.13139398346632145,
+                -0.07986876518312641,
+                -0.9426787681020705
+              ]
+            }
+          },
+          {
+            "frame": 120,
+            "joints": {
+              "pelvis": [
+                0.00045499055253504696,
+                -0.020306258426618876,
+                -0.09231377872331496
+              ],
+              "Head": [
+                0.000006944488700698471,
+                0.08125095587038517,
+                0.5303779412217234
+              ],
+              "hand_l": [
+                0.39488730472152295,
+                -0.12113522237105337,
+                0.8352713495446475
+              ],
+              "hand_r": [
+                -0.39303195158048654,
+                -0.12186660788642152,
+                0.8355410044636936
+              ],
+              "foot_l": [
+                0.11205183861537456,
+                -0.01098166818405677,
+                -0.8858519623788466
+              ],
+              "foot_r": [
+                -0.10756453481040644,
+                -0.03219157458523825,
+                -0.8865870954127466
+              ]
+            }
+          },
+          {
+            "frame": 150,
+            "joints": {
+              "pelvis": [
+                0.00012218321786740963,
+                -0.02222915238290164,
+                -0.09184513293427692
+              ],
+              "Head": [
+                -6.687131160992996e-7,
+                0.14547116466375606,
+                0.4988069102167726
+              ],
+              "hand_l": [
+                0.3293587846404856,
+                -0.26665243609492073,
+                0.09952430504433617
+              ],
+              "hand_r": [
+                -0.3238184641224288,
+                -0.25567418129558905,
+                0.059985190411749156
+              ],
+              "foot_l": [
+                0.23807366481708464,
+                -0.11428184143885617,
+                -0.5045997930769184
+              ],
+              "foot_r": [
+                -0.24022260766424466,
+                -0.11086691163762985,
+                -0.5047533958111631
+              ]
+            }
+          },
+          {
+            "frame": 180,
+            "joints": {
+              "pelvis": [
+                0.0007795733855279769,
+                -0.027681245220909683,
+                -0.09328317547729251
+              ],
+              "Head": [
+                0.000021334653492945957,
+                0.05668861671897882,
+                0.5400636008637324
+              ],
+              "hand_l": [
+                0.18343750037014278,
+                -0.18543990223830856,
+                0.8680960277981338
+              ],
+              "hand_r": [
+                -0.14054000515436738,
+                -0.17815285347897863,
+                0.8643644590762847
+              ],
+              "foot_l": [
+                0.09749490327058563,
+                -0.0400152972264383,
+                -0.9469627468516599
+              ],
+              "foot_r": [
+                -0.08809440710499968,
+                -0.04053249529367616,
+                -0.9478062813834713
+              ]
+            }
+          }
+        ],
+        "raf": {
+          "samples": 179,
+          "p95": 18.19999999999709,
+          "max": 18.5
+        },
+        "render": {
+          "calls": 19,
+          "triangles": 18533,
+          "geometries": 19,
+          "textures": 18
+        },
+        "viewport": [
+          1280,
+          720
+        ],
+        "buffer": [
+          1920,
+          840
+        ],
+        "glError": 0,
+        "scope": "Dressed four-role candidate on author rig, rest-corrected author animation. Production game, IK, gameplay equipment, swim height, world support and final quality not accepted."
+      }
+    }
+  ],
+  "console": []
+}

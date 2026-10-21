@@ -1,0 +1,200 @@
+{
+  "rows": [
+    {
+      "role": "traveler",
+      "referenceHeight": 1.8287165346555412,
+      "bodyRatio": 0.9950073446027923,
+      "clips": 43,
+      "poses": 430,
+      "vertexSamples": 64500,
+      "rangeY": [
+        -1.3703461932522445,
+        1.9338221685336063
+      ],
+      "sourcePositionsUnchanged": true,
+      "sourceWeightsNormalized": true,
+      "meshes": [
+        {
+          "name": "exposed-skin",
+          "triangles": 5906,
+          "vertices": 7281
+        },
+        {
+          "name": "clothed-body",
+          "triangles": 6660,
+          "vertices": 7281
+        },
+        {
+          "name": "travel-coat",
+          "triangles": 712,
+          "vertices": 410
+        },
+        {
+          "name": "travel-boot--1",
+          "triangles": 306,
+          "vertices": 174
+        },
+        {
+          "name": "travel-boot-1",
+          "triangles": 306,
+          "vertices": 174
+        },
+        {
+          "name": "waist-belt",
+          "triangles": 640,
+          "vertices": 369
+        }
+      ],
+      "scope": "Sampled numeric source motion only; not visual clipping, collision, ground support or motion quality acceptance"
+    },
+    {
+      "role": "keeper",
+      "referenceHeight": 1.8287165346555412,
+      "bodyRatio": 0.9950073446027923,
+      "clips": 43,
+      "poses": 430,
+      "vertexSamples": 64500,
+      "rangeY": [
+        -1.3703461932522445,
+        1.9338221685336063
+      ],
+      "sourcePositionsUnchanged": true,
+      "sourceWeightsNormalized": true,
+      "meshes": [
+        {
+          "name": "exposed-skin",
+          "triangles": 5906,
+          "vertices": 7281
+        },
+        {
+          "name": "clothed-body",
+          "triangles": 6660,
+          "vertices": 7281
+        },
+        {
+          "name": "travel-coat",
+          "triangles": 712,
+          "vertices": 410
+        },
+        {
+          "name": "travel-boot--1",
+          "triangles": 306,
+          "vertices": 174
+        },
+        {
+          "name": "travel-boot-1",
+          "triangles": 306,
+          "vertices": 174
+        },
+        {
+          "name": "waist-belt",
+          "triangles": 640,
+          "vertices": 369
+        }
+      ],
+      "scope": "Sampled numeric source motion only; not visual clipping, collision, ground support or motion quality acceptance"
+    },
+    {
+      "role": "botanist",
+      "referenceHeight": 1.8287165346555412,
+      "bodyRatio": 0.9706540208393013,
+      "clips": 43,
+      "poses": 430,
+      "vertexSamples": 64500,
+      "rangeY": [
+        -1.3346593513961185,
+        1.8994216898153686
+      ],
+      "sourcePositionsUnchanged": true,
+      "sourceWeightsNormalized": true,
+      "meshes": [
+        {
+          "name": "exposed-skin",
+          "triangles": 5754,
+          "vertices": 7376
+        },
+        {
+          "name": "clothed-body",
+          "triangles": 7058,
+          "vertices": 7376
+        },
+        {
+          "name": "travel-coat",
+          "triangles": 712,
+          "vertices": 410
+        },
+        {
+          "name": "travel-boot--1",
+          "triangles": 306,
+          "vertices": 174
+        },
+        {
+          "name": "travel-boot-1",
+          "triangles": 306,
+          "vertices": 174
+        },
+        {
+          "name": "waist-belt",
+          "triangles": 640,
+          "vertices": 369
+        }
+      ],
+      "scope": "Sampled numeric source motion only; not visual clipping, collision, ground support or motion quality acceptance"
+    },
+    {
+      "role": "explorer",
+      "referenceHeight": 1.8287165346555412,
+      "bodyRatio": 0.9950073446027923,
+      "clips": 43,
+      "poses": 430,
+      "vertexSamples": 64500,
+      "rangeY": [
+        -1.3703461932522445,
+        1.9338221685336063
+      ],
+      "sourcePositionsUnchanged": true,
+      "sourceWeightsNormalized": true,
+      "meshes": [
+        {
+          "name": "exposed-skin",
+          "triangles": 5906,
+          "vertices": 7281
+        },
+        {
+          "name": "clothed-body",
+          "triangles": 6660,
+          "vertices": 7281
+        },
+        {
+          "name": "travel-coat",
+          "triangles": 712,
+          "vertices": 410
+        },
+        {
+          "name": "travel-boot--1",
+          "triangles": 306,
+          "vertices": 174
+        },
+        {
+          "name": "travel-boot-1",
+          "triangles": 306,
+          "vertices": 174
+        },
+        {
+          "name": "waist-belt",
+          "triangles": 640,
+          "vertices": 369
+        }
+      ],
+      "scope": "Sampled numeric source motion only; not visual clipping, collision, ground support or motion quality acceptance"
+    }
+  ],
+  "files": {
+    "src/authored-wardrobe.js": "081c3de77e50b622ae994ee4122d1c95275ebfdbe34f6ddd4725c1e34999d08a",
+    "src/authored-retarget.js": "43c02d1fcce3c16287ba97318f311d55ee611bdaa7277e8eed77c9f1091e75d1",
+    "src/textile.js": "409b2ccf20dcbd8005e2d220404c358d5d39e1a7c6533db0bb80692cc85a69fb",
+    "tools/probe_authored_wardrobe.mjs": "7917319ab52946bc51355cc3bd7d734f664b798f9e068b81f9323e7a90e9fabb"
+  },
+  "runtimeIntegrated": false,
+  "fullGoalComplete": false
+}
