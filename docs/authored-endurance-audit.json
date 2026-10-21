@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "runtimeFiles": 92,
+  "packageSha256": "57320c01f05ae4ec57ee8b7632e4b898711bbe89715ae5b0495a7355ed8fab4c",
+  "lifecycleStableAfterFirstPair": true,
+  "lifecycleRelease": {
+    "before": {
+      "geometries": 238,
+      "textures": 41
+    },
+    "after": {
+      "geometries": 181,
+      "textures": 21
+    },
+    "glError": 0,
+    "idempotent": true,
+    "scope": "Renderer resource counts after explicit cast disposal, not JS heap or VRAM leak proof"
+  },
+  "continuous": {
+    "activeMs": 600002.34,
+    "frames": 35994,
+    "movingFraction": 0.91,
+    "distanceMeters": 3561.83,
+    "hitCount": 42,
+    "damageTaken": 130,
+    "respawns": 0,
+    "p95Ms": 18.2,
+    "maxMs": 66.7,
+    "over50Ms": 2,
+    "stepAttempts": 1164,
+    "stepsScheduled": 1164,
+    "spatialAttempts": 15,
+    "spatialScheduled": 15,
+    "pannersCreated": 15,
+    "pannersReleased": 15,
+    "settled": {
+      "wallMs": 366.40000009536743,
+      "voices": 0,
+      "pannersCreated": 15,
+      "pannersReleased": 15
+    },
+    "heapMiB": [
+      79.7,
+      82.72,
+      74.15,
+      76.98,
+      89.97,
+      87.12,
+      100.51,
+      93.96,
+      106.89,
+      97.56,
+      95.44
+    ]
+  },
+  "evidenceSha256": {
+    "tests/authored-endurance.html": "fe91d4c24fbb7928b61bcf752aa6b092b1964461d71ed8570a38fdb286907f0b",
+    "tests/authored-lifecycle.html": "e8064f629ea2001b91fb8f5dd451b5597d66306f9bc2bf6cc7e07b5c7da52510",
+    "tools/verify_authored_endurance.py": "03487a0aaacc603312fe41e05c2ba3bf8c40b3213abe68f3a1f523d25acab982",
+    "docs/authored-lifecycle.json": "0387d7aa1ba06f4977f73a7c9b0badc6234eed43637d6cdd8e4e1e921af34845",
+    "docs/authored-endurance-desktop.json": "54efc7cea6f494bec84df377b2960fad0ddebda64c8a6603198ddda34f3b0569",
+    "docs/authored-endurance-start.jpg": "460f00cc6a4313a2469c05445b29e294990285e4d336007e71e0408df2e764a4",
+    "docs/authored-endurance-forest.jpg": "35062af6aa7ee966c24dbcaa3ebec11432117f88f4672567f0982a9bee4ba55e",
+    "docs/authored-endurance-highland.jpg": "bc88119fc32b82445c64e44aa8b5a4e8841218be31c90c393279b4a82615a0b7",
+    "docs/authored-endurance-shoal-stage.jpg": "4bfcd2ec9ee7a1baffd3413ce75b38f5fae91b061015775df6557d625b557946",
+    "docs/authored-endurance-night-stage.jpg": "84aa58f4548ba65fc7204bb7449ea785e3663f74f20ce2ba15e777bf1b72dcbd",
+    "docs/authored-endurance-complete.jpg": "0e522a5b3e569874bb21f6ad7a36260e312c9338727d60c83ada24e0cdb634f7"
+  },
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "limits": "600s declared five-stage teleports, sword/food/buildings/revived enemies; actual movement/tick/actors/render/native audio. Stage names describe initial placement, not geographic containment throughout each phase; actor can leave the region. Diagnostic panels reduce canvas. Not native input, ordinary whole campaign, physical phone, VRAM, listening, leak freedom or final motion/visual quality. Startup resource count changes retained."
+}
