@@ -1,0 +1,80 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>整场间接光配色候选</title>
+<style>html,body{margin:0;height:100%;background:#192723;color:#eee;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:8px;display:flex;gap:8px;flex-wrap:wrap}button,select{font:inherit;padding:6px}output{height:92px;overflow:auto;overflow-wrap:anywhere}canvas{flex:1;min-height:0;width:100%}</style>
+<nav>候选连续人物 / 生产地形镜头与规则 · 声明fixture · 无存档 <select id="lighting"><option value="baseline">当前间接光</option><option value="neutral">中性天空与暖地面候选</option></select><select id="scene"><option value="coast">海岸</option><option value="forest">林地</option><option value="highland">高地</option><option value="approach">高地南坡</option><option value="saddle">高地山脊</option><option value="shoal">浅滩</option><option value="camp">营地</option><option value="keeper">守灯人</option><option value="botanist">药草师</option><option value="explorer">航海家</option><option value="water">深水</option><option value="tree">采集树</option><option value="ordinary">普通存档位置</option></select><select id="light"><option value="240">正午</option><option value="360">黄昏</option><option value="0">午夜</option></select><select id="pitch"><option value=".29">常规俯仰</option><option value=".08">低俯仰</option></select><select id="mode"><option value="walk">步行转向</option><option value="sprint">冲刺转向</option><option value="attack">挥剑</option><option value="gather">采集石斧</option><option value="still">原位</option></select><button id="impact" disabled>规则命中时刻</button><button id="run" disabled>生产移动与转向180帧</button><button id="boots" disabled>靴底对照</button><button id="gpu" disabled>完整画布GPU60帧</button></nav>
+<output>准备…</output><canvas aria-label="整场构图和全身运动诊断，不是主线验收"></canvas>
+<script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {loadAuthoredCast} from '../src/authored-assets.js';
+import {authorSolePoints} from '../src/authored-character.js';
+import {ATTACK_IMPACT,GATHER_IMPACT} from '../src/action-timing.js';
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain,weatherAt,dayCycle} from '../src/world.js';
+import {freshGame,movePlayer,tick,nearest,attack,resolveAttack,interact,resolveGather} from '../src/game.js';
+const world=createWorld(),canvas=document.querySelector('canvas'),view=new WorldView(canvas,world),out=document.querySelector('output');
+// Isolated palette candidate: retain production light energy, shadows and weather.
+const productionAtmosphere=view.updateAtmosphere.bind(view);
+const candidateDaySky=new THREE.Color(0xdae5ef),candidateDayGround=new THREE.Color(0x8a8270);
+const productionNightSky=new THREE.Color(0xd4e1f5),productionNightGround=new THREE.Color(0x8796af);
+view.updateAtmosphere=(time,weather)=>{productionAtmosphere(time,weather);if(document.querySelector('#lighting').value!=='neutral')return;const day=THREE.MathUtils.smoothstep(dayCycle(time).daylight,.04,.65);view.ambient.color.copy(candidateDaySky).lerp(productionNightSky,1-day);view.ambient.groundColor.copy(candidateDayGround).lerp(productionNightGround,1-day);};
+const targetTree=world.objects.find(o=>o.type==='tree'&&Math.hypot(o.x+90,o.z-140)<80);
+const places={coast:[-90,140],forest:[132,-26],highland:[-75,-205],approach:[-75,-175],saddle:[-75,-232],shoal:[190,248],camp:[-56,49],tree:[targetTree.x,targetTree.z+2.4],keeper:[-55,98],botanist:[136,-22],explorer:[-66,-186],water:[10,230],ordinary:[8.2,60.6]};
+let bootDiagnostics=[],gpuMetrics=null,activeGpuQuery=null;
+let pendingAttack=null,pendingGather=null,maxSoleError=0,actionCount=0,actionEvents=[];
+let state,frames=0,running=false,moving=false,hidden=false,previous=null,intervals=[],distance=0,start,poses=[],bodyMotionMax={bank:0,drive:0};
+function visibleHeight(x,z){const gx=(x+400)/2.5,gz=(z+400)/2.5,ix=Math.floor(gx),iz=Math.floor(gz),u=gx-ix,v=gz-iz,x0=ix*2.5-400,z0=iz*2.5-400,h00=Math.fround(terrain(x0,z0)),h10=Math.fround(terrain(x0+2.5,z0)),h01=Math.fround(terrain(x0,z0+2.5)),h11=Math.fround(terrain(x0+2.5,z0+2.5));return u+v<=1?h00+(h10-h00)*u+(h01-h00)*v:h11+(h01-h11)*(1-u)+(h10-h11)*(1-v);}
+function bootGaps(){const rows=[];view.player.traverse(o=>{if(!o.name.startsWith('travel-boot-'))return;let analytic=Infinity,visible=Infinity;for(const i of new Set(o.geometry.index.array)){const p=o.getVertexPosition(i,new THREE.Vector3()).applyMatrix4(o.matrixWorld);analytic=Math.min(analytic,p.y-terrain(p.x,p.z));visible=Math.min(visible,p.y-visibleHeight(p.x,p.z));}rows.push({name:o.name,analytic,visible});});return rows;}
+function draw(){
+  const gl=view.renderer.getContext(),ext=gl.getExtension('EXT_disjoint_timer_query_webgl2');if(activeGpuQuery)gl.beginQuery(ext.TIME_ELAPSED_EXT,activeGpuQuery);
+  view.draw(state,nearest(state,world.objects),null,moving,1/60);if(activeGpuQuery)gl.endQuery(ext.TIME_ELAPSED_EXT);
+  if(running){bodyMotionMax.bank=Math.max(bodyMotionMax.bank,Math.abs(view.player.userData.body.rotation.z));bodyMotionMax.drive=Math.max(bodyMotionMax.drive,Math.abs(view.player.userData.bodyMotion?.drive??0));}
+  for(const [j,p]of authorSolePoints(view.player).entries())if(view.player.userData.legs[j].contact&&view.player.userData.worldFeet[j])maxSoleError=Math.max(maxSoleError,p.distanceTo(view.player.userData.worldFeet[j]));
+  const sorted=[...intervals].sort((a,b)=>a-b),p=state.player,info=view.renderer.info;
+  out.textContent=JSON.stringify({ready:true,lighting:document.querySelector('#lighting').value,gpuMetrics,bootGaps:bootDiagnostics,authored:!!view.authoredCast,roles:view.islanders.map(i=>[i.object.id,i.model.userData.authored]),mode:document.querySelector('#mode').value,maxSoleError,actionCount,actionEvents,inventory:state.inventory,plan:view.player.userData.plan,actionSource:view.player.userData.actionSource,feet:view.player.userData.worldFeet.map(p=>p.toArray()),scene:document.querySelector('#scene').value,startTime:Number(document.querySelector('#light').value),pitch:Number(document.querySelector('#pitch').value),time:state.time,weather:weatherAt(state.time),frames,running,hidden,start,position:[p.x,p.z],height:terrain(p.x,p.z),distance,hp:p.hp,camera:view.camera.position.toArray(),poses,bodyMotionMax,raf:sorted.length?{samples:sorted.length,p95:sorted[Math.floor(sorted.length*.95)],max:sorted.at(-1)}:null,render:{calls:info.render.calls,triangles:info.render.triangles,textures:info.memory.textures},viewport:[innerWidth,innerHeight],buffer:[canvas.width,canvas.height],glError:view.renderer.getContext().getError(),scope:'Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance.'});
+}
+function reset(){
+  gpuMetrics=null;bootDiagnostics=[];
+  const [x,z]=places[document.querySelector('#scene').value];state=freshGame();Object.assign(state.player,{x,z});state.time=Number(document.querySelector('#light').value);state.quest=6;
+  if(document.querySelector('#scene').value==='camp')state.buildings=[{id:'art-fire',type:'campfire',x:-56,z:56},{id:'art-tent',type:'tent',x:-65,z:49},{id:'art-bench',type:'workbench',x:-47,z:49}];
+  if(document.querySelector('#scene').value==='ordinary')state.player.yaw=-2.99159265;state.inventory.axe=1;state.inventory.sword=1;state.selected=document.querySelector('#mode').value==='attack'?'sword':'axe';pendingAttack=pendingGather=null;maxSoleError=actionCount=0,actionEvents=[];start=[x,z];frames=0;moving=false;hidden=false;previous=null;intervals=[];distance=0;poses=[];bodyMotionMax={bank:0,drive:0};view.yaw=.15;view.pitch=Number(document.querySelector('#pitch').value);view.player.userData.lastPosition=null;view.player.userData.worldFeet=null;view.camera.position.set(x+5,Math.max(terrain(x,z),0)+12,z+20);view.sync(state);for(let i=0;i<60;i++)draw();
+}
+document.querySelector('#run').onclick=()=>{
+  running=true;document.querySelectorAll('button,select').forEach(e=>e.disabled=true);
+  function frame(now){
+    if(previous!==null)intervals.push(now-previous);previous=now;hidden||=document.hidden;
+    const p=state.player,before=[p.x,p.z],angle=frames<90?0:Math.PI/2;
+    const mode=document.querySelector('#mode').value;if(['walk','sprint'].includes(mode))movePlayer(state,world.objects,Math.sin(angle),Math.cos(angle),1/60,mode==='sprint');const moved=Math.hypot(p.x-before[0],p.z-before[1]);moving=moved>.001;distance+=moved;tick(state,1/60,false,null,world.objects);if(mode==='attack'&&frames%50===0){const result=attack(state,{defer:true});if(result.pending)pendingAttack=result.pending;}
+    if(mode==='gather'&&frames%60===0){const result=interact(state,targetTree,{defer:true});if(result?.pending){pendingGather=result.pending;view.gatherAt=result.pending.at;view.gatherKind='tree';view.gatherTool='axe';state.player.yaw=Math.atan2(targetTree.x-p.x,targetTree.z-p.z);}}
+    if(pendingAttack&&state.time>=pendingAttack.at+ATTACK_IMPACT){resolveAttack(state,pendingAttack);pendingAttack=null;actionCount++;actionEvents.push({type:'attack',time:state.time,attackAt:state.attackAt});}
+    if(pendingGather&&state.time>=pendingGather.at+GATHER_IMPACT){resolveGather(state,pendingGather);pendingGather=null;actionCount++;actionEvents.push({type:'gather',time:state.time,gatherAt:view.gatherAt,wood:state.inventory.wood});}
+    view.sync(state);frames++;draw();
+    if(frames%30===0)poses.push({frame:frames,player:[p.x,p.z,p.yaw],joints:Object.fromEntries(['pelvis','Head','hand_r','foot_l','foot_r'].map(name=>[name,view.player.getObjectByName(name).matrixWorld.elements.slice(12,15)])),action:view.player.userData.actionSource,body:view.player.userData.body.rotation.toArray(),islanders:view.islanders.map(o=>o.model.userData.body.rotation.toArray()),camera:view.camera.position.toArray(),hp:p.hp});
+    if(frames<180)requestAnimationFrame(frame);else{running=false;moving=false;draw();document.querySelectorAll('button,select').forEach(e=>e.disabled=false);}
+  }requestAnimationFrame(frame);
+};
+document.querySelector('#boots').onclick=()=>{bootDiagnostics=bootGaps();draw();};
+document.querySelector('#gpu').onclick=()=>{
+  const gl=view.renderer.getContext(),ext=gl.getExtension('EXT_disjoint_timer_query_webgl2');if(!ext){gpuMetrics={supported:false};draw();return;}
+  document.querySelectorAll('button,select').forEach(e=>e.disabled=true);const pending=[],samples=[],cpu=[],intervals=[];let issued=0,frames=0,last=null,hidden=false,disjoint=false;
+  function frame(now){if(last!==null)intervals.push(now-last);last=now;hidden||=document.hidden;disjoint||=gl.getParameter(ext.GPU_DISJOINT_EXT);tick(state,1/60,false,null,world.objects);view.sync(state);
+    if(frames>=30&&issued<60){activeGpuQuery=gl.createQuery();pending.push(activeGpuQuery);issued++;}
+    const start=performance.now();draw();cpu.push(performance.now()-start);activeGpuQuery=null;
+    for(let i=pending.length-1;i>=0;i--)if(gl.getQueryParameter(pending[i],gl.QUERY_RESULT_AVAILABLE)){samples.push(gl.getQueryParameter(pending[i],gl.QUERY_RESULT)/1e6);gl.deleteQuery(pending[i]);pending.splice(i,1);}
+    frames++;if((issued<60||pending.length)&&frames<300){requestAnimationFrame(frame);return;}
+    for(const q of pending)gl.deleteQuery(q);samples.sort((a,b)=>a-b);cpu.sort((a,b)=>a-b);intervals.sort((a,b)=>a-b);
+    gpuMetrics={supported:true,passed:samples.length===60&&!hidden&&!disjoint,frames,samples:samples.length,p95:samples[Math.floor(samples.length*.95)],max:samples.at(-1),cpuP95:cpu[Math.floor(cpu.length*.95)],rafP95:intervals[Math.floor(intervals.length*.95)],hidden,disjoint,scope:'Actual full WorldView draw with authored four-role cast; fixed stage and animated idle. No device/VRAM/endurance or final quality acceptance.'};draw();document.querySelectorAll('button,select').forEach(e=>e.disabled=false);
+  }requestAnimationFrame(frame);
+};
+document.querySelector('#impact').onclick=()=>{
+  const mode=document.querySelector('#mode').value;let pending,duration;
+  if(mode==='attack'){pending=attack(state,{defer:true}).pending;duration=ATTACK_IMPACT;}
+  else if(mode==='gather'){pending=interact(state,targetTree,{defer:true})?.pending;duration=GATHER_IMPACT;if(pending){view.gatherAt=pending.at;view.gatherKind='tree';view.gatherTool='axe';state.player.yaw=Math.atan2(targetTree.x-state.player.x,targetTree.z-state.player.z);}}
+  if(!pending)return;let elapsed=0;
+  while(elapsed<duration-1e-9){const step=Math.min(1/60,duration-elapsed);tick(state,step,false,null,world.objects);elapsed+=step;view.sync(state);draw();}
+  const result=mode==='attack'?resolveAttack(state,pending):resolveGather(state,pending);actionCount++;actionEvents.push({type:mode,time:state.time,at:pending.at,result});draw();
+};
+for(const s of document.querySelectorAll('select'))s.onchange=reset;
+document.querySelectorAll('button,select').forEach(e=>e.disabled=true);
+Promise.all([loadAuthoredCast().then(cast=>view.installAuthoredCast(cast)),view.groundSurface.userData.ground.loaded,view.groundSurface.userData.ground.sand.loaded,view.rockSurface.userData.rock.loaded]).then(()=>{reset();document.querySelectorAll('button,select').forEach(e=>e.disabled=false);}).catch(error=>{out.textContent='加载失败：'+error.message;console.error(error);});
+window.addEventListener('resize',()=>{view.resize();if(state&&!running)draw();});
+window.addEventListener('pagehide',()=>{view.authoredCast?.release();view.contactShade.dispose();view.renderer.dispose();});
+</script></html>
