@@ -1,0 +1,55 @@
+{
+  "archiveSha256": "cc73fc4e495b82958207316596317a3f40b9fa38065bde1027937452da537724",
+  "sourceMember": "Universal Animation Library[Standard]/Unreal-Godot/UAL1_Standard_RM.glb",
+  "sourceGlbSha256": "be684571ed655a1b892c2c07e6e2aeca053b606c442d34004adaf1d944090d01",
+  "rows": [
+    {
+      "clip": "Jog_Fwd_Loop",
+      "duration": 0.9333333373069763,
+      "rootDelta": [
+        0.0,
+        0.0,
+        5.0
+      ],
+      "horizontalCycleMeters": 5.0,
+      "sourceMetersPerSecond": 5.357142834334957
+    },
+    {
+      "clip": "Sprint_Loop",
+      "duration": 0.6666666865348816,
+      "rootDelta": [
+        0.0,
+        0.0,
+        5.5
+      ],
+      "horizontalCycleMeters": 5.5,
+      "sourceMetersPerSecond": 8.249999754130847
+    },
+    {
+      "clip": "Swim_Fwd_Loop",
+      "duration": 1.3333333730697632,
+      "rootDelta": [
+        0.0,
+        0.0,
+        2.9000000953674316
+      ],
+      "horizontalCycleMeters": 2.9000000953674316,
+      "sourceMetersPerSecond": 2.175000006705522
+    },
+    {
+      "clip": "Walk_Loop",
+      "duration": 1.3333333730697632,
+      "rootDelta": [
+        0.0,
+        0.0,
+        1.2999999523162842
+      ],
+      "horizontalCycleMeters": 1.2999999523162842,
+      "sourceMetersPerSecond": 0.9749999351799508
+    }
+  ],
+  "gameRulesChanged": false,
+  "runtimeIntegrated": false,
+  "gameFootSlidingAccepted": false,
+  "scope": "Endpoint RM root displacement only. In-place playback uses actual game travel/stride; not evidence for stance-phase no-slip, impact marker, IK or final world scale."
+}

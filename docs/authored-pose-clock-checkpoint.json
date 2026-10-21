@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "sourceFiles": {
+    "src/authored-pose-clock.js": "fa197a88491672fd78421c5cc4487f60d7e47f323e1378e789c125cd87bd509c",
+    "src/action-timing.js": "fb94324d1ff0675e88b44ed241fa9ce4667cf9a1e944ca56c10a79cb0ea7099d",
+    "src/scene.js": "079e292b4b3ffefcb700dbdbed57d8d426506eb8033c8e1d159654d6f23f0c00",
+    "src/character.js": "9fe5c38508ef05aac8d02487f206bc4b48afe14dd7b518d4dd9483cb802d39a1",
+    "tests/authored-pose-clock.test.js": "677e761d4fff61bd14090c32969756fdc3e79bebc6d02cd88901ce6b760c36f2",
+    "tools/inspect_authored_stride.py": "240d4baa86a09797d24167a032752e0809ce83a58bdd16c8d163dd18e4a33b53",
+    "tools/check_authored_pose_clock.mjs": "16d8e11d67e6dc6da86aac9be7d10cb56d000e6a96b147b7c86302c5b89327ff",
+    "docs/authored-stride-inventory.json": "9452587d7bcafc54b2e95c043d240b726ceeefd5d38e25f59dd22f88255f73c7",
+    "docs/authored-pose-clock-tests.txt": "e55f52a57f4276cc0baaeb877c1568759fc1f9912932de550b79f6fdc505ec59",
+    "docs/authored-pose-clock-full-tests.txt": "cc17b7c3817b03f8f2c7c60dd5f6af9a4dfd30afad2a73f6ae7cd5a40dcde64a"
+  },
+  "sourceRootMotionMeasured": true,
+  "gameplayClockUnitVerified": true,
+  "focusedTests": 3,
+  "fullTests": 266,
+  "runtimeIntegrated": false,
+  "renderedAdapterVerified": false,
+  "worldSupportAccepted": false,
+  "swimHeightAccepted": false,
+  "impactMarkerAccepted": false,
+  "fullM5Complete": false,
+  "fullGoalComplete": false,
+  "scope": "Actual author RM cycle endpoint distances and pure game-distance/action clock only; no new rendered character/world adapter or zero-slip proof"
+}

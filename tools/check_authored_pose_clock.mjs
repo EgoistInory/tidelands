@@ -1,0 +1,8 @@
+import fs from 'node:fs';import crypto from'node:crypto';import assert from 'node:assert/strict';
+import {AUTHORED_STRIDES} from '../src/authored-pose-clock.js';
+const root=new URL('../',import.meta.url),read=p=>fs.readFileSync(new URL(p,root));
+const source=JSON.parse(read('docs/authored-stride-inventory.json'));for(const row of source.rows)assert.equal(AUTHORED_STRIDES[row.clip],row.horizontalCycleMeters);
+assert.match(read('docs/authored-pose-clock-tests.txt').toString(),/# pass 3\b/);assert.match(read('docs/authored-pose-clock-full-tests.txt').toString(),/# pass 266\b/);assert.match(read('docs/authored-pose-clock-full-tests.txt').toString(),/# fail 0\b/);
+const files=['src/authored-pose-clock.js','src/action-timing.js','src/scene.js','src/character.js','tests/authored-pose-clock.test.js','tools/inspect_authored_stride.py','tools/check_authored_pose_clock.mjs','docs/authored-stride-inventory.json','docs/authored-pose-clock-tests.txt','docs/authored-pose-clock-full-tests.txt'];
+const report={passed:true,sourceFiles:Object.fromEntries(files.map(p=>[p,crypto.createHash('sha256').update(read(p)).digest('hex')])),sourceRootMotionMeasured:true,gameplayClockUnitVerified:true,focusedTests:3,fullTests:266,runtimeIntegrated:false,renderedAdapterVerified:false,worldSupportAccepted:false,swimHeightAccepted:false,impactMarkerAccepted:false,fullM5Complete:false,fullGoalComplete:false,scope:'Actual author RM cycle endpoint distances and pure game-distance/action clock only; no new rendered character/world adapter or zero-slip proof'};
+fs.writeFileSync(new URL('docs/authored-pose-clock-checkpoint.json',root),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({passed:true,focusedTests:3,fullTests:266,runtimeIntegrated:false}));
