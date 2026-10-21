@@ -1,0 +1,610 @@
+{
+  "accepted": false,
+  "reason": "QA reset retained prior gpuMetrics; later scene rows could read previous completed result. Retained as rejected measurement, corrected page clears it before remeasurement.",
+  "rows": [
+    {
+      "ready": true,
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 12.385874,
+        "max": 13.112749,
+        "cpuP95": 15,
+        "rafP95": 18.599999999976717,
+        "hidden": false,
+        "disjoint": false,
+        "scope": "Actual full WorldView draw with authored four-role cast; fixed stage and animated idle. No device/VRAM/endurance or final quality acceptance."
+      },
+      "bootGaps": [],
+      "authored": true,
+      "roles": [
+        [
+          "keeper",
+          true
+        ],
+        [
+          "botanist",
+          true
+        ],
+        [
+          "explorer",
+          true
+        ]
+      ],
+      "mode": "still",
+      "maxSoleError": 0.0000011390621990262583,
+      "actionCount": 0,
+      "actionEvents": [],
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "plan": {
+        "baseClip": "Idle_Loop",
+        "cycles": 0,
+        "phase": 0,
+        "speed": 0,
+        "action": null,
+        "actionProgress": 0,
+        "equipped": "axe",
+        "recoil": 0,
+        "resetContacts": false
+      },
+      "actionSource": null,
+      "feet": [
+        [
+          -89.63284100340363,
+          1.1351283380422283,
+          140.26923706820133
+        ],
+        [
+          -90.38182901443338,
+          1.328479680588314,
+          139.53989634415842
+        ]
+      ],
+      "scene": "coast",
+      "startTime": 240,
+      "pitch": 0.29,
+      "time": 241.51666666666787,
+      "weather": {
+        "cloudiness": 0.000006158524596899806,
+        "windStrength": 0.40000369511475814,
+        "sunlight": 0.9999955658622902,
+        "skylight": 0.9999992609770484,
+        "fogNear": 119.99984603688507,
+        "fogFar": 469.9992609770484
+      },
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "start": [
+        -90,
+        140
+      ],
+      "position": [
+        -90,
+        140
+      ],
+      "height": 1.2171783651859152,
+      "distance": 0,
+      "hp": 100,
+      "camera": [
+        -87.90786614159951,
+        7.794957384051179,
+        153.84279510200244
+      ],
+      "poses": [],
+      "bodyMotionMax": {
+        "bank": 0,
+        "drive": 0
+      },
+      "raf": null,
+      "render": {
+        "calls": 366,
+        "triangles": 2634179,
+        "textures": 47
+      },
+      "viewport": [
+        1920,
+        1080
+      ],
+      "buffer": [
+        1920,
+        938
+      ],
+      "glError": 0,
+      "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+    },
+    {
+      "ready": true,
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 12.385874,
+        "max": 13.112749,
+        "cpuP95": 15,
+        "rafP95": 18.599999999976717,
+        "hidden": false,
+        "disjoint": false,
+        "scope": "Actual full WorldView draw with authored four-role cast; fixed stage and animated idle. No device/VRAM/endurance or final quality acceptance."
+      },
+      "bootGaps": [],
+      "authored": true,
+      "roles": [
+        [
+          "keeper",
+          true
+        ],
+        [
+          "botanist",
+          true
+        ],
+        [
+          "explorer",
+          true
+        ]
+      ],
+      "mode": "still",
+      "maxSoleError": 7.714530871998447e-7,
+      "actionCount": 0,
+      "actionEvents": [],
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "plan": {
+        "baseClip": "Idle_Loop",
+        "cycles": 0,
+        "phase": 0,
+        "speed": 0,
+        "action": null,
+        "actionProgress": 0,
+        "equipped": "axe",
+        "recoil": 0,
+        "resetContacts": false
+      },
+      "actionSource": null,
+      "feet": [
+        [
+          132.3671589965964,
+          16.711804033309527,
+          -25.73076293179867
+        ],
+        [
+          131.61817098556662,
+          16.798632087798392,
+          -26.460103655841568
+        ]
+      ],
+      "scene": "forest",
+      "startTime": 240,
+      "pitch": 0.29,
+      "time": 240.11666666666676,
+      "weather": {
+        "cloudiness": 3.6441048290036804e-8,
+        "windStrength": 0.400000021864629,
+        "sunlight": 0.9999999737624452,
+        "skylight": 0.9999999956270742,
+        "fogNear": 119.9999990889738,
+        "fogFar": 469.9999956270742
+      },
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "start": [
+        132,
+        -26
+      ],
+      "position": [
+        132,
+        -26
+      ],
+      "height": 16.731652729473826,
+      "distance": 0,
+      "hp": 100,
+      "camera": [
+        134.09244889695572,
+        23.310007765758733,
+        -12.15629428514962
+      ],
+      "poses": [],
+      "bodyMotionMax": {
+        "bank": 0,
+        "drive": 0
+      },
+      "raf": null,
+      "render": {
+        "calls": 405,
+        "triangles": 2314959,
+        "textures": 47
+      },
+      "viewport": [
+        1920,
+        1080
+      ],
+      "buffer": [
+        1920,
+        938
+      ],
+      "glError": 0,
+      "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+    },
+    {
+      "ready": true,
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 12.778874,
+        "max": 12.874416,
+        "cpuP95": 14.799999713897705,
+        "rafP95": 18.600000000034925,
+        "hidden": false,
+        "disjoint": false,
+        "scope": "Actual full WorldView draw with authored four-role cast; fixed stage and animated idle. No device/VRAM/endurance or final quality acceptance."
+      },
+      "bootGaps": [],
+      "authored": true,
+      "roles": [
+        [
+          "keeper",
+          true
+        ],
+        [
+          "botanist",
+          true
+        ],
+        [
+          "explorer",
+          true
+        ]
+      ],
+      "mode": "still",
+      "maxSoleError": 6.596560544455183e-7,
+      "actionCount": 0,
+      "actionEvents": [],
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "plan": {
+        "baseClip": "Idle_Loop",
+        "cycles": 0,
+        "phase": 0,
+        "speed": 0,
+        "action": null,
+        "actionProgress": 0,
+        "equipped": "axe",
+        "recoil": 0,
+        "resetContacts": false
+      },
+      "actionSource": null,
+      "feet": [
+        [
+          -74.63284100340363,
+          37.37047950962232,
+          -204.73076293179867
+        ],
+        [
+          -75.38182901443338,
+          37.44938810648574,
+          -205.46010365584158
+        ]
+      ],
+      "scene": "highland",
+      "startTime": 240,
+      "pitch": 0.29,
+      "time": 240.2500000000002,
+      "weather": {
+        "cloudiness": 1.6733133700874703e-7,
+        "windStrength": 0.40000010039880224,
+        "sunlight": 0.9999998795214373,
+        "skylight": 0.9999999799202396,
+        "fogNear": 119.99999581671658,
+        "fogFar": 469.9999799202396
+      },
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "start": [
+        -75,
+        -205
+      ],
+      "position": [
+        -75,
+        -205
+      ],
+      "height": 37.39809484091374,
+      "distance": 0,
+      "hp": 100,
+      "camera": [
+        -72.9077577246863,
+        43.976072089546484,
+        -191.15689151174448
+      ],
+      "poses": [],
+      "bodyMotionMax": {
+        "bank": 0,
+        "drive": 0
+      },
+      "raf": null,
+      "render": {
+        "calls": 306,
+        "triangles": 902598,
+        "textures": 47
+      },
+      "viewport": [
+        1920,
+        1080
+      ],
+      "buffer": [
+        1920,
+        938
+      ],
+      "glError": 0,
+      "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+    },
+    {
+      "ready": true,
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 8.871874,
+        "max": 8.9715,
+        "cpuP95": 5.5,
+        "rafP95": 18.400000000023283,
+        "hidden": false,
+        "disjoint": false,
+        "scope": "Actual full WorldView draw with authored four-role cast; fixed stage and animated idle. No device/VRAM/endurance or final quality acceptance."
+      },
+      "bootGaps": [],
+      "authored": true,
+      "roles": [
+        [
+          "keeper",
+          true
+        ],
+        [
+          "botanist",
+          true
+        ],
+        [
+          "explorer",
+          true
+        ]
+      ],
+      "mode": "still",
+      "maxSoleError": 7.721442830070957e-7,
+      "actionCount": 0,
+      "actionEvents": [],
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "plan": {
+        "baseClip": "Idle_Loop",
+        "cycles": 0,
+        "phase": 0,
+        "speed": 0,
+        "action": null,
+        "actionProgress": 0,
+        "equipped": "axe",
+        "recoil": 0,
+        "resetContacts": false
+      },
+      "actionSource": null,
+      "feet": [
+        [
+          -55.63284100340363,
+          12.39593809451725,
+          49.26923706820132
+        ],
+        [
+          -56.38182901443338,
+          12.504604366211796,
+          48.53989634415843
+        ]
+      ],
+      "scene": "camp",
+      "startTime": 0,
+      "pitch": 0.29,
+      "time": 0.16666666666666666,
+      "weather": {
+        "cloudiness": 0.14625382854259666,
+        "windStrength": 0.487752297125558,
+        "sunlight": 0.8946972434493304,
+        "skylight": 0.9824495405748884,
+        "fogNear": 116.34365428643508,
+        "fogFar": 452.4495405748884
+      },
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "start": [
+        -56,
+        49
+      ],
+      "position": [
+        -56,
+        49
+      ],
+      "height": 12.437122324462592,
+      "distance": 0,
+      "hp": 100,
+      "camera": [
+        -53.90765496846092,
+        19.015287452880344,
+        62.84340550294306
+      ],
+      "poses": [],
+      "bodyMotionMax": {
+        "bank": 0,
+        "drive": 0
+      },
+      "raf": null,
+      "render": {
+        "calls": 348,
+        "triangles": 2567659,
+        "textures": 47
+      },
+      "viewport": [
+        1920,
+        1080
+      ],
+      "buffer": [
+        1920,
+        938
+      ],
+      "glError": 0,
+      "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+    },
+    {
+      "ready": true,
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 11.268875,
+        "max": 11.355666,
+        "cpuP95": 7.200000286102295,
+        "rafP95": 18.300000000046566,
+        "hidden": false,
+        "disjoint": false,
+        "scope": "Actual full WorldView draw with authored four-role cast; fixed stage and animated idle. No device/VRAM/endurance or final quality acceptance."
+      },
+      "bootGaps": [],
+      "authored": true,
+      "roles": [
+        [
+          "keeper",
+          true
+        ],
+        [
+          "botanist",
+          true
+        ],
+        [
+          "explorer",
+          true
+        ]
+      ],
+      "mode": "still",
+      "maxSoleError": 0,
+      "actionCount": 0,
+      "actionEvents": [],
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 1,
+        "meal": 0
+      },
+      "plan": {
+        "baseClip": "Swim_Idle_Loop",
+        "cycles": 0,
+        "phase": 0,
+        "speed": 0,
+        "action": null,
+        "actionProgress": 0,
+        "equipped": "axe",
+        "recoil": 0,
+        "resetContacts": false
+      },
+      "actionSource": null,
+      "feet": [],
+      "scene": "water",
+      "startTime": 240,
+      "pitch": 0.29,
+      "time": 240.03333333333336,
+      "weather": {
+        "cloudiness": 2.974779478304157e-9,
+        "windStrength": 0.4000000017848677,
+        "sunlight": 0.9999999978581587,
+        "skylight": 0.9999999996430264,
+        "fogNear": 119.99999992563052,
+        "fogFar": 469.99999964302646
+      },
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "start": [
+        10,
+        230
+      ],
+      "position": [
+        10,
+        230
+      ],
+      "height": -3,
+      "distance": 0,
+      "hp": 100,
+      "camera": [
+        12.09275176164019,
+        6.128979209168106,
+        243.84459696692025
+      ],
+      "poses": [],
+      "bodyMotionMax": {
+        "bank": 0,
+        "drive": 0
+      },
+      "raf": null,
+      "render": {
+        "calls": 404,
+        "triangles": 2774426,
+        "textures": 47
+      },
+      "viewport": [
+        1920,
+        1080
+      ],
+      "buffer": [
+        1920,
+        938
+      ],
+      "glError": 0,
+      "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+    }
+  ]
+}

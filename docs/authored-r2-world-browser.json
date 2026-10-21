@@ -1,0 +1,2546 @@
+{
+  "rows": [
+    {
+      "name": "keeper",
+      "path": "/Users/huxiaocong/Codex/tidelands/docs/authored-r2-keeper.jpg",
+      "row": {
+        "ready": true,
+        "gpuMetrics": null,
+        "bootGaps": [],
+        "authored": true,
+        "roles": [
+          [
+            "keeper",
+            true
+          ],
+          [
+            "botanist",
+            true
+          ],
+          [
+            "explorer",
+            true
+          ]
+        ],
+        "mode": "walk",
+        "maxSoleError": 1.2982753209276129e-06,
+        "actionCount": 0,
+        "actionEvents": [],
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "fiber": 0,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "actionSource": null,
+        "feet": [
+          [
+            -54.63284100340363,
+            8.241125037830685,
+            98.26923706820132
+          ],
+          [
+            -55.38182901443338,
+            8.53394339772963,
+            97.53989634415844
+          ]
+        ],
+        "scene": "keeper",
+        "startTime": 240,
+        "pitch": 0.29,
+        "time": 240,
+        "weather": {
+          "cloudiness": 0,
+          "windStrength": 0.4,
+          "sunlight": 1,
+          "skylight": 1,
+          "fogNear": 120,
+          "fogFar": 470
+        },
+        "frames": 0,
+        "running": false,
+        "hidden": false,
+        "start": [
+          -55,
+          98
+        ],
+        "position": [
+          -55,
+          98
+        ],
+        "height": 8.370172857316224,
+        "distance": 0,
+        "hp": 100,
+        "camera": [
+          -52.90706496123864,
+          14.949416757317808,
+          111.84511073729912
+        ],
+        "poses": [],
+        "bodyMotionMax": {
+          "bank": 0,
+          "drive": 0
+        },
+        "raf": null,
+        "render": {
+          "calls": 386,
+          "triangles": 2725832,
+          "textures": 41
+        },
+        "viewport": [
+          1920,
+          1080
+        ],
+        "buffer": [
+          1920,
+          938
+        ],
+        "glError": 0,
+        "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+      }
+    },
+    {
+      "name": "botanist",
+      "path": "/Users/huxiaocong/Codex/tidelands/docs/authored-r2-botanist.jpg",
+      "row": {
+        "ready": true,
+        "gpuMetrics": null,
+        "bootGaps": [],
+        "authored": true,
+        "roles": [
+          [
+            "keeper",
+            true
+          ],
+          [
+            "botanist",
+            true
+          ],
+          [
+            "explorer",
+            true
+          ]
+        ],
+        "mode": "walk",
+        "maxSoleError": 1.154511497675151e-06,
+        "actionCount": 0,
+        "actionEvents": [],
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "fiber": 0,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "actionSource": null,
+        "feet": [
+          [
+            136.3671589965964,
+            15.862274234248462,
+            -21.73076293179867
+          ],
+          [
+            135.61817098556662,
+            16.056630946640556,
+            -22.460103655841568
+          ]
+        ],
+        "scene": "botanist",
+        "startTime": 240,
+        "pitch": 0.29,
+        "time": 240,
+        "weather": {
+          "cloudiness": 0,
+          "windStrength": 0.4,
+          "sunlight": 1,
+          "skylight": 1,
+          "fogNear": 120,
+          "fogFar": 470
+        },
+        "frames": 0,
+        "running": false,
+        "hidden": false,
+        "start": [
+          136,
+          -22
+        ],
+        "position": [
+          136,
+          -22
+        ],
+        "height": 15.92765609157616,
+        "distance": 0,
+        "hp": 100,
+        "camera": [
+          138.09293503876134,
+          22.50689999157774,
+          -8.154889262700861
+        ],
+        "poses": [],
+        "bodyMotionMax": {
+          "bank": 0,
+          "drive": 0
+        },
+        "raf": null,
+        "render": {
+          "calls": 407,
+          "triangles": 2362164,
+          "textures": 47
+        },
+        "viewport": [
+          1920,
+          1080
+        ],
+        "buffer": [
+          1920,
+          938
+        ],
+        "glError": 0,
+        "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+      }
+    },
+    {
+      "name": "explorer",
+      "path": "/Users/huxiaocong/Codex/tidelands/docs/authored-r2-explorer.jpg",
+      "row": {
+        "ready": true,
+        "gpuMetrics": null,
+        "bootGaps": [],
+        "authored": true,
+        "roles": [
+          [
+            "keeper",
+            true
+          ],
+          [
+            "botanist",
+            true
+          ],
+          [
+            "explorer",
+            true
+          ]
+        ],
+        "mode": "walk",
+        "maxSoleError": 1.591450248668817e-06,
+        "actionCount": 0,
+        "actionEvents": [],
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "fiber": 0,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "actionSource": null,
+        "feet": [
+          [
+            -65.63284100340363,
+            23.354821568377602,
+            -185.73076293179867
+          ],
+          [
+            -66.38182901443338,
+            24.115735943034178,
+            -186.46010365584158
+          ]
+        ],
+        "scene": "explorer",
+        "startTime": 240,
+        "pitch": 0.29,
+        "time": 240,
+        "weather": {
+          "cloudiness": 0,
+          "windStrength": 0.4,
+          "sunlight": 1,
+          "skylight": 1,
+          "fogNear": 120,
+          "fogFar": 470
+        },
+        "frames": 0,
+        "running": false,
+        "hidden": false,
+        "start": [
+          -66,
+          -186
+        ],
+        "position": [
+          -66,
+          -186
+        ],
+        "height": 23.656659543693472,
+        "distance": 0,
+        "hp": 100,
+        "camera": [
+          -63.90706496123864,
+          30.235903443695047,
+          -172.15488926270086
+        ],
+        "poses": [],
+        "bodyMotionMax": {
+          "bank": 0,
+          "drive": 0
+        },
+        "raf": null,
+        "render": {
+          "calls": 382,
+          "triangles": 978752,
+          "textures": 47
+        },
+        "viewport": [
+          1920,
+          1080
+        ],
+        "buffer": [
+          1920,
+          938
+        ],
+        "glError": 0,
+        "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+      }
+    },
+    {
+      "name": "highland-sprint",
+      "path": "/Users/huxiaocong/Codex/tidelands/docs/authored-r2-highland-sprint.jpg",
+      "row": {
+        "ready": true,
+        "gpuMetrics": null,
+        "bootGaps": [],
+        "authored": true,
+        "roles": [
+          [
+            "keeper",
+            true
+          ],
+          [
+            "botanist",
+            true
+          ],
+          [
+            "explorer",
+            true
+          ]
+        ],
+        "mode": "sprint",
+        "maxSoleError": 1.6044503230936727e-06,
+        "actionCount": 0,
+        "actionEvents": [],
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "fiber": 0,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 3.117688841440424,
+          "phase": 0.1176888414404238,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "actionSource": null,
+        "feet": [
+          [
+            -57.357133118490715,
+            28.504068078773695,
+            -195.35720373640297
+          ],
+          [
+            -57.66752389702519,
+            28.85199590408246,
+            -195.00934004490105
+          ]
+        ],
+        "scene": "highland",
+        "startTime": 240,
+        "pitch": 0.29,
+        "time": 243.0000000000024,
+        "weather": {
+          "cloudiness": 2.4095520336053777e-05,
+          "windStrength": 0.40001445731220164,
+          "sunlight": 0.999982651225358,
+          "skylight": 0.9999971085375596,
+          "fogNear": 119.9993976119916,
+          "fogFar": 469.99710853755965
+        },
+        "frames": 180,
+        "running": false,
+        "hidden": false,
+        "start": [
+          -75,
+          -205
+        ],
+        "position": [
+          -56.999999999999744,
+          -195.20000000000056
+        ],
+        "height": 28.14264287075539,
+        "distance": 27.7999999999997,
+        "hp": 88,
+        "camera": [
+          -56.1341946156459,
+          35.188446898636684,
+          -181.26927008151014
+        ],
+        "poses": [
+          {
+            "frame": 30,
+            "player": [
+              -75,
+              -199.00000000000034,
+              0
+            ],
+            "joints": {
+              "pelvis": [
+                -75.00237693123574,
+                35.69063180624552,
+                -199.1091756563283
+              ],
+              "Head": [
+                -75.03402945958783,
+                36.540959076549385,
+                -198.45809510266417
+              ],
+              "hand_r": [
+                -75.6553248736171,
+                35.85982422139601,
+                -198.63231604379573
+              ],
+              "foot_l": [
+                -74.77556866137535,
+                35.04351456063857,
+                -199.12525435788905
+              ],
+              "foot_r": [
+                -75.17102177021866,
+                34.70461274780133,
+                -199.38381087256715
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              -72.87959387385462,
+              41.82478477420076,
+              -186.5137248065955
+            ],
+            "hp": 100
+          },
+          {
+            "frame": 60,
+            "player": [
+              -75,
+              -195.20000000000056,
+              0
+            ],
+            "joints": {
+              "pelvis": [
+                -75.00077515610076,
+                33.204218120865185,
+                -195.32848548559355
+              ],
+              "Head": [
+                -75.03523793946852,
+                34.256342475496595,
+                -195.1256501816695
+              ],
+              "hand_r": [
+                -75.52629507100205,
+                33.34450087089164,
+                -195.4078300699244
+              ],
+              "foot_l": [
+                -74.79333880705168,
+                31.8517754955292,
+                -195.11795919347207
+              ],
+              "foot_r": [
+                -75.20224117347473,
+                32.31313038336062,
+                -195.79242933247204
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              -72.89419041178479,
+              38.58947156001166,
+              -181.66518148145937
+            ],
+            "hp": 100
+          },
+          {
+            "frame": 90,
+            "player": [
+              -75,
+              -195.20000000000056,
+              0
+            ],
+            "joints": {
+              "pelvis": [
+                -75.00285602071233,
+                33.21432183835944,
+                -195.32813843419999
+              ],
+              "Head": [
+                -75.02129443045825,
+                34.27972975715508,
+                -195.2167685747121
+              ],
+              "hand_r": [
+                -75.49728362555355,
+                33.33683175048279,
+                -195.47449955349663
+              ],
+              "foot_l": [
+                -74.7932503892189,
+                31.851780310672435,
+                -195.11791286177555
+              ],
+              "foot_r": [
+                -75.20238424041065,
+                32.3131253483118,
+                -195.79244748162063
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              -72.90758526977781,
+              38.32656467738899,
+              -181.36280276637908
+            ],
+            "hp": 88
+          },
+          {
+            "frame": 120,
+            "player": [
+              -68.99999999999991,
+              -195.20000000000056,
+              1.5707963267948966
+            ],
+            "joints": {
+              "pelvis": [
+                -69.10911964351168,
+                32.936406992735265,
+                -195.2096494780774
+              ],
+              "Head": [
+                -68.44088626681503,
+                33.77374720288713,
+                -195.19294208046972
+              ],
+              "hand_r": [
+                -68.37698483681812,
+                33.0506256268332,
+                -194.6587307655441
+              ],
+              "foot_l": [
+                -68.48584261576903,
+                31.937727098252793,
+                -195.3118706254154
+              ],
+              "foot_r": [
+                -70.06825683347896,
+                31.90920068633304,
+                -194.958963473222
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              -68.28673965290196,
+              38.10959464551421,
+              -181.28714708039516
+            ],
+            "hp": 88
+          },
+          {
+            "frame": 150,
+            "player": [
+              -62.99999999999983,
+              -195.20000000000056,
+              1.5707963267948966
+            ],
+            "joints": {
+              "pelvis": [
+                -63.10879595794625,
+                31.720572260593713,
+                -195.1726333391155
+              ],
+              "Head": [
+                -62.43592928475694,
+                32.549463887730326,
+                -195.14315057445216
+              ],
+              "hand_r": [
+                -63.128442381222726,
+                32.168922538820276,
+                -194.6004025336273
+              ],
+              "foot_l": [
+                -64.23406068864166,
+                31.525444600285674,
+                -195.30024701307838
+              ],
+              "foot_r": [
+                -62.40391017502014,
+                30.493050994382934,
+                -194.95110242962735
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              -62.30985743733205,
+              37.110307595273895,
+              -181.27336488526467
+            ],
+            "hp": 88
+          },
+          {
+            "frame": 180,
+            "player": [
+              -56.999999999999744,
+              -195.20000000000056,
+              1.5707963267948966
+            ],
+            "joints": {
+              "pelvis": [
+                -57.10907690987246,
+                29.491308432140798,
+                -195.21358248750698
+              ],
+              "Head": [
+                -56.45855444638702,
+                30.342949046981698,
+                -195.20079574657126
+              ],
+              "hand_r": [
+                -56.4232942882202,
+                29.686562155479496,
+                -194.71857471573725
+              ],
+              "foot_l": [
+                -57.423796436069985,
+                28.544616064629892,
+                -195.27373105356403
+              ],
+              "foot_r": [
+                -57.7368765359117,
+                28.916977625400733,
+                -194.92404596736128
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              -56.30933135192401,
+              35.255328839405706,
+              -181.26681875098174
+            ],
+            "hp": 88
+          }
+        ],
+        "bodyMotionMax": {
+          "bank": 0,
+          "drive": 0
+        },
+        "raf": {
+          "samples": 179,
+          "p95": 17.800000000017462,
+          "max": 18.60000000000582
+        },
+        "render": {
+          "calls": 307,
+          "triangles": 920989,
+          "textures": 47
+        },
+        "viewport": [
+          1920,
+          1080
+        ],
+        "buffer": [
+          1920,
+          938
+        ],
+        "glError": 0,
+        "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+      }
+    },
+    {
+      "name": "deep-swim",
+      "path": "/Users/huxiaocong/Codex/tidelands/docs/authored-r2-deep-swim.jpg",
+      "row": {
+        "ready": true,
+        "gpuMetrics": null,
+        "bootGaps": [],
+        "authored": true,
+        "roles": [
+          [
+            "keeper",
+            true
+          ],
+          [
+            "botanist",
+            true
+          ],
+          [
+            "explorer",
+            true
+          ]
+        ],
+        "mode": "walk",
+        "maxSoleError": 0,
+        "actionCount": 0,
+        "actionEvents": [],
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "fiber": 0,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "plan": {
+          "baseClip": "Swim_Idle_Loop",
+          "cycles": 3.19039098189584,
+          "phase": 0.19039098189584003,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "actionSource": null,
+        "feet": [],
+        "scene": "water",
+        "startTime": 240,
+        "pitch": 0.29,
+        "time": 243.0000000000024,
+        "weather": {
+          "cloudiness": 2.4095520336053777e-05,
+          "windStrength": 0.40001445731220164,
+          "sunlight": 0.999982651225358,
+          "skylight": 0.9999971085375596,
+          "fogNear": 119.9993976119916,
+          "fogFar": 469.99710853755965
+        },
+        "frames": 180,
+        "running": false,
+        "hidden": false,
+        "start": [
+          10,
+          230
+        ],
+        "position": [
+          17.50000000000002,
+          237.50000000000085
+        ],
+        "height": -3,
+        "distance": 15.000000000000874,
+        "hp": 100,
+        "camera": [
+          19.079604350802747,
+          6.1278584341885445,
+          251.356481303458
+        ],
+        "poses": [
+          {
+            "frame": 30,
+            "player": [
+              10,
+              232.50000000000028,
+              0
+            ],
+            "joints": {
+              "pelvis": [
+                10.000639981404168,
+                0.1559140012443079,
+                232.3489671715313
+              ],
+              "Head": [
+                10.000007968430044,
+                0.33278150919098803,
+                233.36460214513954
+              ],
+              "hand_r": [
+                9.189828848444536,
+                -0.019112569620973102,
+                233.69874908025193
+              ],
+              "foot_l": [
+                10.191562171673187,
+                0.1640915235069547,
+                231.09822276865515
+              ],
+              "foot_r": [
+                9.814463867695341,
+                0.13542119267399516,
+                231.09723328172026
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              12.095833176024808,
+              6.134393191699868,
+              245.76805651367837
+            ],
+            "hp": 100
+          },
+          {
+            "frame": 60,
+            "player": [
+              10,
+              235.00000000000057,
+              0
+            ],
+            "joints": {
+              "pelvis": [
+                10.001216215019515,
+                0.13315308781319107,
+                234.84700970665799
+              ],
+              "Head": [
+                10.000028694993532,
+                0.3214896647847381,
+                235.8730268510077
+              ],
+              "hand_r": [
+                9.608261948528622,
+                -0.29328056769903865,
+                235.71505221379903
+              ],
+              "foot_l": [
+                10.43997250941485,
+                0.04172982813594395,
+                233.51381462682176
+              ],
+              "foot_r": [
+                9.56319851444684,
+                0.03216822668507084,
+                233.512596949525
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              12.096455229549226,
+              6.135484033412761,
+              248.2573117904249
+            ],
+            "hp": 100
+          },
+          {
+            "frame": 90,
+            "player": [
+              10,
+              237.50000000000085,
+              0
+            ],
+            "joints": {
+              "pelvis": [
+                10.000432751405208,
+                0.15090415992524941,
+                237.3494582771006
+              ],
+              "Head": [
+                10.000003019612526,
+                0.3497320141866581,
+                238.35431301235363
+              ],
+              "hand_r": [
+                8.938656265668376,
+                0.09784663424214286,
+                238.23437985051982
+              ],
+              "foot_l": [
+                10.205004195112545,
+                0.12333217318902295,
+                236.2310267192495
+              ],
+              "foot_r": [
+                9.799396188165614,
+                0.12056829258189278,
+                236.2304108926696
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              12.096480934996178,
+              6.135528231678866,
+              250.75711140216742
+            ],
+            "hp": 100
+          },
+          {
+            "frame": 120,
+            "player": [
+              12.500000000000018,
+              237.50000000000085,
+              1.5707963267948966
+            ],
+            "joints": {
+              "pelvis": [
+                12.346942615314553,
+                0.14038971223739122,
+                237.4986593141225
+              ],
+              "Head": [
+                13.379394655055075,
+                0.3084351402278857,
+                237.50043026734176
+              ],
+              "hand_r": [
+                13.466335643940203,
+                -0.23217950019511174,
+                237.78056719148842
+              ],
+              "foot_l": [
+                10.956698091273537,
+                0.06182858844641206,
+                237.27094942490479
+              ],
+              "foot_r": [
+                10.954530221305934,
+                0.0603180828171137,
+                237.712239450928
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              14.016035375106108,
+              6.128221760940061,
+              251.34424195354634
+            ],
+            "hp": 100
+          },
+          {
+            "frame": 150,
+            "player": [
+              15.000000000000036,
+              237.50000000000085,
+              1.5707963267948966
+            ],
+            "joints": {
+              "pelvis": [
+                14.849860370744496,
+                0.1452753422127025,
+                237.49975216187752
+              ],
+              "Head": [
+                15.843325448638664,
+                0.36605065691530075,
+                237.49999972913528
+              ],
+              "hand_r": [
+                15.148677060143,
+                0.07756280299148346,
+                238.48773210275846
+              ],
+              "foot_l": [
+                13.888755052494552,
+                0.060463194504634166,
+                237.25007289376137
+              ],
+              "foot_r": [
+                13.886394171014794,
+                0.07987190489815904,
+                237.73490901841254
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              16.506762234362824,
+              6.127869698795362,
+              251.35663722841204
+            ],
+            "hp": 100
+          },
+          {
+            "frame": 180,
+            "player": [
+              17.50000000000002,
+              237.50000000000085,
+              1.5707963267948966
+            ],
+            "joints": {
+              "pelvis": [
+                17.347003558424813,
+                0.1484556318094652,
+                237.49872460775862
+              ],
+              "Head": [
+                18.383041261447037,
+                0.29966555246929283,
+                237.49996527407262
+              ],
+              "hand_r": [
+                18.74144709356613,
+                -0.15414064744756195,
+                237.74544051884558
+              ],
+              "foot_l": [
+                15.949084308401249,
+                0.10648069818138428,
+                237.32694483759758
+              ],
+              "foot_r": [
+                15.947596822611736,
+                0.10548544757429032,
+                237.65761581538572
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              19.00663203643451,
+              6.127860844277477,
+              251.35689173261156
+            ],
+            "hp": 100
+          }
+        ],
+        "bodyMotionMax": {
+          "bank": 0,
+          "drive": 0
+        },
+        "raf": {
+          "samples": 179,
+          "p95": 17.79999999998836,
+          "max": 18.70000000001164
+        },
+        "render": {
+          "calls": 425,
+          "triangles": 2861610,
+          "textures": 47
+        },
+        "viewport": [
+          1920,
+          1080
+        ],
+        "buffer": [
+          1920,
+          938
+        ],
+        "glError": 0,
+        "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+      }
+    },
+    {
+      "name": "gather-impact",
+      "path": "/Users/huxiaocong/Codex/tidelands/docs/authored-r2-gather-impact.jpg",
+      "row": {
+        "ready": true,
+        "gpuMetrics": null,
+        "bootGaps": [],
+        "authored": true,
+        "roles": [
+          [
+            "keeper",
+            true
+          ],
+          [
+            "botanist",
+            true
+          ],
+          [
+            "explorer",
+            true
+          ]
+        ],
+        "mode": "gather",
+        "maxSoleError": 1.0986761842489618e-06,
+        "actionCount": 1,
+        "actionEvents": [
+          {
+            "type": "gather",
+            "time": 240.21000000000015,
+            "at": 240,
+            "result": "木材 +3"
+          }
+        ],
+        "inventory": {
+          "wood": 3,
+          "stone": 0,
+          "fiber": 0,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "gather",
+          "actionProgress": 0.5000000000003573,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "actionSource": {
+          "name": "Sword_Attack",
+          "phase": 0.45000000000039303,
+          "marker": 0.45,
+          "gameProgress": 0.5000000000003573
+        },
+        "feet": [
+          [
+            -122.65926244603153,
+            5.6131788361234,
+            107.92910621343079
+          ],
+          [
+            -122.77565462647966,
+            5.690971730674347,
+            108.02310759286647
+          ]
+        ],
+        "scene": "tree",
+        "startTime": 240,
+        "pitch": 0.29,
+        "time": 240.21000000000015,
+        "weather": {
+          "cloudiness": 1.1806899330446541e-07,
+          "windStrength": 0.400000070841396,
+          "sunlight": 0.9999999149903248,
+          "skylight": 0.9999999858317208,
+          "fogNear": 119.99999704827516,
+          "fogFar": 469.9999858317208
+        },
+        "frames": 0,
+        "running": false,
+        "hidden": false,
+        "start": [
+          -123.0264214426279,
+          107.65986914522946
+        ],
+        "position": [
+          -123.0264214426279,
+          107.65986914522946
+        ],
+        "height": 5.7008599999948295,
+        "distance": 0,
+        "hp": 100,
+        "camera": [
+          -120.93416370298522,
+          12.27886552365013,
+          121.50302233335776
+        ],
+        "poses": [],
+        "bodyMotionMax": {
+          "bank": 0,
+          "drive": 0
+        },
+        "raf": null,
+        "render": {
+          "calls": 317,
+          "triangles": 2494839,
+          "textures": 47
+        },
+        "viewport": [
+          1920,
+          1080
+        ],
+        "buffer": [
+          1920,
+          938
+        ],
+        "glError": 0,
+        "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+      }
+    },
+    {
+      "name": "attack-impact",
+      "path": "/Users/huxiaocong/Codex/tidelands/docs/authored-r2-attack-impact.jpg",
+      "row": {
+        "ready": true,
+        "gpuMetrics": null,
+        "bootGaps": [],
+        "authored": true,
+        "roles": [
+          [
+            "keeper",
+            true
+          ],
+          [
+            "botanist",
+            true
+          ],
+          [
+            "explorer",
+            true
+          ]
+        ],
+        "mode": "attack",
+        "maxSoleError": 1.191833311646083e-06,
+        "actionCount": 1,
+        "actionEvents": [
+          {
+            "type": "attack",
+            "time": 240.22500000000016,
+            "at": 240,
+            "result": {
+              "message": "",
+              "hits": []
+            }
+          }
+        ],
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "fiber": 0,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "attack",
+          "actionProgress": 0.5000000000003663,
+          "equipped": "sword",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "actionSource": {
+          "name": "Sword_Attack",
+          "phase": 0.30833333333384,
+          "marker": 0.30833333333333335,
+          "gameProgress": 0.5000000000003663
+        },
+        "feet": [
+          [
+            -122.65926244603153,
+            5.6131788361234,
+            107.92910621343079
+          ],
+          [
+            -123.40825045706129,
+            5.821727743502112,
+            107.1997654893879
+          ]
+        ],
+        "scene": "tree",
+        "startTime": 240,
+        "pitch": 0.29,
+        "time": 240.22500000000016,
+        "weather": {
+          "cloudiness": 1.355383844048319e-07,
+          "windStrength": 0.40000008132303067,
+          "sunlight": 0.9999999024123633,
+          "skylight": 0.9999999837353939,
+          "fogNear": 119.9999966115404,
+          "fogFar": 469.99998373539387
+        },
+        "frames": 0,
+        "running": false,
+        "hidden": false,
+        "start": [
+          -123.0264214426279,
+          107.65986914522946
+        ],
+        "position": [
+          -123.0264214426279,
+          107.65986914522946
+        ],
+        "height": 5.7008599999948295,
+        "distance": 0,
+        "hp": 100,
+        "camera": [
+          -120.93417916731421,
+          12.278837248627582,
+          121.50297763348496
+        ],
+        "poses": [],
+        "bodyMotionMax": {
+          "bank": 0,
+          "drive": 0
+        },
+        "raf": null,
+        "render": {
+          "calls": 319,
+          "triangles": 2494987,
+          "textures": 47
+        },
+        "viewport": [
+          1920,
+          1080
+        ],
+        "buffer": [
+          1920,
+          938
+        ],
+        "glError": 0,
+        "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+      }
+    },
+    {
+      "name": "water-gpu",
+      "path": "/Users/huxiaocong/Codex/tidelands/docs/authored-r2-water-gpu.jpg",
+      "row": {
+        "ready": true,
+        "gpuMetrics": {
+          "supported": true,
+          "passed": true,
+          "frames": 91,
+          "samples": 60,
+          "p95": 11.268875,
+          "max": 11.355666,
+          "cpuP95": 7.200000286102295,
+          "rafP95": 18.300000000046566,
+          "hidden": false,
+          "disjoint": false,
+          "scope": "Actual full WorldView draw with authored four-role cast; fixed stage and animated idle. No device/VRAM/endurance or final quality acceptance."
+        },
+        "bootGaps": [],
+        "authored": true,
+        "roles": [
+          [
+            "keeper",
+            true
+          ],
+          [
+            "botanist",
+            true
+          ],
+          [
+            "explorer",
+            true
+          ]
+        ],
+        "mode": "still",
+        "maxSoleError": 0,
+        "actionCount": 0,
+        "actionEvents": [],
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "fiber": 0,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "plan": {
+          "baseClip": "Swim_Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "actionSource": null,
+        "feet": [],
+        "scene": "water",
+        "startTime": 240,
+        "pitch": 0.29,
+        "time": 240.05000000000004,
+        "weather": {
+          "cloudiness": 6.693253840062141e-09,
+          "windStrength": 0.4000000040159523,
+          "sunlight": 0.9999999951808572,
+          "skylight": 0.9999999991968095,
+          "fogNear": 119.99999983266865,
+          "fogFar": 469.99999919680954
+        },
+        "frames": 0,
+        "running": false,
+        "hidden": false,
+        "start": [
+          10,
+          230
+        ],
+        "position": [
+          10,
+          230
+        ],
+        "height": -3,
+        "distance": 0,
+        "hp": 100,
+        "camera": [
+          12.09267462610893,
+          6.128829383527022,
+          243.84437205005312
+        ],
+        "poses": [],
+        "bodyMotionMax": {
+          "bank": 0,
+          "drive": 0
+        },
+        "raf": null,
+        "render": {
+          "calls": 404,
+          "triangles": 2774426,
+          "textures": 47
+        },
+        "viewport": [
+          1920,
+          1080
+        ],
+        "buffer": [
+          1920,
+          938
+        ],
+        "glError": 0,
+        "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+      }
+    },
+    {
+      "name": "mobile-camp-night",
+      "path": "/Users/huxiaocong/Codex/tidelands/docs/authored-r2-mobile-camp-night.jpg",
+      "row": {
+        "ready": true,
+        "gpuMetrics": null,
+        "bootGaps": [],
+        "authored": true,
+        "roles": [
+          [
+            "keeper",
+            true
+          ],
+          [
+            "botanist",
+            true
+          ],
+          [
+            "explorer",
+            true
+          ]
+        ],
+        "mode": "still",
+        "maxSoleError": 7.103388745501911e-07,
+        "actionCount": 0,
+        "actionEvents": [],
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "fiber": 0,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "actionSource": null,
+        "feet": [
+          [
+            -55.63284100340363,
+            12.39593809451725,
+            49.26923706820132
+          ],
+          [
+            -56.38182901443338,
+            12.504604366211796,
+            48.53989634415843
+          ]
+        ],
+        "scene": "camp",
+        "startTime": 0,
+        "pitch": 0.29,
+        "time": 0,
+        "weather": {
+          "cloudiness": 0.1464466094067262,
+          "windStrength": 0.48786796564403573,
+          "sunlight": 0.8945584412271571,
+          "skylight": 0.9824264068711929,
+          "fogNear": 116.33883476483184,
+          "fogFar": 452.42640687119285
+        },
+        "frames": 0,
+        "running": false,
+        "hidden": false,
+        "start": [
+          -56,
+          49
+        ],
+        "position": [
+          -56,
+          49
+        ],
+        "height": 12.437122324462592,
+        "distance": 0,
+        "hp": 100,
+        "camera": [
+          -53.907064961238646,
+          19.016366224464175,
+          62.84511073729914
+        ],
+        "poses": [],
+        "bodyMotionMax": {
+          "bank": 0,
+          "drive": 0
+        },
+        "raf": null,
+        "render": {
+          "calls": 211,
+          "triangles": 1622229,
+          "textures": 47
+        },
+        "viewport": [
+          390,
+          844
+        ],
+        "buffer": [
+          390,
+          594
+        ],
+        "glError": 0,
+        "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+      }
+    },
+    {
+      "name": "mobile-forest-walk",
+      "path": "/Users/huxiaocong/Codex/tidelands/docs/authored-r2-mobile-forest-walk.jpg",
+      "row": {
+        "ready": true,
+        "gpuMetrics": null,
+        "bootGaps": [],
+        "authored": true,
+        "roles": [
+          [
+            "keeper",
+            true
+          ],
+          [
+            "botanist",
+            true
+          ],
+          [
+            "explorer",
+            true
+          ]
+        ],
+        "mode": "walk",
+        "maxSoleError": 1.2320926859899493e-06,
+        "actionCount": 0,
+        "actionEvents": [],
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "fiber": 0,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 2.590597562491988,
+          "phase": 0.5905975624919879,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "actionSource": null,
+        "feet": [
+          [
+            141.93768639978828,
+            14.254749772536147,
+            -15.693235648150882
+          ],
+          [
+            142.6536479028232,
+            13.645954925572894,
+            -15.305814416594856
+          ]
+        ],
+        "scene": "forest",
+        "startTime": 240,
+        "pitch": 0.29,
+        "time": 243.0000000000024,
+        "weather": {
+          "cloudiness": 2.4095520336053777e-05,
+          "windStrength": 0.40001445731220164,
+          "sunlight": 0.999982651225358,
+          "skylight": 0.9999971085375596,
+          "fogNear": 119.9993976119916,
+          "fogFar": 469.99710853755965
+        },
+        "frames": 180,
+        "running": false,
+        "hidden": false,
+        "start": [
+          132,
+          -26
+        ],
+        "position": [
+          142.50000000000068,
+          -15.499999999999957
+        ],
+        "height": 13.64551850761066,
+        "distance": 21.000000000000725,
+        "hp": 100,
+        "camera": [
+          143.8745489343542,
+          20.202431310659435,
+          -1.6303679405776244
+        ],
+        "poses": [
+          {
+            "frame": 30,
+            "player": [
+              132,
+              -22.499999999999986,
+              0
+            ],
+            "joints": {
+              "pelvis": [
+                131.97282129694875,
+                17.201920327613962,
+                -22.580171988582823
+              ],
+              "Head": [
+                131.87086951691282,
+                18.146170973515453,
+                -22.114670331513782
+              ],
+              "hand_r": [
+                131.46732462748113,
+                17.678890544190196,
+                -22.853849183026156
+              ],
+              "foot_l": [
+                132.16485220099048,
+                16.952506332514673,
+                -23.94364219557851
+              ],
+              "foot_r": [
+                131.79034180691585,
+                16.045576447138952,
+                -21.77922982642628
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              134.10002078734263,
+              22.5306688047486,
+              -9.459930338377056
+            ],
+            "hp": 100
+          },
+          {
+            "frame": 60,
+            "player": [
+              132,
+              -18.99999999999997,
+              0
+            ],
+            "joints": {
+              "pelvis": [
+                132.02486903390695,
+                16.13670348387857,
+                -19.08018787085083
+              ],
+              "Head": [
+                132.0713424696111,
+                17.090908091456225,
+                -18.613521524517996
+              ],
+              "hand_r": [
+                131.67257400994893,
+                16.411606691977045,
+                -18.23468921113276
+              ],
+              "foot_l": [
+                132.17104854903874,
+                14.999835258230686,
+                -18.24910613347404
+              ],
+              "foot_r": [
+                131.80343984885258,
+                15.693484935043202,
+                -20.369122195091816
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              134.10148753693178,
+              21.434518328981618,
+              -5.974144028833596
+            ],
+            "hp": 100
+          },
+          {
+            "frame": 90,
+            "player": [
+              132,
+              -15.499999999999957,
+              0
+            ],
+            "joints": {
+              "pelvis": [
+                131.98062012108346,
+                14.9493235558722,
+                -15.58021982669957
+              ],
+              "Head": [
+                131.86413539396136,
+                15.858528523553819,
+                -15.064007222799376
+              ],
+              "hand_r": [
+                131.39394156930402,
+                15.429334227677867,
+                -15.70928528724963
+              ],
+              "foot_l": [
+                132.17861881916812,
+                14.4719916530317,
+                -16.831754829608624
+              ],
+              "foot_r": [
+                131.81494046202343,
+                13.780008949569412,
+                -14.808724298202852
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              134.10160282961593,
+              20.267841274366116,
+              -2.4740368097495953
+            ],
+            "hp": 100
+          },
+          {
+            "frame": 120,
+            "player": [
+              135.50000000000023,
+              -15.499999999999957,
+              1.5707963267948966
+            ],
+            "joints": {
+              "pelvis": [
+                135.41974387306266,
+                14.917317695958115,
+                -15.507807161681598
+              ],
+              "Head": [
+                135.8696050160281,
+                15.886530705006397,
+                -15.514477825505663
+              ],
+              "hand_r": [
+                136.02603501751958,
+                15.148149936367767,
+                -14.989857080292733
+              ],
+              "foot_l": [
+                135.78811842423593,
+                14.079652091395067,
+                -15.654480738896618
+              ],
+              "foot_r": [
+                134.37702516198726,
+                13.971884710859777,
+                -15.275993116835615
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              136.78463565130843,
+              20.030906313214885,
+              -1.6481765038310776
+            ],
+            "hp": 100
+          },
+          {
+            "frame": 150,
+            "player": [
+              139.00000000000045,
+              -15.499999999999957,
+              1.5707963267948966
+            ],
+            "joints": {
+              "pelvis": [
+                138.9197362016114,
+                14.822849943643034,
+                -15.504472704893487
+              ],
+              "Head": [
+                139.36967381488412,
+                15.792463747309023,
+                -15.494774822391475
+              ],
+              "hand_r": [
+                139.26993113991762,
+                15.281954539281323,
+                -14.795752277682064
+              ],
+              "foot_l": [
+                138.2850798216638,
+                13.730649204771286,
+                -15.6347352534364
+              ],
+              "foot_r": [
+                138.72324794677303,
+                14.008578424716136,
+                -15.299502259199654
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              140.27251540289296,
+              20.10680783360361,
+              -1.6299491229659164
+            ],
+            "hp": 100
+          },
+          {
+            "frame": 180,
+            "player": [
+              142.50000000000068,
+              -15.499999999999957,
+              1.5707963267948966
+            ],
+            "joints": {
+              "pelvis": [
+                142.41976059855935,
+                14.851939186788352,
+                -15.485144614728132
+              ],
+              "Head": [
+                142.83702582459273,
+                15.83387920233449,
+                -15.432685349302037
+              ],
+              "hand_r": [
+                142.45048024213924,
+                15.186173226178386,
+                -14.836310761528999
+              ],
+              "foot_l": [
+                141.8164135171823,
+                14.298760583974609,
+                -15.641054935503405
+              ],
+              "foot_r": [
+                142.53251190080874,
+                13.684014093159073,
+                -15.252333984701053
+              ]
+            },
+            "action": null,
+            "body": [
+              0,
+              0,
+              0,
+              "XYZ"
+            ],
+            "islanders": [
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ],
+              [
+                0,
+                0,
+                0,
+                "XYZ"
+              ]
+            ],
+            "camera": [
+              143.77237919157335,
+              20.199456654230172,
+              -1.629563301602337
+            ],
+            "hp": 100
+          }
+        ],
+        "bodyMotionMax": {
+          "bank": 0,
+          "drive": 0
+        },
+        "raf": {
+          "samples": 179,
+          "p95": 18.599999999998545,
+          "max": 18.700000000004366
+        },
+        "render": {
+          "calls": 164,
+          "triangles": 1450252,
+          "textures": 47
+        },
+        "viewport": [
+          390,
+          844
+        ],
+        "buffer": [
+          390,
+          594
+        ],
+        "glError": 0,
+        "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+      }
+    },
+    {
+      "name": "ordinary-boot-diagnostic",
+      "path": "/Users/huxiaocong/Codex/tidelands/docs/authored-r2-ordinary-boot-diagnostic.jpg",
+      "row": {
+        "ready": true,
+        "gpuMetrics": null,
+        "bootGaps": [
+          {
+            "name": "travel-boot--1",
+            "analytic": -0.0070012235907932485,
+            "visible": -0.009286994546926053
+          },
+          {
+            "name": "travel-boot-1",
+            "analytic": -0.0009567973647124361,
+            "visible": -0.004640092998502432
+          }
+        ],
+        "authored": true,
+        "roles": [
+          [
+            "keeper",
+            true
+          ],
+          [
+            "botanist",
+            true
+          ],
+          [
+            "explorer",
+            true
+          ]
+        ],
+        "mode": "still",
+        "maxSoleError": 1.2096245241662148e-06,
+        "actionCount": 0,
+        "actionEvents": [],
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "fiber": 0,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "actionSource": null,
+        "feet": [
+          [
+            7.796729517738118,
+            2.642589604814992,
+            60.38865373007413
+          ],
+          [
+            8.646298518690083,
+            2.44657579342682,
+            60.997877371305506
+          ]
+        ],
+        "scene": "ordinary",
+        "startTime": 240,
+        "pitch": 0.29,
+        "time": 240,
+        "weather": {
+          "cloudiness": 0,
+          "windStrength": 0.4,
+          "sunlight": 1,
+          "skylight": 1,
+          "fogNear": 120,
+          "fogFar": 470
+        },
+        "frames": 0,
+        "running": false,
+        "hidden": false,
+        "start": [
+          8.2,
+          60.6
+        ],
+        "position": [
+          8.2,
+          60.6
+        ],
+        "height": 2.548111692948263,
+        "distance": 0,
+        "hp": 100,
+        "camera": [
+          10.292835022325766,
+          9.127172722418667,
+          74.44482169082214
+        ],
+        "poses": [],
+        "bodyMotionMax": {
+          "bank": 0,
+          "drive": 0
+        },
+        "raf": null,
+        "render": {
+          "calls": 308,
+          "triangles": 2125470,
+          "textures": 47
+        },
+        "viewport": [
+          390,
+          844
+        ],
+        "buffer": [
+          390,
+          594
+        ],
+        "glError": 0,
+        "scope": "Candidate authored actor on production world/move/tick/attack/resolveGather and follow camera. Declared quest6, equipped axe/sword and locations; no saves/audio, normal journey, final quality, GPU or physical-device acceptance."
+      }
+    }
+  ],
+  "console": [],
+  "fullGoalComplete": false,
+  "scope": "Declared fixtures using current production actor/world/rules, independent ordinary-save production acceptance is separately recorded.",
+  "excludedFromFinalGpu": [
+    "water-gpu"
+  ],
+  "notes": [
+    "water-gpu image belongs to rejected preflight measurement. Ten accepted GPU rows are separately transcribed from post-fix tool outputs.",
+    "Motion DOM wait timed out while water run was still progressing; next read showed 180 completed frames, no movement rerun."
+  ]
+}

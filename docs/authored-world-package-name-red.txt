@@ -1,0 +1,17 @@
+.F...
+======================================================================
+FAIL: test_character_manifest_assets_and_local_addons_are_included (test_local_delivery.LocalDeliveryTests.test_character_manifest_assets_and_local_addons_are_included)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/test_local_delivery.py", line 63, in test_character_manifest_assets_and_local_addons_are_included
+    self.assertEqual(report['archive'],'tidelands-m5-test.zip')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Base-LICENSE.txt.zip' != 'tidelands-m5-test.zip'
+- Base-LICENSE.txt.zip
++ tidelands-m5-test.zip
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.125s
+
+FAILED (failures=1)

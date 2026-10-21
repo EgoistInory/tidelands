@@ -1,0 +1,32 @@
+{
+  "rows": {
+    "Sword_Attack": {
+      "duration": 1.5333333015441895,
+      "peakRightHandSpeed": 35.62084336701581,
+      "peakRightHandPhase": 0.24791666666666667
+    },
+    "Punch_Cross": {
+      "duration": 1,
+      "peakRightHandSpeed": 9.953578627874876,
+      "peakRightHandPhase": 0.16875
+    },
+    "Interact": {
+      "duration": 2,
+      "peakRightHandSpeed": 0.1756289651446348,
+      "peakRightHandPhase": 0.052083333333333336
+    },
+    "PickUp_Table": {
+      "duration": 0.8333333134651184,
+      "peakRightHandSpeed": 1.515175498433064,
+      "peakRightHandPhase": 0.19791666666666666
+    },
+    "Fixing_Kneeling": {
+      "duration": 5.199999809265137,
+      "peakRightHandSpeed": 2.4835200865173763,
+      "peakRightHandPhase": 0.8479166666666667
+    }
+  },
+  "method": "240 equal source-time intervals; largest right-hand world displacement. Candidate motion landmark only, not actual target contact or gameplay impact acceptance.",
+  "gameImpactAccepted": false,
+  "fixtureSha256": "1c930d9567e37e2964d05add911977bc61b4fd192f719f6747611ea377986c4b"
+}

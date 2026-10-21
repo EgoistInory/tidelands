@@ -23,6 +23,21 @@ def build(name='tidelands-local', stage='M1-M4 functional checkpoint'):
     paths += sorted(Path('src') / p.name for p in (ROOT / 'src').glob('*.js'))
     paths += [Path('vendor') / name for name in ('three.module.min.js', 'three.core.min.js', 'THREE-LICENSE', 'README.md')]
     paths += sorted(p.relative_to(ROOT) for p in (ROOT / 'assets').rglob('*') if p.is_file() and p.suffix in ('.jpg', '.json'))
+    character_manifest = ROOT / 'assets/characters/provenance.json'
+    if character_manifest.exists():
+        character_files = json.loads(character_manifest.read_text())['files']
+        for asset_name, row in character_files.items():
+            if Path(asset_name).name != asset_name or Path(asset_name).suffix not in ('.gltf', '.glb', '.bin', '.png', '.txt'):
+                raise ValueError('人物资料路径不合法')
+            relative = Path('assets/characters') / asset_name
+            target = ROOT / relative
+            if not target.resolve().is_relative_to(ROOT.resolve()) or target.is_symlink():
+                raise ValueError('人物资料不得通过链接离开项目')
+            if hashlib.sha256(target.read_bytes()).hexdigest() != row['sha256']:
+                raise ValueError('人物资料与来源清单不一致')
+            paths.append(relative)
+        paths += [Path('assets/characters/action-landmarks.json'), Path('assets/characters/provenance.json')]
+        paths += [Path('vendor/addons') / name for name in ('loaders/GLTFLoader.js', 'utils/BufferGeometryUtils.js', 'README.md')]
     contents = {str(p): (ROOT / p).read_bytes() for p in paths}
     contents['README.md'] = (ROOT / 'docs/LOCAL-DELIVERY.md').read_bytes()
     manifest = {

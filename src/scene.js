@@ -4,6 +4,8 @@ import {isDepleted,enemyAttackPose} from './game.js';
 import {unobstructedCamera,smoothCamera} from './camera.js';
 import {resourceHalfSize} from './resource-contact.js';
 import {createCharacter,animateCharacter} from './character.js';
+import {animateAuthoredCharacter} from './authored-character.js';
+const animateActor=(model,...args)=>model.userData.authored?animateAuthoredCharacter(model,...args):animateCharacter(model,...args);
 import {createTextileMaterial} from './textile.js';
 import {createCreature,animateCreature,resetCreature} from './creature.js';
 import {mergeStaticParts} from './merge-parts.js';
@@ -164,6 +166,13 @@ export class WorldView{
     this.marker=new THREE.Mesh(new THREE.RingGeometry(1.8,2,40),new THREE.MeshBasicMaterial({color:0xf2d58f,side:THREE.DoubleSide,transparent:true,opacity:.85}));this.marker.rotation.x=-Math.PI/2;this.scene.add(this.marker);
     this.preview=new THREE.Group();this.scene.add(this.preview);this.resize();
   }
+  installAuthoredCast(cast){
+    if(this.authoredCast)throw Error('Authored cast already installed');
+    const replacements=[[this.player,cast.actors.traveler],...this.islanders.map(entry=>[entry.model,cast.actors[entry.object.id]])];
+    if(replacements.some(([,model])=>!model))throw Error('Incomplete authored cast');
+    for(const [old,model]of replacements){model.position.copy(old.position);model.rotation.copy(old.rotation);this.scene.remove(old);this.disposeGroup(old);this.scene.add(model);}
+    this.player=cast.actors.traveler;for(const entry of this.islanders)entry.model=cast.actors[entry.object.id];this.authoredCast=cast;
+  }
   createTerrain(){
     const geometry=new THREE.PlaneGeometry(800,800,320,320);geometry.rotateX(-Math.PI/2);const positions=geometry.attributes.position;
     const colors=[],layers=[];
@@ -257,8 +266,9 @@ export class WorldView{
       const distance=Math.hypot(state.player.x-o.x,state.player.z-o.z);
       const yaw=near?.id===o.id&&distance>.25&&distance<7?Math.atan2(state.player.x-o.x,state.player.z-o.z):g.rotation.y;
       const time=state.time+i*1.7;
-      animateCharacter(g,{x:o.x,z:o.z,yaw,time,attackAt:-100,selected:'hand'},dt,terrain);
+      animateActor(g,{x:o.x,z:o.z,yaw,time,attackAt:-100,selected:'hand'},dt,terrain);
       // Subtle arm motion leaves the torso and planted feet on their existing ground pose.
+      if(g.userData.authored)continue;
       for(let side=0;side<2;side++){
         g.userData.shoulders[side].rotation.z=(side?1:-1)*(.04+Math.sin(time*1.6)*.015);
         g.userData.elbows[side].rotation.x-=Math.sin(time*1.6+side)*.025;
@@ -330,7 +340,7 @@ export class WorldView{
     this.updateIslanders(state,near,dt);
     for(const e of state.enemies){const g=this.creatures.get(e.id);if(g)animateCreature(g,e,state.time,dt,terrain(e.x,e.z),p,enemyAttackPose(state,e),terrain);}
     this.player.position.set(p.x,h,p.z);
-    animateCharacter(this.player,{...p,time:state.time,attackAt:state.attackAt,gatherAt:this.gatherAt,gatherKind:this.gatherKind,gatherTool:this.gatherTool??state.selected,hurtAt:this.hurtAt,selected:state.selected,swimming:terrain(p.x,p.z)<0},dt,terrain);
+    animateActor(this.player,{...p,time:state.time,attackAt:state.attackAt,gatherAt:this.gatherAt,gatherKind:this.gatherKind,gatherTool:this.gatherTool??state.selected,hurtAt:this.hurtAt,selected:state.selected,swimming:terrain(p.x,p.z)<0},dt,terrain);
     this.contactShade?.updateActors(this.player,this.islanders,this.creatures);
     const target=new THREE.Vector3(p.x+Math.sin(this.yaw)*this.distance,h+2.4+Math.tan(this.pitch)*this.distance,p.z+Math.cos(this.yaw)*this.distance);
     target.y=Math.max(target.y,terrain(target.x,target.z)+1.5);

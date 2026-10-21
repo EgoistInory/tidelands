@@ -1,0 +1,67 @@
+{
+  "rows": [
+    {
+      "image": "docs/authored-delivery-ordinary-import.jpg",
+      "coordinates": "位置 X 9.1，Z 66.2；建筑 1；击败 3",
+      "hp": "79",
+      "quest": "群岛，再次相连",
+      "save": "已保存",
+      "dom": "- generic \"潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互\" [active]\n- heading \"潮生群岛\" [level=1]\n- generic: TIDELANDS\n- paragraph: 潮汐海岸\n- generic: 生命\n- progressbar\n- generic: \"79\"\n- generic: 体力\n- progressbar\n- generic: \"100\"\n- heading \"群岛，再次相连\" [level=2]\n- paragraph: 灯火已经点亮。整个群岛等待你的探索。\n- generic: 可以继续建造、制作与自由探索\n- generic \"朝向\":\n  - generic: 西\n  - generic: 北\n  - strong: 北\n  - generic: 东\n  - generic: 南\n- complementary:\n  - generic \"群岛小地图\"\n  - paragraph: 第 27 天 · 夜晚\n  - button \"地图 M\"\n  - button \"暂停\"\n- navigation \"快捷操作\":\n  - button \"1 ✋ 徒手\":\n    - generic: \"1\"\n    - generic: ✋\n    - text: 徒手\n  - button \"2 ⚒ 石斧\":\n    - generic: \"2\"\n    - generic: ⚒\n    - text: 石斧\n  - button \"3 ◉ 食物 3\":\n    - generic: \"3\"\n    - generic: ◉\n    - generic: 食物 3\n  - button \"4 ♨ 营火\":\n    - generic: \"4\"\n    - generic: ♨\n    - text: 营火\n  - button \"5 △ 帐篷\":\n    - generic: \"5\"\n    - generic: △\n    - text: 帐篷\n  - button \"6 ▤ 工作台\":\n    - generic: \"6\"\n    - generic: ▤\n    - text: 工作台\n- text: WASD 移动 · Shift 奔跑 · 空格攻击\n- generic: 拖动视角 · 滚轮缩放 · 自动存档 已保存\n- button \"背包 B\"\n- button \"制作 C\"\n- generic: 位置 X 9.1，Z 66.2；建筑 1；击败 3",
+      "release": "r1"
+    },
+    {
+      "image": "docs/authored-delivery-ordinary-moved.jpg",
+      "coordinates": "位置 X 8.2，Z 60.6；建筑 1；击败 3",
+      "hp": "79",
+      "quest": "群岛，再次相连",
+      "save": "已保存",
+      "dom": "- generic \"潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互\" [active]\n- heading \"潮生群岛\" [level=1]\n- generic: TIDELANDS\n- paragraph: 潮汐海岸\n- generic: 生命\n- progressbar\n- generic: \"79\"\n- generic: 体力\n- progressbar\n- generic: \"100\"\n- heading \"群岛，再次相连\" [level=2]\n- paragraph: 灯火已经点亮。整个群岛等待你的探索。\n- generic: 可以继续建造、制作与自由探索\n- generic \"朝向\":\n  - generic: 西\n  - generic: 北\n  - strong: 北\n  - generic: 东\n  - generic: 南\n- complementary:\n  - generic \"群岛小地图\"\n  - paragraph: 第 27 天 · 夜晚\n  - button \"地图 M\"\n  - button \"暂停\"\n- navigation \"快捷操作\":\n  - button \"1 ✋ 徒手\":\n    - generic: \"1\"\n    - generic: ✋\n    - text: 徒手\n  - button \"2 ⚒ 石斧\":\n    - generic: \"2\"\n    - generic: ⚒\n    - text: 石斧\n  - button \"3 ◉ 食物 3\":\n    - generic: \"3\"\n    - generic: ◉\n    - generic: 食物 3\n  - button \"4 ♨ 营火\":\n    - generic: \"4\"\n    - generic: ♨\n    - text: 营火\n  - button \"5 △ 帐篷\":\n    - generic: \"5\"\n    - generic: △\n    - text: 帐篷\n  - button \"6 ▤ 工作台\":\n    - generic: \"6\"\n    - generic: ▤\n    - text: 工作台\n- text: WASD 移动 · Shift 奔跑 · 空格攻击\n- generic: 拖动视角 · 滚轮缩放 · 自动存档 已保存\n- button \"背包 B\"\n- button \"制作 C\"\n- generic: 位置 X 8.2，Z 60.6；建筑 1；击败 3",
+      "release": "r1"
+    },
+    {
+      "kind": "inventory",
+      "dom": "- generic \"潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互\"\n- heading \"潮生群岛\" [level=1]\n- generic: TIDELANDS\n- paragraph: 潮汐海岸\n- generic: 生命\n- progressbar\n- generic: \"79\"\n- generic: 体力\n- progressbar\n- generic: \"100\"\n- heading \"群岛，再次相连\" [level=2]\n- paragraph: 灯火已经点亮。整个群岛等待你的探索。\n- generic: 可以继续建造、制作与自由探索\n- generic \"朝向\":\n  - generic: 西\n  - generic: 北\n  - strong: 北\n  - generic: 东\n  - generic: 南\n- complementary:\n  - generic \"群岛小地图\"\n  - paragraph: 第 27 天 · 夜晚\n  - button \"地图 M\"\n  - button \"暂停\"\n- navigation \"快捷操作\":\n  - button \"1 ✋ 徒手\":\n    - generic: \"1\"\n    - generic: ✋\n    - text: 徒手\n  - button \"2 ⚒ 石斧\":\n    - generic: \"2\"\n    - generic: ⚒\n    - text: 石斧\n  - button \"3 ◉ 食物 3\":\n    - generic: \"3\"\n    - generic: ◉\n    - generic: 食物 3\n  - button \"4 ♨ 营火\":\n    - generic: \"4\"\n    - generic: ♨\n    - text: 营火\n  - button \"5 △ 帐篷\":\n    - generic: \"5\"\n    - generic: △\n    - text: 帐篷\n  - button \"6 ▤ 工作台\":\n    - generic: \"6\"\n    - generic: ▤\n    - text: 工作台\n- text: WASD 移动 · Shift 奔跑 · 空格攻击\n- generic: 拖动视角 · 滚轮缩放 · 自动存档 已保存\n- button \"背包 B\"\n- button \"制作 C\"\n- generic: 位置 X 8.2，Z 60.6；建筑 1；击败 3\n- dialog:\n  - heading \"旅人的背包\" [level=2]\n  - button \"关闭面板\" [active]: ×\n  - text: 木材\n  - strong: \"4\"\n  - text: 石料\n  - strong: \"5\"\n  - text: 纤维\n  - strong: \"6\"\n  - text: 浆果\n  - strong: \"3\"\n  - text: 贝壳\n  - strong: \"0\"\n  - text: 晶石\n  - strong: \"0\"\n  - text: 石斧\n  - strong: \"1\"\n  - text: 晶石剑\n  - strong: \"0\"\n  - text: 烤浆果\n  - strong: \"0\"\n  - button \"食用食物，恢复生命\"",
+      "release": "r1"
+    },
+    {
+      "image": "docs/authored-delivery-ordinary-mobile-restored.jpg",
+      "coordinates": "位置 X 8.2，Z 60.6；建筑 1；击败 3",
+      "hp": "79",
+      "quest": "群岛，再次相连",
+      "save": "已就绪",
+      "dom": "- generic \"潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互\" [active]\n- heading \"潮生群岛\" [level=1]\n- paragraph: 潮汐海岸\n- generic: 生命\n- progressbar\n- generic: \"79\"\n- generic: 体力\n- progressbar\n- generic: \"100\"\n- heading \"群岛，再次相连\" [level=2]\n- paragraph: 灯火已经点亮。整个群岛等待你的探索。\n- generic: 可以继续建造、制作与自由探索\n- complementary:\n  - generic \"群岛小地图\"\n  - paragraph: 第 27 天 · 夜晚\n  - button \"地图 M\"\n  - button \"暂停\"\n- status: 欢迎回来。当前目标：群岛，再次相连\n- navigation \"快捷操作\":\n  - button \"✋ 徒手\":\n    - generic: ✋\n    - text: 徒手\n  - button \"⚒ 石斧\":\n    - generic: ⚒\n    - text: 石斧\n  - button \"◉ 食物 3\":\n    - generic: ◉\n    - generic: 食物 3\n  - button \"♨ 营火\":\n    - generic: ♨\n    - text: 营火\n  - button \"△ 帐篷\":\n    - generic: △\n    - text: 帐篷\n  - button \"▤ 工作台\":\n    - generic: ▤\n    - text: 工作台\n- button \"背包 B\"\n- button \"制作 C\"\n- generic \"移动摇杆\"\n- button \"攻击\"\n- generic: 位置 X 8.2，Z 60.6；建筑 1；击败 3",
+      "release": "r1"
+    },
+    {
+      "release": "r2",
+      "image": "docs/authored-delivery-r2-mobile-restored.jpg",
+      "coordinates": "位置 X 8.2，Z 60.6；建筑 1；击败 3",
+      "hp": "79",
+      "quest": "群岛，再次相连",
+      "save": "已就绪",
+      "dom": "- generic \"潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互\" [active]\n- heading \"潮生群岛\" [level=1]\n- paragraph: 潮汐海岸\n- generic: 生命\n- progressbar\n- generic: \"79\"\n- generic: 体力\n- progressbar\n- generic: \"100\"\n- heading \"群岛，再次相连\" [level=2]\n- paragraph: 灯火已经点亮。整个群岛等待你的探索。\n- generic: 可以继续建造、制作与自由探索\n- complementary:\n  - generic \"群岛小地图\"\n  - paragraph: 第 27 天 · 夜晚\n  - button \"地图 M\"\n  - button \"暂停\"\n- status: 欢迎回来。当前目标：群岛，再次相连\n- navigation \"快捷操作\":\n  - button \"✋ 徒手\":\n    - generic: ✋\n    - text: 徒手\n  - button \"⚒ 石斧\":\n    - generic: ⚒\n    - text: 石斧\n  - button \"◉ 食物 3\":\n    - generic: ◉\n    - generic: 食物 3\n  - button \"♨ 营火\":\n    - generic: ♨\n    - text: 营火\n  - button \"△ 帐篷\":\n    - generic: △\n    - text: 帐篷\n  - button \"▤ 工作台\":\n    - generic: ▤\n    - text: 工作台\n- button \"背包 B\"\n- button \"制作 C\"\n- generic \"移动摇杆\"\n- button \"攻击\"\n- generic: 位置 X 8.2，Z 60.6；建筑 1；击败 3"
+    },
+    {
+      "release": "r2",
+      "image": "docs/authored-delivery-r2-desktop-reloaded.jpg",
+      "coordinates": "位置 X 8.2，Z 60.6；建筑 1；击败 3",
+      "hp": "79",
+      "quest": "群岛，再次相连",
+      "save": "已就绪",
+      "dom": "- generic \"潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互\" [active]\n- heading \"潮生群岛\" [level=1]\n- generic: TIDELANDS\n- paragraph: 潮汐海岸\n- generic: 生命\n- progressbar\n- generic: \"79\"\n- generic: 体力\n- progressbar\n- generic: \"100\"\n- heading \"群岛，再次相连\" [level=2]\n- paragraph: 灯火已经点亮。整个群岛等待你的探索。\n- generic: 可以继续建造、制作与自由探索\n- generic \"朝向\":\n  - generic: 西\n  - generic: 北\n  - strong: 北\n  - generic: 东\n  - generic: 南\n- complementary:\n  - generic \"群岛小地图\"\n  - paragraph: 第 27 天 · 夜晚\n  - button \"地图 M\"\n  - button \"暂停\"\n- status: 欢迎回来。当前目标：群岛，再次相连\n- navigation \"快捷操作\":\n  - button \"1 ✋ 徒手\":\n    - generic: \"1\"\n    - generic: ✋\n    - text: 徒手\n  - button \"2 ⚒ 石斧\":\n    - generic: \"2\"\n    - generic: ⚒\n    - text: 石斧\n  - button \"3 ◉ 食物 3\":\n    - generic: \"3\"\n    - generic: ◉\n    - generic: 食物 3\n  - button \"4 ♨ 营火\":\n    - generic: \"4\"\n    - generic: ♨\n    - text: 营火\n  - button \"5 △ 帐篷\":\n    - generic: \"5\"\n    - generic: △\n    - text: 帐篷\n  - button \"6 ▤ 工作台\":\n    - generic: \"6\"\n    - generic: ▤\n    - text: 工作台\n- text: WASD 移动 · Shift 奔跑 · 空格攻击\n- generic: 拖动视角 · 滚轮缩放 · 自动存档 已就绪\n- button \"背包 B\"\n- button \"制作 C\"\n- generic: 位置 X 8.2，Z 60.6；建筑 1；击败 3"
+    },
+    {
+      "release": "r2",
+      "image": "docs/authored-delivery-r2-moved.jpg",
+      "coordinates": "位置 X 7.8，Z 57.4；建筑 1；击败 3",
+      "hp": "79",
+      "quest": "群岛，再次相连",
+      "save": "已保存",
+      "dom": "- generic \"潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互\" [active]\n- heading \"潮生群岛\" [level=1]\n- generic: TIDELANDS\n- paragraph: 潮汐海岸\n- generic: 生命\n- progressbar\n- generic: \"79\"\n- generic: 体力\n- progressbar\n- generic: \"100\"\n- heading \"群岛，再次相连\" [level=2]\n- paragraph: 灯火已经点亮。整个群岛等待你的探索。\n- generic: 可以继续建造、制作与自由探索\n- generic \"朝向\":\n  - generic: 西\n  - generic: 北\n  - strong: 北\n  - generic: 东\n  - generic: 南\n- complementary:\n  - generic \"群岛小地图\"\n  - paragraph: 第 28 天 · 夜晚\n  - button \"地图 M\"\n  - button \"暂停\"\n- navigation \"快捷操作\":\n  - button \"1 ✋ 徒手\":\n    - generic: \"1\"\n    - generic: ✋\n    - text: 徒手\n  - button \"2 ⚒ 石斧\":\n    - generic: \"2\"\n    - generic: ⚒\n    - text: 石斧\n  - button \"3 ◉ 食物 3\":\n    - generic: \"3\"\n    - generic: ◉\n    - generic: 食物 3\n  - button \"4 ♨ 营火\":\n    - generic: \"4\"\n    - generic: ♨\n    - text: 营火\n  - button \"5 △ 帐篷\":\n    - generic: \"5\"\n    - generic: △\n    - text: 帐篷\n  - button \"6 ▤ 工作台\":\n    - generic: \"6\"\n    - generic: ▤\n    - text: 工作台\n- text: WASD 移动 · Shift 奔跑 · 空格攻击\n- generic: 拖动视角 · 滚轮缩放 · 自动存档 已保存\n- button \"背包 B\"\n- button \"制作 C\"\n- generic: 位置 X 7.8，Z 57.4；建筑 1；击败 3"
+    }
+  ],
+  "console": [],
+  "browserFileEventsDisabled": true,
+  "fileChooserWallTimeSeconds": 19033.9581,
+  "sourceSaveUnmodified": true
+}

@@ -50,6 +50,22 @@ class LocalDeliveryTests(unittest.TestCase):
         self.assertEqual(verification['archiveSha256'], report['archiveSha256'])
         self.assertEqual(json.loads((self.root / 'docs/tidelands-m5-test-verification.json').read_text()), verification)
 
+    def test_character_manifest_assets_and_local_addons_are_included(self):
+        import hashlib
+        folder=self.root/'assets/characters';folder.mkdir()
+        contents={'body.gltf':b'{"asset":{"version":"2.0"}}','body.bin':b'buffer','body.png':b'png','Base-LICENSE.txt':b'CC0'}
+        manifest={'files':{name:{'sha256':hashlib.sha256(data).hexdigest()}for name,data in contents.items()}}
+        for name,data in contents.items():(folder/name).write_bytes(data)
+        (folder/'provenance.json').write_text(json.dumps(manifest));(folder/'action-landmarks.json').write_text('{}')
+        for name in ['loaders/GLTFLoader.js','utils/BufferGeometryUtils.js','README.md']:
+            path=self.root/'vendor/addons'/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_text('local add-on')
+        report=self.build()
+        self.assertEqual(report['archive'],'tidelands-m5-test.zip')
+        for name in contents:self.assertIn('assets/characters/'+name,report['files'])
+        self.assertIn('vendor/addons/loaders/GLTFLoader.js',report['files'])
+        manifest['files']['../escape.bin']={'sha256':'0'*64};(folder/'provenance.json').write_text(json.dumps(manifest))
+        with self.assertRaises(ValueError):self.build()
+
     def test_changed_inputs_cannot_replace_existing_checkpoint(self):
         self.build()
         before = {p.name: p.read_bytes() for p in (self.root / 'dist').iterdir()}

@@ -60,6 +60,16 @@ function trailBoot(side){
   boot.add(sole,upper,cuff,block(.025,.045,.055,0xb29b68,side*.115,.18,-.02,true));return boot;
 }
 
+export function createCharacterTools(){
+  const tools=new THREE.Group();
+  const axe=new THREE.Group();axe.add(rounded(.045,.78,0x6d5136,0,.08,0));
+  const blade=shapedPart([[-.05,-.12],[.13,-.10],[.29,-.19],[.40,-.08],[.38,.14],[.25,.21],[.12,.10],[-.05,.10]],.09,0x89928c,0,.43,0);blade.name='axe-head';axe.add(blade,block(.12,.10,.10,0xb4a58a,0,.42,0));tools.add(axe);
+  const sword=new THREE.Group();sword.add(rounded(.045,.26,0x514239,0,-.12,0),block(.4,.06,.1,0xb79b5d,0,.08,0,true));
+  const swordBlade=shapedPart([[-.12,.12],[-.16,.28],[-.12,1.09],[0,1.40],[.12,1.09],[.16,.28],[.12,.12]],.045,0x8cc9c7,0,0,0,true);swordBlade.name='sword-blade';sword.add(swordBlade);tools.add(sword);
+  axe.visible=sword.visible=false;
+  return {tools,axe,sword};
+}
+
 export function createCharacter(color=0xb86636){
   const root=new THREE.Group(),body=new THREE.Group();root.add(body);
   const coatProfile=[[.43,0],[.44,.08],[.42,.28],[.36,.52],[.35,.65],[.42,.79],[.49,.90],[.46,.95],[.30,1.02]].map(([r,y])=>new THREE.Vector2(r,y));
@@ -112,12 +122,7 @@ export function createCharacter(color=0xb86636){
     const elbow=new THREE.Group();elbow.position.y=-.43;shoulder.add(elbow);elbows.push(elbow);
     elbow.add(sleeve(.11,.25,color,-.18),rounded(.105,.12,0xc79878,0,-.43,0));
   }
-  const tools=new THREE.Group();tools.position.set(0,-.46,.04);tools.rotation.z=Math.PI;elbows[1].add(tools);
-  const axe=new THREE.Group();axe.add(rounded(.045,.78,0x6d5136,0,.08,0));
-  const blade=shapedPart([[-.05,-.12],[.13,-.10],[.29,-.19],[.40,-.08],[.38,.14],[.25,.21],[.12,.10],[-.05,.10]],.09,0x89928c,0,.43,0);blade.name='axe-head';axe.add(blade,block(.12,.10,.10,0xb4a58a,0,.42,0));tools.add(axe);
-  const sword=new THREE.Group();sword.add(rounded(.045,.26,0x514239,0,-.12,0),block(.4,.06,.1,0xb79b5d,0,.08,0,true));
-  const swordBlade=shapedPart([[-.12,.12],[-.16,.28],[-.12,1.09],[0,1.40],[.12,1.09],[.16,.28],[.12,.12]],.045,0x8cc9c7,0,0,0,true);swordBlade.name='sword-blade';sword.add(swordBlade);tools.add(sword);
-  axe.visible=sword.visible=false;
+  const {tools,axe,sword}=createCharacterTools();tools.position.set(0,-.46,.04);tools.rotation.z=Math.PI;elbows[1].add(tools);
   root.userData={body,hips,knees,ankles,shoulders,elbows,axe,sword,phase:0,walkBlend:0,lastPosition:null,footfallCount:0};
   animateCharacter(root,{x:0,z:0,yaw:0,time:0,attackAt:-100,selected:'hand'},0);
   root.userData.lastPosition=null;return root;

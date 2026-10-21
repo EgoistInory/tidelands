@@ -4,6 +4,7 @@ import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_IMPACT,ENEMY_ATTACK_IMPACT} from '.
 import {bindPointerControls} from './pointer-controls.js';
 import {createMovementHeading} from './movement-heading.js';
 import {prepareSurfaceTextures} from './startup-textures.js';
+import {loadAuthoredCast} from './authored-assets.js';
 import {createWorld,terrain,LANDMARKS,regionAt,dayCycle} from './world.js';
 import {freshGame,QUESTS,ITEMS,RECIPES,affordable,craft,canBuild,build,interact,resolveGather,eat,attack,attackRange,resolveAttack,movePlayer,tick,cancelEnemyAttacks,enemyAttackPose,nearest,nearestEnemy,serialize,restore} from './game.js';
 
@@ -154,7 +155,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     look:(dx,dy)=>{const turn=-dx*.006;view.yaw+=turn;movementHeading.turn(turn);view.pitch=Math.max(.08,Math.min(1.15,view.pitch-dy*.004));},
     zoom:delta=>{view.distance=Math.max(12,Math.min(45,view.distance+delta*.02));}
   });
-  window.addEventListener('resize',()=>view.resize());window.addEventListener('pagehide',()=>{preparation.abort();save();});
+  window.addEventListener('resize',()=>view.resize());window.addEventListener('pagehide',event=>{preparation.abort();save();if(!event.persisted)view.authoredCast?.release();});
   window.addEventListener('pageshow',event=>{
     if(event.persisted&&!prepared&&!renderLost){
       $('load-status').textContent='准备已中断。重新加载可继续。';$('start-button').textContent='重新加载';
@@ -175,6 +176,10 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
   view.camera.position.set(state.player.x+Math.sin(view.yaw)*view.distance,startHeight+2.4+Math.tan(view.pitch)*view.distance,state.player.z+Math.cos(view.yaw)*view.distance);
   const surfaces=[view.groundSurface.userData.ground,view.groundSurface.userData.ground.sand,view.rockSurface.userData.rock];
   void prepareSurfaceTextures(surfaces,view.renderer,{signal:preparation.signal,onProgress:(done,total)=>{$('load-status').textContent=`正在准备群岛 · ${done} / ${total}`;}}).then(async()=>{
+    $('load-status').textContent='正在整备旅人与岛民…';
+    const cast=await loadAuthoredCast({signal:preparation.signal});
+    if(preparation.signal.aborted||renderLost){cast.release();return;}
+    view.installAuthoredCast(cast);
     $('load-status').textContent='正在点亮群岛…';await new Promise(requestAnimationFrame);
     if(preparation.signal.aborted||renderLost)return;
     // Finish the initial scene/shader draw while the start screen is still visible.

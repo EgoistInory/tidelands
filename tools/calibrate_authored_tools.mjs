@@ -1,0 +1,10 @@
+// Candidate source-time landmark from the actual game tool mesh, not the hand speed proxy.
+import fs from'node:fs';import crypto from'node:crypto';import * as T from'../vendor/three.module.min.js';import{loadAuthorFixture}from'../tests/helpers/author-fixture.js';import{createAuthoredCharacter,animateAuthoredCharacter}from'../src/authored-character.js';
+const {body,library}=loadAuthorFixture();library.markers={Sword_Attack:{peakRightHandPhase:.5}};const actor=createAuthoredCharacter(body,library),rows={};
+for(const tool of ['axe','sword']){let best={forward:-Infinity};for(let frame=1;frame<120;frame++){
+ library.markers.Sword_Attack.peakRightHandPhase=frame/120;animateAuthoredCharacter(actor,{x:0,z:0,yaw:0,time:10.225,attackAt:10,selected:tool},1/60,()=>0);
+ const blade=actor.getObjectByName(tool==='axe'?'axe-head':'sword-blade'),positions=blade.geometry.attributes.position;for(let i=0;i<positions.count;i++){const point=new T.Vector3().fromBufferAttribute(positions,i).applyMatrix4(blade.matrixWorld);if(point.z>best.forward)best={phase:frame/120,vertex:i,position:point.toArray(),forward:point.z};}
+ }rows[tool]=best;
+}
+const path=new URL('../assets/characters/action-landmarks.json',import.meta.url),report=JSON.parse(fs.readFileSync(new URL('../docs/authored-action-landmarks.json',import.meta.url)));
+report.rows.Sword_Attack.weaponForwardPhase=Object.fromEntries(Object.entries(rows).map(([name,r])=>[name,r.phase]));report.toolCalibration={rows,method:'119 source poses at full action weight, actual unscaled game blade vertices; maximum projection toward authoritative +Z facing. Candidate contact landmark, not dynamic target/edge collision acceptance.',sourceSha256:crypto.createHash('sha256').update(fs.readFileSync(new URL('../src/authored-character.js',import.meta.url))).digest('hex')};fs.writeFileSync(path,JSON.stringify(report,null,2)+'\n');fs.writeFileSync(new URL('../docs/authored-tool-landmarks.json',import.meta.url),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(rows));

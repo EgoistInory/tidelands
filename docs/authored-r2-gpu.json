@@ -1,0 +1,207 @@
+{
+  "rows": [
+    {
+      "scene": "coast",
+      "startTime": 240,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 11.93325,
+        "max": 12.095666,
+        "cpuP95": 9.199999809265137,
+        "rafP95": 18.300000000000182,
+        "hidden": false,
+        "disjoint": false
+      }
+    },
+    {
+      "scene": "forest",
+      "startTime": 240,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 11.798208,
+        "max": 12.69525,
+        "cpuP95": 14.900000095367432,
+        "rafP95": 18.30000000000109,
+        "hidden": false,
+        "disjoint": false
+      }
+    },
+    {
+      "scene": "highland",
+      "startTime": 240,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 9.05875,
+        "max": 9.3055,
+        "cpuP95": 7.099999904632568,
+        "rafP95": 18.5,
+        "hidden": false,
+        "disjoint": false
+      }
+    },
+    {
+      "scene": "camp",
+      "startTime": 0,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 12.86725,
+        "max": 13.102958,
+        "cpuP95": 6.400000095367432,
+        "rafP95": 18.600000000000364,
+        "hidden": false,
+        "disjoint": false
+      }
+    },
+    {
+      "scene": "water",
+      "startTime": 240,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 12.020375,
+        "max": 14.346916,
+        "cpuP95": 14.700000286102295,
+        "rafP95": 18.600000000002183,
+        "hidden": false,
+        "disjoint": false
+      }
+    },
+    {
+      "scene": "coast",
+      "startTime": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 6.349875,
+        "max": 6.445541,
+        "cpuP95": 5.599999904632568,
+        "rafP95": 18.599999999998545,
+        "hidden": false,
+        "disjoint": false
+      }
+    },
+    {
+      "scene": "forest",
+      "startTime": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 7.144083,
+        "max": 7.156999,
+        "cpuP95": 4.599999904632568,
+        "rafP95": 18.599999999998545,
+        "hidden": false,
+        "disjoint": false
+      }
+    },
+    {
+      "scene": "highland",
+      "startTime": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 3.804541,
+        "max": 3.809208,
+        "cpuP95": 5,
+        "rafP95": 18.599999999998545,
+        "hidden": false,
+        "disjoint": false
+      }
+    },
+    {
+      "scene": "camp",
+      "startTime": 0,
+      "viewport": [
+        390,
+        844
+      ],
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 6.90275,
+        "max": 7.945999,
+        "cpuP95": 5.199999809265137,
+        "rafP95": 18.5,
+        "hidden": false,
+        "disjoint": false
+      }
+    },
+    {
+      "scene": "water",
+      "startTime": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "gpuMetrics": {
+        "supported": true,
+        "passed": true,
+        "frames": 91,
+        "samples": 60,
+        "p95": 7.371791,
+        "max": 7.476999,
+        "cpuP95": 4.800000190734863,
+        "rafP95": 18.5,
+        "hidden": false,
+        "disjoint": false
+      }
+    }
+  ],
+  "console": [],
+  "recording": "Exact transcription of ten completed post-reset-fix CUA outputs; original REPL array export was empty due retained closure binding. No raw timer sample arrays retained.",
+  "scope": "30 warm frames plus 60 full WorldView GPU queries per fixed scene; actual authored cast; desktop/mobile viewport, not physical phone/VRAM/endurance."
+}

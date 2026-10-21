@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: actual author rig follows game location, carries selected tools and stays finite across movement and water
+ok 1 - actual author rig follows game location, carries selected tools and stays finite across movement and water
+  ---
+  duration_ms: 237.909667
+  type: 'test'
+  ...
+# Subtest: actual source rest proportions survive, and planted world supports stay fixed during complete tool actions
+ok 2 - actual source rest proportions survive, and planted world supports stay fixed during complete tool actions
+  ---
+  duration_ms: 458.040459
+  type: 'test'
+  ...
+# Subtest: moving actual sole anchors track support targets through production speeds, slopes and turns
+ok 3 - moving actual sole anchors track support targets through production speeds, slopes and turns
+  ---
+  duration_ms: 801.555792
+  type: 'test'
+  ...
+# Subtest: cloned actual rig owns its bones while sharing immutable template buffers
+ok 4 - cloned actual rig owns its bones while sharing immutable template buffers
+  ---
+  duration_ms: 67.699083
+  type: 'test'
+  ...
+# Subtest: paused actual skeleton and support contacts do not snap into an idle gait
+ok 5 - paused actual skeleton and support contacts do not snap into an idle gait
+  ---
+  duration_ms: 182.470917
+  type: 'test'
+  ...
+# Subtest: shallow-water visuals wade on the actual floor while deep water uses the real waterline
+ok 6 - shallow-water visuals wade on the actual floor while deep water uses the real waterline
+  ---
+  duration_ms: 155.614584
+  type: 'test'
+  ...
+# Subtest: existing world-sized tools do not get enlarged a second time by author body normalization
+ok 7 - existing world-sized tools do not get enlarged a second time by author body normalization
+  ---
+  duration_ms: 116.679291
+  type: 'test'
+  ...
+# Subtest: restored facing initializes before planting and stationary turns recover each foot
+ok 8 - restored facing initializes before planting and stationary turns recover each foot
+  ---
+  duration_ms: 136.470125
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2233.875833

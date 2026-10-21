@@ -1,0 +1,66 @@
+TAP version 13
+# Subtest: actual author rig follows game location, carries selected tools and stays finite across movement and water
+ok 1 - actual author rig follows game location, carries selected tools and stays finite across movement and water
+  ---
+  duration_ms: 205.246959
+  type: 'test'
+  ...
+# Subtest: actual source rest proportions survive, and planted world supports stay fixed during complete tool actions
+ok 2 - actual source rest proportions survive, and planted world supports stay fixed during complete tool actions
+  ---
+  duration_ms: 395.787292
+  type: 'test'
+  ...
+# Subtest: moving actual sole anchors track support targets through production speeds, slopes and turns
+ok 3 - moving actual sole anchors track support targets through production speeds, slopes and turns
+  ---
+  duration_ms: 703.690042
+  type: 'test'
+  ...
+# Subtest: cloned actual rig owns its bones while sharing immutable template buffers
+ok 4 - cloned actual rig owns its bones while sharing immutable template buffers
+  ---
+  duration_ms: 56.466084
+  type: 'test'
+  ...
+# Subtest: paused actual skeleton and support contacts do not snap into an idle gait
+ok 5 - paused actual skeleton and support contacts do not snap into an idle gait
+  ---
+  duration_ms: 129.872709
+  type: 'test'
+  ...
+# Subtest: shallow-water visuals wade on the actual floor while deep water uses the real waterline
+not ok 6 - shallow-water visuals wade on the actual floor while deep water uses the real waterline
+  ---
+  duration_ms: 115.5975
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/authored-world-actor.test.js:39:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 2
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 2
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/authored-world-actor.test.js:40:210)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 5
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1668.235291
