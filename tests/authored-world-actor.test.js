@@ -47,3 +47,21 @@ test('restored facing initializes before planting and stationary turns recover e
  for(let i=1;i<=120;i++){s.time=i/60;s.yaw=Math.PI+i/120*Math.PI;animateAuthoredCharacter(actor,s,1/60,()=>0);for(const [j,p]of authorSolePoints(actor).entries())if(actor.userData.legs[j].contact)assert.ok(p.distanceTo(actor.userData.worldFeet[j])<.003);}
  assert.ok(actor.userData.footfallCount>0);assert.ok(actor.userData.worldFeet.every(p=>Math.abs(p.y)<.13));
 });
+
+test('all authored roles retain whole-body acceleration, braking and turn response after the rig replacement',()=>{
+ for(const [role,sex] of [['traveler','male'],['keeper','male'],['botanist','female'],['explorer','male']])for(const side of [-1,1]){
+  const {body,library}=loadAuthorFixture(sex),actor=createAuthoredCharacter(body,library,role),s={x:0,z:0,yaw:0,time:0,selected:'axe',attackAt:-100};
+  animateAuthoredCharacter(actor,s,1/60,()=>0);let bank=0,drive=0,brake=0;
+  for(let i=1;i<=120;i++){
+   s.time=i/60;s.yaw=side*Math.min(Math.PI/2,i/60);s.x+=Math.sin(s.yaw)*7/60;s.z+=Math.cos(s.yaw)*7/60;animateAuthoredCharacter(actor,s,1/60,()=>0);
+   bank=Math.max(bank,-side*actor.userData.body.rotation.z);drive=Math.max(drive,actor.userData.body.rotation.x);
+   for(const [j,p]of authorSolePoints(actor).entries())if(actor.userData.legs[j].contact)assert.ok(p.distanceTo(actor.userData.worldFeet[j])<.03);
+  }
+  assert.ok(bank>.005&&bank<.12,`${role} actual moving turn bank ${bank}`);assert.ok(drive>.002&&drive<.08,`${role} start response ${drive}`);
+  for(let i=0;i<180;i++){s.time+=1/60;animateAuthoredCharacter(actor,s,1/60,()=>0);brake=Math.min(brake,actor.userData.body.rotation.x);}
+  assert.ok(brake<-.002,`${role} braking response ${brake}`);assert.ok(Math.abs(actor.userData.body.rotation.x)<1e-8&&Math.abs(actor.userData.body.rotation.z)<1e-8);
+  const settled=actor.userData.body.rotation.toArray();animateAuthoredCharacter(actor,s,0,()=>0);assert.deepEqual(actor.userData.body.rotation.toArray(),settled);
+  s.x+=100;s.time+=1/60;animateAuthoredCharacter(actor,s,1/60,()=>0);assert.equal(actor.userData.body.rotation.x,0);assert.equal(actor.userData.body.rotation.z,0);
+  s.swimming=true;s.time+=1/60;animateAuthoredCharacter(actor,s,1/60,()=>-3);assert.equal(actor.userData.body.rotation.x,0);assert.equal(actor.userData.body.rotation.z,0);
+ }
+});

@@ -1,0 +1,100 @@
+TAP version 13
+# Subtest: authored locomotion follows actual travel at 30/60/144fps, including blocked movement
+ok 1 - authored locomotion follows actual travel at 30/60/144fps, including blocked movement
+  ---
+  duration_ms: 1.571292
+  type: 'test'
+  ...
+# Subtest: pause, restored time and teleport discard catch-up distance and reset contact state
+ok 2 - pause, restored time and teleport discard catch-up distance and reset contact state
+  ---
+  duration_ms: 0.30575
+  type: 'test'
+  ...
+# Subtest: game action precedence, exact durations and gathered equipment remain authoritative
+ok 3 - game action precedence, exact durations and gathered equipment remain authoritative
+  ---
+  duration_ms: 0.431834
+  type: 'test'
+  ...
+# Subtest: actual author rig follows game location, carries selected tools and stays finite across movement and water
+ok 4 - actual author rig follows game location, carries selected tools and stays finite across movement and water
+  ---
+  duration_ms: 235.118583
+  type: 'test'
+  ...
+# Subtest: actual source rest proportions survive, and planted world supports stay fixed during complete tool actions
+ok 5 - actual source rest proportions survive, and planted world supports stay fixed during complete tool actions
+  ---
+  duration_ms: 405.741791
+  type: 'test'
+  ...
+# Subtest: moving actual sole anchors track support targets through production speeds, slopes and turns
+ok 6 - moving actual sole anchors track support targets through production speeds, slopes and turns
+  ---
+  duration_ms: 727.180292
+  type: 'test'
+  ...
+# Subtest: cloned actual rig owns its bones while sharing immutable template buffers
+ok 7 - cloned actual rig owns its bones while sharing immutable template buffers
+  ---
+  duration_ms: 58.16375
+  type: 'test'
+  ...
+# Subtest: paused actual skeleton and support contacts do not snap into an idle gait
+ok 8 - paused actual skeleton and support contacts do not snap into an idle gait
+  ---
+  duration_ms: 136.51975
+  type: 'test'
+  ...
+# Subtest: shallow-water visuals wade on the actual floor while deep water uses the real waterline
+ok 9 - shallow-water visuals wade on the actual floor while deep water uses the real waterline
+  ---
+  duration_ms: 115.232042
+  type: 'test'
+  ...
+# Subtest: existing world-sized tools do not get enlarged a second time by author body normalization
+ok 10 - existing world-sized tools do not get enlarged a second time by author body normalization
+  ---
+  duration_ms: 104.684417
+  type: 'test'
+  ...
+# Subtest: restored facing initializes before planting and stationary turns recover each foot
+ok 11 - restored facing initializes before planting and stationary turns recover each foot
+  ---
+  duration_ms: 122.272708
+  type: 'test'
+  ...
+# Subtest: all authored roles retain whole-body acceleration, braking and turn response after the rig replacement
+ok 12 - all authored roles retain whole-body acceleration, braking and turn response after the rig replacement
+  ---
+  duration_ms: 1039.431458
+  type: 'test'
+  ...
+# Subtest: traveler recruits the torso into moving turns, settles, and clears inertia on swim/teleport
+ok 13 - traveler recruits the torso into moving turns, settles, and clears inertia on swim/teleport
+  ---
+  duration_ms: 71.286042
+  type: 'test'
+  ...
+# Subtest: boar turns with its trunk while keeping death/revive/reset independent
+ok 14 - boar turns with its trunk while keeping death/revive/reset independent
+  ---
+  duration_ms: 35.489042
+  type: 'test'
+  ...
+# Subtest: crab turns with its trunk while keeping death/revive/reset independent
+ok 15 - crab turns with its trunk while keeping death/revive/reset independent
+  ---
+  duration_ms: 20.058959
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3011.377375

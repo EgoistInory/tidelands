@@ -3,6 +3,7 @@ import {dressAuthoredAvatar,attachAuthorHair} from './authored-wardrobe.js';
 import {captureAuthorRest,retargetAuthoredClips} from './authored-retarget.js';
 import {createAuthoredPoseClock} from './authored-pose-clock.js';
 import {createCharacterTools} from './character.js';
+import {updateBodyMotion} from './body-motion.js';
 const up=new THREE.Vector3(0,1,0);
 const upper=name=>!['root','pelvis'].includes(name)&&! /^(thigh|calf|foot|ball)_/.test(name);
 function compiled(clip,root){return {duration:clip.duration,tracks:clip.tracks.map(t=>{const split=t.name.lastIndexOf('.'),name=t.name.slice(0,split);return {bone:root.getObjectByName(name),name,property:t.name.slice(split+1),sample:t.createInterpolant()};})};}
@@ -59,7 +60,8 @@ export function animateAuthoredCharacter(root,state,dt,ground=()=>0){
   rig.baseClip=plan.baseClip;sample(base,baseTime);
   if(rig.transitionFrom){const weight=THREE.MathUtils.clamp((state.time-rig.transitionAt)/.18,0,1);for(const [name,p]of rig.transitionFrom){const b=rig.avatar.getObjectByName(name);b.position.lerp(p.position,1-weight);b.quaternion.slerp(p.quaternion,1-weight);b.scale.lerp(p.scale,1-weight);}if(weight===1)rig.transitionFrom=null;}
   if(!rig.lastBasePose)rig.lastBasePose=captureAuthorRest(rig.avatar);else for(const [name,p]of rig.lastBasePose){const b=rig.avatar.getObjectByName(name);p.position.copy(b.position);p.quaternion.copy(b.quaternion);p.scale.copy(b.scale);}
-  rig.body.position.set(0,0,0);rig.body.rotation.set(-.06*plan.recoil,0,.03*plan.recoil);
+  const motion=updateBodyMotion(rig,state.x,state.z,root.rotation.y,dt,plan.resetContacts||swimming);
+  rig.body.position.set(0,0,0);rig.body.rotation.set(.04*motion.drive-.06*plan.recoil,.08*motion.turn,-.10*motion.turn*Math.min(1,motion.speed/3)+.03*plan.recoil);
   if(plan.action){
     const low=plan.action==='gather'&&['berry','fiber','shell'].includes(state.gatherKind),name=low?'PickUp_Table':plan.equipped==='hand'?'Punch_Cross':'Sword_Attack',clip=rig.clips.get(name);
     const marker=rig.markers[name]?.weaponForwardPhase?.[plan.equipped]??rig.markers[name]?.peakRightHandPhase??.5,p=plan.actionProgress;
