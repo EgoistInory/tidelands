@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: deferred attack commits damage at the rendered swing peak and only once
+ok 1 - deferred attack commits damage at the rendered swing peak and only once
+  ---
+  duration_ms: 61.750666
+  type: 'test'
+  ...
+# Subtest: wind-up reserves the cooldown and kill rewards are committed once at impact
+ok 2 - wind-up reserves the cooldown and kill rewards are committed once at impact
+  ---
+  duration_ms: 7.767333
+  type: 'test'
+  ...
+# Subtest: impact uses the starting weapon but the current target distance
+ok 3 - impact uses the starting weapon but the current target distance
+  ---
+  duration_ms: 5.005834
+  type: 'test'
+  ...
+# Subtest: cancelled, expired and replaced-save swings cannot damage or survive serialization
+ok 4 - cancelled, expired and replaced-save swings cannot damage or survive serialization
+  ---
+  duration_ms: 39.380917
+  type: 'test'
+  ...
+# Subtest: gather commits inventory and depletion once at the rendered reach peak
+ok 5 - gather commits inventory and depletion once at the rendered reach peak
+  ---
+  duration_ms: 58.626
+  type: 'test'
+  ...
+# Subtest: gather reserves interaction cooldown and locks the starting tool yield
+ok 6 - gather reserves interaction cooldown and locks the starting tool yield
+  ---
+  duration_ms: 6.005291
+  type: 'test'
+  ...
+# Subtest: leaving range or losing the resource before impact awards nothing
+ok 7 - leaving range or losing the resource before impact awards nothing
+  ---
+  duration_ms: 10.493041
+  type: 'test'
+  ...
+# Subtest: expired, cancelled and replaced-save gathers never commit; NPCs remain immediate
+ok 8 - expired, cancelled and replaced-save gathers never commit; NPCs remain immediate
+  ---
+  duration_ms: 44.164334
+  type: 'test'
+  ...
+# Subtest: swimming cannot start or finish a hidden gathering animation
+ok 9 - swimming cannot start or finish a hidden gathering animation
+  ---
+  duration_ms: 5.679334
+  type: 'test'
+  ...
+# Subtest: resource feedback follows actual committed yield, never early, failed, cancelled or duplicate resolution
+ok 10 - resource feedback follows actual committed yield, never early, failed, cancelled or duplicate resolution
+  ---
+  duration_ms: 27.300083
+  type: 'test'
+  ...
+# Subtest: combat feedback uses actual confirmed targets including the killing blow, with no miss or windup cue
+ok 11 - combat feedback uses actual confirmed targets including the killing blow, with no miss or windup cue
+  ---
+  duration_ms: 11.50725
+  type: 'test'
+  ...
+# Subtest: impact pool freezes on the game clock, expires, remains bounded and releases owned GPU buffers once
+ok 12 - impact pool freezes on the game clock, expires, remains bounded and releases owned GPU buffers once
+  ---
+  duration_ms: 1.779416
+  type: 'test'
+  ...
+# Subtest: production save synchronization clears old impacts only when the state object changes
+ok 13 - production save synchronization clears old impacts only when the state object changes
+  ---
+  duration_ms: 0.639333
+  type: 'test'
+  ...
+# Subtest: the crab impact origin is outside the opaque shell rather than hidden inside it
+ok 14 - the crab impact origin is outside the opaque shell rather than hidden inside it
+  ---
+  duration_ms: 65.947166
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 257.413083

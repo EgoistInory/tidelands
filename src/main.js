@@ -5,6 +5,7 @@ import {bindPointerControls} from './pointer-controls.js';
 import {createMovementHeading} from './movement-heading.js';
 import {prepareSurfaceTextures} from './startup-textures.js';
 import {loadAuthoredCast} from './authored-assets.js';
+import {gatherImpact,attackImpacts} from './impact-feedback.js';
 import {createWorld,terrain,LANDMARKS,regionAt,dayCycle} from './world.js';
 import {freshGame,QUESTS,ITEMS,RECIPES,affordable,craft,canBuild,build,interact,resolveGather,eat,attack,attackRange,resolveAttack,movePlayer,tick,cancelEnemyAttacks,enemyAttackPose,nearest,nearestEnemy,serialize,restore} from './game.js';
 
@@ -74,7 +75,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
   }
   function action(){if(!started||paused||pendingGather)return;cancelAttack();if(state.time-state.attackAt<ATTACK_DURATION)return;if(buildType){if(!placement)return;const message=build(state,world.objects,buildType,placement.x,placement.z);toast(message);if(message.startsWith('建造完成')){audio.effect('craft');buildType=null;placement=null;view.setPreview(null);save();view.sync(state);}return;}
     const result=interact(state,near,{defer:true});if(result?.pending){pendingGather=result.pending;view.gatherAt=result.pending.at;view.gatherKind=near.type;view.gatherTool=['tree','stone','crystal'].includes(near.type)&&state.inventory.axe?'axe':'hand';state.player.yaw=Math.atan2(near.x-state.player.x,near.z-state.player.z);return;}toast(result,near?.type==='npc'?8500:4200);save();view.sync(state);updateUI();}
-  function finishGather(){const message=resolveGather(state,pendingGather);pendingGather=null;if(!message)return;if(message.includes(' +'))audio.effect('gather');toast(message);save();view.sync(state);updateUI();}
+  function finishGather(){const message=resolveGather(state,pendingGather),cue=gatherImpact(state,pendingGather,message);pendingGather=null;if(!message)return;if(cue){audio.effect('gather');view.impacts.spawn(cue);}toast(message);save();view.sync(state);updateUI();}
   function select(slot){if(paused)return;if(slot!=='food'){cancelAttack();cancelGather();}
     if(slot==='food'){const hp=state.player.hp;toast(eat(state));if(state.player.hp>hp)audio.effect('food');save();}
     else if(['campfire','tent','workbench'].includes(slot))beginBuild(slot);
@@ -127,6 +128,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
   function finishStrike(){
     const r=resolveAttack(state,pendingAttack);pendingAttack=null;if(!r)return;
     if(r.hits.length)audio.effect('hit');
+    for(const cue of attackImpacts(state,r))view.impacts.spawn(cue);
     const defeated=r.hits.filter(id=>state.enemies.find(e=>e.id===id)?.hp<=0).length;
     combatFeedback(r.hits.length?'hit':'miss',defeated?`击败 ${defeated} 个目标`:r.hits.length?`命中 ${r.hits.length} 个目标`:'未命中 · 面向目标并靠近再攻击');
     view.sync(state);updateUI();
@@ -155,7 +157,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     look:(dx,dy)=>{const turn=-dx*.006;view.yaw+=turn;movementHeading.turn(turn);view.pitch=Math.max(.08,Math.min(1.15,view.pitch-dy*.004));},
     zoom:delta=>{view.distance=Math.max(12,Math.min(45,view.distance+delta*.02));}
   });
-  window.addEventListener('resize',()=>view.resize());window.addEventListener('pagehide',event=>{preparation.abort();save();if(!event.persisted)view.authoredCast?.release();});
+  window.addEventListener('resize',()=>view.resize());window.addEventListener('pagehide',event=>{preparation.abort();save();if(!event.persisted){view.authoredCast?.release();view.impacts.dispose();}});
   window.addEventListener('pageshow',event=>{
     if(event.persisted&&!prepared&&!renderLost){
       $('load-status').textContent='准备已中断。重新加载可继续。';$('start-button').textContent='重新加载';

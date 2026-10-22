@@ -1,0 +1,203 @@
+[
+  {
+    "label": "fiber",
+    "fixture": "fiber",
+    "target": {
+      "id": "resource-1340",
+      "type": "fiber",
+      "x": 141.23264531604946,
+      "z": -31.64364341646433
+    },
+    "events": [
+      {
+        "cue": {
+          "id": "resource-1340",
+          "kind": "fiber",
+          "x": 141.23264531604946,
+          "y": 20.399600407475322,
+          "z": -31.64364341646433,
+          "floor": 20.04960040747532,
+          "time": 245.64629999990635
+        },
+        "time": 245.64629999990635,
+        "hp": 100,
+        "targetHp": null,
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "fiber": 2,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "kills": 0
+      }
+    ],
+    "sounds": [
+      {
+        "kind": "gather",
+        "time": 245.64629999990635,
+        "before": 0,
+        "after": 1,
+        "context": "running"
+      }
+    ],
+    "frames": 1963,
+    "paused": true,
+    "time": 245.72979999990636,
+    "hp": 100,
+    "inventory": {
+      "wood": 0,
+      "stone": 0,
+      "fiber": 2,
+      "berry": 3,
+      "shell": 0,
+      "crystal": 0,
+      "axe": 1,
+      "sword": 1,
+      "meal": 0
+    },
+    "kills": 0,
+    "targetHp": null,
+    "poolActive": 6,
+    "plan": {
+      "baseClip": "Idle_Loop",
+      "cycles": 0,
+      "phase": 0,
+      "speed": 0,
+      "action": "gather",
+      "actionProgress": 0.7140476190477059,
+      "equipped": "hand",
+      "recoil": 0,
+      "resetContacts": false
+    },
+    "authored": true,
+    "render": {
+      "calls": 124,
+      "triangles": 1853273,
+      "geometries": 120,
+      "textures": 40
+    },
+    "glError": 0,
+    "viewport": [
+      1440,
+      900
+    ],
+    "scope": "Production boot/input/resolve/draw/audio. Declared sword+axe/quest6, forest resource or nearby crab fixture; own save key. Auto-pause through actual pause UI after first confirmed cue; desktop panel shifted right only in QA. Not ordinary campaign, blade mesh contact, audition/device/final quality.",
+    "console": []
+  },
+  {
+    "label": "combat",
+    "fixture": "combat",
+    "target": {
+      "id": "enemy-1",
+      "type": "crab",
+      "x": -67.7,
+      "z": 102
+    },
+    "events": [
+      {
+        "cue": {
+          "id": "enemy-1",
+          "kind": "hit",
+          "x": -68.4,
+          "y": 9.73087462752207,
+          "z": 102,
+          "floor": 9.08087462752207,
+          "time": 243.75089999990468
+        },
+        "time": 243.75089999990468,
+        "hp": 86,
+        "targetHp": 2,
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "fiber": 0,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "kills": 0
+      }
+    ],
+    "sounds": [
+      {
+        "kind": "hit",
+        "time": 241.61759999990463,
+        "before": 1,
+        "after": 2,
+        "context": "running"
+      },
+      {
+        "kind": "hit",
+        "time": 242.9174999999046,
+        "before": 1,
+        "after": 2,
+        "context": "running"
+      },
+      {
+        "kind": "swing",
+        "time": 243.51749999990466,
+        "before": 0,
+        "after": 1,
+        "context": "running"
+      },
+      {
+        "kind": "hit",
+        "time": 243.75089999990468,
+        "before": 0,
+        "after": 1,
+        "context": "running"
+      }
+    ],
+    "frames": 3461,
+    "paused": true,
+    "time": 243.83419999990465,
+    "hp": 86,
+    "inventory": {
+      "wood": 0,
+      "stone": 0,
+      "fiber": 0,
+      "berry": 3,
+      "shell": 0,
+      "crystal": 0,
+      "axe": 1,
+      "sword": 1,
+      "meal": 0
+    },
+    "kills": 0,
+    "targetHp": 2,
+    "poolActive": 6,
+    "plan": {
+      "baseClip": "Idle_Loop",
+      "cycles": 0,
+      "phase": 0,
+      "speed": 0,
+      "action": "attack",
+      "actionProgress": 0.7037777777777718,
+      "equipped": "sword",
+      "recoil": 0,
+      "resetContacts": false
+    },
+    "authored": true,
+    "render": {
+      "calls": 206,
+      "triangles": 2166375,
+      "geometries": 172,
+      "textures": 41
+    },
+    "glError": 0,
+    "viewport": [
+      1440,
+      900
+    ],
+    "scope": "Production boot/input/resolve/draw/audio. Declared sword+axe/quest6, forest resource or nearby crab fixture; own save key. Auto-pause through actual pause UI after first confirmed cue; desktop panel shifted right only in QA. Not ordinary campaign, blade mesh contact, audition/device/final quality.",
+    "console": []
+  }
+]

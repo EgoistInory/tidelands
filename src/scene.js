@@ -5,6 +5,7 @@ import {unobstructedCamera,smoothCamera} from './camera.js';
 import {resourceHalfSize} from './resource-contact.js';
 import {createCharacter,animateCharacter} from './character.js';
 import {animateAuthoredCharacter} from './authored-character.js';
+import {createImpactFeedback} from './impact-feedback.js';
 const animateActor=(model,...args)=>model.userData.authored?animateAuthoredCharacter(model,...args):animateCharacter(model,...args);
 import {createTextileMaterial} from './textile.js';
 import {createCreature,animateCreature,resetCreature} from './creature.js';
@@ -161,6 +162,7 @@ export class WorldView{
     this.createTerrain();this.createWater();this.createScenery();
     this.player=person();this.scene.add(this.player);
     this.contactShade=createContactShade(world);this.scene.add(this.contactShade.group);
+    this.impacts=createImpactFeedback();this.scene.add(this.impacts.mesh);
     // One nearby fire light keeps the lighting cost bounded as camps grow.
     this.fireLight=new THREE.PointLight(0xffac52,0,18,1.5);this.scene.add(this.fireLight);
     this.marker=new THREE.Mesh(new THREE.RingGeometry(1.8,2,40),new THREE.MeshBasicMaterial({color:0xf2d58f,side:THREE.DoubleSide,transparent:true,opacity:.85}));this.marker.rotation.x=-Math.PI/2;this.scene.add(this.marker);
@@ -277,7 +279,7 @@ export class WorldView{
   }
   sync(state){
     const switched=this.syncedState!==state;
-    if(switched){this.gatherAt=this.hurtAt=-100;this.gatherKind=this.gatherTool=null;}
+    if(switched){this.gatherAt=this.hurtAt=-100;this.gatherKind=this.gatherTool=null;this.impacts?.clear();}
     const dummy=new THREE.Object3D();
     for(const {batch,entries,part,hidden}of this.batches){let changed=false;entries.forEach((o,i)=>{const depleted=isDepleted(state,o);if(depleted===hidden.has(i))return;depleted?hidden.add(i):hidden.delete(i);resourceTransform(dummy,o,depleted);batch.setMatrixAt(i,dummy.matrix.clone().multiply(part));changed=true;});if(changed)batch.instanceMatrix.needsUpdate=true;}
     const definitions=new Map(state.buildings.map(b=>[b.id,b]));
@@ -342,6 +344,7 @@ export class WorldView{
     this.player.position.set(p.x,h,p.z);
     animateActor(this.player,{...p,time:state.time,attackAt:state.attackAt,gatherAt:this.gatherAt,gatherKind:this.gatherKind,gatherTool:this.gatherTool??state.selected,hurtAt:this.hurtAt,selected:state.selected,swimming:terrain(p.x,p.z)<0},dt,terrain);
     this.contactShade?.updateActors(this.player,this.islanders,this.creatures);
+    this.impacts?.update(state.time);
     const target=new THREE.Vector3(p.x+Math.sin(this.yaw)*this.distance,h+2.4+Math.tan(this.pitch)*this.distance,p.z+Math.cos(this.yaw)*this.distance);
     target.y=Math.max(target.y,terrain(target.x,target.z)+1.5);
     const focus=new THREE.Vector3(p.x,h+2.4,p.z),boxes=this.cameraObstacles.filter(({object:o})=>Math.hypot(o.x-p.x,o.z-p.z)<this.distance+12&&!isDepleted(state,o)).flatMap(o=>o.boxes??[o.box]);

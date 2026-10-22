@@ -1,0 +1,366 @@
+[
+  {
+    "label": "miss-final",
+    "fixture": "miss",
+    "sources": {
+      "src/main.js": "750b856213545df3ec09f556f2b8ddad110723a93e492c00c67b0dd2251c0665",
+      "src/scene.js": "6204bd2db5786702d3fd6243b3254ed9a86a7408466181f7c5953720b9f78353",
+      "src/impact-feedback.js": "51207c8c538b394db84ee369fe10c4bb85a94c455d7e0072830fc2513407ee98",
+      "src/authored-character.js": "064089799b7a3384b07627801be12b9065df0cd17da77a65d995b65cd2545db0"
+    },
+    "target": {
+      "id": "enemy-1",
+      "type": "crab",
+      "x": -67.4,
+      "z": 102
+    },
+    "events": [],
+    "sounds": [
+      {
+        "kind": "swing",
+        "time": 240.34300000038147,
+        "before": 0,
+        "after": 1,
+        "context": "running"
+      }
+    ],
+    "frames": 4326,
+    "paused": true,
+    "time": 259.06140000038,
+    "hp": 100,
+    "inventory": {
+      "wood": 0,
+      "stone": 0,
+      "fiber": 0,
+      "berry": 3,
+      "shell": 0,
+      "crystal": 0,
+      "axe": 1,
+      "sword": 1,
+      "meal": 0
+    },
+    "kills": 0,
+    "targetHp": 0,
+    "poolActive": 0,
+    "plan": {
+      "baseClip": "Idle_Loop",
+      "cycles": 0,
+      "phase": 0,
+      "speed": 0,
+      "action": null,
+      "actionProgress": 0,
+      "equipped": "sword",
+      "recoil": 0,
+      "resetContacts": false
+    },
+    "authored": true,
+    "render": {
+      "calls": 182,
+      "triangles": 2155935,
+      "geometries": 171,
+      "textures": 41
+    },
+    "glError": 0,
+    "viewport": [
+      1440,
+      900
+    ],
+    "scope": "Production boot/input/resolve/draw/audio. Declared sword+axe/quest6, forest resource or nearby crab fixture; own save key. Auto-pause through actual pause UI after first confirmed cue; QA panel shifted right and pause backdrop unblurred for inspection. Not ordinary campaign, blade mesh contact, audition/device/final quality.",
+    "console": []
+  },
+  {
+    "label": "combat-final",
+    "fixture": "combat",
+    "sources": {
+      "src/main.js": "750b856213545df3ec09f556f2b8ddad110723a93e492c00c67b0dd2251c0665",
+      "src/scene.js": "6204bd2db5786702d3fd6243b3254ed9a86a7408466181f7c5953720b9f78353",
+      "src/impact-feedback.js": "51207c8c538b394db84ee369fe10c4bb85a94c455d7e0072830fc2513407ee98",
+      "src/authored-character.js": "064089799b7a3384b07627801be12b9065df0cd17da77a65d995b65cd2545db0"
+    },
+    "target": {
+      "id": "enemy-1",
+      "type": "crab",
+      "x": -67.7,
+      "z": 102
+    },
+    "events": [
+      {
+        "cue": {
+          "id": "enemy-1",
+          "kind": "hit",
+          "x": -68.85000000000001,
+          "y": 10.230768641845756,
+          "z": 102,
+          "floor": 9.080768641845756,
+          "time": 240.59430000000017
+        },
+        "time": 240.59430000000017,
+        "hp": 100,
+        "targetHp": 2,
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "fiber": 0,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "kills": 0
+      }
+    ],
+    "sounds": [
+      {
+        "kind": "swing",
+        "time": 240.3604000000001,
+        "before": 0,
+        "after": 1,
+        "context": "running"
+      },
+      {
+        "kind": "hit",
+        "time": 240.59430000000017,
+        "before": 0,
+        "after": 1,
+        "context": "running"
+      }
+    ],
+    "frames": 2780,
+    "paused": true,
+    "time": 240.67640000000017,
+    "hp": 100,
+    "inventory": {
+      "wood": 0,
+      "stone": 0,
+      "fiber": 0,
+      "berry": 3,
+      "shell": 0,
+      "crystal": 0,
+      "axe": 1,
+      "sword": 1,
+      "meal": 0
+    },
+    "kills": 0,
+    "targetHp": 2,
+    "poolActive": 6,
+    "plan": {
+      "baseClip": "Idle_Loop",
+      "cycles": 0,
+      "phase": 0,
+      "speed": 0,
+      "action": "attack",
+      "actionProgress": 0.7022222222223541,
+      "equipped": "sword",
+      "recoil": 0,
+      "resetContacts": false
+    },
+    "authored": true,
+    "render": {
+      "calls": 206,
+      "triangles": 2166375,
+      "geometries": 172,
+      "textures": 41
+    },
+    "glError": 0,
+    "viewport": [
+      1440,
+      900
+    ],
+    "scope": "Production boot/input/resolve/draw/audio. Declared sword+axe/quest6, forest resource or nearby crab fixture; own save key. Auto-pause through actual pause UI after first confirmed cue; QA panel shifted right and pause backdrop unblurred for inspection. Not ordinary campaign, blade mesh contact, audition/device/final quality.",
+    "console": []
+  },
+  {
+    "label": "stone-final",
+    "fixture": "stone",
+    "sources": {
+      "src/main.js": "750b856213545df3ec09f556f2b8ddad110723a93e492c00c67b0dd2251c0665",
+      "src/scene.js": "6204bd2db5786702d3fd6243b3254ed9a86a7408466181f7c5953720b9f78353",
+      "src/impact-feedback.js": "51207c8c538b394db84ee369fe10c4bb85a94c455d7e0072830fc2513407ee98",
+      "src/authored-character.js": "064089799b7a3384b07627801be12b9065df0cd17da77a65d995b65cd2545db0"
+    },
+    "target": {
+      "id": "resource-1670",
+      "type": "stone",
+      "x": 156.6556989774108,
+      "z": -13.24796593748033
+    },
+    "events": [
+      {
+        "cue": {
+          "id": "resource-1670",
+          "kind": "stone",
+          "x": 156.6556989774108,
+          "y": 13.71147784369736,
+          "z": -12.650537185475695,
+          "floor": 13.028702127120635,
+          "time": 240.42849999980928
+        },
+        "time": 240.42849999980928,
+        "hp": 100,
+        "targetHp": null,
+        "inventory": {
+          "wood": 0,
+          "stone": 3,
+          "fiber": 0,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "kills": 0
+      }
+    ],
+    "sounds": [
+      {
+        "kind": "gather",
+        "time": 240.42849999980928,
+        "before": 0,
+        "after": 1,
+        "context": "running"
+      }
+    ],
+    "frames": 2271,
+    "paused": true,
+    "time": 240.5122999998093,
+    "hp": 100,
+    "inventory": {
+      "wood": 0,
+      "stone": 3,
+      "fiber": 0,
+      "berry": 3,
+      "shell": 0,
+      "crystal": 0,
+      "axe": 1,
+      "sword": 1,
+      "meal": 0
+    },
+    "kills": 0,
+    "targetHp": null,
+    "poolActive": 6,
+    "plan": {
+      "baseClip": "Idle_Loop",
+      "cycles": 0,
+      "phase": 0,
+      "speed": 0,
+      "action": "gather",
+      "actionProgress": 0.7145238095237768,
+      "equipped": "axe",
+      "recoil": 0,
+      "resetContacts": false
+    },
+    "authored": true,
+    "render": {
+      "calls": 106,
+      "triangles": 1777717,
+      "geometries": 105,
+      "textures": 35
+    },
+    "glError": 0,
+    "viewport": [
+      1440,
+      900
+    ],
+    "scope": "Production boot/input/resolve/draw/audio. Declared sword+axe/quest6, forest resource or nearby crab fixture; own save key. Auto-pause through actual pause UI after first confirmed cue; QA panel shifted right and pause backdrop unblurred for inspection. Not ordinary campaign, blade mesh contact, audition/device/final quality.",
+    "console": []
+  },
+  {
+    "label": "fiber-mobile-final",
+    "fixture": "fiber",
+    "sources": {
+      "src/main.js": "750b856213545df3ec09f556f2b8ddad110723a93e492c00c67b0dd2251c0665",
+      "src/scene.js": "6204bd2db5786702d3fd6243b3254ed9a86a7408466181f7c5953720b9f78353",
+      "src/impact-feedback.js": "51207c8c538b394db84ee369fe10c4bb85a94c455d7e0072830fc2513407ee98",
+      "src/authored-character.js": "064089799b7a3384b07627801be12b9065df0cd17da77a65d995b65cd2545db0"
+    },
+    "target": {
+      "id": "resource-1340",
+      "type": "fiber",
+      "x": 141.23264531604946,
+      "z": -31.64364341646433
+    },
+    "events": [
+      {
+        "cue": {
+          "id": "resource-1340",
+          "kind": "fiber",
+          "x": 141.23264531604946,
+          "y": 20.399600407475322,
+          "z": -31.64364341646433,
+          "floor": 20.04960040747532,
+          "time": 240.48650000009548
+        },
+        "time": 240.48650000009548,
+        "hp": 100,
+        "targetHp": null,
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "fiber": 2,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 1,
+          "meal": 0
+        },
+        "kills": 0
+      }
+    ],
+    "sounds": [
+      {
+        "kind": "gather",
+        "time": 240.48650000009548,
+        "before": 0,
+        "after": 1,
+        "context": "running"
+      }
+    ],
+    "frames": 2903,
+    "paused": true,
+    "time": 240.57110000009547,
+    "hp": 100,
+    "inventory": {
+      "wood": 0,
+      "stone": 0,
+      "fiber": 2,
+      "berry": 3,
+      "shell": 0,
+      "crystal": 0,
+      "axe": 1,
+      "sword": 1,
+      "meal": 0
+    },
+    "kills": 0,
+    "targetHp": null,
+    "poolActive": 6,
+    "plan": {
+      "baseClip": "Idle_Loop",
+      "cycles": 0,
+      "phase": 0,
+      "speed": 0,
+      "action": "gather",
+      "actionProgress": 0.714285714285809,
+      "equipped": "hand",
+      "recoil": 0,
+      "resetContacts": false
+    },
+    "authored": true,
+    "render": {
+      "calls": 74,
+      "triangles": 1310912,
+      "geometries": 103,
+      "textures": 34
+    },
+    "glError": 0,
+    "viewport": [
+      390,
+      844
+    ],
+    "scope": "Production boot/input/resolve/draw/audio. Declared sword+axe/quest6, forest resource or nearby crab fixture; own save key. Auto-pause through actual pause UI after first confirmed cue; QA panel shifted right and pause backdrop unblurred for inspection. Not ordinary campaign, blade mesh contact, audition/device/final quality.",
+    "console": []
+  }
+]
