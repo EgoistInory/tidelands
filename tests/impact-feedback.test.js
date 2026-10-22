@@ -26,12 +26,12 @@ test('combat feedback uses actual confirmed targets including the killing blow, 
 });
 
 test('impact pool freezes on the game clock, expires, remains bounded and releases owned GPU buffers once',()=>{
- const pool=createImpactFeedback(12),geometry=pool.mesh.geometry,material=pool.mesh.material;let released=0;geometry.addEventListener('dispose',()=>released++);material.addEventListener('dispose',()=>released++);
+ const pool=createImpactFeedback(12),geometry=pool.mesh.geometry,material=pool.mesh.material;let released=0;pool.mesh.addEventListener('dispose',()=>released++);geometry.addEventListener('dispose',()=>released++);material.addEventListener('dispose',()=>released++);
  const cue={kind:'tree',x:0,y:1,z:0,floor:0,time:10};assert.equal(pool.mesh.visible,false);pool.spawn(cue);pool.update(10.1);assert.ok(pool.active>0);const matrix=pool.mesh.instanceMatrix.array.slice();pool.update(10.1);assert.deepEqual(pool.mesh.instanceMatrix.array,matrix);
  for(let i=0;i<100;i++)pool.spawn({...cue,kind:'hit'});pool.update(10.1);assert.equal(pool.active,12);assert.equal(pool.mesh.instanceMatrix.count,12);
  const m=new THREE.Matrix4();for(let i=0;i<12;i++){pool.mesh.getMatrixAt(i,m);assert.ok(m.elements.every(Number.isFinite));}
  pool.update(11);assert.equal(pool.active,0);assert.equal(pool.mesh.visible,false);pool.spawn({...cue,time:11});pool.update(11.1);pool.update(5);assert.equal(pool.active,0,'time rewind clears stale bursts');pool.spawn({...cue,time:5});pool.clear();assert.equal(pool.active,0);
- pool.dispose();pool.dispose();assert.equal(released,2);assert.equal(pool.spawn(cue),false);
+ pool.dispose();pool.dispose();assert.equal(released,3);assert.equal(pool.spawn(cue),false);
 });
 
 test('production save synchronization clears old impacts only when the state object changes',()=>{

@@ -1,12 +1,16 @@
 {
   "verified": true,
   "fullGoalComplete": false,
-  "scope": "Confirmed resource/combat/miss callbacks, native input, WebAudio scheduling and visible fixed screenshots of QA production boot. Pause panel/background modified only in QA; mobile panel covers the actor. Not actual blade collision, human audition, normal campaign or final motion/art quality. Native GPU/endurance/delivery audited separately.",
+  "runtimeEvidenceBaselineCommit": "aa9aec2",
+  "currentCleanupOnlyDelta": true,
+  "nativeBufferCycles": 8,
+  "nativeBuffersPerCycleCreatedAndDeleted": 6,
+  "scope": "Native UI/audio/feedback observations use aa9aec2; current source differs only by adding mesh.dispose() inside the final cleanup callback, proven by exact byte comparison. Updated callback separately passes eight native six-create/six-delete GPU buffer cycles. No repeat of unchanged gameplay/animation/render code. QA pause panel/backdrop modified for inspection; mobile panel covers actor. Not blade collision, audition, normal campaign or final quality. GPU/endurance/delivery audited separately.",
   "files": {
-    "src/impact-feedback.js": "51207c8c538b394db84ee369fe10c4bb85a94c455d7e0072830fc2513407ee98",
+    "src/impact-feedback.js": "6cb3af2bb49aecf0e73e59acfab8cd5d4993237304cf6cd7f7936b87ef260bc4",
     "src/main.js": "750b856213545df3ec09f556f2b8ddad110723a93e492c00c67b0dd2251c0665",
     "src/scene.js": "6204bd2db5786702d3fd6243b3254ed9a86a7408466181f7c5953720b9f78353",
-    "tests/impact-feedback.test.js": "d14999b181c175319b5a88483f210866ae28f7b6b5d50c94d04ef6c950cb4e76",
+    "tests/impact-feedback.test.js": "45e9fff211aeb2bd0215e78c5b35b8ca8636a54c16fa48014ce21fbef49b1974",
     "tests/impact-feedback-review.html": "69b5a0b625d86a768162bbc4d0911e49c4807fb870cdb44446bba4892b8aad9b",
     "docs/impact-feedback-browser.json": "53dab23c2915cd5b7681e80443249f41bc8cbfd5516a49c3746d41538f06d347",
     "docs/impact-feedback-red.txt": "293e99866551218088a0ee64c24afa2a768e93b9ba7f4aa67f4e0be7af160161",
@@ -14,9 +18,16 @@
     "docs/impact-feedback-initial-full-tests.txt": "266828b1331edccc660f0832c208c5c09085a0b03db283a61d141c5614259fde",
     "docs/impact-feedback-focused.txt": "cc7b17617c0437334019fa7ccecaec7dea7ecab21518933d154c379fe678a06e",
     "docs/impact-feedback-full-tests.txt": "a68b986ca8a7ab86bf36d880961e07518a1a012c5c2481fb5ddc5f98c3ed16be",
+    "tests/impact-disposal-review.html": "f3d6225ff6382440d2b437c446c9258a8ed1827bc358d3411c03c4984435a6eb",
+    "docs/impact-disposal-before.json": "066089efaa836e250cecd5d86fe13dc3ee0185ce466163e29a152610e6d53f01",
+    "docs/impact-disposal-after.json": "fa73385221b6bb1593e0fd2dcc7624a68b4f70efaf0dc54e6efd98db7f4df76e",
+    "docs/impact-disposal-red.txt": "0b933001b1676bb799255fb0385461b9c110f7666b2f9bf4269010a151b6fd54",
+    "docs/impact-disposal-focused.txt": "fc50f294392d83aae1d7151e164780289192233fdf880f1ff2b82ec98b3616ac",
+    "docs/impact-disposal-full-tests.txt": "7c0292b3fa1bc81d6d2884c4a15ed8dda11e46b511563c47986ac654c191e593",
     "docs/impact-feedback-miss-final.jpg": "86f3d2949c60cc98f93d31bc96269f55e991ec865a4f175f9c23766d59ad6d56",
     "docs/impact-feedback-combat-final.jpg": "b6adf89003e8e2bf2cbda73261515f7e0e9430d845a77b6eced9a48c61208662",
     "docs/impact-feedback-stone-final.jpg": "a89f21c8d4044715cd308f6020774c7f3d6fc39c0e8a887fbfd9ca1bc8887526",
-    "docs/impact-feedback-fiber-mobile-final.jpg": "b52138067fd29250d3f0f285ff478856dde72e104f3a070b458480d0d9abee68"
+    "docs/impact-feedback-fiber-mobile-final.jpg": "b52138067fd29250d3f0f285ff478856dde72e104f3a070b458480d0d9abee68",
+    "docs/impact-disposal-after.jpg": "1238e091683cc843c8d1ed16f0fe7784922b7c7644be966e65a9884b74d28c22"
   }
 }

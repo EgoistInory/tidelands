@@ -47,6 +47,6 @@ export function createImpactFeedback(capacity=48){
       }
       mesh.instanceMatrix.needsUpdate=true;mesh.visible=active>0;
     },
-    dispose(){if(disposed)return;disposed=true;clear();geometry.dispose();material.dispose();}
+    dispose(){if(disposed)return;disposed=true;clear();mesh.dispose();geometry.dispose();material.dispose();}
   };
 }

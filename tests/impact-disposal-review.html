@@ -1,0 +1,11 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>碎屑实例原生GPU释放检查</title><style>body{background:#192723;color:#fff;font:14px system-ui}button{padding:10px}pre{white-space:pre-wrap}canvas{width:400px;height:250px}</style><button id="run">创建渲染并释放8轮</button><pre id="result">原生WebGL缓冲检查；与画面品质和显存大小无关。</pre><canvas></canvas><script type="module">
+import * as THREE from '../vendor/three.module.min.js';import {createImpactFeedback} from '../src/impact-feedback.js';
+const canvas=document.querySelector('canvas'),renderer=new THREE.WebGLRenderer({canvas}),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(50,1.6,.1,100);renderer.setSize(400,250,false);camera.position.set(0,1,5);camera.lookAt(0,1,0);scene.add(new THREE.HemisphereLight(0xffffff,0x777777,2));
+const gl=renderer.getContext(),nativeCreate=gl.createBuffer.bind(gl),nativeDelete=gl.deleteBuffer.bind(gl);let created=0,deleted=0;gl.createBuffer=()=>{created++;return nativeCreate();};gl.deleteBuffer=b=>{if(b)deleted++;return nativeDelete(b);};
+const bytes=await(await fetch('../src/impact-feedback.js',{cache:'no-store'})).arrayBuffer(),digest=await crypto.subtle.digest('SHA-256',bytes),sourceSha256=Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('');
+document.querySelector('button').onclick=()=>{const rows=[];for(let i=0;i<8;i++){
+ const a=created,b=deleted,pool=createImpactFeedback();scene.add(pool.mesh);pool.spawn({kind:'hit',x:0,y:1,z:0,floor:0,time:10});pool.update(10.1);renderer.render(scene,camera);const before=renderer.info.memory.geometries;
+ pool.dispose();pool.dispose();scene.remove(pool.mesh);renderer.render(scene,camera);rows.push({created:created-a,deleted:deleted-b,beforeGeometries:before,afterGeometries:renderer.info.memory.geometries,glError:gl.getError()});
+}document.querySelector('#result').textContent=JSON.stringify({passed:rows.every(r=>r.created===6&&r.deleted===6&&r.beforeGeometries===1&&r.afterGeometries===0&&r.glError===0),rows,sourceSha256,scope:'Native createBuffer/deleteBuffer counts over eight actual render/dispose cycles. Four BoxGeometry buffers and two InstancedMesh matrix/color buffers. Not VRAM size, leak freedom, frame budget or final quality.'});};
+window.addEventListener('pagehide',()=>renderer.dispose());
+</script></html>

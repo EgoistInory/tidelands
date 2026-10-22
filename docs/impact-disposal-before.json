@@ -1,0 +1,63 @@
+{
+  "passed": false,
+  "rows": [
+    {
+      "created": 6,
+      "deleted": 4,
+      "beforeGeometries": 1,
+      "afterGeometries": 0,
+      "glError": 0
+    },
+    {
+      "created": 6,
+      "deleted": 4,
+      "beforeGeometries": 1,
+      "afterGeometries": 0,
+      "glError": 0
+    },
+    {
+      "created": 6,
+      "deleted": 4,
+      "beforeGeometries": 1,
+      "afterGeometries": 0,
+      "glError": 0
+    },
+    {
+      "created": 6,
+      "deleted": 4,
+      "beforeGeometries": 1,
+      "afterGeometries": 0,
+      "glError": 0
+    },
+    {
+      "created": 6,
+      "deleted": 4,
+      "beforeGeometries": 1,
+      "afterGeometries": 0,
+      "glError": 0
+    },
+    {
+      "created": 6,
+      "deleted": 4,
+      "beforeGeometries": 1,
+      "afterGeometries": 0,
+      "glError": 0
+    },
+    {
+      "created": 6,
+      "deleted": 4,
+      "beforeGeometries": 1,
+      "afterGeometries": 0,
+      "glError": 0
+    },
+    {
+      "created": 6,
+      "deleted": 4,
+      "beforeGeometries": 1,
+      "afterGeometries": 0,
+      "glError": 0
+    }
+  ],
+  "sourceSha256": "51207c8c538b394db84ee369fe10c4bb85a94c455d7e0072830fc2513407ee98",
+  "scope": "Native createBuffer/deleteBuffer counts over eight actual render/dispose cycles. Four BoxGeometry buffers and two InstancedMesh matrix/color buffers. Not VRAM size, leak freedom, frame budget or final quality."
+}
