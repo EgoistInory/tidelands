@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "centerVsSideEnergyDb": {
+    "before": 3.0102999734393734,
+    "after": 6.558809613196762e-09
+  },
+  "equalPowerWithStereoPanner": true,
+  "fallbackCentered": true,
+  "fallbackEqualPowerVerified": false,
+  "audioListened": false,
+  "fullGoalComplete": false,
+  "scope": "Native isolated fixed-slice cue per run; noise differs between runs. PCM quantization checked. Not whole mix, human listening or physical-device acceptance.",
+  "files": {
+    "src/audio.js": "24fcc77b6a881e9cfda8a4b7aa49d7168b3a4c907662e42c11b205e03784acb6",
+    "tests/spatial-audio.test.js": "11bb93f9919320e89c8867c158daf9113281a90a02e488b25203620bf9151891",
+    "tests/spatial-audio-review.html": "6f89f1335d3fd15347440ad13eed4de73fe7096457552def487d26b075cf247d",
+    "tools/verify_center_audio.py": "87580822681aaa091aa5e838fedfa681c60369a51f694db99e57b5a855123ae3",
+    "docs/center-audio-before.json": "d37a6834798a7cd130c9b7146aafed9db85853850e2b8e103e135e2926cf0d3e",
+    "docs/center-audio-before.wav": "c5ed33f92640af19d90c07b8434db4d049eb87b3ece6ce56f17da519ca85e917",
+    "docs/center-audio-after.json": "b61da23af0ef5b055c8a282f4a21f471cb1f2e968f6eafa1ed4e5339f7d2f28b",
+    "docs/center-audio-after.wav": "ba5854c1a142504f9124d0da696ccb6e0d9261bff91de67bb75a34006954b55d"
+  }
+}

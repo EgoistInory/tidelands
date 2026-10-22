@@ -1,0 +1,291 @@
+{
+  "complete": true,
+  "sampleRate": 48000,
+  "seconds": 11,
+  "channels": 2,
+  "bytes": 2112044,
+  "events": [
+    {
+      "name": "left",
+      "enemy": {
+        "x": -3,
+        "z": 0
+      },
+      "actualTime": 0.5013333333333333,
+      "before": 0,
+      "createdBefore": 0,
+      "options": {
+        "enemyType": "boar",
+        "pan": -0.85,
+        "volume": 0.98
+      },
+      "after": 1,
+      "createdAfter": 1,
+      "channels": [
+        {
+          "peak": 0.008703646250069141,
+          "rms": 0.0012092263781714324
+        },
+        {
+          "peak": 0.0010301442816853523,
+          "rms": 0.00014312135061123258
+        }
+      ]
+    },
+    {
+      "name": "right",
+      "enemy": {
+        "x": 3,
+        "z": 0
+      },
+      "actualTime": 1.5013333333333334,
+      "before": 0,
+      "createdBefore": 1,
+      "options": {
+        "enemyType": "boar",
+        "pan": 0.85,
+        "volume": 0.98
+      },
+      "after": 1,
+      "createdAfter": 2,
+      "channels": [
+        {
+          "peak": 0.0010313276434317231,
+          "rms": 0.00014327981390608433
+        },
+        {
+          "peak": 0.008713644929230213,
+          "rms": 0.0012105652274311633
+        }
+      ]
+    },
+    {
+      "name": "turn",
+      "enemy": {
+        "x": -3,
+        "z": 0
+      },
+      "yaw": 3.141592653589793,
+      "actualTime": 2.501333333333333,
+      "before": 0,
+      "createdBefore": 2,
+      "options": {
+        "enemyType": "boar",
+        "pan": 0.85,
+        "volume": 0.98
+      },
+      "after": 1,
+      "createdAfter": 3,
+      "channels": [
+        {
+          "peak": 0.0010313276434317231,
+          "rms": 0.00014327981383441664
+        },
+        {
+          "peak": 0.008713644929230213,
+          "rms": 0.0012105652268256462
+        }
+      ]
+    },
+    {
+      "name": "near",
+      "enemy": {
+        "x": 3,
+        "z": 0
+      },
+      "actualTime": 3.501333333333333,
+      "before": 0,
+      "createdBefore": 3,
+      "options": {
+        "enemyType": "boar",
+        "pan": 0.85,
+        "volume": 0.98
+      },
+      "after": 1,
+      "createdAfter": 4,
+      "channels": [
+        {
+          "peak": 0.0010313276434317231,
+          "rms": 0.00014327981383441664
+        },
+        {
+          "peak": 0.008713644929230213,
+          "rms": 0.0012105652268256462
+        }
+      ]
+    },
+    {
+      "name": "far",
+      "enemy": {
+        "x": 14,
+        "z": 0
+      },
+      "actualTime": 4.501333333333333,
+      "before": 0,
+      "createdBefore": 4,
+      "options": {
+        "enemyType": "boar",
+        "pan": 0.85,
+        "volume": 0.2538860103626943
+      },
+      "after": 1,
+      "createdAfter": 5,
+      "channels": [
+        {
+          "peak": 0.0002672411792445928,
+          "rms": 0.00003954950350625558
+        },
+        {
+          "peak": 0.0022579096257686615,
+          "rms": 0.00033415212123433393
+        }
+      ]
+    },
+    {
+      "name": "paused",
+      "enemy": {
+        "x": 3,
+        "z": 0
+      },
+      "actualTime": 5.501333333333333,
+      "before": 0,
+      "createdBefore": 5,
+      "options": {
+        "enemyType": "boar",
+        "pan": 0.85,
+        "volume": 0.98
+      },
+      "after": 0,
+      "createdAfter": 5,
+      "channels": [
+        {
+          "peak": 0,
+          "rms": 0
+        },
+        {
+          "peak": 0,
+          "rms": 0
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "kind": "food",
+      "menu": true,
+      "actualTime": 6.501333333333333,
+      "before": 0,
+      "createdBefore": 5,
+      "options": {
+        "menu": true
+      },
+      "after": 1,
+      "createdAfter": 5,
+      "channels": [
+        {
+          "peak": 0.04534299671649933,
+          "rms": 0.006775844139494484
+        },
+        {
+          "peak": 0.04534299671649933,
+          "rms": 0.006775844139494484
+        }
+      ]
+    },
+    {
+      "name": "muted",
+      "enemy": {
+        "x": 3,
+        "z": 0
+      },
+      "actualTime": 7.501333333333333,
+      "before": 0,
+      "createdBefore": 5,
+      "options": {
+        "enemyType": "boar",
+        "pan": 0.85,
+        "volume": 0.98
+      },
+      "after": 0,
+      "createdAfter": 5,
+      "channels": [
+        {
+          "peak": 0,
+          "rms": 0
+        },
+        {
+          "peak": 0,
+          "rms": 0
+        }
+      ]
+    },
+    {
+      "name": "fallback",
+      "enemy": {
+        "x": 3,
+        "z": 0
+      },
+      "actualTime": 8.501333333333333,
+      "before": 0,
+      "createdBefore": 5,
+      "options": {
+        "enemyType": "boar",
+        "pan": 0.85,
+        "volume": 0.98
+      },
+      "after": 1,
+      "createdAfter": 5,
+      "channels": [
+        {
+          "peak": 0.003602850716561079,
+          "rms": 0.0005367296369842031
+        },
+        {
+          "peak": 0.003602850716561079,
+          "rms": 0.0005367296369842031
+        }
+      ]
+    },
+    {
+      "name": "center",
+      "enemy": {
+        "x": 0,
+        "z": 3
+      },
+      "actualTime": 9.501333333333333,
+      "before": 0,
+      "createdBefore": 5,
+      "options": {
+        "enemyType": "boar",
+        "pan": 0,
+        "volume": 0.98
+      },
+      "after": 1,
+      "createdAfter": 6,
+      "channels": [
+        {
+          "peak": 0.0062044840306043625,
+          "rms": 0.0008619736874452836
+        },
+        {
+          "peak": 0.0062044840306043625,
+          "rms": 0.0008619736874452836
+        }
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "peak": 0.04534299671649933,
+      "rms": 0.0013275886692641198
+    },
+    {
+      "peak": 0.04534299671649933,
+      "rms": 0.0013681000363686539
+    }
+  ],
+  "created": 6,
+  "disconnected": 6,
+  "remaining": 0,
+  "disposed": true,
+  "scope": "Native OfflineAudioContext/nodes, isolated cue fixture, same noise slice. WAV copied from DOM artifact, no ordinary save/campaign/audio audition/VRAM/device proof."
+}

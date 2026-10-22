@@ -73,7 +73,7 @@ export class GameAudio{
     if(tone){node.type='sine';node.frequency.setValueAtTime(kind==='quest'?440:kind==='craft'?660:330,now);node.frequency.exponentialRampToValueAtTime(kind==='quest'?880:440,now+length);}else node.buffer=this.noise;
     filter.type=tone?'lowpass':'bandpass';filter.frequency.value=windup?(enemyType==='crab'?720:180):tone?2800:kind==='splash'?1200:kind==='swing'?1600:kind==='hit'?260:kind==='gather'?700:sandy?520:140;filter.Q.value=.7;
     gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime((windup?.22:kind==='step'?.16:tone?.13:.45)*level,now+(windup?.04:.008));gain.gain.exponentialRampToValueAtTime(.0001,now+length);
-    const spatial=!tone&&pan!==0&&Number.isFinite(pan)&&ctx.createStereoPanner?ctx.createStereoPanner():null;
+    const spatial=!tone&&(windup||pan!==0)&&Number.isFinite(pan)&&ctx.createStereoPanner?ctx.createStereoPanner():null;
     node.connect(filter);filter.connect(gain);
     if(spatial){spatial.pan.setValueAtTime(Math.max(-.85,Math.min(.85,pan)),now);gain.connect(spatial);spatial.connect(this.master);}else gain.connect(ui?this.ui:this.master);
     this.sources.add(node);
