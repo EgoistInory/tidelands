@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "fullGoalComplete": false,
+  "m5Complete": false,
+  "baselineCommit": "64c3305f304edd2e6bdeb8351e1fa829044cfd98",
+  "fullTests": 276,
+  "focusedTests": 15,
+  "worldSha": "bfa8d2c0d7ec4e212d58ceb202f9a62e4213502c6df29cb3465658e752104bc9",
+  "meadowInstances": 117159,
+  "meadowBatches": 347,
+  "sameCameraPairs": [
+    "coast",
+    "forest",
+    "highland",
+    "shoal"
+  ],
+  "motionFrames": 540,
+  "motionDistance": [
+    21.000000000000725,
+    16.833333333333655,
+    21.000000000000725
+  ],
+  "motionRaf": [
+    {
+      "samples": 179,
+      "p95": 18.30000000000291,
+      "max": 18.69999999999709
+    },
+    {
+      "samples": 179,
+      "p95": 18.30000000000291,
+      "max": 233.40000000000146
+    },
+    {
+      "samples": 179,
+      "p95": 17.19999999999709,
+      "max": 18.60000000000582
+    }
+  ],
+  "gpuP95": {
+    "[1920, 1080]": [
+      11.268708,
+      11.592041,
+      9.157499,
+      11.635708,
+      12.032333
+    ],
+    "[390, 844]": [
+      6.328375,
+      7.216374,
+      3.777374,
+      6.889374,
+      7.354875
+    ]
+  },
+  "sourceAndEvidenceSha256": {
+    "src/landscape.js": "207519631b13e3287eb0cd7500ef979c479025aee1f31f16fa2acd39e6dc52ff",
+    "src/meadow.js": "c15ce562a65ffab5b48a681117bb8be0500dc9a270812089eda5a632de04a661",
+    "src/rock.js": "75c6a03d537c0b7570276f70f2859fe62d32368c33b1d9f5b5655fe892d68033",
+    "tests/landscape.test.js": "92400916e8a6e2a73889c4ed8de0d1df7cf05ddc248af266f24ebc1668528fe5",
+    "tests/meadow.test.js": "aac92373f3fd717fade1fbb1e13e138ad7eb714d928bebbcfe000d6d0aa6055a",
+    "tests/rock.test.js": "db2f5b0a99a5b62234b02caefdf21ba38792753c3bd5a6de7f0dc67e49f93eef",
+    "docs/landscape-rhythm-base.json": "bcac57a1ca98cff90644127bc28ececf3a72afc4a18146b68f9fc7eb7e5f2054",
+    "docs/landscape-rhythm-browser.json": "6cb8719043db3d7528f8a06b2d9825cf1b2be0a5d9edadaff7750188bedd366f",
+    "docs/landscape-rhythm-gpu.json": "ccdf70b06040f46d7fac5514e4f3c3ab38fb855d202387eebc9056c9a6564659",
+    "docs/landscape-rhythm-probe.json": "524bddd8f68b6ed2ac91ee4a647d5e1e4ac1c0f6dd4c29b2b2c47286bd7f8915"
+  },
+  "limits": "Source finite environment mass batch; no new archive, current long-run, ordinary journey, physical phone or final quality acceptance. Existing r2 package and endurance remain pinned to previous runtime."
+}

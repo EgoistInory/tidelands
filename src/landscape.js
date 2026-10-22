@@ -4,6 +4,12 @@ import {ISLANDS,LANDMARKS,SPAWN,terrain,randomGenerator} from './world.js';
 const grass=[0x68794f,0x405e48,0x737b70,0xa79b5f],sand=[0xcabe9b,0xb5b294,0xa2aba4,0xddc38c];
 const smooth=(a,b,x)=>{const t=THREE.MathUtils.clamp((x-a)/(b-a),0,1);return t*t*(3-2*t);};
 
+// One broad spatial field links canopy storeys and low vegetation, without moving resources.
+export function landscapeMass(x,z){
+  const wave=Math.sin(x*.045+Math.sin(z*.027)*1.8)*Math.cos(z*.038-x*.017);
+  return smooth(.08,.92,(wave+1)*.5);
+}
+
 // Only appearance depends on this sample; terrain, node IDs and save data stay authoritative.
 export function landscapeSample(x,z){
   const biome=ISLANDS.reduce((best,o,i)=>Math.hypot(x-o.x,z-o.z)/o.r<Math.hypot(x-ISLANDS[best].x,z-ISLANDS[best].z)/ISLANDS[best].r?i:best,0);
@@ -46,7 +52,7 @@ export function createShoreStones(){
 export function islandTreeAppearance(node){
   const biome=ISLANDS.reduce((best,o,i)=>Math.hypot(node.x-o.x,node.z-o.z)/o.r<Math.hypot(node.x-ISLANDS[best].x,node.z-ISLANDS[best].z)/ISLANDS[best].r?i:best,0);
   const variation=1+Math.sin(node.x*1.37+node.z*.91)*.05;
-  const height=[.96,1.22,.78,.87][biome]*variation;
+  const height=[.96,1.22,.78,.87][biome]*variation*(.78+landscapeMass(node.x,node.z)*.38);
   const tint=new THREE.Color().setRGB(...[[.98,.95,.86],[.84,.98,.89],[.90,.95,.95],[1,.90,.72]][biome]);
   return {height,tint,form:['coast','forest','highland','shoal'][biome]};
 }

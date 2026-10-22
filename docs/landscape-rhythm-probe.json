@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "baselineCommit": "64c3305f304edd2e6bdeb8351e1fa829044cfd98",
+  "worldSha": "bfa8d2c0d7ec4e212d58ceb202f9a62e4213502c6df29cb3465658e752104bc9",
+  "resources": 573,
+  "enemies": 79,
+  "treeCount": 309,
+  "meadowInstances": 117159,
+  "meadowBatches": 347,
+  "treeVerticalScaleRange": [
+    0.95,
+    2.199963738555279
+  ],
+  "sourceSha256": {
+    "src/landscape.js": "207519631b13e3287eb0cd7500ef979c479025aee1f31f16fa2acd39e6dc52ff",
+    "src/meadow.js": "c15ce562a65ffab5b48a681117bb8be0500dc9a270812089eda5a632de04a661",
+    "src/rock.js": "75c6a03d537c0b7570276f70f2859fe62d32368c33b1d9f5b5655fe892d68033",
+    "tools/probe_landscape_rhythm.mjs": "784c690097921ae88eeedcebe6d6a9a8f64139437f79f59c0d7e1dc840b0ea06"
+  },
+  "scope": "World state, meadow count/vertices/placement/width/rotation/RNG preserved; grass height and tree height/mineral geometry change. Not rendered naturalness, GPU or endurance acceptance."
+}

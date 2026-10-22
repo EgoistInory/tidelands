@@ -25,7 +25,7 @@ export function createWeatheredRock(radius){
       // A narrow bevel joins broad mineral faces without changing the enclosing sphere.
       reach=THREE.MathUtils.lerp(limit,reach,blend)-.025*blend*(1-blend);
     }
-    return n.clone().multiplyScalar(radius*reach);
+    const p=n.clone().multiplyScalar(radius*reach);p.y*=.74;return p;
   };
   for(let i=0;i<positions.count;i++){
     direction.fromBufferAttribute(positions,i).normalize();

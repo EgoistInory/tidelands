@@ -39,5 +39,19 @@ test('regional tree presentation varies crowns without widening resource contact
   const forms=ISLANDS.map(o=>islandTreeAppearance({x:o.x,z:o.z,scale:1}));
   assert.ok(forms[1].height>forms[0].height&&forms[2].height<forms[0].height);
   assert.equal(new Set(forms.map(f=>f.tint.getHex())).size,4);
-  for(const [i,o]of ISLANDS.entries()){const f=islandTreeAppearance({...o,scale:1});assert.deepEqual(f,forms[i]);assert.ok(f.height>.65&&f.height<1.35);}
+  for(const [i,o]of ISLANDS.entries()){const f=islandTreeAppearance({...o,scale:1});assert.deepEqual(f,forms[i]);assert.ok(f.height>.55&&f.height<1.5);}
+});
+
+test('stand-scale rhythm is continuous and spans distinct open and tall patches without moving nodes',async()=>{
+  const {landscapeMass,islandTreeAppearance}=await import('../src/landscape.js');
+  assert.equal(typeof landscapeMass,'function');
+  const world=createWorld(),before=JSON.stringify(world),values=[];
+  for(let x=-280;x<=280;x+=5)for(let z=-300;z<=280;z+=5){
+    const value=landscapeMass(x,z);values.push(value);assert.ok(value>=0&&value<=1);
+    assert.ok(Math.abs(value-landscapeMass(x+.1,z))<.01,'groups transition across metres, not per-tree random jitter');
+  }
+  assert.ok(Math.min(...values)<.1&&Math.max(...values)>.9);
+  const heights=world.objects.filter(o=>o.type==='tree').map(o=>islandTreeAppearance(o).height);
+  assert.ok(Math.max(...heights)/Math.min(...heights)>2,'multiple canopy storeys across the existing tree stands');
+  assert.equal(JSON.stringify(world),before);
 });

@@ -23,7 +23,7 @@ test('curved grass and petals have finite normals, nondegenerate faces and bound
   }
 });
 
-test('region culling preserves all original grass transforms and random sequence',()=>{
+test('region culling preserves grass placement, width, rotation and random sequence while height varies',()=>{
   const random=randomGenerator(4321),batches=createMeadow(random),matrix=new THREE.Matrix4(),grass=[];
   assert.equal(batches.filter(b=>b.name==='meadow-flowers').reduce((n,b)=>n+b.count,0),1200);
   for(const batch of batches){
@@ -37,12 +37,12 @@ test('region culling preserves all original grass transforms and random sequence
       if(batch.name==='meadow-grass'){
         const row=[...matrix.elements];
         assert.ok(Math.abs(row[13]-(terrain(row[12],row[14])-.04))<.0001,'grass roots follow current authoritative ground');
-        row[13]=0;grass.push(row);
+        row[5]=row[13]=0;grass.push(row);
       }
     }
   }
   assert.equal(grass.length,22595);grass.sort((a,b)=>a[12]-b[12]||a[14]-b[14]);
-  assert.equal(createHash('sha256').update(JSON.stringify(grass)).digest('hex'),'249083de872bcaadb2ce1162c8c5d4635b2d11871df73d73205619922116e44e');
+  assert.equal(createHash('sha256').update(JSON.stringify(grass)).digest('hex'),'4d3b53f4630f4d7f707450978e7ef701f2c1c7865e7bced52af6c26518644f83');
   assert.equal(random(),.67249841010198);
   for(const name of ['meadow-grass','meadow-flowers'])assert.equal(new Set(batches.filter(b=>b.name===name).map(b=>b.geometry)).size,1);
 });

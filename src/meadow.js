@@ -1,5 +1,6 @@
 import * as THREE from '../vendor/three.module.min.js';
 import {terrain,layoutTerrain,LANDMARKS,SPAWN,ISLANDS,randomGenerator} from './world.js';
+import {landscapeMass} from './landscape.js';
 
 const windTime={value:0};
 const windStrength={value:1};
@@ -288,7 +289,7 @@ export function createMeadow(random=randomGenerator(4321),objects=[]){
   for(let i=0;i<85000&&grass.length<26000;i++){
     const x=random()*590-295,z=random()*650-325,y=layoutTerrain(x,z);
     if(y<2.4||y>33||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<5)||Math.sin(x*.11)*Math.cos(z*.13)<-.5)continue;
-    dummy.position.set(x,terrain(x,z)-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);dummy.scale.setScalar(.7+random()*.9);dummy.updateMatrix();grass.push(dummy.matrix.clone());
+    dummy.position.set(x,terrain(x,z)-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);const scale=.7+random()*.9;dummy.scale.set(scale,scale*(.4+landscapeMass(x,z)*.85),scale);dummy.updateMatrix();grass.push(dummy.matrix.clone());
   }
   return [...regionBatches(createWildflower(),flowers,'meadow-flowers'),...regionBatches(createGrassClump(),grass,'meadow-grass'),...createGroundCover(),...createShoreCover(),...createForestCover(objects)];
 }

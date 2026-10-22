@@ -1,0 +1,100 @@
+TAP version 13
+# Subtest: four island surfaces distinguish warm dunes, woodland litter and exposed upland rock
+ok 1 - four island surfaces distinguish warm dunes, woodland litter and exposed upland rock
+  ---
+  duration_ms: 17.545041
+  type: 'test'
+  ...
+# Subtest: shore stones are deterministic shallow dressing and preserve resources, enemies and routes
+ok 2 - shore stones are deterministic shallow dressing and preserve resources, enemies and routes
+  ---
+  duration_ms: 117.144791
+  type: 'test'
+  ...
+# Subtest: regional tree presentation varies crowns without widening resource contact footprints
+ok 3 - regional tree presentation varies crowns without widening resource contact footprints
+  ---
+  duration_ms: 0.499
+  type: 'test'
+  ...
+# Subtest: stand-scale rhythm is continuous and spans distinct open and tall patches without moving nodes
+ok 4 - stand-scale rhythm is continuous and spans distinct open and tall patches without moving nodes
+  ---
+  duration_ms: 8.652791
+  type: 'test'
+  ...
+# Subtest: curved grass and petals have finite normals, nondegenerate faces and bounded sway
+ok 5 - curved grass and petals have finite normals, nondegenerate faces and bounded sway
+  ---
+  duration_ms: 10.638042
+  type: 'test'
+  ...
+# Subtest: region culling preserves grass placement, width, rotation and random sequence while height varies
+ok 6 - region culling preserves grass placement, width, rotation and random sequence while height varies
+  ---
+  duration_ms: 524.71875
+  type: 'test'
+  ...
+# Subtest: grass and flowers share the game clock for rooted vertex sway
+ok 7 - grass and flowers share the game clock for rooted vertex sway
+  ---
+  duration_ms: 0.442208
+  type: 'test'
+  ...
+# Subtest: dense patches stay on gentle land with shared geometry and per-patch tint
+ok 8 - dense patches stay on gentle land with shared geometry and per-patch tint
+  ---
+  duration_ms: 497.767458
+  type: 'test'
+  ...
+# Subtest: near patch batches cull beyond the fade range and recover after the camera returns
+ok 9 - near patch batches cull beyond the fade range and recover after the camera returns
+  ---
+  duration_ms: 387.711459
+  type: 'test'
+  ...
+# Subtest: coastal tufts stay above waves on gentle sand across all islands and cull at distance
+ok 10 - coastal tufts stay above waves on gentle sand across all islands and cull at distance
+  ---
+  duration_ms: 398.304958
+  type: 'test'
+  ...
+# Subtest: weathered rock geometry is deterministic, finite and stays inside the original sphere
+ok 11 - weathered rock geometry is deterministic, finite and stays inside the original sphere
+  ---
+  duration_ms: 36.556166
+  type: 'test'
+  ...
+# Subtest: rock uses smooth shared material and the transformed large stone fits camera clearance
+ok 12 - rock uses smooth shared material and the transformed large stone fits camera clearance
+  ---
+  duration_ms: 14.313875
+  type: 'test'
+  ...
+# Subtest: large and companion stones form low mineral slabs within their existing footprints
+ok 13 - large and companion stones form low mineral slabs within their existing footprints
+  ---
+  duration_ms: 5.973417
+  type: 'test'
+  ...
+# Subtest: organic tree keeps a narrow rooted trunk and finite nondegenerate branching geometry
+ok 14 - organic tree keeps a narrow rooted trunk and finite nondegenerate branching geometry
+  ---
+  duration_ms: 69.846292
+  type: 'test'
+  ...
+# Subtest: branching tree is deterministic and retains two shared instanced surfaces after merging
+ok 15 - branching tree is deterministic and retains two shared instanced surfaces after merging
+  ---
+  duration_ms: 33.571333
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1881.445584

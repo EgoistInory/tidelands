@@ -12,7 +12,7 @@ test('weathered rock geometry is deterministic, finite and stays inside the orig
   for(let i=0;i<position.count;i++){
     p.fromBufferAttribute(position,i);n.fromBufferAttribute(normal,i);
     assert.ok(p.toArray().every(Number.isFinite)&&n.toArray().every(Number.isFinite));
-    assert.ok(p.length()<=1.8&&p.length()>1.35);
+    assert.ok(p.length()<=1.8&&p.length()>1.05,'compressed slabs stay solid inside the old enclosing sphere');
     assert.ok(Math.abs(n.length()-1)<1e-5&&n.dot(p)>0);
   }
   for(const color of a.geometry.attributes.color.array)assert.ok(Number.isFinite(color)&&color>=0&&color<=1);
@@ -29,4 +29,13 @@ test('rock uses smooth shared material and the transformed large stone fits came
   assert.ok(bounds.min.x>-2.8&&bounds.max.x<2.8&&bounds.min.z>-2.8&&bounds.max.z<2.8);
   assert.ok(bounds.max.y<3.5);
   a.geometry.dispose();b.geometry.dispose();
+});
+
+test('large and companion stones form low mineral slabs within their existing footprints',()=>{
+  for(const radius of [1.8,.8]){
+    const rock=createWeatheredRock(radius),size=rock.geometry.boundingBox.getSize(new THREE.Vector3());
+    assert.ok(size.y/size.x<.8,'broad low mineral mass instead of a repeated round boulder');
+    assert.ok(size.x<=radius*2&&size.z<=radius*2);
+    rock.geometry.dispose();
+  }
 });
