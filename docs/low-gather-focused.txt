@@ -1,0 +1,208 @@
+TAP version 13
+# Subtest: male berry: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+ok 1 - male berry: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+  ---
+  duration_ms: 334.063125
+  type: 'test'
+  ...
+# Subtest: male fiber: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+ok 2 - male fiber: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+  ---
+  duration_ms: 189.102875
+  type: 'test'
+  ...
+# Subtest: male shell: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+ok 3 - male shell: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+  ---
+  duration_ms: 137.759292
+  type: 'test'
+  ...
+# Subtest: female berry: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+ok 4 - female berry: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+  ---
+  duration_ms: 145.103125
+  type: 'test'
+  ...
+# Subtest: female fiber: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+ok 5 - female fiber: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+  ---
+  duration_ms: 138.705125
+  type: 'test'
+  ...
+# Subtest: female shell: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+ok 6 - female shell: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+  ---
+  duration_ms: 137.39375
+  type: 'test'
+  ...
+# Subtest: unreachable target preserves arm length and paused action; a cancelled action clears the reach
+ok 7 - unreachable target preserves arm length and paused action; a cancelled action clears the reach
+  ---
+  duration_ms: 135.337125
+  type: 'test'
+  ...
+# Subtest: changing the production state identity clears the transient reach target while ordinary sync preserves it
+ok 8 - changing the production state identity clears the transient reach target while ordinary sync preserves it
+  ---
+  duration_ms: 11.827
+  type: 'test'
+  ...
+# Subtest: moving low pickup and water interruption keep finite skeletons without changing authoritative movement
+ok 9 - moving low pickup and water interruption keep finite skeletons without changing authoritative movement
+  ---
+  duration_ms: 131.011208
+  type: 'test'
+  ...
+# Subtest: authored locomotion follows actual travel at 30/60/144fps, including blocked movement
+ok 10 - authored locomotion follows actual travel at 30/60/144fps, including blocked movement
+  ---
+  duration_ms: 3.6845
+  type: 'test'
+  ...
+# Subtest: pause, restored time and teleport discard catch-up distance and reset contact state
+ok 11 - pause, restored time and teleport discard catch-up distance and reset contact state
+  ---
+  duration_ms: 0.746417
+  type: 'test'
+  ...
+# Subtest: game action precedence, exact durations and gathered equipment remain authoritative
+ok 12 - game action precedence, exact durations and gathered equipment remain authoritative
+  ---
+  duration_ms: 1.263
+  type: 'test'
+  ...
+# Subtest: actual author rig follows game location, carries selected tools and stays finite across movement and water
+ok 13 - actual author rig follows game location, carries selected tools and stays finite across movement and water
+  ---
+  duration_ms: 340.204542
+  type: 'test'
+  ...
+# Subtest: actual source rest proportions survive, and planted world supports stay fixed during complete tool actions
+ok 14 - actual source rest proportions survive, and planted world supports stay fixed during complete tool actions
+  ---
+  duration_ms: 476.939125
+  type: 'test'
+  ...
+# Subtest: moving actual sole anchors track support targets through production speeds, slopes and turns
+ok 15 - moving actual sole anchors track support targets through production speeds, slopes and turns
+  ---
+  duration_ms: 832.49425
+  type: 'test'
+  ...
+# Subtest: cloned actual rig owns its bones while sharing immutable template buffers
+ok 16 - cloned actual rig owns its bones while sharing immutable template buffers
+  ---
+  duration_ms: 64.127417
+  type: 'test'
+  ...
+# Subtest: paused actual skeleton and support contacts do not snap into an idle gait
+ok 17 - paused actual skeleton and support contacts do not snap into an idle gait
+  ---
+  duration_ms: 146.029417
+  type: 'test'
+  ...
+# Subtest: shallow-water visuals wade on the actual floor while deep water uses the real waterline
+ok 18 - shallow-water visuals wade on the actual floor while deep water uses the real waterline
+  ---
+  duration_ms: 127.895541
+  type: 'test'
+  ...
+# Subtest: existing world-sized tools do not get enlarged a second time by author body normalization
+ok 19 - existing world-sized tools do not get enlarged a second time by author body normalization
+  ---
+  duration_ms: 113.082708
+  type: 'test'
+  ...
+# Subtest: restored facing initializes before planting and stationary turns recover each foot
+ok 20 - restored facing initializes before planting and stationary turns recover each foot
+  ---
+  duration_ms: 133.181708
+  type: 'test'
+  ...
+# Subtest: all authored roles retain whole-body acceleration, braking and turn response after the rig replacement
+ok 21 - all authored roles retain whole-body acceleration, braking and turn response after the rig replacement
+  ---
+  duration_ms: 1136.450958
+  type: 'test'
+  ...
+# Subtest: production deferred gathering cannot begin five metres from a resource
+ok 22 - production deferred gathering cannot begin five metres from a resource
+  ---
+  duration_ms: 26.634458
+  type: 'test'
+  ...
+# Subtest: walking just outside close gathering range before impact awards nothing
+ok 23 - walking just outside close gathering range before impact awards nothing
+  ---
+  duration_ms: 11.200833
+  type: 'test'
+  ...
+# Subtest: resource prompts use close range while islanders and camp interactions keep their existing reach
+ok 24 - resource prompts use close range while islanders and camp interactions keep their existing reach
+  ---
+  duration_ms: 6.812708
+  type: 'test'
+  ...
+# Subtest: equipped gathering lowers the blade into low resource height without crossing flat ground
+ok 25 - equipped gathering lowers the blade into low resource height without crossing flat ground
+  ---
+  duration_ms: 97.491833
+  type: 'test'
+  ...
+# Subtest: gather commits inventory and depletion once at the rendered reach peak
+ok 26 - gather commits inventory and depletion once at the rendered reach peak
+  ---
+  duration_ms: 82.401125
+  type: 'test'
+  ...
+# Subtest: gather reserves interaction cooldown and locks the starting tool yield
+ok 27 - gather reserves interaction cooldown and locks the starting tool yield
+  ---
+  duration_ms: 7.543334
+  type: 'test'
+  ...
+# Subtest: leaving range or losing the resource before impact awards nothing
+ok 28 - leaving range or losing the resource before impact awards nothing
+  ---
+  duration_ms: 12.60825
+  type: 'test'
+  ...
+# Subtest: expired, cancelled and replaced-save gathers never commit; NPCs remain immediate
+ok 29 - expired, cancelled and replaced-save gathers never commit; NPCs remain immediate
+  ---
+  duration_ms: 53.688417
+  type: 'test'
+  ...
+# Subtest: swimming cannot start or finish a hidden gathering animation
+ok 30 - swimming cannot start or finish a hidden gathering animation
+  ---
+  duration_ms: 4.147167
+  type: 'test'
+  ...
+# Subtest: plant and shell gathering lowers the visible bare palm and restores carried equipment
+ok 31 - plant and shell gathering lowers the visible bare palm and restores carried equipment
+  ---
+  duration_ms: 109.57325
+  type: 'test'
+  ...
+# Subtest: a crouching gathering cycle keeps planted soles on flat and sloped ground
+ok 32 - a crouching gathering cycle keeps planted soles on flat and sloped ground
+  ---
+  duration_ms: 44.747292
+  type: 'test'
+  ...
+# Subtest: hard resource gathering uses the supplied harvesting tool while attacks keep the selected weapon
+ok 33 - hard resource gathering uses the supplied harvesting tool while attacks keep the selected weapon
+  ---
+  duration_ms: 26.29725
+  type: 'test'
+  ...
+1..33
+# tests 33
+# suites 0
+# pass 33
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3472.657583

@@ -279,7 +279,7 @@ export class WorldView{
   }
   sync(state){
     const switched=this.syncedState!==state;
-    if(switched){this.gatherAt=this.hurtAt=-100;this.gatherKind=this.gatherTool=null;this.impacts?.clear();}
+    if(switched){this.gatherAt=this.hurtAt=-100;this.gatherKind=this.gatherTool=this.gatherTarget=null;this.impacts?.clear();}
     const dummy=new THREE.Object3D();
     for(const {batch,entries,part,hidden}of this.batches){let changed=false;entries.forEach((o,i)=>{const depleted=isDepleted(state,o);if(depleted===hidden.has(i))return;depleted?hidden.add(i):hidden.delete(i);resourceTransform(dummy,o,depleted);batch.setMatrixAt(i,dummy.matrix.clone().multiply(part));changed=true;});if(changed)batch.instanceMatrix.needsUpdate=true;}
     const definitions=new Map(state.buildings.map(b=>[b.id,b]));
@@ -342,7 +342,7 @@ export class WorldView{
     this.updateIslanders(state,near,dt);
     for(const e of state.enemies){const g=this.creatures.get(e.id);if(g)animateCreature(g,e,state.time,dt,terrain(e.x,e.z),p,enemyAttackPose(state,e),terrain);}
     this.player.position.set(p.x,h,p.z);
-    animateActor(this.player,{...p,time:state.time,attackAt:state.attackAt,gatherAt:this.gatherAt,gatherKind:this.gatherKind,gatherTool:this.gatherTool??state.selected,hurtAt:this.hurtAt,selected:state.selected,swimming:terrain(p.x,p.z)<0},dt,terrain);
+    animateActor(this.player,{...p,time:state.time,attackAt:state.attackAt,gatherAt:this.gatherAt,gatherKind:this.gatherKind,gatherTarget:this.gatherTarget,gatherTool:this.gatherTool??state.selected,hurtAt:this.hurtAt,selected:state.selected,swimming:terrain(p.x,p.z)<0},dt,terrain);
     this.contactShade?.updateActors(this.player,this.islanders,this.creatures);
     this.impacts?.update(state.time);
     const target=new THREE.Vector3(p.x+Math.sin(this.yaw)*this.distance,h+2.4+Math.tan(this.pitch)*this.distance,p.z+Math.cos(this.yaw)*this.distance);

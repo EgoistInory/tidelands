@@ -23,7 +23,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
   let waypoint=null,renderLost=false,pendingAttack=null,pendingGather=null,prepared=false;
   const preparation=new AbortController();
   function cancelAttack(){if(pendingAttack){pendingAttack=null;state.attackAt=-100;}}
-  function cancelGather(){if(pendingGather){pendingGather=null;view.gatherAt=-100;view.gatherKind=view.gatherTool=null;}}
+  function cancelGather(){if(pendingGather){pendingGather=null;view.gatherAt=-100;view.gatherKind=view.gatherTool=view.gatherTarget=null;}}
   const mapBase=document.createElement('canvas');mapBase.width=220;mapBase.height=220;
   const mc=mapBase.getContext('2d');
   for(let x=0;x<220;x+=2)for(let y=0;y<220;y+=2){const h=terrain(x/220*800-400,y/220*800-400);mc.fillStyle=h<0?'#235e64':h<2?'#d7c991':h>28?'#9aab95':'#698b55';mc.fillRect(x,y,2,2);}
@@ -74,7 +74,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     if(state.quest!==lastQuest){audio.effect('quest');lastQuest=state.quest;const note=state.quest===6?'归航灯塔已被修复，主线完成！你可以继续自由探索。':`新的目标：${q.title}`;toast(!$('toast').hidden?`${$('toast').textContent}\n${note}`:note,9000);save();}
   }
   function action(){if(!started||paused||pendingGather)return;cancelAttack();if(state.time-state.attackAt<ATTACK_DURATION)return;if(buildType){if(!placement)return;const message=build(state,world.objects,buildType,placement.x,placement.z);toast(message);if(message.startsWith('建造完成')){audio.effect('craft');buildType=null;placement=null;view.setPreview(null);save();view.sync(state);}return;}
-    const result=interact(state,near,{defer:true});if(result?.pending){pendingGather=result.pending;view.gatherAt=result.pending.at;view.gatherKind=near.type;view.gatherTool=['tree','stone','crystal'].includes(near.type)&&state.inventory.axe?'axe':'hand';state.player.yaw=Math.atan2(near.x-state.player.x,near.z-state.player.z);return;}toast(result,near?.type==='npc'?8500:4200);save();view.sync(state);updateUI();}
+    const result=interact(state,near,{defer:true});if(result?.pending){pendingGather=result.pending;view.gatherAt=result.pending.at;view.gatherKind=near.type;view.gatherTarget={x:near.x,z:near.z,y:terrain(near.x,near.z)+.35};view.gatherTool=['tree','stone','crystal'].includes(near.type)&&state.inventory.axe?'axe':'hand';state.player.yaw=Math.atan2(near.x-state.player.x,near.z-state.player.z);return;}toast(result,near?.type==='npc'?8500:4200);save();view.sync(state);updateUI();}
   function finishGather(){const message=resolveGather(state,pendingGather),cue=gatherImpact(state,pendingGather,message);pendingGather=null;if(!message)return;if(cue){audio.effect('gather');view.impacts.spawn(cue);}toast(message);save();view.sync(state);updateUI();}
   function select(slot){if(paused)return;if(slot!=='food'){cancelAttack();cancelGather();}
     if(slot==='food'){const hp=state.player.hp;toast(eat(state));if(state.player.hp>hp)audio.effect('food');save();}

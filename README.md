@@ -2,6 +2,8 @@
 
 正在开发的单人 3D 海岛开放世界。中文界面，本地运行；M1 自由探索、M2 生存与营地、M3 世界内容与成长、M4 本地交付已完成功能验收，证据见 docs/M1-ACCEPTANCE.md 至 docs/M4-ACCEPTANCE.md。最终 M5 品质验收仍在推进，见 AGENT_PROGRESS.md 和 ROADMAP.md。
 
+最新有限功能组：全身低物采集，33针对性/291全量与真实原生E/main结算、暂停取消通过；近距纤维/浆果/贝壳、390检视与远距手臂限伸已保存，见 `docs/LOW-GATHER-REVIEW.md`。整体自然度/远距真实接触仍待，M5和完整3A未完成。当前本地包 `dist/tidelands-m5-2026-10-23-low-gather.zip`，SHA `63501f1a6b641985928aefe6ea5fb3ddc82c13a96f6674f4f31af062aed2a3b8`；独立包普通q6接续/保存390恢复通过，见 `docs/LOW-GATHER-DELIVERY.md`。新源GPU/长时不套用旧证据。
+
 ## 启动
 
 ```sh
@@ -10,7 +12,7 @@ python3 serve.py
 
 打开 http://127.0.0.1:4190 。需要支持 WebGL 2 的现代浏览器。不需要安装 npm 依赖，Three.js 0.180.0 在 vendor 中附带，许可证随包保留。ES 模块需要本地 HTTP 服务，不能双击 HTML 代替。
 
-当前本地包：`dist/tidelands-m5-2026-10-16-motion-sound.zip`，SHA `0033d21e9fdd3e12ac39ee75fc3670b6072ff98f13cec17e160f9eaf3fe2cadc`。合并近障碍镜头小角度搜索与真实陡坡摆动脚落点修复；224全量/17声音接触针对性/4打包及51运行SHA通过。新增四组真实离线时钟混音与WAV、暂停/静音和自然回收证据；音频生产代码保持。普通q6原生继续、移动、保存、390与再次载入保持库存/HP79/营火1/击败3；本批未再下载普通JSON，旧e750备份保留。见 `docs/motion-sound-audit.json` 和 `docs/SOUND-MIX-REVIEW.md`。M5与完整3A未完成，未试听/真机/新来源长时GPU或完整主线复验。
+历史本地包：`dist/tidelands-m5-2026-10-16-motion-sound.zip`，SHA `0033d21e9fdd3e12ac39ee75fc3670b6072ff98f13cec17e160f9eaf3fe2cadc`。合并近障碍镜头小角度搜索与真实陡坡摆动脚落点修复；224全量/17声音接触针对性/4打包及51运行SHA通过。新增四组真实离线时钟混音与WAV、暂停/静音和自然回收证据；音频生产代码保持。普通q6原生继续、移动、保存、390与再次载入保持库存/HP79/营火1/击败3；本批未再下载普通JSON，旧e750备份保留。见 `docs/motion-sound-audit.json` 和 `docs/SOUND-MIX-REVIEW.md`。M5与完整3A未完成，未试听/真机/新来源长时GPU或完整主线复验。
 
 前一空间包：`dist/tidelands-m5-2026-10-16-island-spaces.zip`。四岛树冠比例/叶色和夜间侧光候选已与雾岬遗迹空间一起交付：纹理石拱、分层柱、残柱和刻纹石碑替换旧立柱；柱基/石碑实体阻挡、中央通道可通过，镜头避让保留拱下空间。复用已有石料贴图，2合并表面/2268三角形。221全量/29针对性/4打包、51运行文件验证；生产界面隔离位置原生S/E读碑、同普通q6档原生移动/实际下载/390恢复和新全画布GPU对照已通过，见 `docs/island-spaces-audit.json`。树种/密度、角色与营地自然度、镜头运动/试听和最终统一主路径仍待，M5及完整3A目标未完成。
 

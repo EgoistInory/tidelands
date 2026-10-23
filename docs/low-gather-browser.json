@@ -1,0 +1,512 @@
+[
+  {
+    "name": "fiber-before",
+    "data": {
+      "frames": 0,
+      "time": 240,
+      "running": false,
+      "kind": "fiber",
+      "target": {
+        "id": "resource-1340",
+        "type": "fiber",
+        "x": 141.23264531604946,
+        "z": -31.64364341646433,
+        "y": 20.04960040747532,
+        "scale": 0.9378293221350759,
+        "rotation": 6.038057742941188
+      },
+      "player": {
+        "x": 141.23264531604946,
+        "z": -30.64364341646433,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 3.141592653589793
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "events": [],
+      "action": null,
+      "wrist": [
+        141.7238742196239,
+        21.098423040687557,
+        -30.35133892017607
+      ],
+      "pelvis": [
+        141.22406827130212,
+        20.965542602536964,
+        -30.515220154048322
+      ],
+      "wristTargetError": 1.549099680305783,
+      "soleError": 0.000001074457078153736,
+      "buffer": [
+        1920,
+        889
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "sources": {
+        "src/authored-character.js": "0feb14aa537e91f216dff62aaced321bcfff5a3b0f343ce1df20861464b8dccc",
+        "src/main.js": "213d9b22ec20cf1bc4934adf1051b065cc1e16e8555606fcb8ace45b77d93910",
+        "src/scene.js": "a4e36249e426c1b3f8d9284e3e02751796f3128b797bc0fdbf1fb5a2b6532978"
+      },
+      "scope": "Real world node / production interact-resolve-tick-draw; fixed .01 game seconds per rAF, declared location/quest6/axe and enemies disabled. Hand target is terrain+.35 proxy, not exact plant mesh. No normal save/main-loop input, audition/device/GPU/long run/final quality."
+    }
+  },
+  {
+    "name": "fiber-impact",
+    "data": {
+      "frames": 21,
+      "time": 240.21,
+      "running": false,
+      "kind": "fiber",
+      "target": {
+        "id": "resource-1340",
+        "type": "fiber",
+        "x": 141.23264531604946,
+        "z": -31.64364341646433,
+        "y": 20.04960040747532,
+        "scale": 0.9378293221350759,
+        "rotation": 6.038057742941188
+      },
+      "player": {
+        "x": 141.23264531604946,
+        "z": -30.64364341646433,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 3.141592653589793
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 2,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "events": [
+        {
+          "at": 240.21,
+          "message": "纤维 +2"
+        }
+      ],
+      "action": {
+        "name": "Fixing_Kneeling",
+        "phase": 0.2500000000000285,
+        "marker": 0.25,
+        "gameProgress": 0.500000000000019
+      },
+      "wrist": [
+        141.23264521022577,
+        20.399600387376754,
+        -31.64364363108033
+      ],
+      "pelvis": [
+        141.22878172382306,
+        20.42223576404848,
+        -30.630650817925314
+      ],
+      "wristTargetError": 2.4013045071378853e-7,
+      "soleError": 0.000001074457078153736,
+      "buffer": [
+        1920,
+        889
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "sources": {
+        "src/authored-character.js": "0feb14aa537e91f216dff62aaced321bcfff5a3b0f343ce1df20861464b8dccc",
+        "src/main.js": "213d9b22ec20cf1bc4934adf1051b065cc1e16e8555606fcb8ace45b77d93910",
+        "src/scene.js": "a4e36249e426c1b3f8d9284e3e02751796f3128b797bc0fdbf1fb5a2b6532978"
+      },
+      "scope": "Real world node / production interact-resolve-tick-draw; fixed .01 game seconds per rAF, declared location/quest6/axe and enemies disabled. Hand target is terrain+.35 proxy, not exact plant mesh. No normal save/main-loop input, audition/device/GPU/long run/final quality."
+    }
+  },
+  {
+    "name": "fiber-recovered",
+    "data": {
+      "frames": 45,
+      "time": 240.45,
+      "running": false,
+      "kind": "fiber",
+      "target": {
+        "id": "resource-1340",
+        "type": "fiber",
+        "x": 141.23264531604946,
+        "z": -31.64364341646433,
+        "y": 20.04960040747532,
+        "scale": 0.9378293221350759,
+        "rotation": 6.038057742941188
+      },
+      "player": {
+        "x": 141.23264531604946,
+        "z": -30.64364341646433,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 3.141592653589793
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 2,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "events": [
+        {
+          "at": 240.21,
+          "message": "纤维 +2"
+        }
+      ],
+      "action": null,
+      "wrist": [
+        141.70845653296917,
+        21.07785687360466,
+        -30.39373249579391
+      ],
+      "pelvis": [
+        141.2273784008767,
+        20.96644528805017,
+        -30.513885808866085
+      ],
+      "wristTargetError": 1.499568423782005,
+      "soleError": 0.000001074457078153736,
+      "buffer": [
+        1920,
+        889
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "sources": {
+        "src/authored-character.js": "0feb14aa537e91f216dff62aaced321bcfff5a3b0f343ce1df20861464b8dccc",
+        "src/main.js": "213d9b22ec20cf1bc4934adf1051b065cc1e16e8555606fcb8ace45b77d93910",
+        "src/scene.js": "a4e36249e426c1b3f8d9284e3e02751796f3128b797bc0fdbf1fb5a2b6532978"
+      },
+      "scope": "Real world node / production interact-resolve-tick-draw; fixed .01 game seconds per rAF, declared location/quest6/axe and enemies disabled. Hand target is terrain+.35 proxy, not exact plant mesh. No normal save/main-loop input, audition/device/GPU/long run/final quality."
+    }
+  },
+  {
+    "name": "berry-impact",
+    "data": {
+      "frames": 21,
+      "time": 240.21,
+      "running": false,
+      "kind": "berry",
+      "target": {
+        "id": "resource-1528",
+        "type": "berry",
+        "x": 156.3077755831182,
+        "z": -20.435850815847516,
+        "y": 16.428491843827693,
+        "scale": 1.5265281735686584,
+        "rotation": 0.8417412097400555
+      },
+      "player": {
+        "x": 156.3077755831182,
+        "z": -19.435850815847516,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 3.141592653589793
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 5,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "events": [
+        {
+          "at": 240.21,
+          "message": "浆果 +2"
+        }
+      ],
+      "action": {
+        "name": "Fixing_Kneeling",
+        "phase": 0.2500000000000285,
+        "marker": 0.25,
+        "gameProgress": 0.500000000000019
+      },
+      "wrist": [
+        156.3077754691922,
+        16.778491851381066,
+        -20.435851011792217
+      ],
+      "pelvis": [
+        156.3039119908918,
+        16.719776746748856,
+        -19.4228582173085
+      ],
+      "wristTargetError": 2.2678296671821976e-7,
+      "soleError": 0.0000013799793171914034,
+      "buffer": [
+        1920,
+        889
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "sources": {
+        "src/authored-character.js": "0feb14aa537e91f216dff62aaced321bcfff5a3b0f343ce1df20861464b8dccc",
+        "src/main.js": "213d9b22ec20cf1bc4934adf1051b065cc1e16e8555606fcb8ace45b77d93910",
+        "src/scene.js": "a4e36249e426c1b3f8d9284e3e02751796f3128b797bc0fdbf1fb5a2b6532978"
+      },
+      "scope": "Real world node / production interact-resolve-tick-draw; fixed .01 game seconds per rAF, declared location/quest6/axe and enemies disabled. Hand target is terrain+.35 proxy, not exact plant mesh. No normal save/main-loop input, audition/device/GPU/long run/final quality."
+    }
+  },
+  {
+    "name": "shell-impact",
+    "data": {
+      "frames": 21,
+      "time": 240.21,
+      "running": false,
+      "kind": "shell",
+      "target": {
+        "id": "resource-860",
+        "type": "shell",
+        "x": 124.84349565580487,
+        "z": 19.01813796721399,
+        "y": 1.8017417576885495,
+        "scale": 1.3977933332091197,
+        "rotation": 3.9124772564620467
+      },
+      "player": {
+        "x": 124.84349565580487,
+        "z": 20.01813796721399,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 3.141592653589793
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 2,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "events": [
+        {
+          "at": 240.21,
+          "message": "贝壳 +2"
+        }
+      ],
+      "action": {
+        "name": "Fixing_Kneeling",
+        "phase": 0.2500000000000285,
+        "marker": 0.25,
+        "gameProgress": 0.500000000000019
+      },
+      "wrist": [
+        124.84349555114278,
+        2.1517417340421394,
+        19.018137750272583
+      ],
+      "pelvis": [
+        124.83963206357849,
+        2.186368382640614,
+        20.031130565753003
+      ],
+      "wristTargetError": 2.4202660930250796e-7,
+      "soleError": 0.0000011999511758981418,
+      "buffer": [
+        1920,
+        889
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "sources": {
+        "src/authored-character.js": "0feb14aa537e91f216dff62aaced321bcfff5a3b0f343ce1df20861464b8dccc",
+        "src/main.js": "213d9b22ec20cf1bc4934adf1051b065cc1e16e8555606fcb8ace45b77d93910",
+        "src/scene.js": "a4e36249e426c1b3f8d9284e3e02751796f3128b797bc0fdbf1fb5a2b6532978"
+      },
+      "scope": "Real world node / production interact-resolve-tick-draw; fixed .01 game seconds per rAF, declared location/quest6/axe and enemies disabled. Hand target is terrain+.35 proxy, not exact plant mesh. No normal save/main-loop input, audition/device/GPU/long run/final quality."
+    }
+  },
+  {
+    "name": "fiber-far-impact",
+    "data": {
+      "frames": 21,
+      "time": 240.21,
+      "running": false,
+      "kind": "fiber",
+      "target": {
+        "id": "resource-1340",
+        "type": "fiber",
+        "x": 141.23264531604946,
+        "z": -31.64364341646433,
+        "y": 20.04960040747532,
+        "scale": 0.9378293221350759,
+        "rotation": 6.038057742941188
+      },
+      "player": {
+        "x": 141.23264531604946,
+        "z": -28.94364341646433,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 3.141592653589793
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 2,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "events": [
+        {
+          "at": 240.21,
+          "message": "纤维 +2"
+        }
+      ],
+      "action": {
+        "name": "Fixing_Kneeling",
+        "phase": 0.2500000000000285,
+        "marker": 0.25,
+        "gameProgress": 0.500000000000019
+      },
+      "wrist": [
+        141.4136397248808,
+        20.203117239566122,
+        -30.443282691912437
+      ],
+      "pelvis": [
+        141.22878172382306,
+        19.808613186159874,
+        -28.930650817925315
+      ],
+      "wristTargetError": 1.2297278074218636,
+      "soleError": 0.0000011318524462321198,
+      "buffer": [
+        1920,
+        889
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "sources": {
+        "src/authored-character.js": "0feb14aa537e91f216dff62aaced321bcfff5a3b0f343ce1df20861464b8dccc",
+        "src/main.js": "213d9b22ec20cf1bc4934adf1051b065cc1e16e8555606fcb8ace45b77d93910",
+        "src/scene.js": "a4e36249e426c1b3f8d9284e3e02751796f3128b797bc0fdbf1fb5a2b6532978"
+      },
+      "scope": "Real world node / production interact-resolve-tick-draw; fixed .01 game seconds per rAF, declared location/quest6/axe and enemies disabled. Hand target is terrain+.35 proxy, not exact plant mesh. No normal save/main-loop input, audition/device/GPU/long run/final quality."
+    }
+  },
+  {
+    "name": "shell-mobile-impact",
+    "data": {
+      "frames": 21,
+      "time": 240.21,
+      "running": false,
+      "kind": "shell",
+      "target": {
+        "id": "resource-860",
+        "type": "shell",
+        "x": 124.84349565580487,
+        "z": 19.01813796721399,
+        "y": 1.8017417576885495,
+        "scale": 1.3977933332091197,
+        "rotation": 3.9124772564620467
+      },
+      "player": {
+        "x": 124.84349565580487,
+        "z": 20.01813796721399,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 3.141592653589793
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 2,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "events": [
+        {
+          "at": 240.21,
+          "message": "贝壳 +2"
+        }
+      ],
+      "action": {
+        "name": "Fixing_Kneeling",
+        "phase": 0.2500000000000285,
+        "marker": 0.25,
+        "gameProgress": 0.500000000000019
+      },
+      "wrist": [
+        124.84349555114278,
+        2.1517417340421394,
+        19.018137750272583
+      ],
+      "pelvis": [
+        124.83963206357849,
+        2.186368382640614,
+        20.031130565753003
+      ],
+      "wristTargetError": 2.4202660930250796e-7,
+      "soleError": 0.0000011999511758981418,
+      "buffer": [
+        390,
+        655
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "glError": 0,
+      "sources": {
+        "src/authored-character.js": "0feb14aa537e91f216dff62aaced321bcfff5a3b0f343ce1df20861464b8dccc",
+        "src/main.js": "213d9b22ec20cf1bc4934adf1051b065cc1e16e8555606fcb8ace45b77d93910",
+        "src/scene.js": "a4e36249e426c1b3f8d9284e3e02751796f3128b797bc0fdbf1fb5a2b6532978"
+      },
+      "scope": "Real world node / production interact-resolve-tick-draw; fixed .01 game seconds per rAF, declared location/quest6/axe and enemies disabled. Hand target is terrain+.35 proxy, not exact plant mesh. No normal save/main-loop input, audition/device/GPU/long run/final quality."
+    }
+  }
+]

@@ -33,7 +33,7 @@ function groundNormal(ground,x,z){const e=.15;return new THREE.Vector3(ground(x-
 export function createAuthoredCharacter(avatar,library,role='traveler',hair=null){
   avatar.updateMatrixWorld(true);let sourceBody;avatar.traverse(o=>{if(o.isSkinnedMesh&&(!sourceBody||o.geometry.attributes.position.count>sourceBody.geometry.attributes.position.count))sourceBody=o;});
   if(!sourceBody)throw Error('Author body skin required');const bounds=new THREE.Box3().setFromBufferAttribute(sourceBody.geometry.attributes.position),height=bounds.max.y-bounds.min.y,scale=2.95/height;
-  const needed=new Set(['Idle_Loop','Walk_Loop','Jog_Fwd_Loop','Sprint_Loop','Swim_Fwd_Loop','Swim_Idle_Loop','Sword_Attack','Punch_Cross','PickUp_Table']);
+  const needed=new Set(['Idle_Loop','Walk_Loop','Jog_Fwd_Loop','Sprint_Loop','Swim_Fwd_Loop','Swim_Idle_Loop','Sword_Attack','Punch_Cross','PickUp_Table','Fixing_Kneeling']);
   const rest=captureAuthorRest(avatar),clips=retargetAuthoredClips(avatar,captureAuthorRest(library.scene),library.animations.filter(c=>needed.has(c.name)),height/library.height);
   dressAuthoredAvatar(avatar,role);if(hair)attachAuthorHair(avatar,hair,role);
   const root=new THREE.Group(),body=new THREE.Group();body.scale.setScalar(scale);body.add(avatar);root.add(body);root.updateMatrixWorld(true);
@@ -62,26 +62,31 @@ export function animateAuthoredCharacter(root,state,dt,ground=()=>0){
   if(!rig.lastBasePose)rig.lastBasePose=captureAuthorRest(rig.avatar);else for(const [name,p]of rig.lastBasePose){const b=rig.avatar.getObjectByName(name);p.position.copy(b.position);p.quaternion.copy(b.quaternion);p.scale.copy(b.scale);}
   const motion=updateBodyMotion(rig,state.x,state.z,root.rotation.y,dt,plan.resetContacts||swimming);
   rig.body.position.set(0,0,0);rig.body.rotation.set(.04*motion.drive-.06*plan.recoil,.08*motion.turn,-.10*motion.turn*Math.min(1,motion.speed/3)+.03*plan.recoil);
+  const lowPickup=plan.action==='gather'&&['berry','fiber','shell'].includes(state.gatherKind);
   if(plan.action){
-    const low=plan.action==='gather'&&['berry','fiber','shell'].includes(state.gatherKind),name=low?'PickUp_Table':plan.equipped==='hand'?'Punch_Cross':'Sword_Attack',clip=rig.clips.get(name);
+    const name=lowPickup?'Fixing_Kneeling':plan.equipped==='hand'?'Punch_Cross':'Sword_Attack',clip=rig.clips.get(name);
     const marker=rig.markers[name]?.weaponForwardPhase?.[plan.equipped]??rig.markers[name]?.peakRightHandPhase??.5,p=plan.actionProgress;
-    const sourcePhase=p<.5?p*2*marker:marker+(p-.5)*2*(1-marker);
-    sample(clip,sourcePhase*clip.duration,true,Math.sin(p*Math.PI));rig.actionSource={name,phase:sourcePhase,marker,gameProgress:p};
+    const sourcePhase=lowPickup?(p<.5?p*.5:.25+(p-.5)*1.5):p<.5?p*2*marker:marker+(p-.5)*2*(1-marker);
+    sample(clip,sourcePhase*clip.duration,!lowPickup,Math.sin(p*Math.PI));rig.actionSource={name,phase:sourcePhase,marker:lowPickup?.25:marker,gameProgress:p};
   }else rig.actionSource=null;
   rig.axe.visible=plan.equipped==='axe';rig.sword.visible=plan.equipped==='sword';root.updateMatrixWorld(true);
+  if(lowPickup&&state.gatherTarget&&Number.isFinite(state.gatherTarget.x)&&Number.isFinite(state.gatherTarget.z)){
+    const direction=new THREE.Vector3(state.gatherTarget.x-state.x,0,state.gatherTarget.z-state.z);
+    if(direction.lengthSq()>1e-8)turnBoneWorld(rig.avatar.getObjectByName('spine_01'),new THREE.Quaternion().setFromAxisAngle(up.clone().cross(direction.normalize()),.7*Math.sin(plan.actionProgress*Math.PI)));
+  }
   if(swimming){
     const chest=rig.avatar.getObjectByName('spine_03').getWorldPosition(new THREE.Vector3());rig.body.position.y=(.12-chest.y); // Body container is world-axis aligned; .12 is the production water plane.
     root.updateMatrixWorld(true);let clearance=0;for(const leg of rig.legs){const point=soleWorld(leg);clearance=Math.max(clearance,ground(point.x,point.z)-point.y);}if(clearance>0)rig.body.position.y+=clearance;
     rig.worldFeet=[];for(const leg of rig.legs){leg.target=null;leg.contact=null;}root.updateMatrixWorld(true);return;
   }
   if(plan.resetContacts||plan.speed>.0001)rig.idleStep=null;
-  if(plan.baseClip==='Idle_Loop'&&!rig.transitionFrom&&!rig.idleStep){
+  if(!lowPickup&&plan.baseClip==='Idle_Loop'&&!rig.transitionFrom&&!rig.idleStep){
     const gaps=rig.legs.map(leg=>{const raw=soleWorld(leg);return leg.target?Math.hypot(raw.x-leg.target.x,raw.z-leg.target.z):0;});const side=gaps[0]>gaps[1]?0:1;
     if(gaps[side]>.25)rig.idleStep={side,from:rig.legs[side].target.clone(),at:state.time};
   }
   const targets=[],orientations=[];
   for(const [j,leg]of rig.legs.entries()){
-    const raw=soleWorld(leg),lift=raw.y-root.position.y-rig.floors[plan.baseClip][j];let contact=lift<=.035*rig.scale;
+    const raw=soleWorld(leg),lift=raw.y-root.position.y-rig.floors[plan.baseClip][j];let contact=lowPickup||lift<=.035*rig.scale;
     const normal=groundNormal(ground,raw.x,raw.z),q=new THREE.Quaternion().setFromUnitVectors(up,normal).multiply(root.quaternion).multiply(leg.restFootQ);
     if(rig.idleStep?.side===j){
       const step=rig.idleStep,t=THREE.MathUtils.clamp((state.time-step.at)/.25,0,1),ease=t*t*(3-2*t);raw.x=THREE.MathUtils.lerp(step.from.x,raw.x,ease);raw.z=THREE.MathUtils.lerp(step.from.z,raw.z,ease);raw.y=ground(raw.x,raw.z)+.12*Math.sin(t*Math.PI);
@@ -105,5 +110,10 @@ export function animateAuthoredCharacter(root,state,dt,ground=()=>0){
   rig.legs.forEach((leg,j)=>{if(!leg.contact)return;const h=leg.hip.getWorldPosition(new THREE.Vector3()),k=leg.knee.getWorldPosition(new THREE.Vector3()),a=leg.foot.getWorldPosition(new THREE.Vector3()),length=h.distanceTo(k)+k.distanceTo(a)-.02,offset=soleWorld(leg).sub(a).applyQuaternion(leg.foot.getWorldQuaternion(new THREE.Quaternion()).invert()).applyQuaternion(orientations[j]),target=targets[j].clone().sub(offset),horizontal=(h.x-target.x)**2+(h.z-target.z)**2;drop=Math.max(drop,h.y-target.y-Math.sqrt(Math.max(.01,length*length-horizontal)));});
   if(drop>0){const pelvis=rig.avatar.getObjectByName('pelvis'),position=pelvis.getWorldPosition(new THREE.Vector3());position.y-=Math.min(.6,drop);pelvis.position.copy(pelvis.parent.worldToLocal(position));root.updateMatrixWorld(true);}
   rig.legs.forEach((leg,j)=>solveLeg(leg,targets[j],orientations[j]));root.updateMatrixWorld(true);rig.worldFeet=targets;
+  // Aim the wrist after grounding the full body; the two-bone solve clamps to natural arm length.
+  if(lowPickup&&state.gatherTarget&&['x','y','z'].every(k=>Number.isFinite(state.gatherTarget[k]))){
+    const hand=rig.avatar.getObjectByName('hand_r'),target=hand.getWorldPosition(new THREE.Vector3()).lerp(new THREE.Vector3(state.gatherTarget.x,state.gatherTarget.y,state.gatherTarget.z),Math.sin(plan.actionProgress*Math.PI));
+    solveLeg({hip:rig.shoulders[1],knee:rig.elbows[1],foot:hand,sole:new THREE.Vector3()},target,hand.getWorldQuaternion(new THREE.Quaternion()));root.updateMatrixWorld(true);
+  }
 }
 export function authorSolePoints(root){return root.userData.legs.map(soleWorld);}
