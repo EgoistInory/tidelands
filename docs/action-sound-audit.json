@@ -1,0 +1,53 @@
+{
+  "verified": true,
+  "boundedActionSoundDelivered": true,
+  "archive": "tidelands-m5-2026-10-24-action-sound.zip",
+  "archiveSha256": "6415ac1e97f2a03efb56f929257dc46e40dc49759ad2e38a42ae41d8737d1aa9",
+  "archiveBytes": 15062577,
+  "runtimeInputs": 94,
+  "changedInputs": [
+    "README.md",
+    "src/audio.js",
+    "src/main.js"
+  ],
+  "extractedPath": "/private/tmp/tidelands-delivery-kntu1hz_/tidelands-local",
+  "focusedTests": 26,
+  "fullTests": 307,
+  "nativeFixtures": 6,
+  "imagesViewed": 4,
+  "pcmSeconds": 26,
+  "pcmPeaks": {
+    "isolated-actions": 0.02013518288731575,
+    "continuous-mix": 0.04534299671649933
+  },
+  "audibleQualityAccepted": false,
+  "ordinaryDesktopRestored": true,
+  "ordinary390ReloadRestored": false,
+  "ordinaryNewJsonExported": false,
+  "graphicsRuntimeSourcesUnchanged": true,
+  "currentExactSourceGpuAccepted": false,
+  "currentExactSourceEnduranceAccepted": false,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "scope": "Production cue identity/result scheduling and native offline PCM, not audition or final mixing. Six isolated native-input fixtures, not an uninterrupted ordinary journey. Current desktop restore only. Original graphical GPU samples stay at their captured SHA.",
+  "files": {
+    "docs/action-sound-continuous-mix.wav": "a83e2ce202973ce81d5cb64e557e436cd730201c52fd1c289557adbccc23fd87",
+    "docs/action-sound-fiber-main.jpg": "845ffee5786be8228c8800f0b4a4031bbf6418196a963e8c2e4962dce40bfe4d",
+    "docs/action-sound-focused.txt": "040e12b501720224b5f1dab441c3afc4acc32db05552a6256340a97bab14bc9f",
+    "docs/action-sound-full-tests.txt": "8b2a9769ba44bcdd9ae18376217970ec936ff51239b58f0b71d06c70fcf1d62a",
+    "docs/action-sound-hurt-mobile-main.jpg": "1e5822cf72c5dac9694a2e1c439e7556f924e3c356db7f276d526299ea454284",
+    "docs/action-sound-isolated-actions.wav": "3babf041fe33e912e0510f554678ee74cb36e8427f1e387d98349b9dc10f2067",
+    "docs/action-sound-main-browser.json": "b2700fabd53f9ca10c5094b7dc4efec0ed609e3200c01b6ed103292248a242d1",
+    "docs/action-sound-package-browser.json": "e4311ee3ccc7039ace3f4e38ba516c2e645d989dec2e362eaddb02faf03f0cdf",
+    "docs/action-sound-package-ordinary.jpg": "7d34d424af06a09d843f6b35a577d934819b2f2d22c6e00c2924b119843719d4",
+    "docs/action-sound-pcm-browser.json": "8a07932dcead2f54dd01e32f1ce9d3f9caca703023105df8c9d94734ab84b817",
+    "docs/action-sound-red.txt": "eb7dcaa7877a655512a49437dccf7a1de29cefb14ec60a1c094d4563703b9a29",
+    "docs/action-sound-tree-main.jpg": "b9a5771af02888e47ef6039e6809d49a1bb655b9629a497d569a16958b0556e9",
+    "tests/action-sound-main-review.html": "941c0654831e5a0d3e9698ea852b4d20ca95f85a5b0ecbcccf7ee0ebde0ed9fb",
+    "tests/action-sound-render.html": "65b3759a2803ea6e6719d9422752c3aa8727ebc0f94bc5752597ee710bbf41c6",
+    "tests/action-sound.test.js": "9ffa29c6e20bbbf1312c5e35be41f0b7a1001ae1541feb1fe011c93fcd667674",
+    "tools/verify_action_sound.py": "1661a6be9cda9a6cca6bc9ff4ba36adbf335099c9c661249994b4e10c98840c6",
+    "docs/ACTION-SOUND-DELIVERY.md": "c8a495df688d1055a703e0a5cf97a6eb67dfb25e926d63b83c5ff479a5cadc24",
+    "docs/tidelands-m5-2026-10-24-action-sound-verification.json": "6905cdfea44ac8f8e30edf244b33071d789f50fb812c6a9364cb136be13d0a17"
+  }
+}

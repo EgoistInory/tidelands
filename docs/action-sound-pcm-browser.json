@@ -1,0 +1,525 @@
+{
+  "complete": true,
+  "reports": [
+    {
+      "mode": "isolated-actions",
+      "sourceSha256": "248ccb9aed68219735d7ed5b84ce3431377a8e98d4219ecb621da2d2a8931567",
+      "sampleRate": 48000,
+      "seconds": 14,
+      "peak": 0.02013518288731575,
+      "rms": 0.0007366445967573657,
+      "crossings": 5348,
+      "windows": [
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "tree"
+          },
+          "time": 0.5013333333333333,
+          "peak": 0.01842876523733139,
+          "rms": 0.001415987315301767,
+          "crossings": 220
+        },
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "stone"
+          },
+          "time": 1.5013333333333334,
+          "peak": 0.010245058685541153,
+          "rms": 0.0007147838972341709,
+          "crossings": 674
+        },
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "crystal"
+          },
+          "time": 2.501333333333333,
+          "peak": 0.014112623408436775,
+          "rms": 0.0006442689657931591,
+          "crossings": 910
+        },
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "fiber"
+          },
+          "time": 3.501333333333333,
+          "peak": 0.006768337916582823,
+          "rms": 0.00032601574687058694,
+          "crossings": 234
+        },
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "shell"
+          },
+          "time": 4.501333333333333,
+          "peak": 0.006768810097128153,
+          "rms": 0.0002849560257997047,
+          "crossings": 434
+        },
+        {
+          "kind": "swing",
+          "options": {
+            "weapon": "hand"
+          },
+          "time": 5.501333333333333,
+          "peak": 0.02013518288731575,
+          "rms": 0.0010079437386350716,
+          "crossings": 300
+        },
+        {
+          "kind": "swing",
+          "options": {
+            "weapon": "axe"
+          },
+          "time": 6.501333333333333,
+          "peak": 0.011815222911536694,
+          "rms": 0.0007896420666041317,
+          "crossings": 438
+        },
+        {
+          "kind": "swing",
+          "options": {
+            "weapon": "sword"
+          },
+          "time": 7.501333333333333,
+          "peak": 0.01043034065514803,
+          "rms": 0.0006034172460544691,
+          "crossings": 786
+        },
+        {
+          "kind": "hit",
+          "options": {
+            "enemyType": "boar"
+          },
+          "time": 8.501333333333333,
+          "peak": 0.016229627653956413,
+          "rms": 0.0012850136573076215,
+          "crossings": 178
+        },
+        {
+          "kind": "hit",
+          "options": {
+            "enemyType": "crab"
+          },
+          "time": 9.501333333333333,
+          "peak": 0.01006866991519928,
+          "rms": 0.0005915182053516436,
+          "crossings": 334
+        },
+        {
+          "kind": "hurt",
+          "options": {},
+          "time": 10.501333333333333,
+          "peak": 0.018876951187849045,
+          "rms": 0.001956856927791186,
+          "crossings": 140
+        },
+        {
+          "kind": "enemy-windup",
+          "options": {
+            "enemyType": "boar"
+          },
+          "time": 11.501333333333333,
+          "peak": 0.00638589495792985,
+          "rms": 0.0006749344938810484,
+          "crossings": 182
+        },
+        {
+          "kind": "enemy-windup",
+          "options": {
+            "enemyType": "crab"
+          },
+          "time": 12.501333333333333,
+          "peak": 0.00522839929908514,
+          "rms": 0.0005288310336296438,
+          "crossings": 518
+        }
+      ],
+      "events": [
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "tree"
+          },
+          "time": 0.5013333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "stone"
+          },
+          "time": 1.5013333333333334,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "crystal"
+          },
+          "time": 2.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "fiber"
+          },
+          "time": 3.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "shell"
+          },
+          "time": 4.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "swing",
+          "options": {
+            "weapon": "hand"
+          },
+          "time": 5.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "swing",
+          "options": {
+            "weapon": "axe"
+          },
+          "time": 6.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "swing",
+          "options": {
+            "weapon": "sword"
+          },
+          "time": 7.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "hit",
+          "options": {
+            "enemyType": "boar"
+          },
+          "time": 8.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "hit",
+          "options": {
+            "enemyType": "crab"
+          },
+          "time": 9.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "hurt",
+          "options": {},
+          "time": 10.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "enemy-windup",
+          "options": {
+            "enemyType": "boar"
+          },
+          "time": 11.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "enemy-windup",
+          "options": {
+            "enemyType": "crab"
+          },
+          "time": 12.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        }
+      ],
+      "remainingBeforeDispose": 0,
+      "disposed": true
+    },
+    {
+      "mode": "continuous-mix",
+      "sourceSha256": "248ccb9aed68219735d7ed5b84ce3431377a8e98d4219ecb621da2d2a8931567",
+      "sampleRate": 48000,
+      "seconds": 12,
+      "peak": 0.04534299671649933,
+      "rms": 0.0034460602477889347,
+      "crossings": 10976,
+      "windows": [
+        {
+          "kind": "step",
+          "options": {
+            "surface": "grass"
+          },
+          "time": 0.5013333333333333,
+          "peak": 0.01458787266165018,
+          "rms": 0.0035338205949494166,
+          "crossings": 1690
+        },
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "tree"
+          },
+          "time": 1.5013333333333334,
+          "peak": 0.021320482715964317,
+          "rms": 0.001708115780675977,
+          "crossings": 326
+        },
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "stone"
+          },
+          "time": 2.501333333333333,
+          "peak": 0.01305636391043663,
+          "rms": 0.0012535086505003317,
+          "crossings": 356
+        },
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "fiber"
+          },
+          "time": 3.501333333333333,
+          "peak": 0.02566332183778286,
+          "rms": 0.008331890094392226,
+          "crossings": 2081
+        },
+        {
+          "kind": "swing",
+          "options": {
+            "weapon": "sword"
+          },
+          "time": 4.501333333333333,
+          "peak": 0.010962573811411858,
+          "rms": 0.0009706558754187762,
+          "crossings": 484
+        },
+        {
+          "kind": "hit",
+          "options": {
+            "enemyType": "crab"
+          },
+          "time": 5.501333333333333,
+          "peak": 0.014046339318156242,
+          "rms": 0.0011459061892669696,
+          "crossings": 288
+        },
+        {
+          "kind": "enemy-windup",
+          "options": {
+            "enemyType": "boar"
+          },
+          "time": 6.501333333333333,
+          "peak": 0.028502410277724266,
+          "rms": 0.007788380388559904,
+          "crossings": 2323
+        },
+        {
+          "kind": "hurt",
+          "options": {},
+          "time": 7.501333333333333,
+          "peak": 0.01676604337990284,
+          "rms": 0.0021419657431315303,
+          "crossings": 290
+        },
+        {
+          "kind": "pause",
+          "options": {},
+          "time": 8.501333333333333,
+          "peak": 0.00134126259945333,
+          "rms": 0.00018579313949096865,
+          "crossings": 216
+        },
+        {
+          "kind": "food",
+          "options": {
+            "menu": true
+          },
+          "time": 9.501333333333333,
+          "peak": 0.04534299671649933,
+          "rms": 0.00531540945974549,
+          "crossings": 198
+        },
+        {
+          "kind": "mute",
+          "options": {},
+          "time": 10.501333333333333,
+          "peak": 0,
+          "rms": 0,
+          "crossings": 0
+        }
+      ],
+      "events": [
+        {
+          "kind": "step",
+          "options": {
+            "surface": "grass"
+          },
+          "time": 0.5013333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "tree"
+          },
+          "time": 1.5013333333333334,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "stone"
+          },
+          "time": 2.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "gather",
+          "options": {
+            "surface": "fiber"
+          },
+          "time": 3.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "swing",
+          "options": {
+            "weapon": "sword"
+          },
+          "time": 4.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "hit",
+          "options": {
+            "enemyType": "crab"
+          },
+          "time": 5.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "enemy-windup",
+          "options": {
+            "enemyType": "boar"
+          },
+          "time": 6.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "hurt",
+          "options": {},
+          "time": 7.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": true,
+          "enabled": true
+        },
+        {
+          "kind": "pause",
+          "options": {},
+          "time": 8.501333333333333,
+          "before": 0,
+          "after": 0,
+          "active": false,
+          "enabled": true
+        },
+        {
+          "kind": "food",
+          "options": {
+            "menu": true
+          },
+          "time": 9.501333333333333,
+          "before": 0,
+          "after": 1,
+          "active": false,
+          "enabled": true
+        },
+        {
+          "kind": "mute",
+          "options": {},
+          "time": 10.501333333333333,
+          "before": 0,
+          "after": 0,
+          "active": false,
+          "enabled": false
+        }
+      ],
+      "remainingBeforeDispose": 0,
+      "disposed": true
+    }
+  ],
+  "scope": "Native offline PCM, sequential real render clock, production local nodes; not audition, ordinary main path or device proof.",
+  "console": []
+}

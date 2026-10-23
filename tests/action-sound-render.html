@@ -1,0 +1,34 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>动作声与连续混音PCM核验</title>
+<style>body{font:15px system-ui;max-width:900px;margin:24px auto;padding:12px}button{padding:12px}pre{white-space:pre-wrap;max-height:420px;overflow:auto}audio{width:100%}</style>
+<h1>本地生产音频：材质、装备与受击</h1><p>原生48kHz离线时钟与生产节点。分离声音样本和含环境的连续事件混音。暂停/静音/节点回收有数据，不代表试听或普通主线。</p>
+<button id="render">渲染并保存可试听WAV</button><pre id="result">尚未运行</pre><div id="players"></div>
+<script type="module">
+import {GameAudio} from '../src/audio.js';
+import {terrain} from '../src/world.js';
+function stats(data,from,to){let peak=0,sum=0,crossings=0;for(let i=from;i<to;i++){const x=data[i];if(!Number.isFinite(x))throw Error('Non-finite PCM');peak=Math.max(peak,Math.abs(x));sum+=x*x;if(i>from&&(x>=0)!==(data[i-1]>=0))crossings++;}return {peak,rms:Math.sqrt(sum/(to-from)),crossings};}
+function wav(data,rate){const bytes=new Uint8Array(44+data.length*2),v=new DataView(bytes.buffer),word=(p,s)=>[...s].forEach((c,i)=>v.setUint8(p+i,c.charCodeAt(0)));word(0,'RIFF');v.setUint32(4,bytes.length-8,true);word(8,'WAVEfmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,rate,true);v.setUint32(28,rate*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);word(36,'data');v.setUint32(40,data.length*2,true);for(let i=0;i<data.length;i++)v.setInt16(44+i*2,Math.max(-1,Math.min(1,data[i]))*32767,true);let binary='';for(let i=0;i<bytes.length;i+=8192)binary+=String.fromCharCode(...bytes.subarray(i,i+8192));return 'data:audio/wav;base64,'+btoa(binary);}
+document.querySelector('#render').onclick=async()=>{
+ const button=document.querySelector('#render'),output=document.querySelector('#result'),players=document.querySelector('#players');button.disabled=true;const reports=[];players.replaceChildren();
+ try{
+ const source=await(await fetch('../src/audio.js',{cache:'no-store'})).arrayBuffer(),sourceSha256=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',source)),b=>b.toString(16).padStart(2,'0')).join('');
+ for(const mode of ['isolated-actions','continuous-mix']){
+  const rate=48000,seconds=mode==='isolated-actions'?14:12,ctx=new OfflineAudioContext(1,rate*seconds,rate),adapter=new Proxy(ctx,{get(t,k){if(k==='state')return 'running';if(k==='resume'||k==='close')return async()=>{};const v=Reflect.get(t,k,t);return typeof v==='function'?v.bind(t):v;}}),audio=new GameAudio({contextFactory:()=>adapter});audio.setActive(true);await audio.unlock();
+  const player={x:160,z:-95},height=terrain(player.x,player.z);if(mode==='isolated-actions')for(const name of ['wind','surf','birds','insects'])audio[name].gain.value=0;else audio.update(player,240,height,0);
+  const sequence=mode==='isolated-actions'?[
+   ['gather',{surface:'tree'}],['gather',{surface:'stone'}],['gather',{surface:'crystal'}],['gather',{surface:'fiber'}],['gather',{surface:'shell'}],['swing',{weapon:'hand'}],['swing',{weapon:'axe'}],['swing',{weapon:'sword'}],['hit',{enemyType:'boar'}],['hit',{enemyType:'crab'}],['hurt',{}],['enemy-windup',{enemyType:'boar'}],['enemy-windup',{enemyType:'crab'}]
+  ]:[['step',{surface:'grass'}],['gather',{surface:'tree'}],['gather',{surface:'stone'}],['gather',{surface:'fiber'}],['swing',{weapon:'sword'}],['hit',{enemyType:'crab'}],['enemy-windup',{enemyType:'boar'}],['hurt',{}],['pause',{}],['food',{menu:true}],['mute',{}]];
+  const events=[],waits=[];for(let i=0;i<sequence.length;i++)waits.push(ctx.suspend(i+0.5).then(async()=>{
+   const [kind,options]=sequence[i],before=audio.sources.size;
+   if(mode==='continuous-mix'&&kind!=='pause'&&kind!=='mute')audio.update(player,240+ctx.currentTime,height,0);
+   if(kind==='pause'){audio.setActive(false);audio.effect('hurt');}
+   else if(kind==='mute'){audio.setEnabled(false);audio.effect('quest');}
+   else audio.effect(kind,options);
+   events.push({kind,options,time:ctx.currentTime,before,after:audio.sources.size,active:audio.active,enabled:audio.enabled});await ctx.resume();
+  }));
+  const rendered=await ctx.startRendering();await Promise.all(waits);const data=rendered.getChannelData(0),summary=stats(data,0,data.length),windows=events.map(e=>({kind:e.kind,options:e.options,time:e.time,...stats(data,Math.round(e.time*rate),Math.round((e.time+.65)*rate))})),remaining=audio.sources.size;await audio.dispose();
+  const link=document.createElement('a');link.dataset.mode=mode;link.textContent=mode+' WAV';link.href=wav(data,rate);link.download='tidelands-action-sound-'+mode+'.wav';const media=document.createElement('audio');media.controls=true;media.src=link.href;players.append(link,media);
+  reports.push({mode,sourceSha256,sampleRate:rate,seconds,...summary,windows,events,remainingBeforeDispose:remaining,disposed:audio.context===null&&audio.sources.size===0});output.textContent=JSON.stringify({complete:false,reports});
+ }output.textContent=JSON.stringify({complete:true,reports,scope:'Native offline PCM, sequential real render clock, production local nodes; not audition, ordinary main path or device proof.'},null,2);
+ }catch(error){output.textContent=JSON.stringify({complete:false,error:error.stack,reports});}finally{button.disabled=false;}
+};
+</script></html>

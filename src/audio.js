@@ -61,7 +61,7 @@ export class GameAudio{
   applyVolume(){if(this.context){this.master.gain.setTargetAtTime(this.enabled&&this.active?.35:0,this.context.currentTime,.08);this.ui.gain.setTargetAtTime(this.enabled?.35:0,this.context.currentTime,.02);}}
   setActive(active){this.active=active;this.applyVolume();if(!active){this.lastPosition=null;this.lastFootfallCount=null;this.stepDistance=0;}}
   setEnabled(enabled){this.enabled=enabled;this.applyVolume();}
-  effect(kind,{menu=false,surface='grass',enemyType='boar',pan=0,volume=1}={}){
+  effect(kind,{menu=false,surface='grass',enemyType='boar',weapon='hand',pan=0,volume=1}={}){
     const ui=menu&&['craft','food'].includes(kind);
     const tone=['quest','craft','food'].includes(kind),ctx=this.context;
     const level=tone?1:Number.isFinite(volume)?Math.max(0,Math.min(1,volume)):0;
@@ -69,10 +69,20 @@ export class GameAudio{
     if(!level||!ctx||ctx.state!=='running'||!this.enabled||(!this.active&&!ui)||this.sources.size>=12||(!tone&&this.sources.size>=9))return;
     const node=tone?ctx.createOscillator():ctx.createBufferSource(),gain=ctx.createGain(),filter=ctx.createBiquadFilter(),now=ctx.currentTime;
     const sandy=kind==='step'&&surface==='sand',windup=kind==='enemy-windup';
-    const length=windup?.3:kind==='quest'?.65:kind==='swing'?.16:kind==='step'?(sandy?.13:.09):.22;
+    let length=windup?.3:kind==='quest'?.65:kind==='swing'?.16:kind==='step'?(sandy?.13:.09):.22;
+    let frequency=windup?(enemyType==='crab'?720:180):tone?2800:kind==='splash'?1200:kind==='swing'?1600:kind==='hit'?260:kind==='gather'?700:sandy?520:140;
+    let peak=windup?.22:kind==='step'?.16:tone?.13:.45;
+    // Use the confirmed material/action identity without adding voices or buffers.
+    if(kind==='gather'){
+      if(surface==='tree'){frequency=340;length=.22;}
+      else if(surface==='stone'||surface==='crystal'){frequency=surface==='crystal'?2400:1600;length=.17;}
+      else if(['berry','fiber','shell'].includes(surface)){frequency=surface==='shell'?1900:950;length=.10;peak=.24;}
+    }else if(kind==='swing'){frequency=weapon==='sword'?2100:weapon==='axe'?1050:650;}
+    else if(kind==='hit'&&enemyType==='crab'){frequency=1100;length=.12;peak=.42;}
+    else if(kind==='hurt'){frequency=95;length=.34;peak=.50;}
     if(tone){node.type='sine';node.frequency.setValueAtTime(kind==='quest'?440:kind==='craft'?660:330,now);node.frequency.exponentialRampToValueAtTime(kind==='quest'?880:440,now+length);}else node.buffer=this.noise;
-    filter.type=tone?'lowpass':'bandpass';filter.frequency.value=windup?(enemyType==='crab'?720:180):tone?2800:kind==='splash'?1200:kind==='swing'?1600:kind==='hit'?260:kind==='gather'?700:sandy?520:140;filter.Q.value=.7;
-    gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime((windup?.22:kind==='step'?.16:tone?.13:.45)*level,now+(windup?.04:.008));gain.gain.exponentialRampToValueAtTime(.0001,now+length);
+    filter.type=tone?'lowpass':'bandpass';filter.frequency.value=frequency;filter.Q.value=.7;
+    gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(peak*level,now+(windup?.04:.008));gain.gain.exponentialRampToValueAtTime(.0001,now+length);
     const spatial=!tone&&(windup||pan!==0)&&Number.isFinite(pan)&&ctx.createStereoPanner?ctx.createStereoPanner():null;
     node.connect(filter);filter.connect(gain);
     if(spatial){spatial.pan.setValueAtTime(Math.max(-.85,Math.min(.85,pan)),now);gain.connect(spatial);spatial.connect(this.master);}else gain.connect(ui?this.ui:this.master);
