@@ -1,0 +1,102 @@
+{
+  "kind": "bounded-authored-nature-spike",
+  "integrityPassed": true,
+  "candidateAccepted": false,
+  "productionIntegrated": false,
+  "reason": "Additional authored silhouette detail does not resolve sparse scene composition; darker dense crowns and flat pine cards regress the current visual direction. Candidate lacks production wind and matching camera bounds.",
+  "unchangedRuntimeInputs": 93,
+  "deliverySha256": "9a234a43d2977822caf62d3eb06057e7df9c2aad9d235a762e5c5acd4a7ba0ca",
+  "archiveCrcVerified": true,
+  "sourceFreeModelCount": 68,
+  "preparedModels": 11,
+  "preparedFiles": 31,
+  "preparedBytes": 3404560,
+  "browserRows": 9,
+  "imagesViewed": 9,
+  "movement": {
+    "ready": true,
+    "art": "candidate",
+    "scene": "highland",
+    "time": 243.0000000000024,
+    "position": [
+      -64.5000000000006,
+      -164.49999999999932
+    ],
+    "hp": 100,
+    "camera": [
+      -63.61339441867775,
+      13.29566140915956,
+      -151.9260123303951
+    ],
+    "frames": 180,
+    "running": false,
+    "hidden": false,
+    "distance": 21.000000000000085,
+    "worldUnchanged": true,
+    "budget": {
+      "trees": 309,
+      "instances": {
+        "CommonTree_1": 83,
+        "CommonTree_2": 91,
+        "CommonTree_3": 88,
+        "Pine_1": 20,
+        "Pine_2": 12,
+        "Pine_3": 15,
+        "Bush_Common": 152,
+        "Fern_1": 155,
+        "Plant_1": 152,
+        "Flower_3_Group": 27,
+        "Grass_Wispy_Short": 121
+      },
+      "batches": 18,
+      "triangles": 1819418,
+      "materials": 7
+    },
+    "render": {
+      "calls": 181,
+      "triangles": 2710587,
+      "textures": 54,
+      "geometries": 207
+    },
+    "raf": {
+      "samples": 179,
+      "p95": 18.60000000000582,
+      "max": 66.80000000000291
+    },
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      855
+    ],
+    "glError": 0,
+    "scope": "Isolated authored tree+understory candidate. Production terrain, rules, camera obstacles and cast; declared q6/location/camp fixtures, no persistence/audio. Old camera bounds deliberately unchanged: candidate silhouette/clearance not accepted. No GPU, real device or final quality acceptance."
+  },
+  "inputSha256": {
+    "tools/prepare_nature_candidate.py": "a5461babec44a04da72ce881fa7f9ac1c3b37f7cd481cf52dbb8ee6f7faa486f",
+    "tools/verify_nature_candidate.py": "97bd179f1d159cb6d6a0a2ce083ff81016210e92ac2c556cc753cde1a7762cb1",
+    "tests/authored-nature-review.html": "965cc7be3dbeb0e6870465da3bb74ccba9c3919adf22c599e18e7e1a5b249839",
+    "tests/authored-nature-review.js": "6c54cf9301d3cd3facbf1e74647ac4da459460136b805986a9512c152d625995",
+    "docs/nature-candidate-source.json": "ba3a61e565611dd0fa80d1458f53cdbbad0f355c1cde83fc58cda8627e6fee87",
+    "docs/nature-candidate-browser.json": "27c15f20a4eb3210ebf8ce051217ab6385ef4fcf44a4d17eee272d14a6adcd22",
+    "docs/nature-baseline-coast.jpg": "102d2e1b0e092de5d132fbeb0462f08d635aaad840be5a857fa3ea6db6381400",
+    "docs/nature-candidate-coast.jpg": "4a289e20e3c87a3694859dc3f4d527ec564940a4ac6d7318fd38c201aef33722",
+    "docs/nature-baseline-forest.jpg": "5a7d0965f1e7a40b78c44267b65daf0854f04ad5a47ea7cb4bff303958a2bb7e",
+    "docs/nature-candidate-forest.jpg": "47e40951d58fffc3f9a4f4a168f5b37d74049554294c7686804024a32dc3159c",
+    "docs/nature-baseline-highland.jpg": "5efe1ef01f21c6e55bcad3d2df2bcdaea9fe91c041f491b2ca9ee1a690cb290c",
+    "docs/nature-candidate-highland.jpg": "cf604fd9fdac551d179f9ef06a70b1faf84e39e9a1210d1b5e136358086d4046",
+    "docs/nature-candidate-highland-move.jpg": "ad1e961beb496fe4612c874ac8950cf61585d7779c20661b705d14e9b8001ff3",
+    "docs/nature-baseline-camp-mobile.jpg": "41ae96795d717e7c62b1fa70d53189e4e9a8062fb9c1d5aa81b5ab64bd90289b",
+    "docs/nature-candidate-camp-mobile.jpg": "7f75052e6211865e10e5e6d1f0877275bc9323108f6cac3a344b6f074ce9a7fa"
+  },
+  "m5Complete": false,
+  "fullGoalComplete": false,
+  "limits": [
+    "Frame scheduling is not a GPU performance result.",
+    "Static comparison includes both resident art pools; texture counts do not prove memory cost or leaks.",
+    "Old camera obstacles are intentional for the isolated comparison, not clearance acceptance.",
+    "No production modifications, normal-save mutation, new package, long-run, physical device or audio acceptance."
+  ]
+}
