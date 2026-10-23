@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: confirmed wood, rock and soft pickups have distinct bounded physical cues
+ok 1 - confirmed wood, rock and soft pickups have distinct bounded physical cues
+  ---
+  duration_ms: 0.919333
+  type: 'test'
+  ...
+# Subtest: weapon swing and confirmed shell/flesh hit preserve their physical identity
+ok 2 - weapon swing and confirmed shell/flesh hit preserve their physical identity
+  ---
+  duration_ms: 0.25175
+  type: 'test'
+  ...
+# Subtest: incoming injury has a longer lower cue than outgoing impact without bypassing mute, pause or capacity
+ok 3 - incoming injury has a longer lower cue than outgoing impact without bypassing mute, pause or capacity
+  ---
+  duration_ms: 0.111417
+  type: 'test'
+  ...
+# Subtest: mute prevents initialization and pause fades master to silence
+ok 4 - mute prevents initialization and pause fades master to silence
+  ---
+  duration_ms: 1.901791
+  type: 'test'
+  ...
+# Subtest: effects are bounded and disconnect on completion; footsteps follow distance
+ok 5 - effects are bounded and disconnect on completion; footsteps follow distance
+  ---
+  duration_ms: 0.979666
+  type: 'test'
+  ...
+# Subtest: partial initialization and resume failures release context and allow a retry
+ok 6 - partial initialization and resume failures release context and allow a retry
+  ---
+  duration_ms: 1.991083
+  type: 'test'
+  ...
+# Subtest: menu success cues play while world is paused, and mute silences both channels
+ok 7 - menu success cues play while world is paused, and mute silences both channels
+  ---
+  duration_ms: 0.628459
+  type: 'test'
+  ...
+# Subtest: busy physical actions leave room for quest, crafting and food confirmation cues
+ok 8 - busy physical actions leave room for quest, crafting and food confirmation cues
+  ---
+  duration_ms: 1.085083
+  type: 'test'
+  ...
+# Subtest: ambient noise loops without a sample discontinuity or DC offset
+ok 9 - ambient noise loops without a sample discontinuity or DC offset
+  ---
+  duration_ms: 0.374666
+  type: 'test'
+  ...
+# Subtest: physical actions vary noise slices without truncating tails or allocating new buffers
+ok 10 - physical actions vary noise slices without truncating tails or allocating new buffers
+  ---
+  duration_ms: 0.801334
+  type: 'test'
+  ...
+# Subtest: distance fallback uses walking spacing, coast selects sand, swimming keeps splash spacing
+ok 11 - distance fallback uses walking spacing, coast selects sand, swimming keeps splash spacing
+  ---
+  duration_ms: 0.288625
+  type: 'test'
+  ...
+# Subtest: land audio follows actual rendered ankle touchdowns at walking and running speeds
+ok 12 - land audio follows actual rendered ankle touchdowns at walking and running speeds
+  ---
+  duration_ms: 165.436958
+  type: 'test'
+  ...
+# Subtest: contact counters suppress initial, replayed, paused and teleport steps while idle landings can sound
+ok 13 - contact counters suppress initial, replayed, paused and teleport steps while idle landings can sound
+  ---
+  duration_ms: 0.449
+  type: 'test'
+  ...
+# Subtest: coastal surf fades through the shore elevation band without consuming effect voices
+ok 14 - coastal surf fades through the shore elevation band without consuming effect voices
+  ---
+  duration_ms: 0.496792
+  type: 'test'
+  ...
+# Subtest: surf shares world mute/pause and releases all persistent nodes on disposal
+ok 15 - surf shares world mute/pause and releases all persistent nodes on disposal
+  ---
+  duration_ms: 0.21525
+  type: 'test'
+  ...
+# Subtest: ecology changes with rendered daylight and island habitat, fading out at sea
+ok 16 - ecology changes with rendered daylight and island habitat, fading out at sea
+  ---
+  duration_ms: 0.221833
+  type: 'test'
+  ...
+# Subtest: ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices
+ok 17 - ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices
+  ---
+  duration_ms: 21.449125
+  type: 'test'
+  ...
+# Subtest: ecology shares world mute/pause and releases nodes on normal or failed initialization
+ok 18 - ecology shares world mute/pause and releases nodes on normal or failed initialization
+  ---
+  duration_ms: 0.623042
+  type: 'test'
+  ...
+# Subtest: enemy warnings distinguish body types and reuse bounded, pausable local noise
+ok 19 - enemy warnings distinguish body types and reuse bounded, pausable local noise
+  ---
+  duration_ms: 0.430417
+  type: 'test'
+  ...
+# Subtest: an audible camp follows the nearest real fire and camera direction without per-building allocations
+ok 20 - an audible camp follows the nearest real fire and camera direction without per-building allocations
+  ---
+  duration_ms: 16.559125
+  type: 'test'
+  ...
+# Subtest: camp ambience respects pause/mute and releases its whole graph with a centered fallback
+ok 21 - camp ambience respects pause/mute and releases its whole graph with a centered fallback
+  ---
+  duration_ms: 1.526
+  type: 'test'
+  ...
+# Subtest: a failed fire panner initialization releases the partially built graph and retries cleanly
+ok 22 - a failed fire panner initialization releases the partially built graph and retries cleanly
+  ---
+  duration_ms: 1.367375
+  type: 'test'
+  ...
+# Subtest: enemy sound direction follows screen right and distance fades continuously
+ok 23 - enemy sound direction follows screen right and distance fades continuously
+  ---
+  duration_ms: 4.9585
+  type: 'test'
+  ...
+# Subtest: spatial effect routes and releases one bounded panner; muted cues allocate none
+ok 24 - spatial effect routes and releases one bounded panner; muted cues allocate none
+  ---
+  duration_ms: 0.342416
+  type: 'test'
+  ...
+# Subtest: weather wind is bounded, deterministic and continuous across cycle boundaries
+ok 25 - weather wind is bounded, deterministic and continuous across cycle boundaries
+  ---
+  duration_ms: 2.654917
+  type: 'test'
+  ...
+# Subtest: leaf and grass color and shadow share stable wind strength without changing time phase
+ok 26 - leaf and grass color and shadow share stable wind strength without changing time phase
+  ---
+  duration_ms: 35.671792
+  type: 'test'
+  ...
+# Subtest: production water and atmosphere share bounded wind and reuse their uniforms
+ok 27 - production water and atmosphere share bounded wind and reuse their uniforms
+  ---
+  duration_ms: 40.8065
+  type: 'test'
+  ...
+# Subtest: wind and surf audio targets respond to weather while pause and shared buffers remain intact
+ok 28 - wind and surf audio targets respond to weather while pause and shared buffers remain intact
+  ---
+  duration_ms: 3.894291
+  type: 'test'
+  ...
+# Subtest: world terrain footsteps follow visible contacts across downhill turns, blocking and shore transitions
+ok 29 - world terrain footsteps follow visible contacts across downhill turns, blocking and shore transitions
+  ---
+  duration_ms: 193.457
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 272.264042

@@ -1,0 +1,99 @@
+{
+  "complete": true,
+  "sourceSha256": "41bd278b1287a0847a9c47ce19da4c3a02b8574a64b4e2b202690e8a3a561ea9",
+  "rate": 48000,
+  "seconds": 20,
+  "channels": 2,
+  "peak": 0.030763553455471992,
+  "windows": [
+    {
+      "stage": "near-right",
+      "time": 0.5013333333333333,
+      "active": true,
+      "enabled": true,
+      "left": {
+        "rms": 0.00031153258490565006,
+        "peak": 0.0026049634907394648
+      },
+      "right": {
+        "rms": 0.002631731126853617,
+        "peak": 0.02200922928750515
+      }
+    },
+    {
+      "stage": "near-left",
+      "time": 3.501333333333333,
+      "active": true,
+      "enabled": true,
+      "left": {
+        "rms": 0.002737671219303186,
+        "peak": 0.030763553455471992
+      },
+      "right": {
+        "rms": 0.000324082192941271,
+        "peak": 0.003641105955466628
+      }
+    },
+    {
+      "stage": "far",
+      "time": 6.501333333333333,
+      "active": true,
+      "enabled": true,
+      "left": {
+        "rms": 0.00007881494056692001,
+        "peak": 0.0009244257817044854
+      },
+      "right": {
+        "rms": 0.0006657425828461293,
+        "peak": 0.0078104352578520775
+      }
+    },
+    {
+      "stage": "no-fire",
+      "time": 9.501333333333333,
+      "active": true,
+      "enabled": true,
+      "left": {
+        "rms": 0.0000024174494985769054,
+        "peak": 0.000041741732275113463
+      },
+      "right": {
+        "rms": 0.0000024177395432199377,
+        "peak": 0.00004174764035269618
+      }
+    },
+    {
+      "stage": "paused",
+      "time": 12.501333333333333,
+      "active": false,
+      "enabled": true,
+      "left": {
+        "rms": 0,
+        "peak": 0
+      },
+      "right": {
+        "rms": 0,
+        "peak": 0
+      }
+    },
+    {
+      "stage": "muted",
+      "time": 15.501333333333333,
+      "active": true,
+      "enabled": false,
+      "left": {
+        "rms": 0,
+        "peak": 0
+      },
+      "right": {
+        "rms": 0,
+        "peak": 0
+      }
+    }
+  ],
+  "remainingBeforeDispose": 0,
+  "disposed": true,
+  "fireNodes": 4,
+  "scope": "Native offline isolated camp layer, settled-window stereo/falloff and pause/mute proof; not audition/device/main path.",
+  "console": []
+}

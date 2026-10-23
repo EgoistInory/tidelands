@@ -1,0 +1,48 @@
+TAP version 13
+# Subtest: an audible camp follows the nearest real fire and camera direction without per-building allocations
+not ok 1 - an audible camp follows the nearest real fire and camera direction without per-building allocations
+  ---
+  duration_ms: 2.432875
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/camp-sound.test.js:15:1'
+  failureType: 'testCodeFailure'
+  error: 'a visible burning camp currently has no environmental sound'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/camp-sound.test.js:17:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: camp ambience respects pause/mute and releases its whole graph with a centered fallback
+not ok 2 - camp ambience respects pause/mute and releases its whole graph with a centered fallback
+  ---
+  duration_ms: 6.83
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/camp-sound.test.js:28:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(a.fireSource)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/camp-sound.test.js:31:12)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 65.691625

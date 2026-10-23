@@ -1,0 +1,27 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>营火空间声原生PCM</title>
+<style>body{font:15px system-ui;max-width:920px;margin:24px auto;padding:12px}pre{white-space:pre-wrap;max-height:430px;overflow:auto}audio{display:block;width:100%}button{padding:12px}</style>
+<h1>营火距离、方向与静音</h1><p>生产本地营火层，48kHz双声道离线时钟。其余世界声源显式停止以隔离营火。波形证明信号/定位/余量，不是试听或普通旅程。</p>
+<button id="render">渲染空间营火WAV</button><pre id="result">尚未运行</pre><div id="players"></div>
+<script type="module">
+import {GameAudio} from '../src/audio.js';
+function rms(data,from,to){let sum=0,peak=0;for(let i=from;i<to;i++){const x=data[i];if(!Number.isFinite(x))throw Error('non-finite PCM');sum+=x*x;peak=Math.max(peak,Math.abs(x));}return {rms:Math.sqrt(sum/(to-from)),peak};}
+function wav(channels,rate){const bytes=new Uint8Array(44+channels[0].length*4),v=new DataView(bytes.buffer),word=(p,s)=>[...s].forEach((c,i)=>v.setUint8(p+i,c.charCodeAt(0)));word(0,'RIFF');v.setUint32(4,bytes.length-8,true);word(8,'WAVEfmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,2,true);v.setUint32(24,rate,true);v.setUint32(28,rate*4,true);v.setUint16(32,4,true);v.setUint16(34,16,true);word(36,'data');v.setUint32(40,bytes.length-44,true);for(let i=0;i<channels[0].length;i++)for(let c=0;c<2;c++)v.setInt16(44+i*4+c*2,Math.max(-1,Math.min(1,channels[c][i]))*32767,true);let binary='';for(let i=0;i<bytes.length;i+=8192)binary+=String.fromCharCode(...bytes.subarray(i,i+8192));return 'data:audio/wav;base64,'+btoa(binary);}
+document.querySelector('#render').onclick=async()=>{
+ const button=document.querySelector('#render'),output=document.querySelector('#result');button.disabled=true;
+ try{
+ const raw=await(await fetch('../src/audio.js',{cache:'no-store'})).arrayBuffer(),sourceSha256=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw)),b=>b.toString(16).padStart(2,'0')).join('');
+ const rate=48000,seconds=20,ctx=new OfflineAudioContext(2,seconds*rate,rate),adapter=new Proxy(ctx,{get(t,k){if(k==='state')return 'running';if(k==='resume'||k==='close')return async()=>{};const v=Reflect.get(t,k,t);return typeof v==='function'?v.bind(t):v;}}),a=new GameAudio({contextFactory:()=>adapter});a.setActive(true);await a.unlock();
+ for(const key of ['ambience','surfSource','birdsSource','insectsSource'])a[key].stop();
+ const fire={id:'pcm-fire',type:'campfire',x:2,z:0},events=[],waits=[],stages=['near-right','near-left','far','no-fire','paused','muted'];
+ for(let i=0;i<stages.length;i++)waits.push(ctx.suspend(.5+i*3).then(async()=>{
+  const stage=stages[i],player={x:stage==='far'?-12:0,z:0};
+  if(stage==='paused')a.setActive(false);if(stage==='muted'){a.setActive(true);a.setEnabled(false);}
+  a.update(player,10,5,0,{buildings:stage==='no-fire'?[]:[fire],cameraYaw:stage==='near-left'?Math.PI:0});
+  events.push({stage,time:ctx.currentTime,active:a.active,enabled:a.enabled});await ctx.resume();
+ }));
+ const rendered=await ctx.startRendering();await Promise.all(waits);const channels=[rendered.getChannelData(0),rendered.getChannelData(1)],windows=events.map(e=>({...e,left:rms(channels[0],Math.round((e.time+1)*rate),Math.round((e.time+2.7)*rate)),right:rms(channels[1],Math.round((e.time+1)*rate),Math.round((e.time+2.7)*rate))})),peak=Math.max(...channels.map(c=>rms(c,0,c.length).peak)),nodes=[a.fireSource,a.fireFilter,a.fire,a.firePan];
+ const remaining=a.sources.size;await a.dispose();const link=document.createElement('a');link.id='wav';link.textContent='营火空间声WAV';link.href=wav(channels,rate);link.download='tidelands-camp-sound.wav';const media=document.createElement('audio');media.controls=true;media.src=link.href;document.querySelector('#players').replaceChildren(link,media);
+ output.textContent=JSON.stringify({complete:true,sourceSha256,rate,seconds,channels:2,peak,windows,remainingBeforeDispose:remaining,disposed:a.context===null&&a.fireSource===null,fireNodes: nodes.length,scope:'Native offline isolated camp layer, settled-window stereo/falloff and pause/mute proof; not audition/device/main path.'},null,2);
+ }catch(error){output.textContent=JSON.stringify({complete:false,error:error.stack});}finally{button.disabled=false;}
+};
+</script></html>

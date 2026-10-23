@@ -1,0 +1,357 @@
+{
+  "rows": [
+    {
+      "ready": true,
+      "mode": "night",
+      "sources": {
+        "src/audio.js": "41bd278b1287a0847a9c47ce19da4c3a02b8574a64b4e2b202690e8a3a561ea9",
+        "src/main.js": "2fa82b52b504f1bd293c142a7ef360003ee85c1a24bcc14b09689ab38ac0f085",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d"
+      },
+      "time": 8.720499999618548,
+      "player": {
+        "x": -56,
+        "z": 54,
+        "hp": 63,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "buildingCount": 3,
+      "actualFireMeshes": 1,
+      "fireUniform": 0.8804999996185501,
+      "fireLight": 19.551189947349435,
+      "updates": 532,
+      "worldInput": {
+        "buildings": [
+          {
+            "id": "sound-fire",
+            "type": "campfire",
+            "x": -56,
+            "z": 56
+          },
+          {
+            "id": "sound-tent",
+            "type": "tent",
+            "x": -65,
+            "z": 49
+          },
+          {
+            "id": "sound-bench",
+            "type": "workbench",
+            "x": -47,
+            "z": 49
+          }
+        ],
+        "cameraYaw": 0.15000000000000008
+      },
+      "active": true,
+      "enabled": true,
+      "fireGain": 0.1799106001853943,
+      "pan": -0.1269795000553131,
+      "master": 0.3499999940395355,
+      "fireLoop": true,
+      "fireBufferSeconds": 4,
+      "voices": 0,
+      "activation": [
+        {
+          "value": true,
+          "time": 0
+        }
+      ],
+      "paused": false,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Real main start/rest/pause/resume UI and production audio/world inputs, declared three-building camp/q6/HP63 and disabled enemies; isolated storage key. No ordinary campaign, audition, device or GPU/endurance proof.",
+      "name": "night-start"
+    },
+    {
+      "ready": true,
+      "mode": "night",
+      "sources": {
+        "src/audio.js": "41bd278b1287a0847a9c47ce19da4c3a02b8574a64b4e2b202690e8a3a561ea9",
+        "src/main.js": "2fa82b52b504f1bd293c142a7ef360003ee85c1a24bcc14b09689ab38ac0f085",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d"
+      },
+      "time": 15.93549999961849,
+      "player": {
+        "x": -56,
+        "z": 54,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "buildingCount": 3,
+      "actualFireMeshes": 1,
+      "fireUniform": 8.095499999618491,
+      "fireLight": 18.887560128814755,
+      "updates": 965,
+      "worldInput": {
+        "buildings": [
+          {
+            "id": "sound-fire",
+            "type": "campfire",
+            "x": -56,
+            "z": 56
+          },
+          {
+            "id": "sound-tent",
+            "type": "tent",
+            "x": -65,
+            "z": 49
+          },
+          {
+            "id": "sound-bench",
+            "type": "workbench",
+            "x": -47,
+            "z": 49
+          }
+        ],
+        "cameraYaw": 0.15000000000000008
+      },
+      "active": true,
+      "enabled": true,
+      "fireGain": 0.1799106001853943,
+      "pan": -0.1269795000553131,
+      "master": 0.3499999940395355,
+      "fireLoop": true,
+      "fireBufferSeconds": 4,
+      "voices": 0,
+      "activation": [
+        {
+          "value": true,
+          "time": 0
+        }
+      ],
+      "paused": false,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Real main start/rest/pause/resume UI and production audio/world inputs, declared three-building camp/q6/HP63 and disabled enemies; isolated storage key. No ordinary campaign, audition, device or GPU/endurance proof.",
+      "name": "night-rest"
+    },
+    {
+      "ready": true,
+      "mode": "night",
+      "sources": {
+        "src/audio.js": "41bd278b1287a0847a9c47ce19da4c3a02b8574a64b4e2b202690e8a3a561ea9",
+        "src/main.js": "2fa82b52b504f1bd293c142a7ef360003ee85c1a24bcc14b09689ab38ac0f085",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d"
+      },
+      "time": 16.00389999961849,
+      "player": {
+        "x": -56,
+        "z": 54,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "buildingCount": 3,
+      "actualFireMeshes": 1,
+      "fireUniform": 8.163899999618492,
+      "fireLight": 20.029398774530474,
+      "updates": 969,
+      "worldInput": {
+        "buildings": [
+          {
+            "id": "sound-fire",
+            "type": "campfire",
+            "x": -56,
+            "z": 56
+          },
+          {
+            "id": "sound-tent",
+            "type": "tent",
+            "x": -65,
+            "z": 49
+          },
+          {
+            "id": "sound-bench",
+            "type": "workbench",
+            "x": -47,
+            "z": 49
+          }
+        ],
+        "cameraYaw": 0.15000000000000008
+      },
+      "active": false,
+      "enabled": true,
+      "fireGain": 0.18000000715255737,
+      "pan": -0.1270224153995514,
+      "master": 0,
+      "fireLoop": true,
+      "fireBufferSeconds": 4,
+      "voices": 0,
+      "activation": [
+        {
+          "value": true,
+          "time": 0
+        },
+        {
+          "value": false,
+          "time": 16.00389999961849
+        }
+      ],
+      "paused": true,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Real main start/rest/pause/resume UI and production audio/world inputs, declared three-building camp/q6/HP63 and disabled enemies; isolated storage key. No ordinary campaign, audition, device or GPU/endurance proof.",
+      "name": "night-pause"
+    },
+    {
+      "ready": true,
+      "mode": "night",
+      "sources": {
+        "src/audio.js": "41bd278b1287a0847a9c47ce19da4c3a02b8574a64b4e2b202690e8a3a561ea9",
+        "src/main.js": "2fa82b52b504f1bd293c142a7ef360003ee85c1a24bcc14b09689ab38ac0f085",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d"
+      },
+      "time": 29.90289999961799,
+      "player": {
+        "x": -56,
+        "z": 54,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "buildingCount": 3,
+      "actualFireMeshes": 1,
+      "fireUniform": 22.06289999961799,
+      "fireLight": 17.709001654606585,
+      "updates": 1803,
+      "worldInput": {
+        "buildings": [
+          {
+            "id": "sound-fire",
+            "type": "campfire",
+            "x": -56,
+            "z": 56
+          },
+          {
+            "id": "sound-tent",
+            "type": "tent",
+            "x": -65,
+            "z": 49
+          },
+          {
+            "id": "sound-bench",
+            "type": "workbench",
+            "x": -47,
+            "z": 49
+          }
+        ],
+        "cameraYaw": 0.15000000000000008
+      },
+      "active": true,
+      "enabled": true,
+      "fireGain": 0.18000000715255737,
+      "pan": -0.1270224153995514,
+      "master": 0.3499999940395355,
+      "fireLoop": true,
+      "fireBufferSeconds": 4,
+      "voices": 0,
+      "activation": [
+        {
+          "value": true,
+          "time": 0
+        },
+        {
+          "value": false,
+          "time": 16.00389999961849
+        },
+        {
+          "value": true,
+          "time": 16.00389999961849
+        }
+      ],
+      "paused": false,
+      "viewport": [
+        1280,
+        720
+      ],
+      "glError": 0,
+      "scope": "Real main start/rest/pause/resume UI and production audio/world inputs, declared three-building camp/q6/HP63 and disabled enemies; isolated storage key. No ordinary campaign, audition, device or GPU/endurance proof.",
+      "name": "night-resume"
+    },
+    {
+      "ready": true,
+      "mode": "day",
+      "sources": {
+        "src/audio.js": "41bd278b1287a0847a9c47ce19da4c3a02b8574a64b4e2b202690e8a3a561ea9",
+        "src/main.js": "2fa82b52b504f1bd293c142a7ef360003ee85c1a24bcc14b09689ab38ac0f085",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/campfire.js": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d"
+      },
+      "time": 248.90889999971478,
+      "player": {
+        "x": -56,
+        "z": 54,
+        "hp": 63,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "buildingCount": 3,
+      "actualFireMeshes": 1,
+      "fireUniform": 241.06889999971477,
+      "fireLight": 19.82527665932083,
+      "updates": 539,
+      "worldInput": {
+        "buildings": [
+          {
+            "id": "sound-fire",
+            "type": "campfire",
+            "x": -56,
+            "z": 56
+          },
+          {
+            "id": "sound-tent",
+            "type": "tent",
+            "x": -65,
+            "z": 49
+          },
+          {
+            "id": "sound-bench",
+            "type": "workbench",
+            "x": -47,
+            "z": 49
+          }
+        ],
+        "cameraYaw": 0.15000000000000008
+      },
+      "active": true,
+      "enabled": true,
+      "fireGain": 0.1799106001853943,
+      "pan": -0.1269795000553131,
+      "master": 0.3499999940395355,
+      "fireLoop": true,
+      "fireBufferSeconds": 4,
+      "voices": 0,
+      "activation": [
+        {
+          "value": true,
+          "time": 240
+        }
+      ],
+      "paused": false,
+      "viewport": [
+        390,
+        844
+      ],
+      "glError": 0,
+      "scope": "Real main start/rest/pause/resume UI and production audio/world inputs, declared three-building camp/q6/HP63 and disabled enemies; isolated storage key. No ordinary campaign, audition, device or GPU/endurance proof.",
+      "name": "day-mobile-start"
+    }
+  ],
+  "console": []
+}

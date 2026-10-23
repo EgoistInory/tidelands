@@ -210,7 +210,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
       if(now-uiAt>140){view.sync(state);updateUI();uiAt=now;}if(now-saveAt>8000){save();saveAt=now;}
     }
     if(now>toastUntil)$('toast').hidden=true;
-    if(!renderLost&&prepared){view.draw(state,near,placement,moving,dt);if(started&&!paused)audio.update(state.player,state.time,terrain(state.player.x,state.player.z),view.player.userData.footfallCount);}requestAnimationFrame(frame);
+    if(!renderLost&&prepared){view.draw(state,near,placement,moving,dt);if(started&&!paused)audio.update(state.player,state.time,terrain(state.player.x,state.player.z),view.player.userData.footfallCount,{buildings:state.buildings,cameraYaw:Math.atan2(view.camera.position.x-state.player.x,view.camera.position.z-state.player.z)});}requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
 }
