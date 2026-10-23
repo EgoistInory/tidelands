@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: night fill keeps unlit surfaces readable across clear and overcast weather without changing daylight or key lights
+ok 1 - night fill keeps unlit surfaces readable across clear and overcast weather without changing daylight or key lights
+  ---
+  duration_ms: 79.846167
+  type: 'test'
+  ...
+# Subtest: night sky bounce loses daytime green cast while retaining daylight palette and lighting resources
+ok 2 - night sky bounce loses daytime green cast while retaining daylight palette and lighting resources
+  ---
+  duration_ms: 64.358167
+  type: 'test'
+  ...
+# Subtest: weather wind is bounded, deterministic and continuous across cycle boundaries
+ok 3 - weather wind is bounded, deterministic and continuous across cycle boundaries
+  ---
+  duration_ms: 4.003458
+  type: 'test'
+  ...
+# Subtest: leaf and grass color and shadow share stable wind strength without changing time phase
+ok 4 - leaf and grass color and shadow share stable wind strength without changing time phase
+  ---
+  duration_ms: 51.990625
+  type: 'test'
+  ...
+# Subtest: production water and atmosphere share bounded wind and reuse their uniforms
+ok 5 - production water and atmosphere share bounded wind and reuse their uniforms
+  ---
+  duration_ms: 43.204083
+  type: 'test'
+  ...
+# Subtest: wind and surf audio targets respond to weather while pause and shared buffers remain intact
+ok 6 - wind and surf audio targets respond to weather while pause and shared buffers remain intact
+  ---
+  duration_ms: 1.075125
+  type: 'test'
+  ...
+# Subtest: weather is deterministic over several days with bounded continuous transitions
+ok 7 - weather is deterministic over several days with bounded continuous transitions
+  ---
+  duration_ms: 10.280375
+  type: 'test'
+  ...
+# Subtest: sky cloud coverage and haze use the shared weather without replacing resources
+ok 8 - sky cloud coverage and haze use the shared weather without replacing resources
+  ---
+  duration_ms: 1.5585
+  type: 'test'
+  ...
+# Subtest: production atmosphere coordinates sunlight, land fog and water with stable resources
+ok 9 - production atmosphere coordinates sunlight, land fog and water with stable resources
+  ---
+  duration_ms: 73.273083
+  type: 'test'
+  ...
+# Subtest: night side light adds silhouette depth, fades by daylight and follows weather without a second shadow map
+ok 10 - night side light adds silhouette depth, fades by daylight and follows weather without a second shadow map
+  ---
+  duration_ms: 18.613583
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 203.454458

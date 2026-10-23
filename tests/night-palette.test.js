@@ -11,7 +11,7 @@ test('night sky bounce loses daytime green cast while retaining daylight palette
   const skyColor=view.ambient.color,groundColor=view.ambient.groundColor;
   WorldView.prototype.updateAtmosphere.call(view,0);
   assert.ok(skyColor.b>skyColor.g&&groundColor.b>groundColor.g,'night bounce must be cool instead of daytime green');
-  assert.ok(view.ambient.intensity>.5&&view.ambient.intensity<.7,'palette correction must retain the night intensity');
+  assert.ok(view.ambient.intensity>.8&&view.ambient.intensity<1,'night fill remains bounded below daytime energy');
   WorldView.prototype.updateAtmosphere.call(view,240);
   assert.ok(skyColor.equals(new THREE.Color(0xe2f1df)));assert.ok(groundColor.equals(new THREE.Color(0x697346)));
   assert.equal(view.ambient.color,skyColor);assert.equal(view.ambient.groundColor,groundColor);

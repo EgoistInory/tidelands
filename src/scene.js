@@ -319,7 +319,7 @@ export class WorldView{
     const bounceDay=THREE.MathUtils.smoothstep(daylight,.04,.65);
     this.ambient.color.copy(daySkyBounce).lerp(nightSkyBounce,1-bounceDay);
     if(this.ambient.groundColor)this.ambient.groundColor.copy(dayGroundBounce).lerp(nightGroundBounce,1-bounceDay);
-    this.ambient.intensity=(.6+Math.sqrt((daylight-.04)/.96)*1.5)*weather.skylight;
+    this.ambient.intensity=(.6+Math.sqrt((daylight-.04)/.96)*1.5+.3*(1-bounceDay))*weather.skylight;
     this.sun.intensity=daylight*2.6*weather.sunlight;
     if(this.nightLight)this.nightLight.intensity=.7*(1-THREE.MathUtils.smoothstep(daylight,.12,.65))*weather.skylight;
     this.scene.fog.near=weather.fogNear;this.scene.fog.far=weather.fogFar;

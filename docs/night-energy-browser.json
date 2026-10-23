@@ -1,0 +1,587 @@
+{
+  "rows": [
+    {
+      "name": "camp-baseline",
+      "ready": true,
+      "lighting": "baseline",
+      "scene": "camp",
+      "orbit": 0.15,
+      "time": 0,
+      "weather": {
+        "cloudiness": 0.1464466094067262,
+        "windStrength": 0.48786796564403573,
+        "sunlight": 0.8945584412271571,
+        "skylight": 0.9824264068711929,
+        "fogNear": 116.33883476483184,
+        "fogFar": 452.42640687119285
+      },
+      "position": [
+        -56,
+        49
+      ],
+      "hp": 100,
+      "camera": [
+        -53.907535277523266,
+        19.01636785332296,
+        62.8449843084862
+      ],
+      "energy": {
+        "ambient": 0.5894558441227157,
+        "sun": 0.09303407788762434,
+        "moon": 0.687698484809835,
+        "fire": 20
+      },
+      "colors": {
+        "sky": [
+          0.6583748172725346,
+          0.7529422167708612,
+          0.913098651791473
+        ],
+        "ground": [
+          0.24228112245478564,
+          0.3049873140591091,
+          0.4286904966038916
+        ]
+      },
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "distance": 0,
+      "raf": null,
+      "render": {
+        "calls": 350,
+        "triangles": 2569677,
+        "textures": 40
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        882
+      ],
+      "glError": 0,
+      "scope": "Isolated ambient energy comparison. Current production world/cast/move/tick/camera; declared locations/q6/camp, no persistence/audio. No GPU/endurance/device/final quality acceptance."
+    },
+    {
+      "name": "camp-fill",
+      "ready": true,
+      "lighting": "fill",
+      "scene": "camp",
+      "orbit": 0.15,
+      "time": 0,
+      "weather": {
+        "cloudiness": 0.1464466094067262,
+        "windStrength": 0.48786796564403573,
+        "sunlight": 0.8945584412271571,
+        "skylight": 0.9824264068711929,
+        "fogNear": 116.33883476483184,
+        "fogFar": 452.42640687119285
+      },
+      "position": [
+        -56,
+        49
+      ],
+      "hp": 100,
+      "camera": [
+        -53.907535277523266,
+        19.01636785332296,
+        62.8449843084862
+      ],
+      "energy": {
+        "ambient": 0.8841837661840735,
+        "sun": 0.09303407788762434,
+        "moon": 0.687698484809835,
+        "fire": 20
+      },
+      "colors": {
+        "sky": [
+          0.6583748172725346,
+          0.7529422167708612,
+          0.913098651791473
+        ],
+        "ground": [
+          0.24228112245478564,
+          0.3049873140591091,
+          0.4286904966038916
+        ]
+      },
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "distance": 0,
+      "raf": null,
+      "render": {
+        "calls": 350,
+        "triangles": 2569677,
+        "textures": 40
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        882
+      ],
+      "glError": 0,
+      "scope": "Isolated ambient energy comparison. Current production world/cast/move/tick/camera; declared locations/q6/camp, no persistence/audio. No GPU/endurance/device/final quality acceptance."
+    },
+    {
+      "name": "forest-fill",
+      "ready": true,
+      "lighting": "fill",
+      "scene": "forest",
+      "orbit": 3.29,
+      "time": 1440,
+      "weather": {
+        "cloudiness": 0.8535533905932738,
+        "windStrength": 0.9121320343559643,
+        "sunlight": 0.3854415587728428,
+        "skylight": 0.8975735931288071,
+        "fogNear": 98.66116523516816,
+        "fogFar": 367.57359312880715
+      },
+      "position": [
+        132,
+        -26
+      ],
+      "hp": 100,
+      "camera": [
+        129.92958818597626,
+        23.310898258334195,
+        -39.84829931931679
+      ],
+      "energy": {
+        "ambient": 0.8078162338159263,
+        "sun": 0.04008592211237565,
+        "moon": 0.628301515190165,
+        "fire": 0
+      },
+      "colors": {
+        "sky": [
+          0.6583748172725346,
+          0.7529422167708612,
+          0.913098651791473
+        ],
+        "ground": [
+          0.24228112245478564,
+          0.3049873140591091,
+          0.4286904966038916
+        ]
+      },
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "distance": 0,
+      "raf": null,
+      "render": {
+        "calls": 176,
+        "triangles": 1889075,
+        "textures": 46
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        882
+      ],
+      "glError": 0,
+      "scope": "Isolated ambient energy comparison. Current production world/cast/move/tick/camera; declared locations/q6/camp, no persistence/audio. No GPU/endurance/device/final quality acceptance."
+    },
+    {
+      "name": "forest-baseline",
+      "ready": true,
+      "lighting": "baseline",
+      "scene": "forest",
+      "orbit": 3.29,
+      "time": 1440,
+      "weather": {
+        "cloudiness": 0.8535533905932738,
+        "windStrength": 0.9121320343559643,
+        "sunlight": 0.3854415587728428,
+        "skylight": 0.8975735931288071,
+        "fogNear": 98.66116523516816,
+        "fogFar": 367.57359312880715
+      },
+      "position": [
+        132,
+        -26
+      ],
+      "hp": 100,
+      "camera": [
+        129.92958818597626,
+        23.310898258334195,
+        -39.84829931931679
+      ],
+      "energy": {
+        "ambient": 0.5385441558772842,
+        "sun": 0.04008592211237565,
+        "moon": 0.628301515190165,
+        "fire": 0
+      },
+      "colors": {
+        "sky": [
+          0.6583748172725346,
+          0.7529422167708612,
+          0.913098651791473
+        ],
+        "ground": [
+          0.24228112245478564,
+          0.3049873140591091,
+          0.4286904966038916
+        ]
+      },
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "distance": 0,
+      "raf": null,
+      "render": {
+        "calls": 176,
+        "triangles": 1889075,
+        "textures": 46
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        882
+      ],
+      "glError": 0,
+      "scope": "Isolated ambient energy comparison. Current production world/cast/move/tick/camera; declared locations/q6/camp, no persistence/audio. No GPU/endurance/device/final quality acceptance."
+    },
+    {
+      "name": "day-baseline",
+      "ready": true,
+      "lighting": "baseline",
+      "scene": "shore",
+      "orbit": 0.15,
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "position": [
+        -90,
+        140
+      ],
+      "hp": 100,
+      "camera": [
+        -87.90753527752327,
+        7.796423894046282,
+        153.84498430848618
+      ],
+      "energy": {
+        "ambient": 2.1,
+        "sun": 2.6,
+        "moon": 0,
+        "fire": 0
+      },
+      "colors": {
+        "sky": [
+          0.76052450467022,
+          0.8796223968851662,
+          0.7379104087672317
+        ],
+        "ground": [
+          0.14126329113044458,
+          0.171441100722554,
+          0.061246054224174035
+        ]
+      },
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "distance": 0,
+      "raf": null,
+      "render": {
+        "calls": 375,
+        "triangles": 2673775,
+        "textures": 47
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        882
+      ],
+      "glError": 0,
+      "scope": "Isolated ambient energy comparison. Current production world/cast/move/tick/camera; declared locations/q6/camp, no persistence/audio. No GPU/endurance/device/final quality acceptance."
+    },
+    {
+      "name": "day-fill",
+      "ready": true,
+      "lighting": "fill",
+      "scene": "shore",
+      "orbit": 0.15,
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "position": [
+        -90,
+        140
+      ],
+      "hp": 100,
+      "camera": [
+        -87.90753527752327,
+        7.796423894046282,
+        153.84498430848618
+      ],
+      "energy": {
+        "ambient": 2.1,
+        "sun": 2.6,
+        "moon": 0,
+        "fire": 0
+      },
+      "colors": {
+        "sky": [
+          0.76052450467022,
+          0.8796223968851662,
+          0.7379104087672317
+        ],
+        "ground": [
+          0.14126329113044458,
+          0.171441100722554,
+          0.061246054224174035
+        ]
+      },
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "distance": 0,
+      "raf": null,
+      "render": {
+        "calls": 375,
+        "triangles": 2673775,
+        "textures": 47
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        882
+      ],
+      "glError": 0,
+      "scope": "Isolated ambient energy comparison. Current production world/cast/move/tick/camera; declared locations/q6/camp, no persistence/audio. No GPU/endurance/device/final quality acceptance."
+    },
+    {
+      "name": "mobile-fill",
+      "ready": true,
+      "lighting": "fill",
+      "scene": "shore",
+      "orbit": 0.15,
+      "time": 0,
+      "weather": {
+        "cloudiness": 0.1464466094067262,
+        "windStrength": 0.48786796564403573,
+        "sunlight": 0.8945584412271571,
+        "skylight": 0.9824264068711929,
+        "fogNear": 116.33883476483184,
+        "fogFar": 452.42640687119285
+      },
+      "position": [
+        -90,
+        140
+      ],
+      "hp": 100,
+      "camera": [
+        -87.90753527752327,
+        7.796423894046282,
+        153.84498430848618
+      ],
+      "energy": {
+        "ambient": 0.8841837661840735,
+        "sun": 0.09303407788762434,
+        "moon": 0.687698484809835,
+        "fire": 0
+      },
+      "colors": {
+        "sky": [
+          0.6583748172725346,
+          0.7529422167708612,
+          0.913098651791473
+        ],
+        "ground": [
+          0.24228112245478564,
+          0.3049873140591091,
+          0.4286904966038916
+        ]
+      },
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "distance": 0,
+      "raf": null,
+      "render": {
+        "calls": 206,
+        "triangles": 1632489,
+        "textures": 47
+      },
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        646
+      ],
+      "glError": 0,
+      "scope": "Isolated ambient energy comparison. Current production world/cast/move/tick/camera; declared locations/q6/camp, no persistence/audio. No GPU/endurance/device/final quality acceptance."
+    },
+    {
+      "name": "mobile-baseline",
+      "ready": true,
+      "lighting": "baseline",
+      "scene": "shore",
+      "orbit": 0.15,
+      "time": 0,
+      "weather": {
+        "cloudiness": 0.1464466094067262,
+        "windStrength": 0.48786796564403573,
+        "sunlight": 0.8945584412271571,
+        "skylight": 0.9824264068711929,
+        "fogNear": 116.33883476483184,
+        "fogFar": 452.42640687119285
+      },
+      "position": [
+        -90,
+        140
+      ],
+      "hp": 100,
+      "camera": [
+        -87.90753527752327,
+        7.796423894046282,
+        153.84498430848618
+      ],
+      "energy": {
+        "ambient": 0.5894558441227157,
+        "sun": 0.09303407788762434,
+        "moon": 0.687698484809835,
+        "fire": 0
+      },
+      "colors": {
+        "sky": [
+          0.6583748172725346,
+          0.7529422167708612,
+          0.913098651791473
+        ],
+        "ground": [
+          0.24228112245478564,
+          0.3049873140591091,
+          0.4286904966038916
+        ]
+      },
+      "frames": 0,
+      "running": false,
+      "hidden": false,
+      "distance": 0,
+      "raf": null,
+      "render": {
+        "calls": 206,
+        "triangles": 1632489,
+        "textures": 47
+      },
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        646
+      ],
+      "glError": 0,
+      "scope": "Isolated ambient energy comparison. Current production world/cast/move/tick/camera; declared locations/q6/camp, no persistence/audio. No GPU/endurance/device/final quality acceptance."
+    },
+    {
+      "name": "mobile-move-fill",
+      "ready": true,
+      "lighting": "fill",
+      "scene": "shore",
+      "orbit": 0.15,
+      "time": 2.9999999999999942,
+      "weather": {
+        "cloudiness": 0.14299270097436584,
+        "windStrength": 0.4857956205846195,
+        "sunlight": 0.8970452552984566,
+        "skylight": 0.9828408758830761,
+        "fogNear": 116.42518247564085,
+        "fogFar": 452.8408758830761
+      },
+      "position": [
+        -82.50000000000043,
+        149.33333333333408
+      ],
+      "hp": 100,
+      "camera": [
+        -80.92039564682682,
+        6.127859522381021,
+        163.1898146357514
+      ],
+      "energy": {
+        "ambient": 0.8845567882947685,
+        "sun": 0.0932927065510395,
+        "moon": 0.6879886131181533,
+        "fire": 0
+      },
+      "colors": {
+        "sky": [
+          0.6583748172725346,
+          0.7529422167708612,
+          0.913098651791473
+        ],
+        "ground": [
+          0.24228112245478564,
+          0.3049873140591091,
+          0.4286904966038916
+        ]
+      },
+      "frames": 180,
+      "running": false,
+      "hidden": false,
+      "distance": 16.833333333333655,
+      "raf": {
+        "samples": 179,
+        "p95": 18.39999999999418,
+        "max": 18.60000000000582
+      },
+      "render": {
+        "calls": 203,
+        "triangles": 1630249,
+        "textures": 47
+      },
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        646
+      ],
+      "glError": 0,
+      "scope": "Isolated ambient energy comparison. Current production world/cast/move/tick/camera; declared locations/q6/camp, no persistence/audio. No GPU/endurance/device/final quality acceptance."
+    }
+  ],
+  "console": [],
+  "phase": "Before production edit, isolated plus .3 night fill only",
+  "imagesViewed": 9
+}
