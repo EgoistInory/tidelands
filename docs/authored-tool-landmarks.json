@@ -7,6 +7,10 @@
       "weaponForwardPhase": {
         "axe": 0.45,
         "sword": 0.30833333333333335
+      },
+      "groundedWeaponForwardPhase": {
+        "axe": 0.2833333333333333,
+        "sword": 0.2833333333333333
       }
     },
     "Punch_Cross": {
@@ -36,6 +40,28 @@
   "toolCalibration": {
     "rows": {
       "axe": {
+        "phase": 0.2833333333333333,
+        "vertex": 166,
+        "position": [
+          -0.23568029534020932,
+          1.6611324875249522,
+          1.9467070036097316
+        ],
+        "forward": 1.9467070036097316
+      },
+      "sword": {
+        "phase": 0.2833333333333333,
+        "vertex": 100,
+        "position": [
+          -0.005079075672023524,
+          2.0177651745529674,
+          2.6273972910789523
+        ],
+        "forward": 2.6273972910789523
+      }
+    },
+    "upperBodyRows": {
+      "axe": {
         "phase": 0.45,
         "vertex": 172,
         "position": [
@@ -56,7 +82,7 @@
         "forward": 2.480322480497433
       }
     },
-    "method": "119 source poses at full action weight, actual unscaled game blade vertices; maximum projection toward authoritative +Z facing. Candidate contact landmark, not dynamic target/edge collision acceptance.",
-    "sourceSha256": "0feb14aa537e91f216dff62aaced321bcfff5a3b0f343ce1df20861464b8dccc"
+    "method": "119 stationary full-body source poses at full action weight; prior upper-body poses retained, actual unscaled game blade vertices; maximum projection toward authoritative +Z facing. Candidate contact landmark, not dynamic target/edge collision acceptance.",
+    "sourceSha256": "d3f40c1dede5a195d47f19ace3845a11f3c1819582b275622fc5b1292cf51f77"
   }
 }

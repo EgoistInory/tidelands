@@ -33,7 +33,7 @@ function groundNormal(ground,x,z){const e=.15;return new THREE.Vector3(ground(x-
 export function createAuthoredCharacter(avatar,library,role='traveler',hair=null){
   avatar.updateMatrixWorld(true);let sourceBody;avatar.traverse(o=>{if(o.isSkinnedMesh&&(!sourceBody||o.geometry.attributes.position.count>sourceBody.geometry.attributes.position.count))sourceBody=o;});
   if(!sourceBody)throw Error('Author body skin required');const bounds=new THREE.Box3().setFromBufferAttribute(sourceBody.geometry.attributes.position),height=bounds.max.y-bounds.min.y,scale=2.95/height;
-  const needed=new Set(['Idle_Loop','Walk_Loop','Jog_Fwd_Loop','Sprint_Loop','Swim_Fwd_Loop','Swim_Idle_Loop','Sword_Attack','Punch_Cross','PickUp_Table','Fixing_Kneeling']);
+  const needed=new Set(['Idle_Loop','Walk_Loop','Jog_Fwd_Loop','Sprint_Loop','Swim_Fwd_Loop','Swim_Idle_Loop','Sword_Attack','Punch_Cross','PickUp_Table','Fixing_Kneeling','Hit_Chest']);
   const rest=captureAuthorRest(avatar),clips=retargetAuthoredClips(avatar,captureAuthorRest(library.scene),library.animations.filter(c=>needed.has(c.name)),height/library.height);
   dressAuthoredAvatar(avatar,role);if(hair)attachAuthorHair(avatar,hair,role);
   const root=new THREE.Group(),body=new THREE.Group();body.scale.setScalar(scale);body.add(avatar);root.add(body);root.updateMatrixWorld(true);
@@ -63,12 +63,18 @@ export function animateAuthoredCharacter(root,state,dt,ground=()=>0){
   const motion=updateBodyMotion(rig,state.x,state.z,root.rotation.y,dt,plan.resetContacts||swimming);
   rig.body.position.set(0,0,0);rig.body.rotation.set(.04*motion.drive-.06*plan.recoil,.08*motion.turn,-.10*motion.turn*Math.min(1,motion.speed/3)+.03*plan.recoil);
   const lowPickup=plan.action==='gather'&&['berry','fiber','shell'].includes(state.gatherKind);
+  const fullStrike=!swimming&&plan.action==='attack'&&plan.speed<.1,groundedHit=!swimming&&plan.recoil>0&&plan.speed<.1;
+  const plantedAction=lowPickup||fullStrike||groundedHit;
   if(plan.action){
     const name=lowPickup?'Fixing_Kneeling':plan.equipped==='hand'?'Punch_Cross':'Sword_Attack',clip=rig.clips.get(name);
-    const marker=rig.markers[name]?.weaponForwardPhase?.[plan.equipped]??rig.markers[name]?.peakRightHandPhase??.5,p=plan.actionProgress;
+    const marker=(fullStrike?rig.markers[name]?.groundedWeaponForwardPhase?.[plan.equipped]:null)??rig.markers[name]?.weaponForwardPhase?.[plan.equipped]??rig.markers[name]?.peakRightHandPhase??.5,p=plan.actionProgress;
     const sourcePhase=lowPickup?(p<.5?p*.5:.25+(p-.5)*1.5):p<.5?p*2*marker:marker+(p-.5)*2*(1-marker);
-    sample(clip,sourcePhase*clip.duration,!lowPickup,Math.sin(p*Math.PI));rig.actionSource={name,phase:sourcePhase,marker:lowPickup?.25:marker,gameProgress:p};
+    sample(clip,sourcePhase*clip.duration,!lowPickup&&!fullStrike,Math.sin(p*Math.PI));rig.actionSource={name,phase:sourcePhase,marker:lowPickup?.25:marker,gameProgress:p};
   }else rig.actionSource=null;
+  if(plan.recoil>0){
+    const clip=rig.clips.get('Hit_Chest'),progress=1-plan.recoil,weight=.7*Math.sin(progress*Math.PI);
+    sample(clip,progress*clip.duration,!groundedHit||lowPickup,weight);rig.hurtSource={name:'Hit_Chest',phase:progress,weight};
+  }else rig.hurtSource=null;
   rig.axe.visible=plan.equipped==='axe';rig.sword.visible=plan.equipped==='sword';root.updateMatrixWorld(true);
   if(lowPickup&&state.gatherTarget&&Number.isFinite(state.gatherTarget.x)&&Number.isFinite(state.gatherTarget.z)){
     const direction=new THREE.Vector3(state.gatherTarget.x-state.x,0,state.gatherTarget.z-state.z);
@@ -79,14 +85,15 @@ export function animateAuthoredCharacter(root,state,dt,ground=()=>0){
     root.updateMatrixWorld(true);let clearance=0;for(const leg of rig.legs){const point=soleWorld(leg);clearance=Math.max(clearance,ground(point.x,point.z)-point.y);}if(clearance>0)rig.body.position.y+=clearance;
     rig.worldFeet=[];for(const leg of rig.legs){leg.target=null;leg.contact=null;}root.updateMatrixWorld(true);return;
   }
-  if(plan.resetContacts||plan.speed>.0001)rig.idleStep=null;
-  if(!lowPickup&&plan.baseClip==='Idle_Loop'&&!rig.transitionFrom&&!rig.idleStep){
+  if(plan.resetContacts||plan.speed>.0001||plantedAction)rig.idleStep=null;
+  if(!plantedAction&&plan.baseClip==='Idle_Loop'&&!rig.transitionFrom&&!rig.idleStep){
     const gaps=rig.legs.map(leg=>{const raw=soleWorld(leg);return leg.target?Math.hypot(raw.x-leg.target.x,raw.z-leg.target.z):0;});const side=gaps[0]>gaps[1]?0:1;
     if(gaps[side]>.25)rig.idleStep={side,from:rig.legs[side].target.clone(),at:state.time};
   }
   const targets=[],orientations=[];
   for(const [j,leg]of rig.legs.entries()){
-    const raw=soleWorld(leg),lift=raw.y-root.position.y-rig.floors[plan.baseClip][j];let contact=lowPickup||lift<=.035*rig.scale;
+    const raw=soleWorld(leg),lift=raw.y-root.position.y-rig.floors[plan.baseClip][j];let contact=plantedAction||lift<=.035*rig.scale;
+    if(plantedAction){leg.releasedUntilAir=false;leg.swingFrom=null;}
     const normal=groundNormal(ground,raw.x,raw.z),q=new THREE.Quaternion().setFromUnitVectors(up,normal).multiply(root.quaternion).multiply(leg.restFootQ);
     if(rig.idleStep?.side===j){
       const step=rig.idleStep,t=THREE.MathUtils.clamp((state.time-step.at)/.25,0,1),ease=t*t*(3-2*t);raw.x=THREE.MathUtils.lerp(step.from.x,raw.x,ease);raw.z=THREE.MathUtils.lerp(step.from.z,raw.z,ease);raw.y=ground(raw.x,raw.z)+.12*Math.sin(t*Math.PI);

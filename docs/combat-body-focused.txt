@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: male axe: stationary strikes carry authored pelvis motion through fixed world supports
+ok 1 - male axe: stationary strikes carry authored pelvis motion through fixed world supports
+  ---
+  duration_ms: 470.216792
+  type: 'test'
+  ...
+# Subtest: male sword: stationary strikes carry authored pelvis motion through fixed world supports
+ok 2 - male sword: stationary strikes carry authored pelvis motion through fixed world supports
+  ---
+  duration_ms: 276.777208
+  type: 'test'
+  ...
+# Subtest: male hand: stationary strikes carry authored pelvis motion through fixed world supports
+ok 3 - male hand: stationary strikes carry authored pelvis motion through fixed world supports
+  ---
+  duration_ms: 280.036375
+  type: 'test'
+  ...
+# Subtest: female axe: stationary strikes carry authored pelvis motion through fixed world supports
+ok 4 - female axe: stationary strikes carry authored pelvis motion through fixed world supports
+  ---
+  duration_ms: 290.671917
+  type: 'test'
+  ...
+# Subtest: female sword: stationary strikes carry authored pelvis motion through fixed world supports
+ok 5 - female sword: stationary strikes carry authored pelvis motion through fixed world supports
+  ---
+  duration_ms: 264.197709
+  type: 'test'
+  ...
+# Subtest: female hand: stationary strikes carry authored pelvis motion through fixed world supports
+ok 6 - female hand: stationary strikes carry authored pelvis motion through fixed world supports
+  ---
+  duration_ms: 260.29075
+  type: 'test'
+  ...
+# Subtest: authored chest hit appears on the real skeleton, freezes on pause and recovers independently of attack rules
+ok 7 - authored chest hit appears on the real skeleton, freezes on pause and recovers independently of attack rules
+  ---
+  duration_ms: 119.512209
+  type: 'test'
+  ...
+# Subtest: moving and deep-swimming attacks and hits preserve the locomotion pelvis instead of replacing it with a grounded strike
+ok 8 - moving and deep-swimming attacks and hits preserve the locomotion pelvis instead of replacing it with a grounded strike
+  ---
+  duration_ms: 519.85375
+  type: 'test'
+  ...
+# Subtest: stationary and moving tool strikes select their independently measured contact landmarks
+ok 9 - stationary and moving tool strikes select their independently measured contact landmarks
+  ---
+  duration_ms: 127.883875
+  type: 'test'
+  ...
+# Subtest: male berry: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+ok 10 - male berry: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+  ---
+  duration_ms: 285.677417
+  type: 'test'
+  ...
+# Subtest: male fiber: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+ok 11 - male fiber: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+  ---
+  duration_ms: 232.874875
+  type: 'test'
+  ...
+# Subtest: male shell: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+ok 12 - male shell: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+  ---
+  duration_ms: 145.408208
+  type: 'test'
+  ...
+# Subtest: female berry: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+ok 13 - female berry: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+  ---
+  duration_ms: 162.738292
+  type: 'test'
+  ...
+# Subtest: female fiber: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+ok 14 - female fiber: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+  ---
+  duration_ms: 159.985375
+  type: 'test'
+  ...
+# Subtest: female shell: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+ok 15 - female shell: whole-body pickup lowers the pelvis, reaches a nearby target and retains world supports
+  ---
+  duration_ms: 148.58275
+  type: 'test'
+  ...
+# Subtest: unreachable target preserves arm length and paused action; a cancelled action clears the reach
+ok 16 - unreachable target preserves arm length and paused action; a cancelled action clears the reach
+  ---
+  duration_ms: 144.8965
+  type: 'test'
+  ...
+# Subtest: changing the production state identity clears the transient reach target while ordinary sync preserves it
+ok 17 - changing the production state identity clears the transient reach target while ordinary sync preserves it
+  ---
+  duration_ms: 17.344417
+  type: 'test'
+  ...
+# Subtest: moving low pickup and water interruption keep finite skeletons without changing authoritative movement
+ok 18 - moving low pickup and water interruption keep finite skeletons without changing authoritative movement
+  ---
+  duration_ms: 142.575917
+  type: 'test'
+  ...
+# Subtest: actual author rig follows game location, carries selected tools and stays finite across movement and water
+ok 19 - actual author rig follows game location, carries selected tools and stays finite across movement and water
+  ---
+  duration_ms: 327.001792
+  type: 'test'
+  ...
+# Subtest: actual source rest proportions survive, and planted world supports stay fixed during complete tool actions
+ok 20 - actual source rest proportions survive, and planted world supports stay fixed during complete tool actions
+  ---
+  duration_ms: 571.056
+  type: 'test'
+  ...
+# Subtest: moving actual sole anchors track support targets through production speeds, slopes and turns
+ok 21 - moving actual sole anchors track support targets through production speeds, slopes and turns
+  ---
+  duration_ms: 927.690041
+  type: 'test'
+  ...
+# Subtest: cloned actual rig owns its bones while sharing immutable template buffers
+ok 22 - cloned actual rig owns its bones while sharing immutable template buffers
+  ---
+  duration_ms: 69.614584
+  type: 'test'
+  ...
+# Subtest: paused actual skeleton and support contacts do not snap into an idle gait
+ok 23 - paused actual skeleton and support contacts do not snap into an idle gait
+  ---
+  duration_ms: 172.631916
+  type: 'test'
+  ...
+# Subtest: shallow-water visuals wade on the actual floor while deep water uses the real waterline
+ok 24 - shallow-water visuals wade on the actual floor while deep water uses the real waterline
+  ---
+  duration_ms: 139.250667
+  type: 'test'
+  ...
+# Subtest: existing world-sized tools do not get enlarged a second time by author body normalization
+ok 25 - existing world-sized tools do not get enlarged a second time by author body normalization
+  ---
+  duration_ms: 125.587333
+  type: 'test'
+  ...
+# Subtest: restored facing initializes before planting and stationary turns recover each foot
+ok 26 - restored facing initializes before planting and stationary turns recover each foot
+  ---
+  duration_ms: 155.807458
+  type: 'test'
+  ...
+# Subtest: all authored roles retain whole-body acceleration, braking and turn response after the rig replacement
+ok 27 - all authored roles retain whole-body acceleration, braking and turn response after the rig replacement
+  ---
+  duration_ms: 1206.893875
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3781.567417

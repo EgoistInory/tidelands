@@ -1,0 +1,61 @@
+{
+  "verified": true,
+  "boundedCombatBodyCandidateAccepted": true,
+  "packaged": false,
+  "focusedTests": 27,
+  "fullTests": 300,
+  "changedRuntimeInputs": [
+    "assets/characters/action-landmarks.json",
+    "src/authored-character.js"
+  ],
+  "currentExactSourceGpuAccepted": true,
+  "currentExactSourceEnduranceAccepted": false,
+  "releaseEvidenceMobileOnly": true,
+  "fullMotionQualityAccepted": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "gpuP95Ms": {
+    "desktop": [
+      13.228875,
+      12.858791,
+      9.173125,
+      13.688583,
+      13.328999
+    ],
+    "mobile": [
+      6.045999,
+      6.877375,
+      3.820333,
+      8.633666,
+      7.055416
+    ]
+  },
+  "scope": "Stationary grounded full-body strikes and real Hit_Chest; moving/deep-swimming retain lower-body locomotion. Native main/space confirms sword38/axe23/hand12 and real boar12 hurt, sound dispatch, no false hit on miss. First hand mobile attempt actually1280: retained as desktop and corrected390 sampled. Desktop release report was not captured; only mobile release metadata accepted. GPU forces attack+hurt+48debris each frame in five teleported stages; not normal campaign, device/audition/VRAM, exact mesh contact, endurance or final naturalness. Current source differs from delivered635 only actor and markers; ordinary save and package unmodified.",
+  "files": {
+    "docs/combat-body-sword-crab.jpg": "ae88888beb81880a1ca6ea3487720ec7d227315dbd7f869d1f04856d6fde9089",
+    "docs/combat-body-boar-hurt.jpg": "a8584438366933cd478515b8855f6732b88797f2fe94bb06511dea2199e4efc7",
+    "docs/combat-body-axe-boar.jpg": "79559f6beff5be51994b3c5e6652b4e372071522b209513336dcbaf8bd745ff0",
+    "docs/combat-body-hand-desktop-initial.jpg": "19fd8daeb60b498c75aaddb59a51172838c024e87a9d41a2993e4fdfaef463e6",
+    "docs/combat-body-miss-recovered.jpg": "d22368c870453cdfccdf0c32e6da91a05897be77d2aa6c701a00f0c9392eeedc",
+    "docs/combat-body-hand-mobile.jpg": "cc2ea632fed9857e4178b64b2f2a833c07ab0ec851e8092a86ae29f437e1c03a",
+    "docs/combat-body-gpu-desktop.jpg": "226848e985757547ff98324c4ed60b8d7a3a31a3f63bece9b87c16621b785e75",
+    "docs/combat-body-gpu-mobile.jpg": "d11a2267e249c3914880aab99c671685a9307baf8f540b9dd30850f19534a11e",
+    "docs/combat-body-main-browser.json": "e82bc6948e551443c072d924144d5ccabc6d4e4849b6bf3d2107147b8365717c",
+    "docs/combat-body-gpu.json": "c39b4505e3dd692346a6ce010d019f7fa5491270736b0f3d53d6ce7d86ea2285",
+    "docs/combat-body-focused.txt": "0d78a0ec12cb92863974386ec4837cfe85540d926a6ea77e4df9b027287792de",
+    "docs/combat-body-full-tests.txt": "616581219283152170a9a05778d45aebbe6bf9baba7b972203fa45bc0ca3b0ab",
+    "docs/combat-body-focused-initial.txt": "7085cc9b3488143ff9882448dae20b1df771dcd35da6c44f259663b0202f957a",
+    "docs/combat-body-full-tests-initial.txt": "a0a581a80feed59e05c2d6172f23da9d97247651f9ff0c9036ed8b5df7fecbd3",
+    "docs/combat-body-red.txt": "f9d980d73f7c4f1702c78b46632830576b8fa54c5f1923e5e130219890bdc160",
+    "docs/combat-body-world-cpu.json": "a6e70a52d143de7ab5a34a69a28af8881c24d8266d0dbf24efdcc2373d64b54e",
+    "docs/combat-source-poses.json": "0ce370ba4f381cfcd1c1138b9f71774dba8264beb151230369f15a1549def635",
+    "docs/combat-tool-before.json": "310466498eb8e629dba49ad72dec8456b4feca7e1e821927d86d189226f6a775",
+    "tests/authored-combat-body.test.js": "f64c8a93e48b408a6b7cc4665559085bc103c863f287c6114b0cdef0a3488a20",
+    "tests/combat-body-main-review.html": "477270b5f69924a23a0544c128af9f206b662f8c17be1914703b0f4408cd164c",
+    "tests/combat-body-budget-review.html": "93e39f3ba42dbecbc577571faf08af37168da7da7ee42e65d9d5a95a896e773c",
+    "tools/probe_combat_source.mjs": "0de510afb27ea70676f1d2b2b17c89ee7539fb8dbac74ab1efa64f7a5e81ee78",
+    "tools/calibrate_authored_tools.mjs": "9bd62e379ec0e8adee4f64ccf66fdfd338849bf8e122fd0e37300cc8c792088b",
+    "src/authored-character.js": "d3f40c1dede5a195d47f19ace3845a11f3c1819582b275622fc5b1292cf51f77",
+    "assets/characters/action-landmarks.json": "c1e3e790b9d651d12f351ff9acadb0f835fb3a7dc3ea606908b0b3dcd7f85111"
+  }
+}
