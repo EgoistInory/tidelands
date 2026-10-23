@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: boar: local coat/shell maps are bounded and shared until the last private rig is released
+ok 1 - boar: local coat/shell maps are bounded and shared until the last private rig is released
+  ---
+  duration_ms: 96.8055
+  type: 'test'
+  ...
+# Subtest: crab: local coat/shell maps are bounded and shared until the last private rig is released
+ok 2 - crab: local coat/shell maps are bounded and shared until the last private rig is released
+  ---
+  duration_ms: 71.006542
+  type: 'test'
+  ...
+# Subtest: boar has a connected shoulder-to-snout hide rather than two overlapping body primitives
+ok 3 - boar has a connected shoulder-to-snout hide rather than two overlapping body primitives
+  ---
+  duration_ms: 20.192542
+  type: 'test'
+  ...
+# Subtest: boar: actual articulated contacts remain planted through travel, turning and stopping (flat)
+ok 4 - boar: actual articulated contacts remain planted through travel, turning and stopping (flat)
+  ---
+  duration_ms: 122.591708
+  type: 'test'
+  ...
+# Subtest: boar: actual articulated contacts remain planted through travel, turning and stopping (slope)
+ok 5 - boar: actual articulated contacts remain planted through travel, turning and stopping (slope)
+  ---
+  duration_ms: 76.306708
+  type: 'test'
+  ...
+# Subtest: crab: actual articulated contacts remain planted through travel, turning and stopping (flat)
+ok 6 - crab: actual articulated contacts remain planted through travel, turning and stopping (flat)
+  ---
+  duration_ms: 53.504916
+  type: 'test'
+  ...
+# Subtest: crab: actual articulated contacts remain planted through travel, turning and stopping (slope)
+ok 7 - crab: actual articulated contacts remain planted through travel, turning and stopping (slope)
+  ---
+  duration_ms: 44.245667
+  type: 'test'
+  ...
+# Subtest: articulated geometry stays shared while joints, reset and revived contacts stay private
+ok 8 - articulated geometry stays shared while joints, reset and revived contacts stay private
+  ---
+  duration_ms: 15.508291
+  type: 'test'
+  ...
+# Subtest: boar: resting foot surfaces follow a sloped plane at multiple headings
+ok 9 - boar: resting foot surfaces follow a sloped plane at multiple headings
+  ---
+  duration_ms: 174.654834
+  type: 'test'
+  ...
+# Subtest: crab: resting foot surfaces follow a sloped plane at multiple headings
+ok 10 - crab: resting foot surfaces follow a sloped plane at multiple headings
+  ---
+  duration_ms: 119.320291
+  type: 'test'
+  ...
+# Subtest: crab has eight walking legs and its articulated pincers close during a strike
+ok 11 - crab has eight walking legs and its articulated pincers close during a strike
+  ---
+  duration_ms: 95.135709
+  type: 'test'
+  ...
+# Subtest: boar: sculpted surfaces stay finite and retain the same distant silhouette
+ok 12 - boar: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 65.479166
+  type: 'test'
+  ...
+# Subtest: crab: sculpted surfaces stay finite and retain the same distant silhouette
+ok 13 - crab: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 42.896083
+  type: 'test'
+  ...
+# Subtest: boar: distance gait, bounded turn, hit isolation and death recovery
+ok 14 - boar: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 62.305917
+  type: 'test'
+  ...
+# Subtest: crab: distance gait, bounded turn, hit isolation and death recovery
+ok 15 - crab: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 51.90375
+  type: 'test'
+  ...
+# Subtest: boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 16 - boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 11.642417
+  type: 'test'
+  ...
+# Subtest: crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 17 - crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 13.819834
+  type: 'test'
+  ...
+# Subtest: islanders respond to a nearby conversation target without moving or changing the save
+ok 18 - islanders respond to a nearby conversation target without moving or changing the save
+  ---
+  duration_ms: 1108.159333
+  type: 'test'
+  ...
+# Subtest: tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+ok 19 - tree camera bounds preserve empty ground below the crown while blocking trunk and foliage
+  ---
+  duration_ms: 718.860709
+  type: 'test'
+  ...
+# Subtest: distant geometry is shared until the last owner leaves, while materials remain private
+ok 20 - distant geometry is shared until the last owner leaves, while materials remain private
+  ---
+  duration_ms: 36.975041
+  type: 'test'
+  ...
+# Subtest: resource bounds retain regenerating nodes after initial depletion
+ok 21 - resource bounds retain regenerating nodes after initial depletion
+  ---
+  duration_ms: 696.809292
+  type: 'test'
+  ...
+# Subtest: save replacement releases creatures and resets transient death/hit animation
+ok 22 - save replacement releases creatures and resets transient death/hit animation
+  ---
+  duration_ms: 37.765
+  type: 'test'
+  ...
+# Subtest: boar: near geometry shares a lifetime while pose and hit materials remain private
+ok 23 - boar: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 20.768458
+  type: 'test'
+  ...
+# Subtest: crab: near geometry shares a lifetime while pose and hit materials remain private
+ok 24 - crab: near geometry shares a lifetime while pose and hit materials remain private
+  ---
+  duration_ms: 27.352708
+  type: 'test'
+  ...
+# Subtest: same-type save replacement reuses creature models without carrying over animation or damage
+ok 25 - same-type save replacement reuses creature models without carrying over animation or damage
+  ---
+  duration_ms: 37.80025
+  type: 'test'
+  ...
+# Subtest: loading a different save updates buildings even when IDs are reused
+ok 26 - loading a different save updates buildings even when IDs are reused
+  ---
+  duration_ms: 1.416917
+  type: 'test'
+  ...
+# Subtest: campfire owns its unlit flame without changing shared building materials
+ok 27 - campfire owns its unlit flame without changing shared building materials
+  ---
+  duration_ms: 1.213916
+  type: 'test'
+  ...
+# Subtest: removing tents releases their geometry but retains immutable cloth for later camps
+ok 28 - removing tents releases their geometry but retains immutable cloth for later camps
+  ---
+  duration_ms: 1.597625
+  type: 'test'
+  ...
+# Subtest: repeated build previews release their geometry and private materials
+ok 29 - repeated build previews release their geometry and private materials
+  ---
+  duration_ms: 12.233042
+  type: 'test'
+  ...
+# Subtest: tent preview retains double-sided cloth and shares replacement material safely
+ok 30 - tent preview retains double-sided cloth and shares replacement material safely
+  ---
+  duration_ms: 0.3625
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2802.329709

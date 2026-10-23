@@ -3,6 +3,7 @@ import {updateBodyMotion} from './body-motion.js';
 import {ENEMY_ATTACK_DURATION} from './action-timing.js';
 import {mergeStaticParts} from './merge-parts.js';
 import {placeCreatureFeet,resetCreatureFeet} from './creature-footing.js';
+import {acquireCreatureSurface} from './creature-surface.js';
 
 function profiledHide(sections){
   const vertices=[],uv=[],indices=[],sides=24;
@@ -16,8 +17,8 @@ function profiledHide(sections){
   const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));geometry.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));geometry.setIndex(indices);geometry.computeVertexNormals();return geometry;
 }
 
-function taperedCurve(points,radius,tip=.04){
-  const curve=new THREE.CatmullRomCurve3(points.map(p=>new THREE.Vector3(...p))),segments=16,sides=8;
+function taperedCurve(points,radius,tip=.04,sides=8){
+  const curve=new THREE.CatmullRomCurve3(points.map(p=>new THREE.Vector3(...p))),segments=16;
   const geometry=new THREE.TubeGeometry(curve,segments,radius,sides,false),position=geometry.attributes.position;
   for(let j=0;j<=segments;j++){
     const center=curve.getPointAt(j/segments),scale=1-(1-tip)*j/segments;
@@ -29,7 +30,7 @@ function taperedCurve(points,radius,tip=.04){
 // Each creature owns its materials so hit feedback never changes its neighbours.
 export function createCreature(type,geometryCache=null){
   const root=new THREE.Group(),ground=new THREE.Group(),body=new THREE.Group(),legs=[],claws=[];
-  const hide=new THREE.MeshStandardMaterial({color:type==='crab'?0x9f5037:0x675444,roughness:type==='crab'?.68:.95});
+  const surface=acquireCreatureSurface(type,geometryCache),hide=surface.material;
   const dark=new THREE.MeshStandardMaterial({color:0x302b27,roughness:.8});
   const ivory=new THREE.MeshStandardMaterial({color:0xe7d6ad,roughness:.7});
   const form=(parent,geometry,mat=hide)=>{
@@ -44,7 +45,12 @@ export function createCreature(type,geometryCache=null){
     form(body,profiledHide([[-.86,.69,0,0],[-.74,.71,.58,.15],[-.45,.74,.97,.29],[0,.77,1.07,.34],[.42,.77,.93,.29],[.72,.72,.66,.17],[.8,.69,0,0]]));
     shape(body,[.93,.13,.69],[0,.51,0],dark);
     const rim=[];for(let i=0;i<=32;i++){const a=i/32*Math.PI*2;rim.push(new THREE.Vector3(Math.cos(a)*1.03,.65,Math.sin(a)*.77));}
-    form(body,new THREE.TubeGeometry(new THREE.CatmullRomCurve3(rim),64,.035,6,false),ivory);
+    form(body,new THREE.TubeGeometry(new THREE.CatmullRomCurve3(rim),64,.035,6,false),hide);
+    for(const side of [-1,1])for(let i=0;i<5;i++){
+      const z=-.45+i*.2,x=side*(.95+Math.sin(i/4*Math.PI)*.11),g=new THREE.BufferGeometry();
+      g.setAttribute('position',new THREE.Float32BufferAttribute([x,.7,z-.1,x,.81,z, x+side*.18,.72,z+.035,x,.66,z+.11],3));
+      g.setAttribute('uv',new THREE.Float32BufferAttribute([0,0,.5,1,1,.5,1,0],2));g.setIndex([0,1,2,0,2,3,0,3,1,1,3,2]);g.computeVertexNormals();form(body,g);
+    }
     for(const side of [-1,1]){
       for(let i=0;i<4;i++){
         const joint=new THREE.Group();joint.position.set(side*.76,.66,(i-1.5)*.38);body.add(joint);
@@ -61,26 +67,25 @@ export function createCreature(type,geometryCache=null){
       const pincer=new THREE.Group();pincer.position.set(side*.41,0,.64);claw.add(pincer);
       form(pincer,taperedCurve([[0,0,0],[side*.16,.04,.3],[side*.02,0,.47]],.095));
       claw.userData={side,pincer};claws.push(claw);
+      if(side===1)claw.scale.setScalar(1.12);
       shape(body,[.045,.19,.045],[side*.4,1.05,.5],dark);
       shape(body,[.10,.105,.10],[side*.4,1.24,.5],dark);
       shape(body,[.028,.025,.03],[side*.4-.025,1.27,.583],ivory);
     }
   }else{
-    form(body,profiledHide([[-1.4,1.27,0,0],[-1.21,1.25,.46,.48],[-.9,1.27,.68,.64],[-.48,1.30,.79,.70],[0,1.36,.80,.78],[.42,1.42,.74,.81],[.73,1.37,.61,.70],[1.03,1.29,.41,.48],[1.23,1.24,0,0]]));
-    form(body,profiledHide([[.76,1.32,0,0],[.87,1.31,.49,.48],[1.13,1.28,.52,.47],[1.40,1.15,.42,.33],[1.67,1.02,.32,.23],[1.93,1.00,.28,.20],[1.95,1.00,0,0]]));
+    form(body,profiledHide([[-1.4,1.27,0,0],[-1.21,1.25,.43,.46],[-.9,1.27,.63,.59],[-.48,1.30,.73,.67],[0,1.38,.78,.78],[.42,1.44,.74,.82],[.73,1.39,.60,.71],[1.03,1.29,.46,.49],[1.40,1.15,.38,.32],[1.67,1.02,.30,.23],[1.93,1,.28,.20],[1.95,1,0,0]]));
     shape(body,[.285,.205,.065],[0,1,1.935],dark);
     for(const side of [-1,1]){
       const earOutline=new THREE.Shape();earOutline.moveTo(-.13,0);earOutline.quadraticCurveTo(-.24,.22,0,.48);earOutline.quadraticCurveTo(.25,.19,.13,0);earOutline.closePath();
-      const ear=form(body,new THREE.ExtrudeGeometry(earOutline,{depth:.055,bevelEnabled:true,bevelThickness:.025,bevelSize:.025,bevelSegments:2,steps:1,curveSegments:8}));ear.position.set(side*.40,1.74,1.06);ear.rotation.set(-.32,side*.45,-side*.37);
-      shape(body,[.07,.065,.06],[side*.45,1.45,1.38],dark);
+      const ear=form(body,new THREE.ExtrudeGeometry(earOutline,{depth:.055,bevelEnabled:true,bevelThickness:.025,bevelSize:.025,bevelSegments:2,steps:1,curveSegments:8}));ear.position.set(side*.32,1.6,.98);ear.rotation.set(-.32,side*.45,-side*.37);
+      shape(body,[.07,.065,.06],[side*.36,1.4,1.30],dark);
       shape(body,[.038,.05,.022],[side*.12,1.03,1.995],hide);
       form(body,taperedCurve([[side*.30,.89,1.69],[side*.40,.94,1.82],[side*.45,1.13,1.91],[side*.41,1.32,1.88]],.085),ivory);
       for(const z of [-.8,.8]){
         const joint=new THREE.Group();joint.position.set(side*.53,.95,z);body.add(joint);
         const knee=new THREE.Group();knee.position.set(0,-.48,-.12);joint.add(knee);
-        const thigh=shape(joint,[.19,.29,.2],[0,-.24,-.06]);thigh.rotation.x=Math.atan2(.12,.48);
-        const shin=shape(knee,[.13,.25,.14],[0,-.22,.08]);shin.rotation.x=-Math.atan2(.16,.44);
-        for(const part of [thigh,shin]){part.updateMatrix();part.geometry.applyMatrix4(part.matrix);part.position.set(0,0,0);part.quaternion.identity();part.scale.set(1,1,1);}
+        form(joint,taperedCurve([[0,.11,.025],[0,-.22,-.06],[0,-.48,-.12]],.22,.55,12));
+        form(knee,taperedCurve([[0,.05,-.02],[0,-.22,.08],[0,-.44,.16]],.14,.62,12));
         const ankle=new THREE.Group();ankle.position.set(0,-.44,.16);knee.add(ankle);shape(ankle,[.2,.16,.26],[0,.16,0],dark);
         joint.userData={knee,ankle,foot:ankle.position.clone()};legs.push(joint);
       }
@@ -116,7 +121,7 @@ export function createCreature(type,geometryCache=null){
     return {hip,knee,ankle,upper,lower,pole,rest:hip.position.clone().add(end),leg:ankle??knee,point:ankle?new THREE.Vector3():lower.clone()};
   });
   distant.visible=false;ground.add(distant);
-  root.userData={type,ground,contacts,body,distant,releaseDistant,far:false,legs,claws,hide,phase:0,last:null,hp:null,hitAt:-100,deadAt:null};
+  root.userData={type,ground,contacts,body,distant,releaseDistant,releaseSurface:surface.release,far:false,legs,claws,hide,phase:0,last:null,hp:null,hitAt:-100,deadAt:null};
   resetCreatureFeet(root.userData);
   return root;
 }

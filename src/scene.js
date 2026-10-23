@@ -293,7 +293,7 @@ export class WorldView{
     this.syncedState=state;
     this.contactShade?.sync(state);
   }
-  disposeGroup(group){const shared=new Set(materials.values()),released=new Set(),sharedGeometry=group.userData.releaseDistant?.()??new Set();group.traverse(o=>{if(o.isMesh){if(!sharedGeometry.has(o.geometry))o.geometry.dispose();for(const m of [o.material].flat())if(!shared.has(m)&&!released.has(m)){m.dispose();released.add(m);}}});}
+  disposeGroup(group){const shared=new Set(materials.values()),released=new Set(),sharedGeometry=group.userData.releaseDistant?.()??new Set();group.userData.releaseSurface?.();group.traverse(o=>{if(o.isMesh){if(!sharedGeometry.has(o.geometry))o.geometry.dispose();for(const m of [o.material].flat())if(!shared.has(m)&&!released.has(m)){m.dispose();released.add(m);}}});}
   setPreview(type){
     this.disposeGroup(this.preview);this.preview.clear();
     if(!type)return;

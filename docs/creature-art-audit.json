@@ -1,0 +1,93 @@
+{
+  "verified": true,
+  "boundedCreatureArtDelivered": true,
+  "archive": "tidelands-m5-2026-10-23-creature-surfaces.zip",
+  "archiveSha256": "a9d49c55a5dc5fc2ac825ae8807c11c204debd8db3d9ca5cfee4fdf7295fb7ca",
+  "archiveBytes": 15062164,
+  "runtimeInputs": 94,
+  "changedInputs": [
+    "README.md",
+    "src/creature-surface.js",
+    "src/creature.js",
+    "src/scene.js"
+  ],
+  "extractedPath": "/private/tmp/tidelands-delivery-5b68aand/tidelands-local",
+  "fullTests": 304,
+  "focusedTests": 30,
+  "imagesViewed": 14,
+  "rejectedImages": 2,
+  "currentExactSourceGpuAccepted": true,
+  "gpuRawSamples": 600,
+  "gpuP95Ms": {
+    "desktop": [
+      13.113874,
+      13.600208,
+      12.259125,
+      14.948874,
+      12.083375
+    ],
+    "mobile": [
+      13.268416,
+      13.208957,
+      12.897791,
+      13.868249,
+      13.204416
+    ]
+  },
+  "gpuSystemLoadIsolated": false,
+  "mobileCreatureRelease": {
+    "before": {
+      "geometries": 249,
+      "textures": 52
+    },
+    "after": {
+      "geometries": 204,
+      "textures": 46
+    },
+    "active": 0,
+    "creatureCount": 0,
+    "geometryCacheSize": 0
+  },
+  "desktopReleaseCaptured": false,
+  "ordinaryDesktopRestored": true,
+  "ordinary390ReloadRestored": false,
+  "ordinaryNewJsonExported": false,
+  "currentExactSourceEnduranceAccepted": false,
+  "fullCreatureNaturalnessAccepted": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "scope": "Bounded form/surface delivery. Shared-browser GPU load was not isolated. Diagnostic desktop model buffers differ from viewport; valid mobile model canvas is 390x667. Production mobile hurt crops the boar. No full naturalness, physical device, audition, VRAM/leak freedom, new ordinary mobile save/export or full campaign acceptance.",
+  "files": {
+    "docs/creature-art-browser.json": "964a80ba0233d9a579f141a3fe1653220c7da4a50e2d8c1eaa84dfb758586e79",
+    "docs/creature-art-gpu-desktop.json": "d5980acf71229901bf33903552029266a881323622c817fa51a18ce328ac8cbb",
+    "docs/creature-art-gpu-mobile.json": "e8324a1ad865a499b48f2f591e602200651af06df5a63f7ee1ad3c96cd1c3c15",
+    "docs/creature-art-main-browser.json": "aebc9b5f541b2b41e604dd0482529859e73dfe451944665ba178958de07e232f",
+    "docs/creature-art-package-browser.json": "11b27750418fb84e04755a1e1d7e0156b3d26612e8233872646f40dff0540ec5",
+    "docs/creature-art-striped-source.json": "6847d431f256d36a5754ea0b947a4556d8930f71eac94b93574f492cb9a18aa2",
+    "docs/creature-art-focused.txt": "29ecc0644adae8e8df3ab8e59ecd2456eeb7cd59e285158e20e3c084ca799d67",
+    "docs/creature-art-full-tests.txt": "e08369dc0d046e8bc73842294cc83b1e46fe6bf7994474042e1cfd732b277c32",
+    "docs/creature-art-red.txt": "55d658830787f55bb9b57b10697a27b6ef049199ab9a8c2060c8ed260d0f40cb",
+    "docs/creature-art-baseline-boar.jpg": "30c11aec00b286be0f532c1ef25f66c3768bc6a6075de7f38ebbcbf323f0d68e",
+    "docs/creature-art-baseline-crab-strike.jpg": "a7f2f1402e7365a25c2d3fecef46302f2fd3e8d3f99cd9666814c4c439f6d00a",
+    "docs/creature-art-baseline-pair.jpg": "5135033ddbd821eb96f6364142d5b8b2c9c589ee0af5366e1c9d63a9fd5b200c",
+    "docs/creature-art-candidate-boar.jpg": "8cb191b9ac96f582204b898b5a9257ae95b6a9696d9bbfffd40736c279560b47",
+    "docs/creature-art-candidate-crab-strike.jpg": "2250c7fe10359154116dd6cb3308cb73a13f115562dbe48ac98d4d50e919aba9",
+    "docs/creature-art-candidate-mobile-walk.jpg": "a2fc53d509d679f68447cb2683b6965439773ec3edd9729d4e94ac05e48dca50",
+    "docs/creature-art-candidate-pair.jpg": "75cfa3a6649935db18b4cb64fb26da0f810fd501398eea6340801c5b467af08e",
+    "docs/creature-art-gpu-desktop.jpg": "38e73aa92dbe723b3a96fcdc381896e1a0e6ee0090d27e12a8fe02c3dfc8c8ac",
+    "docs/creature-art-gpu-mobile.jpg": "54d1d8092e64908f614e638544c60bd68c751dcd18666ac349a5c8d4f247dac0",
+    "docs/creature-art-main-boar-mobile.jpg": "4f62e3d63d8dd22fc6485136c0c383007b49de73f8d74ed7a6812ae8204a33a2",
+    "docs/creature-art-main-crab.jpg": "f764434125f631b39d97254cf8a3bd800dcd204049017da03be567fbc22c86f5",
+    "docs/creature-art-mobile-cropped-rejected.jpg": "23d900a59f7fda656e54fb5dd6154adb940ef4ce85b04d6cd9bdfea02b67978d",
+    "docs/creature-art-package-ordinary.jpg": "a70dfdb9c56560efc324da1fa3f14fde1c77988f42b16a0470674b684f57f18e",
+    "docs/creature-art-striped-rejected-pair.jpg": "38956f05ce47095c3ab73cb8cf931377ea8fd06185a2b8131004dfc461616bc2",
+    "tests/creature-art-budget-review.html": "c34acfebb3dfc12a8f1449c396af6e2a5937f28c94f4e9d492a8db932f83ee25",
+    "tests/creature-art-main-review.html": "43dae07b1e15b7e1739bb249f05ebba5ad5c06155c0eaf4ab7cd9a2b58415066",
+    "tests/creature-art-review.html": "da540bb89c2747073bb58065c2ac94605ae9637569db95c4ef369ed166f0ede4",
+    "tests/creature-art-review.js": "6d936a078bdf0eda8e632a761985f240582c2f7e1219ce11a6366de5ea123907",
+    "tests/creature-art.test.js": "7e57d79ed53308b2b5616d3c9414f4c72a5b495dd12822ebfbc7c872e431aac4",
+    "tools/verify_creature_art.py": "770b295e1218f1b427cc7bc00ffd154d0ad1f160545bd067fedf7a7649624bcd",
+    "docs/CREATURE-ART-DELIVERY.md": "aa1525c89597139c45e9a81dde18284540058cf5c73ae0d6d99c10b68c838197",
+    "docs/tidelands-m5-2026-10-23-creature-surfaces-verification.json": "322a6ce85029bc4c4bc0d4ae6a249a40d2d6d6e2a0628afb8fd7790346952129"
+  }
+}
