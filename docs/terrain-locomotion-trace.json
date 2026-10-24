@@ -1,0 +1,192 @@
+{
+  "original": false,
+  "characterSource": "src/character.js",
+  "planeDown": false,
+  "scope": "30/60/144fps fallback regression trajectory on full-amplitude coherent candidate OR continuous -Z 0.8 planar slope. Diagnostic only; no production integration, quality or browser acceptance.",
+  "sources": {
+    "src/character.js": "5013fb09097ea64732f5af11d5b5b5d454ce0f4108d54e55104ebf4b32d53f25",
+    "dist/terrain-composition-candidate/tidelands-local/src/world.js": "ac0daf9f1299ee6456b85112d180c330e28824c71a6bd28533a0176f31f04759"
+  },
+  "rows": [
+    {
+      "fps": 30,
+      "minimum": -0.3880514485573086,
+      "firstViolation": null,
+      "firstWindow": [],
+      "worst": {
+        "frame": 136,
+        "time": 245.53333333333302,
+        "position": [
+          -50.599999999999895,
+          -264.9999999999998
+        ],
+        "height": 36.80392749808647,
+        "pelvis": -0.3880514485573086,
+        "moving": true,
+        "phase": 72.34627076594931,
+        "walkBlend": 0.9999999999999999,
+        "idleStep": null,
+        "contacts": [
+          false,
+          true
+        ],
+        "earlyLift": [
+          0.19426660666551676,
+          null
+        ],
+        "feet": [
+          {
+            "target": [
+              -0.21999999999968622,
+              0.5198890762087487,
+              -0.1818018439916287
+            ],
+            "world": [
+              -50.78180184399152,
+              37.32381657429522,
+              -264.78000000000003
+            ],
+            "horizontal": 0.33503346931503186,
+            "groundDelta": 0.19020706850368185,
+            "heightSlope": 0.7110711514483415
+          },
+          {
+            "target": [
+              0.22000000000002728,
+              -0.1044001714218652,
+              0.5786669666724222
+            ],
+            "world": [
+              -50.02133303332747,
+              36.69952732666461,
+              -265.2199999999998
+            ],
+            "horizontal": 0.42543534133619193,
+            "groundDelta": -0.28419570436193453,
+            "heightSlope": 0.7326605792482366
+          }
+        ]
+      }
+    },
+    {
+      "fps": 60,
+      "minimum": -0.4803437834387284,
+      "firstViolation": null,
+      "firstWindow": [],
+      "worst": {
+        "frame": 296,
+        "time": 245.93333333333806,
+        "position": [
+          -45.799999999999585,
+          -264.9999999999983
+        ],
+        "height": 35.38456193095208,
+        "pelvis": -0.4803437834387284,
+        "moving": true,
+        "phase": 78.6023089847573,
+        "walkBlend": 0.9999999999999998,
+        "idleStep": null,
+        "contacts": [
+          false,
+          true
+        ],
+        "earlyLift": [
+          0.22994601336062281,
+          null
+        ],
+        "feet": [
+          {
+            "target": [
+              -0.22000000000002728,
+              0.610232718136622,
+              -0.39727744321776015
+            ],
+            "world": [
+              -46.197277443217345,
+              35.9947946490887,
+              -264.77999999999827
+            ],
+            "horizontal": 0.5505090685475247,
+            "groundDelta": 0.2855848117723312,
+            "heightSlope": 0.724717002111636
+          },
+          {
+            "target": [
+              0.22000000000002728,
+              -0.18884269352165717,
+              0.600269933196877
+            ],
+            "world": [
+              -45.19973006680271,
+              35.195719237430424,
+              -265.2199999999983
+            ],
+            "horizontal": 0.4470383078670081,
+            "groundDelta": -0.3708242809444826,
+            "heightSlope": 0.7579146896176027
+          }
+        ]
+      }
+    },
+    {
+      "fps": 144,
+      "minimum": -0.47567015744733543,
+      "firstViolation": null,
+      "firstWindow": [],
+      "worst": {
+        "frame": 709,
+        "time": 245.9236111111219,
+        "position": [
+          -45.91666666666678,
+          -265.00000000000034
+        ],
+        "height": 35.427833644069366,
+        "pelvis": -0.47567015744733543,
+        "moving": true,
+        "phase": 78.60664026347807,
+        "walkBlend": 0.9999999999999993,
+        "idleStep": null,
+        "contacts": [
+          false,
+          true
+        ],
+        "earlyLift": [
+          null,
+          null
+        ],
+        "feet": [
+          {
+            "target": [
+              -0.22000000000002728,
+              0.6648333185169264,
+              -0.5709842471918307
+            ],
+            "world": [
+              -46.48765091385861,
+              36.09266696258629,
+              -264.7800000000003
+            ],
+            "horizontal": 0.7242158725215888,
+            "groundDelta": 0.3460697011729863,
+            "heightSlope": 0.7218818234308924
+          },
+          {
+            "target": [
+              0.22000000000002728,
+              -0.18567877751669926,
+              0.5968232111052814
+            ],
+            "world": [
+              -45.3198434555615,
+              35.24215486655267,
+              -265.22000000000037
+            ],
+            "horizontal": 0.44359158577540614,
+            "groundDelta": -0.3675699755345292,
+            "heightSlope": 0.7568808567094999
+          }
+        ]
+      }
+    }
+  ]
+}

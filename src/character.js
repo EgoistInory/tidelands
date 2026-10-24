@@ -165,7 +165,10 @@ function placeFeet(root,ground,time,dt,yaw,crouch=0){
     // Lift before the next rendered movement/turn makes the planted leg unreachable.
     if(rig.moving&&step.stance&&local&&(landingContact||rig.footCycles?.[i]===cycle)&&earlyLift[i]===null){
       const forecast=local.clone().sub(nextTravel).applyAxisAngle(up,-nextTurn);
-      if(Math.max(Math.hypot(local.x-reachCenter.x,local.z-reachCenter.z),Math.hypot(forecast.x-reachCenter.x,forecast.z-reachCenter.z))>.82)earlyLift[i]=u;
+      if(ground)forecast.y-=ground(root.position.x+rig.travelDirection.x*rig.stepDistance,root.position.z+rig.travelDirection.z*rig.stepDistance)-root.position.y;
+      const supportHeight=point=>point.y+Math.sqrt(Math.max(.01,(legLength-.01)**2-(point.x-reachCenter.x)**2-(point.z-reachCenter.z)**2))-(reachCenter.y-body.position.y);
+      // A low planted foot can exhaust vertical reach before reaching the horizontal limit.
+      if(Math.max(Math.hypot(local.x-reachCenter.x,local.z-reachCenter.z),Math.hypot(forecast.x-reachCenter.x,forecast.z-reachCenter.z))>.82||Math.min(supportHeight(local),supportHeight(forecast))<-.38)earlyLift[i]=u;
     }
     const stance=step.stance&&earlyLift[i]===null;let lift=step.lift;
     if(planted&&(!rig.moving||(stance&&(landingContact||rig.footCycles?.[i]===cycle)))){
@@ -190,7 +193,7 @@ function placeFeet(root,ground,time,dt,yaw,crouch=0){
     // Shorten downhill airborne steps before forcing the whole body down to reach them.
     if(ground&&rig.moving&&!stance&&lift*rig.walkBlend>1e-8)for(let attempt=0;attempt<12;attempt++){
       const dx=target.x-reachCenter.x,dz=target.z-reachCenter.z;
-      const reachablePelvis=target.y+Math.sqrt(Math.max(.01,(legLength-.01)**2-dx*dx-dz*dz))-reachCenter.y;
+      const reachablePelvis=target.y+Math.sqrt(Math.max(.01,(legLength-.01)**2-dx*dx-dz*dz))-(reachCenter.y-body.position.y);
       if(reachablePelvis>=-.38)break;
       target.x=THREE.MathUtils.lerp(reachCenter.x,target.x,.85);target.z=THREE.MathUtils.lerp(reachCenter.z,target.z,.85);
       world.copy(root.localToWorld(target.clone()));normal.copy(floorNormal(ground,world.x,world.z));

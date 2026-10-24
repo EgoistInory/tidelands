@@ -20,3 +20,17 @@ test('sprinting down the exposed highland slope does not collapse the pelvis to 
     assert.ok(lowest>-.6,`fps=${fps}, exposed production hill pelvis=${lowest}`);
   }
 });
+
+test('sprint stance releases before an uphill planted foot forces the pelvis below its support range',()=>{
+  for(const fps of [30,60,144]){
+    const direction=1,root=createCharacter(),ground=(_x,z)=>z*.8,dt=1/fps;let z=0,time=240,lowest=0;
+    const pose=()=>{root.position.set(0,ground(0,z),z);animateCharacter(root,{x:0,z,yaw:direction>0?0:Math.PI,time,attackAt:-100,selected:'axe'},dt,ground);root.updateMatrixWorld(true);};
+    root.rotation.y=direction>0?0:Math.PI;
+    for(let frame=0;frame<fps;frame++){time+=dt;pose();}
+    for(let frame=0;frame<fps*4;frame++){
+      z+=direction*12*dt;time+=dt;pose();lowest=Math.min(lowest,root.userData.body.position.y);
+      assert.ok(root.userData.worldFeet.every(p=>p.toArray().every(Number.isFinite)));
+    }
+    assert.ok(lowest>-.6,`fps=${fps}, direction=${direction}, pelvis=${lowest}`);
+  }
+});
