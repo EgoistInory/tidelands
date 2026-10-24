@@ -1,0 +1,88 @@
+{
+  "verified": true,
+  "boundedHudFieldDelivered": true,
+  "archive": "tidelands-m5-2026-10-24-hud-field.zip",
+  "archiveSha256": "f5fdcb4950a778bdf8c04d4eb3b2ca8efb8b33641146110af6665465c179db7b",
+  "archiveBytes": 15063660,
+  "changedInputs": [
+    "README.md",
+    "styles.css"
+  ],
+  "runtimeInputs": 94,
+  "extractedPath": "/private/tmp/tidelands-delivery-2ruxir81/tidelands-local",
+  "newRuleTestRun": false,
+  "historicalFullTests": 310,
+  "historicalTestCommit": "01bd719ae255c1a5284e640a0a75acb8a37cc7e0",
+  "javascriptAndRuleTestsUnchanged": true,
+  "imagesViewed": 10,
+  "rejectedImages": 1,
+  "fixtureRows": 9,
+  "narrowTargets": 11,
+  "coverage": {
+    "desktop-baseline": {
+      "widgetRectangleArea": 170844.91,
+      "viewportPercent": 18.54
+    },
+    "portrait-baseline": {
+      "widgetRectangleArea": 106209.69,
+      "viewportPercent": 32.27
+    },
+    "combat-baseline": {
+      "widgetRectangleArea": 103425.69,
+      "viewportPercent": 31.42
+    },
+    "combat-candidate": {
+      "widgetRectangleArea": 99605.34,
+      "viewportPercent": 30.26
+    },
+    "portrait-final": {
+      "widgetRectangleArea": 104987.03,
+      "viewportPercent": 31.9
+    },
+    "landscape-final": {
+      "widgetRectangleArea": 103454.19,
+      "viewportPercent": 31.43
+    },
+    "narrow-final": {
+      "widgetRectangleArea": 89930.64,
+      "viewportPercent": 37.98
+    },
+    "desktop-final": {
+      "widgetRectangleArea": 133045.91,
+      "viewportPercent": 14.44
+    },
+    "combat-final": {
+      "widgetRectangleArea": 99605.34,
+      "viewportPercent": 30.26
+    }
+  },
+  "ordinaryDesktopRestored": true,
+  "ordinary390ReloadRestored": false,
+  "newManualSaveVerified": false,
+  "ordinaryNewJsonExported": false,
+  "currentExactSourceGpuAccepted": false,
+  "currentExactSourceEnduranceAccepted": false,
+  "physicalTouchDeviceVerified": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "scope": "CSS layout and complete text, native modal controls, DOM hit targets and independent-package ordinary desktop continue. Fixture times/HP/poses differ; rectangle area is not opaque pixels, camera field of view or final visual quality.",
+  "files": {
+    "docs/hud-field-browser.json": "009830a8b17707a29931c097faf3e854df70c0b32952cfa5bc969df6687c4cbb",
+    "docs/hud-field-combat-baseline.jpg": "a51f795bbb70f0a00c7f3c5b2f727dbdd6c0392d27d21af9faadd6c31c4aad09",
+    "docs/hud-field-combat-candidate.jpg": "d7ce0d47c8b5372cca8130df1dd4fcd6077b7b1fb285ec8e2169d34d808a7c72",
+    "docs/hud-field-combat-final.jpg": "871744fcae5f9ff53dbb58a497cd21e3bd0aefb14e898d72a1b7a65449f2cae0",
+    "docs/hud-field-desktop-baseline.jpg": "d20f6073171c0bb96ad5f45e77fea11f349e10df7ad16c98d97fc9fa26d883fe",
+    "docs/hud-field-desktop-final.jpg": "22c21fb9fb121b4636cdd78f8fa3a4dfd333042d5b16a8c657e07426061bead1",
+    "docs/hud-field-landscape-final.jpg": "82e4f51243cc879d180b91a6530f6ad808e0a0686813a002e8a7106198cad0fd",
+    "docs/hud-field-narrow-final.jpg": "9bfcbe14089cce5e059f4e7b24aafc2974a92563617274470b8db95b5fdb8d85",
+    "docs/hud-field-package-browser.json": "cb0cf8291d139d84b1c6d909ec813db332f81e552f7c185480df60b46fad7507",
+    "docs/hud-field-package-ordinary.jpg": "201fdf78ff6924669bc6cc7fe3bd1067db5ce6c8a6b1f93c9d4cfe289a619e38",
+    "docs/hud-field-portrait-baseline.jpg": "be04c6ebbdea81958376f68eb9a1e1f8422e448a2ffb7fab079d38afa5cfcb66",
+    "docs/hud-field-portrait-final.jpg": "f47e2117e3fcd973ecf4bce6a3a8fd52bd6a3e8d203c117c2167341b31db9f73",
+    "tests/hud-field-review.html": "ce3e17920229111dbd841582239f4064b21b49212fce9897ff449bcbdf10a100",
+    "tools/verify_hud_field.py": "2694d34ea38fd3adaa319dc1ee71483e6881824a7a17e4764342ae40b27d3c6f",
+    "docs/HUD-FIELD-PLAN.md": "26060d1cb68732cc74b53bf761adfc87e85386f36495f8c8cd6a42a30bb0352e",
+    "docs/HUD-FIELD-DELIVERY.md": "7959797970649c7e4f5f48f2fec1cb4c7b19fe741f85cc2c7c1f63aac3965bef",
+    "docs/tidelands-m5-2026-10-24-hud-field-verification.json": "bfa7b2998a237031b60678317607c89abb1ba55e010467129477413c19d0b66a"
+  }
+}

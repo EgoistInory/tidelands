@@ -1,0 +1,1721 @@
+{
+  "rows": [
+    {
+      "mode": "freeplay",
+      "sources": {
+        "styles.css": "8dad268e069b3ecf3a901ee234739ca16b26b16a484a29f75e55de4b4465826b",
+        "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+        "src/main.js": "2fa82b52b504f1bd293c142a7ef360003ee85c1a24bcc14b09689ab38ac0f085",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24"
+      },
+      "frames": 1290,
+      "quest": 6,
+      "hp": 100,
+      "time": 248.5506000000018,
+      "position": [
+        -56,
+        54
+      ],
+      "camera": [
+        -53.90786614536961,
+        18.489190239712723,
+        67.84279509110459
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        1080
+      ],
+      "rects": {
+        ".vitals": {
+          "x": 22,
+          "y": 20,
+          "width": 270,
+          "height": 165.5,
+          "bottom": 185.5,
+          "right": 292,
+          "visible": true,
+          "text": "潮生群岛\nTIDELANDS\n\n潮汐海岸\n\n生命\n100\n体力\n100",
+          "scrollWidth": 268,
+          "clientWidth": 268
+        },
+        ".quest": {
+          "x": 22,
+          "y": 208,
+          "width": 260,
+          "height": 135,
+          "bottom": 343,
+          "right": 282,
+          "visible": true,
+          "text": "群岛，再次相连\n\n灯火已经点亮。整个群岛等待你的探索。\n\n可以继续建造、制作与自由探索",
+          "scrollWidth": 258,
+          "clientWidth": 258
+        },
+        ".map-corner": {
+          "x": 1084,
+          "y": 20,
+          "width": 174,
+          "height": 254,
+          "bottom": 274,
+          "right": 1258,
+          "visible": true,
+          "text": "第 1 天 · 午后\n\n地图 M\n暂停",
+          "scrollWidth": 174,
+          "clientWidth": 174
+        },
+        ".hotbar": {
+          "x": 403,
+          "y": 611,
+          "width": 474,
+          "height": 84,
+          "bottom": 695,
+          "right": 877,
+          "visible": true,
+          "text": "1\n✋\n徒手\n2\n⚒\n石斧\n3\n◉\n食物 3\n4\n♨\n营火\n5\n△\n帐篷\n6\n▤\n工作台",
+          "scrollWidth": 474,
+          "clientWidth": 474
+        },
+        "#enemy-status": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#toast": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "欢迎回来。当前目标：群岛，再次相连",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        ".bottom-right": {
+          "x": 1097.8203125,
+          "y": 651,
+          "width": 160.1796875,
+          "height": 44,
+          "bottom": 695,
+          "right": 1258,
+          "visible": true,
+          "text": "背包 B\n制作 C",
+          "scrollWidth": 160,
+          "clientWidth": 160
+        },
+        "#joystick": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#attack-button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "攻击",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#interact-button": {
+          "x": 594.50390625,
+          "y": 460.796875,
+          "width": 90.9921875,
+          "height": 44,
+          "bottom": 504.796875,
+          "right": 685.49609375,
+          "visible": true,
+          "text": "E休息",
+          "scrollWidth": 89,
+          "clientWidth": 89
+        },
+        "#map-button": {
+          "x": 1084,
+          "y": 239.5,
+          "width": 84,
+          "height": 34.5,
+          "bottom": 274,
+          "right": 1168,
+          "visible": true,
+          "text": "地图 M",
+          "scrollWidth": 82,
+          "clientWidth": 82
+        },
+        "#pause-button": {
+          "x": 1174,
+          "y": 239.5,
+          "width": 84,
+          "height": 34.5,
+          "bottom": 274,
+          "right": 1258,
+          "visible": true,
+          "text": "暂停",
+          "scrollWidth": 82,
+          "clientWidth": 82
+        }
+      },
+      "glError": 0,
+      "scope": "Actual production HUD/main with declared quest/start/camp or nearby enemy and isolated key. CSS view/controls evidence, not ordinary campaign, final art, performance or physical touch device.",
+      "name": "desktop-baseline"
+    },
+    {
+      "mode": "journey",
+      "sources": {
+        "styles.css": "8dad268e069b3ecf3a901ee234739ca16b26b16a484a29f75e55de4b4465826b",
+        "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+        "src/main.js": "2fa82b52b504f1bd293c142a7ef360003ee85c1a24bcc14b09689ab38ac0f085",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24"
+      },
+      "frames": 1395,
+      "quest": 0,
+      "hp": 100,
+      "time": 249.18670000028894,
+      "position": [
+        -70,
+        102
+      ],
+      "camera": [
+        -67.90786614536961,
+        15.644070584360641,
+        115.84279509110459
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        844
+      ],
+      "rects": {
+        ".vitals": {
+          "x": 12,
+          "y": 12,
+          "width": 182,
+          "height": 130,
+          "bottom": 142,
+          "right": 194,
+          "visible": true,
+          "text": "潮生群岛\n\n潮汐海岸\n\n生命\n100\n体力\n100",
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        ".quest": {
+          "x": 12,
+          "y": 160,
+          "width": 192,
+          "height": 82.5,
+          "bottom": 242.5,
+          "right": 204,
+          "visible": true,
+          "text": "归航的灯火\n\n与海边的守灯人交谈\n\n靠近人物，按 E 交谈 · 14 米",
+          "scrollWidth": 190,
+          "clientWidth": 190
+        },
+        ".map-corner": {
+          "x": 266,
+          "y": 12,
+          "width": 112,
+          "height": 198.5,
+          "bottom": 210.5,
+          "right": 378,
+          "visible": true,
+          "text": "第 1 天 · 午后\n\n地图 M\n暂停",
+          "scrollWidth": 112,
+          "clientWidth": 112
+        },
+        ".hotbar": {
+          "x": 12,
+          "y": 765,
+          "width": 366,
+          "height": 66,
+          "bottom": 831,
+          "right": 378,
+          "visible": true,
+          "text": "✋\n徒手\n⚒\n石斧\n◉\n食物 3\n♨\n营火\n△\n帐篷\n▤\n工作台",
+          "scrollWidth": 366,
+          "clientWidth": 366
+        },
+        "#enemy-status": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#toast": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        ".bottom-right": {
+          "x": 257.984375,
+          "y": 698,
+          "width": 120.015625,
+          "height": 44,
+          "bottom": 742,
+          "right": 378,
+          "visible": true,
+          "text": "背包 B\n制作 C",
+          "scrollWidth": 120,
+          "clientWidth": 120
+        },
+        "#joystick": {
+          "x": 20,
+          "y": 629,
+          "width": 104,
+          "height": 104,
+          "bottom": 733,
+          "right": 124,
+          "visible": true,
+          "text": "",
+          "scrollWidth": 102,
+          "clientWidth": 102
+        },
+        "#attack-button": {
+          "x": 303,
+          "y": 621,
+          "width": 65,
+          "height": 65,
+          "bottom": 686,
+          "right": 368,
+          "visible": true,
+          "text": "攻击",
+          "scrollWidth": 63,
+          "clientWidth": 63
+        },
+        "#interact-button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "E",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#map-button": {
+          "x": 266,
+          "y": 166.5,
+          "width": 53,
+          "height": 44,
+          "bottom": 210.5,
+          "right": 319,
+          "visible": true,
+          "text": "地图 M",
+          "scrollWidth": 51,
+          "clientWidth": 51
+        },
+        "#pause-button": {
+          "x": 325,
+          "y": 166.5,
+          "width": 53,
+          "height": 44,
+          "bottom": 210.5,
+          "right": 378,
+          "visible": true,
+          "text": "暂停",
+          "scrollWidth": 51,
+          "clientWidth": 51
+        }
+      },
+      "glError": 0,
+      "scope": "Actual production HUD/main with declared quest/start/camp or nearby enemy and isolated key. CSS view/controls evidence, not ordinary campaign, final art, performance or physical touch device.",
+      "name": "portrait-baseline"
+    },
+    {
+      "mode": "combat",
+      "sources": {
+        "styles.css": "8dad268e069b3ecf3a901ee234739ca16b26b16a484a29f75e55de4b4465826b",
+        "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+        "src/main.js": "2fa82b52b504f1bd293c142a7ef360003ee85c1a24bcc14b09689ab38ac0f085",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24"
+      },
+      "frames": 1200,
+      "quest": 6,
+      "hp": 28,
+      "time": 248.73910000009818,
+      "position": [
+        -70,
+        102
+      ],
+      "camera": [
+        -67.90786614536961,
+        15.644070584360641,
+        115.84279509110459
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        844
+      ],
+      "rects": {
+        ".vitals": {
+          "x": 12,
+          "y": 12,
+          "width": 182,
+          "height": 130,
+          "bottom": 142,
+          "right": 194,
+          "visible": true,
+          "text": "潮生群岛\n\n潮汐海岸\n\n生命\n28\n体力\n100",
+          "scrollWidth": 180,
+          "clientWidth": 180
+        },
+        ".quest": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "群岛，再次相连灯火已经点亮。整个群岛等待你的探索。可以继续建造、制作与自由探索",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        ".map-corner": {
+          "x": 266,
+          "y": 12,
+          "width": 112,
+          "height": 198.5,
+          "bottom": 210.5,
+          "right": 378,
+          "visible": true,
+          "text": "第 1 天 · 午后\n\n地图 M\n暂停",
+          "scrollWidth": 112,
+          "clientWidth": 112
+        },
+        ".hotbar": {
+          "x": 12,
+          "y": 765,
+          "width": 366,
+          "height": 66,
+          "bottom": 831,
+          "right": 378,
+          "visible": true,
+          "text": "✋\n徒手\n⚒\n石斧\n◉\n食物 3\n♨\n营火\n△\n帐篷\n▤\n工作台",
+          "scrollWidth": 366,
+          "clientWidth": 366
+        },
+        "#enemy-status": {
+          "x": 12,
+          "y": 160,
+          "width": 192,
+          "height": 68,
+          "bottom": 228,
+          "right": 204,
+          "visible": true,
+          "text": "野猪\n40 / 70\n3 米 · 面向目标 · 空格 / 攻击",
+          "scrollWidth": 190,
+          "clientWidth": 190
+        },
+        "#toast": {
+          "x": 20,
+          "y": 303.8359375,
+          "width": 350,
+          "height": 44,
+          "bottom": 347.8359375,
+          "right": 370,
+          "visible": true,
+          "text": "受到攻击！空格反击，或拉开距离。",
+          "scrollWidth": 348,
+          "clientWidth": 348
+        },
+        ".bottom-right": {
+          "x": 257.984375,
+          "y": 698,
+          "width": 120.015625,
+          "height": 44,
+          "bottom": 742,
+          "right": 378,
+          "visible": true,
+          "text": "背包 B\n制作 C",
+          "scrollWidth": 120,
+          "clientWidth": 120
+        },
+        "#joystick": {
+          "x": 20,
+          "y": 629,
+          "width": 104,
+          "height": 104,
+          "bottom": 733,
+          "right": 124,
+          "visible": true,
+          "text": "",
+          "scrollWidth": 102,
+          "clientWidth": 102
+        },
+        "#attack-button": {
+          "x": 303,
+          "y": 621,
+          "width": 65,
+          "height": 65,
+          "bottom": 686,
+          "right": 368,
+          "visible": true,
+          "text": "攻击",
+          "scrollWidth": 63,
+          "clientWidth": 63
+        },
+        "#interact-button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "E",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#map-button": {
+          "x": 266,
+          "y": 166.5,
+          "width": 53,
+          "height": 44,
+          "bottom": 210.5,
+          "right": 319,
+          "visible": true,
+          "text": "地图 M",
+          "scrollWidth": 51,
+          "clientWidth": 51
+        },
+        "#pause-button": {
+          "x": 325,
+          "y": 166.5,
+          "width": 53,
+          "height": 44,
+          "bottom": 210.5,
+          "right": 378,
+          "visible": true,
+          "text": "暂停",
+          "scrollWidth": 51,
+          "clientWidth": 51
+        }
+      },
+      "glError": 0,
+      "scope": "Actual production HUD/main with declared quest/start/camp or nearby enemy and isolated key. CSS view/controls evidence, not ordinary campaign, final art, performance or physical touch device.",
+      "name": "combat-baseline"
+    },
+    {
+      "mode": "combat",
+      "sources": {
+        "styles.css": "292854c01b59d5c60cc80d60bbad08d601f002d1972be44eaa62778cc18bc6b7",
+        "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+        "src/main.js": "2fa82b52b504f1bd293c142a7ef360003ee85c1a24bcc14b09689ab38ac0f085",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24"
+      },
+      "frames": 405,
+      "quest": 6,
+      "hp": 52,
+      "time": 246.4161000000956,
+      "position": [
+        -70,
+        102
+      ],
+      "camera": [
+        -67.90786614536961,
+        15.644070584360641,
+        115.84279509110459
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        844
+      ],
+      "rects": {
+        ".vitals": {
+          "x": 12,
+          "y": 12,
+          "width": 220,
+          "height": 106.8984375,
+          "bottom": 118.8984375,
+          "right": 232,
+          "visible": true,
+          "text": "潮生群岛\n\n潮汐海岸\n\n生命\n52\n体力\n100",
+          "scrollWidth": 218,
+          "clientWidth": 218
+        },
+        ".quest": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "群岛，再次相连灯火已经点亮。整个群岛等待你的探索。可以继续建造、制作与自由探索",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        ".map-corner": {
+          "x": 278,
+          "y": 12,
+          "width": 100,
+          "height": 166.5,
+          "bottom": 178.5,
+          "right": 378,
+          "visible": true,
+          "text": "第 1 天 · 午后\n\n地图 M\n暂停",
+          "scrollWidth": 100,
+          "clientWidth": 100
+        },
+        ".hotbar": {
+          "x": 12,
+          "y": 765,
+          "width": 366,
+          "height": 66,
+          "bottom": 831,
+          "right": 378,
+          "visible": true,
+          "text": "✋\n徒手\n⚒\n石斧\n◉\n食物 3\n♨\n营火\n△\n帐篷\n▤\n工作台",
+          "scrollWidth": 366,
+          "clientWidth": 366
+        },
+        "#enemy-status": {
+          "x": 12,
+          "y": 118,
+          "width": 220,
+          "height": 68,
+          "bottom": 186,
+          "right": 232,
+          "visible": true,
+          "text": "野猪\n40 / 70\n3 米 · 面向目标 · 空格 / 攻击",
+          "scrollWidth": 218,
+          "clientWidth": 218
+        },
+        "#toast": {
+          "x": 20,
+          "y": 303.8359375,
+          "width": 350,
+          "height": 44,
+          "bottom": 347.8359375,
+          "right": 370,
+          "visible": true,
+          "text": "受到攻击！空格反击，或拉开距离。",
+          "scrollWidth": 348,
+          "clientWidth": 348
+        },
+        ".bottom-right": {
+          "x": 257.984375,
+          "y": 698,
+          "width": 120.015625,
+          "height": 44,
+          "bottom": 742,
+          "right": 378,
+          "visible": true,
+          "text": "背包 B\n制作 C",
+          "scrollWidth": 120,
+          "clientWidth": 120
+        },
+        "#joystick": {
+          "x": 20,
+          "y": 629,
+          "width": 104,
+          "height": 104,
+          "bottom": 733,
+          "right": 124,
+          "visible": true,
+          "text": "",
+          "scrollWidth": 102,
+          "clientWidth": 102
+        },
+        "#attack-button": {
+          "x": 303,
+          "y": 621,
+          "width": 65,
+          "height": 65,
+          "bottom": 686,
+          "right": 368,
+          "visible": true,
+          "text": "攻击",
+          "scrollWidth": 63,
+          "clientWidth": 63
+        },
+        "#interact-button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "E",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#map-button": {
+          "x": 278,
+          "y": 134.5,
+          "width": 47,
+          "height": 44,
+          "bottom": 178.5,
+          "right": 325,
+          "visible": true,
+          "text": "地图 M",
+          "scrollWidth": 45,
+          "clientWidth": 45
+        },
+        "#pause-button": {
+          "x": 331,
+          "y": 134.5,
+          "width": 47,
+          "height": 44,
+          "bottom": 178.5,
+          "right": 378,
+          "visible": true,
+          "text": "暂停",
+          "scrollWidth": 45,
+          "clientWidth": 45
+        }
+      },
+      "glError": 0,
+      "scope": "Actual production HUD/main with declared quest/start/camp or nearby enemy and isolated key. CSS view/controls evidence, not ordinary campaign, final art, performance or physical touch device.",
+      "name": "combat-candidate"
+    },
+    {
+      "mode": "journey",
+      "sources": {
+        "styles.css": "87300d7f0ed07abbd01f1be8b71ad1511ecc50d209dea53ac54ff30e63cc2f34",
+        "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+        "src/main.js": "2fa82b52b504f1bd293c142a7ef360003ee85c1a24bcc14b09689ab38ac0f085",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24"
+      },
+      "frames": 2085,
+      "quest": 0,
+      "hp": 100,
+      "time": 249.3441999998104,
+      "position": [
+        -70,
+        102
+      ],
+      "camera": [
+        -67.90786614536961,
+        15.644070584360641,
+        115.84279509110459
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        844
+      ],
+      "rects": {
+        ".vitals": {
+          "x": 12,
+          "y": 12,
+          "width": 220,
+          "height": 106.8984375,
+          "bottom": 118.8984375,
+          "right": 232,
+          "visible": true,
+          "text": "潮生群岛\n\n潮汐海岸\n\n生命\n100\n体力\n100",
+          "scrollWidth": 218,
+          "clientWidth": 218
+        },
+        ".quest": {
+          "x": 12,
+          "y": 128,
+          "width": 258,
+          "height": 78.84375,
+          "bottom": 206.84375,
+          "right": 270,
+          "visible": true,
+          "text": "归航的灯火\n\n与海边的守灯人交谈\n\n靠近人物，按 E 交谈 · 14 米",
+          "scrollWidth": 255,
+          "clientWidth": 255
+        },
+        ".map-corner": {
+          "x": 278,
+          "y": 12,
+          "width": 100,
+          "height": 166.5,
+          "bottom": 178.5,
+          "right": 378,
+          "visible": true,
+          "text": "第 1 天 · 午后\n\n地图 M\n暂停",
+          "scrollWidth": 100,
+          "clientWidth": 100
+        },
+        ".hotbar": {
+          "x": 12,
+          "y": 765,
+          "width": 366,
+          "height": 66,
+          "bottom": 831,
+          "right": 378,
+          "visible": true,
+          "text": "✋\n徒手\n⚒\n石斧\n◉\n食物 3\n♨\n营火\n△\n帐篷\n▤\n工作台",
+          "scrollWidth": 366,
+          "clientWidth": 366
+        },
+        "#enemy-status": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#toast": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        ".bottom-right": {
+          "x": 257.984375,
+          "y": 698,
+          "width": 120.015625,
+          "height": 44,
+          "bottom": 742,
+          "right": 378,
+          "visible": true,
+          "text": "背包 B\n制作 C",
+          "scrollWidth": 120,
+          "clientWidth": 120
+        },
+        "#joystick": {
+          "x": 20,
+          "y": 629,
+          "width": 104,
+          "height": 104,
+          "bottom": 733,
+          "right": 124,
+          "visible": true,
+          "text": "",
+          "scrollWidth": 102,
+          "clientWidth": 102
+        },
+        "#attack-button": {
+          "x": 303,
+          "y": 621,
+          "width": 65,
+          "height": 65,
+          "bottom": 686,
+          "right": 368,
+          "visible": true,
+          "text": "攻击",
+          "scrollWidth": 63,
+          "clientWidth": 63
+        },
+        "#interact-button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "E",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#map-button": {
+          "x": 278,
+          "y": 134.5,
+          "width": 47,
+          "height": 44,
+          "bottom": 178.5,
+          "right": 325,
+          "visible": true,
+          "text": "地图 M",
+          "scrollWidth": 45,
+          "clientWidth": 45
+        },
+        "#pause-button": {
+          "x": 331,
+          "y": 134.5,
+          "width": 47,
+          "height": 44,
+          "bottom": 178.5,
+          "right": 378,
+          "visible": true,
+          "text": "暂停",
+          "scrollWidth": 45,
+          "clientWidth": 45
+        }
+      },
+      "glError": 0,
+      "scope": "Actual production HUD/main with declared quest/start/camp or nearby enemy and isolated key. CSS view/controls evidence, not ordinary campaign, final art, performance or physical touch device.",
+      "name": "portrait-final"
+    },
+    {
+      "mode": "journey",
+      "sources": {
+        "styles.css": "87300d7f0ed07abbd01f1be8b71ad1511ecc50d209dea53ac54ff30e63cc2f34",
+        "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+        "src/main.js": "2fa82b52b504f1bd293c142a7ef360003ee85c1a24bcc14b09689ab38ac0f085",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24"
+      },
+      "frames": 4635,
+      "quest": 0,
+      "hp": 100,
+      "time": 270.9764999998113,
+      "position": [
+        -70,
+        102
+      ],
+      "camera": [
+        -67.90786614536961,
+        15.644070584360641,
+        115.84279509110459
+      ],
+      "viewport": [
+        844,
+        390
+      ],
+      "buffer": [
+        844,
+        390
+      ],
+      "rects": {
+        ".vitals": {
+          "x": 12,
+          "y": 10,
+          "width": 195,
+          "height": 123.5,
+          "bottom": 133.5,
+          "right": 207,
+          "visible": true,
+          "text": "潮生群岛\n\n潮汐海岸\n\n生命\n100\n体力\n100",
+          "scrollWidth": 193,
+          "clientWidth": 193
+        },
+        ".quest": {
+          "x": 225,
+          "y": 10,
+          "width": 235,
+          "height": 86,
+          "bottom": 96,
+          "right": 460,
+          "visible": true,
+          "text": "归航的灯火\n\n与海边的守灯人交谈\n\n靠近人物，按 E 交谈 · 14 米",
+          "scrollWidth": 233,
+          "clientWidth": 233
+        },
+        ".map-corner": {
+          "x": 720,
+          "y": 10,
+          "width": 112,
+          "height": 176.5,
+          "bottom": 186.5,
+          "right": 832,
+          "visible": true,
+          "text": "第 1 天 · 午后\n\n地图 M\n暂停",
+          "scrollWidth": 112,
+          "clientWidth": 112
+        },
+        ".hotbar": {
+          "x": 242,
+          "y": 318,
+          "width": 360,
+          "height": 60,
+          "bottom": 378,
+          "right": 602,
+          "visible": true,
+          "text": "✋\n徒手\n⚒\n石斧\n◉\n食物 3\n♨\n营火\n△\n帐篷\n▤\n工作台",
+          "scrollWidth": 360,
+          "clientWidth": 360
+        },
+        "#enemy-status": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#toast": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        ".bottom-right": {
+          "x": 715.984375,
+          "y": 250,
+          "width": 116.015625,
+          "height": 44,
+          "bottom": 294,
+          "right": 832,
+          "visible": true,
+          "text": "背包 B\n制作 C",
+          "scrollWidth": 116,
+          "clientWidth": 116
+        },
+        "#joystick": {
+          "x": 18,
+          "y": 280,
+          "width": 92,
+          "height": 92,
+          "bottom": 372,
+          "right": 110,
+          "visible": true,
+          "text": "",
+          "scrollWidth": 90,
+          "clientWidth": 90
+        },
+        "#attack-button": {
+          "x": 757,
+          "y": 307,
+          "width": 65,
+          "height": 65,
+          "bottom": 372,
+          "right": 822,
+          "visible": true,
+          "text": "攻击",
+          "scrollWidth": 63,
+          "clientWidth": 63
+        },
+        "#interact-button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "E",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#map-button": {
+          "x": 720,
+          "y": 142.5,
+          "width": 53,
+          "height": 44,
+          "bottom": 186.5,
+          "right": 773,
+          "visible": true,
+          "text": "地图 M",
+          "scrollWidth": 51,
+          "clientWidth": 51
+        },
+        "#pause-button": {
+          "x": 779,
+          "y": 142.5,
+          "width": 53,
+          "height": 44,
+          "bottom": 186.5,
+          "right": 832,
+          "visible": true,
+          "text": "暂停",
+          "scrollWidth": 51,
+          "clientWidth": 51
+        }
+      },
+      "glError": 0,
+      "scope": "Actual production HUD/main with declared quest/start/camp or nearby enemy and isolated key. CSS view/controls evidence, not ordinary campaign, final art, performance or physical touch device.",
+      "name": "landscape-final"
+    },
+    {
+      "mode": "journey",
+      "sources": {
+        "styles.css": "87300d7f0ed07abbd01f1be8b71ad1511ecc50d209dea53ac54ff30e63cc2f34",
+        "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+        "src/main.js": "2fa82b52b504f1bd293c142a7ef360003ee85c1a24bcc14b09689ab38ac0f085",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24"
+      },
+      "frames": 5265,
+      "quest": 0,
+      "hp": 100,
+      "time": 281.47659999981255,
+      "position": [
+        -70,
+        102
+      ],
+      "camera": [
+        -67.90786614536961,
+        15.644070584360641,
+        115.84279509110459
+      ],
+      "viewport": [
+        320,
+        740
+      ],
+      "buffer": [
+        320,
+        740
+      ],
+      "rects": {
+        ".vitals": {
+          "x": 12,
+          "y": 12,
+          "width": 174,
+          "height": 106.8984375,
+          "bottom": 118.8984375,
+          "right": 186,
+          "visible": true,
+          "text": "潮生群岛\n\n潮汐海岸\n\n生命\n100\n体力\n100",
+          "scrollWidth": 172,
+          "clientWidth": 172
+        },
+        ".quest": {
+          "x": 12,
+          "y": 128,
+          "width": 188,
+          "height": 78.84375,
+          "bottom": 206.84375,
+          "right": 200,
+          "visible": true,
+          "text": "归航的灯火\n\n与海边的守灯人交谈\n\n靠近人物，按 E 交谈 · 14 米",
+          "scrollWidth": 185,
+          "clientWidth": 185
+        },
+        ".map-corner": {
+          "x": 208,
+          "y": 12,
+          "width": 100,
+          "height": 166.5,
+          "bottom": 178.5,
+          "right": 308,
+          "visible": true,
+          "text": "第 1 天 · 午后\n\n地图 M\n暂停",
+          "scrollWidth": 100,
+          "clientWidth": 100
+        },
+        ".hotbar": {
+          "x": 12,
+          "y": 661,
+          "width": 296,
+          "height": 66,
+          "bottom": 727,
+          "right": 308,
+          "visible": true,
+          "text": "✋\n徒手\n⚒\n石斧\n◉\n食物 3\n♨\n营火\n△\n帐篷\n▤\n工作台",
+          "scrollWidth": 296,
+          "clientWidth": 296
+        },
+        "#enemy-status": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#toast": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        ".bottom-right": {
+          "x": 187.984375,
+          "y": 594,
+          "width": 120.015625,
+          "height": 44,
+          "bottom": 638,
+          "right": 308,
+          "visible": true,
+          "text": "背包 B\n制作 C",
+          "scrollWidth": 120,
+          "clientWidth": 120
+        },
+        "#joystick": {
+          "x": 20,
+          "y": 525,
+          "width": 104,
+          "height": 104,
+          "bottom": 629,
+          "right": 124,
+          "visible": true,
+          "text": "",
+          "scrollWidth": 102,
+          "clientWidth": 102
+        },
+        "#attack-button": {
+          "x": 233,
+          "y": 517,
+          "width": 65,
+          "height": 65,
+          "bottom": 582,
+          "right": 298,
+          "visible": true,
+          "text": "攻击",
+          "scrollWidth": 63,
+          "clientWidth": 63
+        },
+        "#interact-button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "E",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#map-button": {
+          "x": 208,
+          "y": 134.5,
+          "width": 47,
+          "height": 44,
+          "bottom": 178.5,
+          "right": 255,
+          "visible": true,
+          "text": "地图 M",
+          "scrollWidth": 45,
+          "clientWidth": 45
+        },
+        "#pause-button": {
+          "x": 261,
+          "y": 134.5,
+          "width": 47,
+          "height": 44,
+          "bottom": 178.5,
+          "right": 308,
+          "visible": true,
+          "text": "暂停",
+          "scrollWidth": 45,
+          "clientWidth": 45
+        }
+      },
+      "glError": 0,
+      "scope": "Actual production HUD/main with declared quest/start/camp or nearby enemy and isolated key. CSS view/controls evidence, not ordinary campaign, final art, performance or physical touch device.",
+      "name": "narrow-final"
+    },
+    {
+      "mode": "freeplay",
+      "sources": {
+        "styles.css": "87300d7f0ed07abbd01f1be8b71ad1511ecc50d209dea53ac54ff30e63cc2f34",
+        "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+        "src/main.js": "2fa82b52b504f1bd293c142a7ef360003ee85c1a24bcc14b09689ab38ac0f085",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24"
+      },
+      "frames": 1275,
+      "quest": 6,
+      "hp": 100,
+      "time": 248.74710000009745,
+      "position": [
+        -56,
+        54
+      ],
+      "camera": [
+        -53.90786614536961,
+        18.489190239712723,
+        67.84279509110459
+      ],
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        1080
+      ],
+      "rects": {
+        ".vitals": {
+          "x": 22,
+          "y": 20,
+          "width": 238,
+          "height": 150,
+          "bottom": 170,
+          "right": 260,
+          "visible": true,
+          "text": "潮生群岛\nTIDELANDS\n\n潮汐海岸\n\n生命\n100\n体力\n100",
+          "scrollWidth": 236,
+          "clientWidth": 236
+        },
+        ".quest": {
+          "x": 22,
+          "y": 178,
+          "width": 238,
+          "height": 115,
+          "bottom": 293,
+          "right": 260,
+          "visible": true,
+          "text": "群岛，再次相连\n\n灯火已经点亮。整个群岛等待你的探索。\n\n可以继续建造、制作与自由探索",
+          "scrollWidth": 235,
+          "clientWidth": 235
+        },
+        ".map-corner": {
+          "x": 1114,
+          "y": 20,
+          "width": 144,
+          "height": 224,
+          "bottom": 244,
+          "right": 1258,
+          "visible": true,
+          "text": "第 1 天 · 午后\n\n地图 M\n暂停",
+          "scrollWidth": 144,
+          "clientWidth": 144
+        },
+        ".hotbar": {
+          "x": 427,
+          "y": 623,
+          "width": 426,
+          "height": 72,
+          "bottom": 695,
+          "right": 853,
+          "visible": true,
+          "text": "1\n✋\n徒手\n2\n⚒\n石斧\n3\n◉\n食物 3\n4\n♨\n营火\n5\n△\n帐篷\n6\n▤\n工作台",
+          "scrollWidth": 426,
+          "clientWidth": 426
+        },
+        "#enemy-status": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#toast": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "欢迎回来。当前目标：群岛，再次相连",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        ".bottom-right": {
+          "x": 1097.8203125,
+          "y": 651,
+          "width": 160.1796875,
+          "height": 44,
+          "bottom": 695,
+          "right": 1258,
+          "visible": true,
+          "text": "背包 B\n制作 C",
+          "scrollWidth": 160,
+          "clientWidth": 160
+        },
+        "#joystick": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#attack-button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "攻击",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#interact-button": {
+          "x": 594.50390625,
+          "y": 460.796875,
+          "width": 90.9921875,
+          "height": 44,
+          "bottom": 504.796875,
+          "right": 685.49609375,
+          "visible": true,
+          "text": "E休息",
+          "scrollWidth": 89,
+          "clientWidth": 89
+        },
+        "#map-button": {
+          "x": 1114,
+          "y": 209.5,
+          "width": 69,
+          "height": 34.5,
+          "bottom": 244,
+          "right": 1183,
+          "visible": true,
+          "text": "地图 M",
+          "scrollWidth": 67,
+          "clientWidth": 67
+        },
+        "#pause-button": {
+          "x": 1189,
+          "y": 209.5,
+          "width": 69,
+          "height": 34.5,
+          "bottom": 244,
+          "right": 1258,
+          "visible": true,
+          "text": "暂停",
+          "scrollWidth": 67,
+          "clientWidth": 67
+        }
+      },
+      "glError": 0,
+      "scope": "Actual production HUD/main with declared quest/start/camp or nearby enemy and isolated key. CSS view/controls evidence, not ordinary campaign, final art, performance or physical touch device.",
+      "name": "desktop-final"
+    },
+    {
+      "mode": "combat",
+      "sources": {
+        "styles.css": "87300d7f0ed07abbd01f1be8b71ad1511ecc50d209dea53ac54ff30e63cc2f34",
+        "index.html": "ceeaa551bc402d9a7039513f0f271860f2ae808bd469a497d8a171f6c42f484e",
+        "src/main.js": "2fa82b52b504f1bd293c142a7ef360003ee85c1a24bcc14b09689ab38ac0f085",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24"
+      },
+      "frames": 1530,
+      "quest": 6,
+      "hp": 16,
+      "time": 250.12770000019347,
+      "position": [
+        -70,
+        102
+      ],
+      "camera": [
+        -67.90786614536961,
+        15.644070584360641,
+        115.84279509110459
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        844
+      ],
+      "rects": {
+        ".vitals": {
+          "x": 12,
+          "y": 12,
+          "width": 220,
+          "height": 106.8984375,
+          "bottom": 118.8984375,
+          "right": 232,
+          "visible": true,
+          "text": "潮生群岛\n\n潮汐海岸\n\n生命\n16\n体力\n100",
+          "scrollWidth": 218,
+          "clientWidth": 218
+        },
+        ".quest": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "群岛，再次相连灯火已经点亮。整个群岛等待你的探索。可以继续建造、制作与自由探索",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        ".map-corner": {
+          "x": 278,
+          "y": 12,
+          "width": 100,
+          "height": 166.5,
+          "bottom": 178.5,
+          "right": 378,
+          "visible": true,
+          "text": "第 1 天 · 午后\n\n地图 M\n暂停",
+          "scrollWidth": 100,
+          "clientWidth": 100
+        },
+        ".hotbar": {
+          "x": 12,
+          "y": 765,
+          "width": 366,
+          "height": 66,
+          "bottom": 831,
+          "right": 378,
+          "visible": true,
+          "text": "✋\n徒手\n⚒\n石斧\n◉\n食物 3\n♨\n营火\n△\n帐篷\n▤\n工作台",
+          "scrollWidth": 366,
+          "clientWidth": 366
+        },
+        "#enemy-status": {
+          "x": 12,
+          "y": 128,
+          "width": 220,
+          "height": 68,
+          "bottom": 196,
+          "right": 232,
+          "visible": true,
+          "text": "野猪\n40 / 70\n3 米 · 面向目标 · 空格 / 攻击",
+          "scrollWidth": 218,
+          "clientWidth": 218
+        },
+        "#toast": {
+          "x": 20,
+          "y": 303.8359375,
+          "width": 350,
+          "height": 44,
+          "bottom": 347.8359375,
+          "right": 370,
+          "visible": true,
+          "text": "受到攻击！空格反击，或拉开距离。",
+          "scrollWidth": 348,
+          "clientWidth": 348
+        },
+        ".bottom-right": {
+          "x": 257.984375,
+          "y": 698,
+          "width": 120.015625,
+          "height": 44,
+          "bottom": 742,
+          "right": 378,
+          "visible": true,
+          "text": "背包 B\n制作 C",
+          "scrollWidth": 120,
+          "clientWidth": 120
+        },
+        "#joystick": {
+          "x": 20,
+          "y": 629,
+          "width": 104,
+          "height": 104,
+          "bottom": 733,
+          "right": 124,
+          "visible": true,
+          "text": "",
+          "scrollWidth": 102,
+          "clientWidth": 102
+        },
+        "#attack-button": {
+          "x": 303,
+          "y": 621,
+          "width": 65,
+          "height": 65,
+          "bottom": 686,
+          "right": 368,
+          "visible": true,
+          "text": "攻击",
+          "scrollWidth": 63,
+          "clientWidth": 63
+        },
+        "#interact-button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0,
+          "right": 0,
+          "visible": false,
+          "text": "E",
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "#map-button": {
+          "x": 278,
+          "y": 134.5,
+          "width": 47,
+          "height": 44,
+          "bottom": 178.5,
+          "right": 325,
+          "visible": true,
+          "text": "地图 M",
+          "scrollWidth": 45,
+          "clientWidth": 45
+        },
+        "#pause-button": {
+          "x": 331,
+          "y": 134.5,
+          "width": 47,
+          "height": 44,
+          "bottom": 178.5,
+          "right": 378,
+          "visible": true,
+          "text": "暂停",
+          "scrollWidth": 45,
+          "clientWidth": 45
+        }
+      },
+      "glError": 0,
+      "scope": "Actual production HUD/main with declared quest/start/camp or nearby enemy and isolated key. CSS view/controls evidence, not ordinary campaign, final art, performance or physical touch device.",
+      "name": "combat-final"
+    }
+  ],
+  "controls": [
+    {
+      "name": "map",
+      "title": "群岛地图",
+      "bounds": {
+        "height": 318,
+        "width": 318
+      }
+    },
+    {
+      "name": "bag",
+      "title": "旅人的背包"
+    },
+    {
+      "name": "craft",
+      "title": "制作与建造"
+    },
+    {
+      "name": "pause",
+      "title": "旅途小憩"
+    }
+  ],
+  "narrowHitTargets": [
+    {
+      "height": 44,
+      "hit": true,
+      "id": "map-button",
+      "visible": true,
+      "width": 47
+    },
+    {
+      "height": 44,
+      "hit": true,
+      "id": "pause-button",
+      "visible": true,
+      "width": 47
+    },
+    {
+      "height": 66,
+      "hit": true,
+      "id": "hand",
+      "visible": true,
+      "width": 47.6640625
+    },
+    {
+      "height": 66,
+      "hit": true,
+      "id": "axe",
+      "visible": true,
+      "width": 45.671875
+    },
+    {
+      "height": 66,
+      "hit": true,
+      "id": "food",
+      "visible": true,
+      "width": 45.6640625
+    },
+    {
+      "height": 66,
+      "hit": true,
+      "id": "campfire",
+      "visible": true,
+      "width": 45.671875
+    },
+    {
+      "height": 66,
+      "hit": true,
+      "id": "tent",
+      "visible": true,
+      "width": 45.6640625
+    },
+    {
+      "height": 66,
+      "hit": true,
+      "id": "workbench",
+      "visible": true,
+      "width": 45.6640625
+    },
+    {
+      "height": 44,
+      "hit": true,
+      "id": "bag-button",
+      "visible": true,
+      "width": 56.2421875
+    },
+    {
+      "height": 44,
+      "hit": true,
+      "id": "craft-button",
+      "visible": true,
+      "width": 56.7734375
+    },
+    {
+      "height": 65,
+      "hit": true,
+      "id": "attack-button",
+      "visible": true,
+      "width": 65
+    }
+  ],
+  "console": [],
+  "rejected": [
+    "combat-candidate"
+  ],
+  "scope": "Actual production CSS HUD, baseline/current; declarative gameplay fixtures. Scene poses/world time are not synchronized between samples; comparisons concern layout/text. No final art, physical touch, ordinary route or performance claim."
+}
