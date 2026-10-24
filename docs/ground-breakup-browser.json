@@ -1,0 +1,636 @@
+{
+  "rows": [
+    {
+      "ready": true,
+      "surface": "baseline",
+      "place": "coast",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/ground-breakup-candidate.js": "ee755ac9a176450dc4e10083eca223a8b97aa249923d102d359782159b6ae903"
+      },
+      "position": [
+        -90,
+        140
+      ],
+      "camera": [
+        -87.90785147236856,
+        7.794984205309278,
+        153.84283750495277
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 372,
+        "triangles": 2668767,
+        "textures": 47,
+        "programs": 40
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, surface-only isolated shader. No normal save, GPU, endurance, device or final art proof.",
+      "name": "coast-baseline",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      }
+    },
+    {
+      "ready": true,
+      "surface": "candidate",
+      "place": "coast",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/ground-breakup-candidate.js": "ee755ac9a176450dc4e10083eca223a8b97aa249923d102d359782159b6ae903"
+      },
+      "position": [
+        -90,
+        140
+      ],
+      "camera": [
+        -87.90785147236856,
+        7.794984205309278,
+        153.84283750495277
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 372,
+        "triangles": 2668767,
+        "textures": 47,
+        "programs": 40
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, surface-only isolated shader. No normal save, GPU, endurance, device or final art proof.",
+      "name": "coast-candidate",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      }
+    },
+    {
+      "ready": true,
+      "surface": "baseline",
+      "place": "forest",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/ground-breakup-candidate.js": "ee755ac9a176450dc4e10083eca223a8b97aa249923d102d359782159b6ae903"
+      },
+      "position": [
+        132,
+        -26
+      ],
+      "camera": [
+        134.09214852763145,
+        23.309458569597187,
+        -12.157162495047235
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 404,
+        "triangles": 2360272,
+        "textures": 53,
+        "programs": 42
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, surface-only isolated shader. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "forest-baseline"
+    },
+    {
+      "ready": true,
+      "surface": "candidate",
+      "place": "forest",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/ground-breakup-candidate.js": "ee755ac9a176450dc4e10083eca223a8b97aa249923d102d359782159b6ae903"
+      },
+      "position": [
+        132,
+        -26
+      ],
+      "camera": [
+        134.09214852763145,
+        23.309458569597187,
+        -12.157162495047235
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 404,
+        "triangles": 2360272,
+        "textures": 53,
+        "programs": 42
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, surface-only isolated shader. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "forest-candidate"
+    },
+    {
+      "ready": true,
+      "surface": "baseline",
+      "place": "highland",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/ground-breakup-candidate.js": "ee755ac9a176450dc4e10083eca223a8b97aa249923d102d359782159b6ae903"
+      },
+      "position": [
+        -75,
+        -205
+      ],
+      "camera": [
+        -72.90785147236856,
+        43.97590068103711,
+        -191.15716249504723
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 303,
+        "triangles": 902742,
+        "textures": 53,
+        "programs": 43
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, surface-only isolated shader. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "highland-baseline"
+    },
+    {
+      "ready": true,
+      "surface": "candidate",
+      "place": "highland",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/ground-breakup-candidate.js": "ee755ac9a176450dc4e10083eca223a8b97aa249923d102d359782159b6ae903"
+      },
+      "position": [
+        -75,
+        -205
+      ],
+      "camera": [
+        -72.90785147236856,
+        43.97590068103711,
+        -191.15716249504723
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 303,
+        "triangles": 902742,
+        "textures": 53,
+        "programs": 43
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, surface-only isolated shader. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "highland-candidate"
+    },
+    {
+      "ready": true,
+      "surface": "baseline",
+      "place": "shoal",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/ground-breakup-candidate.js": "ee755ac9a176450dc4e10083eca223a8b97aa249923d102d359782159b6ae903"
+      },
+      "position": [
+        190,
+        248
+      ],
+      "camera": [
+        192.0921485963835,
+        6.271185675580114,
+        261.8428379598552
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 695,
+        "triangles": 3348253,
+        "textures": 53,
+        "programs": 43
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, surface-only isolated shader. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "shoal-baseline"
+    },
+    {
+      "ready": true,
+      "surface": "candidate",
+      "place": "shoal",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/ground-breakup-candidate.js": "ee755ac9a176450dc4e10083eca223a8b97aa249923d102d359782159b6ae903"
+      },
+      "position": [
+        190,
+        248
+      ],
+      "camera": [
+        192.0921485963835,
+        6.271185675580114,
+        261.8428379598552
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 695,
+        "triangles": 3348253,
+        "textures": 53,
+        "programs": 43
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, surface-only isolated shader. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "shoal-candidate"
+    },
+    {
+      "ready": true,
+      "surface": "candidate",
+      "place": "forest",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/ground-breakup-candidate.js": "ee755ac9a176450dc4e10083eca223a8b97aa249923d102d359782159b6ae903"
+      },
+      "position": [
+        142.50000000000068,
+        -15.499999999999957
+      ],
+      "camera": [
+        143.87454893435412,
+        20.20243131065942,
+        -1.6303679405776688
+      ],
+      "time": 243.0000000000024,
+      "weather": {
+        "cloudiness": 0.000024095520336053777,
+        "windStrength": 0.40001445731220164,
+        "sunlight": 0.999982651225358,
+        "skylight": 0.9999971085375596,
+        "fogNear": 119.9993976119916,
+        "fogFar": 469.99710853755965
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 384,
+        "triangles": 2403994,
+        "textures": 53,
+        "programs": 43
+      },
+      "glError": 0,
+      "frames": 180,
+      "distance": 21.000000000000725,
+      "running": false,
+      "hidden": false,
+      "raf": {
+        "p95": 16.79999999998836,
+        "max": 18.29999999998836
+      },
+      "scope": "Declared production-world fixture, surface-only isolated shader. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "forest-candidate-walk"
+    },
+    {
+      "ready": true,
+      "surface": "baseline",
+      "place": "camp",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/ground-breakup-candidate.js": "ee755ac9a176450dc4e10083eca223a8b97aa249923d102d359782159b6ae903"
+      },
+      "position": [
+        -56,
+        49
+      ],
+      "camera": [
+        -53.90785147236857,
+        19.014928164585957,
+        62.84283750495277
+      ],
+      "time": 0,
+      "weather": {
+        "cloudiness": 0.1464466094067262,
+        "windStrength": 0.48786796564403573,
+        "sunlight": 0.8945584412271571,
+        "skylight": 0.9824264068711929,
+        "fogNear": 116.33883476483184,
+        "fogFar": 452.42640687119285
+      },
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        685
+      ],
+      "render": {
+        "calls": 207,
+        "triangles": 1623449,
+        "textures": 46,
+        "programs": 41
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, surface-only isolated shader. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 684.5,
+        "width": 390,
+        "x": 0,
+        "y": 159.5
+      },
+      "name": "mobile-camp-night-baseline"
+    },
+    {
+      "ready": true,
+      "surface": "candidate",
+      "place": "camp",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/ground-breakup-candidate.js": "ee755ac9a176450dc4e10083eca223a8b97aa249923d102d359782159b6ae903"
+      },
+      "position": [
+        -56,
+        49
+      ],
+      "camera": [
+        -53.90785147236857,
+        19.014928164585957,
+        62.84283750495277
+      ],
+      "time": 0,
+      "weather": {
+        "cloudiness": 0.1464466094067262,
+        "windStrength": 0.48786796564403573,
+        "sunlight": 0.8945584412271571,
+        "skylight": 0.9824264068711929,
+        "fogNear": 116.33883476483184,
+        "fogFar": 452.42640687119285
+      },
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        685
+      ],
+      "render": {
+        "calls": 207,
+        "triangles": 1623449,
+        "textures": 46,
+        "programs": 41
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, surface-only isolated shader. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 684.5,
+        "width": 390,
+        "x": 0,
+        "y": 159.5
+      },
+      "name": "mobile-camp-night-candidate"
+    }
+  ],
+  "console": [],
+  "scope": "Four same-position/time/camera desktop pairs, mobile camp midnight pair, one 180-frame declared production movement. Isolated rejected shader; production untouched. Browser plugin not available; controlled CUA browser APIs used."
+}

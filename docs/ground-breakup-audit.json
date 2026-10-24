@@ -1,0 +1,41 @@
+{
+  "verified": true,
+  "candidateAccepted": false,
+  "productionIntegrated": false,
+  "reason": "Small colour/texture variation does not resolve smooth bare slopes or spatial silhouettes; stop noise iteration.",
+  "samePositionPairs": 5,
+  "imagesViewed": 11,
+  "movementFrames": 180,
+  "movementDistance": 21.000000000000725,
+  "movementRaf": {
+    "p95": 16.79999999998836,
+    "max": 18.29999999998836
+  },
+  "productionInputsUnchanged": 94,
+  "productionArchiveSha256": "f5fdcb4950a778bdf8c04d4eb3b2ca8efb8b33641146110af6665465c179db7b",
+  "currentExactSourceGpuAccepted": false,
+  "newOrdinaryJourneyVerified": false,
+  "newRuleTestRun": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "scope": "Rejected surface-only candidate. Shader amount-zero baseline, QA canvas smaller than viewport, short declared movement, no performance or final-quality claim.",
+  "files": {
+    "docs/ground-breakup-browser.json": "45ae9753cb70c9d9cf979ab775ec30cd815cdd10bfd70499c07059ea4b9c3292",
+    "docs/ground-breakup-coast-baseline.jpg": "065f85d8fea173f166bb83b3cca3663ee75ca90c5d997d730fc05ebc3e312611",
+    "docs/ground-breakup-coast-candidate.jpg": "f21330f3744760bbceb6c4cd7b81cf91a0cdf9b21bc5ab7d965840b3371aea2f",
+    "docs/ground-breakup-forest-baseline.jpg": "ab86b34789a0e91823ae4c2a3320f0cae8ec5257d38f02e3eda4f40a70a8cf45",
+    "docs/ground-breakup-forest-candidate-walk.jpg": "a31606353e2b4f2f0d34cff5998f3b628e582e28ad5c280be992cd9b91b964d5",
+    "docs/ground-breakup-forest-candidate.jpg": "5bfd29b87034a76c33c928085d554b3b7dd789a7d865923664ff9212dd3ecc44",
+    "docs/ground-breakup-highland-baseline.jpg": "14a0d1af02924cce1e36864c85d8b2ac28add34da4ef00d6769996a88b92acff",
+    "docs/ground-breakup-highland-candidate.jpg": "a479ce71a6d7ddaceec841bba917ff2bf926ac3f0e034a9595ed74c525a215e5",
+    "docs/ground-breakup-mobile-camp-night-baseline.jpg": "d84391010a43d6b1409d4d2d1c13acfa5277fdc86310868521ed97b35f23c4d3",
+    "docs/ground-breakup-mobile-camp-night-candidate.jpg": "ad84adfe0d33b38263cd18be667cea53552df34d839b9fb4c8c9700063c369eb",
+    "docs/ground-breakup-shoal-baseline.jpg": "8ab2f3e5704014f20a4e2f1b39f00a6f6a0acda5da28c2c51c12913a42f9bbfd",
+    "docs/ground-breakup-shoal-candidate.jpg": "6b7e4c3876590f58e00cc3c18baae8d1241ee37a4a40c7550a941fa70555bc06",
+    "tests/ground-breakup-candidate.js": "ee755ac9a176450dc4e10083eca223a8b97aa249923d102d359782159b6ae903",
+    "tests/ground-breakup-review.html": "63d58da876d1c94197fdf887338e2f675bf11f8f89bdffd19fd439f493134263",
+    "docs/GROUND-BREAKUP-PLAN.md": "42b28d818644b81671f72c6ab5bc3e0a550a882ca91a7dc8b2cae2701383cc48",
+    "docs/GROUND-BREAKUP-REVIEW.md": "518240322da317bff6a535927ff84221936a79e4900779c5fcaa18c39bd74d8b",
+    "tools/verify_ground_breakup.py": "7622efa9a241fcb439ba3f1be276b97848a1c575eb9bd985c8fd052973439269"
+  }
+}
