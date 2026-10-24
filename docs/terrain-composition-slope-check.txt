@@ -1,0 +1,48 @@
+TAP version 13
+# Subtest: each island has metre-scale unequal shoulders and a lower valley instead of a single smooth mound
+ok 1 - each island has metre-scale unequal shoulders and a lower valley instead of a single smooth mound
+  ---
+  duration_ms: 14.498459
+  type: 'test'
+  ...
+# Subtest: terrain composition preserves shore water lines and the spawn/landmark working areas
+ok 2 - terrain composition preserves shore water lines and the spawn/landmark working areas
+  ---
+  duration_ms: 15.885084
+  type: 'test'
+  ...
+# Subtest: resource identities, footprints, rotation, enemy homes and random layout remain unchanged
+ok 3 - resource identities, footprints, rotation, enemy homes and random layout remain unchanged
+  ---
+  duration_ms: 14.379709
+  type: 'test'
+  ...
+# Subtest: sprinting down the exposed highland slope does not collapse the pelvis to reach an airborne foot
+not ok 4 - sprinting down the exposed highland slope does not collapse the pelvis to reach an airborne foot
+  ---
+  duration_ms: 72.03425
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/terrain-locomotion.test.js:8:1'
+  failureType: 'testCodeFailure'
+  error: 'fps=30, exposed production hill pelvis=-0.7007747614880603'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/terrain-locomotion.test.js:20:12)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 3
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 131.522708

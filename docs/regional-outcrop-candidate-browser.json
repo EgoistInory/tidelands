@@ -1,0 +1,943 @@
+{
+  "rows": [
+    {
+      "ready": true,
+      "budget": {
+        "stoneNodes": 88,
+        "fernInstances": 5649,
+        "tallFernInstances": 2784,
+        "solidLocalBounds": [
+          {
+            "region": 0,
+            "min": [
+              -1.9178556203842163,
+              -0.24889059364795685,
+              -1.1699999570846558
+            ],
+            "max": [
+              1.8767821788787842,
+              2.6707630157470703,
+              1.1670000553131104
+            ]
+          },
+          {
+            "region": 1,
+            "min": [
+              -1.967527985572815,
+              -0.3042197823524475,
+              -1.285698652267456
+            ],
+            "max": [
+              1.926369309425354,
+              2.528470993041992,
+              1.6149084568023682
+            ]
+          },
+          {
+            "region": 2,
+            "min": [
+              -1.9619140625,
+              -0.23868001997470856,
+              -1.2375705242156982
+            ],
+            "max": [
+              1.7425323724746704,
+              2.9447078704833984,
+              1.4028321504592896
+            ]
+          },
+          {
+            "region": 3,
+            "min": [
+              -1.9721648693084717,
+              -0.2272486388683319,
+              -1.7267415523529053
+            ],
+            "max": [
+              1.8175106048583984,
+              1.6648633480072021,
+              1.727748990058899
+            ]
+          }
+        ],
+        "batches": 137
+      },
+      "surface": "baseline",
+      "place": "coast",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/environment-mass-candidate.js": "4de075ec61f2ee292f18189125c3f4fd3824c7530515ee013378f98100cd8c0c"
+      },
+      "position": [
+        -90,
+        140
+      ],
+      "camera": [
+        -87.90785147236856,
+        7.794984205309278,
+        153.84283750495277
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 372,
+        "triangles": 2668767,
+        "textures": 47,
+        "programs": 40
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, isolated outcrops and vertical understory mass. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "coast-baseline"
+    },
+    {
+      "ready": true,
+      "budget": {
+        "stoneNodes": 88,
+        "fernInstances": 5649,
+        "tallFernInstances": 2784,
+        "solidLocalBounds": [
+          {
+            "region": 0,
+            "min": [
+              -1.9178556203842163,
+              -0.24889059364795685,
+              -1.1699999570846558
+            ],
+            "max": [
+              1.8767821788787842,
+              2.6707630157470703,
+              1.1670000553131104
+            ]
+          },
+          {
+            "region": 1,
+            "min": [
+              -1.967527985572815,
+              -0.3042197823524475,
+              -1.285698652267456
+            ],
+            "max": [
+              1.926369309425354,
+              2.528470993041992,
+              1.6149084568023682
+            ]
+          },
+          {
+            "region": 2,
+            "min": [
+              -1.9619140625,
+              -0.23868001997470856,
+              -1.2375705242156982
+            ],
+            "max": [
+              1.7425323724746704,
+              2.9447078704833984,
+              1.4028321504592896
+            ]
+          },
+          {
+            "region": 3,
+            "min": [
+              -1.9721648693084717,
+              -0.2272486388683319,
+              -1.7267415523529053
+            ],
+            "max": [
+              1.8175106048583984,
+              1.6648633480072021,
+              1.727748990058899
+            ]
+          }
+        ],
+        "batches": 137
+      },
+      "surface": "candidate",
+      "place": "coast",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/environment-mass-candidate.js": "4de075ec61f2ee292f18189125c3f4fd3824c7530515ee013378f98100cd8c0c"
+      },
+      "position": [
+        -90,
+        140
+      ],
+      "camera": [
+        -87.90785147236856,
+        7.794984205309278,
+        153.84283750495277
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 373,
+        "triangles": 2687327,
+        "textures": 47,
+        "programs": 41
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, isolated outcrops and vertical understory mass. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "coast-candidate"
+    },
+    {
+      "ready": true,
+      "budget": {
+        "stoneNodes": 88,
+        "fernInstances": 5649,
+        "tallFernInstances": 2784,
+        "solidLocalBounds": [
+          {
+            "region": 0,
+            "min": [
+              -1.9178556203842163,
+              -0.24889059364795685,
+              -1.1699999570846558
+            ],
+            "max": [
+              1.8767821788787842,
+              2.6707630157470703,
+              1.1670000553131104
+            ]
+          },
+          {
+            "region": 1,
+            "min": [
+              -1.967527985572815,
+              -0.3042197823524475,
+              -1.285698652267456
+            ],
+            "max": [
+              1.926369309425354,
+              2.528470993041992,
+              1.6149084568023682
+            ]
+          },
+          {
+            "region": 2,
+            "min": [
+              -1.9619140625,
+              -0.23868001997470856,
+              -1.2375705242156982
+            ],
+            "max": [
+              1.7425323724746704,
+              2.9447078704833984,
+              1.4028321504592896
+            ]
+          },
+          {
+            "region": 3,
+            "min": [
+              -1.9721648693084717,
+              -0.2272486388683319,
+              -1.7267415523529053
+            ],
+            "max": [
+              1.8175106048583984,
+              1.6648633480072021,
+              1.727748990058899
+            ]
+          }
+        ],
+        "batches": 137
+      },
+      "surface": "baseline",
+      "place": "forest",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/environment-mass-candidate.js": "4de075ec61f2ee292f18189125c3f4fd3824c7530515ee013378f98100cd8c0c"
+      },
+      "position": [
+        132,
+        -26
+      ],
+      "camera": [
+        134.09214852763145,
+        23.309458569597187,
+        -12.157162495047235
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 404,
+        "triangles": 2360272,
+        "textures": 53,
+        "programs": 43
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, isolated outcrops and vertical understory mass. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "forest-baseline"
+    },
+    {
+      "ready": true,
+      "budget": {
+        "stoneNodes": 88,
+        "fernInstances": 5649,
+        "tallFernInstances": 2784,
+        "solidLocalBounds": [
+          {
+            "region": 0,
+            "min": [
+              -1.9178556203842163,
+              -0.24889059364795685,
+              -1.1699999570846558
+            ],
+            "max": [
+              1.8767821788787842,
+              2.6707630157470703,
+              1.1670000553131104
+            ]
+          },
+          {
+            "region": 1,
+            "min": [
+              -1.967527985572815,
+              -0.3042197823524475,
+              -1.285698652267456
+            ],
+            "max": [
+              1.926369309425354,
+              2.528470993041992,
+              1.6149084568023682
+            ]
+          },
+          {
+            "region": 2,
+            "min": [
+              -1.9619140625,
+              -0.23868001997470856,
+              -1.2375705242156982
+            ],
+            "max": [
+              1.7425323724746704,
+              2.9447078704833984,
+              1.4028321504592896
+            ]
+          },
+          {
+            "region": 3,
+            "min": [
+              -1.9721648693084717,
+              -0.2272486388683319,
+              -1.7267415523529053
+            ],
+            "max": [
+              1.8175106048583984,
+              1.6648633480072021,
+              1.727748990058899
+            ]
+          }
+        ],
+        "batches": 137
+      },
+      "surface": "candidate",
+      "place": "forest",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/environment-mass-candidate.js": "4de075ec61f2ee292f18189125c3f4fd3824c7530515ee013378f98100cd8c0c"
+      },
+      "position": [
+        132,
+        -26
+      ],
+      "camera": [
+        134.09214852763145,
+        23.309458569597187,
+        -12.157162495047235
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 405,
+        "triangles": 2378832,
+        "textures": 53,
+        "programs": 43
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, isolated outcrops and vertical understory mass. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "forest-candidate"
+    },
+    {
+      "ready": true,
+      "budget": {
+        "stoneNodes": 88,
+        "fernInstances": 5649,
+        "tallFernInstances": 2784,
+        "solidLocalBounds": [
+          {
+            "region": 0,
+            "min": [
+              -1.9178556203842163,
+              -0.24889059364795685,
+              -1.1699999570846558
+            ],
+            "max": [
+              1.8767821788787842,
+              2.6707630157470703,
+              1.1670000553131104
+            ]
+          },
+          {
+            "region": 1,
+            "min": [
+              -1.967527985572815,
+              -0.3042197823524475,
+              -1.285698652267456
+            ],
+            "max": [
+              1.926369309425354,
+              2.528470993041992,
+              1.6149084568023682
+            ]
+          },
+          {
+            "region": 2,
+            "min": [
+              -1.9619140625,
+              -0.23868001997470856,
+              -1.2375705242156982
+            ],
+            "max": [
+              1.7425323724746704,
+              2.9447078704833984,
+              1.4028321504592896
+            ]
+          },
+          {
+            "region": 3,
+            "min": [
+              -1.9721648693084717,
+              -0.2272486388683319,
+              -1.7267415523529053
+            ],
+            "max": [
+              1.8175106048583984,
+              1.6648633480072021,
+              1.727748990058899
+            ]
+          }
+        ],
+        "batches": 137
+      },
+      "surface": "baseline",
+      "place": "highland",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/environment-mass-candidate.js": "4de075ec61f2ee292f18189125c3f4fd3824c7530515ee013378f98100cd8c0c"
+      },
+      "position": [
+        -75,
+        -205
+      ],
+      "camera": [
+        -72.90785147236856,
+        43.97590068103711,
+        -191.15716249504723
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 303,
+        "triangles": 902742,
+        "textures": 53,
+        "programs": 44
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, isolated outcrops and vertical understory mass. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "highland-baseline"
+    },
+    {
+      "ready": true,
+      "budget": {
+        "stoneNodes": 88,
+        "fernInstances": 5649,
+        "tallFernInstances": 2784,
+        "solidLocalBounds": [
+          {
+            "region": 0,
+            "min": [
+              -1.9178556203842163,
+              -0.24889059364795685,
+              -1.1699999570846558
+            ],
+            "max": [
+              1.8767821788787842,
+              2.6707630157470703,
+              1.1670000553131104
+            ]
+          },
+          {
+            "region": 1,
+            "min": [
+              -1.967527985572815,
+              -0.3042197823524475,
+              -1.285698652267456
+            ],
+            "max": [
+              1.926369309425354,
+              2.528470993041992,
+              1.6149084568023682
+            ]
+          },
+          {
+            "region": 2,
+            "min": [
+              -1.9619140625,
+              -0.23868001997470856,
+              -1.2375705242156982
+            ],
+            "max": [
+              1.7425323724746704,
+              2.9447078704833984,
+              1.4028321504592896
+            ]
+          },
+          {
+            "region": 3,
+            "min": [
+              -1.9721648693084717,
+              -0.2272486388683319,
+              -1.7267415523529053
+            ],
+            "max": [
+              1.8175106048583984,
+              1.6648633480072021,
+              1.727748990058899
+            ]
+          }
+        ],
+        "batches": 137
+      },
+      "surface": "candidate",
+      "place": "highland",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/environment-mass-candidate.js": "4de075ec61f2ee292f18189125c3f4fd3824c7530515ee013378f98100cd8c0c"
+      },
+      "position": [
+        -75,
+        -205
+      ],
+      "camera": [
+        -72.90785147236856,
+        43.97590068103711,
+        -191.15716249504723
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 302,
+        "triangles": 852182,
+        "textures": 53,
+        "programs": 44
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, isolated outcrops and vertical understory mass. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "highland-candidate"
+    },
+    {
+      "ready": true,
+      "budget": {
+        "stoneNodes": 88,
+        "fernInstances": 5649,
+        "tallFernInstances": 2784,
+        "solidLocalBounds": [
+          {
+            "region": 0,
+            "min": [
+              -1.9178556203842163,
+              -0.24889059364795685,
+              -1.1699999570846558
+            ],
+            "max": [
+              1.8767821788787842,
+              2.6707630157470703,
+              1.1670000553131104
+            ]
+          },
+          {
+            "region": 1,
+            "min": [
+              -1.967527985572815,
+              -0.3042197823524475,
+              -1.285698652267456
+            ],
+            "max": [
+              1.926369309425354,
+              2.528470993041992,
+              1.6149084568023682
+            ]
+          },
+          {
+            "region": 2,
+            "min": [
+              -1.9619140625,
+              -0.23868001997470856,
+              -1.2375705242156982
+            ],
+            "max": [
+              1.7425323724746704,
+              2.9447078704833984,
+              1.4028321504592896
+            ]
+          },
+          {
+            "region": 3,
+            "min": [
+              -1.9721648693084717,
+              -0.2272486388683319,
+              -1.7267415523529053
+            ],
+            "max": [
+              1.8175106048583984,
+              1.6648633480072021,
+              1.727748990058899
+            ]
+          }
+        ],
+        "batches": 137
+      },
+      "surface": "baseline",
+      "place": "shoal",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/environment-mass-candidate.js": "4de075ec61f2ee292f18189125c3f4fd3824c7530515ee013378f98100cd8c0c"
+      },
+      "position": [
+        190,
+        248
+      ],
+      "camera": [
+        192.0921485963835,
+        6.271185675580114,
+        261.8428379598552
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 695,
+        "triangles": 3348253,
+        "textures": 53,
+        "programs": 44
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, isolated outcrops and vertical understory mass. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "shoal-baseline"
+    },
+    {
+      "ready": true,
+      "budget": {
+        "stoneNodes": 88,
+        "fernInstances": 5649,
+        "tallFernInstances": 2784,
+        "solidLocalBounds": [
+          {
+            "region": 0,
+            "min": [
+              -1.9178556203842163,
+              -0.24889059364795685,
+              -1.1699999570846558
+            ],
+            "max": [
+              1.8767821788787842,
+              2.6707630157470703,
+              1.1670000553131104
+            ]
+          },
+          {
+            "region": 1,
+            "min": [
+              -1.967527985572815,
+              -0.3042197823524475,
+              -1.285698652267456
+            ],
+            "max": [
+              1.926369309425354,
+              2.528470993041992,
+              1.6149084568023682
+            ]
+          },
+          {
+            "region": 2,
+            "min": [
+              -1.9619140625,
+              -0.23868001997470856,
+              -1.2375705242156982
+            ],
+            "max": [
+              1.7425323724746704,
+              2.9447078704833984,
+              1.4028321504592896
+            ]
+          },
+          {
+            "region": 3,
+            "min": [
+              -1.9721648693084717,
+              -0.2272486388683319,
+              -1.7267415523529053
+            ],
+            "max": [
+              1.8175106048583984,
+              1.6648633480072021,
+              1.727748990058899
+            ]
+          }
+        ],
+        "batches": 137
+      },
+      "surface": "candidate",
+      "place": "shoal",
+      "sources": {
+        "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+        "src/scene.js": "715a2dce37243b04171e123a8de594fe155f32fd45a75cce066e829dcc3c9e24",
+        "src/world.js": "883a740a88a180d1a37756a58b63980e9b7c1e60ffd90c81e3600aa9d31ce91d",
+        "tests/environment-mass-candidate.js": "4de075ec61f2ee292f18189125c3f4fd3824c7530515ee013378f98100cd8c0c"
+      },
+      "position": [
+        190,
+        248
+      ],
+      "camera": [
+        192.0921485963835,
+        6.271185675580114,
+        261.8428379598552
+      ],
+      "time": 240,
+      "weather": {
+        "cloudiness": 0,
+        "windStrength": 0.4,
+        "sunlight": 1,
+        "skylight": 1,
+        "fogNear": 120,
+        "fogFar": 470
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        897
+      ],
+      "render": {
+        "calls": 697,
+        "triangles": 3376413,
+        "textures": 53,
+        "programs": 44
+      },
+      "glError": 0,
+      "frames": 0,
+      "distance": 0,
+      "running": false,
+      "hidden": false,
+      "raf": null,
+      "scope": "Declared production-world fixture, isolated outcrops and vertical understory mass. No normal save, GPU, endurance, device or final art proof.",
+      "canvas": {
+        "height": 597.5,
+        "width": 1280,
+        "x": 0,
+        "y": 122.5
+      },
+      "name": "shoal-candidate"
+    }
+  ],
+  "console": [],
+  "accepted": false,
+  "scope": "Four static same-position/camera/time pairs. Candidate remains inside existing solid footprints; broad smooth hills and bare summit unchanged. Stopped before mobile, movement, GPU or production integration."
+}
