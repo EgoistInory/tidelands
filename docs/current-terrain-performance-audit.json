@@ -1,0 +1,140 @@
+{
+  "verified": true,
+  "frozenRuntimeInputs": 95,
+  "packageSha256": "3851f5515fcd1371c93cd1efcb4b22d1ee1619cb60864c1b471c0b93908577bf",
+  "nativeGpuSamples": 600,
+  "fullCanvasGpuEvidenceRecorded": true,
+  "devices": {
+    "desktop": {
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        1080
+      ],
+      "gpuP95Ms": [
+        14.2727,
+        14.1041,
+        9.489,
+        15.2895,
+        14.1125
+      ],
+      "cpuP95Ms": [
+        5.7,
+        6.6,
+        6.5,
+        6.5,
+        6.5
+      ],
+      "rafP95Ms": [
+        16.8,
+        18.1,
+        16.8,
+        16.9,
+        17.5
+      ]
+    },
+    "390": {
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        844
+      ],
+      "gpuP95Ms": [
+        6.3703,
+        6.5395,
+        3.8845,
+        8.5423,
+        7.0485
+      ],
+      "cpuP95Ms": [
+        5.7,
+        6.1,
+        6.2,
+        6,
+        6.2
+      ],
+      "rafP95Ms": [
+        18,
+        18.7,
+        16.8,
+        16.8,
+        18.7
+      ]
+    }
+  },
+  "rejectedPartialCanvasPreserved": true,
+  "boundedEnduranceRecorded": true,
+  "lifecycleRecorded": true,
+  "finalPerformanceAccepted": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "systemGpuLoadIsolated": false,
+  "continuous": {
+    "activeMs": 600001.07,
+    "frames": 33271,
+    "movingFraction": 0.97,
+    "distanceMeters": 3913.67,
+    "hitCount": 44,
+    "damageTaken": 154,
+    "respawns": 0,
+    "p95Ms": 33.3,
+    "maxMs": 100.1,
+    "over50Ms": 5,
+    "settled": {
+      "wallMs": 360.19999980926514,
+      "voices": 0,
+      "pannersCreated": 18,
+      "pannersReleased": 18
+    }
+  },
+  "heapBytes": [
+    92431869,
+    103073526,
+    85907886,
+    81396813,
+    97254054,
+    84443918,
+    105919147,
+    107617523,
+    115048582,
+    87187179,
+    102102847
+  ],
+  "lifecycleRelease": {
+    "before": {
+      "geometries": 238,
+      "textures": 47
+    },
+    "after": {
+      "geometries": 181,
+      "textures": 27
+    },
+    "glError": 0,
+    "idempotent": true,
+    "scope": "Renderer resource counts after explicit cast disposal, not JS heap or VRAM leak proof"
+  },
+  "evidenceSha256": {
+    "tests/current-terrain-gpu.html": "c0b53f18fcc27c693ef9b3c034ebfc654abd994bb82d4fd55b1494908d020f74",
+    "tests/current-terrain-endurance.html": "3d4cc4af7828e7324936520a6ec0aaf880d5868a6f0198a46e1a7beb6d601839",
+    "tests/authored-lifecycle.html": "e8064f629ea2001b91fb8f5dd451b5597d66306f9bc2bf6cc7e07b5c7da52510",
+    "docs/current-terrain-gpu-desktop.json": "12abb22216139664309fc186a7da0146b774edf87bb2b82e899c5f4acbdefa08",
+    "docs/current-terrain-gpu-390.json": "b903b4e629af88b363fd12744bb5c7e6ec667ea021bf655e0b3d2d41c02ff3be",
+    "docs/current-terrain-gpu-console.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "docs/current-terrain-gpu-partial-canvas-rejected.json": "de463c33384afb7cce0e148c818423aee1c160844f83cdf5f1a401f05b0ad85f",
+    "docs/current-terrain-endurance-desktop.json": "129c4255c8cb5a9f4b2f5b58f9215fcb0e5b6430d1771cd836c111caaecbc20f",
+    "docs/current-terrain-lifecycle.json": "d9e40bd159d801a6f5cf88c8d422d4f898eed7540bb031ca8a5785a63876e0d3",
+    "docs/current-terrain-gpu-desktop.jpg": "d32df7734a93fa4e662f2a5e5ab394ff1786c6b214ffc401e9818a121ac60c96",
+    "docs/current-terrain-gpu-390.jpg": "9021872d3edbaf8b0fa9311cea55aff274e2a4352bfa196e0f94f8f23796ac50",
+    "docs/current-terrain-endurance-running.jpg": "8743c70a560b99d06c0dabea495717c80697c6c6b494152eea27c14bc941400e",
+    "docs/current-terrain-endurance-complete.jpg": "8976f8db882d7011f0732f1b1e33fe2309555e7f4473ea1019060e9d907166e8"
+  },
+  "imagesViewed": 4,
+  "campSpatialAudioStimulatedByEndurance": false,
+  "scope": "Frozen production modules; declared five-stage teleports/equipment/enemy/building fixtures, native GPU queries, optional scripted 600s and fixed-view lifecycle. Stage names are initial placements, not geographic containment. Endurance uses older synthetic audio calls without buildings/cameraYaw options, so camp spatial fire and full main event mapping are not covered. GPU scheduling/command submission interval is not pure shader busy time. rAF, JS heap, Three resource counts and voice settlement remain distinct; no ordinary campaign, listening, physical mobile, VRAM or leak-freedom proof. Other paused diagnostic views/system GPU load not isolated."
+}
