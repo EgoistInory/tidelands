@@ -17,7 +17,8 @@ test('an isolated highland height change cannot reshuffle saved resource IDs',as
       const u=(x+75)/65,v=(z+235)/65,w=Math.max(0,1-u*u-v*v);
       return originalTerrain(x,z)+w*w*(8*Math.exp(-((u+.38)**2*11+(v-.12)**2*4))+6*Math.exp(-((u-.4)**2*13+(v+.28)**2*5))-12*Math.exp(-(u*u*9+v*v*5)));
     }`;
-  const candidate=await import('data:text/javascript;base64,'+Buffer.from(changed).toString('base64'));
+  const resolved=changed.replace(/from '([^']+)'/g,(_match,path)=>`from '${new URL('../src/'+path,import.meta.url).href}'`);
+  const candidate=await import('data:text/javascript;base64,'+Buffer.from(resolved).toString('base64'));
   const world=candidate.createWorld();
   assert.deepEqual(identities(world),{resources:baseline.resources,enemies:baseline.enemies});
   assert(world.objects.some(o=>Math.abs(o.y-createWorld().objects.find(b=>b.id===o.id).y)>1));

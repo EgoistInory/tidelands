@@ -1,3 +1,4 @@
+import {landformOffset} from './terrain-composition.js';
 export const WORLD_SIZE = 800;
 export const SPAWN = {x:-70,z:102};
 export const ISLANDS = [
@@ -26,7 +27,7 @@ export function layoutTerrain(x,z){
   }
   return value;
 }
-export function terrain(x,z){
+function previousTerrain(x,z){
   const base=layoutTerrain(x,z),u=(x+75)/65,v=(z+235)/65,edge=1-u*u-v*v;
   if(edge<=0)return base;
   // Interior saddle and unequal shoulders replace the single radial summit.
@@ -88,3 +89,6 @@ export function createWorld(){
   for(const object of objects)object.y=terrain(object.x,object.z);
   return {objects,enemies};
 }
+
+const protectedCompositionSites=[SPAWN,...LANDMARKS];
+export function terrain(x,z){const base=previousTerrain(x,z);return base+landformOffset(x,z,base,ISLANDS,protectedCompositionSites);}
