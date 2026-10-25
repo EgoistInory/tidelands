@@ -19,6 +19,7 @@ import {createGroundSurface} from './ground-surface.js';
 import {createWeatheredRock,initializeRockSurface} from './rock.js';
 import {createMeadow,createFiberClump,updateMeadow,updateGroundCover,updateCampClearance} from './meadow.js';
 import {createSky,updateSky} from './sky.js';
+import {createCampBuilding} from './camp-architecture.js';
 import {createFlame,updateCampfire} from './campfire.js';
 import {createCrystalDeposit} from './crystal.js';
 import {landscapeSample,createShoreStones,islandTreeAppearance} from './landscape.js';
@@ -69,57 +70,9 @@ function resourceModel(type,treeForm='coast'){
   }else{const shell=sphere(.6,palette.cream,0,.2,0);shell.scale.y=.35;g.add(shell);}
   return g;
 }
-export function buildingModel(type){
-  const g=new THREE.Group();
-  if(type==='campfire'){
-    for(let i=0;i<8;i++)g.add(sphere(.3,0x7b8176,Math.cos(i/4*Math.PI)*1.1,.2,Math.sin(i/4*Math.PI)*1.1));
-    const log=box(1.6,.25,.3,palette.bark,0,.3,0);log.rotation.y=.7;g.add(log);
-    const flame=createFlame();g.add(flame);g.userData.flame=flame;
-  }else if(type==='tent'){
-    if(!materials.has('tent-cloth'))materials.set('tent-cloth',createTextileMaterial(0xb9a77c,{side:THREE.DoubleSide,roughness:1}));
-    const cloth=materials.get('tent-cloth');
-    const panel=vertices=>{
-      const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));
-      const origin=new THREE.Vector3(...vertices.slice(0,3)),along=new THREE.Vector3(...vertices.slice(3,6)).sub(origin).normalize();
-      const normal=along.clone().cross(new THREE.Vector3(...vertices.slice(6,9)).sub(origin)).normalize(),across=normal.clone().cross(along),uv=[];
-      for(let i=0;i<vertices.length;i+=3){const p=new THREE.Vector3(...vertices.slice(i,i+3)).sub(origin);uv.push(p.dot(along),p.dot(across));}
-      geo.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));geo.computeVertexNormals();
-      const m=new THREE.Mesh(geo,cloth);m.castShadow=m.receiveShadow=true;g.add(m);
-    };
-    const beam=(from,to,r,color)=>{const start=new THREE.Vector3(...from),end=new THREE.Vector3(...to),delta=end.clone().sub(start);const m=mesh(new THREE.CylinderGeometry(r,r,delta.length(),8),color);m.position.copy(start.add(end).multiplyScalar(.5));m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),delta.normalize());g.add(m);};
-    // Open A-frame shelter: separate canvas slopes, stitched hems and a rear wall.
-    for(const side of [-1,1]){
-      panel([0,2.85,-1.65,side*1.6,.18,-1.65,side*1.6,.18,1.65,0,2.85,-1.65,side*1.6,.18,1.65,0,2.85,1.65]);
-      for(const z of [-1.65,0,1.65])beam([0,2.87,z],[side*1.61,.18,z],.022,0xeadbbb);
-      beam([side*1.6,.18,-1.65],[side*1.6,.18,1.65],.035,0x7b6547);
-      for(const z of [-1.3,1.3]){beam([side*1.6,.45,z],[side*2.1,.1,z],.022,0xdbc79e);beam([side*2.1,0,z],[side*2.1,.3,z],.055,palette.bark);}
-      // Rolled back entry flaps leave the interior visibly open.
-      panel([0,2.82,1.66,side*1.6,.18,1.66,side*1.05,.35,1.68]);
-    }
-    panel([-1.6,.18,-1.65,0,2.85,-1.65,1.6,.18,-1.65]);
-    beam([0,2.8,-1.78],[0,2.8,1.78],.075,palette.bark);
-    beam([0,.1,-1.58],[0,2.8,-1.58],.06,palette.bark);
-    g.add(box(2.8,.09,2.9,0x6d7254,0,.09,0));
-    const bedding=box(.85,.14,1.8,0x7d8b77,-.45,.2,-.25);g.add(bedding);
-    const roll=mesh(new THREE.CylinderGeometry(.19,.19,.85,12),0x9ea487,-.45,.36,-1.05);roll.rotation.z=Math.PI/2;g.add(roll);
-  }else if(type==='workbench'){
-    // Individual worn boards, braces, storage and tools replace the solid slab.
-    for(let i=0;i<5;i++)g.add(box(3,.2,.34,[0x9c784c,0xa88757,0x917248][i%3],0,1.8,(i-2)*.36));
-    for(const x of [-1.15,1.15]){
-      for(const z of [-.6,.6])g.add(box(.22,1.65,.22,palette.bark,x,.825,z));
-      g.add(box(.18,.16,1.42,0x765939,x,.48,0));
-    }
-    g.add(box(2.5,.15,.14,0x765939,0,.55,-.6),box(2.55,.12,1.35,0x816745,0,.55,0));
-    const brace=box(2.5,.12,.12,0x765939,0,1.05,-.6);brace.rotation.z=.35;g.add(brace);
-    g.add(box(.8,.55,.7,0x625943,.4,.9,0));
-    for(const x of [.08,.72])g.add(box(.07,.57,.73,0x413f35,x,.9,0));
-    const hammer=box(.09,.08,.75,0x73583d,.45,1.96,.05);hammer.rotation.y=.45;g.add(hammer);
-    g.add(box(.42,.2,.18,0x717778,.6,2.02,.34));
-    const stone=mesh(new THREE.SphereGeometry(.35,12,8),0x858a80,-.7,1.99,-.1);stone.scale.set(1,.3,.7);g.add(stone);
-    for(const x of [-1.15,1.15])for(const z of [-.65,.65])g.add(mesh(new THREE.CylinderGeometry(.025,.025,.01,6),0x454a46,x,1.905,z));
-
-  }
-  return g;
+export function buildingModel(type,cache=null,options={}){
+  if(type==='tent'&&!materials.has('tent-cloth'))materials.set('tent-cloth',createTextileMaterial(0xb9a77c,{side:THREE.DoubleSide,roughness:1}));
+  return createCampBuilding(type,cache,{...options,clothMaterial:materials.get('tent-cloth'),ashMaterial:type==='campfire'?material(0x302e28):null});
 }
 function landmarkModel(o,stoneSurface){
   const g=new THREE.Group();
@@ -149,7 +102,7 @@ function landmarkModel(o,stoneSurface){
 
 export class WorldView{
   constructor(canvas,world){
-    this.world=world;this.canvas=canvas;this.yaw=.15;this.pitch=.29;this.distance=14;this.resources=new Map();this.creatures=new Map();this.buildings=new Map();
+    this.world=world;this.canvas=canvas;this.yaw=.15;this.pitch=.29;this.distance=14;this.resources=new Map();this.creatures=new Map();this.buildings=new Map();this.architectureSurfaceCache=new Map();
     this.renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
     this.renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));this.renderer.shadowMap.enabled=true;this.renderer.shadowMap.type=THREE.PCFSoftShadowMap;
     this.renderer.outputColorSpace=THREE.SRGBColorSpace;this.renderer.toneMapping=THREE.ACESFilmicToneMapping;this.renderer.toneMappingExposure=1.25;
@@ -284,7 +237,7 @@ export class WorldView{
     for(const {batch,entries,part,hidden}of this.batches){let changed=false;entries.forEach((o,i)=>{const depleted=isDepleted(state,o);if(depleted===hidden.has(i))return;depleted?hidden.add(i):hidden.delete(i);resourceTransform(dummy,o,depleted);batch.setMatrixAt(i,dummy.matrix.clone().multiply(part));changed=true;});if(changed)batch.instanceMatrix.needsUpdate=true;}
     const definitions=new Map(state.buildings.map(b=>[b.id,b]));
     for(const [id,g]of this.buildings){const b=definitions.get(id);if(!b||g.userData.buildingType!==b.type){this.scene.remove(g);this.disposeGroup(g);this.buildings.delete(id);}}
-    for(const b of state.buildings){if(!this.buildings.has(b.id)){const g=buildingModel(b.type);g.userData.buildingType=b.type;this.scene.add(g);this.buildings.set(b.id,g);}this.buildings.get(b.id).position.set(b.x,terrain(b.x,b.z),b.z);}
+    for(const b of state.buildings){if(!this.buildings.has(b.id)){const g=buildingModel(b.type,this.architectureSurfaceCache);g.updateMatrixWorld(true);mergeStaticParts(g);g.userData.buildingType=b.type;this.scene.add(g);this.buildings.set(b.id,g);}this.buildings.get(b.id).position.set(b.x,terrain(b.x,b.z),b.z);}
     updateCampClearance(this.meadow??[],state.buildings);
     const enemies=new Map(state.enemies.map(e=>[e.id,e]));
     for(const [id,g]of this.creatures){if(!enemies.has(id)||g.userData.type!==enemies.get(id).type){this.scene.remove(g);this.disposeGroup(g);this.creatures.delete(id);}}
@@ -297,7 +250,7 @@ export class WorldView{
   setPreview(type){
     this.disposeGroup(this.preview);this.preview.clear();
     if(!type)return;
-    const model=buildingModel(type),shared=new Set(materials.values()),replacements=new Map();
+    const model=buildingModel(type,null,{surfaces:false}),shared=new Set(materials.values()),replacements=new Map();
     model.traverse(o=>{if(o.isMesh){
       const original=o.material;
       if(!replacements.has(original)){

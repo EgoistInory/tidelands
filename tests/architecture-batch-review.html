@@ -1,0 +1,22 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>营地结构整组隔离审查</title>
+<style>html,body{margin:0;width:100%;height:100%;background:#192723;color:white;font:13px system-ui}canvas{width:100%;height:100%;display:block}nav{position:absolute;top:0;left:0;z-index:2;padding:8px;background:#192723cc}button{padding:8px;margin:3px}output{position:absolute;left:0;bottom:0;height:1px;overflow:hidden;pointer-events:none}</style>
+<nav><span id="label"></span> · 明确静态建筑/任务fixture，无存档读写 <button disabled data-scene="camp-day">营地白昼</button><button disabled data-scene="camp-night">营地夜间</button><button disabled data-scene="workbench">工作台</button><button disabled data-scene="tent">帐篷</button><button disabled data-scene="campfire">营火</button></nav><canvas aria-label="营地整组同位审查"></canvas><output id="result">准备中…</output>
+<script type="module">
+const production=new URLSearchParams(location.search).get('production')==='1',candidate=new URLSearchParams(location.search).get('candidate')==='1',base=new URL(production?'../':candidate?'../dist/architecture-candidate/tidelands-local/':'../dist/architecture-baseline/tidelands-local/',location.href);
+const [{WorldView},{createWorld,terrain},{freshGame,nearest},{loadAuthoredCast}]=await Promise.all(['scene','world','game','authored-assets'].map(name=>import(new URL('src/'+name+'.js',base))));
+const canvas=document.querySelector('canvas'),out=document.querySelector('output'),world=createWorld(),view=new WorldView(canvas,world),cast=await loadAuthoredCast();view.installAuthoredCast(cast);
+document.querySelector('#label').textContent=production?'当前生产':candidate?'候选':'冻结生产基线';
+const buildings=[{id:'qa-fire',type:'campfire',x:-80,z:118},{id:'qa-tent',type:'tent',x:-90,z:118},{id:'qa-bench',type:'workbench',x:-84,z:109}];
+let state,scene='camp-day',frames=0,running=false;
+async function show(name){
+  if(running)return;running=true;out.textContent="正在审查 "+name;document.querySelectorAll('button').forEach(b=>b.disabled=true);scene=name;frames=0;state=freshGame();state.quest=6;state.time=name==='camp-night'?0:240;state.buildings=buildings;state.selected='hand';
+  const focus=name==='workbench'?buildings[2]:name==='tent'?buildings[1]:name==='campfire'?buildings[0]:null;
+  Object.assign(state.player,focus?{x:focus.x,z:focus.z-2}:{x:-84,z:124});view.distance=focus?12:20;view.yaw=focus?.4:.15;view.pitch=.4;view.player.userData.lastPosition=null;view.player.userData.worldFeet=[];view.sync(state);
+  const y=Math.max(terrain(state.player.x,state.player.z),-.45);view.camera.position.set(state.player.x+Math.sin(view.yaw)*view.distance,y+2.4+Math.tan(view.pitch)*view.distance,state.player.z+Math.cos(view.yaw)*view.distance);
+  for(let i=0;i<120;i++){await new Promise(requestAnimationFrame);view.draw(state,nearest(state,world.objects),null,false,1/60);frames++;}
+  const info=view.renderer.info;out.textContent=JSON.stringify({candidate,production,qaLayout:2,candidateRevision:candidate?2:0,scene,frames,time:state.time,player:state.player,buildings,viewport:[innerWidth,innerHeight],buffer:[canvas.width,canvas.height],camera:view.camera.position.toArray(),requestedYaw:view.yaw,calls:info.render.calls,triangles:info.render.triangles,textures:info.memory.textures,geometries:info.memory.geometries,glError:view.renderer.getContext().getError(),scope:'Static paired architecture fixture; no ordinary journey, movement, GPU or final quality acceptance.'});running=false;document.querySelectorAll('button').forEach(b=>b.disabled=false);
+}
+await Promise.all([view.groundSurface.userData.ground.loaded,view.groundSurface.userData.ground.sand.loaded,view.rockSurface.userData.rock.loaded]);await show('camp-day');
+for(const button of document.querySelectorAll('button'))button.onclick=()=>show(button.dataset.scene);
+window.addEventListener('pagehide',()=>{for(const group of view.buildings.values())view.disposeGroup(group);cast.release();view.impacts.dispose();view.contactShade.dispose();view.renderer.dispose();});
+</script></html>
