@@ -1,0 +1,260 @@
+{
+  "models": {
+    "island_tree_01": {
+      "primitives": [
+        {
+          "material": "island_tree_01",
+          "vertices": 19345,
+          "triangles": 34787,
+          "components": 35,
+          "componentTriangleQuantiles": [
+            22,
+            569,
+            3736,
+            4200
+          ],
+          "bounds": {
+            "min": [
+              -1.4278439283370972,
+              -0.020327899605035782,
+              -1.7317125797271729
+            ],
+            "max": [
+              1.7236499786376953,
+              3.5607376098632812,
+              1.2547868490219116
+            ]
+          }
+        },
+        {
+          "material": "island_tree_01_leaves",
+          "vertices": 927528,
+          "triangles": 1060032,
+          "components": 44168,
+          "componentTriangleQuantiles": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "bounds": {
+            "min": [
+              -2.3444457054138184,
+              0.6301747560501099,
+              -2.583538055419922
+            ],
+            "max": [
+              2.4107038974761963,
+              5.0071187019348145,
+              2.2341415882110596
+            ]
+          }
+        },
+        {
+          "material": "island_tree_01_branches",
+          "vertices": 357055,
+          "triangles": 504584,
+          "components": 8357,
+          "componentTriangleQuantiles": [
+            33,
+            57,
+            100,
+            132
+          ],
+          "bounds": {
+            "min": [
+              -2.3148062229156494,
+              0.649992048740387,
+              -2.542656898498535
+            ],
+            "max": [
+              2.3549556732177734,
+              4.951547622680664,
+              2.202267646789551
+            ]
+          }
+        }
+      ],
+      "requiredExtensions": [
+        "KHR_texture_transform"
+      ],
+      "nodes": [
+        {
+          "mesh": 0,
+          "name": "island_tree_01_LOD0"
+        }
+      ]
+    },
+    "island_tree_02": {
+      "primitives": [
+        {
+          "material": "island_tree_02",
+          "vertices": 15219,
+          "triangles": 27298,
+          "components": 39,
+          "componentTriangleQuantiles": [
+            34,
+            298,
+            2209,
+            3108
+          ],
+          "bounds": {
+            "min": [
+              -1.1161692142486572,
+              -0.017011718824505806,
+              -0.45452672243118286
+            ],
+            "max": [
+              1.2416797876358032,
+              2.5996620655059814,
+              2.26574444770813
+            ]
+          }
+        },
+        {
+          "material": "island_tree_02_leaves",
+          "vertices": 625401,
+          "triangles": 714744,
+          "components": 29781,
+          "componentTriangleQuantiles": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "bounds": {
+            "min": [
+              -1.8560643196105957,
+              1.2472409009933472,
+              -1.1141542196273804
+            ],
+            "max": [
+              2.0120034217834473,
+              3.389594078063965,
+              2.956543207168579
+            ]
+          }
+        },
+        {
+          "material": "island_tree_02_branches",
+          "vertices": 233874,
+          "triangles": 330171,
+          "components": 5541,
+          "componentTriangleQuantiles": [
+            33,
+            57,
+            100,
+            132
+          ],
+          "bounds": {
+            "min": [
+              -2.052337884902954,
+              1.2643797397613525,
+              -1.072293996810913
+            ],
+            "max": [
+              2.155407428741455,
+              3.3729922771453857,
+              2.9034361839294434
+            ]
+          }
+        }
+      ],
+      "requiredExtensions": [
+        "KHR_texture_transform"
+      ],
+      "nodes": [
+        {
+          "mesh": 0,
+          "name": "island_tree_02_LOD0"
+        }
+      ]
+    },
+    "island_tree_03": {
+      "primitives": [
+        {
+          "material": "island_tree_03",
+          "vertices": 12017,
+          "triangles": 21394,
+          "components": 33,
+          "componentTriangleQuantiles": [
+            12,
+            442,
+            1820,
+            2927
+          ],
+          "bounds": {
+            "min": [
+              -0.8123455047607422,
+              -0.013467597775161266,
+              -1.2038402557373047
+            ],
+            "max": [
+              2.003079414367676,
+              1.5502099990844727,
+              1.4888997077941895
+            ]
+          }
+        },
+        {
+          "material": "island_tree_03_leaves",
+          "vertices": 1232616,
+          "triangles": 1408704,
+          "components": 58696,
+          "componentTriangleQuantiles": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "bounds": {
+            "min": [
+              -0.1820717602968216,
+              0.4113817811012268,
+              -1.2436068058013916
+            ],
+            "max": [
+              2.1597254276275635,
+              2.6015915870666504,
+              1.6696256399154663
+            ]
+          }
+        },
+        {
+          "material": "island_tree_03_branches",
+          "vertices": 463713,
+          "triangles": 655222,
+          "components": 10876,
+          "componentTriangleQuantiles": [
+            33,
+            57,
+            100,
+            132
+          ],
+          "bounds": {
+            "min": [
+              -0.16439206898212433,
+              0.4306362569332123,
+              -1.2281994819641113
+            ],
+            "max": [
+              2.1459953784942627,
+              2.574286460876465,
+              1.6497870683670044
+            ]
+          }
+        }
+      ],
+      "requiredExtensions": [
+        "KHR_texture_transform"
+      ],
+      "nodes": [
+        {
+          "mesh": 0,
+          "name": "island_tree_03_LOD0"
+        }
+      ]
+    }
+  },
+  "productionIntegrated": false
+}

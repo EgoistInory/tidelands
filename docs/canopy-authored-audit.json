@@ -1,0 +1,531 @@
+{
+  "verified": true,
+  "sourceFiles": 36,
+  "sourceBytes": 197567454,
+  "sourceTreeModels": 3,
+  "retainedLeafComponents": 132645,
+  "sourceTopology": {
+    "island_tree_01": {
+      "primitives": [
+        {
+          "material": "island_tree_01",
+          "vertices": 19345,
+          "triangles": 34787,
+          "components": 35,
+          "componentTriangleQuantiles": [
+            22,
+            569,
+            3736,
+            4200
+          ],
+          "bounds": {
+            "min": [
+              -1.4278439283370972,
+              -0.020327899605035782,
+              -1.7317125797271729
+            ],
+            "max": [
+              1.7236499786376953,
+              3.5607376098632812,
+              1.2547868490219116
+            ]
+          }
+        },
+        {
+          "material": "island_tree_01_leaves",
+          "vertices": 927528,
+          "triangles": 1060032,
+          "components": 44168,
+          "componentTriangleQuantiles": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "bounds": {
+            "min": [
+              -2.3444457054138184,
+              0.6301747560501099,
+              -2.583538055419922
+            ],
+            "max": [
+              2.4107038974761963,
+              5.0071187019348145,
+              2.2341415882110596
+            ]
+          }
+        },
+        {
+          "material": "island_tree_01_branches",
+          "vertices": 357055,
+          "triangles": 504584,
+          "components": 8357,
+          "componentTriangleQuantiles": [
+            33,
+            57,
+            100,
+            132
+          ],
+          "bounds": {
+            "min": [
+              -2.3148062229156494,
+              0.649992048740387,
+              -2.542656898498535
+            ],
+            "max": [
+              2.3549556732177734,
+              4.951547622680664,
+              2.202267646789551
+            ]
+          }
+        }
+      ],
+      "requiredExtensions": [
+        "KHR_texture_transform"
+      ],
+      "nodes": [
+        {
+          "mesh": 0,
+          "name": "island_tree_01_LOD0"
+        }
+      ]
+    },
+    "island_tree_02": {
+      "primitives": [
+        {
+          "material": "island_tree_02",
+          "vertices": 15219,
+          "triangles": 27298,
+          "components": 39,
+          "componentTriangleQuantiles": [
+            34,
+            298,
+            2209,
+            3108
+          ],
+          "bounds": {
+            "min": [
+              -1.1161692142486572,
+              -0.017011718824505806,
+              -0.45452672243118286
+            ],
+            "max": [
+              1.2416797876358032,
+              2.5996620655059814,
+              2.26574444770813
+            ]
+          }
+        },
+        {
+          "material": "island_tree_02_leaves",
+          "vertices": 625401,
+          "triangles": 714744,
+          "components": 29781,
+          "componentTriangleQuantiles": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "bounds": {
+            "min": [
+              -1.8560643196105957,
+              1.2472409009933472,
+              -1.1141542196273804
+            ],
+            "max": [
+              2.0120034217834473,
+              3.389594078063965,
+              2.956543207168579
+            ]
+          }
+        },
+        {
+          "material": "island_tree_02_branches",
+          "vertices": 233874,
+          "triangles": 330171,
+          "components": 5541,
+          "componentTriangleQuantiles": [
+            33,
+            57,
+            100,
+            132
+          ],
+          "bounds": {
+            "min": [
+              -2.052337884902954,
+              1.2643797397613525,
+              -1.072293996810913
+            ],
+            "max": [
+              2.155407428741455,
+              3.3729922771453857,
+              2.9034361839294434
+            ]
+          }
+        }
+      ],
+      "requiredExtensions": [
+        "KHR_texture_transform"
+      ],
+      "nodes": [
+        {
+          "mesh": 0,
+          "name": "island_tree_02_LOD0"
+        }
+      ]
+    },
+    "island_tree_03": {
+      "primitives": [
+        {
+          "material": "island_tree_03",
+          "vertices": 12017,
+          "triangles": 21394,
+          "components": 33,
+          "componentTriangleQuantiles": [
+            12,
+            442,
+            1820,
+            2927
+          ],
+          "bounds": {
+            "min": [
+              -0.8123455047607422,
+              -0.013467597775161266,
+              -1.2038402557373047
+            ],
+            "max": [
+              2.003079414367676,
+              1.5502099990844727,
+              1.4888997077941895
+            ]
+          }
+        },
+        {
+          "material": "island_tree_03_leaves",
+          "vertices": 1232616,
+          "triangles": 1408704,
+          "components": 58696,
+          "componentTriangleQuantiles": [
+            24,
+            24,
+            24,
+            24
+          ],
+          "bounds": {
+            "min": [
+              -0.1820717602968216,
+              0.4113817811012268,
+              -1.2436068058013916
+            ],
+            "max": [
+              2.1597254276275635,
+              2.6015915870666504,
+              1.6696256399154663
+            ]
+          }
+        },
+        {
+          "material": "island_tree_03_branches",
+          "vertices": 463713,
+          "triangles": 655222,
+          "components": 10876,
+          "componentTriangleQuantiles": [
+            33,
+            57,
+            100,
+            132
+          ],
+          "bounds": {
+            "min": [
+              -0.16439206898212433,
+              0.4306362569332123,
+              -1.2281994819641113
+            ],
+            "max": [
+              2.1459953784942627,
+              2.574286460876465,
+              1.6497870683670044
+            ]
+          }
+        }
+      ],
+      "requiredExtensions": [
+        "KHR_texture_transform"
+      ],
+      "nodes": [
+        {
+          "mesh": 0,
+          "name": "island_tree_03_LOD0"
+        }
+      ]
+    }
+  },
+  "geometry": {
+    "island_tree_01": {
+      "sourceLeafComponents": 44168,
+      "levels": {
+        "near": {
+          "geometryBytes": 14401408,
+          "primitives": [
+            {
+              "material": "island_tree_01",
+              "inputTriangles": 34787,
+              "outputTriangles": 5218,
+              "relativeSimplificationError": 0.0030013294890522957,
+              "retainedLeafComponents": 0,
+              "maxLeafFitError": 0,
+              "fallbackLeaves": 0
+            },
+            {
+              "material": "island_tree_01_leaves",
+              "inputTriangles": 1060032,
+              "outputTriangles": 176672,
+              "relativeSimplificationError": 0,
+              "retainedLeafComponents": 44168,
+              "maxLeafFitError": 0.006600542411615412,
+              "fallbackLeaves": 0
+            },
+            {
+              "material": "island_tree_01_branches",
+              "inputTriangles": 504584,
+              "outputTriangles": 75686,
+              "relativeSimplificationError": 0.0021833882201462984,
+              "retainedLeafComponents": 0,
+              "maxLeafFitError": 0,
+              "fallbackLeaves": 0
+            }
+          ],
+          "triangles": 257576
+        },
+        "mid": {
+          "geometryBytes": 9713688,
+          "primitives": [
+            {
+              "material": "island_tree_01",
+              "inputTriangles": 34787,
+              "outputTriangles": 2086,
+              "relativeSimplificationError": 0.010260556824505329,
+              "retainedLeafComponents": 0,
+              "maxLeafFitError": 0,
+              "fallbackLeaves": 0
+            },
+            {
+              "material": "island_tree_01_leaves",
+              "inputTriangles": 1060032,
+              "outputTriangles": 88336,
+              "relativeSimplificationError": 0,
+              "retainedLeafComponents": 44168,
+              "maxLeafFitError": 0.006600542411615412,
+              "fallbackLeaves": 0
+            },
+            {
+              "material": "island_tree_01_branches",
+              "inputTriangles": 504584,
+              "outputTriangles": 54644,
+              "relativeSimplificationError": 0.011673006229102612,
+              "retainedLeafComponents": 0,
+              "maxLeafFitError": 0,
+              "fallbackLeaves": 0
+            }
+          ],
+          "triangles": 145066
+        }
+      }
+    },
+    "island_tree_02": {
+      "sourceLeafComponents": 29781,
+      "levels": {
+        "near": {
+          "geometryBytes": 9659144,
+          "primitives": [
+            {
+              "material": "island_tree_02",
+              "inputTriangles": 27298,
+              "outputTriangles": 4094,
+              "relativeSimplificationError": 0.002844669623300433,
+              "retainedLeafComponents": 0,
+              "maxLeafFitError": 0,
+              "fallbackLeaves": 0
+            },
+            {
+              "material": "island_tree_02_leaves",
+              "inputTriangles": 714744,
+              "outputTriangles": 119124,
+              "relativeSimplificationError": 0,
+              "retainedLeafComponents": 29781,
+              "maxLeafFitError": 0.005011065520928393,
+              "fallbackLeaves": 0
+            },
+            {
+              "material": "island_tree_02_branches",
+              "inputTriangles": 330171,
+              "outputTriangles": 49524,
+              "relativeSimplificationError": 0.0022360417060554028,
+              "retainedLeafComponents": 0,
+              "maxLeafFitError": 0,
+              "fallbackLeaves": 0
+            }
+          ],
+          "triangles": 172742
+        },
+        "mid": {
+          "geometryBytes": 6482344,
+          "primitives": [
+            {
+              "material": "island_tree_02",
+              "inputTriangles": 27298,
+              "outputTriangles": 1637,
+              "relativeSimplificationError": 0.007653090171515942,
+              "retainedLeafComponents": 0,
+              "maxLeafFitError": 0,
+              "fallbackLeaves": 0
+            },
+            {
+              "material": "island_tree_02_leaves",
+              "inputTriangles": 714744,
+              "outputTriangles": 59562,
+              "relativeSimplificationError": 0,
+              "retainedLeafComponents": 29781,
+              "maxLeafFitError": 0.005011065520928393,
+              "fallbackLeaves": 0
+            },
+            {
+              "material": "island_tree_02_branches",
+              "inputTriangles": 330171,
+              "outputTriangles": 35423,
+              "relativeSimplificationError": 0.01171256322413683,
+              "retainedLeafComponents": 0,
+              "maxLeafFitError": 0,
+              "fallbackLeaves": 0
+            }
+          ],
+          "triangles": 96622
+        }
+      }
+    },
+    "island_tree_03": {
+      "sourceLeafComponents": 58696,
+      "levels": {
+        "near": {
+          "geometryBytes": 18909668,
+          "primitives": [
+            {
+              "material": "island_tree_03",
+              "inputTriangles": 21394,
+              "outputTriangles": 3209,
+              "relativeSimplificationError": 0.002183429431170225,
+              "retainedLeafComponents": 0,
+              "maxLeafFitError": 0,
+              "fallbackLeaves": 0
+            },
+            {
+              "material": "island_tree_03_leaves",
+              "inputTriangles": 1408704,
+              "outputTriangles": 234784,
+              "relativeSimplificationError": 0,
+              "retainedLeafComponents": 58696,
+              "maxLeafFitError": 0.0040564744686149515,
+              "fallbackLeaves": 0
+            },
+            {
+              "material": "island_tree_03_branches",
+              "inputTriangles": 655222,
+              "outputTriangles": 98282,
+              "relativeSimplificationError": 0.0014647272182628512,
+              "retainedLeafComponents": 0,
+              "maxLeafFitError": 0,
+              "fallbackLeaves": 0
+            }
+          ],
+          "triangles": 336275
+        },
+        "mid": {
+          "geometryBytes": 12735596,
+          "primitives": [
+            {
+              "material": "island_tree_03",
+              "inputTriangles": 21394,
+              "outputTriangles": 1283,
+              "relativeSimplificationError": 0.006174217909574509,
+              "retainedLeafComponents": 0,
+              "maxLeafFitError": 0,
+              "fallbackLeaves": 0
+            },
+            {
+              "material": "island_tree_03_leaves",
+              "inputTriangles": 1408704,
+              "outputTriangles": 117392,
+              "relativeSimplificationError": 0,
+              "retainedLeafComponents": 58696,
+              "maxLeafFitError": 0.0040564744686149515,
+              "fallbackLeaves": 0
+            },
+            {
+              "material": "island_tree_03_branches",
+              "inputTriangles": 655222,
+              "outputTriangles": 70366,
+              "relativeSimplificationError": 0.01168713066726923,
+              "retainedLeafComponents": 0,
+              "maxLeafFitError": 0,
+              "fallbackLeaves": 0
+            }
+          ],
+          "triangles": 189041
+        }
+      }
+    }
+  },
+  "textureBytes": 2300290,
+  "bakedViews": 12,
+  "bakedFiles": 24,
+  "bakedBytes": 8248306,
+  "nativeImagesSaved": 60,
+  "nativeImagesViewed": 48,
+  "acceptedDiagnosticImagesViewed": 30,
+  "sourceAcquired": true,
+  "nearMidGeometryReviewed": true,
+  "farImageFormatVerified": true,
+  "farLightingOrTransitionAccepted": false,
+  "worldWindOrCollisionIntegrated": false,
+  "sourcePhysicalScaleInGameAccepted": false,
+  "productionIntegrated": false,
+  "runtimeInputsUnchanged": 110,
+  "ordinarySaveTouched": false,
+  "currentGpuOrEnduranceAccepted": false,
+  "realDeviceVerified": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "images": {
+    "canopy-authored-r2-island_tree_01-0-source.jpg": "ad6fa344313d8a342c025344071efd04bc7f0ef9acf53615632e57a26b344f48",
+    "canopy-authored-r2-island_tree_01-0-near.jpg": "281b853494b911f19fc297dd1a5011d42858af8ca390d56b58583b1ff342dfa0",
+    "canopy-authored-r2-island_tree_01-0-mid.jpg": "4134e7ea4811930eb26ae166b4d2963034527e366d76bf66db1bfece9752b709",
+    "canopy-authored-r4-island_tree_01-0-near.jpg": "948357ebd567b089463fafa311558faeb8c0c1b17327f658e7e018ef33c628e5",
+    "canopy-authored-r4-island_tree_01-0-far.jpg": "77a10191f3682e84b729214c8c194efc5726278f04af4642348d2c50666db407",
+    "canopy-authored-r2-island_tree_01-90-source.jpg": "75771992ec36737b2d468616d207856308f224f43eaf7e2324f0468fabce7a02",
+    "canopy-authored-r2-island_tree_01-90-near.jpg": "4f837b5ab4611007c551bfae5d24064accc07f44fef4d79c095d222d4e0d83e9",
+    "canopy-authored-r2-island_tree_01-90-mid.jpg": "47b0a77ced6c959c1184192e528f6a1201c513768ebbbf92ba3e83bc4f958024",
+    "canopy-authored-r4-island_tree_01-90-near.jpg": "5bf8807c9321a7fffbb1cb2c25ff2704b22a6f4c1932bebab72adac4c8b5dcf1",
+    "canopy-authored-r4-island_tree_01-90-far.jpg": "b5371dcc1b871693405b7bdb457684090588413bd335dab00ebc7f4c581f4292",
+    "canopy-authored-r2-island_tree_02-0-source.jpg": "e2c3a1f8c3fd87d4d38de6629e92ba6b1fb303349070b70b650a60dc4959cd10",
+    "canopy-authored-r2-island_tree_02-0-near.jpg": "02be60a661e29e994c10353f79759befabecd1f036cd44a52bbcfc9d8b26e548",
+    "canopy-authored-r2-island_tree_02-0-mid.jpg": "aaed0e6403459ac0f9d65cecea02d1fc0f9fdd1667b2a44247cd2ea437bfa28a",
+    "canopy-authored-r4-island_tree_02-0-near.jpg": "735ed09d083a6499d737f06db81a1d254cd7d5ac5ddea34352fa8311fb4ac431",
+    "canopy-authored-r4-island_tree_02-0-far.jpg": "3785d033f97e026a1dd948bd3d60cd17a42ea2170ba14dba82ed7b8ab8e815e1",
+    "canopy-authored-r2-island_tree_02-90-source.jpg": "ef70548ce017c5f5ac7685ac2eac59f64f04555882a0ff2ad61c62f72cd108f7",
+    "canopy-authored-r2-island_tree_02-90-near.jpg": "8ef2f6b91a3ea5709652cafae6fc5e5c08a16cd2e3ec7103482ce1ce6b0fc7a4",
+    "canopy-authored-r2-island_tree_02-90-mid.jpg": "7502263de849eacfa3fe252efc3f463993446bdad242b0b06d8a25d3c78518c4",
+    "canopy-authored-r4-island_tree_02-90-near.jpg": "1e2ec203c41190991cbc6dddb152d61d3f410ee44e72af520e825b3a26bd1abd",
+    "canopy-authored-r4-island_tree_02-90-far.jpg": "62a30518cfd80e605da7441c3c7e0021a08c2c296b92d6a9ba4651be7ac7e4c1",
+    "canopy-authored-r2-island_tree_03-0-source.jpg": "a838ede928e8c0b121ad4bf596202d0457c54451e68b2cee7b7ba814494b2cbe",
+    "canopy-authored-r2-island_tree_03-0-near.jpg": "5959274f53fd6dbf65641f0a3ea269ba2bbd8e32da25148f2c6e81f6f0435274",
+    "canopy-authored-r2-island_tree_03-0-mid.jpg": "3457a5d63f9a952758f363d6b5b653eff6dc0d8bfbc1e40cc9c2df62daa7e2f9",
+    "canopy-authored-r4-island_tree_03-0-near.jpg": "5a8f14d16fdac9de0a3554fb7bb15a5e000811e6f6f6e77f3a72392ae1817d5b",
+    "canopy-authored-r4-island_tree_03-0-far.jpg": "33374fd0eb452800b078219db2b643618e3477af972353be4081fd974ab5b805",
+    "canopy-authored-r2-island_tree_03-90-source.jpg": "b9b073520ed99a1b61a51ce1b45ef0c3c353a8c7a70ea25ce910d770af6b1859",
+    "canopy-authored-r2-island_tree_03-90-near.jpg": "06535ff6464ab84e55dced41f44bb01c013edb26fdf2fcfac4d7d875aebf1059",
+    "canopy-authored-r2-island_tree_03-90-mid.jpg": "8c0a86605dbb61a46983c51113eae50e8820bf5e6c1a7fbc739cabaa0a54b491",
+    "canopy-authored-r4-island_tree_03-90-near.jpg": "b5819faa1525c4bdf619b2aa23e30c50982e0cfeec06aff32f7281b429f5db4b",
+    "canopy-authored-r4-island_tree_03-90-far.jpg": "53fd1dfdeab5296fad3fc6b87495f7d22eafb8a5e0922dbb0455a55393f0a53b"
+  }
+}

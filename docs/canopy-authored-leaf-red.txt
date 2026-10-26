@@ -1,0 +1,33 @@
+TAP version 13
+# Subtest: alpha leaf patch preserves UV extent and curved source surface without removing leaves
+not ok 1 - alpha leaf patch preserves UV extent and curved source surface without removing leaves
+  ---
+  duration_ms: 0.828375
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/leaf-patch-lod.test.js:5:1'
+  failureType: 'testCodeFailure'
+  error: 'Leaf patch reconstruction not implemented'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    fitLeafPatch (file:///Users/huxiaocong/Codex/tidelands/tools/leaf-patch-lod.mjs:3:9)
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/leaf-patch-lod.test.js:11:18)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: leaf reconstruction rejects bad UV or degenerate surfaces instead of silently deleting a component
+ok 2 - leaf reconstruction rejects bad UV or degenerate surfaces instead of silently deleting a component
+  ---
+  duration_ms: 0.797292
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 1
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 44.373667

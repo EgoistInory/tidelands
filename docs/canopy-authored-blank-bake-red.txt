@@ -1,0 +1,10 @@
+/Users/huxiaocong/Codex/tidelands/tools/verify_canopy_bake.py:21: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  data=list(image.getdata());alpha=[p[3] for p in data]
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/verify_canopy_bake.py", line 35, in <module>
+    parser=argparse.ArgumentParser();parser.add_argument('--folder',type=Path,default=ROOT/'dist/canopy-authored-candidate/impostors-r2');args=parser.parse_args();verify(args.folder.resolve())
+                                                                                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/huxiaocong/Codex/tidelands/tools/verify_canopy_bake.py", line 23, in verify
+    assert .02<coverage<.8,('Empty or solid bake',path.name,coverage)
+           ^^^^^^^^^^^^^^^
+AssertionError: ('Empty or solid bake', 'island_tree_01-0-color.png', 0.0)

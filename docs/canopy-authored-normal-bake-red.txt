@@ -1,0 +1,10 @@
+/Users/huxiaocong/Codex/tidelands/tools/verify_canopy_bake.py:21: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  data=list(image.getdata());alpha=[p[3] for p in data]
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/verify_canopy_bake.py", line 35, in <module>
+    parser=argparse.ArgumentParser();parser.add_argument('--folder',type=Path,default=ROOT/'dist/canopy-authored-candidate/impostors-r2');args=parser.parse_args();verify(args.folder.resolve())
+                                                                                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/huxiaocong/Codex/tidelands/tools/verify_canopy_bake.py", line 26, in verify
+    assert lengths and sum(abs(n-1)<.1 for n in lengths)/len(lengths)>.97,('Invalid encoded normals',path.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('Invalid encoded normals', 'island_tree_01-0-normal.png')
