@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: leaf canopy stays finite and its wind bounds fit the tree camera clearance
+ok 1 - leaf canopy stays finite and its wind bounds fit the tree camera clearance
+  ---
+  duration_ms: 53.183459
+  type: 'test'
+  ...
+# Subtest: visible and shadow leaves use the same wind shader and advancing clock
+ok 2 - visible and shadow leaves use the same wind shader and advancing clock
+  ---
+  duration_ms: 5.2585
+  type: 'test'
+  ...
+# Subtest: canopies share a bounded mipmapped cutout texture with opaque leaves and empty edges
+ok 3 - canopies share a bounded mipmapped cutout texture with opaque leaves and empty edges
+  ---
+  duration_ms: 7.799875
+  type: 'test'
+  ...
+# Subtest: berry foliage fits the resource footprint and reuses visible and shadow leaf resources
+ok 4 - berry foliage fits the resource footprint and reuses visible and shadow leaf resources
+  ---
+  duration_ms: 6.178834
+  type: 'test'
+  ...
+# Subtest: bark texture is shared, bounded, opaque and mipmapped
+ok 5 - bark texture is shared, bounded, opaque and mipmapped
+  ---
+  duration_ms: 20.862292
+  type: 'test'
+  ...
+# Subtest: four island surfaces distinguish warm dunes, woodland litter and exposed upland rock
+ok 6 - four island surfaces distinguish warm dunes, woodland litter and exposed upland rock
+  ---
+  duration_ms: 19.965625
+  type: 'test'
+  ...
+# Subtest: shore stones are deterministic shallow dressing and preserve resources, enemies and routes
+ok 7 - shore stones are deterministic shallow dressing and preserve resources, enemies and routes
+  ---
+  duration_ms: 123.080375
+  type: 'test'
+  ...
+# Subtest: regional tree presentation varies crowns without widening resource contact footprints
+ok 8 - regional tree presentation varies crowns without widening resource contact footprints
+  ---
+  duration_ms: 0.447125
+  type: 'test'
+  ...
+# Subtest: stand-scale rhythm is continuous and spans distinct open and tall patches without moving nodes
+ok 9 - stand-scale rhythm is continuous and spans distinct open and tall patches without moving nodes
+  ---
+  duration_ms: 13.421083
+  type: 'test'
+  ...
+# Subtest: woodland groups enrich forest interiors while keeping shallow warm coasts and object identities
+ok 10 - woodland groups enrich forest interiors while keeping shallow warm coasts and object identities
+  ---
+  duration_ms: 171.207709
+  type: 'test'
+  ...
+# Subtest: landmark approach corridors remain open to low dressing
+ok 11 - landmark approach corridors remain open to low dressing
+  ---
+  duration_ms: 50.503542
+  type: 'test'
+  ...
+# Subtest: small decorative stones cannot become visually solid invisible body blockers
+ok 12 - small decorative stones cannot become visually solid invisible body blockers
+  ---
+  duration_ms: 57.014583
+  type: 'test'
+  ...
+# Subtest: building a camp clears dressing and removing it restores original transforms without changing placement
+ok 13 - building a camp clears dressing and removing it restores original transforms without changing placement
+  ---
+  duration_ms: 1.937834
+  type: 'test'
+  ...
+# Subtest: visible leaves and shadow depth use the same clock while release is idempotent
+ok 14 - visible leaves and shadow depth use the same clock while release is idempotent
+  ---
+  duration_ms: 1.363875
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 342.95925

@@ -38,6 +38,17 @@ def build(name='tidelands-local', stage='M1-M4 functional checkpoint'):
             paths.append(relative)
         paths += [Path('assets/characters/action-landmarks.json'), Path('assets/characters/provenance.json')]
         paths += [Path('vendor/addons') / name for name in ('loaders/GLTFLoader.js', 'utils/BufferGeometryUtils.js', 'README.md')]
+    woodland_manifest = ROOT / 'assets/woodland/provenance.json'
+    if woodland_manifest.exists():
+        for asset_name, row in json.loads(woodland_manifest.read_text())['files'].items():
+            relative = Path(asset_name)
+            if relative.is_absolute() or '..' in relative.parts or '\\' in asset_name or relative.suffix not in ('.gltf', '.bin', '.jpg', '.png', '.txt'):
+                raise ValueError('林下资料路径不合法')
+            target = woodland_manifest.parent / relative
+            if not target.resolve().is_relative_to(woodland_manifest.parent.resolve()) or target.is_symlink() or hashlib.sha256(target.read_bytes()).hexdigest() != row['sha256']:
+                raise ValueError('林下资料与本地来源清单不一致')
+            paths.append(Path('assets/woodland') / relative)
+        paths += [Path('vendor/addons') / name for name in ('loaders/GLTFLoader.js', 'utils/BufferGeometryUtils.js', 'README.md')]
     contents = {str(p): (ROOT / p).read_bytes() for p in paths}
     contents['README.md'] = (ROOT / 'docs/LOCAL-DELIVERY.md').read_bytes()
     manifest = {

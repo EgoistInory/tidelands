@@ -128,6 +128,7 @@ export class WorldView{
     for(const [old,model]of replacements){model.position.copy(old.position);model.rotation.copy(old.rotation);this.scene.remove(old);this.disposeGroup(old);this.scene.add(model);}
     this.player=cast.actors.traveler;for(const entry of this.islanders)entry.model=cast.actors[entry.object.id];this.authoredCast=cast;
   }
+  installWoodlandDressing(dressing){this.woodlandDressing?.release();this.woodlandDressing=dressing;this.scene.add(dressing.root);}
   createTerrain(){
     const geometry=new THREE.PlaneGeometry(800,800,320,320);geometry.rotateX(-Math.PI/2);const positions=geometry.attributes.position;
     const colors=[],layers=[];
@@ -287,6 +288,7 @@ export class WorldView{
     const p=state.player,h=Math.max(terrain(p.x,p.z),-.45),weather=weatherAt(state.time);
     updateFoliage(state.time,weather.windStrength);
     updateMeadow(state.time,weather.windStrength);
+    this.woodlandDressing?.update(state,weather.windStrength);
     let fire=null,fireDistance=30;
     for(const b of state.buildings)if(b.type==='campfire'){const model=this.buildings.get(b.id);if(model)updateCampfire(model,state.time);const distance=Math.hypot(b.x-p.x,b.z-p.z);if(distance<fireDistance){fire=b;fireDistance=distance;}}
     this.fireLight.intensity=fire?(20+Math.sin(state.time*9)*2+Math.sin(state.time*17))*(1-Math.min(1,Math.max(0,fireDistance-18)/12)):0;

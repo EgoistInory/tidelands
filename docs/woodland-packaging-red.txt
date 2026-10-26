@@ -1,0 +1,14 @@
+.....F
+======================================================================
+FAIL: test_woodland_manifest_includes_local_geometry_and_rejects_changed_or_escaping_files (__main__.LocalDeliveryTests.test_woodland_manifest_includes_local_geometry_and_rejects_changed_or_escaping_files)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/test_local_delivery.py", line 85, in test_woodland_manifest_includes_local_geometry_and_rejects_changed_or_escaping_files
+    self.assertIn('assets/woodland/plant.bin',self.build()['files'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'assets/woodland/plant.bin' not found in {'README.md': {'bytes': 18, 'sha256': 'f99f471c83b06c69fd8021255c648099849aed259841f3d3cce6e1af230d42d9'}, 'assets/ground/manifest.json': {'bytes': 2, 'sha256': '44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a'}, 'assets/ground/test.jpg': {'bytes': 7, 'sha256': 'f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d'}, 'assets/woodland/provenance.json': {'bytes': 104, 'sha256': '9f767a16aaefd4d542f166ac62bfa47e485104280fee5da8b1395bc9001d90c8'}, 'index.html': {'bytes': 25, 'sha256': '15cc57fb66674877b63695f4449513b443ac5951697bbcedf2889858e2169aba'}, 'serve.py': {'bytes': 1081, 'sha256': '15a7ff5096fd6b8c33c14591065d184ba7e643f9efd3f4c036e4c4058f349e45'}, 'src/sky.js': {'bytes': 24, 'sha256': 'fdbc1a537cdbf695ccd1b804d6947ae1a52a79c54e276bac1184f897c17364f3'}, 'styles.css': {'bytes': 14, 'sha256': '2007703776e20c24376ebae0a759bc90112c3d0632a9f44428e11f7a8444a297'}, 'vendor/README.md': {'bytes': 9, 'sha256': 'b335630551682c19a781afebcf4d07bf978fb1f8ac04c6bf87428ed5106870f5'}, 'vendor/THREE-LICENSE': {'bytes': 13, 'sha256': '554249562188dcb705beeda21404ef55c02838717e986de9f1916ccac305941c'}, 'vendor/three.core.min.js': {'bytes': 17, 'sha256': 'e23760bc7ddd6005290064e42b39fe26faf7299b26454abe8f8bd15d2e4b2848'}, 'vendor/three.module.min.js': {'bytes': 19, 'sha256': '6d94302996818c221ca3be7612bb2abe920a9381df5aa535543ba750a9ec3872'}}
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.135s
+
+FAILED (failures=1)

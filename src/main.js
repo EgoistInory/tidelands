@@ -5,6 +5,7 @@ import {bindPointerControls} from './pointer-controls.js';
 import {createMovementHeading} from './movement-heading.js';
 import {prepareSurfaceTextures} from './startup-textures.js';
 import {loadAuthoredCast} from './authored-assets.js';
+import {loadWoodlandDressing} from './woodland.js';
 import {gatherImpact,attackImpacts} from './impact-feedback.js';
 import {createWorld,terrain,LANDMARKS,regionAt,dayCycle} from './world.js';
 import {freshGame,QUESTS,ITEMS,RECIPES,affordable,craft,canBuild,build,interact,resolveGather,eat,attack,attackRange,resolveAttack,movePlayer,tick,cancelEnemyAttacks,enemyAttackPose,nearest,nearestEnemy,serialize,restore} from './game.js';
@@ -157,7 +158,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     look:(dx,dy)=>{const turn=-dx*.006;view.yaw+=turn;movementHeading.turn(turn);view.pitch=Math.max(.08,Math.min(1.15,view.pitch-dy*.004));},
     zoom:delta=>{view.distance=Math.max(12,Math.min(45,view.distance+delta*.02));}
   });
-  window.addEventListener('resize',()=>view.resize());window.addEventListener('pagehide',event=>{preparation.abort();save();if(!event.persisted){view.authoredCast?.release();view.impacts.dispose();}});
+  window.addEventListener('resize',()=>view.resize());window.addEventListener('pagehide',event=>{preparation.abort();save();if(!event.persisted){view.authoredCast?.release();view.woodlandDressing?.release();view.impacts.dispose();}});
   window.addEventListener('pageshow',event=>{
     if(event.persisted&&!prepared&&!renderLost){
       $('load-status').textContent='准备已中断。重新加载可继续。';$('start-button').textContent='重新加载';
@@ -182,11 +183,13 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     const cast=await loadAuthoredCast({signal:preparation.signal});
     if(preparation.signal.aborted||renderLost){cast.release();return;}
     view.installAuthoredCast(cast);
+    let woodlandFallback=false;
+    try{const dressing=await loadWoodlandDressing(world.objects,{signal:preparation.signal});if(preparation.signal.aborted||renderLost){dressing.release();return;}view.installWoodlandDressing(dressing);}catch(error){if(error.name==='AbortError'||preparation.signal.aborted||renderLost)return;woodlandFallback=true;}
     $('load-status').textContent='正在点亮群岛…';await new Promise(requestAnimationFrame);
     if(preparation.signal.aborted||renderLost)return;
     // Finish the initial scene/shader draw while the start screen is still visible.
     view.draw(state,near,null,false,1/60);prepared=true;
-    $('load-status').textContent=loadError||(surfaces.some(s=>s.state.status==='fallback')?'部分地表使用备用素材 · 可以继续':'群岛已就绪 · 无需联网');
+    $('load-status').textContent=loadError||(woodlandFallback?'部分林下细节暂未载入 · 可以继续':surfaces.some(s=>s.state.status==='fallback')?'部分地表使用备用素材 · 可以继续':'群岛已就绪 · 无需联网');
     $('start-button').textContent=hasSavedGame||state.time>121||state.quest?'继续旅程':'开始旅程';$('start-button').disabled=false;
   }).catch(error=>{
     if(error.name==='AbortError'||renderLost)return;

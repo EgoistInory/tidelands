@@ -1,0 +1,77 @@
+[
+  {
+    "action": "before-start",
+    "state": {
+      "player": {
+        "x": 214.76517629641177,
+        "z": -42.59081239192736,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "inventory": {
+        "wood": 30,
+        "stone": 30,
+        "fiber": 30,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "quest": 2,
+      "buildings": [],
+      "dressingInstalled": true,
+      "placements": 1445,
+      "hiddenDressing": 0,
+      "glError": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "scope": "Explicit supplied materials/quest/position fixture; actual production boot/input, not ordinary journey."
+    }
+  },
+  {
+    "action": "native-4-then-E650ms",
+    "state": {
+      "player": {
+        "x": 214.76517629641177,
+        "z": -42.59081239192736,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "inventory": {
+        "wood": 25,
+        "stone": 27,
+        "fiber": 30,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "quest": 3,
+      "buildings": [
+        {
+          "id": "built-0-25503",
+          "type": "campfire",
+          "x": 214.76517629641177,
+          "z": -36.59081239192736
+        }
+      ],
+      "dressingInstalled": true,
+      "placements": 1445,
+      "hiddenDressing": 6,
+      "glError": 0,
+      "viewport": [
+        1280,
+        720
+      ],
+      "scope": "Explicit supplied materials/quest/position fixture; actual production boot/input, not ordinary journey."
+    }
+  }
+]

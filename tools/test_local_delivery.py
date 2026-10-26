@@ -74,6 +74,20 @@ class LocalDeliveryTests(unittest.TestCase):
             self.build()
         self.assertEqual({p.name: p.read_bytes() for p in (self.root / 'dist').iterdir()}, before)
 
+    def test_woodland_manifest_includes_local_geometry_and_rejects_changed_or_escaping_files(self):
+        import hashlib
+        folder=self.root/'assets/woodland';folder.mkdir()
+        data=b'local geometry';(folder/'plant.bin').write_bytes(data)
+        manifest={'files':{'plant.bin':{'sha256':hashlib.sha256(data).hexdigest()}}}
+        (folder/'provenance.json').write_text(json.dumps(manifest))
+        for name in ['loaders/GLTFLoader.js','utils/BufferGeometryUtils.js','README.md']:
+            path=self.root/'vendor/addons'/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_text('local add-on')
+        self.assertIn('assets/woodland/plant.bin',self.build()['files'])
+        (folder/'plant.bin').write_bytes(b'changed')
+        with self.assertRaises(ValueError):self.build()
+        manifest['files']={'../escape.bin':{'sha256':'0'*64}};(folder/'provenance.json').write_text(json.dumps(manifest))
+        with self.assertRaises(ValueError):self.build()
+
     def test_names_cannot_escape_dist(self):
         for name in ('../checkpoint', '/tmp/checkpoint', 'checkpoint.zip', ''):
             with self.subTest(name=name), self.assertRaises(ValueError):
