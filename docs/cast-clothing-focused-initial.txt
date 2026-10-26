@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: wardrobe keeps source geometry immutable, skin weights normalized, and every role fully dressed
+ok 1 - wardrobe keeps source geometry immutable, skin weights normalized, and every role fully dressed
+  ---
+  duration_ms: 47.413583
+  type: 'test'
+  ...
+# Subtest: attachments follow the real author bone and duplicate or unknown wardrobe calls fail explicitly
+ok 2 - attachments follow the real author bone and duplicate or unknown wardrobe calls fail explicitly
+  ---
+  duration_ms: 6.936292
+  type: 'test'
+  ...
+# Subtest: each hairstyle uses its own author head anchor, including female-authored long hair on a male
+ok 3 - each hairstyle uses its own author head anchor, including female-authored long hair on a male
+  ---
+  duration_ms: 0.685375
+  type: 'test'
+  ...
+# Subtest: hair retains source node rotation and centimetre scale before binding to the target Head
+ok 4 - hair retains source node rotation and centimetre scale before binding to the target Head
+  ---
+  duration_ms: 0.313834
+  type: 'test'
+  ...
+# Subtest: actual author rig follows game location, carries selected tools and stays finite across movement and water
+ok 5 - actual author rig follows game location, carries selected tools and stays finite across movement and water
+  ---
+  duration_ms: 280.589375
+  type: 'test'
+  ...
+# Subtest: actual source rest proportions survive, and planted world supports stay fixed during complete tool actions
+ok 6 - actual source rest proportions survive, and planted world supports stay fixed during complete tool actions
+  ---
+  duration_ms: 588.049458
+  type: 'test'
+  ...
+# Subtest: moving actual sole anchors track support targets through production speeds, slopes and turns
+ok 7 - moving actual sole anchors track support targets through production speeds, slopes and turns
+  ---
+  duration_ms: 984.3825
+  type: 'test'
+  ...
+# Subtest: cloned actual rig owns its bones while sharing immutable template buffers
+ok 8 - cloned actual rig owns its bones while sharing immutable template buffers
+  ---
+  duration_ms: 56.906834
+  type: 'test'
+  ...
+# Subtest: paused actual skeleton and support contacts do not snap into an idle gait
+ok 9 - paused actual skeleton and support contacts do not snap into an idle gait
+  ---
+  duration_ms: 175.1475
+  type: 'test'
+  ...
+# Subtest: shallow-water visuals wade on the actual floor while deep water uses the real waterline
+ok 10 - shallow-water visuals wade on the actual floor while deep water uses the real waterline
+  ---
+  duration_ms: 161.233042
+  type: 'test'
+  ...
+# Subtest: existing world-sized tools do not get enlarged a second time by author body normalization
+ok 11 - existing world-sized tools do not get enlarged a second time by author body normalization
+  ---
+  duration_ms: 148.044292
+  type: 'test'
+  ...
+# Subtest: restored facing initializes before planting and stationary turns recover each foot
+ok 12 - restored facing initializes before planting and stationary turns recover each foot
+  ---
+  duration_ms: 163.01725
+  type: 'test'
+  ...
+# Subtest: all authored roles retain whole-body acceleration, braking and turn response after the rig replacement
+ok 13 - all authored roles retain whole-body acceleration, braking and turn response after the rig replacement
+  ---
+  duration_ms: 1414.063875
+  type: 'test'
+  ...
+# Subtest: all four real roles have continuous roomy sleeve/trouser surfaces without altering the author body
+ok 14 - all four real roles have continuous roomy sleeve/trouser surfaces without altering the author body
+  ---
+  duration_ms: 719.096334
+  type: 'test'
+  ...
+# Subtest: actual added cloth stays attached and finite through four-role whole-body action paths
+not ok 15 - actual added cloth stays attached and finite through four-role whole-body action paths
+  ---
+  duration_ms: 207.576041
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/cast-clothing.test.js:23:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+    +   0.4288000464439422,
+    +   0.42880004644394143
+    -   0.4288000166416169,
+    -   0.4288000166416169
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: 0.4288000166416169
+    1: 0.4288000166416169
+  actual:
+    0: 0.4288000464439422
+    1: 0.42880004644394143
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/cast-clothing.test.js:33:12)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 14
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4043.467916

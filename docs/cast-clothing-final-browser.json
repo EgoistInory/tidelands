@@ -1,0 +1,1272 @@
+[
+  {
+    "ready": true,
+    "art": "baseline",
+    "camera": "ensemble",
+    "cameraPosition": [
+      12,
+      6.5,
+      20
+    ],
+    "cameraTarget": "ensemble",
+    "pose": "idle",
+    "time": 10,
+    "frames": 0,
+    "running": false,
+    "hidden": false,
+    "soleError": 4.123405927189707e-7,
+    "roles": [
+      {
+        "role": "traveler",
+        "position": [
+          -6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "keeper",
+        "position": [
+          -2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "botanist",
+        "position": [
+          2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "explorer",
+        "position": [
+          6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      }
+    ],
+    "animals": [
+      {
+        "type": "boar",
+        "position": [
+          -4,
+          -5
+        ]
+      },
+      {
+        "type": "crab",
+        "position": [
+          4,
+          -5
+        ]
+      }
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      1080
+    ],
+    "render": {
+      "calls": 124,
+      "triangles": 97513,
+      "textures": 35
+    },
+    "glError": 0,
+    "raf": null,
+    "scope": "Actual four-role authored cast and two unchanged creatures on flat diagnostic ground/light; new cloth visibility toggled in one resident scene. Declared poses/motion, not normal gameplay, exact net memory, GPU/long run, real device or full naturalness."
+  },
+  {
+    "ready": true,
+    "art": "candidate",
+    "camera": "ensemble",
+    "cameraPosition": [
+      12,
+      6.5,
+      20
+    ],
+    "cameraTarget": "ensemble",
+    "pose": "idle",
+    "time": 10,
+    "frames": 0,
+    "running": false,
+    "hidden": false,
+    "soleError": 4.123405927189707e-7,
+    "roles": [
+      {
+        "role": "traveler",
+        "position": [
+          -6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "keeper",
+        "position": [
+          -2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "botanist",
+        "position": [
+          2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "explorer",
+        "position": [
+          6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      }
+    ],
+    "animals": [
+      {
+        "type": "boar",
+        "position": [
+          -4,
+          -5
+        ]
+      },
+      {
+        "type": "crab",
+        "position": [
+          4,
+          -5
+        ]
+      }
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      1080
+    ],
+    "render": {
+      "calls": 140,
+      "triangles": 103657,
+      "textures": 35
+    },
+    "glError": 0,
+    "raf": null,
+    "scope": "Actual four-role authored cast and two unchanged creatures on flat diagnostic ground/light; new cloth visibility toggled in one resident scene. Declared poses/motion, not normal gameplay, exact net memory, GPU/long run, real device or full naturalness."
+  },
+  {
+    "ready": true,
+    "art": "baseline",
+    "camera": "side",
+    "cameraPosition": [
+      -12,
+      2.6,
+      3.6739403974420594e-16
+    ],
+    "cameraTarget": "traveler",
+    "pose": "idle",
+    "time": 10,
+    "frames": 0,
+    "running": false,
+    "hidden": false,
+    "soleError": 4.123405927189707e-7,
+    "roles": [
+      {
+        "role": "traveler",
+        "position": [
+          -6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "keeper",
+        "position": [
+          -2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "botanist",
+        "position": [
+          2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "explorer",
+        "position": [
+          6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      }
+    ],
+    "animals": [
+      {
+        "type": "boar",
+        "position": [
+          -4,
+          -5
+        ]
+      },
+      {
+        "type": "crab",
+        "position": [
+          4,
+          -5
+        ]
+      }
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      1080
+    ],
+    "render": {
+      "calls": 123,
+      "triangles": 97129,
+      "textures": 35
+    },
+    "glError": 0,
+    "raf": null,
+    "scope": "Actual four-role authored cast and two unchanged creatures on flat diagnostic ground/light; new cloth visibility toggled in one resident scene. Declared poses/motion, not normal gameplay, exact net memory, GPU/long run, real device or full naturalness."
+  },
+  {
+    "ready": true,
+    "art": "candidate",
+    "camera": "side",
+    "cameraPosition": [
+      -12,
+      2.6,
+      3.6739403974420594e-16
+    ],
+    "cameraTarget": "traveler",
+    "pose": "idle",
+    "time": 10,
+    "frames": 0,
+    "running": false,
+    "hidden": false,
+    "soleError": 4.123405927189707e-7,
+    "roles": [
+      {
+        "role": "traveler",
+        "position": [
+          -6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "keeper",
+        "position": [
+          -2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "botanist",
+        "position": [
+          2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "explorer",
+        "position": [
+          6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      }
+    ],
+    "animals": [
+      {
+        "type": "boar",
+        "position": [
+          -4,
+          -5
+        ]
+      },
+      {
+        "type": "crab",
+        "position": [
+          4,
+          -5
+        ]
+      }
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      1080
+    ],
+    "render": {
+      "calls": 139,
+      "triangles": 103273,
+      "textures": 35
+    },
+    "glError": 0,
+    "raf": null,
+    "scope": "Actual four-role authored cast and two unchanged creatures on flat diagnostic ground/light; new cloth visibility toggled in one resident scene. Declared poses/motion, not normal gameplay, exact net memory, GPU/long run, real device or full naturalness."
+  },
+  {
+    "ready": true,
+    "art": "baseline",
+    "camera": "traveler",
+    "cameraPosition": [
+      -6,
+      2.6,
+      6
+    ],
+    "cameraTarget": "traveler",
+    "pose": "attack",
+    "time": 10.225,
+    "frames": 0,
+    "running": false,
+    "hidden": false,
+    "soleError": 8.321564223713135e-7,
+    "roles": [
+      {
+        "role": "traveler",
+        "position": [
+          -6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "attack",
+          "actionProgress": 0.4999999999999992,
+          "equipped": "sword",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "keeper",
+        "position": [
+          -2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "attack",
+          "actionProgress": 0.4999999999999992,
+          "equipped": "sword",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "botanist",
+        "position": [
+          2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "attack",
+          "actionProgress": 0.4999999999999992,
+          "equipped": "sword",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "explorer",
+        "position": [
+          6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "attack",
+          "actionProgress": 0.4999999999999992,
+          "equipped": "sword",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      }
+    ],
+    "animals": [
+      {
+        "type": "boar",
+        "position": [
+          -4,
+          -5
+        ]
+      },
+      {
+        "type": "crab",
+        "position": [
+          4,
+          -5
+        ]
+      }
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      1080
+    ],
+    "render": {
+      "calls": 68,
+      "triangles": 74979,
+      "textures": 35
+    },
+    "glError": 0,
+    "raf": null,
+    "scope": "Actual four-role authored cast and two unchanged creatures on flat diagnostic ground/light; new cloth visibility toggled in one resident scene. Declared poses/motion, not normal gameplay, exact net memory, GPU/long run, real device or full naturalness."
+  },
+  {
+    "ready": true,
+    "art": "candidate",
+    "camera": "traveler",
+    "cameraPosition": [
+      -6,
+      2.6,
+      6
+    ],
+    "cameraTarget": "traveler",
+    "pose": "attack",
+    "time": 10.225,
+    "frames": 0,
+    "running": false,
+    "hidden": false,
+    "soleError": 8.321564223713135e-7,
+    "roles": [
+      {
+        "role": "traveler",
+        "position": [
+          -6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "attack",
+          "actionProgress": 0.4999999999999992,
+          "equipped": "sword",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "keeper",
+        "position": [
+          -2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "attack",
+          "actionProgress": 0.4999999999999992,
+          "equipped": "sword",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "botanist",
+        "position": [
+          2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "attack",
+          "actionProgress": 0.4999999999999992,
+          "equipped": "sword",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "explorer",
+        "position": [
+          6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "attack",
+          "actionProgress": 0.4999999999999992,
+          "equipped": "sword",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      }
+    ],
+    "animals": [
+      {
+        "type": "boar",
+        "position": [
+          -4,
+          -5
+        ]
+      },
+      {
+        "type": "crab",
+        "position": [
+          4,
+          -5
+        ]
+      }
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      1080
+    ],
+    "render": {
+      "calls": 84,
+      "triangles": 81123,
+      "textures": 35
+    },
+    "glError": 0,
+    "raf": null,
+    "scope": "Actual four-role authored cast and two unchanged creatures on flat diagnostic ground/light; new cloth visibility toggled in one resident scene. Declared poses/motion, not normal gameplay, exact net memory, GPU/long run, real device or full naturalness."
+  },
+  {
+    "ready": true,
+    "art": "baseline",
+    "camera": "traveler",
+    "cameraPosition": [
+      -6,
+      2.6,
+      6
+    ],
+    "cameraTarget": "traveler",
+    "pose": "gather",
+    "time": 10.21,
+    "frames": 0,
+    "running": false,
+    "hidden": false,
+    "soleError": 6.421520520239324e-7,
+    "roles": [
+      {
+        "role": "traveler",
+        "position": [
+          -6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "gather",
+          "actionProgress": 0.500000000000002,
+          "equipped": "hand",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "keeper",
+        "position": [
+          -2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "gather",
+          "actionProgress": 0.500000000000002,
+          "equipped": "hand",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "botanist",
+        "position": [
+          2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "gather",
+          "actionProgress": 0.500000000000002,
+          "equipped": "hand",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "explorer",
+        "position": [
+          6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "gather",
+          "actionProgress": 0.500000000000002,
+          "equipped": "hand",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      }
+    ],
+    "animals": [
+      {
+        "type": "boar",
+        "position": [
+          -4,
+          -5
+        ]
+      },
+      {
+        "type": "crab",
+        "position": [
+          4,
+          -5
+        ]
+      }
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      1080
+    ],
+    "render": {
+      "calls": 62,
+      "triangles": 74037,
+      "textures": 35
+    },
+    "glError": 0,
+    "raf": null,
+    "scope": "Actual four-role authored cast and two unchanged creatures on flat diagnostic ground/light; new cloth visibility toggled in one resident scene. Declared poses/motion, not normal gameplay, exact net memory, GPU/long run, real device or full naturalness."
+  },
+  {
+    "ready": true,
+    "art": "candidate",
+    "camera": "traveler",
+    "cameraPosition": [
+      -6,
+      2.6,
+      6
+    ],
+    "cameraTarget": "traveler",
+    "pose": "gather",
+    "time": 10.21,
+    "frames": 0,
+    "running": false,
+    "hidden": false,
+    "soleError": 6.421520520239324e-7,
+    "roles": [
+      {
+        "role": "traveler",
+        "position": [
+          -6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "gather",
+          "actionProgress": 0.500000000000002,
+          "equipped": "hand",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "keeper",
+        "position": [
+          -2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "gather",
+          "actionProgress": 0.500000000000002,
+          "equipped": "hand",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "botanist",
+        "position": [
+          2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "gather",
+          "actionProgress": 0.500000000000002,
+          "equipped": "hand",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "explorer",
+        "position": [
+          6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": "gather",
+          "actionProgress": 0.500000000000002,
+          "equipped": "hand",
+          "recoil": 0,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      }
+    ],
+    "animals": [
+      {
+        "type": "boar",
+        "position": [
+          -4,
+          -5
+        ]
+      },
+      {
+        "type": "crab",
+        "position": [
+          4,
+          -5
+        ]
+      }
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      1080
+    ],
+    "render": {
+      "calls": 78,
+      "triangles": 80181,
+      "textures": 35
+    },
+    "glError": 0,
+    "raf": null,
+    "scope": "Actual four-role authored cast and two unchanged creatures on flat diagnostic ground/light; new cloth visibility toggled in one resident scene. Declared poses/motion, not normal gameplay, exact net memory, GPU/long run, real device or full naturalness."
+  },
+  {
+    "ready": true,
+    "art": "baseline",
+    "camera": "traveler",
+    "cameraPosition": [
+      -6,
+      2.6,
+      6
+    ],
+    "cameraTarget": "traveler",
+    "pose": "hurt",
+    "time": 10.12,
+    "frames": 0,
+    "running": false,
+    "hidden": false,
+    "soleError": 3.014793610187537e-7,
+    "roles": [
+      {
+        "role": "traveler",
+        "position": [
+          -6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0.6000000000000025,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "keeper",
+        "position": [
+          -2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0.6000000000000025,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "botanist",
+        "position": [
+          2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0.6000000000000025,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "explorer",
+        "position": [
+          6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0.6000000000000025,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      }
+    ],
+    "animals": [
+      {
+        "type": "boar",
+        "position": [
+          -4,
+          -5
+        ]
+      },
+      {
+        "type": "crab",
+        "position": [
+          4,
+          -5
+        ]
+      }
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      1080
+    ],
+    "render": {
+      "calls": 72,
+      "triangles": 75571,
+      "textures": 35
+    },
+    "glError": 0,
+    "raf": null,
+    "scope": "Actual four-role authored cast and two unchanged creatures on flat diagnostic ground/light; new cloth visibility toggled in one resident scene. Declared poses/motion, not normal gameplay, exact net memory, GPU/long run, real device or full naturalness."
+  },
+  {
+    "ready": true,
+    "art": "candidate",
+    "camera": "traveler",
+    "cameraPosition": [
+      -6,
+      2.6,
+      6
+    ],
+    "cameraTarget": "traveler",
+    "pose": "hurt",
+    "time": 10.12,
+    "frames": 0,
+    "running": false,
+    "hidden": false,
+    "soleError": 3.014793610187537e-7,
+    "roles": [
+      {
+        "role": "traveler",
+        "position": [
+          -6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0.6000000000000025,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "keeper",
+        "position": [
+          -2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0.6000000000000025,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "botanist",
+        "position": [
+          2,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0.6000000000000025,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      },
+      {
+        "role": "explorer",
+        "position": [
+          6,
+          0
+        ],
+        "plan": {
+          "baseClip": "Idle_Loop",
+          "cycles": 0,
+          "phase": 0,
+          "speed": 0,
+          "action": null,
+          "actionProgress": 0,
+          "equipped": "axe",
+          "recoil": 0.6000000000000025,
+          "resetContacts": false
+        },
+        "clothMeshes": 4
+      }
+    ],
+    "animals": [
+      {
+        "type": "boar",
+        "position": [
+          -4,
+          -5
+        ]
+      },
+      {
+        "type": "crab",
+        "position": [
+          4,
+          -5
+        ]
+      }
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      1080
+    ],
+    "render": {
+      "calls": 88,
+      "triangles": 81715,
+      "textures": 35
+    },
+    "glError": 0,
+    "raf": null,
+    "scope": "Actual four-role authored cast and two unchanged creatures on flat diagnostic ground/light; new cloth visibility toggled in one resident scene. Declared poses/motion, not normal gameplay, exact net memory, GPU/long run, real device or full naturalness."
+  }
+]

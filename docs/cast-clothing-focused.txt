@@ -1,0 +1,106 @@
+TAP version 13
+# Subtest: wardrobe keeps source geometry immutable, skin weights normalized, and every role fully dressed
+ok 1 - wardrobe keeps source geometry immutable, skin weights normalized, and every role fully dressed
+  ---
+  duration_ms: 47.86675
+  type: 'test'
+  ...
+# Subtest: attachments follow the real author bone and duplicate or unknown wardrobe calls fail explicitly
+ok 2 - attachments follow the real author bone and duplicate or unknown wardrobe calls fail explicitly
+  ---
+  duration_ms: 4.646375
+  type: 'test'
+  ...
+# Subtest: each hairstyle uses its own author head anchor, including female-authored long hair on a male
+ok 3 - each hairstyle uses its own author head anchor, including female-authored long hair on a male
+  ---
+  duration_ms: 0.696083
+  type: 'test'
+  ...
+# Subtest: hair retains source node rotation and centimetre scale before binding to the target Head
+ok 4 - hair retains source node rotation and centimetre scale before binding to the target Head
+  ---
+  duration_ms: 0.322833
+  type: 'test'
+  ...
+# Subtest: actual author rig follows game location, carries selected tools and stays finite across movement and water
+ok 5 - actual author rig follows game location, carries selected tools and stays finite across movement and water
+  ---
+  duration_ms: 254.925083
+  type: 'test'
+  ...
+# Subtest: actual source rest proportions survive, and planted world supports stay fixed during complete tool actions
+ok 6 - actual source rest proportions survive, and planted world supports stay fixed during complete tool actions
+  ---
+  duration_ms: 454.884416
+  type: 'test'
+  ...
+# Subtest: moving actual sole anchors track support targets through production speeds, slopes and turns
+ok 7 - moving actual sole anchors track support targets through production speeds, slopes and turns
+  ---
+  duration_ms: 793.623709
+  type: 'test'
+  ...
+# Subtest: cloned actual rig owns its bones while sharing immutable template buffers
+ok 8 - cloned actual rig owns its bones while sharing immutable template buffers
+  ---
+  duration_ms: 63.032584
+  type: 'test'
+  ...
+# Subtest: paused actual skeleton and support contacts do not snap into an idle gait
+ok 9 - paused actual skeleton and support contacts do not snap into an idle gait
+  ---
+  duration_ms: 143.710708
+  type: 'test'
+  ...
+# Subtest: shallow-water visuals wade on the actual floor while deep water uses the real waterline
+ok 10 - shallow-water visuals wade on the actual floor while deep water uses the real waterline
+  ---
+  duration_ms: 122.962208
+  type: 'test'
+  ...
+# Subtest: existing world-sized tools do not get enlarged a second time by author body normalization
+ok 11 - existing world-sized tools do not get enlarged a second time by author body normalization
+  ---
+  duration_ms: 104.766583
+  type: 'test'
+  ...
+# Subtest: restored facing initializes before planting and stationary turns recover each foot
+ok 12 - restored facing initializes before planting and stationary turns recover each foot
+  ---
+  duration_ms: 125.431083
+  type: 'test'
+  ...
+# Subtest: all authored roles retain whole-body acceleration, braking and turn response after the rig replacement
+ok 13 - all authored roles retain whole-body acceleration, braking and turn response after the rig replacement
+  ---
+  duration_ms: 1070.0865
+  type: 'test'
+  ...
+# Subtest: bending the opposite leg cannot pull a trouser surface across the crotch
+ok 14 - bending the opposite leg cannot pull a trouser surface across the crotch
+  ---
+  duration_ms: 173.191
+  type: 'test'
+  ...
+# Subtest: all four real roles have continuous roomy sleeve/trouser surfaces without altering the author body
+ok 15 - all four real roles have continuous roomy sleeve/trouser surfaces without altering the author body
+  ---
+  duration_ms: 459.085625
+  type: 'test'
+  ...
+# Subtest: actual added cloth stays attached and finite through four-role whole-body action paths
+ok 16 - actual added cloth stays attached and finite through four-role whole-body action paths
+  ---
+  duration_ms: 584.680041
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3202.51925

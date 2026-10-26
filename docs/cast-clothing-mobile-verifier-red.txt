@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/verify_cast_clothing.py", line 109, in <module>
+    verify()
+    ~~~~~~^^
+  File "/Users/huxiaocong/Codex/tidelands/tools/verify_cast_clothing.py", line 73, in verify
+    assert all(r['viewport'] == r['buffer'] == [390, 844] for r in mobile)
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

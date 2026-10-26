@@ -67,6 +67,25 @@ function bootGeometry(body,side,height){
   for(let c=1;c<segments-1;c++)indices.push(0,c+1,c);
   const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));geometry.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));geometry.setIndex(indices);geometry.computeVertexNormals();return transferSkin(geometry,body);
 }
+function relaxedLimb(body,names,height,trousers,color){
+  const bones=names.map(name=>body.skeleton.bones.find(b=>b.name===name));if(bones.some(b=>!b))return null;
+  const points=bones.map(b=>body.worldToLocal(b.getWorldPosition(new THREE.Vector3())));
+  // End inside the boot shaft or just before the wrist, leaving the original hands exposed.
+  points[2].lerp(points[1],trousers?.36:.035);
+  const curve=new THREE.CatmullRomCurve3(points),segments=12,sides=16,geometry=new THREE.TubeGeometry(curve,segments,1,sides,false),positions=geometry.attributes.position;
+  const radii=trousers?[.14,.145,.13,.115,.11,.09]:[.105,.115,.105,.09,.095,.065],colors=[],joints=[],weights=[],boneIndices=bones.map(b=>body.skeleton.bones.indexOf(b));
+  for(let ring=0;ring<=segments;ring++){
+    const t=ring/segments,center=curve.getPointAt(t),at=t*(radii.length-1),i=Math.min(radii.length-2,Math.floor(at)),radius=THREE.MathUtils.lerp(radii[i],radii[i+1],at-i)*height/1.8;
+    for(let side=0;side<=sides;side++){
+      const index=ring*(sides+1)+side,fold=1+.018*Math.cos(side/sides*Math.PI*6+t*4),p=new THREE.Vector3().fromBufferAttribute(positions,index).sub(center).multiplyScalar(radius*fold).add(center);
+      positions.setXYZ(index,p.x,p.y,p.z);colors.push(color.r,color.g,color.b);
+      const bend=THREE.MathUtils.smoothstep(t,.35,.65);joints.push(boneIndices[0],boneIndices[1],0,0);weights.push(1-bend,bend,0,0);
+    }
+  }
+  // Source-nearest weights can cross the inner thighs; each cloth tube follows its own two-bone chain.
+  geometry.setAttribute('skinIndex',new THREE.Uint16BufferAttribute(joints,4));geometry.setAttribute('skinWeight',new THREE.Float32BufferAttribute(weights,4));
+  geometry.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));geometry.computeVertexNormals();return geometry;
+}
 function fixedToBone(avatar,boneName,mesh){
   const bone=avatar.getObjectByName(boneName);if(!bone)throw Error('Missing author bone '+boneName);avatar.updateMatrixWorld(true);bone.attach(mesh);mesh.castShadow=true;mesh.receiveShadow=true;return mesh;
 }
@@ -94,6 +113,10 @@ export function dressAuthoredAvatar(avatar,role='traveler'){
   clothGeometry.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));clothGeometry.computeVertexNormals();
   const fabric=createTextileMaterial(0xffffff,{side:THREE.DoubleSide});fabric.vertexColors=true;
   group.add(skinned(body,clothGeometry,fabric,'clothed-body'));
+  for(const side of ['l','r'])for(const trousers of [false,true]){
+    const names=(trousers?['thigh','calf','foot']:['upperarm','lowerarm','hand']).map(name=>name+'_'+side),geometry=relaxedLimb(body,names,height,trousers,trousers?pants:coat);
+    if(geometry)group.add(skinned(body,geometry,fabric,'relaxed-'+(trousers?'trouser-':'sleeve-')+side));
+  }
   group.add(skinned(body,coatGeometry(body,height),createTextileMaterial(style.coat,{side:THREE.DoubleSide}),'travel-coat'));
   const leatherMaterial=new THREE.MeshStandardMaterial({color:style.pack,roughness:.86}),metal=new THREE.MeshStandardMaterial({color:0xafa07c,metalness:.55,roughness:.46});
   for(const side of [-1,1])group.add(skinned(body,bootGeometry(body,side,height),leatherMaterial,'travel-boot-'+side));

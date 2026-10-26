@@ -1,0 +1,10 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>四身份衣装生产入口采集验收</title><style>html,body,iframe{margin:0;width:100%;height:100%;border:0}body{overflow:hidden}output{position:fixed;height:0;overflow:hidden}</style><iframe title="明确位置工具fixture的真实main入口"></iframe>
+<script type="module">
+const root=new URL('../',location.href),response=await fetch(new URL('index.html',root)),doc=new DOMParser().parseFromString(await response.text(),'text/html'),base=doc.createElement('base');base.href=root.href;doc.head.prepend(base);doc.body.dataset.testHarness='true';for(const script of doc.querySelectorAll('script'))script.remove();
+const setup=doc.createElement('script');setup.type='module';setup.textContent=`
+import {boot} from './src/main.js';import {WorldView} from './src/scene.js';import {freshGame} from './src/game.js';
+const s=freshGame();s.quest=1;Object.assign(s.inventory,{wood:1,stone:3,axe:1});Object.assign(s.player,{x:-73,z:93.4,yaw:Math.PI});s.selected='axe';s.time=240;
+const out=document.createElement('output');out.id='cast-clothing-state';out.style.cssText='position:fixed;height:0;overflow:hidden';document.body.append(out);const draw=WorldView.prototype.draw;let roles=[];
+WorldView.prototype.draw=function(state,...args){const result=draw.call(this,state,...args);if(this.authoredCast&&!roles.length)roles=Object.entries(this.authoredCast.actors).map(([role,actor])=>{let cloth=0;actor.traverse(o=>{if(o.name.startsWith('relaxed-')&&o.visible)cloth++;});return {role,cloth};});out.textContent=JSON.stringify({player:state.player,inventory:state.inventory,quest:state.quest,depleted:state.depleted,roles,plan:this.player.userData.plan,glError:this.renderer.getContext().getError(),viewport:[innerWidth,innerHeight],scope:'Supplied axe/materials/q1/tree position fixture; real main boot/native input, not ordinary journey or free earned equipment.'});return result;};boot({initialState:s,storageKey:'tidelands-cast-clothing-main-qa'});`;
+doc.body.append(setup);document.querySelector('iframe').srcdoc='<!doctype html>'+doc.documentElement.outerHTML;
+</script></html>

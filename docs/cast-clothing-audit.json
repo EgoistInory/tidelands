@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "boundedClothingIncrementAccepted": true,
+  "archive": "tidelands-m5-2026-10-27-cast-clothing.zip",
+  "archiveSha256": "fde17a69b1cad8bcceaa7b851a0ba18e86ce36d1ffc03b46e65b7e68e974c420",
+  "archiveBytes": 15687825,
+  "runtimeInputs": 110,
+  "changedRuntimeInputs": [
+    "README.md",
+    "src/authored-wardrobe.js"
+  ],
+  "fullTests": 330,
+  "focusedTests": 16,
+  "newTests": 3,
+  "initialRedFailures": 2,
+  "crossLegRedFailures": 1,
+  "nativeImagesViewed": 34,
+  "acceptedStaticPairs": 11,
+  "rejectedCrossLegCandidatePreserved": true,
+  "rejectedOccludedSidePairPreserved": true,
+  "oversampledMobilePairPreserved": true,
+  "diagnosticMotionFrames": 180,
+  "motionRaf": {
+    "samples": 179,
+    "p95": 17.600000000034925,
+    "max": 18.599999999976717
+  },
+  "mainNativeGatherAndWalk": true,
+  "ordinaryDesktopRestored": true,
+  "ordinary390ReloadRestored": true,
+  "currentFullJourneyReplayed": false,
+  "currentGpuOrEnduranceAccepted": false,
+  "audioListening": false,
+  "physicalDeviceVerified": false,
+  "clothingCollisionFreeAccepted": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false
+}
