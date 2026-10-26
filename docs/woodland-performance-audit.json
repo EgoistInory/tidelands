@@ -1,0 +1,185 @@
+{
+  "verified": true,
+  "frozenRuntimeInputs": 110,
+  "runtimeCommit": "d68f6155d4bdc4b6acd37201c7fb42450c229e3b",
+  "packageSha256": "c718412c47b02668fb2641e2a25c7f8b454f1709c1c9e74f5590bae88a48694e",
+  "productionFilesChanged": false,
+  "nativeGpuSamples": 600,
+  "fullCanvasGpuEvidenceRecorded": true,
+  "devices": {
+    "desktop": {
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        1080
+      ],
+      "gpuP95Ms": [
+        14.1168,
+        14.1505,
+        9.4958,
+        13.6832,
+        14.1728
+      ],
+      "cpuP95Ms": [
+        5.8,
+        6.6,
+        6.1,
+        6.2,
+        6.1
+      ],
+      "rafP95Ms": [
+        17.5,
+        18,
+        16.7,
+        16.8,
+        17.6
+      ],
+      "drawCalls": [
+        379,
+        435,
+        277,
+        557,
+        325
+      ],
+      "triangles": [
+        2676357,
+        2319652,
+        878932,
+        3165799,
+        2586994
+      ]
+    },
+    "390": {
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        844
+      ],
+      "gpuP95Ms": [
+        6.5995,
+        7.1193,
+        3.9694,
+        8.5069,
+        7.229
+      ],
+      "cpuP95Ms": [
+        5.6,
+        6.2,
+        6.4,
+        6.1,
+        6.2
+      ],
+      "rafP95Ms": [
+        16.9,
+        18.7,
+        16.8,
+        16.8,
+        16.8
+      ],
+      "drawCalls": [
+        208,
+        198,
+        128,
+        247,
+        206
+      ],
+      "triangles": [
+        1615107,
+        1409225,
+        733342,
+        1831284,
+        1631170
+      ]
+    }
+  },
+  "boundedEnduranceRecorded": true,
+  "continuous": {
+    "activeMs": 600001.49,
+    "frames": 35990,
+    "movingFraction": 0.97,
+    "distanceMeters": 3842.26,
+    "hitCount": 40,
+    "damageTaken": 142,
+    "respawns": 0,
+    "p95Ms": 17.9,
+    "maxMs": 85.2,
+    "over50Ms": 2,
+    "campFirePeak": 0.17302735149860382,
+    "campActiveFrames": 7197,
+    "settled": {
+      "wallMs": 362,
+      "voices": 0,
+      "pannersCreated": 19,
+      "pannersReleased": 19
+    }
+  },
+  "heapBytes": [
+    79444458,
+    88933571,
+    87019388,
+    99126673,
+    110972916,
+    109271736,
+    92168428,
+    96892141,
+    105614609,
+    111915558,
+    108660246
+  ],
+  "lifecycleRecorded": true,
+  "castRelease": {
+    "before": {
+      "geometries": 200,
+      "textures": 59
+    },
+    "after": {
+      "geometries": 143,
+      "textures": 39
+    },
+    "glError": 0,
+    "idempotent": true,
+    "scope": "Renderer resource counts after explicit cast disposal, not JS heap or VRAM leak proof"
+  },
+  "woodlandRelease": {
+    "before": {
+      "geometries": 143,
+      "textures": 39
+    },
+    "after": {
+      "geometries": 139,
+      "textures": 36
+    },
+    "idempotent": true,
+    "glError": 0
+  },
+  "imagesViewed": 4,
+  "systemGpuLoadIsolated": false,
+  "campSpatialAudioStimulatedByEndurance": true,
+  "fullMainAudioEventMappingCovered": false,
+  "ordinaryCampaignReplayed": false,
+  "physicalMobileVerified": false,
+  "audioListening": false,
+  "vramMeasured": false,
+  "finalPerformanceAccepted": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "evidenceSha256": {
+    "docs/woodland-performance-runtime.json": "5910c336344d9717158df34f83273056f275e3ab6bc92856653f117a5ed0650d",
+    "docs/woodland-performance-fixture-source.json": "8f02c2fa4c216b41f23530aecbffa62aa5f9412a3c44ef5baab79d91cdc4dfc5",
+    "docs/woodland-performance-gpu-desktop.json": "05e60be0cf14f4be6e3fa9646e1059591ebba60fe0bc68ece7d38a641424404f",
+    "docs/woodland-performance-gpu-390.json": "5ea496f8976081192f552f4b06d6481b7b3b4caff053900aa7483dc00b32f438",
+    "docs/woodland-performance-endurance.json": "5b2f84158ab367363f1fc7a7b837034ffa912bcef253fa7b5435144df5b2e00e",
+    "docs/woodland-performance-lifecycle.json": "fe87ee711a52ce2a2859bb66a09c34625f319142a6555f66665b91af4e9726bf",
+    "docs/woodland-performance-gpu-desktop.jpg": "5f2244e519914ebebaee2ed0e3d9918b2c8421881f4bd214b82946e8fa55214e",
+    "docs/woodland-performance-gpu-390.jpg": "de210d034205d6d1d818e39ae93a86685c5dc062d400968633460aa2f54a61d1",
+    "docs/woodland-performance-endurance-mid.jpg": "6eb93f7f03186098d75fc88a64c34fcff840aab407d29ad810985e4d0d9d11b4",
+    "docs/woodland-performance-endurance-final.jpg": "68756bbd4cac2d65c09810e4a431ed99600c039d6e9e65459480d07298e01a5d"
+  },
+  "scope": "Native timer queries around production render; five teleported load fixtures, scripted 600s with actual movement/tick/actors/woodland/impacts and spatial camp audio inputs. Resource counts and JS heap are not VRAM/leak-freedom proof. No ordinary campaign, real device, listening or stable60fps acceptance; other paused views/system GPU load not isolated."
+}

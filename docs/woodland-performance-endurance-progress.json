@@ -1,0 +1,687 @@
+{
+  "woodlandInstalled": true,
+  "woodlandPlacements": 1445,
+  "campSpatialOptionsPassed": true,
+  "campFirePeak": 0.17302735149860382,
+  "campActiveFrames": 7197,
+  "impactBursts": 40,
+  "impactPeak": 6,
+  "impactActive": 0,
+  "authored": true,
+  "roles": [
+    [
+      "keeper",
+      true
+    ],
+    [
+      "botanist",
+      true
+    ],
+    [
+      "explorer",
+      true
+    ]
+  ],
+  "complete": true,
+  "targetMs": 600000,
+  "activeMs": 600001.49,
+  "wallMs": 600377.19,
+  "frames": 35990,
+  "movingFrames": 35039,
+  "movingFraction": 0.97,
+  "distanceMeters": 3842.26,
+  "hidden": false,
+  "medianMs": 16.7,
+  "p95Ms": 17.9,
+  "maxMs": 85.2,
+  "over50Ms": 2,
+  "frameSpikes": [
+    {
+      "atMs": 133.99,
+      "intervalMs": 85.2,
+      "previousFrame": {
+        "stage": "shore-exploration",
+        "transition": false,
+        "cpuMs": 98.4
+      }
+    },
+    {
+      "atMs": 480067.99,
+      "intervalMs": 66.7,
+      "previousFrame": {
+        "stage": "night-camp",
+        "transition": true,
+        "cpuMs": 80.8
+      }
+    }
+  ],
+  "pannersPeak": 1,
+  "spatialAttempts": 19,
+  "spatialScheduled": 19,
+  "pannersCreated": 19,
+  "pannersReleased": 19,
+  "stepAttempts": 1277,
+  "stepsScheduled": 1277,
+  "hitCount": 40,
+  "damageTaken": 142,
+  "respawns": 0,
+  "revivedPairs": 8,
+  "stages": [
+    {
+      "name": "shore-exploration",
+      "startPosition": [
+        -90,
+        140
+      ],
+      "frames": 7194,
+      "movingFrames": 7193,
+      "distance": 724.7798440000234,
+      "attackHits": 0,
+      "damageTaken": 0,
+      "revivedPairs": 0,
+      "endPosition": [
+        -153.11,
+        137.26
+      ],
+      "kills": 0
+    },
+    {
+      "name": "forest-combat",
+      "startPosition": [
+        132,
+        -26
+      ],
+      "frames": 7199,
+      "movingFrames": 6425,
+      "distance": 707.7413272918737,
+      "attackHits": 34,
+      "damageTaken": 63,
+      "revivedPairs": 8,
+      "endPosition": [
+        174.32,
+        -38.42
+      ],
+      "kills": 17
+    },
+    {
+      "name": "highland-movement",
+      "startPosition": [
+        -75,
+        -205
+      ],
+      "frames": 7200,
+      "movingFrames": 7024,
+      "distance": 939.4115478118376,
+      "attackHits": 6,
+      "damageTaken": 79,
+      "revivedPairs": 0,
+      "endPosition": [
+        -66.35,
+        -127.66
+      ],
+      "kills": 3
+    },
+    {
+      "name": "amber-swimming",
+      "startPosition": [
+        190,
+        248
+      ],
+      "frames": 7199,
+      "movingFrames": 7199,
+      "distance": 630.3263000000104,
+      "attackHits": 0,
+      "damageTaken": 0,
+      "revivedPairs": 0,
+      "endPosition": [
+        171.42,
+        272.58
+      ],
+      "kills": 0
+    },
+    {
+      "name": "night-camp",
+      "startPosition": [
+        -56,
+        49
+      ],
+      "frames": 7198,
+      "movingFrames": 7198,
+      "distance": 840.0013999999506,
+      "attackHits": 0,
+      "damageTaken": 0,
+      "revivedPairs": 0,
+      "endPosition": [
+        -51.18,
+        56.24
+      ],
+      "kills": 0
+    }
+  ],
+  "checkpoints": [
+    {
+      "activeMs": 0,
+      "stage": "shore-exploration",
+      "position": [
+        -90,
+        140
+      ],
+      "height": 1.22,
+      "time": 240,
+      "daytime": "午后",
+      "hp": 100,
+      "kills": 0,
+      "frames": 0,
+      "movingFrames": 0,
+      "distance": 0,
+      "calls": 320,
+      "triangles": 2534552,
+      "geometries": 155,
+      "textures": 50,
+      "glError": 0,
+      "heapBytes": 79444458,
+      "woodlandVisibleBatches": 23,
+      "campfireGain": 0,
+      "audio": {
+        "context": "running",
+        "voices": 0,
+        "stepsScheduled": 0,
+        "pannersCreated": 0,
+        "pannersReleased": 0,
+        "surfGain": 0,
+        "birdsGain": 0,
+        "insectsGain": 0,
+        "ambienceBytes": 8640000
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasCssSize": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "activeMs": 60000.79,
+      "stage": "shore-exploration",
+      "position": [
+        -112.39,
+        146.99
+      ],
+      "height": 1.39,
+      "time": 299.97,
+      "daytime": "午后",
+      "hp": 100,
+      "kills": 0,
+      "frames": 3595,
+      "movingFrames": 3594,
+      "distance": 361.59,
+      "calls": 283,
+      "triangles": 2525810,
+      "geometries": 159,
+      "textures": 50,
+      "glError": 0,
+      "heapBytes": 88933571,
+      "woodlandVisibleBatches": 26,
+      "campfireGain": 0,
+      "audio": {
+        "context": "running",
+        "voices": 1,
+        "stepsScheduled": 101,
+        "pannersCreated": 0,
+        "pannersReleased": 0,
+        "surfGain": 0.018833978101611137,
+        "birdsGain": 0.0015685936668887734,
+        "insectsGain": 0,
+        "ambienceBytes": 8640000
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasCssSize": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "activeMs": 120000.49,
+      "stage": "forest-combat",
+      "position": [
+        132.11,
+        -25.96
+      ],
+      "height": 16.74,
+      "time": 240.02,
+      "daytime": "午后",
+      "hp": 100,
+      "kills": 0,
+      "frames": 7195,
+      "movingFrames": 7194,
+      "distance": 724.9,
+      "calls": 477,
+      "triangles": 2435428,
+      "geometries": 202,
+      "textures": 59,
+      "glError": 0,
+      "heapBytes": 87019388,
+      "woodlandVisibleBatches": 100,
+      "campfireGain": 0,
+      "audio": {
+        "context": "running",
+        "voices": 2,
+        "stepsScheduled": 200,
+        "pannersCreated": 0,
+        "pannersReleased": 0,
+        "surfGain": 0.05343172699213028,
+        "birdsGain": 0.0005136235267855227,
+        "insectsGain": 0.000916015007533133,
+        "ambienceBytes": 8640000
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasCssSize": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "activeMs": 180000.89,
+      "stage": "forest-combat",
+      "position": [
+        151.82,
+        -51.45
+      ],
+      "height": 32.37,
+      "time": 300.02,
+      "daytime": "午后",
+      "hp": 65,
+      "kills": 9,
+      "frames": 10794,
+      "movingFrames": 10376,
+      "distance": 1086.63,
+      "calls": 381,
+      "triangles": 2104524,
+      "geometries": 205,
+      "textures": 59,
+      "glError": 0,
+      "heapBytes": 99126673,
+      "woodlandVisibleBatches": 134,
+      "campfireGain": 0,
+      "audio": {
+        "context": "running",
+        "voices": 1,
+        "stepsScheduled": 367,
+        "pannersCreated": 5,
+        "pannersReleased": 5,
+        "surfGain": 0,
+        "birdsGain": 0.17935627698898315,
+        "insectsGain": 0,
+        "ambienceBytes": 8640000
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasCssSize": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "activeMs": 240000.89,
+      "stage": "highland-movement",
+      "position": [
+        -75,
+        -204.8
+      ],
+      "height": 37.34,
+      "time": 360.02,
+      "daytime": "黄昏",
+      "hp": 100,
+      "kills": 0,
+      "frames": 14394,
+      "movingFrames": 13619,
+      "distance": 1432.72,
+      "calls": 317,
+      "triangles": 858784,
+      "geometries": 207,
+      "textures": 59,
+      "glError": 0,
+      "heapBytes": 110972916,
+      "woodlandVisibleBatches": 14,
+      "campfireGain": 0,
+      "audio": {
+        "context": "running",
+        "voices": 0,
+        "stepsScheduled": 532,
+        "pannersCreated": 9,
+        "pannersReleased": 9,
+        "surfGain": 0,
+        "birdsGain": 0.03237340226769447,
+        "insectsGain": 0.0738840103149414,
+        "ambienceBytes": 8640000
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasCssSize": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "activeMs": 300000.99,
+      "stage": "highland-movement",
+      "position": [
+        -69.66,
+        -161.87
+      ],
+      "height": 6.59,
+      "time": 420.02,
+      "daytime": "夜晚",
+      "hp": 40,
+      "kills": 3,
+      "frames": 17994,
+      "movingFrames": 17043,
+      "distance": 1900.52,
+      "calls": 176,
+      "triangles": 1033772,
+      "geometries": 207,
+      "textures": 59,
+      "glError": 0,
+      "heapBytes": 109271736,
+      "woodlandVisibleBatches": 7,
+      "campfireGain": 0,
+      "audio": {
+        "context": "running",
+        "voices": 1,
+        "stepsScheduled": 712,
+        "pannersCreated": 16,
+        "pannersReleased": 16,
+        "surfGain": 0.003974404186010361,
+        "birdsGain": 0,
+        "insectsGain": 0.008360904641449451,
+        "ambienceBytes": 8640000
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasCssSize": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "activeMs": 360001.09,
+      "stage": "amber-swimming",
+      "position": [
+        190,
+        248.08
+      ],
+      "height": -0.32,
+      "time": 120.02,
+      "daytime": "清晨",
+      "hp": 100,
+      "kills": 0,
+      "frames": 21594,
+      "movingFrames": 20643,
+      "distance": 2372.02,
+      "calls": 692,
+      "triangles": 3300379,
+      "geometries": 207,
+      "textures": 59,
+      "glError": 0,
+      "heapBytes": 92168428,
+      "woodlandVisibleBatches": 0,
+      "campfireGain": 0,
+      "audio": {
+        "context": "running",
+        "voices": 0,
+        "stepsScheduled": 863,
+        "pannersCreated": 19,
+        "pannersReleased": 19,
+        "surfGain": 0.018282990902662277,
+        "birdsGain": 0,
+        "insectsGain": 0.001173718716017902,
+        "ambienceBytes": 8640000
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasCssSize": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "activeMs": 420001.09,
+      "stage": "amber-swimming",
+      "position": [
+        188.04,
+        254.28
+      ],
+      "height": -1.12,
+      "time": 180.02,
+      "daytime": "午后",
+      "hp": 100,
+      "kills": 0,
+      "frames": 25193,
+      "movingFrames": 24242,
+      "distance": 2687.91,
+      "calls": 578,
+      "triangles": 3272695,
+      "geometries": 207,
+      "textures": 59,
+      "glError": 0,
+      "heapBytes": 96892141,
+      "woodlandVisibleBatches": 0,
+      "campfireGain": 0,
+      "audio": {
+        "context": "running",
+        "voices": 1,
+        "stepsScheduled": 893,
+        "pannersCreated": 19,
+        "pannersReleased": 19,
+        "surfGain": 0.018040379509329796,
+        "birdsGain": 0,
+        "insectsGain": 0,
+        "ambienceBytes": 8640000
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasCssSize": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "activeMs": 480001.29,
+      "stage": "night-camp",
+      "position": [
+        -56,
+        49.12
+      ],
+      "height": 15.08,
+      "time": 0.02,
+      "daytime": "夜晚",
+      "hp": 100,
+      "kills": 0,
+      "frames": 28793,
+      "movingFrames": 27842,
+      "distance": 3002.38,
+      "calls": 302,
+      "triangles": 2527311,
+      "geometries": 225,
+      "textures": 68,
+      "glError": 0,
+      "heapBytes": 105614609,
+      "woodlandVisibleBatches": 45,
+      "campfireGain": 0,
+      "audio": {
+        "context": "running",
+        "voices": 1,
+        "stepsScheduled": 923,
+        "pannersCreated": 19,
+        "pannersReleased": 19,
+        "surfGain": 0.014091957360506058,
+        "birdsGain": 0.000054262836783891544,
+        "insectsGain": 0,
+        "ambienceBytes": 8640000
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasCssSize": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "activeMs": 540001.39,
+      "stage": "night-camp",
+      "position": [
+        -41.81,
+        44.53
+      ],
+      "height": 9.87,
+      "time": 60,
+      "daytime": "夜晚",
+      "hp": 100,
+      "kills": 0,
+      "frames": 32390,
+      "movingFrames": 31439,
+      "distance": 3422.26,
+      "calls": 267,
+      "triangles": 2491528,
+      "geometries": 225,
+      "textures": 68,
+      "glError": 0,
+      "heapBytes": 111915558,
+      "woodlandVisibleBatches": 37,
+      "campfireGain": 0.02252175658941269,
+      "audio": {
+        "context": "running",
+        "voices": 0,
+        "stepsScheduled": 1102,
+        "pannersCreated": 19,
+        "pannersReleased": 19,
+        "surfGain": 0,
+        "birdsGain": 0,
+        "insectsGain": 0.0538390688598156,
+        "ambienceBytes": 8640000
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasCssSize": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "activeMs": 600001.49,
+      "stage": "night-camp",
+      "position": [
+        -51.18,
+        56.24
+      ],
+      "height": 12.32,
+      "time": 120,
+      "daytime": "清晨",
+      "hp": 100,
+      "kills": 0,
+      "frames": 35990,
+      "movingFrames": 35039,
+      "distance": 3842.26,
+      "calls": 304,
+      "triangles": 2589514,
+      "geometries": 225,
+      "textures": 68,
+      "glError": 0,
+      "heapBytes": 108660246,
+      "woodlandVisibleBatches": 43,
+      "campfireGain": 0.16679462790489197,
+      "audio": {
+        "context": "running",
+        "voices": 1,
+        "stepsScheduled": 1277,
+        "pannersCreated": 19,
+        "pannersReleased": 19,
+        "surfGain": 0,
+        "birdsGain": 0.01091041136533022,
+        "insectsGain": 0.04854720085859299,
+        "ambienceBytes": 8640000
+      },
+      "viewport": [
+        1280,
+        720
+      ],
+      "canvasCssSize": [
+        1280,
+        720
+      ],
+      "canvasBuffer": [
+        1920,
+        1080
+      ]
+    }
+  ],
+  "note": "Current110 woodland, terrain/current authored cast; buildings/cameraYaw passed to spatial camp audio: swept actor/resource movement and tick with production objects; camera-relative stereo windup/hit audio; native panner creation/release observed. Adaptive steering after blocked inputs. QA scripted input and five phase teleports; production movement/tick/render/audio. Combat pair revived as labelled load fixture. Frame intervals and JS heap only; no save or campaign acceptance.",
+  "settled": {
+    "wallMs": 362,
+    "voices": 0,
+    "pannersCreated": 19,
+    "pannersReleased": 19
+  }
+}

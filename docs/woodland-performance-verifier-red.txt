@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/verify_woodland_delivery.py", line 123, in <module>
+    verify()
+    ~~~~~~^^
+  File "/Users/huxiaocong/Codex/tidelands/tools/verify_woodland_delivery.py", line 104, in verify
+    assert len(images) == 24 and all(p.stat().st_size > 10000 for p in images)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

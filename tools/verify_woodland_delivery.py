@@ -100,7 +100,7 @@ def verify():
     for item, value in [('木材', 4), ('石料', 5), ('纤维', 6), ('浆果', 3), ('石斧', 1)]:
         assert re.search(r'text ' + item + r'\n\s*\d+ text ' + str(value) + r'\n', ordinary['bagAx'])
     assert sha(ROOT / 'docs/beacon-footing-normal-save.json') == '33455473ff0e92097db6351e2ea421e498accde405ee5a9482ae8ef16d55bb29'
-    images = list((ROOT / 'docs').glob('woodland-*.jpg'))
+    images = [p for p in (ROOT / 'docs').glob('woodland-*.jpg') if not p.name.startswith('woodland-performance-')]
     assert len(images) == 24 and all(p.stat().st_size > 10000 for p in images)
     report = dict(verified=True, boundedRegionalGroundcoverAccepted=True,
                   archive=package['archive'], archiveSha256=package['archiveSha256'],
