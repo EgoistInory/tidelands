@@ -1,0 +1,118 @@
+TAP version 13
+# Subtest: large mineral envelope blocks construction even when its centre is beyond three metres
+not ok 1 - large mineral envelope blocks construction even when its centre is beyond three metres
+  ---
+  duration_ms: 26.122125
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/build-resource-clearance.test.js:7:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /树木|岩石/. Input:
+    
+    ''
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: ''
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/build-resource-clearance.test.js:9:36)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: harvesting a solid node cannot permit a structure in its future regrowth footprint
+not ok 2 - harvesting a solid node cannot permit a structure in its future regrowth footprint
+  ---
+  duration_ms: 6.3105
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/build-resource-clearance.test.js:12:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /恢复|树木|岩石/. Input:
+    
+    ''
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: ''
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/build-resource-clearance.test.js:14:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: legacy construction keeps overlapping regrowth hidden from rendering, targeting and collision without rewriting the save
+not ok 3 - legacy construction keeps overlapping regrowth hidden from rendering, targeting and collision without rewriting the save
+  ---
+  duration_ms: 5.027833
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/build-resource-clearance.test.js:16:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/build-resource-clearance.test.js:19:36)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: the actual starter stone cannot regrow through an existing coast camp
+not ok 4 - the actual starter stone cannot regrow through an existing coast camp
+  ---
+  duration_ms: 8.687334
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/build-resource-clearance.test.js:24:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/build-resource-clearance.test.js:27:36)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: clear land remains buildable and distant resources preserve their normal recovery timer
+ok 5 - clear land remains buildable and distant resources preserve their normal recovery timer
+  ---
+  duration_ms: 4.439
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 1
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 121.348292

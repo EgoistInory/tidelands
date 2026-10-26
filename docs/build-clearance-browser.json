@@ -1,0 +1,671 @@
+{
+  "rows": [
+    {
+      "label": "baseline-blocked",
+      "before": {
+        "kind": "blocked",
+        "baseline": true,
+        "player": {
+          "x": -80,
+          "z": 98,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "quest": 2,
+        "inventory": {
+          "wood": 30,
+          "stone": 30,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [],
+        "depleted": {},
+        "stoneHidden": false,
+        "renderedHidden": false,
+        "near": "starter-1",
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "after": {
+        "kind": "blocked",
+        "baseline": true,
+        "player": {
+          "x": -80,
+          "z": 98,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "quest": 3,
+        "inventory": {
+          "wood": 25,
+          "stone": 27,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "built-0-12051",
+            "type": "campfire",
+            "x": -80,
+            "z": 104
+          }
+        ],
+        "depleted": {},
+        "stoneHidden": false,
+        "renderedHidden": false,
+        "near": "starter-1",
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "ax": "Browser tab: 19, Title: \"建造净空与旧营地资源恢复隔离验收\", URL: \"http://127.0.0.1:4190/tests/build-resource-clearance.html?case=blocked&baseline=1\".\nThe following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.\nRemoved element IDs: 76, 90-98\n~\t\t\t\t\t\t\t30 heading 林间的来信, Value: 2, ID: quest-title\n~\t\t\t\t\t\t\t\t83 text 林间的来信\n~\t\t\t\t\t\t\t84 text 前往苍翠林地，寻找药草师林栖\n~\t\t\t\t\t\t\t85 text M 查看地图；可以游泳穿越海峡 · 246 米\n~\t\t\t\t\t\t88 button E采集石料, ID: interact-button\n~\t\t\t\t\t\t\t89 text E\n+\t\t\t\t\t\t\t90 text 采集石料\n+\t\t\t\t\t\t91 text 建造完成：营火 新的目标：林间的来信\n+\t\t\t\t\t\t\t\t92 text ⚒\n+\t\t\t\t\t\t\t\t93 text 石斧\n+\t\t\t\t\t\t\t\t94 text 3\n+\t\t\t\t\t\t\t95 text 已保存\n+\t\t\t\t\t\t96 text 位置 X -80.0，Z 98.0；建筑 1；击败 0\n+\t\t\t\t\t97 text {\"kind\":\"blocked\",\"baseline\":true,\"player\":{\"x\":-80,\"z\":98,\"hp\":62,\"stamina\":100,\"yaw\":0},\"quest\":3,\"inventory\":{\"wood\":25,\"stone\":27,\"fiber\":30,\"berry\":3,\"shell\":0,\"crystal\":0,\"axe\":1,\"sword\":0,\"meal\":0},\"buildings\":[{\"id\":\"built-0-12051\",\"type\":\"campfire\",\"x\":-80,\"z\":104}],\"depleted\":{},\"stoneHidden\":false,\"renderedHidden\":false,\"near\":\"starter-1\",\"viewport\":[1280,720],\"glError\":0,\"scope\":\"Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim.\"}\nThe focused UI element is 5 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world"
+    },
+    {
+      "label": "fixed-blocked",
+      "before": {
+        "kind": "blocked",
+        "baseline": false,
+        "player": {
+          "x": -80,
+          "z": 98,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "quest": 2,
+        "inventory": {
+          "wood": 30,
+          "stone": 30,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [],
+        "depleted": {},
+        "stoneHidden": false,
+        "renderedHidden": false,
+        "near": "starter-1",
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "after": {
+        "kind": "blocked",
+        "baseline": false,
+        "player": {
+          "x": -80,
+          "z": 98,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "quest": 2,
+        "inventory": {
+          "wood": 30,
+          "stone": 30,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [],
+        "depleted": {},
+        "stoneHidden": false,
+        "renderedHidden": false,
+        "near": "starter-1",
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "ax": "Browser tab: 19, Title: \"建造净空与旧营地资源恢复隔离验收\", URL: \"http://127.0.0.1:4190/tests/build-resource-clearance.html?case=blocked\".\nThe following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.\nRemoved element IDs: 81-88, 92-99\n+\t\t\t\t\t\t\t92 text 潮汐海岸\n+\t\t\t\t\t\t\t93 text 62\n+\t\t\t\t\t\t\t94 text 100\n+\t\t\t\t\t\t\t\t95 text 在岛上安一个家\n+\t\t\t\t\t\t\t96 text 建造一堆营火\n+\t\t\t\t\t\t\t97 text 采集 5 木材和 3 石料，按 C 制作\n+\t\t\t\t\t\t\t98 text 北\n+\t\t\t\t\t\t\t99 text 第 1 天 · 清晨\n+\t\t\t\t\t\t\t\t100 text 确认建造\n+\t\t\t\t\t\t\t101 text 这里被树木或岩石占据。\n+\t\t\t\t\t\t102 text 这里被树木或岩石占据。\n+\t\t\t\t\t\t\t\t103 text ⚒\n+\t\t\t\t\t\t\t\t104 text 石斧\n+\t\t\t\t\t\t\t\t105 text 3\n+\t\t\t\t\t\t106 text 位置 X -80.0，Z 98.0；建筑 0；击败 0\n+\t\t\t\t\t107 text {\"kind\":\"blocked\",\"baseline\":false,\"player\":{\"x\":-80,\"z\":98,\"hp\":62,\"stamina\":100,\"yaw\":0},\"quest\":2,\"inventory\":{\"wood\":30,\"stone\":30,\"fiber\":30,\"berry\":3,\"shell\":0,\"crystal\":0,\"axe\":1,\"sword\":0,\"meal\":0},\"buildings\":[],\"depleted\":{},\"stoneHidden\":false,\"renderedHidden\":false,\"near\":\"starter-1\",\"viewport\":[1280,720],\"glError\":0,\"scope\":\"Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim.\"}\nThe focused UI element is 6 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world"
+    },
+    {
+      "label": "fixed-depleted",
+      "before": {
+        "kind": "depleted",
+        "baseline": false,
+        "player": {
+          "x": -80,
+          "z": 98,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "quest": 2,
+        "inventory": {
+          "wood": 30,
+          "stone": 30,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [],
+        "depleted": {
+          "starter-1": 270
+        },
+        "stoneHidden": true,
+        "renderedHidden": true,
+        "near": null,
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "after": {
+        "kind": "depleted",
+        "baseline": false,
+        "player": {
+          "x": -80,
+          "z": 98,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "quest": 2,
+        "inventory": {
+          "wood": 30,
+          "stone": 30,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [],
+        "depleted": {
+          "starter-1": 270
+        },
+        "stoneHidden": true,
+        "renderedHidden": true,
+        "near": null,
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "ax": "Browser tab: 19, Title: \"建造净空与旧营地资源恢复隔离验收\", URL: \"http://127.0.0.1:4190/tests/build-resource-clearance.html?case=depleted\".\nThe following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.\nRemoved element IDs: 78-85, 89-96\n+\t\t\t\t\t\t\t89 text 潮汐海岸\n+\t\t\t\t\t\t\t90 text 62\n+\t\t\t\t\t\t\t91 text 100\n+\t\t\t\t\t\t\t\t92 text 在岛上安一个家\n+\t\t\t\t\t\t\t93 text 建造一堆营火\n+\t\t\t\t\t\t\t94 text 采集 5 木材和 3 石料，按 C 制作\n+\t\t\t\t\t\t\t95 text 北\n+\t\t\t\t\t\t\t96 text 第 1 天 · 清晨\n+\t\t\t\t\t\t\t\t97 text 确认建造\n+\t\t\t\t\t\t\t98 text 这里的树木或岩石会恢复，请换一块空地。\n+\t\t\t\t\t\t99 text 这里的树木或岩石会恢复，请换一块空地。\n+\t\t\t\t\t\t\t\t100 text ⚒\n+\t\t\t\t\t\t\t\t101 text 石斧\n+\t\t\t\t\t\t\t\t102 text 3\n+\t\t\t\t\t\t103 text 位置 X -80.0，Z 98.0；建筑 0；击败 0\n+\t\t\t\t\t104 text {\"kind\":\"depleted\",\"baseline\":false,\"player\":{\"x\":-80,\"z\":98,\"hp\":62,\"stamina\":100,\"yaw\":0},\"quest\":2,\"inventory\":{\"wood\":30,\"stone\":30,\"fiber\":30,\"berry\":3,\"shell\":0,\"crystal\":0,\"axe\":1,\"sword\":0,\"meal\":0},\"buildings\":[],\"depleted\":{\"starter-1\":270},\"stoneHidden\":true,\"renderedHidden\":true,\"near\":null,\"viewport\":[1280,720],\"glError\":0,\"scope\":\"Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim.\"}\nThe focused UI element is 6 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world"
+    },
+    {
+      "label": "baseline-legacy",
+      "before": {
+        "kind": "legacy",
+        "baseline": true,
+        "player": {
+          "x": -80,
+          "z": 98,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "quest": 3,
+        "inventory": {
+          "wood": 30,
+          "stone": 30,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "qa-existing-camp",
+            "type": "campfire",
+            "x": -80,
+            "z": 104
+          }
+        ],
+        "depleted": {
+          "starter-1": 150
+        },
+        "stoneHidden": false,
+        "renderedHidden": false,
+        "near": "starter-1",
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "after": {
+        "kind": "legacy",
+        "baseline": true,
+        "player": {
+          "x": -80,
+          "z": 98,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": -0.3217505543966422
+        },
+        "quest": 3,
+        "inventory": {
+          "wood": 30,
+          "stone": 33,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "qa-existing-camp",
+            "type": "campfire",
+            "x": -80,
+            "z": 104
+          }
+        ],
+        "depleted": {
+          "starter-1": 450.4735999998093
+        },
+        "stoneHidden": true,
+        "renderedHidden": true,
+        "near": "qa-existing-camp",
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "ax": "Browser tab: 19, Title: \"建造净空与旧营地资源恢复隔离验收\", URL: \"http://127.0.0.1:4190/tests/build-resource-clearance.html?case=legacy&baseline=1\".\nThe following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.\nRemoved element IDs: 23, 26, 29, 32-34, 37, 41, 46-47, 55-56, 61, 77, 81-82\n+\t\t\t\t\t\t\t81 text 潮汐海岸\n+\t\t\t\t\t\t\t82 text 62\n+\t\t\t\t\t\t\t83 text 100\n+\t\t\t\t\t\t\t\t84 text 林间的来信\n+\t\t\t\t\t\t\t85 text 前往苍翠林地，寻找药草师林栖\n+\t\t\t\t\t\t\t86 text M 查看地图；可以游泳穿越海峡 · 246 米\n+\t\t\t\t\t\t\t87 text 北\n+\t\t\t\t\t\t\t88 text 第 1 天 · 午后\n~\t\t\t\t\t\t44 button E休息, ID: interact-button\n+\t\t\t\t\t\t\t89 text 休息\n+\t\t\t\t\t\t90 text 石料 +3\n+\t\t\t\t\t\t\t\t91 text ⚒\n+\t\t\t\t\t\t\t\t92 text 石斧\n+\t\t\t\t\t\t\t\t93 text 3\n+\t\t\t\t\t\t\t94 text 已保存\n+\t\t\t\t\t\t95 text 位置 X -80.0，Z 98.0；建筑 1；击败 0\n+\t\t\t\t\t96 text {\"kind\":\"legacy\",\"baseline\":true,\"player\":{\"x\":-80,\"z\":98,\"hp\":62,\"stamina\":100,\"yaw\":-0.3217505543966422},\"quest\":3,\"inventory\":{\"wood\":30,\"stone\":33,\"fiber\":30,\"berry\":3,\"shell\":0,\"crystal\":0,\"axe\":1,\"sword\":0,\"meal\":0},\"buildings\":[{\"id\":\"qa-existing-camp\",\"type\":\"campfire\",\"x\":-80,\"z\":104}],\"depleted\":{\"starter-1\":450.4735999998093},\"stoneHidden\":true,\"renderedHidden\":true,\"near\":\"qa-existing-camp\",\"viewport\":[1280,720],\"glError\":0,\"scope\":\"Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim.\"}\nThe focused UI element is 6 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world"
+    },
+    {
+      "label": "fixed-legacy",
+      "before": {
+        "kind": "legacy",
+        "baseline": false,
+        "player": {
+          "x": -80,
+          "z": 98,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "quest": 3,
+        "inventory": {
+          "wood": 30,
+          "stone": 30,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "qa-existing-camp",
+            "type": "campfire",
+            "x": -80,
+            "z": 104
+          }
+        ],
+        "depleted": {
+          "starter-1": 150
+        },
+        "stoneHidden": true,
+        "renderedHidden": true,
+        "near": "qa-existing-camp",
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "after": {
+        "kind": "legacy",
+        "baseline": false,
+        "player": {
+          "x": -80,
+          "z": 98,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "quest": 3,
+        "inventory": {
+          "wood": 30,
+          "stone": 30,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "qa-existing-camp",
+            "type": "campfire",
+            "x": -80,
+            "z": 104
+          }
+        ],
+        "depleted": {
+          "starter-1": 150
+        },
+        "stoneHidden": true,
+        "renderedHidden": true,
+        "near": "qa-existing-camp",
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "ax": "Browser tab: 19, Title: \"建造净空与旧营地资源恢复隔离验收\", URL: \"http://127.0.0.1:4190/tests/build-resource-clearance.html?case=legacy\".\nThe following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.\nRemoved element IDs: 23, 26, 29, 32-34, 37, 41, 46-47, 55-56, 61, 77, 81-82\n+\t\t\t\t\t\t\t81 text 潮汐海岸\n~\t\t\t\t\t\t\t25 progress indicator Value: 100, ID: hp\n+\t\t\t\t\t\t\t82 text 100\n+\t\t\t\t\t\t\t83 text 100\n+\t\t\t\t\t\t\t\t84 text 林间的来信\n+\t\t\t\t\t\t\t85 text 前往苍翠林地，寻找药草师林栖\n+\t\t\t\t\t\t\t86 text M 查看地图；可以游泳穿越海峡 · 246 米\n+\t\t\t\t\t\t\t87 text 北\n+\t\t\t\t\t\t\t88 text 第 1 天 · 午后\n+\t\t\t\t\t\t\t89 text 休息\n+\t\t\t\t\t\t90 text 火光驱散疲惫，生命和体力已恢复。\n+\t\t\t\t\t\t\t\t91 text ⚒\n+\t\t\t\t\t\t\t\t92 text 石斧\n+\t\t\t\t\t\t\t\t93 text 3\n+\t\t\t\t\t\t\t94 text 已保存\n+\t\t\t\t\t\t95 text 位置 X -80.0，Z 98.0；建筑 1；击败 0\n+\t\t\t\t\t96 text {\"kind\":\"legacy\",\"baseline\":false,\"player\":{\"x\":-80,\"z\":98,\"hp\":100,\"stamina\":100,\"yaw\":0},\"quest\":3,\"inventory\":{\"wood\":30,\"stone\":30,\"fiber\":30,\"berry\":3,\"shell\":0,\"crystal\":0,\"axe\":1,\"sword\":0,\"meal\":0},\"buildings\":[{\"id\":\"qa-existing-camp\",\"type\":\"campfire\",\"x\":-80,\"z\":104}],\"depleted\":{\"starter-1\":150},\"stoneHidden\":true,\"renderedHidden\":true,\"near\":\"qa-existing-camp\",\"viewport\":[1280,720],\"glError\":0,\"scope\":\"Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim.\"}\nThe focused UI element is 6 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world"
+    },
+    {
+      "label": "fixed-clear",
+      "before": {
+        "kind": "clear",
+        "baseline": false,
+        "player": {
+          "x": -80,
+          "z": 112,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "quest": 2,
+        "inventory": {
+          "wood": 30,
+          "stone": 30,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [],
+        "depleted": {},
+        "stoneHidden": false,
+        "renderedHidden": false,
+        "near": null,
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "after": {
+        "kind": "clear",
+        "baseline": false,
+        "player": {
+          "x": -80,
+          "z": 112,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "quest": 3,
+        "inventory": {
+          "wood": 25,
+          "stone": 27,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "built-0-12044",
+            "type": "campfire",
+            "x": -80,
+            "z": 118
+          }
+        ],
+        "depleted": {},
+        "stoneHidden": false,
+        "renderedHidden": false,
+        "near": "built-0-12044",
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "ax": "Browser tab: 19, Title: \"建造净空与旧营地资源恢复隔离验收\", URL: \"http://127.0.0.1:4190/tests/build-resource-clearance.html?case=clear\".\nThe following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.\nRemoved element IDs: 74, 88-96\n~\t\t\t\t\t\t\t31 heading 林间的来信, Value: 2, ID: quest-title\n~\t\t\t\t\t\t\t\t81 text 林间的来信\n~\t\t\t\t\t\t\t82 text 前往苍翠林地，寻找药草师林栖\n~\t\t\t\t\t\t\t83 text M 查看地图；可以游泳穿越海峡 · 253 米\n~\t\t\t\t\t\t86 button E休息, ID: interact-button\n~\t\t\t\t\t\t\t87 text E\n+\t\t\t\t\t\t\t88 text 休息\n+\t\t\t\t\t\t89 text 建造完成：营火 新的目标：林间的来信\n+\t\t\t\t\t\t\t\t90 text ⚒\n+\t\t\t\t\t\t\t\t91 text 石斧\n+\t\t\t\t\t\t\t\t92 text 3\n+\t\t\t\t\t\t\t93 text 已保存\n+\t\t\t\t\t\t94 text 位置 X -80.0，Z 112.0；建筑 1；击败 0\n+\t\t\t\t\t95 text {\"kind\":\"clear\",\"baseline\":false,\"player\":{\"x\":-80,\"z\":112,\"hp\":62,\"stamina\":100,\"yaw\":0},\"quest\":3,\"inventory\":{\"wood\":25,\"stone\":27,\"fiber\":30,\"berry\":3,\"shell\":0,\"crystal\":0,\"axe\":1,\"sword\":0,\"meal\":0},\"buildings\":[{\"id\":\"built-0-12044\",\"type\":\"campfire\",\"x\":-80,\"z\":118}],\"depleted\":{},\"stoneHidden\":false,\"renderedHidden\":false,\"near\":\"built-0-12044\",\"viewport\":[1280,720],\"glError\":0,\"scope\":\"Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim.\"}\nThe focused UI element is 6 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world"
+    },
+    {
+      "label": "baseline-legacy-walk",
+      "before": {
+        "kind": "legacy",
+        "baseline": true,
+        "player": {
+          "x": -80,
+          "z": 98,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "quest": 3,
+        "inventory": {
+          "wood": 30,
+          "stone": 30,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "qa-existing-camp",
+            "type": "campfire",
+            "x": -80,
+            "z": 104
+          }
+        ],
+        "depleted": {
+          "starter-1": 150
+        },
+        "stoneHidden": false,
+        "renderedHidden": false,
+        "near": "starter-1",
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "after": {
+        "kind": "legacy",
+        "baseline": true,
+        "player": {
+          "x": -78.99577574977741,
+          "z": 98,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": 0.15000000000000002
+        },
+        "quest": 3,
+        "inventory": {
+          "wood": 30,
+          "stone": 30,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "qa-existing-camp",
+            "type": "campfire",
+            "x": -80,
+            "z": 104
+          }
+        ],
+        "depleted": {
+          "starter-1": 150
+        },
+        "stoneHidden": false,
+        "renderedHidden": false,
+        "near": "starter-1",
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "ax": "Browser tab: 19, Title: \"建造净空与旧营地资源恢复隔离验收\", URL: \"http://127.0.0.1:4190/tests/build-resource-clearance.html?case=legacy&baseline=1&view=before\".\nThe following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.\nRemoved element IDs: 23, 26, 29, 32-34, 37, 41, 46, 55-56, 61, 81-82\n+\t\t\t\t\t\t\t81 text 潮汐海岸\n+\t\t\t\t\t\t\t82 text 62\n+\t\t\t\t\t\t\t83 text 100\n+\t\t\t\t\t\t\t\t84 text 林间的来信\n+\t\t\t\t\t\t\t85 text 前往苍翠林地，寻找药草师林栖\n+\t\t\t\t\t\t\t86 text M 查看地图；可以游泳穿越海峡 · 245 米\n+\t\t\t\t\t\t\t87 text 北\n+\t\t\t\t\t\t\t88 text 第 1 天 · 午后\n+\t\t\t\t\t\t\t89 text 采集石料\n+\t\t\t\t\t\t\t\t90 text ⚒\n+\t\t\t\t\t\t\t\t91 text 石斧\n+\t\t\t\t\t\t\t\t92 text 3\n+\t\t\t\t\t\t93 text 位置 X -79.0，Z 98.0；建筑 1；击败 0\n+\t\t\t\t\t94 text {\"kind\":\"legacy\",\"baseline\":true,\"player\":{\"x\":-78.99577574977741,\"z\":98,\"hp\":62,\"stamina\":100,\"yaw\":0.15000000000000002},\"quest\":3,\"inventory\":{\"wood\":30,\"stone\":30,\"fiber\":30,\"berry\":3,\"shell\":0,\"crystal\":0,\"axe\":1,\"sword\":0,\"meal\":0},\"buildings\":[{\"id\":\"qa-existing-camp\",\"type\":\"campfire\",\"x\":-80,\"z\":104}],\"depleted\":{\"starter-1\":150},\"stoneHidden\":false,\"renderedHidden\":false,\"near\":\"starter-1\",\"viewport\":[1280,720],\"glError\":0,\"scope\":\"Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim.\"}\nThe focused UI element is 6 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world"
+    },
+    {
+      "label": "fixed-legacy-walk",
+      "before": {
+        "kind": "legacy",
+        "baseline": false,
+        "player": {
+          "x": -80,
+          "z": 98,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "quest": 3,
+        "inventory": {
+          "wood": 30,
+          "stone": 30,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "qa-existing-camp",
+            "type": "campfire",
+            "x": -80,
+            "z": 104
+          }
+        ],
+        "depleted": {
+          "starter-1": 150
+        },
+        "stoneHidden": true,
+        "renderedHidden": true,
+        "near": "qa-existing-camp",
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "after": {
+        "kind": "legacy",
+        "baseline": false,
+        "player": {
+          "x": -78.9957757497774,
+          "z": 104.64454164373022,
+          "hp": 62,
+          "stamina": 100,
+          "yaw": 0.15000000000000002
+        },
+        "quest": 3,
+        "inventory": {
+          "wood": 30,
+          "stone": 30,
+          "fiber": 30,
+          "berry": 3,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "qa-existing-camp",
+            "type": "campfire",
+            "x": -80,
+            "z": 104
+          }
+        ],
+        "depleted": {
+          "starter-1": 150
+        },
+        "stoneHidden": true,
+        "renderedHidden": true,
+        "near": "qa-existing-camp",
+        "viewport": [
+          1280,
+          720
+        ],
+        "glError": 0,
+        "scope": "Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim."
+      },
+      "ax": "Browser tab: 19, Title: \"建造净空与旧营地资源恢复隔离验收\", URL: \"http://127.0.0.1:4190/tests/build-resource-clearance.html?case=legacy&view=before\".\nThe following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.\nRemoved element IDs: 23, 26, 29, 32-34, 37, 41, 46, 55-56, 61, 81-82\n+\t\t\t\t\t\t\t81 text 潮汐海岸\n+\t\t\t\t\t\t\t82 text 62\n+\t\t\t\t\t\t\t83 text 100\n+\t\t\t\t\t\t\t\t84 text 林间的来信\n+\t\t\t\t\t\t\t85 text 前往苍翠林地，寻找药草师林栖\n+\t\t\t\t\t\t\t86 text M 查看地图；可以游泳穿越海峡 · 248 米\n+\t\t\t\t\t\t\t87 text 北\n+\t\t\t\t\t\t\t88 text 第 1 天 · 午后\n+\t\t\t\t\t\t\t89 text 休息\n+\t\t\t\t\t\t\t\t90 text ⚒\n+\t\t\t\t\t\t\t\t91 text 石斧\n+\t\t\t\t\t\t\t\t92 text 3\n+\t\t\t\t\t\t93 text 位置 X -79.0，Z 104.6；建筑 1；击败 0\n+\t\t\t\t\t94 text {\"kind\":\"legacy\",\"baseline\":false,\"player\":{\"x\":-78.9957757497774,\"z\":104.64454164373022,\"hp\":62,\"stamina\":100,\"yaw\":0.15000000000000002},\"quest\":3,\"inventory\":{\"wood\":30,\"stone\":30,\"fiber\":30,\"berry\":3,\"shell\":0,\"crystal\":0,\"axe\":1,\"sword\":0,\"meal\":0},\"buildings\":[{\"id\":\"qa-existing-camp\",\"type\":\"campfire\",\"x\":-80,\"z\":104}],\"depleted\":{\"starter-1\":150},\"stoneHidden\":true,\"renderedHidden\":true,\"near\":\"qa-existing-camp\",\"viewport\":[1280,720],\"glError\":0,\"scope\":\"Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim.\"}\nThe focused UI element is 6 image Description: 潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互, ID: world"
+    }
+  ],
+  "console": []
+}

@@ -1,0 +1,214 @@
+TAP version 13
+# Subtest: large mineral envelope blocks construction even when its centre is beyond three metres
+ok 1 - large mineral envelope blocks construction even when its centre is beyond three metres
+  ---
+  duration_ms: 11.257417
+  type: 'test'
+  ...
+# Subtest: harvesting a solid node cannot permit a structure in its future regrowth footprint
+ok 2 - harvesting a solid node cannot permit a structure in its future regrowth footprint
+  ---
+  duration_ms: 5.403541
+  type: 'test'
+  ...
+# Subtest: legacy construction keeps overlapping regrowth hidden from rendering, targeting and collision without rewriting the save
+ok 3 - legacy construction keeps overlapping regrowth hidden from rendering, targeting and collision without rewriting the save
+  ---
+  duration_ms: 5.852417
+  type: 'test'
+  ...
+# Subtest: the actual starter stone cannot regrow through an existing coast camp
+ok 4 - the actual starter stone cannot regrow through an existing coast camp
+  ---
+  duration_ms: 12.578667
+  type: 'test'
+  ...
+# Subtest: clear land remains buildable and distant resources preserve their normal recovery timer
+ok 5 - clear land remains buildable and distant resources preserve their normal recovery timer
+  ---
+  duration_ms: 5.883042
+  type: 'test'
+  ...
+# Subtest: starter clearing provides enough materials for the first tool without waiting for respawn
+ok 6 - starter clearing provides enough materials for the first tool without waiting for respawn
+  ---
+  duration_ms: 6.179458
+  type: 'test'
+  ...
+# Subtest: day labels and lighting share a continuous repeating day cycle
+ok 7 - day labels and lighting share a continuous repeating day cycle
+  ---
+  duration_ms: 0.512125
+  type: 'test'
+  ...
+# Subtest: deterministic, populated world with safe start and diverse regions
+ok 8 - deterministic, populated world with safe start and diverse regions
+  ---
+  duration_ms: 7.600583
+  type: 'test'
+  ...
+# Subtest: wood, mineral and food nodes deplete and recover without duplicate rewards
+ok 9 - wood, mineral and food nodes deplete and recover without duplicate rewards
+  ---
+  duration_ms: 17.022625
+  type: 'test'
+  ...
+# Subtest: craft consumes exact materials, never negative or repeated unique tools
+ok 10 - craft consumes exact materials, never negative or repeated unique tools
+  ---
+  duration_ms: 5.46175
+  type: 'test'
+  ...
+# Subtest: building location checks, material use, persistence and overlap
+ok 11 - building location checks, material use, persistence and overlap
+  ---
+  duration_ms: 5.636125
+  type: 'test'
+  ...
+# Subtest: movement normalizes diagonal speed, respects trees and bounds
+ok 12 - movement normalizes diagonal speed, respects trees and bounds
+  ---
+  duration_ms: 12.573167
+  type: 'test'
+  ...
+# Subtest: attack cooldown and kill rewards happen only once
+ok 13 - attack cooldown and kill rewards happen only once
+  ---
+  duration_ms: 5.203542
+  type: 'test'
+  ...
+# Subtest: food consumes only when healing; camp heals and defeat preserves inventory
+ok 14 - food consumes only when healing; camp heals and defeat preserves inventory
+  ---
+  duration_ms: 6.758917
+  type: 'test'
+  ...
+# Subtest: entire six-step quest chain reaches conclusion with no repeat reward
+ok 15 - entire six-step quest chain reaches conclusion with no repeat reward
+  ---
+  duration_ms: 5.598959
+  type: 'test'
+  ...
+# Subtest: save roundtrip preserves all world changes
+ok 16 - save roundtrip preserves all world changes
+  ---
+  duration_ms: 9.59775
+  type: 'test'
+  ...
+# Subtest: invalid imports rejected without changing running state
+ok 17 - invalid imports rejected without changing running state
+  ---
+  duration_ms: 60.226917
+  type: 'test'
+  ...
+# Subtest: nearest target respects interaction distance
+ok 18 - nearest target respects interaction distance
+  ---
+  duration_ms: 4.074791
+  type: 'test'
+  ...
+# Subtest: respawn protection survives reload and expires without granting permanent immunity
+ok 19 - respawn protection survives reload and expires without granting permanent immunity
+  ---
+  duration_ms: 14.472083
+  type: 'test'
+  ...
+# Subtest: tick reports lethal damage before healing and clears feedback during protection
+ok 20 - tick reports lethal damage before healing and clears feedback during protection
+  ---
+  duration_ms: 3.858958
+  type: 'test'
+  ...
+# Subtest: damage follows equipped weapon instead of the strongest item in the bag
+ok 21 - damage follows equipped weapon instead of the strongest item in the bag
+  ---
+  duration_ms: 31.820333
+  type: 'test'
+  ...
+# Subtest: duplicate building IDs and malformed entries are rejected with actionable messages
+ok 22 - duplicate building IDs and malformed entries are rejected with actionable messages
+  ---
+  duration_ms: 21.557042
+  type: 'test'
+  ...
+# Subtest: enemy cooldowns cannot be frozen by malformed or future saved attack times
+ok 23 - enemy cooldowns cannot be frozen by malformed or future saved attack times
+  ---
+  duration_ms: 35.577375
+  type: 'test'
+  ...
+# Subtest: sprint exhaustion, swimming and rest preserve a recoverable stamina cycle
+ok 24 - sprint exhaustion, swimming and rest preserve a recoverable stamina cycle
+  ---
+  duration_ms: 7.660333
+  type: 'test'
+  ...
+# Subtest: crafted food consumes its ingredients once and never consumes food at full health
+ok 25 - crafted food consumes its ingredients once and never consumes food at full health
+  ---
+  duration_ms: 7.141
+  type: 'test'
+  ...
+# Subtest: botanist dialogue matches quest prerequisites and a one-time gift
+ok 26 - botanist dialogue matches quest prerequisites and a one-time gift
+  ---
+  duration_ms: 3.470167
+  type: 'test'
+  ...
+# Subtest: all islanders acknowledge the lit lighthouse after completion without repeating gifts or objectives
+ok 27 - all islanders acknowledge the lit lighthouse after completion without repeating gifts or objectives
+  ---
+  duration_ms: 3.589167
+  type: 'test'
+  ...
+# Subtest: combat target ignores corpses and distant enemies without changing the save
+ok 28 - combat target ignores corpses and distant enemies without changing the save
+  ---
+  duration_ms: 3.652084
+  type: 'test'
+  ...
+# Subtest: combat target reflects actual weapon damage, cooldown and defeat
+ok 29 - combat target reflects actual weapon damage, cooldown and defeat
+  ---
+  duration_ms: 7.40275
+  type: 'test'
+  ...
+# Subtest: the recorded forest route cannot walk through crystal944 or cross its camera origin box
+ok 30 - the recorded forest route cannot walk through crystal944 or cross its camera origin box
+  ---
+  duration_ms: 40.790625
+  type: 'test'
+  ...
+# Subtest: scaled stone remains reachable at its surface and grants the original yield once
+ok 31 - scaled stone remains reachable at its surface and grants the original yield once
+  ---
+  duration_ms: 7.138583
+  type: 'test'
+  ...
+# Subtest: surface gathering cannot finish after moving out of arm reach
+ok 32 - surface gathering cannot finish after moving out of arm reach
+  ---
+  duration_ms: 5.696708
+  type: 'test'
+  ...
+# Subtest: legacy saves inside a deposit can move outward without losing progress or being teleported
+ok 33 - legacy saves inside a deposit can move outward without losing progress or being teleported
+  ---
+  duration_ms: 14.258416
+  type: 'test'
+  ...
+# Subtest: a large movement step cannot tunnel across a live deposit
+ok 34 - a large movement step cannot tunnel across a live deposit
+  ---
+  duration_ms: 4.721125
+  type: 'test'
+  ...
+1..34
+# tests 34
+# suites 0
+# pass 34
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 346.886917

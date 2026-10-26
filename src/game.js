@@ -1,6 +1,6 @@
 import {SPAWN,LANDMARKS,terrain,regionAt,createWorld} from './world.js';
 import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_DURATION,GATHER_IMPACT,GATHER_RANGE,ENEMY_ATTACK_DURATION,ENEMY_ATTACK_IMPACT} from './action-timing.js';
-import {resourceReachDistance,resourceBlocksMove} from './resource-contact.js';
+import {resourceReachDistance,resourceBlocksMove,resourceHalfSize} from './resource-contact.js';
 import {ruinBlocksMove} from './ruin-layout.js';
 import {actorRadius,actorBlocksMove,targetReachPadding} from './actor-contact.js';
 export const ITEMS={wood:'木材',stone:'石料',fiber:'纤维',berry:'浆果',shell:'贝壳',crystal:'晶石',axe:'石斧',sword:'晶石剑',meal:'烤浆果'};
@@ -30,6 +30,13 @@ export function craft(state,key){const recipe=RECIPES[key];if(!recipe)return '�
   spend(state,recipe.cost);state.inventory[key]=(state.inventory[key]||0)+1;if(['axe','sword'].includes(key))state.selected=key;if(key==='axe'&&state.quest===1)state.quest=2;
   return `制作完成：${recipe.name}`;
 }
+function resourceIntersectsBuilding(object,building){
+  if(object.type!=='tree'&&object.type!=='stone'&&object.type!=='crystal')return false;
+  const radius=building.type==='tent'?2.15:building.type==='campfire'?1.45:1.5;
+  const dx=Math.abs(object.x-building.x),dz=Math.abs(object.z-building.z),half=resourceHalfSize(object);
+  if(object.type==='tree'||!half){const reach=object.type==='tree'?Math.max(3,radius+1.15):3;return dx*dx+dz*dz<reach*reach;}
+  const x=Math.max(0,dx-half),z=Math.max(0,dz-half);return x*x+z*z<radius*radius;
+}
 export function canBuild(state,objects,key,x,z){
   if(!['campfire','tent','workbench'].includes(key))return '未知建筑。';
   if(state.buildings.length>=MAX_BUILDINGS)return `建筑已达 ${MAX_BUILDINGS} 座上限，无法继续建造。`;
@@ -39,11 +46,14 @@ export function canBuild(state,objects,key,x,z){
   if(Math.abs(terrain(x+2,z)-terrain(x-2,z))+Math.abs(terrain(x,z+2)-terrain(x,z-2))>3)return '这里太陡，换一块平地吧。';
   if(state.buildings.some(b=>Math.hypot(x-b.x,z-b.z)<6)||LANDMARKS.some(b=>Math.hypot(x-b.x,z-b.z)<(b.type==='ruin'?9:7)))return '与现有建筑或人物太近。';
   if(state.enemies.some(e=>e.hp>0&&Math.hypot(x-e.x,z-e.z)<actorRadius(e)+2))return '附近有野兽，请先清理建造位置。';
-  if(objects.some(o=>['tree','stone','crystal'].includes(o.type)&&!isDepleted(state,o)&&Math.hypot(x-o.x,z-o.z)<3))return '这里被树木或岩石占据。';
+  // A depleted node still owns its future regrowth footprint.
+  const placement={type:key,x,z},occupied=objects.find(o=>resourceIntersectsBuilding(o,placement));
+  if(occupied)return (state.depleted[occupied.id]||0)>state.time?'这里的树木或岩石会恢复，请换一块空地。':'这里被树木或岩石占据。';
   return '';
 }
 export function build(state,objects,key,x,z){const error=canBuild(state,objects,key,x,z);if(error)return error;spend(state,RECIPES[key].cost);state.buildings.push({id:`built-${state.buildings.length}-${Math.floor(state.time*100)}`,type:key,x,z});if(key==='campfire'&&state.quest===2)state.quest=3;if(key==='tent')state.respawn={x,z:z+4};return `建造完成：${RECIPES[key].name}`;}
-export function isDepleted(state,object){return (state.depleted[object.id]||0)>state.time;}
+// Legacy camps take priority over overlapping scenery without relocating or rewriting saved objects.
+export function isDepleted(state,object){return (state.depleted[object.id]||0)>state.time||((object.type==='tree'||object.type==='stone'||object.type==='crystal')&&(state.buildings??[]).some(b=>resourceIntersectsBuilding(object,b)));}
 export function interact(state,object,{defer=false}={}){if(!object)return '靠近树木、石头、植物或人物后按 E。';if(state.time-state.interactAt<.45)return '';state.interactAt=state.time;
   if(object.type==='npc'){
     if(object.id==='keeper'){if(state.quest===6)return '阿岚：归航灯塔又亮起来了。谢谢你，旅人。海上的人有了回家的方向。';if(state.quest===0)state.quest=1;return '阿岚：风暴熄灭了归航灯塔。先采些木材和石料，做一把石斧，我们会需要它。';}

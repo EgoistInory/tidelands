@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>建造净空与旧营地资源恢复隔离验收</title>
+<style>html,body,iframe{margin:0;width:100%;height:100%;border:0}body{overflow:hidden}output{position:fixed;height:0;overflow:hidden}</style>
+<iframe title="明确材料、位置与时间fixture的真实main输入验收"></iframe><output>加载隔离fixture，不是普通旅程…</output>
+<script type="module">
+const params=new URLSearchParams(location.search),baseline=params.get('baseline')==='1',kind=['blocked','depleted','legacy','clear'].includes(params.get('case'))?params.get('case'):'blocked';
+const root=new URL(baseline?'../dist/build-clearance-baseline/tidelands-local/':'../',location.href),response=await fetch(new URL('index.html',root)),doc=new DOMParser().parseFromString(await response.text(),'text/html'),base=doc.createElement('base');base.href=root.href;doc.head.prepend(base);doc.body.dataset.testHarness='true';for(const script of doc.querySelectorAll('script'))script.remove();
+const setup=doc.createElement('script');setup.type='module';setup.textContent=`
+import {boot} from './src/main.js';import {WorldView} from './src/scene.js';import {freshGame,isDepleted} from './src/game.js';import {createWorld} from './src/world.js';
+const kind=${JSON.stringify(kind)},baseline=${baseline},state=freshGame();state.quest=2;state.player.x=-80;state.player.z=kind==='clear'?112:98;state.player.yaw=0;state.player.hp=62;Object.assign(state.inventory,{wood:30,stone:30,fiber:30,axe:1});state.selected='axe';
+if(kind==='depleted')state.depleted['starter-1']=state.time+150;
+if(kind==='legacy'){state.time=300;state.depleted['starter-1']=150;state.buildings=[{id:'qa-existing-camp',type:'campfire',x:-80,z:104}];state.quest=3;}
+const output=document.createElement('output');output.id='clearance-state';output.style.cssText='position:fixed;height:0;overflow:hidden;pointer-events:none';document.body.append(output);const stone=createWorld().objects.find(o=>o.id==='starter-1'),draw=WorldView.prototype.draw;
+WorldView.prototype.draw=function(s,...args){const result=draw.call(this,s,...args);let renderedHidden=null;for(const batch of this.batches){const i=batch.entries.findIndex(o=>o.id===stone.id);if(i>=0){renderedHidden=batch.hidden.has(i);break;}}output.textContent=JSON.stringify({kind,baseline,player:s.player,quest:s.quest,inventory:s.inventory,buildings:s.buildings,depleted:s.depleted,stoneHidden:isDepleted(s,stone),renderedHidden,near:args[0]?.id??null,viewport:[innerWidth,innerHeight],glError:this.renderer.getContext().getError(),scope:'Explicit position/material/quest/time/legacy-building fixture; real production main input, no ordinary save or 150-second realtime claim.'});return result;};boot({initialState:state,storageKey:'tidelands-clearance-qa-'+kind+'-'+baseline});`;
+doc.body.append(setup);document.querySelector('iframe').srcdoc='<!doctype html>'+doc.documentElement.outerHTML;
+</script></html>
