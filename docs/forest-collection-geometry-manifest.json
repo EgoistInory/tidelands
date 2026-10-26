@@ -1,0 +1,161 @@
+{
+  "tool": {
+    "version": "meshoptimizer v0.24",
+    "sha256": "68f7b94830e3be31b7f08eb09c01b5c3867c74437d27807629541b3874bab567",
+    "license": "MIT",
+    "source": "https://github.com/zeux/meshoptimizer/tree/v0.24"
+  },
+  "models": {
+    "fir_sapling": {
+      "primitives": [
+        {
+          "mesh": 0,
+          "primitive": 0,
+          "inputTriangles": 546,
+          "outputTriangles": 546,
+          "relativeError": 0,
+          "vertices": 388
+        },
+        {
+          "mesh": 0,
+          "primitive": 1,
+          "inputTriangles": 156856,
+          "outputTriangles": 8000,
+          "relativeError": 0.0017940475372597575,
+          "vertices": 11810
+        },
+        {
+          "mesh": 1,
+          "primitive": 0,
+          "inputTriangles": 510,
+          "outputTriangles": 510,
+          "relativeError": 0,
+          "vertices": 360
+        },
+        {
+          "mesh": 1,
+          "primitive": 1,
+          "inputTriangles": 150366,
+          "outputTriangles": 8000,
+          "relativeError": 0.0022902158088982105,
+          "vertices": 13787
+        },
+        {
+          "mesh": 2,
+          "primitive": 0,
+          "inputTriangles": 384,
+          "outputTriangles": 384,
+          "relativeError": 0,
+          "vertices": 268
+        },
+        {
+          "mesh": 2,
+          "primitive": 1,
+          "inputTriangles": 124359,
+          "outputTriangles": 8000,
+          "relativeError": 0.0024897463154047728,
+          "vertices": 13609
+        }
+      ],
+      "geometryBytes": 1592384,
+      "inputTriangles": 433021,
+      "outputTriangles": 25440
+    },
+    "fern_02": {
+      "primitives": [
+        {
+          "mesh": 0,
+          "primitive": 0,
+          "inputTriangles": 2384,
+          "outputTriangles": 2384,
+          "relativeError": 0,
+          "vertices": 1660
+        },
+        {
+          "mesh": 1,
+          "primitive": 0,
+          "inputTriangles": 2248,
+          "outputTriangles": 2248,
+          "relativeError": 0,
+          "vertices": 1568
+        },
+        {
+          "mesh": 2,
+          "primitive": 0,
+          "inputTriangles": 784,
+          "outputTriangles": 784,
+          "relativeError": 0,
+          "vertices": 544
+        },
+        {
+          "mesh": 3,
+          "primitive": 0,
+          "inputTriangles": 816,
+          "outputTriangles": 816,
+          "relativeError": 0,
+          "vertices": 565
+        }
+      ],
+      "geometryBytes": 213568,
+      "inputTriangles": 6232,
+      "outputTriangles": 6232
+    },
+    "rock_moss_set_01": {
+      "primitives": [
+        {
+          "mesh": 0,
+          "primitive": 0,
+          "inputTriangles": 11000,
+          "outputTriangles": 1799,
+          "relativeError": 0.00954899936914444,
+          "vertices": 1156
+        },
+        {
+          "mesh": 1,
+          "primitive": 0,
+          "inputTriangles": 10996,
+          "outputTriangles": 1799,
+          "relativeError": 0.008276380598545074,
+          "vertices": 1236
+        },
+        {
+          "mesh": 2,
+          "primitive": 0,
+          "inputTriangles": 5000,
+          "outputTriangles": 1800,
+          "relativeError": 0.007166179828345776,
+          "vertices": 1085
+        },
+        {
+          "mesh": 3,
+          "primitive": 0,
+          "inputTriangles": 10589,
+          "outputTriangles": 1800,
+          "relativeError": 0.009553106501698494,
+          "vertices": 1088
+        },
+        {
+          "mesh": 4,
+          "primitive": 0,
+          "inputTriangles": 16548,
+          "outputTriangles": 1800,
+          "relativeError": 0.005686020478606224,
+          "vertices": 1001
+        },
+        {
+          "mesh": 5,
+          "primitive": 0,
+          "inputTriangles": 8994,
+          "outputTriangles": 1800,
+          "relativeError": 0.006837744731456041,
+          "vertices": 1054
+        }
+      ],
+      "geometryBytes": 341416,
+      "inputTriangles": 63127,
+      "outputTriangles": 10798
+    }
+  },
+  "productionIntegrated": false,
+  "visualAccepted": false
+}

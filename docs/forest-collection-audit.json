@@ -1,0 +1,255 @@
+{
+  "verified": true,
+  "acquiredSourceBytes": 28507028,
+  "sourceFiles": 18,
+  "sourceVariants": 13,
+  "boundaryTests": 3,
+  "nativeImagesViewed": 23,
+  "comparisons": [
+    {
+      "revision": 1,
+      "scene": "coast",
+      "baselineTriangles": 2514552,
+      "candidateTriangles": 4490672,
+      "baselineCalls": 339,
+      "candidateCalls": 353
+    },
+    {
+      "revision": 1,
+      "scene": "forest",
+      "baselineTriangles": 2101379,
+      "candidateTriangles": 4077499,
+      "baselineCalls": 374,
+      "candidateCalls": 388
+    },
+    {
+      "revision": 1,
+      "scene": "highland",
+      "baselineTriangles": 1008733,
+      "candidateTriangles": 2984853,
+      "baselineCalls": 330,
+      "candidateCalls": 344
+    },
+    {
+      "revision": 1,
+      "scene": "shoal",
+      "baselineTriangles": 3260951,
+      "candidateTriangles": 5237071,
+      "baselineCalls": 596,
+      "candidateCalls": 610
+    },
+    {
+      "revision": 1,
+      "scene": "camp",
+      "baselineTriangles": 2568508,
+      "candidateTriangles": 4544628,
+      "baselineCalls": 285,
+      "candidateCalls": 299
+    },
+    {
+      "revision": 2,
+      "scene": "coast",
+      "baselineTriangles": 2514552,
+      "candidateTriangles": 2750364,
+      "baselineCalls": 339,
+      "candidateCalls": 396
+    },
+    {
+      "revision": 2,
+      "scene": "forest",
+      "baselineTriangles": 2101379,
+      "candidateTriangles": 2707459,
+      "baselineCalls": 374,
+      "candidateCalls": 412
+    },
+    {
+      "revision": 2,
+      "scene": "highland",
+      "baselineTriangles": 1008733,
+      "candidateTriangles": 1129215,
+      "baselineCalls": 330,
+      "candidateCalls": 336
+    },
+    {
+      "revision": 2,
+      "scene": "shoal",
+      "baselineTriangles": 3260951,
+      "candidateTriangles": 3332405,
+      "baselineCalls": 596,
+      "candidateCalls": 659
+    },
+    {
+      "revision": 2,
+      "scene": "camp",
+      "baselineTriangles": 2568508,
+      "candidateTriangles": 3316010,
+      "baselineCalls": 285,
+      "candidateCalls": 341
+    }
+  ],
+  "motionFrames": 180,
+  "motionMetres": 21.000000000000725,
+  "originalProductionInputsUnchanged": 97,
+  "originalPackageSha256": "7c28ea591fe1fedb598d2c8caabfecff12cf0eb17bd90bcf7b0bee43561261c8",
+  "candidateFiles": {
+    "dist/forest-collection-candidate/texture-manifest.json": {
+      "sha256": "cb499e0386239fb86f69b74bb1637f5649ae91d2fe20d2a9b300be897d059474",
+      "bytes": 3676
+    },
+    "dist/forest-collection-candidate/geometry-manifest.json": {
+      "sha256": "a0be8d7c69b48797f52bb7f6db4221f6d3b5728c449de786878ebfeaec43c739",
+      "bytes": 4034
+    },
+    "dist/forest-collection-candidate/fir_sapling/fir_sapling.gltf": {
+      "sha256": "d9dd2ae0a70ee926efeff5213da3a4e49b6f9fb4d93b74989b1364581b206f33",
+      "bytes": 6928
+    },
+    "dist/forest-collection-candidate/fir_sapling/fir_sapling.bin": {
+      "sha256": "f7cadc9f2b21efb0713849eba4e507f37fd83f61ccd277cffa33baec3fb70366",
+      "bytes": 1592384
+    },
+    "dist/forest-collection-candidate/fern_02/fern_02.gltf": {
+      "sha256": "f6a84d6d40ce41337b58b8a4cd19469afa813dfc72510b78d3340ad541481e94",
+      "bytes": 4569
+    },
+    "dist/forest-collection-candidate/fern_02/fern_02.bin": {
+      "sha256": "7afbcaaf9afedf1958d687390339ddec5fef213d34e8aab4c435be4e3618100f",
+      "bytes": 213568
+    },
+    "dist/forest-collection-candidate/rock_moss_set_01/rock_moss_set_01.bin": {
+      "sha256": "68d2c6157fa9bb3420591ef2540b475284623d9a434677f3b1d94f52acba3c2c",
+      "bytes": 341416
+    },
+    "dist/forest-collection-candidate/rock_moss_set_01/rock_moss_set_01.gltf": {
+      "sha256": "ee9f9ccc99357fbb1c72bd0615fd20c51c4fd3ee2d1caa370d0b13aa582cf343",
+      "bytes": 6664
+    },
+    "dist/forest-collection-candidate/rock_moss_set_01/textures/rock_moss_set_01_rough_1k.jpg": {
+      "sha256": "14c649b4402bdcce1331e95de3bc375eef399498e51e8d7a0b567b03eb994302",
+      "bytes": 30958
+    },
+    "dist/forest-collection-candidate/rock_moss_set_01/textures/rock_moss_set_01_nor_gl_1k.jpg": {
+      "sha256": "866ae06b9497809b9da2737fd93475aa31d24aafa25ffb424a313f9c47d48096",
+      "bytes": 63354
+    },
+    "dist/forest-collection-candidate/rock_moss_set_01/textures/rock_moss_set_01_diff_1k.jpg": {
+      "sha256": "a396e96249a2c4f96996fdc218f19fb2170d609f7d0d7f96d7ad76625aded928",
+      "bytes": 58564
+    },
+    "dist/forest-collection-candidate/fern_02/textures/fern_02_diff_1k.jpg": {
+      "sha256": "016fa05300368c6a2edee55acddc329fb421f080a64d0e81b7369a4e787b66ab",
+      "bytes": 34324
+    },
+    "dist/forest-collection-candidate/fern_02/textures/fern_02_arm_1k.jpg": {
+      "sha256": "3653599a1d8d56e65b9f3982531cfd70594d888f1bc268f19db9d95a00cf18ad",
+      "bytes": 38043
+    },
+    "dist/forest-collection-candidate/fern_02/textures/fern_02_nor_gl_1k.jpg": {
+      "sha256": "365ab0c62b9218b6decf8120f351efdc4177e78458d9cf1b152493f3b4b1a345",
+      "bytes": 35794
+    },
+    "dist/forest-collection-candidate/fir_sapling/textures/fir_sapling_twigs_nor_gl_1k.jpg": {
+      "sha256": "3e9921508bc1c7dec208530351d33a5ee41096caaaf897c4bd5050b037eed62d",
+      "bytes": 57801
+    },
+    "dist/forest-collection-candidate/fir_sapling/textures/fir_sapling_twigs_diff_1k.jpg": {
+      "sha256": "618b611fe58fb8f47c00e505f01c0e8a0d90c54ec01ba56c362dfad1755c9c70",
+      "bytes": 30953
+    },
+    "dist/forest-collection-candidate/fir_sapling/textures/fir_sapling_branches_diff_1k.jpg": {
+      "sha256": "24ba352a6bf7b30fa67110531d30076d2b53c59e2931cdfaa6f8e8e3651507e2",
+      "bytes": 74779
+    },
+    "dist/forest-collection-candidate/fir_sapling/textures/fir_sapling_twigs_arm_1k.jpg": {
+      "sha256": "6108eaf768cbcb9e791b3eacb5a58ffb0713617aaa168b933f6060d7df310a93",
+      "bytes": 35969
+    },
+    "dist/forest-collection-candidate/fir_sapling/textures/fir_sapling_branches_nor_gl_1k.jpg": {
+      "sha256": "3b55456ce975a4069595644bb2fad54e795f3bd438e6e739bfe23b3e64c8d3c6",
+      "bytes": 126512
+    },
+    "dist/forest-collection-candidate/fir_sapling/textures/fir_sapling_branches_arm_1k.jpg": {
+      "sha256": "24ab4be162114fbb15a3c70670b597ae0b27666454bacbe26aaa202fc8feec17",
+      "bytes": 66230
+    },
+    "dist/forest-collection-fulltree/fir_sapling/fir_sapling.gltf": {
+      "sha256": "a9466ca9d8c5b9b2eeeeafd3ce426f8912dcbd98a7281bad8c734833eb35b186",
+      "bytes": 10979
+    },
+    "dist/forest-collection-fulltree/fir_sapling/fir_sapling.bin": {
+      "sha256": "efdebfae6ee4b3ea20c7a85eb9f798ff4953259a3616bcff0b7e580b00f34f40",
+      "bytes": 21677180
+    },
+    "dist/forest-collection-fulltree/fern_02/fern_02.gltf": {
+      "sha256": "f6a84d6d40ce41337b58b8a4cd19469afa813dfc72510b78d3340ad541481e94",
+      "bytes": 4569
+    },
+    "dist/forest-collection-fulltree/fern_02/fern_02.bin": {
+      "sha256": "7afbcaaf9afedf1958d687390339ddec5fef213d34e8aab4c435be4e3618100f",
+      "bytes": 213568
+    },
+    "dist/forest-collection-fulltree/rock_moss_set_01/rock_moss_set_01.bin": {
+      "sha256": "68d2c6157fa9bb3420591ef2540b475284623d9a434677f3b1d94f52acba3c2c",
+      "bytes": 341416
+    },
+    "dist/forest-collection-fulltree/rock_moss_set_01/rock_moss_set_01.gltf": {
+      "sha256": "ee9f9ccc99357fbb1c72bd0615fd20c51c4fd3ee2d1caa370d0b13aa582cf343",
+      "bytes": 6664
+    },
+    "dist/forest-collection-fulltree/rock_moss_set_01/textures/rock_moss_set_01_rough_1k.jpg": {
+      "sha256": "14c649b4402bdcce1331e95de3bc375eef399498e51e8d7a0b567b03eb994302",
+      "bytes": 30958
+    },
+    "dist/forest-collection-fulltree/rock_moss_set_01/textures/rock_moss_set_01_nor_gl_1k.jpg": {
+      "sha256": "866ae06b9497809b9da2737fd93475aa31d24aafa25ffb424a313f9c47d48096",
+      "bytes": 63354
+    },
+    "dist/forest-collection-fulltree/rock_moss_set_01/textures/rock_moss_set_01_diff_1k.jpg": {
+      "sha256": "a396e96249a2c4f96996fdc218f19fb2170d609f7d0d7f96d7ad76625aded928",
+      "bytes": 58564
+    },
+    "dist/forest-collection-fulltree/fern_02/textures/fern_02_diff_1k.jpg": {
+      "sha256": "016fa05300368c6a2edee55acddc329fb421f080a64d0e81b7369a4e787b66ab",
+      "bytes": 34324
+    },
+    "dist/forest-collection-fulltree/fern_02/textures/fern_02_arm_1k.jpg": {
+      "sha256": "3653599a1d8d56e65b9f3982531cfd70594d888f1bc268f19db9d95a00cf18ad",
+      "bytes": 38043
+    },
+    "dist/forest-collection-fulltree/fern_02/textures/fern_02_nor_gl_1k.jpg": {
+      "sha256": "365ab0c62b9218b6decf8120f351efdc4177e78458d9cf1b152493f3b4b1a345",
+      "bytes": 35794
+    },
+    "dist/forest-collection-fulltree/fir_sapling/textures/fir_sapling_twigs_nor_gl_1k.jpg": {
+      "sha256": "3e9921508bc1c7dec208530351d33a5ee41096caaaf897c4bd5050b037eed62d",
+      "bytes": 57801
+    },
+    "dist/forest-collection-fulltree/fir_sapling/textures/fir_sapling_twigs_diff_1k.jpg": {
+      "sha256": "618b611fe58fb8f47c00e505f01c0e8a0d90c54ec01ba56c362dfad1755c9c70",
+      "bytes": 30953
+    },
+    "dist/forest-collection-fulltree/fir_sapling/textures/fir_sapling_branches_diff_1k.jpg": {
+      "sha256": "24ba352a6bf7b30fa67110531d30076d2b53c59e2931cdfaa6f8e8e3651507e2",
+      "bytes": 74779
+    },
+    "dist/forest-collection-fulltree/fir_sapling/textures/fir_sapling_twigs_arm_1k.jpg": {
+      "sha256": "6108eaf768cbcb9e791b3eacb5a58ffb0713617aaa168b933f6060d7df310a93",
+      "bytes": 35969
+    },
+    "dist/forest-collection-fulltree/fir_sapling/textures/fir_sapling_branches_nor_gl_1k.jpg": {
+      "sha256": "3b55456ce975a4069595644bb2fad54e795f3bd438e6e739bfe23b3e64c8d3c6",
+      "bytes": 126512
+    },
+    "dist/forest-collection-fulltree/fir_sapling/textures/fir_sapling_branches_arm_1k.jpg": {
+      "sha256": "24ab4be162114fbb15a3c70670b597ae0b27666454bacbe26aaa202fc8feec17",
+      "bytes": 66230
+    }
+  },
+  "firstPrunedFoliageRejected": true,
+  "wholeCollectionProductionAccepted": false,
+  "productionIntegrated": false,
+  "gpuOrEnduranceAccepted": false,
+  "ordinarySaveChanged": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false
+}
