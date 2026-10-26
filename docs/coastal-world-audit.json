@@ -1,0 +1,123 @@
+{
+  "verified": true,
+  "productionIntegrated": false,
+  "runtimeInputsUnchanged": 110,
+  "nativeImagesViewed": 36,
+  "distanceGeometryPairs": 6,
+  "worldFixturePairs": 5,
+  "worldPairs": [
+    {
+      "scene": "coast",
+      "cameraMatched": true,
+      "callsDelta": 80,
+      "trianglesDelta": 405811
+    },
+    {
+      "scene": "shoal",
+      "cameraMatched": true,
+      "callsDelta": 48,
+      "trianglesDelta": 754585
+    },
+    {
+      "scene": "grove",
+      "cameraMatched": true,
+      "callsDelta": 0,
+      "trianglesDelta": 0
+    },
+    {
+      "scene": "highland",
+      "cameraMatched": true,
+      "callsDelta": 0,
+      "trianglesDelta": 0
+    },
+    {
+      "scene": "camp",
+      "cameraMatched": true,
+      "callsDelta": 68,
+      "trianglesDelta": 357343
+    }
+  ],
+  "alphaCutoffLossReproduced": true,
+  "msaaOpacityDiagnosed": true,
+  "farLightingAndTransitionAccepted": false,
+  "selectedCoastalNodes": 133,
+  "bodyEnvelopeExceedances": 133,
+  "bodyCollisionAccepted": false,
+  "maxWoodRadiusBelowAvatarRange": [
+    2.183110278116803,
+    5.251384178546967
+  ],
+  "windFrames": 180,
+  "windMotion": {
+    "frames": 180,
+    "elapsedMs": 5050.034000000014,
+    "p95RafMs": 33.5,
+    "maxRafMs": 49.30000000001746,
+    "scope": "180 fixed tick wind/render frames, fixed actor and camera; not GPU timing, traversal or long-run proof"
+  },
+  "worldUnitFactor": 1.621247568827334,
+  "woodySurfaceVoxels": {
+    "path": "dist/canopy-authored-candidate/woody-surface-voxels.json",
+    "bytes": 44053,
+    "sha256": "4bfd187b180b1ce4a652a1322ddd67aceb71789068fa8fa169f42c5d39a14178",
+    "cellSize": 0.2,
+    "occupiedCells": {
+      "island_tree_01": 2425,
+      "island_tree_02": 1496,
+      "island_tree_03": 606
+    }
+  },
+  "ordinarySaveTouched": false,
+  "currentGpuOrEnduranceAccepted": false,
+  "fullTestsRerun": true,
+  "fullTestsPassed": 337,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "images": {
+    "canopy-distance-baseline-island_tree_01-0-source.png": "f383dabd27ba4838a1bf06fc8a23755dfc52685ee0b0dbb66ea83793c3a370c6",
+    "canopy-distance-msaa-island_tree_01-0-source.png": "3aeae302a072d318ab4d5b47b7ddab41158455d2f6aefb8310bd907be74813ad",
+    "canopy-distance-baseline-island_tree_01-0-near.png": "b0ad3d7316f007266246a6ee11848bc0ebe9291cf31333454844b76369d7e293",
+    "canopy-distance-msaa-island_tree_01-0-near.png": "aace7e5bdf1ecfd87058f0a6e99fb7478d044e50056f167fd635cc2cd439a7cf",
+    "canopy-distance-baseline-island_tree_01-90-source.png": "bfa1b294abf219702daf444aa1da0deb71d46cf4cc6ce969b5708d3a08e9fb28",
+    "canopy-distance-msaa-island_tree_01-90-source.png": "f1710abb70fe4b7d170d334b740d63fbdc533acbd615753b0d79f21d937276ff",
+    "canopy-distance-baseline-island_tree_01-90-near.png": "24e18172d70bb88d3ee41c3e3bdc05fb48a1e32340c71c2ce048afb54282a75d",
+    "canopy-distance-msaa-island_tree_01-90-near.png": "9cb3c321f2d5f4d3c5e5ea30b8cd2bf58a8a2536e2b739a0c727e22fbfed9680",
+    "canopy-distance-baseline-island_tree_02-0-source.png": "b280cd0370db2c31ff270d05c8b77f2a73a473d88a5d12dfb4bfca0f82fc9a56",
+    "canopy-distance-msaa-island_tree_02-0-source.png": "6a5a411fc5f92848840b974460ebb776d38611ef83bb4d063d444fe88a7207d0",
+    "canopy-distance-baseline-island_tree_02-0-near.png": "091fdcf3d4053a34355675be9b7618dc2515d75cef5c9b17c5374fef94d6edec",
+    "canopy-distance-msaa-island_tree_02-0-near.png": "bd0a7ef571335ec46b7e328c2ab75b7fcf23940ef640db5468ff62e36ef6175f",
+    "canopy-distance-baseline-island_tree_02-90-source.png": "a81446202993cd0a93e099c75c8e4e42223f7eb87221602d7e8adbd02189765d",
+    "canopy-distance-msaa-island_tree_02-90-source.png": "0345e9ea82003fd8f097f2574fc60e841432eff60ef5eb4d5ca15a915ce755ce",
+    "canopy-distance-baseline-island_tree_02-90-near.png": "fba09dbb2ff17f14fc5bc6d56d2d2f0bccfe98d554fdfb500c2dce7df593bb3c",
+    "canopy-distance-msaa-island_tree_02-90-near.png": "1d893ec0a097ca92eb71642a395e5f28572ba53e90f7b24b730099f9fa74817b",
+    "canopy-distance-baseline-island_tree_03-0-source.png": "342b2472a9b6c6d68d94462d1264e4f021c9469d43db82c8011c603809c5ada0",
+    "canopy-distance-msaa-island_tree_03-0-source.png": "c599b0ec1dba8415a0806445f916a9027a3cb0534a7e76a8284b8811ba4dd9e8",
+    "canopy-distance-baseline-island_tree_03-0-near.png": "653b477b01aa02b68d0ec3b3f61c7ea42332b6b348f752234dc560a76deaff20",
+    "canopy-distance-msaa-island_tree_03-0-near.png": "ba712c02ce75f67a7ccaccf89e1e82aaf0b168813d984e8d0aa984e1a427710e",
+    "canopy-distance-baseline-island_tree_03-90-source.png": "a76fc1571dda3b8a208349fad45cd88e470d7d248e997cc34345952c1571d204",
+    "canopy-distance-msaa-island_tree_03-90-source.png": "9d413bca6af48e8bc12a1e1830a66dd5b66e45eb568d3dac1b8e8228bdabbbf8",
+    "canopy-distance-baseline-island_tree_03-90-near.png": "55d6334b1bbbc8a48f34fb1ec3a5c3918bd3d329c077f59fb4f43298fdd7dcdc",
+    "canopy-distance-msaa-island_tree_03-90-near.png": "34d836eb7b1e65c4d4df1218bbcb67bcbb125563dd350be2ed99bc9ec76f43eb",
+    "coastal-world-coast-baseline.png": "a1fd953b6fef5c4e58d6aeef00571d2226a40294f9fa79f9ac2810c8c6c182e7",
+    "coastal-world-coast-candidate.png": "2db67e8fe17d47bb202ec7fa69209fd8deeb9c010e8b1394bf771506b949beca",
+    "coastal-world-shoal-baseline.png": "d885e56a46a76574bfc653da328c0389070593dc5aaf495723401dcb791768fc",
+    "coastal-world-shoal-candidate.png": "9be2f4dd68d9541481d0b500c9465d086fc030ca37e2299ff60f1796f00d2037",
+    "coastal-world-grove-baseline.png": "cb25078978ebfb65576b007dd5783109959048783bed01e8d0212360e400cdda",
+    "coastal-world-grove-candidate.png": "93aec130e5a977c68318d5b3ec77c674e530df1cee036b5a1b2ad4ee27fc4e5d",
+    "coastal-world-highland-baseline.png": "7bf0e7981a217d68becb3ee112f2856d7087492832041bc1b78ba674c74ad300",
+    "coastal-world-highland-candidate.png": "c0cb577f392cc9d5483f2c827d3b36a8e82ad5558965ec1cd601077fe40d6342",
+    "coastal-world-camp-baseline.png": "c0b4ee03bc93f4254950507f6de5751d98c9cfa330dc7e8c7ab94c3d9c81df2b",
+    "coastal-world-camp-candidate.png": "163c0f9df10e38d7608d495be2b4e0606538eecf341bbc04daf89039daf8c9c6",
+    "coastal-world-wind-start.png": "850ad145f3867a78770ca418d3d6d409cb3ab1db13acfc462a48198ee0794ffc",
+    "coastal-world-wind-final.png": "131c22ec3ada46f4ef0da5115e45f249ecf6fb0d8c5e5c547b9bd36c7f749a78"
+  },
+  "probeSources": {
+    "tests/authored-canopy-review.js": "7fc95aeb56c60dd89f65facd238eb70ca77672887edc8feb267621fc1e028f63",
+    "tests/coastal-canopy-world.html": "fd8822d073cd0997d0a294dc22cd5b7c99889f0a80a337895b67ba400048ca96",
+    "tests/coastal-canopy-world.js": "ab771a933d064bf7240e4f8fc38d911f52f59dd535c5ebc053d7ab1589a6e1f2",
+    "tools/inspect_coastal_contact.mjs": "66c39b0cd6b11f2d2b2be6baf856f1ab3f2d6581d7c6fd60425f7af2fb62f722",
+    "tools/coastal-wood-voxels.mjs": "46f3b4a9efd59b1295ea4ae925e1bce9a98112c3594775da75cd72b12b74d859",
+    "tests/coastal-wood-voxels.test.js": "e9f0f743df55bdc53930a1f10badc00c5464e81921858bbec8e991fa6965a381",
+    "docs/coastal-world-full-tests.txt": "6e47fcea47f46b0da7e6a827eaedb93363edcdaa6a78da76d01d316525b89bde"
+  }
+}
