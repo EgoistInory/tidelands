@@ -1,0 +1,81 @@
+{
+  "verified": true,
+  "runtimeFiles": 181,
+  "packageSha256": "339b94dedad2a2749ac390a06a4c6d8e97213b07623c5e969d8a0d1a3b994913",
+  "currentSourceShortGpuEvidenceVerified": true,
+  "gpuQueries": 600,
+  "runs": [
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        1080
+      ],
+      "samples": 300,
+      "gpuP95Ms": {
+        "shore": 14.065,
+        "forest-combat": 14.2921,
+        "highland": 9.2778,
+        "amber-swim": 15.4441,
+        "night-camp": 14.6366
+      },
+      "gpuMaxMs": 15.9576,
+      "scriptedCombatHits": 3
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        844
+      ],
+      "samples": 300,
+      "gpuP95Ms": {
+        "shore": 5.4783,
+        "forest-combat": 6.8224,
+        "highland": 3.6493,
+        "amber-swim": 9.69,
+        "night-camp": 6.7668
+      },
+      "gpuMaxMs": 9.8614,
+      "scriptedCombatHits": 3
+    }
+  ],
+  "staticSceneImagesViewed": 5,
+  "motionFrames": 180,
+  "motionDistance": 21.000000000000725,
+  "acceptedImagesViewed": 8,
+  "failedNarrowArtAttemptRetained": true,
+  "actualNarrowGpuVerified": true,
+  "creatureSupportRows": 158,
+  "creatureContactMinimumOver15cm": 0,
+  "visibleFarProxyMinimumOver15cm": 0,
+  "maxIndividualContactGap": 0.2672154849565729,
+  "completeFootContactOrNaturalnessAccepted": false,
+  "fullVisualQualityAccepted": false,
+  "currentEnduranceAccepted": false,
+  "physicalDeviceVerified": false,
+  "audioListeningVerified": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "images": {
+    "coastal-overall-coast.png": "92fc630920b01e53dbae0e8bf50555d4bcb5a863b9de091b2e30cddbf05e08b6",
+    "coastal-overall-forest.png": "3c4093f6e189cdf81f877b1b9432a847b784971cac980963cf7acde546f8bdac",
+    "coastal-overall-highland.png": "60cdeefdf0ea03fc3f6e226f87d411695f7883f58505271de4bbaee1999b5fb3",
+    "coastal-overall-shoal.png": "56a385942c94a0741bd65848c84195deb8b8ea53ea982085509e8e7360963829",
+    "coastal-overall-camp.png": "edb2bed740c7ea85df2fd23bf48092c6194496594996f4a22f1d7cc0c828511f",
+    "coastal-overall-forest-motion.png": "3f953ffebe0ba8f4cf52a7de7761675407df3333a4a572fc75a47014cf3df22e",
+    "coastal-current-gpu-desktop.png": "4ef89ee3148abc287bf4e4a4ce36915e852a1a42dc48c51fa9afbc5b4560c184",
+    "coastal-current-gpu-second.png": "0a147bafda3fbd9c9166c0b86295a9d12522feb2e8060b43a1f2de9206ab83ef"
+  },
+  "sources": {
+    "tests/current-coastal-gpu.html": "05a24b18285129aafdcd889d18bb8aeb27a54f297f5b6a95b9d60e20ed845c57",
+    "tests/current-coastal-overall.html": "2f9604091afe142316098f4476744efe10c6361e8e493fd45333f79ea3ccc281",
+    "tools/audit_current_creature_support.mjs": "e65759361794860d640e38b997a44edae72c763573e210692776495f3f8bacc3"
+  }
+}

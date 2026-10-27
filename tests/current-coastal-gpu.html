@@ -1,0 +1,78 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>当前181输入海岸与整场GPU采样</title>
+<style>html,body{height:100%;margin:0;background:#192723;color:#efe6cf;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:8px}button{padding:8px}pre{height:150px;overflow:auto;white-space:pre-wrap;font:11px monospace}canvas{flex:1;min-height:0;width:100%}nav{position:absolute;z-index:2;inset:0 0 auto;background:#192723dd}pre{position:absolute;z-index:2;top:60px;left:8px;width:260px;max-height:95px;background:#192723aa;pointer-events:none}canvas{position:absolute;inset:0;flex:none;width:100%;height:100%}</style>
+<nav>当前181输入海岸与整场GPU采样 · 五阶段会传送/准备战斗与建筑fixture · 无存档或音频 <button id="run" disabled>采集五阶段GPU绘制</button></nav>
+<pre id="result">加载表面…</pre><canvas aria-label="生产绘制GPU计时fixture，不是完整旅程或真机"></canvas>
+<script type="module">
+import {loadWoodlandDressing} from '../src/woodland.js';
+import {WorldView} from '../src/scene.js';
+import {prepareCoastalVisual,bindCoastalVisual} from '../src/coastal.js';
+import {createWorld,terrain} from '../src/world.js';
+import {freshGame,movePlayer,tick,nearest,nearestEnemy,attack,resolveAttack,eat} from '../src/game.js';
+import {loadAuthoredCast} from '../src/authored-assets.js';
+import {attackImpacts} from '../src/impact-feedback.js';
+import {ATTACK_IMPACT} from '../src/action-timing.js';
+// API contract: https://registry.khronos.org/webgl/extensions/EXT_disjoint_timer_query_webgl2/
+const scenes=[{name:'shore',x:-90,z:140,time:240},{name:'forest-combat',x:132,z:-26,time:240},{name:'highland',x:-75,z:-205,time:360},{name:'amber-swim',x:190,z:248,time:120},{name:'night-camp',x:-56,z:49,time:0}];
+const world=createWorld(),canvas=document.querySelector('canvas'),out=document.querySelector('pre'),button=document.querySelector('button'),view=new WorldView(canvas,world),gl=view.renderer.getContext(),ext=gl.getExtension('EXT_disjoint_timer_query_webgl2');
+const authoredCast=await loadAuthoredCast();view.installAuthoredCast(authoredCast);const dressing=await loadWoodlandDressing(world.objects);view.installWoodlandDressing(dressing);view.coastal=bindCoastalVisual(view,await prepareCoastalVisual());
+const pendingQueries=new Set(),round=n=>Math.round(n*10000)/10000,raf=()=>new Promise(requestAnimationFrame);
+let activeQuery=null;const nativeRender=view.renderer.render.bind(view.renderer);
+view.renderer.render=(...args)=>{
+  if(activeQuery)gl.beginQuery(ext.TIME_ELAPSED_EXT,activeQuery);
+  try{return nativeRender(...args);}finally{if(activeQuery)gl.endQuery(ext.TIME_ELAPSED_EXT);}
+};
+window.addEventListener('resize',()=>view.resize());
+let state=freshGame(),pendingAttack=null,last=0,distance=0,hits=0,hidden=false,disjointCount=0;
+const summary=values=>{const sorted=[...values].sort((a,b)=>a-b);return {samples:values.length,min:round(sorted[0]),median:round(sorted[Math.floor(sorted.length*.5)]),p95:round(sorted[Math.floor(sorted.length*.95)]),max:round(sorted.at(-1))};};
+function configure(s){
+  state=freshGame();Object.assign(state.player,{x:s.x,z:s.z});state.respawn={x:s.x,z:s.z};state.time=s.time;state.inventory.sword=1;state.inventory.berry=100;state.selected='sword';state.quest=6;
+  if(s.name==='forest-combat')for(const [i,e] of state.enemies.slice(0,2).entries())Object.assign(e,{x:s.x+3+i,z:s.z+1,homeX:s.x+3+i,homeZ:s.z+1,attackAt:s.time});
+  if(s.name==='night-camp')state.buildings=[{id:'qa-fire',type:'campfire',x:-56,z:56},{id:'qa-tent',type:'tent',x:-65,z:49},{id:'qa-bench',type:'workbench',x:-47,z:49}];
+  view.gatherAt=view.hurtAt=-100;view.player.userData.lastPosition=null;view.sync(state);view.yaw=.15;view.camera.position.set(s.x+5,Math.max(terrain(s.x,s.z),0)+12,s.z+20);
+  pendingAttack=null;last=0;distance=hits=0;
+}
+function draw(now,s,index){
+  hidden||=document.hidden;const dt=last?Math.min(.05,(now-last)/1000):1/60;last=now;
+  const enemy=s.name==='forest-combat'?nearestEnemy(state):null,angle=index*.025,before={x:state.player.x,z:state.player.z};
+  movePlayer(state,world.objects,enemy?enemy.x-before.x:Math.sin(angle),enemy?enemy.z-before.z:Math.cos(angle),dt,s.name==='highland');
+  const moved=Math.hypot(state.player.x-before.x,state.player.z-before.z);distance+=moved;
+  const feedback={};tick(state,dt,s.name==='highland',feedback,world.objects);if(feedback.damage)view.hurtAt=state.time;if(state.player.hp<40)eat(state);
+  if(enemy&&!pendingAttack&&Math.hypot(enemy.x-state.player.x,enemy.z-state.player.z)<5.2){const a=attack(state,{defer:true});pendingAttack=a.pending??null;}
+  if(pendingAttack&&state.time-pendingAttack.at>=ATTACK_IMPACT){const result=resolveAttack(state,pendingAttack);hits+=result?.hits.length??0;if(result)for(const cue of attackImpacts(state,result))view.impacts.spawn(cue);pendingAttack=null;view.sync(state);}
+  view.draw(state,nearest(state,world.objects),null,moved>.001,dt);
+}
+// Keep native query objects separate from their ordinal; do not mutate WebGLQuery objects.
+function readWaiting(waiting,gpu){
+  if(gl.getParameter(ext.GPU_DISJOINT_EXT)){disjointCount++;throw Error('GPU计时发生disjoint；本次结果不可接受。');}
+  for(let i=waiting.length-1;i>=0;i--){const q=waiting[i];if(!gl.getQueryParameter(q.query,gl.QUERY_RESULT_AVAILABLE))continue;
+    const nanos=gl.getQueryParameter(q.query,gl.QUERY_RESULT);if(!Number.isFinite(nanos)||nanos<=0)throw Error('GPU计时返回非正或无效值。');
+    gpu[q.sample]=nanos/1e6;gl.deleteQuery(q.query);pendingQueries.delete(q.query);waiting.splice(i,1);
+  }
+}
+Promise.all([view.groundSurface.userData.ground.loaded,view.groundSurface.userData.ground.sand?.loaded,view.rockSurface.userData.rock.loaded]).then(()=>{
+  if(!ext){out.textContent=JSON.stringify({complete:false,supported:false,note:'当前上下文没有GPU计时扩展，不能以CPU/rAF代替。'});return;}
+  button.disabled=false;out.textContent='就绪。每阶段40帧预热/60帧计时，读取异步GPU查询，disjoint或超时则失败；本机浏览器尺寸测试不是真机。';
+});
+button.onclick=async()=>{
+  button.disabled=true;const rows=[],started=performance.now();
+  try{
+    view.resize();
+    gl.getParameter(ext.GPU_DISJOINT_EXT);
+    for(const s of scenes){
+      configure(s);for(let i=0;i<40;i++)draw(await raf(),s,i);
+      const waiting=[],gpu=[],cpu=[],intervals=[];let prior=0;
+      for(let i=0;i<60;i++){
+        const now=await raf();readWaiting(waiting,gpu);if(prior)intervals.push(now-prior);prior=now;
+        const query=gl.createQuery();pendingQueries.add(query);activeQuery=query;
+        const start=performance.now();try{draw(now,s,i+40);}finally{activeQuery=null;}cpu.push(performance.now()-start);waiting.push({query,sample:i});
+      }
+      const drainStart=performance.now();while(waiting.length){await raf();readWaiting(waiting,gpu);if(performance.now()-drainStart>4000)throw Error('GPU查询超过4秒未返回；保留已有结果。');}
+      const info=view.renderer.info;rows.push({phase:s.name,gpuMs:summary(gpu),gpuRawMs:gpu,cpuFrameWorkMs:summary(cpu),rafIntervalMs:summary(intervals),distanceMeters:round(distance),hits,position:[state.player.x,state.player.z].map(round),time:round(state.time),drawCalls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures,programs:info.programs.length,glError:gl.getError()});
+      out.textContent=JSON.stringify({complete:false,supported:true,rows});
+    }
+    out.textContent=JSON.stringify({complete:true,supported:true,elapsedMs:round(performance.now()-started),hidden,disjointCount,rows,viewport:[innerWidth,innerHeight],canvasCssSize:[canvas.clientWidth,canvas.clientHeight],canvasBuffer:[canvas.width,canvas.height],pixelRatio:view.renderer.getPixelRatio(),fragmentTextureUnits:gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS),timerBits:gl.getQuery(ext.TIME_ELAPSED_EXT,ext.QUERY_COUNTER_BITS_EXT),groundStatus:view.groundSurface.userData.ground.state.status,sandStatus:view.groundSurface.userData.ground.sand?.state.status??null,rockStatus:view.rockSurface.userData.rock.state.status,woodlandInstalled:!!view.woodlandDressing,woodlandPlacements:dressing.placements.length,authoredCastInstalled:true,productionTerrain:true,impactFeedbackEnabled:true,coastalResourceIds:view.coastal.trees.length,coastalLevels:Object.fromEntries(['near','mid','far','hidden'].map(k=>[k,view.coastal.trees.filter(t=>t.level===k).length])),runtimeInputs:181,note:'GPU query interval around production renderer.render after40 warm-up frames per teleported fixture; includes command submission window, not pure shader/kernel busy time.60 samples per phase, no live audio, no save/campaign/VRAM or physical mobile evidence; CPU whole-frame work and rAF intervals remain separate.'});
+  }catch(error){out.textContent=JSON.stringify({complete:false,supported:Boolean(ext),hidden,disjointCount,rows,error:error.message});console.error(error);}
+  finally{for(const q of pendingQueries)gl.deleteQuery(q);pendingQueries.clear();}
+};
+window.addEventListener('pagehide',()=>{for(const q of pendingQueries)gl.deleteQuery(q);view.impacts.dispose();dressing.release();authoredCast.release();view.contactShade.dispose();view.renderer.dispose();});
+</script></html>

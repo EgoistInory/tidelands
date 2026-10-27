@@ -1,0 +1,2619 @@
+{
+  "enemies": 79,
+  "samples": 158,
+  "over15cm": [],
+  "proxyOver15cm": [],
+  "largestMaxGap": [
+    {
+      "id": "enemy-66",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -104.24978944529657,
+        -205.89690301146447
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.2672154849565729,
+      "proxyMinVertexGap": -0.05154564487513369,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-25",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        208.61415305458934,
+        -97.9634876557038
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.19547466790319135,
+      "proxyMinVertexGap": -0.0006082082583347415,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-10",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -118.50247119403912,
+        -231.33460434063815
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.16943418680635602,
+      "proxyMinVertexGap": -0.0009482259362023626,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-37",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        139.47024112555712,
+        -47.74385433467072
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.10765575355469892,
+      "proxyMinVertexGap": -0.0012220267038998145,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-71",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        100.7625789545537,
+        178.45349282742973
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.08923022701788241,
+      "proxyMinVertexGap": -0.001153502284389596,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    }
+  ],
+  "allRows": [
+    {
+      "id": "enemy-0",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -22.604620578949323,
+        53.38636345074243
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 3.552713678800501e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-0",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -22.604620578949323,
+        53.38636345074243
+      ],
+      "minFootGap": -1.7763568394002505e-15,
+      "maxFootGap": 0.018973260924452617,
+      "proxyMinVertexGap": -0.033294912573841984,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-1",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        118.80605182192255,
+        -173.1270634243204
+      ],
+      "minFootGap": -4.440892098500626e-15,
+      "maxFootGap": 1.1546319456101628e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-1",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        118.80605182192255,
+        -173.1270634243204
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.04736050792604907,
+      "proxyMinVertexGap": -0.0009828928387944913,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-2",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -50.901368244637226,
+        -289.23204099509775
+      ],
+      "minFootGap": -2.4868995751603507e-14,
+      "maxFootGap": 1.0658141036401503e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-2",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -50.901368244637226,
+        -289.23204099509775
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.010191342241782309,
+      "proxyMinVertexGap": -0.0009718876165649704,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-3",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        123.39759127132638,
+        145.4135315581048
+      ],
+      "minFootGap": -5.329070518200751e-15,
+      "maxFootGap": 8.881784197001252e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-3",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        123.39759127132638,
+        145.4135315581048
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.0271884197051957,
+      "proxyMinVertexGap": -0.036674969655066114,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-4",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        15.166730689391713,
+        64.40313563945335
+      ],
+      "minFootGap": -1.1102230246251565e-15,
+      "maxFootGap": 1.9984014443252818e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-4",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        15.166730689391713,
+        64.40313563945335
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.011373724305506538,
+      "proxyMinVertexGap": -0.0010165821891034987,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-5",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        219.88766352598998,
+        -163.13298785650872
+      ],
+      "minFootGap": -8.881784197001252e-15,
+      "maxFootGap": 1.0658141036401503e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-5",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        219.88766352598998,
+        -163.13298785650872
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.03768288448549484,
+      "proxyMinVertexGap": -0.0006543508723595437,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-6",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -47.56455059155198,
+        -200.52858392239426
+      ],
+      "minFootGap": 7.105427357601002e-15,
+      "maxFootGap": 3.907985046680551e-14,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-6",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -47.56455059155198,
+        -200.52858392239426
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.0728986693479321,
+      "proxyMinVertexGap": -0.043102804661952376,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-7",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        108.4118910171411,
+        171.42099209519463
+      ],
+      "minFootGap": -1.865174681370263e-14,
+      "maxFootGap": -3.552713678800501e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-7",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        108.4118910171411,
+        171.42099209519463
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.045479207875084526,
+      "proxyMinVertexGap": -0.0009446218472870527,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-8",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -88.73491183805638,
+        -81.11686490582537
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 7.993605777301127e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-8",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -88.73491183805638,
+        -81.11686490582537
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.04227023767856419,
+      "proxyMinVertexGap": -0.0009798341636306773,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-9",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        135.3500092789358,
+        -164.3566151533533
+      ],
+      "minFootGap": -5.329070518200751e-15,
+      "maxFootGap": 3.552713678800501e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-9",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        135.3500092789358,
+        -164.3566151533533
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.010494059611081852,
+      "proxyMinVertexGap": -0.03174452099355385,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-10",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -118.50247119403912,
+        -231.33460434063815
+      ],
+      "minFootGap": -7.105427357601002e-15,
+      "maxFootGap": 3.197442310920451e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-10",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -118.50247119403912,
+        -231.33460434063815
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.16943418680635602,
+      "proxyMinVertexGap": -0.0009482259362023626,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-11",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        131.36622734102485,
+        130.74758787431693
+      ],
+      "minFootGap": -9.769962616701378e-15,
+      "maxFootGap": 1.4210854715202004e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-11",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        131.36622734102485,
+        130.74758787431693
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.06677716222896457,
+      "proxyMinVertexGap": -0.0009833914026584623,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-12",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -61.2933289907079,
+        -66.49530689004747
+      ],
+      "minFootGap": -8.881784197001252e-16,
+      "maxFootGap": 2.6645352591003757e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-12",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -61.2933289907079,
+        -66.49530689004747
+      ],
+      "minFootGap": -8.881784197001252e-16,
+      "maxFootGap": 0.0019734862950482324,
+      "proxyMinVertexGap": -0.02962789803396504,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-13",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        83.01197563102124,
+        -74.10834652474708
+      ],
+      "minFootGap": -1.0658141036401503e-14,
+      "maxFootGap": 7.105427357601002e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-13",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        83.01197563102124,
+        -74.10834652474708
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.07004538263894844,
+      "proxyMinVertexGap": -0.0010753535530270142,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-14",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -114.12025115139826,
+        -288.9180864252358
+      ],
+      "minFootGap": -1.5987211554602254e-14,
+      "maxFootGap": 3.907985046680551e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-14",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -114.12025115139826,
+        -288.9180864252358
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.050614051894475764,
+      "proxyMinVertexGap": -0.0011313980866773932,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-15",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        110.79495119176775,
+        176.19430874955464
+      ],
+      "minFootGap": -7.105427357601002e-15,
+      "maxFootGap": 1.5987211554602254e-14,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-15",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        110.79495119176775,
+        176.19430874955464
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.011737588639290308,
+      "proxyMinVertexGap": -0.033679066938226754,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-16",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -171.68595129134638,
+        11.625190903562292
+      ],
+      "minFootGap": -4.085620730620576e-14,
+      "maxFootGap": -5.329070518200751e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-16",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -171.68595129134638,
+        11.625190903562292
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.0530512405521506,
+      "proxyMinVertexGap": -0.0009941708843914654,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-17",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        220.32568276992123,
+        -125.64731294569371
+      ],
+      "minFootGap": -1.0658141036401503e-14,
+      "maxFootGap": 0,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-17",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        220.32568276992123,
+        -125.64731294569371
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.03321897698879184,
+      "proxyMinVertexGap": -0.0009777859158877078,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-18",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -74.36874595297338,
+        -177.57437692212403
+      ],
+      "minFootGap": 7.105427357601002e-15,
+      "maxFootGap": 4.973799150320701e-14,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-18",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -74.36874595297338,
+        -177.57437692212403
+      ],
+      "minFootGap": -3.552713678800501e-15,
+      "maxFootGap": 0.04299732023546099,
+      "proxyMinVertexGap": -0.0403222043505167,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-19",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        99.89811613897973,
+        182.35504967746823
+      ],
+      "minFootGap": 2.6645352591003757e-15,
+      "maxFootGap": 1.509903313490213e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-19",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        99.89811613897973,
+        182.35504967746823
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.037609365572250475,
+      "proxyMinVertexGap": -0.0007789912277056388,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-20",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -157.42169959999757,
+        6.560775720678623
+      ],
+      "minFootGap": -1.0658141036401503e-14,
+      "maxFootGap": 1.7763568394002505e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-20",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -157.42169959999757,
+        6.560775720678623
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.00917167853769918,
+      "proxyMinVertexGap": -0.0009509354566663575,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-21",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        165.74899679552473,
+        -175.52421921842821
+      ],
+      "minFootGap": -1.5987211554602254e-14,
+      "maxFootGap": 8.881784197001252e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-21",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        165.74899679552473,
+        -175.52421921842821
+      ],
+      "minFootGap": -1.7763568394002505e-15,
+      "maxFootGap": 0.0032495443511564304,
+      "proxyMinVertexGap": -0.032482333740748714,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-22",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -91.98971774935362,
+        -281.50886326158576
+      ],
+      "minFootGap": -2.842170943040401e-14,
+      "maxFootGap": 3.907985046680551e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-22",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -91.98971774935362,
+        -281.50886326158576
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.025994187881941855,
+      "proxyMinVertexGap": -0.0010815427680235246,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-23",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        208.75294298109606,
+        187.9111494591643
+      ],
+      "minFootGap": -4.085620730620576e-14,
+      "maxFootGap": -2.398081733190338e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-23",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        208.75294298109606,
+        187.9111494591643
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.04904312752626794,
+      "proxyMinVertexGap": -0.0010802181733842176,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-24",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -170.21759903340566,
+        -24.32584900339398
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 3.552713678800501e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-24",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -170.21759903340566,
+        -24.32584900339398
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.004137508392904721,
+      "proxyMinVertexGap": -0.029552416986342145,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-25",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        208.61415305458934,
+        -97.9634876557038
+      ],
+      "minFootGap": -3.197442310920451e-14,
+      "maxFootGap": -1.0658141036401503e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-25",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        208.61415305458934,
+        -97.9634876557038
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.19547466790319135,
+      "proxyMinVertexGap": -0.0006082082583347415,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-26",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -75.46156089684378,
+        -285.5952633439206
+      ],
+      "minFootGap": -4.973799150320701e-14,
+      "maxFootGap": -1.0658141036401503e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-26",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -75.46156089684378,
+        -285.5952633439206
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.04325254287462954,
+      "proxyMinVertexGap": -0.0009980181056192805,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-27",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        190.73342406681928,
+        218.3876244450055
+      ],
+      "minFootGap": -1.2434497875801753e-14,
+      "maxFootGap": 8.881784197001252e-16,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-27",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        190.73342406681928,
+        218.3876244450055
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.0070918214037822835,
+      "proxyMinVertexGap": -0.02979508412955223,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-28",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -177.55188416051234,
+        24.269834346567624
+      ],
+      "minFootGap": -7.105427357601002e-15,
+      "maxFootGap": 2.1316282072803006e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-28",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -177.55188416051234,
+        24.269834346567624
+      ],
+      "minFootGap": 1.7763568394002505e-15,
+      "maxFootGap": 0.06991187389188269,
+      "proxyMinVertexGap": -0.001083083071428348,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-29",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        70.27018340322833,
+        -111.95522667209227
+      ],
+      "minFootGap": -7.105427357601002e-15,
+      "maxFootGap": 3.552713678800501e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-29",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        70.27018340322833,
+        -111.95522667209227
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.01856346652844465,
+      "proxyMinVertexGap": -0.0010580738225325348,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-30",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -116.45576246153803,
+        -279.203239723314
+      ],
+      "minFootGap": -3.552713678800501e-14,
+      "maxFootGap": 8.881784197001252e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-30",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -116.45576246153803,
+        -279.203239723314
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.004297091453492996,
+      "proxyMinVertexGap": -0.03537722759971551,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-31",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        156.073232464045,
+        222.5289058079583
+      ],
+      "minFootGap": -1.2434497875801753e-14,
+      "maxFootGap": 7.105427357601002e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-31",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        156.073232464045,
+        222.5289058079583
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.08198277104936658,
+      "proxyMinVertexGap": -0.0008307847181221462,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-32",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -89.64234094836011,
+        -76.72413266440674
+      ],
+      "minFootGap": -2.6645352591003757e-15,
+      "maxFootGap": 8.881784197001252e-16,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-32",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -89.64234094836011,
+        -76.72413266440674
+      ],
+      "minFootGap": 8.881784197001252e-16,
+      "maxFootGap": 0.04211485171177731,
+      "proxyMinVertexGap": -0.0009781381125737454,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-33",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        181.75172787857622,
+        -188.079720172292
+      ],
+      "minFootGap": -1.7763568394002505e-15,
+      "maxFootGap": 1.509903313490213e-14,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-33",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        181.75172787857622,
+        -188.079720172292
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.001341059192628613,
+      "proxyMinVertexGap": -0.030217928688456297,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-34",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -97.73440022128862,
+        -292.7259774325568
+      ],
+      "minFootGap": -1.4210854715202004e-14,
+      "maxFootGap": 1.5987211554602254e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-34",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -97.73440022128862,
+        -292.7259774325568
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.008227967402669734,
+      "proxyMinVertexGap": -0.001176974523415808,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-35",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        192.32417394288808,
+        201.7371202460644
+      ],
+      "minFootGap": -1.2434497875801753e-14,
+      "maxFootGap": 1.9539925233402755e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-35",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        192.32417394288808,
+        201.7371202460644
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.04661599402120231,
+      "proxyMinVertexGap": -0.0008902842376183884,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-36",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -29.55983800094956,
+        -62.088446048020515
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 1.7763568394002505e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-36",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -29.55983800094956,
+        -62.088446048020515
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.0018460452623223489,
+      "proxyMinVertexGap": -0.03070854639494769,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-37",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        139.47024112555712,
+        -47.74385433467072
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 2.1316282072803006e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-37",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        139.47024112555712,
+        -47.74385433467072
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.10765575355469892,
+      "proxyMinVertexGap": -0.0012220267038998145,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-38",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -112.24055523657175,
+        -285.708201450578
+      ],
+      "minFootGap": -1.7763568394002505e-15,
+      "maxFootGap": 4.085620730620576e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-38",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -112.24055523657175,
+        -285.708201450578
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.040623926586471626,
+      "proxyMinVertexGap": -0.0011273371645668107,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-39",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        130.23957099025213,
+        141.07794947106396
+      ],
+      "minFootGap": -3.019806626980426e-14,
+      "maxFootGap": -1.0658141036401503e-14,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-39",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        130.23957099025213,
+        141.07794947106396
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.024883310857021,
+      "proxyMinVertexGap": -0.03500909813792674,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-40",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        15.43711445371298,
+        -17.334522191486972
+      ],
+      "minFootGap": -2.6645352591003757e-15,
+      "maxFootGap": 8.881784197001252e-16,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-40",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        15.43711445371298,
+        -17.334522191486972
+      ],
+      "minFootGap": 8.881784197001252e-16,
+      "maxFootGap": 0.009837185629221423,
+      "proxyMinVertexGap": -0.0006962710624103252,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-41",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        91.04367101055492,
+        -112.01153576829455
+      ],
+      "minFootGap": -3.552713678800501e-15,
+      "maxFootGap": 7.105427357601002e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-41",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        91.04367101055492,
+        -112.01153576829455
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.0375995849378441,
+      "proxyMinVertexGap": -0.001034128889479291,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-42",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -131.7953350006424,
+        -190.60658511867103
+      ],
+      "minFootGap": 1.5987211554602254e-14,
+      "maxFootGap": 3.197442310920451e-14,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-42",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -131.7953350006424,
+        -190.60658511867103
+      ],
+      "minFootGap": 1.7763568394002505e-15,
+      "maxFootGap": 0.0023551850102006,
+      "proxyMinVertexGap": -0.03428982403667291,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-43",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        125.5817430401932,
+        212.0080371785835
+      ],
+      "minFootGap": -6.217248937900877e-15,
+      "maxFootGap": 6.217248937900877e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-43",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        125.5817430401932,
+        212.0080371785835
+      ],
+      "minFootGap": 8.881784197001252e-16,
+      "maxFootGap": 0.00827733875509562,
+      "proxyMinVertexGap": -0.0009651957727268012,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-45",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        71.66371267329718,
+        -112.12086578451148
+      ],
+      "minFootGap": -5.329070518200751e-15,
+      "maxFootGap": -3.552713678800501e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-45",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        71.66371267329718,
+        -112.12086578451148
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.004169185828219568,
+      "proxyMinVertexGap": -0.031091406431547952,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-46",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -100.89712242520056,
+        -195.55209777783364
+      ],
+      "minFootGap": -2.842170943040401e-14,
+      "maxFootGap": 1.4210854715202004e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-46",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -100.89712242520056,
+        -195.55209777783364
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.015153806201158915,
+      "proxyMinVertexGap": -0.0010267982869329728,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-47",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        96.942931064173,
+        155.7362000314004
+      ],
+      "minFootGap": -3.9968028886505635e-15,
+      "maxFootGap": 3.1086244689504383e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-47",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        96.942931064173,
+        155.7362000314004
+      ],
+      "minFootGap": -4.440892098500626e-16,
+      "maxFootGap": 0.013192551831594734,
+      "proxyMinVertexGap": -0.001024035378553112,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-48",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -82.5043357851921,
+        -80.13526583703316
+      ],
+      "minFootGap": -2.6645352591003757e-15,
+      "maxFootGap": 1.7763568394002505e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-48",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -82.5043357851921,
+        -80.13526583703316
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.009844830864061294,
+      "proxyMinVertexGap": -0.02987368730893003,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-49",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        207.23092519435417,
+        -150.36399890913515
+      ],
+      "minFootGap": -7.105427357601002e-15,
+      "maxFootGap": 2.1316282072803006e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-49",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        207.23092519435417,
+        -150.36399890913515
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.05427111288363484,
+      "proxyMinVertexGap": -0.0010208407977074785,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-50",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -110.72559622029522,
+        -193.17801468366656
+      ],
+      "minFootGap": -7.105427357601002e-15,
+      "maxFootGap": 2.4868995751603507e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-50",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -110.72559622029522,
+        -193.17801468366656
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.01595149911186411,
+      "proxyMinVertexGap": -0.0010605361841520278,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-51",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        104.50876564363804,
+        201.9110882446371
+      ],
+      "minFootGap": -2.6645352591003757e-15,
+      "maxFootGap": 1.7763568394002505e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-51",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        104.50876564363804,
+        201.9110882446371
+      ],
+      "minFootGap": -8.881784197001252e-16,
+      "maxFootGap": 0.001428518656040545,
+      "proxyMinVertexGap": -0.030351725542789865,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-52",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        15.130269156873112,
+        31.864125875160873
+      ],
+      "minFootGap": -1.3322676295501878e-15,
+      "maxFootGap": 3.9968028886505635e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-52",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        15.130269156873112,
+        31.864125875160873
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.007024118491642195,
+      "proxyMinVertexGap": -0.001003420582139647,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-53",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        106.55148936341905,
+        -98.6703088384608
+      ],
+      "minFootGap": -1.4210854715202004e-14,
+      "maxFootGap": 7.105427357601002e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-53",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        106.55148936341905,
+        -98.6703088384608
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.04968617414273879,
+      "proxyMinVertexGap": -0.0010831924034810925,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-54",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -78.56198610903786,
+        -190.78659570101584
+      ],
+      "minFootGap": -2.842170943040401e-14,
+      "maxFootGap": -7.105427357601002e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-54",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -78.56198610903786,
+        -190.78659570101584
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.009100813023170673,
+      "proxyMinVertexGap": -0.03617227987454186,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-55",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        110.61340054140328,
+        174.450775659177
+      ],
+      "minFootGap": -3.730349362740526e-14,
+      "maxFootGap": -7.105427357601002e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-55",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        110.61340054140328,
+        174.450775659177
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.04466638424380953,
+      "proxyMinVertexGap": -0.0009676210192317569,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-56",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -9.445511422781266,
+        -33.03948440275518
+      ],
+      "minFootGap": -1.7763568394002505e-15,
+      "maxFootGap": 3.552713678800501e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-56",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -9.445511422781266,
+        -33.03948440275518
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.013952522566047065,
+      "proxyMinVertexGap": -0.0010459461918603807,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-57",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        191.12116579192286,
+        -152.80027046564572
+      ],
+      "minFootGap": -7.105427357601002e-15,
+      "maxFootGap": 7.105427357601002e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-57",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        191.12116579192286,
+        -152.80027046564572
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.010334108487295879,
+      "proxyMinVertexGap": -0.03027652997349506,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-58",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -36.92433985269994,
+        -295.5282956408962
+      ],
+      "minFootGap": -3.197442310920451e-14,
+      "maxFootGap": 1.7763568394002505e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-58",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -36.92433985269994,
+        -295.5282956408962
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.00922227401462905,
+      "proxyMinVertexGap": -0.0007339903171939,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-59",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        105.87362262141525,
+        201.12558146054863
+      ],
+      "minFootGap": -4.440892098500626e-15,
+      "maxFootGap": 2.6645352591003757e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-59",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        105.87362262141525,
+        201.12558146054863
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.011047269846153007,
+      "proxyMinVertexGap": -0.0006305082198601042,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-60",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -100.6840634099033,
+        66.58175583104097
+      ],
+      "minFootGap": -3.552713678800501e-15,
+      "maxFootGap": 3.552713678800501e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-60",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -100.6840634099033,
+        66.58175583104097
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.0006072818726892137,
+      "proxyMinVertexGap": -0.030957015940773047,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-61",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        106.03142999000625,
+        -123.51982787388351
+      ],
+      "minFootGap": -1.0658141036401503e-14,
+      "maxFootGap": 3.552713678800501e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-61",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        106.03142999000625,
+        -123.51982787388351
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.020444738806489227,
+      "proxyMinVertexGap": -0.0010438625760933462,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-62",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -132.8638196711223,
+        -230.43949729933092
+      ],
+      "minFootGap": -3.552713678800501e-14,
+      "maxFootGap": -3.552713678800501e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-62",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -132.8638196711223,
+        -230.43949729933092
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.03400795397108425,
+      "proxyMinVertexGap": -0.0008178659844872982,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-63",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        182.83683063015516,
+        121.30541338217976
+      ],
+      "minFootGap": -3.1086244689504383e-15,
+      "maxFootGap": 0,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-63",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        182.83683063015516,
+        121.30541338217976
+      ],
+      "minFootGap": -1.1102230246251565e-16,
+      "maxFootGap": 0.000797308569364219,
+      "proxyMinVertexGap": -0.03077533557269585,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-64",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        22.71455712812009,
+        35.25034019620182
+      ],
+      "minFootGap": -1.7763568394002505e-15,
+      "maxFootGap": 3.3306690738754696e-16,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-64",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        22.71455712812009,
+        35.25034019620182
+      ],
+      "minFootGap": 1.1102230246251565e-16,
+      "maxFootGap": 0.020744920478381057,
+      "proxyMinVertexGap": -0.000986348362742695,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-65",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        235.83037591982702,
+        -83.466826350487
+      ],
+      "minFootGap": 1.7763568394002505e-15,
+      "maxFootGap": 1.9539925233402755e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-65",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        235.83037591982702,
+        -83.466826350487
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.0254250820374331,
+      "proxyMinVertexGap": -0.0010301314159271158,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-66",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -104.24978944529657,
+        -205.89690301146447
+      ],
+      "minFootGap": -4.973799150320701e-14,
+      "maxFootGap": -1.4210854715202004e-14,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-66",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -104.24978944529657,
+        -205.89690301146447
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.2672154849565729,
+      "proxyMinVertexGap": -0.05154564487513369,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-67",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        175.5896906314236,
+        200.60021214855897
+      ],
+      "minFootGap": -8.881784197001252e-15,
+      "maxFootGap": 1.5987211554602254e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-67",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        175.5896906314236,
+        200.60021214855897
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.037881448699046416,
+      "proxyMinVertexGap": -0.0010397529981016618,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-68",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        2.542147593326831,
+        6.78118368635229
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 1.7763568394002505e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-68",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        2.542147593326831,
+        6.78118368635229
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.017353117934908013,
+      "proxyMinVertexGap": -0.0006273578267990132,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-69",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        228.22210445588513,
+        -46.39676210720579
+      ],
+      "minFootGap": -2.1316282072803006e-14,
+      "maxFootGap": 1.4210854715202004e-14,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-69",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        228.22210445588513,
+        -46.39676210720579
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.030134440746257596,
+      "proxyMinVertexGap": -0.030036219032266942,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-70",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -42.50086543249075,
+        -165.11710621729083
+      ],
+      "minFootGap": -2.7533531010703882e-14,
+      "maxFootGap": 4.440892098500626e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-70",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -42.50086543249075,
+        -165.11710621729083
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.007192202036078843,
+      "proxyMinVertexGap": -0.0010804429334738685,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-71",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        100.7625789545537,
+        178.45349282742973
+      ],
+      "minFootGap": -8.881784197001252e-16,
+      "maxFootGap": 1.2434497875801753e-14,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-71",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        100.7625789545537,
+        178.45349282742973
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.08923022701788241,
+      "proxyMinVertexGap": -0.001153502284389596,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-72",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        17.609677799342066,
+        25.446755166385174
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 8.881784197001252e-16,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-72",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        17.609677799342066,
+        25.446755166385174
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.0026914033609650723,
+      "proxyMinVertexGap": -0.030372302636777704,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-73",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        97.44082936859789,
+        -149.93026484172475
+      ],
+      "minFootGap": -1.509903313490213e-14,
+      "maxFootGap": 0,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-73",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        97.44082936859789,
+        -149.93026484172475
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.015802609474956597,
+      "proxyMinVertexGap": -0.0010291880141153342,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-74",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -132.83421362177313,
+        -186.6679582834188
+      ],
+      "minFootGap": -3.552713678800501e-14,
+      "maxFootGap": -5.329070518200751e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-74",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -132.83421362177313,
+        -186.6679582834188
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.026168904741899368,
+      "proxyMinVertexGap": -0.0010797958061203872,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-75",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        195.57612132522195,
+        151.04419081944184
+      ],
+      "minFootGap": -9.769962616701378e-15,
+      "maxFootGap": -3.552713678800501e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-75",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        195.57612132522195,
+        151.04419081944184
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.0010935493591093248,
+      "proxyMinVertexGap": -0.029924940321756743,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-76",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        9.953685739450492,
+        -59.08546279740962
+      ],
+      "minFootGap": -2.6645352591003757e-15,
+      "maxFootGap": 1.7763568394002505e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-76",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        9.953685739450492,
+        -59.08546279740962
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.022692834492763492,
+      "proxyMinVertexGap": -0.0010433451647595682,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-77",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        75.21976967574697,
+        -124.5459932274307
+      ],
+      "minFootGap": -8.881784197001252e-15,
+      "maxFootGap": 1.7763568394002505e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-77",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        75.21976967574697,
+        -124.5459932274307
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.043344743381364736,
+      "proxyMinVertexGap": -0.0010133310558533282,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-78",
+      "type": "boar",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        -48.32590234279071,
+        -195.14912305649182
+      ],
+      "minFootGap": -3.197442310920451e-14,
+      "maxFootGap": 3.552713678800501e-15,
+      "proxyMinVertexGap": null,
+      "planted": 4,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-78",
+      "type": "boar",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        -48.32590234279071,
+        -195.14912305649182
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.06525214695585646,
+      "proxyMinVertexGap": -0.039906882725929904,
+      "planted": null,
+      "contacts": 4,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-79",
+      "type": "crab",
+      "level": "near",
+      "actualFar": false,
+      "position": [
+        143.31914879718545,
+        248.9858124728824
+      ],
+      "minFootGap": -5.329070518200751e-15,
+      "maxFootGap": 5.329070518200751e-15,
+      "proxyMinVertexGap": null,
+      "planted": 8,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    },
+    {
+      "id": "enemy-79",
+      "type": "crab",
+      "level": "far",
+      "actualFar": true,
+      "position": [
+        143.31914879718545,
+        248.9858124728824
+      ],
+      "minFootGap": 0,
+      "maxFootGap": 0.00969700800926443,
+      "proxyMinVertexGap": -0.00060896554005474,
+      "planted": null,
+      "contacts": 8,
+      "scope": "Idle at actual home terrain for60 ticks. Original articulated contacts plus visible distant proxy vertex minimum; no natural gameplay or motion-quality acceptance."
+    }
+  ],
+  "visualQualityAccepted": false
+}
