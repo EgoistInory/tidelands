@@ -1,3 +1,4 @@
+import {footprintGatherTarget} from './resource-footprint.js';
 import {WorldView} from './scene.js';
 import {GameAudio,enemySoundCue} from './audio.js';
 import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_IMPACT,ENEMY_ATTACK_IMPACT} from './action-timing.js';
@@ -6,6 +7,7 @@ import {createMovementHeading} from './movement-heading.js';
 import {prepareSurfaceTextures} from './startup-textures.js';
 import {loadAuthoredCast} from './authored-assets.js';
 import {loadWoodlandDressing} from './woodland.js';
+import {prepareCoastalVisual,bindCoastalVisual} from './coastal.js';
 import {gatherImpact,attackImpacts} from './impact-feedback.js';
 import {createWorld,terrain,LANDMARKS,regionAt,dayCycle} from './world.js';
 import {freshGame,QUESTS,ITEMS,RECIPES,affordable,craft,canBuild,build,interact,resolveGather,eat,attack,attackRange,resolveAttack,movePlayer,tick,cancelEnemyAttacks,enemyAttackPose,nearest,nearestEnemy,serialize,restore} from './game.js';
@@ -75,7 +77,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     if(state.quest!==lastQuest){audio.effect('quest');lastQuest=state.quest;const note=state.quest===6?'归航灯塔已被修复，主线完成！你可以继续自由探索。':`新的目标：${q.title}`;toast(!$('toast').hidden?`${$('toast').textContent}\n${note}`:note,9000);save();}
   }
   function action(){if(!started||paused||pendingGather)return;cancelAttack();if(state.time-state.attackAt<ATTACK_DURATION)return;if(buildType){if(!placement)return;const message=build(state,world.objects,buildType,placement.x,placement.z);toast(message);if(message.startsWith('建造完成')){audio.effect('craft');buildType=null;placement=null;view.setPreview(null);save();view.sync(state);}return;}
-    const result=interact(state,near,{defer:true});if(result?.pending){pendingGather=result.pending;view.gatherAt=result.pending.at;view.gatherKind=near.type;view.gatherTarget={x:near.x,z:near.z,y:terrain(near.x,near.z)+.35};view.gatherTool=['tree','stone','crystal'].includes(near.type)&&state.inventory.axe?'axe':'hand';state.player.yaw=Math.atan2(near.x-state.player.x,near.z-state.player.z);return;}toast(result,near?.type==='npc'?8500:4200);save();view.sync(state);updateUI();}
+    const result=interact(state,near,{defer:true});if(result?.pending){pendingGather=result.pending;view.gatherAt=result.pending.at;view.gatherKind=near.type;view.gatherTarget=footprintGatherTarget(state.player,near)??{x:near.x,z:near.z,y:terrain(near.x,near.z)+.35};view.gatherTool=['tree','stone','crystal'].includes(near.type)&&state.inventory.axe?'axe':'hand';state.player.yaw=Math.atan2(view.gatherTarget.x-state.player.x,view.gatherTarget.z-state.player.z);return;}toast(result,near?.type==='npc'?8500:4200);save();view.sync(state);updateUI();}
   function finishGather(){const message=resolveGather(state,pendingGather),cue=gatherImpact(state,pendingGather,message);pendingGather=null;if(!message)return;if(cue){audio.effect('gather',{surface:cue.kind});view.impacts.spawn(cue);}toast(message);save();view.sync(state);updateUI();}
   function select(slot){if(paused)return;if(slot!=='food'){cancelAttack();cancelGather();}
     if(slot==='food'){const hp=state.player.hp;toast(eat(state));if(state.player.hp>hp)audio.effect('food');save();}
@@ -158,7 +160,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     look:(dx,dy)=>{const turn=-dx*.006;view.yaw+=turn;movementHeading.turn(turn);view.pitch=Math.max(.08,Math.min(1.15,view.pitch-dy*.004));},
     zoom:delta=>{view.distance=Math.max(12,Math.min(45,view.distance+delta*.02));}
   });
-  window.addEventListener('resize',()=>view.resize());window.addEventListener('pagehide',event=>{preparation.abort();save();if(!event.persisted){view.authoredCast?.release();view.woodlandDressing?.release();view.impacts.dispose();}});
+  window.addEventListener('resize',()=>view.resize());window.addEventListener('pagehide',event=>{preparation.abort();save();if(!event.persisted){view.coastal?.release();view.authoredCast?.release();view.woodlandDressing?.release();view.impacts.dispose();}});
   window.addEventListener('pageshow',event=>{
     if(event.persisted&&!prepared&&!renderLost){
       $('load-status').textContent='准备已中断。重新加载可继续。';$('start-button').textContent='重新加载';
@@ -185,11 +187,14 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     view.installAuthoredCast(cast);
     let woodlandFallback=false;
     try{const dressing=await loadWoodlandDressing(world.objects,{signal:preparation.signal});if(preparation.signal.aborted||renderLost){dressing.release();return;}view.installWoodlandDressing(dressing);}catch(error){if(error.name==='AbortError'||preparation.signal.aborted||renderLost)return;woodlandFallback=true;}
+    let coastalFallback=false,coastalPrepared;
+    try{coastalPrepared=await prepareCoastalVisual({signal:preparation.signal});}catch(error){if(error.name==='AbortError'||preparation.signal.aborted||renderLost)return;coastalFallback=true;}
+    if(coastalPrepared){if(preparation.signal.aborted||renderLost){coastalPrepared.release();return;}view.coastal=bindCoastalVisual(view,coastalPrepared);view.sync(state);near=nearest(state,world.objects);}
     $('load-status').textContent='正在点亮群岛…';await new Promise(requestAnimationFrame);
     if(preparation.signal.aborted||renderLost)return;
     // Finish the initial scene/shader draw while the start screen is still visible.
     view.draw(state,near,null,false,1/60);prepared=true;
-    $('load-status').textContent=loadError||(woodlandFallback?'部分林下细节暂未载入 · 可以继续':surfaces.some(s=>s.state.status==='fallback')?'部分地表使用备用素材 · 可以继续':'群岛已就绪 · 无需联网');
+    $('load-status').textContent=loadError||(coastalFallback?'部分海岸细节暂未载入 · 可以继续':woodlandFallback?'部分林下细节暂未载入 · 可以继续':surfaces.some(s=>s.state.status==='fallback')?'部分地表使用备用素材 · 可以继续':'群岛已就绪 · 无需联网');
     $('start-button').textContent=hasSavedGame||state.time>121||state.quest?'继续旅程':'开始旅程';$('start-button').disabled=false;
   }).catch(error=>{
     if(error.name==='AbortError'||renderLost)return;

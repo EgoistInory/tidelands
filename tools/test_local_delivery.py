@@ -88,6 +88,18 @@ class LocalDeliveryTests(unittest.TestCase):
         manifest['files']={'../escape.bin':{'sha256':'0'*64}};(folder/'provenance.json').write_text(json.dumps(manifest))
         with self.assertRaises(ValueError):self.build()
 
+    def test_coastal_manifest_includes_nested_derivatives_and_rejects_changed_files(self):
+        import hashlib
+        folder=self.root/'assets/coastal';(folder/'tree').mkdir(parents=True)
+        data=b'coastal geometry';(folder/'tree/near.bin').write_bytes(data)
+        manifest={'files':{'tree/near.bin':{'sha256':hashlib.sha256(data).hexdigest()}}}
+        (folder/'provenance.json').write_text(json.dumps(manifest))
+        self.assertIn('assets/coastal/tree/near.bin',self.build()['files'])
+        (folder/'tree/near.bin').write_bytes(b'changed')
+        with self.assertRaises(ValueError):self.build()
+        manifest['files']={'../escape.bin':{'sha256':'0'*64}};(folder/'provenance.json').write_text(json.dumps(manifest))
+        with self.assertRaises(ValueError):self.build()
+
     def test_names_cannot_escape_dist(self):
         for name in ('../checkpoint', '/tmp/checkpoint', 'checkpoint.zip', ''):
             with self.subTest(name=name), self.assertRaises(ValueError):

@@ -1,3 +1,4 @@
+import {footprintBlocksMove,footprintIntersectsBuilding,copyFootprint} from './resource-footprint.js';
 import {SPAWN,LANDMARKS,terrain,regionAt,createWorld} from './world.js';
 import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_DURATION,GATHER_IMPACT,GATHER_RANGE,ENEMY_ATTACK_DURATION,ENEMY_ATTACK_IMPACT} from './action-timing.js';
 import {resourceReachDistance,resourceBlocksMove,resourceHalfSize} from './resource-contact.js';
@@ -31,6 +32,7 @@ export function craft(state,key){const recipe=RECIPES[key];if(!recipe)return '�
   return `制作完成：${recipe.name}`;
 }
 function resourceIntersectsBuilding(object,building){
+  const contact=footprintIntersectsBuilding(object,building);if(contact!==null)return contact;
   if(object.type!=='tree'&&object.type!=='stone'&&object.type!=='crystal')return false;
   const radius=building.type==='tent'?2.15:building.type==='campfire'?1.45:1.5;
   const dx=Math.abs(object.x-building.x),dz=Math.abs(object.z-building.z),half=resourceHalfSize(object);
@@ -73,7 +75,7 @@ export function interact(state,object,{defer=false}={}){if(!object)return '靠�
   if(isDepleted(state,object))return '这里的资源还在恢复。';
   const item=RESOURCE_ITEMS[object.type];if(!item)return '';
   const count=['wood','stone'].includes(item)?(state.inventory.axe?3:2):item==='crystal'?1:2;
-  if(defer){if(terrain(state.player.x,state.player.z)<.15)return '请先靠岸，再采集附近资源。';if(resourceReachDistance(state.player,object)>=GATHER_RANGE)return '靠近资源后再采集。';return {message:'',pending:{state,at:state.time,object:{id:object.id,x:object.x,z:object.z,type:object.type,scale:object.scale},item,count,resolved:false}};}
+  if(defer){if(terrain(state.player.x,state.player.z)<.15)return '请先靠岸，再采集附近资源。';if(resourceReachDistance(state.player,object)>=GATHER_RANGE)return '靠近资源后再采集。';return {message:'',pending:{state,at:state.time,object:copyFootprint(object,{id:object.id,x:object.x,z:object.z,type:object.type,scale:object.scale}),item,count,resolved:false}};}
   return applyGather(state,object,item,count);
 }
 export function resolveGather(state,pending){
@@ -114,7 +116,7 @@ function applyAttackDamage(state,damage,range){const hits=[],p=state.player,forw
 function canActorMove(state,objects,from,to,mover){
   const {x,z}=to,radius=actorRadius(mover);
   if(Math.abs(x)>390||Math.abs(z)>390||terrain(x,z)-terrain(from.x,from.z)>1.9)return false;
-  if(objects.some(o=>!isDepleted(state,o)&&(o.type==='tree'?actorBlocksMove(from,to,o,radius,1.15):resourceBlocksMove(from,to,o,radius))))return false;
+  if(objects.some(o=>!isDepleted(state,o)&&(footprintBlocksMove(from,to,o,radius)??(o.type==='tree'?actorBlocksMove(from,to,o,radius,1.15):resourceBlocksMove(from,to,o,radius)))))return false;
   if(state.buildings.some(o=>o.type!=='campfire'&&actorBlocksMove(from,to,o,radius,1.65)))return false;
   if(LANDMARKS.some(o=>o.type==='ruin'?ruinBlocksMove(from,to,o,radius):o.type==='npc'?actorBlocksMove(from,to,o,radius):['cottage','lighthouse'].includes(o.type)&&actorBlocksMove(from,to,o,radius,o.type==='cottage'?3.65:2.65)))return false;
   if(mover!==state.player&&actorBlocksMove(from,to,state.player,radius))return false;

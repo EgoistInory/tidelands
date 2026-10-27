@@ -285,6 +285,7 @@ export class WorldView{
     this.waterUniforms.fogRange.value.set(weather.fogNear,weather.fogFar);
   }
   draw(state,near,placement,moving,dt){
+    this.coastal?.update(state);
     const p=state.player,h=Math.max(terrain(p.x,p.z),-.45),weather=weatherAt(state.time);
     updateFoliage(state.time,weather.windStrength);
     updateMeadow(state.time,weather.windStrength);

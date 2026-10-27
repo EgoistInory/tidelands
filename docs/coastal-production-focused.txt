@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: production binding preserves resource records and bounds expensive visual nodes
+ok 1 - production binding preserves resource records and bounds expensive visual nodes
+  ---
+  duration_ms: 25.030917
+  type: 'test'
+  ...
+# Subtest: production coastal release removes owned scene nodes exactly once
+ok 2 - production coastal release removes owned scene nodes exactly once
+  ---
+  duration_ms: 11.096916
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 91.063792

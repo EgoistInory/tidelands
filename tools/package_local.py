@@ -49,6 +49,16 @@ def build(name='tidelands-local', stage='M1-M4 functional checkpoint'):
                 raise ValueError('林下资料与本地来源清单不一致')
             paths.append(Path('assets/woodland') / relative)
         paths += [Path('vendor/addons') / name for name in ('loaders/GLTFLoader.js', 'utils/BufferGeometryUtils.js', 'README.md')]
+    coastal_manifest = ROOT / 'assets/coastal/provenance.json'
+    if coastal_manifest.exists():
+        for asset_name, row in json.loads(coastal_manifest.read_text())['files'].items():
+            relative = Path(asset_name)
+            if relative.is_absolute() or '..' in relative.parts or '\\' in asset_name or relative.suffix not in ('.gltf', '.bin', '.jpg', '.png', '.json', '.txt'):
+                raise ValueError('海岸资料路径不合法')
+            target = coastal_manifest.parent / relative
+            if not target.resolve().is_relative_to(coastal_manifest.parent.resolve()) or target.is_symlink() or hashlib.sha256(target.read_bytes()).hexdigest() != row['sha256']:
+                raise ValueError('海岸资料与本地来源清单不一致')
+            paths.append(Path('assets/coastal') / relative)
     contents = {str(p): (ROOT / p).read_bytes() for p in paths}
     contents['README.md'] = (ROOT / 'docs/LOCAL-DELIVERY.md').read_bytes()
     manifest = {

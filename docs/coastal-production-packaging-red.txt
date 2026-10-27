@@ -1,0 +1,14 @@
+..F....
+======================================================================
+FAIL: test_coastal_manifest_includes_nested_derivatives_and_rejects_changed_files (test_local_delivery.LocalDeliveryTests.test_coastal_manifest_includes_nested_derivatives_and_rejects_changed_files)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tools/test_local_delivery.py", line 97, in test_coastal_manifest_includes_nested_derivatives_and_rejects_changed_files
+    self.assertIn('assets/coastal/tree/near.bin',self.build()['files'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'assets/coastal/tree/near.bin' not found in {'README.md': {'bytes': 18, 'sha256': 'f99f471c83b06c69fd8021255c648099849aed259841f3d3cce6e1af230d42d9'}, 'assets/coastal/provenance.json': {'bytes': 108, 'sha256': 'fda3c41be6d66d37219ee6928e16bf4bd50a2a88339d053f59f69429b05f90be'}, 'assets/ground/manifest.json': {'bytes': 2, 'sha256': '44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a'}, 'assets/ground/test.jpg': {'bytes': 7, 'sha256': 'f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d'}, 'index.html': {'bytes': 25, 'sha256': '15cc57fb66674877b63695f4449513b443ac5951697bbcedf2889858e2169aba'}, 'serve.py': {'bytes': 1081, 'sha256': '15a7ff5096fd6b8c33c14591065d184ba7e643f9efd3f4c036e4c4058f349e45'}, 'src/sky.js': {'bytes': 24, 'sha256': 'fdbc1a537cdbf695ccd1b804d6947ae1a52a79c54e276bac1184f897c17364f3'}, 'styles.css': {'bytes': 14, 'sha256': '2007703776e20c24376ebae0a759bc90112c3d0632a9f44428e11f7a8444a297'}, 'vendor/README.md': {'bytes': 9, 'sha256': 'b335630551682c19a781afebcf4d07bf978fb1f8ac04c6bf87428ed5106870f5'}, 'vendor/THREE-LICENSE': {'bytes': 13, 'sha256': '554249562188dcb705beeda21404ef55c02838717e986de9f1916ccac305941c'}, 'vendor/three.core.min.js': {'bytes': 17, 'sha256': 'e23760bc7ddd6005290064e42b39fe26faf7299b26454abe8f8bd15d2e4b2848'}, 'vendor/three.module.min.js': {'bytes': 19, 'sha256': '6d94302996818c221ca3be7612bb2abe920a9381df5aa535543ba750a9ec3872'}}
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.144s
+
+FAILED (failures=1)

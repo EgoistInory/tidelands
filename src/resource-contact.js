@@ -1,3 +1,4 @@
+import {footprintReach} from './resource-footprint.js';
 import {GATHER_RANGE} from './action-timing.js';
 
 // Match the conservative mineral boxes used by the camera; unscaled logical nodes keep their old reach.
@@ -6,6 +7,7 @@ export function resourceHalfSize(object){
   return object.type==='stone'?2.8*object.scale:object.type==='crystal'?1.5*object.scale:0;
 }
 export function resourceReachDistance(player,object){
+  const shaped=footprintReach(player,object);if(shaped!==null)return shaped;
   const r=resourceHalfSize(object),dx=Math.abs(player.x-object.x),dz=Math.abs(player.z-object.z);
   return r?Math.hypot(Math.max(0,dx-r),Math.max(0,dz-r))+GATHER_RANGE-1.2:Math.hypot(dx,dz);
 }

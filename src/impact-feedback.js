@@ -1,3 +1,4 @@
+import {footprintGatherTarget} from './resource-footprint.js';
 import * as THREE from '../vendor/three.module.min.js';
 import {terrain} from './world.js';
 
@@ -11,7 +12,7 @@ function cueAt(state,target,kind){
   return {id:target.id,kind,x,y:floor+height,z,floor,time:state.time};
 }
 export function gatherImpact(state,pending,message){
-  return pending?.state===state&&pending.resolved&&typeof message==='string'&&message.includes(' +')&&Object.hasOwn(colors,pending.object.type)?cueAt(state,pending.object,pending.object.type):null;
+  return pending?.state===state&&pending.resolved&&typeof message==='string'&&message.includes(' +')&&Object.hasOwn(colors,pending.object.type)?gatherCue(state,pending.object):null;
 }
 export function attackImpacts(state,result){
   return (result?.hits??[]).flatMap(id=>{const target=state.enemies.find(e=>e.id===id);return target?[cueAt(state,target,'hit')]:[];});
@@ -50,3 +51,5 @@ export function createImpactFeedback(capacity=48){
     dispose(){if(disposed)return;disposed=true;clear();mesh.dispose();geometry.dispose();material.dispose();}
   };
 }
+
+function gatherCue(state,object){const cue=cueAt(state,object,object.type),point=footprintGatherTarget(state.player,object);return point?{...cue,...point,floor:terrain(point.x,point.z)}:cue;}
