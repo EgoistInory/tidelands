@@ -1,0 +1,68 @@
+{
+  "ready": true,
+  "mode": "budget",
+  "place": "coast",
+  "player": {
+    "x": -123,
+    "z": 128,
+    "hp": 100,
+    "stamina": 100,
+    "yaw": 0
+  },
+  "time": 240,
+  "camera": [
+    -120.90706496123865,
+    9.68892201211392,
+    141.84511073729914
+  ],
+  "quaternion": [
+    -0.14411019437758055,
+    0.07415884240078013,
+    0.010830884545581848,
+    0.9867195193722442
+  ],
+  "levels": {
+    "near": 1,
+    "mid": 1,
+    "far": 100,
+    "hidden": 31
+  },
+  "batchCounts": [
+    5,
+    17,
+    8,
+    1,
+    6,
+    4,
+    13,
+    9,
+    7,
+    8,
+    10,
+    12
+  ],
+  "render": {
+    "frame": 123,
+    "calls": 139,
+    "triangles": 1457776,
+    "points": 0,
+    "lines": 0
+  },
+  "memory": {
+    "geometries": 94,
+    "textures": 83
+  },
+  "viewport": [
+    0.46208530805687204,
+    390,
+    844
+  ],
+  "buffer": [
+    390,
+    844
+  ],
+  "glError": 0,
+  "worldUnchanged": true,
+  "motion": null,
+  "scope": "Isolated deterministic camera/render comparison and real movePlayer QA path; no ordinary save or full-main journey/GPU/endurance acceptance."
+}

@@ -1,0 +1,156 @@
+{
+  "verified": true,
+  "productionIntegrated": false,
+  "productionRuntimeInputsUnchanged": 110,
+  "rootTestsPassed": 350,
+  "newBudgetContractsPassed": 2,
+  "nativeImagesViewed": 19,
+  "farInstanceSameCameraComparisons": [
+    {
+      "place": "coast",
+      "callsBefore": 279,
+      "callsAfter": 223,
+      "extraTriangles": 60,
+      "meanAbsRgb": [
+        0.0010197368421052632,
+        0.0010197368421052632,
+        0.001018562030075188
+      ],
+      "compositionAccepted": true
+    },
+    {
+      "place": "shoal",
+      "callsBefore": 255,
+      "callsAfter": 235,
+      "extraTriangles": 10,
+      "meanAbsRgb": [
+        0.0008846334586466166,
+        0.0010079887218045114,
+        0.0019419642857142858
+      ],
+      "compositionAccepted": true
+    },
+    {
+      "place": "dense",
+      "callsBefore": 220,
+      "callsAfter": 191,
+      "extraTriangles": 166,
+      "meanAbsRgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "compositionAccepted": false
+    },
+    {
+      "place": "camp",
+      "callsBefore": 253,
+      "callsAfter": 208,
+      "extraTriangles": 104,
+      "meanAbsRgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "compositionAccepted": true
+    }
+  ],
+  "boundedProfileComparisons": [
+    {
+      "place": "coast",
+      "trianglesBefore": 2771571,
+      "trianglesAfter": 2437468
+    },
+    {
+      "place": "shoal",
+      "trianglesBefore": 3369318,
+      "trianglesAfter": 2624992
+    },
+    {
+      "place": "camp",
+      "trianglesBefore": 2728759,
+      "trianglesAfter": 2556019
+    }
+  ],
+  "motion": [
+    {
+      "size": "desktop",
+      "frames": 240,
+      "elapsedMs": 3983.300000000003,
+      "initial": {
+        "x": -123,
+        "z": 128
+      },
+      "p95RafMs": 18.60000000000582,
+      "maxRafMs": 18.70000000001164,
+      "positionSamples": 240,
+      "maxDisplacement": 7.680854478371525,
+      "distinctNodeLevels": 138
+    },
+    {
+      "size": "narrow",
+      "frames": 240,
+      "elapsedMs": 3981.333999999999,
+      "initial": {
+        "x": -123,
+        "z": 128
+      },
+      "p95RafMs": 16.799999999999272,
+      "maxRafMs": 18.600000000000364,
+      "positionSamples": 240,
+      "maxDisplacement": 7.680854478371525,
+      "distinctNodeLevels": 138
+    }
+  ],
+  "nativeMainBlockedGatheredAndPassed": true,
+  "narrowMainViewport": [
+    390,
+    844
+  ],
+  "mainPassageDelta": 5.329799999999949,
+  "ordinarySaveTouched": false,
+  "farInstancingFiniteIncrementAccepted": true,
+  "budgetProfileFiniteReviewPassed": true,
+  "seamlessLodQualityAccepted": false,
+  "currentGpuOrEnduranceAccepted": false,
+  "physicalDeviceVerified": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "remaining": [
+    "Near/mid rendering still uses per-tree meshes with bounded count",
+    "Dense-node fixture starts inside geometry and is stress workload only",
+    "Four-view impostor brightness and discrete LOD changes remain quality backlog",
+    "240 rAF/physics frames are not native input, GPU time or endurance",
+    "Native main fixture uses declared position/materials/q6/79 zero-HP creatures; no ordinary campaign replay",
+    "Desktop motion predates resize-listener-only addition; narrow/main use current sources"
+  ],
+  "images": {
+    "coastal-batch-pair-dense-batch.png": "3de9cd1f1ee03ca1cfaffd39521900898d244b6bebb365f3a1977444ed094cc6",
+    "coastal-batch-pair-shoal-batch.png": "8f0235814ab4f0c06b789831e7089e47670e72daea727439fe7bea086628504b",
+    "coastal-batch-pair-coast-cards.png": "5f37c63bfd1aa5bf4fc645a665063cf0e13f6c1967efca6783716f2a6be8e356",
+    "coastal-batch-pair-camp-cards.png": "1bbf659ea37f554347154289be5fff6f652bc54541ec383d52db31680c15ed68",
+    "coastal-batch-pair-shoal-cards.png": "ad210816e7609da43fda228316631e3c6ae16f54d760b5ed02c40c34ee123a92",
+    "coastal-batch-pair-dense-cards.png": "71fd69c263fdfb7ac0afd364c5f84a9871485eebd97daa121a72eb671738ae81",
+    "coastal-batch-pair-coast-batch.png": "52ce55f87b05f02dc0bbe8cb86793c053ddb920b9e7043b500133d8f86978f5c",
+    "coastal-batch-pair-camp-batch.png": "8e5fd8d78d274e2e16e8ce402ea42b318c594fdf1fc2b4a4e16ae0661c6f1d1d",
+    "coastal-budget-main-narrow.png": "59487539eb0fefea0987975f88c436a746a4cf91525a893de9eed4afa74b8f91",
+    "coastal-budget-shoal-batch.png": "009a07f480b9a865abb3c783790fb70aa6d5ccde504eb26f8931d7802ded6852",
+    "coastal-budget-motion-narrow.png": "e09db236b02f2b3d89b78f828f591a34dab8d12350f930125384b7f337f06dc8",
+    "coastal-budget-camp-budget.png": "cbd3d7675c642f6fc73d9db92fe6efe0f095a280355b746cd0ec9ae15fad35c5",
+    "coastal-budget-motion-desktop.png": "0219324d3e9389d52450350fad45a21201001ec88226f5b6ec1248bed76d46ec",
+    "coastal-budget-shoal-budget.png": "8dc39fd248e231877eb45aa01337eaa6ce4a1763daf27d65fc901fb0bf525e97",
+    "coastal-budget-camp-batch.png": "4102a2288d8918b6f13b0f4957b78d21864c50b4a9b41dd6c2113c2353e60b43",
+    "coastal-budget-main-passage.png": "58686d4847cf95a635fe0e09da746699bdaed722e5e9ad80aec610948c4e13da",
+    "coastal-budget-narrow-start.png": "b48afa5d5140f426c7fa99140adf5ec1a20418c4502c71915c29edeb78443369",
+    "coastal-budget-coast-batch.png": "32675a0d515e040ed7e2ef36e1b296359f0f2d93dc2dbc5bd60ec70391db8cf4",
+    "coastal-budget-coast-budget.png": "57e83eefdcb7ae7134a358637cef71de19b37b35171068f4cddaa8b50e1b5df2"
+  },
+  "sources": {
+    "tests/coastal-far-batches.js": "2eadeaad1ed5278f91961c6e57f68fff6c90ba5c848ae13beba36fe1d2758b4a",
+    "tests/coastal-level-budget.js": "bfa7eb838fb2f4d245c9197822ebb0e8772a2fe8f458974da98936f8257355e7",
+    "tests/coastal-budget-visual.js": "15d616014320f5c5fa721d17f4400278576ec50ad4c77979ab66a7953f760098",
+    "tests/coastal-budget-main.html": "cb01748a29ec4b08378c43f531ae27724b2f52b3b7118a40fbd5703ba9b33e99",
+    "tests/coastal-batch-review.js": "2eeefc548f6c3c66f076bbf2a5f0a29f4e132364a0c537ef0fcab3b9041ed5ea",
+    "tests/coastal-batch-review.html": "343aea37fa1343c8ec571b2e06ccf349c8fef5e2b733b4fabb0cd34d1ff1ee72"
+  }
+}

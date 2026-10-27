@@ -1,0 +1,7 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>海岸表示批次对照</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#15261d;font:12px system-ui}canvas{position:absolute;inset:0;width:100%;height:100%}nav{position:fixed;z-index:2;top:8px;left:8px;background:#e6e9dfed;padding:6px;display:flex;gap:6px;flex-wrap:wrap;max-width:95%}select,button{font:inherit;padding:5px}output{position:fixed;height:0;overflow:hidden}body.narrow canvas{width:390px;height:844px}body.narrow nav{max-width:370px}</style>
+<canvas aria-label="海岸表示批次同相机对照"></canvas><nav>
+<select id="mode" aria-label="表示" disabled><option value="cards">逐株远景</option><option value="batch">实例远景</option><option value="budget">近1中3预算</option></select>
+<select id="place" aria-label="位置" disabled><option value="coast">海岸</option><option value="shoal">浅滩</option><option value="dense">重几何节点</option><option value="camp">夜营</option></select>
+<button id="motion" disabled>240帧移动环视</button><button id="size" disabled>390窄屏</button></nav><output id="batch-review-state">加载中…</output>
+<script type="module" src="coastal-batch-review.js"></script></html>

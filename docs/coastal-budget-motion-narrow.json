@@ -1,0 +1,80 @@
+{
+  "ready": true,
+  "mode": "budget",
+  "place": "coast",
+  "player": {
+    "x": -124.23219936717106,
+    "z": 128,
+    "hp": 100,
+    "stamina": 100,
+    "yaw": -0.02617993877991534
+  },
+  "time": 244.00000000000318,
+  "camera": [
+    -124.70384955027953,
+    9.76449866784956,
+    141.17240172145426
+  ],
+  "quaternion": [
+    -0.15689716125476638,
+    -0.01767267405724571,
+    -0.002808025187915062,
+    0.9874528203293595
+  ],
+  "levels": {
+    "near": 1,
+    "mid": 1,
+    "far": 99,
+    "hidden": 32
+  },
+  "batchCounts": [
+    6,
+    16,
+    7,
+    1,
+    6,
+    4,
+    13,
+    9,
+    7,
+    9,
+    9,
+    12
+  ],
+  "render": {
+    "frame": 364,
+    "calls": 163,
+    "triangles": 1490749,
+    "points": 0,
+    "lines": 0
+  },
+  "memory": {
+    "geometries": 179,
+    "textures": 101
+  },
+  "viewport": [
+    0.46208530805687204,
+    390,
+    844
+  ],
+  "buffer": [
+    390,
+    844
+  ],
+  "glError": 0,
+  "worldUnchanged": true,
+  "motion": {
+    "frames": 240,
+    "elapsedMs": 3981.333999999999,
+    "initial": {
+      "x": -123,
+      "z": 128
+    },
+    "p95RafMs": 16.799999999999272,
+    "maxRafMs": 18.600000000000364,
+    "positionSamples": 240,
+    "maxDisplacement": 7.680854478371525,
+    "distinctNodeLevels": 138
+  },
+  "scope": "Isolated deterministic camera/render comparison and real movePlayer QA path; no ordinary save or full-main journey/GPU/endurance acceptance."
+}
