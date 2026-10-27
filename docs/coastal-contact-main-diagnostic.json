@@ -1,0 +1,220 @@
+{
+  "start": {
+    "kind": "branch",
+    "resume": false,
+    "diagnosticProbe": {
+      "delta": 0.3499999999999943,
+      "guard": false
+    },
+    "movementChecks": [],
+    "player": {
+      "x": -127.82642144262802,
+      "z": 102.85986914522952,
+      "hp": 100,
+      "stamina": 100,
+      "yaw": 0
+    },
+    "inventory": {
+      "wood": 30,
+      "stone": 30,
+      "fiber": 30,
+      "berry": 3,
+      "shell": 0,
+      "crystal": 0,
+      "axe": 1,
+      "sword": 0,
+      "meal": 0
+    },
+    "quest": 6,
+    "kills": 0,
+    "time": 240.15929999961858,
+    "buildings": [],
+    "depleted": {},
+    "near": {
+      "id": "resource-3",
+      "type": "tree"
+    },
+    "targetId": "resource-3",
+    "targetVisible": true,
+    "targetDepleted": false,
+    "targetContactBoxes": 479,
+    "targetReach": 2.5307176750885283,
+    "gatherAt": -100,
+    "gatherTarget": null,
+    "coastalNodes": 133,
+    "worldUnchanged": true,
+    "camera": [
+      -127.82642144262802,
+      13.653852501430443,
+      116.85986914522952
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      1080
+    ],
+    "render": {
+      "calls": 276,
+      "triangles": 3388252
+    },
+    "glError": 0,
+    "serializedState": "{\"version\":1,\"player\":{\"x\":-127.82642144262802,\"z\":102.85986914522952,\"hp\":100,\"stamina\":100,\"yaw\":0},\"inventory\":{\"wood\":30,\"stone\":30,\"fiber\":30,\"berry\":3,\"shell\":0,\"crystal\":0,\"axe\":1,\"sword\":0,\"meal\":0},\"buildings\":[],\"depleted\":{},\"enemies\":[],\"quest\":6,\"kills\":0,\"time\":240.15929999961858,\"respawn\":{\"x\":-70,\"z\":102},\"discovered\":[\"潮汐海岸\"],\"selected\":\"axe\",\"attackAt\":-100,\"interactAt\":-100}",
+    "scope": "Explicit authored node/resource-3, position/material/quest/enemy-free fixture with isolated r2 core. Real main keyboard/craft/rest/save flow. Frozen authored tree wind during contact review, no ordinary campaign, final LOD/GPU/endurance/device/M5 acceptance.",
+    "label": "diagnostic-start"
+  },
+  "end": {
+    "kind": "branch",
+    "resume": false,
+    "diagnosticProbe": {
+      "delta": 0.3499999999999943,
+      "guard": false
+    },
+    "movementChecks": [
+      {
+        "from": {
+          "x": -127.82642144262802,
+          "z": 104.9206691452295
+        },
+        "to": {
+          "x": -127.82642144262802,
+          "z": 105.1530691452295
+        },
+        "blocked": false
+      },
+      {
+        "from": {
+          "x": -127.82642144262802,
+          "z": 105.1530691452295
+        },
+        "to": {
+          "x": -127.82642144262802,
+          "z": 105.27066914522949
+        },
+        "blocked": false
+      },
+      {
+        "from": {
+          "x": -127.82642144262802,
+          "z": 105.27066914522949
+        },
+        "to": {
+          "x": -127.82642144262802,
+          "z": 105.38686914522948
+        },
+        "blocked": false
+      },
+      {
+        "from": {
+          "x": -127.82642144262802,
+          "z": 105.38686914522948
+        },
+        "to": {
+          "x": -127.82642144262802,
+          "z": 105.5030691452295
+        },
+        "blocked": false
+      },
+      {
+        "from": {
+          "x": -127.82642144262802,
+          "z": 105.5030691452295
+        },
+        "to": {
+          "x": -127.82642144262802,
+          "z": 105.73686914522949
+        },
+        "blocked": false
+      },
+      {
+        "from": {
+          "x": -127.82642144262802,
+          "z": 105.73686914522949
+        },
+        "to": {
+          "x": -127.82642144262802,
+          "z": 105.85306914522951
+        },
+        "blocked": false
+      },
+      {
+        "from": {
+          "x": -127.82642144262802,
+          "z": 105.85306914522951
+        },
+        "to": {
+          "x": -127.82642144262802,
+          "z": 105.96996914522948
+        },
+        "blocked": false
+      },
+      {
+        "from": {
+          "x": -127.82642144262802,
+          "z": 105.96996914522948
+        },
+        "to": {
+          "x": -127.82642144262802,
+          "z": 106.0812691452295
+        },
+        "blocked": false
+      }
+    ],
+    "player": {
+      "x": -127.82642144262802,
+      "z": 106.0812691452295,
+      "hp": 100,
+      "stamina": 100,
+      "yaw": 0
+    },
+    "inventory": {
+      "wood": 30,
+      "stone": 30,
+      "fiber": 30,
+      "berry": 3,
+      "shell": 0,
+      "crystal": 0,
+      "axe": 1,
+      "sword": 0,
+      "meal": 0
+    },
+    "quest": 6,
+    "kills": 0,
+    "time": 240.8925999996187,
+    "buildings": [],
+    "depleted": {},
+    "near": null,
+    "targetId": "resource-3",
+    "targetVisible": true,
+    "targetDepleted": false,
+    "targetContactBoxes": 479,
+    "targetReach": 4.985400366426411,
+    "gatherAt": -100,
+    "gatherTarget": null,
+    "coastalNodes": 133,
+    "worldUnchanged": true,
+    "camera": [
+      -127.82642144262802,
+      13.13889151949445,
+      119.96106282925395
+    ],
+    "viewport": [
+      1280,
+      720
+    ],
+    "buffer": [
+      1920,
+      1080
+    ],
+    "render": {
+      "calls": 276,
+      "triangles": 3391070
+    },
+    "glError": 0,
+    "serializedState": "{\"version\":1,\"player\":{\"x\":-127.82642144262802,\"z\":106.0812691452295,\"hp\":100,\"stamina\":100,\"yaw\":0},\"inventory\":{\"wood\":30,\"stone\":30,\"fiber\":30,\"berry\":3,\"shell\":0,\"crystal\":0,\"axe\":1,\"sword\":0,\"meal\":0},\"buildings\":[],\"depleted\":{},\"enemies\":[],\"quest\":6,\"kills\":0,\"time\":240.8925999996187,\"respawn\":{\"x\":-70,\"z\":102},\"discovered\":[\"潮汐海岸\"],\"selected\":\"axe\",\"attackAt\":-100,\"interactAt\":-100}",
+    "scope": "Explicit authored node/resource-3, position/material/quest/enemy-free fixture with isolated r2 core. Real main keyboard/craft/rest/save flow. Frozen authored tree wind during contact review, no ordinary campaign, final LOD/GPU/endurance/device/M5 acceptance.",
+    "label": "diagnostic-move"
+  }
+}

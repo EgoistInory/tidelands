@@ -1,0 +1,64 @@
+{
+  "verified": true,
+  "isolatedContactIncrementAccepted": true,
+  "productionIntegrated": false,
+  "runtimeInputsUnchanged": 110,
+  "candidateRuntimeInputs": 111,
+  "candidateChangedFiles": [
+    "src/game.js",
+    "src/impact-feedback.js",
+    "src/main.js",
+    "src/resource-contact.js",
+    "src/resource-footprint.js"
+  ],
+  "fullTestsPassed": 345,
+  "candidateLegacyTestsPassed": 67,
+  "candidateIntegrationTestsPassed": 6,
+  "newGeometryContractsPassed": 8,
+  "nativeMainImagesViewed": 11,
+  "bodyBlockedOnActualWood": true,
+  "gatheredWoodDelta": 3,
+  "depletedPassageDelta": 5.553799999999967,
+  "nativeNineSavedFieldsRestored": true,
+  "naturalSimulationRegrowthObserved": true,
+  "regrowthDeadline": 391.4155000000004,
+  "regrowthObservedAt": 494.21219999979473,
+  "oldCampRestHp": [
+    62,
+    100
+  ],
+  "overlapOutwardDelta": -5.7757000000000005,
+  "mergedBoxes": {
+    "island_tree_01": 479,
+    "island_tree_02": 322,
+    "island_tree_03": 133
+  },
+  "initialGrazingFixtureRejected": true,
+  "initialInvalidCreatureRosterSaveRejected": true,
+  "realOrdinarySaveTouched": false,
+  "currentGpuOrEnduranceAccepted": false,
+  "farLightingOrTransitionAccepted": false,
+  "physicalDeviceVerified": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "images": {
+    "coastal-contact-legal-blocked.png": "3ea364e058851b5fcaa2df76e4c5098ad52ba300e0c27fe0f85412c2b35f36f2",
+    "coastal-contact-legal-gathered.png": "4585ae535fbe0177f0129e1e7702d7d338c54b567c9b453b23d3a974635d9952",
+    "coastal-contact-legal-passage.png": "a1178e3aed0f93921aef8c8a5455eda86daefc78309a4916520d56b16a58865d",
+    "coastal-contact-legal-saved.png": "4d10e6c13ebfe43e5e78d80fee75c0bdd0a4107d8f334fefb202d27a68a06138",
+    "coastal-contact-legal-resumed.png": "c6498cb24c64e46d292f698503a1df73526191847f9999b57ce0077ddafa297f",
+    "coastal-contact-legal-regrown.png": "ae9e44d6c7ff8c33473d699d551961a3e71325163d7f1044d6156636a28df230",
+    "coastal-contact-depleted-build-rejected.png": "8c6ae79ec64bc889a83658a8219c95a8d7ade9b4c34634a6c8f875a08363d1f1",
+    "coastal-contact-clear-built.png": "4f96e2221bc4321bf6cfc1cca3f940f0d734f9b1df061969e5082d8e3f7a0e46",
+    "coastal-contact-legacy-before.png": "b93df54081c2e948f786f0c679c40739ecc69e3c1f301d70a333fcb6dbf10c3b",
+    "coastal-contact-legacy-rested.png": "480afa7f6ad0e3f193e638710b422d07a63759f21be100cade312a35bf523f15",
+    "coastal-contact-overlap-outward.png": "863f4eee76437cff1434db582ed42387bb115de038f996fdf993f5c34c0141a3"
+  },
+  "sources": {
+    "tests/coastal-resource-footprint.js": "02be1def0896b80a94828bb4fe86398b4c03fa0f74a997e2acdb7e036ee41c3f",
+    "tests/coastal-contact-main.html": "92f5546e6854125201a9782de75e8713204ab40138ca2cb4ed4618acc6ff4361",
+    "tests/coastal-contact-visual.js": "b219cb09c210873fec60b5989b913be60e13aa31140622466fac75a3e85e9c07",
+    "tools/prepare_coastal_contact_candidate.py": "e1e5755738c51bdba01b9caebdf29de903a5b0de753f74da8e02db6eb4cde7a9",
+    "tools/prepare_coastal_contact_fixtures.mjs": "c3d79a96ca32b1fc41ee9e5f947e072f0d8e55d515a68722cfacb679729f4407"
+  }
+}

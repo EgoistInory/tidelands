@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: swept bodies stop on low limbs but can pass through a real open fork
+ok 1 - swept bodies stop on low limbs but can pass through a real open fork
+  ---
+  duration_ms: 0.703041
+  type: 'test'
+  ...
+# Subtest: vertical filtering follows ground height rather than blocking every branch projection
+ok 2 - vertical filtering follows ground height rather than blocking every branch projection
+  ---
+  duration_ms: 0.152375
+  type: 'test'
+  ...
+# Subtest: legacy overlaps can escape outward without allowing inward penetration
+ok 3 - legacy overlaps can escape outward without allowing inward penetration
+  ---
+  duration_ms: 0.0875
+  type: 'test'
+  ...
+# Subtest: gather snapshots retain geometry without serializing or sharing contacts across IDs
+ok 4 - gather snapshots retain geometry without serializing or sharing contacts across IDs
+  ---
+  duration_ms: 0.271167
+  type: 'test'
+  ...
+# Subtest: building clearance reserves actual low wood even during regrowth and leaves gaps open
+ok 5 - building clearance reserves actual low wood even during regrowth and leaves gaps open
+  ---
+  duration_ms: 0.1185
+  type: 'test'
+  ...
+# Subtest: rotated sparse branch contacts do not fill their enclosing world rectangle
+ok 6 - rotated sparse branch contacts do not fill their enclosing world rectangle
+  ---
+  duration_ms: 0.274042
+  type: 'test'
+  ...
+# Subtest: cell merging preserves exact occupied volume and a separated fork gap
+ok 7 - cell merging preserves exact occupied volume and a separated fork gap
+  ---
+  duration_ms: 0.186
+  type: 'test'
+  ...
+# Subtest: the action and feedback aim at the reachable low wood rather than an empty resource centre
+ok 8 - the action and feedback aim at the reachable low wood rather than an empty resource centre
+  ---
+  duration_ms: 0.354708
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 40.95

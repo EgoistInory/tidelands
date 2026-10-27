@@ -1,0 +1,48 @@
+{
+  "branch": {
+    "nodeId": "resource-3",
+    "model": "island_tree_01",
+    "start": {
+      "x": -123.62642144262796,
+      "z": 101.65986914522951
+    },
+    "to": {
+      "x": -123.62642144262796,
+      "z": 102.4598691452295
+    },
+    "target": {
+      "x": -123.2755786538118,
+      "y": 8.974482044696867,
+      "z": 102.7202646535548
+    },
+    "gap": 0.5464856237794773,
+    "oldCentreDistance": 3.6496575181788926
+  },
+  "blocked": {
+    "nodeId": "resource-16",
+    "model": "island_tree_02",
+    "start": {
+      "x": 187.67289865729353,
+      "z": 216.1440713025903
+    },
+    "target": {
+      "x": 187.67289865729353,
+      "y": 5.8683009802621005,
+      "z": 222.1440713025903
+    },
+    "oldCentreDistance": 3.4274568531054515,
+    "baselineCanBuild": "",
+    "candidateError": "这里被树木或岩石占据。"
+  },
+  "clear": {
+    "x": -110,
+    "z": 108
+  },
+  "selectedNodes": 133,
+  "mergedBoxes": {
+    "island_tree_01": 479,
+    "island_tree_02": 322,
+    "island_tree_03": 133
+  },
+  "scope": "Declared actual authored resource/branch and clear-ground fixtures; no ordinary save input or runtime teleport during input sequence."
+}
