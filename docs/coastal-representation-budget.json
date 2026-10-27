@@ -1,0 +1,151 @@
+{
+  "scope": "Offline source-primitive workload upper envelope before frustum/shadow passes; proposed grouping is not integrated or rendered. The offline instancingImplemented=false describes the inventory model, not the subsequently added isolated wrapper. Native candidate boot/block/gather observed; camera-matched before/after performance comparison still pending.",
+  "nodes": 133,
+  "models": [
+    {
+      "name": "island_tree_01",
+      "near": {
+        "primitives": 3,
+        "triangles": 257576,
+        "gltfSha256": "13ad13bbbd7b2f82795714a213afb117ede18f5177728836b5b2827e92b3f0a1",
+        "geometryBufferBytes": 14401408
+      },
+      "mid": {
+        "primitives": 3,
+        "triangles": 145066,
+        "gltfSha256": "af9294375897e18480069f0282bea4a63a56c39dfea7ac7154a324707706a96f",
+        "geometryBufferBytes": 9713688
+      },
+      "far": {
+        "primitives": 1,
+        "triangles": 2
+      }
+    },
+    {
+      "name": "island_tree_02",
+      "near": {
+        "primitives": 3,
+        "triangles": 172742,
+        "gltfSha256": "3c62ac0d7ba3b84b0900608a28c8a70edc202bae59f4cd00cf25784637c1f009",
+        "geometryBufferBytes": 9659144
+      },
+      "mid": {
+        "primitives": 3,
+        "triangles": 96622,
+        "gltfSha256": "432c9bbc007be33f9971b6ab6a02e9c8d2325e4cefdb146c558c5f6a06a6238d",
+        "geometryBufferBytes": 6482344
+      },
+      "far": {
+        "primitives": 1,
+        "triangles": 2
+      }
+    },
+    {
+      "name": "island_tree_03",
+      "near": {
+        "primitives": 3,
+        "triangles": 336275,
+        "gltfSha256": "6f845ca88c1c4cc24a7b5a0187ca0a7f24c82aa2dfcdbf6ce0e50696813d26cf",
+        "geometryBufferBytes": 18909668
+      },
+      "mid": {
+        "primitives": 3,
+        "triangles": 189041,
+        "gltfSha256": "fe65fc05e681d5fb59038c2edb95fb001f27945bcfdf7de28c6ca7b1ca3c5e7d",
+        "geometryBufferBytes": 12735596
+      },
+      "far": {
+        "primitives": 1,
+        "triangles": 2
+      }
+    }
+  ],
+  "samples": 1072,
+  "maxUnbatchedCalls": {
+    "point": "resource-1190",
+    "heading": 0,
+    "counts": {
+      "near": 2,
+      "mid": 6,
+      "far": 125,
+      "hidden": 0
+    },
+    "unbatchedCalls": 149,
+    "proposedInstancedCalls": 27,
+    "triangles": 1460028,
+    "heavyTriangles": 1459778
+  },
+  "maxProposedInstancedCalls": {
+    "point": "resource-16",
+    "heading": 1,
+    "counts": {
+      "near": 2,
+      "mid": 6,
+      "far": 40,
+      "hidden": 85
+    },
+    "unbatchedCalls": 64,
+    "proposedInstancedCalls": 27,
+    "triangles": 1418999,
+    "heavyTriangles": 1418919
+  },
+  "maxTriangles": {
+    "point": "resource-524",
+    "heading": 0,
+    "counts": {
+      "near": 2,
+      "mid": 6,
+      "far": 124,
+      "hidden": 1
+    },
+    "unbatchedCalls": 148,
+    "proposedInstancedCalls": 21,
+    "triangles": 1605671,
+    "heavyTriangles": 1605423
+  },
+  "maxHeavyTriangles": {
+    "point": "resource-524",
+    "heading": 0,
+    "counts": {
+      "near": 2,
+      "mid": 6,
+      "far": 124,
+      "hidden": 1
+    },
+    "unbatchedCalls": 148,
+    "proposedInstancedCalls": 21,
+    "triangles": 1605671,
+    "heavyTriangles": 1605423
+  },
+  "productionRuntimeInputsUnchanged": 110,
+  "worldUnchanged": true,
+  "instancingImplemented": false,
+  "nativeMovingLodAccepted": false,
+  "currentGpuOrEnduranceAccepted": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "isolatedFarBatchImplemented": true,
+  "nativeFirstFrameObserved": {
+    "render": {
+      "calls": 129,
+      "triangles": 1725946
+    },
+    "viewport": [
+      1280,
+      720
+    ],
+    "glError": 0,
+    "imageViewed": true
+  },
+  "nativeBlockedAndGathered": true,
+  "nativeAfterGatherRender": {
+    "calls": 223,
+    "triangles": 3141281
+  },
+  "performanceGainAccepted": false,
+  "candidateFiles": {
+    "tests/coastal-far-batches.js": "2eadeaad1ed5278f91961c6e57f68fff6c90ba5c848ae13beba36fe1d2758b4a",
+    "tests/coastal-batched-visual.js": "3714a14e781d23ac164f1b1eebd5d532f6e667dc467bb1e5d3dda53406ee948c",
+    "tests/coastal-batched-main.html": "48d007c39618b5716c4a68d47a39950306519b99cae16acec256e8487884ccc6"
+  }
+}
