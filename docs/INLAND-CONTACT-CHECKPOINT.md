@@ -34,3 +34,6 @@ node tools/verify_inland_contacts.mjs --native-overlap
 ```
 
 原生入口 `tests/inland-contact-main.html?case=branch`，`case=overlap&resume=1` 使用独立保存，`case=legacy&lod=mid` 为营地夹具。临时57页已关、视口reset；11普通原暂停handoff、4190原PID55245仍监听；临时4195 Ctrl-C/exit130已停。2048保留，历史goal不强改，无券、购买、付费API或公网推送。
+
+
+2026-10-29 窄屏成熟3D主路径补验：实时96→98%/周47%允许，继续原候选而非只报额度。实际390×844 buffer加载mid，1765近景3D=1；W停在Z−97.084515，再W坐标完全不变，受控点击手机布局采集按钮使木材30→33/树隐藏，W通过至−101.120715。两张截图已看、console空/GL0/15原ID世界不变，正式verify_inland_contact_checkpoint.py连同已有全部证据/181正式输入和ZIP SHA通过。仅声明窄屏按钮采集+键盘穿行，未测本批摇杆/真机/连续镜头/当前循环GPU长时；新证据补齐此前营地场景3D0的范围缺口。生产尚未迁移，接下来优先镜头/循环预算与正式资产及生命周期整组落地，不再调单叶。58关、viewport reset、11原暂停handoff，临时4195预期Ctrl-C exit130停，原普通档未读写。M5五项/完整3A未完，2048保留；无券/购买/付费API/公网推送，仅本地提交。

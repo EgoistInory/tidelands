@@ -32,8 +32,14 @@ def verify():
     escape=rows['overlap-native-forward-exit'];assert escape['player']['z']<rows['overlap-second-reload']['player']['z']-4 and not escape['targetDepleted']
     narrow,rest=rows['narrow-legacy-before'],rows['narrow-legacy-rest'];assert narrow['viewport']==narrow['buffer']==[390,844] and narrow['lod']=='mid' and narrow['player']['hp']==62 and rest['player']['hp']==100
     assert narrow['buildings']==rest['buildings'] and rest['near']['type']=='campfire' and rest['targetDepleted'] and not rest['targetVisible']
+    near=read('docs/inland-contact-narrow-near-observations.json');nb,blocked,repeat,gather,passed=near
+    for row in near:assert row['lod']=='mid' and row['viewport']==row['buffer']==[390,844] and row['worldUnchanged'] and row['glError']==0
+    assert nb['visible3D']==blocked['visible3D']==repeat['visible3D']==1 and blocked['targetVisible'] and repeat['player']==blocked['player']
+    assert .8<nb['player']['z']-blocked['player']['z']<1.1 and gather['inventory']['wood']==33 and gather['targetDepleted'] and not gather['targetVisible'] and gather['gatherTarget'] is not None
+    assert passed['player']['z']<blocked['player']['z']-3.5 and passed['inventory']['wood']==33
+    assert read('docs/inland-contact-narrow-near-console.json')==[]
     images={}
-    for name,size in [('desktop-before',(1280,720)),('desktop-after',(1280,720)),('overlap',(1280,720)),('narrow-legacy',(390,844))]:
+    for name,size in [('desktop-before',(1280,720)),('desktop-after',(1280,720)),('overlap',(1280,720)),('narrow-legacy',(390,844)),('narrow-near-before',(390,844)),('narrow-near-after',(390,844))]:
         path=f'docs/inland-contact-{name}.png'
         with Image.open(ROOT/path) as image:assert image.size==size
         images[path]=sha(path)
@@ -42,5 +48,6 @@ def verify():
     for file,row in package['files'].items():assert sha('docs/LOCAL-DELIVERY.md' if file=='README.md' else file)==row['sha256'],file
     assert sha('dist/tidelands-m5-2026-10-27-coastal-contact-budget.zip')==package['archiveSha256']
     report=dict(verified=True,scope='15 actual core fixtures plus one native current-main resource with declared materials/quest/zero-HP enemy fixtures; isolated storage',rootSurveyOnly=True,all15HeadlessMovementGatherLegacyCamp=True,nativeBodyBlockGatherPass=True,nativeDurableSaveFields=len(durable),nativeEnemyRecordsPreserved=79,expectedTransientResets=['enemy.attackAt','interactAt'],nativeOverlapSavedPlayerUnchanged=True,nativeFullWorldEscapeEndpoint=escape['player'],cameraChunks=1365,maxCameraChunkRadius=escape['maxCameraChunkRadius'],cameraOrbitContactAccepted=False,narrowTouchCampRest=True,nativeNarrowMature3DVisible=False,productionRuntimeFilesUnchanged=len(package['files']),packageSha256=package['archiveSha256'],ordinarySaveTouched=False,productionIntegrated=False,currentCandidateGameLoopGpuOrEnduranceAccepted=False,milestoneM5Complete=False,fullGoalComplete=False,images=images,sources={file:sha(file) for file in ['tests/inland-contact-main.html','tests/inland-contact-renderer.js','tools/inland-contact-volume.mjs','tools/prepare_inland_contact_cells.mjs','tools/verify_inland_contacts.mjs','tools/audit_inland_root_support.mjs']})
+    report.update(nativeNarrowMature3DVisible=True,nativeNarrowTouchGatherAndKeyboardPass=True,nativeNarrowMovementTouchJoystickAccepted=False)
     (ROOT/'docs/inland-contact-checkpoint-audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k not in ['images','sources']},ensure_ascii=False))
 if __name__=='__main__':verify()

@@ -22,7 +22,7 @@
   "maxCameraChunkRadius": 7.629155384092796,
   "cameraOrbitContactAccepted": false,
   "narrowTouchCampRest": true,
-  "nativeNarrowMature3DVisible": false,
+  "nativeNarrowMature3DVisible": true,
   "productionRuntimeFilesUnchanged": 181,
   "packageSha256": "339b94dedad2a2749ac390a06a4c6d8e97213b07623c5e969d8a0d1a3b994913",
   "ordinarySaveTouched": false,
@@ -34,7 +34,9 @@
     "docs/inland-contact-desktop-before.png": "08aa5448c19f3a90069002c01603cfb221d639ddf9b5977a42d57d536cddca90",
     "docs/inland-contact-desktop-after.png": "1710ca5565e9415c59f0ef049bed3d2cbedabd18ebfeee0af0f1496c9418b0b3",
     "docs/inland-contact-overlap.png": "00d3fc76f5297a3e35c8f53483d7e6a6e13219492f5d266a179d56f2e2a3275d",
-    "docs/inland-contact-narrow-legacy.png": "38ad90f62cca243950d4d4ba8b7b722ffa5997363166bf8a1f8b9d6cc8e12ad1"
+    "docs/inland-contact-narrow-legacy.png": "38ad90f62cca243950d4d4ba8b7b722ffa5997363166bf8a1f8b9d6cc8e12ad1",
+    "docs/inland-contact-narrow-near-before.png": "8e59598dfc52ee5f25a7b7404bcdf727e6ea6e7a4a00659e0499717fe757ed4c",
+    "docs/inland-contact-narrow-near-after.png": "0b963387e8014a1c907af1e5fa0f9b37c9e8b4488bc5142b7bb8b5caac29d47f"
   },
   "sources": {
     "tests/inland-contact-main.html": "1c01d1a4f397dd216bbeaf139aba8687a77a3f60327dc1166f3b1b301c8a8942",
@@ -43,5 +45,7 @@
     "tools/prepare_inland_contact_cells.mjs": "cc0e8f5fff58d86dba85a00f4caefe4f51810f8965f17c5a57b9efc12a2d6d75",
     "tools/verify_inland_contacts.mjs": "59cb76fa6e36f8da3eb913d3a697ec38eb2c5560f597fb58e7e0e7b7d34c9c85",
     "tools/audit_inland_root_support.mjs": "7d5cc00fe284a19c4cb04b4655a363655c68038beb973c18804c4879169bab85"
-  }
+  },
+  "nativeNarrowTouchGatherAndKeyboardPass": true,
+  "nativeNarrowMovementTouchJoystickAccepted": false
 }
