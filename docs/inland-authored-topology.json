@@ -1,0 +1,88 @@
+{
+  "models": {
+    "jacaranda_tree": {
+      "primitives": [
+        {
+          "material": "jacaranda_tree_branches",
+          "vertices": 919844,
+          "triangles": 1231286,
+          "components": 33145,
+          "componentTriangleQuantiles": [
+            12,
+            27,
+            64,
+            970
+          ],
+          "bounds": {
+            "min": [
+              -12.889074325561523,
+              2.2754554748535156,
+              -9.659333229064941
+            ],
+            "max": [
+              11.28077507019043,
+              19.267589569091797,
+              9.080706596374512
+            ]
+          }
+        },
+        {
+          "material": "jacaranda_tree_trunk",
+          "vertices": 121378,
+          "triangles": 230112,
+          "components": 74,
+          "componentTriangleQuantiles": [
+            140,
+            2392,
+            9672,
+            12752
+          ],
+          "bounds": {
+            "min": [
+              -3.486842155456543,
+              -0.146615132689476,
+              -3.8195481300354004
+            ],
+            "max": [
+              5.367859363555908,
+              10.20097827911377,
+              2.6690657138824463
+            ]
+          }
+        },
+        {
+          "material": "jacaranda_tree_leaves",
+          "vertices": 2639274,
+          "triangles": 2402434,
+          "components": 116084,
+          "componentTriangleQuantiles": [
+            10,
+            21,
+            28,
+            46
+          ],
+          "bounds": {
+            "min": [
+              -12.92025089263916,
+              2.102717399597168,
+              -9.953813552856445
+            ],
+            "max": [
+              11.496798515319824,
+              19.3222599029541,
+              9.200760841369629
+            ]
+          }
+        }
+      ],
+      "requiredExtensions": [],
+      "nodes": [
+        {
+          "mesh": 0,
+          "name": "jacaranda_tree_LOD0"
+        }
+      ]
+    }
+  },
+  "productionIntegrated": false
+}

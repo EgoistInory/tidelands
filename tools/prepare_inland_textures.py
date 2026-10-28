@@ -1,0 +1,47 @@
+"""Pack official diffuse/opacity data for alpha-masked leaf patches, offline only."""
+from pathlib import Path
+import hashlib
+import io
+import json
+from PIL import Image
+
+ROOT=Path(__file__).resolve().parents[1]
+SOURCE=ROOT/'dist/inland-authored-source'
+OUT=ROOT/'dist/inland-authored-candidate'
+
+def prepare():
+    report=dict(models={},productionIntegrated=False,license='CC0-1.0')
+    for name in ['jacaranda_tree']:
+        acquired=json.loads((SOURCE/name/'acquisition.json').read_text());records={}
+        def original(relative):
+            data=(SOURCE/name/relative).read_bytes()
+            assert hashlib.sha256(data).hexdigest()==acquired['files'][relative]['sha256']
+            return data
+        doc=json.loads((OUT/name/f'{name}_near.gltf').read_text())
+        for image in doc['images']:
+            relative=image['uri'];path=OUT/name/relative
+            if relative.endswith('_rgba_512.png'):
+                diffuse=Image.open(io.BytesIO(original(f'textures/{name}_leaves_diff_1k.jpg'))).convert('RGB')
+                opacity=Image.open(io.BytesIO(original(f'textures/{name}_leaves_alpha_1k.png'))).convert('L')
+                assert diffuse.size==opacity.size
+                diffuse.putalpha(opacity);bitmap=diffuse.resize((512,512),Image.Resampling.LANCZOS)
+                assert bitmap.getchannel('A').getextrema()==(0,255)
+            else:
+                bitmap=Image.open(io.BytesIO(original(relative))).convert('RGB');bitmap.thumbnail((512,512),Image.Resampling.LANCZOS)
+            stream=io.BytesIO();bitmap.save(stream,format='PNG' if relative.endswith('.png') else 'JPEG',**({} if relative.endswith('.png') else {'quality':90}))
+            data=stream.getvalue();path.parent.mkdir(parents=True,exist_ok=True)
+            if path.exists() and path.read_bytes()!=data:raise FileExistsError('Refuse different existing texture')
+            path.write_bytes(data);records[relative]=dict(bytes=len(data),sha256=hashlib.sha256(data).hexdigest(),size=list(bitmap.size))
+        # The original geometry preview uses its original 1k maps and official alpha.
+        relative=f'textures/{name}_leaves_rgba_1k.png';path=OUT/name/relative
+        diffuse=Image.open(io.BytesIO(original(f'textures/{name}_leaves_diff_1k.jpg'))).convert('RGB')
+        diffuse.putalpha(Image.open(io.BytesIO(original(f'textures/{name}_leaves_alpha_1k.png'))).convert('L'))
+        stream=io.BytesIO();diffuse.save(stream,format='PNG');data=stream.getvalue()
+        if path.exists() and path.read_bytes()!=data:raise FileExistsError('Refuse different existing source preview')
+        path.write_bytes(data);records[relative]=dict(bytes=len(data),sha256=hashlib.sha256(data).hexdigest(),size=list(diffuse.size))
+        report['models'][name]=records
+    report['textureBytes']=sum(v['bytes'] for files in report['models'].values() for v in files.values())
+    (OUT/'texture-manifest.json').write_text(json.dumps(report,indent=2)+'\n')
+    print(json.dumps(dict(textures=sum(len(v) for v in report['models'].values()),bytes=report['textureBytes'])))
+
+if __name__=='__main__':prepare()

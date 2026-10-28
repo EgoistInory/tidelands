@@ -1,0 +1,5 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>内陆成熟乔木 · 原作者尺度审查</title>
+<style>html,body{margin:0;height:100%;background:#24372d;color:#fff;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}button,select{font:inherit;padding:6px}output{height:100px;overflow:auto;overflow-wrap:anywhere}canvas{flex:1;min-height:0;width:100%}</style>
+<nav>隔离审查 · 不读写普通存档 <select id="mode"><option value="near">近景候选</option><option value="mid">中景候选</option><option value="source">原始几何 + 官方透明度</option><option value="mass">5株疏林构图候选</option><option value="far">四向远景候选</option><option value="far-mass">5株远景构图候选</option></select><select id="angle"><option value="0">正面</option><option value="90">侧面</option><option value="180">背面</option><option value="270">反侧</option></select><button id="bake" disabled>烘焙4向远景颜色/法线</button></nav>
+<output id="state">准备…</output><canvas aria-label="实际成熟乔木及同单位正式人物"></canvas><textarea id="baked-data" hidden></textarea>
+<script type="module" src="inland-authored-review.js"></script></html>

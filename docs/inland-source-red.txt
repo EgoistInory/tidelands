@@ -1,0 +1,50 @@
+FFFFF
+======================================================================
+FAIL: test_declared_large_inland_tree_fits_explicit_bounded_source_budget (test_inland_source_prepare.InlandSourceSafety.test_declared_large_inland_tree_fits_explicit_bounded_source_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tests/test_inland_source_prepare.py", line 10, in test_declared_large_inland_tree_fits_explicit_bounded_source_budget
+    self.assertEqual(len(inland_entries('jacaranda_tree',self.row())),2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_escaping_paths_unbounded_sizes_and_invalid_checksum_are_rejected (test_inland_source_prepare.InlandSourceSafety.test_escaping_paths_unbounded_sizes_and_invalid_checksum_are_rejected) (mutation='path')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tests/test_inland_source_prepare.py", line 21, in test_escaping_paths_unbounded_sizes_and_invalid_checksum_are_rejected
+    with self.subTest(mutation=mutation),self.assertRaises(ValueError):inland_entries('jacaranda_tree',row)
+                                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_escaping_paths_unbounded_sizes_and_invalid_checksum_are_rejected (test_inland_source_prepare.InlandSourceSafety.test_escaping_paths_unbounded_sizes_and_invalid_checksum_are_rejected) (mutation='size')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tests/test_inland_source_prepare.py", line 21, in test_escaping_paths_unbounded_sizes_and_invalid_checksum_are_rejected
+    with self.subTest(mutation=mutation),self.assertRaises(ValueError):inland_entries('jacaranda_tree',row)
+                                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_escaping_paths_unbounded_sizes_and_invalid_checksum_are_rejected (test_inland_source_prepare.InlandSourceSafety.test_escaping_paths_unbounded_sizes_and_invalid_checksum_are_rejected) (mutation='md5')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tests/test_inland_source_prepare.py", line 21, in test_escaping_paths_unbounded_sizes_and_invalid_checksum_are_rejected
+    with self.subTest(mutation=mutation),self.assertRaises(ValueError):inland_entries('jacaranda_tree',row)
+                                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_other_assets_and_remote_hosts_are_rejected (test_inland_source_prepare.InlandSourceSafety.test_other_assets_and_remote_hosts_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/huxiaocong/Codex/tidelands/tests/test_inland_source_prepare.py", line 12, in test_other_assets_and_remote_hosts_are_rejected
+    with self.assertRaises(ValueError):inland_entries('tree_small_02',self.row('tree_small_02'))
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=5)

@@ -1,0 +1,114 @@
+{
+  "verified": true,
+  "verificationScope": "Published source bytes, derived files and diagnostic capture consistency only",
+  "sourceFiles": 12,
+  "sourceBytes": 215115342,
+  "originalTriangles": 3863832,
+  "sourceAcquired": true,
+  "isolatedRepresentationExecuted": true,
+  "allLeafComponentsRetained": 116084,
+  "nearTriangles": 2436114,
+  "midTriangles": 2357216,
+  "combinedGeometryBytes": 223083608,
+  "bakedViews": 4,
+  "bakedFiles": 8,
+  "bakedBytes": 9716298,
+  "isolatedImagesViewed": 9,
+  "worldCandidateImagesViewed": 4,
+  "worldCandidateOriginalIds": 15,
+  "failedHiddenMassAttemptPreserved": true,
+  "productionRuntimeFilesUnchanged": 181,
+  "currentPackageSha256": "339b94dedad2a2749ac390a06a4c6d8e97213b07623c5e969d8a0d1a3b994913",
+  "productionIntegrated": false,
+  "inland3dBudgetAccepted": false,
+  "farLightingMatchAccepted": false,
+  "wholeProductionForestAccepted": false,
+  "ordinarySaveTouched": false,
+  "gpuOrEnduranceAccepted": false,
+  "physicalDeviceAccepted": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "candidates": {
+    "dist/inland-authored-candidate/jacaranda_tree/jacaranda_tree_near.gltf": {
+      "bytes": 5177,
+      "sha256": "7fdf7d549d8ae114d95b602ead546626e9b8d2037d771825829663c1b1cb77eb"
+    },
+    "dist/inland-authored-candidate/jacaranda_tree/jacaranda_tree_near.bin": {
+      "bytes": 113258712,
+      "sha256": "d82cecc336a4d292be06e29c029f7aee638eb8777659ad28830c4ae33bb5c37c"
+    },
+    "dist/inland-authored-candidate/jacaranda_tree/jacaranda_tree_mid.gltf": {
+      "bytes": 5175,
+      "sha256": "d2c5eab70c6394e575a17f18b8bc2388481165e51b735a087723c8921cb146ff"
+    },
+    "dist/inland-authored-candidate/jacaranda_tree/jacaranda_tree_mid.bin": {
+      "bytes": 109824896,
+      "sha256": "bcf3caf7b6737be9f4b36a5fb801009e4b40d696afa8da4e76818c85b9ab817f"
+    }
+  },
+  "evidence": {
+    "near": {
+      "mode": "near",
+      "triangles": 2456507,
+      "imageSha256": "c3b20aff5e76418af07b02b13b93be0f829eb3cca72f643b9465a0ab6fcf9533"
+    },
+    "source": {
+      "mode": "source",
+      "triangles": 3884225,
+      "imageSha256": "a38eb4cdca3529c012fd7f0996edee089fb040bcb3b5ad6a7ad09f995bdf4d2f"
+    },
+    "mid": {
+      "mode": "mid",
+      "triangles": 2377609,
+      "imageSha256": "bb70c3c8699a09994e40046449593f37e7e0211e22e5b7d6d652f4d5ae1f3ccc"
+    },
+    "mass": {
+      "mode": "mass",
+      "triangles": 12200963,
+      "imageSha256": "9251fede19a8d6da5b6d4ce0f1eb32ddc6965527ce973f055dcf6191827d568a"
+    },
+    "far": {
+      "mode": "far",
+      "triangles": 20395,
+      "imageSha256": "f2aa6c039571390ef96fdebef1babde74daaea85681575f6f44877604d504c63"
+    },
+    "far-90": {
+      "mode": "far",
+      "triangles": 20395,
+      "imageSha256": "1c1bc02bf1e7bcd8538a323d0b9267295fa70d7c83d25f7738ff0f91b5e4390e"
+    },
+    "far-180": {
+      "mode": "far",
+      "triangles": 20395,
+      "imageSha256": "a13240f6a77e8cc257c6454e5d23a1b61117f39a7e60f68bae824636935e27f6"
+    },
+    "far-270": {
+      "mode": "far",
+      "triangles": 20395,
+      "imageSha256": "78e886856933bed3c5d4d0bd03226980d83090382df244acaae5a97776797004"
+    },
+    "far-mass": {
+      "mode": "far-mass",
+      "triangles": 20403,
+      "imageSha256": "018414012697062cd7b3fb8a30c94cbf6466e78e1f3a24a9786bdc39b6bce9e0"
+    }
+  },
+  "worldEvidence": {
+    "edge-old": {
+      "imageSha256": "57795bf9a867435d7936867468da9abed9c163a4154af2ef849ce9a490007df1",
+      "triangles": 2487725
+    },
+    "edge-candidate": {
+      "imageSha256": "db1e0e2b384f6dfb51675a2a5e4571e0b78c01860e21e4c10baf0193e55943a2",
+      "triangles": 2487749
+    },
+    "interior-old": {
+      "imageSha256": "619cdd57665224c937d0ffd5518f7ac710d5f25cf58fcbbe5b9ba4c0e2217c3b",
+      "triangles": 2670921
+    },
+    "interior-candidate": {
+      "imageSha256": "5a1eeb65fadeaaa4fd7eaa7c87d289a555c9b6ca056266518abe2bba9ec7ba5a",
+      "triangles": 2670939
+    }
+  }
+}
