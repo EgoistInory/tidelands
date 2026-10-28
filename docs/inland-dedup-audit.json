@@ -1,0 +1,39 @@
+{
+  "verified": true,
+  "scope": "Exact deduplication, unchanged branch/leaf bytes and isolated near/mid display; no full visual quality or production acceptance",
+  "removedSameWindingTrunkDuplicates": 115056,
+  "rows": [
+    {
+      "level": "near",
+      "triangles": 2223260,
+      "trunkTriangles": 17258,
+      "relativeTrunkError": 0.0007710445206612349,
+      "geometryBytes": 107135184,
+      "savedBytes": 6123528,
+      "sha256": "86faad26cabbc417cf5076d78ce3cdbd2d7c954c9b05ef4eb00f92a54fdbe56e",
+      "branchAndLeafBuffersIdentical": true
+    },
+    {
+      "level": "mid",
+      "triangles": 2134006,
+      "trunkTriangles": 6902,
+      "relativeTrunkError": 0.0017937332158908248,
+      "geometryBytes": 103397384,
+      "savedBytes": 6427512,
+      "sha256": "b4664e315fa79007385ad2402ad43403bdd0e77fda5083d959cfddb29afb2d74",
+      "branchAndLeafBuffersIdentical": true
+    }
+  ],
+  "combinedGeometryBytes": 210532568,
+  "savedBytes": 12551040,
+  "isolatedImagesViewed": 2,
+  "images": {
+    "near": "edbf36bd4784f43f0029b4b79eebc410159463a2d28b53cfd956da83db822a9e",
+    "mid": "4a439fe98e173ea27360b12f5a964ecf547e292caa030867e72c4f54130fe3c6"
+  },
+  "sourceOrPriorCandidateModified": false,
+  "productionIntegrated": false,
+  "visualAccepted": false,
+  "budgetAccepted": false,
+  "fullGoalComplete": false
+}

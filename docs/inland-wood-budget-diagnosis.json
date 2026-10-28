@@ -1,0 +1,74 @@
+{
+  "verifiedSource": true,
+  "pruneUsed": false,
+  "sourceModified": false,
+  "candidateModified": false,
+  "productionIntegrated": false,
+  "rows": [
+    {
+      "material": "jacaranda_tree_branches",
+      "sourceTriangles": 1231286,
+      "degenerateTriangles": 0,
+      "topology": null,
+      "exactDeduplication": null,
+      "outputs": [
+        {
+          "mode": "geometry-only",
+          "triangles": 229436,
+          "error": 0.003996646031737328
+        },
+        {
+          "mode": "original-attribute-weights",
+          "triangles": 243876,
+          "error": 0.003947412595152855
+        },
+        {
+          "mode": "zero-attribute-weights",
+          "triangles": 229436,
+          "error": 0.003996646031737328
+        }
+      ]
+    },
+    {
+      "material": "jacaranda_tree_trunk",
+      "sourceTriangles": 230112,
+      "degenerateTriangles": 0,
+      "topology": {
+        "sourceVertices": 121378,
+        "exactPositionVertices": 57661,
+        "exactAttributeVertices": 60689,
+        "duplicatePositionFaces": 115056,
+        "duplicateAttributeFaces": 115056,
+        "exactPositionEdgeOwners": {
+          "one": 0,
+          "two": 264,
+          "overTwo": 172452
+        }
+      },
+      "exactDeduplication": {
+        "removedSameWindingFaces": 115056,
+        "removedIdenticalAttributeVertices": 60689,
+        "cleanTriangles": 115056,
+        "simplifiedTriangles": 17258,
+        "error": 0.0007710445206612349
+      },
+      "outputs": [
+        {
+          "mode": "geometry-only",
+          "triangles": 230112,
+          "error": 0
+        },
+        {
+          "mode": "original-attribute-weights",
+          "triangles": 230112,
+          "error": 0
+        },
+        {
+          "mode": "zero-attribute-weights",
+          "triangles": 230112,
+          "error": 0
+        }
+      ]
+    }
+  ]
+}

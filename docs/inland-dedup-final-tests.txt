@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: identical attribute vertices and cyclic duplicate faces collapse without changing winding
+ok 1 - identical attribute vertices and cyclic duplicate faces collapse without changing winding
+  ---
+  duration_ms: 1.625583
+  type: 'test'
+  ...
+# Subtest: opposite winding and coincident faces with distinct UV or normals are preserved
+ok 2 - opposite winding and coincident faces with distinct UV or normals are preserved
+  ---
+  duration_ms: 0.705875
+  type: 'test'
+  ...
+# Subtest: invalid ranges and nonfinite geometry fail closed
+ok 3 - invalid ranges and nonfinite geometry fail closed
+  ---
+  duration_ms: 0.170792
+  type: 'test'
+  ...
+# Subtest: alpha leaf patch preserves UV extent and curved source surface without removing leaves
+ok 4 - alpha leaf patch preserves UV extent and curved source surface without removing leaves
+  ---
+  duration_ms: 2.175416
+  type: 'test'
+  ...
+# Subtest: leaf reconstruction rejects bad UV or degenerate surfaces instead of silently deleting a component
+ok 5 - leaf reconstruction rejects bad UV or degenerate surfaces instead of silently deleting a component
+  ---
+  duration_ms: 0.599875
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 53.11325
