@@ -246,6 +246,7 @@ export class WorldView{
     for(const e of state.enemies){if(!this.creatures.has(e.id)){const g=createCreature(e.type,this.creatureGeometryCache);this.scene.add(g);this.creatures.set(e.id,g);}else if(switched)resetCreature(this.creatures.get(e.id));}
     this.syncedState=state;
     this.contactShade?.sync(state);
+    this.inland?.afterSync(state);
   }
   disposeGroup(group){const shared=new Set(materials.values()),released=new Set(),sharedGeometry=group.userData.releaseDistant?.()??new Set();group.userData.releaseSurface?.();group.traverse(o=>{if(o.isMesh){if(!sharedGeometry.has(o.geometry))o.geometry.dispose();for(const m of [o.material].flat())if(!shared.has(m)&&!released.has(m)){m.dispose();released.add(m);}}});}
   setPreview(type){
@@ -286,6 +287,7 @@ export class WorldView{
   }
   draw(state,near,placement,moving,dt){
     this.coastal?.update(state);
+    this.inland?.update(state);
     const p=state.player,h=Math.max(terrain(p.x,p.z),-.45),weather=weatherAt(state.time);
     updateFoliage(state.time,weather.windStrength);
     updateMeadow(state.time,weather.windStrength);

@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>内陆真实主循环与连续镜头采样</title>
+<style>html,body,iframe{margin:0;width:100%;height:100%;border:0}body{overflow:hidden}#sample{position:fixed;right:8px;bottom:74px;z-index:3}output{position:fixed;height:0;overflow:hidden}</style>
+<iframe title="内陆真实主循环位置材料夹具"></iframe><button id="sample" disabled>采样18秒环视</button><output id="runtime-status">准备真实main…</output><output id="runtime-result"></output>
+<script type="module">
+const params=new URLSearchParams(location.search),lod=params.get('lod')==='mid'?'mid':'near',candidate=params.get('candidate')!=='0',root=new URL('../',location.href),audit=await(await fetch('../docs/inland-contact-core-audit.json')).json(),fixture=audit.rows.find(r=>r.id==='resource-1765'),doc=new DOMParser().parseFromString(await(await fetch(new URL('index.html',root))).text(),'text/html'),base=doc.createElement('base');base.href=root.href;doc.head.prepend(base);doc.body.dataset.testHarness='true';for(const script of doc.querySelectorAll('script'))script.remove();
+const setup=doc.createElement('script');setup.type='module';setup.textContent=`
+import {boot} from './src/main.js';import {WorldView} from './src/scene.js';import {freshGame} from './src/game.js';import {prepareInlandContacts,bindInlandContacts} from '${new URL('inland-contact-renderer.js',location.href).href}';import {installInlandRuntimeProbe} from '${new URL('inland-runtime-probe.js',location.href).href}';
+const candidate=${candidate},lod=${JSON.stringify(lod)},fixture=${JSON.stringify(fixture)},prepared=candidate?await prepareInlandContacts(lod):null,state=freshGame();state.quest=6;state.time=240;state.enemies.forEach(e=>e.hp=0);Object.assign(state.inventory,{wood:30,stone:30,fiber:30,axe:1});state.selected='axe';Object.assign(state.player,fixture.start);state.player.yaw=0;
+const sync=WorldView.prototype.sync,draw=WorldView.prototype.draw;
+WorldView.prototype.sync=function(s){if(!this.inlandRuntimeStarted){this.inlandRuntimeStarted=true;this.inlandFrozen=JSON.stringify(this.world.objects);if(prepared)this.inlandContacts=bindInlandContacts(this,prepared);this.yaw=0;this.pitch=.29;installInlandRuntimeProbe(this,{candidate,lod,prepared,mirror:parent.document});}const result=sync.call(this,s);this.inlandContacts?.afterSync();return result;};
+WorldView.prototype.draw=function(s,...args){return this.inlandRuntimeProbe.draw(s,args,()=>{this.inlandContacts?.update(s);return draw.call(this,s,...args);});};
+window.addEventListener('pagehide',()=>prepared?.release());const key='tidelands-inland-runtime-v1-'+lod+'-'+candidate;localStorage.setItem(key+'-audio','off');boot({initialState:state,storageKey:key});`;
+doc.body.append(setup);document.querySelector('iframe').srcdoc='<!doctype html>'+doc.documentElement.outerHTML;
+</script></html>

@@ -1,0 +1,20 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>正式内陆准备生命周期</title><button disabled>核验准备释放/取消/局部失败</button><pre>加载本地模块…</pre><script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {GLTFLoader} from '../vendor/addons/loaders/GLTFLoader.js';
+import {prepareInlandVisual} from '../src/inland.js';
+const button=document.querySelector('button'),out=document.querySelector('pre');button.disabled=false;out.textContent='只使用正式本地文件，实际加载模型/贴图；注入取消和远景加载失败以核验释放，不接入游戏/存档/GPU。';
+button.onclick=async()=>{
+ button.disabled=true;const rows=[],nativeModel=GLTFLoader.prototype.loadAsync,nativeTexture=THREE.TextureLoader.prototype.loadAsync,nativeMaterialDispose=THREE.Material.prototype.dispose,nativeGeometryDispose=THREE.BufferGeometry.prototype.dispose;
+ try{
+  for(const mode of ['release-twice','abort-after-model','fail-after-far-textures']){
+   const owned=new Map(),controller=new AbortController(),track=value=>{if(owned.has(value))return;owned.set(value,0);value.addEventListener('dispose',()=>owned.set(value,owned.get(value)+1));},trackModel=root=>root.traverse(o=>{if(o.isMesh){track(o.geometry);for(const m of [o.material].flat()){track(m);for(const v of Object.values(m))if(v?.isTexture)track(v);}}});
+   THREE.Material.prototype.dispose=function(){track(this);return nativeMaterialDispose.call(this);};THREE.BufferGeometry.prototype.dispose=function(){track(this);return nativeGeometryDispose.call(this);};
+   GLTFLoader.prototype.loadAsync=async function(...args){const result=await nativeModel.apply(this,args);trackModel(result.scene);if(mode==='abort-after-model')controller.abort();return result;};
+   THREE.TextureLoader.prototype.loadAsync=async function(url,...args){if(mode==='fail-after-far-textures'&&String(url).endsWith('jacaranda_tree-1-normal.png'))throw Error('Declared far texture failure');const texture=await nativeTexture.call(this,url,...args);track(texture);return texture;};
+   let error=null;try{const prepared=await prepareInlandVisual({level:'mid',signal:controller.signal});if(mode!=='release-twice')throw Error('Expected preparation failure did not occur');prepared.plane.addEventListener('dispose',()=>{});prepared.release();prepared.release();}catch(e){error={name:e.name,message:e.message};}
+   // Source model:3 geometries+3 materials+9 textures=15. Success adds8 far textures+4 materials+1 plane; partial failure adds3 textures+1 material.
+   const counts=[...owned.values()],expected={'release-twice':28,'abort-after-model':15,'fail-after-far-textures':19}[mode],valid=counts.length===expected&&counts.every(n=>n===1)&&(mode==='release-twice'?!error:mode==='abort-after-model'?error?.name==='AbortError':error?.message==='Declared far texture failure');rows.push({mode,ownedResources:counts.length,expectedResources:expected,disposeCounts:counts,error,verified:valid});if(!valid)throw Error('Preparation lifecycle mismatch');out.textContent=JSON.stringify({complete:false,rows});
+  }out.textContent=JSON.stringify({complete:true,rows,scope:'Real local GLTF and TextureLoader success/abort-after-model/injected far failure, explicit dispose events; no renderer upload or VRAM proof, no ordinary storage touched.'});
+ }catch(error){out.textContent=JSON.stringify({complete:false,rows,error:error.message});console.error(error);}finally{GLTFLoader.prototype.loadAsync=nativeModel;THREE.TextureLoader.prototype.loadAsync=nativeTexture;THREE.Material.prototype.dispose=nativeMaterialDispose;THREE.BufferGeometry.prototype.dispose=nativeGeometryDispose;}
+};
+</script></html>

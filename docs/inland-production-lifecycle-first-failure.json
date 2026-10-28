@@ -1,0 +1,63 @@
+{
+  "complete": false,
+  "rows": [
+    {
+      "mode": "release-twice",
+      "ownedResources": 23,
+      "disposeCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "error": null,
+      "verified": true
+    },
+    {
+      "mode": "abort-after-model",
+      "ownedResources": 15,
+      "disposeCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "error": {
+        "name": "AbortError",
+        "message": "准备已中断"
+      },
+      "verified": false
+    }
+  ],
+  "error": "Preparation lifecycle mismatch"
+}

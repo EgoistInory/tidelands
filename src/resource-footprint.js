@@ -20,7 +20,9 @@ export function registerFootprint(object,boxes,groundAt=terrain,frame={x:0,y:0,z
   const worldBoxes=clean.map(([min,max])=>{const points=[[min[0],min[2]],[min[0],max[2]],[max[0],min[2]],[max[0],max[2]]].map(([a,b])=>[x+scale*(c*a+s*b),z+scale*(-s*a+c*b)]);return Object.freeze([Object.freeze([Math.min(...points.map(p=>p[0])),y+min[1]*scale,Math.min(...points.map(p=>p[1]))]),Object.freeze([Math.max(...points.map(p=>p[0])),y+max[1]*scale,Math.max(...points.map(p=>p[1]))])]);});
   const reach=Math.max(...worldBoxes.flatMap(([min,max])=>[Math.hypot(min[0]-object.x,min[2]-object.z),Math.hypot(min[0]-object.x,max[2]-object.z),Math.hypot(max[0]-object.x,min[2]-object.z),Math.hypot(max[0]-object.x,max[2]-object.z)]));
   const world=p=>({x:x+scale*(c*p.x+s*p.z),y:y+scale*p.y,z:z+scale*(-s*p.x+c*p.z)});
-  footprints.set(object,{boxes:Object.freeze(clean),worldBoxes:Object.freeze(worldBoxes),local,world,ground,scale,reach});
+  const owned={boxes:Object.freeze(clean),worldBoxes:Object.freeze(worldBoxes),local,world,ground,scale,reach};footprints.set(object,owned);
+  // A released view removes only its registration; a later owner must survive.
+  return ()=>{if(footprints.get(object)===owned)footprints.delete(object);};
 }
 export function footprintBoxes(object){return footprints.get(object)?.worldBoxes??null;}
 export function copyFootprint(from,to){const shape=footprints.get(from);if(shape)footprints.set(to,shape);return to;}

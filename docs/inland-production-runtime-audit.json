@@ -1,0 +1,72 @@
+{
+  "verified": true,
+  "scope": "Declared stationary main-loop and automated requested orbit. Native renderer queries, draw CPU and full main rAF kept separate; independent full authored-wood line checks. No ordinary combat, input-driven continuous orbit, long-run/device/VRAM/audio/3A claim.",
+  "deliverySha256": "2e561ab01a872e3453cb9553b8ccf8b9a4067e4aea135f3851ce0200f0f11781",
+  "productionRuntimeFilesVerified": 207,
+  "finalPerformanceAccepted": false,
+  "nativeOuterNarrowBrowserAccepted": false,
+  "embeddedNarrowViewportVerified": true,
+  "imagesArePostIntervalLiveViews": true,
+  "sourceHashes": {
+    "tests/inland-production-main.html": "34d324f5737747ab9090932e1921d1e882492ce6be76e3668160ff6f8faff166",
+    "tests/inland-production-probe.js": "c85ba46eea10cf8f9be732573111fd8f47f979be0fd5baf3a8ae17d9e6495dd5",
+    "src/inland.js": "6e4785b869eddd0b3987e9198ec3cff55b171c0ff08b2ebaa34c9241c72fb7f0",
+    "src/main.js": "927c75f6bc4418475890fa152277779c5252286e87a1be8946227870e4e67681",
+    "src/scene.js": "93364b2aafe7e3f26c98b41e7ddefb6fece8c2f214987107120c0b80b918be26",
+    "src/resource-footprint.js": "664258f31e96d807f860fe0fd5d2d1f108a98a4f9ffcca6f2c5074b45e285be2"
+  },
+  "rows": [
+    {
+      "name": "desktop",
+      "candidate": true,
+      "lod": "near",
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        1080
+      ],
+      "mainLoopFrames": 814,
+      "nativeGpuQueries": 102,
+      "gameClockAdvance": 15.863599999999565,
+      "gpuP95Ms": 17.215624,
+      "drawCpuP95Ms": 5.900000095367432,
+      "rafP95Ms": 24.300000190734863,
+      "rafMaxMs": 93.19999980926514,
+      "minCameraDistance": 6.677431302470492,
+      "maxCameraYawStepRadians": 0.39287634842361285,
+      "woodOccludedSamples": 0,
+      "cameraInsideWoodSamples": 0
+    },
+    {
+      "name": "embedded",
+      "candidate": true,
+      "lod": "mid",
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        585,
+        1266
+      ],
+      "mainLoopFrames": 960,
+      "nativeGpuQueries": 120,
+      "gameClockAdvance": 16.000099999996024,
+      "gpuP95Ms": 12.650833,
+      "drawCpuP95Ms": 4.700000286102295,
+      "rafP95Ms": 18.300000190734863,
+      "rafMaxMs": 31.40000009536743,
+      "minCameraDistance": 6.677845400474189,
+      "maxCameraYawStepRadians": 0.3884581685394499,
+      "woodOccludedSamples": 0,
+      "cameraInsideWoodSamples": 0
+    }
+  ],
+  "inheritedCameraTurnStepDeferred": true,
+  "productionIntegrated": true,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false
+}

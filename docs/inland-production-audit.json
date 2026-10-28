@@ -1,0 +1,54 @@
+{
+  "verified": true,
+  "productionIntegrated": true,
+  "productionAssets": 25,
+  "originalResourceIdsPreserved": 15,
+  "currentCoreAll15Verified": true,
+  "nativeSourceAndExtractedPackageGatherPassSave": true,
+  "ordinaryBackupCopyPreserved": true,
+  "originalOrdinaryKeyTouched": false,
+  "normalAbortPartialFailureResourceCounts": [
+    28,
+    15,
+    19
+  ],
+  "bindSyncFailureRollbackRedToGreen": true,
+  "testsPassed": 370,
+  "archive": "dist/tidelands-m5-2026-10-29-inland-runtime.zip",
+  "archiveBytes": 170918578,
+  "archiveSha256": "2e561ab01a872e3453cb9553b8ccf8b9a4067e4aea135f3851ce0200f0f11781",
+  "runtimeFiles": 207,
+  "archiveEntries": 208,
+  "actualEmbeddedViewport": [
+    390,
+    844
+  ],
+  "actualEmbeddedBuffer": [
+    585,
+    1266
+  ],
+  "nativeOuterNarrowBrowserAccepted": false,
+  "images": {
+    "docs/inland-production-source-before.png": "5a54073e41972745f89f134c76e48b2d7fb11818840ded4cd8ed7cf90dc28213",
+    "docs/inland-production-source-after.png": "d2678f116eab5cd90a65a672959f1d94e735ba6f9c7cc282faf42a0e12c61bbb",
+    "docs/inland-production-delivery-before.png": "c58ca21f44ad3020f0f42f0711c4a3d84033c11548801c9fa71d4a0ff35d3d53",
+    "docs/inland-production-delivery-after.png": "6be140cb5030edb530e016a8d89797d827aa3f53650f9d4a331e6a33afb00a1d",
+    "docs/inland-production-embedded-legacy.png": "8c1b9ba4ee7e8cb282194e425bd053a56fb4bef1ec61f87f60faf492383ef836",
+    "docs/inland-production-embedded-before.png": "d2349f0ef69c68ed9d80732000e221c4e3e693ff67345737e4d4b5ddc9d32cea",
+    "docs/inland-production-embedded-after.png": "7bc1d741202d46fd350bf56c07ed358a6ecaf502e5c48c6c056713d1a1895f97",
+    "docs/inland-production-built-camp.png": "941c2f920adfd86647e317204cb2e0c153ed7ed0f3bb0f9d8984f6583e7eb788",
+    "docs/inland-production-runtime-desktop.png": "649db809d6c998aa105729fab8bc44c24cbb2213afae8d0e7fed20564c268c8c",
+    "docs/inland-production-runtime-embedded.png": "98362597c5537c95c655cd0bcbe28f4c13409c621af4a2405b5260975ec2d433"
+  },
+  "finalPerformanceAccepted": false,
+  "longRunOrPhysicalDeviceAccepted": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "scope": "Actual production startup and extracted package, declared resource/camp fixtures plus exact ordinary backup copy. Embedded narrow viewport is separate from outer browser size; performance photos are post-interval live views. Not new full journey, physical phone, long-run, audio/VRAM or full3A acceptance.",
+  "embeddedNarrowPointerJoystickGatherAndPass": true,
+  "physicalTouchDeviceAccepted": false,
+  "nativeCampBuiltAndReloaded": true,
+  "nativeExtractedOrdinaryBackupCopyVerified": true,
+  "gameConsoleFilesClean": 10,
+  "historicalQaAssertionErrorsPreserved": 1
+}

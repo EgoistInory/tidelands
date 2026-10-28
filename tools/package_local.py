@@ -59,6 +59,16 @@ def build(name='tidelands-local', stage='M1-M4 functional checkpoint'):
             if not target.resolve().is_relative_to(coastal_manifest.parent.resolve()) or target.is_symlink() or hashlib.sha256(target.read_bytes()).hexdigest() != row['sha256']:
                 raise ValueError('海岸资料与本地来源清单不一致')
             paths.append(Path('assets/coastal') / relative)
+    inland_manifest = ROOT / 'assets/inland/provenance.json'
+    if inland_manifest.exists():
+        for asset_name, row in json.loads(inland_manifest.read_text())['files'].items():
+            relative = Path(asset_name)
+            if relative.is_absolute() or '..' in relative.parts or '\\' in asset_name or relative.suffix not in ('.gltf', '.bin', '.jpg', '.png', '.json', '.txt'):
+                raise ValueError('林木资料路径不合法')
+            target = inland_manifest.parent / relative
+            if not target.resolve().is_relative_to(inland_manifest.parent.resolve()) or target.is_symlink() or hashlib.sha256(target.read_bytes()).hexdigest() != row['sha256']:
+                raise ValueError('林木资料与本地来源清单不一致')
+            paths.append(Path('assets/inland') / relative)
     contents = {str(p): (ROOT / p).read_bytes() for p in paths}
     contents['README.md'] = (ROOT / 'docs/LOCAL-DELIVERY.md').read_bytes()
     manifest = {

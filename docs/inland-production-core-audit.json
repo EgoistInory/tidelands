@@ -1,0 +1,696 @@
+{
+  "verified": true,
+  "scope": "Headless declared fresh q6/axe fixtures with unchanged79 enemy records; real core movement/gather/build/serialize/restore. Not browser main path or ordinary progress.",
+  "bodyBoxes": 3114,
+  "cameraBoxes": 3010,
+  "sourceCellsCovered": 35230,
+  "fineBasalCoverageExact": true,
+  "addedInteriorCells": 216,
+  "rows": [
+    {
+      "id": "resource-7",
+      "start": {
+        "x": 105.369005236685,
+        "z": -13.915960477077176
+      },
+      "axis": {
+        "x": -1,
+        "z": 0
+      },
+      "reachableWood": {
+        "x": 105.19815515366203,
+        "y": 11.279943989502247,
+        "z": -14.584522169278417
+      },
+      "reach": 2.4900467282350824,
+      "blockedDistance": 0.8166666666666202,
+      "afterGatherDistance": 2.0999999999998806,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里的树木或岩石会恢复，请换一块空地。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 106.81681155746158,
+          "z": -19.144029575076356
+        },
+        "end": {
+          "x": 108.45014489079482,
+          "z": -19.144029575076356
+        },
+        "axis": {
+          "x": 1,
+          "z": 0
+        },
+        "frames": 14,
+        "distance": 1.6333333333332405,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    },
+    {
+      "id": "resource-49",
+      "start": {
+        "x": 177.48564862646163,
+        "z": 2.191620398312807
+      },
+      "axis": {
+        "x": 0,
+        "z": -1
+      },
+      "reachableWood": {
+        "x": 178.19973286609513,
+        "y": 9.443875020856005,
+        "z": 1.6104164206039573
+      },
+      "reach": 2.7207140516998463,
+      "blockedDistance": 1.2833333333333337,
+      "afterGatherDistance": 2.1000000000000005,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里的树木或岩石会恢复，请换一块空地。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 178.86677560475673,
+          "z": -0.04003390383223149
+        },
+        "end": {
+          "x": 180.03344227142347,
+          "z": -0.04003390383223149
+        },
+        "axis": {
+          "x": 1,
+          "z": 0
+        },
+        "frames": 10,
+        "distance": 1.1666666666667425,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    },
+    {
+      "id": "resource-68",
+      "start": {
+        "x": 248.77977160736918,
+        "z": -108.5035844463855
+      },
+      "axis": {
+        "x": -1,
+        "z": 0
+      },
+      "reachableWood": {
+        "x": 248.24764885026727,
+        "y": 13.106148028084958,
+        "z": -109.31487115714147
+      },
+      "reach": 2.770227167046454,
+      "blockedDistance": 1.0500000000000682,
+      "afterGatherDistance": 2.1000000000001364,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里的树木或岩石会恢复，请换一块空地。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 245.7912594762594,
+          "z": -110.41829813050308
+        },
+        "end": {
+          "x": 244.97459280959268,
+          "z": -110.41829813050308
+        },
+        "axis": {
+          "x": -1,
+          "z": 0
+        },
+        "frames": 7,
+        "distance": 0.8166666666667197,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    },
+    {
+      "id": "resource-106",
+      "start": {
+        "x": 89.81954999268055,
+        "z": -131.88677404634655
+      },
+      "axis": {
+        "x": 0,
+        "z": -1
+      },
+      "reachableWood": {
+        "x": 89.34923970005126,
+        "y": 12.84607609004446,
+        "z": -133.11287770239298
+      },
+      "reach": 2.804846428689065,
+      "blockedDistance": 0.5833333333333712,
+      "afterGatherDistance": 2.1000000000001364,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里的树木或岩石会恢复，请换一块空地。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 87.55325731019775,
+          "z": -134.06182586352105
+        },
+        "end": {
+          "x": 85.68659064353119,
+          "z": -134.06182586352105
+        },
+        "axis": {
+          "x": -1,
+          "z": 0
+        },
+        "frames": 16,
+        "distance": 1.8666666666665606,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    },
+    {
+      "id": "resource-208",
+      "start": {
+        "x": 160.81008242443204,
+        "z": -174.64081289805472
+      },
+      "axis": {
+        "x": 0,
+        "z": -1
+      },
+      "reachableWood": {
+        "x": 161.36251744667604,
+        "y": 10.797511618124265,
+        "z": -175.74261434419157
+      },
+      "reach": 2.764064369840832,
+      "blockedDistance": 1.5166666666667652,
+      "afterGatherDistance": 2.1000000000001364,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里的树木或岩石会恢复，请换一块空地。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 161.79813010716813,
+          "z": -180.51846269392445
+        },
+        "end": {
+          "x": 164.59813010716832,
+          "z": -180.51846269392445
+        },
+        "axis": {
+          "x": 1,
+          "z": 0
+        },
+        "frames": 24,
+        "distance": 2.800000000000182,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    },
+    {
+      "id": "resource-234",
+      "start": {
+        "x": 212.28705167770386,
+        "z": -149.64451062493026
+      },
+      "axis": {
+        "x": 0,
+        "z": -1
+      },
+      "reachableWood": {
+        "x": 212.19485333556307,
+        "y": 16.335456762834664,
+        "z": -150.63071325875546
+      },
+      "reach": 2.7905029880102568,
+      "blockedDistance": 0.466666666666697,
+      "afterGatherDistance": 2.1000000000001364,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里的树木或岩石会恢复，请换一块空地。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 212.84122156102742,
+          "z": -152.84706618189009
+        },
+        "end": {
+          "x": 214.8245548943609,
+          "z": -152.84706618189009
+        },
+        "axis": {
+          "x": 1,
+          "z": 0
+        },
+        "frames": 17,
+        "distance": 1.9833333333334622,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    },
+    {
+      "id": "resource-583",
+      "start": {
+        "x": 227.45082427747548,
+        "z": -33.05787577107549
+      },
+      "axis": {
+        "x": 0,
+        "z": -1
+      },
+      "reachableWood": {
+        "x": 227.8331313195397,
+        "y": 9.610197097235666,
+        "z": -34.01761948908707
+      },
+      "reach": 2.8330859977148943,
+      "blockedDistance": 0.81666666666667,
+      "afterGatherDistance": 2.1000000000000085,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里的树木或岩石会恢复，请换一块空地。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 230.14898932088064,
+          "z": -37.37538471063665
+        },
+        "end": {
+          "x": 232.24898932088078,
+          "z": -37.37538471063665
+        },
+        "axis": {
+          "x": 1,
+          "z": 0
+        },
+        "frames": 18,
+        "distance": 2.1000000000001364,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    },
+    {
+      "id": "resource-823",
+      "start": {
+        "x": 65.2045230846852,
+        "z": -98.80080499500036
+      },
+      "axis": {
+        "x": 0,
+        "z": -1
+      },
+      "reachableWood": {
+        "x": 65.31192425829622,
+        "y": 6.296823450685954,
+        "z": -99.81519387474111
+      },
+      "reach": 2.82005872940469,
+      "blockedDistance": 0.5833333333333002,
+      "afterGatherDistance": 2.0999999999998806,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里的树木或岩石会恢复，请换一块空地。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 63.89529088706479,
+          "z": -103.42010330179393
+        },
+        "end": {
+          "x": 62.61195755373145,
+          "z": -103.42010330179393
+        },
+        "axis": {
+          "x": -1,
+          "z": 0
+        },
+        "frames": 11,
+        "distance": 1.2833333333333385,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    },
+    {
+      "id": "resource-949",
+      "start": {
+        "x": 202.14537183754146,
+        "z": -111.28045693784952
+      },
+      "axis": {
+        "x": -1,
+        "z": 0
+      },
+      "reachableWood": {
+        "x": 201.19390587778332,
+        "y": 22.130636605673324,
+        "z": -112.18416342892007
+      },
+      "reach": 2.7285814145384144,
+      "blockedDistance": 0.7000000000000455,
+      "afterGatherDistance": 2.1000000000001364,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里太陡，换一块平地吧。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 204.43858773082658,
+          "z": -115.96346541467348
+        },
+        "end": {
+          "x": 206.42192106416005,
+          "z": -115.96346541467348
+        },
+        "axis": {
+          "x": 1,
+          "z": 0
+        },
+        "frames": 17,
+        "distance": 1.9833333333334622,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    },
+    {
+      "id": "resource-996",
+      "start": {
+        "x": 194.14328240789473,
+        "z": -29.688339661806822
+      },
+      "axis": {
+        "x": 0,
+        "z": -1
+      },
+      "reachableWood": {
+        "x": 193.71287916516243,
+        "y": 15.722883713104894,
+        "z": -30.494524267052075
+      },
+      "reach": 2.7138821417934116,
+      "blockedDistance": 0.81666666666667,
+      "afterGatherDistance": 2.1000000000000085,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里的树木或岩石会恢复，请换一块空地。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 193.20592839871415,
+          "z": -36.28145497631562
+        },
+        "end": {
+          "x": 191.68926173204738,
+          "z": -36.28145497631562
+        },
+        "axis": {
+          "x": -1,
+          "z": 0
+        },
+        "frames": 13,
+        "distance": 1.5166666666667652,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    },
+    {
+      "id": "resource-1485",
+      "start": {
+        "x": 130.1749857980758,
+        "z": -99.602798525244
+      },
+      "axis": {
+        "x": 0,
+        "z": -1
+      },
+      "reachableWood": {
+        "x": 130.45713410464236,
+        "y": 35.09477930377886,
+        "z": -100.94335592443346
+      },
+      "reach": 2.8458867452355863,
+      "blockedDistance": 0.5833333333333002,
+      "afterGatherDistance": 2.0999999999998806,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里的树木或岩石会恢复，请换一块空地。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 130.79187192946472,
+          "z": -103.7243060610083
+        },
+        "end": {
+          "x": 131.8418719294648,
+          "z": -103.7243060610083
+        },
+        "axis": {
+          "x": 1,
+          "z": 0
+        },
+        "frames": 9,
+        "distance": 1.0500000000000682,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    },
+    {
+      "id": "resource-1765",
+      "start": {
+        "x": 166.57225395552814,
+        "z": -96.07301516085863
+      },
+      "axis": {
+        "x": 0,
+        "z": -1
+      },
+      "reachableWood": {
+        "x": 167.62646349871707,
+        "y": 25.214699603525176,
+        "z": -96.71887807208839
+      },
+      "reach": 2.8280547149278057,
+      "blockedDistance": 0.9333333333332803,
+      "afterGatherDistance": 2.0999999999998806,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里的树木或岩石会恢复，请换一块空地。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 163.64099398155875,
+          "z": -100.92296082004461
+        },
+        "end": {
+          "x": 161.89099398155864,
+          "z": -100.92296082004461
+        },
+        "axis": {
+          "x": -1,
+          "z": 0
+        },
+        "frames": 15,
+        "distance": 1.7500000000001137,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    },
+    {
+      "id": "resource-1934",
+      "start": {
+        "x": 78.86490144840448,
+        "z": -33.2990484153388
+      },
+      "axis": {
+        "x": 0,
+        "z": -1
+      },
+      "reachableWood": {
+        "x": 78.59671301388194,
+        "y": 5.324460439934767,
+        "z": -34.13041355420158
+      },
+      "reach": 2.673551962122449,
+      "blockedDistance": 0.5833333333333357,
+      "afterGatherDistance": 2.1000000000000085,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里的树木或岩石会恢复，请换一块空地。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 79.13348137400347,
+          "z": -35.651583483776264
+        },
+        "end": {
+          "x": 80.7668147073367,
+          "z": -35.651583483776264
+        },
+        "axis": {
+          "x": 1,
+          "z": 0
+        },
+        "frames": 14,
+        "distance": 1.6333333333332405,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    },
+    {
+      "id": "resource-1957",
+      "start": {
+        "x": 147.44107042740077,
+        "z": -129.86887563261902
+      },
+      "axis": {
+        "x": 0,
+        "z": -1
+      },
+      "reachableWood": {
+        "x": 147.0644782319987,
+        "y": 35.609668464495165,
+        "z": -130.82914305359364
+      },
+      "reach": 2.781329783218256,
+      "blockedDistance": 0.8166666666667197,
+      "afterGatherDistance": 2.1000000000001364,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里的树木或岩石会恢复，请换一块空地。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 147.26550488329906,
+          "z": -130.80963577091566
+        },
+        "end": {
+          "x": 145.51550488329895,
+          "z": -130.80963577091566
+        },
+        "axis": {
+          "x": -1,
+          "z": 0
+        },
+        "frames": 15,
+        "distance": 1.7500000000001137,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    },
+    {
+      "id": "resource-1961",
+      "start": {
+        "x": 246.33188408900347,
+        "z": -72.27569370857275
+      },
+      "axis": {
+        "x": 0,
+        "z": -1
+      },
+      "reachableWood": {
+        "x": 246.91249581311962,
+        "y": 7.367683323735967,
+        "z": -73.20152996140753
+      },
+      "reach": 2.8259941618367064,
+      "blockedDistance": 0.8166666666666202,
+      "afterGatherDistance": 2.0999999999998806,
+      "gatherMessage": "木材 +3",
+      "woodAdded": 3,
+      "depletedUntil": 390.211,
+      "regrowthBuild": "这里的树木或岩石会恢复，请换一块空地。",
+      "buildingContact": true,
+      "overlap": {
+        "start": {
+          "x": 244.11824040742786,
+          "z": -74.80877881410905
+        },
+        "end": {
+          "x": 243.5349070740945,
+          "z": -74.80877881410905
+        },
+        "axis": {
+          "x": -1,
+          "z": 0
+        },
+        "frames": 5,
+        "distance": 0.5833333333333712,
+        "savePlayerUnchanged": true,
+        "scope": "Single-tree overlap escape fixture using real production movePlayer/restore; no other resource collision claim"
+      },
+      "legacyCampSuppressesTree": true,
+      "legacyCampRest": "火光驱散疲惫，生命和体力已恢复。",
+      "legacyCampHp": 100
+    }
+  ],
+  "regrowthBuildRejections": 14,
+  "failed": [],
+  "worldObjectsUnchanged": true,
+  "ordinarySaveTouched": false,
+  "nativeMainPathAccepted": false,
+  "productionIntegrated": false,
+  "fullGoalComplete": false,
+  "productionCoreInputs": true,
+  "contactShapeSha256": "09cab1a225cf4f1c078ce490b5fed1d384f3f5690abfce7c9330f7e252222742",
+  "runtimeFootprintSha256": "664258f31e96d807f860fe0fd5d2d1f108a98a4f9ffcca6f2c5074b45e285be2"
+}

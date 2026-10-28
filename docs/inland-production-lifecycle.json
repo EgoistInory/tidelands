@@ -1,0 +1,101 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "mode": "release-twice",
+      "ownedResources": 28,
+      "expectedResources": 28,
+      "disposeCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "error": null,
+      "verified": true
+    },
+    {
+      "mode": "abort-after-model",
+      "ownedResources": 15,
+      "expectedResources": 15,
+      "disposeCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "error": {
+        "name": "AbortError",
+        "message": "准备已中断"
+      },
+      "verified": true
+    },
+    {
+      "mode": "fail-after-far-textures",
+      "ownedResources": 19,
+      "expectedResources": 19,
+      "disposeCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "error": {
+        "name": "Error",
+        "message": "Declared far texture failure"
+      },
+      "verified": true
+    }
+  ],
+  "scope": "Real local GLTF and TextureLoader success/abort-after-model/injected far failure, explicit dispose events; no renderer upload or VRAM proof, no ordinary storage touched."
+}
