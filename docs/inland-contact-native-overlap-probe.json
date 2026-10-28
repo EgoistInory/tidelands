@@ -1,0 +1,52 @@
+{
+  "verified": true,
+  "scope": "Actual native observations against unchanged production terrain and registered candidate footprint. First A/S routes remain overlapped; subsequent W route leaves wood with full world objects active.",
+  "checks": [
+    {
+      "label": "overlap-reloaded",
+      "player": {
+        "x": 163.64099398155875,
+        "z": -100.92296082004461,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "insideRegisteredWood": true
+    },
+    {
+      "label": "overlap-native-escape",
+      "player": {
+        "x": 162.97389398155877,
+        "z": -100.92296082004461,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -1.5707963267948966
+      },
+      "insideRegisteredWood": true
+    },
+    {
+      "label": "overlap-native-side-exit",
+      "player": {
+        "x": 162.97389398155877,
+        "z": -100.92296082004461,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "insideRegisteredWood": true
+    },
+    {
+      "label": "overlap-native-forward-exit",
+      "player": {
+        "x": 162.97389398155877,
+        "z": -105.54366082004458,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 3.141592653589793
+      },
+      "insideRegisteredWood": false
+    }
+  ],
+  "worldObjectsUnchanged": true,
+  "ordinarySaveTouched": false
+}
