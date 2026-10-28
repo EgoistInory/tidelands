@@ -1,0 +1,77 @@
+{
+  "verified": true,
+  "scope": "Serialized geometry, isolated captures and static native render intervals; not whole-game acceptance",
+  "sourceLeafComponentsPreserved": 116084,
+  "sourceSamples": 10067347,
+  "combinedCandidateGeometryBytes": 174327212,
+  "savedBytesVsR2": 36205356,
+  "nativeStaticGpuQueriesVerified": 360,
+  "single3DLevelLoadDemonstrated": true,
+  "maxVisibleMature3DTrees": 1,
+  "staticImagesViewed": 4,
+  "runs": [
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "buffer": [
+        1920,
+        1080
+      ],
+      "loaded3DLevel": "near",
+      "single3DGeometryBytes": 97452456,
+      "nativeQueries": 180,
+      "gpuP95Ms": {
+        "old": 11.591,
+        "candidate": 11.532625,
+        "mesh-candidate": 15.002875
+      },
+      "gpuMaxMs": 15.029083,
+      "jsHeapBytes": 266727397
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        844
+      ],
+      "loaded3DLevel": "mid",
+      "single3DGeometryBytes": 76874756,
+      "nativeQueries": 180,
+      "gpuP95Ms": {
+        "old": 7.296291,
+        "candidate": 7.244125,
+        "mesh-candidate": 10.887
+      },
+      "gpuMaxMs": 10.984749,
+      "jsHeapBytes": 248363491
+    }
+  ],
+  "productionRuntimeFilesUnchanged": 181,
+  "packageSha256": "339b94dedad2a2749ac390a06a4c6d8e97213b07623c5e969d8a0d1a3b994913",
+  "productionIntegrated": false,
+  "terrainRootSupportAccepted": false,
+  "lowWoodContactAccepted": false,
+  "farLightingMatchAccepted": false,
+  "cpuGameLoopOrEnduranceAccepted": false,
+  "vramOrPhysicalDeviceAccepted": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "images": {
+    "inland-component-near-review.png": "9a3c33255f523c1452b04f09756aa4385e60c8c3b2037faf1fa1e2d478864f79",
+    "inland-component-mid-review.png": "42334d6665dcc08a6d57331c53033c9501c17fa86a117676ffb324b25a42fe5b",
+    "inland-component-gpu-desktop.png": "d207a36ba65dd13efc2c26daf18833c1ae7e5dce14ec10c297def51e5801835e",
+    "inland-component-gpu-narrow.png": "8b7171b825eb1909159a929b9610647d03715a4f5d68e7278aa0e0f32388c16c"
+  },
+  "sources": {
+    "tools/build_inland_lod.mjs": "25f6725abb7df90bdf7df7478ecb6985c3e7bbf4c3eac63b57ed03632bde7161",
+    "tools/leaf-component-decimation.mjs": "356badd1943c4756ada4e0974b7190878d4056e9f00e702892a1f43e4ef3d9b8",
+    "tests/inland-world-candidate.js": "8432529b28b16f1c673d41465a2635539c93342916167ba17d863575c630db1a",
+    "tests/inland-world-candidate.html": "d2e86f7ec43c698088b7c0e43f6c2927063b166e3b44f2000aab4246d27d5034",
+    "tests/inland-authored-review.js": "65fd7f72d8d7e343bffa671806555a2b3f77ac3495ba0027074d436669407791"
+  }
+}

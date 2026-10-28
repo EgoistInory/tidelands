@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: identical attribute vertices and cyclic duplicate faces collapse without changing winding
+ok 1 - identical attribute vertices and cyclic duplicate faces collapse without changing winding
+  ---
+  duration_ms: 1.186959
+  type: 'test'
+  ...
+# Subtest: opposite winding and coincident faces with distinct UV or normals are preserved
+ok 2 - opposite winding and coincident faces with distinct UV or normals are preserved
+  ---
+  duration_ms: 0.351125
+  type: 'test'
+  ...
+# Subtest: invalid ranges and nonfinite geometry fail closed
+ok 3 - invalid ranges and nonfinite geometry fail closed
+  ---
+  duration_ms: 0.339459
+  type: 'test'
+  ...
+# Subtest: fingerprint ignores vertex numbering and cyclic face order
+ok 4 - fingerprint ignores vertex numbering and cyclic face order
+  ---
+  duration_ms: 1.565791
+  type: 'test'
+  ...
+# Subtest: opposite winding, different UV, normals and position remain distinct
+ok 5 - opposite winding, different UV, normals and position remain distinct
+  ---
+  duration_ms: 0.326125
+  type: 'test'
+  ...
+# Subtest: fingerprint rejects nonfinite attributes and invalid indices
+ok 6 - fingerprint rejects nonfinite attributes and invalid indices
+  ---
+  duration_ms: 0.148042
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 47.677292

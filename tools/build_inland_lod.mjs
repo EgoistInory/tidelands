@@ -4,9 +4,10 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
 import {fitLeafPatch} from './leaf-patch-lod.mjs';
-import {deduplicateSurface} from './exact-surface-dedup.mjs';
-const exactDedup=process.argv.includes('--exact-dedup');
-const root=path.resolve(import.meta.dirname,'..'),source=path.join(root,'dist/inland-authored-source'),output=path.join(root,exactDedup?'dist/inland-authored-dedup-candidate':'dist/inland-authored-candidate');
+import {deduplicateSurface,surfaceFingerprint} from './exact-surface-dedup.mjs';
+import {simplifyLeafComponent} from './leaf-component-decimation.mjs';
+const componentMesh=process.argv.includes('--component-mesh'),exactDedup=process.argv.includes('--exact-dedup')||componentMesh;
+const root=path.resolve(import.meta.dirname,'..'),source=path.join(root,'dist/inland-authored-source'),output=path.join(root,componentMesh?'dist/inland-authored-component-candidate':exactDedup?'dist/inland-authored-dedup-candidate':'dist/inland-authored-candidate');
 const tool=path.join(root,'tools/vendor/meshoptimizer-0.24/meshopt_simplifier.mjs'),sha=b=>createHash('sha256').update(b).digest('hex'),expected='68f7b94830e3be31b7f08eb09c01b5c3867c74437d27807629541b3874bab567';
 if(sha(await fs.readFile(tool))!==expected)throw Error('Pinned simplifier mismatch');
 const {MeshoptSimplifier:M}=await import(pathToFileURL(tool));await M.ready;
@@ -27,18 +28,33 @@ for(const name of ['jacaranda_tree']){
   for(let i=0;i<leaves.indices.length;i+=3){const a=find(leaves.indices[i]);parent[find(leaves.indices[i+1])]=a;parent[find(leaves.indices[i+2])]=a;}
   const components=new Map();for(let i=0;i<parent.length;i++){const r=find(i);if(!components.has(r))components.set(r,[]);components.get(r).push(i);}
   const componentIndices=new Map();for(let i=0;i<leaves.indices.length;i++){const r=find(leaves.indices[i]);if(!componentIndices.has(r))componentIndices.set(r,[]);componentIndices.get(r).push(leaves.indices[i]);}
+  if(process.argv.includes('--inspect-leaf-duplicates')){
+    const seen=new Map(),examples=[];let duplicateComponents=0,duplicateTriangles=0;
+    for(const [key,ids]of components){
+      const remap=new Map(ids.map((id,i)=>[id,i])),attributes={};for(const [semantic,width]of [['POSITION',3],['NORMAL',3],['TEXCOORD_0',2]])attributes[semantic]=new Float32Array(ids.flatMap(i=>Array.from(leaves.attributes[semantic].subarray(i*width,i*width+width))));
+      const indices=new Uint32Array(componentIndices.get(key).map(i=>remap.get(i))),fingerprint=surfaceFingerprint(attributes,indices);
+      if(seen.has(fingerprint)){duplicateComponents++;duplicateTriangles+=indices.length/3;if(examples.length<10)examples.push({firstRoot:seen.get(fingerprint),duplicateRoot:key,fingerprint});}else seen.set(fingerprint,key);
+    }
+    const result={sourceVerified:true,sourceLeafComponents:components.size,uniqueExactComponents:seen.size,duplicateComponents,duplicateTriangles,comparison:'Complete component faces: exact position, normal and UV; cyclic winding preserved; triangle and vertex numbering ignored',pruneUsed:false,sourceOrCandidateModified:false,examples};
+    await fs.writeFile(path.join(root,'docs/inland-leaf-duplicate-diagnosis.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));process.exit(0);
+  }
   report.models[name]={sourceLeafComponents:components.size,neutralColor0Verified:true,color1UsedByStockMaterial:false,levels:{}};
   for(const level of ['near','mid']){
     const chunks=[],views=[],accessors=[],summaries=[];let byteLength=0;
     const append=(array,type,componentType)=>{const pad=(4-byteLength%4)%4;if(pad){chunks.push(Buffer.alloc(pad));byteLength+=pad;}const data=Buffer.from(array.buffer,array.byteOffset,array.byteLength),offset=byteLength;chunks.push(data);byteLength+=data.length;const view=views.push({buffer:0,byteOffset:offset,byteLength:data.length})-1,a={bufferView:view,componentType,count:array.length/widths[type],type};if(type==='VEC3'){a.min=[Infinity,Infinity,Infinity];a.max=[-Infinity,-Infinity,-Infinity];for(let i=0;i<array.length;i++){a.min[i%3]=Math.min(a.min[i%3],array[i]);a.max[i%3]=Math.max(a.max[i%3],array[i]);}}return accessors.push(a)-1;};
     const primitives=primitiveData.map(data=>{
-      let attrs=data.attributes,indices=data.indices,error=0,maxLeafFitError=0,fallbackLeaves=0,retainedLeafComponents=0,removedExactDuplicateFaces=0;
+      let attrs=data.attributes,indices=data.indices,error=0,maxLeafFitError=0,fallbackLeaves=0,retainedLeafComponents=0,removedExactDuplicateFaces=0,maxSourceSampleError=0,sourceSamples=0,maxComponentSimplifierError=0;const fallbackReasons={};
       const material=doc.materials[data.source.material].name;
       if(data===leaves){
         const positions=[],normals=[],uvs=[],triangles=[];
         for(const [key,ids]of components){
           const p=ids.flatMap(i=>Array.from(attrs.POSITION.subarray(i*3,i*3+3))),uv=ids.flatMap(i=>Array.from(attrs.TEXCOORD_0.subarray(i*2,i*2+2)));let patch;
-          try{patch=fitLeafPatch(p,uv,level==='near'?2:1);if(patch.maxSourceError>.009)throw Error('Leaf fit outside bound');}catch{
+          if(componentMesh){
+            const remap=new Map(ids.map((id,i)=>[id,i])),original={POSITION:new Float32Array(p),NORMAL:new Float32Array(ids.flatMap(i=>Array.from(attrs.NORMAL.subarray(i*3,i*3+3)))),TEXCOORD_0:new Float32Array(uv)},sourceIndices=new Uint32Array(componentIndices.get(key).map(i=>remap.get(i))),reduced=simplifyLeafComponent(M,original,sourceIndices,level);
+            patch={positions:reduced.attributes.POSITION,normals:reduced.attributes.NORMAL,uvs:reduced.attributes.TEXCOORD_0,indices:reduced.indices,maxSourceError:0};
+            if(reduced.fallbackReason){fallbackLeaves++;fallbackReasons[reduced.fallbackReason]=(fallbackReasons[reduced.fallbackReason]??0)+1;}
+            maxSourceSampleError=Math.max(maxSourceSampleError,reduced.maxSourceSampleError);sourceSamples+=reduced.sourceSamples;maxComponentSimplifierError=Math.max(maxComponentSimplifierError,reduced.simplifierError);
+          }else try{patch=fitLeafPatch(p,uv,level==='near'?2:1);if(patch.maxSourceError>.009)throw Error('Leaf fit outside bound');}catch{
             const remap=new Map(ids.map((id,i)=>[id,i]));patch={positions:p,uvs:uv,normals:ids.flatMap(i=>Array.from(attrs.NORMAL.subarray(i*3,i*3+3))),indices:componentIndices.get(key).map(i=>remap.get(i)),maxSourceError:0};fallbackLeaves++;
           }
           const offset=positions.length/3;positions.push(...patch.positions);normals.push(...patch.normals);uvs.push(...patch.uvs);triangles.push(...patch.indices.map(i=>i+offset));maxLeafFitError=Math.max(maxLeafFitError,patch.maxSourceError);retainedLeafComponents++;
@@ -51,7 +67,7 @@ for(const name of ['jacaranda_tree']){
         [indices,error]=M.simplifyWithAttributes(indices,attrs.POSITION,3,weights,5,[.2,.2,.2,.1,.1],null,target,level==='near'?.004:.012,[]);
         const [remap,countOut]=M.compactMesh(indices),compacted={};for(const [key,array]of Object.entries(attrs)){const w=key==='TEXCOORD_0'?2:3,result=new Float32Array(countOut*w);for(let i=0;i<remap.length;i++)if(remap[i]<countOut)result.set(array.subarray(i*w,i*w+w),remap[i]*w);compacted[key]=result;}attrs=compacted;
       }
-      summaries.push({material,inputTriangles:data.indices.length/3,outputTriangles:indices.length/3,relativeSimplificationError:error,retainedLeafComponents,maxLeafFitError,fallbackLeaves,...(exactDedup?{removedExactDuplicateFaces}:{})});
+      summaries.push({material,inputTriangles:data.indices.length/3,outputTriangles:indices.length/3,relativeSimplificationError:error,retainedLeafComponents,maxLeafFitError,fallbackLeaves,...(exactDedup?{removedExactDuplicateFaces}:{}),...(componentMesh&&data===leaves?{leafReduction:'source-component-mesh',maxSourceSampleError,sourceSamples,maxComponentSimplifierError,fallbackReasons}:{})});
       return {attributes:Object.fromEntries(Object.entries(attrs).map(([key,array])=>[key,append(array,key==='TEXCOORD_0'?'VEC2':'VEC3',5126)])),indices:append(indices,'SCALAR',5125),material:data.source.material,mode:4};
     });
     const materials=structuredClone(doc.materials),images=structuredClone(doc.images);for(const material of materials)if(material.name.endsWith('_leaves')){material.alphaMode='MASK';material.alphaCutoff=.45;images[doc.textures[material.pbrMetallicRoughness.baseColorTexture.index].source].uri='textures/'+name+'_leaves_rgba_512.png';}

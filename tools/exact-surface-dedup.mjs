@@ -1,4 +1,5 @@
 // Exact numerical attributes only: no rounding, face reversal or seam removal.
+import {createHash} from 'node:crypto';
 export function deduplicateSurface(attributes,indices){
  const widths={POSITION:3,NORMAL:3,TEXCOORD_0:2},count=attributes.POSITION?.length/3;
  if(!Number.isInteger(count)||!count||!(indices instanceof Uint32Array)||indices.length%3)throw Error('Invalid surface');
@@ -16,4 +17,15 @@ export function deduplicateSurface(attributes,indices){
  }
  const result={};for(const [name,width]of Object.entries(widths)){const array=new Float32Array(kept.length*width);kept.forEach((source,index)=>array.set(attributes[name].subarray(source*width,source*width+width),index*width));result[name]=array;}
  return {attributes:result,indices:new Uint32Array(output),removedFaces,removedVertices:count-kept.length};
+}
+export function surfaceFingerprint(attributes,indices){
+ const widths={POSITION:3,NORMAL:3,TEXCOORD_0:2},count=attributes.POSITION?.length/3;
+ if(!Number.isInteger(count)||!count||!(indices instanceof Uint32Array)||indices.length%3)throw Error('Invalid surface');
+ for(const [key,width]of Object.entries(widths))if(!(attributes[key] instanceof Float32Array)||attributes[key].length!==count*width||!attributes[key].every(Number.isFinite))throw Error('Invalid surface attributes');
+ const vertices=Array.from({length:count},(_,i)=>Object.entries(widths).flatMap(([name,width])=>Array.from(attributes[name].subarray(i*width,i*width+width))).join(',')),faces=[];
+ for(let i=0;i<indices.length;i+=3){
+  const ids=[0,1,2].map(j=>{const index=indices[i+j];if(index>=count)throw Error('Index outside surface');return vertices[index];});
+  const rotations=[0,1,2].map(j=>[ids[j],ids[(j+1)%3],ids[(j+2)%3]].join(';'));faces.push(rotations.sort()[0]);
+ }
+ return createHash('sha256').update(faces.sort().join('|')).digest('hex');
 }

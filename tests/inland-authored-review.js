@@ -3,7 +3,7 @@ import {GLTFLoader} from '../vendor/addons/loaders/GLTFLoader.js';
 import {loadAuthoredCast} from '../src/authored-assets.js';
 import {animateAuthoredCharacter} from '../src/authored-character.js';
 const name='jacaranda_tree',unit=2.95/1.8195863831788301;
-const geometryVariant=new URLSearchParams(location.search).get('geometry')==='dedup'?'exact-dedup':'original-candidate';
+const geometryOption=new URLSearchParams(location.search).get('geometry'),geometryVariant=geometryOption==='components'?'source-components':geometryOption==='dedup'?'exact-dedup':'original-candidate';
 const canvas=document.querySelector('canvas'),out=document.querySelector('#state'),renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true}),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(43,1,.1,500),loader=new GLTFLoader(),models=new Map();
 renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;scene.background=new THREE.Color(0xa3b8b5);
 scene.add(new THREE.HemisphereLight(0xe2eddf,0x64614d,2));const sun=new THREE.DirectionalLight(0xffe5c5,2.7);sun.position.set(-30,55,30);scene.add(sun);
@@ -13,7 +13,7 @@ const parts=root=>{const r=[];root.traverse(o=>{if(o.isMesh)r.push(o);});return 
 let box,size,center,busy=false,frames=[];
 async function load(mode){
   if(models.has(mode))return models.get(mode);
-  const prefix=mode==='source'?'inland-authored-source':geometryVariant==='exact-dedup'?'inland-authored-dedup-candidate':'inland-authored-candidate',filename=mode==='source'?`${name}_1k.gltf`:`${name}_${mode}.gltf`;
+  const prefix=mode==='source'?'inland-authored-source':geometryVariant==='source-components'?'inland-authored-component-candidate':geometryVariant==='exact-dedup'?'inland-authored-dedup-candidate':'inland-authored-candidate',filename=mode==='source'?`${name}_1k.gltf`:`${name}_${mode}.gltf`;
   const gltf=await loader.loadAsync(`../dist/${prefix}/${name}/${filename}`),root=gltf.scene;
   if(mode==='source'){
     const leaf=parts(root).find(m=>m.material.name.endsWith('_leaves'));
