@@ -1,0 +1,31 @@
+TAP version 13
+# Subtest: diagnostic render masks restore every visibility and shadow-update flag including thrown renders
+not ok 1 - diagnostic render masks restore every visibility and shadow-update flag including thrown renders
+  ---
+  duration_ms: 1.265667
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/main-gpu-attribution.test.js:2:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '/Users/huxiaocong/Codex/tidelands/tests/main-gpu-attribution.js' imported from /Users/huxiaocong/Codex/tidelands/tests/main-gpu-attribution.test.js"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:275:11)
+    moduleResolve (node:internal/modules/esm/resolve:860:10)
+    defaultResolve (node:internal/modules/esm/resolve:984:11)
+    ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:643:36)
+    TracingChannel.tracePromise (node:diagnostics_channel:344:14)
+    ModuleLoader.import (node:internal/modules/esm/loader:642:21)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 57.648208

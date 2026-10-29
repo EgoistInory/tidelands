@@ -1,0 +1,593 @@
+{
+  "verified": true,
+  "productionChanged": false,
+  "productionInputsPreserved": 209,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "finalPerformanceAccepted": false,
+  "tests": 382,
+  "reports": {
+    "stationary": {
+      "frames": 960,
+      "queries": 480,
+      "groups": {
+        "baseline": {
+          "gpuMs": {
+            "samples": 68,
+            "p95": 12.906332,
+            "median": 11.830666,
+            "max": 13.333791
+          },
+          "drawCpuMs": {
+            "samples": 137,
+            "p95": 5.099999904632568,
+            "median": 4.699999809265137,
+            "max": 5.5
+          },
+          "renderCalls": {
+            "samples": 137,
+            "p95": 249,
+            "median": 249,
+            "max": 249
+          },
+          "triangles": {
+            "samples": 137,
+            "p95": 2649215,
+            "median": 2649215,
+            "max": 2649215
+          }
+        },
+        "reuseShadow": {
+          "gpuMs": {
+            "samples": 69,
+            "p95": 12.164541,
+            "median": 10.872458,
+            "max": 15.656624
+          },
+          "drawCpuMs": {
+            "samples": 137,
+            "p95": 4.899999618530273,
+            "median": 4.400000095367432,
+            "max": 5.299999713897705
+          },
+          "renderCalls": {
+            "samples": 137,
+            "p95": 249,
+            "median": 249,
+            "max": 249
+          },
+          "triangles": {
+            "samples": 137,
+            "p95": 2649215,
+            "median": 2649215,
+            "max": 2649215
+          }
+        },
+        "noGround": {
+          "gpuMs": {
+            "samples": 69,
+            "p95": 8.524291,
+            "median": 7.739874,
+            "max": 8.969541
+          },
+          "drawCpuMs": {
+            "samples": 138,
+            "p95": 5.200000286102295,
+            "median": 4.800000190734863,
+            "max": 5.900000095367432
+          },
+          "renderCalls": {
+            "samples": 138,
+            "p95": 248,
+            "median": 248,
+            "max": 248
+          },
+          "triangles": {
+            "samples": 138,
+            "p95": 2444415,
+            "median": 2444415,
+            "max": 2444415
+          }
+        },
+        "noWater": {
+          "gpuMs": {
+            "samples": 68,
+            "p95": 13.322125,
+            "median": 11.826375,
+            "max": 17.619541
+          },
+          "drawCpuMs": {
+            "samples": 137,
+            "p95": 5.099999904632568,
+            "median": 4.699999809265137,
+            "max": 5.300000190734863
+          },
+          "renderCalls": {
+            "samples": 137,
+            "p95": 248,
+            "median": 248,
+            "max": 248
+          },
+          "triangles": {
+            "samples": 137,
+            "p95": 2610015,
+            "median": 2610015,
+            "max": 2610015
+          }
+        },
+        "noSky": {
+          "gpuMs": {
+            "samples": 69,
+            "p95": 12.64675,
+            "median": 11.431208,
+            "max": 13.037458
+          },
+          "drawCpuMs": {
+            "samples": 137,
+            "p95": 5.200000286102295,
+            "median": 4.799999713897705,
+            "max": 5.300000190734863
+          },
+          "renderCalls": {
+            "samples": 137,
+            "p95": 248,
+            "median": 248,
+            "max": 248
+          },
+          "triangles": {
+            "samples": 137,
+            "p95": 2648255,
+            "median": 2648255,
+            "max": 2648255
+          }
+        },
+        "noDressing": {
+          "gpuMs": {
+            "samples": 68,
+            "p95": 10.974999,
+            "median": 10.075749,
+            "max": 16.390208
+          },
+          "drawCpuMs": {
+            "samples": 137,
+            "p95": 4.900000095367432,
+            "median": 4.5,
+            "max": 5.099999904632568
+          },
+          "renderCalls": {
+            "samples": 137,
+            "p95": 166,
+            "median": 166,
+            "max": 166
+          },
+          "triangles": {
+            "samples": 137,
+            "p95": 1665924,
+            "median": 1665924,
+            "max": 1665924
+          }
+        },
+        "noTrees": {
+          "gpuMs": {
+            "samples": 69,
+            "p95": 10.131166,
+            "median": 9.35025,
+            "max": 10.699499
+          },
+          "drawCpuMs": {
+            "samples": 137,
+            "p95": 4.900000095367432,
+            "median": 4.5,
+            "max": 5.099999904632568
+          },
+          "renderCalls": {
+            "samples": 137,
+            "p95": 225,
+            "median": 225,
+            "max": 225
+          },
+          "triangles": {
+            "samples": 137,
+            "p95": 1793715,
+            "median": 1793715,
+            "max": 1793715
+          }
+        }
+      },
+      "angularGpu": {
+        "baseline": {
+          "0": {
+            "samples": 68,
+            "median": 11.830666,
+            "p95": 12.906332,
+            "max": 13.333791
+          }
+        },
+        "reuseShadow": {
+          "0": {
+            "samples": 69,
+            "median": 10.872458,
+            "p95": 12.164541,
+            "max": 15.656624
+          }
+        },
+        "noGround": {
+          "0": {
+            "samples": 69,
+            "median": 7.739874,
+            "p95": 8.524291,
+            "max": 8.969541
+          }
+        },
+        "noWater": {
+          "0": {
+            "samples": 68,
+            "median": 11.826375,
+            "p95": 13.322125,
+            "max": 17.619541
+          }
+        },
+        "noSky": {
+          "0": {
+            "samples": 69,
+            "median": 11.431208,
+            "p95": 12.64675,
+            "max": 13.037458
+          }
+        },
+        "noDressing": {
+          "0": {
+            "samples": 68,
+            "median": 10.075749,
+            "p95": 10.974999,
+            "max": 16.390208
+          }
+        },
+        "noTrees": {
+          "0": {
+            "samples": 69,
+            "median": 9.35025,
+            "p95": 10.131166,
+            "max": 10.699499
+          }
+        }
+      }
+    },
+    "orbit": {
+      "frames": 957,
+      "queries": 479,
+      "groups": {
+        "baseline": {
+          "gpuMs": {
+            "samples": 68,
+            "p95": 13.34,
+            "median": 12.133374,
+            "max": 14.022875
+          },
+          "drawCpuMs": {
+            "samples": 136,
+            "p95": 5,
+            "median": 4.400000095367432,
+            "max": 6.400000095367432
+          },
+          "renderCalls": {
+            "samples": 136,
+            "p95": 272,
+            "median": 251,
+            "max": 278
+          },
+          "triangles": {
+            "samples": 136,
+            "p95": 2681487,
+            "median": 2681487,
+            "max": 2726160
+          }
+        },
+        "reuseShadow": {
+          "gpuMs": {
+            "samples": 68,
+            "p95": 12.739624,
+            "median": 10.921208,
+            "max": 14.848041
+          },
+          "drawCpuMs": {
+            "samples": 136,
+            "p95": 4.800000190734863,
+            "median": 4.099999904632568,
+            "max": 68.2999997138977
+          },
+          "renderCalls": {
+            "samples": 136,
+            "p95": 272,
+            "median": 251,
+            "max": 278
+          },
+          "triangles": {
+            "samples": 136,
+            "p95": 2686533,
+            "median": 2681487,
+            "max": 2724624
+          }
+        },
+        "noGround": {
+          "gpuMs": {
+            "samples": 69,
+            "p95": 9.09275,
+            "median": 7.706166,
+            "max": 9.644375
+          },
+          "drawCpuMs": {
+            "samples": 137,
+            "p95": 5.400000095367432,
+            "median": 4.5,
+            "max": 9.299999713897705
+          },
+          "renderCalls": {
+            "samples": 137,
+            "p95": 271,
+            "median": 250,
+            "max": 277
+          },
+          "triangles": {
+            "samples": 137,
+            "p95": 2481161,
+            "median": 2476687,
+            "max": 2519824
+          }
+        },
+        "noWater": {
+          "gpuMs": {
+            "samples": 68,
+            "p95": 13.079583,
+            "median": 11.905166,
+            "max": 13.494499
+          },
+          "drawCpuMs": {
+            "samples": 137,
+            "p95": 5,
+            "median": 4.400000095367432,
+            "max": 6.300000190734863
+          },
+          "renderCalls": {
+            "samples": 137,
+            "p95": 271,
+            "median": 250,
+            "max": 277
+          },
+          "triangles": {
+            "samples": 137,
+            "p95": 2646716,
+            "median": 2642287,
+            "max": 2685424
+          }
+        },
+        "noSky": {
+          "gpuMs": {
+            "samples": 69,
+            "p95": 13.031874,
+            "median": 11.506624,
+            "max": 13.187791
+          },
+          "drawCpuMs": {
+            "samples": 137,
+            "p95": 5.300000190734863,
+            "median": 4.5,
+            "max": 7.5
+          },
+          "renderCalls": {
+            "samples": 137,
+            "p95": 271,
+            "median": 250,
+            "max": 277
+          },
+          "triangles": {
+            "samples": 137,
+            "p95": 2683273,
+            "median": 2680527,
+            "max": 2723664
+          }
+        },
+        "noDressing": {
+          "gpuMs": {
+            "samples": 68,
+            "p95": 11.469166,
+            "median": 10.38075,
+            "max": 11.797875
+          },
+          "drawCpuMs": {
+            "samples": 137,
+            "p95": 4.799999713897705,
+            "median": 4.200000286102295,
+            "max": 6.400000095367432
+          },
+          "renderCalls": {
+            "samples": 137,
+            "p95": 183,
+            "median": 166,
+            "max": 183
+          },
+          "triangles": {
+            "samples": 137,
+            "p95": 1672488,
+            "median": 1665924,
+            "max": 1672488
+          }
+        },
+        "noTrees": {
+          "gpuMs": {
+            "samples": 69,
+            "p95": 11.378999,
+            "median": 9.505208,
+            "max": 12.688874
+          },
+          "drawCpuMs": {
+            "samples": 137,
+            "p95": 5,
+            "median": 4.199999809265137,
+            "max": 11.099999904632568
+          },
+          "renderCalls": {
+            "samples": 137,
+            "p95": 246,
+            "median": 227,
+            "max": 252
+          },
+          "triangles": {
+            "samples": 137,
+            "p95": 1831292,
+            "median": 1825987,
+            "max": 1870656
+          }
+        }
+      },
+      "angularGpu": {
+        "baseline": {
+          "0": {
+            "samples": 35,
+            "median": 11.946874,
+            "p95": 13.224291,
+            "max": 13.485541
+          },
+          "2": {
+            "samples": 16,
+            "median": 11.552125,
+            "p95": 14.022875,
+            "max": 14.022875
+          },
+          "3": {
+            "samples": 17,
+            "median": 12.691083,
+            "p95": 13.588082,
+            "max": 13.588082
+          }
+        },
+        "reuseShadow": {
+          "0": {
+            "samples": 35,
+            "median": 10.921208,
+            "p95": 12.023333,
+            "max": 14.283749
+          },
+          "3": {
+            "samples": 18,
+            "median": 11.93975,
+            "p95": 14.848041,
+            "max": 14.848041
+          },
+          "2": {
+            "samples": 15,
+            "median": 9.822125,
+            "p95": 12.739624,
+            "max": 12.739624
+          }
+        },
+        "noGround": {
+          "0": {
+            "samples": 36,
+            "median": 7.758624,
+            "p95": 8.910541,
+            "max": 9.09275
+          },
+          "2": {
+            "samples": 16,
+            "median": 5.932833,
+            "p95": 7.379666,
+            "max": 7.379666
+          },
+          "3": {
+            "samples": 17,
+            "median": 8.099666,
+            "p95": 9.644375,
+            "max": 9.644375
+          }
+        },
+        "noWater": {
+          "0": {
+            "samples": 35,
+            "median": 11.905166,
+            "p95": 12.762458,
+            "max": 12.78975
+          },
+          "3": {
+            "samples": 18,
+            "median": 12.424874,
+            "p95": 13.494499,
+            "max": 13.494499
+          },
+          "2": {
+            "samples": 15,
+            "median": 10.959208,
+            "p95": 12.741,
+            "max": 12.741
+          }
+        },
+        "noSky": {
+          "0": {
+            "samples": 36,
+            "median": 11.482916,
+            "p95": 12.747041,
+            "max": 13.187791
+          },
+          "2": {
+            "samples": 15,
+            "median": 10.683499,
+            "p95": 13.031874,
+            "max": 13.031874
+          },
+          "3": {
+            "samples": 18,
+            "median": 12.171499,
+            "p95": 13.116083,
+            "max": 13.116083
+          }
+        },
+        "noDressing": {
+          "0": {
+            "samples": 35,
+            "median": 10.17825,
+            "p95": 11.001583,
+            "max": 11.797875
+          },
+          "2": {
+            "samples": 16,
+            "median": 10.113666,
+            "p95": 11.146374,
+            "max": 11.146374
+          },
+          "3": {
+            "samples": 17,
+            "median": 10.956,
+            "p95": 11.590749,
+            "max": 11.590749
+          }
+        },
+        "noTrees": {
+          "0": {
+            "samples": 37,
+            "median": 9.412124,
+            "p95": 10.183583,
+            "max": 10.870249
+          },
+          "2": {
+            "samples": 15,
+            "median": 10.197875,
+            "p95": 12.688874,
+            "max": 12.688874
+          },
+          "3": {
+            "samples": 17,
+            "median": 9.515499,
+            "p95": 10.059416,
+            "max": 10.059416
+          }
+        }
+      }
+    }
+  },
+  "sourceHashes": {
+    "tests/main-gpu-attribution.js": "bff04c2be79e34e4a19d35d6223925f7ff12588068c56c7f83fde69c525d5548",
+    "tests/main-gpu-attribution.html": "0f1de8b7414096bd060482809ba6162b14a1a8aa09c8be6b8432ab69d6ea4391",
+    "tests/main-gpu-attribution.test.js": "b58c1dcc3a584c50b372ad9eef7d9f4a7bd906bd6ec2b6ffcadfa7d2a2e88535"
+  },
+  "scope": "Actual packaged main, stationary declared fixture and automated requested orbit, interleaved diagnostic removal and shadow-map reuse. Quality is intentionally incomplete during masks. Differences are not additive. No real input orbit, normal campaign/combat/audio/device/endurance/VRAM or production optimization proof."
+}

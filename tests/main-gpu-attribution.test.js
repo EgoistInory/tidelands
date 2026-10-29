@@ -1,0 +1,7 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+test('diagnostic render masks restore every visibility and shadow-update flag including thrown renders',async()=>{
+ const {createGpuAblation,GPU_ABLATIONS}=await import('./main-gpu-attribution.js'),node=()=>({visible:true}),ground={...node(),geometry:{attributes:{groundLayers:{}}}},tree=node(),coast=node(),far=node(),inland=node(),dress=node(),view={scene:{children:[ground]},renderer:{shadowMap:{autoUpdate:true,needsUpdate:true}},water:node(),sky:node(),meadow:[node(),{visible:false}],woodlandDressing:{root:dress},batches:[{entries:[{type:'tree'}],batch:tree}],coastal:{trees:[{root:coast}],farBatches:[far]},inland:{trees:[{root:inland}]}};
+ const apply=createGpuAblation(view),all=[ground,tree,coast,far,inland,dress,view.water,view.sky,...view.meadow],original=all.map(n=>n.visible);
+ for(const mode of GPU_ABLATIONS){let called=0;assert.throws(()=>apply(mode,()=>{called++;if(mode==='noTrees')assert.ok([tree,coast,far,inland].every(n=>!n.visible));if(mode==='reuseShadow')assert.deepEqual(view.renderer.shadowMap,{autoUpdate:false,needsUpdate:false});throw Error('injected draw failure');}),/injected draw failure/);assert.equal(called,1);assert.deepEqual(all.map(n=>n.visible),original);assert.deepEqual(view.renderer.shadowMap,{autoUpdate:true,needsUpdate:true});}
+ assert.equal(apply('baseline',()=>42),42);assert.throws(()=>apply('invalid',()=>{}),/Unknown/);
+});
