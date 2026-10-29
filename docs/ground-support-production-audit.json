@@ -1,0 +1,54 @@
+{
+  "verified": true,
+  "productionIntegrated": true,
+  "functionalAccepted": true,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "finalVisualQualityAccepted": false,
+  "currentGpuMeasured": false,
+  "currentEnduranceMeasured": false,
+  "package": {
+    "archive": "tidelands-m5-2026-10-29-ground-support.zip",
+    "archiveBytes": 170922245,
+    "archiveSha256": "ee606c25629a7b9f704fc504d661abea31264244b52027a9530253c60ca8301f",
+    "archiveEntries": 210
+  },
+  "runtimeInputs": 209,
+  "changedInputs": [
+    "README.md",
+    "src/ground-support.js",
+    "src/meadow.js",
+    "src/scene.js"
+  ],
+  "nativeRows": 23,
+  "nativeImages": 8,
+  "distances": {
+    "ordinary": 3.569999999999994,
+    "embeddedPointer": 4.30289999999998
+  },
+  "startupObservations": {
+    "source-before": {
+      "createTerrainMs": 186.2000002861023,
+      "createSceneryMs": 749.2999997138977,
+      "firstDrawMs": 3201.800000190735,
+      "authoredReadyMs": 3201.800000190735
+    },
+    "delivery-before": {
+      "createTerrainMs": 185.60000038146973,
+      "createSceneryMs": 737.5,
+      "firstDrawMs": 2801.7999997138977,
+      "authoredReadyMs": 2801.7999997138977
+    },
+    "baseline-startup": {
+      "createTerrainMs": 182.40000009536743,
+      "createSceneryMs": 692.2000002861023,
+      "firstDrawMs": 2814.2999997138977,
+      "authoredReadyMs": 2814.2999997138977
+    }
+  },
+  "nominalRootRange": [
+    -0.5460321755419848,
+    -0.03499810081228816
+  ],
+  "scope": "Finite decorative support production delivery. Single cached startup observations, not a controlled benchmark. Color wind uniform progresses and existing shadow receiving remains; grass does not gain cast shadows. No full journey, new GPU/endurance/audio/device or final-quality proof."
+}

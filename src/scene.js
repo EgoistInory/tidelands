@@ -17,6 +17,7 @@ import {createTree,TREE_FORMS} from './tree.js';
 import {createRuin} from './ruin.js';
 import {createLighthouse} from './lighthouse.js';
 import {createGroundSurface} from './ground-surface.js';
+import {visibleGroundSampler} from './ground-support.js';
 import {createWeatheredRock,initializeRockSurface} from './rock.js';
 import {createMeadow,createFiberClump,updateMeadow,updateGroundCover,updateCampClearance} from './meadow.js';
 import {createSky,updateSky} from './sky.js';
@@ -128,6 +129,7 @@ export class WorldView{
     }
     geometry.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));geometry.computeVertexNormals();
     geometry.setAttribute('groundLayers',new THREE.Float32BufferAttribute(layers,2));
+    this.groundHeight=visibleGroundSampler(geometry);
     const random=randomGenerator(835),pixels=new Uint8Array(256*256*4);
     for(let i=0;i<pixels.length;i+=4){const grain=185+Math.floor(random()*70);pixels[i]=pixels[i+1]=pixels[i+2]=grain;pixels[i+3]=255;}
     const detail=new THREE.DataTexture(pixels,256,256);detail.wrapS=detail.wrapT=THREE.RepeatWrapping;detail.repeat.set(80,80);detail.magFilter=THREE.LinearFilter;detail.minFilter=THREE.LinearMipmapLinearFilter;detail.generateMipmaps=true;detail.needsUpdate=true;
@@ -204,7 +206,7 @@ export class WorldView{
     this.islanders=[];
     for(const o of LANDMARKS){const g=landmarkModel(o,this.rockSurface);g.position.set(o.x,terrain(o.x,o.z),o.z);if(o.type==='ruin')this.cameraObstacles.push({object:o,boxes:g.userData.cameraBoxes.map(box=>box.clone().translate(g.position))});if(o.type==='npc'){animateCharacter(g,{x:o.x,z:o.z,yaw:0,time:0,attackAt:-100,selected:'hand'},0,terrain);this.islanders.push({object:o,model:g});}this.scene.add(g);if(o.type==='lighthouse')this.lighthouse=g;}
     const random=randomGenerator(4321);
-    this.meadow=[...createMeadow(random,this.world.objects),...createShoreStones()];this.scene.add(...this.meadow);
+    this.meadow=[...createMeadow(random,this.world.objects,this.groundHeight),...createShoreStones()];this.scene.add(...this.meadow);
     this.sky=createSky();this.scene.add(this.sky);
   }
   updateIslanders(state,near,dt){

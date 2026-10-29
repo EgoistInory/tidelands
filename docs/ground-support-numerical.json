@@ -1,0 +1,54 @@
+{
+  "verified": true,
+  "productionIntegrated": true,
+  "sceneryCpuMs": 1243.019042,
+  "audit": {
+    "instances": 105636,
+    "rootQueries": 1063824,
+    "minRootGap": -0.5460321755419848,
+    "maxRootGap": -0.03499810081228816,
+    "bufferBytes": 6760704,
+    "groups": {
+      "meadow-flowers": {
+        "instances": 1200,
+        "minRootGap": -0.050134226016623984,
+        "maxRootGap": -0.034998792168906334
+      },
+      "meadow-grass": {
+        "instances": 22595,
+        "minRootGap": -0.5460321755419848,
+        "maxRootGap": -0.03499810081228816
+      },
+      "meadow-cover": {
+        "instances": 75676,
+        "minRootGap": -0.22852171623113637,
+        "maxRootGap": -0.03499904636644757
+      },
+      "meadow-shore": {
+        "instances": 1167,
+        "minRootGap": -0.04307435151476913,
+        "maxRootGap": -0.03499988110876373
+      },
+      "meadow-fern": {
+        "instances": 4998,
+        "minRootGap": -0.046925836424108525,
+        "maxRootGap": -0.03499905450910745
+      }
+    },
+    "auditCpuMs": 49.70900000000006,
+    "scope": "Static rendered Float32 root positions, before camp hiding; wind and low-side burial remain quality limits."
+  },
+  "nonYValuesIdentical": 1584540,
+  "containedInstances": 105636,
+  "campHiddenInstances": 20,
+  "exactCampRestore": true,
+  "worldUnchanged": true,
+  "sourceHashes": {
+    "src/ground-support.js": "375dadd53e14de0d8c5e97534b9fc2c5db6c7c5c248c15607ec8aa14017776db",
+    "src/meadow.js": "b761bf74d0721a6531064434e074dbfae80e17f838bea172b9481729b394bf1c",
+    "src/scene.js": "d283b541c2b0a2e7985da3d874b652c0d1753a95754b6c945a725052aa58da03",
+    "tests/ground-support-production.test.js": "d844ebb8f3dfefdd2ed1a0050ff109b46441e12e9444e74a25532106e5326611",
+    "tests/ground-support-observer.js": "386c045ab31d8e2ccf5fec7917c4944f1067f51349047014220031a22f2c3a3e"
+  },
+  "scope": "Actual production scenery with actual 320 grid. Static bounds and roots only; native main evidence is separate. Full M5 quality remains pending."
+}

@@ -1,0 +1,17 @@
+import * as THREE from '../vendor/three.module.min.js';import {writeFileSync,readFileSync} from 'node:fs';import {createHash} from 'node:crypto';import assert from 'node:assert/strict';
+import {WorldView} from '../src/scene.js';import {terrain,createWorld} from '../src/world.js';import {createMeadow,updateCampClearance} from '../src/meadow.js';import {visibleGroundSampler} from '../src/ground-support.js';import {observeGroundSupport} from '../tests/ground-support-observer.js';
+const world=createWorld(),frozen=JSON.stringify(world.objects),g=new THREE.PlaneGeometry(800,800,320,320);g.rotateX(-Math.PI/2);const p=g.attributes.position;for(let i=0;i<p.count;i++)p.setY(i,terrain(p.getX(i),p.getZ(i)));
+const view={world,scene:new THREE.Scene(),groundHeight:visibleGroundSampler(g)};view.scene.add(new THREE.Mesh(g));const at=performance.now();WorldView.prototype.createScenery.call(view);const sceneryCpuMs=performance.now()-at,audit=observeGroundSupport(view),old=createMeadow(undefined,world.objects),names=new Set(old.map(b=>b.name)),actual=view.meadow.filter(b=>names.has(b.name));
+let nonYValuesIdentical=0,containedInstances=0;const m=new THREE.Matrix4(),box=new THREE.Box3(),sphere=new THREE.Sphere();
+for(let k=0;k<old.length;k++){
+ const a=actual[k],b=old[k];assert.equal(a.count,b.count);assert.equal(a.name,b.name);assert.deepEqual(a.instanceColor?.array,b.instanceColor?.array);assert.equal(a.receiveShadow,b.receiveShadow);assert.equal(a.castShadow,b.castShadow);
+ assert.deepEqual(a.geometry.attributes.position.array,b.geometry.attributes.position.array);
+ for(let i=0;i<a.instanceMatrix.array.length;i++)if(i%16!==13){assert.equal(a.instanceMatrix.array[i],b.instanceMatrix.array[i]);nonYValuesIdentical++;}
+ // A box corner can lie outside the geometry sphere. Check the transformed geometry sphere itself.
+ a.geometry.computeBoundingSphere();
+ for(let i=0;i<a.count;i++){a.getMatrixAt(i,m);box.copy(a.geometry.boundingBox).applyMatrix4(m);assert.ok(a.boundingBox.containsBox(box));sphere.copy(a.geometry.boundingSphere).applyMatrix4(m);assert.ok(sphere.center.distanceTo(a.boundingSphere.center)+sphere.radius<=a.boundingSphere.radius+1e-5);containedInstances++;}
+}
+const before=actual.map(b=>b.instanceMatrix.array.slice()),first=actual.find(b=>b.name==='meadow-grass');first.getMatrixAt(0,m);const camp={type:'campfire',x:m.elements[12],z:m.elements[14]},hidden=updateCampClearance(view.meadow,[camp]);assert.ok(hidden>0);updateCampClearance(view.meadow,[]);for(let k=0;k<actual.length;k++)assert.deepEqual(actual[k].instanceMatrix.array,before[k]);assert.equal(JSON.stringify(world.objects),frozen);
+const hash=p=>createHash('sha256').update(readFileSync(new URL('../'+p,import.meta.url))).digest('hex'),sources=['src/ground-support.js','src/meadow.js','src/scene.js','tests/ground-support-production.test.js','tests/ground-support-observer.js'];
+const report={verified:true,productionIntegrated:true,sceneryCpuMs,audit,nonYValuesIdentical,containedInstances,campHiddenInstances:hidden,exactCampRestore:true,worldUnchanged:true,sourceHashes:Object.fromEntries(sources.map(p=>[p,hash(p)])),scope:'Actual production scenery with actual 320 grid. Static bounds and roots only; native main evidence is separate. Full M5 quality remains pending.'};
+writeFileSync(new URL('../docs/ground-support-numerical.json',import.meta.url),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

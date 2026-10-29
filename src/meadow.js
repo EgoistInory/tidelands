@@ -1,6 +1,7 @@
 import * as THREE from '../vendor/three.module.min.js';
 import {terrain,layoutTerrain,LANDMARKS,SPAWN,ISLANDS,randomGenerator} from './world.js';
 import {landscapeMass} from './landscape.js';
+import {seatMeadowRoots} from './ground-support.js';
 
 const windTime={value:0};
 const windStrength={value:1};
@@ -192,7 +193,8 @@ export function createFiberClump(){
 }
 
 // Keep the existing placements, but cull regions instead of submitting the whole archipelago.
-function regionBatches(model,matrices,name,regionSize=128,colors=[]){
+function regionBatches(model,matrices,name,regionSize=128,colors=[],groundHeight=null){
+  if(groundHeight)seatMeadowRoots(model.geometry,matrices,groundHeight);
   const regions=new Map();
   matrices.forEach((matrix,i)=>{const key=`${Math.floor(matrix.elements[12]/regionSize)},${Math.floor(matrix.elements[14]/regionSize)}`;if(!regions.has(key))regions.set(key,[]);regions.get(key).push({matrix,color:colors[i]});});
   return [...regions.values()].map(entries=>{
@@ -207,7 +209,7 @@ function pathDistance(x,z,a,b){
 }
 
 // A separate seed leaves existing scenery and cloud random draws unchanged.
-function createGroundCover(){
+function createGroundCover(groundHeight){
   const random=randomGenerator(19541),dummy=new THREE.Object3D(),matrices=[],colors=[],keeper=LANDMARKS.find(o=>o.id==='keeper'),cottage=LANDMARKS.find(o=>o.id==='cottage');
   for(let patch=0;patch<850;patch++){
     const cx=random()*590-295,cz=random()*650-325,radius=3+random()*4;
@@ -227,11 +229,11 @@ function createGroundCover(){
     }
   }
   const model=createGrassClump();model.material=groundCoverSurface();
-  return regionBatches(model,matrices,'meadow-cover',32,colors);
+  return regionBatches(model,matrices,'meadow-cover',32,colors,groundHeight);
 }
 
 // Sparse salt-tolerant tufts above the wave band, independent of inland placement RNG.
-function createShoreCover(){
+function createShoreCover(groundHeight){
   const random=randomGenerator(26081),dummy=new THREE.Object3D(),matrices=[],colors=[];
   for(let patch=0;patch<2400;patch++){
     const cx=random()*590-295,cz=random()*650-325,radius=1.5+random()*2.5;
@@ -246,11 +248,11 @@ function createShoreCover(){
       matrices.push(dummy.matrix.clone());colors.push(tone);
     }
   }
-  return regionBatches(createDuneClump(),matrices,'meadow-shore',32,colors);
+  return regionBatches(createDuneClump(),matrices,'meadow-shore',32,colors,groundHeight);
 }
 
 // A tree's shelter defines a small community, leaving open routes and exposed slopes clear.
-export function createForestCover(objects){
+export function createForestCover(objects,groundHeight){
   const random=randomGenerator(48271),dummy=new THREE.Object3D(),matrices=[],colors=[],occupied=new Map();
   const keeper=LANDMARKS.find(o=>o.id==='keeper'),cottage=LANDMARKS.find(o=>o.id==='cottage');
   for(const tree of objects.filter(o=>o.type==='tree'&&layoutTerrain(o.x,o.z)>=3.5&&layoutTerrain(o.x,o.z)<=28)){
@@ -277,10 +279,10 @@ export function createForestCover(objects){
       }
     }
   }
-  return regionBatches(createFernClump(),matrices,'meadow-fern',32,colors);
+  return regionBatches(createFernClump(),matrices,'meadow-fern',32,colors,groundHeight);
 }
 
-export function createMeadow(random=randomGenerator(4321),objects=[]){
+export function createMeadow(random=randomGenerator(4321),objects=[],groundHeight=null){
   const dummy=new THREE.Object3D(),flowers=[],grass=[];
   for(let i=0;i<3000&&flowers.length<1200;i++){
     const x=random()*440-260,z=random()*450-290,y=layoutTerrain(x,z);if(y<2||y>28)continue;
@@ -291,5 +293,5 @@ export function createMeadow(random=randomGenerator(4321),objects=[]){
     if(y<2.4||y>33||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<5)||Math.sin(x*.11)*Math.cos(z*.13)<-.5)continue;
     dummy.position.set(x,terrain(x,z)-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);const scale=.7+random()*.9;dummy.scale.set(scale,scale*(.4+landscapeMass(x,z)*.85),scale);dummy.updateMatrix();grass.push(dummy.matrix.clone());
   }
-  return [...regionBatches(createWildflower(),flowers,'meadow-flowers'),...regionBatches(createGrassClump(),grass,'meadow-grass'),...createGroundCover(),...createShoreCover(),...createForestCover(objects)];
+  return [...regionBatches(createWildflower(),flowers,'meadow-flowers',128,[],groundHeight),...regionBatches(createGrassClump(),grass,'meadow-grass',128,[],groundHeight),...createGroundCover(groundHeight),...createShoreCover(groundHeight),...createForestCover(objects,groundHeight)];
 }

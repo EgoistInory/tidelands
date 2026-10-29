@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: production meadow initialization matches reviewed Float32 Y results and consumes unchanged random draws
+not ok 1 - production meadow initialization matches reviewed Float32 Y results and consumes unchanged random draws
+  ---
+  duration_ms: 917.377458
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/ground-support-production.test.js:5:1'
+  failureType: 'testCodeFailure'
+  error: 'production did not use actual visible terrain'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/ground-support-production.test.js:8:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: actual scenery routes the visible sampler into meadow construction and camp clearance restores corrected matrices
+not ok 2 - actual scenery routes the visible sampler into meadow construction and camp clearance restores corrected matrices
+  ---
+  duration_ms: 1164.396625
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/ground-support-production.test.js:14:1'
+  failureType: 'testCodeFailure'
+  error: 'scenery retained analytic-only root translation'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/ground-support-production.test.js:17:59)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2176.473708
