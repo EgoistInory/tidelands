@@ -1,0 +1,44 @@
+TAP version 13
+# Subtest: landform weather fields are bounded and continuous across the four islands with zero tidal exposure
+ok 1 - landform weather fields are bounded and continuous across the four islands with zero tidal exposure
+  ---
+  duration_ms: 47.582666
+  type: 'test'
+  ...
+# Subtest: surface candidate preserves world and rendered height geometry, shares textures and adds one bounded attribute without texture fetches
+not ok 2 - surface candidate preserves world and rendered height geometry, shares textures and adds one bounded attribute without texture fetches
+  ---
+  duration_ms: 168.209625
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/landform-surface.test.js:10:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    clone must retain production landscape feature flags
+    + actual - expected
+
+      {
+    +   STANDARD: ''
+    -   GROUND_LANDSCAPE: 1
+      }
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    GROUND_LANDSCAPE: 1
+  actual:
+    STANDARD: ''
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/landform-surface.test.js:14:105)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 1
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 270.079458

@@ -1,0 +1,73 @@
+{
+  "verified": true,
+  "accepted": false,
+  "productionIntegrated": false,
+  "packaged": false,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "productionInputsPreserved": 209,
+  "productionArchiveSha256": "ee606c25629a7b9f704fc504d661abea31264244b52027a9530253c60ca8301f",
+  "nativePairs": 12,
+  "visualDecisionPairs": 11,
+  "occludedPairs": [
+    [
+      "forest",
+      "near"
+    ]
+  ],
+  "firstCloneFailureImagesPreserved": 2,
+  "attributeBytes": 1236492,
+  "sourceHashes": {
+    "tests/landform-surface-candidate.js": "1cdba17efa2b0ff32c4422f2ab89308fe4cc25d8c10677f18e46fbd85bdf6345",
+    "tests/landform-surface.test.js": "3f461032d89cf157961da5023b678669645e5f590cbd4ffc9658d21e930a360c",
+    "tests/landform-surface-review.html": "f71894eba8ead32fa16a38ed484953a488f0cb73f63f870665c52d70f0311f74"
+  },
+  "perf": {
+    "old": {
+      "gpuMs": {
+        "samples": 120,
+        "p95": 12.293749,
+        "median": 10.378374,
+        "max": 12.497167
+      },
+      "renderCpuMs": {
+        "samples": 960,
+        "p95": 4.099999904632568,
+        "median": 3.0999999046325684,
+        "max": 4.800000190734863
+      },
+      "rafIntervalMs": {
+        "samples": 959,
+        "p95": 18.69999999999709,
+        "median": 16.69999999999709,
+        "max": 18.80000000000291
+      }
+    },
+    "candidate": {
+      "gpuMs": {
+        "samples": 121,
+        "p95": 12.436625,
+        "median": 10.624666,
+        "max": 12.690625
+      },
+      "renderCpuMs": {
+        "samples": 961,
+        "p95": 4.799999713897705,
+        "median": 3.4000000953674316,
+        "max": 6
+      },
+      "rafIntervalMs": {
+        "samples": 960,
+        "p95": 18.60000000000582,
+        "median": 16.69999999999709,
+        "max": 18.80000000000291
+      }
+    }
+  },
+  "candidateToOldGpuP95Ratio": 1.011621841311385,
+  "testPasses": 381,
+  "importantCodeReviewFindings": 0,
+  "wetZonePixelsUnchangedProven": false,
+  "reason": "Continuous weather tint and rock UV warping only shift tone. Bare hill form, repeated landscape composition and primitive upland vegetation remain; stop this tuning route. Forest near pair is obscured by a branch and excluded from visual benefit judgment.",
+  "scope": "Fixed authored WorldView diagnostic; native static GPU queries, no main-loop, ordinary movement/combat/save, dynamic wind, mobile/device, VRAM/endurance, audio or final3A evidence."
+}

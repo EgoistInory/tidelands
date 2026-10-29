@@ -1,0 +1,27 @@
+{
+  "reviewer": "landform_review",
+  "scope": [
+    "tests/landform-surface-candidate.js",
+    "tests/landform-surface.test.js",
+    "tests/landform-surface-review.html",
+    "docs/superpowers/plans/2026-10-29-landform-surface.md"
+  ],
+  "readOnly": true,
+  "importantFindings": 0,
+  "minorFindings": [
+    {
+      "file": "tests/landform-surface-candidate.js",
+      "line": 26,
+      "issue": "Rock UV offsets lack fragment-height gating. Interpolation across a tidal triangle can change wet-zone rock pixels; CPU zero weights do not prove wet pixels unchanged.",
+      "disposition": "Not promoted. Keep as QA reuse boundary; do not claim wet pixel invariance."
+    },
+    {
+      "file": "tests/landform-surface-review.html",
+      "line": 12,
+      "issue": "Diagnostic sampler can return complete true after a resize or sparse hidden run.",
+      "disposition": "Current runs independently verified: 960/961 frames, 120/121 native queries, hidden false, disjoint0, same before/after camera and buffer; future reuse must abort invalid runs."
+    }
+  ],
+  "productionPromotionRecommended": false,
+  "visualIndependentlyReviewed": false
+}
