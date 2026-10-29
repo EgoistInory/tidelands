@@ -1,0 +1,48 @@
+{
+  "verified": true,
+  "productionIntegrated": false,
+  "before": {
+    "instances": 105636,
+    "minRootGap": -0.3388691638700436,
+    "maxRootGap": 0.3426121560311799
+  },
+  "after": {
+    "instances": 105636,
+    "minRootGap": -0.5460321755419848,
+    "maxRootGap": -0.03499810081228816
+  },
+  "groups": {
+    "meadow-flowers": {
+      "instances": 1200,
+      "fullyBuriedBefore": 0,
+      "fullyBuriedAfter": 0,
+      "maxTranslation": 0.13197708129882812
+    },
+    "meadow-grass": {
+      "instances": 22595,
+      "fullyBuriedBefore": 0,
+      "fullyBuriedAfter": 0,
+      "maxTranslation": 0.3776130676269531
+    },
+    "meadow-cover": {
+      "instances": 75676,
+      "fullyBuriedBefore": 0,
+      "fullyBuriedAfter": 0,
+      "maxTranslation": 0.18690872192382812
+    },
+    "meadow-shore": {
+      "instances": 1167,
+      "fullyBuriedBefore": 0,
+      "fullyBuriedAfter": 0,
+      "maxTranslation": 0.018517494201660156
+    },
+    "meadow-fern": {
+      "instances": 4998,
+      "fullyBuriedBefore": 0,
+      "fullyBuriedAfter": 0,
+      "maxTranslation": 0.16158676147460938
+    }
+  },
+  "nonYValuesIdentical": 1584540,
+  "scope": "Nominal vertices only; no shader wind. Gross grass float removed through decorative translation. Burial counts are retained as limits, not a full-naturalness verdict."
+}

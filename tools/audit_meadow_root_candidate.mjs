@@ -1,0 +1,9 @@
+import * as THREE from '../vendor/three.module.min.js';import {writeFileSync} from 'node:fs';
+import {terrain,createWorld} from '../src/world.js';import {createMeadow} from '../src/meadow.js';import {buildGroundRootVariants,visibleGroundSampler} from '../tests/visible-ground-sampler.js';
+const geometry=new THREE.PlaneGeometry(800,800,320,320);geometry.rotateX(-Math.PI/2);const p=geometry.attributes.position;for(let i=0;i<p.count;i++)p.setY(i,terrain(p.getX(i),p.getZ(i)));
+const result=buildGroundRootVariants(createMeadow(undefined,createWorld().objects),geometry),sample=visibleGroundSampler(geometry),groups={};let unchanged=0;
+for(const {batch,before,after}of result.variants){const group=groups[batch.name]??={instances:0,fullyBuriedBefore:0,fullyBuriedAfter:0,maxTranslation:0},p=batch.geometry.attributes.position;
+ for(let i=0;i<batch.count;i++){const k=i*16;let top=-Infinity;for(let j=0;j<p.count;j++){const x=p.getX(j),y=p.getY(j),z=p.getZ(j),wx=before[k]*x+before[k+4]*y+before[k+8]*z+before[k+12],wy=before[k+1]*x+before[k+5]*y+before[k+9]*z+before[k+13],wz=before[k+2]*x+before[k+6]*y+before[k+10]*z+before[k+14];top=Math.max(top,wy-sample(wx,wz));}const delta=after[k+13]-before[k+13];group.instances++;group.fullyBuriedBefore+=Number(top<=0);group.fullyBuriedAfter+=Number(top+delta<=0);group.maxTranslation=Math.max(group.maxTranslation,Math.abs(delta));}
+ for(let i=0;i<before.length;i++)if(i%16!==13){if(before[i]!==after[i])throw Error('Non-Y value changed');unchanged++;}
+}
+const report={verified:true,productionIntegrated:false,before:result.before,after:result.after,groups,nonYValuesIdentical:unchanged,scope:'Nominal vertices only; no shader wind. Gross grass float removed through decorative translation. Burial counts are retained as limits, not a full-naturalness verdict.'};writeFileSync(new URL('../docs/meadow-root-candidate-audit.json',import.meta.url),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "productionIntegrated": false,
+  "runtimeInputsUnchanged": 208,
+  "packageSha256": "edb40edf0b8ae3cb6994732998839062da1de6d6e2a0f299c91476086bbbac57",
+  "rootInstances": 105636,
+  "grassGrossFloatBefore": 241,
+  "maxRootGapBefore": 0.3426121560311799,
+  "maxRootGapAfter": -0.03499810081228816,
+  "minimumRootGapAfter": -0.5460321755419848,
+  "fullyBuriedInstancesAfter": 0,
+  "nonYMatrixValuesIdentical": 1584540,
+  "independentRayChecks": 70,
+  "nativeSameCameraPairs": 3,
+  "images": {
+    "docs/meadow-root-ridge-before.png": "87b6ecd42b36f67fd9cc27507cdc26e1e45ffef5d302a7b61328414cebdf08f4",
+    "docs/meadow-root-ridge-after.png": "f1279f9772308c7b3f5a5aae084c5a59a96ae0156e9863de4e6efac6fa6e1638",
+    "docs/meadow-root-slope-after.png": "cf18072f6d193c40f710f79944b0cc3f9c5cc3d2fdac9840aed8b5a832aacabb",
+    "docs/meadow-root-slope-before.png": "879db663e211e87c9cd6294bc3cbf351ef22b6f1da13c53e9682ff7012e7f472",
+    "docs/meadow-root-coast-before.png": "e82fde9f3262bb8445e44fd0b01ea7902049606bc6f31892527765c608075c9b",
+    "docs/meadow-root-coast-after.png": "b66b3046dae125d3a15d662280dcba889cd81b309b5c13198dd4f9ed96606b26"
+  },
+  "focusedTests": 2,
+  "fullTests": 377,
+  "newOrdinarySaveTouched": false,
+  "currentGpuOrEnduranceAccepted": false,
+  "wholeLandscapeQualityAccepted": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "scope": "Isolated actual-terrain decorative support fix. Fallback backgrounds/hidden actor/close diagnostic camera, nominal roots/vertices only. Some roots remain deeply buried, no whole-clump nominal burial. Not authored whole scene, production migration, normal main path, GPU or mobile proof."
+}

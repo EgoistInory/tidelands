@@ -1,0 +1,230 @@
+{
+  "verified": true,
+  "scope": "Actual320 terrain triangle grid plus every generated decorative meadow root. Independent70 ray checks. Diagnostic only: production208 unchanged; not visual, full-grounding or GPU acceptance.",
+  "rayChecks": 70,
+  "maxRayError": 2.930988785010413e-14,
+  "groups": {
+    "meadow-flowers": {
+      "instances": 1200,
+      "grossFloat": 0,
+      "grossBuried": 0,
+      "centerGapRange": [
+        -0.1423778638081803,
+        0.096087451794304
+      ],
+      "maxRootGap": 0.09697646945886973,
+      "rootGapP95": -0.00046436407326844176
+    },
+    "meadow-grass": {
+      "instances": 22595,
+      "grossFloat": 241,
+      "grossBuried": 387,
+      "centerGapRange": [
+        -0.23981695424298977,
+        0.22507977262137402
+      ],
+      "maxRootGap": 0.3426121560311799,
+      "rootGapP95": 0.09785921271735987
+    },
+    "meadow-cover": {
+      "instances": 75676,
+      "grossFloat": 1,
+      "grossBuried": 3,
+      "centerGapRange": [
+        -0.17617117993650133,
+        0.10536486560595648
+      ],
+      "maxRootGap": 0.15190899161561688,
+      "rootGapP95": 0.034442349372378445
+    },
+    "meadow-shore": {
+      "instances": 1167,
+      "grossFloat": 0,
+      "grossBuried": 0,
+      "centerGapRange": [
+        -0.054892520926661525,
+        -0.019546910039214938
+      ],
+      "maxRootGap": -0.017537012296370502,
+      "rootGapP95": -0.027334375668110145
+    },
+    "meadow-fern": {
+      "instances": 4998,
+      "grossFloat": 0,
+      "grossBuried": 0,
+      "centerGapRange": [
+        -0.15722888656309486,
+        0.12558392679784092
+      ],
+      "maxRootGap": 0.12658733653634613,
+      "rootGapP95": -0.004312992597508725
+    }
+  },
+  "worst": [
+    {
+      "name": "meadow-grass",
+      "batchIndex": 24,
+      "index": 224,
+      "x": -41.45341110229492,
+      "y": 30.222763061523438,
+      "z": -208.3750762939453,
+      "centerGap": 0.22507977262137402,
+      "minRootGap": 0.10119959768416464,
+      "maxRootGap": 0.3426121560311799,
+      "rootPoints": 10,
+      "analyticCenterGap": -0.040001178644896385
+    },
+    {
+      "name": "meadow-grass",
+      "batchIndex": 24,
+      "index": 744,
+      "x": -111.45165252685547,
+      "y": 29.780132293701172,
+      "z": -250.73692321777344,
+      "centerGap": 0.17263692925335405,
+      "minRootGap": 0.029299447686160107,
+      "maxRootGap": 0.32969873099710867,
+      "rootPoints": 10,
+      "analyticCenterGap": -0.04000173281908914
+    },
+    {
+      "name": "meadow-grass",
+      "batchIndex": 24,
+      "index": 1549,
+      "x": -118.66411590576172,
+      "y": 23.453413009643555,
+      "z": -253.20843505859375,
+      "centerGap": 0.08441294406073396,
+      "minRootGap": -0.02250958317831575,
+      "maxRootGap": 0.3186855615279285,
+      "rootPoints": 10,
+      "analyticCenterGap": -0.040001096795059254
+    },
+    {
+      "name": "meadow-grass",
+      "batchIndex": 24,
+      "index": 1344,
+      "x": -39.10655975341797,
+      "y": 28.29962730407715,
+      "z": -208.42552185058594,
+      "centerGap": 0.12566525375586934,
+      "minRootGap": 0.04084117551944999,
+      "maxRootGap": 0.30714965878981815,
+      "rootPoints": 10,
+      "analyticCenterGap": -0.039998190048507354
+    },
+    {
+      "name": "meadow-grass",
+      "batchIndex": 24,
+      "index": 65,
+      "x": -44.145145416259766,
+      "y": 31.929121017456055,
+      "z": -208.8122100830078,
+      "centerGap": 0.21089498339279444,
+      "minRootGap": 0.13906832879163034,
+      "maxRootGap": 0.30000398050578525,
+      "rootPoints": 10,
+      "analyticCenterGap": -0.04000114099392604
+    },
+    {
+      "name": "meadow-grass",
+      "batchIndex": 25,
+      "index": 74,
+      "x": -120.65155029296875,
+      "y": 21.966201782226562,
+      "z": -256.7358093261719,
+      "centerGap": 0.09266955493949425,
+      "minRootGap": -0.05293669040205984,
+      "maxRootGap": 0.2762490378909348,
+      "rootPoints": 10,
+      "analyticCenterGap": -0.04000084111887503
+    },
+    {
+      "name": "meadow-grass",
+      "batchIndex": 24,
+      "index": 1526,
+      "x": -39.53013229370117,
+      "y": 25.553678512573242,
+      "z": -200.9213104248047,
+      "centerGap": 0.07808002756794608,
+      "minRootGap": -0.0071964468153389305,
+      "maxRootGap": 0.2747155954113225,
+      "rootPoints": 10,
+      "analyticCenterGap": -0.040002796638781035
+    },
+    {
+      "name": "meadow-grass",
+      "batchIndex": 24,
+      "index": 1044,
+      "x": -116.81881713867188,
+      "y": 23.955610275268555,
+      "z": -248.9960479736328,
+      "centerGap": -0.010874019982285432,
+      "minRootGap": -0.24011443567382074,
+      "maxRootGap": 0.27091724566693287,
+      "rootPoints": 10,
+      "analyticCenterGap": -0.04000488570039096
+    },
+    {
+      "name": "meadow-grass",
+      "batchIndex": 24,
+      "index": 1363,
+      "x": -111.38182830810547,
+      "y": 29.75497817993164,
+      "z": -249.30694580078125,
+      "centerGap": 0.13601381716434346,
+      "minRootGap": 0.06954193838710054,
+      "maxRootGap": 0.27078929506486205,
+      "rootPoints": 10,
+      "analyticCenterGap": -0.03999761453961881
+    },
+    {
+      "name": "meadow-grass",
+      "batchIndex": 25,
+      "index": 543,
+      "x": -118.84950256347656,
+      "y": 23.24521255493164,
+      "z": -259.0430603027344,
+      "centerGap": 0.13378836363554925,
+      "minRootGap": 0.02828878421608394,
+      "maxRootGap": 0.262751149987146,
+      "rootPoints": 10,
+      "analyticCenterGap": -0.039998637713253515
+    },
+    {
+      "name": "meadow-grass",
+      "batchIndex": 24,
+      "index": 1220,
+      "x": -108.43453216552734,
+      "y": 32.11070251464844,
+      "z": -248.2294158935547,
+      "centerGap": 0.14143676002278127,
+      "minRootGap": -0.031697202224954424,
+      "maxRootGap": 0.2623818303773433,
+      "rootPoints": 10,
+      "analyticCenterGap": -0.03999922398833888
+    },
+    {
+      "name": "meadow-grass",
+      "batchIndex": 24,
+      "index": 882,
+      "x": -36.973445892333984,
+      "y": 25.67453384399414,
+      "z": -203.3060302734375,
+      "centerGap": 0.12540671031750605,
+      "minRootGap": 0.03549617253659321,
+      "maxRootGap": 0.2564378337198576,
+      "rootPoints": 10,
+      "analyticCenterGap": -0.04000125616183681
+    }
+  ],
+  "sourceHashes": {
+    "src/scene.js": "e65f7eeed6717823f1739cd4de36ce497f06d99856fecc21aa41d56c16e6a8eb",
+    "src/world.js": "4abcfa0aa50fb5098bbdffc8ff1c992bf4859dd9415f3f455e0db6793fcc6b9e",
+    "src/meadow.js": "c15ce562a65ffab5b48a681117bb8be0500dc9a270812089eda5a632de04a661",
+    "src/landscape.js": "207519631b13e3287eb0cd7500ef979c479025aee1f31f16fa2acd39e6dc52ff"
+  },
+  "rawPath": "dist/meadow-visible-support-initial-raw.json",
+  "rawSha256": "c288df94c01cd352b859cd6b83f81df11c0fe947a7581fff0b1d5c707cbbc103",
+  "rowCount": 105636
+}
