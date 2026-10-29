@@ -11,7 +11,8 @@ import {createTextileMaterial} from './textile.js';
 import {createCreature,animateCreature,resetCreature} from './creature.js';
 import {mergeStaticParts} from './merge-parts.js';
 import {cottageSurfaces,cottageRoof} from './cottage-surfaces.js';
-import {createBerryFoliage,barkSurface,updateFoliage} from './foliage.js';
+import {updateFoliage} from './foliage.js';
+import {createBerryBush} from './berry.js';
 import {createTree,TREE_FORMS} from './tree.js';
 import {createRuin} from './ruin.js';
 import {createLighthouse} from './lighthouse.js';
@@ -45,7 +46,6 @@ function person(color=palette.cloth){
 }
 function resourceModel(type,treeForm='coast'){
   const g=new THREE.Group();
-  const branch=(geometry,x=0,y=0,z=0)=>{const m=new THREE.Mesh(geometry,barkSurface());m.position.set(x,y,z);m.castShadow=m.receiveShadow=true;return m;};
   if(type==='tree'){
     return createTree(treeForm);
   }else if(type==='stone'){
@@ -54,17 +54,7 @@ function resourceModel(type,treeForm='coast'){
   }else if(type==='crystal'){
     return createCrystalDeposit();
   }else if(type==='berry'){
-    g.add(createBerryFoliage());
-    for(let i=0;i<5;i++){
-      const angle=i*2.399,end=new THREE.Vector3(Math.cos(angle)*.55,1.05+(i%3)*.22,Math.sin(angle)*.55);
-      const base=new THREE.Vector3(Math.cos(angle)*.12,.05,Math.sin(angle)*.12),delta=end.clone().sub(base);
-      const stem=branch(new THREE.CylinderGeometry(.016,.038,delta.length(),6));
-      stem.position.copy(base.add(end).multiplyScalar(.5));stem.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),delta.normalize());g.add(stem);
-      for(let berry=0;berry<3;berry++){
-        const fruit=sphere(.105,0xb85f44,Math.cos(angle)*.94+(berry-1)*.105,1.02+(i%3)*.22-berry*.07,Math.sin(angle)*.94);
-        fruit.scale.y=1.1;g.add(fruit);
-      }
-    }
+    return createBerryBush();
   }else if(type==='fiber'){
     g.add(createFiberClump());
   }else{const shell=sphere(.6,palette.cream,0,.2,0);shell.scale.y=.35;g.add(shell);}

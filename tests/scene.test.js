@@ -75,7 +75,7 @@ test('resource bounds retain regenerating nodes after initial depletion',()=>{
     }
   }
   const leaves=view.batches.filter(({batch})=>batch.material.alphaTest>0);
-  assert.deepEqual(new Set(leaves.flatMap(({entries})=>entries.map(e=>e.type))),new Set(['tree','berry']));
+  assert.deepEqual(new Set(leaves.flatMap(({entries})=>entries.map(e=>e.type))),new Set(['tree']));
   for(const {batch}of leaves){assert.ok(batch.customDepthMaterial);assert.equal(batch.customDepthMaterial.map,batch.material.map);}
   const bounds=view.batches.map(({batch})=>batch.boundingSphere.clone());
   const ids=new Set();

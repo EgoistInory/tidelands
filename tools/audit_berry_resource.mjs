@@ -1,0 +1,12 @@
+import {writeFileSync,readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import * as THREE from '../vendor/three.module.min.js';
+import {createBerryBush} from '../src/berry.js';
+import {createWorld} from '../src/world.js';
+const model=createBerryBush();model.updateMatrixWorld(true);const box=new THREE.Box3().setFromObject(model),world=createWorld();
+const parts=model.children.map(m=>({name:m.name,triangles:(m.geometry.index?.count??m.geometry.attributes.position.count)/3,geometryBytes:Object.values(m.geometry.attributes).reduce((n,a)=>n+a.array.byteLength,0),transparent:m.material.transparent,alphaTest:m.material.alphaTest,textureBytes:[...new Set([m.material.map,m.material.bumpMap])].filter(Boolean).reduce((n,t)=>n+t.image.data.byteLength,0)}));
+const nodes=world.objects.filter(o=>o.type==='berry'),maxAttachmentGap=Math.max(...model.userData.attachments.map(a=>Math.hypot(...a.stemEnd.map((n,i)=>n-a.center[i]))-a.radius*1.12));
+if(parts.length!==3||parts.reduce((n,p)=>n+p.triangles,0)>=7000||maxAttachmentGap>0)throw Error('Berry shape budget or attached-fruit contract failed');
+const sources=Object.fromEntries(['src/berry.js','src/scene.js','src/crystal.js','src/world.js','src/game.js','src/resource-contact.js'].map(p=>[p,createHash('sha256').update(readFileSync(new URL('../'+p,import.meta.url))).digest('hex')]));
+const report={verified:true,bounds:{min:box.min.toArray(),max:box.max.toArray()},parts,triangles:parts.reduce((n,p)=>n+p.triangles,0),attachments:model.userData.attachments.length,maxAttachmentGap,originalNodes:nodes,sourceHashes:sources,scope:'Production factory numerical envelope/shared-part budget and attached upper-fruit surface. Not terrain support, wind, final visual, GPU or movement proof.'};
+writeFileSync(new URL('../docs/berry-resource-numerical.json',import.meta.url),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({verified:true,nodes:nodes.length,triangles:report.triangles,parts,attachmentCount:report.attachments,bounds:report.bounds}));

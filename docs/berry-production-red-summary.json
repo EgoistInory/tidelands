@@ -1,0 +1,21 @@
+[
+  {
+    "rawPreserved": "dist/resource-detail-red.txt",
+    "sha256": "e8614a8a9b69df1befa0ee9e200e83c4268573f44cf04a2e402fca8509b3c593",
+    "bytes": 2510,
+    "failedSubtests": [
+      "not ok 1 - berry detail fits unchanged logical envelope with finite deterministic bounded instancing input",
+      "not ok 4 - mineral caps face outwards at the top and bottom of the main prism"
+    ],
+    "reason": "Candidate exceeded planned mesh budget and inward mineral caps"
+  },
+  {
+    "rawPreserved": "dist/berry-production-red.txt",
+    "sha256": "026695c30e1f68211eeb97961038d2896a7a40c9af6056577c9edbf62759cb01",
+    "bytes": 1211250,
+    "failedSubtests": [
+      "not ok 1 - actual scenery instancing adopts the reviewed berry geometry at every original node"
+    ],
+    "reason": "Actual scenery still used old berry geometry"
+  }
+]

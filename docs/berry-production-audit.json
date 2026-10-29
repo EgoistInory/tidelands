@@ -1,0 +1,162 @@
+{
+  "verified": true,
+  "berryProductionIntegrated": true,
+  "crystalCandidatePromoted": false,
+  "productionBerryNodes": 61,
+  "resourceInstancedParts": 3,
+  "nativeNaturalRegrowthAndSecondGather": true,
+  "naturalRegrowthGameTime": 182.191699999976,
+  "nativePackageGatherSaveReload": true,
+  "nativeOrdinaryBackupCopyRestored": true,
+  "originalOrdinaryKeyTouched": false,
+  "testsPassed": 375,
+  "runtimeFiles": 208,
+  "archiveEntries": 209,
+  "archiveBytes": 170920904,
+  "archiveSha256": "edb40edf0b8ae3cb6994732998839062da1de6d6e2a0f299c91476086bbbac57",
+  "archive": "dist/tidelands-m5-2026-10-29-berry-runtime.zip",
+  "runtimeDelta": [
+    "README.md",
+    "src/berry.js",
+    "src/scene.js"
+  ],
+  "visualComparisonPairs": 5,
+  "firstUnsettledFollowViewsRejected": 3,
+  "crystalSteepTerrainSupportAccepted": false,
+  "embeddedViewport": [
+    390,
+    844
+  ],
+  "embeddedBuffer": [
+    585,
+    1266
+  ],
+  "outerNarrowBrowserAccepted": false,
+  "physicalTouchDeviceAccepted": false,
+  "performance": {
+    "desktop": {
+      "gpuMs": {
+        "samples": 81,
+        "min": 10.486375,
+        "median": 21.908833,
+        "p95": 38.297333,
+        "max": 88.211375
+      },
+      "drawCpuMs": {
+        "samples": 644,
+        "min": 3.5,
+        "median": 4.300000190734863,
+        "p95": 5.300000190734863,
+        "max": 64.59999990463257
+      },
+      "rafIntervalMs": {
+        "samples": 643,
+        "min": 9.400000095367432,
+        "median": 24.700000286102295,
+        "p95": 27.800000190734863,
+        "max": 75.59999990463257
+      },
+      "elapsedMs": 18029.39999961853
+    },
+    "embedded": {
+      "gpuMs": {
+        "samples": 107,
+        "min": 5.309124,
+        "median": 17.831,
+        "p95": 48.13975,
+        "max": 88.066709
+      },
+      "drawCpuMs": {
+        "samples": 853,
+        "min": 2.8000001907348633,
+        "median": 4,
+        "p95": 5,
+        "max": 138.69999980926514
+      },
+      "rafIntervalMs": {
+        "samples": 852,
+        "min": 5.900000095367432,
+        "median": 18.699999809265137,
+        "p95": 22.300000190734863,
+        "max": 144.09999990463257
+      },
+      "elapsedMs": 18031
+    },
+    "baselineDesktop": {
+      "gpuMs": {
+        "samples": 81,
+        "min": 10.305041,
+        "median": 22.742958,
+        "p95": 41.413541,
+        "max": 59.964624
+      },
+      "drawCpuMs": {
+        "samples": 646,
+        "min": 3.5999999046325684,
+        "median": 4.400000095367432,
+        "p95": 5.599999904632568,
+        "max": 78
+      },
+      "rafIntervalMs": {
+        "samples": 645,
+        "min": 11.200000286102295,
+        "median": 24.40000009536743,
+        "p95": 27.600000381469727,
+        "max": 84.40000009536743
+      },
+      "elapsedMs": 18027.099999904633
+    }
+  },
+  "desktopGpu25msGatePassed": false,
+  "embeddedGpu25msGatePassed": false,
+  "failedRecorderOutputPreserved": true,
+  "desktopRelativeGuardPassed": true,
+  "performanceGainAccepted": false,
+  "gpuSystemLoadIsolated": false,
+  "images": {
+    "docs/berry-production-delivery-reload.png": "17eb174db5be43341a544383b1f2d5e3216688b500ce766771a031c44f2316a2",
+    "docs/berry-production-embedded-gather.png": "162013eb9973fa23ee8b9de38022917e74a42e4d61bfada63e820d0f3a964cd4",
+    "docs/berry-production-ordinary-reload.png": "1c0d35d08493f87e02f11373985f062e14b416c0ff1adaa9355ab98319e8ceab",
+    "docs/berry-production-runtime-desktop.png": "0a61b37eccc2150ed3aadbac41d5bf857e67ea4e0981e7ddb5582625fab62bcd",
+    "docs/berry-production-runtime-embedded.png": "4e11154d1e4cdaa59cf383792d7525bfb447933cbcb80f41df8ee181959e9ee5",
+    "docs/berry-production-source-gather.png": "750ed2e66401838fdc1415112dfd53a683418d468761b44893d55c68e8f3d15b",
+    "docs/berry-production-source-regrowth-early.png": "c1e7c76c208cfacf7ef87d0f6331411330c06ebb27898c3adadfa1895aabfea4",
+    "docs/berry-production-source-regrowth.png": "20e61a1a1bd84c3cf7ea84644aeed28f9616d0bc51399bc301dcc0d1e9a079e3",
+    "docs/berry-production-source-reload.png": "70f3ee85c15fa9352ce69924ffa1c7edac67386b86e3325851fd14b760d361d7",
+    "docs/resource-detail-berry-candidate-near-day.png": "c9f22eac9d5fc599c29eb87a99a9bce20c7b836bd563e6d662b8da1747a82361",
+    "docs/resource-detail-berry-old-near-day.png": "bf2ff9aa95c156e3c2fbc7f6b29b8d0dc107376e5974c5cf632d8ee3ebdc2bb6",
+    "docs/resource-detail-crystal-candidate-follow-day.png": "a151e42213e78e8ff7db2c8de900f79e3cd63174c2611719ea35f5b0844da105",
+    "docs/resource-detail-crystal-candidate-follow-dusk.png": "14280a456d7a043a987c6123edcea5d8d481cd8ca98d97b5ad7c156aae2840ae",
+    "docs/resource-detail-crystal-candidate-near-day.png": "dc7ccde16649d67e604e0b22abd49a3a35a31ceed1496e67509f35e58ffcecc5",
+    "docs/resource-detail-crystal-old-follow-day.png": "4ad6dc4d600697ffa6fa32c9a9263393f8a5940503df78186dc567bd720e2f9c",
+    "docs/resource-detail-crystal-old-near-day.png": "07d8e39e0592ab133f11bf32b1886ecad047cfb497c72e22a48bb0060b4fa5e5",
+    "docs/resource-detail-r2-berry-candidate-follow-day.png": "29cecf9cbf01db6fe1f45e4e5210e43c7c18057bdde8d5ad84974cbcbd3f45e3",
+    "docs/resource-detail-r2-berry-candidate-near-dusk.png": "8b72f2369e2b4b4f0bc1aa9ad27d437b2bf717722ae2d03c2bffd533cf7cbd01",
+    "docs/resource-detail-r2-berry-candidate-near-night.png": "8fe6a21975ecdc9757ceb8a5443e757783a5bce85193e66158ffc5671c75f919",
+    "docs/resource-detail-r2-berry-old-follow-day.png": "3ff67a1b000f9d199b87b2e168a4e6bac751723a6b86f794f2861258b5b59dfc",
+    "docs/resource-detail-r2-berry-old-near-dusk.png": "cfa71d105b42ccf2bd57658d8814dbf0fe8325fd0ad4e0d40e010cf9d678cc73",
+    "docs/resource-detail-r2-berry-old-near-night.png": "2e74500c5bc884abcd5aab82d660480f7aef906a9d1f8ede5fce24e927e35300",
+    "docs/resource-detail-r2-crystal-candidate-follow-day.png": "ec959e5fd2741b6de4911b26c9074c73199c5fb5ebbbf766a628e0eb06883c56",
+    "docs/resource-detail-r2-crystal-candidate-near-day.png": "f3adcd16d6d3a3a783d918ce6a3310dcef2a898ca65cb0153e84453200c000eb",
+    "docs/resource-detail-r2-crystal-old-follow-day.png": "66c015a9ca109970835b062dca0f0aea6a75151a5e34abcfb1f5c11983f8914b",
+    "docs/resource-detail-r2-crystal-old-near-day.png": "5f2b0caa0436b00058a0b6416fe7a5b42127939d7f2f709a37677d00c0c933c9",
+    "docs/resource-detail-verified-berry-candidate-follow-day.png": "60620b6bc923aac5761e53afe83dcf9decfd8106c5f378b181c6ec51fe0577fa",
+    "docs/resource-detail-verified-berry-candidate-near-dusk.png": "5047ceb9f2c805dd59e8d463fbe2380545c164ab8b1326af235956a0bc67f8fd",
+    "docs/resource-detail-verified-berry-candidate-near-night.png": "51f55f73c0453e15571157686f5c972665f272fa40cac3837e31ca4efb1dc84b",
+    "docs/resource-detail-verified-berry-old-follow-day.png": "6731e6fbef626e66c5818bdcacc4a05a306b0289b54e359313e0ffba28d4b65f",
+    "docs/resource-detail-verified-berry-old-near-dusk.png": "50365d98f8c1c5a48a6932527c8ceae00868424bc7ed5beccb3cbbfc500f412a",
+    "docs/resource-detail-verified-berry-old-near-night.png": "ce5709441308b49ce36d2dc43dfe83c6877bff423f940874c0088231f6c3be49",
+    "docs/resource-detail-verified-crystal-candidate-follow-day.png": "ec959e5fd2741b6de4911b26c9074c73199c5fb5ebbbf766a628e0eb06883c56",
+    "docs/resource-detail-verified-crystal-candidate-near-day.png": "f3adcd16d6d3a3a783d918ce6a3310dcef2a898ca65cb0153e84453200c000eb",
+    "docs/resource-detail-verified-crystal-old-follow-day.png": "66c015a9ca109970835b062dca0f0aea6a75151a5e34abcfb1f5c11983f8914b",
+    "docs/resource-detail-verified-crystal-old-near-day.png": "5f2b0caa0436b00058a0b6416fe7a5b42127939d7f2f709a37677d00c0c933c9"
+  },
+  "historicalQaSyntaxErrorPreserved": true,
+  "fullVisualQualityAccepted": false,
+  "finalPerformanceAccepted": false,
+  "currentFullJourneyReplayed": false,
+  "longRunOrPhysicalDeviceAccepted": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "scope": "Finite berry geometry/attachment increment with native main and independent package proof. Crystal candidate rejected for limited normal-distance gain. Bare highland/steep resource support, static berry wind, final motion/audio/endurance/device/whole3A remain open."
+}
