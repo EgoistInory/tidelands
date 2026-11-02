@@ -12,10 +12,20 @@ export function landformOffset(x,z,base,islands,protectedSites){
   }
   if(weight===0)return 0;
   const island=islands[region],u=(x-island.x)/island.r,v=(z-island.z)/island.r;
-  const angle=[.45,-.6,.2,.8][region],a=u*Math.cos(angle)+v*Math.sin(angle),b=-u*Math.sin(angle)+v*Math.cos(angle);
+  // Regional macroforms keep the islands from reading as the same rotated hill:
+  // low dunes on the coast/shoal, folded forest ridges, and a sharper highland spine.
+  const [angle,frequency,warp,width,amplitude,shoulder,shoulderWidth,valley,valleyAt,valleyWidth,secondary]=[
+    [.45,4.2,.08,.17,7.5,.31,.15,-.48,.02,.16,0],
+    [-.6,5.4,.13,.12,13.5,.30,.12,-.62,.01,.13,.32],
+    [.2,5.4,.12,.135,9,.34,.14,-.82,.015,.14,.34],
+    [.8,3.8,.06,.20,5.5,.29,.19,-.72,.02,.21,0]
+  ][region];
+  const a=u*Math.cos(angle)+v*Math.sin(angle),b=-u*Math.sin(angle)+v*Math.cos(angle);
   const band=(center,width)=>Math.exp(-(((b-center)/width)**2));
-  const ridge=band(-.22-.1*Math.sin(a*5),.13)*(.7+.3*Math.cos(a*4));
-  const shoulder=.65*band(.28-.1*Math.sin(a*4+1),.1);
-  const gully=-.8*band(.015,.115);
-  return [9,12,8,5][region]*weight*(ridge+shoulder+gully);
+  const ridgeCenter=-.22-warp*Math.sin(a*frequency),shoulderCenter=shoulder-warp*.72*Math.sin(a*(frequency-.8)+1);
+  const ridge=band(ridgeCenter,width)*(.72+.28*Math.cos(a*(frequency-.9)));
+  const folded=secondary*band(.08+warp*.55*Math.sin(a*frequency*.73+2),width*.82);
+  const shoulderLift=.65*band(shoulderCenter,shoulderWidth);
+  const gully=valley*band(valleyAt,valleyWidth);
+  return amplitude*weight*(ridge+folded+shoulderLift+gully);
 }

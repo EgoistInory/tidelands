@@ -1,0 +1,150 @@
+{
+  "status": "candidate_reviewed_main_path_pending",
+  "date": "2026-11-02",
+  "sourceCommit": "1ac9e2520ceb7c84b63cd64eb6272a86af4d0ac3",
+  "workingTreeFile": "src/terrain-composition.js",
+  "workingTreeSha256": "59cc2a15ac157cbfaea098d446077ff0a8837b7fcf0cb1d0a03e32a2ef026a97",
+  "oldPackage": {
+    "archive": "tidelands-m5-2026-10-29-ground-support.zip",
+    "sha256": "ee606c25629a7b9f704fc504d661abea31264244b52027a9530253c60ca8301f",
+    "containsCandidate": false
+  },
+  "regionalProfiles": {
+    "coast": {
+      "angle": 0.45,
+      "frequency": 4.2,
+      "warp": 0.08,
+      "ridgeWidth": 0.17,
+      "amplitude": 7.5,
+      "shoulder": 0.31,
+      "shoulderWidth": 0.15,
+      "valley": -0.48,
+      "valleyAt": 0.02,
+      "valleyWidth": 0.16,
+      "secondaryRidge": 0
+    },
+    "forest": {
+      "angle": -0.6,
+      "frequency": 5.4,
+      "warp": 0.13,
+      "ridgeWidth": 0.12,
+      "amplitude": 13.5,
+      "shoulder": 0.3,
+      "shoulderWidth": 0.12,
+      "valley": -0.62,
+      "valleyAt": 0.01,
+      "valleyWidth": 0.13,
+      "secondaryRidge": 0.32
+    },
+    "highland": {
+      "angle": 0.2,
+      "frequency": 5.4,
+      "warp": 0.12,
+      "ridgeWidth": 0.135,
+      "amplitude": 9,
+      "shoulder": 0.34,
+      "shoulderWidth": 0.14,
+      "valley": -0.82,
+      "valleyAt": 0.015,
+      "valleyWidth": 0.14,
+      "secondaryRidge": 0.34
+    },
+    "shoal": {
+      "angle": 0.8,
+      "frequency": 3.8,
+      "warp": 0.06,
+      "ridgeWidth": 0.2,
+      "amplitude": 5.5,
+      "shoulder": 0.29,
+      "shoulderWidth": 0.19,
+      "valley": -0.72,
+      "valleyAt": 0.02,
+      "valleyWidth": 0.21,
+      "secondaryRidge": 0
+    }
+  },
+  "checks": {
+    "targetedTerrainTests": "4/4",
+    "terrainGameplayLandscapeRuinSupportTests": "37/37",
+    "fullNodeSuiteBeforeFingerprintTestAdded": "385/385",
+    "finalFullNodeSuiteAfterAddedTest": "386/386",
+    "isolatedHighlandRenderViewed": true,
+    "isolatedRenderScreenshotPersisted": false,
+    "consoleLogsCollected": false
+  },
+  "invariants": {
+    "shoreWaterline": "preserved by existing base <= 4 guard",
+    "landmarkAndSpawnTerrain": "protected by existing site weights and regression tests",
+    "resourceIdentityXYRotation": "unchanged",
+    "enemyRecords": "unchanged",
+    "decorativeFoliageInstances": {
+      "before": 105636,
+      "after": 105721
+    },
+    "persistentSaveSchema": "unchanged"
+  },
+  "scopeLimits": [
+    "one scripted highland view is not four-island visual acceptance",
+    "no ordinary main-path, mobile viewport, GPU timer, long-duration or device validation",
+    "not packaged; old package and old 60-second sample do not represent candidate",
+    "M5 and full 3A goal remain incomplete"
+  ],
+  "subsequentReview": {
+    "fullTests": "388/388",
+    "focusedTests": "12/12",
+    "newInlandHeightRedTests": "2 failures before fix",
+    "runtimeHashes": {
+      "src/terrain-composition.js": "59cc2a15ac157cbfaea098d446077ff0a8837b7fcf0cb1d0a03e32a2ef026a97",
+      "src/inland.js": "249b301d60d462798eba67a09ce22e5d6863ccbad2b4a946ffa6b42cee633c15",
+      "src/world.js": "4abcfa0aa50fb5098bbdffc8ff1c992bf4859dd9415f3f455e0db6793fcc6b9e",
+      "src/scene.js": "d283b541c2b0a2e7985da3d874b652c0d1753a95754b6c945a725052aa58da03",
+      "src/game.js": "149cdd62e69562a93d59db3702b0fbab33f3c66e39d866e574de4d7a7b42d2da",
+      "tests/regional-landform-review.html": "13a1c6b6c046f8cd703959be9ed2ed6fe58fb4f2201ffc8f8c9f8310e6e67e36"
+    },
+    "observations": "docs/regional-landform-observations.json",
+    "rawImagesDirectory": "dist/regional-landform-review-2026-11-02-r2",
+    "imagesReviewed": 37,
+    "trackedPreviewSheets": [
+      {
+        "file": "docs/regional-landform-coast-comparison.jpg",
+        "sha256": "600e0cf07b995eee06ed43ce64efcad93c3ee4534fb3657709fcb364592db35d"
+      },
+      {
+        "file": "docs/regional-landform-forest-comparison.jpg",
+        "sha256": "829d17deeb256c1f4a4fc39aec01d95148f52d880a739c1422be6b2e8c36436f"
+      },
+      {
+        "file": "docs/regional-landform-highland-comparison.jpg",
+        "sha256": "cd7a33329b2496ac3f703aeb735a87b98dda61099311adc92d2110923e9bda8b"
+      },
+      {
+        "file": "docs/regional-landform-shoal-comparison.jpg",
+        "sha256": "5b386bb6e07c11c09415a4f0de90a4b4fa0096fe282a068cbf4e87c4f1fb650b"
+      },
+      {
+        "file": "docs/regional-landform-motion-grid.jpg",
+        "sha256": "f4ee1d13e66124039a1cb85f25410d2187d1a395a1f51461a37e84cfe7ee2f18"
+      },
+      {
+        "file": "docs/regional-landform-mobile-grid.jpg",
+        "sha256": "821c16d34a4d788317d5293b4f930476391054bded40e161f4d12ea69a2ae0bd"
+      }
+    ],
+    "sameCameraPairs": 12,
+    "forestNearPairExcludedFromVisualBenefit": true,
+    "motionFixtureEndpointsMatchBaseline": true,
+    "mobileViewport": [
+      390,
+      844
+    ],
+    "mobileCanvasBuffer": [
+      585,
+      1066
+    ],
+    "consoleWarningsErrors": [],
+    "requestAbortEventsRetained": true,
+    "ordinaryMainPathAccepted": false,
+    "packaged": false,
+    "fullGoalComplete": false
+  }
+}

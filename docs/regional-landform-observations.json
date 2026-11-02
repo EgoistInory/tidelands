@@ -1,0 +1,2862 @@
+{
+  "date": "2026-11-02T07:04:53.410Z",
+  "browserPath": "Browser plugin not available; bundled Playwright, isolated contexts, native Metal headless Chromium.",
+  "baselineRef": "1ac9e2520ceb7c84b63cd64eb6272a86af4d0ac3",
+  "baselineHelperSha256": "9e5f7760b99a9e4ca3cc4ff143e321a4cade7f8e69ea6893d3788a64434dd40c",
+  "sources": {
+    "src/terrain-composition.js": "59cc2a15ac157cbfaea098d446077ff0a8837b7fcf0cb1d0a03e32a2ef026a97",
+    "src/inland.js": "249b301d60d462798eba67a09ce22e5d6863ccbad2b4a946ffa6b42cee633c15",
+    "src/world.js": "4abcfa0aa50fb5098bbdffc8ff1c992bf4859dd9415f3f455e0db6793fcc6b9e",
+    "src/scene.js": "d283b541c2b0a2e7985da3d874b652c0d1753a95754b6c945a725052aa58da03",
+    "src/game.js": "149cdd62e69562a93d59db3702b0fbab33f3c66e39d866e574de4d7a7b42d2da",
+    "tests/regional-landform-review.html": "13a1c6b6c046f8cd703959be9ed2ed6fe58fb4f2201ffc8f8c9f8310e6e67e36"
+  },
+  "heights": {
+    "coast": {
+      "before": 17.83869741156944,
+      "after": 16.584239511314607,
+      "cameraGround": 17.83869741156944
+    },
+    "forest": {
+      "before": 26.548837798755184,
+      "after": 25.87714184463823,
+      "cameraGround": 26.548837798755184
+    },
+    "highland": {
+      "before": 30.262764239170522,
+      "after": 28.36840844449211,
+      "cameraGround": 30.262764239170522
+    },
+    "shoal": {
+      "before": 12.994241192819608,
+      "after": 14.299529926780554,
+      "cameraGround": 14.299529926780554
+    }
+  },
+  "rows": [
+    {
+      "variant": "before",
+      "kind": "static",
+      "image": "before-coast-near.png",
+      "sha256": "a92177f7a305efb46440e2b41572a91972d9973d5ab40d79d218423570abc2b3",
+      "ready": true,
+      "site": "coast",
+      "distance": "near",
+      "position": [
+        -130,
+        20
+      ],
+      "height": 17.83869741156944,
+      "camera": [
+        -123,
+        23.83869741156944,
+        28
+      ],
+      "lookAt": [
+        -130,
+        18.83869741156944,
+        20
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 137,
+        "triangles": 1779524
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "static",
+      "image": "before-coast-middle.png",
+      "sha256": "79da4ad4e6ddb2b98b7923f4985d979ac77bf2d91eac1db191680f99ad350954",
+      "ready": true,
+      "site": "coast",
+      "distance": "middle",
+      "position": [
+        -130,
+        20
+      ],
+      "height": 17.83869741156944,
+      "camera": [
+        -105,
+        35.83869741156944,
+        48
+      ],
+      "lookAt": [
+        -130,
+        18.83869741156944,
+        20
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 144,
+        "triangles": 2080750
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "static",
+      "image": "before-coast-far.png",
+      "sha256": "a6f5c381c382ed6e2242352934b209a4a6b797b50c4fa44dcc0157afc7337e34",
+      "ready": true,
+      "site": "coast",
+      "distance": "far",
+      "position": [
+        -130,
+        20
+      ],
+      "height": 17.83869741156944,
+      "camera": [
+        -45,
+        82.83869741156944,
+        115
+      ],
+      "lookAt": [
+        -130,
+        18.83869741156944,
+        20
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 215,
+        "triangles": 2350816
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "motion",
+      "image": "before-coast-motion.png",
+      "sha256": "3195ca71e6f250a844d77eadb3ef5bcd36c75cb1fd2e649de96a447c21534e35",
+      "ready": true,
+      "site": "coast",
+      "distance": "middle",
+      "position": [
+        -119.3833333333337,
+        -1.0000000000000349
+      ],
+      "height": 9.622802309110359,
+      "camera": [
+        -118.22082905598462,
+        16.200581798578334,
+        12.951651151764928
+      ],
+      "lookAt": [
+        -119.3833333333337,
+        10.622802309110359,
+        -1.0000000000000349
+      ],
+      "time": 246.00000000000477,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 170,
+        "triangles": 1981627
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": {
+        "complete": true,
+        "frames": 360,
+        "start": [
+          -130,
+          20
+        ],
+        "end": [
+          -119.3833333333337,
+          -1.0000000000000349
+        ],
+        "distance": 31.61666666666639,
+        "simulationSeconds": 6,
+        "rafMs": {
+          "median": 11.899999999999636,
+          "p95": 26.100000000000364,
+          "max": 27.600000000000364
+        },
+        "hidden": false
+      },
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "static",
+      "image": "before-forest-near.png",
+      "sha256": "30d476f7443c12f0d681378b57becdd0a22a5f439d62e5f0a88a9c4dbedc0164",
+      "ready": true,
+      "site": "forest",
+      "distance": "near",
+      "position": [
+        164.4377,
+        -108.4654
+      ],
+      "height": 26.548837798755184,
+      "camera": [
+        171.4377,
+        32.54883779875519,
+        -100.4654
+      ],
+      "lookAt": [
+        164.4377,
+        27.548837798755184,
+        -108.4654
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 207,
+        "triangles": 4966580
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "static",
+      "image": "before-forest-middle.png",
+      "sha256": "3cc1a0181bc246beefbe6eccfaf89b0c0d8819fa1409a691314ec6b682a68e9f",
+      "ready": true,
+      "site": "forest",
+      "distance": "middle",
+      "position": [
+        164.4377,
+        -108.4654
+      ],
+      "height": 26.548837798755184,
+      "camera": [
+        189.4377,
+        44.54883779875519,
+        -80.4654
+      ],
+      "lookAt": [
+        164.4377,
+        27.548837798755184,
+        -108.4654
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 256,
+        "triangles": 5048650
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "static",
+      "image": "before-forest-far.png",
+      "sha256": "4ce04a673db1061a500890fd7370158ce53d64695fef7e7a24531c038ced5871",
+      "ready": true,
+      "site": "forest",
+      "distance": "far",
+      "position": [
+        164.4377,
+        -108.4654
+      ],
+      "height": 26.548837798755184,
+      "camera": [
+        249.4377,
+        91.54883779875519,
+        -13.465400000000002
+      ],
+      "lookAt": [
+        164.4377,
+        27.548837798755184,
+        -108.4654
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 365,
+        "triangles": 5802005
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "motion",
+      "image": "before-forest-motion.png",
+      "sha256": "585917d3c29b0a1558674bd2cec236ded6c9de773346285f47c33e89e208099f",
+      "ready": true,
+      "site": "forest",
+      "distance": "middle",
+      "position": [
+        178.5543666666676,
+        -129.465399999999
+      ],
+      "height": 24.75631374485192,
+      "camera": [
+        180.64618286608118,
+        28.200707310009633,
+        -115.62257693766632
+      ],
+      "lookAt": [
+        178.5543666666676,
+        25.75631374485192,
+        -129.465399999999
+      ],
+      "time": 246.00000000000477,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 154,
+        "triangles": 2094857
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": {
+        "complete": true,
+        "frames": 360,
+        "start": [
+          164.4377,
+          -108.4654
+        ],
+        "end": [
+          178.5543666666676,
+          -129.465399999999
+        ],
+        "distance": 35.116666666666575,
+        "simulationSeconds": 6,
+        "rafMs": {
+          "median": 12.399999999999636,
+          "p95": 26.19999999999891,
+          "max": 26.30000000000109
+        },
+        "hidden": false
+      },
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "static",
+      "image": "before-highland-near.png",
+      "sha256": "62621fa0bffc56e3d34186906eec45255c5015fe6a94a302dcf860cdf46ade4d",
+      "ready": true,
+      "site": "highland",
+      "distance": "near",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 30.262764239170522,
+      "camera": [
+        -34.4534111,
+        36.26276423917052,
+        -200.3750763
+      ],
+      "lookAt": [
+        -41.4534111,
+        31.262764239170522,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 99,
+        "triangles": 1155041
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "static",
+      "image": "before-highland-middle.png",
+      "sha256": "9e92a1a66a68759e952230d5ee4f9655a58f7ba68fc563c0f25348137516fb40",
+      "ready": true,
+      "site": "highland",
+      "distance": "middle",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 30.262764239170522,
+      "camera": [
+        -16.453411099999997,
+        48.26276423917052,
+        -180.3750763
+      ],
+      "lookAt": [
+        -41.4534111,
+        31.262764239170522,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 118,
+        "triangles": 1228181
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "static",
+      "image": "before-highland-far.png",
+      "sha256": "cf82b4133cc86726a70c2b978fa92a1d84e125c1538effab996eb2a51fee8b18",
+      "ready": true,
+      "site": "highland",
+      "distance": "far",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 30.262764239170522,
+      "camera": [
+        43.5465889,
+        95.26276423917052,
+        -113.37507629999999
+      ],
+      "lookAt": [
+        -41.4534111,
+        31.262764239170522,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 131,
+        "triangles": 1768071
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "motion",
+      "image": "before-highland-motion.png",
+      "sha256": "ea765da5af252a1e472e3f7c527ff2bef1f214e08a2faa5971a8e63a4125d4f8",
+      "ready": true,
+      "site": "highland",
+      "distance": "middle",
+      "position": [
+        -20.45341109999991,
+        -229.37507630000135
+      ],
+      "height": 14.901620611957618,
+      "camera": [
+        -19.180328549345234,
+        21.80957121986866,
+        -215.50006951480947
+      ],
+      "lookAt": [
+        -20.45341109999991,
+        15.901620611957618,
+        -229.37507630000135
+      ],
+      "time": 246.00000000000477,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 100,
+        "triangles": 1174785
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": {
+        "complete": true,
+        "frames": 360,
+        "start": [
+          -41.4534111,
+          -208.3750763
+        ],
+        "end": [
+          -20.45341109999991,
+          -229.37507630000135
+        ],
+        "distance": 42.00000000000145,
+        "simulationSeconds": 6,
+        "rafMs": {
+          "median": 16.700000000000728,
+          "p95": 21,
+          "max": 26.5
+        },
+        "hidden": false
+      },
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "static",
+      "image": "before-shoal-near.png",
+      "sha256": "11e49e5ef1a429ab935e47e89b7b5936d9ff510358903926cfe3098a5993a694",
+      "ready": true,
+      "site": "shoal",
+      "distance": "near",
+      "position": [
+        170,
+        160
+      ],
+      "height": 12.994241192819608,
+      "camera": [
+        177,
+        20.299529926780554,
+        168
+      ],
+      "lookAt": [
+        170,
+        15.299529926780554,
+        160
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 271,
+        "triangles": 2969099
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "static",
+      "image": "before-shoal-middle.png",
+      "sha256": "402b020e83e3f686efa7cea93d02ccf7cba9a9c713cf885a16d6a06689b85278",
+      "ready": true,
+      "site": "shoal",
+      "distance": "middle",
+      "position": [
+        170,
+        160
+      ],
+      "height": 12.994241192819608,
+      "camera": [
+        195,
+        32.29952992678055,
+        188
+      ],
+      "lookAt": [
+        170,
+        15.299529926780554,
+        160
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 288,
+        "triangles": 3308878
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "static",
+      "image": "before-shoal-far.png",
+      "sha256": "eb9d1243b20f6266474ef46ed7b24f2eb2e540818e91cdc569f002d04bb19f2b",
+      "ready": true,
+      "site": "shoal",
+      "distance": "far",
+      "position": [
+        170,
+        160
+      ],
+      "height": 12.994241192819608,
+      "camera": [
+        255,
+        79.29952992678055,
+        255
+      ],
+      "lookAt": [
+        170,
+        15.299529926780554,
+        160
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 294,
+        "triangles": 3234646
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "before",
+      "kind": "motion",
+      "image": "before-shoal-motion.png",
+      "sha256": "a61e22b7156444909a95ec207750d5a35e05ca51a6f1c73a09d4ed7a702f93f0",
+      "ready": true,
+      "site": "shoal",
+      "distance": "middle",
+      "position": [
+        191.00000000000136,
+        138.99999999999864
+      ],
+      "height": 2.894332941738355,
+      "camera": [
+        180.57940653645295,
+        8.674910273789742,
+        144.35456932414812
+      ],
+      "lookAt": [
+        191.00000000000136,
+        3.894332941738355,
+        138.99999999999864
+      ],
+      "time": 246.00000000000477,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 102,
+        "triangles": 1924386
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": {
+        "complete": true,
+        "frames": 360,
+        "start": [
+          170,
+          160
+        ],
+        "end": [
+          191.00000000000136,
+          138.99999999999864
+        ],
+        "distance": 42.00000000000273,
+        "simulationSeconds": 6,
+        "rafMs": {
+          "median": 12.700000000000728,
+          "p95": 26.099999999998545,
+          "max": 455.2999999999993
+        },
+        "hidden": false
+      },
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "static",
+      "image": "candidate-coast-near.png",
+      "sha256": "64cd1e7dc14733bac7c5b84ea811cdd79d2a616d67911829ca389c31e1c56d32",
+      "ready": true,
+      "site": "coast",
+      "distance": "near",
+      "position": [
+        -130,
+        20
+      ],
+      "height": 16.584239511314607,
+      "camera": [
+        -123,
+        23.83869741156944,
+        28
+      ],
+      "lookAt": [
+        -130,
+        18.83869741156944,
+        20
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 137,
+        "triangles": 1783482
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "static",
+      "image": "candidate-coast-middle.png",
+      "sha256": "a86619700c243e3885ab551ffbd0de73d676be2b8f586427090fcfc2f9208bb1",
+      "ready": true,
+      "site": "coast",
+      "distance": "middle",
+      "position": [
+        -130,
+        20
+      ],
+      "height": 16.584239511314607,
+      "camera": [
+        -105,
+        35.83869741156944,
+        48
+      ],
+      "lookAt": [
+        -130,
+        18.83869741156944,
+        20
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 147,
+        "triangles": 2094458
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "static",
+      "image": "candidate-coast-far.png",
+      "sha256": "b153c9e66e988d985e71dbe969ac0b2a5643788239d84c15a9bdd4f1ee96b504",
+      "ready": true,
+      "site": "coast",
+      "distance": "far",
+      "position": [
+        -130,
+        20
+      ],
+      "height": 16.584239511314607,
+      "camera": [
+        -45,
+        82.83869741156944,
+        115
+      ],
+      "lookAt": [
+        -130,
+        18.83869741156944,
+        20
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 220,
+        "triangles": 2364640
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "motion",
+      "image": "candidate-coast-motion.png",
+      "sha256": "bf85da333dff3319e3e800b2df242a0c751b84a3bdea0a69c19a2688c8d31403",
+      "ready": true,
+      "site": "coast",
+      "distance": "middle",
+      "position": [
+        -119.3833333333337,
+        -1.0000000000000349
+      ],
+      "height": 13.535407191618242,
+      "camera": [
+        -118.2208471580574,
+        20.113186286428565,
+        12.951652657334572
+      ],
+      "lookAt": [
+        -119.3833333333337,
+        14.535407191618242,
+        -1.0000000000000349
+      ],
+      "time": 246.00000000000477,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 177,
+        "triangles": 1993976
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": {
+        "complete": true,
+        "frames": 360,
+        "start": [
+          -130,
+          20
+        ],
+        "end": [
+          -119.3833333333337,
+          -1.0000000000000349
+        ],
+        "distance": 31.61666666666639,
+        "simulationSeconds": 6,
+        "rafMs": {
+          "median": 14.800000000000182,
+          "p95": 26.100000000000364,
+          "max": 29
+        },
+        "hidden": false
+      },
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "static",
+      "image": "candidate-forest-near.png",
+      "sha256": "a6c416b76787d2ee68c983ea2d1ea4045b0a5ecaf87c6c4f4b2a78024ae94cdf",
+      "ready": true,
+      "site": "forest",
+      "distance": "near",
+      "position": [
+        164.4377,
+        -108.4654
+      ],
+      "height": 25.87714184463823,
+      "camera": [
+        171.4377,
+        32.54883779875519,
+        -100.4654
+      ],
+      "lookAt": [
+        164.4377,
+        27.548837798755184,
+        -108.4654
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 212,
+        "triangles": 4942086
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "static",
+      "image": "candidate-forest-middle.png",
+      "sha256": "e6fc779def20945afabf5bc0014fe95b6ab21516746b5bfedf36cbc75a560c08",
+      "ready": true,
+      "site": "forest",
+      "distance": "middle",
+      "position": [
+        164.4377,
+        -108.4654
+      ],
+      "height": 25.87714184463823,
+      "camera": [
+        189.4377,
+        44.54883779875519,
+        -80.4654
+      ],
+      "lookAt": [
+        164.4377,
+        27.548837798755184,
+        -108.4654
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 247,
+        "triangles": 4992542
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "static",
+      "image": "candidate-forest-far.png",
+      "sha256": "f8a6d75fba99d4ab036c8d283e066331345d4d2bc5ce71edac86145a093f9bd3",
+      "ready": true,
+      "site": "forest",
+      "distance": "far",
+      "position": [
+        164.4377,
+        -108.4654
+      ],
+      "height": 25.87714184463823,
+      "camera": [
+        249.4377,
+        91.54883779875519,
+        -13.465400000000002
+      ],
+      "lookAt": [
+        164.4377,
+        27.548837798755184,
+        -108.4654
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 359,
+        "triangles": 5737826
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "motion",
+      "image": "candidate-forest-motion.png",
+      "sha256": "72523454eb21fb89ac8b86b7a7fb12bc715e09fd7951c9da37a06a40968928fe",
+      "ready": true,
+      "site": "forest",
+      "distance": "middle",
+      "position": [
+        178.5543666666676,
+        -129.465399999999
+      ],
+      "height": 23.09603943401878,
+      "camera": [
+        180.64618361961013,
+        27.584604202421733,
+        -115.62257011790672
+      ],
+      "lookAt": [
+        178.5543666666676,
+        24.09603943401878,
+        -129.465399999999
+      ],
+      "time": 246.00000000000477,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 149,
+        "triangles": 2068442
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": {
+        "complete": true,
+        "frames": 360,
+        "start": [
+          164.4377,
+          -108.4654
+        ],
+        "end": [
+          178.5543666666676,
+          -129.465399999999
+        ],
+        "distance": 35.116666666666575,
+        "simulationSeconds": 6,
+        "rafMs": {
+          "median": 12.200000000000728,
+          "p95": 26.19999999999891,
+          "max": 109.39999999999964
+        },
+        "hidden": false
+      },
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "static",
+      "image": "candidate-highland-near.png",
+      "sha256": "f2a476b085104ff003d549dfaa937c51a1e6e5a619791ec9ab896a212c82d63e",
+      "ready": true,
+      "site": "highland",
+      "distance": "near",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 28.36840844449211,
+      "camera": [
+        -34.4534111,
+        36.26276423917052,
+        -200.3750763
+      ],
+      "lookAt": [
+        -41.4534111,
+        31.262764239170522,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 98,
+        "triangles": 1154796
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "static",
+      "image": "candidate-highland-middle.png",
+      "sha256": "43e90c49774783fa27a1efa4ba3964b5f1a70019f3d25978cc02b73c3d7415be",
+      "ready": true,
+      "site": "highland",
+      "distance": "middle",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 28.36840844449211,
+      "camera": [
+        -16.453411099999997,
+        48.26276423917052,
+        -180.3750763
+      ],
+      "lookAt": [
+        -41.4534111,
+        31.262764239170522,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 119,
+        "triangles": 1234046
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "static",
+      "image": "candidate-highland-far.png",
+      "sha256": "0df2e8215830f56c781c54ecb26558e6b2b26d7c430647e4415595dee44b45e5",
+      "ready": true,
+      "site": "highland",
+      "distance": "far",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 28.36840844449211,
+      "camera": [
+        43.5465889,
+        95.26276423917052,
+        -113.37507629999999
+      ],
+      "lookAt": [
+        -41.4534111,
+        31.262764239170522,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 131,
+        "triangles": 1777526
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "motion",
+      "image": "candidate-highland-motion.png",
+      "sha256": "8561dd3651e5ac6912ec7d766e1e19b85f074fd8a6a6a98e43edea231ca01a0e",
+      "ready": true,
+      "site": "highland",
+      "distance": "middle",
+      "position": [
+        -20.45341109999991,
+        -229.37507630000135
+      ],
+      "height": 15.583276318034581,
+      "camera": [
+        -19.180312478930734,
+        22.493311965398796,
+        -215.49997938127896
+      ],
+      "lookAt": [
+        -20.45341109999991,
+        16.58327631803458,
+        -229.37507630000135
+      ],
+      "time": 246.00000000000477,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 100,
+        "triangles": 1181467
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": {
+        "complete": true,
+        "frames": 360,
+        "start": [
+          -41.4534111,
+          -208.3750763
+        ],
+        "end": [
+          -20.45341109999991,
+          -229.37507630000135
+        ],
+        "distance": 42.00000000000145,
+        "simulationSeconds": 6,
+        "rafMs": {
+          "median": 11.900000000001455,
+          "p95": 26.099999999998545,
+          "max": 42.70000000000073
+        },
+        "hidden": false
+      },
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "static",
+      "image": "candidate-shoal-near.png",
+      "sha256": "a92c9ff20c79de476821e0a209047d523da6a5f03b6cd7a6b528c0ad9effb04d",
+      "ready": true,
+      "site": "shoal",
+      "distance": "near",
+      "position": [
+        170,
+        160
+      ],
+      "height": 14.299529926780554,
+      "camera": [
+        177,
+        20.299529926780554,
+        168
+      ],
+      "lookAt": [
+        170,
+        15.299529926780554,
+        160
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 271,
+        "triangles": 2983498
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "static",
+      "image": "candidate-shoal-middle.png",
+      "sha256": "b972bdc01bc16f6e0189fdcbf2e3c8f14df5ec44d22c9370a6c0884187b5afcc",
+      "ready": true,
+      "site": "shoal",
+      "distance": "middle",
+      "position": [
+        170,
+        160
+      ],
+      "height": 14.299529926780554,
+      "camera": [
+        195,
+        32.29952992678055,
+        188
+      ],
+      "lookAt": [
+        170,
+        15.299529926780554,
+        160
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 288,
+        "triangles": 3323127
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "static",
+      "image": "candidate-shoal-far.png",
+      "sha256": "3ab969d548c4a888fa53e2faa4dd0ec8d46d45ceb49275aff4eb32a9eef82f8d",
+      "ready": true,
+      "site": "shoal",
+      "distance": "far",
+      "position": [
+        170,
+        160
+      ],
+      "height": 14.299529926780554,
+      "camera": [
+        255,
+        79.29952992678055,
+        255
+      ],
+      "lookAt": [
+        170,
+        15.299529926780554,
+        160
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 294,
+        "triangles": 3233921
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate",
+      "kind": "motion",
+      "image": "candidate-shoal-motion.png",
+      "sha256": "d3fe17b8a4b8ae3f334517d0197b92d62eee98499fd4b20f059320bba7d938ff",
+      "ready": true,
+      "site": "shoal",
+      "distance": "middle",
+      "position": [
+        191.00000000000136,
+        138.99999999999864
+      ],
+      "height": 2.894332941738355,
+      "camera": [
+        180.5786671783435,
+        8.67515899341238,
+        144.3549606982578
+      ],
+      "lookAt": [
+        191.00000000000136,
+        3.894332941738355,
+        138.99999999999864
+      ],
+      "time": 246.00000000000477,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 102,
+        "triangles": 1920225
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": {
+        "complete": true,
+        "frames": 360,
+        "start": [
+          170,
+          160
+        ],
+        "end": [
+          191.00000000000136,
+          138.99999999999864
+        ],
+        "distance": 42.00000000000273,
+        "simulationSeconds": 6,
+        "rafMs": {
+          "median": 17.799999999999272,
+          "p95": 25.600000000002183,
+          "max": 71.59999999999854
+        },
+        "hidden": false
+      },
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate-mobile",
+      "kind": "static",
+      "image": "candidate-mobile-coast-middle.png",
+      "sha256": "cdf930d8ac5d81ac3dc7aa4ebc0ed943a8030f7358c29c44b8b8838b6d7a9977",
+      "ready": true,
+      "site": "coast",
+      "distance": "middle",
+      "position": [
+        -130,
+        20
+      ],
+      "height": 16.584239511314607,
+      "camera": [
+        -105,
+        35.83869741156944,
+        48
+      ],
+      "lookAt": [
+        -130,
+        18.83869741156944,
+        20
+      ],
+      "time": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        585,
+        1066
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 106,
+        "triangles": 1306817
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate-mobile",
+      "kind": "static",
+      "image": "candidate-mobile-forest-middle.png",
+      "sha256": "763016dc44af2ae5e69f3967c5d0b4d51564f7e8c7cb561f55eb5f00de1a8be9",
+      "ready": true,
+      "site": "forest",
+      "distance": "middle",
+      "position": [
+        164.4377,
+        -108.4654
+      ],
+      "height": 25.87714184463823,
+      "camera": [
+        189.4377,
+        44.54883779875519,
+        -80.4654
+      ],
+      "lookAt": [
+        164.4377,
+        27.548837798755184,
+        -108.4654
+      ],
+      "time": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        585,
+        1066
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 158,
+        "triangles": 3881419
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate-mobile",
+      "kind": "static",
+      "image": "candidate-mobile-highland-middle.png",
+      "sha256": "bf1c037943a29c681e15c2ddb326038898a0678f0acb8704c553389ead7ca3f3",
+      "ready": true,
+      "site": "highland",
+      "distance": "middle",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 28.36840844449211,
+      "camera": [
+        -16.453411099999997,
+        48.26276423917052,
+        -180.3750763
+      ],
+      "lookAt": [
+        -41.4534111,
+        31.262764239170522,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        585,
+        1066
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 87,
+        "triangles": 1111338
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate-mobile",
+      "kind": "motion",
+      "image": "candidate-mobile-highland-motion.png",
+      "sha256": "8a15a6041429d3cb2d46b046df2621e55235cbcff0d816471a165f8f4f6f7670",
+      "ready": true,
+      "site": "highland",
+      "distance": "middle",
+      "position": [
+        -20.45341109999991,
+        -229.37507630000135
+      ],
+      "height": 15.583276318034581,
+      "camera": [
+        -19.180312478930734,
+        22.493311965398796,
+        -215.49997938127896
+      ],
+      "lookAt": [
+        -20.45341109999991,
+        16.58327631803458,
+        -229.37507630000135
+      ],
+      "time": 246.00000000000477,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        585,
+        1066
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 83,
+        "triangles": 1124872
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": {
+        "complete": true,
+        "frames": 360,
+        "start": [
+          -41.4534111,
+          -208.3750763
+        ],
+        "end": [
+          -20.45341109999991,
+          -229.37507630000135
+        ],
+        "distance": 42.00000000000145,
+        "simulationSeconds": 6,
+        "rafMs": {
+          "median": 12.5,
+          "p95": 26.199999999999818,
+          "max": 72.13400000000001
+        },
+        "hidden": false
+      },
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "variant": "candidate-mobile",
+      "kind": "static",
+      "image": "candidate-mobile-shoal-middle.png",
+      "sha256": "dd75cb14695aa95395added1c4798803c54c9a3c25ff27ed1d5a723d2495e7a0",
+      "ready": true,
+      "site": "shoal",
+      "distance": "middle",
+      "position": [
+        170,
+        160
+      ],
+      "height": 14.299529926780554,
+      "camera": [
+        195,
+        32.29952992678055,
+        188
+      ],
+      "lookAt": [
+        170,
+        15.299529926780554,
+        160
+      ],
+      "time": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        585,
+        1066
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 177,
+        "triangles": 2871409
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof."
+    }
+  ],
+  "contexts": [
+    {
+      "variant": "before",
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "logs": [],
+      "failures": [
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/UAL1_Standard.glb",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        }
+      ],
+      "url": "http://127.0.0.1:4190/tests/regional-landform-review.html",
+      "title": "四岛区域地貌 · 同镜头验收",
+      "meaningfulBody": true,
+      "failuresBeforeClose": [
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/UAL1_Standard.glb",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "logs": [],
+      "failures": [
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/UAL1_Standard.glb",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        }
+      ],
+      "url": "http://127.0.0.1:4190/tests/regional-landform-review.html",
+      "title": "四岛区域地貌 · 同镜头验收",
+      "meaningfulBody": true,
+      "failuresBeforeClose": [
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/UAL1_Standard.glb",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        }
+      ]
+    },
+    {
+      "variant": "candidate-mobile",
+      "width": 390,
+      "height": 844,
+      "dpr": 1.5,
+      "logs": [],
+      "failures": [
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Hair_Long.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/UAL1_Standard.glb",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Superhero_Male_FullBody.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Superhero_Female_FullBody.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Hair_SimpleParted.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Hair_Buns.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Hair_Long.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        }
+      ],
+      "url": "http://127.0.0.1:4190/tests/regional-landform-review.html",
+      "title": "四岛区域地貌 · 同镜头验收",
+      "meaningfulBody": true,
+      "failuresBeforeClose": [
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Hair_Long.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/UAL1_Standard.glb",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Superhero_Male_FullBody.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Superhero_Female_FullBody.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Hair_SimpleParted.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Hair_Buns.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Hair_Long.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          },
+          "closing": false
+        }
+      ]
+    }
+  ],
+  "scope": "Four-island static same-camera comparisons and declared 6-second production-motion fixtures; no ordinary campaign, GPU duration, endurance, listening or device acceptance.",
+  "complete": true,
+  "cleanConsole": true
+}

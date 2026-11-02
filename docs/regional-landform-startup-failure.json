@@ -1,0 +1,19 @@
+{
+  "error": "page.waitForFunction: Timeout 90000ms exceeded.\n    at /Users/huxiaocong/Codex/tidelands/tools/run_regional_landform_review.mjs:33:91",
+  "contexts": [
+    {
+      "variant": "before",
+      "logs": []
+    },
+    {
+      "variant": "candidate",
+      "logs": [
+        {
+          "type": "pageerror",
+          "message": "Inland pose changed"
+        }
+      ]
+    }
+  ],
+  "scope": "Pre-fix declared review page; Inland pose changed reproduced from current landform with original inland binder."
+}

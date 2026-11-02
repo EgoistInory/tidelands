@@ -2,6 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
 import {ISLANDS,SPAWN,LANDMARKS,terrain,createWorld} from '../src/world.js';
+import {landformOffset} from '../src/terrain-composition.js';
 
 // Pin the actual pre-change world: coordinate identity and old protected ground are migration contracts.
 const prior=await import('data:text/javascript;base64,'+Buffer.from(execFileSync('git',['show','c9f780ff20082976626849a961f9facd4e17d5b5:src/world.js'],{cwd:new URL('..',import.meta.url)})).toString('base64'));
@@ -14,6 +15,21 @@ test('each island has metre-scale unequal shoulders and a lower valley instead o
     }
     assert.ok(lower < -2 && higher > 2.5,`region ${region}: ${lower}..${higher}`);
   }
+});
+
+test('regional profiles differ after removing rotation and total height scale',async()=>{
+  const before=await import('data:text/javascript;base64,'+Buffer.from(execFileSync('git',['show','1ac9e2520ceb7c84b63cd64eb6272a86af4d0ac3:src/terrain-composition.js'],{cwd:new URL('..',import.meta.url)})).toString('base64'));
+  const islands=ISLANDS.map((_,i)=>({x:i*1000,z:0,r:100}));
+  const signatures=offset=>islands.map((island,i)=>{
+    const angle=[.45,-.6,.2,.8][i],values=[];
+    for(const a of [-.6,-.3,0,.3,.6])for(const b of [-.45,0,.45]){
+      const u=a*Math.cos(angle)-b*Math.sin(angle),v=a*Math.sin(angle)+b*Math.cos(angle);
+      values.push(offset(island.x+u*island.r,island.z+v*island.r,20,islands,[]));
+    }
+    const magnitude=Math.hypot(...values);return values.map(n=>(n/magnitude).toFixed(5)).join(',');
+  });
+  assert.equal(new Set(signatures(before.landformOffset)).size,1,'baseline really reused one rotated/scaled profile');
+  assert.equal(new Set(signatures(landformOffset)).size,ISLANDS.length,'each biome needs its own broad-form profile');
 });
 
 test('terrain composition preserves shore water lines and the spawn/landmark working areas',()=>{

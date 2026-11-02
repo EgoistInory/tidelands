@@ -29,8 +29,9 @@ export function bindInlandVisual(view,prepared){
   for(const boxes of [data.bodyBoxes,data.cameraBoxes])if(!Array.isArray(boxes)||!boxes.length||boxes.length>10000||boxes.some(b=>!Array.isArray(b)||b.length!==2||b.some(v=>!Array.isArray(v)||v.length!==3||!v.every(Number.isFinite))||b[0].some((v,i)=>v>=b[1][i])))throw Error('Invalid inland contact boxes');
   // Validate every pose and camera chunk before binding the physics WeakMap.
   for(const placement of data.placements){
-    const node=view.world.objects.find(o=>o.id===placement.id);if(!node||JSON.stringify([node.x,node.y,node.z,node.scale,node.rotation])!==JSON.stringify(placement.pose))throw Error('Inland pose changed');if(footprintBoxes(node))throw Error('Inland resource already bound');
-    const f=placement.frame,matrix=new THREE.Matrix4().compose(new THREE.Vector3(f.x,f.y,f.z),new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,1,0),f.rotation),new THREE.Vector3(f.scale,f.scale,f.scale)),chunks=new Map();
+    const node=view.world.objects.find(o=>o.id===placement.id),pose=placement.pose;if(!node||!Array.isArray(pose)||pose.length!==5||!pose.every(Number.isFinite)||JSON.stringify([node.x,node.z,node.scale,node.rotation])!==JSON.stringify([pose[0],pose[2],pose[3],pose[4]])||node.y!==terrain(node.x,node.z))throw Error('Inland pose changed');if(footprintBoxes(node))throw Error('Inland resource already bound');
+    // The asset frame keeps its authored root offset when the authoritative terrain changes.
+    const f={...placement.frame,y:node.y+placement.frame.y-pose[1]},matrix=new THREE.Matrix4().compose(new THREE.Vector3(f.x,f.y,f.z),new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,1,0),f.rotation),new THREE.Vector3(f.scale,f.scale,f.scale)),chunks=new Map();
     for(const [min,max]of data.cameraBoxes){const key=[Math.floor((min[0]+max[0])/4),Math.floor((min[2]+max[2])/4)].join(',');if(!chunks.has(key))chunks.set(key,[]);chunks.get(key).push(new THREE.Box3(new THREE.Vector3(...min),new THREE.Vector3(...max)).applyMatrix4(matrix));}
     const records=[];for(const boxes of chunks.values()){
       const bounds=new THREE.Box3();boxes.forEach(b=>bounds.union(b));const c=bounds.getCenter(new THREE.Vector3()),radius=Math.hypot(bounds.max.x-bounds.min.x,bounds.max.z-bounds.min.z)/2;if(radius>=12)throw Error('Camera chunk exceeds core culling allowance');

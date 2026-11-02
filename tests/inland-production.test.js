@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import * as THREE from '../vendor/three.module.min.js';
-import {createWorld} from '../src/world.js';
+import {createWorld,terrain} from '../src/world.js';
 import {freshGame} from '../src/game.js';
 import {footprintBoxes} from '../src/resource-footprint.js';
 import {bindInlandVisual} from '../src/inland.js';
@@ -22,4 +23,22 @@ test('a duplicate inland install fails without disturbing its existing owner',()
 });
 test('invalid later placement fails before changing any original resource contacts',()=>{
  const f=fixture();f.prepared.data.placements[1].pose[0]+=1;assert.throws(()=>bindInlandVisual(f.view,f.prepared),/pose/i);assert.equal(footprintBoxes(f.nodes[0]),null);assert.equal(f.view.scene.children.length,1);assert.equal(f.view.cameraObstacles,f.obstacles);f.prepared.release();
+});
+test('the checked-in inland placements follow current terrain with visual and contact height offsets intact',()=>{
+ const f=fixture(),data=JSON.parse(fs.readFileSync(new URL('../assets/inland/inland-contact-shapes.json',import.meta.url))),frozen=JSON.stringify(data);f.prepared.data=data;
+ assert(data.placements.some(p=>terrain(p.pose[0],p.pose[2])!==p.pose[1]),'exercise the actual old-height asset contract');
+ const bound=bindInlandVisual(f.view,f.prepared);
+ try{for(const tree of bound.trees){
+  const p=data.placements.find(p=>p.id===tree.node.id),expected=tree.node.y+p.frame.y-p.pose[1];
+  assert.equal(tree.root.position.y,expected);assert.equal(tree.frame.y,expected);
+  const bodyBottom=Math.min(...data.bodyBoxes.map(([min])=>min[1]))*p.frame.scale+expected;
+  const cameraBottom=Math.min(...data.cameraBoxes.map(([min])=>min[1]))*p.frame.scale+expected;
+  assert.ok(Math.abs(Math.min(...footprintBoxes(tree.node).map(([min])=>min[1]))-bodyBottom)<1e-9);
+  assert.ok(Math.abs(Math.min(...tree.records.flatMap(r=>r.boxes).map(b=>b.min.y))-cameraBottom)<1e-9);
+ }assert.equal(JSON.stringify(data),frozen);}finally{bound.release();}
+ for(const p of data.placements)assert.equal(footprintBoxes(f.view.world.objects.find(o=>o.id===p.id)),null);
+});
+test('an inland node with a non-authoritative height is rejected before any binding',()=>{
+ const f=fixture();f.nodes[1].y+=1;f.prepared.data.placements[1].pose[1]+=1;
+ assert.throws(()=>bindInlandVisual(f.view,f.prepared),/pose/i);assert.equal(footprintBoxes(f.nodes[0]),null);assert.equal(f.view.scene.children.length,1);f.prepared.release();
 });

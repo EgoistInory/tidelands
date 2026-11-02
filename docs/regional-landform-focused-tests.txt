@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: production meadow initialization matches reviewed Float32 Y results and consumes unchanged random draws
+ok 1 - production meadow initialization matches reviewed Float32 Y results and consumes unchanged random draws
+  ---
+  duration_ms: 2060.241417
+  type: 'test'
+  ...
+# Subtest: actual scenery routes the visible sampler into meadow construction and camp clearance restores corrected matrices
+ok 2 - actual scenery routes the visible sampler into meadow construction and camp clearance restores corrected matrices
+  ---
+  duration_ms: 1289.086416
+  type: 'test'
+  ...
+# Subtest: inland release removes wood physics and owned visuals while restoring original live instances
+ok 3 - inland release removes wood physics and owned visuals while restoring original live instances
+  ---
+  duration_ms: 19.666375
+  type: 'test'
+  ...
+# Subtest: released depleted instances remain hidden and current hidden indices stay coherent
+ok 4 - released depleted instances remain hidden and current hidden indices stay coherent
+  ---
+  duration_ms: 14.2085
+  type: 'test'
+  ...
+# Subtest: a duplicate inland install fails without disturbing its existing owner
+ok 5 - a duplicate inland install fails without disturbing its existing owner
+  ---
+  duration_ms: 11.609875
+  type: 'test'
+  ...
+# Subtest: invalid later placement fails before changing any original resource contacts
+ok 6 - invalid later placement fails before changing any original resource contacts
+  ---
+  duration_ms: 8.535333
+  type: 'test'
+  ...
+# Subtest: the checked-in inland placements follow current terrain with visual and contact height offsets intact
+ok 7 - the checked-in inland placements follow current terrain with visual and contact height offsets intact
+  ---
+  duration_ms: 174.208167
+  type: 'test'
+  ...
+# Subtest: an inland node with a non-authoritative height is rejected before any binding
+ok 8 - an inland node with a non-authoritative height is rejected before any binding
+  ---
+  duration_ms: 6.4315
+  type: 'test'
+  ...
+# Subtest: each island has metre-scale unequal shoulders and a lower valley instead of a single smooth mound
+ok 9 - each island has metre-scale unequal shoulders and a lower valley instead of a single smooth mound
+  ---
+  duration_ms: 19.316375
+  type: 'test'
+  ...
+# Subtest: regional profiles differ after removing rotation and total height scale
+ok 10 - regional profiles differ after removing rotation and total height scale
+  ---
+  duration_ms: 8.899208
+  type: 'test'
+  ...
+# Subtest: terrain composition preserves shore water lines and the spawn/landmark working areas
+ok 11 - terrain composition preserves shore water lines and the spawn/landmark working areas
+  ---
+  duration_ms: 34.749458
+  type: 'test'
+  ...
+# Subtest: resource identities, footprints, rotation, enemy homes and random layout remain unchanged
+ok 12 - resource identities, footprints, rotation, enemy homes and random layout remain unchanged
+  ---
+  duration_ms: 21.416833
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3424.01475

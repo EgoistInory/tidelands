@@ -1,0 +1,80 @@
+{
+  "kind": "qa-only-scripted-dynamic-endurance-smoke",
+  "complete": true,
+  "targetMs": 60000,
+  "activeMs": 60000.29,
+  "wallMs": 60006.39,
+  "sourceCommit": "1ac9e2520ceb7c84b63cd64eb6272a86af4d0ac3",
+  "package": {
+    "archive": "tidelands-m5-2026-10-29-ground-support.zip",
+    "sha256": "ee606c25629a7b9f704fc504d661abea31264244b52027a9530253c60ca8301f",
+    "runtimeInputs": 209,
+    "verification": "tools/verify_ground_support_production.py passed after sample; source inputs match archive"
+  },
+  "runner": {
+    "url": "http://127.0.0.1:4195/tests/dynamic-endurance.html",
+    "viewport": [1280, 720],
+    "canvasBuffer": [1920, 852],
+    "hidden": false
+  },
+  "metrics": {
+    "frames": 3588,
+    "movingFrames": 3309,
+    "movingFraction": 0.92,
+    "distanceMeters": 361.67,
+    "medianMs": 16.7,
+    "p95Ms": 16.8,
+    "maxMs": 116.7,
+    "over50Ms": 3,
+    "frameSpikes": [
+      { "atMs": 100.19, "intervalMs": 100.19, "previousStage": "shore-exploration", "previousCpuMs": 108.2 },
+      { "atMs": 233.59, "intervalMs": 116.7, "previousStage": "shore-exploration", "previousCpuMs": 123.5 },
+      { "atMs": 48050.29, "intervalMs": 50.1, "previousStage": "night-camp", "transition": true, "previousCpuMs": 55.4 }
+    ],
+    "stepAttempts": 181,
+    "stepsScheduled": 181,
+    "hitCount": 6,
+    "damageTaken": 110,
+    "respawns": 0,
+    "revivedPairs": 1
+  },
+  "stages": [
+    { "name": "shore-exploration", "frames": 709, "movingFrames": 708, "distance": 71.0335, "attackHits": 0, "damageTaken": 0, "endPosition": [-87.88, 136.42], "kills": 0 },
+    { "name": "forest-combat", "frames": 720, "movingFrames": 625, "distance": 68.93456, "attackHits": 6, "damageTaken": 14, "revivedPairs": 1, "endPosition": [142.17, -42.02], "kills": 3 },
+    { "name": "highland-movement", "frames": 720, "movingFrames": 537, "distance": 75.62353, "attackHits": 0, "damageTaken": 96, "endPosition": [-65.65, -220.76], "kills": 0 },
+    { "name": "amber-swimming", "frames": 720, "movingFrames": 720, "distance": 61.9668, "attackHits": 0, "damageTaken": 0, "endPosition": [195.07, 243.62], "kills": 0 },
+    { "name": "night-camp", "frames": 719, "movingFrames": 719, "distance": 84.1162, "attackHits": 0, "damageTaken": 0, "endPosition": [-46.65, 41.55], "kills": 0 }
+  ],
+  "selectedCheckpoints": [
+    {
+      "activeMs": 0,
+      "stage": "shore-exploration",
+      "position": [-90, 140],
+      "height": 1.22,
+      "daytime": "午后",
+      "hp": 100,
+      "drawCalls": 452,
+      "triangles": 2856947,
+      "geometries": 257,
+      "textures": 20,
+      "heapBytes": 69140651,
+      "audio": { "context": "running", "voices": 0, "stepsScheduled": 0, "ambienceBytes": 8640000 }
+    },
+    {
+      "activeMs": 60000.29,
+      "stage": "night-camp",
+      "position": [-46.65, 41.55],
+      "height": 9.98,
+      "daytime": "夜晚",
+      "hp": 100,
+      "kills": 0,
+      "drawCalls": 331,
+      "triangles": 2872356,
+      "geometries": 357,
+      "textures": 38,
+      "heapBytes": 71141253,
+      "audio": { "context": "running", "voices": 0, "stepsScheduled": 181, "insectsGain": 0.0538390688598156, "ambienceBytes": 8640000 }
+    }
+  ],
+  "scope": "The page runs production movement/tick/render/audio with scripted input and five teleport phase fixtures; the combat opponent is a labelled load fixture. It performs no save or campaign acceptance. Frame intervals and JavaScript heap are recorded only. AudioContext running and scheduled step count do not prove audible quality. No GPU timer, VRAM, real device, continuous natural campaign, or long-run leak conclusion. Three >50ms intervals were observed; do not claim stable 60fps or a performance pass."
+}

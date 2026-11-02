@@ -1,9 +1,9 @@
 # 潮生群岛开发进度
 
-更新时间：2026-10-26
+更新时间：2026-11-02
 status: in_progress
-stage: M5_forest_collection_acquired_layout_pending
-next_action: 成组CC0幼树/蕨类/苔石实际取得并完成两版隔离审查，首Prune针叶和通用散点布局不接生产。下一基于已取得组做区域林缘/开放路/湿润林下与岩带构图，保留海岸原石/NPC净空；整组审查后接装饰净空/风动预算，不再轮换资产或单树调参。M5五项及完整3A未完，2048继续。
+stage: M5_regional_landform_reviewed_main_path_pending
+next_action: 四岛同镜头/窄屏与生产移动fixture已审查，修复作者内陆树旧Y资料拒载并保持模型/接触/镜头盒一起跟随地表；388测试通过。下一用正式main检查普通备份副本恢复、采集/营地与当前路径，再决定版本化交付；森林近景遮挡、高地占位树和裸坡仍列整体品质问题。用户已明确授权同步现有公开GitHub仓库；完成检查点后提交并核对远程HEAD。M5五项及完整3A未完，2048继续。
 
 ## 已完成
 - 前置小游戏 `/Users/huxiaocong/Codex/tide-2048` 已完成，验收见其 docs/VERIFICATION.md。
@@ -1542,3 +1542,11 @@ M1–M4功能交付已完成，M5整体品质仍未完成。资产两来源受�
 1恢复契约RED→GREEN、382全量通过，正式verify_main_gpu_attribution.py通过209源码/解压/ee606c25 ZIP/33455473备份；3图已看含首暂停图，异常/正常finally恢复遮罩。定点首帧体力99.1871→100自然恢复，XZ/HP/朝向/袋和世界保持。见docs/MAIN-GPU-ATTRIBUTION-CHECKPOINT.md及main-gpu-attribution-audit.json。下一地表零贡献岩石颜色/法线/粗糙度采样快路径单候选，保留混合/湿岸质量，像素对照与同环境GPU通过才推广；不删系统/降画质或机械重复原测量。M5五项/完整3A未完，2048保留。76关、11原普通暂停handoff/4190 PID55245保留；4195/session78522预期exit130停，无普通key操作/新包/公网推送/付费API/券购买；实时普通10→24%/周96→99%仍允许，历史usageLimited未强改。
 
 2026-11-02 地表零岩石权重采样QA候选完成，未接生产/正式209包。QA分支在rockBlend==0时跳过三投影albedo/normal/roughness取样，预先算显式梯度；四个全世界固定镜位RGBA8逐像素完全相同，每点48+48有效GPU查询、disjoint0/GL0。GPU P95有升有降且方差大，拒绝宣称稳定优化，候选仅留QA。首次枚举错误的GL_INVALID_ENUM轮次作废，修正timer.GPU_DISJOINT_EXT后复测。npm test 385通过，verify_ground_rock_sampling_candidate.py和verify_main_gpu_attribution.py通过，正式包SHA ee606c25保持。详见docs/GROUND-ROCK-SAMPLING-CANDIDATE-CHECKPOINT.md；下一转M5另一组用户可见视觉/动作/声音/反馈/性能工作，不再循环打磨此采样分支。M5五项与完整3A未完成，2048保留。原11普通暂停tab/4190 PID55245不变；本次临时tab77关闭、4195停止，无普通存档操作/新包/公网推送/付费API/购买或重置券。
+
+2026-11-02 M5当前源码动态负载60秒烟测：本地隔离页驱动生产move/tick/render/audio，五段海岸/林地战斗/高地/游泳/夜营脚本阶段切换，累计移动361.67米、92%帧有移动，6次fixture命中、累计受伤110；不是正常连续主线。1280×720、DPR1.5/缓冲1920×852，60,000.29ms有效、3588帧，帧间隔中位/P95 16.7/16.8ms、最大116.7ms、3次>50ms（两次启动尖峰、一次夜营切换）；不能据P95称稳定60fps。JS堆端点69.14→71.14MB只有两个样本，不推断无泄漏。AudioContext运行并排入181步声，声源数0；未试听，不能验收音色。浏览器warn/error为空、页面图像已实际查看；详细原始结果docs/dynamic-endurance-smoke-2026-11-02.json。烟测无存档/主线验收，不测GPU计时/VRAM/真机/长期稳定。当前209运行输入与现有本地包SHA ee606c25629a7b9f704fc504d661abea31264244b52027a9530253c60ca8301f经既有tools/verify_ground_support_production.py复核匹配；该验证器明确M5/fullGoal=false、当前GPU与长时证据未覆盖。临时4195/session4194已Ctrl-C预期130退出且无监听；lsof实测4190/PID55245仍监听，原tab/普通档未操作。goal仍usageLimited未改，实时普通额度17%已用且ordinaryUsageAllowed=true；未动额度重置券/付费/公网推送。此烟测补充动态运行证据但不关闭M5质量项；下一仍推进整体可见场景/角色动作/反馈品质，避免重复采样或单点微调。
+
+2026-11-02 M5四岛宏观地貌分区候选：terrain-composition.js按海岸缓丘、林地褶脊、高地脊谷、浅滩沙丘设独立频率/宽度/幅度，保留水线外场、任务地标/出生区保护；资源ID、XY/旋转、敌人记录未变，地表派生Y随高度场重算，林下装饰因可行地面阈值增加85簇（105636→105721）。首轮高地参数因局部坡度1.847超1.5门槛且浅滩谷值不足而撤改；缩小高地幅度/warp并加深浅滩谷后通过。新增四岛宏形指纹回归；地貌/主路径/地表/营地相关37测试通过，全量npm test 386/386通过。当前209输入ZIP/旧209SHA不含本地工作树改动；未创建新包。新源在独立动态QA页实际查看一帧高地移动场景，属于传送fixture，不是普通探索；没有保留PNG，console日志未采集，也未核验桌面以外尺寸、当前GPU或长时性能。高地外观仍有简化岩坡/晶簇/动物原型感，四岛同镜头审查和普通主路径仍待。旧60秒JSON绑定本次地貌修改前的source commit，不能套用为本次性能证据。详见docs/REGIONAL-LANDFORM-CHECKPOINT.md与regional-landform-checkpoint.json。M1-M4维持既有状态，M5五项与完整3A未完成；本轮不改存档/旧普通浏览器状态，不推送/发布公网，不购额或使用重置券。
+
+2026-11-02 后续完成四岛12同镜头对/37实际图检查，6张联系表跟随Git，原PNG保留dist并记录SHA；森林近景遮挡排除视觉收益。海岸/浅滩肩谷更宽缓、林地起伏变化，高地差别有限，保留候选并停止参数细调。实测暴露内陆树旧Y资料拒载：两项RED后统一根/木质接触/镜头盒frame随权威地表，XZ/scale/rotation与错误node.y守卫仍严格；15真实资料高度/释放、12相关/388全量通过。旧新四条360帧移动XZ终点一致、31.62/35.12/42/42m，390高地42m；均为无敌人quest6的明确fixture，不是普通旅程。三组Metal浏览器console空/GL0，加载ERR_ABORTED原事件保留，不称完整网络或最终性能通过。详见docs/REGIONAL-LANDFORM-CHECKPOINT.md；原209包不包含候选，正常main恢复/采集建造/当前路径及新包仍待，M5五项/完整3A未完成。原普通存档未操作，4190本次PID81852留用，QA浏览器全部关闭。
+
+2026-11-02 Git管理：本地原main相对实测远程7e85c1f领先108提交，用户明确选择“继续同步现有公开仓库”。按docs/GIT-WORKFLOW.md提交当前检查点并使用普通推送到EgoistInory/tidelands，不改可见性或重写历史；网站部署和付费仍不在授权内。实时ordinaryUsageAllowed=true（最近20%/周19%已用），历史goal usageLimited只记录不强改，无券/购买。完整目标未完成，2048保留。
