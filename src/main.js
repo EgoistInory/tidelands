@@ -34,12 +34,24 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
   function toast(text,duration=4200){if(!text)return;$('toast').textContent=text;$('toast').hidden=false;toastUntil=performance.now()+duration;
     if(panel.open){let feedback=$('panel-feedback');if(!feedback){feedback=document.createElement('p');feedback.id='panel-feedback';feedback.setAttribute('role','status');$('panel-body').append(feedback);}feedback.textContent=text;}
   }
-  let combatTimer=null,damageTimer=null;
+  let combatTimer=null,damageTimer=null,hurtTimer=null,combatKind='';
+  function refreshCombatFeedback(){$('combat-feedback').hidden=$('attack-feedback').hidden&&$('hurt-feedback').hidden;}
+  function clearCombatFeedback(){
+    clearTimeout(combatTimer);clearTimeout(hurtTimer);clearTimeout(damageTimer);combatKind='';
+    for(const id of ['attack-feedback','hurt-feedback']){$(id).hidden=true;$(id).textContent='';}
+    $('combat-feedback').hidden=true;$('damage-feedback').hidden=true;
+  }
   function combatFeedback(kind,text){
-    const output=$('combat-feedback');clearTimeout(combatTimer);
-    output.dataset.kind=kind;output.textContent=text;output.hidden=false;
-    combatTimer=setTimeout(()=>{output.hidden=true;},1100);
-    if(kind==='hurt'){clearTimeout(damageTimer);$('damage-feedback').hidden=false;damageTimer=setTimeout(()=>{$('damage-feedback').hidden=true;},450);}
+    if(kind==='hurt'){
+      const output=$('hurt-feedback');clearTimeout(hurtTimer);output.textContent=text;output.hidden=false;
+      hurtTimer=setTimeout(()=>{output.hidden=true;output.textContent='';refreshCombatFeedback();},1100);
+      clearTimeout(damageTimer);$('damage-feedback').hidden=false;damageTimer=setTimeout(()=>{$('damage-feedback').hidden=true;},450);
+    }else if(kind!=='miss'||combatKind!=='hit'){
+      const output=$('attack-feedback');clearTimeout(combatTimer);combatKind=kind;
+      output.dataset.kind=kind;output.textContent=text;output.hidden=false;
+      combatTimer=setTimeout(()=>{output.hidden=true;output.textContent='';combatKind='';refreshCombatFeedback();},1100);
+    }
+    refreshCombatFeedback();
   }
   function save(){try{if(!storage)throw new Error('Storage unavailable');storage.setItem(storageKey,serialize(state));$('save-state').textContent='已保存';return true;}catch(error){$('save-state').textContent='无法保存，请导出备份';return false;}}
   function map(canvas,large=false){const ctx=canvas.getContext('2d'),w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.drawImage(mapBase,0,0,w,h);
@@ -88,7 +100,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
   }
   function beginBuild(type){if(!affordable(state,RECIPES[type].cost)){toast('材料不足。按 C 查看制作所需材料。');return;}buildType=type;view.setPreview(type);closePanel();toast('走到合适的位置，按 E 确认建造；Esc 取消。');}
   function closePanel(){if(renderLost)return;panel.close();panelKind='';paused=false;audio.setActive(true);void unlockAudio();keys.clear();movementHeading.end();$('world').focus({preventScroll:true});}
-  function openPanel(kind){if(!started||renderLost)return;cancelAttack();cancelGather();cancelEnemyAttacks(state);panelKind=kind;paused=true;$('combat-feedback').hidden=true;$('damage-feedback').hidden=true;audio.setActive(false);keys.clear();movementHeading.end();resetPointers();
+  function openPanel(kind){if(!started||renderLost)return;cancelAttack();cancelGather();cancelEnemyAttacks(state);panelKind=kind;paused=true;clearCombatFeedback();audio.setActive(false);keys.clear();movementHeading.end();resetPointers();
     const titles={bag:'旅人的背包',craft:'制作与建造',map:'群岛地图',pause:'旅途小憩'};$('panel-title').textContent=titles[kind];const body=$('panel-body');body.replaceChildren();
     if(kind==='bag'){
       const inventory=document.createElement('div');inventory.className='inventory';

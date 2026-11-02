@@ -1,0 +1,50 @@
+{
+  "kind": "temporal-sample-review",
+  "sourceVideo": "dist/r2-encounter-2026-11-03/page@cb28b7b8bf45264e549ecf15fa6c431d.webm",
+  "sourceVideoSha256": "6d74d0392dc79695667248e7e74d0a9476066b5fe0b8a11b1e10bea1cc9258b7",
+  "intervalStartVideoSeconds": 10.4,
+  "requestedIntervalSeconds": 3.2,
+  "outputFps": 8,
+  "cropXYWH": [
+    500,
+    220,
+    480,
+    400
+  ],
+  "scaleWH": [
+    600,
+    500
+  ],
+  "framesReviewed": 26,
+  "frames": {
+    "frame-001.png": "bf4dc0ae3d6f1e37cdc8d007739119d66adaf5f3bc1357bafc8883d3f4435463",
+    "frame-002.png": "f7e7baef52967db03efbd0b76e0c7e58a3a235be683d8327a7597e35a4640d2a",
+    "frame-003.png": "7e4831e5738693df5a443224f5c1c67932585c06656d3c954210f9292db46e14",
+    "frame-004.png": "9c5c7f82b7ab318e1390c91d6891978ad14a265fd6a5269b552811dc9a39c29a",
+    "frame-005.png": "2e7c2618b394f44100eaf58130840c6f1b0ba8063094b9bc1bedefb531e8b1ba",
+    "frame-006.png": "9af1ca3eee8993514e416da79dafa6d8dcc66b86438f477e98b33d8c639f727a",
+    "frame-007.png": "944d2137e0807677681f5a274131ecbead1a07bfb8580be7d9eed269abcf1135",
+    "frame-008.png": "431168923a94473394bc42d0857b7ef61869312f6ac814676f888ca956706293",
+    "frame-009.png": "a0f226edc437a7f67dcad300d51ce89f8b46a256f617a5e99203e9388017c583",
+    "frame-010.png": "2cb3d37af902a42c32415c7eada606d7bf219cebfa7792276f44a5c80c9d27b4",
+    "frame-011.png": "8e787c440905f73b6ef2f63264550896afe9d59c1edd3c41827898a5011d817d",
+    "frame-012.png": "95650275d41ed9d10ca0f0177fe6ac0dd1ada80386c88a1cd9255d91fe7a148c",
+    "frame-013.png": "4ba8e0b7efbced2c4f0b28922b892212ecec166cc293a08f5a73b14a50cdb40a",
+    "frame-014.png": "c426c33b63fc266cf9888529af4f360dd40c0f3106ed00ce57819862c33e0986",
+    "frame-015.png": "cc9e743b70a549a035795a1a08d66c3485db3daf5e00ad489c1e2e2f30f2b585",
+    "frame-016.png": "6a581e4dad2adef818d0f11ac87020a732c00cd9fe60402d1ab3441ecb64f2ab",
+    "frame-017.png": "be9115d69bfd9558f73cdfce40f5159d5380f2f5507658288637376eca6854a5",
+    "frame-018.png": "1cda682dfdaa9934de534cd466cce45280252fa42df0a0dfa325e311607b6e0c",
+    "frame-019.png": "f93ea70a3efb2e3fd397817698af6cd29437bdf36b9551bd6c68be9092b1aeb2",
+    "frame-020.png": "42b8ded52945cf09164ae0a007e7d9e3e1ce1d0a5f665a69035a1bfd4a613082",
+    "frame-021.png": "04a4781506bf8642167de313ab6f294f3a888f62dcbce5a6b699216544262a3f",
+    "frame-022.png": "3feb1fd8a70cd68827f4b9c19a7fafaf84d6fccf648e7fa09797808937c242e9",
+    "frame-023.png": "f3a0ac5c9d336f33c2e5e61d54abe8a2edcf15f0d092ab39d8667a18f6f594bf",
+    "frame-024.png": "2be0ae326313006a1d32fb971fd23e20d2c8a815c6bdfd9e6b03be12070ddeb5",
+    "frame-025.png": "7a8d3448d081de1e24f9aef5f3f8626d042a9caf87bcdb5cb45eee82f4c72285",
+    "frame-026.png": "b95fadab9278a27539baec8a4a30bd04d692021185dcfe891a452099e958ab18"
+  },
+  "fullVideoWatched": false,
+  "contactNaturalnessAccepted": false,
+  "finding": "Recorded confirmed hit at page time 12.202s is replaced by incoming damage at 12.475s. Single textContent/timer in main causes outcome loss. Screen-space crab/player silhouette overlap alone is not mesh penetration proof."
+}

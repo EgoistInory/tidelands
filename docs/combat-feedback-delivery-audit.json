@@ -1,0 +1,77 @@
+{
+  "finiteFeedbackBatchAccepted": true,
+  "archive": "tidelands-m5-2026-11-03-combat-feedback.zip",
+  "archiveBytes": 170923284,
+  "archiveSha256": "f49d15377d9b6bc3d910ff10f689d6f810074b0b06ea980513604579a5ef14e8",
+  "runtimeInputs": 209,
+  "changedRuntimeInputs": [
+    "README.md",
+    "index.html",
+    "src/main.js",
+    "styles.css"
+  ],
+  "referenceNode": "22.17.1",
+  "ruleTestsPassed": 393,
+  "packagingTestsPassed": 7,
+  "nativeUi": [
+    {
+      "name": "desktop",
+      "viewport": [
+        1440,
+        900
+      ],
+      "canvas": [
+        1440,
+        900
+      ],
+      "intervals": [
+        {
+          "text": "命中 1 个目标",
+          "ms": 1097.8999996185303,
+          "confirmedReplacement": false
+        },
+        {
+          "text": "击败 1 个目标",
+          "ms": 1097.3000001907349,
+          "confirmedReplacement": false
+        }
+      ],
+      "kills": 4,
+      "hp": 62,
+      "reloadExact": true
+    },
+    {
+      "name": "mobile",
+      "viewport": [
+        390,
+        844
+      ],
+      "canvas": [
+        390,
+        844
+      ],
+      "intervals": [
+        {
+          "text": "命中 1 个目标",
+          "ms": 948.5999999046326,
+          "confirmedReplacement": true
+        },
+        {
+          "text": "击败 1 个目标",
+          "ms": 1095.2999997138977,
+          "confirmedReplacement": false
+        }
+      ],
+      "kills": 4,
+      "hp": 62,
+      "reloadExact": true
+    }
+  ],
+  "packageRequestsStayedInsideBase": true,
+  "previousPackagesAndBackupPreserved": true,
+  "imagesReviewed": 4,
+  "naturalBodyContactAccepted": false,
+  "audioQualityAccepted": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false
+}

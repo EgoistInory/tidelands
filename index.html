@@ -2,7 +2,7 @@
 <body><canvas id="world" aria-label="潮生群岛三维世界，使用 WASD 移动，拖动视角，E 交互" tabindex="0"></canvas>
 <div id="hud" hidden>
 <div id="damage-feedback" aria-hidden="true" hidden></div>
-<output id="combat-feedback" role="status" aria-live="polite" hidden></output>
+<output id="combat-feedback" role="status" aria-live="polite" hidden><span id="attack-feedback" hidden></span><span id="hurt-feedback" hidden></span></output>
   <section class="vitals glass"><div class="brand"><h1>潮生群岛</h1><span>TIDELANDS</span></div><p id="region">潮汐海岸</p><div class="meter"><span>生命</span><progress id="hp" value="100" max="100"></progress><b id="hp-value">100</b></div><div class="meter stamina"><span>体力</span><progress id="stamina" value="100" max="100"></progress><b id="stamina-value">100</b></div></section>
   <section class="quest glass"><h2 id="quest-title">归航的灯火</h2><p id="quest-text">与海边的守灯人交谈</p><small id="quest-hint">靠近后按 E 交谈</small></section>
   <div class="compass" aria-label="朝向"><span>西</span><span>北</span><strong id="bearing">北</strong><span>东</span><span>南</span></div>
