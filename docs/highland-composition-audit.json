@@ -1,0 +1,26 @@
+{
+  "candidateOnly": true,
+  "productionIntegrated": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false,
+  "decision": "reject-current-composition",
+  "imagesReviewed": 11,
+  "sameCameraComposedPairs": 4,
+  "counts": {
+    "minerals": 22,
+    "ferns": 51,
+    "batches": 10
+  },
+  "sources": {
+    "tests/highland-composition-candidate.js": "867f76dbe3dcb583c90fe50d8591c07e6fb05fd4fc1a3ffd0192e4af5b33bcdf",
+    "tests/highland-composition-review.html": "72763a17d6d945c7f85e5945a07c7ab556ed6ad553eb8e3708a31de06727005c",
+    "tests/highland-vegetation-candidate.js": "5509004becc96218adde458c5b64cb67b8cb8b8fb775a7828674e62b9ac408c2",
+    "src/woodland.js": "89cd0c56a8488f221f46c50f6b0c808d3614f02a0e73bf719c2690fd9c39deef",
+    "src/scene.js": "d283b541c2b0a2e7985da3d874b652c0d1753a95754b6c945a725052aa58da03",
+    "src/world.js": "4abcfa0aa50fb5098bbdffc8ff1c992bf4859dd9415f3f455e0db6793fcc6b9e"
+  },
+  "consoleWarningsErrors": [],
+  "originalImagesDirectory": "dist/highland-composition-2026-11-03",
+  "visualFinding": "The existing rock bases and sheltered fern layer do not materially improve the bare hillside at near, middle, far or 390px. The sparse tree palette remains a mismatch. Do not promote or repeat tree/fern/color tuning.",
+  "lifecycleBoundary": "The plan-only test covers identity/layout. Old stone matrices are zeroed, not removed from submissions. Ground candidate depletion, camp masks and restoration are not accepted in native main; do not integrate this rejected QA route."
+}
