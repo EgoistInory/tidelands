@@ -1,0 +1,1218 @@
+{
+  "rows": [
+    {
+      "ready": true,
+      "type": "crab",
+      "phase": "idle",
+      "angle": "side",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "crab",
+        "x": 14.3,
+        "z": 43.699999999999996,
+        "hp": 40,
+        "attackAt": 0
+      },
+      "time": 240,
+      "authoredPlayer": true,
+      "distance": 2.299999999999997,
+      "contactDistance": 2.3,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6447697058332094,
+      "creatureBodyLift": -0.04,
+      "support": [
+        {
+          "i": 0,
+          "point": [
+            15.992626455960233,
+            1.2881240935919172,
+            44.90550370508013
+          ],
+          "planted": true,
+          "analyticFloor": 1.2881240935919174,
+          "visibleFloor": 1.2979429910060798,
+          "rayFloor": 1.2979429910060816,
+          "analyticGap": -2.220446049250313e-16,
+          "visibleGap": -0.009818897414162642
+        },
+        {
+          "i": 1,
+          "point": [
+            16.00883299469925,
+            1.3302341584419008,
+            44.09183067365579
+          ],
+          "planted": true,
+          "analyticFloor": 1.330234158441901,
+          "visibleFloor": 1.3419942849993824,
+          "rayFloor": 1.3419942849994015,
+          "analyticGap": -2.220446049250313e-16,
+          "visibleGap": -0.011760126557481598
+        },
+        {
+          "i": 2,
+          "point": [
+            16.054403963781517,
+            1.3510368234404928,
+            43.614581523661045
+          ],
+          "planted": true,
+          "analyticFloor": 1.3510368234404933,
+          "visibleFloor": 1.3633486313507153,
+          "rayFloor": 1.363348631350732,
+          "analyticGap": -4.440892098500626e-16,
+          "visibleGap": -0.012311807910222461
+        },
+        {
+          "i": 3,
+          "point": [
+            16.017522728137862,
+            1.4279880366337752,
+            42.498781719570474
+          ],
+          "planted": true,
+          "analyticFloor": 1.4279880366337756,
+          "visibleFloor": 1.4368588992066256,
+          "rayFloor": 1.4368588992066123,
+          "analyticGap": -4.440892098500626e-16,
+          "visibleGap": -0.008870862572850413
+        },
+        {
+          "i": 4,
+          "point": [
+            12.599971282434257,
+            1.9016912718187604,
+            44.90705864076509
+          ],
+          "planted": true,
+          "analyticFloor": 1.901691271818762,
+          "visibleFloor": 1.9038681905265464,
+          "rayFloor": 1.903868190526552,
+          "analyticGap": -1.5543122344752192e-15,
+          "visibleGap": -0.002176918707786024
+        },
+        {
+          "i": 5,
+          "point": [
+            12.563162051555278,
+            1.9745744929047764,
+            43.79137090568782
+          ],
+          "planted": true,
+          "analyticFloor": 1.9745744929047768,
+          "visibleFloor": 1.9801420388778521,
+          "rayFloor": 1.9801420388778581,
+          "analyticGap": -4.440892098500626e-16,
+          "visibleGap": -0.005567545973075738
+        },
+        {
+          "i": 6,
+          "point": [
+            12.703466580256752,
+            2.049997717263238,
+            43.02624290272338
+          ],
+          "planted": false,
+          "analyticFloor": 1.994990707186579,
+          "visibleFloor": 2.001069046462685,
+          "rayFloor": 2.001069046462689,
+          "analyticGap": 0.05500701007665909,
+          "visibleGap": 0.048928670800552965
+        },
+        {
+          "i": 7,
+          "point": [
+            12.614053901435517,
+            2.0478165536869635,
+            42.51616830244911
+          ],
+          "planted": true,
+          "analyticFloor": 2.047816553686964,
+          "visibleFloor": 2.049707079477202,
+          "rayFloor": 2.0497070794772156,
+          "analyticGap": -4.440892098500626e-16,
+          "visibleGap": -0.0018905257902384065
+        }
+      ],
+      "playerBox": {
+        "min": [
+          13.708879639544945,
+          1.6466457967092287,
+          40.5991528332372
+        ],
+        "max": [
+          14.986287071618724,
+          4.647752677536969,
+          41.931690235636324
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.209933199970843,
+          1.9043054351457214,
+          42.93994776033559
+        ],
+        "max": [
+          15.65010826027627,
+          3.0376997529122143,
+          44.600674897359
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          12.534170437229577,
+          1.2868114283125345,
+          41.859269980092016
+        ],
+        "max": [
+          16.161066137459862,
+          3.0376997529122143,
+          44.9099338163247
+        ]
+      },
+      "coreGaps": [
+        -1.7763538716478813,
+        -1.3910539562029856,
+        1.0082575246992675
+      ],
+      "fullGaps": [
+        -2.4521166343891476,
+        -1.3910539562029856,
+        -0.07242025554430853
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": false,
+      "enemyPose": null,
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "crab",
+          "x": 14.3,
+          "z": 43.699999999999996,
+          "hp": 40,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        22.3,
+        4.923547959160668,
+        42.55
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Foot proxies compared with actual ground triangles/rays. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "ready": true,
+      "type": "crab",
+      "phase": "enemy",
+      "angle": "side",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 93,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "crab",
+        "x": 14.3,
+        "z": 43.699999999999996,
+        "hp": 40,
+        "attackAt": 240.00001
+      },
+      "time": 240.30001000000001,
+      "authoredPlayer": true,
+      "distance": 2.299999999999997,
+      "contactDistance": 2.3,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6447697058332094,
+      "creatureBodyLift": -0.04,
+      "support": [
+        {
+          "i": 0,
+          "point": [
+            15.992626455960233,
+            1.2881240935919176,
+            44.90550370508013
+          ],
+          "planted": true,
+          "analyticFloor": 1.2881240935919174,
+          "visibleFloor": 1.2979429910060798,
+          "rayFloor": 1.2979429910060816,
+          "analyticGap": 2.220446049250313e-16,
+          "visibleGap": -0.009818897414162198
+        },
+        {
+          "i": 1,
+          "point": [
+            15.914082246546542,
+            1.3848880770121923,
+            44.36608252528039
+          ],
+          "planted": false,
+          "analyticFloor": 1.3298519714549348,
+          "visibleFloor": 1.3410214357441927,
+          "rayFloor": 1.3410214357441816,
+          "analyticGap": 0.055036105557257464,
+          "visibleGap": 0.04386664126799955
+        },
+        {
+          "i": 2,
+          "point": [
+            16.01289323943006,
+            1.391074190166798,
+            43.07520584177952
+          ],
+          "planted": true,
+          "analyticFloor": 1.391074190166799,
+          "visibleFloor": 1.4026368222130212,
+          "rayFloor": 1.4026368222130259,
+          "analyticGap": -8.881784197001252e-16,
+          "visibleGap": -0.011562632046223209
+        },
+        {
+          "i": 3,
+          "point": [
+            16.01724419551576,
+            1.4429453044347533,
+            42.27868633459865
+          ],
+          "planted": true,
+          "analyticFloor": 1.4429453044347533,
+          "visibleFloor": 1.4527997758216924,
+          "rayFloor": 1.4527997758216884,
+          "analyticGap": 0,
+          "visibleGap": -0.009854471386939068
+        },
+        {
+          "i": 4,
+          "point": [
+            12.599971282434257,
+            1.9016912718187609,
+            44.90705864076508
+          ],
+          "planted": true,
+          "analyticFloor": 1.9016912718187624,
+          "visibleFloor": 1.9038681905265464,
+          "rayFloor": 1.903868190526552,
+          "analyticGap": -1.5543122344752192e-15,
+          "visibleGap": -0.00217691870778558
+        },
+        {
+          "i": 5,
+          "point": [
+            12.563162051555276,
+            1.9745744929047766,
+            43.791370905687806
+          ],
+          "planted": true,
+          "analyticFloor": 1.9745744929047777,
+          "visibleFloor": 1.9801420388778521,
+          "rayFloor": 1.9801420388778581,
+          "analyticGap": -1.1102230246251565e-15,
+          "visibleGap": -0.005567545973075516
+        },
+        {
+          "i": 6,
+          "point": [
+            12.709718778042841,
+            1.9949823862694838,
+            43.00724285087793
+          ],
+          "planted": true,
+          "analyticFloor": 1.9949823862694842,
+          "visibleFloor": 2.001063884612051,
+          "rayFloor": 2.0010638846120514,
+          "analyticGap": -4.440892098500626e-16,
+          "visibleGap": -0.006081498342567215
+        },
+        {
+          "i": 7,
+          "point": [
+            12.614053901435515,
+            2.0478165536869644,
+            42.5161683024491
+          ],
+          "planted": true,
+          "analyticFloor": 2.047816553686965,
+          "visibleFloor": 2.049707079477202,
+          "rayFloor": 2.0497070794772156,
+          "analyticGap": -4.440892098500626e-16,
+          "visibleGap": -0.0018905257902375183
+        }
+      ],
+      "playerBox": {
+        "min": [
+          13.69287804217208,
+          1.6466457633927227,
+          40.60057790140259
+        ],
+        "max": [
+          14.973807372064133,
+          4.652461002935046,
+          41.93169023461977
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.209651881407908,
+          1.9094637155230259,
+          42.71985239073844
+        ],
+        "max": [
+          15.649826941713334,
+          3.0428580332895185,
+          44.380579527761846
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          12.530741338374009,
+          1.2868027829464586,
+          42.25132032702459
+        ],
+        "max": [
+          16.143851128164556,
+          3.52573574107192,
+          44.90965384081393
+        ]
+      },
+      "coreGaps": [
+        -1.7641554906562256,
+        -1.3962122698967958,
+        0.7881621561186662
+      ],
+      "fullGaps": [
+        -2.4430660336901244,
+        -1.8790899776791972,
+        0.31963009240481455
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": true,
+      "enemyPose": {
+        "at": 240.00001,
+        "yaw": 3.141592653589793,
+        "resolved": true
+      },
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "crab",
+          "x": 14.3,
+          "z": 43.699999999999996,
+          "hp": 40,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        22.3,
+        4.923547959160668,
+        42.55
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Foot proxies compared with actual ground triangles/rays. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "ready": true,
+      "type": "crab",
+      "phase": "player",
+      "angle": "side",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "crab",
+        "x": 14.3,
+        "z": 43.699999999999996,
+        "hp": 17,
+        "attackAt": 0
+      },
+      "time": 240.225,
+      "authoredPlayer": true,
+      "distance": 2.299999999999997,
+      "contactDistance": 2.3,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6447697058332094,
+      "creatureBodyLift": -0.04,
+      "support": [
+        {
+          "i": 0,
+          "point": [
+            15.992626455960234,
+            1.2881240935919158,
+            44.905503705080136
+          ],
+          "planted": true,
+          "analyticFloor": 1.288124093591917,
+          "visibleFloor": 1.2979429910060798,
+          "rayFloor": 1.2979429910060816,
+          "analyticGap": -1.1102230246251565e-15,
+          "visibleGap": -0.009818897414163974
+        },
+        {
+          "i": 1,
+          "point": [
+            15.907847237293954,
+            1.3290325493171977,
+            44.398709578470914
+          ],
+          "planted": true,
+          "analyticFloor": 1.3290325493171977,
+          "visibleFloor": 1.3401229422949832,
+          "rayFloor": 1.3401229422949825,
+          "analyticGap": 0,
+          "visibleGap": -0.011090392977785468
+        },
+        {
+          "i": 2,
+          "point": [
+            16.054403963781517,
+            1.3510368234404924,
+            43.614581523661045
+          ],
+          "planted": true,
+          "analyticFloor": 1.3510368234404933,
+          "visibleFloor": 1.3633486313507153,
+          "rayFloor": 1.363348631350732,
+          "analyticGap": -8.881784197001252e-16,
+          "visibleGap": -0.012311807910222905
+        },
+        {
+          "i": 3,
+          "point": [
+            15.980031864880248,
+            1.4227966648164463,
+            42.66764894339047
+          ],
+          "planted": true,
+          "analyticFloor": 1.4227966648164472,
+          "visibleFloor": 1.432560774458563,
+          "rayFloor": 1.4325607744585653,
+          "analyticGap": -8.881784197001252e-16,
+          "visibleGap": -0.009764109642116603
+        },
+        {
+          "i": 4,
+          "point": [
+            12.60252417909682,
+            1.95551520617444,
+            44.91880873017969
+          ],
+          "planted": false,
+          "analyticFloor": 1.9005210248245323,
+          "visibleFloor": 1.9026756899199357,
+          "rayFloor": 1.9026756899199313,
+          "analyticGap": 0.054994181349907745,
+          "visibleGap": 0.05283951625450434
+        },
+        {
+          "i": 5,
+          "point": [
+            12.64554107465477,
+            1.9270335892213342,
+            44.30030008889858
+          ],
+          "planted": true,
+          "analyticFloor": 1.9270335892213346,
+          "visibleFloor": 1.932908747705413,
+          "rayFloor": 1.9329087477054259,
+          "analyticGap": -4.440892098500626e-16,
+          "visibleGap": -0.005875158484078824
+        },
+        {
+          "i": 6,
+          "point": [
+            12.649887105999838,
+            1.974884624849345,
+            43.503770601995875
+          ],
+          "planted": true,
+          "analyticFloor": 1.9748846248493452,
+          "visibleFloor": 1.9815642797118151,
+          "rayFloor": 1.9815642797118045,
+          "analyticGap": -2.220446049250313e-16,
+          "visibleGap": -0.00667965486247013
+        },
+        {
+          "i": 7,
+          "point": [
+            12.654233137344907,
+            2.0264716412621118,
+            42.707241115093154
+          ],
+          "planted": true,
+          "analyticFloor": 2.0264716412621118,
+          "visibleFloor": 2.030219811718195,
+          "rayFloor": 2.0302198117181973,
+          "analyticGap": 0,
+          "visibleGap": -0.003748170456083333
+        }
+      ],
+      "playerBox": {
+        "min": [
+          13.536787581090865,
+          1.6481165146319625,
+          40.62152303577645
+        ],
+        "max": [
+          15.091931438555065,
+          4.139511613661027,
+          42.82966825365326
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.306137946209592,
+          1.802000212712409,
+          43.11871463228252
+        ],
+        "max": [
+          15.689950804224434,
+          3.031581620554746,
+          44.77939395566564
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          12.56765722929953,
+          1.286357290423668,
+          42.04421150159906
+        ],
+        "max": [
+          16.198380375578914,
+          3.031581620554746,
+          44.95611853239031
+        ]
+      },
+      "coreGaps": [
+        -1.7857934923454728,
+        -1.3834651059227834,
+        0.2890463786292585
+      ],
+      "fullGaps": [
+        -2.5242742092555357,
+        -1.3834651059227834,
+        -0.785456752054202
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": false,
+      "enemyPose": null,
+      "result": {
+        "message": "命中 1 个目标",
+        "hits": [
+          "close-review"
+        ]
+      },
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "crab",
+          "x": 14.3,
+          "z": 43.699999999999996,
+          "hp": 40,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        22.3,
+        4.923547959160668,
+        42.55
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Foot proxies compared with actual ground triangles/rays. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "ready": true,
+      "type": "boar",
+      "phase": "idle",
+      "angle": "side",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "boar",
+        "x": 14.3,
+        "z": 43.949999999999996,
+        "hp": 70,
+        "attackAt": 0
+      },
+      "time": 240,
+      "authoredPlayer": true,
+      "distance": 2.549999999999997,
+      "contactDistance": 2.5500000000000003,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6295748520131987,
+      "creatureBodyLift": -0.16,
+      "support": [
+        {
+          "i": 0,
+          "point": [
+            14.8235921602118,
+            1.4929407159249073,
+            44.70879422185819
+          ],
+          "planted": true,
+          "analyticFloor": 1.4929407159249077,
+          "visibleFloor": 1.4976181125322583,
+          "rayFloor": 1.4976181125322512,
+          "analyticGap": -4.440892098500626e-16,
+          "visibleGap": -0.004677396607351003
+        },
+        {
+          "i": 1,
+          "point": [
+            14.838650610600528,
+            1.5856406365892481,
+            43.11463375559768
+          ],
+          "planted": true,
+          "analyticFloor": 1.5856406365892484,
+          "visibleFloor": 1.5914240768009527,
+          "rayFloor": 1.591424076800962,
+          "analyticGap": -2.220446049250313e-16,
+          "visibleGap": -0.005783440211704516
+        },
+        {
+          "i": 2,
+          "point": [
+            13.781308953492838,
+            1.6810782953292318,
+            44.71368439112599
+          ],
+          "planted": true,
+          "analyticFloor": 1.681078295329232,
+          "visibleFloor": 1.6933778780193718,
+          "rayFloor": 1.6933778780193762,
+          "analyticGap": -2.220446049250313e-16,
+          "visibleGap": -0.012299582690139976
+        },
+        {
+          "i": 3,
+          "point": [
+            13.825350704592232,
+            1.7709831620726557,
+            43.09485527193367
+          ],
+          "planted": true,
+          "analyticFloor": 1.7709831620726597,
+          "visibleFloor": 1.7840963101666731,
+          "rayFloor": 1.7840963101666745,
+          "analyticGap": -3.9968028886505635e-15,
+          "visibleGap": -0.013113148094017424
+        }
+      ],
+      "playerBox": {
+        "min": [
+          13.708879639544945,
+          1.6466457967092287,
+          40.5991528332372
+        ],
+        "max": [
+          14.986287071618724,
+          4.647752677536969,
+          41.931690235636324
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.770288107056192,
+          2.0578970167012693,
+          41.99715690152371
+        ],
+        "max": [
+          15.324947596002042,
+          3.9110291324037334,
+          45.73493341562923
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          13.612357274899663,
+          1.4349387175019541,
+          41.99715690152371
+        ],
+        "max": [
+          15.324947596002042,
+          3.9110291324037334,
+          45.73493341562923
+        ]
+      },
+      "coreGaps": [
+        -1.215998964562532,
+        -2.2643833356945047,
+        0.06546666588738503
+      ],
+      "fullGaps": [
+        -1.373929796719061,
+        -2.2643833356945047,
+        0.06546666588738503
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": true,
+      "enemyPose": null,
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "boar",
+          "x": 14.3,
+          "z": 43.949999999999996,
+          "hp": 70,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        22.3,
+        4.915950532250664,
+        42.675
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Foot proxies compared with actual ground triangles/rays. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "ready": true,
+      "type": "boar",
+      "phase": "enemy",
+      "angle": "side",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 88,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "boar",
+        "x": 14.3,
+        "z": 43.949999999999996,
+        "hp": 70,
+        "attackAt": 240.00001
+      },
+      "time": 240.30001000000001,
+      "authoredPlayer": true,
+      "distance": 2.549999999999997,
+      "contactDistance": 2.5500000000000003,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6295748520131987,
+      "creatureBodyLift": -0.16,
+      "support": [
+        {
+          "i": 0,
+          "point": [
+            14.79985533308597,
+            1.510196813333775,
+            44.47312899947729
+          ],
+          "planted": true,
+          "analyticFloor": 1.5101968133337753,
+          "visibleFloor": 1.516369170413851,
+          "rayFloor": 1.5163691704138529,
+          "analyticGap": -2.220446049250313e-16,
+          "visibleGap": -0.006172357080076019
+        },
+        {
+          "i": 1,
+          "point": [
+            14.859260623086037,
+            1.5948172843980195,
+            42.918620909288656
+          ],
+          "planted": true,
+          "analyticFloor": 1.5948172843980184,
+          "visibleFloor": 1.599429638414045,
+          "rayFloor": 1.599429638414037,
+          "analyticGap": 1.1102230246251565e-15,
+          "visibleGap": -0.004612354016025444
+        },
+        {
+          "i": 2,
+          "point": [
+            13.75684679959943,
+            1.6989550917148353,
+            44.47874030216495
+          ],
+          "planted": true,
+          "analyticFloor": 1.6989550917148377,
+          "visibleFloor": 1.7122216564412753,
+          "rayFloor": 1.7122216564412867,
+          "analyticGap": -2.4424906541753444e-15,
+          "visibleGap": -0.013266564726440055
+        },
+        {
+          "i": 3,
+          "point": [
+            13.825350704592235,
+            1.7709831620726568,
+            43.09485527193367
+          ],
+          "planted": true,
+          "analyticFloor": 1.7709831620726597,
+          "visibleFloor": 1.7840963101666731,
+          "rayFloor": 1.7840963101666745,
+          "analyticGap": -2.886579864025407e-15,
+          "visibleGap": -0.013113148094016314
+        }
+      ],
+      "playerBox": {
+        "min": [
+          13.69287804217208,
+          1.6466457633927227,
+          40.60057790140259
+        ],
+        "max": [
+          14.973807372064133,
+          4.652461002935046,
+          41.93169023461977
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.76546671157568,
+          1.9131095379264644,
+          42.00821808865397
+        ],
+        "max": [
+          15.318580249310129,
+          3.9280751892276786,
+          45.742744354838216
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          13.587895121006255,
+          1.4305714924401518,
+          42.00821808865397
+        ],
+        "max": [
+          15.318580249310129,
+          3.9280751892276786,
+          45.742744354838216
+        ]
+      },
+      "coreGaps": [
+        -1.208340660488453,
+        -2.281429425834956,
+        0.07652785403419671
+      ],
+      "fullGaps": [
+        -1.3859122510578779,
+        -2.281429425834956,
+        0.07652785403419671
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": true,
+      "enemyPose": {
+        "at": 240.00001,
+        "yaw": 3.141592653589793,
+        "resolved": true
+      },
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "boar",
+          "x": 14.3,
+          "z": 43.949999999999996,
+          "hp": 70,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        22.3,
+        4.915950532250664,
+        42.675
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Foot proxies compared with actual ground triangles/rays. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "ready": true,
+      "type": "boar",
+      "phase": "player",
+      "angle": "side",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "boar",
+        "x": 14.3,
+        "z": 43.949999999999996,
+        "hp": 47,
+        "attackAt": 0
+      },
+      "time": 240.225,
+      "authoredPlayer": true,
+      "distance": 2.549999999999997,
+      "contactDistance": 2.5500000000000003,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6295748520131987,
+      "creatureBodyLift": -0.16,
+      "support": [
+        {
+          "i": 0,
+          "point": [
+            14.813319893495798,
+            1.485169409683859,
+            44.88436817644574
+          ],
+          "planted": true,
+          "analyticFloor": 1.4851694096838606,
+          "visibleFloor": 1.4889070056944835,
+          "rayFloor": 1.488907005694486,
+          "analyticGap": -1.5543122344752192e-15,
+          "visibleGap": -0.003737596010624511
+        },
+        {
+          "i": 1,
+          "point": [
+            14.838650610600526,
+            1.5856406365892495,
+            43.114633755597666
+          ],
+          "planted": true,
+          "analyticFloor": 1.5856406365892495,
+          "visibleFloor": 1.5914240768009527,
+          "rayFloor": 1.591424076800962,
+          "analyticGap": 0,
+          "visibleGap": -0.0057834402117031836
+        },
+        {
+          "i": 2,
+          "point": [
+            13.794379249466159,
+            1.6685425637191005,
+            44.8961972256495
+          ],
+          "planted": true,
+          "analyticFloor": 1.6685425637191005,
+          "visibleFloor": 1.679855336785135,
+          "rayFloor": 1.679855336785124,
+          "analyticGap": 0,
+          "visibleGap": -0.01131277306603451
+        },
+        {
+          "i": 3,
+          "point": [
+            13.8028698238574,
+            1.7619665848636732,
+            43.29899745328842
+          ],
+          "planted": true,
+          "analyticFloor": 1.7619665848636716,
+          "visibleFloor": 1.7756776226728104,
+          "rayFloor": 1.7756776226728164,
+          "analyticGap": 1.5543122344752192e-15,
+          "visibleGap": -0.013711037809137183
+        }
+      ],
+      "playerBox": {
+        "min": [
+          13.536787581090865,
+          1.6481165146319625,
+          40.62152303577645
+        ],
+        "max": [
+          15.091931438555065,
+          4.139511613661027,
+          42.82966825365326
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.900045642416128,
+          2.0077005472492613,
+          42.17494307451734
+        ],
+        "max": [
+          15.459787582818382,
+          3.838846992594728,
+          45.9141809798124
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          13.625427570872985,
+          1.4177062361470032,
+          42.17494307451734
+        ],
+        "max": [
+          15.459787582818382,
+          3.838846992594728,
+          45.9141809798124
+        ]
+      },
+      "coreGaps": [
+        -1.191885796138937,
+        -2.1318110664117653,
+        -0.654725179135923
+      ],
+      "fullGaps": [
+        -1.4665038676820803,
+        -2.1907304779627657,
+        -0.654725179135923
+      ],
+      "coreBoxesSeparate": false,
+      "allBoxesSeparate": false,
+      "enemyPose": null,
+      "result": {
+        "message": "命中 1 个目标",
+        "hits": [
+          "close-review"
+        ]
+      },
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "boar",
+          "x": 14.3,
+          "z": 43.949999999999996,
+          "hp": 70,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        22.3,
+        4.915950532250664,
+        42.675
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Foot proxies compared with actual ground triangles/rays. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    }
+  ],
+  "logs": [],
+  "sources": {
+    "tests/close-encounter-review.html": "8e54d5e804c6b52316e23ddfa4cdb93d1699e5141a5e61501aa3d35b45998eea",
+    "src/scene.js": "d283b541c2b0a2e7985da3d874b652c0d1753a95754b6c945a725052aa58da03",
+    "src/creature.js": "0647cc0a71e346c729fb4635ce0b177807e6b44f747bd4d3e29dff0b2b56b301",
+    "src/creature-footing.js": "71707700f33b00c293c660cb958b4c83c97b8b74086064fbaccccec05cfa615b"
+  },
+  "complete": true
+}

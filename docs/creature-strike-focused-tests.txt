@@ -1,0 +1,166 @@
+TAP version 13
+# Subtest: walking and long steps cannot cross an islander, but talking and walking around still work
+ok 1 - walking and long steps cannot cross an islander, but talking and walking around still work
+  ---
+  duration_ms: 16.536291
+  type: 'test'
+  ...
+# Subtest: chasing boar stops before touching the body and never overshoots on a large tick
+ok 2 - chasing boar stops before touching the body and never overshoots on a large tick
+  ---
+  duration_ms: 14.926208
+  type: 'test'
+  ...
+# Subtest: living creatures block player traversal; a defeated creature releases the path
+ok 3 - living creatures block player traversal; a defeated creature releases the path
+  ---
+  duration_ms: 7.914333
+  type: 'test'
+  ...
+# Subtest: legacy overlapping saves stay intact on restore and allow walking out
+ok 4 - legacy overlapping saves stay intact on restore and allow walking out
+  ---
+  duration_ms: 21.841209
+  type: 'test'
+  ...
+# Subtest: boar contact remains reachable with every owned weapon and keeps exact damage and rewards
+ok 5 - boar contact remains reachable with every owned weapon and keeps exact damage and rewards
+  ---
+  duration_ms: 24.198125
+  type: 'test'
+  ...
+# Subtest: enemy steps respect mineral and islander occupancy without mutating either
+ok 6 - enemy steps respect mineral and islander occupancy without mutating either
+  ---
+  duration_ms: 14.325625
+  type: 'test'
+  ...
+# Subtest: an old exact overlap separates gradually during simulation without teleporting the player
+ok 7 - an old exact overlap separates gradually during simulation without teleporting the player
+  ---
+  duration_ms: 8.683125
+  type: 'test'
+  ...
+# Subtest: larger body reach is frontal and cannot hit beyond contact allowance
+ok 8 - larger body reach is frontal and cannot hit beyond contact allowance
+  ---
+  duration_ms: 10.092708
+  type: 'test'
+  ...
+# Subtest: construction cannot spawn a solid building on a living creature or spend rejected materials
+ok 9 - construction cannot spawn a solid building on a living creature or spend rejected materials
+  ---
+  duration_ms: 7.862458
+  type: 'test'
+  ...
+# Subtest: nearby pre-existing creature overlaps separate without placing both bodies on the player
+ok 10 - nearby pre-existing creature overlaps separate without placing both bodies on the player
+  ---
+  duration_ms: 14.251667
+  type: 'test'
+  ...
+# Subtest: boar: actual articulated contacts remain planted through travel, turning and stopping (flat)
+ok 11 - boar: actual articulated contacts remain planted through travel, turning and stopping (flat)
+  ---
+  duration_ms: 136.586584
+  type: 'test'
+  ...
+# Subtest: boar: actual articulated contacts remain planted through travel, turning and stopping (slope)
+ok 12 - boar: actual articulated contacts remain planted through travel, turning and stopping (slope)
+  ---
+  duration_ms: 47.423709
+  type: 'test'
+  ...
+# Subtest: crab: actual articulated contacts remain planted through travel, turning and stopping (flat)
+ok 13 - crab: actual articulated contacts remain planted through travel, turning and stopping (flat)
+  ---
+  duration_ms: 52.6165
+  type: 'test'
+  ...
+# Subtest: crab: actual articulated contacts remain planted through travel, turning and stopping (slope)
+ok 14 - crab: actual articulated contacts remain planted through travel, turning and stopping (slope)
+  ---
+  duration_ms: 37.198792
+  type: 'test'
+  ...
+# Subtest: articulated geometry stays shared while joints, reset and revived contacts stay private
+ok 15 - articulated geometry stays shared while joints, reset and revived contacts stay private
+  ---
+  duration_ms: 16.598542
+  type: 'test'
+  ...
+# Subtest: boar: resting foot surfaces follow a sloped plane at multiple headings
+ok 16 - boar: resting foot surfaces follow a sloped plane at multiple headings
+  ---
+  duration_ms: 165.032042
+  type: 'test'
+  ...
+# Subtest: crab: resting foot surfaces follow a sloped plane at multiple headings
+ok 17 - crab: resting foot surfaces follow a sloped plane at multiple headings
+  ---
+  duration_ms: 90.015875
+  type: 'test'
+  ...
+# Subtest: crab raises its claws before damage and reaches the contacting body at impact
+ok 18 - crab raises its claws before damage and reaches the contacting body at impact
+  ---
+  duration_ms: 81.53575
+  type: 'test'
+  ...
+# Subtest: complete crab strike keeps claw geometry above ground, freezes at a held clock and returns to rest
+ok 19 - complete crab strike keeps claw geometry above ground, freezes at a held clock and returns to rest
+  ---
+  duration_ms: 63.597083
+  type: 'test'
+  ...
+# Subtest: crab has eight walking legs and its articulated pincers close during a strike
+ok 20 - crab has eight walking legs and its articulated pincers close during a strike
+  ---
+  duration_ms: 97.088209
+  type: 'test'
+  ...
+# Subtest: boar: sculpted surfaces stay finite and retain the same distant silhouette
+ok 21 - boar: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 50.704542
+  type: 'test'
+  ...
+# Subtest: crab: sculpted surfaces stay finite and retain the same distant silhouette
+ok 22 - crab: sculpted surfaces stay finite and retain the same distant silhouette
+  ---
+  duration_ms: 32.763958
+  type: 'test'
+  ...
+# Subtest: boar: distance gait, bounded turn, hit isolation and death recovery
+ok 23 - boar: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 56.703084
+  type: 'test'
+  ...
+# Subtest: crab: distance gait, bounded turn, hit isolation and death recovery
+ok 24 - crab: distance gait, bounded turn, hit isolation and death recovery
+  ---
+  duration_ms: 48.465792
+  type: 'test'
+  ...
+# Subtest: boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 25 - boar: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 9.310666
+  type: 'test'
+  ...
+# Subtest: crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+ok 26 - crab: distant batching keeps bounds and uses hysteresis without suppressing animation
+  ---
+  duration_ms: 12.33175
+  type: 'test'
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 26
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 385.517292

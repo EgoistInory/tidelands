@@ -1,0 +1,57 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>近身实体与侧视 · 当前生产模型</title>
+<style>html,body{margin:0;height:100%;background:#172c27;color:#eee;font:12px system-ui}body{display:flex;flex-direction:column}nav{padding:6px;display:flex;gap:8px;flex-wrap:wrap}select{font:inherit;padding:5px}output{height:70px;overflow:auto;overflow-wrap:anywhere;font:10px monospace}canvas{flex:1;width:100%;min-height:0}</style>
+<nav>声明站位/装备/时钟fixture · 无存档 · 真实作者旅人/生产生物
+<select id="type"><option value="crab">海岸蟹</option><option value="boar">野猪</option></select>
+<select id="phase"><option value="idle">近身待机</option><option value="enemy">敌人冲击</option><option value="player">旅人挥斧</option></select>
+<select id="angle"><option value="side">侧视</option><option value="reverse">反侧</option><option value="top">上方</option></select>
+<span id="status">准备…</span></nav><output></output><canvas aria-label="近身模型与地面实体侧视"></canvas>
+<script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain} from '../src/world.js';
+import {freshGame,tick,attack,resolveAttack,enemyAttackPose} from '../src/game.js';
+import {actorRadius} from '../src/actor-contact.js';
+import {loadAuthoredCast} from '../src/authored-assets.js';
+import {prepareSurfaceTextures} from '../src/startup-textures.js';
+import {ATTACK_IMPACT,ENEMY_ATTACK_IMPACT} from '../src/action-timing.js';
+const world=createWorld(),worldBefore=JSON.stringify(world),view=new WorldView(document.querySelector('canvas'),world),out=document.querySelector('output');
+const groundMesh=view.scene.children.find(o=>o.isMesh&&o.material===view.groundSurface);
+let state,initial=null,result=null,phase,ready=false;
+function visibleMesh(mesh,root){let p=mesh;while(p){if(!p.visible)return false;if(p===root)return true;p=p.parent;}return false;}
+function boxOf(root,{excludeTools=false,core=false}={}){
+ const box=new THREE.Box3();root.updateMatrixWorld(true);
+ root.traverse(o=>{if(!o.isMesh||!visibleMesh(o,root))return;
+  if(core&&o.parent!==root.userData.body)return;
+  if(excludeTools){let p=o;while(p&&p!==root){if(p===root.userData.axe||p===root.userData.sword)return;p=p.parent;}}
+  box.union(new THREE.Box3().setFromObject(o,true));
+ });return box;
+}
+const boxRow=b=>({min:b.min.toArray(),max:b.max.toArray()});
+function separate(a,b){return ['x','y','z'].map(axis=>Math.max(b.min[axis]-a.max[axis],a.min[axis]-b.max[axis]));}
+function snapshot(){
+ const enemy=state.enemies[0],model=view.creatures.get(enemy.id),playerBox=boxOf(view.player,{excludeTools:true}),coreBox=boxOf(model,{core:true}),fullBox=boxOf(model),coreGaps=separate(playerBox,coreBox),fullGaps=separate(playerBox,fullBox);
+ const support=model.userData.contacts.map((c,i)=>{const p=c.point.clone().applyMatrix4(c.leg.matrixWorld),ray=new THREE.Raycaster(new THREE.Vector3(p.x,100,p.z),new THREE.Vector3(0,-1,0)),hit=ray.intersectObject(groundMesh)[0];return {i,point:p.toArray(),planted:model.userData.footContacts[i],analyticFloor:terrain(p.x,p.z),visibleFloor:view.groundHeight(p.x,p.z),rayFloor:hit?.point.y??null,analyticGap:p.y-terrain(p.x,p.z),visibleGap:p.y-view.groundHeight(p.x,p.z)};});
+ return {ready,type:enemy.type,phase,angle:document.querySelector('#angle').value,player:{...state.player},enemy:{...enemy},time:state.time,authoredPlayer:!!view.player.userData.authored,distance:Math.hypot(enemy.x-state.player.x,enemy.z-state.player.z),contactDistance:actorRadius(enemy)+actorRadius(state.player),playerGround:terrain(state.player.x,state.player.z),enemyGround:terrain(enemy.x,enemy.z),creatureBodyLift:model.userData.ground.position.y,support,playerBox:boxRow(playerBox),creatureCoreBox:boxRow(coreBox),creatureAllBox:boxRow(fullBox),coreGaps,fullGaps,coreBoxesSeparate:coreGaps.some(v=>v>0),allBoxesSeparate:fullGaps.some(v=>v>0),enemyPose:enemyAttackPose(state,enemy),result,initial,worldUnchanged:JSON.stringify(world)===worldBefore,camera:view.camera.position.toArray(),viewport:[innerWidth,innerHeight],buffer:[view.canvas.width,view.canvas.height],hidden:document.hidden,glError:view.renderer.getContext().getError(),scope:'Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Foot proxies compared with actual ground triangles/rays. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance.'};
+}
+function draw(){
+ const p=state.player,e=state.enemies[0],x=(p.x+e.x)/2,z=(p.z+e.z)/2,h=(terrain(p.x,p.z)+terrain(e.x,e.z))/2,angle=document.querySelector('#angle').value;
+ const offset=angle==='side'?[8,3.2,0]:angle==='reverse'?[-8,3.2,0]:[.01,12,.01];
+ view.camera.position.set(x+offset[0],h+offset[1],z+offset[2]);view.camera.lookAt(x,h+1.2,z);view.sky.position.copy(view.camera.position);view.renderer.render(view.scene,view.camera);out.textContent=JSON.stringify(snapshot());
+}
+function reset(){
+ phase=document.querySelector('#phase').value;const type=document.querySelector('#type').value,distance=actorRadius({type})+actorRadius({});
+ state=freshGame();state.quest=6;state.time=240;state.selected=phase==='player'?'axe':'hand';state.inventory.axe=1;
+ Object.assign(state.player,{x:14.3,z:41.4,yaw:0});state.enemies=[{id:'close-review',type,x:14.3,z:41.4+distance,hp:type==='boar'?70:40,attackAt:0}];state.buildings=[];
+ result=null;view.sync(state);view.player.userData.lastPosition=null;for(let i=0;i<60;i++)view.draw(state,null,null,false,1/60);
+ const e=state.enemies[0];initial={player:{...state.player},enemy:{...e}};
+ if(phase==='enemy'){tick(state,.00001,false,null,[]);tick(state,ENEMY_ATTACK_IMPACT,false,null,[]);}
+ if(phase==='player'){const started=attack(state,{defer:true});state.time+=ATTACK_IMPACT;result=resolveAttack(state,started.pending);}
+ // Settle the displayed pose without advancing the declared game clock.
+ for(let i=0;i<30;i++)view.draw(state,null,null,false,1/60);draw();return snapshot();
+}
+await prepareSurfaceTextures([view.groundSurface.userData.ground,view.groundSurface.userData.ground.sand,view.rockSurface.userData.rock],view.renderer);
+view.installAuthoredCast(await loadAuthoredCast());ready=true;reset();document.querySelector('#status').textContent='作者旅人与生物已就绪';
+for(const select of document.querySelectorAll('select'))select.onchange=()=>select.id==='angle'?draw():reset();
+window.closeEncounterReview={reset,snapshot,draw};window.addEventListener('resize',()=>{view.resize();if(ready)draw();});
+window.addEventListener('pagehide',()=>{view.authoredCast?.release();for(const model of view.creatures.values())view.disposeGroup(model);view.contactShade.dispose();view.impacts.dispose();view.renderer.dispose();});
+</script></html>

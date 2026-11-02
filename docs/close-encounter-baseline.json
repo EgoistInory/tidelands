@@ -1,0 +1,2377 @@
+{
+  "rows": [
+    {
+      "kind": "desktop",
+      "image": "crab-idle-side-desktop.png",
+      "sha256": "babad9c86f6bbbe29f3df1e5f39ca732b0e3e6528c74101a14d1cf2362177efe",
+      "ready": true,
+      "type": "crab",
+      "phase": "idle",
+      "angle": "side",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "crab",
+        "x": 14.3,
+        "z": 43.699999999999996,
+        "hp": 40,
+        "attackAt": 0
+      },
+      "time": 240,
+      "authoredPlayer": true,
+      "distance": 2.299999999999997,
+      "contactDistance": 2.3,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6447697058332094,
+      "creatureBodyLift": -0.04,
+      "playerBox": {
+        "min": [
+          13.708879639544945,
+          1.6466457967092287,
+          40.5991528332372
+        ],
+        "max": [
+          14.986287071618724,
+          4.647752677536969,
+          41.931690235636324
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.209933199970843,
+          1.9043054351457214,
+          42.93994776033559
+        ],
+        "max": [
+          15.65010826027627,
+          3.0376997529122143,
+          44.600674897359
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          12.534170437229577,
+          1.2868114283125345,
+          41.859269980092016
+        ],
+        "max": [
+          16.161066137459862,
+          3.0376997529122143,
+          44.9099338163247
+        ]
+      },
+      "coreGaps": [
+        -1.7763538716478813,
+        -1.3910539562029856,
+        1.0082575246992675
+      ],
+      "fullGaps": [
+        -2.4521166343891476,
+        -1.3910539562029856,
+        -0.07242025554430853
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": false,
+      "enemyPose": null,
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "crab",
+          "x": 14.3,
+          "z": 43.699999999999996,
+          "hp": 40,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        22.3,
+        4.923547959160668,
+        42.55
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "crab-idle-reverse-desktop.png",
+      "sha256": "53be91e7392391ed662d857fa4b87c9dacedd6cf9f54e769be0a8d52fddddc70",
+      "ready": true,
+      "type": "crab",
+      "phase": "idle",
+      "angle": "reverse",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "crab",
+        "x": 14.3,
+        "z": 43.699999999999996,
+        "hp": 40,
+        "attackAt": 0
+      },
+      "time": 240,
+      "authoredPlayer": true,
+      "distance": 2.299999999999997,
+      "contactDistance": 2.3,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6447697058332094,
+      "creatureBodyLift": -0.04,
+      "playerBox": {
+        "min": [
+          13.708879639544945,
+          1.6466457967092287,
+          40.5991528332372
+        ],
+        "max": [
+          14.986287071618724,
+          4.647752677536969,
+          41.931690235636324
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.209933199970843,
+          1.9043054351457214,
+          42.93994776033559
+        ],
+        "max": [
+          15.65010826027627,
+          3.0376997529122143,
+          44.600674897359
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          12.534170437229577,
+          1.2868114283125345,
+          41.859269980092016
+        ],
+        "max": [
+          16.161066137459862,
+          3.0376997529122143,
+          44.9099338163247
+        ]
+      },
+      "coreGaps": [
+        -1.7763538716478813,
+        -1.3910539562029856,
+        1.0082575246992675
+      ],
+      "fullGaps": [
+        -2.4521166343891476,
+        -1.3910539562029856,
+        -0.07242025554430853
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": false,
+      "enemyPose": null,
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "crab",
+          "x": 14.3,
+          "z": 43.699999999999996,
+          "hp": 40,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        6.300000000000001,
+        4.923547959160668,
+        42.55
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "crab-idle-top-desktop.png",
+      "sha256": "177e0d8d5601249b3c8406dcb1b64ec4141cde0bfb8e09e81d642f7c6c9a2c2f",
+      "ready": true,
+      "type": "crab",
+      "phase": "idle",
+      "angle": "top",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "crab",
+        "x": 14.3,
+        "z": 43.699999999999996,
+        "hp": 40,
+        "attackAt": 0
+      },
+      "time": 240,
+      "authoredPlayer": true,
+      "distance": 2.299999999999997,
+      "contactDistance": 2.3,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6447697058332094,
+      "creatureBodyLift": -0.04,
+      "playerBox": {
+        "min": [
+          13.708879639544945,
+          1.6466457967092287,
+          40.5991528332372
+        ],
+        "max": [
+          14.986287071618724,
+          4.647752677536969,
+          41.931690235636324
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.209933199970843,
+          1.9043054351457214,
+          42.93994776033559
+        ],
+        "max": [
+          15.65010826027627,
+          3.0376997529122143,
+          44.600674897359
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          12.534170437229577,
+          1.2868114283125345,
+          41.859269980092016
+        ],
+        "max": [
+          16.161066137459862,
+          3.0376997529122143,
+          44.9099338163247
+        ]
+      },
+      "coreGaps": [
+        -1.7763538716478813,
+        -1.3910539562029856,
+        1.0082575246992675
+      ],
+      "fullGaps": [
+        -2.4521166343891476,
+        -1.3910539562029856,
+        -0.07242025554430853
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": false,
+      "enemyPose": null,
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "crab",
+          "x": 14.3,
+          "z": 43.699999999999996,
+          "hp": 40,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        14.31,
+        13.723547959160669,
+        42.559999999999995
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "crab-enemy-side-desktop.png",
+      "sha256": "537fbce60bafc6dc535e5af939f27a6794dab3b97cfd6eb1d394779cecc98cf8",
+      "ready": true,
+      "type": "crab",
+      "phase": "enemy",
+      "angle": "side",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 93,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "crab",
+        "x": 14.3,
+        "z": 43.699999999999996,
+        "hp": 40,
+        "attackAt": 240.00001
+      },
+      "time": 240.30001000000001,
+      "authoredPlayer": true,
+      "distance": 2.299999999999997,
+      "contactDistance": 2.3,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6447697058332094,
+      "creatureBodyLift": -0.04,
+      "playerBox": {
+        "min": [
+          13.69287804217208,
+          1.6466457633927227,
+          40.60057790140259
+        ],
+        "max": [
+          14.973807372064133,
+          4.652461002935046,
+          41.93169023461977
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.209651881407908,
+          1.9094637155230259,
+          42.71985239073844
+        ],
+        "max": [
+          15.649826941713334,
+          3.0428580332895185,
+          44.380579527761846
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          12.530741338374009,
+          1.2868027829464586,
+          42.25132032702459
+        ],
+        "max": [
+          16.143851128164556,
+          3.52573574107192,
+          44.90965384081393
+        ]
+      },
+      "coreGaps": [
+        -1.7641554906562256,
+        -1.3962122698967958,
+        0.7881621561186662
+      ],
+      "fullGaps": [
+        -2.4430660336901244,
+        -1.8790899776791972,
+        0.31963009240481455
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": true,
+      "enemyPose": {
+        "at": 240.00001,
+        "yaw": 3.141592653589793,
+        "resolved": true
+      },
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "crab",
+          "x": 14.3,
+          "z": 43.699999999999996,
+          "hp": 40,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        22.3,
+        4.923547959160668,
+        42.55
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "crab-enemy-reverse-desktop.png",
+      "sha256": "164c9075bcbe063182b2d91f915f270b78d8b52d1dd22d637ad6a835598f666d",
+      "ready": true,
+      "type": "crab",
+      "phase": "enemy",
+      "angle": "reverse",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 93,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "crab",
+        "x": 14.3,
+        "z": 43.699999999999996,
+        "hp": 40,
+        "attackAt": 240.00001
+      },
+      "time": 240.30001000000001,
+      "authoredPlayer": true,
+      "distance": 2.299999999999997,
+      "contactDistance": 2.3,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6447697058332094,
+      "creatureBodyLift": -0.04,
+      "playerBox": {
+        "min": [
+          13.69287804217208,
+          1.6466457633927227,
+          40.60057790140259
+        ],
+        "max": [
+          14.973807372064133,
+          4.652461002935046,
+          41.93169023461977
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.209651881407908,
+          1.9094637155230259,
+          42.71985239073844
+        ],
+        "max": [
+          15.649826941713334,
+          3.0428580332895185,
+          44.380579527761846
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          12.530741338374009,
+          1.2868027829464586,
+          42.25132032702459
+        ],
+        "max": [
+          16.143851128164556,
+          3.52573574107192,
+          44.90965384081393
+        ]
+      },
+      "coreGaps": [
+        -1.7641554906562256,
+        -1.3962122698967958,
+        0.7881621561186662
+      ],
+      "fullGaps": [
+        -2.4430660336901244,
+        -1.8790899776791972,
+        0.31963009240481455
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": true,
+      "enemyPose": {
+        "at": 240.00001,
+        "yaw": 3.141592653589793,
+        "resolved": true
+      },
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "crab",
+          "x": 14.3,
+          "z": 43.699999999999996,
+          "hp": 40,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        6.300000000000001,
+        4.923547959160668,
+        42.55
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "crab-enemy-top-desktop.png",
+      "sha256": "be951ebd062ae20113f9e45fee61608f01e161b703b7e0bbb4e5913dde7bf40c",
+      "ready": true,
+      "type": "crab",
+      "phase": "enemy",
+      "angle": "top",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 93,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "crab",
+        "x": 14.3,
+        "z": 43.699999999999996,
+        "hp": 40,
+        "attackAt": 240.00001
+      },
+      "time": 240.30001000000001,
+      "authoredPlayer": true,
+      "distance": 2.299999999999997,
+      "contactDistance": 2.3,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6447697058332094,
+      "creatureBodyLift": -0.04,
+      "playerBox": {
+        "min": [
+          13.69287804217208,
+          1.6466457633927227,
+          40.60057790140259
+        ],
+        "max": [
+          14.973807372064133,
+          4.652461002935046,
+          41.93169023461977
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.209651881407908,
+          1.9094637155230259,
+          42.71985239073844
+        ],
+        "max": [
+          15.649826941713334,
+          3.0428580332895185,
+          44.380579527761846
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          12.530741338374009,
+          1.2868027829464586,
+          42.25132032702459
+        ],
+        "max": [
+          16.143851128164556,
+          3.52573574107192,
+          44.90965384081393
+        ]
+      },
+      "coreGaps": [
+        -1.7641554906562256,
+        -1.3962122698967958,
+        0.7881621561186662
+      ],
+      "fullGaps": [
+        -2.4430660336901244,
+        -1.8790899776791972,
+        0.31963009240481455
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": true,
+      "enemyPose": {
+        "at": 240.00001,
+        "yaw": 3.141592653589793,
+        "resolved": true
+      },
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "crab",
+          "x": 14.3,
+          "z": 43.699999999999996,
+          "hp": 40,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        14.31,
+        13.723547959160669,
+        42.559999999999995
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "crab-player-side-desktop.png",
+      "sha256": "f0ada43d045ca5f8c9b38c40f0b2a9b0c554a079ecb16591a3f0f8d999dca6f7",
+      "ready": true,
+      "type": "crab",
+      "phase": "player",
+      "angle": "side",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "crab",
+        "x": 14.3,
+        "z": 43.699999999999996,
+        "hp": 17,
+        "attackAt": 0
+      },
+      "time": 240.225,
+      "authoredPlayer": true,
+      "distance": 2.299999999999997,
+      "contactDistance": 2.3,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6447697058332094,
+      "creatureBodyLift": -0.04,
+      "playerBox": {
+        "min": [
+          13.536787581090865,
+          1.6481165146319625,
+          40.62152303577645
+        ],
+        "max": [
+          15.091931438555065,
+          4.139511613661027,
+          42.82966825365326
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.306137946209592,
+          1.802000212712409,
+          43.11871463228252
+        ],
+        "max": [
+          15.689950804224434,
+          3.031581620554746,
+          44.77939395566564
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          12.56765722929953,
+          1.286357290423668,
+          42.04421150159906
+        ],
+        "max": [
+          16.198380375578914,
+          3.031581620554746,
+          44.95611853239031
+        ]
+      },
+      "coreGaps": [
+        -1.7857934923454728,
+        -1.3834651059227834,
+        0.2890463786292585
+      ],
+      "fullGaps": [
+        -2.5242742092555357,
+        -1.3834651059227834,
+        -0.785456752054202
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": false,
+      "enemyPose": null,
+      "result": {
+        "message": "命中 1 个目标",
+        "hits": [
+          "close-review"
+        ]
+      },
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "crab",
+          "x": 14.3,
+          "z": 43.699999999999996,
+          "hp": 40,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        22.3,
+        4.923547959160668,
+        42.55
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "crab-player-reverse-desktop.png",
+      "sha256": "be95881bee174282d7f63e9c582402ce880f24717ea2436dab3bc65a568c4d5f",
+      "ready": true,
+      "type": "crab",
+      "phase": "player",
+      "angle": "reverse",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "crab",
+        "x": 14.3,
+        "z": 43.699999999999996,
+        "hp": 17,
+        "attackAt": 0
+      },
+      "time": 240.225,
+      "authoredPlayer": true,
+      "distance": 2.299999999999997,
+      "contactDistance": 2.3,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6447697058332094,
+      "creatureBodyLift": -0.04,
+      "playerBox": {
+        "min": [
+          13.536787581090865,
+          1.6481165146319625,
+          40.62152303577645
+        ],
+        "max": [
+          15.091931438555065,
+          4.139511613661027,
+          42.82966825365326
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.306137946209592,
+          1.802000212712409,
+          43.11871463228252
+        ],
+        "max": [
+          15.689950804224434,
+          3.031581620554746,
+          44.77939395566564
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          12.56765722929953,
+          1.286357290423668,
+          42.04421150159906
+        ],
+        "max": [
+          16.198380375578914,
+          3.031581620554746,
+          44.95611853239031
+        ]
+      },
+      "coreGaps": [
+        -1.7857934923454728,
+        -1.3834651059227834,
+        0.2890463786292585
+      ],
+      "fullGaps": [
+        -2.5242742092555357,
+        -1.3834651059227834,
+        -0.785456752054202
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": false,
+      "enemyPose": null,
+      "result": {
+        "message": "命中 1 个目标",
+        "hits": [
+          "close-review"
+        ]
+      },
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "crab",
+          "x": 14.3,
+          "z": 43.699999999999996,
+          "hp": 40,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        6.300000000000001,
+        4.923547959160668,
+        42.55
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "crab-player-top-desktop.png",
+      "sha256": "263bdbcf74e3da745edd1bfd18b0c5670ff149baef6e6ecc6915861d45133a0e",
+      "ready": true,
+      "type": "crab",
+      "phase": "player",
+      "angle": "top",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "crab",
+        "x": 14.3,
+        "z": 43.699999999999996,
+        "hp": 17,
+        "attackAt": 0
+      },
+      "time": 240.225,
+      "authoredPlayer": true,
+      "distance": 2.299999999999997,
+      "contactDistance": 2.3,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6447697058332094,
+      "creatureBodyLift": -0.04,
+      "playerBox": {
+        "min": [
+          13.536787581090865,
+          1.6481165146319625,
+          40.62152303577645
+        ],
+        "max": [
+          15.091931438555065,
+          4.139511613661027,
+          42.82966825365326
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.306137946209592,
+          1.802000212712409,
+          43.11871463228252
+        ],
+        "max": [
+          15.689950804224434,
+          3.031581620554746,
+          44.77939395566564
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          12.56765722929953,
+          1.286357290423668,
+          42.04421150159906
+        ],
+        "max": [
+          16.198380375578914,
+          3.031581620554746,
+          44.95611853239031
+        ]
+      },
+      "coreGaps": [
+        -1.7857934923454728,
+        -1.3834651059227834,
+        0.2890463786292585
+      ],
+      "fullGaps": [
+        -2.5242742092555357,
+        -1.3834651059227834,
+        -0.785456752054202
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": false,
+      "enemyPose": null,
+      "result": {
+        "message": "命中 1 个目标",
+        "hits": [
+          "close-review"
+        ]
+      },
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "crab",
+          "x": 14.3,
+          "z": 43.699999999999996,
+          "hp": 40,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        14.31,
+        13.723547959160669,
+        42.559999999999995
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "boar-idle-side-desktop.png",
+      "sha256": "1886b79e868db4a57718ba9708d2077e4a7d02fa436e4df1efbf030634b5c43b",
+      "ready": true,
+      "type": "boar",
+      "phase": "idle",
+      "angle": "side",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "boar",
+        "x": 14.3,
+        "z": 43.949999999999996,
+        "hp": 70,
+        "attackAt": 0
+      },
+      "time": 240,
+      "authoredPlayer": true,
+      "distance": 2.549999999999997,
+      "contactDistance": 2.5500000000000003,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6295748520131987,
+      "creatureBodyLift": -0.16,
+      "playerBox": {
+        "min": [
+          13.708879639544945,
+          1.6466457967092287,
+          40.5991528332372
+        ],
+        "max": [
+          14.986287071618724,
+          4.647752677536969,
+          41.931690235636324
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.770288107056192,
+          2.0578970167012693,
+          41.99715690152371
+        ],
+        "max": [
+          15.324947596002042,
+          3.9110291324037334,
+          45.73493341562923
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          13.612357274899663,
+          1.4349387175019541,
+          41.99715690152371
+        ],
+        "max": [
+          15.324947596002042,
+          3.9110291324037334,
+          45.73493341562923
+        ]
+      },
+      "coreGaps": [
+        -1.215998964562532,
+        -2.2643833356945047,
+        0.06546666588738503
+      ],
+      "fullGaps": [
+        -1.373929796719061,
+        -2.2643833356945047,
+        0.06546666588738503
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": true,
+      "enemyPose": null,
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "boar",
+          "x": 14.3,
+          "z": 43.949999999999996,
+          "hp": 70,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        22.3,
+        4.915950532250664,
+        42.675
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "boar-idle-reverse-desktop.png",
+      "sha256": "5359bb1558f617fa586913fe1583556c0d0510e2a1d53171b2aa5cef14272d07",
+      "ready": true,
+      "type": "boar",
+      "phase": "idle",
+      "angle": "reverse",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "boar",
+        "x": 14.3,
+        "z": 43.949999999999996,
+        "hp": 70,
+        "attackAt": 0
+      },
+      "time": 240,
+      "authoredPlayer": true,
+      "distance": 2.549999999999997,
+      "contactDistance": 2.5500000000000003,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6295748520131987,
+      "creatureBodyLift": -0.16,
+      "playerBox": {
+        "min": [
+          13.708879639544945,
+          1.6466457967092287,
+          40.5991528332372
+        ],
+        "max": [
+          14.986287071618724,
+          4.647752677536969,
+          41.931690235636324
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.770288107056192,
+          2.0578970167012693,
+          41.99715690152371
+        ],
+        "max": [
+          15.324947596002042,
+          3.9110291324037334,
+          45.73493341562923
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          13.612357274899663,
+          1.4349387175019541,
+          41.99715690152371
+        ],
+        "max": [
+          15.324947596002042,
+          3.9110291324037334,
+          45.73493341562923
+        ]
+      },
+      "coreGaps": [
+        -1.215998964562532,
+        -2.2643833356945047,
+        0.06546666588738503
+      ],
+      "fullGaps": [
+        -1.373929796719061,
+        -2.2643833356945047,
+        0.06546666588738503
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": true,
+      "enemyPose": null,
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "boar",
+          "x": 14.3,
+          "z": 43.949999999999996,
+          "hp": 70,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        6.300000000000001,
+        4.915950532250664,
+        42.675
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "boar-idle-top-desktop.png",
+      "sha256": "5eab0a1e8a9bbb6efcae4c43aff9dd56530f88e2619f0212e5216cef60902953",
+      "ready": true,
+      "type": "boar",
+      "phase": "idle",
+      "angle": "top",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "boar",
+        "x": 14.3,
+        "z": 43.949999999999996,
+        "hp": 70,
+        "attackAt": 0
+      },
+      "time": 240,
+      "authoredPlayer": true,
+      "distance": 2.549999999999997,
+      "contactDistance": 2.5500000000000003,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6295748520131987,
+      "creatureBodyLift": -0.16,
+      "playerBox": {
+        "min": [
+          13.708879639544945,
+          1.6466457967092287,
+          40.5991528332372
+        ],
+        "max": [
+          14.986287071618724,
+          4.647752677536969,
+          41.931690235636324
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.770288107056192,
+          2.0578970167012693,
+          41.99715690152371
+        ],
+        "max": [
+          15.324947596002042,
+          3.9110291324037334,
+          45.73493341562923
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          13.612357274899663,
+          1.4349387175019541,
+          41.99715690152371
+        ],
+        "max": [
+          15.324947596002042,
+          3.9110291324037334,
+          45.73493341562923
+        ]
+      },
+      "coreGaps": [
+        -1.215998964562532,
+        -2.2643833356945047,
+        0.06546666588738503
+      ],
+      "fullGaps": [
+        -1.373929796719061,
+        -2.2643833356945047,
+        0.06546666588738503
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": true,
+      "enemyPose": null,
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "boar",
+          "x": 14.3,
+          "z": 43.949999999999996,
+          "hp": 70,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        14.31,
+        13.715950532250663,
+        42.684999999999995
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "boar-enemy-side-desktop.png",
+      "sha256": "6d4d09ec11aa296b036b7857ca9318c43e8427c255efe88a760fc90a535f8d2c",
+      "ready": true,
+      "type": "boar",
+      "phase": "enemy",
+      "angle": "side",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 88,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "boar",
+        "x": 14.3,
+        "z": 43.949999999999996,
+        "hp": 70,
+        "attackAt": 240.00001
+      },
+      "time": 240.30001000000001,
+      "authoredPlayer": true,
+      "distance": 2.549999999999997,
+      "contactDistance": 2.5500000000000003,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6295748520131987,
+      "creatureBodyLift": -0.16,
+      "playerBox": {
+        "min": [
+          13.69287804217208,
+          1.6466457633927227,
+          40.60057790140259
+        ],
+        "max": [
+          14.973807372064133,
+          4.652461002935046,
+          41.93169023461977
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.76546671157568,
+          1.9131095379264644,
+          42.00821808865397
+        ],
+        "max": [
+          15.318580249310129,
+          3.9280751892276786,
+          45.742744354838216
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          13.587895121006255,
+          1.4305714924401518,
+          42.00821808865397
+        ],
+        "max": [
+          15.318580249310129,
+          3.9280751892276786,
+          45.742744354838216
+        ]
+      },
+      "coreGaps": [
+        -1.208340660488453,
+        -2.281429425834956,
+        0.07652785403419671
+      ],
+      "fullGaps": [
+        -1.3859122510578779,
+        -2.281429425834956,
+        0.07652785403419671
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": true,
+      "enemyPose": {
+        "at": 240.00001,
+        "yaw": 3.141592653589793,
+        "resolved": true
+      },
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "boar",
+          "x": 14.3,
+          "z": 43.949999999999996,
+          "hp": 70,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        22.3,
+        4.915950532250664,
+        42.675
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "boar-enemy-reverse-desktop.png",
+      "sha256": "27ec3cf6a2985c3c581a4695a7c675e0311b02bf1cd300fb4261ccfccca9a4af",
+      "ready": true,
+      "type": "boar",
+      "phase": "enemy",
+      "angle": "reverse",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 88,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "boar",
+        "x": 14.3,
+        "z": 43.949999999999996,
+        "hp": 70,
+        "attackAt": 240.00001
+      },
+      "time": 240.30001000000001,
+      "authoredPlayer": true,
+      "distance": 2.549999999999997,
+      "contactDistance": 2.5500000000000003,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6295748520131987,
+      "creatureBodyLift": -0.16,
+      "playerBox": {
+        "min": [
+          13.69287804217208,
+          1.6466457633927227,
+          40.60057790140259
+        ],
+        "max": [
+          14.973807372064133,
+          4.652461002935046,
+          41.93169023461977
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.76546671157568,
+          1.9131095379264644,
+          42.00821808865397
+        ],
+        "max": [
+          15.318580249310129,
+          3.9280751892276786,
+          45.742744354838216
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          13.587895121006255,
+          1.4305714924401518,
+          42.00821808865397
+        ],
+        "max": [
+          15.318580249310129,
+          3.9280751892276786,
+          45.742744354838216
+        ]
+      },
+      "coreGaps": [
+        -1.208340660488453,
+        -2.281429425834956,
+        0.07652785403419671
+      ],
+      "fullGaps": [
+        -1.3859122510578779,
+        -2.281429425834956,
+        0.07652785403419671
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": true,
+      "enemyPose": {
+        "at": 240.00001,
+        "yaw": 3.141592653589793,
+        "resolved": true
+      },
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "boar",
+          "x": 14.3,
+          "z": 43.949999999999996,
+          "hp": 70,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        6.300000000000001,
+        4.915950532250664,
+        42.675
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "boar-enemy-top-desktop.png",
+      "sha256": "68be77de5433b61ebd0e77c7ccd1148c20472871799dffe1cc226598195d51c8",
+      "ready": true,
+      "type": "boar",
+      "phase": "enemy",
+      "angle": "top",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 88,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "boar",
+        "x": 14.3,
+        "z": 43.949999999999996,
+        "hp": 70,
+        "attackAt": 240.00001
+      },
+      "time": 240.30001000000001,
+      "authoredPlayer": true,
+      "distance": 2.549999999999997,
+      "contactDistance": 2.5500000000000003,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6295748520131987,
+      "creatureBodyLift": -0.16,
+      "playerBox": {
+        "min": [
+          13.69287804217208,
+          1.6466457633927227,
+          40.60057790140259
+        ],
+        "max": [
+          14.973807372064133,
+          4.652461002935046,
+          41.93169023461977
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.76546671157568,
+          1.9131095379264644,
+          42.00821808865397
+        ],
+        "max": [
+          15.318580249310129,
+          3.9280751892276786,
+          45.742744354838216
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          13.587895121006255,
+          1.4305714924401518,
+          42.00821808865397
+        ],
+        "max": [
+          15.318580249310129,
+          3.9280751892276786,
+          45.742744354838216
+        ]
+      },
+      "coreGaps": [
+        -1.208340660488453,
+        -2.281429425834956,
+        0.07652785403419671
+      ],
+      "fullGaps": [
+        -1.3859122510578779,
+        -2.281429425834956,
+        0.07652785403419671
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": true,
+      "enemyPose": {
+        "at": 240.00001,
+        "yaw": 3.141592653589793,
+        "resolved": true
+      },
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "boar",
+          "x": 14.3,
+          "z": 43.949999999999996,
+          "hp": 70,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        14.31,
+        13.715950532250663,
+        42.684999999999995
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "boar-player-side-desktop.png",
+      "sha256": "14155d3bbafc7e6e9139fe0eca7e92fee33c5260f114918e4cfe62a5cf5f3a1e",
+      "ready": true,
+      "type": "boar",
+      "phase": "player",
+      "angle": "side",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "boar",
+        "x": 14.3,
+        "z": 43.949999999999996,
+        "hp": 47,
+        "attackAt": 0
+      },
+      "time": 240.225,
+      "authoredPlayer": true,
+      "distance": 2.549999999999997,
+      "contactDistance": 2.5500000000000003,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6295748520131987,
+      "creatureBodyLift": -0.16,
+      "playerBox": {
+        "min": [
+          13.536787581090865,
+          1.6481165146319625,
+          40.62152303577645
+        ],
+        "max": [
+          15.091931438555065,
+          4.139511613661027,
+          42.82966825365326
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.900045642416128,
+          2.0077005472492613,
+          42.17494307451734
+        ],
+        "max": [
+          15.459787582818382,
+          3.838846992594728,
+          45.9141809798124
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          13.625427570872985,
+          1.4177062361470032,
+          42.17494307451734
+        ],
+        "max": [
+          15.459787582818382,
+          3.838846992594728,
+          45.9141809798124
+        ]
+      },
+      "coreGaps": [
+        -1.191885796138937,
+        -2.1318110664117653,
+        -0.654725179135923
+      ],
+      "fullGaps": [
+        -1.4665038676820803,
+        -2.1907304779627657,
+        -0.654725179135923
+      ],
+      "coreBoxesSeparate": false,
+      "allBoxesSeparate": false,
+      "enemyPose": null,
+      "result": {
+        "message": "命中 1 个目标",
+        "hits": [
+          "close-review"
+        ]
+      },
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "boar",
+          "x": 14.3,
+          "z": 43.949999999999996,
+          "hp": 70,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        22.3,
+        4.915950532250664,
+        42.675
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "boar-player-reverse-desktop.png",
+      "sha256": "06b3581e9084534733723d2c2cb4fd25fb7c2cda78eb1ff5977286293c609496",
+      "ready": true,
+      "type": "boar",
+      "phase": "player",
+      "angle": "reverse",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "boar",
+        "x": 14.3,
+        "z": 43.949999999999996,
+        "hp": 47,
+        "attackAt": 0
+      },
+      "time": 240.225,
+      "authoredPlayer": true,
+      "distance": 2.549999999999997,
+      "contactDistance": 2.5500000000000003,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6295748520131987,
+      "creatureBodyLift": -0.16,
+      "playerBox": {
+        "min": [
+          13.536787581090865,
+          1.6481165146319625,
+          40.62152303577645
+        ],
+        "max": [
+          15.091931438555065,
+          4.139511613661027,
+          42.82966825365326
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.900045642416128,
+          2.0077005472492613,
+          42.17494307451734
+        ],
+        "max": [
+          15.459787582818382,
+          3.838846992594728,
+          45.9141809798124
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          13.625427570872985,
+          1.4177062361470032,
+          42.17494307451734
+        ],
+        "max": [
+          15.459787582818382,
+          3.838846992594728,
+          45.9141809798124
+        ]
+      },
+      "coreGaps": [
+        -1.191885796138937,
+        -2.1318110664117653,
+        -0.654725179135923
+      ],
+      "fullGaps": [
+        -1.4665038676820803,
+        -2.1907304779627657,
+        -0.654725179135923
+      ],
+      "coreBoxesSeparate": false,
+      "allBoxesSeparate": false,
+      "enemyPose": null,
+      "result": {
+        "message": "命中 1 个目标",
+        "hits": [
+          "close-review"
+        ]
+      },
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "boar",
+          "x": 14.3,
+          "z": 43.949999999999996,
+          "hp": 70,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        6.300000000000001,
+        4.915950532250664,
+        42.675
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "desktop",
+      "image": "boar-player-top-desktop.png",
+      "sha256": "a666032afac418366b53057b86d1475d523fad044eb63c6159c53e7d3df41cf3",
+      "ready": true,
+      "type": "boar",
+      "phase": "player",
+      "angle": "top",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "boar",
+        "x": 14.3,
+        "z": 43.949999999999996,
+        "hp": 47,
+        "attackAt": 0
+      },
+      "time": 240.225,
+      "authoredPlayer": true,
+      "distance": 2.549999999999997,
+      "contactDistance": 2.5500000000000003,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6295748520131987,
+      "creatureBodyLift": -0.16,
+      "playerBox": {
+        "min": [
+          13.536787581090865,
+          1.6481165146319625,
+          40.62152303577645
+        ],
+        "max": [
+          15.091931438555065,
+          4.139511613661027,
+          42.82966825365326
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.900045642416128,
+          2.0077005472492613,
+          42.17494307451734
+        ],
+        "max": [
+          15.459787582818382,
+          3.838846992594728,
+          45.9141809798124
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          13.625427570872985,
+          1.4177062361470032,
+          42.17494307451734
+        ],
+        "max": [
+          15.459787582818382,
+          3.838846992594728,
+          45.9141809798124
+        ]
+      },
+      "coreGaps": [
+        -1.191885796138937,
+        -2.1318110664117653,
+        -0.654725179135923
+      ],
+      "fullGaps": [
+        -1.4665038676820803,
+        -2.1907304779627657,
+        -0.654725179135923
+      ],
+      "coreBoxesSeparate": false,
+      "allBoxesSeparate": false,
+      "enemyPose": null,
+      "result": {
+        "message": "命中 1 个目标",
+        "hits": [
+          "close-review"
+        ]
+      },
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "boar",
+          "x": 14.3,
+          "z": 43.949999999999996,
+          "hp": 70,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        14.31,
+        13.715950532250663,
+        42.684999999999995
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        789
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "mobile",
+      "image": "crab-enemy-side-mobile.png",
+      "sha256": "fb9a8563e6795be7e2f4ff8f49baaa6febdd7fb582906138db0b89dd59b502e0",
+      "ready": true,
+      "type": "crab",
+      "phase": "enemy",
+      "angle": "side",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 93,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "crab",
+        "x": 14.3,
+        "z": 43.699999999999996,
+        "hp": 40,
+        "attackAt": 240.00001
+      },
+      "time": 240.30001000000001,
+      "authoredPlayer": true,
+      "distance": 2.299999999999997,
+      "contactDistance": 2.3,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6447697058332094,
+      "creatureBodyLift": -0.04,
+      "playerBox": {
+        "min": [
+          13.69287804217208,
+          1.6466457633927227,
+          40.60057790140259
+        ],
+        "max": [
+          14.973807372064133,
+          4.652461002935046,
+          41.93169023461977
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.209651881407908,
+          1.9094637155230259,
+          42.71985239073844
+        ],
+        "max": [
+          15.649826941713334,
+          3.0428580332895185,
+          44.380579527761846
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          12.530741338374009,
+          1.2868027829464586,
+          42.25132032702459
+        ],
+        "max": [
+          16.143851128164556,
+          3.52573574107192,
+          44.90965384081393
+        ]
+      },
+      "coreGaps": [
+        -1.7641554906562256,
+        -1.3962122698967958,
+        0.7881621561186662
+      ],
+      "fullGaps": [
+        -2.4430660336901244,
+        -1.8790899776791972,
+        0.31963009240481455
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": true,
+      "enemyPose": {
+        "at": 240.00001,
+        "yaw": 3.141592653589793,
+        "resolved": true
+      },
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "crab",
+          "x": 14.3,
+          "z": 43.699999999999996,
+          "hp": 40,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        22.3,
+        4.923547959160668,
+        42.55
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        708
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    },
+    {
+      "kind": "mobile",
+      "image": "boar-enemy-side-mobile.png",
+      "sha256": "d4252decb6bfc13aa21114b87d4e8d521bd364935b8676536b8d35ecc506a16c",
+      "ready": true,
+      "type": "boar",
+      "phase": "enemy",
+      "angle": "side",
+      "player": {
+        "x": 14.3,
+        "z": 41.4,
+        "hp": 88,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "enemy": {
+        "id": "close-review",
+        "type": "boar",
+        "x": 14.3,
+        "z": 43.949999999999996,
+        "hp": 70,
+        "attackAt": 240.00001
+      },
+      "time": 240.30001000000001,
+      "authoredPlayer": true,
+      "distance": 2.549999999999997,
+      "contactDistance": 2.5500000000000003,
+      "playerGround": 1.8023262124881274,
+      "enemyGround": 1.6295748520131987,
+      "creatureBodyLift": -0.16,
+      "playerBox": {
+        "min": [
+          13.69287804217208,
+          1.6466457633927227,
+          40.60057790140259
+        ],
+        "max": [
+          14.973807372064133,
+          4.652461002935046,
+          41.93169023461977
+        ]
+      },
+      "creatureCoreBox": {
+        "min": [
+          13.76546671157568,
+          1.9131095379264644,
+          42.00821808865397
+        ],
+        "max": [
+          15.318580249310129,
+          3.9280751892276786,
+          45.742744354838216
+        ]
+      },
+      "creatureAllBox": {
+        "min": [
+          13.587895121006255,
+          1.4305714924401518,
+          42.00821808865397
+        ],
+        "max": [
+          15.318580249310129,
+          3.9280751892276786,
+          45.742744354838216
+        ]
+      },
+      "coreGaps": [
+        -1.208340660488453,
+        -2.281429425834956,
+        0.07652785403419671
+      ],
+      "fullGaps": [
+        -1.3859122510578779,
+        -2.281429425834956,
+        0.07652785403419671
+      ],
+      "coreBoxesSeparate": true,
+      "allBoxesSeparate": true,
+      "enemyPose": {
+        "at": 240.00001,
+        "yaw": 3.141592653589793,
+        "resolved": true
+      },
+      "result": null,
+      "initial": {
+        "player": {
+          "x": 14.3,
+          "z": 41.4,
+          "hp": 100,
+          "stamina": 100,
+          "yaw": 0
+        },
+        "enemy": {
+          "id": "close-review",
+          "type": "boar",
+          "x": 14.3,
+          "z": 43.949999999999996,
+          "hp": 70,
+          "attackAt": 0
+        }
+      },
+      "worldUnchanged": true,
+      "camera": [
+        22.3,
+        4.915950532250664,
+        42.675
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        708
+      ],
+      "hidden": false,
+      "glError": 0,
+      "scope": "Declared exact contact-distance fixture at coast (14.3,41.4), quest6/time240/owned axe. Real authored rig/wardrobe, creature, terrain and action rules. Visible posed mesh AABBs: separation proves no intersection for those boxes; overlapping boxes do not prove mesh penetration. Core excludes articulated claws/legs; player excludes tools. Not native ordinary gameplay, contact sweep, camera or full-quality acceptance."
+    }
+  ],
+  "logs": [],
+  "sources": {
+    "tests/close-encounter-review.html": "1c0fac466e75585e0af3725f3038925bbccd24fa0830d41bb3e4542bd7ad6775",
+    "src/scene.js": "d283b541c2b0a2e7985da3d874b652c0d1753a95754b6c945a725052aa58da03",
+    "src/actor-contact.js": "76eced7c3ac2bb41ea28011ee324ae0842775bc1dca1377e72963644cbfcba4f",
+    "src/creature.js": "0647cc0a71e346c729fb4635ce0b177807e6b44f747bd4d3e29dff0b2b56b301",
+    "src/creature-footing.js": "71707700f33b00c293c660cb958b4c83c97b8b74086064fbaccccec05cfa615b",
+    "src/game.js": "149cdd62e69562a93d59db3702b0fbab33f3c66e39d866e574de4d7a7b42d2da"
+  },
+  "scope": "Static declared exact-contact coast fixtures using current authored player. No storage/native campaign/GPU/endurance or physical triangle-collision acceptance.",
+  "complete": true
+}

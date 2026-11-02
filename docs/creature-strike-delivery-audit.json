@@ -1,0 +1,57 @@
+{
+  "finiteCreatureStrikeAccepted": true,
+  "archive": "tidelands-m5-2026-11-03-creature-strike.zip",
+  "archiveBytes": 170923544,
+  "archiveSha256": "2ffaf5a98e607ad5dceef0edc35a02200374be2cb26ec2d0eed4cb0bae3ac3e1",
+  "runtimeInputs": 209,
+  "changedRuntimeInputs": [
+    "README.md",
+    "src/creature.js"
+  ],
+  "ruleTests": 395,
+  "focusedTests": 26,
+  "packagingTests": 7,
+  "staticImagesReviewed": 40,
+  "nativeImagesReviewed": 8,
+  "nativeMotionFramesReviewed": 21,
+  "native": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "kills": 4,
+      "hp": 41,
+      "foodHpBeforeAfter": [
+        30,
+        48
+      ],
+      "reloadExact": true,
+      "videoSha256": "b4965ed8c444e711f6548a1187f7b0aaa5c55c14fd04e1dc6bef7d317e51e383"
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "kills": 4,
+      "hp": 55,
+      "foodHpBeforeAfter": [
+        37,
+        55
+      ],
+      "reloadExact": true,
+      "videoSha256": "4ea1f5e10026926800c3d0a57779b33a35e47a5a75e52988bd45d225fdc2ac70"
+    }
+  ],
+  "bodyCollisionInflated": false,
+  "groundSupportChanged": false,
+  "previousPackagesAndBackupPreserved": true,
+  "fullTriangleContactAccepted": false,
+  "fullVideosWatched": false,
+  "audioAuditioned": false,
+  "milestoneM5Complete": false,
+  "fullGoalComplete": false
+}

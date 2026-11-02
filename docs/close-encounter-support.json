@@ -1,0 +1,504 @@
+{
+  "scope": "Six exact-contact coast fixtures matching the review page;60 idle warm/30 frozen-pose solves. Foot proxies and boar visible hoof vertices; not native gameplay, whole-scene performance, complete sole or triangle contact acceptance.",
+  "sources": {
+    "src/creature.js": "0647cc0a71e346c729fb4635ce0b177807e6b44f747bd4d3e29dff0b2b56b301",
+    "src/creature-footing.js": "71707700f33b00c293c660cb958b4c83c97b8b74086064fbaccccec05cfa615b",
+    "src/world.js": "4abcfa0aa50fb5098bbdffc8ff1c992bf4859dd9415f3f455e0db6793fcc6b9e",
+    "src/game.js": "149cdd62e69562a93d59db3702b0fbab33f3c66e39d866e574de4d7a7b42d2da"
+  },
+  "node": "v22.17.1",
+  "rows": [
+    {
+      "type": "crab",
+      "phase": "idle",
+      "time": 240,
+      "root": [
+        14.3,
+        1.6447697058332094,
+        43.699999999999996
+      ],
+      "groundLift": -0.04,
+      "feet": [
+        {
+          "i": 0,
+          "point": [
+            15.992626455960233,
+            1.2881240935919172,
+            44.90550370508013
+          ],
+          "gap": -2.220446049250313e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 1,
+          "point": [
+            16.00883299469925,
+            1.3302341584419008,
+            44.09183067365579
+          ],
+          "gap": -2.220446049250313e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 2,
+          "point": [
+            16.054403963781517,
+            1.3510368234404928,
+            43.61458152366104
+          ],
+          "gap": -8.881784197001252e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 3,
+          "point": [
+            16.017522728137862,
+            1.4279880366337752,
+            42.498781719570474
+          ],
+          "gap": -4.440892098500626e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 4,
+          "point": [
+            12.599971282434257,
+            1.9016912718187589,
+            44.90705864076509
+          ],
+          "gap": -3.1086244689504383e-15,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 5,
+          "point": [
+            12.563162051555278,
+            1.9745744929047764,
+            43.79137090568782
+          ],
+          "gap": -4.440892098500626e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 6,
+          "point": [
+            12.703466580256752,
+            2.049997717263238,
+            43.02624290272338
+          ],
+          "gap": 0.05500701007665909,
+          "declaredPlanted": false,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 7,
+          "point": [
+            12.614053901435517,
+            2.0478165536869635,
+            42.51616830244911
+          ],
+          "gap": -4.440892098500626e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        }
+      ],
+      "minGap": -3.1086244689504383e-15,
+      "maxGap": 0.05500701007665909,
+      "declaredPlanted": 7
+    },
+    {
+      "type": "crab",
+      "phase": "enemy",
+      "time": 240.30001000000001,
+      "root": [
+        14.3,
+        1.6447697058332094,
+        43.699999999999996
+      ],
+      "groundLift": -0.04,
+      "feet": [
+        {
+          "i": 0,
+          "point": [
+            15.992626455960233,
+            1.2881240935919176,
+            44.90550370508013
+          ],
+          "gap": 2.220446049250313e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 1,
+          "point": [
+            15.91408224654654,
+            1.384888077012192,
+            44.366082525280376
+          ],
+          "gap": 0.055036105557256354,
+          "declaredPlanted": false,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 2,
+          "point": [
+            16.01289323943006,
+            1.391074190166798,
+            43.07520584177952
+          ],
+          "gap": -8.881784197001252e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 3,
+          "point": [
+            16.01724419551576,
+            1.4429453044347533,
+            42.27868633459865
+          ],
+          "gap": 0,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 4,
+          "point": [
+            12.599971282434257,
+            1.9016912718187595,
+            44.90705864076508
+          ],
+          "gap": -2.886579864025407e-15,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 5,
+          "point": [
+            12.563162051555276,
+            1.9745744929047766,
+            43.791370905687806
+          ],
+          "gap": -1.1102230246251565e-15,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 6,
+          "point": [
+            12.709718778042841,
+            1.9949823862694838,
+            43.00724285087793
+          ],
+          "gap": -4.440892098500626e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 7,
+          "point": [
+            12.614053901435515,
+            2.0478165536869644,
+            42.5161683024491
+          ],
+          "gap": -4.440892098500626e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        }
+      ],
+      "minGap": -2.886579864025407e-15,
+      "maxGap": 0.055036105557256354,
+      "declaredPlanted": 7
+    },
+    {
+      "type": "crab",
+      "phase": "player",
+      "time": 240.225,
+      "root": [
+        14.3,
+        1.6447697058332094,
+        43.699999999999996
+      ],
+      "groundLift": -0.04,
+      "feet": [
+        {
+          "i": 0,
+          "point": [
+            15.992626455960234,
+            1.2881240935919158,
+            44.905503705080136
+          ],
+          "gap": -1.1102230246251565e-15,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 1,
+          "point": [
+            15.907847237293955,
+            1.3290325493171977,
+            44.398709578470914
+          ],
+          "gap": 0,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 2,
+          "point": [
+            16.054403963781517,
+            1.3510368234404928,
+            43.61458152366104
+          ],
+          "gap": -8.881784197001252e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 3,
+          "point": [
+            15.980031864880248,
+            1.4227966648164463,
+            42.66764894339047
+          ],
+          "gap": -8.881784197001252e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 4,
+          "point": [
+            12.602524179096818,
+            1.955515206174438,
+            44.91880873017969
+          ],
+          "gap": 0.054994181349905746,
+          "declaredPlanted": false,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 5,
+          "point": [
+            12.64554107465477,
+            1.9270335892213342,
+            44.30030008889858
+          ],
+          "gap": -4.440892098500626e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 6,
+          "point": [
+            12.649887105999838,
+            1.974884624849345,
+            43.503770601995875
+          ],
+          "gap": -2.220446049250313e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        },
+        {
+          "i": 7,
+          "point": [
+            12.654233137344907,
+            2.0264716412621118,
+            42.707241115093154
+          ],
+          "gap": 0,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": null
+        }
+      ],
+      "minGap": -1.1102230246251565e-15,
+      "maxGap": 0.054994181349905746,
+      "declaredPlanted": 7
+    },
+    {
+      "type": "boar",
+      "phase": "idle",
+      "time": 240,
+      "root": [
+        14.3,
+        1.6295748520131987,
+        43.949999999999996
+      ],
+      "groundLift": -0.16,
+      "feet": [
+        {
+          "i": 0,
+          "point": [
+            14.8235921602118,
+            1.4929407159249073,
+            44.70879422185819
+          ],
+          "gap": -4.440892098500626e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": -4.440892098500626e-16
+        },
+        {
+          "i": 1,
+          "point": [
+            14.838650610600528,
+            1.5856406365892481,
+            43.11463375559768
+          ],
+          "gap": -2.220446049250313e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": -2.220446049250313e-16
+        },
+        {
+          "i": 2,
+          "point": [
+            13.781308953492838,
+            1.6810782953292318,
+            44.71368439112599
+          ],
+          "gap": -2.220446049250313e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": -4.440892098500626e-16
+        },
+        {
+          "i": 3,
+          "point": [
+            13.825350704592232,
+            1.7709831620726557,
+            43.09485527193367
+          ],
+          "gap": -3.9968028886505635e-15,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": -4.218847493575595e-15
+        }
+      ],
+      "minGap": -3.9968028886505635e-15,
+      "maxGap": -2.220446049250313e-16,
+      "declaredPlanted": 4
+    },
+    {
+      "type": "boar",
+      "phase": "enemy",
+      "time": 240.30001000000001,
+      "root": [
+        14.3,
+        1.6295748520131987,
+        43.949999999999996
+      ],
+      "groundLift": -0.16,
+      "feet": [
+        {
+          "i": 0,
+          "point": [
+            14.79985533308597,
+            1.510196813333775,
+            44.47312899947729
+          ],
+          "gap": -2.220446049250313e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": -2.220446049250313e-16
+        },
+        {
+          "i": 1,
+          "point": [
+            14.859260623086037,
+            1.5948172843980195,
+            42.918620909288656
+          ],
+          "gap": 8.881784197001252e-16,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": 8.881784197001252e-16
+        },
+        {
+          "i": 2,
+          "point": [
+            13.75684679959943,
+            1.6989550917148353,
+            44.47874030216495
+          ],
+          "gap": -2.4424906541753444e-15,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": -2.4424906541753444e-15
+        },
+        {
+          "i": 3,
+          "point": [
+            13.825350704592235,
+            1.7709831620726568,
+            43.09485527193367
+          ],
+          "gap": -2.886579864025407e-15,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": -2.886579864025407e-15
+        }
+      ],
+      "minGap": -2.886579864025407e-15,
+      "maxGap": 8.881784197001252e-16,
+      "declaredPlanted": 4
+    },
+    {
+      "type": "boar",
+      "phase": "player",
+      "time": 240.225,
+      "root": [
+        14.3,
+        1.6295748520131987,
+        43.949999999999996
+      ],
+      "groundLift": -0.16,
+      "feet": [
+        {
+          "i": 0,
+          "point": [
+            14.813319893495798,
+            1.485169409683859,
+            44.88436817644574
+          ],
+          "gap": -1.3322676295501878e-15,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": -1.3322676295501878e-15
+        },
+        {
+          "i": 1,
+          "point": [
+            14.838650610600526,
+            1.5856406365892495,
+            43.114633755597666
+          ],
+          "gap": 0,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": 0
+        },
+        {
+          "i": 2,
+          "point": [
+            13.794379249466159,
+            1.6685425637191005,
+            44.8961972256495
+          ],
+          "gap": 0,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": 0
+        },
+        {
+          "i": 3,
+          "point": [
+            13.8028698238574,
+            1.7619665848636732,
+            43.29899745328842
+          ],
+          "gap": 1.5543122344752192e-15,
+          "declaredPlanted": true,
+          "visibleHoofMinGap": 1.5543122344752192e-15
+        }
+      ],
+      "minGap": -1.3322676295501878e-15,
+      "maxGap": 1.5543122344752192e-15,
+      "declaredPlanted": 4
+    }
+  ]
+}
