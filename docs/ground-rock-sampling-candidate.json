@@ -1,0 +1,45 @@
+{
+  "complete": true,
+  "candidateIntegrated": false,
+  "productionChanged": false,
+  "runtimePackage": "dist/tidelands-m5-2026-10-29-ground-support.zip",
+  "runtimePackageSha256": "ee606c25629a7b9f704fc504d661abea31264244b52027a9530253c60ca8301f",
+  "fixture": "fresh q6 source scene, authored cast installed, no save read/write",
+  "viewport": [1280, 720],
+  "buffer": [1920, 945],
+  "pixelRatio": 1.5,
+  "groundStatus": "ready",
+  "rockStatus": "ready",
+  "timerBits": 64,
+  "disjoint": 0,
+  "glError": 0,
+  "pixelComparison": {
+    "method": "read RGBA8 from the default framebuffer after baseline and candidate render at the same fixed camera; compare RGB and alpha byte-for-byte",
+    "result": "exact in all compared pixels at each declared location",
+    "locations": {
+      "highland": {"pixels": 1814400, "changed": 0, "maxChannelDelta": 0},
+      "slope": {"pixels": 1814400, "changed": 0, "maxChannelDelta": 0},
+      "coast": {"pixels": 1814400, "changed": 0, "maxChannelDelta": 0},
+      "forest": {"pixels": 1814400, "changed": 0, "maxChannelDelta": 0}
+    }
+  },
+  "gpuQueries": {
+    "method": "96 EXT_disjoint_timer_query_webgl2 render queries per location, strictly interleaved baseline/candidate; 48 samples per mode; report percentiles with floor index",
+    "locations": {
+      "highland": {"baseline": {"samples": 48, "medianMs": 14.473041, "p95Ms": 29.758624, "maxMs": 46.916999}, "candidate": {"samples": 48, "medianMs": 14.33525, "p95Ms": 27.072832, "maxMs": 28.281375}},
+      "slope": {"baseline": {"samples": 48, "medianMs": 13.448874, "p95Ms": 21.961874, "maxMs": 44.788375}, "candidate": {"samples": 48, "medianMs": 14.348916, "p95Ms": 22.147291, "maxMs": 28.791458}},
+      "coast": {"baseline": {"samples": 48, "medianMs": 25.667166, "p95Ms": 49.185208, "maxMs": 62.149083}, "candidate": {"samples": 48, "medianMs": 25.74075, "p95Ms": 55.396832, "maxMs": 65.714666}},
+      "forest": {"baseline": {"samples": 48, "medianMs": 26.817082, "p95Ms": 56.699583, "maxMs": 63.787749}, "candidate": {"samples": 48, "medianMs": 25.244583, "p95Ms": 47.902166, "maxMs": 52.876958}}
+    },
+    "interpretation": "Mixed per-location changes and broad variance; no consistent GPU improvement demonstrated. Keep the branch in QA only; do not promote it as an optimization."
+  },
+  "sourceSha256": {
+    "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+    "src/scene.js": "d283b541c2b0a2e7985da3d874b652c0d1753a95754b6c945a725052aa58da03",
+    "tests/ground-rock-sampling-candidate.js": "b1a354b20b8f8c3f8533e753c878e8460f283de1ccc6417a5859fda7e3ded835",
+    "tests/ground-rock-sampling-review.html": "62ba8d0f970957742b9949fbaf63f5bb55ed2645a1caa2844de98ecea4740215",
+    "tests/ground-rock-sampling-candidate.test.js": "0da5075295186f61bd7f8625c26b081815add29bf6ff4f45ed85e151418d1a46"
+  },
+  "automatedTests": {"command": "npm test", "passed": 385, "failed": 0, "evidence": "docs/ground-rock-sampling-tests.txt"},
+  "scope": "Four fixed source-scene views, one desktop WebGL implementation, no user movement, normal campaign/save, thermal endurance, mobile hardware, visual quality or full-goal performance acceptance."
+}

@@ -1,0 +1,34 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>零岩石权重采样快路径 QA</title>
+<style>html,body{margin:0;height:100%;background:#192723;color:#eee;font:13px system-ui}body{display:flex;flex-direction:column}output{height:90px;overflow:auto;font:10px monospace;overflow-wrap:anywhere}canvas{flex:1;min-height:0;width:100%}</style>
+<output id="result">准备隔离完整场景；不读存档…</output><canvas aria-label="完整世界地表零权重采样候选"></canvas>
+<script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {WorldView} from '../src/scene.js';import {createWorld,terrain} from '../src/world.js';import {freshGame,nearest} from '../src/game.js';import {loadAuthoredCast} from '../src/authored-assets.js';
+import {installGroundRockSamplingCandidate} from './ground-rock-sampling-candidate.js';
+const out=document.querySelector('#result'),canvas=document.querySelector('canvas'),world=createWorld(),view=new WorldView(canvas,world),gl=view.renderer.getContext(),timer=gl.getExtension('EXT_disjoint_timer_query_webgl2'),ground=view.groundSurface;
+const baseCompile=ground.onBeforeCompile,baseKey=ground.customProgramCacheKey,places={highland:[-41.4534111,-208.3750763],slope:[-111.4516525,-250.7369231],coast:[-64,110],forest:[164.4377,-108.4654]};
+const state=freshGame();state.quest=6;state.time=240;const sources=Object.fromEntries(await Promise.all(['src/ground-surface.js','tests/ground-rock-sampling-candidate.js','src/scene.js'].map(async n=>{const b=await(await fetch('../'+n,{cache:'no-store'})).arrayBuffer();return[n,Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',b)),b=>b.toString(16).padStart(2,'0')).join('')];})));
+function setPlace(name){const [x,z]=places[name];Object.assign(state.player,{x,z});view.camera.position.set(x+12,Math.max(terrain(x,z),0)+16,z+28);view.camera.lookAt(x,terrain(x,z)+1,z);view.camera.updateMatrixWorld();view.sync(state);}
+function render(mode){ground.onBeforeCompile=mode==='candidate'?candidateCompile:baseCompile;ground.customProgramCacheKey=mode==='candidate'?candidateKey:baseKey;view.renderer.render(view.scene,view.camera);}
+let candidateCompile,candidateKey;
+let disjoint=0;
+function pixels(){const b=new Uint8Array(canvas.width*canvas.height*4);gl.readPixels(0,0,canvas.width,canvas.height,gl.RGBA,gl.UNSIGNED_BYTE,b);return b;}
+function compare(a,b){let changed=0,sum=0,max=0;for(let i=0;i<a.length;i+=4){let d=Math.max(Math.abs(a[i]-b[i]),Math.abs(a[i+1]-b[i+1]),Math.abs(a[i+2]-b[i+2]),Math.abs(a[i+3]-b[i+3]));if(d){changed++;sum+=d;max=Math.max(max,d);}}return {pixels:a.length/4,changed,changedPct:changed/(a.length/4)*100,meanMaxChannelDelta:sum/(a.length/4),maxChannelDelta:max};}
+function percentile(v,p){const a=[...v].sort((x,y)=>x-y);return a[Math.floor(a.length*p)];}
+function query(mode){return new Promise((resolve,reject)=>{if(!timer)return reject(Error('EXT_disjoint_timer_query_webgl2 unavailable'));const q=gl.createQuery();gl.beginQuery(timer.TIME_ELAPSED_EXT,q);render(mode);gl.endQuery(timer.TIME_ELAPSED_EXT);const start=performance.now();function poll(){if(gl.getParameter(timer.GPU_DISJOINT_EXT)){disjoint++;gl.deleteQuery(q);return reject(Error('GPU timer disjoint'));}if(gl.getQueryParameter(q,gl.QUERY_RESULT_AVAILABLE)){const ns=gl.getQueryParameter(q,gl.QUERY_RESULT);gl.deleteQuery(q);return resolve(ns/1e6);}if(performance.now()-start>3000){gl.deleteQuery(q);return reject(Error('GPU query timeout'));}requestAnimationFrame(poll);}requestAnimationFrame(poll);});}
+try{
+  await Promise.all([loadAuthoredCast().then(c=>view.installAuthoredCast(c)),ground.userData.ground.loaded,ground.userData.ground.sand.loaded,view.rockSurface.userData.rock.loaded]);
+  installGroundRockSamplingCandidate(ground);candidateCompile=ground.onBeforeCompile;candidateKey=ground.customProgramCacheKey;ground.onBeforeCompile=baseCompile;ground.customProgramCacheKey=baseKey;
+  const locations={};
+  for(const [name] of Object.entries(places)){
+    setPlace(name);for(let i=0;i<12;i++)render(i%2?'candidate':'baseline');
+    render('baseline');const baseline=pixels();render('candidate');const optimized=pixels();
+    const timings={baseline:[],candidate:[]};
+    for(let i=0;i<96;i++){const mode=i%2?'candidate':'baseline';timings[mode].push(await query(mode));}
+    const glError=gl.getError();locations[name]={pixel:compare(baseline,optimized),gpuMs:Object.fromEntries(Object.entries(timings).map(([mode,values])=>[mode,{samples:values.length,median:percentile(values,.5),p95:percentile(values,.95),max:Math.max(...values)}])),glError};
+    out.textContent=JSON.stringify({complete:false,locations,viewport:[innerWidth,innerHeight],buffer:[canvas.width,canvas.height],sources});
+  }
+  out.textContent=JSON.stringify({complete:true,supported:true,locations,viewport:[innerWidth,innerHeight],buffer:[canvas.width,canvas.height],pixelRatio:view.renderer.getPixelRatio(),timerBits:gl.getQuery(timer.TIME_ELAPSED_EXT,timer.QUERY_COUNTER_BITS_EXT),disjoint,glError:gl.getError(),textures:view.renderer.info.memory.textures,programs:view.renderer.info.programs.length,groundStatus:ground.userData.ground.state.status,rockStatus:view.rockSurface.userData.rock.state.status,sources,player:{x:state.player.x,z:state.player.z,hp:state.player.hp,inventory:{...state.inventory}},scope:'Full source scene; paired same-camera buffer comparison and interleaved baseline/candidate GPU render queries. Fixed fresh q6 fixture, four declared sites; no live save, player movement, extended play, mobile hardware, thermal or final-performance acceptance.'});
+}catch(error){out.textContent=JSON.stringify({complete:false,error:String(error),stack:error.stack,sources,viewport:[innerWidth,innerHeight],buffer:[canvas.width,canvas.height],glError:gl.getError()});}
+window.addEventListener('pagehide',()=>{view.authoredCast?.release();view.contactShade.dispose();view.renderer.dispose();});
+</script></html>
