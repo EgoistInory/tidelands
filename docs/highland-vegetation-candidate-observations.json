@@ -1,0 +1,572 @@
+{
+  "sources": {
+    "tests/highland-vegetation-candidate.js": "5509004becc96218adde458c5b64cb67b8cb8b8fb775a7828674e62b9ac408c2",
+    "tests/highland-vegetation-review.html": "24143a1f2f8ced8f5e0bd9fcb6bc67008259bb9a1c5562cac3fc7ac419d3fee2",
+    "src/scene.js": "d283b541c2b0a2e7985da3d874b652c0d1753a95754b6c945a725052aa58da03",
+    "src/world.js": "4abcfa0aa50fb5098bbdffc8ff1c992bf4859dd9415f3f455e0db6793fcc6b9e",
+    "src/coastal-sources.js": "fb1f16e0ee43dc643eb5951b11acc79f9610d71ea415e5cafe9ec96a65ea7360"
+  },
+  "rows": [
+    {
+      "kind": "static",
+      "variant": "old",
+      "distance": "near",
+      "image": "old-near-static.png",
+      "sha256": "17e5a25aa0c5d01e9964f728700248bdc4f9999b047855bdc1dcc393113cc78d",
+      "ready": true,
+      "highlandCandidateEnabled": false,
+      "highlandTreeCount": 47,
+      "site": "highland",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 28.36840844449211,
+      "camera": [
+        -34.4534111,
+        34.36840844449211,
+        -200.3750763
+      ],
+      "lookAt": [
+        -41.4534111,
+        29.36840844449211,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 98,
+        "triangles": 1154796
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Whole-biome borrowed local-asset candidate; not integrated into main. No ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "kind": "static",
+      "variant": "old",
+      "distance": "middle",
+      "image": "old-middle-static.png",
+      "sha256": "1865fcba89a68b26b808de94d5ded332d78a75b549e93c3a0338b97520458e6e",
+      "ready": true,
+      "highlandCandidateEnabled": false,
+      "highlandTreeCount": 47,
+      "site": "highland",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 28.36840844449211,
+      "camera": [
+        -16.453411099999997,
+        46.36840844449211,
+        -180.3750763
+      ],
+      "lookAt": [
+        -41.4534111,
+        29.36840844449211,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 119,
+        "triangles": 1234046
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Whole-biome borrowed local-asset candidate; not integrated into main. No ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "kind": "static",
+      "variant": "old",
+      "distance": "far",
+      "image": "old-far-static.png",
+      "sha256": "1ba8b11fd07e1e01458b483a05d95b2b4dd692a81203108bcd8b8ddc67bffc3f",
+      "ready": true,
+      "highlandCandidateEnabled": false,
+      "highlandTreeCount": 47,
+      "site": "highland",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 28.36840844449211,
+      "camera": [
+        43.5465889,
+        93.3684084444921,
+        -113.37507629999999
+      ],
+      "lookAt": [
+        -41.4534111,
+        29.36840844449211,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 131,
+        "triangles": 1777526
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Whole-biome borrowed local-asset candidate; not integrated into main. No ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "kind": "motion",
+      "variant": "old",
+      "distance": "middle",
+      "image": "old-middle-motion.png",
+      "sha256": "00bfc2314f64c4e1dd0166aebfa3327c3615593c0fd12c03f0a133bedbe479f7",
+      "ready": true,
+      "highlandCandidateEnabled": false,
+      "highlandTreeCount": 47,
+      "site": "highland",
+      "position": [
+        -20.45341109999991,
+        -229.37507630000135
+      ],
+      "height": 15.583276318034581,
+      "camera": [
+        -19.180312478930734,
+        22.493311965398796,
+        -215.49997938127896
+      ],
+      "lookAt": [
+        -20.45341109999991,
+        16.58327631803458,
+        -229.37507630000135
+      ],
+      "time": 246.00000000000477,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 100,
+        "triangles": 1181467
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": {
+        "complete": true,
+        "frames": 360,
+        "start": [
+          -41.4534111,
+          -208.3750763
+        ],
+        "end": [
+          -20.45341109999991,
+          -229.37507630000135
+        ],
+        "distance": 42.00000000000145,
+        "simulationSeconds": 6,
+        "rafMs": {
+          "median": 15.399999999999636,
+          "p95": 21.300000000000182,
+          "max": 27.735999999999876
+        },
+        "hidden": false
+      },
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Whole-biome borrowed local-asset candidate; not integrated into main. No ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "kind": "static",
+      "variant": "candidate",
+      "distance": "near",
+      "image": "candidate-near-static.png",
+      "sha256": "ee8550465c84c590bdce7d79e62e8a0e3d56119b2fafba542899955ad1da9721",
+      "ready": true,
+      "highlandCandidateEnabled": true,
+      "highlandTreeCount": 47,
+      "site": "highland",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 28.36840844449211,
+      "camera": [
+        -34.4534111,
+        34.36840844449211,
+        -200.3750763
+      ],
+      "lookAt": [
+        -41.4534111,
+        29.36840844449211,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 113,
+        "triangles": 1636213
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Whole-biome borrowed local-asset candidate; not integrated into main. No ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "kind": "static",
+      "variant": "candidate",
+      "distance": "middle",
+      "image": "candidate-middle-static.png",
+      "sha256": "1a0a6f4971ec9201dd97fa8804a25fe6b77cd6e0ce0439bbb2e2cd413714e1fb",
+      "ready": true,
+      "highlandCandidateEnabled": true,
+      "highlandTreeCount": 47,
+      "site": "highland",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 28.36840844449211,
+      "camera": [
+        -16.453411099999997,
+        46.36840844449211,
+        -180.3750763
+      ],
+      "lookAt": [
+        -41.4534111,
+        29.36840844449211,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 140,
+        "triangles": 1860539
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Whole-biome borrowed local-asset candidate; not integrated into main. No ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "kind": "static",
+      "variant": "candidate",
+      "distance": "far",
+      "image": "candidate-far-static.png",
+      "sha256": "d777be322dc55ccd3a48e661cb26d3876bdff6264b3647e4ad1e82689980dd19",
+      "ready": true,
+      "highlandCandidateEnabled": true,
+      "highlandTreeCount": 47,
+      "site": "highland",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 28.36840844449211,
+      "camera": [
+        43.5465889,
+        93.3684084444921,
+        -113.37507629999999
+      ],
+      "lookAt": [
+        -41.4534111,
+        29.36840844449211,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 155,
+        "triangles": 2500641
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Whole-biome borrowed local-asset candidate; not integrated into main. No ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "kind": "motion",
+      "variant": "candidate",
+      "distance": "middle",
+      "image": "candidate-middle-motion.png",
+      "sha256": "95fbfe3317183e31c4ab3c8a7df8c0fe2472261f1029c0e6648ec2f406dc27bc",
+      "ready": true,
+      "highlandCandidateEnabled": true,
+      "highlandTreeCount": 47,
+      "site": "highland",
+      "position": [
+        -20.45341109999991,
+        -229.37507630000135
+      ],
+      "height": 15.583276318034581,
+      "camera": [
+        -19.180312478930734,
+        22.493311965398796,
+        -215.49997938127896
+      ],
+      "lookAt": [
+        -20.45341109999991,
+        16.58327631803458,
+        -229.37507630000135
+      ],
+      "time": 246.00000000000477,
+      "viewport": [
+        1440,
+        900
+      ],
+      "buffer": [
+        1440,
+        804
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 123,
+        "triangles": 1913831
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": {
+        "complete": true,
+        "frames": 360,
+        "start": [
+          -41.4534111,
+          -208.3750763
+        ],
+        "end": [
+          -20.45341109999991,
+          -229.37507630000135
+        ],
+        "distance": 42.00000000000145,
+        "simulationSeconds": 6,
+        "rafMs": {
+          "median": 11.799999999999272,
+          "p95": 14.199999999998909,
+          "max": 27.200000000000728
+        },
+        "hidden": false
+      },
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Whole-biome borrowed local-asset candidate; not integrated into main. No ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "kind": "mobile",
+      "variant": "old",
+      "distance": "middle",
+      "image": "old-middle-mobile.png",
+      "sha256": "0c241f3970fa801bd5f601ba5b521bec915ead26aa1ebbff4461071433a5e17a",
+      "ready": true,
+      "highlandCandidateEnabled": false,
+      "highlandTreeCount": 47,
+      "site": "highland",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 28.36840844449211,
+      "camera": [
+        -16.453411099999997,
+        46.36840844449211,
+        -180.3750763
+      ],
+      "lookAt": [
+        -41.4534111,
+        29.36840844449211,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        711
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 87,
+        "triangles": 1111338
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Whole-biome borrowed local-asset candidate; not integrated into main. No ordinary gameplay, GPU timing, long-duration or device proof."
+    },
+    {
+      "kind": "mobile",
+      "variant": "candidate",
+      "distance": "middle",
+      "image": "candidate-middle-mobile.png",
+      "sha256": "b1c284e358b63ce8dacea09c7a1912c876a67e898941813642597b5d49d8f81e",
+      "ready": true,
+      "highlandCandidateEnabled": true,
+      "highlandTreeCount": 47,
+      "site": "highland",
+      "position": [
+        -41.4534111,
+        -208.3750763
+      ],
+      "height": 28.36840844449211,
+      "camera": [
+        -16.453411099999997,
+        46.36840844449211,
+        -180.3750763
+      ],
+      "lookAt": [
+        -41.4534111,
+        29.36840844449211,
+        -208.3750763
+      ],
+      "time": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        711
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 108,
+        "triangles": 1737831
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Whole-biome borrowed local-asset candidate; not integrated into main. No ordinary gameplay, GPU timing, long-duration or device proof."
+    }
+  ],
+  "logs": [],
+  "scope": "Whole-highland local authored vegetation candidate, shared existing licensed assets, fixed cameras/declared no-save fixtures. Production R2 and ordinary save untouched; no GPU/endurance/main or quality completion proof.",
+  "complete": true
+}

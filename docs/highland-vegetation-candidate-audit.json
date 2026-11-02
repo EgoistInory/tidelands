@@ -1,0 +1,34 @@
+{
+  "candidateOnly": true,
+  "productionIntegrated": false,
+  "fullGoalComplete": false,
+  "milestoneM5Complete": false,
+  "resourceIds": 47,
+  "imagesReviewed": 10,
+  "consoleWarningsErrors": [],
+  "glErrors": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "sameCameraStaticPairs": 4,
+  "ownershipRegression": "node --test tests/highland-vegetation-candidate.test.mjs: 1/1",
+  "visualFinding": "Detailed woody silhouettes replace the 47 highland placeholder trees, but the sparse leaf palette makes the bare island read emptier; do not promote this representation alone. Review together with existing local rock/shrub ground layers.",
+  "budgetFinding": "Diagnostic replacement zeroes the old instance matrices without removing their submissions; recorded counts are not an optimized production budget or GPU comparison. Extra near/mid candidate mesh budget remains open.",
+  "nativeMainPathAccepted": false,
+  "sources": {
+    "tests/highland-vegetation-candidate.js": "5509004becc96218adde458c5b64cb67b8cb8b8fb775a7828674e62b9ac408c2",
+    "tests/highland-vegetation-review.html": "24143a1f2f8ced8f5e0bd9fcb6bc67008259bb9a1c5562cac3fc7ac419d3fee2",
+    "src/scene.js": "d283b541c2b0a2e7985da3d874b652c0d1753a95754b6c945a725052aa58da03",
+    "src/world.js": "4abcfa0aa50fb5098bbdffc8ff1c992bf4859dd9415f3f455e0db6793fcc6b9e",
+    "src/coastal-sources.js": "fb1f16e0ee43dc643eb5951b11acc79f9610d71ea415e5cafe9ec96a65ea7360"
+  },
+  "originalImagesDirectory": "dist/highland-vegetation-2026-11-02"
+}
