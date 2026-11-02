@@ -2,7 +2,7 @@
 
 正在开发的单人 3D 海岛开放世界。中文界面，本地运行；M1 自由探索、M2 生存与营地、M3 世界内容与成长、M4 本地交付已完成功能验收，证据见 docs/M1-ACCEPTANCE.md 至 docs/M4-ACCEPTANCE.md。最终 M5 品质验收仍在推进，见 AGENT_PROGRESS.md 和 ROADMAP.md。
 
-当前已验证本地包：`dist/tidelands-m5-2026-10-29-ground-support.zip`，SHA `ee606c25629a7b9f704fc504d661abea31264244b52027a9530253c60ca8301f`，见 `docs/GROUND-SUPPORT-DELIVERY.md`。工作树另有四岛地貌与内陆树高度接线候选，388测试及四岛同镜头/窄屏隔离检查通过，尚未重新打包或完成当前普通主路径验收；见 `docs/REGIONAL-LANDFORM-CHECKPOINT.md`。本地包保存在被Git忽略的`dist/`中；M5和完整3A仍未完成。
+当前已验证本地包：`dist/tidelands-m5-2026-11-02-regional-landforms-r2.zip`，SHA `a7b0356cf1b490a84b148c131a01e0ec320cec6ff6246a7881449833d2699eea`。四岛地貌、内陆树高度接线及开始/继续首帧时间保护已纳入；390规则测试、7打包测试、实际采集/营地与独立解压普通副本的桌面/390移动保存恢复通过，详见 `docs/REGIONAL-LANDFORM-CHECKPOINT.md`。这是有限品质批次，完整主线路径、性能、试听/真机及完整M5/3A仍待。历史209地表支撑包保留，见 `docs/GROUND-SUPPORT-DELIVERY.md`；本地包位于被Git忽略的`dist/`。
 
 代码与必要证据由Git管理，`main`同步到公开仓库 [EgoistInory/tidelands](https://github.com/EgoistInory/tidelands)。用户于2026-11-02明确确认继续同步该公开仓库；提交、推送和本地交付包的边界见 `docs/GIT-WORKFLOW.md`。
 

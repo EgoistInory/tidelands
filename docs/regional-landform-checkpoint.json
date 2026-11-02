@@ -1,5 +1,5 @@
 {
-  "status": "candidate_reviewed_main_path_pending",
+  "status": "finite_local_delivery_accepted_full_quality_pending",
   "date": "2026-11-02",
   "sourceCommit": "1ac9e2520ceb7c84b63cd64eb6272a86af4d0ac3",
   "workingTreeFile": "src/terrain-composition.js",
@@ -161,5 +161,18 @@
       "originalSaveModified": false,
       "fullOrdinaryMainPathAccepted": false
     }
+  },
+  "delivery": {
+    "archive": "dist/tidelands-m5-2026-11-02-regional-landforms-r2.zip",
+    "sha256": "a7b0356cf1b490a84b148c131a01e0ec320cec6ff6246a7881449833d2699eea",
+    "bytes": 170922953,
+    "runtimeInputs": 209,
+    "fullTests": 390,
+    "packageTests": 7,
+    "mainFrameTimeMonotonic": true,
+    "ordinaryCopyRestore": "docs/regional-landform-package-main-restore.json",
+    "gatherCampFixtures": "docs/regional-landform-gather-camp.json",
+    "fullGoalComplete": false,
+    "milestoneM5Complete": false
   }
 }

@@ -2,8 +2,8 @@
 
 更新时间：2026-11-02
 status: in_progress
-stage: M5_regional_landform_reviewed_main_path_pending
-next_action: 四岛同镜头/窄屏、生产移动fixture及正式main普通备份副本的移动/保存/390恢复已通过有限审查，修复作者内陆树旧Y资料拒载；388测试通过。下一补当前源采集/营地与路径，再决定版本化交付；森林近景遮挡、高地占位树和裸坡仍列整体品质问题。用户已明确授权同步现有公开GitHub仓库；完成检查点后提交并核对远程HEAD。M5五项及完整3A未完，2048继续。
+stage: M5_regional_landform_delivery_complete_quality_pending
+next_action: 区域地貌/内陆树权威高度/首帧时钟保护已完成有限交付，R2独立包与普通副本桌面/390恢复、采集营地及390+7测试已过。直接转R2完整连续探索/战斗/营地的整体品质，按主要差距成组处理高地占位植被与裸坡/角色生物呈现；不回本组频率幅度或重复副本恢复。M5五项/完整3A仍未完。用户已明确授权同步现有公开GitHub仓库，每次检查点提交普通推送并核对远程HEAD，2048继续。
 
 ## 已完成
 - 前置小游戏 `/Users/huxiaocong/Codex/tide-2048` 已完成，验收见其 docs/VERIFICATION.md。
@@ -1552,3 +1552,7 @@ M1–M4功能交付已完成，M5整体品质仍未完成。资产两来源受�
 2026-11-02 Git管理：本地原main相对实测远程7e85c1f领先108提交，用户明确选择“继续同步现有公开仓库”。按docs/GIT-WORKFLOW.md提交当前检查点并使用普通推送到EgoistInory/tidelands，不改可见性或重写历史；网站部署和付费仍不在授权内。实时ordinaryUsageAllowed=true（最近20%/周19%已用），历史goal usageLimited只记录不强改，无券/购买。完整目标未完成，2048保留。
 
 2026-11-02 同步等待期间补正式main普通备份副本：完整作者启动无降级，真实W500ms移动3.8311米，暂停点击保存、桌面真实重载和390×844/585×1266缓冲再保存重载均精确保持各自全JSON；库存/营火/quest6/kills3/HP79保持。全新独立浏览器profile仅载入33455473历史导出副本，未读写原普通浏览器；两图已实看、console为空。见docs/regional-landform-main-restore.json及REGIONAL-LANDFORM-CHECKPOINT.md，未把副本恢复称新普通完整主线。此项无需重复，下一采集/营地/当前路径与有限包；M5/3A仍未完成。
+
+2026-11-02 区域地貌有限交付收口：真实导入build-ready/浆果fixture，制作石斧扣4木3石、营火再扣5木3石并推进quest3，浆果3→5及耗尽期限写入，两项各自暂停保存/重载全JSON一致。首QA错误恢复运行后拍图使时钟与野猪自然移动，修为照片后保持暂停取保存，不放宽全JSON断言；失败原记录保留。独立首包随后捕获启动负dt导致体力96.48→98.74，追到main的rAF时间早于performance.now开始屏障；实际生产前缀带入move/tick的新回归RED，单行改dt下界0并保持last单调，390全量/7打包通过。R2独立包170922953字节/209输入210条，SHA a7b0356cf1b490a84b148c131a01e0ec320cec6ff6246a7881449833d2699eea，仅README/main/inland/terrain-composition四运行输入较旧209变化，源码/ZIP/独立解压全SHA与原包/33455473备份保持核对通过。独立main普通备份副本W500ms移动3.8829m、桌面/390×844/585×1266完整保存恢复通过，无作者降级、console空、所有运行请求在包内，体力100；另四图实看。详见docs/REGIONAL-LANDFORM-CHECKPOINT.md及regional-landform-package-audit.json。首02693bed包失败保留不交付，旧209包保持。
+
+本组有限交付完成，不把声明fixture/历史普通副本、规则或短运行当作当前完整旅程/GPU长时/试听真机或3A证明；高地植被/裸坡和角色生物整体仍是下一主要品质组。M5五项/完整目标未完，2048保留。Git首次110提交已实际普通推送至公开origin/main的caedf90，后续验收与修复随本检查点继续同步；用户明确授权已持久写入Git流程与每小时提示，禁止网站部署、付费/券和历史重写继续保持。完整历史bundle与8e75f91增量已验证，本轮末提交另留增量。QA浏览器均关闭，4190/PID81852继续本地预览；无原普通浏览器存档改动。

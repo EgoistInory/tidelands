@@ -1,0 +1,36 @@
+TAP version 13
+# Subtest: a callback timestamp before the start barrier cannot reverse world time, walking or stamina
+not ok 1 - a callback timestamp before the start barrier cannot reverse world time, walking or stamina
+  ---
+  duration_ms: 24.986291
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/frame-time.test.js:12:1'
+  failureType: 'testCodeFailure'
+  error: 'stale frame must not run simulation backwards'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/frame-time.test.js:15:3)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: ordinary frames retain elapsed simulation time and long frames retain the existing 50ms cap
+ok 2 - ordinary frames retain elapsed simulation time and long frames retain the existing 50ms cap
+  ---
+  duration_ms: 0.779459
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 1
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 77.766458

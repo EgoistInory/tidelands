@@ -205,7 +205,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     console.error(error);$('load-status').textContent='画面准备失败。请刷新页面重试。';
     $('start-button').textContent='重新加载';$('start-button').disabled=false;$('start-button').onclick=()=>location.reload();
   });
-  function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;let moving=false;
+  function frame(now){const dt=Math.max(0,Math.min(.05,(now-last)/1000));last=Math.max(last,now);let moving=false;
     if(started&&!paused){let x=stick.x,z=stick.z;for(const k of keys)if(movement[k]){x+=movement[k][0];z+=movement[k][1];}movementHeading.end(stickActive||keyboardMoving());moving=Math.hypot(x,z)>.08;const running=keys.has('shift')&&moving;const v=relative(x,z);movePlayer(state,world.objects,v.x,v.z,dt,running);const feedback={},message=tick(state,dt,running,feedback,world.objects);
       if(feedback.enemyWindups?.length){for(const enemy of feedback.enemyWindups)audio.effect('enemy-windup',{enemyType:enemy.type,...enemySoundCue(state.player,state.enemies.find(e=>e.id===enemy.id),Math.atan2(view.camera.position.x-state.player.x,view.camera.position.z-state.player.z))});updateUI();}
       if(feedback.damage>0){view.hurtAt=state.time;audio.effect('hurt');combatFeedback('hurt',feedback.respawned?'倒下了 · 已返回营地':`受到伤害 −${Math.ceil(feedback.damage)}`);updateUI();}
