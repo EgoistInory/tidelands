@@ -2,7 +2,9 @@
 
 正在开发的单人 3D 海岛开放世界。中文界面，本地运行；M1 自由探索、M2 生存与营地、M3 世界内容与成长、M4 本地交付已完成功能验收，证据见 docs/M1-ACCEPTANCE.md 至 docs/M4-ACCEPTANCE.md。最终 M5 品质验收仍在推进，见 AGENT_PROGRESS.md 和 ROADMAP.md。
 
-当前合并本地包：`dist/tidelands-m5-2026-10-23-full-body-actions.zip`，SHA `9a234a43d2977822caf62d3eb06057e7df9c2aad9d235a762e5c5acd4a7ba0ca`。300全量、原生三装备攻击/真实受击/空挥与有效390、两尺寸完整画布GPU和独立包普通q6恢复通过有限验收；站立攻击使用全身源动作，移动/深泳保留下身步态。见 `docs/COMBAT-BODY-DELIVERY.md`，当前源600秒/试听/真机及完整M5/3A仍未完成。
+当前已验证本地包：`dist/tidelands-m5-2026-10-29-ground-support.zip`，SHA `ee606c25629a7b9f704fc504d661abea31264244b52027a9530253c60ca8301f`，见 `docs/GROUND-SUPPORT-DELIVERY.md`。工作树另有四岛地貌与内陆树高度接线候选，388测试及四岛同镜头/窄屏隔离检查通过，尚未重新打包或完成当前普通主路径验收；见 `docs/REGIONAL-LANDFORM-CHECKPOINT.md`。本地包保存在被Git忽略的`dist/`中；M5和完整3A仍未完成。
+
+代码与必要证据由Git管理，`main`同步到公开仓库 [EgoistInory/tidelands](https://github.com/EgoistInory/tidelands)。用户于2026-11-02明确确认继续同步该公开仓库；提交、推送和本地交付包的边界见 `docs/GIT-WORKFLOW.md`。
 
 前一有限功能组：全身低物采集，33针对性/291全量与真实原生E/main结算、暂停取消通过；近距纤维/浆果/贝壳、390检视与远距手臂限伸已保存，见 `docs/LOW-GATHER-REVIEW.md`。整体自然度/远距真实接触仍待，M5和完整3A未完成。当前本地包 `dist/tidelands-m5-2026-10-23-low-gather.zip`，SHA `63501f1a6b641985928aefe6ea5fb3ddc82c13a96f6674f4f31af062aed2a3b8`；独立包普通q6接续/保存390恢复通过，见 `docs/LOW-GATHER-DELIVERY.md`。新源GPU/长时不套用旧证据。
 
