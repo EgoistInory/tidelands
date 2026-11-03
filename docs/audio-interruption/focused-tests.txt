@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: confirmed wood, rock and soft pickups have distinct bounded physical cues
+ok 1 - confirmed wood, rock and soft pickups have distinct bounded physical cues
+  ---
+  duration_ms: 1.779584
+  type: 'test'
+  ...
+# Subtest: weapon swing and confirmed shell/flesh hit preserve their physical identity
+ok 2 - weapon swing and confirmed shell/flesh hit preserve their physical identity
+  ---
+  duration_ms: 0.421791
+  type: 'test'
+  ...
+# Subtest: incoming injury has a longer lower cue than outgoing impact without bypassing mute, pause or capacity
+ok 3 - incoming injury has a longer lower cue than outgoing impact without bypassing mute, pause or capacity
+  ---
+  duration_ms: 0.12075
+  type: 'test'
+  ...
+# Subtest: pause cancels active world warnings and strikes while preserving paused-menu feedback
+ok 4 - pause cancels active world warnings and strikes while preserving paused-menu feedback
+  ---
+  duration_ms: 1.91825
+  type: 'test'
+  ...
+# Subtest: mute cancels world and menu tails so a quick unmute does not revive old cues
+ok 5 - mute cancels world and menu tails so a quick unmute does not revive old cues
+  ---
+  duration_ms: 0.208125
+  type: 'test'
+  ...
+# Subtest: mute prevents initialization and pause fades master to silence
+ok 6 - mute prevents initialization and pause fades master to silence
+  ---
+  duration_ms: 1.710625
+  type: 'test'
+  ...
+# Subtest: effects are bounded and disconnect on completion; footsteps follow distance
+ok 7 - effects are bounded and disconnect on completion; footsteps follow distance
+  ---
+  duration_ms: 0.909209
+  type: 'test'
+  ...
+# Subtest: partial initialization and resume failures release context and allow a retry
+ok 8 - partial initialization and resume failures release context and allow a retry
+  ---
+  duration_ms: 1.836084
+  type: 'test'
+  ...
+# Subtest: menu success cues play while world is paused, and mute silences both channels
+ok 9 - menu success cues play while world is paused, and mute silences both channels
+  ---
+  duration_ms: 0.393334
+  type: 'test'
+  ...
+# Subtest: busy physical actions leave room for quest, crafting and food confirmation cues
+ok 10 - busy physical actions leave room for quest, crafting and food confirmation cues
+  ---
+  duration_ms: 0.64825
+  type: 'test'
+  ...
+# Subtest: ambient noise loops without a sample discontinuity or DC offset
+ok 11 - ambient noise loops without a sample discontinuity or DC offset
+  ---
+  duration_ms: 0.34475
+  type: 'test'
+  ...
+# Subtest: physical actions vary noise slices without truncating tails or allocating new buffers
+ok 12 - physical actions vary noise slices without truncating tails or allocating new buffers
+  ---
+  duration_ms: 0.82275
+  type: 'test'
+  ...
+# Subtest: distance fallback uses walking spacing, coast selects sand, swimming keeps splash spacing
+ok 13 - distance fallback uses walking spacing, coast selects sand, swimming keeps splash spacing
+  ---
+  duration_ms: 0.347292
+  type: 'test'
+  ...
+# Subtest: land audio follows actual rendered ankle touchdowns at walking and running speeds
+ok 14 - land audio follows actual rendered ankle touchdowns at walking and running speeds
+  ---
+  duration_ms: 142.923958
+  type: 'test'
+  ...
+# Subtest: contact counters suppress initial, replayed, paused and teleport steps while idle landings can sound
+ok 15 - contact counters suppress initial, replayed, paused and teleport steps while idle landings can sound
+  ---
+  duration_ms: 0.45775
+  type: 'test'
+  ...
+# Subtest: coastal surf fades through the shore elevation band without consuming effect voices
+ok 16 - coastal surf fades through the shore elevation band without consuming effect voices
+  ---
+  duration_ms: 0.527167
+  type: 'test'
+  ...
+# Subtest: surf shares world mute/pause and releases all persistent nodes on disposal
+ok 17 - surf shares world mute/pause and releases all persistent nodes on disposal
+  ---
+  duration_ms: 0.229917
+  type: 'test'
+  ...
+# Subtest: ecology changes with rendered daylight and island habitat, fading out at sea
+ok 18 - ecology changes with rendered daylight and island habitat, fading out at sea
+  ---
+  duration_ms: 0.231875
+  type: 'test'
+  ...
+# Subtest: ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices
+ok 19 - ecology buffers are finite, bounded, quiet at loop endpoints and reused without effect voices
+  ---
+  duration_ms: 22.827625
+  type: 'test'
+  ...
+# Subtest: ecology shares world mute/pause and releases nodes on normal or failed initialization
+ok 20 - ecology shares world mute/pause and releases nodes on normal or failed initialization
+  ---
+  duration_ms: 0.692375
+  type: 'test'
+  ...
+# Subtest: enemy warnings distinguish body types and reuse bounded, pausable local noise
+ok 21 - enemy warnings distinguish body types and reuse bounded, pausable local noise
+  ---
+  duration_ms: 0.484208
+  type: 'test'
+  ...
+# Subtest: an audible camp follows the nearest real fire and camera direction without per-building allocations
+ok 22 - an audible camp follows the nearest real fire and camera direction without per-building allocations
+  ---
+  duration_ms: 10.241291
+  type: 'test'
+  ...
+# Subtest: camp ambience respects pause/mute and releases its whole graph with a centered fallback
+ok 23 - camp ambience respects pause/mute and releases its whole graph with a centered fallback
+  ---
+  duration_ms: 1.039
+  type: 'test'
+  ...
+# Subtest: a failed fire panner initialization releases the partially built graph and retries cleanly
+ok 24 - a failed fire panner initialization releases the partially built graph and retries cleanly
+  ---
+  duration_ms: 0.959166
+  type: 'test'
+  ...
+# Subtest: enemy sound direction follows screen right and distance fades continuously
+ok 25 - enemy sound direction follows screen right and distance fades continuously
+  ---
+  duration_ms: 8.126125
+  type: 'test'
+  ...
+# Subtest: spatial effect routes and releases one bounded panner; muted cues allocate none
+ok 26 - spatial effect routes and releases one bounded panner; muted cues allocate none
+  ---
+  duration_ms: 0.618334
+  type: 'test'
+  ...
+# Subtest: world terrain footsteps follow visible contacts across downhill turns, blocking and shore transitions
+ok 27 - world terrain footsteps follow visible contacts across downhill turns, blocking and shore transitions
+  ---
+  duration_ms: 197.894458
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 278.571667

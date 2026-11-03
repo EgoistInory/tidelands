@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>独立包普通副本与声音中断追踪</title><style>html,body,iframe{margin:0;width:100%;height:100%;border:0}</style><iframe title="独立包真实界面与普通副本"></iframe>
+<script type="module">
+const runtime=new URL(new URL(location.href).searchParams.get('runtime')??'../',location.href);if(runtime.origin!==location.origin)throw Error('Only same-origin local runtime');
+const doc=new DOMParser().parseFromString(await(await fetch(new URL('index.html',runtime))).text(),'text/html'),base=doc.createElement('base');base.href=runtime.href;doc.head.prepend(base);for(const script of doc.querySelectorAll('script'))script.remove();
+const setup=doc.createElement('script');setup.type='module';setup.textContent=`
+import {boot} from './src/main.js';import {GameAudio} from './src/audio.js';
+const records=[],events=[];let ref=null,next=0;
+const effect=GameAudio.prototype.effect;GameAudio.prototype.effect=function(kind,options){ref=this;const before=new Set(this.sources);const result=effect.call(this,kind,options);for(const node of this.sources)if(!before.has(node)){
+ const row={id:++next,kind,menu:!!options?.menu,startedAt:this.context.currentTime,stops:[],endedAt:null};records.push(row);const stop=node.stop.bind(node),ended=node.onended;node.stop=time=>{row.stops.push({calledAt:this.context?.currentTime??null,scheduledAt:time});return stop(time);};node.onended=()=>{row.endedAt=this.context?.currentTime??null;ended();};
+ }return result;};
+for(const name of ['setActive','setEnabled']){const original=GameAudio.prototype[name];GameAudio.prototype[name]=function(value){ref=this;events.push({method:name,value,at:this.context?.currentTime??null,activeIds:records.filter(r=>r.endedAt===null).map(r=>r.id)});return original.call(this,value);};}
+window.audioInterruptionMain={snapshot:()=>({records:structuredClone(records),events:structuredClone(events),context:ref?.context?.state??null,contextTime:ref?.context?.currentTime??null,active:ref?.active??null,enabled:ref?.enabled??null,sources:ref?.sources.size??null,releases:ref?.effectReleases.size??null,panel:document.querySelector('#panel').open,hp:Number(document.querySelector('#hp').value),hidden:document.hidden,glError:document.querySelector('#world').getContext('webgl2').getError(),viewport:[innerWidth,innerHeight]}),dispose:()=>ref?.dispose()};
+boot({storageKey:'tidelands-qa-audio-interruption'});
+`;doc.body.append(setup);document.querySelector('iframe').srcdoc='<!doctype html>'+doc.documentElement.outerHTML;
+</script></html>

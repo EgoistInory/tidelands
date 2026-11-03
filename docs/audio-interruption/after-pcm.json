@@ -1,0 +1,201 @@
+{
+  "logs": [],
+  "sources": {
+    "src/audio.js": "2d609259a19a5b09b8bb014b97770319263bfee65516ebc3cc8c83e4cad6fdaa",
+    "tests/audio-interruption-render.html": "280870d3fbaeb445e39622843cb8d38a88e5f892d8640e6347d4dabef56ad5cb"
+  },
+  "complete": true,
+  "sampleRate": 48000,
+  "seconds": 0.9,
+  "rows": [
+    {
+      "mode": "warning-pause",
+      "events": [
+        {
+          "at": 0.30133333333333334,
+          "active": true,
+          "enabled": true,
+          "voices": 1
+        },
+        {
+          "at": 0.3413333333333333,
+          "active": false,
+          "enabled": true,
+          "voices": 1
+        },
+        {
+          "at": 0.36,
+          "active": true,
+          "enabled": true,
+          "voices": 1
+        }
+      ],
+      "full": {
+        "peak": 0.006791253574192524,
+        "rms": 0.00035160640785793836,
+        "maxSampleChange": 0.0007928239647299051
+      },
+      "attack": {
+        "peak": 0.006791253574192524,
+        "rms": 0.001690913390553193,
+        "maxSampleChange": 0.0007928239647299051
+      },
+      "afterResume": {
+        "peak": 0,
+        "rms": 0,
+        "maxSampleChange": 0
+      },
+      "release": {
+        "peak": 0.004442480858415365,
+        "rms": 0.0006218021526495167,
+        "maxSampleChange": 0.0005139542045071721
+      },
+      "remaining": 0,
+      "disposed": true,
+      "file": "warning-pause.wav",
+      "sha256": "7d60d91e5ac5bf0ce551b0222cbcf24e6efe5e3494ee0b19d80bc63422944e7d"
+    },
+    {
+      "mode": "hurt-pause",
+      "events": [
+        {
+          "at": 0.30133333333333334,
+          "active": true,
+          "enabled": true,
+          "voices": 1
+        },
+        {
+          "at": 0.3413333333333333,
+          "active": false,
+          "enabled": true,
+          "voices": 1
+        },
+        {
+          "at": 0.36,
+          "active": true,
+          "enabled": true,
+          "voices": 1
+        }
+      ],
+      "full": {
+        "peak": 0.013433556072413921,
+        "rms": 0.0009013733935008532,
+        "maxSampleChange": 0.00048729218542575836
+      },
+      "attack": {
+        "peak": 0.008531286381185055,
+        "rms": 0.0035400491406098653,
+        "maxSampleChange": 0.00046054041013121605
+      },
+      "afterResume": {
+        "peak": 0,
+        "rms": 0,
+        "maxSampleChange": 0
+      },
+      "release": {
+        "peak": 0.006877214182168245,
+        "rms": 0.0016999174539819148,
+        "maxSampleChange": 0.00023836689069867134
+      },
+      "remaining": 0,
+      "disposed": true,
+      "file": "hurt-pause.wav",
+      "sha256": "22440de81547c404d61e96211b298cfbfc578502c3599c70719be6abfa252087"
+    },
+    {
+      "mode": "menu-mute",
+      "events": [
+        {
+          "at": 0.30133333333333334,
+          "active": true,
+          "enabled": true,
+          "voices": 1
+        },
+        {
+          "at": 0.3413333333333333,
+          "active": true,
+          "enabled": false,
+          "voices": 1
+        },
+        {
+          "at": 0.36,
+          "active": true,
+          "enabled": true,
+          "voices": 1
+        }
+      ],
+      "full": {
+        "peak": 0.04534299671649933,
+        "rms": 0.0043471370368471434,
+        "maxSampleChange": 0.001932928164023906
+      },
+      "attack": {
+        "peak": 0.04310440272092819,
+        "rms": 0.021855981169126334,
+        "maxSampleChange": 0.001932928164023906
+      },
+      "afterResume": {
+        "peak": 0,
+        "rms": 0,
+        "maxSampleChange": 0
+      },
+      "release": {
+        "peak": 0.01598268747329712,
+        "rms": 0.0035319316963219327,
+        "maxSampleChange": 0.0007100980146788061
+      },
+      "remaining": 0,
+      "disposed": true,
+      "file": "menu-mute.wav",
+      "sha256": "07df9d12ebfc943ecd67c22fb91b69c5dfd5a806a160e56bd6aa679da3e51e4d"
+    },
+    {
+      "mode": "menu-preserve",
+      "events": [
+        {
+          "at": 0.30133333333333334,
+          "active": false,
+          "enabled": true,
+          "voices": 1
+        },
+        {
+          "at": 0.3413333333333333,
+          "active": false,
+          "enabled": true,
+          "voices": 1
+        },
+        {
+          "at": 0.36,
+          "active": true,
+          "enabled": true,
+          "voices": 1
+        }
+      ],
+      "full": {
+        "peak": 0.04534299671649933,
+        "rms": 0.00451722936922991,
+        "maxSampleChange": 0.001932928164023906
+      },
+      "attack": {
+        "peak": 0.04310440272092819,
+        "rms": 0.021855981169126334,
+        "maxSampleChange": 0.001932928164023906
+      },
+      "afterResume": {
+        "peak": 0.002137996256351471,
+        "rms": 0.0005833175759002038,
+        "maxSampleChange": 0.00010284716609021416
+      },
+      "release": {
+        "peak": 0.01598268747329712,
+        "rms": 0.006187104235614037,
+        "maxSampleChange": 0.0007100980146788061
+      },
+      "remaining": 0,
+      "disposed": true,
+      "file": "menu-preserve.wav",
+      "sha256": "c5a266004844c8244d4c10c97092c8fe6b1f6e8c16781d43112816cc67493d35"
+    }
+  ],
+  "scope": "Production node graph; continuous beds disconnected for isolated transient PCM. Real offline suspension time is recorded. No audition, ordinary-main interaction or device acceptance."
+}

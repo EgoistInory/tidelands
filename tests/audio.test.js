@@ -4,7 +4,7 @@ import {GameAudio} from '../src/audio.js';
 import {createCharacter,animateCharacter} from '../src/character.js';
 import * as THREE from '../vendor/three.module.min.js';
 function context(){
-  const param=()=>({value:0,setTargetAtTime(v){this.value=v;},setValueAtTime(v){this.value=v;},linearRampToValueAtTime(){},exponentialRampToValueAtTime(){}});
+  const param=()=>({value:0,setTargetAtTime(v){this.value=v;},setValueAtTime(v){this.value=v;},cancelScheduledValues(){},linearRampToValueAtTime(){},exponentialRampToValueAtTime(){}});
   const node=()=>({gain:param(),frequency:param(),Q:param(),connect(target){this.target=target;},disconnect(){this.disconnected=true;},start(...args){this.startArgs=args;},stop(){this.stopped=true;}});
   return {state:'running',sampleRate:100,currentTime:1,destination:node(),createGain:node,createBufferSource:node,createOscillator:node,createBiquadFilter:node,createBuffer:(_,n,rate)=>{const samples=new Float32Array(n);return {duration:n/rate,getChannelData:()=>samples};},async resume(){},async close(){this.state='closed';}};
 }

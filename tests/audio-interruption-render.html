@@ -1,0 +1,23 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>暂停与静音的旧音效残留诊断</title>
+<style>body{font:14px system-ui;max-width:1000px;margin:25px auto}pre{white-space:pre-wrap}button{padding:12px}</style>
+<h1>生产音频瞬态中断 · 原生离线时钟</h1><p>48kHz生产GameAudio；隔离环境声后检查快速暂停/继续与静音/恢复，非试听或普通主线。</p><button>运行</button><pre>准备…</pre>
+<script type="module">
+import {GameAudio} from '../src/audio.js';import {randomGenerator} from '../src/world.js';
+function stats(data,from,to,rate){let energy=0,peak=0,change=0;const a=Math.round(from*rate),b=Math.round(to*rate);for(let i=a;i<b;i++){const v=data[i];if(!Number.isFinite(v))throw Error('Non-finite PCM');energy+=v*v;peak=Math.max(peak,Math.abs(v));if(i>a)change=Math.max(change,Math.abs(v-data[i-1]));}return {peak,rms:Math.sqrt(energy/(b-a)),maxSampleChange:change};}
+function wav(data,rate){const bytes=new Uint8Array(44+data.length*2),v=new DataView(bytes.buffer),word=(p,s)=>[...s].forEach((c,i)=>v.setUint8(p+i,c.charCodeAt(0)));word(0,'RIFF');v.setUint32(4,bytes.length-8,true);word(8,'WAVEfmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,rate,true);v.setUint32(28,rate*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);word(36,'data');v.setUint32(40,data.length*2,true);for(let i=0;i<data.length;i++)v.setInt16(44+i*2,Math.max(-1,Math.min(1,data[i]))*32767,true);let s='';for(let i=0;i<bytes.length;i+=8192)s+=String.fromCharCode(...bytes.subarray(i,i+8192));return btoa(s);}
+document.querySelector('button').onclick=async()=>{
+ const button=document.querySelector('button'),out=document.querySelector('pre');button.disabled=true;const rows=[];
+ try{for(const mode of ['warning-pause','hurt-pause','menu-mute','menu-preserve']){
+  const rate=48000,ctx=new OfflineAudioContext(1,rate*.9,rate),adapter=new Proxy(ctx,{get(t,k){if(k==='state')return 'running';if(k==='resume'||k==='close')return async()=>{};const v=Reflect.get(t,k,t);return typeof v==='function'?v.bind(t):v;}}),a=new GameAudio({contextFactory:()=>adapter}),events=[];
+  const original=Math.random;try{Math.random=randomGenerator(90281);a.setActive(true);await a.unlock();}finally{Math.random=original;}
+  for(const name of ['ambience','surfSource','birdsSource','insectsSource','fireSource'])a[name].disconnect();
+  const jobs=[[.3,()=>{if(mode==='menu-preserve')a.setActive(false);a.effect(mode==='warning-pause'?'enemy-windup':mode==='hurt-pause'?'hurt':'food',{menu:mode.startsWith('menu'),enemyType:'crab'});}],
+   [.34,()=>mode==='menu-mute'?a.setEnabled(false):a.setActive(false)],
+   [.36,()=>mode==='menu-mute'?a.setEnabled(true):a.setActive(true)]];
+  const waits=jobs.map(([time,fn])=>ctx.suspend(time).then(async()=>{fn();events.push({at:ctx.currentTime,active:a.active,enabled:a.enabled,voices:a.sources.size});await ctx.resume();}));
+  const buffer=await ctx.startRendering();await Promise.all(waits);const data=buffer.getChannelData(0),remaining=a.sources.size;await a.dispose();
+  rows.push({mode,events,full:stats(data,0,.9,rate),attack:stats(data,.31,.335,rate),afterResume:stats(data,.40,.50,rate),release:stats(data,.34,.39,rate),remaining,disposed:!a.context&&a.sources.size===0,wavBase64:wav(data,rate)});
+ }window.audioInterruption={complete:true,sampleRate:48000,seconds:.9,rows,scope:'Production node graph; continuous beds disconnected for isolated transient PCM. Real offline suspension time is recorded. No audition, ordinary-main interaction or device acceptance.'};out.textContent=JSON.stringify({...window.audioInterruption,rows:rows.map(({wavBase64,...r})=>r)},null,2);
+ }catch(error){window.audioInterruption={complete:false,error:error.stack};out.textContent=JSON.stringify(window.audioInterruption);}finally{button.disabled=false;}
+};
+</script></html>

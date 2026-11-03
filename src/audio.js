@@ -39,7 +39,7 @@ function fireBuffer(ctx){
   return buffer;
 }
 export class GameAudio{
-  constructor({enabled=true,contextFactory=()=>new AudioContext()}={}){this.enabled=enabled;this.contextFactory=contextFactory;this.context=null;this.active=false;this.sources=new Set();this.stepDistance=0;this.lastPosition=null;}
+  constructor({enabled=true,contextFactory=()=>new AudioContext()}={}){this.enabled=enabled;this.contextFactory=contextFactory;this.context=null;this.active=false;this.sources=new Set();this.effectReleases=new Map();this.stepDistance=0;this.lastPosition=null;}
   async unlock(){
     if(!this.enabled)return;
     try{
@@ -76,8 +76,17 @@ export class GameAudio{
     }catch(error){await this.dispose();throw error;}
   }
   applyVolume(){if(this.context){this.master.gain.setTargetAtTime(this.enabled&&this.active?.35:0,this.context.currentTime,.08);this.ui.gain.setTargetAtTime(this.enabled?.35:0,this.context.currentTime,.02);}}
-  setActive(active){this.active=active;this.applyVolume();if(!active){this.lastPosition=null;this.lastFootfallCount=null;this.stepDistance=0;}}
-  setEnabled(enabled){this.enabled=enabled;this.applyVolume();}
+  releaseEffects(includeMenu=false){
+    if(!this.context)return;const now=this.context.currentTime;
+    for(const [source,{menu,gain}] of this.effectReleases){
+      if(menu&&!includeMenu)continue;
+      // Finish cancelled one-shots before a quick resume can revive their tails.
+      const level=gain.gain.value;gain.gain.cancelScheduledValues(now);gain.gain.setValueAtTime(level,now);gain.gain.linearRampToValueAtTime(0,now+.015);
+      try{source.stop(now+.02);}catch{}this.effectReleases.delete(source);
+    }
+  }
+  setActive(active){this.active=active;this.applyVolume();if(!active){this.releaseEffects();this.lastPosition=null;this.lastFootfallCount=null;this.stepDistance=0;}}
+  setEnabled(enabled){this.enabled=enabled;this.applyVolume();if(!enabled)this.releaseEffects(true);}
   effect(kind,{menu=false,surface='grass',enemyType='boar',weapon='hand',pan=0,volume=1}={}){
     const ui=menu&&['craft','food'].includes(kind);
     const tone=['quest','craft','food'].includes(kind),ctx=this.context;
@@ -103,8 +112,8 @@ export class GameAudio{
     const spatial=!tone&&(windup||pan!==0)&&Number.isFinite(pan)&&ctx.createStereoPanner?ctx.createStereoPanner():null;
     node.connect(filter);filter.connect(gain);
     if(spatial){spatial.pan.setValueAtTime(Math.max(-.85,Math.min(.85,pan)),now);gain.connect(spatial);spatial.connect(this.master);}else gain.connect(ui?this.ui:this.master);
-    this.sources.add(node);
-    node.onended=()=>{node.disconnect();filter.disconnect();gain.disconnect();spatial?.disconnect();this.sources.delete(node);};
+    this.sources.add(node);this.effectReleases.set(node,{menu:ui,gain});
+    node.onended=()=>{node.disconnect();filter.disconnect();gain.disconnect();spatial?.disconnect();this.sources.delete(node);this.effectReleases.delete(node);};
     if(tone)node.start(now);
     else{
       // Read a different section of the shared noise for successive physical actions.
@@ -145,7 +154,7 @@ export class GameAudio{
   async dispose(){
     const ctx=this.context;this.context=null;
     for(const source of this.sources){try{source.stop();}catch{}source.disconnect();}
-    this.sources.clear();
+    this.sources.clear();this.effectReleases.clear();
     if(this.ambience){try{this.ambience.stop();}catch{}this.ambience.disconnect();}
     if(this.surfSource){try{this.surfSource.stop();}catch{}this.surfSource.disconnect();}
     if(this.fireSource){try{this.fireSource.stop();}catch{}this.fireSource.disconnect();}
