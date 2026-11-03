@@ -2,8 +2,12 @@
 
 更新时间：2026-11-03
 status: in_progress
-stage: M5_current_native_campaign_functional_closed
-next_action: ea99aa69正式包原始index新隔离档已从零经3段原生旅程完成任务0→6/13击败/营火1/HP67、12木8石3晶石准确交付、结束行走与完整JSON刷新恢复；10阶段图已看，404测试通过，源/ZIP209输入保持。下一从本轮真实结束档docs/native-campaign-2026-11-03/final-save.json或dist/native-campaign-2026-11-03/browser-state.json继续390原生控件、回营地和自然夜景整体体验。注意旧checkpoint-save.json仍为任务2失败档，不得当最新进度，见delivery-checkpoint.json。两次规划失配后已改为本地副本绑定133海岸/15林地真实接触资料，第三段完成；收尾隐藏暂停按钮清理错误原样保留、未来保护已修，未重跑抹证。非不中断旅程/完整视频审查/试听/午夜/第四岛/真机/GPU验收；整体美术/动作品质与M5五项/完整3A仍未完，2048保留，按授权普通提交推送，不回局部反复打磨。
+stage: M5_ordinary_ending_mobile_controls_checked
+next_action: ea99正式包本轮从零主线已完成；390控件续接也通过。最新正常档改为docs/campaign-mobile-2026-11-03/final-save.json或dist/campaign-mobile-2026-11-03/browser-state.json（任务6/13击败/营火1/HP85/浆果9）。下一沿该档回营地与自然夜景连续整体体验，不重跑从零主线；此前HP67结束档和任务2失败checkpoint均保留，不得误用旧checkpoint。当前404生产回归/209包不变，三段旅程及控制器失败/清理边界见CURRENT-NATIVE-CAMPAIGN.md；390鼠标摇杆及触屏tap不是实体手机或完整手机主线，镜头轨迹/命中未量化。整体美术/人物生物动作、夜景/第四岛/试听/真机/GPU品质与M5五项/完整3A仍未完，2048保留，按授权普通同步，不回局部反复打磨。
+
+## 2026-11-03 普通结束档390控件续接
+
+见docs/CAMPAIGN-MOBILE-CHECKPOINT.md。正式原始index从本轮原普通结束档浏览器配置继续，未改状态/模块；390×844真实鼠标摇杆移动>0.5米、触屏食用HP67→85/浆果10→9、地图设点清除及暂停保存刷新全JSON一致。任务6/击败13/营火1保持，GL0/console空、滚动宽390，3原图已看。执行拖镜头/攻击但未据此冒充镜头曲线/命中验收；非真机、多指、手机全主线或夜景。最新自有正常存档指针更新到campaign-mobile目录，旧档/包保持。仅QA工具/证据/进度变动，不重复完整404旧测试或重打包。实时普通14%/周97%允许时推进有限组，历史usageLimited不强改、券/购买未用；M5/完整3A未完、2048保留，下一回营地自然夜景整体体验，按授权普通同步。
 
 ## 2026-11-03 当前正式包从零普通主线收口
 
