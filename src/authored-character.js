@@ -12,6 +12,12 @@ function sample(clip,time,onlyUpper=false,weight=1){
     if(weight===1)property.fromArray(v);else if(t.property==='quaternion')property.slerp(new THREE.Quaternion().fromArray(v),weight);else property.lerp(new THREE.Vector3().fromArray(v),weight);
   }
 }
+function strikeSourcePhase(p,marker){
+  // Keep the measured contact pose while joining source speeds across impact.
+  const before=p<.5,t=before?p*2:(p-.5)*2,t2=t*t,t3=t2*t,slope=2*Math.min(marker,1-marker);
+  const start=before?0:marker,end=before?marker:1,left=before?2*marker:slope,right=before?slope:2*(1-marker);
+  return (2*t3-3*t2+1)*start+(t3-2*t2+t)*left/2+(-2*t3+3*t2)*end+(t3-t2)*right/2;
+}
 function restore(root,pose){for(const [name,p]of pose){const b=root.getObjectByName(name);b.position.copy(p.position);b.quaternion.copy(p.quaternion);b.scale.copy(p.scale);}}
 function soleWorld(leg){return leg.foot.localToWorld(leg.sole.clone());}
 function turnBoneWorld(bone,delta){const parentQ=bone.parent.getWorldQuaternion(new THREE.Quaternion()),world=bone.getWorldQuaternion(new THREE.Quaternion());bone.quaternion.copy(parentQ.invert().multiply(delta).multiply(world)).normalize();bone.updateWorldMatrix(false,true);}
@@ -68,7 +74,7 @@ export function animateAuthoredCharacter(root,state,dt,ground=()=>0){
   if(plan.action){
     const name=lowPickup?'Fixing_Kneeling':plan.equipped==='hand'?'Punch_Cross':'Sword_Attack',clip=rig.clips.get(name);
     const marker=(fullStrike?rig.markers[name]?.groundedWeaponForwardPhase?.[plan.equipped]:null)??rig.markers[name]?.weaponForwardPhase?.[plan.equipped]??rig.markers[name]?.peakRightHandPhase??.5,p=plan.actionProgress;
-    const sourcePhase=lowPickup?(p<.5?p*.5:.25+(p-.5)*1.5):p<.5?p*2*marker:marker+(p-.5)*2*(1-marker);
+    const sourcePhase=lowPickup?(p<.5?p*.5:.25+(p-.5)*1.5):strikeSourcePhase(p,marker);
     sample(clip,sourcePhase*clip.duration,!lowPickup&&!fullStrike,Math.sin(p*Math.PI));rig.actionSource={name,phase:sourcePhase,marker:lowPickup?.25:marker,gameProgress:p};
   }else rig.actionSource=null;
   if(plan.recoil>0){

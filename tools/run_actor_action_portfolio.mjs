@@ -1,0 +1,13 @@
+// Browser plugin not available. Existing headless Chromium/Metal, isolated fixture only.
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
+const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright'),out=process.argv[2];assert(out&&!fs.existsSync(out));fs.mkdirSync(out,{recursive:true});
+const sha=b=>createHash('sha256').update(b).digest('hex'),report={rows:[],logs:[],sources:Object.fromEntries(['src/authored-character.js','src/game.js','tests/actor-action-portfolio.html'].map(p=>[p,sha(fs.readFileSync(p))])),scope:'Sequential declared scene fixture. Actual world/rules/author rig, local side camera. No main/native inputs, audition, physical device or complete natural motion acceptance.'},browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
+try{const context=await browser.newContext({viewport:{width:1200,height:800}}),page=await context.newPage();page.setDefaultTimeout(60000);await context.route('**/*',r=>new URL(r.request().url()).origin==='http://127.0.0.1:4190'?r.continue():r.abort());page.on('pageerror',e=>report.logs.push(e.message));page.on('console',e=>{if(['warning','error'].includes(e.type()))report.logs.push(e.text());});await page.goto('http://127.0.0.1:4190/tests/actor-action-portfolio.html');await page.waitForFunction(()=>!!window.actorPortfolio);
+ for(const [i,spec]of [{action:'attack',tool:'hand'},{action:'attack',tool:'axe'},{action:'attack',tool:'sword'},{action:'gather',distance:1},{action:'gather',distance:2.7}].entries()){
+  await page.evaluate(s=>window.actorPortfolio.reset(s),spec);const samples=[];
+  for(const age of spec.action==='attack'?[0,.075,.15,.2,.225,.25,.3,.375,.449,.5]:[0,.1,.21,.3,.38,.419,.46]){
+   const row=await page.evaluate(age=>window.actorPortfolio.advance(age),age),image=`${i}-${Math.round(age*1000)}.png`;await page.screenshot({path:path.join(out,image)});assert(row.authored&&row.worldUnchanged&&!row.hidden&&row.glError===0);samples.push({...row,image,sha256:sha(fs.readFileSync(path.join(out,image)))});
+  }report.rows.push({spec,samples});
+ }
+ await page.setViewportSize({width:390,height:844});await page.evaluate(()=>window.actorPortfolio.reset({action:'attack',tool:'sword'}));const row=await page.evaluate(()=>window.actorPortfolio.advance(.225)),image='mobile-sword-impact.png';await page.screenshot({path:path.join(out,image)});report.mobile={...row,image,sha256:sha(fs.readFileSync(path.join(out,image)))};assert.equal(report.logs.length,0);report.complete=true;
+}catch(e){report.error=e.stack;throw e;}finally{fs.writeFileSync(path.join(out,'raw.json'),JSON.stringify(report,null,2)+'\n');await browser.close();}

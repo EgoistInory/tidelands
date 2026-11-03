@@ -1,0 +1,29 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>旅人整套动作时钟对照</title>
+<style>html,body{margin:0;height:100%;background:#172c27;color:white;font:12px system-ui}body{display:flex;flex-direction:column}p{margin:5px}output{height:40px;overflow:auto}canvas{flex:1;min-height:0;width:100%}</style>
+<p>声明海岸近身/林地真实节点 fixture · 全身动作时间片 · 无存档/声音/原生主线路径</p><output>准备…</output><canvas></canvas>
+<script type="module">
+import * as T from '../vendor/three.module.min.js';
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain} from '../src/world.js';
+import {freshGame,nearest,attack,resolveAttack,interact,resolveGather} from '../src/game.js';
+import {actorRadius} from '../src/actor-contact.js';
+import {loadAuthoredCast} from '../src/authored-assets.js';
+import {prepareSurfaceTextures} from '../src/startup-textures.js';
+import {ATTACK_IMPACT,GATHER_IMPACT} from '../src/action-timing.js';
+const world=createWorld(),original=JSON.stringify(world),view=new WorldView(document.querySelector('canvas'),world),out=document.querySelector('output');
+let state,spec,pending,result,age=0,target;
+function snapshot(){const rig=view.player.userData;return {spec,age,result,pending:!!pending,authored:!!rig.authored,source:rig.actionSource,player:{...state.player},inventory:{...state.inventory},enemies:state.enemies.map(e=>({...e})),wrist:view.player.getObjectByName('hand_r').getWorldPosition(new T.Vector3()).toArray(),pelvis:view.player.getObjectByName('pelvis').getWorldPosition(new T.Vector3()).toArray(),camera:view.camera.position.toArray(),buffer:[view.canvas.width,view.canvas.height],worldUnchanged:JSON.stringify(world)===original,hidden:document.hidden,glError:view.renderer.getContext().getError()};}
+function draw(dt){view.draw(state,target??null,null,false,dt);const p=state.player,h=terrain(p.x,p.z);view.camera.position.set(p.x+7.5,h+3.7,p.z+3);view.camera.lookAt(p.x,h+1.25,p.z+.7);view.sky.position.copy(view.camera.position);view.renderer.render(view.scene,view.camera);out.textContent=JSON.stringify(snapshot());}
+function reset(next){spec=next;state=freshGame();state.quest=6;state.time=240;state.inventory.axe=state.inventory.sword=1;state.selected=spec.tool??'axe';state.buildings=[];pending=result=target=null;age=0;
+ if(spec.action==='attack'){Object.assign(state.player,{x:14.3,z:41.4,yaw:0});state.enemies=[{id:'portfolio-crab',type:'crab',hp:40,x:14.3,z:41.4+actorRadius({type:'crab'})+actorRadius({}),attackAt:0}];}
+ else{state.enemies=[];target=world.objects.filter(o=>o.type==='berry'&&terrain(o.x,o.z)>.5).sort((a,b)=>Math.hypot(a.x-136,a.z+22)-Math.hypot(b.x-136,b.z+22)).find(o=>{Object.assign(state.player,{x:o.x,z:o.z+(spec.distance??1),yaw:Math.PI});return terrain(state.player.x,state.player.z)>.15&&nearest(state,world.objects)?.id===o.id;});if(!target)throw Error('No actual berry node');}
+ view.sync(state);view.player.userData.lastPosition=null;view.attackAt=view.gatherAt=-100;view.gatherTarget=null;for(let i=0;i<60;i++)draw(1/60);
+ if(spec.action==='attack'){pending=attack(state,{defer:true}).pending;view.attackAt=pending.at;}
+ else{pending=interact(state,target,{defer:true}).pending;view.gatherAt=pending.at;view.gatherKind=target.type;view.gatherTool='hand';view.gatherTarget={x:target.x,y:terrain(target.x,target.z)+.35,z:target.z};}
+ if(!pending)throw Error('Action did not start');draw(0);return snapshot();
+}
+function advance(next){if(next<age)throw Error('Only forward fixture time');const dt=next-age;age=next;state.time=240+age;if(pending&&age>=(spec.action==='attack'?ATTACK_IMPACT:GATHER_IMPACT)){result=spec.action==='attack'?resolveAttack(state,pending):resolveGather(state,pending);pending=null;view.sync(state);}draw(dt);return snapshot();}
+await prepareSurfaceTextures([view.groundSurface.userData.ground,view.groundSurface.userData.ground.sand,view.rockSurface.userData.rock],view.renderer);view.installAuthoredCast(await loadAuthoredCast());
+window.actorPortfolio={reset,advance,snapshot};reset({action:'attack',tool:'axe'});
+addEventListener('pagehide',()=>{view.authoredCast?.release();for(const m of view.creatures.values())view.disposeGroup(m);view.contactShade.dispose();view.impacts.dispose();view.renderer.dispose();});
+</script></html>

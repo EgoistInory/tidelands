@@ -1,0 +1,140 @@
+TAP version 13
+# Subtest: male hand: contact landmark does not abruptly multiply whole-body speed
+not ok 1 - male hand: contact landmark does not abruptly multiply whole-body speed
+  ---
+  duration_ms: 200.5445
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/authored-action-continuity.test.js:9:77'
+  failureType: 'testCodeFailure'
+  error: 'wrist contact speed jumps 46.716 m/s'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/authored-action-continuity.test.js:20:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: male axe: contact landmark does not abruptly multiply whole-body speed
+not ok 2 - male axe: contact landmark does not abruptly multiply whole-body speed
+  ---
+  duration_ms: 146.000833
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/authored-action-continuity.test.js:9:77'
+  failureType: 'testCodeFailure'
+  error: 'wrist contact speed jumps 69.100 m/s'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/authored-action-continuity.test.js:20:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: male sword: contact landmark does not abruptly multiply whole-body speed
+not ok 3 - male sword: contact landmark does not abruptly multiply whole-body speed
+  ---
+  duration_ms: 108.380875
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/authored-action-continuity.test.js:9:77'
+  failureType: 'testCodeFailure'
+  error: 'wrist contact speed jumps 69.100 m/s'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/authored-action-continuity.test.js:20:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: female hand: contact landmark does not abruptly multiply whole-body speed
+not ok 4 - female hand: contact landmark does not abruptly multiply whole-body speed
+  ---
+  duration_ms: 141.091833
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/authored-action-continuity.test.js:9:77'
+  failureType: 'testCodeFailure'
+  error: 'wrist contact speed jumps 43.138 m/s'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/authored-action-continuity.test.js:20:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: female axe: contact landmark does not abruptly multiply whole-body speed
+not ok 5 - female axe: contact landmark does not abruptly multiply whole-body speed
+  ---
+  duration_ms: 104.344833
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/authored-action-continuity.test.js:9:77'
+  failureType: 'testCodeFailure'
+  error: 'wrist contact speed jumps 67.345 m/s'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/authored-action-continuity.test.js:20:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: female sword: contact landmark does not abruptly multiply whole-body speed
+not ok 6 - female sword: contact landmark does not abruptly multiply whole-body speed
+  ---
+  duration_ms: 111.610375
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/authored-action-continuity.test.js:9:77'
+  failureType: 'testCodeFailure'
+  error: 'wrist contact speed jumps 67.345 m/s'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/authored-action-continuity.test.js:20:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 0
+# fail 6
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 876.747667
