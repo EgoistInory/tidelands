@@ -1,0 +1,154 @@
+{
+  "entry": "http://127.0.0.1:4190/dist/tidelands-m5-2026-11-03-audio-interruption/tidelands-local/",
+  "packageSha256": "ea99aa6904c0ea57560d1ce3874d7d469d9d2dcc5fe252d7cf82f5a5d27239d1",
+  "phases": [
+    {
+      "name": "00-fresh",
+      "save": "00-fresh-save.json",
+      "saveSha256": "df2798c2f6689e417781b6d58b316eccc6fc7d71a5e0db3ef2389294e48b6aa2",
+      "image": "00-fresh.png",
+      "imageSha256": "067cf9f8bc064748287c98d209e38da29c7170b50ace272cd956c8e70369e2ba",
+      "quest": 0,
+      "kills": 0,
+      "time": 120.1433,
+      "player": {
+        "x": -70,
+        "z": 102,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 0,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [],
+      "discovered": [
+        "潮汐海岸"
+      ],
+      "ui": {
+        "title": "归航的灯火",
+        "hp": 100,
+        "toast": "欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "01-keeper",
+      "save": "01-keeper-save.json",
+      "saveSha256": "9fdb3cd2b2510b34f6706e52b2381d94677f750d1ea085e4be412329d48267b8",
+      "image": "01-keeper.png",
+      "imageSha256": "32beb56336e623dc8a30037c13beb5ac1ae158768c34ee6412adf6b0f6cf62e3",
+      "quest": 1,
+      "kills": 0,
+      "time": 123.73009999999981,
+      "player": {
+        "x": -60.44779430366034,
+        "z": 95.74085274299965,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -2.991592653589793
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 0,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [],
+      "discovered": [
+        "潮汐海岸"
+      ],
+      "ui": {
+        "title": "荒野的第一把工具",
+        "hp": 100,
+        "toast": "阿岚：风暴熄灭了归航灯塔。先采些木材和石料，做一把石斧，我们会需要它。\n新的目标：荒野的第一把工具",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "02-axe",
+      "save": "02-axe-save.json",
+      "saveSha256": "4fd6008ceb2a8006779ee902c1ee73f865781dc6ea1e4f8c6ad8e17c0de5eaf7",
+      "image": "02-axe.png",
+      "imageSha256": "11534540630025bba1f5d1465ff5cd10d3925d9fb92d91618135ee3a1eceda18",
+      "quest": 2,
+      "kills": 0,
+      "time": 137.17449999999974,
+      "player": {
+        "x": -65.55884116241276,
+        "z": 114.62053653848831,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -0.4030948252729279
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 1,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [],
+      "discovered": [
+        "潮汐海岸"
+      ],
+      "ui": {
+        "title": "在岛上安一个家",
+        "hp": 100,
+        "toast": "制作完成：石斧\n新的目标：在岛上安一个家",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    }
+  ],
+  "logs": [],
+  "scope": "Unmodified packaged index in a fresh isolated browser context. No init script, route replacement, game-state injection, clock change or teleport. Own ordinary saves are read after actual slot-1 input. Pure Node planning on copied save observations. Not physical device, audition or GPU acceptance.",
+  "complete": false,
+  "error": "Error: Native movement stalled near resource-617\n    at go (file:///Users/huxiaocong/Codex/tidelands/tools/run_native_campaign.mjs:43:23)\n    at async gather (file:///Users/huxiaocong/Codex/tidelands/tools/run_native_campaign.mjs:52:3)\n    at async file:///Users/huxiaocong/Codex/tidelands/tools/run_native_campaign.mjs:72:22",
+  "respawns": 0,
+  "video": "page@b4765a0ce5dcbf06890a3cf1726cc49e.webm",
+  "videoSha256": "6307484d1d3565e22404feb572c10483300bb499111de0b03a3bdb192142b6ac"
+}

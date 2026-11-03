@@ -2,6 +2,7 @@
 import {createWorld,LANDMARKS,terrain} from '../src/world.js';
 import {actorBlocksMove} from '../src/actor-contact.js';
 import {resourceBlocksMove,resourceReachDistance} from '../src/resource-contact.js';
+import {footprintBlocksMove} from '../src/resource-footprint.js';
 import {ruinBlocksMove} from '../src/ruin-layout.js';
 export const world=createWorld();
 const cells=new Map(),cellSize=16;
@@ -12,7 +13,7 @@ export function clearSegment(state,from,to){
   for(let i=1;i<=steps;i++){
     const b={x:from.x+(to.x-from.x)*i/steps,z:from.z+(to.z-from.z)*i/steps};
     if(Math.abs(b.x)>390||Math.abs(b.z)>390||terrain(b.x,b.z)-terrain(a.x,a.z)>1.9)return false;
-    if(nearby(b).some(o=>(state.depleted[o.id]??0)<=state.time&&(o.type==='tree'?actorBlocksMove(a,b,o,.35,1.15):resourceBlocksMove(a,b,o,.35))))return false;
+    if(nearby(b).some(o=>(state.depleted[o.id]??0)<=state.time&&(footprintBlocksMove(a,b,o,.35)??(o.type==='tree'?actorBlocksMove(a,b,o,.35,1.15):resourceBlocksMove(a,b,o,.35)))))return false;
     if(state.buildings.some(o=>o.type!=='campfire'&&actorBlocksMove(a,b,o,.35,1.65)))return false;
     if(LANDMARKS.some(o=>o.type==='ruin'?ruinBlocksMove(a,b,o):o.type==='npc'?actorBlocksMove(a,b,o):['cottage','lighthouse'].includes(o.type)&&actorBlocksMove(a,b,o,.35,o.type==='cottage'?3.65:2.65)))return false;
     if(state.enemies.some(o=>o.hp>0&&actorBlocksMove(a,b,o)))return false;a=b;

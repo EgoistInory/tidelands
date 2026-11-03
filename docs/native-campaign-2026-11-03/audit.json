@@ -1,0 +1,43 @@
+{
+  "fullCurrentJourneyFunctionalComplete": true,
+  "fullGoalComplete": false,
+  "m5Complete": false,
+  "uninterruptedJourneyAccepted": false,
+  "browserSessions": 3,
+  "controllerNavigationFailures": 2,
+  "completeInputTrace": false,
+  "audioListened": false,
+  "videoFullyReviewed": false,
+  "respawnsObserved": 0,
+  "runtimePackage": "tidelands-m5-2026-11-03-audio-interruption",
+  "packageSha256": "ea99aa6904c0ea57560d1ce3874d7d469d9d2dcc5fe252d7cf82f5a5d27239d1",
+  "latestOrdinarySave": "final-save.json",
+  "finalSaveSha256": "3f9b22ebc1bac9b49c88021b78ce5dca895b5060d86411fc9b1eeb6aac90fc4c",
+  "browserStatePath": "dist/native-campaign-2026-11-03/browser-state.json",
+  "browserStateSha256": "ed6104fa173f2c1247b2e4e18bf5a6d910ccf05bc0094734539d6525f4cdd39c",
+  "staleCheckpointFileRetained": "checkpoint-save.json",
+  "cleanupFailure": "After successful exact reload check, final cleanup tried hidden pause on start screen. Source guard corrected for future runs; raw failure retained, journey not rerun. Canonical save is final-save.json, not old checkpoint-save.json.",
+  "videos": [
+    {
+      "path": "dist/native-campaign-2026-11-03/page@7682340ca88abf390c786f74c1685ed6.webm",
+      "bytes": 4494482,
+      "sha256": "f030da17780973116d75667605cfa5d41f57b634489a0f5ce32196ac415473a9"
+    },
+    {
+      "path": "dist/native-campaign-2026-11-03/page@b4765a0ce5dcbf06890a3cf1726cc49e.webm",
+      "bytes": 9650437,
+      "sha256": "6307484d1d3565e22404feb572c10483300bb499111de0b03a3bdb192142b6ac"
+    },
+    {
+      "path": "dist/native-campaign-2026-11-03/page@c3ff4c7cf44f5976f5321355c8dbca87.webm",
+      "bytes": 50032297,
+      "sha256": "76511370bd01816c8b5740d749d42bb84c869dfaa6143daff3338e3c4282591c"
+    }
+  ],
+  "sources": {
+    "tools/run_native_campaign.mjs": "023e5ab819a81b2b6b724182423f4b9ba634ba8bd9f07e27814031cc71a3a97a",
+    "tools/journey_path.mjs": "3a0b09a85c268ebe0b4aea6d2cdeae180ad683f02d60cf1afd1bb81c637e04dd",
+    "tools/campaign_contact_plan.mjs": "166df2b051401115f35e58959cadbf1f575a5e65ec2920cffa6823a80b3a4655",
+    "tests/native-campaign-path.test.js": "3ac47b51832a16be385b554ba1c935dd1835e03eb95384856165b3bc6ae4fd75"
+  }
+}
