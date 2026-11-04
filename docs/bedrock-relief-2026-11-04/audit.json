@@ -1,0 +1,129 @@
+{
+  "complete": true,
+  "candidateIntegrated": false,
+  "fullGoalComplete": false,
+  "m5Complete": false,
+  "rawPath": "dist/bedrock-relief-2026-11-04-r2",
+  "rows": 12,
+  "pairs": [
+    {
+      "width": 1280,
+      "site": "highland",
+      "distance": "ordinary",
+      "meanAbsoluteRGB": 3.8554335002302023,
+      "changedPixelFraction": 0.9383567852209945,
+      "render": {
+        "calls": 337,
+        "triangles": 1245166,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "width": 1280,
+      "site": "highland",
+      "distance": "overview",
+      "meanAbsoluteRGB": 2.352572154120626,
+      "changedPixelFraction": 0.6502999827348066,
+      "render": {
+        "calls": 437,
+        "triangles": 1403786,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "width": 1280,
+      "site": "camp",
+      "distance": "ordinary",
+      "meanAbsoluteRGB": 0.0005812615101289134,
+      "changedPixelFraction": 0.0008244129834254144,
+      "render": {
+        "calls": 339,
+        "triangles": 2982001,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "width": 1280,
+      "site": "night",
+      "distance": "ordinary",
+      "meanAbsoluteRGB": 0.00029782458563535914,
+      "changedPixelFraction": 0.0005514071132596685,
+      "render": {
+        "calls": 339,
+        "triangles": 2982001,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "width": 390,
+      "site": "highland",
+      "distance": "ordinary",
+      "meanAbsoluteRGB": 3.4707932692307693,
+      "changedPixelFraction": 0.9490418002136752,
+      "render": {
+        "calls": 210,
+        "triangles": 1132470,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "width": 390,
+      "site": "camp",
+      "distance": "ordinary",
+      "meanAbsoluteRGB": 0.0012241809116809116,
+      "changedPixelFraction": 0.002560763888888889,
+      "render": {
+        "calls": 216,
+        "triangles": 2010549,
+        "points": 0,
+        "lines": 0
+      }
+    }
+  ],
+  "firstAttempt": {
+    "path": "dist/bedrock-relief-2026-11-04/raw.json",
+    "sha256": "346bdce5c2a9d769dbdb6cdaee5610ea945684139814f7fba5c149080d4da572",
+    "reason": "Harness required no requestfailed events despite resolved asset loaders; preserved eight desktop images and original assertion."
+  },
+  "networkDiagnostics": [
+    {
+      "width": 1280,
+      "consoleWarningsErrors": 0,
+      "abortedRequests": 18
+    },
+    {
+      "width": 390,
+      "consoleWarningsErrors": 0,
+      "abortedRequests": 9
+    }
+  ],
+  "networkCause": "Unresolved; no clean-network claim. Authored loader promises and all texture states independently ready.",
+  "screenshotsReviewed": true,
+  "reviewScope": "Agent inspected all 12 final images through three paired contact sheets, plus original ordinary highland candidate at full size.",
+  "decision": "rejected",
+  "decisionReason": "Interrupted lines read as scratches on smooth bare hills; no new silhouette or spatial layering. Do not promote or continue seam/noise tuning.",
+  "motionReviewed": false,
+  "gpuTimingMeasured": false,
+  "physicalDevice": false,
+  "currentOrdinarySave": "docs/native-camp-night-2026-11-04/final-save.json",
+  "auditToolSha256": "39412ca3b7d43fb2cfc145038511454f9497d9b6ad8ab4b6b1ebc0945251c380",
+  "contactSheets": [
+    {
+      "path": "docs/bedrock-relief-2026-11-04/camp-night-comparison.jpg",
+      "sha256": "b0bdebc8a6f1c48446fe195d4380aad25b859e3d47bdf7cdec694e6c3f8febca"
+    },
+    {
+      "path": "docs/bedrock-relief-2026-11-04/highland-comparison.jpg",
+      "sha256": "cd059bf87f541b66f295d32eb7e09f5cd8cba1cb98c5fe8bb449158bf3a42d51"
+    },
+    {
+      "path": "docs/bedrock-relief-2026-11-04/mobile-comparison.jpg",
+      "sha256": "29379967ba131a928f6220649daf1e4831e63b77e89d0f1f566e6a9cf21103eb"
+    }
+  ]
+}

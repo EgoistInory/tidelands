@@ -1,0 +1,527 @@
+{
+  "date": "2026-11-04T14:13:13.641Z",
+  "sources": {
+    "tests/bedrock-relief-candidate.js": "090a28e1f3a362ab042c81d53d0fcfa17ef7d879c1860fd9431bd0c9d59da2d7",
+    "tests/bedrock-relief-review.html": "16940c7cb32a0808f14dea96af2c8c53a442bcb7e911e122fab5f8d9fd41a19f",
+    "tools/run_bedrock_relief_review.mjs": "60879cedc588665182c8c8cd14373608c523d37bfb84142e77f3309eabbab26d",
+    "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+    "src/scene.js": "d283b541c2b0a2e7985da3d874b652c0d1753a95754b6c945a725052aa58da03",
+    "src/world.js": "4abcfa0aa50fb5098bbdffc8ff1c992bf4859dd9415f3f455e0db6793fcc6b9e",
+    "src/landscape.js": "207519631b13e3287eb0cd7500ef979c479025aee1f31f16fa2acd39e6dc52ff",
+    "docs/native-campaign-2026-11-03/06-explorer-save.json": "92ede0255c22816ace94e6a57cfa452251750cef382d90a2348baf7f8c119b01",
+    "docs/native-camp-night-2026-11-04/01-camp-return-save.json": "752b0e8681c494dff83ca740eab63d52127a948a6bb9ee31222fa848f696a424",
+    "docs/native-camp-night-2026-11-04/02-natural-night-save.json": "2d1ce8885e381e18ea8777ddbda313dd51e7d4b8c7792265861d74b0fd9b4ff3"
+  },
+  "rows": [
+    {
+      "site": "highland",
+      "distance": "ordinary",
+      "variant": "baseline",
+      "camera": [
+        -67.9173748304866,
+        30.775199214200626,
+        -173.8773166514339
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 337,
+        "triangles": 1245166,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-highland-ordinary-baseline.png",
+      "sha256": "a1fb023f204b1b57801f8e03f77deb2d979a9b024be83a8cb2b768795c56e25e"
+    },
+    {
+      "site": "highland",
+      "distance": "ordinary",
+      "variant": "candidate",
+      "camera": [
+        -67.9173748304866,
+        30.775199214200626,
+        -173.8773166514339
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 337,
+        "triangles": 1245166,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-highland-ordinary-candidate.png",
+      "sha256": "0b45a6bf571bd78ddb5e5c2b905141b110069e5156ca91a74bf2e1609c55415f"
+    },
+    {
+      "site": "highland",
+      "distance": "overview",
+      "variant": "baseline",
+      "camera": [
+        -45.009508685116984,
+        43.775199214200626,
+        -159.72011174253848
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 437,
+        "triangles": 1403786,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-highland-overview-baseline.png",
+      "sha256": "b6bd5058604ab1f6e9e5b5e7c2f3f65e030246c30aab61340fc70c3953391733"
+    },
+    {
+      "site": "highland",
+      "distance": "overview",
+      "variant": "candidate",
+      "camera": [
+        -45.009508685116984,
+        43.775199214200626,
+        -159.72011174253848
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 437,
+        "triangles": 1403786,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-highland-overview-candidate.png",
+      "sha256": "73b8e8055620b51374cbff072d9683548cb4e543d9a714eadab0795805114ada"
+    },
+    {
+      "site": "camp",
+      "distance": "ordinary",
+      "variant": "baseline",
+      "camera": [
+        -71.69575413492436,
+        12.997665337459935,
+        119.70163337078873
+      ],
+      "lookAt": [
+        -73.78788798955475,
+        9.097665337459935,
+        105.85883827968414
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 819.6352999998687,
+      "quest": 6,
+      "kills": 13,
+      "player": {
+        "x": -73.78788798955475,
+        "z": 105.85883827968414,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 339,
+        "triangles": 2982001,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-camp-ordinary-baseline.png",
+      "sha256": "efd851c39c3f1bec15575345819cde2c402fc5416d3307dfecb33ea619727ab3"
+    },
+    {
+      "site": "camp",
+      "distance": "ordinary",
+      "variant": "candidate",
+      "camera": [
+        -71.69575413492436,
+        12.997665337459935,
+        119.70163337078873
+      ],
+      "lookAt": [
+        -73.78788798955475,
+        9.097665337459935,
+        105.85883827968414
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 819.6352999998687,
+      "quest": 6,
+      "kills": 13,
+      "player": {
+        "x": -73.78788798955475,
+        "z": 105.85883827968414,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 339,
+        "triangles": 2982001,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-camp-ordinary-candidate.png",
+      "sha256": "647118e422b91ecc6a45e23bfab8e331d755b7c11c205e26215511025b7d27a6"
+    },
+    {
+      "site": "night",
+      "distance": "ordinary",
+      "variant": "baseline",
+      "camera": [
+        -71.69575413492436,
+        12.997665337459935,
+        119.70163337078873
+      ],
+      "lookAt": [
+        -73.78788798955475,
+        9.097665337459935,
+        105.85883827968414
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 865.6556999998638,
+      "quest": 6,
+      "kills": 13,
+      "player": {
+        "x": -73.78788798955475,
+        "z": 105.85883827968414,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 339,
+        "triangles": 2982001,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-night-ordinary-baseline.png",
+      "sha256": "661f87e4981e46bf19787037d5aa322255cf3aa08058e68e39819dc2bfd22376"
+    },
+    {
+      "site": "night",
+      "distance": "ordinary",
+      "variant": "candidate",
+      "camera": [
+        -71.69575413492436,
+        12.997665337459935,
+        119.70163337078873
+      ],
+      "lookAt": [
+        -73.78788798955475,
+        9.097665337459935,
+        105.85883827968414
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 865.6556999998638,
+      "quest": 6,
+      "kills": 13,
+      "player": {
+        "x": -73.78788798955475,
+        "z": 105.85883827968414,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 339,
+        "triangles": 2982001,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-night-ordinary-candidate.png",
+      "sha256": "da7fda25f3d5f846d56dced2b87d0123be84760291b56aeabfdb33e9e13983dc"
+    }
+  ],
+  "contexts": [
+    {
+      "width": 1280,
+      "logs": [],
+      "failures": [
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/UAL1_Standard.glb",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Superhero_Male_FullBody.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "Frozen copied ordinary save scenes, explicit fixed camera. Isolated material candidate only. Not native gameplay, GPU timing, continuous motion, audition or physical-device proof.",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/characters/UAL1_Standard.glb'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/characters/Superhero_Male_FullBody.bin'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.gltf'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.gltf'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.bin'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.bin'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.gltf'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.gltf'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.bin'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.bin'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.gltf'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.bin'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.bin'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.gltf'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_mid.bin'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.bin'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.gltf'\n+   },\n+   {\n+     failure: {\n+       errorText: 'net::ERR_ABORTED'\n+     },\n+     url: 'http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.bin'\n+   }\n+ ]\n- []\n\n    at file:///Users/huxiaocong/Codex/tidelands/tools/run_bedrock_relief_review.mjs:23:97"
+}
