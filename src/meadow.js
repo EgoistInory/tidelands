@@ -245,6 +245,10 @@ function createShoreCover(groundHeight){
       if(y<.55||y>2.4||slope>.45||random()<r/radius*.5||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<8))continue;
       const scale=.65+random()*.65;
       dummy.position.set(x,terrain(x,z)-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);dummy.scale.set(scale,scale*(.7+random()*.4),scale);dummy.updateMatrix();
+      // Layout RNG stays stable; the drawn Float32 position must still sit on safe coastal ground.
+      const px=Math.fround(x),pz=Math.fround(z),height=terrain(px,pz),currentSlope=Math.hypot(terrain(px+.5,pz)-terrain(px-.5,pz),terrain(px,pz+.5)-terrain(px,pz-.5));
+      if(height<.55||height>2.4||currentSlope>.45)continue;
+      dummy.position.y=height-.04;dummy.updateMatrix();
       matrices.push(dummy.matrix.clone());colors.push(tone);
     }
   }

@@ -1,0 +1,378 @@
+{
+  "entry": "http://127.0.0.1:4190/dist/tidelands-m5-2026-11-05-bedrock/tidelands-local/",
+  "packageSha256": "b1900ba4c824a8d244892b3db37caa15cbda77ce51c089adea444116e584be31",
+  "phases": [
+    {
+      "name": "00-fresh",
+      "save": "00-fresh-save.json",
+      "saveSha256": "8d0bf22d9a761131849ef8df3c8a4124686997e6427102c022dfa901b15cc3de",
+      "image": "00-fresh.png",
+      "imageSha256": "c826ae54f5e0ebf8b87530f30b8d5094d63d5170a8202a1423eee6a873d1ae0c",
+      "quest": 0,
+      "kills": 0,
+      "time": 120.11019999980925,
+      "player": {
+        "x": -70,
+        "z": 102,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 0,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [],
+      "discovered": [
+        "潮汐海岸"
+      ],
+      "ui": {
+        "title": "归航的灯火",
+        "hp": 100,
+        "toast": "欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "01-keeper",
+      "save": "01-keeper-save.json",
+      "saveSha256": "516f057ce3d18747804d9c3753440edaad4e26accd19750f57c18fcca8158c20",
+      "image": "01-keeper.png",
+      "imageSha256": "a37fab9372255f7ad7f517e37e002763d44768d98b048a26b56ec431bbd0261b",
+      "quest": 1,
+      "kills": 0,
+      "time": 123.02419999980931,
+      "player": {
+        "x": -60.21027497026714,
+        "z": 95.9024731200085,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 1.7207963267948967
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 0,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [],
+      "discovered": [
+        "潮汐海岸"
+      ],
+      "ui": {
+        "title": "荒野的第一把工具",
+        "hp": 100,
+        "toast": "阿岚：风暴熄灭了归航灯塔。先采些木材和石料，做一把石斧，我们会需要它。\n新的目标：荒野的第一把工具",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "02-axe",
+      "save": "02-axe-save.json",
+      "saveSha256": "0391701586fe93f51c1303d0579a119b6b48aee557ae7ab751c5f2e024b75272",
+      "image": "02-axe.png",
+      "imageSha256": "5f734f6dce0ab59f6d8722e567a2e3a3cf0cc587cefbebea60b0e8a242d59e7d",
+      "quest": 2,
+      "kills": 0,
+      "time": 135.07049999980967,
+      "player": {
+        "x": -68.24811840067908,
+        "z": 114.74380123636449,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.36603211583030515
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 1,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [],
+      "discovered": [
+        "潮汐海岸"
+      ],
+      "ui": {
+        "title": "在岛上安一个家",
+        "hp": 100,
+        "toast": "制作完成：石斧\n新的目标：在岛上安一个家",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "03-camp",
+      "save": "03-camp-save.json",
+      "saveSha256": "4edf32a831e0ca45e7c946c98c229e8a3af683a9d521090de57497a8a64f56dc",
+      "image": "03-camp.png",
+      "imageSha256": "afe8efe736bc9e15ed95ec2623f4a216d471706fd3614caa5a744b1594b71e14",
+      "quest": 3,
+      "kills": 1,
+      "time": 190.19229999980564,
+      "player": {
+        "x": -73.95936287696702,
+        "z": 100.79034754663843,
+        "hp": 76,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "inventory": {
+        "wood": 13,
+        "stone": 10,
+        "fiber": 2,
+        "berry": 4,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18988",
+          "type": "campfire",
+          "x": -73.06273408212543,
+          "z": 106.72297401425469
+        }
+      ],
+      "discovered": [
+        "潮汐海岸"
+      ],
+      "ui": {
+        "title": "林间的来信",
+        "hp": 76,
+        "toast": "建造完成：营火\n新的目标：林间的来信",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "04-botanist",
+      "save": "04-botanist-save.json",
+      "saveSha256": "52e0dc2a200ade7e29da345f2a1f0ba27eb1fc2950933b3a581575756aecc7bd",
+      "image": "04-botanist.png",
+      "imageSha256": "ac994d0dab32aa33937cf5f08b0abcb739f2c1869adc4b26a8e435c19d7f667e",
+      "quest": 4,
+      "kills": 5,
+      "time": 292.79339999979493,
+      "player": {
+        "x": 129.1942573595897,
+        "z": -24.99710416821649,
+        "hp": 73,
+        "stamina": 100,
+        "yaw": 1.7207963267948967
+      },
+      "inventory": {
+        "wood": 13,
+        "stone": 10,
+        "fiber": 10,
+        "berry": 10,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18988",
+          "type": "campfire",
+          "x": -73.06273408212543,
+          "z": 106.72297401425469
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地"
+      ],
+      "ui": {
+        "title": "雾岬的回声",
+        "hp": 73,
+        "toast": "林栖：雾岬高地上有能点亮灯塔的晶石。野兽守着山路，击退两只，再去找航海家远舟。送你一些浆果。\n新的目标：雾岬的回声",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "05-two-kills",
+      "save": "05-two-kills-save.json",
+      "saveSha256": "cc8307d577bbc28f04a678f6416b97573dd06a7d7dac6190c5b8c01786cecfdf",
+      "image": "05-two-kills.png",
+      "imageSha256": "4a91077266af796a1b58becdcbf0858c8b3200e1905c51933975772da753395e",
+      "quest": 4,
+      "kills": 5,
+      "time": 293.04929999979487,
+      "player": {
+        "x": 129.1942573595897,
+        "z": -24.99710416821649,
+        "hp": 73,
+        "stamina": 100,
+        "yaw": 1.7207963267948967
+      },
+      "inventory": {
+        "wood": 13,
+        "stone": 10,
+        "fiber": 10,
+        "berry": 10,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18988",
+          "type": "campfire",
+          "x": -73.06273408212543,
+          "z": 106.72297401425469
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地"
+      ],
+      "ui": {
+        "title": "雾岬的回声",
+        "hp": 73,
+        "toast": "林栖：雾岬高地上有能点亮灯塔的晶石。野兽守着山路，击退两只，再去找航海家远舟。送你一些浆果。\n新的目标：雾岬的回声",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "06-explorer",
+      "save": "06-explorer-save.json",
+      "saveSha256": "8d35a7fa407f248e6e39a3ddb2feac3d3d3c25a2c5b79131b9b1c20bcb21058c",
+      "image": "06-explorer.png",
+      "imageSha256": "9ebdf023e6e4a280750565c2d92bf38c1af814e8299dbe77aeec483b95d75cc1",
+      "quest": 5,
+      "kills": 7,
+      "time": 629.5245999997744,
+      "player": {
+        "x": -69.0097996178229,
+        "z": -187.12620342176115,
+        "hp": 60,
+        "stamina": 100,
+        "yaw": -2.991592653589793
+      },
+      "inventory": {
+        "wood": 13,
+        "stone": 10,
+        "fiber": 14,
+        "berry": 11,
+        "shell": 0,
+        "crystal": 1,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18988",
+          "type": "campfire",
+          "x": -73.06273408212543,
+          "z": 106.72297401425469
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "让灯塔重新发光",
+        "hp": 60,
+        "toast": "远舟：你已经能独自穿过荒野了。这块晶石送给你；带齐材料，回去修复灯塔吧。\n新的目标：让灯塔重新发光",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    }
+  ],
+  "logs": [],
+  "scope": "Unmodified packaged index in a fresh isolated browser context. No init script, route replacement, game-state injection, clock change or teleport. Own ordinary saves are read after actual slot-1 input. Pure Node planning on copied save observations. Not physical device, audition or GPU acceptance.",
+  "attempt": 1,
+  "complete": false,
+  "error": "Error: No route to resource-1134: No route within budget\n    at go (file:///Users/huxiaocong/Codex/tidelands/tools/run_bedrock_native_campaign.mjs:48:23)\n    at async gather (file:///Users/huxiaocong/Codex/tidelands/tools/run_bedrock_native_campaign.mjs:60:3)\n    at async file:///Users/huxiaocong/Codex/tidelands/tools/run_bedrock_native_campaign.mjs:83:70",
+  "respawns": 0,
+  "video": "page@33e8b3b605f4f0a8508c3583177eaa36.webm",
+  "videoSha256": "b06f59a06a7d5d4fa9ca8bd77f3ebc5abe9ac6c78c344b446e4f85da27da39e3"
+}

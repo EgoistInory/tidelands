@@ -1,5 +1,6 @@
 // Pure local input planning on a copied observation; never imports browser APIs or mutates the running game.
 import {createWorld,LANDMARKS,terrain} from '../src/world.js';
+import {terrainStepAllowed} from '../src/terrain-grid.js';
 import {actorBlocksMove} from '../src/actor-contact.js';
 import {resourceBlocksMove,resourceReachDistance} from '../src/resource-contact.js';
 import {footprintBlocksMove} from '../src/resource-footprint.js';
@@ -12,7 +13,8 @@ export function clearSegment(state,from,to){
   const distance=Math.hypot(to.x-from.x,to.z-from.z),steps=Math.max(1,Math.ceil(distance/.45));let a={...from};
   for(let i=1;i<=steps;i++){
     const b={x:from.x+(to.x-from.x)*i/steps,z:from.z+(to.z-from.z)*i/steps};
-    if(Math.abs(b.x)>390||Math.abs(b.z)>390||terrain(b.x,b.z)-terrain(a.x,a.z)>1.9)return false;
+    const turn={x:b.x,z:a.z};
+    if(Math.abs(b.x)>390||Math.abs(b.z)>390||!terrainStepAllowed(a,turn,terrain)||!terrainStepAllowed(turn,b,terrain))return false;
     if(nearby(b).some(o=>(state.depleted[o.id]??0)<=state.time&&(footprintBlocksMove(a,b,o,.35)??(o.type==='tree'?actorBlocksMove(a,b,o,.35,1.15):resourceBlocksMove(a,b,o,.35)))))return false;
     if(state.buildings.some(o=>o.type!=='campfire'&&actorBlocksMove(a,b,o,.35,1.65)))return false;
     if(LANDMARKS.some(o=>o.type==='ruin'?ruinBlocksMove(a,b,o):o.type==='npc'?actorBlocksMove(a,b,o):['cottage','lighthouse'].includes(o.type)&&actorBlocksMove(a,b,o,.35,o.type==='cottage'?3.65:2.65)))return false;

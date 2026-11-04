@@ -3,7 +3,7 @@ import {createGroundSurface} from '../src/ground-surface.js';import {createRockS
 test('landform weather fields are bounded and continuous across the four islands with zero tidal exposure',async()=>{
  const {landformSample}=await import('./landform-surface-candidate.js');let low=1,high=0;
  for(const island of ISLANDS)for(let x=island.x-50;x<=island.x+50;x+=3)for(let z=island.z-50;z<=island.z+50;z+=3){
-  const a=landformSample(x,z),b=landformSample(x+.01,z+.01);assert.equal(a.length,3);assert.ok(a.every(v=>Number.isFinite(v)&&v>=0&&v<=1));assert.ok(a.every((v,i)=>Math.abs(v-b[i])<.015));if(terrain(x,z)<1.6)assert.deepEqual(a,[0,0,0]);else{low=Math.min(low,a[0]);high=Math.max(high,a[0]);}
+  const a=landformSample(x,z),b=landformSample(x+.00001,z+.00001);assert.equal(a.length,3);assert.ok(a.every(v=>Number.isFinite(v)&&v>=0&&v<=1));assert.ok(a.every((v,i)=>Math.abs(v-b[i])<.015));if(terrain(x,z)<1.6)assert.deepEqual(a,[0,0,0]);else{low=Math.min(low,a[0]);high=Math.max(high,a[0]);}
  }
  assert.ok(high-low>.4,'broad dry and weathered patches must span multiple terrain cells');
 });

@@ -1,4 +1,6 @@
 import {landformOffset} from './terrain-composition.js';
+import {createTerrainSurface} from './terrain-grid.js';
+import {bedrockHeight} from './bedrock-terrain.js';
 export const WORLD_SIZE = 800;
 export const SPAWN = {x:-70,z:102};
 export const ISLANDS = [
@@ -91,4 +93,5 @@ export function createWorld(){
 }
 
 const protectedCompositionSites=[SPAWN,...LANDMARKS];
-export function terrain(x,z){const base=previousTerrain(x,z);return base+landformOffset(x,z,base,ISLANDS,protectedCompositionSites);}
+const terrainSurface=createTerrainSurface((x,z)=>{const base=previousTerrain(x,z),regional=base+landformOffset(x,z,base,ISLANDS,protectedCompositionSites);return bedrockHeight(x,z,regional,ISLANDS,protectedCompositionSites);});
+export function terrain(x,z){return terrainSurface(x,z);}

@@ -1,5 +1,6 @@
 import {footprintBlocksMove,footprintIntersectsBuilding,copyFootprint} from './resource-footprint.js';
 import {SPAWN,LANDMARKS,terrain,regionAt,createWorld} from './world.js';
+import {terrainStepAllowed} from './terrain-grid.js';
 import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_DURATION,GATHER_IMPACT,GATHER_RANGE,ENEMY_ATTACK_DURATION,ENEMY_ATTACK_IMPACT} from './action-timing.js';
 import {resourceReachDistance,resourceBlocksMove,resourceHalfSize} from './resource-contact.js';
 import {ruinBlocksMove} from './ruin-layout.js';
@@ -115,7 +116,7 @@ function applyAttackDamage(state,damage,range){const hits=[],p=state.player,forw
 }
 function canActorMove(state,objects,from,to,mover){
   const {x,z}=to,radius=actorRadius(mover);
-  if(Math.abs(x)>390||Math.abs(z)>390||terrain(x,z)-terrain(from.x,from.z)>1.9)return false;
+  if(Math.abs(x)>390||Math.abs(z)>390||!terrainStepAllowed(from,to,terrain))return false;
   if(objects.some(o=>!isDepleted(state,o)&&(footprintBlocksMove(from,to,o,radius)??(o.type==='tree'?actorBlocksMove(from,to,o,radius,1.15):resourceBlocksMove(from,to,o,radius)))))return false;
   if(state.buildings.some(o=>o.type!=='campfire'&&actorBlocksMove(from,to,o,radius,1.65)))return false;
   if(LANDMARKS.some(o=>o.type==='ruin'?ruinBlocksMove(from,to,o,radius):o.type==='npc'?actorBlocksMove(from,to,o,radius):['cottage','lighthouse'].includes(o.type)&&actorBlocksMove(from,to,o,radius,o.type==='cottage'?3.65:2.65)))return false;

@@ -18,6 +18,7 @@ import {createRuin} from './ruin.js';
 import {createLighthouse} from './lighthouse.js';
 import {createGroundSurface} from './ground-surface.js';
 import {visibleGroundSampler} from './ground-support.js';
+import {TERRAIN_SIZE,TERRAIN_SEGMENTS} from './terrain-grid.js';
 import {createWeatheredRock,initializeRockSurface} from './rock.js';
 import {createMeadow,createFiberClump,updateMeadow,updateGroundCover,updateCampClearance} from './meadow.js';
 import {createSky,updateSky} from './sky.js';
@@ -121,7 +122,7 @@ export class WorldView{
   }
   installWoodlandDressing(dressing){this.woodlandDressing?.release();this.woodlandDressing=dressing;this.scene.add(dressing.root);}
   createTerrain(){
-    const geometry=new THREE.PlaneGeometry(800,800,320,320);geometry.rotateX(-Math.PI/2);const positions=geometry.attributes.position;
+    const geometry=new THREE.PlaneGeometry(TERRAIN_SIZE,TERRAIN_SIZE,TERRAIN_SEGMENTS,TERRAIN_SEGMENTS);geometry.rotateX(-Math.PI/2);const positions=geometry.attributes.position;
     const colors=[],layers=[];
     for(let i=0;i<positions.count;i++){
       const x=positions.getX(i),z=positions.getZ(i),y=terrain(x,z);positions.setY(i,y);
@@ -134,7 +135,7 @@ export class WorldView{
     for(let i=0;i<pixels.length;i+=4){const grain=185+Math.floor(random()*70);pixels[i]=pixels[i+1]=pixels[i+2]=grain;pixels[i+3]=255;}
     const detail=new THREE.DataTexture(pixels,256,256);detail.wrapS=detail.wrapT=THREE.RepeatWrapping;detail.repeat.set(80,80);detail.magFilter=THREE.LinearFilter;detail.minFilter=THREE.LinearMipmapLinearFilter;detail.generateMipmaps=true;detail.needsUpdate=true;
     this.groundSurface=createGroundSurface(detail,{anisotropy:this.renderer.capabilities.getMaxAnisotropy(),landscape:true,rockSurface:this.rockSurface});
-    const ground=new THREE.Mesh(geometry,this.groundSurface);ground.receiveShadow=true;this.scene.add(ground);
+    const ground=new THREE.Mesh(geometry,this.groundSurface);ground.castShadow=ground.receiveShadow=true;this.scene.add(ground);
   }
   createWater(){
     // Static terrain heights drive shallow-water colour and the foam band.

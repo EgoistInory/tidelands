@@ -2,11 +2,11 @@
 
 正在开发的单人 3D 海岛开放世界。中文界面，本地运行；M1 自由探索、M2 生存与营地、M3 世界内容与成长、M4 本地交付已完成功能验收，证据见 docs/M1-ACCEPTANCE.md 至 docs/M4-ACCEPTANCE.md。最终 M5 品质验收仍在推进，见 AGENT_PROGRESS.md 和 ROADMAP.md。
 
-当前已验证本地包：`dist/tidelands-m5-2026-11-03-creature-strike.zip`，SHA `2ffaf5a98e607ad5dceef0edc35a02200374be2cb26ec2d0eed4cb0bae3ac3e1`。蟹先抬螯、在实际伤害时向前夹击再收回，保留原有碰撞/伤害/闪避规则；395规则测试（项目Node22.17.1）、7打包测试、同镜头侧视与独立包桌面/390原生实战、食用及保存刷新通过，详见 `docs/CREATURE-STRIKE-DELIVERY.md`。这是有限品质批次，完整主线路径、自然动作、性能、试听/真机及完整M5/3A仍待。此前反馈包、区域地貌R2和地表支撑包保留；本地包位于被Git忽略的`dist/`。
+当前已验证本地包：`dist/tidelands-m5-2026-11-05-bedrock.zip`，SHA `b1900ba4c824a8d244892b3db37caa15cbda77ce51c089adea444116e584be31`。连续高地岩阶与实际Float32三角地面共用支撑，保留地标工作区/自然坡道，并阻止已捕获的小步攀陡壁。416规则/7打包、15场景图、独立包两会话从零普通主线至任务6/12击败、结束探索和完整保存刷新，以及三个真实旧档桌面/390导入恢复通过；首轮验收导航失败及修正留证。详见 `docs/BEDROCK-DELIVERY-CHECKPOINT.md`。这是有限交付，整体动作、美术/声音、当前GPU长时和真机及完整M5/3A仍待。旧包均保留，`dist/`不进入Git。
 
 代码与必要证据由Git管理，`main`同步到公开仓库 [EgoistInory/tidelands](https://github.com/EgoistInory/tidelands)。用户于2026-11-02明确确认继续同步该公开仓库；提交、推送和本地交付包的边界见 `docs/GIT-WORKFLOW.md`。
 
-前一有限功能组：全身低物采集，33针对性/291全量与真实原生E/main结算、暂停取消通过；近距纤维/浆果/贝壳、390检视与远距手臂限伸已保存，见 `docs/LOW-GATHER-REVIEW.md`。整体自然度/远距真实接触仍待，M5和完整3A未完成。当前本地包 `dist/tidelands-m5-2026-10-23-low-gather.zip`，SHA `63501f1a6b641985928aefe6ea5fb3ddc82c13a96f6674f4f31af062aed2a3b8`；独立包普通q6接续/保存390恢复通过，见 `docs/LOW-GATHER-DELIVERY.md`。新源GPU/长时不套用旧证据。
+历史有限功能组：全身低物采集，33针对性/291全量与真实原生E/main结算、暂停取消通过；近距纤维/浆果/贝壳、390检视与远距手臂限伸已保存，见 `docs/LOW-GATHER-REVIEW.md`。整体自然度/远距真实接触仍待，M5和完整3A未完成。该批本地包 `dist/tidelands-m5-2026-10-23-low-gather.zip`，SHA `63501f1a6b641985928aefe6ea5fb3ddc82c13a96f6674f4f31af062aed2a3b8`；独立包普通q6接续/保存390恢复通过，见 `docs/LOW-GATHER-DELIVERY.md`。新源GPU/长时不套用旧证据。
 
 ## 启动
 

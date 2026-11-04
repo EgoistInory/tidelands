@@ -6,7 +6,8 @@ test('decorative root candidate uses visible triangle support and preserves ever
  assert.equal(typeof support.buildGroundRootVariants,'function','ground-support candidate missing');
  const world=createWorld(),frozen=JSON.stringify(world.objects),batches=createMeadow(undefined,world.objects),originals=batches.map(b=>b.instanceMatrix.array.slice());
  const result=support.buildGroundRootVariants(batches,grid());assert.equal(JSON.stringify(world.objects),frozen);assert.equal(result.variants.length,batches.length);
- assert.ok(result.before.maxRootGap>.3);assert.ok(result.after.maxRootGap<-.0349);assert.equal(result.after.instances,result.before.instances);assert.equal(result.after.instances,105721);
+ const expected=batches.filter(b=>['meadow-grass','meadow-flowers','meadow-cover','meadow-shore','meadow-fern'].includes(b.name)).reduce((n,b)=>n+b.count,0);
+ assert.ok(result.before.maxRootGap>.3);assert.ok(result.after.maxRootGap<-.0349);assert.equal(result.after.instances,result.before.instances);assert.equal(result.after.instances,expected);assert(expected>100000&&expected<150000);
  for(let k=0;k<batches.length;k++){assert.deepEqual(batches[k].instanceMatrix.array,originals[k],'preparation must not mutate visible instances');const v=result.variants[k];for(let i=0;i<v.after.length;i++)if(i%16!==13)assert.equal(v.after[i],v.before[i]);}
 });
 test('ground sampler agrees with real triangle hits rather than interpolated cell corners on one diagonal',()=>{

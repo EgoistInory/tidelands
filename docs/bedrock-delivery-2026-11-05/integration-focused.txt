@@ -1,0 +1,148 @@
+TAP version 13
+# Subtest: archived independent-rock planner stays bounded and preserves resources under the current terrain
+ok 1 - archived independent-rock planner stays bounded and preserves resources under the current terrain
+  ---
+  duration_ms: 58.454584
+  type: 'test'
+  ...
+# Subtest: highland summit becomes an asymmetric saddle with two distinct shoulders
+ok 2 - highland summit becomes an asymmetric saddle with two distinct shoulders
+  ---
+  duration_ms: 7.80375
+  type: 'test'
+  ...
+# Subtest: regional composition keeps shorelines, low coastal ground and landmark foundations exact
+ok 3 - regional composition keeps shorelines, low coastal ground and landmark foundations exact
+  ---
+  duration_ms: 195.901667
+  type: 'test'
+  ...
+# Subtest: ridge height changes remain continuous and resource placement stays on authoritative ground
+ok 4 - ridge height changes remain continuous and resource placement stays on authoritative ground
+  ---
+  duration_ms: 154.427125
+  type: 'test'
+  ...
+# Subtest: landform weather fields are bounded and continuous across the four islands with zero tidal exposure
+ok 5 - landform weather fields are bounded and continuous across the four islands with zero tidal exposure
+  ---
+  duration_ms: 64.530625
+  type: 'test'
+  ...
+# Subtest: surface candidate preserves world and rendered height geometry, shares textures and adds one bounded attribute without texture fetches
+ok 6 - surface candidate preserves world and rendered height geometry, shares textures and adds one bounded attribute without texture fetches
+  ---
+  duration_ms: 150.749542
+  type: 'test'
+  ...
+# Subtest: curved grass and petals have finite normals, nondegenerate faces and bounded sway
+ok 7 - curved grass and petals have finite normals, nondegenerate faces and bounded sway
+  ---
+  duration_ms: 10.24475
+  type: 'test'
+  ...
+# Subtest: region culling preserves grass placement, width, rotation and random sequence while height varies
+ok 8 - region culling preserves grass placement, width, rotation and random sequence while height varies
+  ---
+  duration_ms: 492.785625
+  type: 'test'
+  ...
+# Subtest: grass and flowers share the game clock for rooted vertex sway
+ok 9 - grass and flowers share the game clock for rooted vertex sway
+  ---
+  duration_ms: 0.466583
+  type: 'test'
+  ...
+# Subtest: dense patches stay on gentle land with shared geometry and per-patch tint
+ok 10 - dense patches stay on gentle land with shared geometry and per-patch tint
+  ---
+  duration_ms: 313.263875
+  type: 'test'
+  ...
+# Subtest: near patch batches cull beyond the fade range and recover after the camera returns
+ok 11 - near patch batches cull beyond the fade range and recover after the camera returns
+  ---
+  duration_ms: 280.889708
+  type: 'test'
+  ...
+# Subtest: coastal tufts stay above waves on gentle sand across all islands and cull at distance
+ok 12 - coastal tufts stay above waves on gentle sand across all islands and cull at distance
+  ---
+  duration_ms: 265.722667
+  type: 'test'
+  ...
+# Subtest: each island has metre-scale unequal shoulders and a lower valley instead of a single smooth mound
+ok 13 - each island has metre-scale unequal shoulders and a lower valley instead of a single smooth mound
+  ---
+  duration_ms: 85.022291
+  type: 'test'
+  ...
+# Subtest: regional profiles differ after removing rotation and total height scale
+ok 14 - regional profiles differ after removing rotation and total height scale
+  ---
+  duration_ms: 10.528792
+  type: 'test'
+  ...
+# Subtest: terrain composition preserves shore water lines and the spawn/landmark working areas
+ok 15 - terrain composition preserves shore water lines and the spawn/landmark working areas
+  ---
+  duration_ms: 53.051792
+  type: 'test'
+  ...
+# Subtest: resource identities, footprints, rotation, enemy homes and random layout remain unchanged
+ok 16 - resource identities, footprints, rotation, enemy homes and random layout remain unchanged
+  ---
+  duration_ms: 28.7395
+  type: 'test'
+  ...
+# Subtest: sprinting down the exposed highland slope does not collapse the pelvis to reach an airborne foot
+ok 17 - sprinting down the exposed highland slope does not collapse the pelvis to reach an airborne foot
+  ---
+  duration_ms: 278.406167
+  type: 'test'
+  ...
+# Subtest: sprint stance releases before an uphill planted foot forces the pelvis below its support range
+ok 18 - sprint stance releases before an uphill planted foot forces the pelvis below its support range
+  ---
+  duration_ms: 38.716834
+  type: 'test'
+  ...
+# Subtest: real cliff rejects uphill movement at dt=0.016666666666666666
+ok 19 - real cliff rejects uphill movement at dt=0.016666666666666666
+  ---
+  duration_ms: 29.862417
+  type: 'test'
+  ...
+# Subtest: real cliff rejects uphill movement at dt=0.06
+ok 20 - real cliff rejects uphill movement at dt=0.06
+  ---
+  duration_ms: 7.5245
+  type: 'test'
+  ...
+# Subtest: steep saved positions can retreat downhill and normal coast movement remains available
+ok 21 - steep saved positions can retreat downhill and normal coast movement remains available
+  ---
+  duration_ms: 21.9745
+  type: 'test'
+  ...
+# Subtest: decorative root candidate uses visible triangle support and preserves every non-Y matrix value
+ok 22 - decorative root candidate uses visible triangle support and preserves every non-Y matrix value
+  ---
+  duration_ms: 741.914333
+  type: 'test'
+  ...
+# Subtest: ground sampler agrees with real triangle hits rather than interpolated cell corners on one diagonal
+ok 23 - ground sampler agrees with real triangle hits rather than interpolated cell corners on one diagonal
+  ---
+  duration_ms: 78.636667
+  type: 'test'
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1445.578542
