@@ -1,0 +1,233 @@
+{
+  "entry": "http://127.0.0.1:4190/dist/tidelands-m5-2026-11-03-audio-interruption/tidelands-local/",
+  "packageSha256": "ea99aa6904c0ea57560d1ce3874d7d469d9d2dcc5fe252d7cf82f5a5d27239d1",
+  "phases": [
+    {
+      "name": "00-continued-ending",
+      "save": "00-continued-ending-save.json",
+      "saveSha256": "c4a312c874844ab1885da0439ab466df7182bdb27abeecb1310aed2f0a24d78c",
+      "image": "00-continued-ending.png",
+      "imageSha256": "20b0f69f1990b4b853f16c1c84147cd13f5edff7ee8a5dc2dd974477b7b84f90",
+      "quest": 6,
+      "kills": 13,
+      "time": 792.0984999998672,
+      "cycle": {
+        "label": "午后",
+        "daylight": 0.6487304010058773,
+        "day": 2
+      },
+      "player": {
+        "x": -100.21781664515474,
+        "z": -47.160666635571296,
+        "hp": 85,
+        "stamina": 100,
+        "yaw": 2.569937802725032
+      },
+      "inventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 26,
+        "berry": 9,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-23733",
+          "type": "campfire",
+          "x": -72.20057294388393,
+          "z": 106.86954811788564
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "群岛，再次相连",
+        "hp": 85,
+        "toast": "欢迎回来。当前目标：群岛，再次相连",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "01-camp-return",
+      "save": "01-camp-return-save.json",
+      "saveSha256": "752b0e8681c494dff83ca740eab63d52127a948a6bb9ee31222fa848f696a424",
+      "image": "01-camp-return.png",
+      "imageSha256": "4f704a9ab774cb56b506f88bcc4c631d8aa27b019ea84879c16d5adec3963ded",
+      "quest": 6,
+      "kills": 13,
+      "time": 819.6352999998687,
+      "cycle": {
+        "label": "黄昏",
+        "daylight": 0.3739132245980801,
+        "day": 2
+      },
+      "player": {
+        "x": -73.78788798955475,
+        "z": 105.85883827968414,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "inventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 26,
+        "berry": 9,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-23733",
+          "type": "campfire",
+          "x": -72.20057294388393,
+          "z": 106.86954811788564
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "群岛，再次相连",
+        "hp": 100,
+        "toast": "火光驱散疲惫，生命和体力已恢复。",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "02-natural-night",
+      "save": "02-natural-night-save.json",
+      "saveSha256": "2d1ce8885e381e18ea8777ddbda313dd51e7d4b8c7792265861d74b0fd9b4ff3",
+      "image": "02-natural-night.png",
+      "imageSha256": "f65af4b22ac946377f17451255ee19944438b63a02494c7716fdd83b2abf2e50",
+      "quest": 6,
+      "kills": 13,
+      "time": 865.6556999998638,
+      "cycle": {
+        "label": "夜晚",
+        "daylight": 0.04,
+        "day": 2
+      },
+      "player": {
+        "x": -73.78788798955475,
+        "z": 105.85883827968414,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "inventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 26,
+        "berry": 9,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-23733",
+          "type": "campfire",
+          "x": -72.20057294388393,
+          "z": 106.86954811788564
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "群岛，再次相连",
+        "hp": 100,
+        "toast": "火光驱散疲惫，生命和体力已恢复。",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    }
+  ],
+  "logs": [],
+  "scope": "Unmodified packaged index continuing the own mobile ending browser profile. No init script, route replacement, game-state injection, clock change or teleport. Own ordinary saves are read after actual slot-1 input. Pure Node planning on copied save observations. Not physical device, audition or GPU acceptance.",
+  "attempt": 1,
+  "complete": true,
+  "initialSaveSha256": "717c23ee8255975c03f0be5a85a1ab4816ddcfd7432c1c9a06ebb61e62939d5d",
+  "nightWait": {
+    "start": 819.6352999998687,
+    "observations": [
+      {
+        "wall": 1793797715783,
+        "time": 835.415199999867,
+        "cycle": {
+          "label": "黄昏",
+          "daylight": 0.2009820406361646,
+          "day": 2
+        }
+      },
+      {
+        "wall": 1793797730841,
+        "time": 850.5427999998655,
+        "cycle": {
+          "label": "黄昏",
+          "daylight": 0.04,
+          "day": 2
+        }
+      },
+      {
+        "wall": 1793797745907,
+        "time": 865.6090999998638,
+        "cycle": {
+          "label": "夜晚",
+          "daylight": 0.04,
+          "day": 2
+        }
+      }
+    ]
+  },
+  "reloadExact": true,
+  "respawns": 0,
+  "video": "page@7a8fd975d342cb329b75717cd25a1d82.webm",
+  "videoSha256": "327c18c63dd2f8ddcea97abad6aa4b8329b45260327dcdb1a92065385739f7c9"
+}
