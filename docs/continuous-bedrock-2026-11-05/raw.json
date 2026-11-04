@@ -1,0 +1,850 @@
+{
+  "sources": {
+    "src/world.js": "4abcfa0aa50fb5098bbdffc8ff1c992bf4859dd9415f3f455e0db6793fcc6b9e",
+    "src/scene.js": "d283b541c2b0a2e7985da3d874b652c0d1753a95754b6c945a725052aa58da03",
+    "src/game.js": "149cdd62e69562a93d59db3702b0fbab33f3c66e39d866e574de4d7a7b42d2da",
+    "src/landscape.js": "207519631b13e3287eb0cd7500ef979c479025aee1f31f16fa2acd39e6dc52ff",
+    "tests/continuous-bedrock-candidate.js": "b06e5b81353ef20b23a5e3303fe295c3989a068a8f542b92993d38423653f7da",
+    "tests/continuous-bedrock-review.html": "f31107f3396c9fb25446e13eefa0c7d2d5ad92a12ef19287fd9f063cfa5b9288",
+    "tools/run_continuous_bedrock_review.mjs": "13f7c0dcdaaa7b95f03e8d8c3c833058c86ecfa8f0443f266348a0852e76a55d"
+  },
+  "modifiedWorldSha256": "3dd483b40d6656f1b52af9a918f65400675ce873003c6a21e5e7581aa0a218a8",
+  "rows": [
+    {
+      "site": "highland",
+      "distance": "ordinary",
+      "variant": "baseline",
+      "camera": [
+        -67.9173748304866,
+        30.775199214200626,
+        -173.8773166514339
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 337,
+        "triangles": 1245166,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-highland-ordinary-baseline.png",
+      "sha256": "0167060e16ad61b23f0294f5a3c75342ba973f51bac55b5fe89c421905fa2c51"
+    },
+    {
+      "site": "highland",
+      "distance": "overview",
+      "variant": "baseline",
+      "camera": [
+        -45.009508685116984,
+        43.775199214200626,
+        -159.72011174253848
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 437,
+        "triangles": 1403786,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-highland-overview-baseline.png",
+      "sha256": "bd7bb7e83351c13cc529f3bb5cd60e042d1e6da981576ef735ea565128a1c14a"
+    },
+    {
+      "site": "camp",
+      "distance": "ordinary",
+      "variant": "baseline",
+      "camera": [
+        -71.69575413492436,
+        12.997665337459935,
+        119.70163337078873
+      ],
+      "lookAt": [
+        -73.78788798955475,
+        9.097665337459935,
+        105.85883827968414
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 819.6352999998687,
+      "quest": 6,
+      "kills": 13,
+      "player": {
+        "x": -73.78788798955475,
+        "z": 105.85883827968414,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 339,
+        "triangles": 2982001,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-camp-ordinary-baseline.png",
+      "sha256": "f16d031a33a017edc63719d694bfa6d82f2ead23f54bf6d4a496269a1e3c5c3e"
+    },
+    {
+      "site": "highland",
+      "distance": "ordinary",
+      "variant": "candidate",
+      "camera": [
+        -67.9173748304866,
+        30.775199214200626,
+        -173.8773166514339
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 360,
+        "triangles": 1307832,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-highland-ordinary-candidate.png",
+      "sha256": "63474da9c0f7d11d490ad26b3f33e89f2bc691a3b0701536585e13822b9d8dd9"
+    },
+    {
+      "site": "highland",
+      "distance": "overview",
+      "variant": "candidate",
+      "camera": [
+        -45.009508685116984,
+        43.775199214200626,
+        -159.72011174253848
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 455,
+        "triangles": 1457074,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-highland-overview-candidate.png",
+      "sha256": "d9d02b3837958fad340b95462cab0c5f5fac1d7729c2ed10a68365c95419a38d"
+    },
+    {
+      "site": "camp",
+      "distance": "ordinary",
+      "variant": "candidate",
+      "camera": [
+        -71.69575413492436,
+        12.997665337459935,
+        119.70163337078873
+      ],
+      "lookAt": [
+        -73.78788798955475,
+        9.097665337459935,
+        105.85883827968414
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 819.6352999998687,
+      "quest": 6,
+      "kills": 13,
+      "player": {
+        "x": -73.78788798955475,
+        "z": 105.85883827968414,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 338,
+        "triangles": 2964729,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-camp-ordinary-candidate.png",
+      "sha256": "c2a2eda2bdf8a99837363545335fed98f2d3ae0090c18da22186fd4dea5f8846"
+    },
+    {
+      "site": "highland",
+      "distance": "ordinary",
+      "variant": "baseline",
+      "camera": [
+        -67.9173748304866,
+        30.775199214200626,
+        -173.8773166514339
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        750
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 210,
+        "triangles": 1132470,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "390-highland-ordinary-baseline.png",
+      "sha256": "f18786e5a511c1f40f48d22606423c5000929789578f582235956a2ebbbf9667"
+    },
+    {
+      "site": "highland",
+      "distance": "ordinary",
+      "variant": "candidate",
+      "camera": [
+        -67.9173748304866,
+        30.775199214200626,
+        -173.8773166514339
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        750
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 205,
+        "triangles": 1113271,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "390-highland-ordinary-candidate.png",
+      "sha256": "c14ea97bfdeb2f6844209f53983a578afadf98727183ba44b94feed3a495103e"
+    }
+  ],
+  "contexts": [
+    {
+      "width": 1280,
+      "variant": "baseline",
+      "logs": [],
+      "failures": [
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/UAL1_Standard.glb",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Superhero_Male_FullBody.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "variant": "candidate",
+      "logs": [],
+      "failures": [
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Superhero_Male_FullBody.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/UAL1_Standard.glb",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "variant": "baseline",
+      "logs": [],
+      "failures": [
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/UAL1_Standard.glb",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Superhero_Male_FullBody.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "variant": "candidate",
+      "logs": [],
+      "failures": [
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Superhero_Male_FullBody.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/UAL1_Standard.glb",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "Isolated authority-height and terrain-shadow study on copied ordinary saves. World module route replacement declared. Not native inputs, movement/contact, old-camp, GPU timing or M5 acceptance.",
+  "complete": true
+}
