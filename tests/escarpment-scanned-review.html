@@ -1,0 +1,35 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>扫描岩体区域候选 · 正常存档画面对照</title>
+<style>html,body{margin:0;height:100%;background:#192723;color:#eee;font:13px system-ui}body{display:flex;flex-direction:column}nav{padding:7px}canvas{flex:1;min-height:0;width:100%;display:block}output{height:44px;overflow:auto;overflow-wrap:anywhere;font:10px monospace}</style>
+<nav>隔离几何候选 · 复制正常存档的静止场景，无用户存储写入 · <span id="status">准备中…</span></nav><canvas aria-label="正常旅程场景中的宏观岩体候选"></canvas><output></output>
+<script type="module">
+import * as THREE from '../vendor/three.module.min.js';
+import {WorldView} from '../src/scene.js';
+import {createWorld,terrain} from '../src/world.js';
+import {restore,serialize} from '../src/game.js';
+import {loadAuthoredCast} from '../src/authored-assets.js';
+import {loadWoodlandDressing} from '../src/woodland.js';
+import {prepareCoastalVisual,bindCoastalVisual} from '../src/coastal.js';
+import {prepareInlandVisual,bindInlandVisual} from '../src/inland.js';
+import {prepareSurfaceTextures} from '../src/startup-textures.js';
+import {updateGroundCover} from '../src/meadow.js';
+import {createScannedEscarpmentCandidate} from './escarpment-scanned-candidate.js';
+const files={highland:'native-campaign-2026-11-03/06-explorer-save.json',camp:'native-camp-night-2026-11-04/01-camp-return-save.json',night:'native-camp-night-2026-11-04/02-natural-night-save.json'};
+const saves=Object.fromEntries(await Promise.all(Object.entries(files).map(async([k,p])=>[k,await(await fetch('../docs/'+p)).text()])));
+const world=createWorld(),worldJSON=JSON.stringify(world),view=new WorldView(document.querySelector('canvas'),world),gl=view.renderer.getContext();
+await prepareSurfaceTextures([view.groundSurface.userData.ground,view.groundSurface.userData.ground.sand,view.rockSurface.userData.rock],view.renderer);
+view.installAuthoredCast(await loadAuthoredCast());view.installWoodlandDressing(await loadWoodlandDressing(world.objects));
+view.coastal=bindCoastalVisual(view,await prepareCoastalVisual());view.inland=bindInlandVisual(view,await prepareInlandVisual({level:innerWidth<700?'mid':'near'}));
+const ground=view.scene.children.find(o=>o.isMesh&&o.material===view.groundSurface),candidate=createScannedEscarpmentCandidate(view);
+let state,saved,camera,look,site,distance,variant;
+function snapshot(){return {site,distance,variant,camera:camera.toArray(),lookAt:look.toArray(),viewport:[innerWidth,innerHeight],buffer:[view.canvas.width,view.canvas.height],time:state.time,quest:state.quest,kills:state.kills,player:{...state.player},buildings:state.buildings.length,worldUnchanged:JSON.stringify(world)===worldJSON,stateUnchanged:serialize(state)===saved,authored:{cast:!!view.authoredCast,woodland:!!view.woodlandDressing,coastal:!!view.coastal,inland:!!view.inland},textures:[view.groundSurface.userData.ground.state.status,view.groundSurface.userData.ground.sand.state.status,view.rockSurface.userData.rock.state.status],escarpments:{count:candidate.plan.length,plan:candidate.plan},ground:{vertices:ground.geometry.attributes.position.count,layers:ground.geometry.attributes.groundLayers.count},render:{calls:view.renderer.info.render.calls,triangles:view.renderer.info.render.triangles,points:view.renderer.info.render.points,lines:view.renderer.info.render.lines},glError:gl.getError()};}
+function draw(){candidate.setEnabled(variant==='candidate');candidate.update(state);view.camera.position.copy(camera);view.camera.lookAt(look);view.sky.position.copy(camera);view.coastal.update(state);view.inland.update(state);updateGroundCover(view.meadow,camera);view.renderer.render(view.scene,view.camera);document.querySelector('output').textContent=JSON.stringify(snapshot());return snapshot();}
+function reset(nextSite='highland',nextDistance='ordinary',nextVariant='baseline'){
+  site=nextSite;distance=nextDistance;variant=nextVariant;state=restore(saves[site]);saved=serialize(state);view.player.userData.lastPosition=null;view.player.userData.worldFeet=null;
+  view.sync(state);view.draw(state,null,null,false,1/60);
+  const {x,z}=state.player,h=terrain(x,z),offset=distance==='overview'?[25,18,28]:distance==='far'?[65,45,60]:[Math.sin(.15)*14,5,Math.cos(.15)*14];
+  camera=new THREE.Vector3(x+offset[0],h+offset[1],z+offset[2]);look=new THREE.Vector3(x,h+1.1,z);return draw();
+}
+window.escarpmentReview={reset,snapshot,setVariant(v){variant=v;return draw();}};reset();document.querySelector('#status').textContent='就绪';
+window.addEventListener('resize',()=>{view.resize();draw();});
+window.addEventListener('pagehide',()=>{candidate.release();view.inland.release();view.coastal.release();view.authoredCast.release();view.woodlandDressing.release();view.contactShade.dispose();view.impacts.dispose();view.renderer.dispose();});
+</script></html>

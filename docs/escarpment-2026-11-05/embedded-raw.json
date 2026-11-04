@@ -1,0 +1,1823 @@
+{
+  "date": "2026-11-04T18:22:45.426Z",
+  "sources": {
+    "tests/escarpment-candidate.js": "d055deee9152f539b1e60c9005232b3977e0b656557378c960e9b613b258df8e",
+    "tests/escarpment-scanned-candidate.js": "3377c103891ddb2e6ae5bd98cbfdea89b95cbdbc8445eb5229eb08c03504e23a",
+    "tests/escarpment-embedded-candidate.js": "4885d06b15e3baf4db9e2e11b6811ab8a8d157123adee5dc0a2cc949a1d789f2",
+    "tests/escarpment-embedded-review.html": "9b853a179ceceefb71d226f182ebdd1762d5d786d56c3f502c3f75a8f0cc5df8",
+    "tools/run_escarpment_embedded_review.mjs": "c6824221107fde8fc34e3b30bd2eac5afa98f9caa27c90deed2373200d5c81a2",
+    "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+    "src/scene.js": "d283b541c2b0a2e7985da3d874b652c0d1753a95754b6c945a725052aa58da03",
+    "src/world.js": "4abcfa0aa50fb5098bbdffc8ff1c992bf4859dd9415f3f455e0db6793fcc6b9e",
+    "src/landscape.js": "207519631b13e3287eb0cd7500ef979c479025aee1f31f16fa2acd39e6dc52ff",
+    "docs/native-campaign-2026-11-03/06-explorer-save.json": "92ede0255c22816ace94e6a57cfa452251750cef382d90a2348baf7f8c119b01",
+    "docs/native-camp-night-2026-11-04/01-camp-return-save.json": "752b0e8681c494dff83ca740eab63d52127a948a6bb9ee31222fa848f696a424",
+    "docs/native-camp-night-2026-11-04/02-natural-night-save.json": "2d1ce8885e381e18ea8777ddbda313dd51e7d4b8c7792265861d74b0fd9b4ff3"
+  },
+  "rows": [
+    {
+      "site": "highland",
+      "distance": "ordinary",
+      "variant": "baseline",
+      "camera": [
+        -67.9173748304866,
+        30.775199214200626,
+        -173.8773166514339
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "escarpments": {
+        "count": 6,
+        "plan": [
+          {
+            "id": "bedrock-21--101--210",
+            "x": -101,
+            "z": -210,
+            "length": 8.441662753932178,
+            "width": 2.9788777817972,
+            "height": 4.487064289115369,
+            "rotation": -0.964454561713641,
+            "seed": 516725,
+            "rank": 48.422753189905464
+          },
+          {
+            "id": "bedrock-6--94--238",
+            "x": -94,
+            "z": -238,
+            "length": 7.309154789545573,
+            "width": 3.5550764286890626,
+            "height": 6.010072201769798,
+            "rotation": -0.10938120615113789,
+            "seed": 925943,
+            "rank": 46.73736124607309
+          },
+          {
+            "id": "bedrock-2--59--245",
+            "x": -59,
+            "z": -245,
+            "length": 9.735868323245086,
+            "width": 3.501824262179434,
+            "height": 5.1643335106782615,
+            "rotation": -0.0315799788234202,
+            "seed": 927804,
+            "rank": 45.48781334119214
+          },
+          {
+            "id": "bedrock-25--115--196",
+            "x": -115,
+            "z": -196,
+            "length": 8.786068306770176,
+            "width": 2.8598506965674457,
+            "height": 4.582632822729647,
+            "rotation": -0.45220588323827865,
+            "seed": 450087,
+            "rank": 38.2495030460875
+          },
+          {
+            "id": "bedrock-0--115--259",
+            "x": -115,
+            "z": -259,
+            "length": 9.130274605820887,
+            "width": 3.0278257999569176,
+            "height": 4.486894663888961,
+            "rotation": -2.194283114483464,
+            "seed": 679071,
+            "rank": 35.40989694199959
+          },
+          {
+            "id": "bedrock-15--122--217",
+            "x": -122,
+            "z": -217,
+            "length": 7.3380080696661025,
+            "width": 3.5571653283201154,
+            "height": 4.669941752403974,
+            "rotation": -1.895216871874694,
+            "seed": 270146,
+            "rank": 34.11568026839654
+          }
+        ]
+      },
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 337,
+        "triangles": 1245166,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-highland-ordinary-baseline.png",
+      "sha256": "0167060e16ad61b23f0294f5a3c75342ba973f51bac55b5fe89c421905fa2c51",
+      "screenshotTarget": "canvas"
+    },
+    {
+      "site": "highland",
+      "distance": "ordinary",
+      "variant": "candidate",
+      "camera": [
+        -67.9173748304866,
+        30.775199214200626,
+        -173.8773166514339
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "escarpments": {
+        "count": 6,
+        "plan": [
+          {
+            "id": "bedrock-21--101--210",
+            "x": -101,
+            "z": -210,
+            "length": 8.441662753932178,
+            "width": 2.9788777817972,
+            "height": 4.487064289115369,
+            "rotation": -0.964454561713641,
+            "seed": 516725,
+            "rank": 48.422753189905464
+          },
+          {
+            "id": "bedrock-6--94--238",
+            "x": -94,
+            "z": -238,
+            "length": 7.309154789545573,
+            "width": 3.5550764286890626,
+            "height": 6.010072201769798,
+            "rotation": -0.10938120615113789,
+            "seed": 925943,
+            "rank": 46.73736124607309
+          },
+          {
+            "id": "bedrock-2--59--245",
+            "x": -59,
+            "z": -245,
+            "length": 9.735868323245086,
+            "width": 3.501824262179434,
+            "height": 5.1643335106782615,
+            "rotation": -0.0315799788234202,
+            "seed": 927804,
+            "rank": 45.48781334119214
+          },
+          {
+            "id": "bedrock-25--115--196",
+            "x": -115,
+            "z": -196,
+            "length": 8.786068306770176,
+            "width": 2.8598506965674457,
+            "height": 4.582632822729647,
+            "rotation": -0.45220588323827865,
+            "seed": 450087,
+            "rank": 38.2495030460875
+          },
+          {
+            "id": "bedrock-0--115--259",
+            "x": -115,
+            "z": -259,
+            "length": 9.130274605820887,
+            "width": 3.0278257999569176,
+            "height": 4.486894663888961,
+            "rotation": -2.194283114483464,
+            "seed": 679071,
+            "rank": 35.40989694199959
+          },
+          {
+            "id": "bedrock-15--122--217",
+            "x": -122,
+            "z": -217,
+            "length": 7.3380080696661025,
+            "width": 3.5571653283201154,
+            "height": 4.669941752403974,
+            "rotation": -1.895216871874694,
+            "seed": 270146,
+            "rank": 34.11568026839654
+          }
+        ]
+      },
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 342,
+        "triangles": 1254164,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-highland-ordinary-candidate.png",
+      "sha256": "c60aa13e74a3bd7d917642c0b5693a413a3d8e17165130d4547db5d2df5627c6",
+      "screenshotTarget": "canvas"
+    },
+    {
+      "site": "highland",
+      "distance": "overview",
+      "variant": "baseline",
+      "camera": [
+        -45.009508685116984,
+        43.775199214200626,
+        -159.72011174253848
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "escarpments": {
+        "count": 6,
+        "plan": [
+          {
+            "id": "bedrock-21--101--210",
+            "x": -101,
+            "z": -210,
+            "length": 8.441662753932178,
+            "width": 2.9788777817972,
+            "height": 4.487064289115369,
+            "rotation": -0.964454561713641,
+            "seed": 516725,
+            "rank": 48.422753189905464
+          },
+          {
+            "id": "bedrock-6--94--238",
+            "x": -94,
+            "z": -238,
+            "length": 7.309154789545573,
+            "width": 3.5550764286890626,
+            "height": 6.010072201769798,
+            "rotation": -0.10938120615113789,
+            "seed": 925943,
+            "rank": 46.73736124607309
+          },
+          {
+            "id": "bedrock-2--59--245",
+            "x": -59,
+            "z": -245,
+            "length": 9.735868323245086,
+            "width": 3.501824262179434,
+            "height": 5.1643335106782615,
+            "rotation": -0.0315799788234202,
+            "seed": 927804,
+            "rank": 45.48781334119214
+          },
+          {
+            "id": "bedrock-25--115--196",
+            "x": -115,
+            "z": -196,
+            "length": 8.786068306770176,
+            "width": 2.8598506965674457,
+            "height": 4.582632822729647,
+            "rotation": -0.45220588323827865,
+            "seed": 450087,
+            "rank": 38.2495030460875
+          },
+          {
+            "id": "bedrock-0--115--259",
+            "x": -115,
+            "z": -259,
+            "length": 9.130274605820887,
+            "width": 3.0278257999569176,
+            "height": 4.486894663888961,
+            "rotation": -2.194283114483464,
+            "seed": 679071,
+            "rank": 35.40989694199959
+          },
+          {
+            "id": "bedrock-15--122--217",
+            "x": -122,
+            "z": -217,
+            "length": 7.3380080696661025,
+            "width": 3.5571653283201154,
+            "height": 4.669941752403974,
+            "rotation": -1.895216871874694,
+            "seed": 270146,
+            "rank": 34.11568026839654
+          }
+        ]
+      },
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 437,
+        "triangles": 1403786,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-highland-overview-baseline.png",
+      "sha256": "bd7bb7e83351c13cc529f3bb5cd60e042d1e6da981576ef735ea565128a1c14a",
+      "screenshotTarget": "canvas"
+    },
+    {
+      "site": "highland",
+      "distance": "overview",
+      "variant": "candidate",
+      "camera": [
+        -45.009508685116984,
+        43.775199214200626,
+        -159.72011174253848
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "escarpments": {
+        "count": 6,
+        "plan": [
+          {
+            "id": "bedrock-21--101--210",
+            "x": -101,
+            "z": -210,
+            "length": 8.441662753932178,
+            "width": 2.9788777817972,
+            "height": 4.487064289115369,
+            "rotation": -0.964454561713641,
+            "seed": 516725,
+            "rank": 48.422753189905464
+          },
+          {
+            "id": "bedrock-6--94--238",
+            "x": -94,
+            "z": -238,
+            "length": 7.309154789545573,
+            "width": 3.5550764286890626,
+            "height": 6.010072201769798,
+            "rotation": -0.10938120615113789,
+            "seed": 925943,
+            "rank": 46.73736124607309
+          },
+          {
+            "id": "bedrock-2--59--245",
+            "x": -59,
+            "z": -245,
+            "length": 9.735868323245086,
+            "width": 3.501824262179434,
+            "height": 5.1643335106782615,
+            "rotation": -0.0315799788234202,
+            "seed": 927804,
+            "rank": 45.48781334119214
+          },
+          {
+            "id": "bedrock-25--115--196",
+            "x": -115,
+            "z": -196,
+            "length": 8.786068306770176,
+            "width": 2.8598506965674457,
+            "height": 4.582632822729647,
+            "rotation": -0.45220588323827865,
+            "seed": 450087,
+            "rank": 38.2495030460875
+          },
+          {
+            "id": "bedrock-0--115--259",
+            "x": -115,
+            "z": -259,
+            "length": 9.130274605820887,
+            "width": 3.0278257999569176,
+            "height": 4.486894663888961,
+            "rotation": -2.194283114483464,
+            "seed": 679071,
+            "rank": 35.40989694199959
+          },
+          {
+            "id": "bedrock-15--122--217",
+            "x": -122,
+            "z": -217,
+            "length": 7.3380080696661025,
+            "width": 3.5571653283201154,
+            "height": 4.669941752403974,
+            "rotation": -1.895216871874694,
+            "seed": 270146,
+            "rank": 34.11568026839654
+          }
+        ]
+      },
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 443,
+        "triangles": 1414584,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-highland-overview-candidate.png",
+      "sha256": "d239a9ab5d66f235d493cb3abc8c58306e90ed9d4cc9ef3aeb828655d392be83",
+      "screenshotTarget": "canvas"
+    },
+    {
+      "site": "highland",
+      "distance": "far",
+      "variant": "baseline",
+      "camera": [
+        -5.009508685116984,
+        70.77519921420063,
+        -127.72011174253848
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "escarpments": {
+        "count": 6,
+        "plan": [
+          {
+            "id": "bedrock-21--101--210",
+            "x": -101,
+            "z": -210,
+            "length": 8.441662753932178,
+            "width": 2.9788777817972,
+            "height": 4.487064289115369,
+            "rotation": -0.964454561713641,
+            "seed": 516725,
+            "rank": 48.422753189905464
+          },
+          {
+            "id": "bedrock-6--94--238",
+            "x": -94,
+            "z": -238,
+            "length": 7.309154789545573,
+            "width": 3.5550764286890626,
+            "height": 6.010072201769798,
+            "rotation": -0.10938120615113789,
+            "seed": 925943,
+            "rank": 46.73736124607309
+          },
+          {
+            "id": "bedrock-2--59--245",
+            "x": -59,
+            "z": -245,
+            "length": 9.735868323245086,
+            "width": 3.501824262179434,
+            "height": 5.1643335106782615,
+            "rotation": -0.0315799788234202,
+            "seed": 927804,
+            "rank": 45.48781334119214
+          },
+          {
+            "id": "bedrock-25--115--196",
+            "x": -115,
+            "z": -196,
+            "length": 8.786068306770176,
+            "width": 2.8598506965674457,
+            "height": 4.582632822729647,
+            "rotation": -0.45220588323827865,
+            "seed": 450087,
+            "rank": 38.2495030460875
+          },
+          {
+            "id": "bedrock-0--115--259",
+            "x": -115,
+            "z": -259,
+            "length": 9.130274605820887,
+            "width": 3.0278257999569176,
+            "height": 4.486894663888961,
+            "rotation": -2.194283114483464,
+            "seed": 679071,
+            "rank": 35.40989694199959
+          },
+          {
+            "id": "bedrock-15--122--217",
+            "x": -122,
+            "z": -217,
+            "length": 7.3380080696661025,
+            "width": 3.5571653283201154,
+            "height": 4.669941752403974,
+            "rotation": -1.895216871874694,
+            "seed": 270146,
+            "rank": 34.11568026839654
+          }
+        ]
+      },
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 498,
+        "triangles": 1500613,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-highland-far-baseline.png",
+      "sha256": "bf4f33e7cbc066895f7c0ec11e6e43ee4dcb7ad14ff7d19f20652fbf9b2b4427",
+      "screenshotTarget": "canvas"
+    },
+    {
+      "site": "highland",
+      "distance": "far",
+      "variant": "candidate",
+      "camera": [
+        -5.009508685116984,
+        70.77519921420063,
+        -127.72011174253848
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "escarpments": {
+        "count": 6,
+        "plan": [
+          {
+            "id": "bedrock-21--101--210",
+            "x": -101,
+            "z": -210,
+            "length": 8.441662753932178,
+            "width": 2.9788777817972,
+            "height": 4.487064289115369,
+            "rotation": -0.964454561713641,
+            "seed": 516725,
+            "rank": 48.422753189905464
+          },
+          {
+            "id": "bedrock-6--94--238",
+            "x": -94,
+            "z": -238,
+            "length": 7.309154789545573,
+            "width": 3.5550764286890626,
+            "height": 6.010072201769798,
+            "rotation": -0.10938120615113789,
+            "seed": 925943,
+            "rank": 46.73736124607309
+          },
+          {
+            "id": "bedrock-2--59--245",
+            "x": -59,
+            "z": -245,
+            "length": 9.735868323245086,
+            "width": 3.501824262179434,
+            "height": 5.1643335106782615,
+            "rotation": -0.0315799788234202,
+            "seed": 927804,
+            "rank": 45.48781334119214
+          },
+          {
+            "id": "bedrock-25--115--196",
+            "x": -115,
+            "z": -196,
+            "length": 8.786068306770176,
+            "width": 2.8598506965674457,
+            "height": 4.582632822729647,
+            "rotation": -0.45220588323827865,
+            "seed": 450087,
+            "rank": 38.2495030460875
+          },
+          {
+            "id": "bedrock-0--115--259",
+            "x": -115,
+            "z": -259,
+            "length": 9.130274605820887,
+            "width": 3.0278257999569176,
+            "height": 4.486894663888961,
+            "rotation": -2.194283114483464,
+            "seed": 679071,
+            "rank": 35.40989694199959
+          },
+          {
+            "id": "bedrock-15--122--217",
+            "x": -122,
+            "z": -217,
+            "length": 7.3380080696661025,
+            "width": 3.5571653283201154,
+            "height": 4.669941752403974,
+            "rotation": -1.895216871874694,
+            "seed": 270146,
+            "rank": 34.11568026839654
+          }
+        ]
+      },
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 504,
+        "triangles": 1511411,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-highland-far-candidate.png",
+      "sha256": "7122adf012cd3a5d815336080178bfbba90c808ffc04d478ea63fd280a977e4f",
+      "screenshotTarget": "canvas"
+    },
+    {
+      "site": "camp",
+      "distance": "ordinary",
+      "variant": "baseline",
+      "camera": [
+        -71.69575413492436,
+        12.997665337459935,
+        119.70163337078873
+      ],
+      "lookAt": [
+        -73.78788798955475,
+        9.097665337459935,
+        105.85883827968414
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 819.6352999998687,
+      "quest": 6,
+      "kills": 13,
+      "player": {
+        "x": -73.78788798955475,
+        "z": 105.85883827968414,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "escarpments": {
+        "count": 6,
+        "plan": [
+          {
+            "id": "bedrock-21--101--210",
+            "x": -101,
+            "z": -210,
+            "length": 8.441662753932178,
+            "width": 2.9788777817972,
+            "height": 4.487064289115369,
+            "rotation": -0.964454561713641,
+            "seed": 516725,
+            "rank": 48.422753189905464
+          },
+          {
+            "id": "bedrock-6--94--238",
+            "x": -94,
+            "z": -238,
+            "length": 7.309154789545573,
+            "width": 3.5550764286890626,
+            "height": 6.010072201769798,
+            "rotation": -0.10938120615113789,
+            "seed": 925943,
+            "rank": 46.73736124607309
+          },
+          {
+            "id": "bedrock-2--59--245",
+            "x": -59,
+            "z": -245,
+            "length": 9.735868323245086,
+            "width": 3.501824262179434,
+            "height": 5.1643335106782615,
+            "rotation": -0.0315799788234202,
+            "seed": 927804,
+            "rank": 45.48781334119214
+          },
+          {
+            "id": "bedrock-25--115--196",
+            "x": -115,
+            "z": -196,
+            "length": 8.786068306770176,
+            "width": 2.8598506965674457,
+            "height": 4.582632822729647,
+            "rotation": -0.45220588323827865,
+            "seed": 450087,
+            "rank": 38.2495030460875
+          },
+          {
+            "id": "bedrock-0--115--259",
+            "x": -115,
+            "z": -259,
+            "length": 9.130274605820887,
+            "width": 3.0278257999569176,
+            "height": 4.486894663888961,
+            "rotation": -2.194283114483464,
+            "seed": 679071,
+            "rank": 35.40989694199959
+          },
+          {
+            "id": "bedrock-15--122--217",
+            "x": -122,
+            "z": -217,
+            "length": 7.3380080696661025,
+            "width": 3.5571653283201154,
+            "height": 4.669941752403974,
+            "rotation": -1.895216871874694,
+            "seed": 270146,
+            "rank": 34.11568026839654
+          }
+        ]
+      },
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 339,
+        "triangles": 2982001,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-camp-ordinary-baseline.png",
+      "sha256": "b846f5d04245bde4262c42ffe0ab76b06d7bc93ebb45607d9e99747ff64740a0",
+      "screenshotTarget": "canvas"
+    },
+    {
+      "site": "camp",
+      "distance": "ordinary",
+      "variant": "candidate",
+      "camera": [
+        -71.69575413492436,
+        12.997665337459935,
+        119.70163337078873
+      ],
+      "lookAt": [
+        -73.78788798955475,
+        9.097665337459935,
+        105.85883827968414
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        724
+      ],
+      "time": 819.6352999998687,
+      "quest": 6,
+      "kills": 13,
+      "player": {
+        "x": -73.78788798955475,
+        "z": 105.85883827968414,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "escarpments": {
+        "count": 6,
+        "plan": [
+          {
+            "id": "bedrock-21--101--210",
+            "x": -101,
+            "z": -210,
+            "length": 8.441662753932178,
+            "width": 2.9788777817972,
+            "height": 4.487064289115369,
+            "rotation": -0.964454561713641,
+            "seed": 516725,
+            "rank": 48.422753189905464
+          },
+          {
+            "id": "bedrock-6--94--238",
+            "x": -94,
+            "z": -238,
+            "length": 7.309154789545573,
+            "width": 3.5550764286890626,
+            "height": 6.010072201769798,
+            "rotation": -0.10938120615113789,
+            "seed": 925943,
+            "rank": 46.73736124607309
+          },
+          {
+            "id": "bedrock-2--59--245",
+            "x": -59,
+            "z": -245,
+            "length": 9.735868323245086,
+            "width": 3.501824262179434,
+            "height": 5.1643335106782615,
+            "rotation": -0.0315799788234202,
+            "seed": 927804,
+            "rank": 45.48781334119214
+          },
+          {
+            "id": "bedrock-25--115--196",
+            "x": -115,
+            "z": -196,
+            "length": 8.786068306770176,
+            "width": 2.8598506965674457,
+            "height": 4.582632822729647,
+            "rotation": -0.45220588323827865,
+            "seed": 450087,
+            "rank": 38.2495030460875
+          },
+          {
+            "id": "bedrock-0--115--259",
+            "x": -115,
+            "z": -259,
+            "length": 9.130274605820887,
+            "width": 3.0278257999569176,
+            "height": 4.486894663888961,
+            "rotation": -2.194283114483464,
+            "seed": 679071,
+            "rank": 35.40989694199959
+          },
+          {
+            "id": "bedrock-15--122--217",
+            "x": -122,
+            "z": -217,
+            "length": 7.3380080696661025,
+            "width": 3.5571653283201154,
+            "height": 4.669941752403974,
+            "rotation": -1.895216871874694,
+            "seed": 270146,
+            "rank": 34.11568026839654
+          }
+        ]
+      },
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 345,
+        "triangles": 2992799,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "1280-camp-ordinary-candidate.png",
+      "sha256": "b846f5d04245bde4262c42ffe0ab76b06d7bc93ebb45607d9e99747ff64740a0",
+      "screenshotTarget": "canvas"
+    },
+    {
+      "site": "highland",
+      "distance": "ordinary",
+      "variant": "baseline",
+      "camera": [
+        -67.9173748304866,
+        30.775199214200626,
+        -173.8773166514339
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        750
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "escarpments": {
+        "count": 6,
+        "plan": [
+          {
+            "id": "bedrock-21--101--210",
+            "x": -101,
+            "z": -210,
+            "length": 8.441662753932178,
+            "width": 2.9788777817972,
+            "height": 4.487064289115369,
+            "rotation": -0.964454561713641,
+            "seed": 516725,
+            "rank": 48.422753189905464
+          },
+          {
+            "id": "bedrock-6--94--238",
+            "x": -94,
+            "z": -238,
+            "length": 7.309154789545573,
+            "width": 3.5550764286890626,
+            "height": 6.010072201769798,
+            "rotation": -0.10938120615113789,
+            "seed": 925943,
+            "rank": 46.73736124607309
+          },
+          {
+            "id": "bedrock-2--59--245",
+            "x": -59,
+            "z": -245,
+            "length": 9.735868323245086,
+            "width": 3.501824262179434,
+            "height": 5.1643335106782615,
+            "rotation": -0.0315799788234202,
+            "seed": 927804,
+            "rank": 45.48781334119214
+          },
+          {
+            "id": "bedrock-25--115--196",
+            "x": -115,
+            "z": -196,
+            "length": 8.786068306770176,
+            "width": 2.8598506965674457,
+            "height": 4.582632822729647,
+            "rotation": -0.45220588323827865,
+            "seed": 450087,
+            "rank": 38.2495030460875
+          },
+          {
+            "id": "bedrock-0--115--259",
+            "x": -115,
+            "z": -259,
+            "length": 9.130274605820887,
+            "width": 3.0278257999569176,
+            "height": 4.486894663888961,
+            "rotation": -2.194283114483464,
+            "seed": 679071,
+            "rank": 35.40989694199959
+          },
+          {
+            "id": "bedrock-15--122--217",
+            "x": -122,
+            "z": -217,
+            "length": 7.3380080696661025,
+            "width": 3.5571653283201154,
+            "height": 4.669941752403974,
+            "rotation": -1.895216871874694,
+            "seed": 270146,
+            "rank": 34.11568026839654
+          }
+        ]
+      },
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 210,
+        "triangles": 1132470,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "390-highland-ordinary-baseline.png",
+      "sha256": "602d2ce88970151bd1394120696b51e1b817f42089516471cfe95e94055d49bd",
+      "screenshotTarget": "canvas"
+    },
+    {
+      "site": "highland",
+      "distance": "ordinary",
+      "variant": "candidate",
+      "camera": [
+        -67.9173748304866,
+        30.775199214200626,
+        -173.8773166514339
+      ],
+      "lookAt": [
+        -70.00950868511698,
+        26.875199214200627,
+        -187.72011174253848
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        750
+      ],
+      "time": 730.2709999999724,
+      "quest": 5,
+      "kills": 8,
+      "player": {
+        "x": -70.00950868511698,
+        "z": -187.72011174253848,
+        "hp": 65,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "escarpments": {
+        "count": 6,
+        "plan": [
+          {
+            "id": "bedrock-21--101--210",
+            "x": -101,
+            "z": -210,
+            "length": 8.441662753932178,
+            "width": 2.9788777817972,
+            "height": 4.487064289115369,
+            "rotation": -0.964454561713641,
+            "seed": 516725,
+            "rank": 48.422753189905464
+          },
+          {
+            "id": "bedrock-6--94--238",
+            "x": -94,
+            "z": -238,
+            "length": 7.309154789545573,
+            "width": 3.5550764286890626,
+            "height": 6.010072201769798,
+            "rotation": -0.10938120615113789,
+            "seed": 925943,
+            "rank": 46.73736124607309
+          },
+          {
+            "id": "bedrock-2--59--245",
+            "x": -59,
+            "z": -245,
+            "length": 9.735868323245086,
+            "width": 3.501824262179434,
+            "height": 5.1643335106782615,
+            "rotation": -0.0315799788234202,
+            "seed": 927804,
+            "rank": 45.48781334119214
+          },
+          {
+            "id": "bedrock-25--115--196",
+            "x": -115,
+            "z": -196,
+            "length": 8.786068306770176,
+            "width": 2.8598506965674457,
+            "height": 4.582632822729647,
+            "rotation": -0.45220588323827865,
+            "seed": 450087,
+            "rank": 38.2495030460875
+          },
+          {
+            "id": "bedrock-0--115--259",
+            "x": -115,
+            "z": -259,
+            "length": 9.130274605820887,
+            "width": 3.0278257999569176,
+            "height": 4.486894663888961,
+            "rotation": -2.194283114483464,
+            "seed": 679071,
+            "rank": 35.40989694199959
+          },
+          {
+            "id": "bedrock-15--122--217",
+            "x": -122,
+            "z": -217,
+            "length": 7.3380080696661025,
+            "width": 3.5571653283201154,
+            "height": 4.669941752403974,
+            "rotation": -1.895216871874694,
+            "seed": 270146,
+            "rank": 34.11568026839654
+          }
+        ]
+      },
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 213,
+        "triangles": 1137869,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "390-highland-ordinary-candidate.png",
+      "sha256": "602d2ce88970151bd1394120696b51e1b817f42089516471cfe95e94055d49bd",
+      "screenshotTarget": "canvas"
+    },
+    {
+      "site": "camp",
+      "distance": "ordinary",
+      "variant": "baseline",
+      "camera": [
+        -71.69575413492436,
+        12.997665337459935,
+        119.70163337078873
+      ],
+      "lookAt": [
+        -73.78788798955475,
+        9.097665337459935,
+        105.85883827968414
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        750
+      ],
+      "time": 819.6352999998687,
+      "quest": 6,
+      "kills": 13,
+      "player": {
+        "x": -73.78788798955475,
+        "z": 105.85883827968414,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "escarpments": {
+        "count": 6,
+        "plan": [
+          {
+            "id": "bedrock-21--101--210",
+            "x": -101,
+            "z": -210,
+            "length": 8.441662753932178,
+            "width": 2.9788777817972,
+            "height": 4.487064289115369,
+            "rotation": -0.964454561713641,
+            "seed": 516725,
+            "rank": 48.422753189905464
+          },
+          {
+            "id": "bedrock-6--94--238",
+            "x": -94,
+            "z": -238,
+            "length": 7.309154789545573,
+            "width": 3.5550764286890626,
+            "height": 6.010072201769798,
+            "rotation": -0.10938120615113789,
+            "seed": 925943,
+            "rank": 46.73736124607309
+          },
+          {
+            "id": "bedrock-2--59--245",
+            "x": -59,
+            "z": -245,
+            "length": 9.735868323245086,
+            "width": 3.501824262179434,
+            "height": 5.1643335106782615,
+            "rotation": -0.0315799788234202,
+            "seed": 927804,
+            "rank": 45.48781334119214
+          },
+          {
+            "id": "bedrock-25--115--196",
+            "x": -115,
+            "z": -196,
+            "length": 8.786068306770176,
+            "width": 2.8598506965674457,
+            "height": 4.582632822729647,
+            "rotation": -0.45220588323827865,
+            "seed": 450087,
+            "rank": 38.2495030460875
+          },
+          {
+            "id": "bedrock-0--115--259",
+            "x": -115,
+            "z": -259,
+            "length": 9.130274605820887,
+            "width": 3.0278257999569176,
+            "height": 4.486894663888961,
+            "rotation": -2.194283114483464,
+            "seed": 679071,
+            "rank": 35.40989694199959
+          },
+          {
+            "id": "bedrock-15--122--217",
+            "x": -122,
+            "z": -217,
+            "length": 7.3380080696661025,
+            "width": 3.5571653283201154,
+            "height": 4.669941752403974,
+            "rotation": -1.895216871874694,
+            "seed": 270146,
+            "rank": 34.11568026839654
+          }
+        ]
+      },
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 216,
+        "triangles": 2010549,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "390-camp-ordinary-baseline.png",
+      "sha256": "b776c6c31b4867dca4e0dbccce6d25ee7b01401e2594bac1b3204ccca973d76f",
+      "screenshotTarget": "canvas"
+    },
+    {
+      "site": "camp",
+      "distance": "ordinary",
+      "variant": "candidate",
+      "camera": [
+        -71.69575413492436,
+        12.997665337459935,
+        119.70163337078873
+      ],
+      "lookAt": [
+        -73.78788798955475,
+        9.097665337459935,
+        105.85883827968414
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        750
+      ],
+      "time": 819.6352999998687,
+      "quest": 6,
+      "kills": 13,
+      "player": {
+        "x": -73.78788798955475,
+        "z": 105.85883827968414,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "buildings": 1,
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "textures": [
+        "ready",
+        "ready",
+        "ready"
+      ],
+      "escarpments": {
+        "count": 6,
+        "plan": [
+          {
+            "id": "bedrock-21--101--210",
+            "x": -101,
+            "z": -210,
+            "length": 8.441662753932178,
+            "width": 2.9788777817972,
+            "height": 4.487064289115369,
+            "rotation": -0.964454561713641,
+            "seed": 516725,
+            "rank": 48.422753189905464
+          },
+          {
+            "id": "bedrock-6--94--238",
+            "x": -94,
+            "z": -238,
+            "length": 7.309154789545573,
+            "width": 3.5550764286890626,
+            "height": 6.010072201769798,
+            "rotation": -0.10938120615113789,
+            "seed": 925943,
+            "rank": 46.73736124607309
+          },
+          {
+            "id": "bedrock-2--59--245",
+            "x": -59,
+            "z": -245,
+            "length": 9.735868323245086,
+            "width": 3.501824262179434,
+            "height": 5.1643335106782615,
+            "rotation": -0.0315799788234202,
+            "seed": 927804,
+            "rank": 45.48781334119214
+          },
+          {
+            "id": "bedrock-25--115--196",
+            "x": -115,
+            "z": -196,
+            "length": 8.786068306770176,
+            "width": 2.8598506965674457,
+            "height": 4.582632822729647,
+            "rotation": -0.45220588323827865,
+            "seed": 450087,
+            "rank": 38.2495030460875
+          },
+          {
+            "id": "bedrock-0--115--259",
+            "x": -115,
+            "z": -259,
+            "length": 9.130274605820887,
+            "width": 3.0278257999569176,
+            "height": 4.486894663888961,
+            "rotation": -2.194283114483464,
+            "seed": 679071,
+            "rank": 35.40989694199959
+          },
+          {
+            "id": "bedrock-15--122--217",
+            "x": -122,
+            "z": -217,
+            "length": 7.3380080696661025,
+            "width": 3.5571653283201154,
+            "height": 4.669941752403974,
+            "rotation": -1.895216871874694,
+            "seed": 270146,
+            "rank": 34.11568026839654
+          }
+        ]
+      },
+      "ground": {
+        "vertices": 103041,
+        "layers": 103041
+      },
+      "render": {
+        "calls": 222,
+        "triangles": 2021347,
+        "points": 0,
+        "lines": 0
+      },
+      "glError": 0,
+      "image": "390-camp-ordinary-candidate.png",
+      "sha256": "b776c6c31b4867dca4e0dbccce6d25ee7b01401e2594bac1b3204ccca973d76f",
+      "screenshotTarget": "canvas"
+    }
+  ],
+  "contexts": [
+    {
+      "width": 1280,
+      "logs": [],
+      "failures": [
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Superhero_Male_FullBody.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/UAL1_Standard.glb",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "logs": [],
+      "failures": [
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Superhero_Female_FullBody.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/Superhero_Male_FullBody.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/characters/UAL1_Standard.glb",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/rock_moss_set_01/rock_moss_set_01.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/woodland/fern_02/fern_02.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_01/island_tree_01_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_near.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_02/island_tree_02_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_near.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/coastal/island_tree_03/island_tree_03_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_mid.gltf",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:4190/assets/inland/jacaranda_tree/jacaranda_tree_mid.bin",
+          "failure": {
+            "errorText": "net::ERR_ABORTED"
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "Frozen copied ordinary save scenes, explicit fixed camera. Isolated closed rock geometry candidate only; contacts not integrated. Not native gameplay, GPU timing, continuous motion, audition or physical-device proof.",
+  "complete": true
+}

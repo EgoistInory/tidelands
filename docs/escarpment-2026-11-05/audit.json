@@ -1,0 +1,415 @@
+{
+  "complete": true,
+  "candidateIntegrated": false,
+  "m5Complete": false,
+  "fullGoalComplete": false,
+  "screenImageCount": 36,
+  "pixelIdenticalBaselinesDeduplicated": true,
+  "uniqueReviewImages": 24,
+  "reviewed": true,
+  "decisions": {
+    "procedural": "reject: pale angular pillars",
+    "scanned": "reject: detached stretched slabs",
+    "embedded": "reject: burial reduces slabs but leaves the ordinary/mobile bare slope largely unchanged"
+  },
+  "contactImplementation": "Not implemented; the visual gate failed before gameplay integration. No movement, build, camera-contact or reachability acceptance claimed.",
+  "gpuTimingMeasured": false,
+  "motionReviewed": false,
+  "physicalDevice": false,
+  "stats": [
+    {
+      "variant": "procedural",
+      "width": 1280,
+      "site": "highland",
+      "distance": "ordinary",
+      "before": {
+        "calls": 337,
+        "triangles": 1245166,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 342,
+        "triangles": 1245766,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "procedural",
+      "width": 1280,
+      "site": "highland",
+      "distance": "overview",
+      "before": {
+        "calls": 437,
+        "triangles": 1403786,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 443,
+        "triangles": 1404506,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "procedural",
+      "width": 1280,
+      "site": "highland",
+      "distance": "far",
+      "before": {
+        "calls": 498,
+        "triangles": 1500613,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 504,
+        "triangles": 1501333,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "procedural",
+      "width": 1280,
+      "site": "camp",
+      "distance": "ordinary",
+      "before": {
+        "calls": 339,
+        "triangles": 2982001,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 345,
+        "triangles": 2982721,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "procedural",
+      "width": 390,
+      "site": "highland",
+      "distance": "ordinary",
+      "before": {
+        "calls": 210,
+        "triangles": 1132470,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 213,
+        "triangles": 1132830,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "procedural",
+      "width": 390,
+      "site": "camp",
+      "distance": "ordinary",
+      "before": {
+        "calls": 216,
+        "triangles": 2010549,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 222,
+        "triangles": 2011269,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "scanned",
+      "width": 1280,
+      "site": "highland",
+      "distance": "ordinary",
+      "before": {
+        "calls": 337,
+        "triangles": 1245166,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 342,
+        "triangles": 1254164,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "scanned",
+      "width": 1280,
+      "site": "highland",
+      "distance": "overview",
+      "before": {
+        "calls": 437,
+        "triangles": 1403786,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 443,
+        "triangles": 1414584,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "scanned",
+      "width": 1280,
+      "site": "highland",
+      "distance": "far",
+      "before": {
+        "calls": 498,
+        "triangles": 1500613,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 504,
+        "triangles": 1511411,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "scanned",
+      "width": 1280,
+      "site": "camp",
+      "distance": "ordinary",
+      "before": {
+        "calls": 339,
+        "triangles": 2982001,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 345,
+        "triangles": 2992799,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "scanned",
+      "width": 390,
+      "site": "highland",
+      "distance": "ordinary",
+      "before": {
+        "calls": 210,
+        "triangles": 1132470,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 213,
+        "triangles": 1137869,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "scanned",
+      "width": 390,
+      "site": "camp",
+      "distance": "ordinary",
+      "before": {
+        "calls": 216,
+        "triangles": 2010549,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 222,
+        "triangles": 2021347,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "embedded",
+      "width": 1280,
+      "site": "highland",
+      "distance": "ordinary",
+      "before": {
+        "calls": 337,
+        "triangles": 1245166,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 342,
+        "triangles": 1254164,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "embedded",
+      "width": 1280,
+      "site": "highland",
+      "distance": "overview",
+      "before": {
+        "calls": 437,
+        "triangles": 1403786,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 443,
+        "triangles": 1414584,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "embedded",
+      "width": 1280,
+      "site": "highland",
+      "distance": "far",
+      "before": {
+        "calls": 498,
+        "triangles": 1500613,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 504,
+        "triangles": 1511411,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "embedded",
+      "width": 1280,
+      "site": "camp",
+      "distance": "ordinary",
+      "before": {
+        "calls": 339,
+        "triangles": 2982001,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 345,
+        "triangles": 2992799,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "embedded",
+      "width": 390,
+      "site": "highland",
+      "distance": "ordinary",
+      "before": {
+        "calls": 210,
+        "triangles": 1132470,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 213,
+        "triangles": 1137869,
+        "points": 0,
+        "lines": 0
+      }
+    },
+    {
+      "variant": "embedded",
+      "width": 390,
+      "site": "camp",
+      "distance": "ordinary",
+      "before": {
+        "calls": 216,
+        "triangles": 2010549,
+        "points": 0,
+        "lines": 0
+      },
+      "after": {
+        "calls": 222,
+        "triangles": 2021347,
+        "points": 0,
+        "lines": 0
+      }
+    }
+  ],
+  "network": [
+    {
+      "variant": "procedural",
+      "contexts": [
+        {
+          "width": 1280,
+          "abortedRequests": 19,
+          "consoleWarningsErrors": 0
+        },
+        {
+          "width": 390,
+          "abortedRequests": 16,
+          "consoleWarningsErrors": 0
+        }
+      ]
+    },
+    {
+      "variant": "scanned",
+      "contexts": [
+        {
+          "width": 1280,
+          "abortedRequests": 17,
+          "consoleWarningsErrors": 0
+        },
+        {
+          "width": 390,
+          "abortedRequests": 16,
+          "consoleWarningsErrors": 0
+        }
+      ]
+    },
+    {
+      "variant": "embedded",
+      "contexts": [
+        {
+          "width": 1280,
+          "abortedRequests": 18,
+          "consoleWarningsErrors": 0
+        },
+        {
+          "width": 390,
+          "abortedRequests": 16,
+          "consoleWarningsErrors": 0
+        }
+      ]
+    }
+  ],
+  "sourceAndImageHashesVerified": true,
+  "firstFailurePath": "dist/escarpment-2026-11-05/raw.json",
+  "firstFailureSha256": "e95d75145fe6870392fb5f3ef397b33542b45bf88f5a69210cf246e09af2e810",
+  "currentOrdinarySave": "docs/native-camp-night-2026-11-04/final-save.json",
+  "auditToolSha256": "bea669b96493671ef4f88860cf34fd8505118e908bcb36e8b0683b5e439ef53a",
+  "contactSheets": [
+    {
+      "path": "docs/escarpment-2026-11-05/desktop-camp-control.jpg",
+      "sha256": "8308d3752e13f45d7fff851d8095d5ab57a7a11d4025829fdfe110dcc8660fd9"
+    },
+    {
+      "path": "docs/escarpment-2026-11-05/desktop-highland.jpg",
+      "sha256": "9febc3e94f051043cad122dfff15d334e996d661de74635e6c8498a1cb2c5036"
+    },
+    {
+      "path": "docs/escarpment-2026-11-05/mobile-camp-control.jpg",
+      "sha256": "03a6dcc2ddce87327ae65ab47588cc32704263311c96957ecf86b208e67b5152"
+    },
+    {
+      "path": "docs/escarpment-2026-11-05/mobile-highland.jpg",
+      "sha256": "b9ed3f22e0270e7a6aadf36f2851182f545ed0be8df9d64fcc1a1bbf4896364d"
+    }
+  ]
+}

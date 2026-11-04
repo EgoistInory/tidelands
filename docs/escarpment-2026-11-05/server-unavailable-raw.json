@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-04T18:16:56.616Z",
+  "sources": {
+    "tests/escarpment-candidate.js": "d055deee9152f539b1e60c9005232b3977e0b656557378c960e9b613b258df8e",
+    "tests/escarpment-review.html": "e5cc907985ee99a1976825f265e5028325732f9fb9d7905973126b2c7429ce7f",
+    "tools/run_escarpment_review.mjs": "ed393ab77476b030850ca36deb567d0bdb9e22d6472a9abf0a4f77df322d60fa",
+    "src/ground-surface.js": "0c15f0d23d34e415926d50d09da6c95afd538e6c3ac4644e12a15295bdca2002",
+    "src/scene.js": "d283b541c2b0a2e7985da3d874b652c0d1753a95754b6c945a725052aa58da03",
+    "src/world.js": "4abcfa0aa50fb5098bbdffc8ff1c992bf4859dd9415f3f455e0db6793fcc6b9e",
+    "src/landscape.js": "207519631b13e3287eb0cd7500ef979c479025aee1f31f16fa2acd39e6dc52ff",
+    "docs/native-campaign-2026-11-03/06-explorer-save.json": "92ede0255c22816ace94e6a57cfa452251750cef382d90a2348baf7f8c119b01",
+    "docs/native-camp-night-2026-11-04/01-camp-return-save.json": "752b0e8681c494dff83ca740eab63d52127a948a6bb9ee31222fa848f696a424",
+    "docs/native-camp-night-2026-11-04/02-natural-night-save.json": "2d1ce8885e381e18ea8777ddbda313dd51e7d4b8c7792265861d74b0fd9b4ff3"
+  },
+  "rows": [],
+  "contexts": [
+    {
+      "width": 1280,
+      "logs": [],
+      "failures": [
+        {
+          "url": "http://127.0.0.1:4190/tests/escarpment-review.html",
+          "failure": {
+            "errorText": "net::ERR_CONNECTION_REFUSED"
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "Frozen copied ordinary save scenes, explicit fixed camera. Isolated closed rock geometry candidate only; contacts not integrated. Not native gameplay, GPU timing, continuous motion, audition or physical-device proof.",
+  "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4190/tests/escarpment-review.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4190/tests/escarpment-review.html\", waiting until \"load\"\u001b[22m\n\n    at /Users/huxiaocong/Codex/tidelands/tools/run_escarpment_review.mjs:13:14"
+}
