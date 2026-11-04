@@ -1,0 +1,71 @@
+{
+  "complete": true,
+  "productionAdopted": false,
+  "fullGoalComplete": false,
+  "m5Complete": false,
+  "sourceSha256": {
+    "src/world.js": "4abcfa0aa50fb5098bbdffc8ff1c992bf4859dd9415f3f455e0db6793fcc6b9e",
+    "src/ground-support.js": "375dadd53e14de0d8c5e97534b9fc2c5db6c7c5c248c15607ec8aa14017776db",
+    "tests/continuous-bedrock-candidate.js": "b06e5b81353ef20b23a5e3303fe295c3989a068a8f542b92993d38423653f7da",
+    "tests/conforming-bedrock-candidate.js": "39fd11209c1e6ebcca0610cdc28bd167a53eff7ca3be20edcccc17d6a2faf1d4",
+    "tests/conforming-bedrock-candidate.test.mjs": "14bc503e6598fbbbec219a7d33db60696a116554d6b5893e8b4fb35619d637f6",
+    "tools/verify_conforming_bedrock.mjs": "783a97b50f2833c68f93bbe858104176d332fe47430386adfa2d7e6ee5460e68"
+  },
+  "tests": {
+    "redFailures": 2,
+    "redPasses": 1,
+    "greenPasses": 3,
+    "redSha256": "00f9f34fb0f053394c1dfe06364230b81028bf55c0f7502dd6a161428302b8c1",
+    "greenSha256": "cef36182411b0c24052ad125143269cb0d898f1c87c0dcf03c1bead61c78bf39",
+    "scope": "Five independent actual-mesh raycasts, all resource roots, every vertex, cell/diagonal boundary continuity."
+  },
+  "mesh": {
+    "segments": 320,
+    "vertices": 103041,
+    "verticesBeforeSha256": "de5e4eed51db7c4b993be2d33997b4fcdb388930463a4627c534da3cae9fcd9f",
+    "verticesAfterSha256": "de5e4eed51db7c4b993be2d33997b4fcdb388930463a4627c534da3cae9fcd9f",
+    "geometryExactlyUnchanged": true
+  },
+  "heightSupport": {
+    "sampleCount": 23409,
+    "maxBefore": 3.8225524093927383,
+    "maxAfter": 0
+  },
+  "resources": {
+    "count": 573,
+    "identityPreserved": true,
+    "enemiesPreserved": true,
+    "rootsBeforeOverHalfMetre": 9,
+    "worstRootAfter": 0,
+    "rootsAfterOverHalfMetre": 0
+  },
+  "ordinarySave": {
+    "path": "docs/native-camp-night-2026-11-04/final-save.json",
+    "sha256": "f6d4d5c05648468dff6adc26df43967187df63f1f68f1ea84368476a0e9ec1aa",
+    "modified": false,
+    "anchors": [
+      {
+        "id": "ordinary-player",
+        "x": -73.78788798955475,
+        "z": 105.85883827968414,
+        "oldAuthority": 7.997665337459935,
+        "newAuthority": 7.986461665298845,
+        "visible": 7.986461665298845
+      },
+      {
+        "id": "built-0-23733",
+        "x": -72.20057294388393,
+        "z": 106.86954811788564,
+        "oldAuthority": 7.845961193749426,
+        "newAuthority": 7.83883132134791,
+        "visible": 7.83883132134791
+      }
+    ]
+  },
+  "browserRendered": false,
+  "nativeInputs": false,
+  "slopeRulesRechecked": false,
+  "oldCampsRechecked": false,
+  "gpuMeasured": false,
+  "scope": "Numeric support repair on the isolated continuous-bedrock candidate. Existing rendered geometry is identical; appearance, materials, normal derivation, movement/slope paths, old-camp usability and runtime integration remain unaccepted."
+}
