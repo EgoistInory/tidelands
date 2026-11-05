@@ -1,0 +1,178 @@
+{
+  "rows": [
+    {
+      "mode": "camp",
+      "duration": 30.42,
+      "contextSeconds": 30.56,
+      "durationDelta": -0.13999999999999702,
+      "peak": 0.028094345703721046,
+      "rms": 0.001943396559531093,
+      "windows": {
+        "ambient": {
+          "from": 1,
+          "to": 8.152,
+          "peak": 0.027084562927484512,
+          "rms": 0.0022379945181573617,
+          "clipped": 0,
+          "samples": 686592
+        },
+        "pause": {
+          "from": 22.154666666666667,
+          "to": 23.864,
+          "peak": 2.0345869483764863e-34,
+          "rms": 2.034586948379327e-34,
+          "clipped": 0,
+          "samples": 164096
+        },
+        "muted": {
+          "from": 24.917333333333332,
+          "to": 26.466666666666665,
+          "peak": 2.0345869483764863e-34,
+          "rms": 2.0345869483791283e-34,
+          "clipped": 0,
+          "samples": 148736
+        },
+        "resumed": {
+          "from": 27.584,
+          "to": 30.093333333333334,
+          "peak": 0.027900330722332,
+          "rms": 0.0021898290158007677,
+          "clipped": 0,
+          "samples": 240896
+        }
+      },
+      "events": {
+        "step": 36,
+        "gather": 1,
+        "swing": 0,
+        "hit": 0,
+        "hurt": 0,
+        "enemy-windup": 0,
+        "food": 0
+      },
+      "chunks": 31,
+      "bytes": 410744,
+      "finalSaveSha256": "2072ff360938a4a3fa255fbe84004df814024c0f45495c71d9af73cda5cca69d",
+      "profileSha256": "7c209d9be1342ff31f063f2c685844cec3a884defcc9cfc4af4df5f3c4472582",
+      "finalInventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 40,
+        "berry": 17,
+        "shell": 0,
+        "crystal": 5,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "video": "page@f72b9a8d4586585900d7cfe94af4df7a.webm",
+      "hashes": {
+        "raw.json": "eff2c62382bcd2f14c6824f5c3d5a428d2fb9131150c12efb0dd1a2e4879ab0c",
+        "pcm-analysis.json": "9906da38957d2f0d7876e790428f437f6701f9694bd38a43acd72a5715d9fb83",
+        "inputs.jsonl": "f11a187da269d4ca6483ad5fb7ca7256fd668856a110313189bb7f36cfcbbb96",
+        "final-save.json": "2072ff360938a4a3fa255fbe84004df814024c0f45495c71d9af73cda5cca69d",
+        "main-mix.webm": "02dae16db7c1625b11b56eede265e65b3fd801c7582393359c656d01fcc881f8",
+        "review-12s.wav": "d4e8098b1fb960d1bd3385fc121049c114a56e313a0379561206fa7ac7d9749d",
+        "page@f72b9a8d4586585900d7cfe94af4df7a.webm": "e6055f10042688634c1a5c7c4d27cb763b102b0f465b48b2e4740778eab81667",
+        "00-start.jpg": "f3ff7626bcb860186b7768acee02289b0a5afbd64fb668767d8b4b2a2e54df2e",
+        "01-native-gather.jpg": "261702783af123c004f4e99fb026be39102247edb7a49e7b9046fea4b7ac6620",
+        "02-rest.jpg": "ea232859a7cb54ef4b01855cda567a318b066c30538ddd77767f56a7d85d6f2a",
+        "03-final.jpg": "8fa52c78432e25abb80c4fa5df6187fbdb03ea08396625e4676d22101e45f1a9"
+      }
+    },
+    {
+      "mode": "combat",
+      "duration": 34.98,
+      "contextSeconds": 35.024,
+      "durationDelta": -0.044000000000004036,
+      "peak": 0.042953070253133774,
+      "rms": 0.0022820147847423303,
+      "windows": {
+        "ambient": {
+          "from": 1,
+          "to": 9.906666666666666,
+          "peak": 0.012677473947405815,
+          "rms": 0.0025021608611397426,
+          "clipped": 0,
+          "samples": 855040
+        },
+        "pause": {
+          "from": 26.810666666666666,
+          "to": 28.472,
+          "peak": 2.0345887850864095e-34,
+          "rms": 2.0345887850868983e-34,
+          "clipped": 0,
+          "samples": 159488
+        },
+        "muted": {
+          "from": 29.52,
+          "to": 31.064,
+          "peak": 2.0345887850864095e-34,
+          "rms": 2.0345887850874555e-34,
+          "clipped": 0,
+          "samples": 148224
+        },
+        "resumed": {
+          "from": 32.159979166666666,
+          "to": 34.663979166666664,
+          "peak": 0.011417465284466743,
+          "rms": 0.002764156974439132,
+          "clipped": 0,
+          "samples": 240384
+        }
+      },
+      "events": {
+        "step": 43,
+        "gather": 0,
+        "swing": 3,
+        "hit": 2,
+        "hurt": 1,
+        "enemy-windup": 1,
+        "food": 1
+      },
+      "chunks": 35,
+      "bytes": 486778,
+      "finalSaveSha256": "3a3f92d7b28ae0e9a9bb2d1c2ba05d6448a1b2c42d1b8535398fc4dd7235a45b",
+      "profileSha256": "4465c8d77ae2b0dd40561c7690164a6b2969af1765e72a754f8b892338896815",
+      "finalInventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 40,
+        "berry": 14,
+        "shell": 0,
+        "crystal": 5,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "video": "page@6729ba852987e818f6d528e61cfb5142.webm",
+      "hashes": {
+        "raw.json": "0ee684478532b77658ef9794dcc3360029594cb672399eabc94186e12e515feb",
+        "pcm-analysis.json": "4babd2096ee71cd553c912e24cd28f2f04761980098fc2893fd3a1b32f3e7e8d",
+        "inputs.jsonl": "ad643c1ba725ffee376db0f961d2ac70d445fff6fd3fed67579602829ece06e9",
+        "final-save.json": "3a3f92d7b28ae0e9a9bb2d1c2ba05d6448a1b2c42d1b8535398fc4dd7235a45b",
+        "main-mix.webm": "77c72d26f8cfb7d8a0d898afde350efcd401fbf8cab2c41f98cf26e1b3d5731d",
+        "review-12s.wav": "27558465cda3ce98869a61d0c16f91c73b0270171a0c8e0d4440de3b1671f689",
+        "page@6729ba852987e818f6d528e61cfb5142.webm": "cbdd271f78e12ae05622e5ce27e5cc226dc1bcd295f1d3e09343fcefbf9a00ce",
+        "00-start.jpg": "ac247df6a7208cc6469f5c82508614287d0cbae9a3c635542c408fd600d33cfa",
+        "01-native-combat.jpg": "153f0e668f0c4aab645d48bd4c383802f09eba6485e8764b294af10441c7b7e5",
+        "02-native-food.jpg": "cace013f2351fff4f38cd377be28a0c855a2638bd7f0a53a8e62de9a155f5997",
+        "03-final.jpg": "68bc96ff4705bb70e18ffa0196b32323573d9002046a4eef0701d1924c748cf0"
+      }
+    }
+  ],
+  "sources": {
+    "tools/observe_main_mix.js": "6378b8fca42a618398d5878a182a0ec71003d523572c35e67eefdb5e7c28eecf",
+    "tools/run_main_mix_review.mjs": "ae104100ac38f97dbb4d612f4826533da64de8c12ce6c2596ff78bfbd3d4c2cf",
+    "tools/analyze_main_mix.mjs": "02c5eedde6bfafc71efbdedf35949178764dc9e62c3a596a286d3ae2e85d953f",
+    "tools/verify_main_mix.py": "7b487bf744261ce4a803d2737d8a18faabcfdabcb85ecb946ae714c861886468"
+  },
+  "nativeMainCaptured": true,
+  "microphoneUsed": false,
+  "offlineSynthesisUsed": false,
+  "auditionAccepted": false,
+  "frameExactAvSyncAccepted": false,
+  "physicalDeviceAccepted": false,
+  "fullGoalComplete": false,
+  "m5Complete": false
+}

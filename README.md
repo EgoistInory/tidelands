@@ -6,6 +6,8 @@
 
 代码与必要证据由Git管理，`main`同步到公开仓库 [EgoistInory/tidelands](https://github.com/EgoistInory/tidelands)。用户于2026-11-02明确确认继续同步该公开仓库；提交、推送和本地交付包的边界见 `docs/GIT-WORKFLOW.md`。
 
+当前主混音片段：真实普通营地/历史实战分支已保存30.42/34.98秒48kHz立体声录音和独立无声视频，实际采集/受击/击败/食用、静音与恢复及保存刷新通过；未试听/完整播放/AV同步或真机验收，见 `docs/MAIN-MIX-CHECKPOINT.md`。运行包保持，M5/3A仍未完成。
+
 当前同包像素上限普通旅程：1080p/390高DPI实际585×1266完成614.52/601.67秒，采集/实战/林栖/营火/自然夜晚与保存刷新通过，GPU P95 14.76/9.83ms；DOM与原生堆在活动/暂停中观察到自然回收，前轮短窗疑问有了较长窗口证据，见 `docs/RUNTIME-CEILING-CHECKPOINT.md`。115.5/94ms长帧、真机/VRAM/试听和整体美术/动作仍待，未改211运行输入或上方ZIP；历史短窗证据保留在 `docs/RUNTIME-BUDGET-CHECKPOINT.md`，M5/3A仍未完成。
 
 历史有限功能组：全身低物采集，33针对性/291全量与真实原生E/main结算、暂停取消通过；近距纤维/浆果/贝壳、390检视与远距手臂限伸已保存，见 `docs/LOW-GATHER-REVIEW.md`。整体自然度/远距真实接触仍待，M5和完整3A未完成。该批本地包 `dist/tidelands-m5-2026-10-23-low-gather.zip`，SHA `63501f1a6b641985928aefe6ea5fb3ddc82c13a96f6674f4f31af062aed2a3b8`；独立包普通q6接续/保存390恢复通过，见 `docs/LOW-GATHER-DELIVERY.md`。新源GPU/长时不套用旧证据。

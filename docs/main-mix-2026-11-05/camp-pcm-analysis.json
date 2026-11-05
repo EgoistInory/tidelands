@@ -1,0 +1,60 @@
+{
+  "sampleRate": 48000,
+  "channels": 2,
+  "duration": 30.42,
+  "full": {
+    "from": 0,
+    "to": 30.42,
+    "peak": 0.028094345703721046,
+    "rms": 0.001943396559531093,
+    "clipped": 0,
+    "samples": 2920320
+  },
+  "windows": {
+    "ambient": {
+      "from": 1,
+      "to": 8.152,
+      "peak": 0.027084562927484512,
+      "rms": 0.0022379945181573617,
+      "clipped": 0,
+      "samples": 686592
+    },
+    "pause": {
+      "from": 22.154666666666667,
+      "to": 23.864,
+      "peak": 2.0345869483764863e-34,
+      "rms": 2.034586948379327e-34,
+      "clipped": 0,
+      "samples": 164096
+    },
+    "muted": {
+      "from": 24.917333333333332,
+      "to": 26.466666666666665,
+      "peak": 2.0345869483764863e-34,
+      "rms": 2.0345869483791283e-34,
+      "clipped": 0,
+      "samples": 148736
+    },
+    "resumed": {
+      "from": 27.584,
+      "to": 30.093333333333334,
+      "peak": 0.027900330722332,
+      "rms": 0.0021898290158007677,
+      "clipped": 0,
+      "samples": 240896
+    }
+  },
+  "preview": {
+    "from": 6.352,
+    "to": 18.352,
+    "sampleRate": 16000,
+    "channels": 2,
+    "scope": "12-second nearest-sample16kHz stereo review copy; original encoded stereo retained",
+    "sha256": "d4e8098b1fb960d1bd3385fc121049c114a56e313a0379561206fa7ac7d9749d"
+  },
+  "originalSha256": "02dae16db7c1625b11b56eede265e65b3fd801c7582393359c656d01fcc881f8",
+  "contextRecordedSeconds": 30.56,
+  "durationDeltaSeconds": -0.13999999999999702,
+  "auditionAccepted": false,
+  "avSyncAccepted": false
+}

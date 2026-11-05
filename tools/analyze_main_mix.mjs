@@ -1,0 +1,19 @@
+// Native browser Opus decode: installed Playwright ffmpeg has no Opus/PCM/WAV codecs.
+import fs from 'node:fs';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
+const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright'),browser=await chromium.launch({channel:'chromium',headless:true}),sha=b=>createHash('sha256').update(b).digest('hex');
+try{for(const mode of ['camp','combat']){
+ const dir=`dist/main-mix-2026-11-05-${mode}`,raw=JSON.parse(fs.readFileSync(dir+'/raw.json'));assert(raw.complete&&!raw.logs.length&&raw.reloadExact);
+ const context=await browser.newContext(),page=await context.newPage();await page.goto('http://127.0.0.1:4190/');
+ const result=await page.evaluate(async({dir,marks})=>{
+  const context=new OfflineAudioContext(2,1,48000),buffer=await context.decodeAudioData(await(await fetch('/'+dir+'/main-mix.webm')).arrayBuffer()),channels=Array.from({length:buffer.numberOfChannels},(_,i)=>buffer.getChannelData(i)),rate=buffer.sampleRate;
+  function measure(from,to){const a=Math.max(0,Math.floor(from*rate)),b=Math.min(buffer.length,Math.floor(to*rate));let peak=0,sum=0,clipped=0,n=0;for(const c of channels)for(let i=a;i<b;i++){const x=c[i];if(!Number.isFinite(x))throw Error('Non-finite decoded PCM');peak=Math.max(peak,Math.abs(x));sum+=x*x;clipped+=Math.abs(x)>=.999;n++;}return {from:a/rate,to:b/rate,peak,rms:n?Math.sqrt(sum/n):0,clipped,samples:n};}
+  const at=n=>marks.find(v=>v.name===n).seconds,windows={ambient:measure(1,Math.max(2,at('ambient-end')-.2)),pause:measure(at('pause-start')+1.2,at('pause-end')-.2),muted:measure(at('mute-start')+.8,at('mute-end')-.2),resumed:measure(at('resume-start')+.8,at('resume-end')-.2)};
+  const start=Math.max(0,(marks.some(v=>v.name==='combat-end')?at('combat-end')-8:at('movement-start')-2)),length=Math.min(12,buffer.duration-start),sr=16000,n=Math.floor(length*sr),bytes=new ArrayBuffer(44+n*channels.length*2),v=new DataView(bytes),put=(p,s)=>{for(let i=0;i<s.length;i++)v.setUint8(p+i,s.charCodeAt(i));};
+  put(0,'RIFF');v.setUint32(4,bytes.byteLength-8,true);put(8,'WAVEfmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,channels.length,true);v.setUint32(24,sr,true);v.setUint32(28,sr*channels.length*2,true);v.setUint16(32,channels.length*2,true);v.setUint16(34,16,true);put(36,'data');v.setUint32(40,bytes.byteLength-44,true);
+  for(let i=0;i<n;i++)for(let c=0;c<channels.length;c++){const x=channels[c][Math.min(buffer.length-1,Math.floor((start+i/sr)*rate))];v.setInt16(44+(i*channels.length+c)*2,Math.round(Math.max(-1,Math.min(1,x))*32767),true);}
+  let binary='';const u=new Uint8Array(bytes);for(let i=0;i<u.length;i+=16384)binary+=String.fromCharCode(...u.subarray(i,i+16384));
+  return {sampleRate:rate,channels:channels.length,duration:buffer.duration,full:measure(0,buffer.duration),windows,preview:{from:start,to:start+length,sampleRate:sr,channels:channels.length,scope:'12-second nearest-sample16kHz stereo review copy; original encoded stereo retained'},previewBase64:btoa(binary)};
+ },{dir,marks:raw.marks});
+ fs.writeFileSync(dir+'/review-12s.wav',Buffer.from(result.previewBase64,'base64'));delete result.previewBase64;result.preview.sha256=sha(fs.readFileSync(dir+'/review-12s.wav'));result.originalSha256=sha(fs.readFileSync(dir+'/main-mix.webm'));result.contextRecordedSeconds=raw.mix.seconds;result.durationDeltaSeconds=result.duration-raw.mix.seconds;result.auditionAccepted=false;result.avSyncAccepted=false;
+ assert(result.channels===2&&result.sampleRate===48000&&result.full.peak>0&&result.full.clipped===0);fs.writeFileSync(dir+'/pcm-analysis.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({mode,duration:result.duration,contextSeconds:raw.mix.seconds,windows:result.windows}));await context.close();
+}}finally{await browser.close();}
