@@ -1,0 +1,1433 @@
+{
+  "package": "tidelands-m5-2026-11-05-camera-orbit-r2",
+  "packageSha256": "79c84f319f64b6cf5b06c9597cdf002ea95ca5c069b8b64f042cd0e032bc7e65",
+  "runtimeInputs": 211,
+  "probeTests": 3,
+  "testReceiptSha256": "c9c02ef194cef737afe336b440d5038db989bf362d4d8917fef32941f3ce120b",
+  "runs": [
+    {
+      "mode": "desktop",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "buffer": [
+        1920,
+        1080
+      ],
+      "dpr": 1,
+      "frames": 44789,
+      "activeWallSeconds": 614.5194000000954,
+      "activeGameSeconds": 614.4170000002887,
+      "pathMetres": 1257.337172881315,
+      "actualMovingFrames": 11176,
+      "inputMovingFrames": 11186,
+      "warmupExcludedSeconds": 10,
+      "steadyGpuMs": {
+        "samples": 5514,
+        "min": 6.568541,
+        "median": 10.923,
+        "p95": 14.757125,
+        "max": 22.415583
+      },
+      "steadyDrawCpuMs": {
+        "samples": 44113,
+        "min": 3.1999998092651367,
+        "median": 4.600000381469727,
+        "p95": 5.599999904632568,
+        "max": 113.39999961853027
+      },
+      "steadyRenderSubmitCpuMs": {
+        "samples": 44113,
+        "min": 1.5,
+        "median": 2.5,
+        "p95": 3.1000003814697266,
+        "max": 110.59999990463257
+      },
+      "steadyRafIntervalMs": {
+        "samples": 44113,
+        "min": 4.300000190734863,
+        "median": 12.799999713897705,
+        "p95": 26.699999809265137,
+        "max": 115.5
+      },
+      "rafOver33_34ms": 144,
+      "gpu25msP95GatePassed": true,
+      "maxDrawCalls": 464,
+      "maxTriangles": 5062950,
+      "nativeQueryLifecycle": {
+        "active": false,
+        "frame": 44789,
+        "bufferedFrames": 0,
+        "inflight": 0,
+        "peakInflight": 2,
+        "dropped": 0,
+        "hiddenFrames": 0,
+        "contextLost": false,
+        "errors": [],
+        "supported": true,
+        "issued": 5599,
+        "completed": 5599,
+        "deleted": 5599,
+        "disjointFrames": 0,
+        "timeouts": 0,
+        "pending": false
+      },
+      "heapUsedBytes": {
+        "samples": 41,
+        "min": 78956676,
+        "median": 88196088,
+        "p95": 109794508,
+        "max": 111071532
+      },
+      "heapFirstLastBytes": [
+        86119468,
+        90061312
+      ],
+      "heapSamples": 41,
+      "lateResourceCountRanges": {
+        "geometries": [
+          252,
+          252
+        ],
+        "textures": [
+          138,
+          138
+        ],
+        "programs": [
+          56,
+          56
+        ]
+      },
+      "phases": [
+        {
+          "from": "00-continued-camp",
+          "to": "01-highland-arrival",
+          "frames": 4060,
+          "gpuMs": {
+            "samples": 507,
+            "min": 7.0825,
+            "median": 12.227249,
+            "p95": 15.531749,
+            "max": 19.555124
+          },
+          "drawCpuMs": {
+            "samples": 4060,
+            "min": 3.4000000953674316,
+            "median": 4.699999809265137,
+            "p95": 5.400000095367432,
+            "max": 52.69999980926514
+          }
+        },
+        {
+          "from": "01-highland-arrival",
+          "to": "02-highland-gather",
+          "frames": 301,
+          "gpuMs": {
+            "samples": 38,
+            "min": 7.970041,
+            "median": 8.409749,
+            "p95": 9.091916,
+            "max": 9.777
+          },
+          "drawCpuMs": {
+            "samples": 301,
+            "min": 3.5,
+            "median": 4.400000095367432,
+            "p95": 5,
+            "max": 6.699999809265137
+          }
+        },
+        {
+          "from": "02-highland-gather",
+          "to": "03-native-combat",
+          "frames": 1114,
+          "gpuMs": {
+            "samples": 139,
+            "min": 6.568541,
+            "median": 7.826374,
+            "p95": 9.165749,
+            "max": 10.693
+          },
+          "drawCpuMs": {
+            "samples": 1114,
+            "min": 3.5999999046325684,
+            "median": 4.5,
+            "p95": 5.400000095367432,
+            "max": 6.699999809265137
+          }
+        },
+        {
+          "from": "03-native-combat",
+          "to": "04-woodland-visit",
+          "frames": 33783,
+          "gpuMs": {
+            "samples": 4223,
+            "min": 7.187874,
+            "median": 10.568374,
+            "p95": 13.839791,
+            "max": 18.894333
+          },
+          "drawCpuMs": {
+            "samples": 33783,
+            "min": 3.1999998092651367,
+            "median": 4.599999904632568,
+            "p95": 5.5,
+            "max": 8.100000381469727
+          }
+        },
+        {
+          "from": "04-woodland-visit",
+          "to": "05-camp-return",
+          "frames": 5474,
+          "gpuMs": {
+            "samples": 684,
+            "min": 8.983375,
+            "median": 13.157916,
+            "p95": 16.95775,
+            "max": 22.415583
+          },
+          "drawCpuMs": {
+            "samples": 5474,
+            "min": 3.5,
+            "median": 5.099999904632568,
+            "p95": 5.900000095367432,
+            "max": 113.39999961853027
+          }
+        },
+        {
+          "from": "05-camp-return",
+          "to": "07-final-rest",
+          "frames": 49,
+          "gpuMs": {
+            "samples": 6,
+            "min": 12.142583,
+            "median": 12.175417,
+            "p95": 13.570374,
+            "max": 13.570374
+          },
+          "drawCpuMs": {
+            "samples": 49,
+            "min": 4,
+            "median": 4.699999809265137,
+            "p95": 5.400000095367432,
+            "max": 6.400000095367432
+          }
+        }
+      ],
+      "finalSaveSha256": "b37f413cc6dc036d17fc164936412c3981ff5940d769fe6d7a68e9211d08db18",
+      "profileSha256": "94ff238cd7759b9ca5d09554ed1e3431eed2deb3936898debbb3572c3396cf23",
+      "initialSaveSha256": "9eb5c411617ea73063b6f26bf786696ef28475910ee9f49d33e54b2b48eb8978",
+      "initialProfileSha256": "ef2744c73955a8694c31f9e3a8125d88d66cd115eee10a19bd1d3bf0e1cadf0c",
+      "finalQuest": 6,
+      "finalKills": 20,
+      "finalHp": 100,
+      "finalInventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 40,
+        "berry": 15,
+        "shell": 0,
+        "crystal": 5,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "localReadyMs": 2784,
+      "evidenceSha256": {
+        "raw.json": "aceebc335b35d0e14ba9e9ee12f8beac9d99620e74041d17199acb359dc47c5b",
+        "samples.jsonl": "188401e9a7dc744e70e5736222745f99aa4fde76a34410c3d8e8f918a0267ea8",
+        "inputs.jsonl": "aa99ab682a7bafa1120a467c7411d743bc74d88b09749e883633e4691a84f968",
+        "heap.json": "24c366f0b9371ea4fc10ae875e6e6b942639e4fba0e243d1c7f8eecd7a44c7b1",
+        "final-save.json": "b37f413cc6dc036d17fc164936412c3981ff5940d769fe6d7a68e9211d08db18",
+        "00-continued-camp.jpg": "c74c7a99f7f91c3576a08bc3253cacbfa549af16bf8c69582b85b281dd2732e5",
+        "01-highland-arrival.jpg": "c57d79b2569d6062d6147afc18d28ed079dc382087db23ce99b1dd92ec109ded",
+        "02-highland-gather.jpg": "e641794bc22ef6b0368156af3911e3a9faf17371cb8e5da10fd546f244f08622",
+        "03-native-combat.jpg": "c363a75cf178ea5187957d657e6abb0e6cb8b017e6e669e0a6960df338015e34",
+        "04-woodland-visit.jpg": "2a2527b4df179cebcf3b6a61ad0aa83b538251323a7bc101d374e1927fa4219e",
+        "05-camp-return.jpg": "2886b13d10746fbfba4cf91ebecf7e8fceef14281a8e6cb9a884b19a2a33e0da",
+        "07-final-rest.jpg": "ed604c088a3eef6afeb639520d6055e6d631202cfa794acad7cbb3cdc3f51065"
+      },
+      "cdpBackingStorageBytes": {
+        "samples": 41,
+        "min": 223060018,
+        "median": 223492643,
+        "p95": 322271287,
+        "max": 323324749
+      },
+      "cdpBackingFirstLastBytes": [
+        320541619,
+        225049483
+      ],
+      "cdpEmbedderHeapBytes": {
+        "samples": 41,
+        "min": 2469744,
+        "median": 19099584,
+        "p95": 45718232,
+        "max": 57652640
+      },
+      "browserReportedHeapUsedBytes": {
+        "samples": 610,
+        "min": 300841787,
+        "median": 315576639,
+        "p95": 427027572,
+        "max": 441188499
+      },
+      "browserVersion": "151.0.7922.34",
+      "glIdentity": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+      },
+      "targetEnemy": {
+        "id": "enemy-10",
+        "type": "crab",
+        "initialHp": 40,
+        "finalHp": -6
+      },
+      "heapPhases": {
+        "active": {
+          "samples": 41,
+          "wallSeconds": 614.492,
+          "fields": {
+            "usedSize": {
+              "first": 86119468,
+              "last": 90061312,
+              "samples": 41,
+              "min": 78956676,
+              "median": 88196088,
+              "p95": 109794508,
+              "max": 111071532
+            },
+            "backingStorageSize": {
+              "first": 320541619,
+              "last": 225049483,
+              "samples": 41,
+              "min": 223060018,
+              "median": 223492643,
+              "p95": 322271287,
+              "max": 323324749
+            },
+            "embedderHeapUsedSize": {
+              "first": 2474088,
+              "last": 29367088,
+              "samples": 41,
+              "min": 2469744,
+              "median": 19099584,
+              "p95": 45718232,
+              "max": 57652640
+            },
+            "nodes": {
+              "first": 305,
+              "last": 5990,
+              "samples": 41,
+              "min": 283,
+              "median": 3756,
+              "p95": 9091,
+              "max": 11492
+            },
+            "documents": {
+              "first": 1,
+              "last": 1,
+              "samples": 41,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1
+            },
+            "jsEventListeners": {
+              "first": 100,
+              "last": 213,
+              "samples": 41,
+              "min": 68,
+              "median": 137,
+              "p95": 300,
+              "max": 373
+            },
+            "elements": {
+              "first": 117,
+              "last": 117,
+              "samples": 41,
+              "min": 117,
+              "median": 117,
+              "p95": 117,
+              "max": 117
+            }
+          }
+        },
+        "paused": {
+          "samples": 6,
+          "wallSeconds": 60.034,
+          "fields": {
+            "usedSize": {
+              "first": 96792048,
+              "last": 80802272,
+              "samples": 6,
+              "min": 80794004,
+              "median": 92378140,
+              "p95": 96792048,
+              "max": 96792048
+            },
+            "backingStorageSize": {
+              "first": 225063886,
+              "last": 223063421,
+              "samples": 6,
+              "min": 223063411,
+              "median": 225063886,
+              "p95": 225063886,
+              "max": 225063886
+            },
+            "embedderHeapUsedSize": {
+              "first": 30045264,
+              "last": 2718240,
+              "samples": 6,
+              "min": 2718240,
+              "median": 31561488,
+              "p95": 35228192,
+              "max": 35228192
+            },
+            "nodes": {
+              "first": 6012,
+              "last": 292,
+              "samples": 6,
+              "min": 292,
+              "median": 6012,
+              "p95": 6012,
+              "max": 6012
+            },
+            "documents": {
+              "first": 1,
+              "last": 1,
+              "samples": 6,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1
+            },
+            "jsEventListeners": {
+              "first": 219,
+              "last": 74,
+              "samples": 6,
+              "min": 74,
+              "median": 219,
+              "p95": 219,
+              "max": 219
+            },
+            "elements": {
+              "first": 126,
+              "last": 126,
+              "samples": 6,
+              "min": 126,
+              "median": 126,
+              "p95": 126,
+              "max": 126
+            }
+          }
+        },
+        "reloaded": {
+          "samples": 2,
+          "wallSeconds": 1.206,
+          "fields": {
+            "usedSize": {
+              "first": 90515740,
+              "last": 77003220,
+              "samples": 2,
+              "min": 77003220,
+              "median": 90515740,
+              "p95": 90515740,
+              "max": 90515740
+            },
+            "backingStorageSize": {
+              "first": 350062675,
+              "last": 213647070,
+              "samples": 2,
+              "min": 213647070,
+              "median": 350062675,
+              "p95": 350062675,
+              "max": 350062675
+            },
+            "embedderHeapUsedSize": {
+              "first": 2239784,
+              "last": 1649624,
+              "samples": 2,
+              "min": 1649624,
+              "median": 2239784,
+              "p95": 2239784,
+              "max": 2239784
+            },
+            "nodes": {
+              "first": 263,
+              "last": 260,
+              "samples": 2,
+              "min": 260,
+              "median": 263,
+              "p95": 263,
+              "max": 263
+            },
+            "documents": {
+              "first": 1,
+              "last": 1,
+              "samples": 2,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1
+            },
+            "jsEventListeners": {
+              "first": 87,
+              "last": 55,
+              "samples": 2,
+              "min": 55,
+              "median": 87,
+              "p95": 87,
+              "max": 87
+            },
+            "elements": {
+              "first": 117,
+              "last": 117,
+              "samples": 2,
+              "min": 117,
+              "median": 117,
+              "p95": 117,
+              "max": 117
+            }
+          }
+        }
+      },
+      "naturalActiveCounterDrops": [
+        {
+          "wall": 1793870751739,
+          "fromNodes": 11492,
+          "toNodes": 331,
+          "fromEmbedder": 57652640,
+          "toEmbedder": 2575448
+        },
+        {
+          "wall": 1793870766866,
+          "fromNodes": 331,
+          "toNodes": 319,
+          "fromEmbedder": 2575448,
+          "toEmbedder": 2570608
+        },
+        {
+          "wall": 1793870850292,
+          "fromNodes": 6151,
+          "toNodes": 1795,
+          "fromEmbedder": 31855568,
+          "toEmbedder": 9612368
+        },
+        {
+          "wall": 1793870948403,
+          "fromNodes": 9091,
+          "toNodes": 283,
+          "fromEmbedder": 45718232,
+          "toEmbedder": 2469744
+        },
+        {
+          "wall": 1793870978590,
+          "fromNodes": 1639,
+          "toNodes": 936,
+          "fromEmbedder": 8728240,
+          "toEmbedder": 5182880
+        },
+        {
+          "wall": 1793871059143,
+          "fromNodes": 6760,
+          "toNodes": 840,
+          "fromEmbedder": 34177776,
+          "toEmbedder": 4883176
+        },
+        {
+          "wall": 1793871152445,
+          "fromNodes": 8257,
+          "toNodes": 761,
+          "fromEmbedder": 41574936,
+          "toEmbedder": 4531616
+        },
+        {
+          "wall": 1793871229725,
+          "fromNodes": 7471,
+          "toNodes": 601,
+          "fromEmbedder": 37322056,
+          "toEmbedder": 3726440
+        }
+      ],
+      "pausedObservationSeconds": 60.035,
+      "rafOver50ms": 13,
+      "rafOver100ms": 1,
+      "largestDrawFrames": [
+        {
+          "frame": 39887,
+          "gameTime": 1794.5607000006557,
+          "player": [
+            113.4680841222646,
+            -25.249287294801753
+          ],
+          "drawCpuMs": 113.39999961853027,
+          "renderSubmitCpuMs": 110.59999990463257,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 115.5
+        },
+        {
+          "frame": 1182,
+          "gameTime": 1272.9256000003973,
+          "player": [
+            -73.85808650433586,
+            32.13727918341318
+          ],
+          "drawCpuMs": 52.69999980926514,
+          "renderSubmitCpuMs": 50.40000009536743,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 53.89999961853027
+        },
+        {
+          "frame": 1228,
+          "gameTime": 1273.697200000398,
+          "player": [
+            -74.36595199754734,
+            28.776940675047552
+          ],
+          "drawCpuMs": 45.09999990463257,
+          "renderSubmitCpuMs": 43,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 55.59999990463257
+        },
+        {
+          "frame": 2678,
+          "gameTime": 1294.293100000405,
+          "player": [
+            -77.19428892844958,
+            -82.59073690801648
+          ],
+          "drawCpuMs": 41.5,
+          "renderSubmitCpuMs": 39.30000019073486,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 42.19999980926514
+        },
+        {
+          "frame": 3661,
+          "gameTime": 1307.4078000004051,
+          "player": [
+            -86.67494369745043,
+            -166.40399814304416
+          ],
+          "drawCpuMs": 39.59999990463257,
+          "renderSubmitCpuMs": 36.799999713897705,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 40.19999980926514
+        },
+        {
+          "frame": 959,
+          "gameTime": 1269.400200000398,
+          "player": [
+            -70.7425853747132,
+            52.75127749333154
+          ],
+          "drawCpuMs": 29,
+          "renderSubmitCpuMs": 27.199999809265137,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 35.30000019073486
+        },
+        {
+          "frame": 676,
+          "gameTime": 1265.581600000398,
+          "player": [
+            -67.73503835198937,
+            72.65098757654896
+          ],
+          "drawCpuMs": 20.59999990463257,
+          "renderSubmitCpuMs": 18.199999809265137,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 21.40000009536743
+        },
+        {
+          "frame": 2185,
+          "gameTime": 1287.2237000004022,
+          "player": [
+            -79.29541635270265,
+            -44.04390902351926
+          ],
+          "drawCpuMs": 8.599999904632568,
+          "renderSubmitCpuMs": 6.400000095367432,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 14.599999904632568
+        },
+        {
+          "frame": 31560,
+          "gameTime": 1667.9494000006055,
+          "player": [
+            33.60142313574868,
+            -97.86425039136248
+          ],
+          "drawCpuMs": 8.100000381469727,
+          "renderSubmitCpuMs": 3.5,
+          "gpuMsIfSampled": 12.20325,
+          "nextRafIntervalMs": 10.200000286102295
+        },
+        {
+          "frame": 42573,
+          "gameTime": 1837.5791000006725,
+          "player": [
+            3.6171635064008294,
+            -5.694794997454275
+          ],
+          "drawCpuMs": 8,
+          "renderSubmitCpuMs": 4,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 17.300000190734863
+        },
+        {
+          "frame": 38483,
+          "gameTime": 1772.0911000006472,
+          "player": [
+            99.03395891460863,
+            -49.29164837872409
+          ],
+          "drawCpuMs": 7.800000190734863,
+          "renderSubmitCpuMs": 3.3000001907348633,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 12.200000286102295
+        },
+        {
+          "frame": 31525,
+          "gameTime": 1667.4949000006056,
+          "player": [
+            33.60142313574868,
+            -97.86425039136248
+          ],
+          "drawCpuMs": 7.699999809265137,
+          "renderSubmitCpuMs": 4.599999904632568,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 10.400000095367432
+        }
+      ],
+      "unboundedLeakExcluded": false
+    },
+    {
+      "mode": "narrow",
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        585,
+        1266
+      ],
+      "dpr": 2,
+      "frames": 46388,
+      "activeWallSeconds": 601.6732999997139,
+      "activeGameSeconds": 601.6721000003611,
+      "pathMetres": 1441.7655564102242,
+      "actualMovingFrames": 13808,
+      "inputMovingFrames": 13810,
+      "warmupExcludedSeconds": 10,
+      "steadyGpuMs": {
+        "samples": 5701,
+        "min": 4.864708,
+        "median": 7.900041,
+        "p95": 9.833541,
+        "max": 27.221375
+      },
+      "steadyDrawCpuMs": {
+        "samples": 45607,
+        "min": 3,
+        "median": 4.099999904632568,
+        "p95": 4.799999713897705,
+        "max": 92.59999990463257
+      },
+      "steadyRenderSubmitCpuMs": {
+        "samples": 45607,
+        "min": 1.299999713897705,
+        "median": 2,
+        "p95": 2.5999999046325684,
+        "max": 90.40000009536743
+      },
+      "steadyRafIntervalMs": {
+        "samples": 45607,
+        "min": 4.099999904632568,
+        "median": 10.800000190734863,
+        "p95": 26.700000286102295,
+        "max": 94
+      },
+      "rafOver33_34ms": 4,
+      "gpu25msP95GatePassed": true,
+      "maxDrawCalls": 313,
+      "maxTriangles": 4055263,
+      "nativeQueryLifecycle": {
+        "active": false,
+        "frame": 46388,
+        "bufferedFrames": 0,
+        "inflight": 0,
+        "peakInflight": 2,
+        "dropped": 0,
+        "hiddenFrames": 0,
+        "contextLost": false,
+        "errors": [],
+        "supported": true,
+        "issued": 5799,
+        "completed": 5799,
+        "deleted": 5799,
+        "disjointFrames": 0,
+        "timeouts": 0,
+        "pending": false
+      },
+      "heapUsedBytes": {
+        "samples": 40,
+        "min": 74749364,
+        "median": 92257360,
+        "p95": 111270868,
+        "max": 112059536
+      },
+      "heapFirstLastBytes": [
+        74749364,
+        89139668
+      ],
+      "heapSamples": 40,
+      "lateResourceCountRanges": {
+        "geometries": [
+          244,
+          252
+        ],
+        "textures": [
+          137,
+          138
+        ],
+        "programs": [
+          56,
+          56
+        ]
+      },
+      "phases": [
+        {
+          "from": "00-continued-camp",
+          "to": "01-highland-arrival",
+          "frames": 4347,
+          "gpuMs": {
+            "samples": 544,
+            "min": 5.148249,
+            "median": 8.197749,
+            "p95": 10.399666,
+            "max": 27.221375
+          },
+          "drawCpuMs": {
+            "samples": 4347,
+            "min": 3.1999998092651367,
+            "median": 4.299999713897705,
+            "p95": 4.900000095367432,
+            "max": 59.90000009536743
+          }
+        },
+        {
+          "from": "01-highland-arrival",
+          "to": "02-highland-gather",
+          "frames": 356,
+          "gpuMs": {
+            "samples": 44,
+            "min": 5.077833,
+            "median": 6.773374,
+            "p95": 6.967541,
+            "max": 7.025333
+          },
+          "drawCpuMs": {
+            "samples": 356,
+            "min": 3.299999713897705,
+            "median": 4.099999904632568,
+            "p95": 4.900000095367432,
+            "max": 6.5
+          }
+        },
+        {
+          "from": "02-highland-gather",
+          "to": "03-native-combat",
+          "frames": 1112,
+          "gpuMs": {
+            "samples": 139,
+            "min": 4.864708,
+            "median": 6.446291,
+            "p95": 6.751458,
+            "max": 6.904083
+          },
+          "drawCpuMs": {
+            "samples": 1112,
+            "min": 3.299999713897705,
+            "median": 4.199999809265137,
+            "p95": 4.799999713897705,
+            "max": 7
+          }
+        },
+        {
+          "from": "03-native-combat",
+          "to": "04-woodland-visit",
+          "frames": 32245,
+          "gpuMs": {
+            "samples": 4031,
+            "min": 5.132958,
+            "median": 7.750083,
+            "p95": 9.523458,
+            "max": 12.554916
+          },
+          "drawCpuMs": {
+            "samples": 32245,
+            "min": 3,
+            "median": 4,
+            "p95": 4.699999809265137,
+            "max": 8.100000381469727
+          }
+        },
+        {
+          "from": "04-woodland-visit",
+          "to": "05-camp-return",
+          "frames": 6324,
+          "gpuMs": {
+            "samples": 791,
+            "min": 5.906583,
+            "median": 8.523833,
+            "p95": 10.581791,
+            "max": 12.88125
+          },
+          "drawCpuMs": {
+            "samples": 6324,
+            "min": 3.1999998092651367,
+            "median": 4.299999713897705,
+            "p95": 4.900000095367432,
+            "max": 92.59999990463257
+          }
+        },
+        {
+          "from": "05-camp-return",
+          "to": "06-natural-night",
+          "frames": 136,
+          "gpuMs": {
+            "samples": 17,
+            "min": 6.359249,
+            "median": 7.538791,
+            "p95": 9.584166,
+            "max": 9.584166
+          },
+          "drawCpuMs": {
+            "samples": 136,
+            "min": 3.5,
+            "median": 4.199999809265137,
+            "p95": 4.800000190734863,
+            "max": 5
+          }
+        },
+        {
+          "from": "06-natural-night",
+          "to": "07-final-rest",
+          "frames": 1868,
+          "gpuMs": {
+            "samples": 233,
+            "min": 6.050041,
+            "median": 8.361583,
+            "p95": 10.1745,
+            "max": 11.102916
+          },
+          "drawCpuMs": {
+            "samples": 1868,
+            "min": 3.5,
+            "median": 4.199999809265137,
+            "p95": 4.700000286102295,
+            "max": 5.699999809265137
+          }
+        }
+      ],
+      "finalSaveSha256": "5bebccc79dcaf0e379fc77aefc38c5d5c90805605c14dd01098ac095fa0dc491",
+      "profileSha256": "dc12eab04ac9925c9b78a9872aebfa8f97d9f9451b66a64daa71374ca92e28c8",
+      "initialSaveSha256": "9eb5c411617ea73063b6f26bf786696ef28475910ee9f49d33e54b2b48eb8978",
+      "initialProfileSha256": "ef2744c73955a8694c31f9e3a8125d88d66cd115eee10a19bd1d3bf0e1cadf0c",
+      "finalQuest": 6,
+      "finalKills": 20,
+      "finalHp": 100,
+      "finalInventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 40,
+        "berry": 15,
+        "shell": 0,
+        "crystal": 5,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "localReadyMs": 2634,
+      "evidenceSha256": {
+        "raw.json": "21a037a8afef4190fcf8d619a6140e20eec3ac1e2a564a4620338d507271514d",
+        "samples.jsonl": "659a17136abcea767bbe37a20443ec2c9fe80d9b561b10cde82c7a31471317a0",
+        "inputs.jsonl": "cc6d55ca259c3f02b08384d76572cf8ad56a94cfe10d0cea74b48633db53053f",
+        "heap.json": "46cca99feda8e9338e4db91cf8cdc8606a7de86e500ad9df3d23e4740cdd97ee",
+        "final-save.json": "5bebccc79dcaf0e379fc77aefc38c5d5c90805605c14dd01098ac095fa0dc491",
+        "00-continued-camp.jpg": "28e769f8ea69e58b9ffafed72a596b36c0f8c50bfaa5133e8a2c42955da960c9",
+        "01-highland-arrival.jpg": "98ec7a6f85b1a4236a35fce78b5c7fa9072a3e7502a41bb64f25ae46cbbce65a",
+        "02-highland-gather.jpg": "972ce7ca154acf16660133f98a8cfa466b18b3c459f33ad30c29d224c3d0ae9c",
+        "03-native-combat.jpg": "7cc190a0f593791cc38f5fedc6e90e0357e24c34be9ecfeb53e49f5473a1bd35",
+        "04-woodland-visit.jpg": "9a83f4dee7a4e5f485644b1f3649b446927cf34b104fbb731fed203ddee60b3d",
+        "05-camp-return.jpg": "c91d2f7401cc8824b0aeef9e88c4ca3eba1f6cb151d259f6e6544dd94bda6072",
+        "06-natural-night.jpg": "904c0fe82b7d0a13ca1e726e2b821548a7f715bbb56abea5e5837cef1fe2393b",
+        "07-final-rest.jpg": "3e61fc15e50c52fc30d83206198d6a732feac777f6000795b24d1b197dd99be1"
+      },
+      "cdpBackingStorageBytes": {
+        "samples": 40,
+        "min": 202482054,
+        "median": 202887996,
+        "p95": 282087664,
+        "max": 282209318
+      },
+      "cdpBackingFirstLastBytes": [
+        279385989,
+        203687423
+      ],
+      "cdpEmbedderHeapBytes": {
+        "samples": 40,
+        "min": 2294768,
+        "median": 19058880,
+        "p95": 48945264,
+        "max": 56439280
+      },
+      "browserReportedHeapUsedBytes": {
+        "samples": 598,
+        "min": 280337807,
+        "median": 297277047,
+        "p95": 384443015,
+        "max": 399701992
+      },
+      "browserVersion": "151.0.7922.34",
+      "glIdentity": {
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+        "vendor": "Google Inc. (Apple)",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+      },
+      "targetEnemy": {
+        "id": "enemy-10",
+        "type": "crab",
+        "initialHp": 40,
+        "finalHp": -6
+      },
+      "heapPhases": {
+        "active": {
+          "samples": 40,
+          "wallSeconds": 601.737,
+          "fields": {
+            "usedSize": {
+              "first": 74749364,
+              "last": 89139668,
+              "samples": 40,
+              "min": 74749364,
+              "median": 92257360,
+              "p95": 111270868,
+              "max": 112059536
+            },
+            "backingStorageSize": {
+              "first": 279385989,
+              "last": 203687423,
+              "samples": 40,
+              "min": 202482054,
+              "median": 202887996,
+              "p95": 282087664,
+              "max": 282209318
+            },
+            "embedderHeapUsedSize": {
+              "first": 2294768,
+              "last": 19058880,
+              "samples": 40,
+              "min": 2294768,
+              "median": 19058880,
+              "p95": 48945264,
+              "max": 56439280
+            },
+            "nodes": {
+              "first": 305,
+              "last": 3887,
+              "samples": 40,
+              "min": 305,
+              "median": 3887,
+              "p95": 10635,
+              "max": 11595
+            },
+            "documents": {
+              "first": 1,
+              "last": 1,
+              "samples": 40,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1
+            },
+            "jsEventListeners": {
+              "first": 100,
+              "last": 132,
+              "samples": 40,
+              "min": 69,
+              "median": 126,
+              "p95": 357,
+              "max": 375
+            },
+            "elements": {
+              "first": 117,
+              "last": 117,
+              "samples": 40,
+              "min": 117,
+              "median": 117,
+              "p95": 117,
+              "max": 117
+            }
+          }
+        },
+        "paused": {
+          "samples": 5,
+          "wallSeconds": 60.021,
+          "fields": {
+            "usedSize": {
+              "first": 95694980,
+              "last": 91141448,
+              "samples": 5,
+              "min": 91141448,
+              "median": 95694980,
+              "p95": 106905180,
+              "max": 106905180
+            },
+            "backingStorageSize": {
+              "first": 203701823,
+              "last": 202484883,
+              "samples": 5,
+              "min": 202484883,
+              "median": 203701823,
+              "p95": 203701823,
+              "max": 203701823
+            },
+            "embedderHeapUsedSize": {
+              "first": 19789208,
+              "last": 2954160,
+              "samples": 5,
+              "min": 2954160,
+              "median": 21930120,
+              "p95": 27031912,
+              "max": 27031912
+            },
+            "nodes": {
+              "first": 3909,
+              "last": 294,
+              "samples": 5,
+              "min": 294,
+              "median": 3909,
+              "p95": 3909,
+              "max": 3909
+            },
+            "documents": {
+              "first": 1,
+              "last": 1,
+              "samples": 5,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1
+            },
+            "jsEventListeners": {
+              "first": 138,
+              "last": 74,
+              "samples": 5,
+              "min": 74,
+              "median": 138,
+              "p95": 138,
+              "max": 138
+            },
+            "elements": {
+              "first": 126,
+              "last": 126,
+              "samples": 5,
+              "min": 126,
+              "median": 126,
+              "p95": 126,
+              "max": 126
+            }
+          }
+        },
+        "reloaded": {
+          "samples": 2,
+          "wallSeconds": 1.204,
+          "fields": {
+            "usedSize": {
+              "first": 87522316,
+              "last": 77607232,
+              "samples": 2,
+              "min": 77607232,
+              "median": 87522316,
+              "p95": 87522316,
+              "max": 87522316
+            },
+            "backingStorageSize": {
+              "first": 326340225,
+              "last": 193069142,
+              "samples": 2,
+              "min": 193069142,
+              "median": 326340225,
+              "p95": 326340225,
+              "max": 326340225
+            },
+            "embedderHeapUsedSize": {
+              "first": 2215112,
+              "last": 1543144,
+              "samples": 2,
+              "min": 1543144,
+              "median": 2215112,
+              "p95": 2215112,
+              "max": 2215112
+            },
+            "nodes": {
+              "first": 263,
+              "last": 260,
+              "samples": 2,
+              "min": 260,
+              "median": 263,
+              "p95": 263,
+              "max": 263
+            },
+            "documents": {
+              "first": 1,
+              "last": 1,
+              "samples": 2,
+              "min": 1,
+              "median": 1,
+              "p95": 1,
+              "max": 1
+            },
+            "jsEventListeners": {
+              "first": 87,
+              "last": 55,
+              "samples": 2,
+              "min": 55,
+              "median": 87,
+              "p95": 87,
+              "max": 87
+            },
+            "elements": {
+              "first": 117,
+              "last": 117,
+              "samples": 2,
+              "min": 117,
+              "median": 117,
+              "p95": 117,
+              "max": 117
+            }
+          }
+        }
+      },
+      "naturalActiveCounterDrops": [
+        {
+          "wall": 1793871519636,
+          "fromNodes": 11595,
+          "toNodes": 850,
+          "fromEmbedder": 56439280,
+          "toEmbedder": 5123272
+        },
+        {
+          "wall": 1793871551988,
+          "fromNodes": 1443,
+          "toNodes": 1346,
+          "fromEmbedder": 8170048,
+          "toEmbedder": 7475032
+        },
+        {
+          "wall": 1793871631548,
+          "fromNodes": 6984,
+          "toNodes": 912,
+          "fromEmbedder": 36374888,
+          "toEmbedder": 5205448
+        },
+        {
+          "wall": 1793871730051,
+          "fromNodes": 8138,
+          "toNodes": 475,
+          "fromEmbedder": 41558944,
+          "toEmbedder": 3257216
+        },
+        {
+          "wall": 1793871828158,
+          "fromNodes": 7842,
+          "toNodes": 355,
+          "fromEmbedder": 40113704,
+          "toEmbedder": 2632328
+        },
+        {
+          "wall": 1793871905722,
+          "fromNodes": 6667,
+          "toNodes": 1140,
+          "fromEmbedder": 33964512,
+          "toEmbedder": 2947608
+        },
+        {
+          "wall": 1793871997449,
+          "fromNodes": 10635,
+          "toNodes": 924,
+          "fromEmbedder": 47267056,
+          "toEmbedder": 5342616
+        }
+      ],
+      "pausedObservationSeconds": 60.024,
+      "rafOver50ms": 2,
+      "rafOver100ms": 0,
+      "largestDrawFrames": [
+        {
+          "frame": 38645,
+          "gameTime": 1757.6571000007225,
+          "player": [
+            114.08670440680912,
+            -24.61661169395298
+          ],
+          "drawCpuMs": 92.59999990463257,
+          "renderSubmitCpuMs": 90.40000009536743,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 94
+        },
+        {
+          "frame": 4019,
+          "gameTime": 1308.051500000413,
+          "player": [
+            -83.49820802784426,
+            -171.39776000611937
+          ],
+          "drawCpuMs": 59.90000009536743,
+          "renderSubmitCpuMs": 57.60000038146973,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 60.90000009536743
+        },
+        {
+          "frame": 3943,
+          "gameTime": 1307.0226000004131,
+          "player": [
+            -87.44598715801403,
+            -166.95411390979297
+          ],
+          "drawCpuMs": 32.90000009536743,
+          "renderSubmitCpuMs": 30.300000190734863,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 33.5
+        },
+        {
+          "frame": 2957,
+          "gameTime": 1293.9719000004059,
+          "player": [
+            -77.72562569073722,
+            -82.31833804340488
+          ],
+          "drawCpuMs": 18.199999809265137,
+          "renderSubmitCpuMs": 16.09999990463257,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 18.699999809265137
+        },
+        {
+          "frame": 1396,
+          "gameTime": 1273.4462000004003,
+          "player": [
+            -73.02209779588519,
+            30.347250499469272
+          ],
+          "drawCpuMs": 14.600000381469727,
+          "renderSubmitCpuMs": 12.700000286102295,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 16.700000286102295
+        },
+        {
+          "frame": 1067,
+          "gameTime": 1269.3944000004,
+          "player": [
+            -69.66798880014194,
+            52.540019589528164
+          ],
+          "drawCpuMs": 14.300000190734863,
+          "renderSubmitCpuMs": 12.300000190734863,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 14.900000095367432
+        },
+        {
+          "frame": 2810,
+          "gameTime": 1292.0560000004057,
+          "player": [
+            -82.80706521955122,
+            -75.71395991508231
+          ],
+          "drawCpuMs": 10.200000286102295,
+          "renderSubmitCpuMs": 8.099999904632568,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 14.5
+        },
+        {
+          "frame": 1421,
+          "gameTime": 1273.7307000004002,
+          "player": [
+            -73.31970383670637,
+            28.378112897759642
+          ],
+          "drawCpuMs": 9.200000286102295,
+          "renderSubmitCpuMs": 6.900000095367432,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 15.099999904632568
+        },
+        {
+          "frame": 41688,
+          "gameTime": 1796.7669000007418,
+          "player": [
+            17.331882265660827,
+            -5.474708829948866
+          ],
+          "drawCpuMs": 8.5,
+          "renderSubmitCpuMs": 6.300000190734863,
+          "gpuMsIfSampled": 8.157833,
+          "nextRafIntervalMs": 14.299999713897705
+        },
+        {
+          "frame": 7599,
+          "gameTime": 1354.2770000004416,
+          "player": [
+            -118.13968687552877,
+            -215.09904587763975
+          ],
+          "drawCpuMs": 8.100000381469727,
+          "renderSubmitCpuMs": 5.400000095367432,
+          "gpuMsIfSampled": null,
+          "nextRafIntervalMs": 9.700000286102295
+        },
+        {
+          "frame": 4032,
+          "gameTime": 1308.2817000004131,
+          "player": [
+            -83.7390126345122,
+            -172.99106572110549
+          ],
+          "drawCpuMs": 7.900000095367432,
+          "renderSubmitCpuMs": 5.5,
+          "gpuMsIfSampled": 27.221375,
+          "nextRafIntervalMs": 15.599999904632568
+        },
+        {
+          "frame": 7568,
+          "gameTime": 1353.910700000442,
+          "player": [
+            -118.34325149958431,
+            -216.44594984000423
+          ],
+          "drawCpuMs": 7.900000095367432,
+          "renderSubmitCpuMs": 3.3000001907348633,
+          "gpuMsIfSampled": 7.064708,
+          "nextRafIntervalMs": 10.700000286102295
+        }
+      ],
+      "unboundedLeakExcluded": false
+    }
+  ],
+  "sourceSha256": {
+    "tools/runtime_budget_probe.js": "9ac141a7c52701380ad08c321f313dcf3ef0b43c2a7831e29e53aead21535889",
+    "tools/run_runtime_ceiling.mjs": "6c2decab08c447fc88f73a53ba7509b5ac636811ae70cb379cd5f9ab9acf4e66",
+    "tools/verify_runtime_ceiling.py": "b288c8e2c3144ae588394372758b9b5a8062282cff8fa99a1d0d43e52dace9e4",
+    "tests/runtime-budget-probe.test.js": "0abdae0d765ac8e630508cc50d0dc3a16a8603e749091a9408fbe6376ad7e364"
+  },
+  "systemGpuIsolated": false,
+  "vramMeasured": false,
+  "forcedGc": false,
+  "physicalMobileAccepted": false,
+  "tenMinuteNativeSampleCollected": true,
+  "finalEnduranceAccepted": false,
+  "wholeGoalComplete": false,
+  "m5Complete": false,
+  "performanceGainClaimed": false
+}

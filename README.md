@@ -2,11 +2,11 @@
 
 正在开发的单人 3D 海岛开放世界。中文界面，本地运行；M1 自由探索、M2 生存与营地、M3 世界内容与成长、M4 本地交付已完成功能验收，证据见 docs/M1-ACCEPTANCE.md 至 docs/M4-ACCEPTANCE.md。最终 M5 品质验收仍在推进，见 AGENT_PROGRESS.md 和 ROADMAP.md。
 
-最新本地可运行检查点：`dist/tidelands-m5-2026-11-05-camera-orbit-r2.zip`，SHA `79c84f319f64b6cf5b06c9597cdf002ea95ca5c069b8b64f042cd0e032bc7e65`。两个实际镜头输入的固定焦点转角141.10°/97.32°降为8.90°/7.32°；419规则/7打包、桌面与390旧档原生恢复、普通高地采集和真实野猪战斗/返营地恢复通过。**全局镜头质量未通过：新普通路径仍有94.24°瞬转**，三轮后停止当前路线继续小修，剩余RED与失败包保留，见 `docs/CAMERA-ORBIT-CHECKPOINT.md`。M5五项、自然动作/整体美术声音、当前GPU长时与真机及完整3A仍未完成；所有本地包在ignored `dist/`中保留。
+最新本地可运行检查点：`dist/tidelands-m5-2026-11-05-camera-orbit-r2.zip`，SHA `79c84f319f64b6cf5b06c9597cdf002ea95ca5c069b8b64f042cd0e032bc7e65`。两个实际镜头输入的固定焦点转角141.10°/97.32°降为8.90°/7.32°；419规则/7打包、桌面与390旧档原生恢复、普通高地采集和真实野猪战斗/返营地恢复通过。**全局镜头质量未通过：新普通路径仍有94.24°瞬转**，三轮后停止当前路线继续小修，剩余RED与失败包保留，见 `docs/CAMERA-ORBIT-CHECKPOINT.md`。M5五项、自然动作/整体美术声音、最终性能与真机及完整3A仍未完成；所有本地包在ignored `dist/`中保留。
 
 代码与必要证据由Git管理，`main`同步到公开仓库 [EgoistInory/tidelands](https://github.com/EgoistInory/tidelands)。用户于2026-11-02明确确认继续同步该公开仓库；提交、推送和本地交付包的边界见 `docs/GIT-WORKFLOW.md`。
 
-当前同包整画布预算基线：桌面181.58秒/390窄屏93.45秒普通采集、实战/营地移动与保存刷新，GPU P95 10.60/9.09ms；仅DPR1、非真机/长时/VRAM，embedder heap增长待辨因，见 `docs/RUNTIME-BUDGET-CHECKPOINT.md`。211运行输入和上方ZIP未改，M5/3A仍未完成。
+当前同包像素上限普通旅程：1080p/390高DPI实际585×1266完成614.52/601.67秒，采集/实战/林栖/营火/自然夜晚与保存刷新通过，GPU P95 14.76/9.83ms；DOM与原生堆在活动/暂停中观察到自然回收，前轮短窗疑问有了较长窗口证据，见 `docs/RUNTIME-CEILING-CHECKPOINT.md`。115.5/94ms长帧、真机/VRAM/试听和整体美术/动作仍待，未改211运行输入或上方ZIP；历史短窗证据保留在 `docs/RUNTIME-BUDGET-CHECKPOINT.md`，M5/3A仍未完成。
 
 历史有限功能组：全身低物采集，33针对性/291全量与真实原生E/main结算、暂停取消通过；近距纤维/浆果/贝壳、390检视与远距手臂限伸已保存，见 `docs/LOW-GATHER-REVIEW.md`。整体自然度/远距真实接触仍待，M5和完整3A未完成。该批本地包 `dist/tidelands-m5-2026-10-23-low-gather.zip`，SHA `63501f1a6b641985928aefe6ea5fb3ddc82c13a96f6674f4f31af062aed2a3b8`；独立包普通q6接续/保存390恢复通过，见 `docs/LOW-GATHER-DELIVERY.md`。新源GPU/长时不套用旧证据。
 
