@@ -44,5 +44,24 @@ export function smoothCamera(focus,current,desired,boxes,heightAt,dt,minimumDist
   const turn=Math.atan2(Math.sin(to.theta-from.theta),Math.cos(to.theta-from.theta));
   from.theta+=turn*blend;from.phi=THREE.MathUtils.lerp(from.phi,to.phi,blend);from.radius=THREE.MathUtils.lerp(from.radius,to.radius,blend);
   const next=new THREE.Vector3().setFromSpherical(from).add(focus);
-  return unobstructedCamera(focus,next,boxes,heightAt,minimumDistance,Math.atan2(current.x-focus.x,current.z-focus.z));
+  const safe=unobstructedCamera(focus,next,boxes,heightAt,minimumDistance,Math.atan2(current.x-focus.x,current.z-focus.z));
+  const safeYaw=Math.atan2(safe.x-focus.x,safe.z-focus.z),nextYaw=Math.atan2(next.x-focus.x,next.z-focus.z);
+  const correction=Math.abs(Math.atan2(Math.sin(safeYaw-nextYaw),Math.cos(safeYaw-nextYaw)));
+  // Preserve a clear incoming ray while easing towards a distant side. A newly blocked
+  // incoming ray still needs immediate avoidance, including the tower framing fallback.
+  if(correction>Math.PI/4&&current.distanceTo(unobstructedCamera(focus,current,boxes,heightAt))<1e-5){
+    const local=unobstructedCamera(focus,next,boxes,heightAt),candidates=[local];
+    // The subject can be under a crown whose box encloses the focus and old camera.
+    // Exit that box vertically instead of retaining an inside-box close-up.
+    for(const box of boxes)if(box.containsPoint(focus)&&box.containsPoint(local))for(const y of [box.min.y-.5,box.max.y+.5]){const p=local.clone();p.y=y;candidates.push(p);}
+    candidates.sort((a,b)=>a.distanceToSquared(local)-b.distanceToSquared(local));
+    // A crown surrounding the subject can require retraction below the usual 6m
+    // preference. Keep 2m of subject space; an outside tower keeps the old framing rule.
+    const framingMinimum=boxes.some(box=>box.containsPoint(focus))?Math.min(minimumDistance,2):Math.min(minimumDistance,current.distanceTo(focus));
+    for(const candidate of candidates){
+      const clear=unobstructedCamera(focus,candidate,boxes,heightAt);
+      if(clear.distanceTo(focus)>=framingMinimum&&clear.y>=heightAt(clear.x,clear.z)+.35&&!boxes.some(box=>box.containsPoint(clear)))return clear;
+    }
+  }
+  return safe;
 }

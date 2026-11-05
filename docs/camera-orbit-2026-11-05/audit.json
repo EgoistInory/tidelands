@@ -1,0 +1,122 @@
+{
+  "runtimePackage": "tidelands-m5-2026-11-05-camera-orbit-r2",
+  "archiveSha256": "79c84f319f64b6cf5b06c9597cdf002ea95ca5c069b8b64f042cd0e032bc7e65",
+  "bytes": 170927269,
+  "runtimeInputs": 211,
+  "archiveEntries": 212,
+  "ruleTests": 419,
+  "packagingTestsObserved": 7,
+  "cases": [
+    {
+      "folder": "camera-orbit-r2-new-field-pose-2026-11-05",
+      "width": 1280,
+      "fixedFocusOrbitDegrees": 7.318965726718406,
+      "fov": 61.616536613839926,
+      "projectedBounds": {
+        "min": [
+          -0.16311108556751555,
+          -0.4634065803693382,
+          0.9039421037990641
+        ],
+        "max": [
+          0.2857021649996931,
+          0.35137232729613466,
+          0.9342491032912894
+        ],
+        "vertices": 19253
+      },
+      "rawSha256": "0ad8825991642e361056e97615d4c1205ac44b4c65fa607f053ca61d241f606b"
+    },
+    {
+      "folder": "camera-orbit-r2-mobile-field-pose-2026-11-05",
+      "width": 390,
+      "fixedFocusOrbitDegrees": 8.904929347083385,
+      "fov": 70,
+      "projectedBounds": {
+        "min": [
+          -0.7676539988863825,
+          -0.76659643553026,
+          0.7761715380099312
+        ],
+        "max": [
+          0.8786790138754317,
+          0.9232007528108412,
+          0.8686313359862499
+        ],
+        "vertices": 19253
+      },
+      "rawSha256": "28eab96bf10436f70f1a3883e3af4ae209b37c203948a4061bde8185c04a8aae"
+    }
+  ],
+  "observedFrames": 9426,
+  "gameSeconds": 126.73569999999859,
+  "pathMetres": 724.1678999999991,
+  "maxNativeOrbitDegrees": 94.23521357183385,
+  "nativeOrbitStepsOver45Degrees": 3,
+  "maxNativeOrientationDegrees": 94.42149147707511,
+  "nativeFovRange": [
+    55,
+    70
+  ],
+  "finalQuest": 6,
+  "finalKills": 15,
+  "finalHp": 100,
+  "finalTime": 1042.0143000000262,
+  "finalInventory": {
+    "wood": 1,
+    "stone": 2,
+    "fiber": 30,
+    "berry": 11,
+    "shell": 0,
+    "crystal": 3,
+    "axe": 1,
+    "sword": 0,
+    "meal": 0
+  },
+  "finalSaveSha256": "8b24ee35512823f6e1631fb26ce68d126ee3a21d8e8040428fe34f6148ebe891",
+  "profileSha256": "9b5ccb8eb5d7e4ca73acf7f513feeb2ee7767b30414f52e4613b14f30cc3a4b5",
+  "observationSha256": "f48f1a8b0b9d090de9227285f47c201da67d0c7e8c9a55567fc39cfcb9841120",
+  "nativeVideo": "page@c5b0bfd09f5b6acea3ffd53775a2ddab.webm",
+  "nativeVideoSha256": "de1a386536bc8f1ab6383e89c5837b7f4ffe036ce5f32f0f1b7b0e441d6fce3c",
+  "inputsSha256": "40e30e30af0d32490c9f55b0ff3a40c3a5eaa7ebbff00ef15528c9b1525f8210",
+  "fullGoalComplete": false,
+  "m5Complete": false,
+  "globalCameraNaturalnessAccepted": false,
+  "gpuEnduranceAccepted": false,
+  "physicalDeviceAccepted": false,
+  "audioListened": false,
+  "wholeVideoReviewed": false,
+  "sourceSha256": {
+    "src/camera.js": "c52a162e897821ad490c62f9655e558768f5f253d7932c528fdb160a6b7b487a",
+    "src/scene.js": "62c161e19585aa7eadc69fcf787371489d046086604ade58345228822632d246",
+    "tests/camera-native-step.test.js": "479199462057a906c5d945a2673940c1561aab2f1db09665838fee8b5c2386c3",
+    "tools/capture_native_camera_case.mjs": "e676b8b9b7f452198706332ce372eaa0894b7439f0750d6ca8aedcfcc22f9e26",
+    "tools/observe_camera_orbit.js": "e7d38bb2074a9e00db0202d9fd2faff2dda08851f920e061c164e96f621af957",
+    "tools/run_camera_orbit_r2_journey.mjs": "0b2e68b7d9744d8dc032913a8f3eb09fe9a8b3bf27bb00f920189c41d195569b",
+    "tools/run_camera_orbit_r2_combat.mjs": "769dabd849d5a4233e14156d96e0a61ba120e7cbe08aac5fd6f44546087ca6ab",
+    "tools/run_camera_orbit_r2_save_compat.mjs": "eb22a1878ba6194f6134532efe842eb1b226a70b01da36d568e32dbcbd2b296a",
+    "tools/summarize_camera_orbit.py": "ccb5d6e065fcccd7b2032f962754b2c92311f36c3f92164598edd6135b178f9b",
+    "tools/verify_camera_orbit_delivery.py": "11f2e8b068ce45140e05f2b0468c7cb1b32f30908102295cf622fa21fcafe02d"
+  },
+  "combat": {
+    "enemy": "enemy-0",
+    "initialKills": 15,
+    "finalKills": 16,
+    "finalHp": 100,
+    "finalInventory": {
+      "wood": 1,
+      "stone": 2,
+      "fiber": 32,
+      "berry": 12,
+      "shell": 0,
+      "crystal": 3,
+      "axe": 1,
+      "sword": 0,
+      "meal": 0
+    },
+    "finalSaveSha256": "f9cea46afa154439a3ff8e7f0ac242d1aa06f98cbf12a90ffa797c142d6f7a19",
+    "profileSha256": "d5756647423c9a814512a940a735b2806f101efeff0cdaeccf0388828b52d8bd",
+    "video": "page@a3758289400123b1908448e372c9936a.webm",
+    "videoSha256": "fd730bc13ca71687bd5662407a48bbbb58d09c4e9137c544a826cfdc8f77913a"
+  }
+}

@@ -304,7 +304,10 @@ export class WorldView{
     // Avoidance may move the rendered camera; retain the player's requested orbit for the next gesture.
     const renderedYaw=Math.atan2(this.camera.position.x-p.x,this.camera.position.z-p.z);
     const safe=unobstructedCamera(focus,target,boxes,terrain,6,renderedYaw);
-    this.camera.position.copy(smoothCamera(focus,this.camera.position,safe,boxes,terrain,dt,Math.min(6,safe.distanceTo(focus))));this.camera.lookAt(focus);
+    this.camera.position.copy(smoothCamera(focus,this.camera.position,safe,boxes,terrain,dt,Math.min(6,safe.distanceTo(focus))));
+    // A retracted camera frames the body centre; the ordinary distant view keeps its look-ahead.
+    const framing=THREE.MathUtils.smoothstep(this.camera.position.distanceTo(focus),3,6),framedFocus=focus.clone();framedFocus.y-=1.4*(1-framing);this.camera.lookAt(framedFocus);
+    const fov=70-15*framing;if(Math.abs(this.camera.fov-fov)>1e-4){this.camera.fov=fov;this.camera.updateProjectionMatrix();}
     updateGroundCover(this.meadow,this.camera.position);
     this.updateAtmosphere(state.time,weather);
     this.sun.position.set(p.x-70,h+100,p.z+40);this.sun.target.position.set(p.x,h,p.z);

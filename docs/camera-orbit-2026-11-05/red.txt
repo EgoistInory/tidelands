@@ -1,0 +1,38 @@
+TAP version 13
+# Subtest: actual native corner keeps the camera outside all captured parts, with clear ray and terrain clearance
+ok 1 - actual native corner keeps the camera outside all captured parts, with clear ray and terrain clearance
+  ---
+  duration_ms: 5.753916
+  type: 'test'
+  ...
+# Subtest: actual native corner cannot bypass easing with a far-side instantaneous camera orbit
+not ok 2 - actual native corner cannot bypass easing with a far-side instantaneous camera orbit
+  ---
+  duration_ms: 1.807625
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/camera-native-step.test.js:10:1'
+  failureType: 'testCodeFailure'
+  error: 'Native corner orbit step 141.0950706529166 degrees'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/camera-native-step.test.js:11:163)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 1
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 62.049583

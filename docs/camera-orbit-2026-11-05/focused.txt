@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: the exposed forest corner uses a nearby clear angle while preserving subject distance
+ok 1 - the exposed forest corner uses a nearby clear angle while preserving subject distance
+  ---
+  duration_ms: 834.045708
+  type: 'test'
+  ...
+# Subtest: an orbit turn follows an arc without cutting through the player or snapping to the target
+ok 2 - an orbit turn follows an arc without cutting through the player or snapping to the target
+  ---
+  duration_ms: 1.64475
+  type: 'test'
+  ...
+# Subtest: angle wrapping follows the short arc and easing has equivalent results at different frame rates
+ok 3 - angle wrapping follows the short arc and easing has equivalent results at different frame rates
+  ---
+  duration_ms: 3.995708
+  type: 'test'
+  ...
+# Subtest: smoothing still retracts before solid scenery and terrain, including a zero-distance prior pose
+ok 4 - smoothing still retracts before solid scenery and terrain, including a zero-distance prior pose
+  ---
+  duration_ms: 0.259291
+  type: 'test'
+  ...
+# Subtest: an open side of a nearby tower keeps framing while a smoothed arc crosses its blocked side
+ok 5 - an open side of a nearby tower keeps framing while a smoothed arc crosses its blocked side
+  ---
+  duration_ms: 0.368333
+  type: 'test'
+  ...
+# Subtest: temporary landmark avoidance cannot overwrite manual orbit or steer the next released gesture
+ok 6 - temporary landmark avoidance cannot overwrite manual orbit or steer the next released gesture
+  ---
+  duration_ms: 58.885916
+  type: 'test'
+  ...
+# Subtest: an orbit temporarily moved around a tower returns to manual direction when the obstruction clears
+ok 7 - an orbit temporarily moved around a tower returns to manual direction when the obstruction clears
+  ---
+  duration_ms: 24.237542
+  type: 'test'
+  ...
+# Subtest: temporary avoidance retains an already clear side instead of jumping across the player
+ok 8 - temporary avoidance retains an already clear side instead of jumping across the player
+  ---
+  duration_ms: 0.147625
+  type: 'test'
+  ...
+# Subtest: actual native corner keeps the camera outside all captured parts, with clear ray and terrain clearance
+ok 9 - actual native corner keeps the camera outside all captured parts, with clear ray and terrain clearance
+  ---
+  duration_ms: 7.162541
+  type: 'test'
+  ...
+# Subtest: actual native corner cannot bypass easing with a far-side instantaneous camera orbit
+ok 10 - actual native corner cannot bypass easing with a far-side instantaneous camera orbit
+  ---
+  duration_ms: 1.3115
+  type: 'test'
+  ...
+# Subtest: camera retracts before a blocking rock and returns to requested distance when clear
+ok 11 - camera retracts before a blocking rock and returns to requested distance when clear
+  ---
+  duration_ms: 1.624917
+  type: 'test'
+  ...
+# Subtest: camera avoids intervening terrain even when its destination is above ground
+ok 12 - camera avoids intervening terrain even when its destination is above ground
+  ---
+  duration_ms: 0.116208
+  type: 'test'
+  ...
+# Subtest: close scenery turns the framed camera into clear space instead of the player head
+ok 13 - close scenery turns the framed camera into clear space instead of the player head
+  ---
+  duration_ms: 0.9975
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 913.949875

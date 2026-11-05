@@ -2,7 +2,7 @@
 
 正在开发的单人 3D 海岛开放世界。中文界面，本地运行；M1 自由探索、M2 生存与营地、M3 世界内容与成长、M4 本地交付已完成功能验收，证据见 docs/M1-ACCEPTANCE.md 至 docs/M4-ACCEPTANCE.md。最终 M5 品质验收仍在推进，见 AGENT_PROGRESS.md 和 ROADMAP.md。
 
-当前已验证本地包：`dist/tidelands-m5-2026-11-05-bedrock.zip`，SHA `b1900ba4c824a8d244892b3db37caa15cbda77ce51c089adea444116e584be31`。连续高地岩阶与实际Float32三角地面共用支撑，保留地标工作区/自然坡道，并阻止已捕获的小步攀陡壁。416规则/7打包、15场景图、独立包两会话从零普通主线至任务6/12击败、结束探索和完整保存刷新，以及三个真实旧档桌面/390导入恢复通过；首轮验收导航失败及修正留证。详见 `docs/BEDROCK-DELIVERY-CHECKPOINT.md`。这是有限交付，整体动作、美术/声音、当前GPU长时和真机及完整M5/3A仍待。旧包均保留，`dist/`不进入Git。
+最新本地可运行检查点：`dist/tidelands-m5-2026-11-05-camera-orbit-r2.zip`，SHA `79c84f319f64b6cf5b06c9597cdf002ea95ca5c069b8b64f042cd0e032bc7e65`。两个实际镜头输入的固定焦点转角141.10°/97.32°降为8.90°/7.32°；419规则/7打包、桌面与390旧档原生恢复、普通高地采集和真实野猪战斗/返营地恢复通过。**全局镜头质量未通过：新普通路径仍有94.24°瞬转**，三轮后停止当前路线继续小修，剩余RED与失败包保留，见 `docs/CAMERA-ORBIT-CHECKPOINT.md`。M5五项、自然动作/整体美术声音、当前GPU长时与真机及完整3A仍未完成；所有本地包在ignored `dist/`中保留。
 
 代码与必要证据由Git管理，`main`同步到公开仓库 [EgoistInory/tidelands](https://github.com/EgoistInory/tidelands)。用户于2026-11-02明确确认继续同步该公开仓库；提交、推送和本地交付包的边界见 `docs/GIT-WORKFLOW.md`。
 
@@ -34,7 +34,7 @@ python3 serve.py
 
 当前开发源码还增加低岸线起伏海浪层，与既有风声叠加、渐入内陆，并共享暂停/静音。112项测试、八组真实离线PCM和实际营地/海域接线验证通过，见 `docs/coastal-audio-review.json`；尚未试听或做完整声场品质验收。这批声音修改已进入coastal及最新state-reuse包，本地开发服务运行相同生产源码。
 
-用 `python3 tools/verify_local.py --name tidelands-m5-2026-10-16-motion-sound` 校验并单独解压当前包；`python3 tools/verify_motion_sound_delivery.py` 核对本次运动模块、四组混音WAV、普通继续/两次恢复和来源证据。旧空间/运动候选审核绑定各自原源码，不能对新源码直接重跑套作通过结论。旧资源/镜头审计继续绑定各自历史源码，不对新源码套用旧通过结论。后续构建使用 `python3 tools/package_local.py --name tidelands-m5-next --stage 'M5 quality batch checkpoint'`，每次改源码换新包名；已有包只允许相同来源的完全一致重建，拒绝覆盖历史检查点。打包工具回归运行 `python3 tools/test_local_delivery.py`。四岛正常旅程和实际战斗已有十分钟有效帧调度/JS堆记录，见 `docs/cross-island-review.json`：含间歇输入与较多静止时间，不能代替持续运动或GPU品质验收；该采样在两处岛民对话修正之前完成，绑定自己的源码SHA，不能作为当前包完全一致的长时证明。
+用 `python3 tools/verify_local.py --name tidelands-m5-2026-11-05-camera-orbit-r2` 校验并单独解压当前有限检查点；`python3 tools/verify_camera_orbit_delivery.py` 核对镜头两case/普通操作/新包来源及仍然失败的全局品质记录。历史 `verify_motion_sound_delivery.py` 绑定其旧运动声音版本。旧空间/运动候选审核绑定各自原源码，不能对新源码直接重跑套作通过结论。旧资源/镜头审计继续绑定各自历史源码，不对新源码套用旧通过结论。后续构建使用 `python3 tools/package_local.py --name tidelands-m5-next --stage 'M5 quality batch checkpoint'`，每次改源码换新包名；已有包只允许相同来源的完全一致重建，拒绝覆盖历史检查点。打包工具回归运行 `python3 tools/test_local_delivery.py`。四岛正常旅程和实际战斗已有十分钟有效帧调度/JS堆记录，见 `docs/cross-island-review.json`：含间歇输入与较多静止时间，不能代替持续运动或GPU品质验收；该采样在两处岛民对话修正之前完成，绑定自己的源码SHA，不能作为当前包完全一致的长时证明。
 
 2026-10-07后续源码增加岛民近距交谈朝向和待机手臂轻动，以及攻击/采集从装备待机姿态进入和恢复的衔接；101项测试和桌面/窄屏12秒隔离循环通过，见 `docs/islander-response-review.json` 与 `docs/action-transition-review.json`。攻击结果统一由短时战斗提示显示，消除空挥时残留旧命中提示；桌面键盘/390窄屏攻击键已实测。上述早期包不含这些后续修改，完整动作品质与声音同步仍待验收。
 
@@ -57,7 +57,7 @@ E 与最近目标交互，空格攻击，1–6 快捷操作，B 背包、C 制�
 `npm test` 运行无第三方测试依赖的 Node 规则测试。
 `node tests/soak-rules.js` 执行确定性加速规则审计：模拟一小时移动/采集/战斗及60次读档。它不是实际运行一小时的浏览器或GPU性能测试。
 `AGENT_PROGRESS.md` 记录最新真实验证与 next_action，`ROADMAP.md` 保留完整交付目标。
-自动化 ID `2048` 每小时检查并接续，限额后下一小时再检查；不会购买额度、消费重置券或公网发布。
+自动化 ID `2048` 每小时检查并接续，限额后下一小时再检查；不会购买额度、消费重置券或部署公网网站，已有公开GitHub仓库按明确授权同步。
 
 本地验收入口（先启动服务）：
 

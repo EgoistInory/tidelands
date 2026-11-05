@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: remaining field input reproduces exactly
+ok 1 - remaining field input reproduces exactly
+  ---
+  duration_ms: 0.381042
+  type: 'test'
+  ...
+# Subtest: remaining field input must avoid an over-45-degree instantaneous orbit
+not ok 2 - remaining field input must avoid an over-45-degree instantaneous orbit
+  ---
+  duration_ms: 0.366375
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/experiments/camera-orbit-r2-remaining.test.mjs:6:1'
+  failureType: 'testCodeFailure'
+  error: 'Remaining orbit 96.90868869973822 degrees'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/experiments/camera-orbit-r2-remaining.test.mjs:6:175)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: remaining camera point must be outside every captured part
+not ok 3 - remaining camera point must be outside every captured part
+  ---
+  duration_ms: 5.176208
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/experiments/camera-orbit-r2-remaining.test.mjs:7:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert(!boxes.some(b=>b.containsPoint(next)))
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/experiments/camera-orbit-r2-remaining.test.mjs:7:71)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 1
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 73.453375
