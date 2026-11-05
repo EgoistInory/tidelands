@@ -2,8 +2,12 @@
 
 更新时间：2026-11-05
 status: in_progress
-stage: M5_continuous_bedrock_runtime_delivery
-next_action: 连续岩阶/共同Float32地面已接生产并形成b1900ba4新211输入独立包；416规则/7打包、15作者场景图与两会话从零普通主线任务6/12击败/营火1/HP70/浆果10、结束探索/全JSON恢复、三真实旧档桌面及390原生导入/摇杆食用/夜营休息保持通过。首次最近陡阶资源规划预算失败保留，只修QA选择可达邻节点，未改包或注入材料。见docs/BEDROCK-DELIVERY-CHECKPOINT.md。最新普通档docs/bedrock-delivery-2026-11-05/native-final-save.json与dist/bedrock-native-campaign-2026-11-05/browser-state.json；旧任务5 checkpoint不是当前档。下一沿同普通进度审多地形移动/下降、采集/实战的全身动作和镜头反馈整体问题，不回岩阶/独立岩块/单树细调。重复地表/简化植被、下降自然度、试听/真机与当前GPU长时等仍待；M5五项/完整3A开放、2048保留，按授权普通同步。
+stage: M5_native_movement_camera_case_preserved
+next_action: 同一普通结束档已实际海岸→高地采晶石→跨海实战→原营火休息，7923观测帧/600.144米/102.936游戏秒，任务6/14击败/营火1/HP100并完整保存刷新。最新docs/movement-native-2026-11-05/final-save.json与dist/movement-native-2026-11-05/browser-state.json；旧档/profile保持。发现6次镜头单帧>45度，最坏142.09度；实际234阻挡盒/输入在作者场景精确复现。最终避障侧向搜索绕过缓动，第一内缩候选旧塔构图/新增安全检查失败已拒用，生产恢复、b190包和211输入复核保持。见docs/NATIVE-MOVEMENT-CAMERA-CHECKPOINT.md。下一针对捕获case同时保住实体安全/旧塔构图并限制远侧瞬跳，先修镜头再真实移动验收；实验RED明确未解决，不冒充修好。脚底标点无明显穿地但28接触样本目标差>0.1米留待后查，不先改地面/骨骼。M5五项/完整3A开放、2048保留，按授权同步。
+
+## 2026-11-05 普通多地形移动与镜头问题留证
+
+见docs/NATIVE-MOVEMENT-CAMERA-CHECKPOINT.md及movement-native-2026-11-05/summary.json。原生接续同一普通进度，海岸/高地/跨海/实战/原营火，晶石0→1、击败12→14/HP最终100，四图已审、保存刷新一致。只读draw观测7923帧记录实际脚底/目标和镜头，非逐字节未包装index、非GPU/真机/试听或全视频通过。镜头142.09度瞬跳用234真实盒精确复现，RED留证；第一内缩候选虽降至8.90度但旧塔构图/新增盒内检查失败，拒用并恢复生产，不放宽守卫。脚底标点最差−1.96e-6米、目标误差0.309米/28接触样本>0.1米，先处理镜头，不猜改地面或身体。新继续点为本节final-save/profile，旧包/档保持，原211输入审计通过，无新包。实时普通额度允许，历史goal不改、无券/购买/付费API/公网部署；M5/3A未完、2048保留，按授权同步。
 
 ## 2026-11-05 连续岩阶正式接线与独立包交付
 

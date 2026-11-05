@@ -1,0 +1,122 @@
+TAP version 13
+# Subtest: the exposed forest corner uses a nearby clear angle while preserving subject distance
+ok 1 - the exposed forest corner uses a nearby clear angle while preserving subject distance
+  ---
+  duration_ms: 822.423542
+  type: 'test'
+  ...
+# Subtest: an orbit turn follows an arc without cutting through the player or snapping to the target
+ok 2 - an orbit turn follows an arc without cutting through the player or snapping to the target
+  ---
+  duration_ms: 1.480875
+  type: 'test'
+  ...
+# Subtest: angle wrapping follows the short arc and easing has equivalent results at different frame rates
+ok 3 - angle wrapping follows the short arc and easing has equivalent results at different frame rates
+  ---
+  duration_ms: 3.110209
+  type: 'test'
+  ...
+# Subtest: smoothing still retracts before solid scenery and terrain, including a zero-distance prior pose
+ok 4 - smoothing still retracts before solid scenery and terrain, including a zero-distance prior pose
+  ---
+  duration_ms: 0.255333
+  type: 'test'
+  ...
+# Subtest: an open side of a nearby tower keeps framing while a smoothed arc crosses its blocked side
+not ok 5 - an open side of a nearby tower keeps framing while a smoothed arc crosses its blocked side
+  ---
+  duration_ms: 0.577917
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/camera-easing.test.js:32:1'
+  failureType: 'testCodeFailure'
+  error: 'smoothing must not introduce a near-head pose when an open framed direction exists'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/camera-easing.test.js:36:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: temporary landmark avoidance cannot overwrite manual orbit or steer the next released gesture
+ok 6 - temporary landmark avoidance cannot overwrite manual orbit or steer the next released gesture
+  ---
+  duration_ms: 58.617041
+  type: 'test'
+  ...
+# Subtest: an orbit temporarily moved around a tower returns to manual direction when the obstruction clears
+ok 7 - an orbit temporarily moved around a tower returns to manual direction when the obstruction clears
+  ---
+  duration_ms: 24.259833
+  type: 'test'
+  ...
+# Subtest: temporary avoidance retains an already clear side instead of jumping across the player
+ok 8 - temporary avoidance retains an already clear side instead of jumping across the player
+  ---
+  duration_ms: 0.345875
+  type: 'test'
+  ...
+# Subtest: camera retracts before a blocking rock and returns to requested distance when clear
+ok 9 - camera retracts before a blocking rock and returns to requested distance when clear
+  ---
+  duration_ms: 1.082459
+  type: 'test'
+  ...
+# Subtest: camera avoids intervening terrain even when its destination is above ground
+ok 10 - camera avoids intervening terrain even when its destination is above ground
+  ---
+  duration_ms: 0.112958
+  type: 'test'
+  ...
+# Subtest: close scenery turns the framed camera into clear space instead of the player head
+ok 11 - close scenery turns the framed camera into clear space instead of the player head
+  ---
+  duration_ms: 1.585708
+  type: 'test'
+  ...
+# Subtest: camera remains outside captured authored boxes and on the player side of any obstruction
+not ok 12 - camera remains outside captured authored boxes and on the player side of any obstruction
+  ---
+  duration_ms: 13.095083
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/experiments/native-camera-step.test.mjs:6:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert(!box.containsPoint(p))
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/experiments/native-camera-step.test.mjs:8:26)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: ordinary camera avoids a greater than 45 degree orbit jump in one 8.1ms frame
+ok 13 - ordinary camera avoids a greater than 45 degree orbit jump in one 8.1ms frame
+  ---
+  duration_ms: 1.079334
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 11
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 901.16625

@@ -1,0 +1,41 @@
+{
+  "observedFrames": 7923,
+  "gameSeconds": 102.93559999998809,
+  "observedPathMetres": 600.1444357069837,
+  "maxGroundDropPerFrame": 0.4841511615327363,
+  "maxCameraYawStepDegrees": 142.08955161411595,
+  "maxCameraYawStepFrame": 1844,
+  "cameraStepsOver45Degrees": 6,
+  "landContactMinSoleMarkerGap": -1.9610147745652284e-06,
+  "landContactMaxTargetError": 0.3094425039877061,
+  "landContactSamplesOver10cmTargetError": 28,
+  "finalQuest": 6,
+  "finalKills": 14,
+  "finalHp": 100,
+  "finalInventory": {
+    "wood": 1,
+    "stone": 2,
+    "fiber": 28,
+    "berry": 10,
+    "shell": 0,
+    "crystal": 1,
+    "axe": 1,
+    "sword": 0,
+    "meal": 0
+  },
+  "finalSaveSha256": "060fa2b76a01561e2148eeb74ca11c6b6ed9cdf1ffc5c26cbb6d5d79ec976f50",
+  "rawObservationSha256": "8d0e84f55af13a3bf8281d871802be12c19bd0d2805ee2059b285ef62ce7ea4f",
+  "nativeVideoSha256": "beef821a40e4f4c32227f51364604c832fc0108f5b3b8bf491ee3dcbceff797a",
+  "inputsSha256": "14e0242931687c81eb9d7e0d896f052f36be60d492b12feca42d5c1ac784d4e9",
+  "m5Complete": false,
+  "fullGoalComplete": false,
+  "sourceSha256": {
+    "src/camera.js": "a2f696abdc34ac0e2cfdb8cbed02b40e0823398f593f13c9ab58e2bd21204aac",
+    "src/scene.js": "68144ccc72a6840bb6c80b4f72372b377bf9e5aa2dc738c316cf389644668a6c",
+    "src/world.js": "9f1ff4e4d7b7fa4b3323faf4e5a776cdbfabae4ab99cf0696c58d6b22190b8c1",
+    "src/authored-character.js": "02ac9a9f14d2b232f5349589d33a88ff374d3dd7b3bb202a5d0b0dde35afbbba",
+    "tools/observe_movement_scene.js": "63110f9bcbac333ba6f332eb9ae3040af4ee040143b6133547ce912ad772ed6a",
+    "tools/run_movement_native_review.mjs": "aa1814fc0c6ba436faf71aef5a22e82ae0f255e33fc69d02ab1a82a045a62f1a",
+    "tools/verify_movement_native.py": "33e23c2b3af6d364c350bcbb8d9f0888a60a108ad1e387a134df637f22f02445"
+  }
+}
