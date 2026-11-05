@@ -2,8 +2,14 @@
 
 更新时间：2026-11-05
 status: in_progress
-stage: M5_camera_partial_checkpoint_next_gpu_audit
-next_action: R2可运行检查点79c84f31/211输入已完成419规则/7打包、两个真实输入定点141.10/97.32→8.90/7.32度和完整可见顶点入框、桌面/390三真实旧档原生恢复，以及同普通进度高地采集/野猪实战/返营地保存刷新。全局镜头仍未通过：R2新路线9426帧/724.17米仍3次>45度、最坏94.24度，剩余case精确复现1通过/2失败，盒外/转角RED保留。按三轮停止该相机分支继续试配，不能把两case通过当整体修好；后续最终审计前须重设连续避障/碰撞策略。下一先转整场GPU/内存预算组推进其他M5，不回镜头/单模型参数循环；角色/地表/夜间/声音与真机品质仍开。最新普通档docs/camera-orbit-2026-11-05/r2-combat-final-save.json及dist/camera-orbit-r2-combat-2026-11-05/browser-state.json（任务6/16击败/营火1/HP100/12浆果/3晶石）；旧包/档全保留。见docs/CAMERA-ORBIT-CHECKPOINT.md。M5五项/完整3A未完，2048保留，按授权普通同步。
+stage: M5_native_runtime_baseline_next_native_heap_audit
+next_action: 当前79c84f31/211运行输入未改，普通整画布桌面181.58秒/13938帧、390窄屏93.45秒/7211帧原生GPU/CPU/内存基线已收集，桌面高地采晶石3→4、实战16→19击败后返营HP100并刷新保持。GPU P95为10.60/9.09ms，仅1280×800/390×844、DPR1，未覆盖最大像素/真机；CDP embedder heap短窗仍上升，不能称无泄漏。下一用1080p/移动高DPI正常旅程至少10分钟补DOM计数/监听器及JS、backing/embedder自然回收，先辨因再局部优化；不回第四轮镜头/单模型调参。最新较完整普通档docs/runtime-budget-2026-11-05/desktop-final-save.json、dist/runtime-budget-2026-11-05-desktop/browser-state.json（任务6/19击败/营火1/HP100/14浆果/4晶石），窄屏兄弟分支与旧档全部保留。见docs/RUNTIME-BUDGET-CHECKPOINT.md；M5五项/完整3A未完、2048保留，按授权普通同步。
+
+## 2026-11-05 当前普通旅程整画布预算基线
+
+见docs/RUNTIME-BUDGET-CHECKPOINT.md及runtime-budget-2026-11-05/audit.json。仅观测工具/证据，生产211输入/79c84f31包不变；3查询/流式队列生命周期测试通过。桌面181.58秒13938帧1166.71米，原生高地采集、蟹实战16→19/HP61及返原营火100；390窄屏93.45秒7211帧704.74米采浆果与营地循环，键盘操作不称触控。均保存刷新逐字保持，旧普通档/profile未写。查询1742/901有效、全部已发删除，0disjoint/GL/console/观测丢弃；十张图有界审看。
+
+GPU P95 10.60/9.09ms、draw CPU P95 5.2/4.8ms；仅DPR1的1280×800/390×844，25ms守卫有限通过，不能覆盖旧大画布失败/系统负载/真机或称性能提升。桌面rAF仍有36.3ms尖峰；JS堆结束77.74/84.17MiB，backing另列，末60秒几何/贴图/program稳定。但embedder heap约2.2→56.34/71.31MiB，未完成泄漏/自然回收辨因，不下无泄漏结论。下一最大像素/至少十分钟正常路径+DOM/监听器/完整内存口径，先测后改；镜头既有94度RED继续保留且不重启第四轮。最新继续点为本节desktop-final-save/profile（q6/19击败/HP100/4晶石），窄屏是从旧档出发兄弟分支不合并。M5五项/完整3A未完，2048保留，原4190服务不变，独立浏览器已关，无付费/网站部署，按授权同步。
 
 ## 2026-11-05 镜头两case有限修复与剩余失败检查点
 

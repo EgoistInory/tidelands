@@ -1,0 +1,471 @@
+{
+  "package": "tidelands-m5-2026-11-05-camera-orbit-r2",
+  "packageSha256": "79c84f319f64b6cf5b06c9597cdf002ea95ca5c069b8b64f042cd0e032bc7e65",
+  "runtimeInputs": 211,
+  "probeTests": 3,
+  "testReceiptSha256": "9ca645740bd2365b4dcc854c2d1a485edd7575919cd35f6be28327ce54169c40",
+  "runs": [
+    {
+      "mode": "desktop",
+      "viewportAndBuffer": [
+        1280,
+        800
+      ],
+      "frames": 13938,
+      "activeWallSeconds": 181.57919999980928,
+      "activeGameSeconds": 181.57930000008264,
+      "pathMetres": 1166.7129340721242,
+      "actualMovingFrames": 11559,
+      "inputMovingFrames": 11599,
+      "warmupExcludedSeconds": 10,
+      "steadyGpuMs": {
+        "samples": 1644,
+        "min": 5.628166,
+        "median": 8.987,
+        "p95": 10.600958,
+        "max": 14.888375
+      },
+      "steadyDrawCpuMs": {
+        "samples": 13159,
+        "min": 3.4000000953674316,
+        "median": 4.5,
+        "p95": 5.200000286102295,
+        "max": 21.5
+      },
+      "steadyRenderSubmitCpuMs": {
+        "samples": 13159,
+        "min": 1.5999999046325684,
+        "median": 2.4000000953674316,
+        "p95": 2.9000000953674316,
+        "max": 19
+      },
+      "steadyRafIntervalMs": {
+        "samples": 13159,
+        "min": 4.099999904632568,
+        "median": 10.800000190734863,
+        "p95": 26.700000286102295,
+        "max": 36.30000019073486
+      },
+      "rafOver33_34ms": 1,
+      "gpu25msP95GatePassed": true,
+      "maxDrawCalls": 402,
+      "maxTriangles": 3528472,
+      "nativeQueryLifecycle": {
+        "active": false,
+        "frame": 13938,
+        "bufferedFrames": 0,
+        "inflight": 0,
+        "peakInflight": 1,
+        "dropped": 0,
+        "hiddenFrames": 0,
+        "contextLost": false,
+        "errors": [],
+        "supported": true,
+        "issued": 1743,
+        "completed": 1742,
+        "deleted": 1743,
+        "disjointFrames": 0,
+        "timeouts": 0,
+        "pending": false
+      },
+      "heapUsedBytes": {
+        "samples": 14,
+        "min": 77801812,
+        "median": 89224524,
+        "p95": 107393620,
+        "max": 107393620
+      },
+      "heapFirstLastBytes": [
+        77801812,
+        81514048
+      ],
+      "heapSamples": 14,
+      "lateResourceCountRanges": {
+        "geometries": [
+          248,
+          248
+        ],
+        "textures": [
+          129,
+          129
+        ],
+        "programs": [
+          55,
+          55
+        ]
+      },
+      "phases": [
+        {
+          "from": "00-continued-camp",
+          "to": "01-highland-arrival",
+          "frames": 4423,
+          "gpuMs": {
+            "samples": 552,
+            "min": 5.848417,
+            "median": 9.179875,
+            "p95": 10.735416,
+            "max": 12.502749
+          },
+          "drawCpuMs": {
+            "samples": 4423,
+            "min": 3.5,
+            "median": 4.5,
+            "p95": 5.299999713897705,
+            "max": 21.5
+          }
+        },
+        {
+          "from": "01-highland-arrival",
+          "to": "02-highland-gather",
+          "frames": 303,
+          "gpuMs": {
+            "samples": 38,
+            "min": 5.745249,
+            "median": 7.353041,
+            "p95": 8.8995,
+            "max": 9.000749
+          },
+          "drawCpuMs": {
+            "samples": 303,
+            "min": 3.5,
+            "median": 4.400000095367432,
+            "p95": 5.099999904632568,
+            "max": 5.800000190734863
+          }
+        },
+        {
+          "from": "02-highland-gather",
+          "to": "03-native-combat",
+          "frames": 1028,
+          "gpuMs": {
+            "samples": 129,
+            "min": 5.628166,
+            "median": 7.543249,
+            "p95": 9.365958,
+            "max": 11.550208
+          },
+          "drawCpuMs": {
+            "samples": 1028,
+            "min": 3.799999713897705,
+            "median": 4.599999904632568,
+            "p95": 5.100000381469727,
+            "max": 6.599999904632568
+          }
+        },
+        {
+          "from": "03-native-combat",
+          "to": "04-camp-return",
+          "frames": 3869,
+          "gpuMs": {
+            "samples": 484,
+            "min": 5.867291,
+            "median": 8.837874,
+            "p95": 11.326625,
+            "max": 14.888375
+          },
+          "drawCpuMs": {
+            "samples": 3869,
+            "min": 3.4000000953674316,
+            "median": 4.5,
+            "p95": 5.199999809265137,
+            "max": 9.300000190734863
+          }
+        },
+        {
+          "from": "04-camp-return",
+          "to": "05-final-rest",
+          "frames": 4296,
+          "gpuMs": {
+            "samples": 537,
+            "min": 8.648083,
+            "median": 9.066124,
+            "p95": 9.79675,
+            "max": 10.922375
+          },
+          "drawCpuMs": {
+            "samples": 4296,
+            "min": 3.5999999046325684,
+            "median": 4.5,
+            "p95": 5.200000286102295,
+            "max": 8.200000286102295
+          }
+        }
+      ],
+      "finalSaveSha256": "9eb5c411617ea73063b6f26bf786696ef28475910ee9f49d33e54b2b48eb8978",
+      "profileSha256": "ef2744c73955a8694c31f9e3a8125d88d66cd115eee10a19bd1d3bf0e1cadf0c",
+      "initialSaveSha256": "f9cea46afa154439a3ff8e7f0ac242d1aa06f98cbf12a90ffa797c142d6f7a19",
+      "initialProfileSha256": "d5756647423c9a814512a940a735b2806f101efeff0cdaeccf0388828b52d8bd",
+      "finalQuest": 6,
+      "finalKills": 19,
+      "finalHp": 100,
+      "finalInventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 38,
+        "berry": 14,
+        "shell": 0,
+        "crystal": 4,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "localReadyMs": 2612,
+      "evidenceSha256": {
+        "raw.json": "b32d43432cb0b1d9d3996eadcd221eebc6bbced5c783fac3504012a5a77d6314",
+        "samples.jsonl": "088a24a22745eb5df58b43d8a3c260cf6515fd7e7274db0e723d25bd3da3db7a",
+        "inputs.jsonl": "ce7b28f28cd7b8d1f6a85a958b7d4316e7ffdf823a7d1ef40cc2d0c85e578df6",
+        "heap.json": "a7dcf8fd866c5bd55d84f7e68a3ed578e0ca1664cb72a13070da26117034a08c",
+        "final-save.json": "9eb5c411617ea73063b6f26bf786696ef28475910ee9f49d33e54b2b48eb8978",
+        "00-continued-camp.png": "608d30852147d07251c64b83111ec1b627becd8eef145dc437f7969dfa725fd0",
+        "01-highland-arrival.png": "22b1a206c8a04f7a3db2ea92a39eae5d5a833444b4ce21584f69e068ab4c9d46",
+        "02-highland-gather.png": "91c2cac7c2534cedc9cc74f4c3bf8a80aea528ead8bf030c611bf9bedbd5c7ba",
+        "03-native-combat.png": "9ce31b17a296d454566c46ce7b214cfb7ee9f4dd138549d9522100dba84a77ea",
+        "04-camp-return.png": "13eb13689c6ad1240197e7877cff09f3937be86e5299ca145a254e71514b50cb",
+        "05-final-rest.png": "abd8444f0091de286d2a4c0fe5695c95224f44e36d69897a9d99ebb7f3951c71"
+      },
+      "cdpBackingStorageBytes": {
+        "samples": 14,
+        "min": 223127821,
+        "median": 320541572,
+        "p95": 323087479,
+        "max": 323087479
+      },
+      "cdpBackingFirstLastBytes": [
+        320541572,
+        223951349
+      ],
+      "cdpEmbedderHeapBytes": {
+        "samples": 14,
+        "min": 2312088,
+        "median": 18638024,
+        "p95": 59074088,
+        "max": 59074088
+      },
+      "browserReportedHeapUsedBytes": {
+        "samples": 181,
+        "min": 301311392,
+        "median": 407822182,
+        "p95": 435171191,
+        "max": 444103349
+      }
+    },
+    {
+      "mode": "narrow",
+      "viewportAndBuffer": [
+        390,
+        844
+      ],
+      "frames": 7211,
+      "activeWallSeconds": 93.45090000009537,
+      "activeGameSeconds": 93.45150000003628,
+      "pathMetres": 704.7438999999991,
+      "actualMovingFrames": 6740,
+      "inputMovingFrames": 6740,
+      "warmupExcludedSeconds": 10,
+      "steadyGpuMs": {
+        "samples": 806,
+        "min": 5.540624,
+        "median": 7.680333,
+        "p95": 9.086708,
+        "max": 10.032541
+      },
+      "steadyDrawCpuMs": {
+        "samples": 6443,
+        "min": 3.1999998092651367,
+        "median": 4.300000190734863,
+        "p95": 4.800000190734863,
+        "max": 6
+      },
+      "steadyRenderSubmitCpuMs": {
+        "samples": 6443,
+        "min": 1.5999999046325684,
+        "median": 2.200000286102295,
+        "p95": 2.5999999046325684,
+        "max": 3.5
+      },
+      "steadyRafIntervalMs": {
+        "samples": 6443,
+        "min": 6,
+        "median": 10.799999713897705,
+        "p95": 26.700000286102295,
+        "max": 27.59999990463257
+      },
+      "rafOver33_34ms": 0,
+      "gpu25msP95GatePassed": true,
+      "maxDrawCalls": 218,
+      "maxTriangles": 2059082,
+      "nativeQueryLifecycle": {
+        "active": false,
+        "frame": 7211,
+        "bufferedFrames": 0,
+        "inflight": 0,
+        "peakInflight": 1,
+        "dropped": 0,
+        "hiddenFrames": 0,
+        "contextLost": false,
+        "errors": [],
+        "supported": true,
+        "issued": 902,
+        "completed": 902,
+        "deleted": 902,
+        "disjointFrames": 0,
+        "timeouts": 0,
+        "pending": false
+      },
+      "heapUsedBytes": {
+        "samples": 8,
+        "min": 75998380,
+        "median": 97849668,
+        "p95": 110615048,
+        "max": 110615048
+      },
+      "heapFirstLastBytes": [
+        75998380,
+        88261884
+      ],
+      "heapSamples": 8,
+      "lateResourceCountRanges": {
+        "geometries": [
+          163,
+          163
+        ],
+        "textures": [
+          100,
+          100
+        ],
+        "programs": [
+          50,
+          50
+        ]
+      },
+      "phases": [
+        {
+          "from": "00-continued-camp",
+          "to": "01-native-gather",
+          "frames": 111,
+          "gpuMs": {
+            "samples": 14,
+            "min": 8.589166,
+            "median": 8.883,
+            "p95": 9.901999,
+            "max": 9.901999
+          },
+          "drawCpuMs": {
+            "samples": 111,
+            "min": 3.799999713897705,
+            "median": 4.400000095367432,
+            "p95": 5.200000286102295,
+            "max": 5.800000190734863
+          }
+        },
+        {
+          "from": "01-native-gather",
+          "to": "04-camp-return",
+          "frames": 99,
+          "gpuMs": {
+            "samples": 13,
+            "min": 8.655624,
+            "median": 8.894958,
+            "p95": 10.745499,
+            "max": 10.745499
+          },
+          "drawCpuMs": {
+            "samples": 99,
+            "min": 3.5999999046325684,
+            "median": 4.400000095367432,
+            "p95": 5,
+            "max": 5.200000286102295
+          }
+        },
+        {
+          "from": "04-camp-return",
+          "to": "05-final-rest",
+          "frames": 6993,
+          "gpuMs": {
+            "samples": 875,
+            "min": 5.540624,
+            "median": 7.699375,
+            "p95": 9.086124,
+            "max": 10.032541
+          },
+          "drawCpuMs": {
+            "samples": 6993,
+            "min": 3.1999998092651367,
+            "median": 4.300000190734863,
+            "p95": 4.800000190734863,
+            "max": 6
+          }
+        }
+      ],
+      "finalSaveSha256": "51511278a8bde0632e820ebb99145a3cb112d69bd6eaf7e52dc43a255aaa0fe0",
+      "profileSha256": "1bcb2e000bead0815df97496cff9b939f75932468bb157c17f2390e0fe9b3f75",
+      "initialSaveSha256": "f9cea46afa154439a3ff8e7f0ac242d1aa06f98cbf12a90ffa797c142d6f7a19",
+      "initialProfileSha256": "d5756647423c9a814512a940a735b2806f101efeff0cdaeccf0388828b52d8bd",
+      "finalQuest": 6,
+      "finalKills": 16,
+      "finalHp": 100,
+      "finalInventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 32,
+        "berry": 14,
+        "shell": 0,
+        "crystal": 3,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "localReadyMs": 2584,
+      "evidenceSha256": {
+        "raw.json": "c637b4b48d74ffabf2bb344ef2039862b4a0b2fffa3636112d210c36c3fd2e9e",
+        "samples.jsonl": "30b4bb0e657acd8408f3d6f6e5e0ce574fa4df8e2eb7831429391d4c92ef0277",
+        "inputs.jsonl": "ebb4ece6112c561ced05ef67b3260a002409f41fe0720d5f4d52e0a611fdb438",
+        "heap.json": "07c48aaf931c2857ae83da6ea1d3c25eca2e8642bc7edff0bd717f649e5cc2ba",
+        "final-save.json": "51511278a8bde0632e820ebb99145a3cb112d69bd6eaf7e52dc43a255aaa0fe0",
+        "00-continued-camp.png": "29348b0ebeef3adfdb182037216521ee3aa6d4e7ae9ebeda23a668c48db6be01",
+        "01-native-gather.png": "ca6e0fd9be4615742b3412c364bff25a1bce4ce48dff16a781ce6c001e6e48ec",
+        "04-camp-return.png": "9af7ee11e33bb7e2b6ff32d9118ea1fa1057fc9130012c94534ca6de7b96296e",
+        "05-final-rest.png": "d63692abab07beea51e1a16a8d8d21771a666da7ed8d171c3f24e1f50ff113be"
+      },
+      "cdpBackingStorageBytes": {
+        "samples": 8,
+        "min": 279385942,
+        "median": 282807689,
+        "p95": 284774240,
+        "max": 284774240
+      },
+      "cdpBackingFirstLastBytes": [
+        279385942,
+        284774240
+      ],
+      "cdpEmbedderHeapBytes": {
+        "samples": 8,
+        "min": 2271432,
+        "median": 49084848,
+        "p95": 74769448,
+        "max": 74769448
+      },
+      "browserReportedHeapUsedBytes": {
+        "samples": 93,
+        "min": 357190476,
+        "median": 378240874,
+        "p95": 391925214,
+        "max": 396976244
+      }
+    }
+  ],
+  "sourceSha256": {
+    "tools/runtime_budget_probe.js": "9ac141a7c52701380ad08c321f313dcf3ef0b43c2a7831e29e53aead21535889",
+    "tools/run_runtime_budget.mjs": "0da8e17854780f1620c82573911425163418a20dc13179e7dda35075ae5de1dc",
+    "tools/verify_runtime_budget.py": "5014069d2bd8198933e8b0dfe34b94ef67e49408b6d834e6088361b00d86e22e",
+    "tests/runtime-budget-probe.test.js": "0abdae0d765ac8e630508cc50d0dc3a16a8603e749091a9408fbe6376ad7e364"
+  },
+  "systemGpuIsolated": false,
+  "vramMeasured": false,
+  "forcedGc": false,
+  "physicalMobileAccepted": false,
+  "longEnduranceAccepted": false,
+  "wholeGoalComplete": false,
+  "m5Complete": false,
+  "performanceGainClaimed": false
+}

@@ -6,6 +6,8 @@
 
 代码与必要证据由Git管理，`main`同步到公开仓库 [EgoistInory/tidelands](https://github.com/EgoistInory/tidelands)。用户于2026-11-02明确确认继续同步该公开仓库；提交、推送和本地交付包的边界见 `docs/GIT-WORKFLOW.md`。
 
+当前同包整画布预算基线：桌面181.58秒/390窄屏93.45秒普通采集、实战/营地移动与保存刷新，GPU P95 10.60/9.09ms；仅DPR1、非真机/长时/VRAM，embedder heap增长待辨因，见 `docs/RUNTIME-BUDGET-CHECKPOINT.md`。211运行输入和上方ZIP未改，M5/3A仍未完成。
+
 历史有限功能组：全身低物采集，33针对性/291全量与真实原生E/main结算、暂停取消通过；近距纤维/浆果/贝壳、390检视与远距手臂限伸已保存，见 `docs/LOW-GATHER-REVIEW.md`。整体自然度/远距真实接触仍待，M5和完整3A未完成。该批本地包 `dist/tidelands-m5-2026-10-23-low-gather.zip`，SHA `63501f1a6b641985928aefe6ea5fb3ddc82c13a96f6674f4f31af062aed2a3b8`；独立包普通q6接续/保存390恢复通过，见 `docs/LOW-GATHER-DELIVERY.md`。新源GPU/长时不套用旧证据。
 
 ## 启动
