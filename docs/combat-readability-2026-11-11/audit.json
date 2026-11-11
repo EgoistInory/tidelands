@@ -1,0 +1,34 @@
+{
+  "source": "docs/main-mix-2026-11-05/combat-page@6729ba852987e818f6d528e61cfb5142.webm",
+  "sha256": "cbdd271f78e12ae05622e5ce27e5cc226dc1bcd295f1d3e09343fcefbf9a00ce",
+  "sampleSeconds": [
+    24.0,
+    24.5,
+    25.0,
+    25.5,
+    26.0,
+    26.5,
+    27.0,
+    27.5,
+    28.0,
+    28.5,
+    29.0,
+    29.5
+  ],
+  "scope": "Twelve half-second video frame samples, not full motion playback or audio audition",
+  "artifacts": {
+    "26.0.png": "25aecef520f01910a130c243d786c11c7781cf06f3ee2614ea4258ffc9b7caa2",
+    "27.0.png": "48d8898c05208910415046171dec76409c064539dcb5f590f82dbfb9668046ba",
+    "contact.jpg": "8cf9ae71031b546a2b527eddf8067df2283f0b416706d10c9b097f0198f329ec",
+    "28.5.png": "2991b1c6ae7b2df2b9942cb57702377b6af6fb5f7c39a1c6baf650e2e89b2fdf"
+  },
+  "afterCombatGroundProbe": {
+    "source": "dist/main-mix-2026-11-05-combat/01-native-combat-save.json",
+    "playerHeight": 27.86200750352744,
+    "enemyHeight": 28.038572622939604,
+    "horizontalDistance": 2.055374640996862,
+    "scope": "Post-combat positions only; cannot establish impact-frame positions or terrain occlusion"
+  },
+  "productionChanged": false,
+  "fullQualityAccepted": false
+}
