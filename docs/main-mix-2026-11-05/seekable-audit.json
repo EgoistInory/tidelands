@@ -1,0 +1,57 @@
+{
+  "scope": "Exact Float32 decoded PCM roundtrip and native media seeks; no audition or AV sync claim",
+  "results": [
+    {
+      "mode": "camp",
+      "originalSha": "02dae16db7c1625b11b56eede265e65b3fd801c7582393359c656d01fcc881f8",
+      "output": "camp-full-48k-float.wav",
+      "sha256": "ec247dc215b923cd0283ca76babcf8328b49a3a85810bcc3876501ebeb3f85b9",
+      "frames": 1460160,
+      "seconds": 30.42,
+      "mismatches": 0,
+      "seeks": [
+        {
+          "time": 1,
+          "duration": 30.42,
+          "error": null
+        },
+        {
+          "time": 15,
+          "duration": 30.42,
+          "error": null
+        },
+        {
+          "time": 29.42,
+          "duration": 30.42,
+          "error": null
+        }
+      ]
+    },
+    {
+      "mode": "combat",
+      "originalSha": "77c72d26f8cfb7d8a0d898afde350efcd401fbf8cab2c41f98cf26e1b3d5731d",
+      "output": "combat-full-48k-float.wav",
+      "sha256": "198b15ea9ebe408f06ec3e90015accb36d04d433daf955e13054765b99f7c123",
+      "frames": 1679040,
+      "seconds": 34.98,
+      "mismatches": 0,
+      "seeks": [
+        {
+          "time": 1,
+          "duration": 34.98,
+          "error": null
+        },
+        {
+          "time": 15,
+          "duration": 34.98,
+          "error": null
+        },
+        {
+          "time": 33.98,
+          "duration": 34.98,
+          "error": null
+        }
+      ]
+    }
+  ]
+}
