@@ -109,7 +109,7 @@ function applyAttackDamage(state,damage,range){const hits=[],p=state.player,forw
   for(const e of state.enemies){
     const dx=e.x-p.x,dz=e.z-p.z,distance=Math.hypot(dx,dz);
     // Centres include the creature body radius; this is a frontal gameplay arc, not mesh collision.
-    if(e.hp<=0||distance>range+targetReachPadding(e)||(distance>.01&&(dx*forwardX+dz*forwardZ)/distance<.35))continue;
+    if(e.hp<=0||distance>range+targetReachPadding(e)||Math.hypot(distance,terrain(e.x,e.z)-terrain(p.x,p.z))>range+targetReachPadding(e)||(distance>.01&&(dx*forwardX+dz*forwardZ)/distance<.35))continue;
     e.hp-=damage;hits.push(e.id);if(e.hp<=0){state.kills++;state.inventory.fiber+=2;state.inventory.berry++;}
   }
   return {message:hits.length?`命中 ${hits.length} 个目标${state.kills?' · 累计击败 '+state.kills:''}`:'',hits};
@@ -142,7 +142,7 @@ export function tick(state,dt,running=false,feedback=null,objects=[]){if(feedbac
     if(plan){
       const age=state.time-plan.at,dx=state.player.x-e.x,dz=state.player.z-e.z,distance=Math.hypot(dx,dz);
       if(!plan.resolved&&age>=ENEMY_ATTACK_IMPACT){plan.resolved=true;
-        if(distance<2.9&&(distance<.01||(dx*Math.sin(plan.yaw)+dz*Math.cos(plan.yaw))/distance>=.35)&&state.time>=(state.protectedUntil||0)){
+        if(distance<2.9&&Math.hypot(distance,terrain(e.x,e.z)-terrain(state.player.x,state.player.z))<2.9&&(distance<.01||(dx*Math.sin(plan.yaw)+dz*Math.cos(plan.yaw))/distance>=.35)&&state.time>=(state.protectedUntil||0)){
           const damage=Math.min(state.player.hp,e.type==='boar'?12:7);state.player.hp-=damage;if(feedback)feedback.damage+=damage;message='受到攻击！空格反击，或拉开距离。';
         }
       }
@@ -161,7 +161,7 @@ export function tick(state,dt,running=false,feedback=null,objects=[]){if(feedbac
     const dx=Math.sin(angle)*step,dz=Math.cos(angle)*step;
     stepEnemy(state,objects,e,dx,dz);
   }
-    if(distance<2.9&&state.time>=(state.protectedUntil||0)&&state.time-(e.attackAt||0)>1.3){e.attackAt=state.time;plans.set(e.id,{at:state.time,yaw:Math.atan2(state.player.x-e.x,state.player.z-e.z),resolved:false});if(feedback)(feedback.enemyWindups??=[]).push({id:e.id,type:e.type});}}
+    if(distance<2.9&&Math.hypot(distance,terrain(e.x,e.z)-terrain(state.player.x,state.player.z))<2.9&&state.time>=(state.protectedUntil||0)&&state.time-(e.attackAt||0)>1.3){e.attackAt=state.time;plans.set(e.id,{at:state.time,yaw:Math.atan2(state.player.x-e.x,state.player.z-e.z),resolved:false});if(feedback)(feedback.enemyWindups??=[]).push({id:e.id,type:e.type});}}
   if(state.player.hp<=0){if(feedback)feedback.respawned=true;Object.assign(state.player,state.respawn,{hp:100,stamina:100});state.protectedUntil=state.time+8;cancelEnemyAttacks(state);message='你在营地醒来。背包已保留，获得 8 秒保护，趁现在重新出发吧。';}
   return message;
 }

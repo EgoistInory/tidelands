@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: native cliff-separated target cannot receive a planar melee hit
+ok 1 - native cliff-separated target cannot receive a planar melee hit
+  ---
+  duration_ms: 13.35425
+  type: 'test'
+  ...
+# Subtest: native cliff-separated crab cannot damage player during windup
+ok 2 - native cliff-separated crab cannot damage player during windup
+  ---
+  duration_ms: 5.000209
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 55.645417
