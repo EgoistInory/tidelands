@@ -1,0 +1,23 @@
+diff --git a/src/game.js b/src/game.js
+index fb6e9cb..6d9bc62 100644
+--- a/src/game.js
++++ b/src/game.js
+@@ -114,14 +114,16 @@ function applyAttackDamage(state,damage,range){const hits=[],p=state.player,forw
+   }
+   return {message:hits.length?`命中 ${hits.length} 个目标${state.kills?' · 累计击败 '+state.kills:''}`:'',hits};
+ }
++// Conservative 3m body envelopes: separated cliff shelves must not collide in XZ alone.
++function actorHeightOverlaps(point,actor){return Math.abs(terrain(point.x,point.z)-terrain(actor.x,actor.z))<3;}
+ function canActorMove(state,objects,from,to,mover){
+   const {x,z}=to,radius=actorRadius(mover);
+   if(Math.abs(x)>390||Math.abs(z)>390||!terrainStepAllowed(from,to,terrain))return false;
+   if(objects.some(o=>!isDepleted(state,o)&&(footprintBlocksMove(from,to,o,radius)??(o.type==='tree'?actorBlocksMove(from,to,o,radius,1.15):resourceBlocksMove(from,to,o,radius)))))return false;
+   if(state.buildings.some(o=>o.type!=='campfire'&&actorBlocksMove(from,to,o,radius,1.65)))return false;
+   if(LANDMARKS.some(o=>o.type==='ruin'?ruinBlocksMove(from,to,o,radius):o.type==='npc'?actorBlocksMove(from,to,o,radius):['cottage','lighthouse'].includes(o.type)&&actorBlocksMove(from,to,o,radius,o.type==='cottage'?3.65:2.65)))return false;
+-  if(mover!==state.player&&actorBlocksMove(from,to,state.player,radius))return false;
+-  return !state.enemies.some(o=>o!==mover&&o.hp>0&&actorBlocksMove(from,to,o,radius));
++  if(mover!==state.player&&actorHeightOverlaps(to,state.player)&&actorBlocksMove(from,to,state.player,radius))return false;
++  return !state.enemies.some(o=>o!==mover&&o.hp>0&&actorHeightOverlaps(to,o)&&actorBlocksMove(from,to,o,radius));
+ }
+ export function movePlayer(state,objects,dx,dz,dt,running=false){
+   const p=state.player,length=Math.hypot(dx,dz);if(length<.01)return;
