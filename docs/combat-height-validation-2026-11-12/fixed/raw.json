@@ -1,0 +1,767 @@
+{
+  "entry": "http://127.0.0.1:4190/dist/tidelands-m5-2026-11-05-camera-orbit-r2/tidelands-local/",
+  "mode": "combat",
+  "complete": false,
+  "phases": [
+    {
+      "name": "00-start",
+      "save": "00-start-save.json",
+      "saveSha256": "62d6c696c6cf1b1667bddda54877b91aa5f97b781e3bff067e0a7a8cf11b51d4",
+      "image": "00-start.jpg",
+      "imageSha256": "96b17470a9c916b1f20ff237acbbda30361e950aabd3f674b5fa2dde53fccbf2",
+      "quest": 6,
+      "kills": 19,
+      "time": 1316.5013000004053,
+      "player": {
+        "x": -53.62463105352945,
+        "z": -196.6098543474151,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 2.7367996276585145
+      },
+      "inventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 38,
+        "berry": 14,
+        "shell": 0,
+        "crystal": 5,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18988",
+          "type": "campfire",
+          "x": -73.06273408212543,
+          "z": 106.72297401425469
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "群岛，再次相连",
+        "hp": 100,
+        "toast": "存档已导入。",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    }
+  ],
+  "marks": [
+    {
+      "name": "capture-start",
+      "seconds": 0.010666666666666658,
+      "wall": 3439.5,
+      "context": "running",
+      "hp": 100,
+      "day": "第 3 天 · 黄昏",
+      "feedback": "",
+      "hurt": "",
+      "toast": "存档已导入。"
+    },
+    {
+      "name": "ambient-end",
+      "seconds": 10.117333333333333,
+      "wall": 13547.900000095367,
+      "context": "running",
+      "hp": 100,
+      "day": "第 3 天 · 黄昏",
+      "feedback": "",
+      "hurt": "",
+      "toast": "存档已导入。"
+    },
+    {
+      "name": "combat-start",
+      "seconds": 10.144,
+      "wall": 13572.300000190735,
+      "context": "running",
+      "hp": 100,
+      "day": "第 3 天 · 黄昏",
+      "feedback": "",
+      "hurt": "",
+      "toast": "存档已导入。"
+    }
+  ],
+  "logs": [],
+  "initialSaveSha256": "b37f413cc6dc036d17fc164936412c3981ff5940d769fe6d7a68e9211d08db18",
+  "initialProfileSha256": "94ff238cd7759b9ca5d09554ed1e3431eed2deb3936898debbb3572c3396cf23",
+  "packageSha256": "79c84f319f64b6cf5b06c9597cdf002ea95ca5c069b8b64f042cd0e032bc7e65",
+  "observerSha256": "6378b8fca42a618398d5878a182a0ec71003d523572c35e67eefdb5e7c28eecf",
+  "historicalSaveSha256": "f35e00ffc6d9b3e6e157b4a68648b9d6f8720a35156f5bdc992913a24d3738e3",
+  "scope": "Actual ordinary main native controls. Same original master/ui outputs remain connected; diagnostic fan-out mixes both into a MediaRecorder Opus stream, no microphone or offline synthesis. Current source game.js served over frozen package for declared fix validation; package/state/clock untouched; served scene.js appends declared read-only camera/HP/terrain observation. Centres and sampled terrain rays are not mesh visibility proof. Combat restores own captured ordinary pre-combat history using native file chooser. Video has no audio; no frame-exact AV sync, audition, GPU/performance, physical phone or full3A acceptance.",
+  "recording": {
+    "mimeType": "audio/webm;codecs=opus",
+    "sampleRate": 48000,
+    "channels": 2,
+    "startContextTime": 0.128
+  },
+  "error": "Error: No route to enemy-10: No route within budget\n    at go (file:///Users/huxiaocong/Codex/tidelands/tools/run_combat_height_fixed.mjs:42:23)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:541:9)\n    at async file:///Users/huxiaocong/Codex/tidelands/tools/run_combat_height_fixed.mjs:75:207",
+  "mix": {
+    "context": "running",
+    "active": true,
+    "enabled": true,
+    "recording": false,
+    "seconds": 34.32533333333333,
+    "bytes": 552275,
+    "chunks": 34,
+    "pending": 0,
+    "peakPending": 1,
+    "errors": [],
+    "events": [
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 0.16533333333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 0.43733333333333335,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 10.762666666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 10.933333333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 11.349333333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 11.424,
+        "before": 1,
+        "after": 2,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 11.92,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 12.090666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 12.565333333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 13.034666666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 13.082666666666666,
+        "before": 1,
+        "after": 2,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 13.642666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 14.149333333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 14.698666666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 15.258666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 15.722666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 16.410666666666668,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 16.933333333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 17.386666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 17.541333333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 17.978666666666665,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 18.389333333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 18.538666666666668,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 19.002666666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 19.082666666666668,
+        "before": 1,
+        "after": 2,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 19.557333333333332,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 20.08,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 20.512,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 20.549333333333333,
+        "before": 1,
+        "after": 2,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 21.093333333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 21.557333333333332,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 21.6,
+        "before": 1,
+        "after": 2,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 22.021333333333335,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 22.202666666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 22.213333333333335,
+        "before": 1,
+        "after": 2,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 22.890666666666668,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 22.954666666666668,
+        "before": 1,
+        "after": 2,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 22.965333333333334,
+        "before": 2,
+        "after": 3,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 23.669333333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 23.717333333333332,
+        "before": 1,
+        "after": 2,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 24.474666666666668,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 25.232,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 25.989333333333335,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 26.75733333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 27.530666666666665,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 28.298666666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 29.056,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 29.818666666666665,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 30.570666666666668,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 31.338666666666665,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 32.10666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 32.85333333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 33.61066666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      }
+    ],
+    "sources": 0
+  },
+  "respawns": 0,
+  "video": "page@4221d9e1c1f7e87b06092b6064c5b106.webm",
+  "videoSha256": "39f0b77c6e948ad2f0bf52e1c080c0058b2da52c9d1e885a68dde4bd99d902a1"
+}

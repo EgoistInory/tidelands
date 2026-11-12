@@ -1,0 +1,464 @@
+{
+  "entry": "http://127.0.0.1:4190/dist/tidelands-m5-2026-11-05-camera-orbit-r2/tidelands-local/",
+  "mode": "combat",
+  "complete": false,
+  "phases": [
+    {
+      "name": "00-start",
+      "save": "00-start-save.json",
+      "saveSha256": "58014b3ea68ea4dd783e2e4f15482f0ba2a574aa50e407e7ea53289cb5033e19",
+      "image": "00-start.jpg",
+      "imageSha256": "337feceb97b5c476e4a3fc5a56fc4c15d94ebe664c3c398e3a3446d17d79c08c",
+      "quest": 6,
+      "kills": 19,
+      "time": 1511.8439000004255,
+      "player": {
+        "x": -112.78727151264037,
+        "z": -227.18211453640046,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -2.991592653589793
+      },
+      "inventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 38,
+        "berry": 14,
+        "shell": 0,
+        "crystal": 5,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18988",
+          "type": "campfire",
+          "x": -73.06273408212543,
+          "z": 106.72297401425469
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "群岛，再次相连",
+        "hp": 100,
+        "toast": "存档已导入。",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "00-downhill",
+      "save": "00-downhill-save.json",
+      "saveSha256": "2b222cf46d1ccb4f795b059e88cac8372efeb0f9b8fcc26e0739219602292552",
+      "image": "00-downhill.jpg",
+      "imageSha256": "f1ffac236c4d763079b199e012979e4884a9df5405cb08713b8bb99028696880",
+      "quest": 6,
+      "kills": 19,
+      "time": 1523.0418000004279,
+      "player": {
+        "x": -112.78727151264037,
+        "z": -226.07464348045164,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "inventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 38,
+        "berry": 14,
+        "shell": 0,
+        "crystal": 5,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18988",
+          "type": "campfire",
+          "x": -73.06273408212543,
+          "z": 106.72297401425469
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "群岛，再次相连",
+        "hp": 100,
+        "toast": "存档已导入。",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    }
+  ],
+  "marks": [
+    {
+      "name": "capture-start",
+      "seconds": 0,
+      "wall": 5329.199999809265,
+      "context": "running",
+      "hp": 100,
+      "day": "第 4 天 · 夜晚",
+      "feedback": "",
+      "hurt": "",
+      "toast": "存档已导入。"
+    },
+    {
+      "name": "ambient-end",
+      "seconds": 8.128,
+      "wall": 15500.300000190735,
+      "context": "running",
+      "hp": 100,
+      "day": "第 4 天 · 夜晚",
+      "feedback": "",
+      "hurt": "",
+      "toast": "存档已导入。"
+    },
+    {
+      "name": "combat-start",
+      "seconds": 8.144,
+      "wall": 15516.300000190735,
+      "context": "running",
+      "hp": 100,
+      "day": "第 4 天 · 夜晚",
+      "feedback": "",
+      "hurt": "",
+      "toast": "存档已导入。"
+    }
+  ],
+  "logs": [],
+  "initialSaveSha256": "b37f413cc6dc036d17fc164936412c3981ff5940d769fe6d7a68e9211d08db18",
+  "initialProfileSha256": "94ff238cd7759b9ca5d09554ed1e3431eed2deb3936898debbb3572c3396cf23",
+  "packageSha256": "79c84f319f64b6cf5b06c9597cdf002ea95ca5c069b8b64f042cd0e032bc7e65",
+  "observerSha256": "6378b8fca42a618398d5878a182a0ec71003d523572c35e67eefdb5e7c28eecf",
+  "historicalSaveSha256": "ec5a993988751ed5005ec62e3a8071168d4d88fc8d88d0e76db1863350137cb5",
+  "scope": "Actual ordinary main native controls. Same original master/ui outputs remain connected; diagnostic fan-out mixes both into a MediaRecorder Opus stream, no microphone or offline synthesis. Current source game.js served over frozen package for declared fix validation; package/state/clock untouched; served scene.js appends declared read-only camera/HP/terrain observation. Centres and sampled terrain rays are not mesh visibility proof. Combat restores own captured ordinary pre-combat history using native file chooser. Video has no audio; no frame-exact AV sync, audition, GPU/performance, physical phone or full3A acceptance.",
+  "recording": {
+    "mimeType": "audio/webm;codecs=opus",
+    "sampleRate": 48000,
+    "channels": 2,
+    "startContextTime": 0
+  },
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n19 !== 20\n\n    at file:///Users/huxiaocong/Codex/tidelands/tools/run_combat_height_downhill.mjs:75:312",
+  "mix": {
+    "context": "running",
+    "active": true,
+    "enabled": true,
+    "recording": false,
+    "seconds": 21.76,
+    "bytes": 350189,
+    "chunks": 23,
+    "pending": 0,
+    "peakPending": 1,
+    "errors": [],
+    "events": [
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 0,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 0,
+        "before": 1,
+        "after": 2,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 9.130666666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 9.173333333333334,
+        "before": 1,
+        "after": 2,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 9.184,
+        "before": 2,
+        "after": 3,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 9.306666666666667,
+        "before": 1,
+        "after": 2,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 10.010666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 10.064,
+        "before": 1,
+        "after": 2,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 10.090666666666667,
+        "before": 2,
+        "after": 3,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 10.821333333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 11.578666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 12.346666666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 13.104,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 13.861333333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 14.624,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 15.402666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 16.16,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 16.922666666666668,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 17.685333333333332,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 18.474666666666668,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 19.232,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 19.989333333333335,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 20.752,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      }
+    ],
+    "sources": 0
+  },
+  "respawns": 0,
+  "video": "page@68b7db433e98f231d5a57c59890154f7.webm",
+  "videoSha256": "fc43fbdc81798966d206471483c97fe6404cf155591eee02d4be1d7f8cedcba3"
+}

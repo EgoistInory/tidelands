@@ -1,0 +1,90 @@
+{
+  "results": [
+    {
+      "case": "fixed",
+      "complete": false,
+      "error": "Error: No route to enemy-10: No route within budget\n    at go (file:///Users/huxiaocong/Codex/tidelands/tools/run_combat_height_fixed.mjs:42:23)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:541:9)\n    at async file:///Users/huxiaocong/Codex/tidelands/tools/run_combat_height_fixed.mjs:75:207",
+      "logs": [],
+      "player": {
+        "x": -112.78727151264037,
+        "z": -227.18211453640046,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -2.991592653589793
+      },
+      "enemy": {
+        "id": "enemy-10",
+        "type": "crab",
+        "x": -114.62683768155902,
+        "z": -228.5626927884999,
+        "hp": 40,
+        "homeX": -118.50247119403912,
+        "homeZ": -231.33460434063815,
+        "attackAt": 0
+      }
+    },
+    {
+      "case": "recovery",
+      "complete": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n19 !== 20\n\n    at file:///Users/huxiaocong/Codex/tidelands/tools/run_combat_height_recovery.mjs:75:372",
+      "logs": [],
+      "player": {
+        "x": -112.78727151264037,
+        "z": -227.18211453640046,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -2.991592653589793
+      },
+      "enemy": {
+        "id": "enemy-10",
+        "type": "crab",
+        "x": -114.62683768155902,
+        "z": -228.5626927884999,
+        "hp": 40,
+        "homeX": -118.50247119403912,
+        "homeZ": -231.33460434063815,
+        "attackAt": 0
+      }
+    },
+    {
+      "case": "downhill",
+      "complete": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n19 !== 20\n\n    at file:///Users/huxiaocong/Codex/tidelands/tools/run_combat_height_downhill.mjs:75:312",
+      "logs": [],
+      "player": {
+        "x": -112.78727151264037,
+        "z": -226.07464348045164,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -2.991592653589793
+      },
+      "enemy": {
+        "id": "enemy-10",
+        "type": "crab",
+        "x": -114.08568814221437,
+        "z": -227.97309396862502,
+        "hp": 40,
+        "homeX": -118.50247119403912,
+        "homeZ": -231.33460434063815,
+        "attackAt": 0
+      }
+    }
+  ],
+  "nativeCombatAccepted": false,
+  "stoppedAfterThreeAttempts": true,
+  "hashes": {
+    "recovery/checkpoint-save.json": "ec5a993988751ed5005ec62e3a8071168d4d88fc8d88d0e76db1863350137cb5",
+    "recovery/raw.json": "e938dbed52b47e262a568bcd6753971fb83c590eb54f3f33971a86587dd81d62",
+    "recovery/combat-frames-final.json": "a169e7ab8a451d55d3ce7d1b539073bf45b0c076571c0436ccf3a77eea6a5df3",
+    "recovery/inputs.jsonl": "6271d1868931b5af6d23c0d1d86764acfc7487bdb9162edee6ee274d498adffa",
+    "downhill/checkpoint-save.json": "f8d0e12fd0e5c17bde648924c647831cc961682f8b23b5250a54ddfab946ad3b",
+    "downhill/raw.json": "2989a3967ecf11ce026ef3884b0baa36e340d176ebc8621e13404b7a74774aa1",
+    "downhill/00-downhill-save.json": "2b222cf46d1ccb4f795b059e88cac8372efeb0f9b8fcc26e0739219602292552",
+    "downhill/combat-frames-final.json": "7c81a77489b49d92358329484b4f1cb1866315b9ef53b4d1e754916f7aacb5fb",
+    "downhill/00-downhill.jpg": "f1ffac236c4d763079b199e012979e4884a9df5405cb08713b8bb99028696880",
+    "downhill/inputs.jsonl": "bd62b30c42fc08e9b3c180bbf9b797460fcb2d4d6de43d7d4dbbcee92d135407",
+    "fixed/checkpoint-save.json": "bd1274ad9aa738263f879b5ce562cfce4e8b6b45a5132cbb3667f4f9a9367ac6",
+    "fixed/raw.json": "16252d57b498fd71382f554dcc2be3e7b59e1deaaef6d5a615f678e13762b88a",
+    "fixed/inputs.jsonl": "ede64af80bfcae8561bd3306f5cb587c41006957566caeb7766f649ce782a3e3"
+  }
+}

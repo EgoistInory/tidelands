@@ -1,0 +1,2459 @@
+{
+  "entry": "http://127.0.0.1:4190/dist/tidelands-m5-2026-11-05-camera-orbit-r2/tidelands-local/",
+  "mode": "combat",
+  "complete": false,
+  "phases": [
+    {
+      "name": "00-start",
+      "save": "00-start-save.json",
+      "saveSha256": "b1ee6679a2939105190cdfdab344d46bf521f1de7ce72d08fb97d746913b79c7",
+      "image": "00-start.jpg",
+      "imageSha256": "41713bf623f0b9be9717959f1a6ddc6d4312a3acff86b80e8cfb60ea0389596b",
+      "quest": 6,
+      "kills": 19,
+      "time": 1350.853300000405,
+      "player": {
+        "x": -112.78727151264037,
+        "z": -227.18211453640046,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -2.991592653589793
+      },
+      "inventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 38,
+        "berry": 14,
+        "shell": 0,
+        "crystal": 5,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18988",
+          "type": "campfire",
+          "x": -73.06273408212543,
+          "z": 106.72297401425469
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "群岛，再次相连",
+        "hp": 100,
+        "toast": "存档已导入。",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    }
+  ],
+  "marks": [
+    {
+      "name": "capture-start",
+      "seconds": 0,
+      "wall": 3378.2000002861023,
+      "context": "running",
+      "hp": 100,
+      "day": "第 3 天 · 夜晚",
+      "feedback": "",
+      "hurt": "",
+      "toast": "存档已导入。"
+    },
+    {
+      "name": "ambient-end",
+      "seconds": 10.090666666666667,
+      "wall": 13465.800000190735,
+      "context": "running",
+      "hp": 100,
+      "day": "第 3 天 · 夜晚",
+      "feedback": "",
+      "hurt": "",
+      "toast": "存档已导入。"
+    },
+    {
+      "name": "combat-start",
+      "seconds": 10.101333333333333,
+      "wall": 13476.200000286102,
+      "context": "running",
+      "hp": 100,
+      "day": "第 3 天 · 夜晚",
+      "feedback": "",
+      "hurt": "",
+      "toast": "存档已导入。"
+    }
+  ],
+  "logs": [],
+  "initialSaveSha256": "b37f413cc6dc036d17fc164936412c3981ff5940d769fe6d7a68e9211d08db18",
+  "initialProfileSha256": "94ff238cd7759b9ca5d09554ed1e3431eed2deb3936898debbb3572c3396cf23",
+  "packageSha256": "79c84f319f64b6cf5b06c9597cdf002ea95ca5c069b8b64f042cd0e032bc7e65",
+  "observerSha256": "6378b8fca42a618398d5878a182a0ec71003d523572c35e67eefdb5e7c28eecf",
+  "historicalSaveSha256": "bd1274ad9aa738263f879b5ce562cfce4e8b6b45a5132cbb3667f4f9a9367ac6",
+  "scope": "Actual ordinary main native controls. Same original master/ui outputs remain connected; diagnostic fan-out mixes both into a MediaRecorder Opus stream, no microphone or offline synthesis. Current source game.js served over frozen package for declared fix validation; package/state/clock untouched; served scene.js appends declared read-only camera/HP/terrain observation. Centres and sampled terrain rays are not mesh visibility proof. Combat restores own captured ordinary pre-combat history using native file chooser. Video has no audio; no frame-exact AV sync, audition, GPU/performance, physical phone or full3A acceptance.",
+  "recording": {
+    "mimeType": "audio/webm;codecs=opus",
+    "sampleRate": 48000,
+    "channels": 2,
+    "startContextTime": 0.16
+  },
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n19 !== 20\n\n    at file:///Users/huxiaocong/Codex/tidelands/tools/run_combat_height_recovery.mjs:75:372",
+  "mix": {
+    "context": "running",
+    "active": true,
+    "enabled": true,
+    "recording": false,
+    "seconds": 161.51466666666667,
+    "bytes": 2602289,
+    "chunks": 159,
+    "pending": 0,
+    "peakPending": 1,
+    "errors": [],
+    "events": [
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 0.18133333333333332,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "step",
+        "options": {
+          "surface": "grass"
+        },
+        "at": 0.45866666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 10.56,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 11.370666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 12.128,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 12.890666666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 13.669333333333332,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 14.426666666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 15.184,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 15.936,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 16.704,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 17.482666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 18.250666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 19.008,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 19.765333333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 20.538666666666668,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 21.296,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 22.058666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 23.178666666666665,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 23.936,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 24.688,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 25.44,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 26.197333333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 26.954666666666668,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 27.706666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 28.464,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 29.221333333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 29.983999999999998,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 30.752,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 31.514666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 32.272000000000006,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 33.05066666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 33.83466666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 34.60266666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 35.74933333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 36.512,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 37.28,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 38.037333333333336,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 38.80533333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 39.568000000000005,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 40.33066666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 41.088,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 41.872,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 42.624,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 43.38133333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 44.13866666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 44.92266666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 45.67466666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 46.432,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 47.19466666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 48.309333333333335,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 49.098666666666674,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 49.872,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 50.624,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 51.38133333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 52.165333333333336,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 52.92266666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 53.67466666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 54.44266666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 55.216,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 55.973333333333336,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 56.72533333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 57.49866666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 58.29866666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 59.05066666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 59.80800000000001,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 60.92266666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 61.67466666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 62.42666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 63.184000000000005,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 63.94133333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 64.70400000000001,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 65.456,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 66.21333333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 66.976,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 67.73333333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 68.48533333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 69.248,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 70.016,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 70.768,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 71.54666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 72.304,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 73.43466666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 74.19200000000001,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 74.95466666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 75.712,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 76.46933333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 77.232,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 77.98933333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 78.75200000000001,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 79.50933333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 80.26666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 81.024,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 81.80266666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 82.55466666666668,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 83.30666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 84.06400000000001,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 84.85866666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 85.98933333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 86.74133333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 87.49866666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 88.256,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 89.01333333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 89.77066666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 90.528,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 91.29066666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 92.05866666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 92.82666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 93.57866666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 94.34133333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 95.104,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 95.86666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 96.62400000000001,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 97.38133333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 98.50666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 99.26400000000001,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 100.02133333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 100.784,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 101.54133333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 102.29866666666668,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 103.06133333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 103.81866666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 104.58666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 105.34933333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 106.11200000000001,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 106.90666666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 107.664,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 108.42133333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 109.17333333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 109.936,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 111.056,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 111.808,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 112.57066666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 113.328,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 114.096,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 114.85333333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 115.60533333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 116.36800000000001,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 117.12533333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 117.88266666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 118.64533333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 119.40266666666668,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 120.16,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 120.93333333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 121.69066666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 122.44266666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 123.58933333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 124.34666666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 125.104,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 125.86133333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 126.65066666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 127.41333333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 128.17333333333335,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 128.928,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 129.72266666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 130.48,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 131.232,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 131.99466666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 132.76266666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 133.52533333333335,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 134.28266666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 135.04,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 136.15466666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 136.94400000000002,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 137.70133333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 138.45333333333335,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 139.22133333333335,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 140,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 140.76266666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 141.52,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 142.28266666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 143.072,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 143.82933333333332,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 144.58133333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 145.33333333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 146.13333333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 146.88533333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 147.63733333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 148.76266666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 149.52,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 150.27733333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 151.04533333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 151.80266666666668,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 152.55466666666666,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 153.31733333333332,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 154.07466666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 154.83733333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 155.60533333333333,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 156.368,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 157.13066666666668,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 157.89333333333335,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 158.65066666666667,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 159.40800000000002,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      },
+      {
+        "method": "effect",
+        "kind": "swing",
+        "options": {
+          "weapon": "axe"
+        },
+        "at": 160.16533333333334,
+        "before": 0,
+        "after": 1,
+        "active": true,
+        "enabled": true
+      }
+    ],
+    "sources": 0
+  },
+  "respawns": 0,
+  "video": "page@2b1f69bb7097e47075b2abb8186bfc10.webm",
+  "videoSha256": "45105083c22e1dc108d4a17f0b585c0bf8908926e168dc8a904104f49d24f1cd"
+}
