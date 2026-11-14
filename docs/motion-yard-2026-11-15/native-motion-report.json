@@ -1,0 +1,165 @@
+{
+  "package": "tidelands-m5-2026-11-15-settlement",
+  "mode": "motion",
+  "historySha256": "947f9b7499c45414a6f07d912bb00731ff12acbc065e252e9ab67856ddbbdaf6",
+  "complete": true,
+  "logs": [],
+  "phases": [
+    {
+      "label": "00-start",
+      "time": 1905.0504000006858,
+      "player": {
+        "x": -46.62100396654394,
+        "z": 86.99207658595876,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 1.7207963267948967
+      },
+      "kills": 20,
+      "quest": 6
+    },
+    {
+      "label": "straight",
+      "time": 1906.4203000006871,
+      "player": {
+        "x": -37.848824717310954,
+        "z": 85.66629136227955,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 1.7207963267948967
+      },
+      "kills": 20,
+      "quest": 6
+    },
+    {
+      "label": "stop",
+      "time": 1907.0667000006877,
+      "player": {
+        "x": -37.848824717310954,
+        "z": 85.66629136227955,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 1.7207963267948967
+      },
+      "kills": 20,
+      "quest": 6
+    },
+    {
+      "label": "return-straight",
+      "time": 1908.3168000006876,
+      "player": {
+        "x": -46.680527985435695,
+        "z": 87.00107276153379,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "kills": 20,
+      "quest": 6
+    },
+    {
+      "label": "stop2",
+      "time": 1908.9616000006888,
+      "player": {
+        "x": -46.680527985435695,
+        "z": 87.00107276153379,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "kills": 20,
+      "quest": 6
+    },
+    {
+      "label": "diagonal",
+      "time": 1909.82530000069,
+      "player": {
+        "x": -41.6700492742523,
+        "z": 90.69587668367122,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.9353981633974483
+      },
+      "kills": 20,
+      "quest": 6
+    },
+    {
+      "label": "sprint",
+      "time": 1911.1861000006918,
+      "player": {
+        "x": -28.314421656585075,
+        "z": 100.54452152357888,
+        "hp": 100,
+        "stamina": 75.89399999999996,
+        "yaw": 0.9353981633974483
+      },
+      "kills": 20,
+      "quest": 6
+    },
+    {
+      "label": "stop3",
+      "time": 1911.8675000006929,
+      "player": {
+        "x": -28.314421656585075,
+        "z": 100.54452152357888,
+        "hp": 100,
+        "stamina": 83.38939999999995,
+        "yaw": 0.9353981633974483
+      },
+      "kills": 20,
+      "quest": 6
+    },
+    {
+      "label": "return-diagonal",
+      "time": 1914.7273000006958,
+      "player": {
+        "x": -44.6472450101525,
+        "z": 88.5004468423223,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -2.206194490192345
+      },
+      "kills": 20,
+      "quest": 6
+    },
+    {
+      "label": "stop4",
+      "time": 1915.3941000006967,
+      "player": {
+        "x": -44.6472450101525,
+        "z": 88.5004468423223,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -2.206194490192345
+      },
+      "kills": 20,
+      "quest": 6
+    },
+    {
+      "label": "09-motion-end",
+      "time": 1916.3353000006966,
+      "player": {
+        "x": -44.6472450101525,
+        "z": 88.5004468423223,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -2.206194490192345
+      },
+      "kills": 20,
+      "quest": 6
+    }
+  ],
+  "archiveSha256": "a2d88c8b301dc5fa2ac59fa84ec8082610a61036e70406a151760054919a5faa",
+  "scope": "Ordinary restored porch progress, native held keys and read-only bounded skeleton observer appended to scene response. Original game/state/clock untouched. Not byte-unmodified scene module, GPU, audition or complete animation quality acceptance.",
+  "observerSha256": "02e002ec49f37827e7a8fdf325437eefb1452dd11bbb669474faf731be33fd19",
+  "motionPattern": "lane",
+  "motionFrames": 625,
+  "droppedMotionFrames": 0,
+  "motionClipFrames": {
+    "Sprint_Loop": 64,
+    "Jog_Fwd_Loop": 351,
+    "Idle_Loop": 210
+  },
+  "reloadExact": true,
+  "video": "/Users/huxiaocong/Codex/tidelands/dist/native-open-lane-motion-2026-11-15/page@e57d62f0370299eaca0fc3c5354057be.webm"
+}

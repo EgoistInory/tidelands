@@ -1,0 +1,191 @@
+{
+  "sourceAnimationNames": [
+    {
+      "name": "Jog_Fwd_Loop",
+      "duration": 0.9333333373069763,
+      "rootPositions": [
+        {
+          "name": "root.position",
+          "start": [
+            0,
+            0,
+            0
+          ],
+          "end": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sprint_Loop",
+      "duration": 0.6666666865348816,
+      "rootPositions": [
+        {
+          "name": "root.position",
+          "start": [
+            0,
+            0,
+            0
+          ],
+          "end": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Walk_Formal_Loop",
+      "duration": 1.3333333730697632,
+      "rootPositions": [
+        {
+          "name": "root.position",
+          "start": [
+            0,
+            0,
+            0
+          ],
+          "end": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Walk_Loop",
+      "duration": 1.3333333730697632,
+      "rootPositions": [
+        {
+          "name": "root.position",
+          "start": [
+            0,
+            0,
+            0
+          ],
+          "end": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "speed": 2.4,
+      "name": "Walk_Loop",
+      "variant": "current",
+      "scale": 1.621247568827334,
+      "libraryHeight": 1.8287165346555412,
+      "sourceDuration": 1.3333333730697632,
+      "cycleSeconds": 0.878175734236844,
+      "contactTravelSamples": 223,
+      "medianContactStride": 2.227679979069136,
+      "footfalls": 9,
+      "estimatedDistancePerFootfall": 1.0666666666666667,
+      "maxFootSpan": 1.3218047326155606,
+      "spanToBodyHeight": 0.4480694008866307,
+      "maxLegAngle": 38.198238780210374,
+      "minPelvis": 1.305043089870191,
+      "maxPelvis": 1.518143062190186
+    },
+    {
+      "speed": 2.4,
+      "name": "Walk_Loop",
+      "variant": "source",
+      "scale": 1.621247568827334,
+      "libraryHeight": 1.8287165346555412,
+      "sourceDuration": 1.3333333730697632,
+      "cycleSeconds": 0.878175734236844,
+      "contactTravelSamples": 223,
+      "medianContactStride": 2.227679979069136,
+      "footfalls": 0,
+      "estimatedDistancePerFootfall": null,
+      "maxFootSpan": 1.217349215301495,
+      "spanToBodyHeight": 0.4126607509496593,
+      "maxLegAngle": 30.716477737497424,
+      "minPelvis": 1.4555770353157798,
+      "maxPelvis": 1.540245227001336
+    },
+    {
+      "speed": 7,
+      "name": "Jog_Fwd_Loop",
+      "variant": "current",
+      "scale": 1.621247568827334,
+      "libraryHeight": 1.8287165346555412,
+      "sourceDuration": 0.9333333373069763,
+      "cycleSeconds": 1.15803397773381,
+      "contactTravelSamples": 69,
+      "medianContactStride": 9.26222429378208,
+      "footfalls": 10,
+      "estimatedDistancePerFootfall": 2.8,
+      "maxFootSpan": 2.320266256466732,
+      "spanToBodyHeight": 0.7865309343955024,
+      "maxLegAngle": 72.11249222718351,
+      "minPelvis": 1.1918610455712244,
+      "maxPelvis": 1.5849662284021433
+    },
+    {
+      "speed": 7,
+      "name": "Jog_Fwd_Loop",
+      "variant": "source",
+      "scale": 1.621247568827334,
+      "libraryHeight": 1.8287165346555412,
+      "sourceDuration": 0.9333333373069763,
+      "cycleSeconds": 1.15803397773381,
+      "contactTravelSamples": 69,
+      "medianContactStride": 9.26222429378208,
+      "footfalls": 0,
+      "estimatedDistancePerFootfall": null,
+      "maxFootSpan": 2.4294048554776246,
+      "spanToBodyHeight": 0.823527069653432,
+      "maxLegAngle": 67.02027068104609,
+      "minPelvis": 1.1918610454255185,
+      "maxPelvis": 1.5849662284021433
+    },
+    {
+      "speed": 12,
+      "name": "Sprint_Loop",
+      "variant": "current",
+      "scale": 1.621247568827334,
+      "libraryHeight": 1.8287165346555412,
+      "sourceDuration": 0.6666666865348816,
+      "cycleSeconds": 0.7430718023791947,
+      "contactTravelSamples": 73,
+      "medianContactStride": 9.779055814410968,
+      "footfalls": 17,
+      "estimatedDistancePerFootfall": 2.823529411764706,
+      "maxFootSpan": 2.189863705542414,
+      "spanToBodyHeight": 0.7423266798448861,
+      "maxLegAngle": 61.66664452108085,
+      "minPelvis": 1.227959889920177,
+      "maxPelvis": 1.5653213430623212
+    },
+    {
+      "speed": 12,
+      "name": "Sprint_Loop",
+      "variant": "source",
+      "scale": 1.621247568827334,
+      "libraryHeight": 1.8287165346555412,
+      "sourceDuration": 0.6666666865348816,
+      "cycleSeconds": 0.7430718023791947,
+      "contactTravelSamples": 73,
+      "medianContactStride": 9.779055814410968,
+      "footfalls": 0,
+      "estimatedDistancePerFootfall": null,
+      "maxFootSpan": 2.201561094925559,
+      "spanToBodyHeight": 0.7462918965849351,
+      "maxLegAngle": 55.50065949194278,
+      "minPelvis": 1.343079543197382,
+      "maxPelvis": 1.565321334220007
+    }
+  ],
+  "scope": "Actual shipped local skeleton and clips. Controlled flat-floor trajectories compare current grounding with retargeted source poses before the grounding overlay. No ordinary inputs or motion/naturalness acceptance."
+}

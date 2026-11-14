@@ -2,15 +2,16 @@
 import fs from 'node:fs';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
 const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright');
 const name=process.argv[2]??'tidelands-m5-2026-11-14-dynamic-contact',out=process.argv[3]??'dist/dynamic-contact-delivery-2026-11-14',mode=process.argv[4]??'combat',key='tidelands-save-v1';
-assert(['combat','camp','settlement'].includes(mode));
-const history=mode!=='combat'?'docs/main-mix-2026-11-05/camp-final-save.json':'dist/combat-height-recovery-2026-11-12-combat/checkpoint-save.json',sha=b=>createHash('sha256').update(b).digest('hex');
+assert(['combat','camp','settlement','motion'].includes(mode));
+const history=mode==='motion'?'docs/settlement-ground-2026-11-15/route-final-save.json':mode!=='combat'?'docs/main-mix-2026-11-05/camp-final-save.json':'dist/combat-height-recovery-2026-11-12-combat/checkpoint-save.json',sha=b=>createHash('sha256').update(b).digest('hex');
 assert(!fs.existsSync(out));fs.mkdirSync(out,{recursive:true});
 const report={package:name,mode,historySha256:sha(fs.readFileSync(history)),complete:false,logs:[],phases:[]};
 const manifest=JSON.parse(fs.readFileSync(`dist/${name}.json`));report.archiveSha256=sha(fs.readFileSync(`dist/${name}.zip`));assert.equal(report.archiveSha256,manifest.archiveSha256);
 for(const [file,row] of Object.entries(manifest.files)){assert.equal(sha(fs.readFileSync(`dist/${name}/tidelands-local/${file}`)),row.sha256);assert.equal(sha(fs.readFileSync(file==='README.md'?'docs/LOCAL-DELIVERY.md':file)),row.sha256);}
 const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
 const context=await browser.newContext({viewport:{width:mode==='camp'?390:1280,height:mode==='camp'?844:800},recordVideo:{dir:out,size:{width:960,height:600}}});
-await context.route('**/*',route=>new URL(route.request().url()).origin==='http://127.0.0.1:4190'?route.continue():route.abort());
+await context.route('**/*',route=>{const u=new URL(route.request().url());if(u.origin!=='http://127.0.0.1:4190')return route.abort();if(mode==='motion'&&u.pathname===`/dist/${name}/tidelands-local/src/scene.js`)return route.fulfill({contentType:'text/javascript',body:fs.readFileSync(`dist/${name}/tidelands-local/src/scene.js`,'utf8')+'\n'+fs.readFileSync('tools/observe_native_motion.js','utf8')});return route.continue();});
+if(mode==='motion'){report.scope='Ordinary restored porch progress, native held keys and read-only bounded skeleton observer appended to scene response. Original game/state/clock untouched. Not byte-unmodified scene module, GPU, audition or complete animation quality acceptance.';report.observerSha256=sha(fs.readFileSync('tools/observe_native_motion.js'));}
 const page=await context.newPage(),video=page.video();page.on('pageerror',e=>report.logs.push(e.message));page.on('console',e=>{if(['error','warning'].includes(e.type()))report.logs.push(e.text());});
 const press=async key=>{fs.appendFileSync(`${out}/inputs.jsonl`,JSON.stringify({key,wall:Date.now()})+'\n');await page.keyboard.press(key);};
 async function walk(key,ms){fs.appendFileSync(`${out}/inputs.jsonl`,JSON.stringify({key,ms,wall:Date.now()})+'\n');await page.keyboard.down(key);try{await page.waitForTimeout(ms);}finally{await page.keyboard.up(key);}}
@@ -19,7 +20,15 @@ async function phase(label){const s=await state();report.phases.push({label,time
 try{
  await page.goto(`http://127.0.0.1:4190/dist/${name}/tidelands-local/`);await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);await page.click('#start-button');await page.click('#pause-button');
  const chooser=page.waitForEvent('filechooser');await page.getByRole('button',{name:'导入存档',exact:true}).click();await(await chooser).setFiles(history);await page.waitForFunction(()=>!document.querySelector('#panel').open);
- let s=await phase('00-start');if(mode==='settlement'){
+ let s=await phase('00-start');if(mode==='motion'){
+  await page.evaluate(()=>{window.nativeMotionReview.active=true;});
+  const pattern=process.env.MOTION_PATTERN??'original';assert(['original','lane'].includes(pattern));report.motionPattern=pattern;
+  const sequence=pattern==='lane'?[['straight',['d'],1200],['stop',[],600],['return-straight',['a'],1200],['stop2',[],600],['diagonal',['d','s'],800],['sprint',['Shift','d','s'],1300],['stop3',[],600],['return-diagonal',['a','w'],2800],['stop4',[],600]]:[['straight',['a'],1700],['stop',[],600],['diagonal',['w','a'],1500],['stop2',[],600],['sprint',['Shift','a'],1300],['stop3',[],600],['return',['d','s'],1700],['stop4',[],600]];
+  for(const [label,keys,ms]of sequence){
+   fs.appendFileSync(`${out}/inputs.jsonl`,JSON.stringify({label,keys,ms,wall:Date.now()})+'\n');for(const k of keys)await page.keyboard.down(k);try{await page.waitForTimeout(ms);}finally{for(const k of [...keys].reverse())await page.keyboard.up(k);}await phase(label);
+  }
+  await press('Space');await page.waitForTimeout(700);await page.evaluate(()=>{window.nativeMotionReview.active=false;});const capture=await page.evaluate(()=>window.nativeMotionReview.snapshot());assert.equal(capture.dropped,0);assert(capture.frames.length>400);fs.writeFileSync(`${out}/motion-frames.json`,JSON.stringify(capture));report.motionFrames=capture.frames.length;report.droppedMotionFrames=capture.dropped;report.motionClipFrames=Object.fromEntries([...new Set(capture.frames.map(f=>f.baseClip))].map(name=>[name,capture.frames.filter(f=>f.baseClip===name).length]));if(pattern==='lane'){assert(report.motionClipFrames.Sprint_Loop>40);assert(report.motionClipFrames.Jog_Fwd_Loop>50);assert(report.motionClipFrames.Idle_Loop>50);}s=await phase('09-motion-end');assert(s.player.hp>0&&s.quest===6);
+ }else if(mode==='settlement'){
   for(const [label,x,z]of [['spawn',-70,102],['keeper',-59,94],['porch',-46,86]]){
    let reached=false;
    for(let i=0;i<100;i++){
