@@ -1,9 +1,10 @@
+import {execFileSync} from 'node:child_process';
 import fs from 'node:fs';import assert from 'node:assert/strict';import {pathToFileURL} from 'node:url';import {actorBlocksMove3D} from './actor_contact_3d_candidate.js';import {actorBlocksMove} from '../src/actor-contact.js';import {createWorld,terrain} from '../src/world.js';
 const actor={type:'crab',x:0,z:0};let checked=0;
 for(let x=-4;x<=4;x+=.25)for(let z=-4;z<=4;z+=.25)for(const [dx,dz]of [[.07,0],[-.07,0],[0,.07],[0,-.07]]){const a={x,z},b={x:x+dx,z:z+dz};assert.equal(actorBlocksMove3D(a,b,actor,()=>0),actorBlocksMove(a,b,actor));checked++;}
 assert.equal(actorBlocksMove3D({x:-4,z:0},{x:4,z:0},actor,()=>0),true);
 const root=pathToFileURL(process.cwd()+'/src/').href;
-let code=fs.readFileSync('src/game.js','utf8').replaceAll("from './",`from '${root}`);
+let code=execFileSync('git',['show','7cebaf5fe8afc9af1d38435f78db9918a1298ceb:src/game.js'],{encoding:'utf8'}).replaceAll("from './",`from '${root}`);
 const {applyDynamicContactCandidate}=await import('./dynamic_contact_candidate.mjs');
 const candidate=pathToFileURL(process.cwd()+'/tools/actor_contact_3d_candidate.js').href;
 code=applyDynamicContactCandidate(code,candidate);

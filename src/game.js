@@ -4,7 +4,7 @@ import {terrainStepAllowed} from './terrain-grid.js';
 import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_DURATION,GATHER_IMPACT,GATHER_RANGE,ENEMY_ATTACK_DURATION,ENEMY_ATTACK_IMPACT} from './action-timing.js';
 import {resourceReachDistance,resourceBlocksMove,resourceHalfSize} from './resource-contact.js';
 import {ruinBlocksMove} from './ruin-layout.js';
-import {actorRadius,actorBlocksMove,targetReachPadding} from './actor-contact.js';
+import {actorRadius,actorBlocksMove,actorBlocksMove3D,targetReachPadding} from './actor-contact.js';
 export const ITEMS={wood:'木材',stone:'石料',fiber:'纤维',berry:'浆果',shell:'贝壳',crystal:'晶石',axe:'石斧',sword:'晶石剑',meal:'烤浆果'};
 const RESOURCE_ITEMS={tree:'wood',stone:'stone',fiber:'fiber',berry:'berry',shell:'shell',crystal:'crystal'};
 const MAX_BUILDINGS=500;
@@ -120,8 +120,8 @@ function canActorMove(state,objects,from,to,mover){
   if(objects.some(o=>!isDepleted(state,o)&&(footprintBlocksMove(from,to,o,radius)??(o.type==='tree'?actorBlocksMove(from,to,o,radius,1.15):resourceBlocksMove(from,to,o,radius)))))return false;
   if(state.buildings.some(o=>o.type!=='campfire'&&actorBlocksMove(from,to,o,radius,1.65)))return false;
   if(LANDMARKS.some(o=>o.type==='ruin'?ruinBlocksMove(from,to,o,radius):o.type==='npc'?actorBlocksMove(from,to,o,radius):['cottage','lighthouse'].includes(o.type)&&actorBlocksMove(from,to,o,radius,o.type==='cottage'?3.65:2.65)))return false;
-  if(mover!==state.player&&actorBlocksMove(from,to,state.player,radius))return false;
-  return !state.enemies.some(o=>o!==mover&&o.hp>0&&actorBlocksMove(from,to,o,radius));
+  if(mover!==state.player&&actorBlocksMove3D(from,to,state.player,terrain,radius))return false;
+  return !state.enemies.some(o=>o!==mover&&o.hp>0&&actorBlocksMove3D(from,to,o,terrain,radius));
 }
 export function movePlayer(state,objects,dx,dz,dt,running=false){
   const p=state.player,length=Math.hypot(dx,dz);if(length<.01)return;
@@ -152,7 +152,7 @@ export function tick(state,dt,running=false,feedback=null,objects=[]){if(feedbac
     const speed=e.type==='boar'?4.2:2.5;let travel=speed*dt;
     if(Math.hypot(e.x-state.player.x,e.z-state.player.z)<25){
       let crowded=null,depth=0;
-      for(const other of [...LANDMARKS.filter(o=>o.type==='npc'),...state.enemies]){if(other===e||other.hp<=0)continue;const d=Math.hypot(e.x-other.x,e.z-other.z),overlap=actorRadius(e)+actorRadius(other)-d;if(overlap>depth){depth=overlap;crowded=other;}}
+      for(const other of [...LANDMARKS.filter(o=>o.type==='npc'),...state.enemies]){if(other===e||other.hp<=0)continue;const d=Math.hypot(e.x-other.x,e.z-other.z,other.type==='npc'?0:terrain(e.x,e.z)-terrain(other.x,other.z)),overlap=actorRadius(e)+actorRadius(other)-d;if(overlap>depth){depth=overlap;crowded=other;}}
       if(crowded){const before={x:e.x,z:e.z},d=Math.hypot(e.x-crowded.x,e.z-crowded.z),angle=d>1e-8?Math.atan2(e.x-crowded.x,e.z-crowded.z):[...e.id].reduce((n,c)=>n+c.charCodeAt(0),0),step=Math.min(depth+.001,travel);stepEnemy(state,objects,e,Math.sin(angle)*step,Math.cos(angle)*step);travel=Math.max(0,travel-Math.hypot(e.x-before.x,e.z-before.z));}
     }
     const distance=Math.hypot(e.x-state.player.x,e.z-state.player.z),contact=actorRadius(e)+actorRadius(state.player);if(distance<15&&Math.abs(distance-contact)>1e-8){

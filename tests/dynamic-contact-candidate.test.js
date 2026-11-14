@@ -1,9 +1,9 @@
-import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+import test from 'node:test';import assert from 'node:assert/strict';
 import {applyDynamicContactCandidate} from '../tools/dynamic_contact_candidate.mjs';
 import {actorBlocksMove3D} from '../tools/actor_contact_3d_candidate.js';
 const actor={type:'crab',x:0,z:0},flat=()=>0;
 test('adapter changes only two dynamic contacts and refuses stale source',()=>{
- const src=fs.readFileSync(new URL('../src/game.js',import.meta.url),'utf8'),out=applyDynamicContactCandidate(src,'candidate');
+ const src='actorBlocksMove(from,to,state.player,radius); o!==mover&&o.hp>0&&actorBlocksMove(from,to,o,radius); actorBlocksMove(from,to,o,radius,1.65); actorBlocksMove(from,to,o,radius,1.15)',out=applyDynamicContactCandidate(src,'candidate');
  assert(out.includes('actorBlocksMove(from,to,o,radius,1.65)'));assert(out.includes('actorBlocksMove(from,to,o,radius,1.15)'));
  assert.equal((out.match(/actorBlocksMove3D\(from,to,/g)||[]).length,2);assert.throws(()=>applyDynamicContactCandidate(out,'candidate'));
 });
