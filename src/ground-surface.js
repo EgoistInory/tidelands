@@ -1,4 +1,5 @@
 import * as THREE from '../vendor/three.module.min.js';
+import {settlementGroundGLSL} from './settlement-ground.js';
 
 // CC0 source and channel hashes are kept beside the local textures.
 export function createGroundSurface(detail,{loader=new THREE.TextureLoader(),anisotropy=1,landscape=false,rockSurface}={}){
@@ -60,8 +61,16 @@ export function createGroundSurface(detail,{loader=new THREE.TextureLoader(),ani
       #ifdef GROUND_LANDSCAPE
         varying vec2 landscapeLayers;varying vec3 landscapeNormal;
       #endif
-      varying vec3 groundPosition;varying float groundSlope;\n${shader.fragmentShader}`
+      varying vec3 groundPosition;varying float groundSlope;
+      #ifdef GROUND_LANDSCAPE
+      ${settlementGroundGLSL}
+      #endif\n${shader.fragmentShader}`
       .replace('#include <map_fragment>',`
+        float settlementBlend=0.,settlementDetail=1.;
+        #ifdef GROUND_LANDSCAPE
+          settlementBlend=settlementWear(groundPosition.xz)*(1.-smoothstep(.07,.17,groundSlope))*smoothstep(2.5,4.,groundPosition.y);
+          if(settlementBlend>0.){settlementDetail=.65+.7*settlementGrain(groundPosition.xz*1.7);settlementBlend*=.65+.35*settlementGrain(groundPosition.xz*3.1);}
+        #endif
         float rockBlend=0.,litterBlend=0.;vec3 rockColor=vec3(1.),rockWeights=vec3(0.,1.,0.);
         vec2 rockX=groundPosition.zy*.33,rockY=groundPosition.xz*.33,rockZ=groundPosition.xy*.33;
         #ifdef GROUND_LANDSCAPE
@@ -90,10 +99,13 @@ export function createGroundSurface(detail,{loader=new THREE.TextureLoader(),ani
         diffuseColor.rgb=mix(diffuseColor.rgb,mix(grassColor,biomeGrass,.85),grassBlend);
         diffuseColor.rgb=mix(diffuseColor.rgb,diffuseColor.rgb*vec3(.72,.65,.48)*(1.+grassDetail),litterBlend);
         diffuseColor.rgb=mix(diffuseColor.rgb,rockColor*.78+diffuseColor.rgb*.22,rockBlend);
-        diffuseColor.rgb*=mix(1.,.64,shoreWetness);`)
+        diffuseColor.rgb*=mix(1.,.64,shoreWetness);
+        vec3 wornSoil=mix(vec3(.10,.073,.039),vec3(.23,.17,.095),clamp(sandDetail*.55,0.,1.))*settlementDetail;
+        diffuseColor.rgb=mix(diffuseColor.rgb,wornSoil,settlementBlend*mix(.78,1.,baseDetail.r));`)
       .replace('#include <roughnessmap_fragment>',THREE.ShaderChunk.roughnessmap_fragment.replace('roughnessFactor *= texelRoughness.g;','roughnessFactor *= mix(mix(1.,texture2D(groundSandRoughness,vRoughnessMapUv).g,sandBlend),texelRoughness.g,grassBlend);')+`
         float rockRoughness=texture2D(groundRockRoughness,rockX).g*rockWeights.x+texture2D(groundRockRoughness,rockY).g*rockWeights.y+texture2D(groundRockRoughness,rockZ).g*rockWeights.z;
         roughnessFactor=mix(roughnessFactor,rockRoughness,rockBlend);
+        roughnessFactor=mix(roughnessFactor,.9,settlementBlend);
         roughnessFactor=mix(roughnessFactor,.28,shoreWetness);`)
       .replace('#include <normal_fragment_maps>',`
         vec3 baseNormal=perturbNormalArb(-vViewPosition,normal,dHdxy_fwd(),faceDirection);
@@ -108,8 +120,9 @@ export function createGroundSurface(detail,{loader=new THREE.TextureLoader(),ani
           vec3 rockPerturb=(vec3(0.,nx.y,nx.x)*rockWeights.x+vec3(ny.x,0.,ny.y)*rockWeights.y+vec3(nz.x,nz.y,0.)*rockWeights.z)*.38;
           vec3 rockWorldNormal=normalize(normalize(landscapeNormal)+rockPerturb);
           normal=normalize(mix(normal,mat3(viewMatrix)*rockWorldNormal,rockBlend));
-        #endif`);
+        #endif
+        normal=normalize(mix(normal,normalize(tbn*shoreNormal),settlementBlend*groundSandReady*.8));`);
   };
-  material.customProgramCacheKey=()=> 'tidelands-ground-landscape-v5-'+landscape;
+  material.customProgramCacheKey=()=> 'tidelands-ground-landscape-v6-'+landscape;
   return material;
 }

@@ -219,7 +219,7 @@ export class WorldView{
     this.islanders=[];
     for(const o of LANDMARKS){const g=landmarkModel(o,this.rockSurface);g.position.set(o.x,terrain(o.x,o.z),o.z);if(o.type==='ruin')this.cameraObstacles.push({object:o,boxes:g.userData.cameraBoxes.map(box=>box.clone().translate(g.position))});if(o.type==='npc'){animateCharacter(g,{x:o.x,z:o.z,yaw:0,time:0,attackAt:-100,selected:'hand'},0,terrain);this.islanders.push({object:o,model:g});}this.scene.add(g);if(o.type==='lighthouse')this.lighthouse=g;}
     const random=randomGenerator(4321);
-    this.meadow=[...createMeadow(random,this.world.objects,this.groundHeight),...createShoreStones()];this.scene.add(...this.meadow);
+    this.meadow=[...createMeadow(random,this.world.objects,this.groundHeight,{settlement:true}),...createShoreStones()];this.scene.add(...this.meadow);
     this.sky=createSky();this.scene.add(this.sky);
   }
   updateIslanders(state,near,dt){

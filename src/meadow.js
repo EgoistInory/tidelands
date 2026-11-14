@@ -2,6 +2,7 @@ import * as THREE from '../vendor/three.module.min.js';
 import {terrain,layoutTerrain,LANDMARKS,SPAWN,ISLANDS,randomGenerator} from './world.js';
 import {landscapeMass} from './landscape.js';
 import {seatMeadowRoots} from './ground-support.js';
+import {settlementWearAt} from './settlement-ground.js';
 
 const windTime={value:0};
 const windStrength={value:1};
@@ -286,7 +287,7 @@ export function createForestCover(objects,groundHeight){
   return regionBatches(createFernClump(),matrices,'meadow-fern',32,colors,groundHeight);
 }
 
-export function createMeadow(random=randomGenerator(4321),objects=[],groundHeight=null){
+export function createMeadow(random=randomGenerator(4321),objects=[],groundHeight=null,{settlement=false}={}){
   const dummy=new THREE.Object3D(),flowers=[],grass=[];
   for(let i=0;i<3000&&flowers.length<1200;i++){
     const x=random()*440-260,z=random()*450-290,y=layoutTerrain(x,z);if(y<2||y>28)continue;
@@ -297,5 +298,11 @@ export function createMeadow(random=randomGenerator(4321),objects=[],groundHeigh
     if(y<2.4||y>33||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<5)||Math.sin(x*.11)*Math.cos(z*.13)<-.5)continue;
     dummy.position.set(x,terrain(x,z)-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);const scale=.7+random()*.9;dummy.scale.set(scale,scale*(.4+landscapeMass(x,z)*.85),scale);dummy.updateMatrix();grass.push(dummy.matrix.clone());
   }
-  return [...regionBatches(createWildflower(),flowers,'meadow-flowers',128,[],groundHeight),...regionBatches(createGrassClump(),grass,'meadow-grass',128,[],groundHeight),...createGroundCover(groundHeight),...createShoreCover(groundHeight),...createForestCover(objects,groundHeight)];
+  const batches=[...regionBatches(createWildflower(),flowers,'meadow-flowers',128,[],groundHeight),...regionBatches(createGrassClump(),grass,'meadow-grass',128,[],groundHeight),...createGroundCover(groundHeight),...createShoreCover(groundHeight),...createForestCover(objects,groundHeight)];
+  if(settlement)for(const batch of batches){
+    const data=batch.instanceMatrix.array;let hidden=0;
+    for(let i=0;i<batch.count;i++){const at=i*16;if(settlementWearAt(data[at+12],data[at+14])>.36){data[at+13]=-10000;hidden++;}}
+    if(hidden){batch.instanceMatrix.needsUpdate=true;batch.userData.settlementHidden=hidden;}
+  }
+  return batches;
 }

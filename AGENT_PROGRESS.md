@@ -2,8 +2,14 @@
 
 更新时间：2026-11-15
 status: in_progress
-stage: M5_shared_atmosphere_delivered_next_coastal_composition
-next_action: 海岸营地—林缘分带候选已生成（tools/coastal_route_candidate.js），3种共享实例批次、营地/路径/资源净空与真实地形根部，2针对性测试通过，见docs/COASTAL-ROUTE-CANDIDATE.md及数量SHA报告。下一直接在隔离真实营地/林缘中看完整行走镜位与390画面，并检查低物支撑/旧建筑净空；成组取舍，勿回单草叶/海浪参数。生产212输入/57f73025正式包未改；整体M5/3A仍未完，2048保留。
+stage: M5_settlement_ground_delivered_next_whole_motion_composition
+next_action: 海岸低物候选已实际对照拒用，不再小物循环；连续聚落磨损地面/装饰净空正式交付，426测试、12图有界审看，新214条包a2d88c8b原生夜间步行营地→阿岚交谈→门廊、390夜营和完整保存刷新通过，见docs/SETTLEMENT-GROUND-DELIVERY.md。当前普通继续点docs/settlement-ground-2026-11-15/route-final-save.json（主线6/20击败/HP100/17浆果），旧档保持。下一整组处理人物/生物完整运动与聚落前中远景主要观感，不再单脚曲线、低物或地面/海浪参数轮调。M5/3A未完，2048保留。
+
+## 2026-11-15 聚落地面/动线正式交付
+
+见docs/SETTLEMENT-GROUND-DELIVERY.md，低物232实例实际12图未形成整体分带而拒用；转营地—阿岚—门廊连续地面/装饰净空，426测试、最终12图有界审看及新214条包a2d88c8b原始index实际夜间步行/交谈/完整保存刷新、390夜营恢复步行通过，console空/GL0。原始输入、最终普通继续档和代表图保存在docs/settlement-ground-2026-11-15，视频dist保留。新普通继续点位于门廊，源自既有main-mix营地档连续行走，非历史战斗分支合并，旧档/包保持。
+
+无新增媒体/贴图/绘制批次，初版平涂只补一轮既有沙土法线与程序磨损后收口。不称完整聚落美术/自然动作/真机/GPU或3A通过；下一主要人物/生物完整运动与聚落前中远景，不回小物/土色/海浪参数。实时额度恢复0%后继续，历史goal不强改，无购买/重置券/付费API/公网部署，2048保留，按授权同步。
 
 ## 2026-11-15 海岸分带构图候选检查点
 
