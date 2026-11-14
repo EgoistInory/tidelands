@@ -16,20 +16,13 @@ export function skyPalette(time,cloudiness=0){
   return {horizon,zenith,cloud,light};
 }
 
-export function createSky(){
-  const palette=skyPalette(240);
-  const material=new THREE.ShaderMaterial({
-    side:THREE.BackSide,depthWrite:false,depthTest:false,fog:false,
-    uniforms:{time:{value:0},origin:{value:new THREE.Vector2()},horizon:{value:palette.horizon},zenith:{value:palette.zenith},cloud:{value:palette.cloud},light:{value:palette.light},cloudiness:{value:0},sunlight:{value:1}},
-    vertexShader:`varying vec3 direction;
-      void main(){direction=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`,
-    fragmentShader:`varying vec3 direction;
-      uniform float time,light,cloudiness,sunlight;uniform vec2 origin;uniform vec3 horizon,zenith,cloud;
+// One atmospheric field drives the visible sky and the sea reflection.
+export const atmosphereGLSL=`
       float hash(vec2 p){vec3 q=fract(vec3(p.xyx)*.1031);q+=dot(q,q.yzx+33.33);return fract((q.x+q.y)*q.z);}
       float noise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.0-2.0*f);
         return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x),f.y);}
       float layers(vec2 p){float n=0.0,a=.55;for(int i=0;i<4;i++){n+=noise(p)*a;p=p*2.07+vec2(13.1,7.7);a*=.5;}return n;}
-      void main(){
+      vec3 sampleAtmosphere(vec3 direction,vec2 origin,float time,vec3 horizon,vec3 zenith,vec3 cloud,float light,float cloudiness,float sunlight){
         vec3 d=normalize(direction);float elevation=max(d.y,0.0);
         vec3 color=mix(horizon,zenith,pow(elevation,.45));
         // A distant cloud sheet: soft density edges and shaded bases, without opaque faceted puffs.
@@ -40,6 +33,22 @@ export function createSky(){
         vec3 sunDirection=normalize(vec3(-70.0,100.0,40.0));
         float glow=pow(max(dot(d,sunDirection),0.0),32.0)*light*sunlight*(1.0-coverage)*.12;
         color+=vec3(1.0,.83,.60)*glow;
+        return color;
+      }
+`;
+
+export function createSky(){
+  const palette=skyPalette(240);
+  const material=new THREE.ShaderMaterial({
+    side:THREE.BackSide,depthWrite:false,depthTest:false,fog:false,
+    uniforms:{time:{value:0},origin:{value:new THREE.Vector2()},horizon:{value:palette.horizon},zenith:{value:palette.zenith},cloud:{value:palette.cloud},light:{value:palette.light},cloudiness:{value:0},sunlight:{value:1}},
+    vertexShader:`varying vec3 direction;
+      void main(){direction=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`,
+    fragmentShader:`varying vec3 direction;
+      uniform float time,light,cloudiness,sunlight;uniform vec2 origin;uniform vec3 horizon,zenith,cloud;
+      ${atmosphereGLSL}
+      void main(){
+        vec3 color=sampleAtmosphere(direction,origin,time,horizon,zenith,cloud,light,cloudiness,sunlight);
         gl_FragColor=vec4(color,1.0);
         #include <tonemapping_fragment>
         #include <colorspace_fragment>

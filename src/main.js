@@ -173,7 +173,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     look:(dx,dy)=>{const turn=-dx*.006;view.yaw+=turn;movementHeading.turn(turn);view.pitch=Math.max(.08,Math.min(1.15,view.pitch-dy*.004));},
     zoom:delta=>{view.distance=Math.max(12,Math.min(45,view.distance+delta*.02));}
   });
-  window.addEventListener('resize',()=>view.resize());window.addEventListener('pagehide',event=>{preparation.abort();save();if(!event.persisted){view.inland?.release();view.coastal?.release();view.authoredCast?.release();view.woodlandDressing?.release();view.impacts.dispose();}});
+  window.addEventListener('resize',()=>view.resize());window.addEventListener('pagehide',event=>{preparation.abort();save();if(!event.persisted){view.inland?.release();view.coastal?.release();view.authoredCast?.release();view.woodlandDressing?.release();view.impacts.dispose();view.finish?.dispose();}});
   window.addEventListener('pageshow',event=>{
     if(event.persisted&&!prepared&&!renderLost){
       $('load-status').textContent='准备已中断。重新加载可继续。';$('start-button').textContent='重新加载';

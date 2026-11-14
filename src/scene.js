@@ -21,7 +21,8 @@ import {visibleGroundSampler} from './ground-support.js';
 import {TERRAIN_SIZE,TERRAIN_SEGMENTS} from './terrain-grid.js';
 import {createWeatheredRock,initializeRockSurface} from './rock.js';
 import {createMeadow,createFiberClump,updateMeadow,updateGroundCover,updateCampClearance} from './meadow.js';
-import {createSky,updateSky} from './sky.js';
+import {createSky,updateSky,skyPalette,atmosphereGLSL} from './sky.js';
+import {createSceneFinish} from './scene-finish.js';
 import {createCampBuilding} from './camp-architecture.js';
 import {createFlame,updateCampfire} from './campfire.js';
 import {createCrystalDeposit} from './crystal.js';
@@ -111,7 +112,7 @@ export class WorldView{
     // One nearby fire light keeps the lighting cost bounded as camps grow.
     this.fireLight=new THREE.PointLight(0xffac52,0,18,1.5);this.scene.add(this.fireLight);
     this.marker=new THREE.Mesh(new THREE.RingGeometry(1.8,2,40),new THREE.MeshBasicMaterial({color:0xf2d58f,side:THREE.DoubleSide,transparent:true,opacity:.85}));this.marker.rotation.x=-Math.PI/2;this.scene.add(this.marker);
-    this.preview=new THREE.Group();this.scene.add(this.preview);this.resize();
+    this.preview=new THREE.Group();this.scene.add(this.preview);this.finish=createSceneFinish(this.renderer);this.resize();
   }
   installAuthoredCast(cast){
     if(this.authoredCast)throw Error('Authored cast already installed');
@@ -146,28 +147,39 @@ export class WorldView{
       heights[i]=heights[i+1]=heights[i+2]=encoded;heights[i+3]=255;
     }
     const depthMap=new THREE.DataTexture(heights,size,size);depthMap.magFilter=depthMap.minFilter=THREE.LinearFilter;depthMap.needsUpdate=true;
-    this.waterUniforms={time:{value:0},light:{value:1},sunlight:{value:1},windStrength:{value:1},terrainMap:{value:depthMap},skyColor:{value:this.scene.fog.color},fogRange:{value:new THREE.Vector2(this.scene.fog.near,this.scene.fog.far)}};
+    const palette=skyPalette(240);
+    this.waterUniforms={skyZenith:{value:palette.zenith},skyCloud:{value:palette.cloud},skyLight:{value:palette.light},cloudiness:{value:0},skyOrigin:{value:new THREE.Vector2()},time:{value:0},light:{value:1},sunlight:{value:1},windStrength:{value:1},terrainMap:{value:depthMap},skyColor:{value:this.scene.fog.color},fogRange:{value:new THREE.Vector2(this.scene.fog.near,this.scene.fog.far)}};
     const waterMaterial=new THREE.ShaderMaterial({uniforms:this.waterUniforms,transparent:true,depthWrite:false,
       vertexShader:`varying vec3 world;uniform float time,windStrength;
         void main(){vec3 p=position;p.y+=(sin(p.x*.13+time*.6)*.10+cos(p.z*.17+time*.8)*.10)*windStrength;
         world=(modelMatrix*vec4(p,1.)).xyz;gl_Position=projectionMatrix*viewMatrix*vec4(world,1.);}`,
-      fragmentShader:`varying vec3 world;uniform float time;uniform float light;uniform float sunlight;uniform float windStrength;uniform sampler2D terrainMap;uniform vec3 skyColor;uniform vec2 fogRange;
+      fragmentShader:`varying vec3 world;uniform float time;uniform float light;uniform float sunlight;uniform float windStrength;uniform sampler2D terrainMap;uniform vec3 skyColor,skyZenith,skyCloud;uniform float skyLight,cloudiness;uniform vec2 fogRange,skyOrigin;
+        ${atmosphereGLSL}
         void main(){
           vec2 uv=world.xz/800.+.5;
           float inside=step(0.,uv.x)*step(uv.x,1.)*step(0.,uv.y)*step(uv.y,1.);
           float floorHeight=mix(-20.,texture2D(terrainMap,uv).r*80.-20.,inside);
           float depth=max(0.,world.y-floorHeight);
-          vec3 shallow=vec3(.19,.48,.43),deep=vec3(.035,.18,.24);
-          vec3 col=mix(shallow,deep,1.-exp(-depth*.16));
-          float ripple=sin(world.x*.8+world.z*.3+time*1.2)*.035;
-          vec3 normal=normalize(vec3((-cos(world.x*.13+time*.6)*.013+ripple)*windStrength,1.,(sin(world.z*.17+time*.8)*.017+ripple)*windStrength));
-          vec3 eye=normalize(cameraPosition-world);
-          float fresnel=.025+.58*pow(1.-max(dot(normal,eye),0.),5.);
-          col=mix(col,skyColor,fresnel);
-          float glint=pow(max(dot(reflect(-normalize(vec3(-.7,1.,.4)),normal),eye),0.),110.);
+          vec3 shallow=vec3(.13,.37,.30),deep=vec3(.018,.075,.11);
+          vec3 col=mix(shallow,deep,1.-exp(-depth*.16))*light;
+          // Crossing wave trains replace the old single-direction striped normal field.
+          vec2 q=world.xz;
+          vec2 slope=vec2(.75,.66)*cos(dot(q,vec2(.75,.66))*.17-time*.7)*.045;
+          slope+=vec2(-.5,.866)*cos(dot(q,vec2(-.5,.866))*.29+time*.91)*.032;
+          slope+=vec2(.96,-.28)*cos(dot(q,vec2(.96,-.28))*.63-time*1.23)*.022;
+          float detail=1.-smoothstep(.1,.8,length(fwidth(q)));
+          slope+=vec2(-.24,-.97)*cos(dot(q,vec2(-.24,-.97))*1.19+time*1.47)*.018*detail;
+          vec3 normal=normalize(vec3(-slope.x*windStrength,1.,-slope.y*windStrength));
+          vec3 eye=normalize(cameraPosition-world),reflected=reflect(-eye,normal);
+          reflected.y=max(reflected.y,.015);
+          vec3 environment=sampleAtmosphere(reflected,skyOrigin,time,skyColor,skyZenith,skyCloud,skyLight,cloudiness,sunlight);
+          float fresnel=.02+.98*pow(1.-max(dot(normal,eye),0.),5.);
+          col=mix(col,environment,fresnel);
+          vec3 halfVector=normalize(eye+normalize(vec3(-.7,1.,.4)));
+          float glint=pow(max(dot(normal,halfVector),0.),350.);
           float foam=(1.-smoothstep(.1,1.25,depth))*smoothstep(.48,.8,sin(depth*7.-time*1.7+sin(world.x*.6+world.z*.7))*.5+.5);
-          col=mix(col,vec3(.77,.86,.77),foam*.65);
-          col=col*light+vec3(1.,.84,.61)*glint*sunlight*.45;
+          col=mix(col,vec3(.77,.86,.77)*light,foam*.65);
+          col+=vec3(1.,.84,.61)*glint*sunlight*1.8;
           col=mix(col,skyColor,smoothstep(fogRange.x,fogRange.y,length(cameraPosition-world)));
           gl_FragColor=vec4(col,mix(.46,.94,1.-exp(-depth*.35)));
           #include <tonemapping_fragment>
@@ -273,6 +285,10 @@ export class WorldView{
     this.scene.fog.near=weather.fogNear;this.scene.fog.far=weather.fogFar;
     updateSky(this.sky,time,this.camera,this.scene.fog,weather);
     this.scene.background.copy(this.scene.fog.color);
+    const skyUniforms=this.sky.material.uniforms;
+    this.waterUniforms.skyZenith.value.copy(skyUniforms.zenith.value);this.waterUniforms.skyCloud.value.copy(skyUniforms.cloud.value);
+    this.waterUniforms.skyLight.value=skyUniforms.light.value;this.waterUniforms.cloudiness.value=weather.cloudiness;
+    this.waterUniforms.skyOrigin.value.copy(skyUniforms.origin.value);
     this.waterUniforms.time.value=time;this.waterUniforms.light.value=(.15+daylight*.85)*weather.skylight;
     this.waterUniforms.sunlight.value=daylight*weather.sunlight;
     this.waterUniforms.windStrength.value=weather.windStrength;
@@ -314,6 +330,6 @@ export class WorldView{
     if(this.nightLight){this.nightLight.position.set(p.x+70,h+90,p.z-40);this.nightLight.target.position.set(p.x,h,p.z);}
     this.marker.visible=Boolean(near)&&!placement;if(near)this.marker.position.set(near.x,Math.max(.3,terrain(near.x,near.z))+.08,near.z);
     if(placement){this.preview.visible=true;this.preview.position.set(placement.x,terrain(placement.x,placement.z),placement.z);this.preview.traverse(o=>{if(o.isMesh)o.material.color.set(placement.error?0xe08568:0xa6dd9b);});}else this.preview.visible=false;
-    this.renderer.render(this.scene,this.camera);
+    if(this.finish)this.finish.render(this.scene,this.camera);else this.renderer.render(this.scene,this.camera);
   }
 }

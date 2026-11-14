@@ -2,8 +2,14 @@
 
 更新时间：2026-11-15
 status: in_progress
-stage: M5_contact_delivered_next_whole_scene_finish
-next_action: 动态接触正式接入/420测试/独立211输入包原生下坡实战与精确保存恢复通过，见docs/DYNAMIC-CONTACT-DELIVERY.md；此组收口不重复。已下载固定版Saltline源码并核实程序生成/缓存、湿地材质、天空/后期和像素预算，见docs/SALTLINE-SOURCE-ANALYSIS.md。下一直接落实整场光照接触/高光后期，同镜头四岛/日夜对照与实际移动验证，不再单模型循环。旧main-mix营地普通继续点保持；M5/3A未完，2048保留。
+stage: M5_shared_atmosphere_delivered_next_coastal_composition
+next_action: 海天共享程序场/交叉波面+整场HDR接触与高光批次已正式接入，422测试、同镜头四岛/日夜有界审看和213条新包桌面普通实战/390夜营步行及完整保存刷新通过，见docs/ATMOSPHERE-FINISH-DELIVERY.md。此组收口，不再单波形或后期参数循环。下一完成海岸营地—林缘的整体可玩构图，用共享程序化岩/木/草改善稀疏/重复感，再按整段体验推广与减体积。既有主线/普通继续点保持；M5/3A未完、2048保留。
+
+## 2026-11-15 海天/整场光照正式交付
+
+见docs/ATMOSPHERE-FINISH-DELIVERY.md，212运行输入/213条新R2包57f73025，422测试，四岛日夜同镜头20图有界审看及M2/Metal固定小样本GPU P95桌面12.69→13.70/窄屏7.65→7.74ms（非严格对照），释放回基线计数。首轮缺MSAA黑叶片实际图拒绝后修复，首合并QA闭包错误留证后修正。原始解压index桌面普通历史档下坡战斗19→20/食用100、390现有普通夜营档按键步行，两端完整保存刷新保持、console空/GL0。原始视频留dist，代表图/输入/报告和SHA在docs。
+
+新程序化模块压缩只增加约3KB，未压减树资产。统一海天与高光不是整体3A完成，重复地面/稀疏植被/规则崖台/人物自然度等仍明显；下一直接海岸营地到林缘完整可玩区域构图，不回单海浪/后期参数。首组836538b已经普通推送并独立核对远近HEAD一致；本组按授权同步。实时额度允许，历史goal usageLimited不强改、无购买/券/付费API/公网部署，2048保留。
 
 ## 2026-11-15 动态接触交付与Saltline源审
 
