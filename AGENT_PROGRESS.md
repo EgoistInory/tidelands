@@ -2,8 +2,14 @@
 
 更新时间：2026-11-15
 status: in_progress
-stage: M5_current_full_frame_journey_checkpoint_camera_red
-next_action: 最新22335602/215输入包的1080p与高DPI390完整HDR十分钟普通海岸—林地/采集/实战/返原营火及保存恢复补证收口，见docs/SETTLEMENT-FOREST-JOURNEY.md；438测试通过。镜头仍RED：桌面162.58°、窄屏94.54°且各3次>45°。docs/settlement-forest-2026-11-15/camera-input-cases.json含3个真实完整输入，replay_journey_camera_inputs.mjs按原算法误差≤3.6e-15米。下一基于这些用例重新设计独立镜头策略并验证实体安全/连续性/构图，勿第四轮旧平滑/阈值调参，勿重跑本组长跑或单脚/树/院道具轮调。普通继续点为docs/settlement-forest-2026-11-15/desktop-final-save.json（同一门廊分支返原营火，22击败/木4/浆果19/HP100）。生产src和22335602包不变；M5/3A、试听/真机/全场景性能仍未完，2048保留。
+stage: M5_independent_camera_policy_candidate
+next_action: 已以3个真实完整输入完成独立相机路径/前景淡出QA候选，见docs/CAMERA-POLICY-CANDIDATE.md及设计/计划。10新测/448全量、1280/390共12图，原94.54/91.51/69.81°变1.44/1.19/.36°，实体外/代表姿态全顶点入框/GL0/状态不变，但只是单步+淡出缓入，未普通连续验收。下一收口地形视线（terrainOccluded明确unresolved）、多障碍路径、静态根对象精确筛选和有界连续画面/实际成本，再原生短路/生产/包；勿再跑旧平滑角阈值或两个十分钟长跑，不改单脚/树/院道具。生产src、22335602/215输入和普通继续点docs/settlement-forest-2026-11-15/desktop-final-save.json保持。M5/3A未完，2048保留。
+
+## 2026-11-15 独立镜头策略候选
+
+见docs/CAMERA-POLICY-CANDIDATE.md。确认原镜头点均在盒外，但视线受阻/6米偏好强制全局换轨导致大跳；不再旧函数参数轮调。新QA控制器将镜头路径和主体可见性分离，配静态前景局部可逆淡出。10新测/448全量、12同输入对照通过，三例缩为1.44/1.19/.36度，无盒内/代表姿态出框，GL0/console空、世界档案保持。
+
+尚未推广：山脊视线明确unresolved，多障碍连续轨迹/根对象筛选/淡出运动自然度及成本仍待，下一有界连续/原生短路和交付。生产215输入/22335602、22击败原营地继续点与旧档保持，无付费/API/重置券/网站部署，M5/3A和2048继续。
 
 ## 2026-11-15 连续旅程与总帧预算检查点
 

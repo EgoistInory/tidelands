@@ -1,0 +1,60 @@
+TAP version 13
+# Subtest: actual field frame5561: connected endpoint without an orbit jump
+ok 1 - actual field frame5561: connected endpoint without an orbit jump
+  ---
+  duration_ms: 16.266708
+  type: 'test'
+  ...
+# Subtest: actual field frame41865: connected endpoint without an orbit jump
+not ok 2 - actual field frame41865: connected endpoint without an orbit jump
+  ---
+  duration_ms: 4.757958
+  type: 'test'
+  location: '/Users/huxiaocong/Codex/tidelands/tests/camera-controller-candidate.test.js:4:22'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/huxiaocong/Codex/tidelands/tests/camera-controller-candidate.test.js:9:79)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: actual field frame44647: connected endpoint without an orbit jump
+ok 3 - actual field frame44647: connected endpoint without an orbit jump
+  ---
+  duration_ms: 3.10775
+  type: 'test'
+  ...
+# Subtest: camera routes around a solid wall and reaches the requested side without crossing it
+ok 4 - camera routes around a solid wall and reaches the requested side without crossing it
+  ---
+  duration_ms: 2.44075
+  type: 'test'
+  ...
+# Subtest: explicit inside-camera recovery is finite and leaves saved state and obstacle boxes untouched
+ok 5 - explicit inside-camera recovery is finite and leaves saved state and obstacle boxes untouched
+  ---
+  duration_ms: 0.283833
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 4
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 94.613375
