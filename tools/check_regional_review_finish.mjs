@@ -1,0 +1,17 @@
+// Declared scene-composition preview: verify the actual production finish, not raw forward-only screenshots.
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {execFileSync} from 'node:child_process';import {guardCameraQaRoute} from './camera_policy_qa.mjs';
+const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright'),out=process.argv[2];assert(out&&!fs.existsSync(out));fs.mkdirSync(out,{recursive:true});
+const before=execFileSync('git',['show','051d5ad:tests/regional-landform-review.html'],{encoding:'utf8'}),after=fs.readFileSync('tests/regional-landform-review.html','utf8'),report={complete:false,rows:[],logs:[],scope:'Browser plugin absent; installed headless Metal. Declared no-storage fixed-camera coast/forest fixture, before raw forward vs production HDR finish; not ordinary play, GPU timing, natural motion or full3A.'};
+const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
+try{for(const width of [1280,390])for(const variant of ['before','after']){
+ const context=await browser.newContext({viewport:{width,height:width===390?844:800}});try{
+ await context.route('**/*',guardCameraQaRoute(r=>{const u=new URL(r.request().url());if(u.origin!=='http://127.0.0.1:4190')return r.abort();if(u.pathname==='/tests/regional-landform-review.html')return r.fulfill({contentType:'text/html',body:(variant==='before'?before:after).replace('window.regionalReview={reset,snapshot,move,sites};','window.regionalReview={reset,snapshot,move,sites,view};')});return r.continue();},report.logs));
+ const page=await context.newPage();page.setDefaultTimeout(90000);page.on('pageerror',e=>report.logs.push(e.message));page.on('console',e=>{if(['warning','error'].includes(e.type()))report.logs.push(e.text());});await page.goto('http://127.0.0.1:4190/tests/regional-landform-review.html');await page.waitForFunction(()=>!!window.regionalReview);
+ for(const site of ['coast','forest']){const row=await page.evaluate(site=>{const r=window.regionalReview,view=r.view,render=view.renderer.render;let passes=0;view.renderer.render=function(...a){passes++;return render.apply(this,a);};let snapshot;try{r.reset(site,'middle');passes=0;r.reset(site,'middle');snapshot=r.snapshot();}finally{view.renderer.render=render;}return {passes,finish:!!view.finish,...snapshot};},site);
+ // reset calls one complete draw then one fixed view: HDR4+raw1 before; HDR4+HDR4 after.
+ assert(row.finish);assert.equal(row.passes,variant==='before'?5:8);assert(row.stateUnchanged&&row.worldUnchanged&&row.glError===0);const image=`${width}-${site}-${variant}.jpg`;await page.screenshot({path:path.join(out,image),type:'jpeg',quality:86});report.rows.push({width,variant,site,image,...row});}
+ if(width===390&&variant==='after'){await page.click('#move');await page.waitForFunction(()=>window.regionalReview.snapshot().motion?.complete);report.motion=await page.evaluate(()=>window.regionalReview.snapshot());assert(report.motion.motion.distance>1&&report.motion.glError===0&&report.motion.worldUnchanged);}
+ assert.equal(await page.evaluate(()=>localStorage.length),0);
+ }finally{await context.close();}}
+ assert.deepEqual(report.logs,[]);report.complete=true;
+}catch(e){report.error=e.stack;process.exitCode=1;console.error(e.stack);}finally{try{await browser.close();}finally{fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2)+'\n');}}
