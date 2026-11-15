@@ -5,6 +5,10 @@ status: in_progress
 stage: M5_connected_camera_limited_delivery
 next_action: 连续镜头有限组已交付，见docs/CAMERA-POLICY-DELIVERY.md；456测试/7打包，声明12段及双端原生林缘回营/手势，最终0eb90b4e正式R2/217输入在1280/390原始解压入口步行、保存及实际规范化导出恢复通过。冷却重置导致的窄屏原始失败和首重复引擎/首塔楼恢复失败保留，不重写。下一直接整段可玩区域前中远景与动作声音的主要差距，不再单树/单后期或同组镜头打磨。普通继续点docs/settlement-forest-2026-11-15/desktop-final-save.json/22击败保持；M5/3A未完，2048保留。
 
+## 2026-11-16 预览统计边界
+
+正式HDR固定图的renderer.info只剩最后合成pass（1次绘制/1三角），不是整帧成本。为预览render字段补充显式scope，保留既有字段兼容与历史8图；HTML模块语法通过。未据此声称性能提升，生产217输入/0eb90b4e包和存档不变。下一整体构图仍按实际画面推进；实时额度普通允许但周额度99%，保留可恢复点，不买额度/用券，M5/3A继续。
+
 ## 2026-11-16 整场构图预览修正
 
 下一整场构图前核对实际渲染，发现regional-landform-review固定镜头绕过正式HDR finish。仅修QA固定绘制并在声明固定镜头禁用旧跟随视角的淡出残留，生产217输入/0eb90b4e包和普通档保持。1280/390海岸/林地前后8图：一次普通draw加固定图，实测5pass(4+1)变8pass(4+4)，GL0/console空、世界/静态状态保持；390真实fixture按钮360帧移动通过，无存储。报告/代表图/SHA见docs/regional-review-finish-2026-11-16。不是普通主线、GPU或3A通过，旧报告不追改。
