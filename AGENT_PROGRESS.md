@@ -2,8 +2,14 @@
 
 更新时间：2026-11-15
 status: in_progress
-stage: M5_settlement_yard_delivered_next_whole_journey
-next_action: 修船院整组已正式接线与独立包原生交付，见docs/FISHING-YARD-DELIVERY.md。434规则/7打包、16日夜同镜头图、75历史档和最终0合法放置相交、1280/390原生院前阻挡/退开/返回及完整JSON恢复通过；新216条/215输入包22335602。普通继续点docs/yard-delivery-2026-11-15/desktop-final-save.json（同一原门廊分支，旧档保留）。本整组收口，不再船漆/单箱/足曲线轮调；下一直接海岸—林缘完整探索战斗的主要整体构图与动作/反馈差距，保留镜头全局突转/试听/真机/最新长时GPU待办。M5五项/3A未完，2048保留。
+stage: M5_current_full_frame_journey_checkpoint_camera_red
+next_action: 最新22335602/215输入包的1080p与高DPI390完整HDR十分钟普通海岸—林地/采集/实战/返原营火及保存恢复补证收口，见docs/SETTLEMENT-FOREST-JOURNEY.md；438测试通过。镜头仍RED：桌面162.58°、窄屏94.54°且各3次>45°。docs/settlement-forest-2026-11-15/camera-input-cases.json含3个真实完整输入，replay_journey_camera_inputs.mjs按原算法误差≤3.6e-15米。下一基于这些用例重新设计独立镜头策略并验证实体安全/连续性/构图，勿第四轮旧平滑/阈值调参，勿重跑本组长跑或单脚/树/院道具轮调。普通继续点为docs/settlement-forest-2026-11-15/desktop-final-save.json（同一门廊分支返原营火，22击败/木4/浆果19/HP100）。生产src和22335602包不变；M5/3A、试听/真机/全场景性能仍未完，2048保留。
+
+## 2026-11-15 连续旅程与总帧预算检查点
+
+见docs/SETTLEMENT-FOREST-JOURNEY.md。1080p604秒/32969帧、高DPI390600秒/46280帧，两端原生门廊→跨海林栖→采集/实际击败20→22→原营火/恢复，木1→4/浆果17→19/HP100，存档完整刷新保持。完整4pass GPU P9520.36/11.45ms，仅有限守卫；rAF仍最大139/103ms，不能称稳定60或完整性能通过。438测试、只读源与全流/SHA已保存，生产不变。
+
+保留首390工具误把接近中的空挥当停滞的失败，修正后R2成功；保留事后推导dt/场景未精确复现（2.407米）的拒用回放。R2实际捕获3个完整camera输入，Node原算法精确复现至3.6e-15米，说明重大突转仍真实存在；桌面最坏162.58°/窄屏94.54°，各3次>45。下一必须新镜头策略，停止旧局部参数路线和本组重复长跑。普通继续点转本证据目录desktop-final-save.json，旧分支保留；M5/3A仍未通过，2048保留。
 
 ## 2026-11-15 修船院整组交付
 

@@ -1,0 +1,234 @@
+{
+  "entry": "http://127.0.0.1:4190/dist/tidelands-m5-2026-11-15-yard/tidelands-local/",
+  "width": 390,
+  "dpr": 1.5,
+  "complete": false,
+  "phases": [
+    {
+      "name": "00-settlement",
+      "save": "00-settlement-save.json",
+      "saveSha256": "6c0a0428f1fd756666aee33bde866632b51cc4577550d809e57223d17964ffc8",
+      "image": "00-settlement.png",
+      "imageSha256": "be97973eff7637124619ac87f491582651bbaa5730e190e6678262da3774f09e",
+      "quest": 6,
+      "kills": 20,
+      "time": 1910.7528000006835,
+      "player": {
+        "x": -46.00116743636531,
+        "z": 85.86318677915428,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "inventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 40,
+        "berry": 17,
+        "shell": 0,
+        "crystal": 5,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18988",
+          "type": "campfire",
+          "x": -73.06273408212543,
+          "z": 106.72297401425469
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "群岛，再次相连",
+        "hp": 100,
+        "toast": "存档已导入。",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "buffer": [
+          585,
+          1266
+        ]
+      }
+    },
+    {
+      "name": "01-forest-arrival",
+      "save": "01-forest-arrival-save.json",
+      "saveSha256": "e5bf7ccaa46c0a0bb27f58d2a81b1199826a9c0c44a856316e91d80acfc7ca3a",
+      "image": "01-forest-arrival.png",
+      "imageSha256": "43fbb92ea8686e04e6fa7349d094635739b0c395edda39c2bcf590d124c0ecc4",
+      "quest": 6,
+      "kills": 20,
+      "time": 1989.7451000006722,
+      "player": {
+        "x": 129.91404677530124,
+        "z": -26.1244548058137,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 1.7207963267948967
+      },
+      "inventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 40,
+        "berry": 17,
+        "shell": 0,
+        "crystal": 5,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18988",
+          "type": "campfire",
+          "x": -73.06273408212543,
+          "z": 106.72297401425469
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "群岛，再次相连",
+        "hp": 100,
+        "toast": "林栖：我看见灯塔的光了。归航的船有了方向，多谢你，旅人。",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "buffer": [
+          585,
+          1266
+        ]
+      }
+    },
+    {
+      "name": "02-forest-gather",
+      "save": "02-forest-gather-save.json",
+      "saveSha256": "164b3e68959f16c789970b27ee72449570eb3154f59435546d1d84e9a43f2804",
+      "image": "02-forest-gather.png",
+      "imageSha256": "8e53164e6fba4181a3ee4c1b5250a54f2773931ea446c6872652771084d70448",
+      "quest": 6,
+      "kills": 20,
+      "time": 1993.201500000672,
+      "player": {
+        "x": 113.20718021029379,
+        "z": -21.913123151926474,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -0.6619943147243823
+      },
+      "inventory": {
+        "wood": 4,
+        "stone": 2,
+        "fiber": 40,
+        "berry": 17,
+        "shell": 0,
+        "crystal": 5,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18988",
+          "type": "campfire",
+          "x": -73.06273408212543,
+          "z": 106.72297401425469
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "群岛，再次相连",
+        "hp": 100,
+        "toast": "木材 +3",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          390,
+          844
+        ],
+        "buffer": [
+          585,
+          1266
+        ]
+      }
+    }
+  ],
+  "logs": [],
+  "heap": [
+    {
+      "wall": 1794718634870,
+      "usedSize": 96422428,
+      "totalSize": 146669568,
+      "embedderHeapUsedSize": 3585608,
+      "backingStorageSize": 279857677
+    },
+    {
+      "wall": 1794718713839,
+      "usedSize": 111934932,
+      "totalSize": 160301056,
+      "embedderHeapUsedSize": 47984480,
+      "backingStorageSize": 281197777
+    },
+    {
+      "wall": 1794718717345,
+      "usedSize": 111856200,
+      "totalSize": 161873920,
+      "embedderHeapUsedSize": 49925760,
+      "backingStorageSize": 281279637
+    }
+  ],
+  "initialSaveSha256": "15dfbd8d10179e8b46d1775a58767fbc5b22e8b9941b28cb02978e88a3cdfbb6",
+  "packageSha256": "223356025130460351dc1c319a1b03efc6c9a2aabe78cfee8dc07b167ab4eaf4",
+  "probeSha256": "e58f01013160b4b6ada7c6d0c027de5dd4a3835b8b9660a3146d60464bd1189c",
+  "timerSha256": "9ac141a7c52701380ad08c321f313dcf3ef0b43c2a7831e29e53aead21535889",
+  "scope": "Native file import of our own preferred ordinary progress, continuous input and natural clock. Only scene response appends a bounded read-only observer around full WorldView.draw, including all HDR passes. No teleport, resource/enemy/state/clock injection. Headless Metal 1080p or high-DPI390, not physical phones, VRAM, system GPU isolation, listening or final3A acceptance.",
+  "readyWallMs": 2770,
+  "startedWall": 1794718634566,
+  "targetEnemy": "enemy-37",
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(state.kills>initialKills)\n\n    at file:///Users/huxiaocong/Codex/tidelands/tools/run_settlement_forest_journey.mjs:78:144",
+  "probe": {
+    "active": false,
+    "closed": true,
+    "frames": 6944,
+    "bufferedFrames": 0,
+    "inflight": 0,
+    "peakInflight": 1,
+    "dropped": 0,
+    "hiddenFrames": 0,
+    "contextLost": false,
+    "errors": [],
+    "supported": true,
+    "issued": 868,
+    "completed": 868,
+    "deleted": 868,
+    "disjointFrames": 0,
+    "timeouts": 0,
+    "pending": false
+  },
+  "respawns": 0,
+  "video": "page@ad44653907d7592dc85a329f5d4424c4.webm",
+  "videoSha256": "d2954e39cbfe88dfb9cc0c6fa5a0ffdd3157de22ebf01bc20630669b7582d117"
+}

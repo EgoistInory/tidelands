@@ -1,0 +1,15 @@
+{
+  "classification": "Native runner arrival/combat approach threshold, not demonstrated game damage regression.",
+  "failedAssertion": "state.kills > initialKills",
+  "evidence": "Successive held-forward inputs moved the player from (139.7201,-42.9202) through (139.5599,-43.9805) to (139.4159,-44.9329). Last 3D separation3.009m exceeded the existing axe range2.6m. The runner counted three still-approaching swings as a stalled encounter.",
+  "correction": "Count no-damage stalls only when 3D separation also fails to improve by0.05m; keep the16-action encounter cap and three stalled-stop cap. No game edits.",
+  "priorRunnerSha256": "a7356a76b9b46029c9d2ac078581ce48bb9fc10493f4a321205d93ad9ac285d8",
+  "correctedRunnerSha256": "fb904785bb549c7650daa8f19a51ccd3a2e934d2163da95030a3dfe43304dda4",
+  "preserved": [
+    "raw.json",
+    "samples.jsonl",
+    "inputs.jsonl",
+    "checkpoint-save.json",
+    "runner-before-fix.mjs"
+  ]
+}

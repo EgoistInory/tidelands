@@ -1,0 +1,527 @@
+{
+  "width": 1920,
+  "dpr": 1,
+  "buffer": [
+    1920,
+    1080
+  ],
+  "completeJourney": true,
+  "fullGameOr3AAccepted": false,
+  "frames": 32969,
+  "wallSeconds": 604.0445,
+  "gameSeconds": 602.8697000000068,
+  "pathMetres": 3760.873791275069,
+  "actualMovingFrames": 25908,
+  "completeHdrPasses": 4,
+  "gpuMs": {
+    "count": 4059,
+    "median": 15.290874,
+    "p95": 20.3585,
+    "max": 76.050626
+  },
+  "gpuP95Under25ms": true,
+  "drawCpuMs": {
+    "count": 32475,
+    "median": 5.100000381469727,
+    "p95": 6.299999237060547,
+    "max": 136.69999980926514
+  },
+  "renderSubmitCpuMs": {
+    "count": 32475,
+    "median": 2.8000001907348633,
+    "p95": 3.6000003814697266,
+    "max": 134.0999994277954
+  },
+  "rafMs": {
+    "count": 32475,
+    "median": 18,
+    "p95": 24.90000057220459,
+    "max": 139
+  },
+  "rafOver50ms": 243,
+  "horizontalCameraOrbitDegrees": {
+    "count": 32474,
+    "median": 0.03190005087339739,
+    "p95": 0.5445607744461529,
+    "max": 162.57575229854888
+  },
+  "horizontalCameraTurnsOver45Degrees": 3,
+  "horizontalCameraCases": [
+    {
+      "degrees": 80.25825443573073,
+      "before": [
+        4071,
+        81667.30000019073,
+        1988.074600000684,
+        103.47787642198688,
+        -20.361673051267367,
+        100,
+        1,
+        22.09999942779541,
+        7,
+        2.8999996185302734,
+        358,
+        4746156,
+        4,
+        101.59012312818061,
+        16.500087658678932,
+        -7.345679771842077
+      ],
+      "after": [
+        4072,
+        81689.20000076294,
+        1988.101800000684,
+        103.66613843522588,
+        -20.390126071690336,
+        100,
+        1,
+        21.90000057220459,
+        8.09999942779541,
+        3.09999942779541,
+        355,
+        4778359,
+        4,
+        116.37739962263441,
+        16.610970659651205,
+        -16.26145731001783
+      ]
+    },
+    {
+      "degrees": 162.57575229854888,
+      "before": [
+        29773,
+        549972.5,
+        2455.5237000006564,
+        95.78862180250903,
+        -8.352573982394905,
+        93,
+        1,
+        18.399999618530273,
+        8.700000762939453,
+        3.40000057220459,
+        346,
+        2766934,
+        4,
+        98.46523140397846,
+        8.654266055050584,
+        -6.2180096095532615
+      ],
+      "after": [
+        29774,
+        549991,
+        2455.5379000006565,
+        95.6903379573625,
+        -8.337719832027078,
+        93,
+        1,
+        18.5,
+        10,
+        4.799999237060547,
+        200,
+        2121370,
+        4,
+        93.0899403040923,
+        8.922723100963617,
+        -12.192415302200859
+      ]
+    },
+    {
+      "degrees": 45.18279047439499,
+      "before": [
+        31641,
+        584663.9000005722,
+        2490.137800000672,
+        -12.09561964542077,
+        25.794364761445188,
+        86,
+        1,
+        19,
+        6,
+        2.40000057220459,
+        284,
+        3264633,
+        4,
+        -9.924401713611521,
+        12.80513821419284,
+        31.00922293032741
+      ],
+      "after": [
+        31642,
+        584683.2000007629,
+        2490.148300000672,
+        -12.084635942683962,
+        25.867039435673487,
+        86,
+        1,
+        19.300000190734863,
+        5.59999942779541,
+        2.3999996185302734,
+        181,
+        2533359,
+        4,
+        -6.885289053677128,
+        12.789603923110231,
+        27.990197713349453
+      ]
+    }
+  ],
+  "auditToolSha256": "0b50a02679c51422f6506a10d9d4d660c2d370d4dbca19bb99e0b43feac17910",
+  "drawCalls": {
+    "count": 32475,
+    "median": 376,
+    "p95": 398,
+    "max": 420
+  },
+  "triangles": {
+    "count": 32475,
+    "median": 2753967,
+    "p95": 3209943,
+    "max": 4963472
+  },
+  "capturedCameraCaseCount": 0,
+  "queryLifecycle": {
+    "active": false,
+    "closed": true,
+    "frames": 32969,
+    "bufferedFrames": 0,
+    "inflight": 0,
+    "peakInflight": 1,
+    "dropped": 0,
+    "hiddenFrames": 0,
+    "contextLost": false,
+    "errors": [],
+    "supported": true,
+    "issued": 4122,
+    "completed": 4121,
+    "deleted": 4122,
+    "disjointFrames": 0,
+    "timeouts": 0,
+    "pending": false
+  },
+  "heapSamples": [
+    {
+      "wall": 1794717657860,
+      "usedSize": 104481988,
+      "totalSize": 149553152,
+      "embedderHeapUsedSize": 3697968,
+      "backingStorageSize": 321013117
+    },
+    {
+      "wall": 1794717740507,
+      "usedSize": 104065808,
+      "totalSize": 160563200,
+      "embedderHeapUsedSize": 46871368,
+      "backingStorageSize": 322151390
+    },
+    {
+      "wall": 1794717744297,
+      "usedSize": 119762696,
+      "totalSize": 161349632,
+      "embedderHeapUsedSize": 48812112,
+      "backingStorageSize": 322246785
+    },
+    {
+      "wall": 1794717755580,
+      "usedSize": 122338832,
+      "totalSize": 163184640,
+      "embedderHeapUsedSize": 58959392,
+      "backingStorageSize": 322763290
+    },
+    {
+      "wall": 1794717770588,
+      "usedSize": 86734220,
+      "totalSize": 113901568,
+      "embedderHeapUsedSize": 3031144,
+      "backingStorageSize": 223464645
+    },
+    {
+      "wall": 1794717781725,
+      "usedSize": 89210152,
+      "totalSize": 119144448,
+      "embedderHeapUsedSize": 12325064,
+      "backingStorageSize": 224008443
+    },
+    {
+      "wall": 1794717793696,
+      "usedSize": 86585832,
+      "totalSize": 119144448,
+      "embedderHeapUsedSize": 22398616,
+      "backingStorageSize": 224593101
+    },
+    {
+      "wall": 1794717805316,
+      "usedSize": 93660672,
+      "totalSize": 119668736,
+      "embedderHeapUsedSize": 32513320,
+      "backingStorageSize": 225245614
+    },
+    {
+      "wall": 1794717816864,
+      "usedSize": 93712592,
+      "totalSize": 143785984,
+      "embedderHeapUsedSize": 7150296,
+      "backingStorageSize": 223695759
+    },
+    {
+      "wall": 1794717828233,
+      "usedSize": 97846328,
+      "totalSize": 145096704,
+      "embedderHeapUsedSize": 17726576,
+      "backingStorageSize": 224348393
+    },
+    {
+      "wall": 1794717839820,
+      "usedSize": 88383456,
+      "totalSize": 147456000,
+      "embedderHeapUsedSize": 27702160,
+      "backingStorageSize": 224865073
+    },
+    {
+      "wall": 1794717851454,
+      "usedSize": 92782096,
+      "totalSize": 148766720,
+      "embedderHeapUsedSize": 37799768,
+      "backingStorageSize": 225504077
+    },
+    {
+      "wall": 1794717862531,
+      "usedSize": 86615996,
+      "totalSize": 150339584,
+      "embedderHeapUsedSize": 47563936,
+      "backingStorageSize": 226115888
+    },
+    {
+      "wall": 1794717874694,
+      "usedSize": 95158392,
+      "totalSize": 151912448,
+      "embedderHeapUsedSize": 58258144,
+      "backingStorageSize": 226795735
+    },
+    {
+      "wall": 1794717886197,
+      "usedSize": 108501088,
+      "totalSize": 152698880,
+      "embedderHeapUsedSize": 68372248,
+      "backingStorageSize": 227407526
+    },
+    {
+      "wall": 1794717897003,
+      "usedSize": 90084492,
+      "totalSize": 153747456,
+      "embedderHeapUsedSize": 3455072,
+      "backingStorageSize": 223491781
+    },
+    {
+      "wall": 1794717908064,
+      "usedSize": 90947980,
+      "totalSize": 155058176,
+      "embedderHeapUsedSize": 12969568,
+      "backingStorageSize": 224130776
+    },
+    {
+      "wall": 1794717920054,
+      "usedSize": 86073240,
+      "totalSize": 155058176,
+      "embedderHeapUsedSize": 23242112,
+      "backingStorageSize": 224729009
+    },
+    {
+      "wall": 1794717931212,
+      "usedSize": 89490524,
+      "totalSize": 155058176,
+      "embedderHeapUsedSize": 32567072,
+      "backingStorageSize": 225218474
+    },
+    {
+      "wall": 1794717942640,
+      "usedSize": 98955996,
+      "totalSize": 155058176,
+      "embedderHeapUsedSize": 42214904,
+      "backingStorageSize": 225762346
+    },
+    {
+      "wall": 1794717953924,
+      "usedSize": 94821720,
+      "totalSize": 155058176,
+      "embedderHeapUsedSize": 52063904,
+      "backingStorageSize": 226319714
+    },
+    {
+      "wall": 1794717965936,
+      "usedSize": 112184812,
+      "totalSize": 155058176,
+      "embedderHeapUsedSize": 62696720,
+      "backingStorageSize": 226917982
+    },
+    {
+      "wall": 1794717977717,
+      "usedSize": 96094056,
+      "totalSize": 155320320,
+      "embedderHeapUsedSize": 73047496,
+      "backingStorageSize": 227543396
+    },
+    {
+      "wall": 1794717989524,
+      "usedSize": 85163432,
+      "totalSize": 156106752,
+      "embedderHeapUsedSize": 6658368,
+      "backingStorageSize": 223681623
+    },
+    {
+      "wall": 1794718001068,
+      "usedSize": 98491644,
+      "totalSize": 156106752,
+      "embedderHeapUsedSize": 16814200,
+      "backingStorageSize": 224225492
+    },
+    {
+      "wall": 1794718012359,
+      "usedSize": 103686500,
+      "totalSize": 156106752,
+      "embedderHeapUsedSize": 26667904,
+      "backingStorageSize": 224837335
+    },
+    {
+      "wall": 1794718024360,
+      "usedSize": 84191728,
+      "totalSize": 156106752,
+      "embedderHeapUsedSize": 37044352,
+      "backingStorageSize": 225449211
+    },
+    {
+      "wall": 1794718035698,
+      "usedSize": 92359904,
+      "totalSize": 156106752,
+      "embedderHeapUsedSize": 46688448,
+      "backingStorageSize": 226033784
+    },
+    {
+      "wall": 1794718047737,
+      "usedSize": 84777716,
+      "totalSize": 156106752,
+      "embedderHeapUsedSize": 57003992,
+      "backingStorageSize": 226631982
+    },
+    {
+      "wall": 1794718059345,
+      "usedSize": 109841416,
+      "totalSize": 156106752,
+      "embedderHeapUsedSize": 67160496,
+      "backingStorageSize": 227271002
+    },
+    {
+      "wall": 1794718070368,
+      "usedSize": 97740444,
+      "totalSize": 156106752,
+      "embedderHeapUsedSize": 76716944,
+      "backingStorageSize": 227842021
+    },
+    {
+      "wall": 1794718081763,
+      "usedSize": 81184108,
+      "totalSize": 155582464,
+      "embedderHeapUsedSize": 9630000,
+      "backingStorageSize": 223858370
+    },
+    {
+      "wall": 1794718093173,
+      "usedSize": 82264380,
+      "totalSize": 155582464,
+      "embedderHeapUsedSize": 19531800,
+      "backingStorageSize": 224443016
+    },
+    {
+      "wall": 1794718104374,
+      "usedSize": 83600280,
+      "totalSize": 155582464,
+      "embedderHeapUsedSize": 28806608,
+      "backingStorageSize": 224973270
+    },
+    {
+      "wall": 1794718115930,
+      "usedSize": 103182104,
+      "totalSize": 156368896,
+      "embedderHeapUsedSize": 38835872,
+      "backingStorageSize": 225503520
+    },
+    {
+      "wall": 1794718127359,
+      "usedSize": 94896456,
+      "totalSize": 156368896,
+      "embedderHeapUsedSize": 48718744,
+      "backingStorageSize": 226088200
+    },
+    {
+      "wall": 1794718138736,
+      "usedSize": 103227980,
+      "totalSize": 156368896,
+      "embedderHeapUsedSize": 58525160,
+      "backingStorageSize": 226618449
+    },
+    {
+      "wall": 1794718150006,
+      "usedSize": 89732096,
+      "totalSize": 156368896,
+      "embedderHeapUsedSize": 68205648,
+      "backingStorageSize": 227162243
+    },
+    {
+      "wall": 1794718161826,
+      "usedSize": 85030036,
+      "totalSize": 156106752,
+      "embedderHeapUsedSize": 10857976,
+      "backingStorageSize": 223899155
+    },
+    {
+      "wall": 1794718260176,
+      "usedSize": 88363136,
+      "totalSize": 156893184,
+      "embedderHeapUsedSize": 26191872,
+      "backingStorageSize": 225139277
+    },
+    {
+      "wall": 1794718261288,
+      "usedSize": 84730724,
+      "totalSize": 156893184,
+      "embedderHeapUsedSize": 26946608,
+      "backingStorageSize": 225166509
+    }
+  ],
+  "resourceRanges": {
+    "geometries": [
+      229,
+      257
+    ],
+    "textures": [
+      114,
+      144
+    ],
+    "programs": [
+      91,
+      97
+    ]
+  },
+  "finalQuest": 6,
+  "finalKills": 22,
+  "finalInventory": {
+    "wood": 4,
+    "stone": 2,
+    "fiber": 44,
+    "berry": 19,
+    "shell": 0,
+    "crystal": 5,
+    "axe": 1,
+    "sword": 0,
+    "meal": 0
+  },
+  "finalSaveSha256": "73cca7ba71efce99a57aff6ece8f539d5fff32e86db561b4594de32f2db313ca",
+  "archiveSha256": "223356025130460351dc1c319a1b03efc6c9a2aabe78cfee8dc07b167ab4eaf4",
+  "filesSha256": {
+    "raw.json": "a3928fb8d42eacc6b4a309594f7bf274b51ecb8810f30367c6fbdd4e98c3f21a",
+    "samples.jsonl": "6263fa6973b21bfd174015a4a02214eddfd88578244f4daaca26a003fa9c7ef9",
+    "inputs.jsonl": "18ee2f8eb39a621fe1a1743c076b0f28f6b93476672acf159f4abb34ce7b982e",
+    "page@bf8ffd6479bc33e39ac8a3333b113197.webm": "c234f769fae08ea69791c70b303e82dc4ed16176ba5a2a3aac5426bd52911ffa",
+    "final-save.json": "73cca7ba71efce99a57aff6ece8f539d5fff32e86db561b4594de32f2db313ca"
+  },
+  "scope": "Native file import of our own preferred ordinary progress, continuous input and natural clock. Only scene response appends a bounded read-only observer around full WorldView.draw, including all HDR passes. No teleport, resource/enemy/state/clock injection. Headless Metal 1080p or high-DPI390, not physical phones, VRAM, system GPU isolation, listening or final3A acceptance."
+}

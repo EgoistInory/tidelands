@@ -1,0 +1,62 @@
+{
+  "scope": "Pure replay of the actual captured full obstacle boxes, dt and camera inputs. No source change, world reconstruction, game input or pose quality claim.",
+  "cameraSourceSha256": "c52a162e897821ad490c62f9655e558768f5f253d7932c528fdb160a6b7b487a",
+  "samplesSha256": "c292fc60a47ad7f6f26e6e1cd3be77eddc40d548cd67e337a723ab416482cba6",
+  "cases": [
+    {
+      "frame": 5561,
+      "time": 1983.8142000006587,
+      "degrees": 94.54321699535838,
+      "boxCount": 4052,
+      "fieldErrorMetres": 3.552713678800501e-15,
+      "exact": true,
+      "actual": [
+        117.06736548847434,
+        16.623930611853986,
+        -21.883509583925868
+      ],
+      "field": [
+        117.06736548847434,
+        16.623930611853982,
+        -21.883509583925868
+      ]
+    },
+    {
+      "frame": 41865,
+      "time": 2454.507500000593,
+      "degrees": 91.50986859724007,
+      "boxCount": 3164,
+      "fieldErrorMetres": 0,
+      "exact": true,
+      "actual": [
+        100.61331317966562,
+        9.149359150367872,
+        -11.780678885229644
+      ],
+      "field": [
+        100.61331317966562,
+        9.149359150367872,
+        -11.780678885229644
+      ]
+    },
+    {
+      "frame": 44647,
+      "time": 2490.3186000006167,
+      "degrees": 69.80737549616921,
+      "boxCount": 1830,
+      "fieldErrorMetres": 0,
+      "exact": true,
+      "actual": [
+        -8.558421048261568,
+        12.590865052329555,
+        29.600379890607417
+      ],
+      "field": [
+        -8.558421048261568,
+        12.590865052329555,
+        29.600379890607417
+      ]
+    }
+  ],
+  "complete": true
+}
