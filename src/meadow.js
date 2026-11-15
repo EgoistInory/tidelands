@@ -62,8 +62,8 @@ export function updateGroundCover(batches,camera){
 
 const campFootprints={tent:[2.15,1.85],workbench:[1.65,1.2],campfire:[1.4,1.4]};
 const landscapeNames=new Set(['meadow-grass','meadow-flowers','meadow-cover','meadow-shore','meadow-fern','shore-stones']);
-export function updateCampClearance(batches,buildings){
-  const footprints=buildings.filter(b=>campFootprints[b.type]).map(b=>[b.x,b.z,...campFootprints[b.type]]),key=JSON.stringify(footprints);
+export function updateCampClearance(batches,buildings,scenery=[]){
+  const footprints=[...buildings.filter(b=>campFootprints[b.type]).map(b=>[b.x,b.z,...campFootprints[b.type]]),...scenery],key=JSON.stringify(footprints);
   let changed=0;
   for(const batch of batches){
     if(!landscapeNames.has(batch.name)||batch.userData.campKey===key)continue;

@@ -1,3 +1,5 @@
+import {createFishingYard} from './fishing-yard.js';
+import {FISHING_YARD,fishingYardActive} from './fishing-yard-layout.js';
 import * as THREE from '../vendor/three.module.min.js';
 import {terrain,LANDMARKS,randomGenerator,dayCycle,weatherAt} from './world.js';
 import {isDepleted,enemyAttackPose} from './game.js';
@@ -220,6 +222,8 @@ export class WorldView{
     for(const o of LANDMARKS){const g=landmarkModel(o,this.rockSurface);g.position.set(o.x,terrain(o.x,o.z),o.z);if(o.type==='ruin')this.cameraObstacles.push({object:o,boxes:g.userData.cameraBoxes.map(box=>box.clone().translate(g.position))});if(o.type==='npc'){animateCharacter(g,{x:o.x,z:o.z,yaw:0,time:0,attackAt:-100,selected:'hand'},0,terrain);this.islanders.push({object:o,model:g});}this.scene.add(g);if(o.type==='lighthouse')this.lighthouse=g;}
     const random=randomGenerator(4321);
     this.meadow=[...createMeadow(random,this.world.objects,this.groundHeight,{settlement:true}),...createShoreStones()];this.scene.add(...this.meadow);
+    this.fishingYard=createFishingYard();this.scene.add(this.fishingYard.root);
+    this.yardCameraBoxes=FISHING_YARD.boxes.map(([a,b])=>new THREE.Box3(new THREE.Vector3(...a),new THREE.Vector3(...b)));
     this.sky=createSky();this.scene.add(this.sky);
   }
   updateIslanders(state,near,dt){
@@ -244,7 +248,8 @@ export class WorldView{
     const definitions=new Map(state.buildings.map(b=>[b.id,b]));
     for(const [id,g]of this.buildings){const b=definitions.get(id);if(!b||g.userData.buildingType!==b.type){this.scene.remove(g);this.disposeGroup(g);this.buildings.delete(id);}}
     for(const b of state.buildings){if(!this.buildings.has(b.id)){const g=buildingModel(b.type,this.architectureSurfaceCache);g.updateMatrixWorld(true);mergeStaticParts(g);g.userData.buildingType=b.type;this.scene.add(g);this.buildings.set(b.id,g);}this.buildings.get(b.id).position.set(b.x,terrain(b.x,b.z),b.z);}
-    updateCampClearance(this.meadow??[],state.buildings);
+    if(this.fishingYard)this.fishingYard.root.visible=fishingYardActive(state);
+    updateCampClearance(this.meadow??[],state.buildings,this.fishingYard?.root.visible?[FISHING_YARD.clearance]:[]);
     const enemies=new Map(state.enemies.map(e=>[e.id,e]));
     for(const [id,g]of this.creatures){if(!enemies.has(id)||g.userData.type!==enemies.get(id).type){this.scene.remove(g);this.disposeGroup(g);this.creatures.delete(id);}}
     this.creatureGeometryCache??=new Map();
@@ -315,6 +320,7 @@ export class WorldView{
     const target=new THREE.Vector3(p.x+Math.sin(this.yaw)*this.distance,h+2.4+Math.tan(this.pitch)*this.distance,p.z+Math.cos(this.yaw)*this.distance);
     target.y=Math.max(target.y,terrain(target.x,target.z)+1.5);
     const focus=new THREE.Vector3(p.x,h+2.4,p.z),boxes=this.cameraObstacles.filter(({object:o})=>Math.hypot(o.x-p.x,o.z-p.z)<this.distance+12&&!isDepleted(state,o)).flatMap(o=>o.boxes??[o.box]);
+    if(fishingYardActive(state))boxes.push(...(this.yardCameraBoxes??[]));
     for(const g of this.buildings.values())if(g.position.distanceTo(focus)<this.distance+12)boxes.push(new THREE.Box3().setFromObject(g));
     for(const o of LANDMARKS)if(['lighthouse','cottage'].includes(o.type)&&Math.hypot(o.x-p.x,o.z-p.z)<this.distance+12){const r=o.type==='lighthouse'?3.2:5,y=terrain(o.x,o.z);boxes.push(new THREE.Box3(new THREE.Vector3(o.x-r,y,o.z-r),new THREE.Vector3(o.x+r,y+(o.type==='lighthouse'?25:9),o.z+r)));}
     // Avoidance may move the rendered camera; retain the player's requested orbit for the next gesture.

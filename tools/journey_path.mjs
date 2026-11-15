@@ -1,3 +1,4 @@
+import {fishingYardBlocksMove} from '../src/fishing-yard-layout.js';
 // Pure local input planning on a copied observation; never imports browser APIs or mutates the running game.
 import {createWorld,LANDMARKS,terrain} from '../src/world.js';
 import {terrainStepAllowed} from '../src/terrain-grid.js';
@@ -16,6 +17,7 @@ export function clearSegment(state,from,to){
     const turn={x:b.x,z:a.z};
     if(Math.abs(b.x)>390||Math.abs(b.z)>390||!terrainStepAllowed(a,turn,terrain)||!terrainStepAllowed(turn,b,terrain))return false;
     if(nearby(b).some(o=>(state.depleted[o.id]??0)<=state.time&&(footprintBlocksMove(a,b,o,.35)??(o.type==='tree'?actorBlocksMove(a,b,o,.35,1.15):resourceBlocksMove(a,b,o,.35)))))return false;
+    if(fishingYardBlocksMove(state,a,b))return false;
     if(state.buildings.some(o=>o.type!=='campfire'&&actorBlocksMove(a,b,o,.35,1.65)))return false;
     if(LANDMARKS.some(o=>o.type==='ruin'?ruinBlocksMove(a,b,o):o.type==='npc'?actorBlocksMove(a,b,o):['cottage','lighthouse'].includes(o.type)&&actorBlocksMove(a,b,o,.35,o.type==='cottage'?3.65:2.65)))return false;
     if(state.enemies.some(o=>o.hp>0&&actorBlocksMove(a,b,o)))return false;a=b;

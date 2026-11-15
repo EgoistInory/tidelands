@@ -2,14 +2,15 @@
 import fs from 'node:fs';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
 const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright');
 const name=process.argv[2]??'tidelands-m5-2026-11-14-dynamic-contact',out=process.argv[3]??'dist/dynamic-contact-delivery-2026-11-14',mode=process.argv[4]??'combat',key='tidelands-save-v1';
-assert(['combat','camp','settlement','motion'].includes(mode));
-const history=mode==='motion'?'docs/settlement-ground-2026-11-15/route-final-save.json':mode!=='combat'?'docs/main-mix-2026-11-05/camp-final-save.json':'dist/combat-height-recovery-2026-11-12-combat/checkpoint-save.json',sha=b=>createHash('sha256').update(b).digest('hex');
+assert(['combat','camp','settlement','motion','yard'].includes(mode));
+const history=['motion','yard'].includes(mode)?'docs/settlement-ground-2026-11-15/route-final-save.json':mode!=='combat'?'docs/main-mix-2026-11-05/camp-final-save.json':'dist/combat-height-recovery-2026-11-12-combat/checkpoint-save.json',sha=b=>createHash('sha256').update(b).digest('hex');
 assert(!fs.existsSync(out));fs.mkdirSync(out,{recursive:true});
 const report={package:name,mode,historySha256:sha(fs.readFileSync(history)),complete:false,logs:[],phases:[]};
 const manifest=JSON.parse(fs.readFileSync(`dist/${name}.json`));report.archiveSha256=sha(fs.readFileSync(`dist/${name}.zip`));assert.equal(report.archiveSha256,manifest.archiveSha256);
 for(const [file,row] of Object.entries(manifest.files)){assert.equal(sha(fs.readFileSync(`dist/${name}/tidelands-local/${file}`)),row.sha256);assert.equal(sha(fs.readFileSync(file==='README.md'?'docs/LOCAL-DELIVERY.md':file)),row.sha256);}
 const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
-const context=await browser.newContext({viewport:{width:mode==='camp'?390:1280,height:mode==='camp'?844:800},recordVideo:{dir:out,size:{width:960,height:600}}});
+const width=Number(process.env.NATIVE_WIDTH??(mode==='camp'?390:1280));assert([390,1280].includes(width));
+const context=await browser.newContext({viewport:{width,height:width===390?844:800},recordVideo:{dir:out,size:{width:960,height:600}}});
 await context.route('**/*',route=>{const u=new URL(route.request().url());if(u.origin!=='http://127.0.0.1:4190')return route.abort();if(mode==='motion'&&u.pathname===`/dist/${name}/tidelands-local/src/scene.js`)return route.fulfill({contentType:'text/javascript',body:fs.readFileSync(`dist/${name}/tidelands-local/src/scene.js`,'utf8')+'\n'+fs.readFileSync('tools/observe_native_motion.js','utf8')});return route.continue();});
 if(mode==='motion'){report.scope='Ordinary restored porch progress, native held keys and read-only bounded skeleton observer appended to scene response. Original game/state/clock untouched. Not byte-unmodified scene module, GPU, audition or complete animation quality acceptance.';report.observerSha256=sha(fs.readFileSync('tools/observe_native_motion.js'));}
 const page=await context.newPage(),video=page.video();page.on('pageerror',e=>report.logs.push(e.message));page.on('console',e=>{if(['error','warning'].includes(e.type()))report.logs.push(e.text());});
@@ -20,7 +21,14 @@ async function phase(label){const s=await state();report.phases.push({label,time
 try{
  await page.goto(`http://127.0.0.1:4190/dist/${name}/tidelands-local/`);await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);await page.click('#start-button');await page.click('#pause-button');
  const chooser=page.waitForEvent('filechooser');await page.getByRole('button',{name:'导入存档',exact:true}).click();await(await chooser).setFiles(history);await page.waitForFunction(()=>!document.querySelector('#panel').open);
- let s=await phase('00-start');if(mode==='motion'){
+ let s=await phase('00-start');if(mode==='yard'){
+  async function reach(label,x,z){let reached=false;for(let i=0;i<100;i++){const dx=x-s.player.x,dz=z-s.player.z;if(Math.hypot(dx,dz)<.85){reached=true;break;}const cx=dx*Math.cos(.15)-dz*Math.sin(.15),cz=dx*Math.sin(.15)+dz*Math.cos(.15);await walk(Math.abs(cx)>Math.abs(cz)?cx>0?'d':'a':cz>0?'s':'w',110);s=await state();}assert(reached,`Native yard route stalled: ${label}`);await phase(label);}
+  await reach('01-approach',-40,82);await reach('02-yard-front',-33,81);
+  const front=s.player.z;await walk('w',900);s=await phase('03-hull-contact');assert(s.player.z<front-.3&&s.player.z>78.65);
+  const contact=s.player.z;await walk('w',450);s=await phase('04-hull-stop');assert(Math.abs(s.player.z-contact)<.15,'Native forward input must remain outside hull');
+  await walk('s',700);s=await phase('05-retreat');assert(s.player.z>contact+2);
+  await reach('06-return-porch',-46,86);assert.equal(s.quest,6);assert.equal(s.kills,20);assert.equal(s.player.hp,100);assert.equal(s.inventory.berry,17);
+ }else if(mode==='motion'){
   await page.evaluate(()=>{window.nativeMotionReview.active=true;});
   const pattern=process.env.MOTION_PATTERN??'original';assert(['original','lane'].includes(pattern));report.motionPattern=pattern;
   const sequence=pattern==='lane'?[['straight',['d'],1200],['stop',[],600],['return-straight',['a'],1200],['stop2',[],600],['diagonal',['d','s'],800],['sprint',['Shift','d','s'],1300],['stop3',[],600],['return-diagonal',['a','w'],2800],['stop4',[],600]]:[['straight',['a'],1700],['stop',[],600],['diagonal',['w','a'],1500],['stop2',[],600],['sprint',['Shift','a'],1300],['stop3',[],600],['return',['d','s'],1700],['stop4',[],600]];

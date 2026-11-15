@@ -1,0 +1,872 @@
+{
+  "project": "潮生群岛",
+  "stage": "M5 integrated settlement repair yard; full quality incomplete",
+  "fullGoalComplete": false,
+  "builderSha256": "cf4fecd96c8ebbcbdfaf8111f4ff8b3cf94601d1b3aaa3712806ee995aca4568",
+  "files": {
+    "README.md": {
+      "bytes": 19332,
+      "sha256": "4a7be7354500dc5490168c4aa2944851389eef6a47ab487ab4c335f5e361c8db"
+    },
+    "assets/characters/Animation-LICENSE.txt": {
+      "bytes": 332,
+      "sha256": "6d01f55c6e4c49a2c9963e147e561945ae2c83958c8ca667d90a6bffdbfac061"
+    },
+    "assets/characters/Base-LICENSE.txt": {
+      "bytes": 806,
+      "sha256": "0f4beaf0fe360a7732e58bbe3dbf60a2422367fbea60cb9ea4add968f383268e"
+    },
+    "assets/characters/Hair_Buns.bin": {
+      "bytes": 131768,
+      "sha256": "4f6d4c010201278483da8d6d46ec40e3beb8d9e679ec2139bed216c561bccd38"
+    },
+    "assets/characters/Hair_Buns.gltf": {
+      "bytes": 2243,
+      "sha256": "2bb3593575e21c9af39a53e48c42c1314b0a894e9577f3f14abffcb145cd56c5"
+    },
+    "assets/characters/Hair_Buzzed.bin": {
+      "bytes": 19892,
+      "sha256": "89992fc7a5319df6f2908e44a3b694329fac4b500629a573224702e5fdd16f77"
+    },
+    "assets/characters/Hair_Buzzed.gltf": {
+      "bytes": 2006,
+      "sha256": "43752a4c8f2464eb2494a8ab179bf7ad237638a3d47fb3de0a38361db40e1451"
+    },
+    "assets/characters/Hair_Long.bin": {
+      "bytes": 115996,
+      "sha256": "13996da35c7afbf8cb5097da37207ee5b7c2e2904d4ab9e2ace9843030fff8d5"
+    },
+    "assets/characters/Hair_Long.gltf": {
+      "bytes": 2056,
+      "sha256": "94500e2e37e09efc8b8b920b8c6437ef1c76ca35863992b82d0d5de6e77122e9"
+    },
+    "assets/characters/Hair_SimpleParted.bin": {
+      "bytes": 32032,
+      "sha256": "57c6359703a37e346ee38a9c7ba55c8dee761c0a02da99847d06f5a91728f3cc"
+    },
+    "assets/characters/Hair_SimpleParted.gltf": {
+      "bytes": 2010,
+      "sha256": "ce6c666d00bcca2baa0c58d0442505f90f8feff952592effc4697a2341e9e56d"
+    },
+    "assets/characters/LICENSE.txt": {
+      "bytes": 806,
+      "sha256": "0f4beaf0fe360a7732e58bbe3dbf60a2422367fbea60cb9ea4add968f383268e"
+    },
+    "assets/characters/Superhero_Female_FullBody.bin": {
+      "bytes": 990808,
+      "sha256": "3a8220a485b33d05d879115a50697728b45a151781106033afb8b8c243fca208"
+    },
+    "assets/characters/Superhero_Female_FullBody.gltf": {
+      "bytes": 39041,
+      "sha256": "5ab0d4ae5ce17f4f4c4319655d82a4c882b559d6bb8c592b4dbb76d4f2ff1906"
+    },
+    "assets/characters/Superhero_Male_FullBody.bin": {
+      "bytes": 720076,
+      "sha256": "459003f9745853ae562a85506a2b94dd56515c1f37728f9fa3d2ce1a3e4cd92f"
+    },
+    "assets/characters/Superhero_Male_FullBody.gltf": {
+      "bytes": 38235,
+      "sha256": "49059ba5189df4c49630a95bdf8ba6d38ca8b8fa259d0105c219bcd6f786c314"
+    },
+    "assets/characters/T_Eye_Brown.png": {
+      "bytes": 35958,
+      "sha256": "d08e3356a83211bc6ca21fe3a8e39f4b5c1a3b8f85457fc2c0fb57be09935025"
+    },
+    "assets/characters/T_Eye_Normal.png": {
+      "bytes": 15099,
+      "sha256": "9ed61f7726a54fe346a78b9e5a18905d8e2b88f86235d97f53cd207a26f3f8c7"
+    },
+    "assets/characters/T_Hair_1_BaseColor.png": {
+      "bytes": 275973,
+      "sha256": "ea3e630418cc5a8b22fc1e00a33b2a71b5b9946725425c0bde76e8060eb037e3"
+    },
+    "assets/characters/T_Hair_1_Normal.png": {
+      "bytes": 452790,
+      "sha256": "22d5edb103c73b48f487e807acd9947f43c99fb1e4cc4429f9c4c2232264d80e"
+    },
+    "assets/characters/T_Hair_2_BaseColor.png": {
+      "bytes": 307164,
+      "sha256": "585b52fdafc084b0cf28d9050b5773f279438018623e7fb08bbbdfc73f34d888"
+    },
+    "assets/characters/T_Hair_2_Normal.png": {
+      "bytes": 511420,
+      "sha256": "8daaa7fc8c4c1a543ce9c278d79de9fc59d3605a5d750b0467571065a720ff4c"
+    },
+    "assets/characters/T_Superhero_Female_Dark_BaseColor.png": {
+      "bytes": 209195,
+      "sha256": "a0a25a90f4ae4eba3e4a97797757e242f5f213ef3c9a4b9356c0401aebdfba5b"
+    },
+    "assets/characters/T_Superhero_Female_Normal.png": {
+      "bytes": 347957,
+      "sha256": "2ceafcff0cbbce983cef010b62e67d3382d982510117abfad16954299f78f717"
+    },
+    "assets/characters/T_Superhero_Female_Roughness.png": {
+      "bytes": 232988,
+      "sha256": "3932f539205ccd1a5e86f68446190b3350a366de48059bbe66ceead999d2a1c6"
+    },
+    "assets/characters/T_Superhero_Male_Dark.png": {
+      "bytes": 216453,
+      "sha256": "e7994bfe175832f42e71e4eb391cbb416b2d3db11ca289c6281fff3b5defda76"
+    },
+    "assets/characters/T_Superhero_Male_Normal.png": {
+      "bytes": 409923,
+      "sha256": "5281042f29f3fc4a070643465efcdf6f9639056827eee0ff30e5ad096479ea3e"
+    },
+    "assets/characters/T_Superhero_Male_Roughness.png": {
+      "bytes": 223417,
+      "sha256": "18bb487c9eac6b71dc9c549a965a6f3f3223a9d0d3480dba8b48ef21f1412438"
+    },
+    "assets/characters/UAL1_Standard.glb": {
+      "bytes": 7618436,
+      "sha256": "69591853d817488edaa8fd9bf8fc1d821eaeaf789f8627b3cd23b41c4ed67997"
+    },
+    "assets/characters/action-landmarks.json": {
+      "bytes": 2701,
+      "sha256": "c1e3e790b9d651d12f351ff9acadb0f835fb3a7dc3ea606908b0b3dcd7f85111"
+    },
+    "assets/characters/provenance.json": {
+      "bytes": 8820,
+      "sha256": "7ef7534e34b196c0aa016ea3f8f465fe9fec2d7f13cad4db66d93f8bceb077f4"
+    },
+    "assets/coastal/LICENSE.txt": {
+      "bytes": 455,
+      "sha256": "6e4653db51a6c8c47604f17d43212d6779306cf5940c051877bfa4b44237640a"
+    },
+    "assets/coastal/impostors-r3/island_tree_01-0-color.png": {
+      "bytes": 360810,
+      "sha256": "fd08ef57a7d67dc60a375a2ee85a4d98d525f80ced0c3088d6f255da22aabc83"
+    },
+    "assets/coastal/impostors-r3/island_tree_01-0-normal.png": {
+      "bytes": 374035,
+      "sha256": "55b636cc010ea550f70783c1aaeb99455b72a1f19cda69997529484a3c85f2e9"
+    },
+    "assets/coastal/impostors-r3/island_tree_01-1-color.png": {
+      "bytes": 358185,
+      "sha256": "b4430d8286c4814a2ede55276fe8ff22bee4cf7e21c3907113e7c012efcd40dc"
+    },
+    "assets/coastal/impostors-r3/island_tree_01-1-normal.png": {
+      "bytes": 371736,
+      "sha256": "524b8a167df4668b99451767666cae119498a5c61f1aa4153a7268d253076439"
+    },
+    "assets/coastal/impostors-r3/island_tree_01-2-color.png": {
+      "bytes": 357527,
+      "sha256": "ace5948b28321939119614b3912e37a926a0ca8e08448cdc5e5d3d8449276ade"
+    },
+    "assets/coastal/impostors-r3/island_tree_01-2-normal.png": {
+      "bytes": 371250,
+      "sha256": "bb84a30cb6ed2ec8bec2debdb80ce1e63aeebe6d5088e5421b68be3fe28024cb"
+    },
+    "assets/coastal/impostors-r3/island_tree_01-3-color.png": {
+      "bytes": 355756,
+      "sha256": "40b186b88987bb65b4be8a85a70a12279b532449b90450bdef122302565b4cd6"
+    },
+    "assets/coastal/impostors-r3/island_tree_01-3-normal.png": {
+      "bytes": 369212,
+      "sha256": "2ba5ef4c41af5f90847d23e718e5b70068181f56852bc51c7053dcb14f18b460"
+    },
+    "assets/coastal/impostors-r3/island_tree_02-0-color.png": {
+      "bytes": 336143,
+      "sha256": "4c5df6061f4f5baa887639ea98613329f5309ff30ce754aeb6d95d93cbfa4142"
+    },
+    "assets/coastal/impostors-r3/island_tree_02-0-normal.png": {
+      "bytes": 349766,
+      "sha256": "7ba62d70cf5f5d205c91350c58082455f832125fa7e508fcf80e071f7232d618"
+    },
+    "assets/coastal/impostors-r3/island_tree_02-1-color.png": {
+      "bytes": 346242,
+      "sha256": "cf07bfc70c9f250320c2fe5f302d58e3bede8224063821db90a4413d8687ff85"
+    },
+    "assets/coastal/impostors-r3/island_tree_02-1-normal.png": {
+      "bytes": 358897,
+      "sha256": "b0506d50c6fbc3c896cddf36c934156ae1dd0ddf8bad06e72830cb7931224daa"
+    },
+    "assets/coastal/impostors-r3/island_tree_02-2-color.png": {
+      "bytes": 333452,
+      "sha256": "3381a2868777a0948ef8fb53a68a9d6203eb740c6de422281b99f911a8a39f49"
+    },
+    "assets/coastal/impostors-r3/island_tree_02-2-normal.png": {
+      "bytes": 348374,
+      "sha256": "cd282da5e245106a9348f0a2fa8c076fb272e29fcf717ee5543029ef093ab345"
+    },
+    "assets/coastal/impostors-r3/island_tree_02-3-color.png": {
+      "bytes": 346370,
+      "sha256": "3ed9377accb9335b63065a263da4c542718a90a81ae8219b443490fb715538ea"
+    },
+    "assets/coastal/impostors-r3/island_tree_02-3-normal.png": {
+      "bytes": 359933,
+      "sha256": "fc67511da22e737545727cd8bd620e853b9a404399db7eadfac79f8790d9e9f2"
+    },
+    "assets/coastal/impostors-r3/island_tree_03-0-color.png": {
+      "bytes": 294424,
+      "sha256": "d7d4e771ca58dffba766a94ce03e31238659127beeae558f39617faf0f0db652"
+    },
+    "assets/coastal/impostors-r3/island_tree_03-0-normal.png": {
+      "bytes": 304353,
+      "sha256": "d130936f55dbbc6bfcec1a0608e03156d59688c57d2b0d1baf95dcd71fc8432d"
+    },
+    "assets/coastal/impostors-r3/island_tree_03-1-color.png": {
+      "bytes": 333822,
+      "sha256": "7ddeccd876aa8c66fbf0ef762021e3fba87704c7521c2b6df9eeebd4e514de17"
+    },
+    "assets/coastal/impostors-r3/island_tree_03-1-normal.png": {
+      "bytes": 344290,
+      "sha256": "9f8a2a165c67816cdba825b2c7e243088d878bf8c7fb69290cd53ace9e8ee630"
+    },
+    "assets/coastal/impostors-r3/island_tree_03-2-color.png": {
+      "bytes": 293679,
+      "sha256": "d7bee465a7a700023208d5549b84eea06eb1743f56b580eb8cc32fa950b601ac"
+    },
+    "assets/coastal/impostors-r3/island_tree_03-2-normal.png": {
+      "bytes": 303060,
+      "sha256": "0e5d1ce46eb525fae3e093084124a7a579ea9d8e5b24e2a886c77a7a61eb064f"
+    },
+    "assets/coastal/impostors-r3/island_tree_03-3-color.png": {
+      "bytes": 334178,
+      "sha256": "53e54316e5eafd65facffcf7119f47ffcdf54ea19fa07e700297130c4d7e8aef"
+    },
+    "assets/coastal/impostors-r3/island_tree_03-3-normal.png": {
+      "bytes": 342812,
+      "sha256": "7696e7468baf24f82b3b1e3b76b6b4670f9507a6d2ebdcfb9232d77d6a8429f3"
+    },
+    "assets/coastal/island_tree_01/island_tree_01_mid.bin": {
+      "bytes": 9713688,
+      "sha256": "7a0237cf45c265d8f5c55dd54b655b2e32a27e9fef5c1f1537caa945853f1c52"
+    },
+    "assets/coastal/island_tree_01/island_tree_01_mid.gltf": {
+      "bytes": 5365,
+      "sha256": "af9294375897e18480069f0282bea4a63a56c39dfea7ac7154a324707706a96f"
+    },
+    "assets/coastal/island_tree_01/island_tree_01_near.bin": {
+      "bytes": 14401408,
+      "sha256": "a537e58223cdc3a5283e3be54fe78a9d8363d081b0660f5146c031bee320c18c"
+    },
+    "assets/coastal/island_tree_01/island_tree_01_near.gltf": {
+      "bytes": 5377,
+      "sha256": "13ad13bbbd7b2f82795714a213afb117ede18f5177728836b5b2827e92b3f0a1"
+    },
+    "assets/coastal/island_tree_01/textures/island_tree_01_arm_1k.jpg": {
+      "bytes": 79519,
+      "sha256": "5a1095c53a54d45e64d4227bcda5702ea48d1ce92acec51c082599f6ac05e3fe"
+    },
+    "assets/coastal/island_tree_01/textures/island_tree_01_branches_arm_1k.jpg": {
+      "bytes": 46421,
+      "sha256": "4f7748d9e914910f9e6c247e16a82d165f33ed69bbc84e8d82bc4a6d43b142d1"
+    },
+    "assets/coastal/island_tree_01/textures/island_tree_01_branches_diff_1k.jpg": {
+      "bytes": 79204,
+      "sha256": "88d0a5df6ab0e08e0fc16ebd04c5cc093da6f059059dce221c5d50d4163264ef"
+    },
+    "assets/coastal/island_tree_01/textures/island_tree_01_branches_nor_gl_1k.jpg": {
+      "bytes": 103208,
+      "sha256": "31b7dd993a4136c1539084d2a5d14221c26b12299ebb6a410f846fd51606b0d3"
+    },
+    "assets/coastal/island_tree_01/textures/island_tree_01_diff_1k.jpg": {
+      "bytes": 84550,
+      "sha256": "bd6f7f9e83594541c066dade1ec47e91c9412f8fe3339905a7efcead2f632a51"
+    },
+    "assets/coastal/island_tree_01/textures/island_tree_01_leaves_arm_1k.jpg": {
+      "bytes": 59949,
+      "sha256": "c45d4c6d04e8ef0db8eec72f1ae58fa2accef9577afeb612a785b8ac9ce72956"
+    },
+    "assets/coastal/island_tree_01/textures/island_tree_01_leaves_nor_gl_1k.jpg": {
+      "bytes": 42535,
+      "sha256": "a5d157cd6833f3e8515763059d93149de9cb0c0169e715894a401d2d67889586"
+    },
+    "assets/coastal/island_tree_01/textures/island_tree_01_leaves_rgba_512.png": {
+      "bytes": 157520,
+      "sha256": "a6771cd5b6d9cc75cc83d2471d8e34a2d9248e50b2f7319d9ff9d6a5ad575b14"
+    },
+    "assets/coastal/island_tree_01/textures/island_tree_01_nor_gl_1k.jpg": {
+      "bytes": 140046,
+      "sha256": "f60e52f341b9f03f76c4e36e80b07d7e517505281699fe35be3350b9d657e11d"
+    },
+    "assets/coastal/island_tree_02/island_tree_02_mid.bin": {
+      "bytes": 6482344,
+      "sha256": "74c0055ea1a66a96ec0ad9de02882610e901ac007547626f62290650ae03773a"
+    },
+    "assets/coastal/island_tree_02/island_tree_02_mid.gltf": {
+      "bytes": 5368,
+      "sha256": "432c9bbc007be33f9971b6ab6a02e9c8d2325e4cefdb146c558c5f6a06a6238d"
+    },
+    "assets/coastal/island_tree_02/island_tree_02_near.bin": {
+      "bytes": 9659144,
+      "sha256": "09b324d466cae0e78aad6b24e8c5911ae643de46c0824c907eedb71a410c646d"
+    },
+    "assets/coastal/island_tree_02/island_tree_02_near.gltf": {
+      "bytes": 5375,
+      "sha256": "3c62ac0d7ba3b84b0900608a28c8a70edc202bae59f4cd00cf25784637c1f009"
+    },
+    "assets/coastal/island_tree_02/textures/island_tree_02_arm_1k.jpg": {
+      "bytes": 69802,
+      "sha256": "2772396197e79af4d6aefdcbe711db278fb9e157da38d8d8ce3df84312b9f6d9"
+    },
+    "assets/coastal/island_tree_02/textures/island_tree_02_branches_arm_1k.jpg": {
+      "bytes": 46421,
+      "sha256": "4f7748d9e914910f9e6c247e16a82d165f33ed69bbc84e8d82bc4a6d43b142d1"
+    },
+    "assets/coastal/island_tree_02/textures/island_tree_02_branches_diff_1k.jpg": {
+      "bytes": 79204,
+      "sha256": "88d0a5df6ab0e08e0fc16ebd04c5cc093da6f059059dce221c5d50d4163264ef"
+    },
+    "assets/coastal/island_tree_02/textures/island_tree_02_branches_nor_gl_1k.jpg": {
+      "bytes": 103208,
+      "sha256": "31b7dd993a4136c1539084d2a5d14221c26b12299ebb6a410f846fd51606b0d3"
+    },
+    "assets/coastal/island_tree_02/textures/island_tree_02_diff_1k.jpg": {
+      "bytes": 77988,
+      "sha256": "6a6eca881deb5c50e1cc0e00b154bf90a01c31a0c628db94821f04af266b8bb9"
+    },
+    "assets/coastal/island_tree_02/textures/island_tree_02_leaves_arm_1k.jpg": {
+      "bytes": 59949,
+      "sha256": "c45d4c6d04e8ef0db8eec72f1ae58fa2accef9577afeb612a785b8ac9ce72956"
+    },
+    "assets/coastal/island_tree_02/textures/island_tree_02_leaves_nor_gl_1k.jpg": {
+      "bytes": 42535,
+      "sha256": "a5d157cd6833f3e8515763059d93149de9cb0c0169e715894a401d2d67889586"
+    },
+    "assets/coastal/island_tree_02/textures/island_tree_02_leaves_rgba_512.png": {
+      "bytes": 157520,
+      "sha256": "a6771cd5b6d9cc75cc83d2471d8e34a2d9248e50b2f7319d9ff9d6a5ad575b14"
+    },
+    "assets/coastal/island_tree_02/textures/island_tree_02_nor_gl_1k.jpg": {
+      "bytes": 125497,
+      "sha256": "49bc5b506c9472545babe84ffba26771a239b4cbfa1a862020da522524ffb822"
+    },
+    "assets/coastal/island_tree_03/island_tree_03_mid.bin": {
+      "bytes": 12735596,
+      "sha256": "542bfaa72892d7b3f30a7554256d35b5cbbe4c781a383c350b08dce8d61df0cc"
+    },
+    "assets/coastal/island_tree_03/island_tree_03_mid.gltf": {
+      "bytes": 5372,
+      "sha256": "fe65fc05e681d5fb59038c2edb95fb001f27945bcfdf7de28c6ca7b1ca3c5e7d"
+    },
+    "assets/coastal/island_tree_03/island_tree_03_near.bin": {
+      "bytes": 18909668,
+      "sha256": "534b1ab21afed6c88ef5fba38bb3fd3806710514584f0f3de4e1e7e5d893b1ab"
+    },
+    "assets/coastal/island_tree_03/island_tree_03_near.gltf": {
+      "bytes": 5386,
+      "sha256": "6f845ca88c1c4cc24a7b5a0187ca0a7f24c82aa2dfcdbf6ce0e50696813d26cf"
+    },
+    "assets/coastal/island_tree_03/textures/island_tree_03_arm_1k.jpg": {
+      "bytes": 64842,
+      "sha256": "d809f459086c22585fe39184cd2d686da7d5762d16713457ede69951eb6b9f70"
+    },
+    "assets/coastal/island_tree_03/textures/island_tree_03_branches_arm_1k.jpg": {
+      "bytes": 46421,
+      "sha256": "4f7748d9e914910f9e6c247e16a82d165f33ed69bbc84e8d82bc4a6d43b142d1"
+    },
+    "assets/coastal/island_tree_03/textures/island_tree_03_branches_diff_1k.jpg": {
+      "bytes": 79204,
+      "sha256": "88d0a5df6ab0e08e0fc16ebd04c5cc093da6f059059dce221c5d50d4163264ef"
+    },
+    "assets/coastal/island_tree_03/textures/island_tree_03_branches_nor_gl_1k.jpg": {
+      "bytes": 103208,
+      "sha256": "31b7dd993a4136c1539084d2a5d14221c26b12299ebb6a410f846fd51606b0d3"
+    },
+    "assets/coastal/island_tree_03/textures/island_tree_03_diff_1k.jpg": {
+      "bytes": 85218,
+      "sha256": "7da34c8f7a76e0a9283288d4b6da73138272aac1733cfda9268c34d843e911f9"
+    },
+    "assets/coastal/island_tree_03/textures/island_tree_03_leaves_arm_1k.jpg": {
+      "bytes": 59949,
+      "sha256": "c45d4c6d04e8ef0db8eec72f1ae58fa2accef9577afeb612a785b8ac9ce72956"
+    },
+    "assets/coastal/island_tree_03/textures/island_tree_03_leaves_nor_gl_1k.jpg": {
+      "bytes": 42535,
+      "sha256": "a5d157cd6833f3e8515763059d93149de9cb0c0169e715894a401d2d67889586"
+    },
+    "assets/coastal/island_tree_03/textures/island_tree_03_leaves_rgba_512.png": {
+      "bytes": 157520,
+      "sha256": "a6771cd5b6d9cc75cc83d2471d8e34a2d9248e50b2f7319d9ff9d6a5ad575b14"
+    },
+    "assets/coastal/island_tree_03/textures/island_tree_03_nor_gl_1k.jpg": {
+      "bytes": 106317,
+      "sha256": "3692df007972adaf17d93121e86361177eb6573cce9998fe4ff171f6c6eaf521"
+    },
+    "assets/coastal/provenance.json": {
+      "bytes": 11797,
+      "sha256": "9465715531290a0b954a8b16262c9c4609d1d3decaf957a1ba088c9f815d5cb9"
+    },
+    "assets/coastal/woody-surface-voxels.json": {
+      "bytes": 44053,
+      "sha256": "4bfd187b180b1ce4a652a1322ddd67aceb71789068fa8fa169f42c5d39a14178"
+    },
+    "assets/ground/coastal-sand/albedo.jpg": {
+      "bytes": 703132,
+      "sha256": "e72144f9d7b81bdb7bbdb34222b53431738dcef79346dd89412d2abd541e4d30"
+    },
+    "assets/ground/coastal-sand/manifest.json": {
+      "bytes": 1710,
+      "sha256": "645c20f5bbe691dacd7fde8daafde9ef851b5900c94b616103604c77932c4399"
+    },
+    "assets/ground/coastal-sand/normal-gl.jpg": {
+      "bytes": 884706,
+      "sha256": "1bde5f49ea78f94bcad73592696bf3949711c4ac197133b710c0c8521b6e996b"
+    },
+    "assets/ground/coastal-sand/roughness.jpg": {
+      "bytes": 291218,
+      "sha256": "5c9ead290a94913cfa2d0452a576ba527b50301fe208f2ffc4861e42a8fea45b"
+    },
+    "assets/ground/leafy-grass/albedo.jpg": {
+      "bytes": 1195394,
+      "sha256": "cfa40bc9d9417d1852db8753a8d5917f110c40101179f63543c382e39bc05e4a"
+    },
+    "assets/ground/leafy-grass/manifest.json": {
+      "bytes": 1638,
+      "sha256": "f49abbcbc4a709048e10e6c3355337ab9753473825f1176bfebe6eb060eba513"
+    },
+    "assets/ground/leafy-grass/normal-gl.jpg": {
+      "bytes": 1466049,
+      "sha256": "832328216adc0a7e1f70a31d5ee48c9ab7f2152d83816122736cf42ac4b2ebd6"
+    },
+    "assets/ground/leafy-grass/roughness.jpg": {
+      "bytes": 511385,
+      "sha256": "0c2a1d91aacb8e54a496051b59854e51e456fe858abeade778e308359ef16463"
+    },
+    "assets/inland/LICENSE.txt": {
+      "bytes": 300,
+      "sha256": "ef57fde5f7db22d148e37bb1da08899fa9abebbcc8de9115eab015c988295981"
+    },
+    "assets/inland/impostor-layout.json": {
+      "bytes": 995,
+      "sha256": "feeecd1359f08e954988035ae153bf5f86e185091e86ab0ca1dd0d3f48ab2876"
+    },
+    "assets/inland/impostors-r1/jacaranda_tree-0-color.png": {
+      "bytes": 1307120,
+      "sha256": "35a2837a54a7ebe56c51cdc9ee8ccafae97cb8641ced5360c8ec64e72dbb1853"
+    },
+    "assets/inland/impostors-r1/jacaranda_tree-0-normal.png": {
+      "bytes": 1275500,
+      "sha256": "fcb79400f3a96e265457e2d37dd00b0a31990c574ac8a8a0fcb085f1cbadafea"
+    },
+    "assets/inland/impostors-r1/jacaranda_tree-1-color.png": {
+      "bytes": 1146069,
+      "sha256": "80621d42389fead675eccf41f0984a4219390524ebcdaf28edac2bd9f24faaee"
+    },
+    "assets/inland/impostors-r1/jacaranda_tree-1-normal.png": {
+      "bytes": 1121295,
+      "sha256": "596e70fd75b777792779414c456a9057cf5c7f180a74dc5fcc634c45a707abab"
+    },
+    "assets/inland/impostors-r1/jacaranda_tree-2-color.png": {
+      "bytes": 1307499,
+      "sha256": "b16121622a17cd83d764a9390aafdd62a0514b10598a178f6f69d95f4729b050"
+    },
+    "assets/inland/impostors-r1/jacaranda_tree-2-normal.png": {
+      "bytes": 1278004,
+      "sha256": "35280fd51b507308d4bda3693826de37eb2fbb97f9a50b0dc35c0c6b1dbc65b5"
+    },
+    "assets/inland/impostors-r1/jacaranda_tree-3-color.png": {
+      "bytes": 1152750,
+      "sha256": "1a9beaf131d3210b932ce2f213254fe49783b7db281d9c1a992dcd2e1c5f28f1"
+    },
+    "assets/inland/impostors-r1/jacaranda_tree-3-normal.png": {
+      "bytes": 1128061,
+      "sha256": "4a61c834474c5ef8d0c8a7da494737a837656bf77e1ed08c33c93199c99bd1c9"
+    },
+    "assets/inland/inland-contact-shapes.json": {
+      "bytes": 375557,
+      "sha256": "09cab1a225cf4f1c078ce490b5fed1d384f3f5690abfce7c9330f7e252222742"
+    },
+    "assets/inland/jacaranda_tree/jacaranda_tree_mid.bin": {
+      "bytes": 76874756,
+      "sha256": "7a37ae2c863daf766ea28b2eb55df32e487d426d9286d63b268f73fcdcae74a0"
+    },
+    "assets/inland/jacaranda_tree/jacaranda_tree_mid.gltf": {
+      "bytes": 5162,
+      "sha256": "6a4bf512374af45e76cc0818af533a76fd099f4a659361cf4149645b8b45e2a7"
+    },
+    "assets/inland/jacaranda_tree/jacaranda_tree_near.bin": {
+      "bytes": 97452456,
+      "sha256": "14f9f9680b412decaa9022238ad768b006df4d60629d3fdcb2a9e2d041907af2"
+    },
+    "assets/inland/jacaranda_tree/jacaranda_tree_near.gltf": {
+      "bytes": 5168,
+      "sha256": "b9d654f27a429cc1403801ac9500ca4198b624795decb5cbf94fbf478221bc7b"
+    },
+    "assets/inland/jacaranda_tree/textures/jacaranda_tree_branches_arm_1k.jpg": {
+      "bytes": 46421,
+      "sha256": "4f7748d9e914910f9e6c247e16a82d165f33ed69bbc84e8d82bc4a6d43b142d1"
+    },
+    "assets/inland/jacaranda_tree/textures/jacaranda_tree_branches_diff_1k.jpg": {
+      "bytes": 76079,
+      "sha256": "d83e7009dbe767339115c4bad6c501c08be02c24811978b79985d56dbe0c2e2f"
+    },
+    "assets/inland/jacaranda_tree/textures/jacaranda_tree_branches_nor_gl_1k.jpg": {
+      "bytes": 103208,
+      "sha256": "31b7dd993a4136c1539084d2a5d14221c26b12299ebb6a410f846fd51606b0d3"
+    },
+    "assets/inland/jacaranda_tree/textures/jacaranda_tree_leaves_arm_1k.jpg": {
+      "bytes": 24065,
+      "sha256": "abc5ce0a45d52be3b011284a660a2a2bd7089e39dcaa97d8a74959ca3bf50f15"
+    },
+    "assets/inland/jacaranda_tree/textures/jacaranda_tree_leaves_nor_gl_1k.jpg": {
+      "bytes": 92987,
+      "sha256": "a0476685e70c7d87e64fa25679e7a7e2a7da2da8b50e8fc5f12e31886e01c423"
+    },
+    "assets/inland/jacaranda_tree/textures/jacaranda_tree_leaves_rgba_512.png": {
+      "bytes": 366860,
+      "sha256": "dc53b2e7b2eb73178e6785e4b899b944c78776d70910bcbee444ba9fff7c113d"
+    },
+    "assets/inland/jacaranda_tree/textures/jacaranda_tree_trunk_arm_1k.jpg": {
+      "bytes": 76296,
+      "sha256": "4a7be66191eb384877425eb9ae488a4e1f468865df1681149cf71790b3ce7798"
+    },
+    "assets/inland/jacaranda_tree/textures/jacaranda_tree_trunk_diff_1k.jpg": {
+      "bytes": 89324,
+      "sha256": "10fad4fd2075bc717320b306b54d3a2cfb97679335e26c5326c0dd8d377c1612"
+    },
+    "assets/inland/jacaranda_tree/textures/jacaranda_tree_trunk_nor_gl_1k.jpg": {
+      "bytes": 110307,
+      "sha256": "236b449f264b250846c3dae66d66af7c676de6bfdf2ea03cbd1f3ae313924baa"
+    },
+    "assets/inland/provenance.json": {
+      "bytes": 4384,
+      "sha256": "eec5e921b924f3f9cca0e93b5590be9b5c4c50a8dbf8fe2f7d6acf732efde3da"
+    },
+    "assets/rock/lichen-rock/albedo.jpg": {
+      "bytes": 1070311,
+      "sha256": "780128a5757920a7e30c50042e8975e8333ef4ae5809b30bb5be6a2f9fec3ec5"
+    },
+    "assets/rock/lichen-rock/manifest.json": {
+      "bytes": 1427,
+      "sha256": "3099a12429d3ca75bc837223242cb9a4bec4022e22f8071b899d0d56dc3fd17c"
+    },
+    "assets/rock/lichen-rock/normal-gl.jpg": {
+      "bytes": 1259569,
+      "sha256": "a3510a296030a1e312ef589a872ae416f2d23203a7b7c0c9e3646e8109c6a61c"
+    },
+    "assets/rock/lichen-rock/roughness.jpg": {
+      "bytes": 573955,
+      "sha256": "13a12b95d951f6fa4407d210fc97244274ff73583b60208eff651f3779c01a2e"
+    },
+    "assets/woodland/LICENSE.txt": {
+      "bytes": 251,
+      "sha256": "c7e758b79e5f871c1ff666d4b100d999bb898004a463ea1f69d42f2262ed5cb3"
+    },
+    "assets/woodland/fern_02/fern_02.bin": {
+      "bytes": 213568,
+      "sha256": "7afbcaaf9afedf1958d687390339ddec5fef213d34e8aab4c435be4e3618100f"
+    },
+    "assets/woodland/fern_02/fern_02.gltf": {
+      "bytes": 4569,
+      "sha256": "f6a84d6d40ce41337b58b8a4cd19469afa813dfc72510b78d3340ad541481e94"
+    },
+    "assets/woodland/fern_02/textures/fern_02_arm_1k.jpg": {
+      "bytes": 38043,
+      "sha256": "3653599a1d8d56e65b9f3982531cfd70594d888f1bc268f19db9d95a00cf18ad"
+    },
+    "assets/woodland/fern_02/textures/fern_02_diff_1k.jpg": {
+      "bytes": 34324,
+      "sha256": "016fa05300368c6a2edee55acddc329fb421f080a64d0e81b7369a4e787b66ab"
+    },
+    "assets/woodland/fern_02/textures/fern_02_nor_gl_1k.jpg": {
+      "bytes": 35794,
+      "sha256": "365ab0c62b9218b6decf8120f351efdc4177e78458d9cf1b152493f3b4b1a345"
+    },
+    "assets/woodland/provenance.json": {
+      "bytes": 1910,
+      "sha256": "0fc8bb5003a4156673130d49dbe3c82bb8bebc15525396b808cf1540e365c32f"
+    },
+    "assets/woodland/rock_moss_set_01/rock_moss_set_01.bin": {
+      "bytes": 341416,
+      "sha256": "68d2c6157fa9bb3420591ef2540b475284623d9a434677f3b1d94f52acba3c2c"
+    },
+    "assets/woodland/rock_moss_set_01/rock_moss_set_01.gltf": {
+      "bytes": 6664,
+      "sha256": "ee9f9ccc99357fbb1c72bd0615fd20c51c4fd3ee2d1caa370d0b13aa582cf343"
+    },
+    "assets/woodland/rock_moss_set_01/textures/rock_moss_set_01_diff_1k.jpg": {
+      "bytes": 58564,
+      "sha256": "a396e96249a2c4f96996fdc218f19fb2170d609f7d0d7f96d7ad76625aded928"
+    },
+    "assets/woodland/rock_moss_set_01/textures/rock_moss_set_01_nor_gl_1k.jpg": {
+      "bytes": 63354,
+      "sha256": "866ae06b9497809b9da2737fd93475aa31d24aafa25ffb424a313f9c47d48096"
+    },
+    "assets/woodland/rock_moss_set_01/textures/rock_moss_set_01_rough_1k.jpg": {
+      "bytes": 30958,
+      "sha256": "14c649b4402bdcce1331e95de3bc375eef399498e51e8d7a0b567b03eb994302"
+    },
+    "index.html": {
+      "bytes": 4429,
+      "sha256": "b6a1999b12bf081d8edb28fee66d7d82e69d22778942287e91f6c9f52a531ad1"
+    },
+    "serve.py": {
+      "bytes": 1081,
+      "sha256": "15a7ff5096fd6b8c33c14591065d184ba7e643f9efd3f4c036e4c4058f349e45"
+    },
+    "src/action-timing.js": {
+      "bytes": 337,
+      "sha256": "fb94324d1ff0675e88b44ed241fa9ce4667cf9a1e944ca56c10a79cb0ea7099d"
+    },
+    "src/actor-contact.js": {
+      "bytes": 2014,
+      "sha256": "c4ef9ebdeac35142e6af308dd6f7cd9d00d2e9244c823cb220e8875efb509067"
+    },
+    "src/audio.js": {
+      "bytes": 13435,
+      "sha256": "2d609259a19a5b09b8bb014b97770319263bfee65516ebc3cc8c83e4cad6fdaa"
+    },
+    "src/authored-assets.js": {
+      "bytes": 3465,
+      "sha256": "fcc16588e1d980290d1784bb675cd65477acedfd27ed1157a62120a1c2066e3f"
+    },
+    "src/authored-character.js": {
+      "bytes": 15250,
+      "sha256": "02ac9a9f14d2b232f5349589d33a88ff374d3dd7b3bb202a5d0b0dde35afbbba"
+    },
+    "src/authored-pose-clock.js": {
+      "bytes": 1938,
+      "sha256": "fa197a88491672fd78421c5cc4487f60d7e47f323e1378e789c125cd87bd509c"
+    },
+    "src/authored-retarget.js": {
+      "bytes": 1901,
+      "sha256": "43c02d1fcce3c16287ba97318f311d55ee611bdaa7277e8eed77c9f1091e75d1"
+    },
+    "src/authored-wardrobe.js": {
+      "bytes": 13705,
+      "sha256": "cc389eae641342df247e655abbac97e846e5b7583bbbfd25090e5291b8da9ddc"
+    },
+    "src/bedrock-terrain.js": {
+      "bytes": 1184,
+      "sha256": "ea1461a5232372e598cf6e984ffab30346692ae3207e924e0f66e3d5feeeeee5"
+    },
+    "src/berry.js": {
+      "bytes": 5801,
+      "sha256": "b1ab48acbc02b9acbd171d9e7bdef00fa282fde03fc09c8057f96233733ce5f5"
+    },
+    "src/body-motion.js": {
+      "bytes": 714,
+      "sha256": "48952cd92f0856612830dc4fb72ec17d433b1df6572188a483b948fd65cf5c4e"
+    },
+    "src/camera.js": {
+      "bytes": 4748,
+      "sha256": "c52a162e897821ad490c62f9655e558768f5f253d7932c528fdb160a6b7b487a"
+    },
+    "src/camp-architecture.js": {
+      "bytes": 6930,
+      "sha256": "8f508ca8b1f4fba7a4d3577e7f7d0d426118aad7633e15931f0224da152f6e4b"
+    },
+    "src/camp-surface.js": {
+      "bytes": 2323,
+      "sha256": "482fe1dd4fe6365e50823e667bebaebf6ab8cdc5d28deb9348516b1f6616eca4"
+    },
+    "src/campfire.js": {
+      "bytes": 2776,
+      "sha256": "7cc0f26ba49f60b711c75eb4f9ec4a5edb03e525f7847b0117c5ee25373f117d"
+    },
+    "src/character-head.js": {
+      "bytes": 6010,
+      "sha256": "081f3f9a67c3b8c264004b3c9d5352e9a23a75262e20d6e179e48927b9b3d413"
+    },
+    "src/character.js": {
+      "bytes": 24035,
+      "sha256": "5013fb09097ea64732f5af11d5b5b5d454ce0f4108d54e55104ebf4b32d53f25"
+    },
+    "src/coastal-far-batches.js": {
+      "bytes": 1477,
+      "sha256": "2eadeaad1ed5278f91961c6e57f68fff6c90ba5c848ae13beba36fe1d2758b4a"
+    },
+    "src/coastal-level-budget.js": {
+      "bytes": 521,
+      "sha256": "bfa7eb838fb2f4d245c9197822ebb0e8772a2fe8f458974da98936f8257355e7"
+    },
+    "src/coastal-sources.js": {
+      "bytes": 7578,
+      "sha256": "fb1f16e0ee43dc643eb5951b11acc79f9610d71ea415e5cafe9ec96a65ea7360"
+    },
+    "src/coastal.js": {
+      "bytes": 1123,
+      "sha256": "6c18509bbeb0d5a121a4ed2f19a2d4c1c909eefafeecb876c93400c8296257a1"
+    },
+    "src/contact-shade.js": {
+      "bytes": 5960,
+      "sha256": "850e369efa536ffae51afc404734459502362bb05875bb3a510a223dbc9029dc"
+    },
+    "src/cottage-surfaces.js": {
+      "bytes": 2904,
+      "sha256": "538fbd00cb32b9316156a0ea8dc5918cea2b36286f3f095e26291bcd033e399a"
+    },
+    "src/creature-footing.js": {
+      "bytes": 3783,
+      "sha256": "71707700f33b00c293c660cb958b4c83c97b8b74086064fbaccccec05cfa615b"
+    },
+    "src/creature-surface.js": {
+      "bytes": 2370,
+      "sha256": "24f417deb393d5ddd9bf3b2a73c9a6629d53b4209b28c8a89eafaaa23abec387"
+    },
+    "src/creature.js": {
+      "bytes": 14044,
+      "sha256": "7a03b988d1d350d7342c02fb3f11000185bb3790743be30c16da94c481471bbb"
+    },
+    "src/crystal.js": {
+      "bytes": 2319,
+      "sha256": "1f4191077b07bc551dd5bb59397f404e0d0cde15c7aa2f30bc27e1f098d4c3cb"
+    },
+    "src/fishing-yard-layout.js": {
+      "bytes": 3435,
+      "sha256": "c542e1bebd4fe896bb4c74e0f712c88355bf29acd473ea91096839f849ef63c1"
+    },
+    "src/fishing-yard.js": {
+      "bytes": 5747,
+      "sha256": "5db325b31582e19dcf7f9205ee874a938aaa12a2646b3fa260890dce3ccbfa45"
+    },
+    "src/foliage.js": {
+      "bytes": 8947,
+      "sha256": "28a688f2939d62f5b26ca66fd5e144e695a25a9da61b40e4785bab50ec425893"
+    },
+    "src/game.js": {
+      "bytes": 21121,
+      "sha256": "52b61ceafaf90ebdf81aa0ea6b702f7a5e5efbb12f09249b47bb5a49976cb1b5"
+    },
+    "src/ground-support.js": {
+      "bytes": 1664,
+      "sha256": "375dadd53e14de0d8c5e97534b9fc2c5db6c7c5c248c15607ec8aa14017776db"
+    },
+    "src/ground-surface.js": {
+      "bytes": 9909,
+      "sha256": "aa3b407246d727fe48b645366c35f347312d557d4079fe0b7ee4d8434bcda290"
+    },
+    "src/impact-feedback.js": {
+      "bytes": 3814,
+      "sha256": "bacbe8e023fabc7055141c88e382891593bba0928f67ae8b5ed010e0089d0bae"
+    },
+    "src/inland.js": {
+      "bytes": 8366,
+      "sha256": "249b301d60d462798eba67a09ce22e5d6863ccbad2b4a946ffa6b42cee633c15"
+    },
+    "src/landscape.js": {
+      "bytes": 3847,
+      "sha256": "207519631b13e3287eb0cd7500ef979c479025aee1f31f16fa2acd39e6dc52ff"
+    },
+    "src/lighthouse.js": {
+      "bytes": 6029,
+      "sha256": "b134e4d6a593723b93267c8963ed1ab77d6a6112e31523689451333481ff8091"
+    },
+    "src/main.js": {
+      "bytes": 29746,
+      "sha256": "145ff85b497c6258ee31047863a875969de471ee4a7a83d8375bcd5c6459a3af"
+    },
+    "src/meadow.js": {
+      "bytes": 19762,
+      "sha256": "d7d8a19b7e3bbb66cb9199089856a0c777216b386c6b03d770be34a550bac37f"
+    },
+    "src/merge-parts.js": {
+      "bytes": 2121,
+      "sha256": "fa67b9162fcbb07d7f177a8855d42d56f8faf4f087c938c5997af0c87eac802f"
+    },
+    "src/movement-heading.js": {
+      "bytes": 450,
+      "sha256": "338f5d4063575847e9c17a60b9e6999b21744012b95e6096cfae531136ddd976"
+    },
+    "src/pointer-controls.js": {
+      "bytes": 1925,
+      "sha256": "b92d43d36099f1a444b1635a050c9dc3dd67709fcaebe33d4fca09501cdd650f"
+    },
+    "src/resource-contact.js": {
+      "bytes": 1619,
+      "sha256": "0d12a998df36543d3186edc765a5f749843e0a29cd588066306db90c2a45f34f"
+    },
+    "src/resource-footprint.js": {
+      "bytes": 6205,
+      "sha256": "664258f31e96d807f860fe0fd5d2d1f108a98a4f9ffcca6f2c5074b45e285be2"
+    },
+    "src/rock-surface.js": {
+      "bytes": 3575,
+      "sha256": "65854c61dec285c8c9ae1e010610b47d8ddeb31c428fd7fd1358983002182673"
+    },
+    "src/rock.js": {
+      "bytes": 2952,
+      "sha256": "75c6a03d537c0b7570276f70f2859fe62d32368c33b1d9f5b5655fe892d68033"
+    },
+    "src/ruin-layout.js": {
+      "bytes": 634,
+      "sha256": "546990987a222bd223d8a489c75054340f5b829518805eb562fd0493a8e38240"
+    },
+    "src/ruin.js": {
+      "bytes": 3667,
+      "sha256": "a246871499788f118c41aa5b8a31c08c3e9c7f9a7cd32a3e8dd4ed2a4b75414c"
+    },
+    "src/scene-finish.js": {
+      "bytes": 5438,
+      "sha256": "871e95018fd5fbc6c34bc6515201b26c305d24869ba2287e63ceb6f9045e472c"
+    },
+    "src/scene.js": {
+      "bytes": 27189,
+      "sha256": "0ec78198ef206e41f89221318514e957099a14d949679ff115ce800e552ba33d"
+    },
+    "src/settlement-ground.js": {
+      "bytes": 2109,
+      "sha256": "7e44ba874d59f27460bf955c069479df7a06d68179453757e07a960b69448bc6"
+    },
+    "src/sky.js": {
+      "bytes": 4062,
+      "sha256": "ea7f6f8377b6258dd1d5fe3c67299ab778c50c8a86d6ee0accbd4fcb675f6129"
+    },
+    "src/startup-textures.js": {
+      "bytes": 1241,
+      "sha256": "ea277895bc4a79aeba47c69dc841d55d6c0b54c0fb0809277857a34c9c059fcd"
+    },
+    "src/terrain-composition.js": {
+      "bytes": 1824,
+      "sha256": "59cc2a15ac157cbfaea098d446077ff0a8837b7fcf0cb1d0a03e32a2ef026a97"
+    },
+    "src/terrain-grid.js": {
+      "bytes": 1235,
+      "sha256": "99e4f886e28e8adeb3149a6f4c8d915a5715b0924229d517ab9dd5f3f5b5b7f9"
+    },
+    "src/textile.js": {
+      "bytes": 1403,
+      "sha256": "409b2ccf20dcbd8005e2d220404c358d5d39e1a7c6533db0bb80692cc85a69fb"
+    },
+    "src/tree.js": {
+      "bytes": 4062,
+      "sha256": "2a74ce682a6b566458965656b98df17e135e23a656c768894c0cb689de3aaffe"
+    },
+    "src/woodland.js": {
+      "bytes": 7891,
+      "sha256": "89cd0c56a8488f221f46c50f6b0c808d3614f02a0e73bf719c2690fd9c39deef"
+    },
+    "src/world.js": {
+      "bytes": 5927,
+      "sha256": "9f1ff4e4d7b7fa4b3323faf4e5a776cdbfabae4ab99cf0696c58d6b22190b8c1"
+    },
+    "styles.css": {
+      "bytes": 14754,
+      "sha256": "d28ebefb621b0c3600d4a5df9611f1c70ceb026e9af2e3310f0ce7b6ce5e5abc"
+    },
+    "vendor/README.md": {
+      "bytes": 376,
+      "sha256": "ba420a3a87fdd72cd14ec0251ee69a1971e52f2e2150b25ed208396c6e225c6d"
+    },
+    "vendor/THREE-LICENSE": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "vendor/addons/README.md": {
+      "bytes": 393,
+      "sha256": "b6eed89a3ae9711db7c733e54cad0e46f9aa84dbbf581a427665a33af706897f"
+    },
+    "vendor/addons/loaders/GLTFLoader.js": {
+      "bytes": 114759,
+      "sha256": "010a8c951743eb55c1e26e1c71e43162c5d49c571909fe8ea02ac7cb88c7a077"
+    },
+    "vendor/addons/utils/BufferGeometryUtils.js": {
+      "bytes": 35559,
+      "sha256": "a3c7f0ca98f311efc1909cb44268394ddc91ed7e026a2bf57e1e47b7f0c75e4a"
+    },
+    "vendor/three.core.min.js": {
+      "bytes": 381124,
+      "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de"
+    },
+    "vendor/three.module.min.js": {
+      "bytes": 338908,
+      "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6"
+    }
+  },
+  "archive": "tidelands-m5-2026-11-15-yard.zip",
+  "archiveBytes": 170937239,
+  "archiveSha256": "223356025130460351dc1c319a1b03efc6c9a2aabe78cfee8dc07b167ab4eaf4",
+  "archiveEntries": 216
+}

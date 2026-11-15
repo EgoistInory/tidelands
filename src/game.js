@@ -1,3 +1,4 @@
+import {fishingYardActive,fishingYardBlocksMove,fishingYardIntersectsBuilding} from './fishing-yard-layout.js';
 import {footprintBlocksMove,footprintIntersectsBuilding,copyFootprint} from './resource-footprint.js';
 import {SPAWN,LANDMARKS,terrain,regionAt,createWorld} from './world.js';
 import {terrainStepAllowed} from './terrain-grid.js';
@@ -47,6 +48,7 @@ export function canBuild(state,objects,key,x,z){
   if(Math.hypot(x-state.player.x,z-state.player.z)>9)return '请靠近建造位置。';
   const h=terrain(x,z);if(h<1)return '不能建在水里或潮间带。';
   if(Math.abs(terrain(x+2,z)-terrain(x-2,z))+Math.abs(terrain(x,z+2)-terrain(x,z-2))>3)return '这里太陡，换一块平地吧。';
+  if(fishingYardActive(state)&&fishingYardIntersectsBuilding({type:key,x,z}))return '这里是修船院，请换一块空地。';
   if(state.buildings.some(b=>Math.hypot(x-b.x,z-b.z)<6)||LANDMARKS.some(b=>Math.hypot(x-b.x,z-b.z)<(b.type==='ruin'?9:7)))return '与现有建筑或人物太近。';
   if(state.enemies.some(e=>e.hp>0&&Math.hypot(x-e.x,z-e.z)<actorRadius(e)+2))return '附近有野兽，请先清理建造位置。';
   // A depleted node still owns its future regrowth footprint.
@@ -117,6 +119,7 @@ function applyAttackDamage(state,damage,range){const hits=[],p=state.player,forw
 function canActorMove(state,objects,from,to,mover){
   const {x,z}=to,radius=actorRadius(mover);
   if(Math.abs(x)>390||Math.abs(z)>390||!terrainStepAllowed(from,to,terrain))return false;
+  if(fishingYardBlocksMove(state,from,to,radius))return false;
   if(objects.some(o=>!isDepleted(state,o)&&(footprintBlocksMove(from,to,o,radius)??(o.type==='tree'?actorBlocksMove(from,to,o,radius,1.15):resourceBlocksMove(from,to,o,radius)))))return false;
   if(state.buildings.some(o=>o.type!=='campfire'&&actorBlocksMove(from,to,o,radius,1.65)))return false;
   if(LANDMARKS.some(o=>o.type==='ruin'?ruinBlocksMove(from,to,o,radius):o.type==='npc'?actorBlocksMove(from,to,o,radius):['cottage','lighthouse'].includes(o.type)&&actorBlocksMove(from,to,o,radius,o.type==='cottage'?3.65:2.65)))return false;
