@@ -38,6 +38,8 @@
 
 ### Task 3: Acceptance checkpoint
 
-- [ ] Review the combined scene and camera safety/continuity at desktop and390 sizes.
+- [x] Review the combined scene and camera safety/continuity at desktop and390 sizes.
 - [x] Preserve the reviewed QA candidate and record unresolved terrain, continuous motion and runtime cost; do not promote.
-- [ ] Update progress and ordinarily commit/push the reviewed bounded checkpoint, verifying remote HEAD.
+- [x] Update checkpoint and verify prior7d9be6d remote; new delivery sync is recorded by its final Git receipt.
+
+Production continuation: promote the accepted bounded policy, preserve old camera functions, add explicit load/focus-jump recovery, pass456 tests and7 packaging checks, then verify raw extracted R2 in1280/390 with actual canonical live-export recovery. Full M5/3A remains open. See docs/CAMERA-POLICY-DELIVERY.md for failure receipts and boundaries.

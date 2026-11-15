@@ -1,0 +1,47 @@
+{
+  "package": "tidelands-m5-2026-11-15-connected-camera-r2",
+  "archiveSha256": "0eb90b4ea299bf7face514e2d2ae26c12ba361646d2b01050e01da234d254449",
+  "archiveBytes": 170940926,
+  "runtimeInputs": 217,
+  "entries": 218,
+  "tests": 456,
+  "nativeCamera": [
+    {
+      "width": 1920,
+      "frames": 7465,
+      "inside": 0,
+      "recovered": 0,
+      "terrain": 0,
+      "unresolved": 0,
+      "maxShift": 0.7000000000000002,
+      "maxTurn": 3.9143781777428712,
+      "maxTerrainStreak": 0,
+      "terrainStreak": 0,
+      "maxControllerCpu": 5.600000381469727,
+      "exceptions": []
+    },
+    {
+      "width": 390,
+      "frames": 10395,
+      "inside": 0,
+      "recovered": 0,
+      "terrain": 0,
+      "unresolved": 0,
+      "maxShift": 0.700000000000002,
+      "maxTurn": 4.1057378188302405,
+      "maxTerrainStreak": 0,
+      "terrainStreak": 0,
+      "maxControllerCpu": 3.3999996185302734,
+      "exceptions": []
+    }
+  ],
+  "native390OriginalReportComplete": false,
+  "canonicalRestoreSupplementPassed": true,
+  "packageSmokePassed": true,
+  "motionCandidateFrames": 1440,
+  "wholeVideoReviewed": false,
+  "audioListened": false,
+  "fullGoalComplete": false,
+  "m5Complete": false,
+  "prototypeSnapshotScope": "motion-source preserves exact QA source before promotion; production adds explicit load/focus-jump reset covered by camera-intent test"
+}

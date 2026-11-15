@@ -3,7 +3,8 @@ import {FISHING_YARD,fishingYardActive} from './fishing-yard-layout.js';
 import * as THREE from '../vendor/three.module.min.js';
 import {terrain,LANDMARKS,randomGenerator,dayCycle,weatherAt} from './world.js';
 import {isDepleted,enemyAttackPose} from './game.js';
-import {unobstructedCamera,smoothCamera} from './camera.js';
+import {followCamera} from './camera-controller.js';
+import {prepareCameraOccluder,createForegroundFade,cameraOccluderRoots} from './camera-occlusion.js';
 import {resourceHalfSize} from './resource-contact.js';
 import {createCharacter,animateCharacter} from './character.js';
 import {animateAuthoredCharacter} from './authored-character.js';
@@ -219,7 +220,7 @@ export class WorldView{
       }
     }
     this.islanders=[];
-    for(const o of LANDMARKS){const g=landmarkModel(o,this.rockSurface);g.position.set(o.x,terrain(o.x,o.z),o.z);if(o.type==='ruin')this.cameraObstacles.push({object:o,boxes:g.userData.cameraBoxes.map(box=>box.clone().translate(g.position))});if(o.type==='npc'){animateCharacter(g,{x:o.x,z:o.z,yaw:0,time:0,attackAt:-100,selected:'hand'},0,terrain);this.islanders.push({object:o,model:g});}this.scene.add(g);if(o.type==='lighthouse')this.lighthouse=g;}
+    for(const o of LANDMARKS){const g=landmarkModel(o,this.rockSurface);if(o.type!=='npc'){this.cameraForegroundRoots??=[];this.cameraForegroundRoots.push(g);}g.position.set(o.x,terrain(o.x,o.z),o.z);if(o.type==='ruin')this.cameraObstacles.push({object:o,boxes:g.userData.cameraBoxes.map(box=>box.clone().translate(g.position))});if(o.type==='npc'){animateCharacter(g,{x:o.x,z:o.z,yaw:0,time:0,attackAt:-100,selected:'hand'},0,terrain);this.islanders.push({object:o,model:g});}this.scene.add(g);if(o.type==='lighthouse')this.lighthouse=g;}
     const random=randomGenerator(4321);
     this.meadow=[...createMeadow(random,this.world.objects,this.groundHeight,{settlement:true}),...createShoreStones()];this.scene.add(...this.meadow);
     this.fishingYard=createFishingYard();this.scene.add(this.fishingYard.root);
@@ -242,7 +243,7 @@ export class WorldView{
   }
   sync(state){
     const switched=this.syncedState!==state;
-    if(switched){this.gatherAt=this.hurtAt=-100;this.gatherKind=this.gatherTool=this.gatherTarget=null;this.impacts?.clear();}
+    if(switched){this.cameraRoute={reset:true};this.cameraFade?.reset();this.gatherAt=this.hurtAt=-100;this.gatherKind=this.gatherTool=this.gatherTarget=null;this.impacts?.clear();}
     const dummy=new THREE.Object3D();
     for(const {batch,entries,part,hidden}of this.batches){let changed=false;entries.forEach((o,i)=>{const depleted=isDepleted(state,o);if(depleted===hidden.has(i))return;depleted?hidden.add(i):hidden.delete(i);resourceTransform(dummy,o,depleted);batch.setMatrixAt(i,dummy.matrix.clone().multiply(part));changed=true;});if(changed)batch.instanceMatrix.needsUpdate=true;}
     const definitions=new Map(state.buildings.map(b=>[b.id,b]));
@@ -323,10 +324,11 @@ export class WorldView{
     if(fishingYardActive(state))boxes.push(...(this.yardCameraBoxes??[]));
     for(const g of this.buildings.values())if(g.position.distanceTo(focus)<this.distance+12)boxes.push(new THREE.Box3().setFromObject(g));
     for(const o of LANDMARKS)if(['lighthouse','cottage'].includes(o.type)&&Math.hypot(o.x-p.x,o.z-p.z)<this.distance+12){const r=o.type==='lighthouse'?3.2:5,y=terrain(o.x,o.z);boxes.push(new THREE.Box3(new THREE.Vector3(o.x-r,y,o.z-r),new THREE.Vector3(o.x+r,y+(o.type==='lighthouse'?25:9),o.z+r)));}
-    // Avoidance may move the rendered camera; retain the player's requested orbit for the next gesture.
-    const renderedYaw=Math.atan2(this.camera.position.x-p.x,this.camera.position.z-p.z);
-    const safe=unobstructedCamera(focus,target,boxes,terrain,6,renderedYaw);
-    this.camera.position.copy(smoothCamera(focus,this.camera.position,safe,boxes,terrain,dt,Math.min(6,safe.distanceTo(focus))));
+    // Requested yaw/pitch remain under the player's control while the lens follows a connected path.
+    this.cameraRoute??={};const cameraResult=followCamera(focus,this.camera.position,target,boxes,terrain,dt,this.cameraRoute);
+    this.camera.position.copy(cameraResult.position);
+    this.cameraFade??=createForegroundFade();for(const root of cameraOccluderRoots(this))prepareCameraOccluder(root);
+    const bodyFocus=focus.clone();bodyFocus.y-=1;this.cameraFade.update(bodyFocus,this.camera.position,cameraResult.occluded,dt);
     // A retracted camera frames the body centre; the ordinary distant view keeps its look-ahead.
     const framing=THREE.MathUtils.smoothstep(this.camera.position.distanceTo(focus),3,6),framedFocus=focus.clone();framedFocus.y-=1.4*(1-framing);this.camera.lookAt(framedFocus);
     const fov=70-15*framing;if(Math.abs(this.camera.fov-fov)>1e-4){this.camera.fov=fov;this.camera.updateProjectionMatrix();}
