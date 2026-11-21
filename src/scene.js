@@ -125,6 +125,27 @@ export class WorldView{
     this.player=cast.actors.traveler;for(const entry of this.islanders)entry.model=cast.actors[entry.object.id];this.authoredCast=cast;
   }
   installWoodlandDressing(dressing){this.woodlandDressing?.release();this.woodlandDressing=dressing;this.scene.add(dressing.root);}
+  warmInlandTree(){
+    const tree=this.inland?.trees[0];
+    if(!tree||!this.finish?.enabled)return;
+    // Upload the one shared near model using its real lights and HDR format.
+    const camera=this.camera.clone(),{x,y,z}=tree.frame;
+    camera.position.set(x+6,y+5,z+12);camera.lookAt(x,y+5,z);
+    const hidden=this.scene.children.filter(o=>o.visible&&!o.isLight&&o!==tree.root);
+    const culled=[];
+    tree.near.traverse(mesh=>{if(mesh.isMesh&&mesh.frustumCulled)culled.push(mesh);});
+    const {visible:rootVisible}=tree.root,{visible:nearVisible}=tree.near,{visible:farVisible}=tree.far;
+    try{
+      for(const object of hidden)object.visible=false;
+      for(const mesh of culled)mesh.frustumCulled=false;
+      tree.root.visible=tree.near.visible=true;tree.far.visible=false;
+      this.finish.warmScene(this.scene,camera);
+    }finally{
+      for(const object of hidden)object.visible=true;
+      for(const mesh of culled)mesh.frustumCulled=true;
+      tree.root.visible=rootVisible;tree.near.visible=nearVisible;tree.far.visible=farVisible;
+    }
+  }
   createTerrain(){
     const geometry=new THREE.PlaneGeometry(TERRAIN_SIZE,TERRAIN_SIZE,TERRAIN_SEGMENTS,TERRAIN_SEGMENTS);geometry.rotateX(-Math.PI/2);const positions=geometry.attributes.position;
     const colors=[],layers=[];

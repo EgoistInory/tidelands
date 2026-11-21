@@ -218,6 +218,8 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     if(inlandPrepared){if(preparation.signal.aborted||renderLost){inlandPrepared.release();return;}try{view.inland=bindInlandVisual(view,inlandPrepared);view.sync(state);near=nearest(state,world.objects);}catch(error){view.inland?.release();view.inland=null;inlandPrepared.release();inlandFallback=true;}}
     $('load-status').textContent='正在点亮群岛…';await new Promise(requestAnimationFrame);
     if(preparation.signal.aborted||renderLost)return;
+    view.warmInlandTree();
+    if(preparation.signal.aborted||renderLost)return;
     // Finish the initial scene/shader draw while the start screen is still visible.
     view.draw(state,near,null,false,1/60);prepared=true;
     $('load-status').textContent=loadError||(inlandFallback?'部分林木细节暂未载入 · 可以继续':coastalFallback?'部分海岸细节暂未载入 · 可以继续':woodlandFallback?'部分林下细节暂未载入 · 可以继续':surfaces.some(s=>s.state.status==='fallback')?'部分地表使用备用素材 · 可以继续':'群岛已就绪 · 无需联网');

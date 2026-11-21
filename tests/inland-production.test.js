@@ -6,6 +6,7 @@ import {createWorld,terrain} from '../src/world.js';
 import {freshGame} from '../src/game.js';
 import {footprintBoxes} from '../src/resource-footprint.js';
 import {bindInlandVisual} from '../src/inland.js';
+import {WorldView} from '../src/scene.js';
 function fixture(){
  const world=createWorld(),nodes=world.objects.filter(o=>o.type==='tree').slice(0,2),scene=new THREE.Scene(),geometry=new THREE.BoxGeometry(1,3,1),material=new THREE.MeshStandardMaterial(),model=new THREE.Group();model.add(new THREE.Mesh(geometry,material));let disposed=0;geometry.addEventListener('dispose',()=>disposed++);
  const batch=new THREE.InstancedMesh(geometry,material,2),record={batch,entries:nodes,part:new THREE.Matrix4(),hidden:new Set()};nodes.forEach((node,i)=>batch.setMatrixAt(i,new THREE.Matrix4().makeTranslation(node.x,node.y,node.z)));scene.add(batch);
@@ -23,6 +24,30 @@ test('a duplicate inland install fails without disturbing its existing owner',()
 });
 test('invalid later placement fails before changing any original resource contacts',()=>{
  const f=fixture();f.prepared.data.placements[1].pose[0]+=1;assert.throws(()=>bindInlandVisual(f.view,f.prepared),/pose/i);assert.equal(footprintBoxes(f.nodes[0]),null);assert.equal(f.view.scene.children.length,1);assert.equal(f.view.cameraObstacles,f.obstacles);f.prepared.release();
+});
+test('offscreen tree warmup restores visibility, culling and the active camera even if rendering fails',()=>{
+ const f=fixture(),view=f.view,bound=bindInlandVisual(view,f.prepared);
+ view.inland=bound;
+ const tree=bound.trees[0],mesh=tree.near.children[0],cameraPosition=view.camera.position.clone();
+ const sun=new THREE.DirectionalLight(),previouslyHidden=new THREE.Group();
+ previouslyHidden.visible=false;tree.root.visible=false;tree.near.visible=false;
+ view.scene.add(sun,previouslyHidden);
+ let draws=0;
+ view.finish={enabled:true,warmScene(scene,camera){
+  draws++;assert.equal(scene,view.scene);assert.notEqual(camera,view.camera);
+  assert(tree.root.visible&&tree.near.visible&&sun.visible);
+  assert(!tree.far.visible&&!mesh.frustumCulled&&!f.record.batch.visible&&!bound.trees[1].root.visible);
+  throw Error('warm draw failed');
+ }};
+ try{
+  assert.throws(()=>WorldView.prototype.warmInlandTree.call(view),/warm draw failed/);
+  assert.equal(draws,1);
+  assert.deepEqual(view.camera.position,cameraPosition);
+  assert(!tree.root.visible&&!tree.near.visible&&!previouslyHidden.visible);
+  assert(tree.far.visible&&mesh.frustumCulled&&f.record.batch.visible&&bound.trees[1].root.visible&&sun.visible);
+  view.finish.enabled=false;
+  WorldView.prototype.warmInlandTree.call(view);assert.equal(draws,1);
+ }finally{bound.release();}
 });
 test('the checked-in inland placements follow current terrain with visual and contact height offsets intact',()=>{
  const f=fixture(),data=JSON.parse(fs.readFileSync(new URL('../assets/inland/inland-contact-shapes.json',import.meta.url))),frozen=JSON.stringify(data);f.prepared.data=data;

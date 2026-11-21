@@ -7,6 +7,7 @@ import {dayCycle,terrain} from '../src/world.js';
 import {world,nextInput} from './journey_path.mjs';
 import {bindCampaignContacts} from './campaign_contact_plan.mjs';
 import {assertCameraRestoreEvidence} from './camera_policy_qa.mjs';
+import {profileRoute,routeViewport,routeRequests,startRouteProfile,stopRouteProfile} from './route-frame-profile.mjs';
 
 const [name,out]=process.argv.slice(2);
 assert(/^[a-zA-Z0-9_-]+$/.test(name)&&out&&!fs.existsSync(out));
@@ -21,6 +22,7 @@ for(const [file,{sha256}] of Object.entries(manifest.files)){
   assert.equal(sha(fs.readFileSync(file==='README.md'?'docs/LOCAL-DELIVERY.md':file)),sha256,file);
 }
 const report={complete:false,archiveSha256:manifest.archiveSha256,saveSha256:sha(original),rows:[],logs:[],scope:'Original extracted index and modules. Ordinary historical save, real file input, held keys, natural time. Narrow window is not a physical device.'};
+if(profileRoute)report.scope='Ordinary historical save, native inputs and clock. Only scene response appends read-only complete-draw GPU/CPU measurement. No video recording during timing.';
 const camp=seed.buildings.find(b=>b.type==='campfire');
 const contacts=bindCampaignContacts(world);
 const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright');
@@ -29,7 +31,7 @@ fs.mkdirSync(out,{recursive:true});
 try{
   for(const width of [1280,390]){
     const dir=path.join(out,String(width));fs.mkdirSync(dir);
-    const context=await browser.newContext({viewport:{width,height:width===390?844:800},recordVideo:{dir,size:{width:960,height:600}}});
+    const context=await browser.newContext({...routeViewport(width),...(profileRoute?{}:{recordVideo:{dir,size:{width:960,height:600}}})});
     const page=await context.newPage(),inputs=[],phases=[];
     const read=()=>page.evaluate(k=>JSON.parse(localStorage.getItem(k)),key);
     const observe=async()=>{await page.keyboard.press('1');return read();};
@@ -60,7 +62,7 @@ try{
     page.on('pageerror',e=>report.logs.push(e.message));
     page.on('console',e=>{if(['warning','error'].includes(e.type()))report.logs.push(e.text());});
     try{
-      await context.route('**/*',route=>new URL(route.request().url()).origin===origin?route.continue():route.abort());
+      await routeRequests(context,origin,root,dir);
       await page.goto(`${origin}/${root}/`);
       await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);
       await page.click('#start-button');await page.click('#pause-button');
@@ -71,6 +73,7 @@ try{
       const initial=await capture('00-forest-dusk');
       assert.equal(dayCycle(initial.time).label,'黄昏');
       assert(Math.hypot(initial.player.x-seed.player.x,initial.player.z-seed.player.z)<.01);
+      await startRouteProfile(page);
       await go({id:'forest-bank',type:'waypoint',x:76,z:-19});
       await capture('01-landing');
       const shore={id:'camp-approach',type:'waypoint',x:camp.x+13,z:camp.z-10};
@@ -85,6 +88,7 @@ try{
       assert.equal(arrived.quest,seed.quest);assert.equal(arrived.kills,seed.kills);
       assert.equal(arrived.player.hp,100);assert.deepEqual(arrived.buildings,seed.buildings);
       assert.deepEqual(arrived.inventory,seed.inventory);
+      const timing=await stopRouteProfile(page,dir);
       await page.click('#pause-button');
       await page.getByRole('button',{name:'保存进度',exact:true}).click();
       const saved=await page.evaluate(k=>localStorage.getItem(k),key);
@@ -97,7 +101,7 @@ try{
       assertCameraRestoreEvidence({startLabel,loadStatus,exported:fs.readFileSync(exported,'utf8')},saved);
       const glError=await page.evaluate(()=>document.querySelector('#world').getContext('webgl2').getError());
       assert.equal(glError,0);
-      report.rows.push({width,phases,rest:{before:approach.player.hp,after:arrived.player.hp},restore:true,glError,savedSha256:sha(saved)});
+      report.rows.push({width,phases,rest:{before:approach.player.hp,after:arrived.player.hp},restore:true,glError,savedSha256:sha(saved),...(timing?{timing}:{})});
     }finally{
       fs.writeFileSync(path.join(dir,'inputs.json'),JSON.stringify(inputs,null,2)+'\n');
       await context.close();

@@ -57,6 +57,12 @@ export function createSceneFinish(renderer){
   return {
     get enabled(){return enabled;},set enabled(value){enabled=!!value;},
     setNightFocus(position,amount){nightFocus.copy(position);composite.uniforms.nightAmount.value=amount;},
+    warmScene(world,view){
+      if(!enabled||released)return;
+      const previous=renderer.getRenderTarget();
+      try{renderer.setRenderTarget(color);renderer.render(world,view);}
+      finally{renderer.setRenderTarget(previous);}
+    },
     resize(width,height){if(released)return;color.setSize(width,height);const w=Math.max(1,Math.ceil(width/4)),h=Math.max(1,Math.ceil(height/4));glow.setSize(w,h);blur.setSize(w,h);bright.uniforms.texel.value.set(1/width,1/height);soften.uniforms.stepSize.value.set(1/w,0);composite.uniforms.resolution.value.set(width,height);composite.uniforms.glowTexel.value.set(1/w,1/h);},
     render(world,view){
       if(!enabled||released){renderer.render(world,view);return;}
