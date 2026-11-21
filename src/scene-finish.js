@@ -21,7 +21,7 @@ export function createSceneFinish(renderer){
   const soften=make(`varying vec2 vUv;uniform sampler2D source;uniform vec2 stepSize;
     void main(){vec3 c=texture2D(source,vUv).rgb*.4;c+=(texture2D(source,vUv+stepSize).rgb+texture2D(source,vUv-stepSize).rgb)*.24;c+=(texture2D(source,vUv+stepSize*2.0).rgb+texture2D(source,vUv-stepSize*2.0).rgb)*.06;gl_FragColor=vec4(c,1.0);}`,
     {source:{value:glow.texture},stepSize:{value:new THREE.Vector2()}});
-  const composite=make(`varying vec2 vUv;uniform sampler2D source,depth,glow;uniform mat4 inverseProjection;uniform vec2 resolution,glowTexel;uniform float focal;
+  const composite=make(`varying vec2 vUv;uniform sampler2D source,depth,glow;uniform mat4 inverseProjection;uniform vec2 resolution,glowTexel;uniform float focal,nightAmount;uniform vec3 nightFocus;
     vec3 positionAt(vec2 uv,float d){vec4 p=inverseProjection*vec4(uv*2.0-1.0,d*2.0-1.0,1.0);return p.xyz/p.w;}
     void main(){
       vec3 col=texture2D(source,vUv).rgb;float d=texture2D(depth,vUv).r;
@@ -38,6 +38,12 @@ export function createSceneFinish(renderer){
         }
       }
       col*=1.0-min(.25,shade*.055);
+      if(nightAmount>0.0&&d<.99999){
+        vec3 delta=p-nightFocus;
+        float nearGround=1.0-smoothstep(36.0,676.0,dot(delta,delta));
+        float shadows=1.0-smoothstep(.02,.22,dot(col,vec3(.2126,.7152,.0722)));
+        col*=1.0+.68*nightAmount*nearGround*shadows;
+      }
       vec3 bloom=texture2D(glow,vUv).rgb*.4;
       bloom+=(texture2D(glow,vUv+vec2(0,glowTexel.y)).rgb+texture2D(glow,vUv-vec2(0,glowTexel.y)).rgb)*.24;
       bloom+=(texture2D(glow,vUv+vec2(0,glowTexel.y*2.0)).rgb+texture2D(glow,vUv-vec2(0,glowTexel.y*2.0)).rgb)*.06;
@@ -45,11 +51,12 @@ export function createSceneFinish(renderer){
       gl_FragColor=vec4(col,1.0);
       #include <tonemapping_fragment>
       #include <colorspace_fragment>
-    }`,{source:{value:color.texture},depth:{value:color.depthTexture},glow:{value:blur.texture},inverseProjection:{value:new THREE.Matrix4()},resolution:{value:new THREE.Vector2()},glowTexel:{value:new THREE.Vector2()},focal:{value:1}});
+    }`,{source:{value:color.texture},depth:{value:color.depthTexture},glow:{value:blur.texture},inverseProjection:{value:new THREE.Matrix4()},resolution:{value:new THREE.Vector2()},glowTexel:{value:new THREE.Vector2()},focal:{value:1},nightAmount:{value:0},nightFocus:{value:new THREE.Vector3()}});
   bright.toneMapped=soften.toneMapped=false;
-  const size=new THREE.Vector2();let enabled=true,released=false;
+  const size=new THREE.Vector2(),nightFocus=new THREE.Vector3();let enabled=true,released=false;
   return {
     get enabled(){return enabled;},set enabled(value){enabled=!!value;},
+    setNightFocus(position,amount){nightFocus.copy(position);composite.uniforms.nightAmount.value=amount;},
     resize(width,height){if(released)return;color.setSize(width,height);const w=Math.max(1,Math.ceil(width/4)),h=Math.max(1,Math.ceil(height/4));glow.setSize(w,h);blur.setSize(w,h);bright.uniforms.texel.value.set(1/width,1/height);soften.uniforms.stepSize.value.set(1/w,0);composite.uniforms.resolution.value.set(width,height);composite.uniforms.glowTexel.value.set(1/w,1/h);},
     render(world,view){
       if(!enabled||released){renderer.render(world,view);return;}
@@ -60,6 +67,7 @@ export function createSceneFinish(renderer){
         quad.material=bright;renderer.setRenderTarget(glow);renderer.render(scene,camera);
         quad.material=soften;renderer.setRenderTarget(blur);renderer.render(scene,camera);
         composite.uniforms.inverseProjection.value.copy(view.projectionMatrixInverse);composite.uniforms.focal.value=.5*color.height*view.projectionMatrix.elements[5];
+        if(composite.uniforms.nightAmount.value>0)composite.uniforms.nightFocus.value.copy(nightFocus).applyMatrix4(view.matrixWorldInverse);
         quad.material=composite;renderer.setRenderTarget(previous);renderer.render(scene,camera);
       }finally{renderer.setRenderTarget(previous);}
     },

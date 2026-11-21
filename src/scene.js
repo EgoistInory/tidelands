@@ -309,7 +309,9 @@ export class WorldView{
     this.woodlandDressing?.update(state,weather.windStrength);
     let fire=null,fireDistance=30;
     for(const b of state.buildings)if(b.type==='campfire'){const model=this.buildings.get(b.id);if(model)updateCampfire(model,state.time);const distance=Math.hypot(b.x-p.x,b.z-p.z);if(distance<fireDistance){fire=b;fireDistance=distance;}}
-    this.fireLight.intensity=fire?(20+Math.sin(state.time*9)*2+Math.sin(state.time*17))*(1-Math.min(1,Math.max(0,fireDistance-18)/12)):0;
+    const night=1-THREE.MathUtils.smoothstep(dayCycle(state.time).daylight,.04,.28);
+    this.fireLight.distance=18+5*night;
+    this.fireLight.intensity=fire?(20+7*night+Math.sin(state.time*9)*2+Math.sin(state.time*17))*(1-Math.min(1,Math.max(0,fireDistance-18)/12)):0;
     if(fire)this.fireLight.position.set(fire.x,terrain(fire.x,fire.z)+1.8,fire.z);
     if(this.lighthouse){const {lantern,beacon}=this.lighthouse.userData;const lit=state.quest===6;beacon.visible=lit;beacon.rotation.y=state.time*.3;lantern.material.emissive.set(lit?0xffce72:0x000000);lantern.material.emissiveIntensity=lit?2:0;}
     this.updateIslanders(state,near,dt);
@@ -321,6 +323,8 @@ export class WorldView{
     const target=new THREE.Vector3(p.x+Math.sin(this.yaw)*this.distance,h+2.4+Math.tan(this.pitch)*this.distance,p.z+Math.cos(this.yaw)*this.distance);
     target.y=Math.max(target.y,terrain(target.x,target.z)+1.5);
     const focus=new THREE.Vector3(p.x,h+2.4,p.z),boxes=this.cameraObstacles.filter(({object:o})=>Math.hypot(o.x-p.x,o.z-p.z)<this.distance+12&&!isDepleted(state,o)).flatMap(o=>o.boxes??[o.box]);
+    // Let nearby shadow detail read against the dark horizon; fire stays a real local light.
+    this.finish?.setNightFocus(focus,night);
     if(fishingYardActive(state))boxes.push(...(this.yardCameraBoxes??[]));
     for(const g of this.buildings.values())if(g.position.distanceTo(focus)<this.distance+12)boxes.push(new THREE.Box3().setFromObject(g));
     for(const o of LANDMARKS)if(['lighthouse','cottage'].includes(o.type)&&Math.hypot(o.x-p.x,o.z-p.z)<this.distance+12){const r=o.type==='lighthouse'?3.2:5,y=terrain(o.x,o.z);boxes.push(new THREE.Box3(new THREE.Vector3(o.x-r,y,o.z-r),new THREE.Vector3(o.x+r,y+(o.type==='lighthouse'?25:9),o.z+r)));}
