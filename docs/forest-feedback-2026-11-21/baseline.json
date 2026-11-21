@@ -1,0 +1,114 @@
+{
+  "complete": true,
+  "expected": "centered",
+  "archiveSha256": "1126f4d4bb78487b3447753b26f4a3692bc7241838b4e5f77a62b724196a0e8f",
+  "saveSha256": "c832824896a38bb3b5b10b1940e121b37eff2cc3a6493a8dd119543545d2052d",
+  "rows": [
+    {
+      "width": 1280,
+      "phases": [
+        {
+          "label": "00-start",
+          "player": {
+            "x": 112.6335268832512,
+            "z": -23.00960493677319,
+            "hp": 100,
+            "stamina": 100,
+            "yaw": -0.223768835118981
+          },
+          "kills": 20,
+          "wood": 4,
+          "berry": 17,
+          "image": "00-start.jpg"
+        },
+        {
+          "label": "01-gather",
+          "player": {
+            "x": 114.0306206037664,
+            "z": -34.624405705882324,
+            "hp": 100,
+            "stamina": 100,
+            "yaw": 2.7151974798734657
+          },
+          "kills": 20,
+          "wood": 4,
+          "berry": 19,
+          "image": "01-gather.jpg"
+        },
+        {
+          "label": "02-encounter",
+          "player": {
+            "x": 137.64048066819618,
+            "z": -47.53573995685863,
+            "hp": 93,
+            "stamina": 100,
+            "yaw": 1.7207963267948967
+          },
+          "kills": 21,
+          "wood": 4,
+          "berry": 20,
+          "image": "02-encounter.jpg"
+        }
+      ],
+      "cues": {
+        "sounds": [
+          {
+            "kind": "gather",
+            "options": {
+              "surface": "berry"
+            },
+            "played": true
+          },
+          {
+            "kind": "hit",
+            "options": {
+              "enemyType": "crab"
+            },
+            "played": true
+          },
+          {
+            "kind": "hit",
+            "options": {
+              "enemyType": "crab"
+            },
+            "played": true
+          }
+        ],
+        "impacts": [
+          {
+            "id": "resource-170",
+            "kind": "berry",
+            "x": 114.8830231372267,
+            "y": 13.844977416527291,
+            "z": -36.50084836408496,
+            "floor": 13.494977416527291,
+            "time": 1999.4468000006816
+          },
+          {
+            "id": "enemy-37",
+            "kind": "hit",
+            "x": 138.3371468136177,
+            "y": 25.118926627103846,
+            "z": -47.5473924293289,
+            "floor": 23.968926627103848,
+            "time": 2004.6709000006806
+          },
+          {
+            "id": "enemy-37",
+            "kind": "hit",
+            "x": 138.78251693480647,
+            "y": 25.345397243894784,
+            "z": -47.670844234166346,
+            "floor": 24.195397243894785,
+            "time": 2005.46760000068
+          }
+        ]
+      },
+      "restored": true,
+      "savedSha256": "a6e19680a96a2193d65f8328d01f00810e045c738351484056d9de781895bc05",
+      "glError": 0
+    }
+  ],
+  "logs": [],
+  "scope": "Native Chromium and a historical normal save. Audio and the impact pool are observed without altering the game state."
+}

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {freshGame,interact,resolveGather,attack,resolveAttack} from '../src/game.js';
-import {gatherImpact,attackImpacts,createImpactFeedback} from '../src/impact-feedback.js';
+import {gatherContact,gatherImpact,attackImpacts,createImpactFeedback} from '../src/impact-feedback.js';
 import * as THREE from '../vendor/three.module.min.js';
 import {WorldView} from '../src/scene.js';
 import {createCreature} from '../src/creature.js';
@@ -23,6 +23,16 @@ test('combat feedback uses actual confirmed targets including the killing blow, 
  const windup=attack(state,{defer:true});assert.deepEqual(attackImpacts(state,windup),[]);state.time+=.225;
  const result=resolveAttack(state,windup.pending);assert.ok(enemy.hp<=0);const cues=attackImpacts(state,result);assert.equal(cues.length,1);assert.equal(cues[0].kind,'hit');assert.equal(cues[0].id,enemy.id);assert.ok(cues[0].z<enemy.z);
  assert.deepEqual(attackImpacts(state,resolveAttack(state,windup.pending)),[]);state.time+=1;const miss=attack(state,{defer:true});state.time+=.225;assert.deepEqual(attackImpacts(state,resolveAttack(state,miss.pending)),[]);
+});
+
+test('a moving gather keeps the same contact point for the animation and confirmed impact',()=>{
+ const state=freshGame(),object={id:'moving-stone',type:'stone',x:state.player.x+2,z:state.player.z};
+ const pending=interact(state,object,{defer:true}).pending,point=gatherContact(state,pending.object);
+ state.player.z+=1;state.time+=.21;
+ assert.notDeepEqual(gatherContact(state,pending.object),point);
+ const message=resolveGather(state,pending),cue=gatherImpact(state,pending,message,point);
+ assert.deepEqual({x:cue.x,y:cue.y,z:cue.z},point);
+ assert.equal(state.inventory.stone,2);
 });
 
 test('impact pool freezes on the game clock, expires, remains bounded and releases owned GPU buffers once',()=>{

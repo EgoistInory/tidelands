@@ -8,14 +8,15 @@ const contactProfiles={
   rock:{frequency:1750,length:.075,peak:.17},
   litter:{frequency:670,length:.14,peak:.15}
 };
-export function enemySoundCue(player,enemy,cameraYaw=0){
-  if(!player||!enemy||![player.x,player.z,enemy.x,enemy.z,cameraYaw].every(Number.isFinite))return {pan:0,volume:0};
-  const x=enemy.x-player.x,z=enemy.z-player.z,distance=Math.hypot(x,z);
+export function worldSoundCue(player,source,cameraYaw=0){
+  if(!player||!source||![player.x,player.z,source.x,source.z,cameraYaw].every(Number.isFinite))return {pan:0,volume:0};
+  const x=source.x-player.x,z=source.z-player.z,distance=Math.hypot(x,z);
   // Camera looks toward the player from +yaw; its screen-right axis is (cos(yaw),-sin(yaw)).
   const pan=distance<1e-6?0:.85*(x*Math.cos(cameraYaw)-z*Math.sin(cameraYaw))/distance;
   const fade=Math.max(0,Math.min(1,(24-distance)/8)),volume=fade/(1+(Math.max(0,distance-2)/7)**2);
   return {pan:Math.max(-.85,Math.min(.85,pan)),volume};
 }
+export {worldSoundCue as enemySoundCue};
 function ecologyBuffer(ctx,kind){
   const bird=kind==='birds',seconds=bird?23:19,random=randomGenerator(bird?9971:8831);
   const buffer=ctx.createBuffer(1,ctx.sampleRate*seconds,ctx.sampleRate),samples=buffer.getChannelData(0);
@@ -94,7 +95,7 @@ export class GameAudio{
   }
   setActive(active){this.active=active;this.applyVolume();if(!active){this.releaseEffects();this.lastPosition=null;this.lastFootfallCount=null;this.stepDistance=0;}}
   setEnabled(enabled){this.enabled=enabled;this.applyVolume();if(!enabled)this.releaseEffects(true);}
-  effect(kind,{menu=false,surface='grass',enemyType='boar',weapon='hand',pan=0,volume=1}={}){
+  effect(kind,{menu=false,surface='grass',enemyType='boar',weapon='hand',pan=null,volume=1}={}){
     const ui=menu&&['craft','food'].includes(kind);
     const tone=['quest','craft','food'].includes(kind),ctx=this.context;
     const level=tone?1:Number.isFinite(volume)?Math.max(0,Math.min(1,volume)):0;
@@ -118,9 +119,9 @@ export class GameAudio{
     if(tone){node.type='sine';node.frequency.setValueAtTime(kind==='quest'?440:kind==='craft'?660:330,now);node.frequency.exponentialRampToValueAtTime(kind==='quest'?880:440,now+length);}else node.buffer=this.noise;
     filter.type=tone?'lowpass':'bandpass';filter.frequency.value=frequency;filter.Q.value=.7;
     gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(peak*level,now+(windup?.04:.008));gain.gain.exponentialRampToValueAtTime(.0001,now+length);
-    const spatial=!tone&&(windup||pan!==0)&&Number.isFinite(pan)&&ctx.createStereoPanner?ctx.createStereoPanner():null;
+    const spatial=!tone&&(windup||Number.isFinite(pan))&&ctx.createStereoPanner?ctx.createStereoPanner():null;
     node.connect(filter);filter.connect(gain);
-    if(spatial){spatial.pan.setValueAtTime(Math.max(-.85,Math.min(.85,pan)),now);gain.connect(spatial);spatial.connect(this.master);}else gain.connect(ui?this.ui:this.master);
+    if(spatial){spatial.pan.setValueAtTime(Number.isFinite(pan)?Math.max(-.85,Math.min(.85,pan)):0,now);gain.connect(spatial);spatial.connect(this.master);}else gain.connect(ui?this.ui:this.master);
     this.sources.add(node);this.effectReleases.set(node,{menu:ui,gain});
     node.onended=()=>{node.disconnect();filter.disconnect();gain.disconnect();spatial?.disconnect();this.sources.delete(node);this.effectReleases.delete(node);};
     if(tone)node.start(now);
@@ -152,7 +153,7 @@ export class GameAudio{
       this.insects.gain.setTargetAtTime(habitat*(1-day)*.09,now,1.8);
       // One nearest-fire bed keeps large saved camps within a fixed audio budget.
       let fire=null,distance=24;for(const b of buildings){if(b.type!=='campfire'||!Number.isFinite(b.x)||!Number.isFinite(b.z))continue;const d=Math.hypot(b.x-player.x,b.z-player.z);if(d<distance){distance=d;fire=b;}}
-      const cue=enemySoundCue(player,fire,cameraYaw);
+      const cue=worldSoundCue(player,fire,cameraYaw);
       this.fire.gain.setTargetAtTime(cue.volume*.18,now,.25);this.firePan?.pan.setTargetAtTime(cue.pan,now,.12);
     }
     const priorFootfalls=this.lastFootfallCount??null;this.lastFootfallCount=Number.isSafeInteger(footfallCount)&&footfallCount>=0?footfallCount:null;

@@ -23,4 +23,16 @@ test('spatial effect routes and releases one bounded panner; muted cues allocate
   a.effect('enemy-windup',{pan:0,volume:.5});assert.equal(made,2,'center warning uses the same spatial gain law as side warnings');
   assert.equal(panner.pan.value,0);[...a.sources][0].onended();assert.ok(panner.disconnected);
   a.effect('enemy-windup',{volume:0});assert.equal(made,2);a.enabled=false;a.effect('enemy-windup',{pan:1});assert.equal(made,2);
+  a.enabled=true;
+  for(const [kind,pan] of [['gather',0],['hit',-.55]]){
+    a.effect(kind,{pan,volume:.9});
+    assert.equal(panner.pan.value,pan);
+    const source=[...a.sources][0];
+    assert.equal(source.target.target.target,panner);
+    source.onended();
+  }
+  assert.equal(made,4);
+  a.effect('hit');
+  assert.equal(made,4,'a non-positional hit still uses the direct mix');
+  [...a.sources][0].onended();
 });

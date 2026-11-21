@@ -11,8 +11,15 @@ function cueAt(state,target,kind){
   const height=kind==='hit'?(target.type==='boar'?1.3:1.15):kind==='tree'?1.3:['stone','crystal'].includes(kind)?Math.min(1.3,.8*(target.scale??1)):.35;
   return {id:target.id,kind,x,y:floor+height,z,floor,time:state.time};
 }
-export function gatherImpact(state,pending,message){
-  return pending?.state===state&&pending.resolved&&typeof message==='string'&&message.includes(' +')&&Object.hasOwn(colors,pending.object.type)?gatherCue(state,pending.object):null;
+export function gatherContact(state,object){
+  const point=footprintGatherTarget(state.player,object)??cueAt(state,object,object.type);
+  return {x:point.x,y:point.y,z:point.z};
+}
+export function gatherImpact(state,pending,message,point){
+  if(pending?.state!==state||!pending.resolved||typeof message!=='string'||!message.includes(' +')||!Object.hasOwn(colors,pending.object.type))return null;
+  const {id,type:kind}=pending.object;
+  const contact=point??gatherContact(state,pending.object);
+  return {id,kind,...contact,floor:terrain(contact.x,contact.z),time:state.time};
 }
 export function attackImpacts(state,result){
   return (result?.hits??[]).flatMap(id=>{const target=state.enemies.find(e=>e.id===id);return target?[cueAt(state,target,'hit')]:[];});
@@ -51,5 +58,3 @@ export function createImpactFeedback(capacity=48){
     dispose(){if(disposed)return;disposed=true;clear();mesh.dispose();geometry.dispose();material.dispose();}
   };
 }
-
-function gatherCue(state,object){const cue=cueAt(state,object,object.type),point=footprintGatherTarget(state.player,object);return point?{...cue,...point,floor:terrain(point.x,point.z)}:cue;}
