@@ -4,6 +4,7 @@ import {captureAuthorRest,retargetAuthoredClips} from './authored-retarget.js';
 import {createAuthoredPoseClock} from './authored-pose-clock.js';
 import {createCharacterTools} from './character.js';
 import {updateBodyMotion} from './body-motion.js';
+import {WATER_LEVEL} from './world.js';
 const up=new THREE.Vector3(0,1,0);
 const upper=name=>!['root','pelvis'].includes(name)&&! /^(thigh|calf|foot|ball)_/.test(name);
 function compiled(clip,root){return {duration:clip.duration,tracks:clip.tracks.map(t=>{const split=t.name.lastIndexOf('.'),name=t.name.slice(0,split);return {bone:root.getObjectByName(name),name,property:t.name.slice(split+1),sample:t.createInterpolant()};})};}
@@ -57,7 +58,8 @@ export function createAuthoredCharacter(avatar,library,role='traveler',hair=null
 export function animateAuthoredCharacter(root,state,dt,ground=()=>0){
   const rig=root.userData;if(dt<=0&&rig.lastPosition&&rig.lastTime===state.time&&rig.lastPosition.x===state.x&&rig.lastPosition.z===state.z)return;
   if(!rig.lastPosition){root.rotation.y=state.yaw;rig.idleStep=null;rig.baseClip=null;rig.transitionFrom=null;rig.clock=createAuthoredPoseClock(rig.scale);for(const leg of rig.legs){leg.target=null;leg.contact=null;}}
-  const floorHeight=ground(state.x,state.z),swimming=!!state.swimming&&.12-floorHeight>=1.8;
+  const floorHeight=ground(state.x,state.z),swimming=!!state.swimming&&WATER_LEVEL-floorHeight>=1.8;
+  rig.swimming=swimming;
   const plan=rig.clock.update({...state,swimming},dt);rig.lastPosition={x:state.x,z:state.z};rig.lastTime=state.time;rig.plan=plan;
   root.position.set(state.x,swimming?Math.max(floorHeight,-.45):floorHeight,state.z);
   root.rotation.y+=Math.atan2(Math.sin(state.yaw-root.rotation.y),Math.cos(state.yaw-root.rotation.y))*(dt>0?1-Math.exp(-dt*16):1);

@@ -1,7 +1,7 @@
 import {createFishingYard} from './fishing-yard.js';
 import {FISHING_YARD,fishingYardActive} from './fishing-yard-layout.js';
 import * as THREE from '../vendor/three.module.min.js';
-import {terrain,LANDMARKS,randomGenerator,dayCycle,weatherAt} from './world.js';
+import {terrain,WATER_LEVEL,LANDMARKS,randomGenerator,dayCycle,weatherAt} from './world.js';
 import {isDepleted,enemyAttackPose} from './game.js';
 import {followCamera} from './camera-controller.js';
 import {prepareCameraOccluder,createForegroundFade,cameraOccluderRoots} from './camera-occlusion.js';
@@ -188,7 +188,7 @@ export class WorldView{
           #include <tonemapping_fragment>
           #include <colorspace_fragment>
         }`});
-    const geometry=new THREE.PlaneGeometry(1800,1800,140,140);geometry.rotateX(-Math.PI/2);this.water=new THREE.Mesh(geometry,waterMaterial);this.water.position.y=.12;this.scene.add(this.water);
+    const geometry=new THREE.PlaneGeometry(1800,1800,140,140);geometry.rotateX(-Math.PI/2);this.water=new THREE.Mesh(geometry,waterMaterial);this.water.position.y=WATER_LEVEL;this.scene.add(this.water);
   }
   createScenery(){
     // Shared geometries/materials through instancing keep hundreds of resource nodes inexpensive.

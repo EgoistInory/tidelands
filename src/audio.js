@@ -1,6 +1,13 @@
 // Local synthesis: no downloads, microphone access or external audio service.
-import {ISLANDS,dayCycle,randomGenerator,weatherAt} from './world.js';
+import {ISLANDS,WATER_LEVEL,dayCycle,randomGenerator,weatherAt} from './world.js';
+import {estuaryHabitat} from './estuary-habitat.js';
 const habitatDensity=[.6,1,.24,.48];
+const contactProfiles={
+  wade:{frequency:1450,length:.125,peak:.29},
+  gravel:{frequency:1020,length:.10,peak:.20},
+  rock:{frequency:1750,length:.075,peak:.17},
+  litter:{frequency:670,length:.14,peak:.15}
+};
 export function enemySoundCue(player,enemy,cameraYaw=0){
   if(!player||!enemy||![player.x,player.z,enemy.x,enemy.z,cameraYaw].every(Number.isFinite))return {pan:0,volume:0};
   const x=enemy.x-player.x,z=enemy.z-player.z,distance=Math.hypot(x,z);
@@ -99,7 +106,9 @@ export class GameAudio{
     let frequency=windup?(enemyType==='crab'?720:180):tone?2800:kind==='splash'?1200:kind==='swing'?1600:kind==='hit'?260:kind==='gather'?700:sandy?520:140;
     let peak=windup?.22:kind==='step'?.16:tone?.13:.45;
     // Use the confirmed material/action identity without adding voices or buffers.
-    if(kind==='gather'){
+    if((kind==='step'||kind==='splash')&&Object.hasOwn(contactProfiles,surface)){
+      ({frequency,length,peak}=contactProfiles[surface]);
+    }else if(kind==='gather'){
       if(surface==='tree'){frequency=340;length=.22;}
       else if(surface==='stone'||surface==='crystal'){frequency=surface==='crystal'?2400:1600;length=.17;}
       else if(['berry','fiber','shell'].includes(surface)){frequency=surface==='shell'?1900:950;length=.10;peak=.24;}
@@ -123,10 +132,17 @@ export class GameAudio{
     }
     node.stop(now+length+.02);
   }
-  update(player,time,height,footfallCount=null,{buildings=[],cameraYaw=0}={}){
+  update(player,time,height,footfallCount=null,{buildings=[],cameraYaw=0,swimming}={}){
     if(!this.active)return;
-    if(this.context){const now=this.context.currentTime,{windStrength}=weatherAt(time);this.wind.gain.setTargetAtTime((height<2?.18:.075)*(1+Math.sin(time*.3)*.25)*windStrength,now,.3);this.filter.frequency.setTargetAtTime(height<2?850:420,now,.3);
+    const hasRenderedMode=typeof swimming==='boolean';
+    const isSwimming=swimming??(height<0);
+    const wading=hasRenderedMode&&!isSwimming&&height<WATER_LEVEL;
+    const bank=hasRenderedMode?estuaryHabitat(player.x,player.z,height):null;
+    if(this.context){const now=this.context.currentTime,{windStrength}=weatherAt(time);
       const shore=Math.max(0,Math.min(1,(5-height)/5)),wave=.5+.5*Math.sin(time*.65);
+      const shelter=bank?.shelter??0;
+      this.wind.gain.setTargetAtTime((.075+.105*shore)*(1-.4*shelter)*(1+Math.sin(time*.3)*.25)*windStrength,now,.3);
+      this.filter.frequency.setTargetAtTime((420+430*shore)*(1-.25*shelter),now,.3);
       this.surf.gain.setTargetAtTime(shore*(.035+.10*wave*wave)*windStrength,now,.45);this.surfFilter.frequency.setTargetAtTime(460+220*wave,now,.4);
       let habitat=0;
       for(let i=0;i<ISLANDS.length;i++){const island=ISLANDS[i],inside=Math.max(0,Math.min(1,(1-Math.hypot(player.x-island.x,player.z-island.z)/island.r)/.32));habitat=Math.max(habitat,inside*habitatDensity[i]);}
@@ -140,16 +156,24 @@ export class GameAudio{
       this.fire.gain.setTargetAtTime(cue.volume*.18,now,.25);this.firePan?.pan.setTargetAtTime(cue.pan,now,.12);
     }
     const priorFootfalls=this.lastFootfallCount??null;this.lastFootfallCount=Number.isSafeInteger(footfallCount)&&footfallCount>=0?footfallCount:null;
-    const last=this.lastPosition;this.lastPosition={x:player.x,z:player.z};if(!last)return;
+    const last=this.lastPosition;this.lastPosition={x:player.x,z:player.z,swimming:isSwimming};if(!last)return;
     const distance=Math.hypot(player.x-last.x,player.z-last.z);if(distance>4){this.stepDistance=0;return;}
-    // The rendered rig owns land contacts, including running flight and idle recovery.
-    if(height>=0&&this.lastFootfallCount!==null){
+    const kind=isSwimming||wading?'splash':'step';
+    let surface=height<2?'sand':'grass';
+    if(isSwimming)surface=hasRenderedMode?'swim':surface;
+    else if(wading)surface='wade';
+    else if(bank?.bedrock>=.48)surface='rock';
+    else if(bank?.gravel>=.45)surface='gravel';
+    else if(bank?.shelter>=.46)surface='litter';
+    // The rig reports ground contacts through shallow water and idle recovery.
+    if(!isSwimming&&this.lastFootfallCount!==null){
       this.stepDistance=0;
-      if(priorFootfalls!==null)for(let i=0;i<Math.min(2,Math.max(0,this.lastFootfallCount-priorFootfalls));i++)this.effect('step',{surface:height<2?'sand':'grass'});
+      if(priorFootfalls!==null)for(let i=0;i<Math.min(2,Math.max(0,this.lastFootfallCount-priorFootfalls));i++)this.effect(kind,{surface});
       return;
     }
-    const stride=height<0?1.7:.8;
-    this.stepDistance+=distance;if(this.stepDistance>=stride){this.stepDistance%=stride;this.effect(height<0?'splash':'step',{surface:height<2?'sand':'grass'});}
+    if(last.swimming!==isSwimming){this.stepDistance=0;return;}
+    const stride=isSwimming?1.7:.8;
+    this.stepDistance+=distance;if(this.stepDistance>=stride){this.stepDistance%=stride;this.effect(kind,{surface});}
   }
   async dispose(){
     const ctx=this.context;this.context=null;

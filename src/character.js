@@ -238,6 +238,7 @@ function placeFeet(root,ground,time,dt,yaw,crouch=0){
 
 export function animateCharacter(root,{x,z,yaw,time,attackAt,gatherAt=-100,gatherKind=null,gatherTool=null,hurtAt=-100,selected,swimming=false},dt,ground=null){
   const rig=root.userData,last=rig.lastPosition;
+  rig.swimming=swimming;
   const traveled=last?Math.hypot(x-last.x,z-last.z):0;rig.lastPosition={x,z};
   if(!last)resetFeet(rig);
   rig.travelDirection=traveled>.0001?new THREE.Vector3(x-last.x,0,z-last.z).normalize():(rig.travelDirection??new THREE.Vector3(0,0,1));

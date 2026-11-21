@@ -93,6 +93,27 @@ test('distance fallback uses walking spacing, coast selects sand, swimming keeps
   a.update({x:100,z:0},3,-1);assert.equal(events.length,1);
 });
 
+test('rendered wading follows footfalls and entering swimming starts a fresh stroke cadence',()=>{
+  const audio=new GameAudio(),events=[];
+  audio.setActive(true);
+  audio.effect=(kind,options)=>events.push({kind,...options});
+  audio.update({x:0,z:0},0,.4,20,{swimming:false});
+  audio.update({x:1.8,z:0},1,-.4,20,{swimming:false});
+  assert.deepEqual(events,[]);
+  audio.update({x:2,z:0},2,-.6,21,{swimming:false});
+  audio.update({x:2.25,z:0},3,-1.2,21,{swimming:false});
+  assert.deepEqual(events,[{kind:'splash',surface:'wade'}]);
+  audio.update({x:2.7,z:0},4,-1.8,21,{swimming:true});
+  audio.update({x:4.2,z:0},5,-2,21,{swimming:true});
+  assert.equal(events.length,1);
+  audio.update({x:4.5,z:0},6,-2,21,{swimming:true});
+  assert.deepEqual(events.at(-1),{kind:'splash',surface:'swim'});
+  audio.update({x:4,z:0},7,-1.5,21,{swimming:false});
+  audio.update({x:3.6,z:0},8,-1.2,22,{swimming:false});
+  audio.update({x:3.3,z:0},9,.4,23,{swimming:false});
+  assert.deepEqual(events.slice(2),[{kind:'splash',surface:'wade'},{kind:'step',surface:'sand'}]);
+});
+
 test('land audio follows actual rendered ankle touchdowns at walking and running speeds',()=>{
   for(const fps of [30,60,144])for(const speed of [2.4,7,12]){
     const c=createCharacter(),a=new GameAudio(),dt=1/fps,raised=[false,false];let sounds=0,visibleLandings=0;

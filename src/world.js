@@ -2,6 +2,7 @@ import {landformOffset} from './terrain-composition.js';
 import {createTerrainSurface} from './terrain-grid.js';
 import {bedrockHeight} from './bedrock-terrain.js';
 export const WORLD_SIZE = 800;
+export const WATER_LEVEL = .12;
 export const SPAWN = {x:-70,z:102};
 export const ISLANDS = [
   {x:-90,z:5,r:155,h:25,name:'潮汐海岸',color:0x789b50},
