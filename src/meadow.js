@@ -3,6 +3,7 @@ import {terrain,layoutTerrain,LANDMARKS,SPAWN,ISLANDS,randomGenerator} from './w
 import {landscapeMass} from './landscape.js';
 import {seatMeadowRoots} from './ground-support.js';
 import {estuaryHabitat} from './estuary-habitat.js';
+import {highlandAscent} from './highland-ascent.js';
 import {settlementWearAt} from './settlement-ground.js';
 
 const windTime={value:0};
@@ -55,14 +56,14 @@ function groundCoverSurface(){
 
 export function updateGroundCover(batches,camera){
   for(const batch of batches){
-    if(!['meadow-cover','meadow-shore','meadow-fern'].includes(batch.name))continue;
+    if(!['meadow-cover','meadow-shore','meadow-fern','highland-heath'].includes(batch.name))continue;
     const box=batch.boundingBox,dx=Math.max(box.min.x-camera.x,0,camera.x-box.max.x),dz=Math.max(box.min.z-camera.z,0,camera.z-box.max.z);
     batch.visible=batch.userData.detailEnabled!==false&&dx*dx+dz*dz<80*80;
   }
 }
 
 const campFootprints={tent:[2.15,1.85],workbench:[1.65,1.2],campfire:[1.4,1.4]};
-const landscapeNames=new Set(['meadow-grass','meadow-flowers','meadow-cover','meadow-shore','meadow-fern','shore-stones']);
+const landscapeNames=new Set(['meadow-grass','meadow-flowers','meadow-cover','meadow-shore','meadow-fern','shore-stones','highland-heath','highland-scree']);
 export function updateCampClearance(batches,buildings,scenery=[]){
   const footprints=[...buildings.filter(b=>campFootprints[b.type]).map(b=>[b.x,b.z,...campFootprints[b.type]]),...scenery],key=JSON.stringify(footprints);
   let changed=0;
@@ -196,6 +197,14 @@ export function createFiberClump(){
 
 // Keep the existing placements, but cull regions instead of submitting the whole archipelago.
 function regionBatches(model,matrices,name,regionSize=128,colors=[],groundHeight=null){
+  // Preserve the seeded placements while shortening plants along the worn tread.
+  if(name!=='meadow-shore'&&name!=='highland-heath'){
+    const heightScale=new THREE.Vector3(1,1,1);
+    for(const matrix of matrices){
+      const a=matrix.elements,wear=highlandAscent(a[12],a[14],a[13])?.wear??0;
+      if(wear>0){heightScale.y=1-wear*.86;matrix.scale(heightScale);}
+    }
+  }
   if(groundHeight)seatMeadowRoots(model.geometry,matrices,groundHeight);
   const regions=new Map();
   matrices.forEach((matrix,i)=>{const key=`${Math.floor(matrix.elements[12]/regionSize)},${Math.floor(matrix.elements[14]/regionSize)}`;if(!regions.has(key))regions.set(key,[]);regions.get(key).push({matrix,color:colors[i]});});
@@ -235,7 +244,7 @@ function createGroundCover(groundHeight){
 }
 
 // Sparse salt-tolerant tufts above the wave band, independent of inland placement RNG.
-function createShoreCover(groundHeight){
+function createShoreCover(groundHeight,highland){
   const random=randomGenerator(26081),dummy=new THREE.Object3D(),matrices=[],colors=[];
   for(let patch=0;patch<2400;patch++){
     const cx=random()*590-295,cz=random()*650-325,radius=1.5+random()*2.5;
@@ -268,7 +277,19 @@ function createShoreCover(groundHeight){
     dummy.scale.set(scale,scale*(1.13+reed*.42),scale);dummy.updateMatrix();
     matrices.push(dummy.matrix.clone());colors.push(reedColor.clone().multiplyScalar(.84+random()*.16));
   }
-  return regionBatches(createDuneClump(),matrices,'meadow-shore',32,colors,groundHeight);
+  const heath=randomGenerator(53128),heathTone=new THREE.Color(0xb4b18b),heathMatrices=[],heathColors=[];
+  if(highland)for(let x=-102;x<=-53;x+=1.15)for(let z=-198;z<=-146;z+=1.15){
+    const px=x+(heath()-.5),pz=z+(heath()-.5),height=terrain(px,pz);
+    const slope=Math.hypot(terrain(px+.5,pz)-terrain(px-.5,pz),terrain(px,pz+.5)-terrain(px,pz-.5));
+    const ascent=highlandAscent(px,pz,height,slope);
+    if(!ascent||ascent.wear>.22||ascent.plants<.45||heath()>.8*ascent.plants)continue;
+    const scale=.85+heath()*.77;
+    dummy.position.set(px,height-.04,pz);dummy.rotation.set(0,heath()*Math.PI*2,0);
+    dummy.scale.set(scale,scale*.58,scale);dummy.updateMatrix();
+    heathMatrices.push(dummy.matrix.clone());heathColors.push(heathTone.clone().multiplyScalar(.8+heath()*.23));
+  }
+  const model=createDuneClump();
+  return [...regionBatches(model,matrices,'meadow-shore',32,colors,groundHeight),...regionBatches(model,heathMatrices,'highland-heath',32,heathColors,groundHeight)];
 }
 
 // A tree's shelter defines a small community, leaving open routes and exposed slopes clear.
@@ -309,7 +330,7 @@ export function createForestCover(objects,groundHeight){
   return regionBatches(createFernClump(),matrices,'meadow-fern',32,colors,groundHeight);
 }
 
-export function createMeadow(random=randomGenerator(4321),objects=[],groundHeight=null,{settlement=false}={}){
+export function createMeadow(random=randomGenerator(4321),objects=[],groundHeight=null,{settlement=false,highland=false}={}){
   const dummy=new THREE.Object3D(),flowers=[],grass=[];
   for(let i=0;i<3000&&flowers.length<1200;i++){
     const x=random()*440-260,z=random()*450-290,y=layoutTerrain(x,z);if(y<2||y>28)continue;
@@ -320,7 +341,7 @@ export function createMeadow(random=randomGenerator(4321),objects=[],groundHeigh
     if(y<2.4||y>33||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<5)||Math.sin(x*.11)*Math.cos(z*.13)<-.5)continue;
     dummy.position.set(x,terrain(x,z)-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);const scale=.7+random()*.9;dummy.scale.set(scale,scale*(.4+landscapeMass(x,z)*.85),scale);dummy.updateMatrix();grass.push(dummy.matrix.clone());
   }
-  const batches=[...regionBatches(createWildflower(),flowers,'meadow-flowers',128,[],groundHeight),...regionBatches(createGrassClump(),grass,'meadow-grass',128,[],groundHeight),...createGroundCover(groundHeight),...createShoreCover(groundHeight),...createForestCover(objects,groundHeight)];
+  const batches=[...regionBatches(createWildflower(),flowers,'meadow-flowers',128,[],groundHeight),...regionBatches(createGrassClump(),grass,'meadow-grass',128,[],groundHeight),...createGroundCover(groundHeight),...createShoreCover(groundHeight,highland),...createForestCover(objects,groundHeight)];
   if(settlement)for(const batch of batches){
     const data=batch.instanceMatrix.array;let hidden=0;
     for(let i=0;i<batch.count;i++){const at=i*16;if(settlementWearAt(data[at+12],data[at+14])>.36){data[at+13]=-10000;hidden++;}}
