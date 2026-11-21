@@ -2,6 +2,7 @@ import * as THREE from '../vendor/three.module.min.js';
 import {terrain,layoutTerrain,LANDMARKS,SPAWN,ISLANDS,randomGenerator} from './world.js';
 import {landscapeMass} from './landscape.js';
 import {seatMeadowRoots} from './ground-support.js';
+import {estuaryHabitat} from './estuary-habitat.js';
 import {settlementWearAt} from './settlement-ground.js';
 
 const windTime={value:0};
@@ -253,6 +254,20 @@ function createShoreCover(groundHeight){
       matrices.push(dummy.matrix.clone());colors.push(tone);
     }
   }
+  // Fill the sheltered pockets using the same material and batch type as the shore.
+  const reedColor=new THREE.Color(0xc1b37a);
+  for(let x=18;x<=150;x+=.9)for(let z=-55;z<=49;z+=.9){
+    const px=x+(random()-.5)*.85,pz=z+(random()-.5)*.85;
+    const height=terrain(px,pz);
+    if(height<.6||height>2.6)continue;
+    const slope=Math.hypot(terrain(px+.5,pz)-terrain(px-.5,pz),terrain(px,pz+.5)-terrain(px,pz-.5));
+    const reed=estuaryHabitat(px,pz,height,slope)?.reed??0;
+    if(reed<.28||random()>.74*reed)continue;
+    const scale=.8+random()*.55;
+    dummy.position.set(px,height-.04,pz);dummy.rotation.set(0,random()*Math.PI*2,0);
+    dummy.scale.set(scale,scale*(1.13+reed*.42),scale);dummy.updateMatrix();
+    matrices.push(dummy.matrix.clone());colors.push(reedColor.clone().multiplyScalar(.84+random()*.16));
+  }
   return regionBatches(createDuneClump(),matrices,'meadow-shore',32,colors,groundHeight);
 }
 
@@ -279,7 +294,14 @@ export function createForestCover(objects,groundHeight){
         const scale=.8+random()*.6;
         dummy.position.set(x,terrain(x,z)-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);dummy.scale.set(scale,scale*(.75+random()*.25),scale);dummy.updateMatrix();
         const color=tone.clone().multiplyScalar(.88+random()*.12),currentHeight=terrain(x,z);
-        if(currentHeight<3.5||currentHeight>28||Math.hypot(terrain(x+.5,z)-terrain(x-.5,z),terrain(x,z+.5)-terrain(x,z-.5))>.6)continue;
+        if(currentHeight<3.5||currentHeight>28)continue;
+        const currentSlope=Math.hypot(terrain(x+.5,z)-terrain(x-.5,z),terrain(x,z+.5)-terrain(x,z-.5));
+        if(currentSlope>.6)continue;
+        const habitat=estuaryHabitat(x,z,currentHeight,currentSlope);
+        if(habitat){
+          const spread=1+habitat.shelter*.6-habitat.bedrock*.22;
+          dummy.scale.multiplyScalar(spread);dummy.updateMatrix();color.multiplyScalar(1-habitat.shelter*.14);
+        }
         matrices.push(dummy.matrix.clone());colors.push(color);
       }
     }

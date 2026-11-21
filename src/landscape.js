@@ -1,6 +1,8 @@
 import * as THREE from '../vendor/three.module.min.js';
 import {ISLANDS,LANDMARKS,SPAWN,terrain,randomGenerator} from './world.js';
+import {estuaryHabitat} from './estuary-habitat.js';
 
+const estuaryGravel=new THREE.Color(0x77766a),estuarySoil=new THREE.Color(0x485139);
 const grass=[0x68794f,0x405e48,0x737b70,0xa79b5f],sand=[0xcabe9b,0xb5b294,0xa2aba4,0xddc38c];
 const smooth=(a,b,x)=>{const t=THREE.MathUtils.clamp((x-a)/(b-a),0,1);return t*t*(3-2*t);};
 
@@ -20,7 +22,10 @@ export function landscapeSample(x,z){
   const color=new THREE.Color(grass[biome]).lerp(new THREE.Color(sand[biome]),1-smooth(1.6,5.8,y));
   color.lerp(new THREE.Color(0x81745b),litter*.7).lerp(new THREE.Color(0x8d9590),rock*.65);
   color.multiplyScalar(.89+patch*.18);
-  return {biome,color,rock,litter};
+  const habitat=estuaryHabitat(x,z,y,slope);
+  if(!habitat)return {biome,color,rock,litter};
+  color.lerp(estuaryGravel,habitat.gravel*.88).lerp(estuarySoil,habitat.shelter*.8);
+  return {biome,color,rock:Math.max(rock,habitat.bedrock*.87),litter:Math.max(litter,habitat.shelter*.48)};
 }
 
 export function createShoreStones(){
