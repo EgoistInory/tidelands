@@ -1,6 +1,6 @@
 // Read-only diagnostic: one query surrounds the complete WorldView.draw, including HDR passes.
 import {TimerPool} from './runtime_budget_probe.js';
-export function installJourneyProbe(view,sink){
+export function installJourneyProbe(view,sink,{sampleGlErrors=true}={}){
  const gl=view.renderer.getContext(),pool=new TimerPool(gl,gl.getExtension('EXT_disjoint_timer_query_webgl2')),render=view.renderer.render;
  let active=false,closed=false,capturing=false,frame=0,last=null,lastResource=-Infinity,renderCpu=0,calls=0,triangles=0,passes=0,inflight=0,peakInflight=0,dropped=0,hiddenFrames=0,contextLost=false;
  let frames=[],gpu=[],resources=[],cameraCases=[],previousRow=null,capturedCameraCases=0,cameraCasesDropped=0;const errors=[];
@@ -23,7 +23,7 @@ export function installJourneyProbe(view,sink){
    if(previousRow){const a=Math.atan2(previousRow[13]-previousRow[3],previousRow[15]-previousRow[4]),b=Math.atan2(row[13]-row[3],row[15]-row[4]),degrees=Math.abs(Math.atan2(Math.sin(b-a),Math.cos(b-a)))*180/Math.PI,input=view.__journeyCameraInput;
     if(degrees>45&&input){if(cameraCases.length<8){cameraCases.push({frame,time:state.time,degrees,before:previousRow,after:row,input:{focus:input.focus.toArray(),current:input.current.toArray(),desired:input.desired.toArray(),dt:input.dt,boxes:input.boxes.map(b=>[b.min.toArray(),b.max.toArray()])}});capturedCameraCases++;}else cameraCasesDropped++;}
    }previousRow=row;
-   if(t-lastResource>=1000){resources.push({frame,wall:t,time:state.time,geometries:view.renderer.info.memory.geometries,textures:view.renderer.info.memory.textures,programs:view.renderer.info.programs.length,viewport:[innerWidth,innerHeight],buffer:[view.canvas.width,view.canvas.height],glError:gl.getError()});lastResource=t;}
+   if(t-lastResource>=1000){resources.push({frame,wall:t,time:state.time,geometries:view.renderer.info.memory.geometries,textures:view.renderer.info.memory.textures,programs:view.renderer.info.programs.length,viewport:[innerWidth,innerHeight],buffer:[view.canvas.width,view.canvas.height],glError:sampleGlErrors?gl.getError():null});lastResource=t;}
    frame++;if(frames.length>=180)flush();
   }
  }};

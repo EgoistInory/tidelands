@@ -23,6 +23,20 @@ test('throwing draw closes the full interval and preserves its error; stop is id
   assert(events.indexOf('end')>events.indexOf('world'));await window.journeyProbe.stop();const count=events.length;await window.journeyProbe.stop();assert.equal(events.length,count);
  }finally{globalThis.window=oldWindow;globalThis.document=oldDocument;delete globalThis.innerWidth;delete globalThis.innerHeight;}
 });
+test('resource-only sampling never makes a synchronous WebGL error query',async()=>{
+ const saved={window:globalThis.window,document:globalThis.document,innerWidth:globalThis.innerWidth,innerHeight:globalThis.innerHeight};
+ Object.assign(globalThis,{window:{},document:{hidden:false},innerWidth:1280,innerHeight:800});
+ try{
+  const {view,batches}=fixture(),gl=view.renderer.getContext();
+  gl.getError=()=>assert.fail('Synchronous query in the measured frame');
+  const p=installJourneyProbe(view,b=>batches.push(b),{sampleGlErrors:false});
+  window.journeyProbe.start();p.draw(()=>view.renderer.render('world'),{time:2,player:{x:0,z:0,hp:100}},true);
+  await window.journeyProbe.stop();
+  const [resources]=batches.flatMap(b=>b.resources);
+  assert.equal(resources.textures,4);
+  assert.equal(resources.glError,null);
+ }finally{Object.assign(globalThis,saved);}
+});
 test('full-frame streaming caps batches and in-flight sends rather than retaining an unbounded movie',async()=>{
  const oldWindow=globalThis.window,oldDocument=globalThis.document;globalThis.window={};globalThis.document={hidden:false};globalThis.innerWidth=1280;globalThis.innerHeight=800;
  try{

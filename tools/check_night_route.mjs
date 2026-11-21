@@ -22,7 +22,7 @@ for(const [file,{sha256}] of Object.entries(manifest.files)){
   assert.equal(sha(fs.readFileSync(file==='README.md'?'docs/LOCAL-DELIVERY.md':file)),sha256,file);
 }
 const report={complete:false,archiveSha256:manifest.archiveSha256,saveSha256:sha(original),rows:[],logs:[],scope:'Original extracted index and modules. Ordinary historical save, real file input, held keys, natural time. Narrow window is not a physical device.'};
-if(profileRoute)report.scope='Ordinary historical save, native inputs and clock. Only scene response appends read-only complete-draw GPU/CPU measurement. No video recording during timing.';
+if(profileRoute)report.scope='Ordinary historical save, native inputs and clock. Scene and main responses carry read-only GPU/CPU and callback-stage measurements. No video recording during timing.';
 const camp=seed.buildings.find(b=>b.type==='campfire');
 const contacts=bindCampaignContacts(world);
 const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright');
@@ -62,7 +62,7 @@ try{
     page.on('pageerror',e=>report.logs.push(e.message));
     page.on('console',e=>{if(['warning','error'].includes(e.type()))report.logs.push(e.text());});
     try{
-      await routeRequests(context,origin,root,dir);
+      await routeRequests(context,origin,root,dir,{stages:profileRoute});
       await page.goto(`${origin}/${root}/`);
       await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);
       await page.click('#start-button');await page.click('#pause-button');

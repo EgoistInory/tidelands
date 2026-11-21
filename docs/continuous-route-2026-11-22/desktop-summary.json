@@ -1,0 +1,747 @@
+{
+  "archiveSha256": "5d10d6f27cda322dcc10d061ee5e0d08320aeb7cc30e5a3fdf9a15b41a1a8594",
+  "framesSha256": "64b239e086e55885f962af0bf432ccf7d2916f66d0cf87214bc24f69cfea7fc6",
+  "frameProfileSha256": "f68ac3c8f0b041561311b443d4da2f3b95b96ce86b60b524c72f14637f911fcb",
+  "runnerSha256": "d878f2bf0f1257b14a76a02a2144e9691c685f2b3d4dd4fdb1b4bf88b170d4ef",
+  "startingSaveSha256": "15dfbd8d10179e8b46d1775a58767fbc5b22e8b9941b28cb02978e88a3cdfbb6",
+  "finalSaveSha256": "f4d921dff0a8864989ac6e75c51f5a810e38c52bae75e6fa5a0de85dcc5e679c",
+  "exportSha256": "1cbfd5614bc7c21952948ac65b598bce340be6d4e1a2915c6f8c6fb15e2101f5",
+  "buffer": [
+    1920,
+    1080
+  ],
+  "wallSeconds": 602.018,
+  "displayedSeconds": 601.879,
+  "frames": 38733,
+  "moving": 27937,
+  "distance": 3444.854,
+  "waterFrames": 878,
+  "lighting": [
+    "夜晚",
+    "清晨",
+    "午后",
+    "黄昏"
+  ],
+  "timing": {
+    "active": false,
+    "closed": true,
+    "frames": 38733,
+    "bufferedFrames": 0,
+    "inflight": 0,
+    "peakInflight": 2,
+    "dropped": 0,
+    "hiddenFrames": 0,
+    "contextLost": false,
+    "errors": [],
+    "capturedCameraCases": 0,
+    "cameraCasesDropped": 0,
+    "columns": [
+      "frame",
+      "wall",
+      "time",
+      "x",
+      "z",
+      "hp",
+      "moving",
+      "interval",
+      "drawCpu",
+      "renderCpu",
+      "calls",
+      "triangles",
+      "passes",
+      "cameraX",
+      "cameraY",
+      "cameraZ",
+      "dt",
+      "yaw",
+      "pitch",
+      "distance"
+    ],
+    "supported": true,
+    "issued": 4842,
+    "completed": 4842,
+    "deleted": 4842,
+    "disjointFrames": 0,
+    "timeouts": 0,
+    "pending": false
+  },
+  "gpuMs": {
+    "n": 4842,
+    "median": 14.545,
+    "p95": 18.798,
+    "p99": 23.062,
+    "max": 37.795
+  },
+  "intervalMs": {
+    "n": 38732,
+    "median": 15.8,
+    "p95": 26.5,
+    "p99": 32.1,
+    "max": 77.7
+  },
+  "drawCpuMs": {
+    "n": 38733,
+    "median": 4.8,
+    "p95": 6.1,
+    "p99": 7.1,
+    "max": 58.9
+  },
+  "syncCpuMs": {
+    "n": 4040,
+    "median": 0.2,
+    "p95": 0.3,
+    "p99": 0.3,
+    "max": 2.3
+  },
+  "turn": {
+    "maxDegrees": 3.975,
+    "over45": 0
+  },
+  "spikeCount": 59,
+  "matchedStages": 17,
+  "stageLimitReached": false,
+  "outsideCallbackMajority": 0,
+  "observedLongAnimationFrames": 259,
+  "spikes": [
+    {
+      "frame": 4155,
+      "time": 1986.9659000006864,
+      "x": 102.71134884448999,
+      "z": -20.755951928379286,
+      "elevation": 10.22329078889565,
+      "intervalMs": 77.7,
+      "previousDrawCpuMs": 5.9,
+      "previousRendererCpuMs": 3,
+      "previousGpuMs": null,
+      "costs": null,
+      "longAnimationFrames": [
+        {
+          "wall": 80641.5999994278,
+          "ms": 76.90000057220459,
+          "blocking": 19.6,
+          "renderStart": 80712.0999994278,
+          "scripts": [
+            {
+              "file": "main.js",
+              "name": "frame",
+              "ms": 6.300000190734863,
+              "layout": 0
+            }
+          ]
+        }
+      ],
+      "nearCheckpoint": null
+    },
+    {
+      "frame": 4113,
+      "time": 1986.0462000006864,
+      "x": 98.64883445198204,
+      "z": -18.645357665934096,
+      "elevation": 8.765369728368482,
+      "intervalMs": 73,
+      "previousDrawCpuMs": 6.1,
+      "previousRendererCpuMs": 3.3,
+      "previousGpuMs": 25.141249,
+      "costs": null,
+      "longAnimationFrames": [
+        {
+          "wall": 79715.5999994278,
+          "ms": 73,
+          "blocking": 16.3,
+          "renderStart": 79781.19999980927,
+          "scripts": [
+            {
+              "file": "main.js",
+              "name": "frame",
+              "ms": 7.199999809265137,
+              "layout": 0
+            }
+          ]
+        }
+      ],
+      "nearCheckpoint": null
+    },
+    {
+      "frame": 9810,
+      "time": 2097.0407000006853,
+      "x": 58.883130827820935,
+      "z": -50.158661687731,
+      "elevation": 0.8824983103681253,
+      "intervalMs": 64.5,
+      "previousDrawCpuMs": 5.3,
+      "previousRendererCpuMs": 2.8,
+      "previousGpuMs": null,
+      "costs": null,
+      "longAnimationFrames": [
+        {
+          "wall": 190888,
+          "ms": 64.29999923706055,
+          "blocking": 2.7,
+          "renderStart": 190946,
+          "scripts": [
+            {
+              "file": "main.js",
+              "name": "frame",
+              "ms": 6.100000381469727,
+              "layout": 0
+            }
+          ]
+        }
+      ],
+      "nearCheckpoint": null
+    },
+    {
+      "frame": 35232,
+      "time": 2451.1828000006235,
+      "x": -62.59107032639508,
+      "z": 93.21557952668228,
+      "elevation": 10.309470816799157,
+      "intervalMs": 64.4,
+      "previousDrawCpuMs": 5.3,
+      "previousRendererCpuMs": 2.7,
+      "previousGpuMs": null,
+      "costs": null,
+      "longAnimationFrames": [
+        {
+          "wall": 545082.3999996185,
+          "ms": 64,
+          "blocking": 6.6,
+          "renderStart": 545140.2999992371,
+          "scripts": [
+            {
+              "file": "main.js",
+              "name": "frame",
+              "ms": 5.799999237060547,
+              "layout": 0
+            }
+          ]
+        }
+      ],
+      "nearCheckpoint": null
+    },
+    {
+      "frame": 4594,
+      "time": 1995.403600000687,
+      "x": 114.0880499901142,
+      "z": -22.475372136807245,
+      "elevation": 12.798091707238328,
+      "intervalMs": 64.1,
+      "previousDrawCpuMs": 8.7,
+      "previousRendererCpuMs": 3.5,
+      "previousGpuMs": null,
+      "costs": null,
+      "longAnimationFrames": [
+        {
+          "wall": 89086.5,
+          "ms": 64,
+          "blocking": 0,
+          "renderStart": 89141.39999961853,
+          "scripts": [
+            {
+              "file": "main.js",
+              "name": "frame",
+              "ms": 9.100000381469727,
+              "layout": 0
+            }
+          ]
+        }
+      ],
+      "nearCheckpoint": "02-forest-gather"
+    },
+    {
+      "frame": 35207,
+      "time": 2450.7488000006233,
+      "x": -61.39981714259438,
+      "z": 91.23734746191215,
+      "elevation": 10.418792273452896,
+      "intervalMs": 64.1,
+      "previousDrawCpuMs": 5.8,
+      "previousRendererCpuMs": 2.9,
+      "previousGpuMs": null,
+      "costs": null,
+      "longAnimationFrames": [
+        {
+          "wall": 544628.2999992371,
+          "ms": 65.20000076293945,
+          "blocking": 8.1,
+          "renderStart": 544685.2999992371,
+          "scripts": [
+            {
+              "file": "main.js",
+              "name": "frame",
+              "ms": 7.799999237060547,
+              "layout": 0
+            }
+          ]
+        }
+      ],
+      "nearCheckpoint": null
+    },
+    {
+      "frame": 10356,
+      "time": 2107.2457000006793,
+      "x": 53.49920432660142,
+      "z": -63.28630707292724,
+      "elevation": 0.6377444653834828,
+      "intervalMs": 64,
+      "previousDrawCpuMs": 5.7,
+      "previousRendererCpuMs": 3.1,
+      "previousGpuMs": null,
+      "costs": null,
+      "longAnimationFrames": [
+        {
+          "wall": 201100.5,
+          "ms": 63.89999961853027,
+          "blocking": 6.9,
+          "renderStart": 201157.5999994278,
+          "scripts": [
+            {
+              "file": "main.js",
+              "name": "frame",
+              "ms": 6.600000381469727,
+              "layout": 0
+            }
+          ]
+        }
+      ],
+      "nearCheckpoint": null
+    },
+    {
+      "frame": 489,
+      "time": 1920.8096000006876,
+      "x": -17.56945059874554,
+      "z": 81.56615305512913,
+      "elevation": 4.258404972586322,
+      "intervalMs": 62.9,
+      "previousDrawCpuMs": 58.9,
+      "previousRendererCpuMs": 55.9,
+      "previousGpuMs": 18.9495,
+      "costs": {
+        "previousDraw": 58.9,
+        "previousAfterDraw": 0,
+        "outsideCallback": 3.7,
+        "currentBeforeDraw": 0.3
+      },
+      "longAnimationFrames": [
+        {
+          "wall": 14376.699999809265,
+          "ms": 78.30000019073486,
+          "blocking": 13.2,
+          "renderStart": 14391.79999923706,
+          "scripts": [
+            {
+              "file": "main.js",
+              "name": "frame",
+              "ms": 60.30000019073486,
+              "layout": 0
+            }
+          ]
+        }
+      ],
+      "nearCheckpoint": null
+    },
+    {
+      "frame": 2637,
+      "time": 1959.8189000006835,
+      "x": 33.59885216734285,
+      "z": 22.32383001966843,
+      "elevation": 0.4371594548908296,
+      "intervalMs": 62.3,
+      "previousDrawCpuMs": 5.7,
+      "previousRendererCpuMs": 3.2,
+      "previousGpuMs": null,
+      "costs": null,
+      "longAnimationFrames": [
+        {
+          "wall": 53490.099999427795,
+          "ms": 62.19999980926514,
+          "blocking": 4.3,
+          "renderStart": 53545.699999809265,
+          "scripts": [
+            {
+              "file": "main.js",
+              "name": "frame",
+              "ms": 6.5,
+              "layout": 0
+            }
+          ]
+        }
+      ],
+      "nearCheckpoint": null
+    },
+    {
+      "frame": 2523,
+      "time": 1957.7622000006836,
+      "x": 32.45841321769507,
+      "z": 25.551700593611326,
+      "elevation": 0.4479502812192142,
+      "intervalMs": 62.1,
+      "previousDrawCpuMs": 4.8,
+      "previousRendererCpuMs": 2.8,
+      "previousGpuMs": null,
+      "costs": null,
+      "longAnimationFrames": [
+        {
+          "wall": 51418.5,
+          "ms": 62.39999961853027,
+          "blocking": 2.2,
+          "renderStart": 51474.89999961853,
+          "scripts": [
+            {
+              "file": "main.js",
+              "name": "frame",
+              "ms": 5.800000190734863,
+              "layout": 0
+            }
+          ]
+        }
+      ],
+      "nearCheckpoint": null
+    },
+    {
+      "frame": 35501,
+      "time": 2455.831000000625,
+      "x": -78.79892702677186,
+      "z": 106.56050044027447,
+      "elevation": 7.339574093520391,
+      "intervalMs": 62,
+      "previousDrawCpuMs": 5.2,
+      "previousRendererCpuMs": 2.7,
+      "previousGpuMs": null,
+      "costs": null,
+      "longAnimationFrames": [
+        {
+          "wall": 549759.6999998093,
+          "ms": 61.59999942779541,
+          "blocking": 3.9,
+          "renderStart": 549815.5,
+          "scripts": [
+            {
+              "file": "main.js",
+              "name": "frame",
+              "ms": 5.699999809265137,
+              "layout": 0
+            }
+          ]
+        }
+      ],
+      "nearCheckpoint": null
+    },
+    {
+      "frame": 2762,
+      "time": 1962.084800000684,
+      "x": 34.414078530683156,
+      "z": 17.482845071694015,
+      "elevation": 0.580910294456391,
+      "intervalMs": 61.8,
+      "previousDrawCpuMs": 5.7,
+      "previousRendererCpuMs": 3.2,
+      "previousGpuMs": null,
+      "costs": null,
+      "longAnimationFrames": [
+        {
+          "wall": 55749.699999809265,
+          "ms": 61.5,
+          "blocking": 3.9,
+          "renderStart": 55804.699999809265,
+          "scripts": [
+            {
+              "file": "main.js",
+              "name": "frame",
+              "ms": 6.300000190734863,
+              "layout": 0
+            }
+          ]
+        }
+      ],
+      "nearCheckpoint": null
+    }
+  ],
+  "resourceSamples": {
+    "first": {
+      "frame": 0,
+      "wall": 4445,
+      "time": 1910.8202000006836,
+      "geometries": 216,
+      "textures": 113,
+      "programs": 94,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "buffer": [
+        1920,
+        1080
+      ],
+      "glError": 0
+    },
+    "last": {
+      "frame": 38679,
+      "wall": 605406.1999998093,
+      "time": 2511.4155000006585,
+      "geometries": 257,
+      "textures": 144,
+      "programs": 102,
+      "viewport": [
+        1920,
+        1080
+      ],
+      "buffer": [
+        1920,
+        1080
+      ],
+      "glError": 0
+    },
+    "max": {
+      "geometries": 257,
+      "textures": 144,
+      "programs": 102
+    }
+  },
+  "usedHeapBytes": [
+    105857060,
+    127344940,
+    123095812,
+    117572060,
+    89187144,
+    104511472,
+    105669176,
+    92189732,
+    91157904,
+    106154884,
+    98167284,
+    95989616,
+    110184656,
+    107990472,
+    93481660,
+    90014216,
+    90153424,
+    87085388,
+    107262364,
+    92562620,
+    93030876,
+    96600248,
+    114069048,
+    94893308,
+    113284596,
+    96380860,
+    91055192,
+    102595892,
+    114422752,
+    83860592,
+    98331832,
+    111178372,
+    106474848,
+    88388988
+  ],
+  "phases": [
+    {
+      "name": "00-settlement",
+      "imageSha256": "e421bc94603e5ac2578db0675723e0aeba8008e7c495da900bb5281ad73b5d96",
+      "saveSha256": "2094a2487f3f5d49e6600a4c0c6ac87ad112eb34eb1e84488d52d44b910053e0",
+      "time": 1910.8202000006836,
+      "cycle": {
+        "label": "夜晚",
+        "daylight": 0.04,
+        "day": 4
+      },
+      "player": {
+        "x": -46.00116743636531,
+        "z": 85.86318677915428,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "elevation": 8.256144973303602,
+      "kills": 20,
+      "wood": 1,
+      "crystal": 5,
+      "berry": 17
+    },
+    {
+      "name": "01-forest-arrival",
+      "imageSha256": "9793d747a951bcd0d7e2ddd0d03f0dbde177f34a85a706780cc613ed6e42b837",
+      "saveSha256": "896cdf3e0cc2f392bf78259573dd6d7aee8a345261e9eb671e625ddf6042cecc",
+      "time": 1991.451800000687,
+      "cycle": {
+        "label": "夜晚",
+        "daylight": 0.04,
+        "day": 5
+      },
+      "player": {
+        "x": 130.04740845064873,
+        "z": -24.887393257810597,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 1.7207963267948967
+      },
+      "elevation": 16.106686155184363,
+      "kills": 20,
+      "wood": 1,
+      "crystal": 5,
+      "berry": 17
+    },
+    {
+      "name": "02-forest-gather",
+      "imageSha256": "a25377c3a06346ae1e114e809191733801d1941789255188788e61f55b9943d2",
+      "saveSha256": "916f95f357f5f76d1d698023acc268fb22e00e9fb34bfc0fed0c264e04d047be",
+      "time": 1994.907100000687,
+      "cycle": {
+        "label": "夜晚",
+        "daylight": 0.04,
+        "day": 5
+      },
+      "player": {
+        "x": 114.0880499901142,
+        "z": -22.475372136807245,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -0.7827963245012255
+      },
+      "elevation": 12.798091707238328,
+      "kills": 20,
+      "wood": 4,
+      "crystal": 5,
+      "berry": 17
+    },
+    {
+      "name": "03-forest-combat",
+      "imageSha256": "4d61c591dff9fc67c7867ae8682c8171372ea65d8c047fe407384f9b1ba8775b",
+      "saveSha256": "6ead8ffdd2a931f53c6a2f8945eaaf1ed145c54b0078b82313c0eb8b9d4921d0",
+      "time": 2006.5167000006902,
+      "cycle": {
+        "label": "夜晚",
+        "daylight": 0.04,
+        "day": 5
+      },
+      "player": {
+        "x": 138.47581123822292,
+        "z": -46.84665291848426,
+        "hp": 86,
+        "stamina": 100,
+        "yaw": 1.7207963267948967
+      },
+      "elevation": 23.8043099361494,
+      "kills": 21,
+      "wood": 4,
+      "crystal": 5,
+      "berry": 18
+    },
+    {
+      "name": "04-highland-foot",
+      "imageSha256": "48f102f148ddc107495a76eaeda84192d53741f91045012309b3008ba857a35d",
+      "saveSha256": "4d7eb83e57a823389c30fc762e247edd1311a3404ca18c1f7bd624f7c928e049",
+      "time": 2156.140900000673,
+      "cycle": {
+        "label": "午后",
+        "daylight": 0.9989157088786556,
+        "day": 5
+      },
+      "player": {
+        "x": -77.50660626269497,
+        "z": -151.53457633307505,
+        "hp": 86,
+        "stamina": 100,
+        "yaw": -2.991592653589793
+      },
+      "elevation": 3.212911321079731,
+      "kills": 21,
+      "wood": 4,
+      "crystal": 5,
+      "berry": 18
+    },
+    {
+      "name": "05-highland-lookout",
+      "imageSha256": "6acffd468a9063e61d7ea5bfb74e2eb567b477234f8ff2225677d005b6522fb7",
+      "saveSha256": "fe9196f1ccee6317dec311214a9dfba3d8af8612d933fc71a12ac9813678be6f",
+      "time": 2163.463400000675,
+      "cycle": {
+        "label": "午后",
+        "daylight": 0.9991266323304853,
+        "day": 5
+      },
+      "player": {
+        "x": -71.9505683517088,
+        "z": -187.5558402273588,
+        "hp": 86,
+        "stamina": 100,
+        "yaw": -2.991592653589793
+      },
+      "elevation": 25.88203528220744,
+      "kills": 21,
+      "wood": 4,
+      "crystal": 5,
+      "berry": 18
+    },
+    {
+      "name": "04-forest-return",
+      "imageSha256": "c7736ff6bcf7e4c27ae59332ccc97617c70e0bd6540a1faf61f9db8d4d1d67a1",
+      "saveSha256": "fb235c482d2f159fad98ccdf5c2e5975bc31a44066344ce3cbe7a1eda68558e5",
+      "time": 2408.364700000612,
+      "cycle": {
+        "label": "夜晚",
+        "daylight": 0.04,
+        "day": 6
+      },
+      "player": {
+        "x": -78.60580420082806,
+        "z": -154.0981754308242,
+        "hp": 86,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "elevation": 4.680716287400152,
+      "kills": 21,
+      "wood": 4,
+      "crystal": 5,
+      "berry": 18
+    },
+    {
+      "name": "05-original-camp",
+      "imageSha256": "28f95c6b6a7bb643f42e2e24cee5749be46f5ccbbd45e191fca2d1307bf67347",
+      "saveSha256": "7db54f82bdcac50a121f6b748beb02d03ac3d7f43f38d3ae3f14d26a75a4416a",
+      "time": 2454.1178000006253,
+      "cycle": {
+        "label": "夜晚",
+        "daylight": 0.04,
+        "day": 6
+      },
+      "player": {
+        "x": -71.68314025188486,
+        "z": 103.89641575424368,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "elevation": 8.56998542722353,
+      "kills": 21,
+      "wood": 4,
+      "crystal": 5,
+      "berry": 18
+    },
+    {
+      "name": "06-final-rest",
+      "imageSha256": "9c367f351d27c19ff6b7fba71faa3798ae447365c7715fe52dc476828f75ef4c",
+      "saveSha256": "45ad1910c0ae1501046c4c15121393eaa949ee584ac2e5d9ec004e63c3820503",
+      "time": 2511.7339000006573,
+      "cycle": {
+        "label": "清晨",
+        "daylight": 0.05820681578341598,
+        "day": 6
+      },
+      "player": {
+        "x": -71.83683228859482,
+        "z": 108.87529060282745,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "elevation": 7.331203505953813,
+      "kills": 21,
+      "wood": 4,
+      "crystal": 5,
+      "berry": 18
+    }
+  ],
+  "scope": "Actual native keys and clock, production rendering and save format. Main/scene only carry time observers. Unassigned gaps can include host/browser scheduling. JS heap and renderer object counts are not VRAM."
+}

@@ -1,15 +1,19 @@
 // Current frozen package, ordinary continuous settlement-to-forest journey and complete-frame GPU observation.
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
 import {world,nextInput,plan} from './journey_path.mjs';import {terrain,LANDMARKS} from '../src/world.js';import {nearest} from '../src/game.js';import {bindCampaignContacts} from './campaign_contact_plan.mjs';
+import {routeRequests,startRouteProfile,stopRouteProfile,profileRoute} from './route-frame-profile.mjs';
+import {assertCameraRestoreEvidence} from './camera_policy_qa.mjs';
 const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright'),out=process.argv[2]??'dist/settlement-forest-journey-2026-11-15',width=Number(process.env.JOURNEY_WIDTH??1920),dpr=width===390?1.5:1;
 assert([390,1920].includes(width));assert(!fs.existsSync(out));fs.mkdirSync(out,{recursive:true});
-const packageName='tidelands-m5-2026-11-15-yard',entry=`http://127.0.0.1:4190/dist/${packageName}/tidelands-local/`,key='tidelands-save-v1',originalSave='docs/yard-delivery-2026-11-15/desktop-final-save.json',sha=b=>createHash('sha256').update(b).digest('hex');
+const current=Boolean(process.argv[3]),packageName=process.argv[3]??'tidelands-m5-2026-11-15-yard',origin='http://127.0.0.1:4190',root=`dist/${packageName}/tidelands-local`,entry=`${origin}/${root}/`,key='tidelands-save-v1',originalSave='docs/yard-delivery-2026-11-15/desktop-final-save.json',sha=b=>createHash('sha256').update(b).digest('hex');
+assert(/^[a-zA-Z0-9_-]+$/.test(packageName)&&(!current||profileRoute));
 const manifest=JSON.parse(fs.readFileSync(`dist/${packageName}.json`));assert.equal(sha(fs.readFileSync(`dist/${packageName}.zip`)),manifest.archiveSha256);
 for(const [file,row]of Object.entries(manifest.files)){assert.equal(sha(fs.readFileSync(`dist/${packageName}/tidelands-local/${file}`)),row.sha256);assert.equal(sha(fs.readFileSync(file==='README.md'?'docs/LOCAL-DELIVERY.md':file)),row.sha256);}
 const report={entry,width,dpr,runnerSha256:sha(fs.readFileSync(new URL(import.meta.url))),complete:false,phases:[],logs:[],heap:[],initialSaveSha256:sha(fs.readFileSync(originalSave)),packageSha256:manifest.archiveSha256,probeSha256:sha(fs.readFileSync('tools/journey_frame_probe.js')),timerSha256:sha(fs.readFileSync('tools/runtime_budget_probe.js')),scope:'Native file import of our own preferred ordinary progress, continuous input and natural clock. Only scene response appends a bounded read-only observer around full WorldView.draw, including all HDR passes. No teleport, resource/enemy/state/clock injection. Headless Metal 1080p or high-DPI390, not physical phones, VRAM, system GPU isolation, listening or final3A acceptance.'};
+if(current)report.scope='Real inputs and historical save through forest, highland and back to camp. Main and scene append read-only frame timings. No video recording, no state injection.';
 fs.copyFileSync('tools/journey_frame_probe.js',path.join(out,'probe-source.js'));fs.copyFileSync('tools/runtime_budget_probe.js',path.join(out,'timer-source.js'));fs.copyFileSync(new URL(import.meta.url),path.join(out,'runner-source.mjs'));
 const journal=e=>fs.appendFileSync(path.join(out,'inputs.jsonl'),JSON.stringify({wall:Date.now(),...e})+'\n'),plannerContacts=bindCampaignContacts(world);
-const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']}),context=await browser.newContext({viewport:{width,height:width===390?844:1080},deviceScaleFactor:dpr,recordVideo:{dir:out,size:{width:960,height:540}}});
+const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']}),context=await browser.newContext({viewport:{width,height:width===390?844:1080},deviceScaleFactor:dpr,...(current?{}:{recordVideo:{dir:out,size:{width:960,height:540}}})});
 let page,video,state,started=false,steps=0,respawns=0,lastPosition=null;
 async function press(k){journal({input:'press',key:k});await page.keyboard.press(k);}
 async function walk(k,ms){journal({input:'hold',key:k,ms});await page.keyboard.down(k);try{await page.waitForTimeout(ms);}finally{await page.keyboard.up(k);}}
@@ -64,10 +68,13 @@ async function gather(type,minimum){
 }
 
 try{
+ if(current)await routeRequests(context,origin,root,out,{stages:true});
+ else{
  await context.exposeBinding('__journeySink',(source,batch)=>fs.appendFileSync(path.join(out,'samples.jsonl'),JSON.stringify(batch)+'\n'));
  await context.route('**/*',route=>{const u=new URL(route.request().url());if(u.origin!=='http://127.0.0.1:4190')return route.abort();if(u.pathname===`/dist/${packageName}/tidelands-local/src/scene.js`){let source=fs.readFileSync(`dist/${packageName}/tidelands-local/src/scene.js`,'utf8');const marker='const safe=unobstructedCamera(';assert(source.includes(marker));source=source.replace(marker,'this.__journeyCameraInput={focus,current:this.camera.position.clone(),desired:target,boxes,dt};const safe=unobstructedCamera(');return route.fulfill({contentType:'text/javascript',body:source+`\nimport {installJourneyProbe} from '/tools/journey_frame_probe.js';\nconst journeyDraw=WorldView.prototype.draw;WorldView.prototype.draw=function(...args){this.__journey??=installJourneyProbe(this,window.__journeySink);return this.__journey.draw(()=>journeyDraw.apply(this,args),args[0],args[3],args[4]);};`});}return route.continue();});
+ }
  page=await context.newPage();video=page.video();page.setDefaultTimeout(90000);page.on('pageerror',e=>report.logs.push(e.message));page.on('console',e=>{if(['warning','error'].includes(e.type()))report.logs.push(e.text());});
- const load=Date.now();await page.goto(entry);await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);report.readyWallMs=Date.now()-load;await page.click('#start-button');started=true;await page.click('#pause-button');const chooser=page.waitForEvent('filechooser');await page.getByRole('button',{name:'导入存档',exact:true}).click();await(await chooser).setFiles(originalSave);await page.waitForFunction(()=>!document.querySelector('#panel').open);await page.evaluate(()=>window.journeyProbe.start());report.startedWall=Date.now();
+ const load=Date.now();await page.goto(entry);await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);report.readyWallMs=Date.now()-load;await page.click('#start-button');started=true;await page.click('#pause-button');const chooser=page.waitForEvent('filechooser');await page.getByRole('button',{name:'导入存档',exact:true}).click();await(await chooser).setFiles(originalSave);await page.waitForFunction(()=>!document.querySelector('#panel').open);if(current)await startRouteProfile(page);else await page.evaluate(()=>window.journeyProbe.start());report.startedWall=Date.now();
  const cdp=await context.newCDPSession(page),heap=async()=>{report.heap.push({wall:Date.now(),...await cdp.send('Runtime.getHeapUsage')});};
  await snapshot('00-settlement');const original=JSON.parse(fs.readFileSync(originalSave)),camp=state.buildings.find(b=>b.type==='campfire');await heap();
  await talk('botanist');await snapshot('01-forest-arrival');await heap();
@@ -79,15 +86,35 @@ try{
  assert(chosen,'No bounded live encounter found');report.targetEnemy=chosen.id;await go({...chosen,type:'npc'});await defend();await observe();assert(state.kills>initialKills);await snapshot('03-forest-combat');await heap();
  // Spend the remainder walking real forest ground before returning to the original camp.
  const minimumMs=600000;let lap=0;
- while(Date.now()-report.startedWall<minimumMs-90000){const p=LANDMARKS.find(l=>l.id==='botanist');for(const [dx,dz]of [[-9,5],[7,6],[8,-5],[0,0]]){await go({id:`forest-lap-${lap++}`,type:'npc',x:p.x+dx,z:p.z+dz});if(lap%8===0)await heap();if(Date.now()-report.startedWall>=minimumMs-90000)break;}}
- await snapshot('04-forest-return');await go(camp,{interact:true});await press('e');await page.waitForTimeout(550);await snapshot('05-original-camp');await heap();
+ if(current){
+  await go({id:'highland-foot',type:'waypoint',x:-79,z:-151});await snapshot('04-highland-foot');
+  for(const [x,z] of [[-82,-158],[-82,-166],[-79,-173],[-76,-180]])await go({id:'highland-ascent',type:'waypoint',x,z});
+  await talk('explorer');assert.match(await page.locator('#toast').textContent(),/^远舟：/);await snapshot('05-highland-lookout');await heap();
+  while(Date.now()-report.startedWall<minimumMs-105000){
+   for(const [x,z] of [[-76,-180],[-79,-173],[-82,-166],[-81,-177],[-73,-186]]){
+    await go({id:`highland-lap-${lap++}`,type:'waypoint',x,z});
+    if(lap%8===0)await heap();
+    if(Date.now()-report.startedWall>=minimumMs-105000)break;
+   }
+  }
+  await go({id:'highland-exit',type:'waypoint',x:-79,z:-151});
+ }else while(Date.now()-report.startedWall<minimumMs-90000){const p=LANDMARKS.find(l=>l.id==='botanist');for(const [dx,dz]of [[-9,5],[7,6],[8,-5],[0,0]]){await go({id:`forest-lap-${lap++}`,type:'npc',x:p.x+dx,z:p.z+dz});if(lap%8===0)await heap();if(Date.now()-report.startedWall>=minimumMs-90000)break;}}
+ await snapshot(current?'06-highland-departure':'04-forest-return');await go(camp,{interact:true});await press('e');await page.waitForTimeout(550);await snapshot(current?'07-original-camp':'05-original-camp');await heap();
  while(Date.now()-report.startedWall<minimumMs){for(const [dx,dz]of [[-8,4],[6,4],[0,0]]){await go({id:`camp-lap-${lap++}`,type:'npc',x:camp.x+dx,z:camp.z+dz});if(Date.now()-report.startedWall>=minimumMs)break;}}
- await go(camp,{interact:true});await press('e');await page.waitForTimeout(550);await snapshot('06-final-rest');await heap();assert.equal(state.quest,6);assert.equal(state.player.hp,100);assert.deepEqual(state.buildings,original.buildings);assert.equal(respawns,0);
- report.probe=await page.evaluate(()=>window.journeyProbe.stop());report.stoppedWall=Date.now();assert.equal(report.probe.dropped,0);assert.equal(report.probe.errors.length,0);assert.equal(report.probe.hiddenFrames,0);assert(!report.probe.contextLost);assert.equal(report.probe.issued,report.probe.deleted);
+ await go(camp,{interact:true});await press('e');await page.waitForTimeout(550);await snapshot(current?'08-final-rest':'06-final-rest');await heap();assert.equal(state.quest,6);assert.equal(state.player.hp,100);assert.deepEqual(state.buildings,original.buildings);assert.equal(respawns,0);
+ report.probe=current?await stopRouteProfile(page,out):await page.evaluate(()=>window.journeyProbe.stop());report.stoppedWall=Date.now();assert.equal(report.probe.dropped,0);assert.equal(report.probe.errors.length,0);assert.equal(report.probe.hiddenFrames,0);assert(!report.probe.contextLost);assert.equal(report.probe.issued,report.probe.deleted);
  await page.click('#pause-button');await page.getByRole('button',{name:'保存进度',exact:true}).click();const saved=await page.evaluate(key=>localStorage.getItem(key),key);fs.writeFileSync(path.join(out,'final-save.json'),saved);report.final=JSON.parse(saved);
- await page.reload();await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),saved);report.reloadExact=true;assert.deepEqual(report.logs,[]);report.complete=true;
+ await page.reload();await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),saved);report.reloadExact=true;
+ if(current){
+  const startLabel=await page.locator('#start-button').textContent(),loadStatus=await page.locator('#load-status').textContent();
+  await page.evaluate(()=>{document.querySelector('#start-button').click();document.querySelector('#pause-button').click();});
+  const download=page.waitForEvent('download');await page.getByRole('button',{name:'导出存档',exact:true}).click();
+  const exportPath=path.join(out,'restored-live-export.json');await(await download).saveAs(exportPath);
+  assertCameraRestoreEvidence({startLabel,loadStatus,exported:fs.readFileSync(exportPath,'utf8')},saved);report.exportExact=true;
+ }
+ assert.deepEqual(report.logs,[]);report.complete=true;
 }catch(e){report.error=e.stack;process.exitCode=1;console.error(e.stack);
 }finally{
- if(page&&!page.isClosed()&&started){try{if(!report.probe)report.probe=await page.evaluate(()=>window.journeyProbe.stop());const saved=await page.evaluate(key=>localStorage.getItem(key),key);if(saved)fs.writeFileSync(path.join(out,'checkpoint-save.json'),saved);}catch(e){report.checkpointError=e.message;}}
+ if(page&&!page.isClosed()&&started){try{if(!report.probe)report.probe=current?await stopRouteProfile(page,out):await page.evaluate(()=>window.journeyProbe.stop());const saved=await page.evaluate(key=>localStorage.getItem(key),key);if(saved)fs.writeFileSync(path.join(out,'checkpoint-save.json'),saved);}catch(e){report.checkpointError=e.message;}}
  report.respawns=respawns;await context.close();if(video){report.video=path.basename(await video.path());report.videoSha256=sha(fs.readFileSync(path.join(out,report.video)));}assert.equal(sha(fs.readFileSync(originalSave)),report.initialSaveSha256);assert.equal(sha(fs.readFileSync(`dist/${packageName}.zip`)),report.packageSha256);fs.writeFileSync(path.join(out,'raw.json'),JSON.stringify(report,null,2)+'\n');plannerContacts.release();await browser.close();
 }

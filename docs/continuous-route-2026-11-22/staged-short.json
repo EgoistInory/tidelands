@@ -1,0 +1,576 @@
+{
+  "scope": "Real native Metal Chromium frame observations. GPU samples cover all four passes. Unknown residual is not counted as CPU or GPU attribution. No device or long soak claim.",
+  "results": [
+    {
+      "source": "current-journey-budget-2026-11-22-spike-check",
+      "route": "night",
+      "assetSha256": "5d10d6f27cda322dcc10d061ee5e0d08320aeb7cc30e5a3fdf9a15b41a1a8594",
+      "framesSha256": "ff417318aa88535792fd750a93650cf3d727edb4bbc283000b534db84d8a31f9",
+      "buffer": [
+        1920,
+        1080
+      ],
+      "frames": 3171,
+      "seconds": 59.756,
+      "syncMs": {
+        "n": 396,
+        "median": 0.2,
+        "p95": 0.3,
+        "max": 0.4
+      },
+      "intervalMs": {
+        "n": 3170,
+        "median": 18.3,
+        "p95": 24.4,
+        "max": 59.8
+      },
+      "drawCpuMs": {
+        "n": 3171,
+        "median": 5.7,
+        "p95": 7.4,
+        "max": 59.2
+      },
+      "gpuMs": {
+        "n": 396,
+        "median": 15.562,
+        "p95": 19.873,
+        "max": 27.403
+      },
+      "over50": 6,
+      "over33": 55,
+      "warmup": {
+        "ms": 92.39999961853027,
+        "before": {
+          "geometries": 0,
+          "textures": 9
+        },
+        "after": {
+          "geometries": 3,
+          "textures": 21
+        }
+      },
+      "initialTextures": 125,
+      "finalTextures": 144,
+      "peakDrawCalls": 524,
+      "phases": {
+        "forest": {
+          "frames": 375,
+          "moving": 353,
+          "intervalMs": {
+            "n": 374,
+            "median": 19.2,
+            "p95": 24.2,
+            "max": 55.9
+          },
+          "drawCpuMs": {
+            "n": 375,
+            "median": 6.7,
+            "p95": 10.3,
+            "max": 24.1
+          },
+          "gpuMs": {
+            "n": 47,
+            "median": 15.546,
+            "p95": 20.256,
+            "max": 27.154
+          }
+        },
+        "shore": {
+          "frames": 1965,
+          "moving": 1438,
+          "intervalMs": {
+            "n": 1965,
+            "median": 18.9,
+            "p95": 25.1,
+            "max": 59.8
+          },
+          "drawCpuMs": {
+            "n": 1965,
+            "median": 5.7,
+            "p95": 6.6,
+            "max": 59.2
+          },
+          "gpuMs": {
+            "n": 246,
+            "median": 16.165,
+            "p95": 19.181,
+            "max": 27.403
+          }
+        },
+        "water": {
+          "frames": 653,
+          "moving": 371,
+          "intervalMs": {
+            "n": 653,
+            "median": 17.4,
+            "p95": 22,
+            "max": 40.6
+          },
+          "drawCpuMs": {
+            "n": 653,
+            "median": 5.6,
+            "p95": 6.2,
+            "max": 29.5
+          },
+          "gpuMs": {
+            "n": 82,
+            "median": 14.571,
+            "p95": 15.207,
+            "max": 22.138
+          }
+        },
+        "camp": {
+          "frames": 178,
+          "moving": 141,
+          "intervalMs": {
+            "n": 178,
+            "median": 16.9,
+            "p95": 24,
+            "max": 48.1
+          },
+          "drawCpuMs": {
+            "n": 178,
+            "median": 5.5,
+            "p95": 6.2,
+            "max": 46.9
+          },
+          "gpuMs": {
+            "n": 21,
+            "median": 14.232,
+            "p95": 14.561,
+            "max": 14.677
+          }
+        }
+      },
+      "nearTree": {
+        "entryFrame": 114,
+        "treeId": "resource-7",
+        "x": 115.129,
+        "z": -22.869,
+        "highestInterval": 25.6,
+        "highestDraw": 24.1,
+        "associatedRender": 14.4,
+        "lastResources": {
+          "frame": 109,
+          "wall": 5756,
+          "time": 350.9171999999945,
+          "geometries": 233,
+          "textures": 125,
+          "programs": 55,
+          "viewport": [
+            1920,
+            1080
+          ],
+          "buffer": [
+            1920,
+            1080
+          ],
+          "glError": 0
+        },
+        "nextResources": {
+          "frame": 156,
+          "wall": 6776.5,
+          "time": 351.9331999999946,
+          "geometries": 233,
+          "textures": 125,
+          "programs": 56,
+          "viewport": [
+            1920,
+            1080
+          ],
+          "buffer": [
+            1920,
+            1080
+          ],
+          "glError": 0
+        }
+      },
+      "worst": [
+        {
+          "frame": 1457,
+          "phase": "shore",
+          "x": 16.179,
+          "z": -5.355,
+          "time": 375.333,
+          "interval": 59.8,
+          "previousDraw": 59.2,
+          "previousRender": 55.9,
+          "sampledPreviousGpu": 15.302125,
+          "syncMs": 0
+        },
+        {
+          "frame": 2608,
+          "phase": "shore",
+          "x": -34.455,
+          "z": 62.897,
+          "time": 398.457,
+          "interval": 56.9,
+          "previousDraw": 56.3,
+          "previousRender": 53.7,
+          "sampledPreviousGpu": null,
+          "syncMs": 0
+        },
+        {
+          "frame": 2646,
+          "phase": "shore",
+          "x": -37.084,
+          "z": 66.304,
+          "time": 399.217,
+          "interval": 56.1,
+          "previousDraw": 55.4,
+          "previousRender": 53,
+          "sampledPreviousGpu": null,
+          "syncMs": 0
+        },
+        {
+          "frame": 246,
+          "phase": "forest",
+          "x": 94.442,
+          "z": -19.742,
+          "time": 354.011,
+          "interval": 55.9,
+          "previousDraw": 9.4,
+          "previousRender": 3,
+          "sampledPreviousGpu": null,
+          "syncMs": 0.3
+        },
+        {
+          "frame": 2025,
+          "phase": "shore",
+          "x": -3.289,
+          "z": 21.086,
+          "time": 386.331,
+          "interval": 54.5,
+          "previousDraw": 6,
+          "previousRender": 3.3,
+          "sampledPreviousGpu": 26.146249,
+          "syncMs": 0
+        },
+        {
+          "frame": 2408,
+          "phase": "shore",
+          "x": -24.442,
+          "z": 45.133,
+          "time": 394.424,
+          "interval": 51.9,
+          "previousDraw": 6.5,
+          "previousRender": 3.3,
+          "sampledPreviousGpu": null,
+          "syncMs": 0
+        }
+      ],
+      "stageProbe": {
+        "over50": 6,
+        "matches": [
+          {
+            "frame": 246,
+            "ms": 55.9,
+            "previousDraw": 53.3,
+            "previousAfterDraw": 0,
+            "outsideCallback": 1.1,
+            "currentBeforeDraw": 1.5
+          },
+          {
+            "frame": 1457,
+            "ms": 59.8,
+            "previousDraw": 59.2,
+            "previousAfterDraw": 0,
+            "outsideCallback": 0.3,
+            "currentBeforeDraw": 0.3
+          },
+          {
+            "frame": 2025,
+            "ms": 54.5,
+            "previousDraw": 46.9,
+            "previousAfterDraw": 0.1,
+            "outsideCallback": 7.1,
+            "currentBeforeDraw": 0.4
+          },
+          {
+            "frame": 2408,
+            "ms": 51.9,
+            "previousDraw": 41.1,
+            "previousAfterDraw": 0,
+            "outsideCallback": 10.5,
+            "currentBeforeDraw": 0.3
+          },
+          {
+            "frame": 2608,
+            "ms": 56.9,
+            "previousDraw": 56.3,
+            "previousAfterDraw": 0.1,
+            "outsideCallback": 0.2,
+            "currentBeforeDraw": 0.3
+          },
+          {
+            "frame": 2646,
+            "ms": 56.1,
+            "previousDraw": 55.5,
+            "previousAfterDraw": 0,
+            "outsideCallback": 0.3,
+            "currentBeforeDraw": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "source": "current-journey-budget-2026-11-22-spike-check",
+      "route": "night",
+      "assetSha256": "5d10d6f27cda322dcc10d061ee5e0d08320aeb7cc30e5a3fdf9a15b41a1a8594",
+      "framesSha256": "e3cb31bca4eb434370292f6dbd70d36bd4074f52854257609c6a3df9d432e705",
+      "buffer": [
+        585,
+        1266
+      ],
+      "frames": 4461,
+      "seconds": 58.101,
+      "syncMs": {
+        "n": 392,
+        "median": 0.2,
+        "p95": 0.3,
+        "max": 0.4
+      },
+      "intervalMs": {
+        "n": 4460,
+        "median": 11.2,
+        "p95": 26.7,
+        "max": 29.5
+      },
+      "drawCpuMs": {
+        "n": 4461,
+        "median": 4.7,
+        "p95": 6.3,
+        "max": 19.1
+      },
+      "gpuMs": {
+        "n": 558,
+        "median": 8.839,
+        "p95": 12.236,
+        "max": 34.612
+      },
+      "over50": 0,
+      "over33": 0,
+      "warmup": {
+        "ms": 62.09999942779541,
+        "before": {
+          "geometries": 0,
+          "textures": 9
+        },
+        "after": {
+          "geometries": 3,
+          "textures": 21
+        }
+      },
+      "initialTextures": 124,
+      "finalTextures": 138,
+      "peakDrawCalls": 311,
+      "phases": {
+        "forest": {
+          "frames": 582,
+          "moving": 540,
+          "intervalMs": {
+            "n": 581,
+            "median": 11.1,
+            "p95": 26.6,
+            "max": 29.5
+          },
+          "drawCpuMs": {
+            "n": 582,
+            "median": 5.4,
+            "p95": 8.9,
+            "max": 19.1
+          },
+          "gpuMs": {
+            "n": 73,
+            "median": 9.708,
+            "p95": 14.265,
+            "max": 34.612
+          }
+        },
+        "shore": {
+          "frames": 2780,
+          "moving": 2058,
+          "intervalMs": {
+            "n": 2780,
+            "median": 11.2,
+            "p95": 26.7,
+            "max": 29.1
+          },
+          "drawCpuMs": {
+            "n": 2780,
+            "median": 4.7,
+            "p95": 5.4,
+            "max": 16
+          },
+          "gpuMs": {
+            "n": 348,
+            "median": 8.904,
+            "p95": 11.156,
+            "max": 24.341
+          }
+        },
+        "water": {
+          "frames": 867,
+          "moving": 495,
+          "intervalMs": {
+            "n": 867,
+            "median": 10.9,
+            "p95": 26.9,
+            "max": 28
+          },
+          "drawCpuMs": {
+            "n": 867,
+            "median": 4.5,
+            "p95": 5.1,
+            "max": 6.3
+          },
+          "gpuMs": {
+            "n": 108,
+            "median": 8.405,
+            "p95": 11.219,
+            "max": 11.837
+          }
+        },
+        "camp": {
+          "frames": 232,
+          "moving": 193,
+          "intervalMs": {
+            "n": 232,
+            "median": 11,
+            "p95": 26.7,
+            "max": 27.6
+          },
+          "drawCpuMs": {
+            "n": 232,
+            "median": 4.6,
+            "p95": 5.3,
+            "max": 12.9
+          },
+          "gpuMs": {
+            "n": 29,
+            "median": 8.869,
+            "p95": 12.841,
+            "max": 26.617
+          }
+        }
+      },
+      "nearTree": {
+        "entryFrame": 176,
+        "treeId": "resource-7",
+        "x": 115.125,
+        "z": -22.868,
+        "highestInterval": 26.7,
+        "highestDraw": 19.1,
+        "associatedRender": 10.4,
+        "lastResources": {
+          "frame": 167,
+          "wall": 5125.60000038147,
+          "time": 350.83459999999445,
+          "geometries": 224,
+          "textures": 124,
+          "programs": 54,
+          "viewport": [
+            390,
+            844
+          ],
+          "buffer": [
+            585,
+            1266
+          ],
+          "glError": 0
+        },
+        "nextResources": {
+          "frame": 232,
+          "wall": 6131,
+          "time": 351.8406999999945,
+          "geometries": 224,
+          "textures": 124,
+          "programs": 55,
+          "viewport": [
+            390,
+            844
+          ],
+          "buffer": [
+            585,
+            1266
+          ],
+          "glError": 0
+        }
+      },
+      "worst": [
+        {
+          "frame": 315,
+          "phase": "forest",
+          "x": 102.275,
+          "z": -20.926,
+          "time": 352.859,
+          "interval": 29.5,
+          "previousDraw": 6,
+          "previousRender": 2.3,
+          "sampledPreviousGpu": null,
+          "syncMs": 0
+        },
+        {
+          "frame": 1807,
+          "phase": "shore",
+          "x": 27.047,
+          "z": -9.556,
+          "time": 372.192,
+          "interval": 29.1,
+          "previousDraw": 4.1,
+          "previousRender": 1.8,
+          "sampledPreviousGpu": null,
+          "syncMs": 0
+        },
+        {
+          "frame": 2103,
+          "phase": "shore",
+          "x": 14.897,
+          "z": -3.061,
+          "time": 375.892,
+          "interval": 28.5,
+          "previousDraw": 4.3,
+          "previousRender": 2.2,
+          "sampledPreviousGpu": null,
+          "syncMs": 0
+        },
+        {
+          "frame": 2199,
+          "phase": "shore",
+          "x": 12.09,
+          "z": -1.172,
+          "time": 377.174,
+          "interval": 28.3,
+          "previousDraw": 4.7,
+          "previousRender": 2.5,
+          "sampledPreviousGpu": null,
+          "syncMs": 0.1
+        },
+        {
+          "frame": 3359,
+          "phase": "shore",
+          "x": -21.546,
+          "z": 43.824,
+          "time": 392.475,
+          "interval": 28.1,
+          "previousDraw": 4.4,
+          "previousRender": 2.3,
+          "sampledPreviousGpu": null,
+          "syncMs": 0.2
+        },
+        {
+          "frame": 4004,
+          "phase": "shore",
+          "x": -43.39,
+          "z": 82.928,
+          "time": 400.876,
+          "interval": 28.1,
+          "previousDraw": 4.3,
+          "previousRender": 2.2,
+          "sampledPreviousGpu": null,
+          "syncMs": 0
+        }
+      ]
+    }
+  ]
+}

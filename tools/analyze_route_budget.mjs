@@ -20,7 +20,7 @@ const results=[];
 for(const source of sources){
   const report=JSON.parse(fs.readFileSync(path.join(source,'report.json')));
   assert(report.complete&&report.rows.length===2&&!report.logs.length,source);
-  const route=source.endsWith('-night')?'night':'highland';
+  const route=report.rows[0].phases.some(p=>p.label==='00-forest-dusk')?'night':'highland';
   for(const row of report.rows){
     const dir=path.join(source,String(row.width)),raw=fs.readFileSync(path.join(dir,'frames.jsonl'));
     const batches=raw.toString().trim().split('\n').map(JSON.parse);
@@ -28,7 +28,7 @@ for(const source of sources){
     const profile=JSON.parse(fs.readFileSync(path.join(dir,'profile.json')));
     assert.equal(frames.length,profile.timing.frames);
     assert.equal(gpu.length,profile.timing.completed);
-    assert(resources.length&&resources.every(r=>r.glError===0));
+    assert(resources.length&&resources.every(r=>r.glError===0||(r.glError===null&&profile.glError===0)));
     assert(frames.every(f=>f[12]===4),'All timings must cover four passes');
     const phase=f=>route==='highland'?(f[2]<row.phases[1].time?'downhill':'ascent'):
       (terrain(f[3],f[4])<.15?'water':f[2]<row.phases[1].time?'forest':f[2]<row.phases[2].time?'shore':'camp');
@@ -49,6 +49,17 @@ for(const source of sources){
         previousDraw:round(p[8]),previousRender:round(p[9]),sampledPreviousGpu:gpu.find(g=>g.frame===p[0])?.ms??null,
         syncMs:round(profile.sync.filter(s=>s.wall>=p[1]&&s.wall<f[1]).reduce((sum,s)=>sum+s.ms,0))};
     });
+    const stageProbe=profile.stages?.length?{
+      over50:frames.filter(f=>f[7]>50).length,
+      matches:frames.filter(f=>f[7]>50).flatMap(f=>{
+        const p=frames[f[0]-1],stage=profile.stages.find(x=>Math.abs(x.current.drawStart-f[1])<1&&Math.abs(x.previous.drawStart-p[1])<1);
+        if(!stage)return [];
+        const {previous,current}=stage;
+        return [{frame:f[0],ms:round(f[7]),previousDraw:round(previous.drawEnd-previous.drawStart),
+          previousAfterDraw:round(previous.end-previous.drawEnd),outsideCallback:round(current.begin-previous.end),
+          currentBeforeDraw:round(current.drawStart-current.begin)}];
+      })
+    }:null;
     let nearTree=null;
     if(route==='night'){
       const distance=f=>Math.hypot(f[3]-tree[0],f[4]-tree[2]);
@@ -65,7 +76,8 @@ for(const source of sources){
       syncMs:summary(profile.sync.map(s=>s.ms)),intervalMs:summary(frames.map(f=>f[7])),drawCpuMs:summary(frames.map(f=>f[8])),
       gpuMs:summary(gpu.map(g=>g.ms)),over50:frames.filter(f=>f[7]>50).length,over33:frames.filter(f=>f[7]>33.33).length,
       warmup:profile.warmup??null,initialTextures:resources[0].textures,finalTextures:resources.at(-1).textures,
-      peakDrawCalls:Math.max(...frames.map(f=>f[10])),phases,nearTree,worst
+      peakDrawCalls:Math.max(...frames.map(f=>f[10])),phases,nearTree,worst,
+      ...(stageProbe?{stageProbe}:{})
     });
   }
 }
