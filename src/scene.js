@@ -31,6 +31,7 @@ import {createFlame,updateCampfire} from './campfire.js';
 import {createCrystalDeposit} from './crystal.js';
 import {landscapeSample,createShoreStones,islandTreeAppearance} from './landscape.js';
 import {createContactShade} from './contact-shade.js';
+import {createWindupCue} from './windup-cue.js';
 
 const palette={bark:0x65513d,leaf:0x365a42,lightLeaf:0x68815b,rock:0x858d86,sand:0xd5c8a7,cloth:0xb86636,cream:0xeee1bd};
 const nightSkyBounce=new THREE.Color(0xd4e1f5),daySkyBounce=new THREE.Color(0xe2f1df),nightGroundBounce=new THREE.Color(0x8796af),dayGroundBounce=new THREE.Color(0x697346);
@@ -115,6 +116,7 @@ export class WorldView{
     // One nearby fire light keeps the lighting cost bounded as camps grow.
     this.fireLight=new THREE.PointLight(0xffac52,0,18,1.5);this.scene.add(this.fireLight);
     this.marker=new THREE.Mesh(new THREE.RingGeometry(1.8,2,40),new THREE.MeshBasicMaterial({color:0xf2d58f,side:THREE.DoubleSide,transparent:true,opacity:.85}));this.marker.rotation.x=-Math.PI/2;this.scene.add(this.marker);
+    this.windupCue=createWindupCue(terrain);this.scene.add(this.windupCue.mesh);
     this.preview=new THREE.Group();this.scene.add(this.preview);this.finish=createSceneFinish(this.renderer);this.resize();
   }
   installAuthoredCast(cast){
@@ -336,7 +338,18 @@ export class WorldView{
     if(fire)this.fireLight.position.set(fire.x,terrain(fire.x,fire.z)+1.8,fire.z);
     if(this.lighthouse){const {lantern,beacon}=this.lighthouse.userData;const lit=state.quest===6;beacon.visible=lit;beacon.rotation.y=state.time*.3;lantern.material.emissive.set(lit?0xffce72:0x000000);lantern.material.emissiveIntensity=lit?2:0;}
     this.updateIslanders(state,near,dt);
-    for(const e of state.enemies){const g=this.creatures.get(e.id);if(g)animateCreature(g,e,state.time,dt,terrain(e.x,e.z),p,enemyAttackPose(state,e),terrain);}
+    let windup=null,windupDistance=7;
+    for(const e of state.enemies){
+      const g=this.creatures.get(e.id);
+      if(!g)continue;
+      const pose=enemyAttackPose(state,e);
+      animateCreature(g,e,state.time,dt,terrain(e.x,e.z),p,pose,terrain);
+      if(e.hp>0&&pose&&!pose.resolved){
+        const distance=Math.hypot(e.x-p.x,e.z-p.z);
+        if(distance<windupDistance){windup={enemy:e,pose};windupDistance=distance;}
+      }
+    }
+    this.windupCue.update(windup,state.time);
     this.player.position.set(p.x,h,p.z);
     animateActor(this.player,{...p,time:state.time,attackAt:state.attackAt,gatherAt:this.gatherAt,gatherKind:this.gatherKind,gatherTarget:this.gatherTarget,gatherTool:this.gatherTool??state.selected,hurtAt:this.hurtAt,selected:state.selected,swimming:terrain(p.x,p.z)<0},dt,terrain);
     this.contactShade?.updateActors(this.player,this.islanders,this.creatures);
@@ -361,7 +374,7 @@ export class WorldView{
     this.updateAtmosphere(state.time,weather);
     this.sun.position.set(p.x-70,h+100,p.z+40);this.sun.target.position.set(p.x,h,p.z);
     if(this.nightLight){this.nightLight.position.set(p.x+70,h+90,p.z-40);this.nightLight.target.position.set(p.x,h,p.z);}
-    this.marker.visible=Boolean(near)&&!placement;if(near)this.marker.position.set(near.x,Math.max(.3,terrain(near.x,near.z))+.08,near.z);
+    this.marker.visible=Boolean(near)&&!placement&&!this.windupCue.mesh.visible;if(near)this.marker.position.set(near.x,Math.max(.3,terrain(near.x,near.z))+.08,near.z);
     if(placement){this.preview.visible=true;this.preview.position.set(placement.x,terrain(placement.x,placement.z),placement.z);this.preview.traverse(o=>{if(o.isMesh)o.material.color.set(placement.error?0xe08568:0xa6dd9b);});}else this.preview.visible=false;
     if(this.finish)this.finish.render(this.scene,this.camera);else this.renderer.render(this.scene,this.camera);
   }

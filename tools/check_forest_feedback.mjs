@@ -6,8 +6,8 @@ import {world,nextInput} from './journey_path.mjs';
 import {bindCampaignContacts} from './campaign_contact_plan.mjs';
 import {assertCameraRestoreEvidence} from './camera_policy_qa.mjs';
 
-const [name,out,history,expected='spatial',captureMode]=process.argv.slice(2);
-const recordMix=captureMode==='--record-mix';
+const [name,out,history,expected='spatial',...checks]=process.argv.slice(2);
+const recordMix=checks.includes('--record-mix'),checkWindup=checks.includes('--check-windup');
 assert(/^[a-zA-Z0-9_-]+$/.test(name)&&out&&!fs.existsSync(out));
 assert(['centered','spatial'].includes(expected));
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
@@ -20,7 +20,7 @@ const report={complete:false,expected,archiveSha256:manifest.archiveSha256,saveS
 if(recordMix)report.scope+=' Canvas and stereo game buses are muxed into one WebM. Event wall times are measured in the game callback; they do not establish hardware output latency.';
 const mixObserver=recordMix?fs.readFileSync('tools/observe_main_mix.js','utf8'):'';
 const audioTrace=`
-window.forestFeedback={sounds:[],impacts:[]};
+window.forestFeedback={sounds:[],impacts:[],windups:[],resourceSuppressed:0};
 const tracedEffect=GameAudio.prototype.effect;
 GameAudio.prototype.effect=function(kind,options){
   const before=this.sources.size;
@@ -33,6 +33,7 @@ GameAudio.prototype.effect=function(kind,options){
 };`;
 const sceneTrace=`
 const tracedDraw=WorldView.prototype.draw,observed=new WeakSet(),pendingContactFrames=[];
+let lastWindup=false;
 WorldView.prototype.draw=function(...args){
   if(!observed.has(this)){
     observed.add(this);
@@ -48,6 +49,17 @@ WorldView.prototype.draw=function(...args){
   for(const contact of pendingContactFrames.splice(0)){
     contact.drawAt=performance.now();
     contact.activeParticles=this.impacts.active;
+  }
+  if(${checkWindup}){
+    const mesh=this.windupCue.mesh,record=window.forestFeedback;
+    if(mesh.visible&&args[1]&&!this.marker.visible)record.resourceSuppressed++;
+    if(mesh.visible!==lastWindup){
+      const positions=mesh.geometry.attributes.position,wall=performance.now();
+      const centre=new THREE.Vector3().fromBufferAttribute(positions,Math.floor(positions.count/2)).project(this.camera);
+      record.windups.push({visible:mesh.visible,time:args[0].time,wall,
+        buffer:[this.canvas.width,this.canvas.height],centre:centre.toArray()});
+      lastWindup=mesh.visible;
+    }
   }
   return result;
 };`;
@@ -137,6 +149,13 @@ try {
         }
       }
       assert(cues.impacts.some(c=>c.kind==='berry')&&cues.impacts.some(c=>c.kind==='hit'&&c.id===encounter.id));
+      if(checkWindup){
+        assert(cues.windups.some(event=>event.visible)&&cues.windups.at(-1)?.visible===false);
+        for(let i=0;i<cues.windups.length;i+=2){
+          const shown=cues.windups[i],hidden=cues.windups[i+1];
+          assert(shown.visible&&hidden&&!hidden.visible&&hidden.time-shown.time<=.351);
+        }
+      }
       if(expected==='spatial')assert(cues.sounds.some(e=>Math.abs(e.options.pan)>.05));
       if(expected==='spatial'){
         const camp=state.buildings.find(b=>b.type==='campfire');
@@ -195,6 +214,7 @@ try {
     }
   }
   assert.deepEqual(report.logs,[]);assert.equal(sha(fs.readFileSync(history)),report.saveSha256);
+  if(checkWindup)assert(report.rows.some(row=>row.cues.resourceSuppressed>0));
   report.complete=true;
 }catch(error){
   report.error=error.stack;process.exitCode=1;console.error(error);

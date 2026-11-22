@@ -1,0 +1,426 @@
+{
+  "complete": true,
+  "expected": "spatial",
+  "archiveSha256": "a23ebcf1d71cee4bfa4a438f5c52b5638d8de1dc484df8bf7cb243dfcb978294",
+  "saveSha256": "c832824896a38bb3b5b10b1940e121b37eff2cc3a6493a8dd119543545d2052d",
+  "rows": [
+    {
+      "width": 1280,
+      "phases": [
+        {
+          "label": "00-start",
+          "player": {
+            "x": 112.6335268832512,
+            "z": -23.00960493677319,
+            "hp": 100,
+            "stamina": 100,
+            "yaw": -0.223768835118981
+          },
+          "kills": 20,
+          "wood": 4,
+          "berry": 17,
+          "image": "00-start.jpg"
+        },
+        {
+          "label": "01-gather",
+          "player": {
+            "x": 113.94114600033713,
+            "z": -34.78079082455154,
+            "hp": 100,
+            "stamina": 100,
+            "yaw": 2.640605715263708
+          },
+          "kills": 20,
+          "wood": 4,
+          "berry": 19,
+          "image": "01-gather.jpg"
+        },
+        {
+          "label": "02-encounter",
+          "player": {
+            "x": 139.4890074706575,
+            "z": -45.77324349111579,
+            "hp": 93,
+            "stamina": 100,
+            "yaw": -2.991592653589793
+          },
+          "kills": 21,
+          "wood": 4,
+          "berry": 20,
+          "image": "02-encounter.jpg"
+        },
+        {
+          "label": "03-camp",
+          "player": {
+            "x": -70.54114922352888,
+            "z": 101.54818346448002,
+            "hp": 100,
+            "stamina": 100,
+            "yaw": -1.4207963267948966
+          },
+          "kills": 21,
+          "wood": 4,
+          "berry": 20,
+          "image": "03-camp.jpg"
+        }
+      ],
+      "cues": {
+        "sounds": [
+          {
+            "kind": "gather",
+            "options": {
+              "surface": "berry",
+              "pan": 0.5150760270079983,
+              "volume": 1
+            },
+            "played": true,
+            "wall": 7633.400000572205
+          },
+          {
+            "kind": "hit",
+            "options": {
+              "enemyType": "crab",
+              "pan": 0.110273610740689,
+              "volume": 1
+            },
+            "played": true,
+            "wall": 12974.400000572205
+          },
+          {
+            "kind": "hit",
+            "options": {
+              "enemyType": "crab",
+              "pan": 0.17117975018345932,
+              "volume": 1
+            },
+            "played": true,
+            "wall": 13755.900000572205
+          }
+        ],
+        "impacts": [
+          {
+            "id": "resource-170",
+            "kind": "berry",
+            "x": 114.8830231372267,
+            "y": 13.844977416527291,
+            "z": -36.50084836408496,
+            "floor": 13.494977416527291,
+            "time": 1999.5593000006836,
+            "wall": 7634,
+            "spawned": true,
+            "drawAt": 7640.699999809265,
+            "activeParticles": 6
+          },
+          {
+            "id": "enemy-37",
+            "kind": "hit",
+            "x": 139.6240769235447,
+            "y": 25.298841999964957,
+            "z": -46.59408202456274,
+            "floor": 24.148841999964958,
+            "time": 2004.9103000006849,
+            "wall": 12974.400000572205,
+            "spawned": true,
+            "drawAt": 12982.60000038147,
+            "activeParticles": 6
+          },
+          {
+            "id": "enemy-37",
+            "kind": "hit",
+            "x": 139.54967019325534,
+            "y": 25.39590578853129,
+            "z": -46.921642391362134,
+            "floor": 24.245905788531292,
+            "time": 2005.6917000006856,
+            "wall": 13755.900000572205,
+            "spawned": true,
+            "drawAt": 13761.900000572205,
+            "activeParticles": 6
+          }
+        ],
+        "windups": [
+          {
+            "visible": true,
+            "time": 2004.5902000006852,
+            "wall": 12668,
+            "buffer": [
+              1280,
+              800
+            ],
+            "centre": [
+              -0.0008029906219266015,
+              -0.28580338784179016,
+              0.9746225531281918
+            ]
+          },
+          {
+            "visible": false,
+            "time": 2004.9103000006849,
+            "wall": 12982.60000038147,
+            "buffer": [
+              1280,
+              800
+            ],
+            "centre": [
+              0.0049698550151540885,
+              -0.3029308798496199,
+              0.9737870217533935
+            ]
+          }
+        ],
+        "resourceSuppressed": 20
+      },
+      "rest": {
+        "before": 72,
+        "after": 100
+      },
+      "restored": true,
+      "savedSha256": "8b950d7647291133a6cddc482fdd05f69efe535c03a4adcc4c864c9ab0c00996",
+      "glError": 0,
+      "recording": {
+        "width": 1280,
+        "height": 800,
+        "seconds": 112.2,
+        "channels": 2,
+        "peak": 0.02540772780776024,
+        "clipped": 0,
+        "bytes": 22795030,
+        "sha256": "76e59f65678566b419cc7f36455920e865255078417c2c55d27d844e4a27b7b6",
+        "contacts": [
+          {
+            "kind": "gather",
+            "target": "resource-170",
+            "soundToDrawMs": 7.299999237060547,
+            "pan": 0.5150760270079983,
+            "particles": 6
+          },
+          {
+            "kind": "hit",
+            "target": "enemy-37",
+            "soundToDrawMs": 8.199999809265137,
+            "pan": 0.110273610740689,
+            "particles": 6
+          },
+          {
+            "kind": "hit",
+            "target": "enemy-37",
+            "soundToDrawMs": 6,
+            "pan": 0.17117975018345932,
+            "particles": 6
+          }
+        ],
+        "capturedSeconds": 112.272
+      }
+    },
+    {
+      "width": 390,
+      "phases": [
+        {
+          "label": "00-start",
+          "player": {
+            "x": 112.6335268832512,
+            "z": -23.00960493677319,
+            "hp": 100,
+            "stamina": 100,
+            "yaw": -0.223768835118981
+          },
+          "kills": 20,
+          "wood": 4,
+          "berry": 17,
+          "image": "00-start.jpg"
+        },
+        {
+          "label": "01-gather",
+          "player": {
+            "x": 113.94854540054887,
+            "z": -34.60067405998887,
+            "hp": 100,
+            "stamina": 100,
+            "yaw": 2.684538396927705
+          },
+          "kills": 20,
+          "wood": 4,
+          "berry": 19,
+          "image": "01-gather.jpg"
+        },
+        {
+          "label": "02-encounter",
+          "player": {
+            "x": 137.32152548639306,
+            "z": -49.219598017113164,
+            "hp": 93,
+            "stamina": 100,
+            "yaw": 1.7207963267948967
+          },
+          "kills": 21,
+          "wood": 4,
+          "berry": 20,
+          "image": "02-encounter.jpg"
+        },
+        {
+          "label": "03-camp",
+          "player": {
+            "x": -68.99461853266538,
+            "z": 101.82709811098488,
+            "hp": 100,
+            "stamina": 100,
+            "yaw": 0.15000000000000002
+          },
+          "kills": 21,
+          "wood": 4,
+          "berry": 20,
+          "image": "03-camp.jpg"
+        }
+      ],
+      "cues": {
+        "sounds": [
+          {
+            "kind": "gather",
+            "options": {
+              "surface": "berry",
+              "pan": 0.4848829295942736,
+              "volume": 0.9997182005636955
+            },
+            "played": true,
+            "wall": 5514
+          },
+          {
+            "kind": "hit",
+            "options": {
+              "enemyType": "crab",
+              "pan": 0.6609477358453246,
+              "volume": 1
+            },
+            "played": true,
+            "wall": 10897.39999961853
+          },
+          {
+            "kind": "hit",
+            "options": {
+              "enemyType": "crab",
+              "pan": 0.6254969072379011,
+              "volume": 1
+            },
+            "played": true,
+            "wall": 11673.599999427795
+          }
+        ],
+        "impacts": [
+          {
+            "id": "resource-170",
+            "kind": "berry",
+            "x": 114.8830231372267,
+            "y": 13.844977416527291,
+            "z": -36.50084836408496,
+            "floor": 13.494977416527291,
+            "time": 1999.3484000006827,
+            "wall": 5514.099999427795,
+            "spawned": true,
+            "drawAt": 5520.39999961853,
+            "activeParticles": 6
+          },
+          {
+            "id": "enemy-37",
+            "kind": "hit",
+            "x": 138.3691520942456,
+            "y": 25.48237882359594,
+            "z": -48.43132056665258,
+            "floor": 24.332378823595942,
+            "time": 2004.731900000686,
+            "wall": 10897.39999961853,
+            "spawned": true,
+            "drawAt": 10902.89999961853,
+            "activeParticles": 6
+          },
+          {
+            "id": "enemy-37",
+            "kind": "hit",
+            "x": 138.27464795585294,
+            "y": 25.49005663241329,
+            "z": -48.576124973225,
+            "floor": 24.34005663241329,
+            "time": 2005.5080000006872,
+            "wall": 11673.699999809265,
+            "spawned": true,
+            "drawAt": 11678.5,
+            "activeParticles": 6
+          }
+        ],
+        "windups": [
+          {
+            "visible": true,
+            "time": 2004.3091000006855,
+            "wall": 10479.599999427795,
+            "buffer": [
+              390,
+              844
+            ],
+            "centre": [
+              0.06653974120183338,
+              -0.27996768302839153,
+              0.9739561752268812
+            ]
+          },
+          {
+            "visible": false,
+            "time": 2004.6231000006858,
+            "wall": 10793.699999809265,
+            "buffer": [
+              390,
+              844
+            ],
+            "centre": [
+              -0.09269273802641807,
+              -0.32372795446584357,
+              0.9738364108679619
+            ]
+          }
+        ],
+        "resourceSuppressed": 0
+      },
+      "rest": {
+        "before": 86,
+        "after": 100
+      },
+      "restored": true,
+      "savedSha256": "9e43d7686ed5c6419de1fe92385760fb9f4558db93625b245d4a7c549b8929f1",
+      "glError": 0,
+      "recording": {
+        "width": 390,
+        "height": 844,
+        "seconds": 110.1,
+        "channels": 2,
+        "peak": 0.028682101517915726,
+        "clipped": 0,
+        "bytes": 20099018,
+        "sha256": "a53cc2b39003af34d4fc8f49fb59dc4d0c7e290c2e3bb975d148090cad76cf3b",
+        "contacts": [
+          {
+            "kind": "gather",
+            "target": "resource-170",
+            "soundToDrawMs": 6.399999618530273,
+            "pan": 0.4848829295942736,
+            "particles": 6
+          },
+          {
+            "kind": "hit",
+            "target": "enemy-37",
+            "soundToDrawMs": 5.5,
+            "pan": 0.6609477358453246,
+            "particles": 6
+          },
+          {
+            "kind": "hit",
+            "target": "enemy-37",
+            "soundToDrawMs": 4.90000057220459,
+            "pan": 0.6254969072379011,
+            "particles": 6
+          }
+        ],
+        "capturedSeconds": 110.16
+      }
+    }
+  ],
+  "logs": [],
+  "scope": "Native Chromium and a historical normal save. Audio and the impact pool are observed without altering the game state. Canvas and stereo game buses are muxed into one WebM. Event wall times are measured in the game callback; they do not establish hardware output latency."
+}
