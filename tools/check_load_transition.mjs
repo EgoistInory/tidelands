@@ -4,15 +4,16 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 
-const [name,saveFile,out]=process.argv.slice(2);
+const [name,saveFile,out,mode]=process.argv.slice(2);
 assert(/^[a-zA-Z0-9_-]+$/.test(name)&&saveFile&&out&&!fs.existsSync(out));
+assert(mode===undefined||mode==='--profile');
 const root=`dist/${name}/tidelands-local`,origin='http://127.0.0.1:4190',key='tidelands-save-v1';
 const sha=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const manifest=JSON.parse(fs.readFileSync(`dist/${name}.json`));
 assert.equal(sha(`dist/${name}.zip`),manifest.archiveSha256);
 for(const [file,entry] of Object.entries(manifest.files))assert.equal(sha(`${root}/${file}`),entry.sha256,file);
 const report={archive:manifest.archiveSha256,save:sha(saveFile),rows:[],logs:[],complete:false};
-const trace=`
+const trace=String.raw`
 const loadTrace={events:[],longFrames:[]};
 window.loadTrace=loadTrace;
 const note=(name,start=performance.now(),extra={})=>{
@@ -33,9 +34,26 @@ for(const name of ['sync','draw','warmInlandTree']){
     if(!observed.has(this)){
       observed.add(this);
       const renderer=this.renderer,render=renderer.render,gl=renderer.getContext();
-      let calls=null;
-      for(const op of ['linkProgram','getProgramParameter','getShaderParameter','getActiveUniform','bufferData',
-        'texStorage2D','texImage2D','texSubImage2D','drawElements','drawElementsInstanced','drawArrays','blitFramebuffer']){
+      const shaders=new WeakMap(),programShaders=new WeakMap();
+      const shaderSource=gl.shaderSource,attachShader=gl.attachShader;
+      gl.shaderSource=function(shader,source){
+        const material=source.match(/^#define SHADER_NAME (.+)$/m)?.[1]?.trim()||null;
+        const type=source.match(/^#define SHADER_TYPE (.+)$/m)?.[1]?.trim()||null;
+        const variants=source.match(/^#define (?:USE_INSTANCING|USE_SHADOWMAP|NUM_DIR_LIGHT_SHADOWS)\b.*$/gm)??[];
+        shaders.set(shader,{material,type,variants});
+        return shaderSource.call(this,shader,source);
+      };
+      gl.attachShader=function(program,shader){
+        const attached=programShaders.get(program)??[];
+        attached.push(shaders.get(shader));
+        programShaders.set(program,attached);
+        return attachShader.call(this,program,shader);
+      };
+      let calls=null,programLogs=null;
+      for(const op of ['compileShader','linkProgram','useProgram','getProgramParameter','getShaderParameter',
+        'getProgramInfoLog','getShaderInfoLog','getActiveUniform','getUniformLocation','getActiveAttrib','getAttribLocation',
+        'bufferData','bufferSubData','texStorage2D','texImage2D','texSubImage2D','texParameteri','generateMipmap','checkFramebufferStatus',
+        'drawElements','drawElementsInstanced','drawArrays','blitFramebuffer']){
         const native=gl[op];
         gl[op]=function(...params){
           if(!calls)return native.apply(this,params);
@@ -43,14 +61,16 @@ for(const name of ['sync','draw','warmInlandTree']){
           try{return native.apply(this,params);}finally{
             const item=calls[op]??={count:0,ms:0,max:0},ms=performance.now()-start;
             item.count++;item.ms+=ms;item.max=Math.max(item.max,ms);
+            if(op==='getProgramInfoLog')programLogs.push({shaders:programShaders.get(params[0]),ms});
           }
         };
       }
       renderer.render=function(...pargs){
         const start=performance.now();
         calls={};
+        programLogs=[];
         try{return render.apply(this,pargs);}finally{
-          note('render',start,{triangles:this.info.render.triangles,gl:calls});calls=null;
+          note('render',start,{triangles:this.info.render.triangles,gl:calls,programLogs});calls=null;programLogs=null;
         }
       };
     }
@@ -80,8 +100,33 @@ try{
       await page.goto(`${origin}/${root}/`);await ready();
       await page.click('#start-button');await page.click('#pause-button');
       const file=page.waitForEvent('filechooser');
-      await page.getByRole('button',{name:'导入存档',exact:true}).click();await(await file).setFiles(saveFile);
-      await page.waitForFunction(()=>!document.querySelector('#panel').open);
+      await page.getByRole('button',{name:'导入存档',exact:true}).click();
+      const chooser=await file;
+      const cdp=mode==='--profile'?await context.newCDPSession(page):null;
+      let navigationStart;
+      if(cdp){
+        await cdp.send('Performance.enable');
+        const {metrics}=await cdp.send('Performance.getMetrics');
+        navigationStart=metrics.find(metric=>metric.name==='NavigationStart')?.value;
+        assert(navigationStart>0);
+        await cdp.send('Profiler.enable');
+        await cdp.send('Profiler.setSamplingInterval',{interval:1000});
+        await cdp.send('Profiler.start');
+      }
+      await chooser.setFiles(saveFile);
+      const firstDraw=await page.waitForFunction(()=>{
+        const events=window.loadTrace.events;
+        const fileChange=events.find(event=>event.name==='file-change');
+        return fileChange&&events.find(event=>event.name==='draw'&&event.start>=fileChange.end&&!event.panel);
+      });
+      const importDraw=await firstDraw.jsonValue();
+      if(cdp){
+        const {profile}=await cdp.send('Profiler.stop');
+        assert((profile.startTime/1e3-navigationStart*1e3)<=importDraw.start);
+        assert((profile.endTime/1e3-navigationStart*1e3)>=importDraw.end);
+        fs.writeFileSync(path.join(out,`${width}-import-profile.json`),JSON.stringify({navigationStart,importDraw,profile}));
+        await cdp.detach();
+      }
       await page.waitForTimeout(650);
       const imported=await page.evaluate(()=>window.loadTrace);
       await page.click('#pause-button');await page.getByRole('button',{name:'保存进度',exact:true}).click();
@@ -101,9 +146,12 @@ try{
       assert.match(startLabel,/继续旅程/);assert.match(loadStatus,/群岛已就绪/);
       assert.deepEqual(final.buildings,prior.buildings);assert.deepEqual(final.inventory,prior.inventory);
       assert.equal(final.quest,prior.quest);assert(final.time>=prior.time);
-      const glError=await page.evaluate(()=>document.querySelector('#world').getContext('webgl2').getError());
+      const {glError,parallelShaderCompile}=await page.evaluate(()=>{
+        const gl=document.querySelector('#world').getContext('webgl2');
+        return {glError:gl.getError(),parallelShaderCompile:Boolean(gl.getExtension('KHR_parallel_shader_compile'))};
+      });
       assert.equal(glError,0);
-      report.rows.push({width,glError,imported,continued});
+      report.rows.push({width,glError,parallelShaderCompile,importDraw,imported,continued});
     }finally{await context.close();}
   }
   assert.deepEqual(report.logs,[]);assert.equal(sha(saveFile),report.save);report.complete=true;
