@@ -19,6 +19,15 @@ test('leaving range or circling behind the committed direction makes the attack 
 test('defeated enemies cannot finish their pending windup',()=>{
   const {s,e}=encounter();game.tick(s,.01);e.hp=0;game.tick(s,.31);assert.equal(s.player.hp,100);
 });
+test('an active warning selects the attacker over a closer recovery and expires at impact',()=>{
+  const {s,e}=encounter(),crab=s.enemies[1];
+  Object.assign(crab,{type:'crab',x:s.player.x+1.35,z:s.player.z,hp:40,attackAt:s.time});
+  game.tick(s,.01);
+  assert.equal(game.nearestEnemy(s),crab);
+  assert.deepEqual(game.closestEnemyWindup(s),{enemy:e,pose:game.enemyAttackPose(s,e)});
+  game.tick(s,.301);
+  assert.equal(game.closestEnemyWindup(s),null);
+});
 test('pause cancellation and save restoration do not resume a stale enemy strike',()=>{
   const {s,e}=encounter();game.tick(s,.01);const bytes=game.serialize(s),loaded=game.restore(bytes);
   assert.equal(typeof game.cancelEnemyAttacks,'function');game.cancelEnemyAttacks(s);game.tick(s,.31);game.tick(loaded,.31);

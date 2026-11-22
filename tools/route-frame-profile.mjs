@@ -70,9 +70,11 @@ export async function routeRequests(context,origin,root,dir,{stages=false}={}){
     }
     if(profileRoute&&stages&&url.pathname===`/${root}/src/main.js`){
       let source=fs.readFileSync(`${root}/src/main.js`,'utf8');
+      const draw=source.includes('view.draw(state,near,placement,moving,dt,windup);')?
+        'view.draw(state,near,placement,moving,dt,windup);':'view.draw(state,near,placement,moving,dt);';
       const replacements=[
         ['function frame(now){const dt=', 'function frame(now){const __begin=performance.now();let __drawStart=__begin,__drawEnd=__begin;const dt='],
-        ['      view.draw(state,near,placement,moving,dt);', '      __drawStart=performance.now();view.draw(state,near,placement,moving,dt);__drawEnd=performance.now();'],
+        ['      '+draw, '      __drawStart=performance.now();'+draw+'__drawEnd=performance.now();'],
         ['    requestAnimationFrame(frame);','    window.routeProfile?.recordStage(now,__begin,__drawStart,__drawEnd,performance.now());requestAnimationFrame(frame);']
       ];
       for(const [before,after] of replacements){

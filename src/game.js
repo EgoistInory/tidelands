@@ -13,6 +13,18 @@ const MAX_BUILDINGS=500;
 const enemyAttacks=new WeakMap();
 export function cancelEnemyAttacks(state){enemyAttacks.delete(state);}
 export function enemyAttackPose(state,enemy){return enemyAttacks.get(state)?.get(enemy.id)??null;}
+export function closestEnemyWindup(state){
+  const plans=enemyAttacks.get(state);
+  if(!plans?.size)return null;
+  let closest=null,distance=7;
+  for(const enemy of state.enemies){
+    const pose=plans.get(enemy.id);
+    if(enemy.hp<=0||!pose||pose.resolved||state.time<pose.at||state.time-pose.at>=ENEMY_ATTACK_IMPACT)continue;
+    const separation=Math.hypot(enemy.x-state.player.x,enemy.z-state.player.z);
+    if(separation<distance){distance=separation;closest={enemy,pose};}
+  }
+  return closest;
+}
 export const RECIPES={axe:{name:'石斧',cost:{wood:4,stone:3},description:'提高采集数量和攻击伤害'},meal:{name:'烤浆果',cost:{berry:3},description:'恢复 45 点生命'},sword:{name:'晶石剑',cost:{wood:4,stone:4,crystal:3},description:'伤害提升至 38'},campfire:{name:'营火',cost:{wood:5,stone:3},description:'靠近按 E 休息，恢复生命'},tent:{name:'帐篷',cost:{wood:8,fiber:5},description:'设置重生点，恢复体力'},workbench:{name:'工作台',cost:{wood:8,stone:5},description:'解锁晶石剑制作'}};
 export const QUESTS=[
   {title:'归航的灯火',text:'与海边的守灯人交谈',hint:'靠近人物，按 E 交谈'},

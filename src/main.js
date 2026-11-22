@@ -1,6 +1,6 @@
 import {WorldView} from './scene.js';
 import {GameAudio,worldSoundCue} from './audio.js';
-import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_IMPACT,ENEMY_ATTACK_IMPACT} from './action-timing.js';
+import {ATTACK_DURATION,ATTACK_IMPACT,GATHER_IMPACT} from './action-timing.js';
 import {bindPointerControls} from './pointer-controls.js';
 import {createMovementHeading} from './movement-heading.js';
 import {prepareSurfaceTextures} from './startup-textures.js';
@@ -10,7 +10,7 @@ import {prepareCoastalVisual,bindCoastalVisual} from './coastal.js';
 import {prepareInlandVisual,bindInlandVisual} from './inland.js';
 import {gatherContact,gatherImpact,attackImpacts} from './impact-feedback.js';
 import {createWorld,terrain,LANDMARKS,regionAt,dayCycle} from './world.js';
-import {freshGame,QUESTS,ITEMS,RECIPES,affordable,craft,canBuild,build,interact,resolveGather,eat,attack,attackRange,resolveAttack,movePlayer,tick,cancelEnemyAttacks,enemyAttackPose,nearest,nearestEnemy,serialize,restore} from './game.js';
+import {freshGame,QUESTS,ITEMS,RECIPES,affordable,craft,canBuild,build,interact,resolveGather,eat,attack,attackRange,resolveAttack,movePlayer,tick,cancelEnemyAttacks,closestEnemyWindup,nearest,nearestEnemy,serialize,restore} from './game.js';
 
 const $=id=>document.getElementById(id);
 export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
@@ -60,16 +60,21 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     if(waypoint){const [x,y]=point(waypoint.x,waypoint.z);ctx.strokeStyle='#efcd73';ctx.beginPath();ctx.arc(x,y,large?9:5,0,Math.PI*2);ctx.stroke();}
     const [x,y]=point(state.player.x,state.player.z);ctx.save();ctx.translate(x,y);ctx.rotate(-state.player.yaw);ctx.fillStyle='#fff4c8';ctx.strokeStyle='#3f4d38';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,large?8:6);ctx.lineTo(large?-5:-4,large?-6:-4);ctx.lineTo(large?5:4,large?-6:-4);ctx.closePath();ctx.fill();ctx.stroke();ctx.restore();
   }
-  function updateUI(){
-    $('hp').value=state.player.hp;$('hp-value').textContent=Math.ceil(state.player.hp);$('stamina').value=state.player.stamina;$('stamina-value').textContent=Math.floor(state.player.stamina);
-    const enemy=nearestEnemy(state);$('enemy-status').hidden=!enemy;
+  let warnedEnemy=null;
+  function updateEnemyStatus(windup=closestEnemyWindup(state)){
+    warnedEnemy=windup?.enemy??null;
+    const enemy=warnedEnemy??nearestEnemy(state);$('enemy-status').hidden=!enemy;
     if(enemy){
       const name=enemy.type==='boar'?'野猪':'海岸蟹',distance=Math.hypot(enemy.x-state.player.x,enemy.z-state.player.z),hp=Math.ceil(enemy.hp),max=Math.max(enemy.type==='boar'?70:40,hp);
       $('enemy-name').textContent=name;$('enemy-hp').max=max;$('enemy-hp').value=hp;$('enemy-hp').setAttribute('aria-label',`${name}生命`);$('enemy-hp-value').textContent=`${hp} / ${max}`;
-      const pose=enemyAttackPose(state,enemy),winding=pose&&!pose.resolved&&state.time-pose.at<ENEMY_ATTACK_IMPACT;
+      const winding=Boolean(windup);
       $('enemy-status').dataset.danger=winding?'windup':distance<2.9?'close':'near';
       $('enemy-hint').textContent=winding?'蓄力 · 移动闪避':`${Math.ceil(distance)} 米 · ${distance<=attackRange(state,enemy)?'面向目标 · 空格 / 攻击':distance<2.9?'近身威胁 · 靠近反击或退开':'正在靠近 · 迎战或拉开距离'}`;
     }
+  }
+  function updateUI(){
+    $('hp').value=state.player.hp;$('hp-value').textContent=Math.ceil(state.player.hp);$('stamina').value=state.player.stamina;$('stamina-value').textContent=Math.floor(state.player.stamina);
+    updateEnemyStatus();
     $('region').textContent=regionAt(state.player.x,state.player.z);$('coordinates').textContent=`位置 X ${state.player.x.toFixed(1)}，Z ${state.player.z.toFixed(1)}；建筑 ${state.buildings.length}；击败 ${state.kills}`;
     const q=QUESTS[state.quest];$('quest-title').textContent=q.title;$('quest-text').textContent=q.text;
     const target=state.quest===0?'keeper':state.quest===3?'botanist':state.quest===4?'explorer':state.quest===5?'lighthouse':null;
@@ -245,13 +250,17 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
       }
       if(pendingAttack&&state.time>=pendingAttack.at+ATTACK_IMPACT)finishStrike();
       if(pendingGather&&state.time>=pendingGather.at+GATHER_IMPACT)finishGather();
-      if(message)toast(message,feedback.respawned?9000:4200);near=nearest(state,world.objects);
+      // The damage indicator carries the hit result while the world view stays clear.
+      if(message&&(!feedback.damage||feedback.respawned))toast(message,feedback.respawned?9000:4200);
+      near=nearest(state,world.objects);
       if(buildType){const px=state.player.x+Math.sin(state.player.yaw)*6,pz=state.player.z+Math.cos(state.player.yaw)*6;placement={x:px,z:pz,error:canBuild(state,world.objects,buildType,px,pz)};}else placement=null;
       if(now-uiAt>140){view.sync(state);updateUI();uiAt=now;}if(now-saveAt>8000){save();saveAt=now;}
     }
     if(now>toastUntil)$('toast').hidden=true;
     if(!renderLost&&prepared){
-      view.draw(state,near,placement,moving,dt);
+      const windup=closestEnemyWindup(state);
+      if(started&&!paused&&warnedEnemy!==(windup?.enemy??null))updateEnemyStatus(windup);
+      view.draw(state,near,placement,moving,dt,windup);
       if(started&&!paused){
         const {footfallCount,swimming}=view.player.userData;
         audio.update(state.player,state.time,terrain(state.player.x,state.player.z),footfallCount,{buildings:state.buildings,cameraYaw:cameraYaw(),swimming});

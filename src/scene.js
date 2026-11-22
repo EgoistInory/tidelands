@@ -2,7 +2,7 @@ import {createFishingYard} from './fishing-yard.js';
 import {FISHING_YARD,fishingYardActive} from './fishing-yard-layout.js';
 import * as THREE from '../vendor/three.module.min.js';
 import {terrain,WATER_LEVEL,LANDMARKS,randomGenerator,dayCycle,weatherAt} from './world.js';
-import {isDepleted,enemyAttackPose} from './game.js';
+import {isDepleted,enemyAttackPose,closestEnemyWindup} from './game.js';
 import {followCamera} from './camera-controller.js';
 import {prepareCameraOccluder,createForegroundFade,cameraOccluderRoots} from './camera-occlusion.js';
 import {resourceHalfSize} from './resource-contact.js';
@@ -326,7 +326,7 @@ export class WorldView{
     this.waterUniforms.windStrength.value=weather.windStrength;
     this.waterUniforms.fogRange.value.set(weather.fogNear,weather.fogFar);
   }
-  draw(state,near,placement,moving,dt){
+  draw(state,near,placement,moving,dt,windup=closestEnemyWindup(state)){
     this.coastal?.update(state);
     this.inland?.update(state);
     const p=state.player,h=Math.max(terrain(p.x,p.z),-.45),weather=weatherAt(state.time);
@@ -341,16 +341,11 @@ export class WorldView{
     if(fire)this.fireLight.position.set(fire.x,terrain(fire.x,fire.z)+1.8,fire.z);
     if(this.lighthouse){const {lantern,beacon}=this.lighthouse.userData;const lit=state.quest===6;beacon.visible=lit;beacon.rotation.y=state.time*.3;lantern.material.emissive.set(lit?0xffce72:0x000000);lantern.material.emissiveIntensity=lit?2:0;}
     this.updateIslanders(state,near,dt);
-    let windup=null,windupDistance=7;
     for(const e of state.enemies){
       const g=this.creatures.get(e.id);
       if(!g)continue;
       const pose=enemyAttackPose(state,e);
       animateCreature(g,e,state.time,dt,terrain(e.x,e.z),p,pose,terrain);
-      if(e.hp>0&&pose&&!pose.resolved){
-        const distance=Math.hypot(e.x-p.x,e.z-p.z);
-        if(distance<windupDistance){windup={enemy:e,pose};windupDistance=distance;}
-      }
     }
     this.windupCue.update(windup,state.time);
     this.player.position.set(p.x,h,p.z);
