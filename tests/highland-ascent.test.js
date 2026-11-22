@@ -19,12 +19,25 @@ test('the visible ascent stays continuous and clear to the existing lookout',()=
       assert.ok(field.wear>.9);
       assert.equal(field.stone,0);
       assert.equal(field.plants,0);
+      assert.equal(field.outcrop,0);
     }
   }
   assert.equal(highlandAscent(-70,-187,terrain(-70,-187),.7).stone,0);
   assert.equal(highlandAscent(-70,-141,terrain(-70,-141),.7),null);
   assert.equal(highlandAscent(112,-23,terrain(112,-23),.7),null);
   assert.equal(highlandAscent(-79,-151,0,.7),null);
+});
+
+test('continuous outcrop bands show on both flanks of the middle ascent',()=>{
+  for(const [west,east] of [[-94,-86],[-77,-68]]){
+    let strongest=0,exposedSamples=0;
+    for(let x=west;x<=east;x+=.5)for(let z=-182;z<=-158;z+=.5){
+      const outcrop=highlandAscent(x,z,terrain(x,z),.45)?.outcrop??0;
+      strongest=Math.max(strongest,outcrop);
+      if(outcrop>.42)exposedSamples++;
+    }
+    assert(strongest>.7&&exposedSamples>30);
+  }
 });
 
 test('highland dressing stays off the tread and honors existing camp clearance',()=>{

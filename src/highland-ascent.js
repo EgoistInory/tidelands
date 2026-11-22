@@ -26,5 +26,11 @@ export function highlandAscent(x,z,height,slope=0){
   const flanks=verge*smooth(2.3,4.8,distance)*smooth(4,9,Math.hypot(x-lookoutX,z-lookoutZ));
   const stone=flanks*smooth(.35,.89,slope*.72+rockBands*.39);
   const plants=flanks*(1-smooth(.61,.85,slope))*(.28+.72*(1-smooth(.26,.76,rockBands)));
-  return {wear,stone,plants};
+  // Expose broad seams along the existing relief on either side of the trail.
+  // The layers use terrain material weights, leaving the walking surface intact.
+  const bed=height*.19+(x+76)*.021+.18*Math.sin((z+170)*.14);
+  const layer=bed-Math.floor(bed);
+  const outcrop=verge*smooth(3.8,7,distance)*smooth(.08,.26,layer)*(1-smooth(.66,.91,layer))*
+    (.8+.2*smooth(.2,.65,slope));
+  return {wear,stone,plants,outcrop};
 }

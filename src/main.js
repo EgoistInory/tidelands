@@ -30,7 +30,7 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
   const mapBase=document.createElement('canvas');mapBase.width=220;mapBase.height=220;
   const mc=mapBase.getContext('2d');
   for(let x=0;x<220;x+=2)for(let y=0;y<220;y+=2){const h=terrain(x/220*800-400,y/220*800-400);mc.fillStyle=h<0?'#235e64':h<2?'#d7c991':h>28?'#9aab95':'#698b55';mc.fillRect(x,y,2,2);}
-  function toast(text,duration=4200){if(!text)return;$('toast').textContent=text;$('toast').hidden=false;toastUntil=performance.now()+duration;
+  function toast(text,duration=4200,dialogue=false){if(!text)return;const message=$('toast');message.toggleAttribute('data-dialogue',dialogue);message.textContent=text;message.hidden=false;toastUntil=performance.now()+duration;
     if(panel.open){let feedback=$('panel-feedback');if(!feedback){feedback=document.createElement('p');feedback.id='panel-feedback';feedback.setAttribute('role','status');$('panel-body').append(feedback);}feedback.textContent=text;}
   }
   let combatTimer=null,damageTimer=null,hurtTimer=null,combatKind='';
@@ -86,10 +86,14 @@ export function boot({initialState=null,storageKey='tidelands-save-v1'}={}){
     $('interact-label').textContent=buildType?'确认建造':near?`${names[near.type]||'交互'}${near.type==='npc'?' · '+near.name.split(' · ')[1]:''}`:'';
     $('placement-tip').hidden=!buildType;if(buildType)$('placement-tip').textContent=placement?.error||'在前方放置 · E 确认 · Esc 取消';
     map($('minimap'));if(panelKind==='map'&&$('large-map'))map($('large-map'),true);
-    if(state.quest!==lastQuest){audio.effect('quest');lastQuest=state.quest;const note=state.quest===6?'归航灯塔已被修复，主线完成！你可以继续自由探索。':`新的目标：${q.title}`;toast(!$('toast').hidden?`${$('toast').textContent}\n${note}`:note,9000);save();}
+    if(state.quest!==lastQuest){audio.effect('quest');lastQuest=state.quest;const note=state.quest===6?'归航灯塔已被修复，主线完成！你可以继续自由探索。':`新的目标：${q.title}`;
+      const message=$('toast'),hasMessage=!message.hidden;
+      toast(hasMessage?`${message.textContent}\n${note}`:note,9000,hasMessage&&message.hasAttribute('data-dialogue'));save();}
   }
   function action(){if(!started||paused||pendingGather)return;cancelAttack();if(state.time-state.attackAt<ATTACK_DURATION)return;if(buildType){if(!placement)return;const message=build(state,world.objects,buildType,placement.x,placement.z);toast(message);if(message.startsWith('建造完成')){audio.effect('craft');buildType=null;placement=null;view.setPreview(null);save();view.sync(state);}return;}
-    const result=interact(state,near,{defer:true});if(result?.pending){pendingGather=result.pending;view.gatherAt=result.pending.at;view.gatherKind=near.type;view.gatherTarget=gatherContact(state,pendingGather.object);view.gatherTool=['tree','stone','crystal'].includes(near.type)&&state.inventory.axe?'axe':'hand';state.player.yaw=Math.atan2(view.gatherTarget.x-state.player.x,view.gatherTarget.z-state.player.z);return;}toast(result,near?.type==='npc'?8500:4200);save();view.sync(state);updateUI();}
+    const result=interact(state,near,{defer:true});if(result?.pending){pendingGather=result.pending;view.gatherAt=result.pending.at;view.gatherKind=near.type;view.gatherTarget=gatherContact(state,pendingGather.object);view.gatherTool=['tree','stone','crystal'].includes(near.type)&&state.inventory.axe?'axe':'hand';state.player.yaw=Math.atan2(view.gatherTarget.x-state.player.x,view.gatherTarget.z-state.player.z);return;}
+    const dialogue=near?.type==='npc';
+    toast(result,dialogue?8500:4200,dialogue);save();view.sync(state);updateUI();}
   function cameraYaw(){return Math.atan2(view.camera.position.x-state.player.x,view.camera.position.z-state.player.z);}
   function finishGather(){
     const message=resolveGather(state,pendingGather),cue=gatherImpact(state,pendingGather,message,view.gatherTarget);

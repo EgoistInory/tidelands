@@ -151,10 +151,10 @@ export class WorldView{
     const colors=[],layers=[];
     for(let i=0;i<positions.count;i++){
       const x=positions.getX(i),z=positions.getZ(i),y=terrain(x,z);positions.setY(i,y);
-      const sample=landscapeSample(x,z);colors.push(...sample.color.toArray());layers.push(sample.rock,sample.litter);
+      const sample=landscapeSample(x,z);colors.push(...sample.color.toArray());layers.push(sample.rock,sample.litter,sample.exposure);
     }
     geometry.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));geometry.computeVertexNormals();
-    geometry.setAttribute('groundLayers',new THREE.Float32BufferAttribute(layers,2));
+    geometry.setAttribute('groundLayers',new THREE.Float32BufferAttribute(layers,3));
     this.groundHeight=visibleGroundSampler(geometry);
     const random=randomGenerator(835),pixels=new Uint8Array(256*256*4);
     for(let i=0;i<pixels.length;i+=4){const grain=185+Math.floor(random()*70);pixels[i]=pixels[i+1]=pixels[i+2]=grain;pixels[i+3]=255;}

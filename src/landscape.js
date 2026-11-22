@@ -5,6 +5,7 @@ import {highlandAscent} from './highland-ascent.js';
 
 const estuaryGravel=new THREE.Color(0x77766a),estuarySoil=new THREE.Color(0x485139);
 const ascentGravel=new THREE.Color(0xa59a83),ascentLedge=new THREE.Color(0x8d8c83),ascentHeath=new THREE.Color(0x626949);
+const exposedSlate=new THREE.Color(0x777f7b);
 const grass=[0x68794f,0x405e48,0x737b70,0xa79b5f],sand=[0xcabe9b,0xb5b294,0xa2aba4,0xddc38c];
 const smooth=(a,b,x)=>{const t=THREE.MathUtils.clamp((x-a)/(b-a),0,1);return t*t*(3-2*t);};
 
@@ -21,18 +22,21 @@ export function landscapeSample(x,z){
   const patch=(Math.sin(x*.083+Math.sin(z*.045)*2)+Math.cos(z*.11-x*.031))*.25+.5;
   const dry=smooth(.4,3.8,y),rock=dry*Math.max(smooth(.38,.85,slope),biome===2?smooth(18,34,y)*(.7+patch*.3):smooth(30,43,y)*.65);
   const litter=biome===1?dry*(1-smooth(27,36,y))*smooth(.3,.8,patch)*.65:0;
+  const cliff=biome===2?smooth(5,16,y)*smooth(.38,.78,slope):0;
   const color=new THREE.Color(grass[biome]).lerp(new THREE.Color(sand[biome]),1-smooth(1.6,5.8,y));
   color.lerp(new THREE.Color(0x81745b),litter*.7).lerp(new THREE.Color(0x8d9590),rock*.65);
   color.multiplyScalar(.89+patch*.18);
   const ascent=highlandAscent(x,z,y,slope);
   if(ascent){
-    color.lerp(ascentHeath,ascent.plants*.48).lerp(ascentLedge,ascent.stone*.7).lerp(ascentGravel,ascent.wear*(.62+.14*patch));
-    return {biome,color,rock:Math.max(rock,ascent.stone*.92)*(1-ascent.wear*.46),litter};
+    const exposure=Math.max(cliff,ascent.outcrop)*(1-ascent.wear);
+    color.lerp(ascentHeath,ascent.plants*.48).lerp(ascentLedge,ascent.stone*.7)
+      .lerp(exposedSlate,ascent.outcrop).lerp(ascentGravel,ascent.wear*(.62+.14*patch));
+    return {biome,color,rock:Math.max(rock,ascent.stone*.92,exposure)*(1-ascent.wear*.46),litter,exposure};
   }
   const habitat=estuaryHabitat(x,z,y,slope);
-  if(!habitat)return {biome,color,rock,litter};
+  if(!habitat)return {biome,color,rock:Math.max(rock,cliff),litter,exposure:cliff};
   color.lerp(estuaryGravel,habitat.gravel*.88).lerp(estuarySoil,habitat.shelter*.8);
-  return {biome,color,rock:Math.max(rock,habitat.bedrock*.87),litter:Math.max(litter,habitat.shelter*.48)};
+  return {biome,color,rock:Math.max(rock,habitat.bedrock*.87),litter:Math.max(litter,habitat.shelter*.48),exposure:0};
 }
 
 export function createShoreStones({highland=false}={}){

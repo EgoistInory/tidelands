@@ -1,0 +1,1343 @@
+{
+  "complete": true,
+  "baseline": "1e810317e43626cc568803d481679d9ae6a2bdb2",
+  "source": {
+    "src/scene.js": "578d1802d18916bdebf986ed45309e42da3459dd0cb5f88c83bc24e909fabc70",
+    "src/landscape.js": "b158a13b84e856e6f8723efedcc56daee9d5f10addf998ad7da56d1c87183b0f",
+    "src/meadow.js": "7c4e443611a082eb37039daabe2cc3e9f8338525547fb908d995ec6159920ce7",
+    "src/highland-ascent.js": "2114ac7cb91b3c5d05b5856bb61483d15adb2c301cd5860e1908fa871288764f",
+    "src/ground-surface.js": "64abe4373574e225a162014b61efed1084f09f4a745b444106574772e6d41aa6"
+  },
+  "rows": [
+    {
+      "width": 1280,
+      "variant": "before",
+      "label": "entry",
+      "image": "1280-entry-before.png",
+      "sha256": "a7b3f7e3594b0851f24b059b781dc85a99b7b7758537619fc3b61b9ee1bcec45",
+      "ready": true,
+      "site": "coast",
+      "distance": "near",
+      "position": [
+        -79,
+        -151
+      ],
+      "height": 3.2493935585022014,
+      "camera": [
+        -73,
+        8.249393558502202,
+        -139
+      ],
+      "lookAt": [
+        -79,
+        7.249393558502201,
+        -156
+      ],
+      "time": 240,
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        704
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 13,
+          "calls": 133,
+          "triangles": 1288220,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 14,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 15,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 16,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "variant": "before",
+      "label": "ascent",
+      "image": "1280-ascent-before.png",
+      "sha256": "1ea05ea33fee423bcb9c676a3cf7d1582ca30f61f1c5147d35ced74a3317b2a1",
+      "ready": true,
+      "site": "forest",
+      "distance": "middle",
+      "position": [
+        -82,
+        -166
+      ],
+      "height": 12.014643287658698,
+      "camera": [
+        -96,
+        25.0146432876587,
+        -138
+      ],
+      "lookAt": [
+        -82,
+        16.0146432876587,
+        -171
+      ],
+      "time": 240,
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        704
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 21,
+          "calls": 153,
+          "triangles": 1370384,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 22,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 23,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 24,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "variant": "before",
+      "label": "lookout",
+      "image": "1280-lookout-before.png",
+      "sha256": "411a73e0829923950bae519a5667080c914d27004c05744ed94b678c8a1c29d8",
+      "ready": true,
+      "site": "highland",
+      "distance": "near",
+      "position": [
+        -71,
+        -187
+      ],
+      "height": 25.326647186279292,
+      "camera": [
+        -65,
+        30.326647186279292,
+        -175
+      ],
+      "lookAt": [
+        -71,
+        29.326647186279292,
+        -192
+      ],
+      "time": 240,
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        704
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 29,
+          "calls": 130,
+          "triangles": 1185207,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 30,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 31,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 32,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "variant": "before",
+      "label": "night",
+      "image": "1280-night-before.png",
+      "sha256": "a5d7fabe38b3079f8f985293584b53e03110210af6aee3a6b1468ab957195c15",
+      "ready": true,
+      "site": "forest",
+      "distance": "near",
+      "position": [
+        -82,
+        -166
+      ],
+      "height": 12.014643287658698,
+      "camera": [
+        -76,
+        17.0146432876587,
+        -154
+      ],
+      "lookAt": [
+        -82,
+        16.0146432876587,
+        -171
+      ],
+      "time": 375,
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        704
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 37,
+          "calls": 131,
+          "triangles": 1278178,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 38,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 39,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 40,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "variant": "after",
+      "label": "entry",
+      "image": "1280-entry-after.png",
+      "sha256": "654280c91ce07a13f450f35db2c78c36e4caf010179afe981b53caf8d4ab0b26",
+      "ready": true,
+      "site": "coast",
+      "distance": "near",
+      "position": [
+        -79,
+        -151
+      ],
+      "height": 3.2493935585022014,
+      "camera": [
+        -73,
+        8.249393558502202,
+        -139
+      ],
+      "lookAt": [
+        -79,
+        7.249393558502201,
+        -156
+      ],
+      "time": 240,
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        704
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 13,
+          "calls": 133,
+          "triangles": 1288220,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 14,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 15,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 16,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "variant": "after",
+      "label": "ascent",
+      "image": "1280-ascent-after.png",
+      "sha256": "48f106a19ac8483a073bba0ce3529227a91894a37d4b796b419ea4d5a4f20dde",
+      "ready": true,
+      "site": "forest",
+      "distance": "middle",
+      "position": [
+        -82,
+        -166
+      ],
+      "height": 12.014643287658698,
+      "camera": [
+        -96,
+        25.0146432876587,
+        -138
+      ],
+      "lookAt": [
+        -82,
+        16.0146432876587,
+        -171
+      ],
+      "time": 240,
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        704
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 21,
+          "calls": 153,
+          "triangles": 1370384,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 22,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 23,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 24,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "variant": "after",
+      "label": "lookout",
+      "image": "1280-lookout-after.png",
+      "sha256": "48d009f66d52ea23958f7a30398039c7f47faa36d1c3ab8913bef743de8e9af8",
+      "ready": true,
+      "site": "highland",
+      "distance": "near",
+      "position": [
+        -71,
+        -187
+      ],
+      "height": 25.326647186279292,
+      "camera": [
+        -65,
+        30.326647186279292,
+        -175
+      ],
+      "lookAt": [
+        -71,
+        29.326647186279292,
+        -192
+      ],
+      "time": 240,
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        704
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 29,
+          "calls": 130,
+          "triangles": 1185207,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 30,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 31,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 32,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "variant": "after",
+      "label": "night",
+      "image": "1280-night-after.png",
+      "sha256": "9f15d32bbc504c411e1772b162d1464ba639f4db5319d450c877474352651d91",
+      "ready": true,
+      "site": "forest",
+      "distance": "near",
+      "position": [
+        -82,
+        -166
+      ],
+      "height": 12.014643287658698,
+      "camera": [
+        -76,
+        17.0146432876587,
+        -154
+      ],
+      "lookAt": [
+        -82,
+        16.0146432876587,
+        -171
+      ],
+      "time": 375,
+      "viewport": [
+        1280,
+        800
+      ],
+      "buffer": [
+        1280,
+        704
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 37,
+          "calls": 131,
+          "triangles": 1278178,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 38,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 39,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 40,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "variant": "before",
+      "label": "entry",
+      "image": "390-entry-before.png",
+      "sha256": "473781c82ab884f08c61cdafc7e9341185619d1518e120d991d9974444e8dbdd",
+      "ready": true,
+      "site": "coast",
+      "distance": "near",
+      "position": [
+        -79,
+        -151
+      ],
+      "height": 3.2493935585022014,
+      "camera": [
+        -73,
+        8.249393558502202,
+        -139
+      ],
+      "lookAt": [
+        -79,
+        7.249393558502201,
+        -156
+      ],
+      "time": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        711
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 13,
+          "calls": 112,
+          "triangles": 1237277,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 14,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 15,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 16,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "variant": "before",
+      "label": "ascent",
+      "image": "390-ascent-before.png",
+      "sha256": "34a3ea8a2dceccea7cbd1ff921fdb962abd5fe54e0eb8ba6e4c5f7bf5857e2ef",
+      "ready": true,
+      "site": "forest",
+      "distance": "middle",
+      "position": [
+        -82,
+        -166
+      ],
+      "height": 12.014643287658698,
+      "camera": [
+        -96,
+        25.0146432876587,
+        -138
+      ],
+      "lookAt": [
+        -82,
+        16.0146432876587,
+        -171
+      ],
+      "time": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        711
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 21,
+          "calls": 116,
+          "triangles": 1219445,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 22,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 23,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 24,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "variant": "before",
+      "label": "lookout",
+      "image": "390-lookout-before.png",
+      "sha256": "24e7561a8d46a29a4316d716b37da179bd9ba4bea505274fcff3823410384933",
+      "ready": true,
+      "site": "highland",
+      "distance": "near",
+      "position": [
+        -71,
+        -187
+      ],
+      "height": 25.326647186279292,
+      "camera": [
+        -65,
+        30.326647186279292,
+        -175
+      ],
+      "lookAt": [
+        -71,
+        29.326647186279292,
+        -192
+      ],
+      "time": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        711
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 29,
+          "calls": 100,
+          "triangles": 1081200,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 30,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 31,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 32,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "variant": "before",
+      "label": "night",
+      "image": "390-night-before.png",
+      "sha256": "2c65d7e03fab010b1c4a4e282f8723c42c3e0b448c109aee278654bb2e41ce1a",
+      "ready": true,
+      "site": "forest",
+      "distance": "near",
+      "position": [
+        -82,
+        -166
+      ],
+      "height": 12.014643287658698,
+      "camera": [
+        -76,
+        17.0146432876587,
+        -154
+      ],
+      "lookAt": [
+        -82,
+        16.0146432876587,
+        -171
+      ],
+      "time": 375,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        711
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 37,
+          "calls": 104,
+          "triangles": 1223621,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 38,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 39,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 40,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "variant": "after",
+      "label": "entry",
+      "image": "390-entry-after.png",
+      "sha256": "0d5af19cf0a80f1363a2072ff8b49b2a852c34df22eb0485d0adf42ae28b5bd5",
+      "ready": true,
+      "site": "coast",
+      "distance": "near",
+      "position": [
+        -79,
+        -151
+      ],
+      "height": 3.2493935585022014,
+      "camera": [
+        -73,
+        8.249393558502202,
+        -139
+      ],
+      "lookAt": [
+        -79,
+        7.249393558502201,
+        -156
+      ],
+      "time": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        711
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 13,
+          "calls": 112,
+          "triangles": 1237277,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 14,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 15,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 16,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "variant": "after",
+      "label": "ascent",
+      "image": "390-ascent-after.png",
+      "sha256": "367252f871d5255afea5dc0698035b4ed82c76bea923018db05e757c683203cd",
+      "ready": true,
+      "site": "forest",
+      "distance": "middle",
+      "position": [
+        -82,
+        -166
+      ],
+      "height": 12.014643287658698,
+      "camera": [
+        -96,
+        25.0146432876587,
+        -138
+      ],
+      "lookAt": [
+        -82,
+        16.0146432876587,
+        -171
+      ],
+      "time": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        711
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 21,
+          "calls": 116,
+          "triangles": 1219445,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 22,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 23,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 24,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "variant": "after",
+      "label": "lookout",
+      "image": "390-lookout-after.png",
+      "sha256": "c2b3cf46f712ded3429850f917eea3862979c75940c59235f05349ad14ce7962",
+      "ready": true,
+      "site": "highland",
+      "distance": "near",
+      "position": [
+        -71,
+        -187
+      ],
+      "height": 25.326647186279292,
+      "camera": [
+        -65,
+        30.326647186279292,
+        -175
+      ],
+      "lookAt": [
+        -71,
+        29.326647186279292,
+        -192
+      ],
+      "time": 240,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        711
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 29,
+          "calls": 100,
+          "triangles": 1081200,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 30,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 31,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 32,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "variant": "after",
+      "label": "night",
+      "image": "390-night-after.png",
+      "sha256": "5e71d49cd5623f579e2aca337ca896244c3a7baf6341d7f662e6a02964f98534",
+      "ready": true,
+      "site": "forest",
+      "distance": "near",
+      "position": [
+        -82,
+        -166
+      ],
+      "height": 12.014643287658698,
+      "camera": [
+        -76,
+        17.0146432876587,
+        -154
+      ],
+      "lookAt": [
+        -82,
+        16.0146432876587,
+        -171
+      ],
+      "time": 375,
+      "viewport": [
+        390,
+        844
+      ],
+      "buffer": [
+        390,
+        711
+      ],
+      "worldUnchanged": true,
+      "stateUnchanged": true,
+      "authored": {
+        "cast": true,
+        "woodland": true,
+        "coastal": true,
+        "inland": true
+      },
+      "render": {
+        "calls": 1,
+        "triangles": 1,
+        "scope": "Last renderer pass only; not complete-frame draw calls or triangle cost"
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+      "glError": 0,
+      "motion": null,
+      "running": false,
+      "scope": "Declared no-storage fixture; enemies inactive, quest6, fixed time and identical comparison camera. Not ordinary gameplay, GPU timing, long-duration or device proof.",
+      "hdr": true,
+      "passes": [
+        {
+          "frame": 37,
+          "calls": 104,
+          "triangles": 1223621,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 38,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 39,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        },
+        {
+          "frame": 40,
+          "calls": 1,
+          "triangles": 1,
+          "points": 0,
+          "lines": 0
+        }
+      ]
+    }
+  ],
+  "logs": [],
+  "scope": "Production HDR against matching fixtures. No save changes. Full-frame draw and triangle counts, no GPU timings."
+}

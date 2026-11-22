@@ -55,4 +55,10 @@
   .map-corner{width:100px}.map-corner canvas{width:88px;height:88px;margin-left:6px}.map-corner p{margin:3px 0;font-size:10px}
   .map-corner button{min-height:44px;font-size:11px;padding:5px 2px}
   #enemy-status{top:128px;width:min(220px,calc(100% - 146px));max-width:none;padding:7px 10px}
+  /* Give the speaking character the centre of the portrait view. */
+  #hud:has(.toast[data-dialogue]:not([hidden])) .quest{display:none}
+  #hud:not(:has(#enemy-status:not([hidden]))) .toast[data-dialogue]{
+    top:128px;left:12px;transform:none;width:calc(100% - 132px);padding:8px 10px;
+    border-left:2px solid var(--gold);line-height:1.5;overflow-wrap:anywhere
+  }
 }

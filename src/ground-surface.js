@@ -49,7 +49,7 @@ export function createGroundSurface(detail,{loader=new THREE.TextureLoader(),ani
     shader.vertexShader=`varying vec3 groundPosition;varying float groundSlope;\n${shader.vertexShader}`.replace('#include <begin_vertex>',`#include <begin_vertex>
       groundPosition=position;groundSlope=1.-normal.y;`);
     shader.vertexShader=`#ifdef GROUND_LANDSCAPE
-      attribute vec2 groundLayers;varying vec2 landscapeLayers;varying vec3 landscapeNormal;
+      attribute vec3 groundLayers;varying vec3 landscapeLayers;varying vec3 landscapeNormal;
       #endif\n${shader.vertexShader}`.replace('groundPosition=position;',`groundPosition=position;
       #ifdef GROUND_LANDSCAPE
         landscapeLayers=groundLayers;landscapeNormal=normal;
@@ -59,7 +59,7 @@ export function createGroundSurface(detail,{loader=new THREE.TextureLoader(),ani
       uniform sampler2D groundSandAlbedo,groundSandNormal,groundSandRoughness;uniform float groundSandReady,groundSandEnabled;
       uniform sampler2D groundRockAlbedo,groundRockNormal,groundRockRoughness;uniform float groundRockReady;
       #ifdef GROUND_LANDSCAPE
-        varying vec2 landscapeLayers;varying vec3 landscapeNormal;
+        varying vec3 landscapeLayers;varying vec3 landscapeNormal;
       #endif
       varying vec3 groundPosition;varying float groundSlope;
       #ifdef GROUND_LANDSCAPE
@@ -77,6 +77,7 @@ export function createGroundSurface(detail,{loader=new THREE.TextureLoader(),ani
           rockBlend=landscapeLayers.x*groundRockReady;litterBlend=landscapeLayers.y;
           rockWeights=pow(abs(normalize(landscapeNormal)),vec3(4.));rockWeights/=max(dot(rockWeights,vec3(1.)),.001);
           rockColor=texture2D(groundRockAlbedo,rockX).rgb*rockWeights.x+texture2D(groundRockAlbedo,rockY).rgb*rockWeights.y+texture2D(groundRockAlbedo,rockZ).rgb*rockWeights.z;
+          rockColor*=mix(vec3(1.),vec3(.58,.72,.86),landscapeLayers.z);
         #endif
         float grassBlend=groundReady*groundEnabled*smoothstep(2.5,5.5,groundPosition.y)
           *(1.-smoothstep(.035,.14,groundSlope))*(1.-smoothstep(30.,42.,groundPosition.y))*(1.-rockBlend);
@@ -123,6 +124,6 @@ export function createGroundSurface(detail,{loader=new THREE.TextureLoader(),ani
         #endif
         normal=normalize(mix(normal,normalize(tbn*shoreNormal),settlementBlend*groundSandReady*.8));`);
   };
-  material.customProgramCacheKey=()=> 'tidelands-ground-landscape-v6-'+landscape;
+  material.customProgramCacheKey=()=> 'tidelands-ground-landscape-v7-'+landscape;
   return material;
 }

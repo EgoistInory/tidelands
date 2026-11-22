@@ -4,13 +4,14 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {HIGHLAND_ASCENT,highlandAscent} from '../src/highland-ascent.js';
-import {terrain} from '../src/world.js';
+import {LANDMARKS,terrain} from '../src/world.js';
 import {world,nextInput} from './journey_path.mjs';
 import {bindCampaignContacts} from './campaign_contact_plan.mjs';
 import {assertCameraRestoreEvidence} from './camera_policy_qa.mjs';
 import {profileRoute,routeViewport,routeRequests,startRouteProfile,stopRouteProfile} from './route-frame-profile.mjs';
 
-const [name,out]=process.argv.slice(2);
+const [name,out,dialogueCheck]=process.argv.slice(2);
+const checkDialogue=dialogueCheck==='--check-dialogue';
 assert(/^[a-zA-Z0-9_-]+$/.test(name)&&out&&!fs.existsSync(out));
 const root=`dist/${name}/tidelands-local`,key='tidelands-save-v1',origin='http://127.0.0.1:4190';
 const history='docs/movement-native-2026-11-05/01-highland-arrival-save.json';
@@ -30,7 +31,8 @@ fs.mkdirSync(out,{recursive:true});
 try{
   for(const width of [1280,390]){
     const dir=path.join(out,String(width));fs.mkdirSync(dir);
-    const context=await browser.newContext({...routeViewport(width),...(profileRoute?{}:{recordVideo:{dir,size:{width:960,height:600}}})});
+    const context=await browser.newContext({...routeViewport(width),hasTouch:checkDialogue&&width===390,
+      ...(profileRoute?{}:{recordVideo:{dir,size:{width:960,height:600}}})});
     const page=await context.newPage(),inputs=[],phases=[];
     const read=()=>page.evaluate(k=>JSON.parse(localStorage.getItem(k)),key);
     const observe=async()=>{await page.keyboard.press('1');return read();};
@@ -40,13 +42,13 @@ try{
       phases.push({label,player,time,height,wear:highlandAscent(player.x,player.z,height)?.wear??0,image,sha256:sha(fs.readFileSync(path.join(dir,image)))});
       return s;
     };
-    const go=async(i,talk=false)=>{
-      const [x,z]=HIGHLAND_ASCENT[i],target={id:`ascent-${i}`,x,z,type:'waypoint'};
+    const go=async(point,speaker=null)=>{
+      const [x,z]=Array.isArray(point)?point:HIGHLAND_ASCENT[point],target={id:`ascent-${x}-${z}`,x,z,type:'waypoint'};
       for(let n=0;n<55;n++){
         const s=await observe(),dx=x-s.player.x,dz=z-s.player.z;
-        if(talk&&Math.hypot(dx,dz)<4&&(await page.locator('#interact-label').textContent()).includes('远舟'))return;
+        if(speaker&&Math.hypot(dx,dz)<4&&(await page.locator('#interact-label').textContent()).includes(speaker))return;
         const route=nextInput({...s,requestedYaw:.15},target);
-        if(route.reached&&!talk)return;
+        if(route.reached&&!speaker)return;
         const cx=dx*Math.cos(.15)-dz*Math.sin(.15),cz=dx*Math.sin(.15)+dz*Math.cos(.15);
         const key=route.reached?(Math.abs(cx)>Math.abs(cz)?(cx>0?'d':'a'):(cz>0?'s':'w')):route.key;
         assert(key,`No route to ${target.id}`);
@@ -72,18 +74,49 @@ try{
       assert(Math.hypot(initial.player.x-seed.player.x,initial.player.z-seed.player.z)<.01);
       await startRouteProfile(page);
       for(const i of [5,4,3,2,1,0])await go(i);
+      let shoreHeight;
+      if(checkDialogue){
+        await go([-79,-143]);
+        const {player}=await observe();
+        shoreHeight=terrain(player.x,player.z);
+        assert(shoreHeight<1.2,`Shore height: ${shoreHeight} at ${player.x}, ${player.z}`);
+        await go(0);
+      }
       await capture('01-foot');
       for(const i of [1,2,3])await go(i);
       await capture('02-ascent');
       for(const i of [4,5])await go(i);
-      await go(6,true);await page.keyboard.press('e');await page.waitForTimeout(230);
+      await go(6,'远舟');
+      if(checkDialogue&&width===390)await page.locator('#interact-button').tap();
+      else await page.keyboard.press('e');
+      await page.waitForTimeout(230);
       assert.match(await page.locator('#toast').textContent(),/^远舟：/);
+      let dialogue;
+      if(checkDialogue){
+        dialogue=await page.evaluate(()=>{
+          const toast=document.querySelector('#toast');
+          const rect=selector=>document.querySelector(selector).getBoundingClientRect().toJSON();
+          return {marked:toast.hasAttribute('data-dialogue'),toast:rect('#toast'),vitals:rect('.vitals'),
+            map:rect('.map-corner'),prompt:rect('#interact-button'),questDisplay:getComputedStyle(document.querySelector('.quest')).display,
+            fitsText:toast.scrollWidth<=toast.clientWidth};
+        });
+        assert(dialogue.marked&&dialogue.fitsText);
+        if(width===390){
+          assert.equal(dialogue.questDisplay,'none');
+          assert(dialogue.toast.top>=dialogue.vitals.bottom&&dialogue.toast.right<=dialogue.map.left&&
+            dialogue.toast.bottom<dialogue.prompt.top&&dialogue.toast.top<=150);
+        }
+      }
       const final=await capture('03-lookout');
       assert(phases[3].height-phases[1].height>19 && phases[2].height>phases[1].height+8);
       assert.equal(final.quest,seed.quest);assert.equal(final.kills,seed.kills);assert(final.player.hp>0);
       assert.deepEqual(final.buildings,seed.buildings);assert.deepEqual(final.inventory,seed.inventory);
       const timing=await stopRouteProfile(page,dir);
       await page.click('#pause-button');await page.getByRole('button',{name:'保存进度',exact:true}).click();
+      if(checkDialogue){
+        assert.equal(await page.locator('#toast').getAttribute('data-dialogue'),null);
+        assert(await page.locator('.quest').evaluate(quest=>getComputedStyle(quest).display!=='none'));
+      }
       const saved=await page.evaluate(k=>localStorage.getItem(k),key);
       await page.reload();await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);
       const startLabel=await page.locator('#start-button').textContent(),loadStatus=await page.locator('#load-status').textContent();
@@ -93,7 +126,20 @@ try{
       const exported=path.join(dir,'restored-live-export.json');await(await download).saveAs(exported);
       assertCameraRestoreEvidence({startLabel,loadStatus,exported:fs.readFileSync(exported,'utf8')},saved);
       const glError=await page.evaluate(()=>document.querySelector('#world').getContext('webgl2').getError());
-      assert.equal(glError,0);report.rows.push({width,phases,restore:true,glError,savedSha256:sha(saved),...(timing?{timing}:{})});
+      assert.equal(glError,0);report.rows.push({width,phases,restore:true,glError,savedSha256:sha(saved),...(timing?{timing}:{}),...(dialogue?{dialogue,shoreHeight}:{})});
+      if(checkDialogue&&width===390){
+        // This browser context owns a disposable test copy, already exported above.
+        await page.getByRole('button',{name:'开始新旅程',exact:true}).click();
+        await page.locator('#confirm-new').click();
+        const {x,z}=LANDMARKS.find(o=>o.id==='keeper');
+        await go([x,z],'阿岚');
+        await page.locator('#interact-button').tap();
+        const message=await page.locator('#toast').textContent();
+        assert.match(message,/新的目标/);
+        assert.equal(await page.locator('#toast').getAttribute('data-dialogue'),'');
+        assert.equal((await read()).quest,1);
+        report.questDialogue={width,quest:1,message};
+      }
     }finally{
       fs.writeFileSync(path.join(dir,'inputs.json'),JSON.stringify(inputs,null,2)+'\n');
       await context.close();
