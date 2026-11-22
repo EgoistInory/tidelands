@@ -10,8 +10,9 @@ import {bindCampaignContacts} from './campaign_contact_plan.mjs';
 import {assertCameraRestoreEvidence} from './camera_policy_qa.mjs';
 import {profileRoute,routeViewport,routeRequests,startRouteProfile,stopRouteProfile} from './route-frame-profile.mjs';
 
-const [name,out,dialogueCheck]=process.argv.slice(2);
-const checkDialogue=dialogueCheck==='--check-dialogue';
+const [name,out,...checks]=process.argv.slice(2);
+const checkDialogue=checks.includes('--check-dialogue'),measureMotion=checks.includes('--observe-motion');
+assert(!measureMotion||checkDialogue&&!profileRoute);
 assert(/^[a-zA-Z0-9_-]+$/.test(name)&&out&&!fs.existsSync(out));
 const root=`dist/${name}/tidelands-local`,key='tidelands-save-v1',origin='http://127.0.0.1:4190';
 const history='docs/movement-native-2026-11-05/01-highland-arrival-save.json';
@@ -24,6 +25,7 @@ for(const [file,{sha256}] of Object.entries(manifest.files)){
 }
 const report={complete:false,archiveSha256:manifest.archiveSha256,saveSha256:sha(original),rows:[],logs:[],scope:'Original extracted game, historical normal save, held keys down to the shore and back uphill. No renderer or state interception.'};
 if(profileRoute)report.scope='Ordinary historical save, native inputs and clock. Only scene response appends read-only complete-draw GPU/CPU measurement. No video recording during timing.';
+if(measureMotion)report.scope='Ordinary saved state and native ascent. Scene response adds read-only motion samples, audio response adds an isolated stereo recorder. Sound and silent video are separate captures.';
 const contacts=bindCampaignContacts(world);
 const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright');
 const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
@@ -64,6 +66,17 @@ try{
     page.on('console',e=>{if(['warning','error'].includes(e.type()))report.logs.push(e.text());});
     try{
       await routeRequests(context,origin,root,dir);
+      const audioPath=path.join(dir,'route-audio.webm'),motionPath=path.join(dir,'motion.json');
+      if(measureMotion){
+        await context.exposeBinding('__mainMixSink',(_source,bytes)=>fs.appendFileSync(audioPath,Buffer.from(bytes)));
+        const observers={'scene.js':'tools/observe_highland_motion.js','audio.js':'tools/observe_main_mix.js'};
+        await context.route('**/src/*.js',route=>{
+          const url=new URL(route.request().url()),file=path.basename(url.pathname);
+          if(url.origin!==origin||url.pathname!==`/${root}/src/${file}`||!observers[file])return route.fallback();
+          return route.fulfill({contentType:'application/javascript',
+            body:fs.readFileSync(`${root}/src/${file}`,'utf8')+'\n'+fs.readFileSync(observers[file],'utf8')});
+        });
+      }
       await page.goto(`${origin}/${root}/`);
       await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);
       await page.click('#start-button');await page.click('#pause-button');
@@ -80,6 +93,10 @@ try{
         const {player}=await observe();
         shoreHeight=terrain(player.x,player.z);
         assert(shoreHeight<1.2,`Shore height: ${shoreHeight} at ${player.x}, ${player.z}`);
+        if(measureMotion){
+          await page.waitForFunction(()=>window.mainMix?.status().context==='running');
+          await page.evaluate(()=>{window.mainMix.start();window.highlandMotion.active=true;});
+        }
         await go(0);
       }
       await capture('01-foot');
@@ -111,6 +128,33 @@ try{
       assert(phases[3].height-phases[1].height>19 && phases[2].height>phases[1].height+8);
       assert.equal(final.quest,seed.quest);assert.equal(final.kills,seed.kills);assert(final.player.hp>0);
       assert.deepEqual(final.buildings,seed.buildings);assert.deepEqual(final.inventory,seed.inventory);
+      let motion;
+      if(measureMotion){
+        await page.waitForTimeout(1250);
+        const {frames,mix}=await page.evaluate(async()=>{
+          window.highlandMotion.active=false;
+          return {frames:window.highlandMotion.frames,mix:await window.mainMix.stop()};
+        });
+        assert(frames.length>180&&frames.some(f=>f.explorer.step!==null));
+        assert.equal(mix.errors.length,0);assert.equal(mix.pending,0);
+        fs.writeFileSync(motionPath,JSON.stringify({frames,mix})+'\n');
+        const audio=fs.readFileSync(audioPath),pcm=await page.evaluate(async bytes=>{
+          const context=new OfflineAudioContext(2,1,48000);
+          const buffer=await context.decodeAudioData(Uint8Array.from(atob(bytes),ch=>ch.charCodeAt(0)).buffer);
+          let peak=0,clipped=0;
+          for(let j=0;j<buffer.numberOfChannels;j++)for(const value of buffer.getChannelData(j)){
+            peak=Math.max(peak,Math.abs(value));clipped+=Number(Math.abs(value)>=.999);
+          }
+          return {seconds:buffer.duration,channels:buffer.numberOfChannels,peak,clipped};
+        },audio.toString('base64'));
+        assert(pcm.seconds>5&&pcm.channels===2&&pcm.peak>.01&&pcm.clipped===0);
+        const footsteps=mix.events.filter(e=>e.kind==='step'&&e.after>e.before).map(e=>e.options.surface);
+        assert(footsteps.length>6&&mix.bytes===audio.length);
+        motion={frames:frames.length,bodySteps:frames.at(-1).player.footfalls-frames[0].player.footfalls,
+          explorerStepFrames:frames.filter(f=>f.explorer.step!==null).length,
+          footsteps:Object.fromEntries([...new Set(footsteps)].map(s=>[s,footsteps.filter(t=>t===s).length])),
+          pcm,audioSha256:sha(audio),framesSha256:sha(fs.readFileSync(motionPath))};
+      }
       const timing=await stopRouteProfile(page,dir);
       await page.click('#pause-button');await page.getByRole('button',{name:'保存进度',exact:true}).click();
       if(checkDialogue){
@@ -126,7 +170,8 @@ try{
       const exported=path.join(dir,'restored-live-export.json');await(await download).saveAs(exported);
       assertCameraRestoreEvidence({startLabel,loadStatus,exported:fs.readFileSync(exported,'utf8')},saved);
       const glError=await page.evaluate(()=>document.querySelector('#world').getContext('webgl2').getError());
-      assert.equal(glError,0);report.rows.push({width,phases,restore:true,glError,savedSha256:sha(saved),...(timing?{timing}:{}),...(dialogue?{dialogue,shoreHeight}:{})});
+      assert.equal(glError,0);report.rows.push({width,phases,restore:true,glError,savedSha256:sha(saved),
+        ...(timing?{timing}:{}),...(dialogue?{dialogue,shoreHeight}:{}),...(motion?{motion}:{})});
       if(checkDialogue&&width===390){
         // This browser context owns a disposable test copy, already exported above.
         await page.getByRole('button',{name:'开始新旅程',exact:true}).click();

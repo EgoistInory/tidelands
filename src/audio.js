@@ -1,6 +1,7 @@
 // Local synthesis: no downloads, microphone access or external audio service.
 import {ISLANDS,WATER_LEVEL,dayCycle,randomGenerator,weatherAt} from './world.js';
 import {estuaryHabitat} from './estuary-habitat.js';
+import {highlandAscent} from './highland-ascent.js';
 const habitatDensity=[.6,1,.24,.48];
 const contactProfiles={
   wade:{frequency:1450,length:.125,peak:.29},
@@ -166,6 +167,11 @@ export class GameAudio{
     else if(bank?.bedrock>=.48)surface='rock';
     else if(bank?.gravel>=.45)surface='gravel';
     else if(bank?.shelter>=.46)surface='litter';
+    else if(hasRenderedMode){
+      const ascent=highlandAscent(player.x,player.z,height);
+      if(ascent?.wear>=.5)surface='gravel';
+      else if(ascent?.outcrop>=.48)surface='rock';
+    }
     // The rig reports ground contacts through shallow water and idle recovery.
     if(!isSwimming&&this.lastFootfallCount!==null){
       this.stepDistance=0;

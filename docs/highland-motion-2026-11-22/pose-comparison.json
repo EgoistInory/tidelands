@@ -1,0 +1,77 @@
+{
+  "scope": "Fixed real-game stance coordinates and ground with authored skeleton, 480 frames at 60 Hz and a two-second 180 degree turn. Controlled pose comparison, separate from native navigation.",
+  "records": [
+    {
+      "variant": "before",
+      "role": "explorer",
+      "frames": 480,
+      "liftFrames": 33,
+      "pivotFrames": 98,
+      "maxSwingGap": 0.4556733181816206,
+      "maxSwingTargetError": 0.587900936502636,
+      "maxAllTargetError": 0.6130099556030575,
+      "minKneeClearance": 0.14734859273348633,
+      "maxPelvisChangePerFrame": 0.5997370592052178
+    },
+    {
+      "variant": "before",
+      "role": "botanist",
+      "frames": 480,
+      "liftFrames": 7,
+      "pivotFrames": 98,
+      "maxSwingGap": 0.20907714771814057,
+      "maxSwingTargetError": 0.2063223814939244,
+      "maxAllTargetError": 0.22850571941179307,
+      "minKneeClearance": 0.6721394882049552,
+      "maxPelvisChangePerFrame": 0.26191086122586427
+    },
+    {
+      "variant": "before",
+      "role": "keeper",
+      "frames": 480,
+      "liftFrames": 0,
+      "pivotFrames": 98,
+      "maxSwingGap": 0.15458194545824,
+      "maxSwingTargetError": 0.13784088186671206,
+      "maxAllTargetError": 0.16150089618660407,
+      "minKneeClearance": 0.7009926458113664,
+      "maxPelvisChangePerFrame": 0.19486510791941214
+    },
+    {
+      "variant": "after",
+      "role": "explorer",
+      "frames": 480,
+      "liftFrames": 0,
+      "pivotFrames": 98,
+      "maxSwingGap": 0.11934329811238342,
+      "maxSwingTargetError": 0.02539650429790478,
+      "maxAllTargetError": 0.049567341067490035,
+      "minKneeClearance": 0.14734859273348633,
+      "maxPelvisChangePerFrame": 0.055332748723134983
+    },
+    {
+      "variant": "after",
+      "role": "botanist",
+      "frames": 480,
+      "liftFrames": 0,
+      "pivotFrames": 98,
+      "maxSwingGap": 0.11934298228153395,
+      "maxSwingTargetError": 0.0000012230682322589483,
+      "maxAllTargetError": 0.0000012230682322589483,
+      "minKneeClearance": 0.6714421769890535,
+      "maxPelvisChangePerFrame": 0.031567809987368634
+    },
+    {
+      "variant": "after",
+      "role": "keeper",
+      "frames": 480,
+      "liftFrames": 0,
+      "pivotFrames": 98,
+      "maxSwingGap": 0.11934300988349911,
+      "maxSwingTargetError": 0.000001240913895030174,
+      "maxAllTargetError": 0.0000013556309896946147,
+      "minKneeClearance": 0.7009926458113664,
+      "maxPelvisChangePerFrame": 0.03204066448434517
+    }
+  ]
+}

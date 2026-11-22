@@ -2,6 +2,7 @@ import test from 'node:test';import assert from 'node:assert/strict';
 import * as THREE from '../vendor/three.module.min.js';
 import {createAuthoredCharacter,animateAuthoredCharacter,authorSolePoints} from '../src/authored-character.js';
 import {loadAuthorFixture} from './helpers/author-fixture.js';
+import {LANDMARKS,terrain} from '../src/world.js';
 
 test('actual author rig follows game location, carries selected tools and stays finite across movement and water',()=>{
  const {body,library}=loadAuthorFixture('male'),actor=createAuthoredCharacter(body,library,'traveler');
@@ -46,6 +47,26 @@ test('restored facing initializes before planting and stationary turns recover e
  const {body,library}=loadAuthorFixture(),actor=createAuthoredCharacter(body,library),s={x:0,z:0,yaw:Math.PI,time:0,selected:'hand',attackAt:-100};animateAuthoredCharacter(actor,s,1/60,()=>0);assert.ok(Math.abs(actor.rotation.y-Math.PI)<1e-8);
  for(let i=1;i<=120;i++){s.time=i/60;s.yaw=Math.PI+i/120*Math.PI;animateAuthoredCharacter(actor,s,1/60,()=>0);for(const [j,p]of authorSolePoints(actor).entries())if(actor.userData.legs[j].contact)assert.ok(p.distanceTo(actor.userData.worldFeet[j])<.003);}
  assert.ok(actor.userData.footfallCount>0);assert.ok(actor.userData.worldFeet.every(p=>Math.abs(p.y)<.13));
+});
+
+test('an idle turn on the explorer slope can reach each planned step',()=>{
+ const {body,library}=loadAuthorFixture(),actor=createAuthoredCharacter(body,library,'explorer');
+ const {x,z}=LANDMARKS.find(site=>site.id==='explorer');
+ let maxGap=0,maxTargetError=0,steps=0;
+ for(let i=0;i<480;i++){
+  const time=2150+i/60,yaw=Math.PI*Math.min(1,Math.max(0,(i-180)/120));
+  animateAuthoredCharacter(actor,{x,z,time,yaw,attackAt:-100,selected:'hand'},1/60,terrain);
+  const rig=actor.userData;
+  if(!rig.idleStep||time===rig.idleStep.at)continue;
+  const {side}=rig.idleStep,p=authorSolePoints(actor)[side];
+  maxGap=Math.max(maxGap,p.y-terrain(p.x,p.z));
+  maxTargetError=Math.max(maxTargetError,p.distanceTo(rig.worldFeet[side]));
+  steps++;
+ }
+ assert(steps>0);
+ assert(maxGap<=.17,`actual sole gap ${maxGap.toFixed(3)} m`);
+ assert(maxTargetError<=.035,`planned step missed by ${maxTargetError.toFixed(3)} m`);
+ assert(actor.userData.legs.every(leg=>leg.contact));
 });
 
 test('all authored roles retain whole-body acceleration, braking and turn response after the rig replacement',()=>{

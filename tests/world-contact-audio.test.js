@@ -38,3 +38,17 @@ test('world terrain footsteps follow visible contacts across downhill turns, blo
     if(route.name==='highland')assert.equal(splashes,0);else assert.ok(splashes>0,`${route.name}: no swimming movement sounded`);
   }
 });
+
+test('highland tread and exposed rock sound only on rendered landing contacts',()=>{
+  for(const {x,z,surface} of [{x:-82,z:-166,surface:'gravel'},{x:-89,z:-166,surface:'rock'},
+    {x:-138,z:-185,surface:'grass'}]){
+    const audio=new GameAudio(),heard=[],height=terrain(x,z);
+    audio.effect=(kind,options)=>heard.push([kind,options.surface]);
+    audio.setActive(true);
+    audio.update({x,z},240,height,8,{swimming:false});
+    audio.update({x,z},240.1,height,8,{swimming:false});
+    assert.deepEqual(heard,[]);
+    audio.update({x,z},240.2,height,9,{swimming:false});
+    assert.deepEqual(heard,[['step',surface]]);
+  }
+});

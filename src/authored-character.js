@@ -120,9 +120,10 @@ export function animateAuthoredCharacter(root,state,dt,ground=()=>0){
     if(contact&&leg.contact===false)rig.footfallCount++;
     leg.target=raw.clone();leg.contact=contact;targets.push(raw);orientations.push(q);
   }
-  // Reach correction moves the rendered pelvis only; authoritative world coordinates never change.
+  // Keep a stationary pivot step within reach as it lands on a lower surface.
+  // Reach correction moves the rendered pelvis only.
   let drop=0;
-  rig.legs.forEach((leg,j)=>{if(!leg.contact)return;const h=leg.hip.getWorldPosition(new THREE.Vector3()),k=leg.knee.getWorldPosition(new THREE.Vector3()),a=leg.foot.getWorldPosition(new THREE.Vector3()),length=h.distanceTo(k)+k.distanceTo(a)-.02,offset=soleWorld(leg).sub(a).applyQuaternion(leg.foot.getWorldQuaternion(new THREE.Quaternion()).invert()).applyQuaternion(orientations[j]),target=targets[j].clone().sub(offset),horizontal=(h.x-target.x)**2+(h.z-target.z)**2;drop=Math.max(drop,h.y-target.y-Math.sqrt(Math.max(.01,length*length-horizontal)));});
+  rig.legs.forEach((leg,j)=>{if(!leg.contact&&rig.idleStep?.side!==j)return;const h=leg.hip.getWorldPosition(new THREE.Vector3()),k=leg.knee.getWorldPosition(new THREE.Vector3()),a=leg.foot.getWorldPosition(new THREE.Vector3()),length=h.distanceTo(k)+k.distanceTo(a)-.02,offset=soleWorld(leg).sub(a).applyQuaternion(leg.foot.getWorldQuaternion(new THREE.Quaternion()).invert()).applyQuaternion(orientations[j]),target=targets[j].clone().sub(offset),horizontal=(h.x-target.x)**2+(h.z-target.z)**2;drop=Math.max(drop,h.y-target.y-Math.sqrt(Math.max(.01,length*length-horizontal)));});
   if(drop>0){const pelvis=rig.avatar.getObjectByName('pelvis'),position=pelvis.getWorldPosition(new THREE.Vector3());position.y-=Math.min(.6,drop);pelvis.position.copy(pelvis.parent.worldToLocal(position));root.updateMatrixWorld(true);}
   rig.legs.forEach((leg,j)=>solveLeg(leg,targets[j],orientations[j]));root.updateMatrixWorld(true);rig.worldFeet=targets;
   // Aim the wrist after grounding the full body; the two-bone solve clamps to natural arm length.
