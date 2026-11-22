@@ -326,7 +326,12 @@ export class WorldView{
     this.waterUniforms.windStrength.value=weather.windStrength;
     this.waterUniforms.fogRange.value.set(weather.fogNear,weather.fogFar);
   }
-  draw(state,near,placement,moving,dt,windup=closestEnemyWindup(state)){
+  async prepareImport(state,near,signal){
+    if(!this.finish?.canCompileWorld||signal.aborted)return;
+    this.prepareFrame(state,near,null,false,0,closestEnemyWindup(state));
+    await this.finish.compileWorld(this.scene,this.camera,signal);
+  }
+  prepareFrame(state,near,placement,moving,dt,windup){
     this.coastal?.update(state);
     this.inland?.update(state);
     const p=state.player,h=Math.max(terrain(p.x,p.z),-.45),weather=weatherAt(state.time);
@@ -374,6 +379,9 @@ export class WorldView{
     if(this.nightLight){this.nightLight.position.set(p.x+70,h+90,p.z-40);this.nightLight.target.position.set(p.x,h,p.z);}
     this.marker.visible=Boolean(near)&&!placement&&!this.windupCue.mesh.visible;if(near)this.marker.position.set(near.x,Math.max(.3,terrain(near.x,near.z))+.08,near.z);
     if(placement){this.preview.visible=true;this.preview.position.set(placement.x,terrain(placement.x,placement.z),placement.z);this.preview.traverse(o=>{if(o.isMesh)o.material.color.set(placement.error?0xe08568:0xa6dd9b);});}else this.preview.visible=false;
+  }
+  draw(state,near,placement,moving,dt,windup=closestEnemyWindup(state)){
+    this.prepareFrame(state,near,placement,moving,dt,windup);
     if(this.finish)this.finish.render(this.scene,this.camera);else this.renderer.render(this.scene,this.camera);
   }
 }

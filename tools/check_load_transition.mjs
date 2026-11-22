@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 
 const [name,saveFile,out,mode]=process.argv.slice(2);
 assert(/^[a-zA-Z0-9_-]+$/.test(name)&&saveFile&&out&&!fs.existsSync(out));
-assert(mode===undefined||mode==='--profile');
+assert(mode===undefined||mode==='--profile'||mode==='--no-parallel-compile');
 const root=`dist/${name}/tidelands-local`,origin='http://127.0.0.1:4190',key='tidelands-save-v1';
 const sha=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const manifest=JSON.parse(fs.readFileSync(`dist/${name}.json`));
@@ -14,7 +14,7 @@ assert.equal(sha(`dist/${name}.zip`),manifest.archiveSha256);
 for(const [file,entry] of Object.entries(manifest.files))assert.equal(sha(`${root}/${file}`),entry.sha256,file);
 const report={archive:manifest.archiveSha256,save:sha(saveFile),rows:[],logs:[],complete:false};
 const trace=String.raw`
-const loadTrace={events:[],longFrames:[]};
+const loadTrace={events:[],longFrames:[],longTasks:[]};
 window.loadTrace=loadTrace;
 const note=(name,start=performance.now(),extra={})=>{
   if(loadTrace.events.length<2500)loadTrace.events.push({name,start,end:performance.now(),...extra});
@@ -27,13 +27,22 @@ if(PerformanceObserver.supportedEntryTypes.includes('long-animation-frame')){
       scripts:e.scripts.map(s=>({file:s.sourceURL?.split('/').at(-1),name:s.sourceFunctionName,ms:s.duration}))});
   }).observe({type:'long-animation-frame'});
 }
+if(PerformanceObserver.supportedEntryTypes.includes('longtask')){
+  new PerformanceObserver(list=>{
+    for(const e of list.getEntries())loadTrace.longTasks.push({start:e.startTime,duration:e.duration});
+  }).observe({type:'longtask'});
+}
 const observed=new WeakSet();
 for(const name of ['sync','draw','warmInlandTree']){
   const method=WorldView.prototype[name];
   WorldView.prototype[name]=function(...args){
     if(!observed.has(this)){
       observed.add(this);
-      const renderer=this.renderer,render=renderer.render,gl=renderer.getContext();
+      const renderer=this.renderer,render=renderer.render,compile=renderer.compile,gl=renderer.getContext();
+      renderer.compile=function(...params){
+        const start=performance.now(),before=this.info.programs.length;
+        try{return compile.apply(this,params);}finally{note('compile',start,{programs:this.info.programs.length-before});}
+      };
       const shaders=new WeakMap(),programShaders=new WeakMap();
       const shaderSource=gl.shaderSource,attachShader=gl.attachShader;
       gl.shaderSource=function(shader,source){
@@ -87,6 +96,13 @@ try{
   for(const width of [1920,390]){
     const context=await browser.newContext({viewport:{width,height:width===390?844:1080},deviceScaleFactor:width===390?1.5:1});
     try{
+      if(mode==='--no-parallel-compile')await context.addInitScript(()=>{
+        const original=WebGL2RenderingContext.prototype.getExtension;
+        WebGL2RenderingContext.prototype.getExtension=function(name){
+          if(name==='KHR_parallel_shader_compile')return null;
+          return original.call(this,name);
+        };
+      });
       await context.route('**/*',route=>{
         const url=new URL(route.request().url());
         if(url.origin!==origin)return route.abort();
@@ -129,6 +145,7 @@ try{
       }
       await page.waitForTimeout(650);
       const imported=await page.evaluate(()=>window.loadTrace);
+      await page.screenshot({path:path.join(out,`${width}-import.jpg`),type:'jpeg',quality:85});
       await page.click('#pause-button');await page.getByRole('button',{name:'保存进度',exact:true}).click();
       const saved=await page.evaluate(key=>localStorage.getItem(key),key);
       await page.reload();await ready();
@@ -146,12 +163,25 @@ try{
       assert.match(startLabel,/继续旅程/);assert.match(loadStatus,/群岛已就绪/);
       assert.deepEqual(final.buildings,prior.buildings);assert.deepEqual(final.inventory,prior.inventory);
       assert.equal(final.quest,prior.quest);assert(final.time>=prior.time);
+      const beforeInvalid=await page.evaluate(key=>localStorage.getItem(key),key);
+      const invalid=page.waitForEvent('filechooser');
+      await page.getByRole('button',{name:'导入存档',exact:true}).click();
+      await(await invalid).setFiles({name:'invalid.json',mimeType:'application/json',buffer:Buffer.from('{')});
+      await page.waitForFunction(()=>document.querySelector('#toast').textContent.startsWith('导入失败'));
+      assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),beforeInvalid);
+      assert.equal(await page.locator('#panel-title').textContent(),'旅途小憩');
+      await page.click('#panel-close');
+      assert.equal(await page.locator('#panel').evaluate(panel=>panel.open),false);
       const {glError,parallelShaderCompile}=await page.evaluate(()=>{
         const gl=document.querySelector('#world').getContext('webgl2');
         return {glError:gl.getError(),parallelShaderCompile:Boolean(gl.getExtension('KHR_parallel_shader_compile'))};
       });
       assert.equal(glError,0);
-      report.rows.push({width,glError,parallelShaderCompile,importDraw,imported,continued});
+      if(mode==='--no-parallel-compile'){
+        assert.equal(parallelShaderCompile,false);
+        assert(!imported.events.some(event=>event.name==='compile'));
+      }
+      report.rows.push({width,glError,parallelShaderCompile,invalidRejected:true,importDraw,imported,continued});
     }finally{await context.close();}
   }
   assert.deepEqual(report.logs,[]);assert.equal(sha(saveFile),report.save);report.complete=true;

@@ -12,7 +12,7 @@ import {createWindupCue} from '../src/windup-cue.js';
 function viewAt(p,yaw,pitch){
   const h=Math.max(terrain(p.x,p.z),-.45),camera=new THREE.PerspectiveCamera();
   camera.position.set(p.x+Math.sin(yaw)*14,h+2.4+Math.tan(pitch)*14,p.z+Math.cos(yaw)*14);
-  return {yaw,pitch,distance:14,camera,cameraObstacles:[],buildings:new Map(),creatures:new Map(),meadow:[],player:createCharacter(),fireLight:{position:new THREE.Vector3()},sun:{position:new THREE.Vector3(),target:{position:new THREE.Vector3()}},marker:new THREE.Object3D(),windupCue:createWindupCue(terrain),preview:new THREE.Group(),scene:new THREE.Scene(),renderer:{render(){}},updateIslanders(){},updateAtmosphere(){}};
+  return Object.assign(Object.create(WorldView.prototype),{yaw,pitch,distance:14,camera,cameraObstacles:[],buildings:new Map(),creatures:new Map(),meadow:[],player:createCharacter(),fireLight:{position:new THREE.Vector3()},sun:{position:new THREE.Vector3(),target:{position:new THREE.Vector3()}},marker:new THREE.Object3D(),windupCue:createWindupCue(terrain),preview:new THREE.Group(),scene:new THREE.Scene(),renderer:{render(){}},updateIslanders(){},updateAtmosphere(){}});
 }
 test('temporary landmark avoidance cannot overwrite manual orbit or steer the next released gesture',()=>{
   const state=freshGame();Object.assign(state.player,{x:-86.9,z:-51.9});state.enemies=[];

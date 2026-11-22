@@ -56,7 +56,21 @@ export function createSceneFinish(renderer){
   const size=new THREE.Vector2(),nightFocus=new THREE.Vector3();let enabled=true,released=false;
   return {
     get enabled(){return enabled;},set enabled(value){enabled=!!value;},
+    get canCompileWorld(){return enabled&&!released&&renderer.extensions.has('KHR_parallel_shader_compile');},
     setNightFocus(position,amount){nightFocus.copy(position);composite.uniforms.nightAmount.value=amount;},
+    async compileWorld(world,view,signal){
+      const previous=renderer.getRenderTarget(),cached=new Set(renderer.info.programs);
+      try{
+        renderer.setRenderTarget(color);
+        renderer.compile(world,view);
+      }finally{renderer.setRenderTarget(previous);}
+      // Poll the actual queued programs so context loss or a page transition can stop the wait.
+      const pending=renderer.info.programs.filter(program=>!cached.has(program));
+      const gl=renderer.getContext(),deadline=performance.now()+1500;
+      while(!signal.aborted&&!gl.isContextLost()&&performance.now()<deadline&&pending.some(program=>!program.isReady())){
+        await new Promise(resolve=>setTimeout(resolve,10));
+      }
+    },
     warmScene(world,view){
       if(!enabled||released)return;
       const previous=renderer.getRenderTarget();
