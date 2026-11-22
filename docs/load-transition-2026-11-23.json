@@ -1,0 +1,571 @@
+[
+  {
+    "version": "r1",
+    "archive": "24c06df1dcd8805476e44afc0c70c8bdf456e267cb3ea3989044bd45e7415af1",
+    "save": "15dfbd8d10179e8b46d1775a58767fbc5b22e8b9941b28cb02978e88a3cdfbb6",
+    "rawSha256": "360ae823f9fdfa461a3527fa3a0eb2bdf1f5a9817e6189c4eb4d4118226d2f0c",
+    "rows": [
+      {
+        "width": 1920,
+        "stage": "imported",
+        "first": {
+          "frame": 364,
+          "passes": [
+            360,
+            0.09999942779541016,
+            0,
+            0
+          ]
+        },
+        "beforeEntry": {
+          "frame": 496.29999923706055,
+          "passes": [
+            480.69999980926514,
+            2.799999237060547,
+            1.8999996185302734,
+            3.5
+          ]
+        },
+        "latency": 421,
+        "peakSync": 27.699999809265137
+      },
+      {
+        "width": 1920,
+        "stage": "continued",
+        "first": {
+          "frame": 4.199999809265137,
+          "passes": [
+            2.6999998092651367,
+            0,
+            0,
+            0
+          ]
+        },
+        "beforeEntry": {
+          "frame": 419.5999994277954,
+          "passes": [
+            409.19999980926514,
+            1.8000001907348633,
+            1.1999998092651367,
+            2.6999998092651367
+          ]
+        },
+        "latency": 59.30000019073486,
+        "peakSync": 0.3000001907348633
+      },
+      {
+        "width": 390,
+        "stage": "imported",
+        "first": {
+          "frame": 215.70000076293945,
+          "passes": [
+            212.9000005722046,
+            0,
+            0,
+            0
+          ]
+        },
+        "beforeEntry": {
+          "frame": 387,
+          "passes": [
+            373.4000005722046,
+            1.8000001907348633,
+            1.2999992370605469,
+            2.6000003814697266
+          ]
+        },
+        "latency": 245.30000019073486,
+        "peakSync": 21
+      },
+      {
+        "width": 390,
+        "stage": "continued",
+        "first": {
+          "frame": 5,
+          "passes": [
+            2.8000001907348633,
+            0,
+            0,
+            0
+          ]
+        },
+        "beforeEntry": {
+          "frame": 313.3999996185303,
+          "passes": [
+            300.80000019073486,
+            1.6999998092651367,
+            1.3000001907348633,
+            3.1000003814697266
+          ]
+        },
+        "latency": 91,
+        "peakSync": 0.3000001907348633
+      }
+    ]
+  },
+  {
+    "version": "r2",
+    "archive": "24c06df1dcd8805476e44afc0c70c8bdf456e267cb3ea3989044bd45e7415af1",
+    "save": "15dfbd8d10179e8b46d1775a58767fbc5b22e8b9941b28cb02978e88a3cdfbb6",
+    "rawSha256": "d605c26713b09e189615dfcf4b5b3e81c5473ece256cefbf9e76d470a466df2c",
+    "rows": [
+      {
+        "width": 1920,
+        "stage": "imported",
+        "first": {
+          "frame": 374.0999994277954,
+          "passes": [
+            370.20000076293945,
+            0.09999942779541016,
+            0,
+            0
+          ],
+          "gl": {
+            "bufferData": {
+              "count": 33,
+              "ms": 0.40000057220458984,
+              "max": 0.10000038146972656
+            },
+            "drawElements": {
+              "count": 238,
+              "ms": 0.10000038146972656,
+              "max": 0.10000038146972656
+            },
+            "linkProgram": {
+              "count": 35,
+              "ms": 0.09999942779541016,
+              "max": 0.09999942779541016
+            },
+            "getProgramParameter": {
+              "count": 105,
+              "ms": 2.100004196166992,
+              "max": 0.20000076293945312
+            },
+            "getActiveUniform": {
+              "count": 1544,
+              "ms": 0.4999990463256836,
+              "max": 0.10000038146972656
+            },
+            "drawElementsInstanced": {
+              "count": 82,
+              "ms": 0,
+              "max": 0
+            },
+            "drawArrays": {
+              "count": 4,
+              "ms": 0,
+              "max": 0
+            },
+            "texStorage2D": {
+              "count": 3,
+              "ms": 0,
+              "max": 0
+            },
+            "texSubImage2D": {
+              "count": 7,
+              "ms": 14.899999618530273,
+              "max": 8.199999809265137
+            },
+            "blitFramebuffer": {
+              "count": 1,
+              "ms": 0,
+              "max": 0
+            }
+          }
+        },
+        "beforeEntry": {
+          "frame": 494.5,
+          "passes": [
+            479.30000019073486,
+            3.299999237060547,
+            1.6000003814697266,
+            3.3000001907348633
+          ],
+          "gl": {
+            "bufferData": {
+              "count": 1145,
+              "ms": 10.09999942779541,
+              "max": 0.5
+            },
+            "texStorage2D": {
+              "count": 85,
+              "ms": 0,
+              "max": 0
+            },
+            "texSubImage2D": {
+              "count": 99,
+              "ms": 58.90000247955322,
+              "max": 5.90000057220459
+            },
+            "drawElements": {
+              "count": 420,
+              "ms": 0.09999942779541016,
+              "max": 0.09999942779541016
+            },
+            "linkProgram": {
+              "count": 45,
+              "ms": 0.09999942779541016,
+              "max": 0.09999942779541016
+            },
+            "getProgramParameter": {
+              "count": 135,
+              "ms": 2.1999969482421875,
+              "max": 0.19999980926513672
+            },
+            "getActiveUniform": {
+              "count": 1407,
+              "ms": 0.7999973297119141,
+              "max": 0.10000038146972656
+            },
+            "drawElementsInstanced": {
+              "count": 110,
+              "ms": 0,
+              "max": 0
+            },
+            "drawArrays": {
+              "count": 7,
+              "ms": 0,
+              "max": 0
+            },
+            "blitFramebuffer": {
+              "count": 1,
+              "ms": 0,
+              "max": 0
+            }
+          }
+        },
+        "latency": 417.3999996185303,
+        "peakSync": 25
+      },
+      {
+        "width": 1920,
+        "stage": "continued",
+        "first": {
+          "frame": 4.800000190734863,
+          "passes": [
+            2.6999998092651367,
+            0.10000038146972656,
+            0,
+            0
+          ],
+          "gl": {
+            "drawElements": {
+              "count": 238,
+              "ms": 0,
+              "max": 0
+            },
+            "drawElementsInstanced": {
+              "count": 83,
+              "ms": 0,
+              "max": 0
+            },
+            "drawArrays": {
+              "count": 4,
+              "ms": 0,
+              "max": 0
+            },
+            "texSubImage2D": {
+              "count": 4,
+              "ms": 0,
+              "max": 0
+            },
+            "blitFramebuffer": {
+              "count": 1,
+              "ms": 0,
+              "max": 0
+            }
+          }
+        },
+        "beforeEntry": {
+          "frame": 413.9000005722046,
+          "passes": [
+            403.80000019073486,
+            1.6999998092651367,
+            1.2000007629394531,
+            2.6999998092651367
+          ],
+          "gl": {
+            "bufferData": {
+              "count": 1024,
+              "ms": 9.89999771118164,
+              "max": 1.6999998092651367
+            },
+            "linkProgram": {
+              "count": 38,
+              "ms": 0.09999942779541016,
+              "max": 0.09999942779541016
+            },
+            "getProgramParameter": {
+              "count": 114,
+              "ms": 3.100001335144043,
+              "max": 0.20000076293945312
+            },
+            "getActiveUniform": {
+              "count": 1580,
+              "ms": 0.6000003814697266,
+              "max": 0.10000038146972656
+            },
+            "drawElements": {
+              "count": 238,
+              "ms": 0.09999942779541016,
+              "max": 0.09999942779541016
+            },
+            "drawElementsInstanced": {
+              "count": 83,
+              "ms": 0,
+              "max": 0
+            },
+            "texStorage2D": {
+              "count": 79,
+              "ms": 0,
+              "max": 0
+            },
+            "texSubImage2D": {
+              "count": 93,
+              "ms": 86.19999694824219,
+              "max": 19
+            },
+            "drawArrays": {
+              "count": 4,
+              "ms": 0,
+              "max": 0
+            },
+            "blitFramebuffer": {
+              "count": 1,
+              "ms": 0,
+              "max": 0
+            }
+          }
+        },
+        "latency": 57.80000019073486,
+        "peakSync": 0.40000057220458984
+      },
+      {
+        "width": 390,
+        "stage": "imported",
+        "first": {
+          "frame": 214.29999923706055,
+          "passes": [
+            211.4000005722046,
+            0,
+            0,
+            0
+          ],
+          "gl": {
+            "bufferData": {
+              "count": 23,
+              "ms": 0,
+              "max": 0
+            },
+            "drawElements": {
+              "count": 149,
+              "ms": 0.10000038146972656,
+              "max": 0.10000038146972656
+            },
+            "linkProgram": {
+              "count": 28,
+              "ms": 0,
+              "max": 0
+            },
+            "getProgramParameter": {
+              "count": 84,
+              "ms": 2.399998664855957,
+              "max": 0.19999980926513672
+            },
+            "getActiveUniform": {
+              "count": 1203,
+              "ms": 0.3000011444091797,
+              "max": 0.10000038146972656
+            },
+            "drawElementsInstanced": {
+              "count": 40,
+              "ms": 0.10000038146972656,
+              "max": 0.10000038146972656
+            },
+            "drawArrays": {
+              "count": 4,
+              "ms": 0,
+              "max": 0
+            },
+            "texSubImage2D": {
+              "count": 4,
+              "ms": 0,
+              "max": 0
+            },
+            "blitFramebuffer": {
+              "count": 1,
+              "ms": 0,
+              "max": 0
+            }
+          }
+        },
+        "beforeEntry": {
+          "frame": 372.1000003814697,
+          "passes": [
+            359.5,
+            1.7000007629394531,
+            1.1999998092651367,
+            2.6000003814697266
+          ],
+          "gl": {
+            "bufferData": {
+              "count": 1045,
+              "ms": 2.399998664855957,
+              "max": 0.19999980926513672
+            },
+            "texStorage2D": {
+              "count": 82,
+              "ms": 0,
+              "max": 0
+            },
+            "texSubImage2D": {
+              "count": 96,
+              "ms": 48.900001525878906,
+              "max": 3.6000003814697266
+            },
+            "drawElements": {
+              "count": 296,
+              "ms": 0.10000038146972656,
+              "max": 0.10000038146972656
+            },
+            "linkProgram": {
+              "count": 43,
+              "ms": 0.10000038146972656,
+              "max": 0.10000038146972656
+            },
+            "getProgramParameter": {
+              "count": 129,
+              "ms": 3.2000017166137695,
+              "max": 0.19999980926513672
+            },
+            "getActiveUniform": {
+              "count": 1327,
+              "ms": 0.6999998092651367,
+              "max": 0.10000038146972656
+            },
+            "drawElementsInstanced": {
+              "count": 87,
+              "ms": 0.10000038146972656,
+              "max": 0.10000038146972656
+            },
+            "drawArrays": {
+              "count": 4,
+              "ms": 0,
+              "max": 0
+            },
+            "blitFramebuffer": {
+              "count": 1,
+              "ms": 0,
+              "max": 0
+            }
+          }
+        },
+        "latency": 249.39999961853027,
+        "peakSync": 20.199999809265137
+      },
+      {
+        "width": 390,
+        "stage": "continued",
+        "first": {
+          "frame": 4.59999942779541,
+          "passes": [
+            2.6999998092651367,
+            0,
+            0,
+            0
+          ],
+          "gl": {
+            "drawElements": {
+              "count": 149,
+              "ms": 0,
+              "max": 0
+            },
+            "drawElementsInstanced": {
+              "count": 41,
+              "ms": 0.09999942779541016,
+              "max": 0.09999942779541016
+            },
+            "drawArrays": {
+              "count": 4,
+              "ms": 0,
+              "max": 0
+            },
+            "texSubImage2D": {
+              "count": 4,
+              "ms": 0,
+              "max": 0
+            },
+            "blitFramebuffer": {
+              "count": 1,
+              "ms": 0.09999942779541016,
+              "max": 0.09999942779541016
+            }
+          }
+        },
+        "beforeEntry": {
+          "frame": 306.19999980926514,
+          "passes": [
+            295.5999994277954,
+            1.6999998092651367,
+            1.3000001907348633,
+            2.8000001907348633
+          ],
+          "gl": {
+            "bufferData": {
+              "count": 791,
+              "ms": 3.3999996185302734,
+              "max": 0.20000076293945312
+            },
+            "linkProgram": {
+              "count": 31,
+              "ms": 0,
+              "max": 0
+            },
+            "getProgramParameter": {
+              "count": 93,
+              "ms": 2.3000001907348633,
+              "max": 0.19999980926513672
+            },
+            "getActiveUniform": {
+              "count": 1239,
+              "ms": 0.5,
+              "max": 0.10000038146972656
+            },
+            "drawElements": {
+              "count": 149,
+              "ms": 0,
+              "max": 0
+            },
+            "drawElementsInstanced": {
+              "count": 41,
+              "ms": 0,
+              "max": 0
+            },
+            "texStorage2D": {
+              "count": 60,
+              "ms": 0.10000038146972656,
+              "max": 0.10000038146972656
+            },
+            "texSubImage2D": {
+              "count": 67,
+              "ms": 41.699997901916504,
+              "max": 1.8999996185302734
+            },
+            "drawArrays": {
+              "count": 4,
+              "ms": 0,
+              "max": 0
+            },
+            "blitFramebuffer": {
+              "count": 1,
+              "ms": 0,
+              "max": 0
+            }
+          }
+        },
+        "latency": 66,
+        "peakSync": 0.39999961853027344
+      }
+    ]
+  }
+]
