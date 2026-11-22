@@ -6,7 +6,8 @@ import {world,nextInput} from './journey_path.mjs';
 import {bindCampaignContacts} from './campaign_contact_plan.mjs';
 import {assertCameraRestoreEvidence} from './camera_policy_qa.mjs';
 
-const [name,out,history,expected='spatial']=process.argv.slice(2);
+const [name,out,history,expected='spatial',captureMode]=process.argv.slice(2);
+const recordMix=captureMode==='--record-mix';
 assert(/^[a-zA-Z0-9_-]+$/.test(name)&&out&&!fs.existsSync(out));
 assert(['centered','spatial'].includes(expected));
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
@@ -16,6 +17,8 @@ assert.equal(sha(fs.readFileSync(`dist/${name}.zip`)),manifest.archiveSha256);
 for(const [file,{sha256}] of Object.entries(manifest.files))assert.equal(sha(fs.readFileSync(`${root}/${file}`)),sha256,file);
 const original=fs.readFileSync(history),seed=JSON.parse(original);
 const report={complete:false,expected,archiveSha256:manifest.archiveSha256,saveSha256:sha(original),rows:[],logs:[],scope:'Native Chromium and a historical normal save. Audio and the impact pool are observed without altering the game state.'};
+if(recordMix)report.scope+=' Canvas and stereo game buses are muxed into one WebM. Event wall times are measured in the game callback; they do not establish hardware output latency.';
+const mixObserver=recordMix?fs.readFileSync('tools/observe_main_mix.js','utf8'):'';
 const audioTrace=`
 window.forestFeedback={sounds:[],impacts:[]};
 const tracedEffect=GameAudio.prototype.effect;
@@ -24,22 +27,29 @@ GameAudio.prototype.effect=function(kind,options){
   const result=tracedEffect.call(this,kind,options);
   if(kind==='hit'||kind==='gather'){
     const source=this.sources.size>before?[...this.sources].at(-1):null;
-    window.forestFeedback.sounds.push({kind,options,played:!!source});
+    window.forestFeedback.sounds.push({kind,options,played:!!source,wall:performance.now()});
   }
   return result;
 };`;
 const sceneTrace=`
-const tracedDraw=WorldView.prototype.draw,observed=new WeakSet();
+const tracedDraw=WorldView.prototype.draw,observed=new WeakSet(),pendingContactFrames=[];
 WorldView.prototype.draw=function(...args){
   if(!observed.has(this)){
     observed.add(this);
     const spawn=this.impacts.spawn;
     this.impacts.spawn=cue=>{
-      window.forestFeedback.impacts.push(cue);
-      return spawn(cue);
+      const result=spawn(cue),contact={...cue,wall:performance.now(),spawned:result};
+      window.forestFeedback.impacts.push(contact);
+      if(result)pendingContactFrames.push(contact);
+      return result;
     };
   }
-  return tracedDraw.apply(this,args);
+  const result=tracedDraw.apply(this,args);
+  for(const contact of pendingContactFrames.splice(0)){
+    contact.drawAt=performance.now();
+    contact.activeParticles=this.impacts.active;
+  }
+  return result;
 };`;
 const contacts=bindCampaignContacts(world);
 const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright');
@@ -48,6 +58,7 @@ fs.mkdirSync(out,{recursive:true});
 try {
   for(const width of (expected==='centered'?[1280]:[1280,390])){
     const dir=path.join(out,String(width));fs.mkdirSync(dir);
+    const movie=path.join(dir,'forest-route.webm');
     const context=await browser.newContext({viewport:{width,height:width===390?844:800},recordVideo:{dir,size:{width:960,height:600}}});
     const page=await context.newPage(),inputs=[],phases=[];
     let rest=null;
@@ -77,10 +88,15 @@ try {
       phases.push({label,player:state.player,kills:state.kills,wood:state.inventory.wood,berry:state.inventory.berry,image});
     };
     try {
+      if(recordMix)await context.exposeBinding('__mainMixSink',(_source,bytes,size)=>{
+        const chunk=Buffer.from(bytes,'base64');
+        assert.equal(chunk.length,size,'Recorder chunk size');
+        fs.appendFileSync(movie,chunk);
+      });
       await context.route('**/*',route=>{
         const url=new URL(route.request().url());
         if(url.origin!==origin)return route.abort();
-        const trace=url.pathname===`/${root}/src/audio.js`?audioTrace:url.pathname===`/${root}/src/scene.js`?sceneTrace:null;
+        const trace=url.pathname===`/${root}/src/audio.js`?audioTrace+'\n'+mixObserver:url.pathname===`/${root}/src/scene.js`?sceneTrace:null;
         return trace?route.fulfill({contentType:'application/javascript',body:fs.readFileSync('.'+url.pathname,'utf8')+'\n'+trace}):route.continue();
       });
       await page.goto(`${origin}/${root}/`);
@@ -91,6 +107,10 @@ try {
       await (await chooser).setFiles(history);
       await page.waitForFunction(()=>!document.querySelector('#panel').open);
       await capture('00-start',await observe());
+      if(recordMix){
+        await page.waitForFunction(()=>window.mainMix?.status().context==='running');
+        await page.evaluate(()=>window.mainMix.start(document.querySelector('#world')));
+      }
       const berry=world.objects.find(o=>o.id==='resource-170');
       await go(berry,'采集浆果');
       await press('e');await page.waitForTimeout(520);
@@ -127,6 +147,35 @@ try {
         await capture('03-camp',state);
         rest={before:before.player.hp,after:state.player.hp};
       }
+      let recording;
+      if(recordMix){
+        const stereo=await page.evaluate(()=>window.mainMix.stop());
+        fs.writeFileSync(path.join(dir,'mix-status.json'),JSON.stringify(stereo,null,2)+'\n');
+        const bytes=fs.readFileSync(movie);
+        assert.equal(stereo.bytes,bytes.length);
+        assert.deepEqual(stereo.errors,[]);assert.equal(stereo.pending,0);
+        const media=await page.evaluate(async url=>{
+          const bytes=await (await fetch(url)).arrayBuffer();
+          const video=document.createElement('video'),uri=URL.createObjectURL(new Blob([bytes],{type:'video/webm'}));
+          try{
+            await new Promise((resolve,reject)=>{video.onloadedmetadata=resolve;video.onerror=()=>reject(Error('WebM metadata unavailable'));video.src=uri;});
+            const decoder=new OfflineAudioContext(2,1,48000),audio=await decoder.decodeAudioData(bytes);
+            let peak=0,clipped=0;
+            for(let i=0;i<audio.numberOfChannels;i++)for(const value of audio.getChannelData(i)){
+              peak=Math.max(peak,Math.abs(value));clipped+=Number(Math.abs(value)>=.999);
+            }
+            return {width:video.videoWidth,height:video.videoHeight,seconds:audio.duration,channels:audio.numberOfChannels,peak,clipped};
+          }finally{video.removeAttribute('src');video.load();URL.revokeObjectURL(uri);}
+        },`${origin}/${movie}`);
+        assert(media.width>0&&media.height>0&&media.channels===2&&media.seconds>10&&media.peak>.005&&media.clipped===0);
+        const contacts=cues.sounds.map(sound=>{
+          const contact=cues.impacts.find(c=>c.kind===(sound.kind==='gather'?sound.options.surface:sound.kind)&&c.wall>=sound.wall&&c.wall-sound.wall<30);
+          assert(contact?.spawned&&contact.activeParticles>0&&Number.isFinite(contact.drawAt));
+          return {kind:sound.kind,target:contact.id,soundToDrawMs:contact.drawAt-sound.wall,pan:sound.options.pan,particles:contact.activeParticles};
+        });
+        assert(contacts.every(c=>c.soundToDrawMs>=0&&c.soundToDrawMs<150));
+        recording={...media,bytes:bytes.length,sha256:sha(bytes),contacts,capturedSeconds:stereo.seconds};
+      }
       assert.equal(state.quest,seed.quest);assert.deepEqual(state.buildings,seed.buildings);
       await page.click('#pause-button');await page.getByRole('button',{name:'保存进度',exact:true}).click();
       const saved=await page.evaluate(key=>localStorage.getItem(key),key);
@@ -139,7 +188,7 @@ try {
       assertCameraRestoreEvidence({startLabel,loadStatus,exported:fs.readFileSync(exported,'utf8')},saved);
       const glError=await page.evaluate(()=>document.querySelector('#world').getContext('webgl2').getError());
       assert.equal(glError,0);
-      report.rows.push({width,phases,cues,rest,restored:true,savedSha256:sha(saved),glError});
+      report.rows.push({width,phases,cues,rest,restored:true,savedSha256:sha(saved),glError,...(recording?{recording}:{})});
     }finally{
       fs.writeFileSync(path.join(dir,'inputs.json'),JSON.stringify(inputs,null,2)+'\n');
       await context.close();
