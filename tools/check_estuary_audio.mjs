@@ -8,7 +8,11 @@ import {bindCampaignContacts} from './campaign_contact_plan.mjs';
 import {LANDMARKS, terrain, WATER_LEVEL} from '../src/world.js';
 import {assertCameraRestoreEvidence} from './camera_policy_qa.mjs';
 
-const [name, output, saveFile] = process.argv.slice(2);
+const [name, output, saveFile, route, expected] = process.argv.slice(2);
+const shoal = route === '--shoal';
+const requireBands = expected === '--landfall-cues';
+assert(route === undefined || shoal);
+assert(expected === undefined || (shoal && requireBands));
 assert(/^[a-zA-Z0-9_-]+$/.test(name));
 assert(output && !fs.existsSync(output));
 const sha = data => createHash('sha256').update(data).digest('hex');
@@ -34,9 +38,10 @@ GameAudio.prototype.effect=function(kind,options){
   const result=tracedEffect.call(this,kind,options);
   if(mixRecording&&currentContact)mixEvents.at(-1).contact=currentContact;
   return result;
-};`;
-const deep = {id:'estuary-swim',type:'waypoint',x:59,z:-19};
-const landing = {id:'estuary-landing',type:'waypoint',x:77,z:-19};
+};
+window.mainMix.ambience=()=>({wind:mixEngine.wind.gain.value,surf:mixEngine.surf.gain.value});`;
+const deep = shoal ? {id:'shoal-crossing',type:'waypoint',x:44,z:100} : {id:'estuary-swim',type:'waypoint',x:59,z:-19};
+const landing = shoal ? {id:'shoal-landing',type:'waypoint',x:86,z:139} : {id:'estuary-landing',type:'waypoint',x:77,z:-19};
 const botanist = LANDMARKS.find(o=>o.id==='botanist');
 const report = {
   complete:false, archiveSha256:manifest.archiveSha256, saveSha256:sha(saveBytes),
@@ -59,10 +64,10 @@ try {
     const observe = async () => {await page.keyboard.press('1');return read();};
     const capture = async label => {
       const {player,time} = await observe();
-      const at = await page.evaluate(()=>window.mainMix.status().seconds);
+      const {at,ambience} = await page.evaluate(()=>({at:window.mainMix.status().seconds,ambience:window.mainMix.ambience()}));
       await page.screenshot({path:path.join(dir,`${label}.jpg`),type:'jpeg',quality:87});
       const height = terrain(player.x,player.z);
-      phases.push({label,x:player.x,z:player.z,height,time,at});
+      phases.push({label,x:player.x,z:player.z,height,time,at,ambience});
       return height;
     };
     const go = async target => {
@@ -101,16 +106,27 @@ try {
       const restored = await read();
       assert(Math.hypot(restored.player.x-seed.player.x,restored.player.z-seed.player.z)<.01);
       await page.evaluate(()=>window.mainMix.start());
-      await capture('00-forest');
+      await capture(shoal?'00-coast':'00-forest');
       await go(deep);
       assert(await capture('01-swimming') < WATER_LEVEL-1.8);
       await go(landing);
-      assert(await capture('02-landfall') > WATER_LEVEL);
-      await go(botanist);
-      await page.keyboard.press('e');
-      await page.waitForTimeout(200);
-      assert.match(await page.locator('#toast').textContent(),/^林栖：/);
-      await capture('03-botanist');
+      const landHeight = await capture('02-landfall');
+      assert(landHeight > WATER_LEVEL);
+      if (shoal) {
+        await go(world.objects.find(o=>o.id==='resource-1077'));
+        assert.match(await page.locator('#interact-label').textContent(),/拾取贝壳/);
+        await page.keyboard.press('e');
+        await page.waitForTimeout(520);
+        await capture('03-shell');
+        await go({id:'shoal-ridge',type:'waypoint',x:110,z:159});
+        assert(await capture('04-ridge') > landHeight+2);
+      } else {
+        await go(botanist);
+        await page.keyboard.press('e');
+        await page.waitForTimeout(200);
+        assert.match(await page.locator('#toast').textContent(),/^林栖：/);
+        await capture('03-botanist');
+      }
       await page.click('#pause-button');
       await page.waitForTimeout(1800);
       const mix = await page.evaluate(()=>window.mainMix.stop());
@@ -134,7 +150,18 @@ try {
       assert(firstSwim>0 && lastSwim>firstSwim);
       assert(cues.slice(0,firstSwim).some(c=>c.options.surface==='wade'), 'Missing outbound wade');
       assert(cues.slice(lastSwim+1).some(c=>c.options.surface==='wade'), 'Missing inbound wade');
-      for (const type of ['litter','rock','gravel']) assert(counts[type]>0,`Missing ${type} contact`);
+      for (const type of shoal ? ['sand','grass'] : ['litter','rock','gravel']) {
+        assert(counts[type]>0,`Missing ${type} contact`);
+      }
+      if (requireBands) {
+        const surfaces = cues.slice(lastSwim+1).map(c=>c.options.surface);
+        let previous = -1;
+        for (const surface of ['wade','wet-sand','gravel','grass']) {
+          const next = surfaces.indexOf(surface,previous+1);
+          assert(next>previous,`Missing ordered landfall cue ${surface}`);
+          previous = next;
+        }
+      }
 
       const pcm = await page.evaluate(async({file,pausesAt})=>{
         const audio = new OfflineAudioContext(2,1,48000);
@@ -159,9 +186,15 @@ try {
       const final = JSON.parse(saved);
       assert.equal(final.quest,seed.quest);
       assert.equal(final.kills,seed.kills);
-      assert.equal(final.player.hp,seed.player.hp);
+      if (shoal) {
+        const hurt = mix.events.some(event=>event.kind==='hurt' && event.after>event.before);
+        assert(final.player.hp>0 && final.player.hp<=seed.player.hp);
+        assert.equal(final.player.hp<seed.player.hp,hurt);
+      } else {
+        assert.equal(final.player.hp,seed.player.hp);
+      }
       assert.deepEqual(final.buildings,seed.buildings);
-      assert.deepEqual(final.inventory,seed.inventory);
+      assert.deepEqual(final.inventory,shoal?{...seed.inventory,shell:seed.inventory.shell+2}:seed.inventory);
       await page.reload();
       await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);
       const startLabel = await page.locator('#start-button').textContent();
@@ -174,7 +207,7 @@ try {
       assertCameraRestoreEvidence({startLabel,loadStatus,exported:fs.readFileSync(exportPath,'utf8')},saved);
       const glError=await page.evaluate(()=>document.querySelector('#world').getContext('webgl2').getError());
       assert.equal(glError,0);
-      report.rows.push({width,phases,counts,pcm,glError,restore:true,savedSha256:sha(saved),audioSha256:sha(fs.readFileSync(audioFile))});
+      report.rows.push({width,phases,counts,pcm,glError,restore:true,hp:{before:seed.player.hp,after:final.player.hp},savedSha256:sha(saved),audioSha256:sha(fs.readFileSync(audioFile))});
     } finally {
       fs.writeFileSync(path.join(dir,'route.json'),JSON.stringify({phases,inputs},null,2)+'\n');
       await context.close();

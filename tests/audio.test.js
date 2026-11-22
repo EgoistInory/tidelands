@@ -2,6 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {GameAudio} from '../src/audio.js';
 import {createCharacter,animateCharacter} from '../src/character.js';
+import {terrain} from '../src/world.js';
 import * as THREE from '../vendor/three.module.min.js';
 function context(){
   const param=()=>({value:0,setTargetAtTime(v){this.value=v;},setValueAtTime(v){this.value=v;},cancelScheduledValues(){},linearRampToValueAtTime(){},exponentialRampToValueAtTime(){}});
@@ -158,6 +159,30 @@ test('coastal surf fades through the shore elevation band without consuming effe
   assert.equal(a.sources.size,0);assert.equal(a.surfSource,source);assert.equal(a.noise,buffer);
   a.update({x:0,z:0},7,0,0);assert.notEqual(a.surf.gain.value,levels[1]);
   await a.dispose();
+});
+
+test('Amber Shoal carries more surf at its wash line and follows the terrain bands for grounded steps',async()=>{
+  const audio=new GameAudio({contextFactory:context}), contacts=[];
+  audio.setActive(true);
+  await audio.unlock();
+  audio.effect=(kind,options)=>contacts.push({kind,surface:options.surface});
+  const wet={x:84,z:138}, strand={x:96,z:149}, dune={x:108,z:157};
+  const height=terrain(wet.x,wet.z);
+  audio.update({x:8,z:71},5,height,0,{swimming:false});
+  const plainSurf=audio.surf.gain.value;
+  for(const [index,position] of [wet,strand,dune].entries()){
+    const ground=terrain(position.x,position.z);
+    audio.update(position,5,ground,index,{swimming:false});
+    audio.update(position,5,ground,index+1,{swimming:false});
+    if(position===wet)assert(audio.surf.gain.value>plainSurf);
+    if(position===dune){
+      const duneSurf=audio.surf.gain.value;
+      audio.update({x:8,z:71},5,ground,index+1,{swimming:false});
+      assert.equal(duneSurf,audio.surf.gain.value);
+    }
+  }
+  assert.deepEqual(contacts.map(c=>c.surface),['wet-sand','gravel','grass']);
+  await audio.dispose();
 });
 
 test('surf shares world mute/pause and releases all persistent nodes on disposal',async()=>{

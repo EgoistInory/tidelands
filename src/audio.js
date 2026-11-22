@@ -1,10 +1,12 @@
 // Local synthesis: no downloads, microphone access or external audio service.
-import {ISLANDS,WATER_LEVEL,dayCycle,randomGenerator,weatherAt} from './world.js';
+import {ISLANDS,WATER_LEVEL,dayCycle,randomGenerator,terrain,weatherAt} from './world.js';
 import {estuaryHabitat} from './estuary-habitat.js';
 import {highlandAscent} from './highland-ascent.js';
+import {shoalHabitat} from './shoal-habitat.js';
 const habitatDensity=[.6,1,.24,.48];
 const contactProfiles={
   wade:{frequency:1450,length:.125,peak:.29},
+  'wet-sand':{frequency:380,length:.12,peak:.18},
   gravel:{frequency:1020,length:.10,peak:.20},
   rock:{frequency:1750,length:.075,peak:.17},
   litter:{frequency:670,length:.14,peak:.15}
@@ -140,12 +142,15 @@ export class GameAudio{
     const isSwimming=swimming??(height<0);
     const wading=hasRenderedMode&&!isSwimming&&height<WATER_LEVEL;
     const bank=hasRenderedMode?estuaryHabitat(player.x,player.z,height):null;
+    const shoal=hasRenderedMode?shoalHabitat(player.x,player.z,height):null;
     if(this.context){const now=this.context.currentTime,{windStrength}=weatherAt(time);
       const shore=Math.max(0,Math.min(1,(5-height)/5)),wave=.5+.5*Math.sin(time*.65);
       const shelter=bank?.shelter??0;
       this.wind.gain.setTargetAtTime((.075+.105*shore)*(1-.4*shelter)*(1+Math.sin(time*.3)*.25)*windStrength,now,.3);
       this.filter.frequency.setTargetAtTime((420+430*shore)*(1-.25*shelter),now,.3);
-      this.surf.gain.setTargetAtTime(shore*(.035+.10*wave*wave)*windStrength,now,.45);this.surfFilter.frequency.setTargetAtTime(460+220*wave,now,.4);
+      // Carry the existing surf bed across the visible wash line as the tide recedes.
+      const surfExposure=shore+(1-shore)*(shoal?.wash??0)*.7;
+      this.surf.gain.setTargetAtTime(surfExposure*(.035+.10*wave*wave)*windStrength,now,.45);this.surfFilter.frequency.setTargetAtTime(460+220*wave,now,.4);
       let habitat=0;
       for(let i=0;i<ISLANDS.length;i++){const island=ISLANDS[i],inside=Math.max(0,Math.min(1,(1-Math.hypot(player.x-island.x,player.z-island.z)/island.r)/.32));habitat=Math.max(habitat,inside*habitatDensity[i]);}
       habitat*=Math.max(0,Math.min(1,height/6));
@@ -167,6 +172,17 @@ export class GameAudio{
     else if(bank?.bedrock>=.48)surface='rock';
     else if(bank?.gravel>=.45)surface='gravel';
     else if(bank?.shelter>=.46)surface='litter';
+    else if(shoal){
+      if(shoal.wash>=.34)surface='wet-sand';
+      else{
+        if(shoal.wash>=.16)surface='sand';
+        if(shoal.strand>=.45){
+          const {x,z}=player;
+          const slope=Math.hypot(terrain(x+.5,z)-terrain(x-.5,z),terrain(x,z+.5)-terrain(x,z-.5));
+          if(shoalHabitat(x,z,height,slope).strand>=.45)surface='gravel';
+        }
+      }
+    }
     else if(hasRenderedMode){
       const ascent=highlandAscent(player.x,player.z,height);
       if(ascent?.wear>=.5)surface='gravel';
