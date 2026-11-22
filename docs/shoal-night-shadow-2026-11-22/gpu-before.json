@@ -1,0 +1,365 @@
+{
+  "complete": true,
+  "archiveSha256": "ebcd77b729c857a66bace0ecda7f3407624b0737c032c2abf08b972269c2f022",
+  "frameStreamSha256": "4480de6ac04d5ae9e6e97098bccb9197a59f4909c7900592091faa9de825ad15",
+  "fixtureSha256": "077f7285c8822fbaf1211d8ed8906ced7758c3230745b0b18faa3413f6a9052d",
+  "runnerSha256": "2e5ceac96a259cb0041baee392b3aad1bd8d260f989e57dc20c2c4386205aba5",
+  "variant": "--full-check",
+  "rows": [
+    {
+      "site": "landing",
+      "sample": {
+        "frame": 27832,
+        "time": 2367.084400000625,
+        "ms": 22.864749,
+        "latencyMs": 65.69999980926514
+      },
+      "saveSha256": "0717b448a72fbc08322a59ed48805561424b35a7d0b3df0b96c1753fe17495aa",
+      "position": [
+        84.32787501579601,
+        136.98469270943582
+      ],
+      "camera": [
+        86.4200088704264,
+        7.966142699951736,
+        150.8274878005404
+      ],
+      "cameraInput": [
+        0.15,
+        0.29,
+        14
+      ],
+      "buffer": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "full": {
+          "median": 14.596999,
+          "p95": 15.820667,
+          "max": 19.841875,
+          "samples": [
+            19.841875,
+            14.695791,
+            14.635625,
+            14.537291,
+            14.588416,
+            14.581499,
+            14.59804,
+            14.698333,
+            14.583499,
+            14.616708,
+            14.632875,
+            14.63925,
+            14.595291,
+            14.552291,
+            14.594791,
+            14.575333,
+            14.562875,
+            15.820667,
+            14.602582,
+            14.578999,
+            14.608083,
+            14.563375,
+            14.596999,
+            15.047041
+          ]
+        }
+      },
+      "counters": [
+        {
+          "calls": 298,
+          "triangles": 2514265
+        },
+        {
+          "calls": 1,
+          "triangles": 1
+        },
+        {
+          "calls": 1,
+          "triangles": 1
+        },
+        {
+          "calls": 1,
+          "triangles": 1
+        }
+      ],
+      "glError": 0,
+      "storage": 0,
+      "shadowTargetWrites": 1,
+      "sun": {
+        "intensity": 0.09572681202740628,
+        "shadowAutoUpdate": true
+      },
+      "waterSun": 0.03681800462592549,
+      "screenSha256": "9ee96fe6b0f0d192b53d8bfc4148c1950fe21f93b74f632637fb034c0b921b04"
+    },
+    {
+      "site": "dune",
+      "sample": {
+        "frame": 28248,
+        "time": 2374.489300000625,
+        "ms": 24.824624,
+        "latencyMs": 91
+      },
+      "saveSha256": "fcdeaff9a4c3f5b62a7b9f3a0dfc8d2f5585c3acd1506f91dc5f0858d2c0cd9f",
+      "position": [
+        102.26706975662452,
+        153.17294569876378
+      ],
+      "camera": [
+        104.95997030190041,
+        10.606324017762063,
+        165.2806827439632
+      ],
+      "cameraInput": [
+        0.15,
+        0.29,
+        14
+      ],
+      "buffer": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "full": {
+          "median": 15.77525,
+          "p95": 16.3735,
+          "max": 20.484583,
+          "samples": [
+            20.484583,
+            15.944249,
+            15.678333,
+            15.728708,
+            15.806874,
+            15.704541,
+            15.712833,
+            15.719207,
+            15.734874,
+            15.744999,
+            15.809874,
+            15.741707,
+            15.862083,
+            15.917,
+            16.027041,
+            15.879209,
+            15.840458,
+            16.031541,
+            15.6815,
+            15.629875,
+            15.705249,
+            15.77525,
+            15.79,
+            16.3735
+          ]
+        }
+      },
+      "counters": [
+        {
+          "calls": 307,
+          "triangles": 2722530
+        },
+        {
+          "calls": 1,
+          "triangles": 1
+        },
+        {
+          "calls": 1,
+          "triangles": 1
+        },
+        {
+          "calls": 1,
+          "triangles": 1
+        }
+      ],
+      "glError": 0,
+      "storage": 0,
+      "shadowTargetWrites": 1,
+      "sun": {
+        "intensity": 0.09514945999343591,
+        "shadowAutoUpdate": true
+      },
+      "waterSun": 0.0365959461513215,
+      "screenSha256": "c34a601529f762c537321085bd40d88f9e525004f4879156907d7185374a03e6"
+    },
+    {
+      "site": "dune-control",
+      "sample": {
+        "frame": 28256,
+        "time": 2374.6603000006253,
+        "ms": 16.240666,
+        "latencyMs": 74
+      },
+      "saveSha256": "fcdeaff9a4c3f5b62a7b9f3a0dfc8d2f5585c3acd1506f91dc5f0858d2c0cd9f",
+      "position": [
+        103.26631410302653,
+        153.17979742727806
+      ],
+      "camera": [
+        105.26066710124908,
+        10.911729634652753,
+        165.63554159120568
+      ],
+      "cameraInput": [
+        0.15,
+        0.29,
+        14
+      ],
+      "buffer": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "full": {
+          "median": 15.962,
+          "p95": 16.069875,
+          "max": 21.143292,
+          "samples": [
+            21.143292,
+            15.943,
+            15.895333,
+            15.896249,
+            15.929375,
+            16.032249,
+            15.986874,
+            16.0295,
+            16.069875,
+            15.959749,
+            15.838791,
+            15.945875,
+            16.007667,
+            15.941499,
+            15.970124,
+            15.968458,
+            16.008249,
+            15.90625,
+            15.970291,
+            15.962,
+            15.973166,
+            15.92975,
+            16.053499,
+            15.909125
+          ]
+        }
+      },
+      "counters": [
+        {
+          "calls": 308,
+          "triangles": 2682373
+        },
+        {
+          "calls": 1,
+          "triangles": 1
+        },
+        {
+          "calls": 1,
+          "triangles": 1
+        },
+        {
+          "calls": 1,
+          "triangles": 1
+        }
+      ],
+      "glError": 0,
+      "storage": 0,
+      "shadowTargetWrites": 1,
+      "sun": {
+        "intensity": 0.09513592767623393,
+        "shadowAutoUpdate": true
+      },
+      "waterSun": 0.036590741413936125,
+      "screenSha256": "7ab1b1fa0a964a7eed7a822d695169fa496543af6f1d47bc237fbb1fec28a7e0"
+    },
+    {
+      "site": "dune-day",
+      "sample": {
+        "frame": 28248,
+        "time": 2374.489300000625,
+        "ms": 24.824624,
+        "latencyMs": 91
+      },
+      "saveSha256": "fcdeaff9a4c3f5b62a7b9f3a0dfc8d2f5585c3acd1506f91dc5f0858d2c0cd9f",
+      "position": [
+        102.26706975662452,
+        153.17294569876378
+      ],
+      "camera": [
+        104.95997030190041,
+        10.606324017762063,
+        165.2806827439632
+      ],
+      "cameraInput": [
+        0.15,
+        0.29,
+        14
+      ],
+      "overrideTime": 240,
+      "buffer": [
+        1920,
+        1080
+      ],
+      "metrics": {
+        "full": {
+          "median": 15.676374,
+          "p95": 15.929083,
+          "max": 21.042916,
+          "samples": [
+            21.042916,
+            15.77425,
+            15.670582,
+            15.625249,
+            15.659083,
+            15.593708,
+            15.545125,
+            15.658,
+            15.676374,
+            15.631957,
+            15.635249,
+            15.659166,
+            15.838749,
+            15.710666,
+            15.627375,
+            15.673333,
+            15.705291,
+            15.704499,
+            15.762625,
+            15.82525,
+            15.82875,
+            15.915125,
+            15.890374,
+            15.929083
+          ]
+        }
+      },
+      "counters": [
+        {
+          "calls": 307,
+          "triangles": 2722520
+        },
+        {
+          "calls": 1,
+          "triangles": 1
+        },
+        {
+          "calls": 1,
+          "triangles": 1
+        },
+        {
+          "calls": 1,
+          "triangles": 1
+        }
+      ],
+      "glError": 0,
+      "storage": 0,
+      "shadowTargetWrites": 1,
+      "sun": {
+        "intensity": 2.6,
+        "shadowAutoUpdate": true
+      },
+      "waterSun": 1,
+      "screenSha256": "74341a7e9db75102f387ee4d4198db375e05d127b989594219712a7cece9898f"
+    }
+  ],
+  "logs": [],
+  "scope": "Static scenes using recorded route position, camera and clock with the nearest checkpoint save. One query around each selected renderer.render or the full HDR draw. Pass queries exclude the surrounding target changes and cannot be added to infer frame time."
+}

@@ -309,7 +309,10 @@ export class WorldView{
     this.ambient.color.copy(daySkyBounce).lerp(nightSkyBounce,1-bounceDay);
     if(this.ambient.groundColor)this.ambient.groundColor.copy(dayGroundBounce).lerp(nightGroundBounce,1-bounceDay);
     this.ambient.intensity=(.6+Math.sqrt((daylight-.04)/.96)*1.5+.3*(1-bounceDay))*weather.skylight;
-    this.sun.intensity=daylight*2.6*weather.sunlight;
+    const directSun=daylight*weather.sunlight*THREE.MathUtils.smoothstep(daylight,.04,.12);
+    this.sun.intensity=directSun*2.6;
+    // Keep the same shadow resources and shaders; refresh the sun map only while it can affect the scene.
+    this.sun.shadow.autoUpdate=directSun>0;
     if(this.nightLight)this.nightLight.intensity=.7*(1-THREE.MathUtils.smoothstep(daylight,.12,.65))*weather.skylight;
     this.scene.fog.near=weather.fogNear;this.scene.fog.far=weather.fogFar;
     updateSky(this.sky,time,this.camera,this.scene.fog,weather);
@@ -319,7 +322,7 @@ export class WorldView{
     this.waterUniforms.skyLight.value=skyUniforms.light.value;this.waterUniforms.cloudiness.value=weather.cloudiness;
     this.waterUniforms.skyOrigin.value.copy(skyUniforms.origin.value);
     this.waterUniforms.time.value=time;this.waterUniforms.light.value=(.15+daylight*.85)*weather.skylight;
-    this.waterUniforms.sunlight.value=daylight*weather.sunlight;
+    this.waterUniforms.sunlight.value=directSun;
     this.waterUniforms.windStrength.value=weather.windStrength;
     this.waterUniforms.fogRange.value.set(weather.fogNear,weather.fogFar);
   }
