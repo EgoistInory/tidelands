@@ -1,0 +1,119 @@
+{
+  "complete": true,
+  "archiveSha256": "7d4c4fc7cc84d4e61601f007398ea067ef0435d94a3b2b20bace826d75354a7f",
+  "saveSha256": "360eeb1d7708024d482eb92b7dc63e9aded52e563c332e7da3c441fa4a0d8f79",
+  "rows": [
+    {
+      "width": 1280,
+      "counts": {
+        "mixed": 235,
+        "cues": 52,
+        "mismatch": 0,
+        "hurt": 176,
+        "duplicate": 0,
+        "bodyCovered": 0
+      },
+      "motion": {
+        "samples": 34,
+        "loading": {
+          "id": "enemy-15",
+          "age": 0.09969999999884749,
+          "attackAt": 12815.923900038355,
+          "root": [
+            118.28279061716327,
+            9.817666761787155,
+            173.5807332070158
+          ],
+          "bodyShift": 0.10970058751979066,
+          "reach": 1.8274210359583565,
+          "planted": 3
+        },
+        "contact": {
+          "id": "enemy-15",
+          "age": 0.3021999999982654,
+          "attackAt": 12815.923900038355,
+          "root": [
+            118.28279061716327,
+            9.817666761787155,
+            173.5807332070158
+          ],
+          "bodyShift": 0.21998540411313325,
+          "reach": 1.8004506145585442,
+          "planted": 2
+        }
+      },
+      "cueTypes": [
+        "boar",
+        "crab"
+      ],
+      "hp": [
+        67,
+        67
+      ],
+      "kills": [
+        3,
+        4
+      ],
+      "restored": true,
+      "glError": 0,
+      "hurtImageSha256": "40b5fae1f80b5a0de547bbdd5058631484b51f3e5b7b0663584d7634d2980111"
+    },
+    {
+      "width": 390,
+      "counts": {
+        "mixed": 333,
+        "cues": 80,
+        "mismatch": 0,
+        "hurt": 255,
+        "duplicate": 0,
+        "bodyCovered": 0
+      },
+      "motion": {
+        "samples": 45,
+        "loading": {
+          "id": "enemy-15",
+          "age": 0.09850000000005821,
+          "attackAt": 12815.930400038349,
+          "root": [
+            118.28279061716327,
+            9.817666761787155,
+            173.5807332070158
+          ],
+          "bodyShift": 0.10850023824953077,
+          "reach": 1.8276688000883927,
+          "planted": 3
+        },
+        "contact": {
+          "id": "enemy-15",
+          "age": 0.30129999999917345,
+          "attackAt": 12815.930400038349,
+          "root": [
+            118.28279061716327,
+            9.817666761787155,
+            173.5807332070158
+          ],
+          "bodyShift": 0.21999490346563394,
+          "reach": 1.8004693339276858,
+          "planted": 2
+        }
+      },
+      "cueTypes": [
+        "boar",
+        "crab"
+      ],
+      "hp": [
+        67,
+        67
+      ],
+      "kills": [
+        3,
+        4
+      ],
+      "restored": true,
+      "glError": 0,
+      "hurtImageSha256": "474f0737b7469db23333f01fb2a888aaa0dfbb51c7bcf55ef757a9928739cbfc"
+    }
+  ],
+  "logs": [],
+  "scope": "The original entry and a normal saved encounter. Only the scene response appends a draw observer. Native aim, attacks and food; actual scene cue and HUD read together."
+}

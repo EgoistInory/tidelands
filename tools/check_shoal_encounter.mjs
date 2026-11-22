@@ -5,9 +5,10 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {assertCameraRestoreEvidence} from './camera_policy_qa.mjs';
 
-const [name,out,saveFile,mode]=process.argv.slice(2),strict=mode==='--aligned';
+const [name,out,saveFile,mode,motion]=process.argv.slice(2),strict=mode==='--aligned',recordMotion=motion==='--boar-motion';
 assert(/^[a-zA-Z0-9_-]+$/.test(name)&&out&&!fs.existsSync(out));
-assert(mode===undefined||strict);
+assert(mode===undefined||strict||mode==='--observe');
+assert(motion===undefined||recordMotion);
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 const root=`dist/${name}/tidelands-local`,origin='http://127.0.0.1:4190',key='tidelands-save-v1';
 const manifest=JSON.parse(fs.readFileSync(`dist/${name}.json`));
@@ -38,11 +39,23 @@ WorldView.prototype.draw=function(state,...args){
     return !hurt.hidden&&screen.z>-1&&screen.z<1&&x>=rect.left&&x<=rect.right&&y>=rect.top&&y<=rect.bottom;
   };
   if(marked)encounters.types.add(marked.type);
+  let boar=null;
+  if(${recordMotion})for(const e of near){
+    if(e.type!=='boar')continue;
+    const pose=enemyAttackPose(state,e),rig=this.creatures.get(e.id);
+    if(!pose||!rig)continue;
+    const muzzle=rig.userData.body.localToWorld(new THREE.Vector3(0,1.03,1.995));
+    const yaw=rig.rotation.y;
+    boar={id:e.id,age:state.time-pose.at,attackAt:pose.at,root:rig.position.toArray(),bodyShift:rig.userData.body.position.z,
+      reach:(muzzle.x-e.x)*Math.sin(yaw)+(muzzle.z-e.z)*Math.cos(yaw),
+      planted:rig.userData.footContacts?.filter(Boolean).length??0};
+    break;
+  }
   const row={time:state.time,hp:p.hp,player:{x:p.x,z:p.z},yaw:this.yaw,kills:state.kills,food:state.inventory.berry+state.inventory.meal,near,marked,
     hud:{name:el('enemy-name').textContent,danger:hud.hidden?null:hud.dataset.danger},
     attack:el('attack-feedback').hidden?null:el('attack-feedback').textContent, hurt:hurt.hidden?null:hurt.textContent,
     hurtTop:hurt.hidden?null:rect.top,bodyCovered:covered('head',1.45)||covered('spine_03',1.12),
-    types:[...encounters.types],duplicate:!toast.hidden&&toast.textContent.startsWith('受到攻击！')};
+    types:[...encounters.types],duplicate:!toast.hidden&&toast.textContent.startsWith('受到攻击！'),boar};
   encounters.latest=row;
   if(encounters.frames.length<3200)encounters.frames.push(row);
 };`;
@@ -52,7 +65,8 @@ const browser=await chromium.launch({channel:'chromium',headless:true,args:['--u
 try{
   for(const width of [1280,390]){
     const dir=path.join(out,String(width));fs.mkdirSync(dir);
-    const context=await browser.newContext({viewport:{width,height:width===390?844:800}});
+    const viewport={width,height:width===390?844:800};
+    const context=await browser.newContext({viewport,...(recordMotion?{recordVideo:{dir,size:viewport}}:{})});
     const page=await context.newPage();
     const inputs=[];
     const latest=()=>page.evaluate(()=>window.shoalEncounter.latest);
@@ -111,6 +125,19 @@ try{
       assert(last.kills>seed.kills&&last.hp>0);
       const counts={mixed:size,cues:cues.length,mismatch:mismatch.length,hurt:hurt.length,
         duplicate:frames.filter(f=>f.duplicate).length,bodyCovered:hurt.filter(f=>f.bodyCovered).length};
+      let motionEvidence;
+      if(recordMotion){
+        const strike=frames.find(f=>f.boar)?.boar;
+        assert(strike,'Missing a native boar strike');
+        const samples=frames.map(f=>f.boar).filter(f=>f?.attackAt===strike.attackAt&&f.id===strike.id);
+        const loading=samples.filter(f=>f.age>.085&&f.age<.18),contact=samples.filter(f=>f.age>.278&&f.age<.36);
+        assert(loading.length&&contact.length,'Missing recorded loading or contact');
+        const back=loading.reduce((a,b)=>a.bodyShift<b.bodyShift?a:b);
+        const forward=contact.reduce((a,b)=>a.bodyShift>b.bodyShift?a:b);
+        assert.deepEqual(back.root,forward.root);
+        if(strict)assert(back.planted>=2&&forward.planted>=2&&back.bodyShift<-.15&&forward.bodyShift>.28&&forward.reach-back.reach>.35);
+        motionEvidence={samples:samples.length,loading:back,contact:forward};
+      }
       if(strict){
         assert.equal(counts.mismatch,0);assert.equal(counts.duplicate,0);
         if(width===390)assert.equal(counts.bodyCovered,0);
@@ -130,7 +157,7 @@ try{
       assertCameraRestoreEvidence({startLabel,loadStatus,exported:fs.readFileSync(exported,'utf8')},saved);
       const glError=await page.evaluate(()=>document.querySelector('#world').getContext('webgl2').getError());
       assert.equal(glError,0);
-      report.rows.push({width,counts,cueTypes:[...new Set(cues.map(f=>f.marked.type))],hp:[seed.player.hp,final.player.hp],
+      report.rows.push({width,counts,motion:motionEvidence,cueTypes:[...new Set(cues.map(f=>f.marked.type))],hp:[seed.player.hp,final.player.hp],
         kills:[seed.kills,final.kills],restored:true,glError,hurtImageSha256:sha(fs.readFileSync(path.join(dir,'hurt.jpg')))});
       console.log(JSON.stringify(report.rows.at(-1)));
     }finally{

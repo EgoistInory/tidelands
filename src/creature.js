@@ -155,6 +155,12 @@ export function animateCreature(root,enemy,time,dt,height,target,attackPose=unde
   const attackAt=attackPose===undefined?enemy.attackAt:attackPose?.at;
   const motion=updateBodyMotion(u,enemy.x,enemy.z,root.rotation.y,dt,!last||distance>=4||enemy.hp<=0||revived);
   const attackAge=time-(attackAt??-100),attack=attackAge>=0&&attackAge<ENEMY_ATTACK_DURATION?Math.sin(attackAge/ENEMY_ATTACK_DURATION*Math.PI):0;
+  const boar=u.type==='boar';
+  // The boar gathers its weight before driving the muzzle through the contact frame.
+  const loadedAt=ENEMY_ATTACK_IMPACT*.45;
+  const driveIn=boar&&attack>0?THREE.MathUtils.smootherstep(attackAge,loadedAt,ENEMY_ATTACK_IMPACT):0;
+  const load=boar&&attack>0?THREE.MathUtils.smootherstep(attackAge,0,loadedAt)*(1-driveIn):0;
+  const thrust=driveIn*(1-THREE.MathUtils.smootherstep(attackAge,ENEMY_ATTACK_IMPACT,ENEMY_ATTACK_DURATION));
   // Raise before the blow, then extend toward the target at the actual damage time.
   const clawPitch=attackAge<0||attackAge>=ENEMY_ATTACK_DURATION?0:attackAge<ENEMY_ATTACK_IMPACT/2?
     -.9*THREE.MathUtils.smootherstep(attackAge,0,ENEMY_ATTACK_IMPACT/2):attackAge<ENEMY_ATTACK_IMPACT?
@@ -163,8 +169,9 @@ export function animateCreature(root,enemy,time,dt,height,target,attackPose=unde
   const hurt=Math.max(0,1-(time-u.hitAt)/.24),death=u.deadAt===null?0:Math.min(1,Math.max(0,(time-u.deadAt)/.5));
   u.legs.forEach((leg,i)=>{const stride=moving?Math.sin(u.phase+(i%2)*Math.PI)*.55:0;leg.rotation.x=u.type==='boar'?stride:0;leg.rotation.z=u.type==='crab'?stride*.45:0;});
   u.claws.forEach((claw,i)=>{claw.rotation.x=clawPitch;claw.rotation.y=(i?1:-1)*attack*.12;claw.userData.pincer.rotation.y=-claw.userData.side*attack*.43;});
-  u.body.position.y=(moving?Math.abs(Math.sin(u.phase))*.07:Math.sin(time*2)*.015)-death*.45;
-  u.body.position.z=attack*.22-hurt*.18;u.body.rotation.x=(u.type==='boar'?-attack*.18:0)+(u.type==='boar'?.035:.02)*motion.drive;
+  u.body.position.y=(moving?Math.abs(Math.sin(u.phase))*.07:Math.sin(time*2)*.015)-death*.45-load*.05-thrust*.055;
+  u.body.position.z=(boar?thrust*.43-load*.28:attack*.22)-hurt*.18;
+  u.body.rotation.x=load*.10-thrust*.055+(boar?.035:.02)*motion.drive;
   u.body.rotation.y=.05*motion.turn;u.body.rotation.z=death*1.3+hurt*.1-(u.type==='boar'?.07:.045)*motion.turn*Math.min(1,motion.speed/2.5);
   const range=Math.hypot(target.x-enemy.x,target.z-enemy.z);
   if(range>120)u.far=true;else if(range<100)u.far=false;

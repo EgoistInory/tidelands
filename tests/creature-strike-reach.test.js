@@ -29,3 +29,34 @@ test('complete crab strike keeps claw geometry above ground, freezes at a held c
   const held=pose(10+ENEMY_ATTACK_IMPACT);assert(held.equals(pose(10+ENEMY_ATTACK_IMPACT)));
   const recovered=pose(11,-100);assert(Math.abs(recovered.min.z-rest.min.z)<.01&&Math.abs(recovered.max.z-rest.max.z)<.01);
 });
+
+test('boar loads back before contact, then drives the muzzle forward over planted feet',()=>{
+  const ground=(x,z)=>4+.13*x+.17*z;
+  const root=createCreature('boar'),enemy={x:0,z:0,hp:70},target={x:0,z:2.5};
+  const muzzle=new THREE.Vector3(0,1.03,1.995);
+  const pose=(time,attack)=> {
+    animateCreature(root,enemy,time,1/120,4,target,attack,ground);
+    return root.userData.body.localToWorld(muzzle.clone());
+  };
+  let rest;
+  for(let i=0;i<24;i++)rest=pose(9.8+i/120,null);
+  let previous=rest,load,impact,planted=0;
+  const plan={at:10,yaw:0};
+  for(let i=0;i<=72;i++){
+    const point=pose(10+i/120,plan);
+    assert(point.distanceTo(previous)<.075,'the muzzle should ease between phases');
+    previous=point;
+    if(i===16)load=point;
+    if(i===36)impact=point;
+    const {worldFeet,footContacts}=root.userData;
+    for(const [index,foot] of worldFeet.entries())if(footContacts[index]){
+      assert(Math.abs(foot.y-ground(foot.x,foot.z))<.015);
+      planted++;
+    }
+  }
+  assert(load.z<rest.z-.12&&load.y<rest.y-.1,'windup should load back and down');
+  assert(impact.z>rest.z+.22&&impact.z>load.z+.46,'contact must follow the visible drive');
+  assert(planted>160,'the visual shift must retain real contact through the strike');
+  assert(Math.abs(previous.z-rest.z)<.02,'the muzzle should return to its resting reach');
+  assert.deepEqual(root.position.toArray(),[0,4,0]);
+});
