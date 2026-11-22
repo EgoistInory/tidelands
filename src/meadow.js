@@ -5,7 +5,7 @@ import {seatMeadowRoots} from './ground-support.js';
 import {estuaryHabitat} from './estuary-habitat.js';
 import {highlandAscent} from './highland-ascent.js';
 import {shoalHabitat,shoalInterior} from './shoal-habitat.js';
-import {settlementWearAt} from './settlement-ground.js';
+import {settlementBankAt,settlementWearAt} from './settlement-ground.js';
 import {createCanopy} from './foliage.js';
 
 const windTime={value:0};
@@ -376,6 +376,16 @@ export function createMeadow(random=randomGenerator(4321),objects=[],groundHeigh
     if(y<2.4||y>33||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<5)||Math.sin(x*.11)*Math.cos(z*.13)<-.5)continue;
     const height=terrain(x,z),sand=shoal?(shoalInterior(x,z,height)?.sand??0):0;
     dummy.position.set(x,height-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);const scale=.7+random()*.9;dummy.scale.set(scale,scale*(.4+landscapeMass(x,z)*.85)*(1-.76*sand),scale);dummy.updateMatrix();grass.push(dummy.matrix.clone());
+  }
+  if(settlement){
+    const bankRandom=randomGenerator(80813);
+    for(let gx=-59;gx<=-27;gx+=.8)for(let gz=69;gz<=95;gz+=.8){
+      const x=gx+(bankRandom()-.5)*.7,z=gz+(bankRandom()-.5)*.7,bank=settlementBankAt(x,z);
+      if(bank<.34||bankRandom()>.9*bank||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<5.5))continue;
+      const height=terrain(x,z),scale=.55+bankRandom()*.74;
+      dummy.position.set(x,height-.04,z);dummy.rotation.set(0,bankRandom()*Math.PI*2,0);
+      dummy.scale.set(scale,scale*(.67+.4*bank),scale);dummy.updateMatrix();grass.push(dummy.matrix.clone());
+    }
   }
   const batches=[...regionBatches(createWildflower(),flowers,'meadow-flowers',128,[],groundHeight),...regionBatches(createGrassClump(),grass,'meadow-grass',128,[],groundHeight),...createGroundCover(groundHeight),...createShoreCover(groundHeight,highland,shoal),...createForestCover(objects,groundHeight)];
   if(shoal)batches.push(...createShoalScrub(objects,groundHeight));

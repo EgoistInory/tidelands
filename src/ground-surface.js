@@ -66,10 +66,17 @@ export function createGroundSurface(detail,{loader=new THREE.TextureLoader(),ani
       ${settlementGroundGLSL}
       #endif\n${shader.fragmentShader}`
       .replace('#include <map_fragment>',`
-        float settlementBlend=0.,settlementDetail=1.;
+        float settlementBlend=0.,settlementDetail=1.,packedGrit=0.,settlementVerge=0.;
         #ifdef GROUND_LANDSCAPE
-          settlementBlend=settlementWear(groundPosition.xz)*(1.-smoothstep(.07,.17,groundSlope))*smoothstep(2.5,4.,groundPosition.y);
-          if(settlementBlend>0.){settlementDetail=.65+.7*settlementGrain(groundPosition.xz*1.7);settlementBlend*=.65+.35*settlementGrain(groundPosition.xz*3.1);}
+          vec2 p=groundPosition.xz;
+          float wear=settlementWear(p);
+          settlementBlend=wear*(1.-smoothstep(.07,.17,groundSlope))*smoothstep(2.5,4.,groundPosition.y);
+          if(settlementBlend>0.){
+            settlementBlend*=.58+.42*settlementGrain(p*3.1);
+            settlementDetail=.69+.62*settlementGrain(p*1.7);
+            packedGrit=smoothstep(.59,.82,settlementGrain(p*19.));
+          }
+          if(p.x> -59.&&p.x< -27.&&p.y>69.&&p.y<95.)settlementVerge=settlementBank(p,wear);
         #endif
         float rockBlend=0.,litterBlend=0.;vec3 rockColor=vec3(1.),rockWeights=vec3(0.,1.,0.);
         vec2 rockX=groundPosition.zy*.33,rockY=groundPosition.xz*.33,rockZ=groundPosition.xy*.33;
@@ -102,6 +109,8 @@ export function createGroundSurface(detail,{loader=new THREE.TextureLoader(),ani
         diffuseColor.rgb=mix(diffuseColor.rgb,rockColor*.78+diffuseColor.rgb*.22,rockBlend);
         diffuseColor.rgb*=mix(1.,.64,shoreWetness);
         vec3 wornSoil=mix(vec3(.10,.073,.039),vec3(.23,.17,.095),clamp(sandDetail*.55,0.,1.))*settlementDetail;
+        wornSoil=mix(wornSoil,vec3(.31,.27,.19),packedGrit*.24);
+        diffuseColor.rgb*=mix(vec3(1.),vec3(.76,.84,.68),settlementVerge*.66);
         diffuseColor.rgb=mix(diffuseColor.rgb,wornSoil,settlementBlend*mix(.78,1.,baseDetail.r));`)
       .replace('#include <roughnessmap_fragment>',THREE.ShaderChunk.roughnessmap_fragment.replace('roughnessFactor *= texelRoughness.g;','roughnessFactor *= mix(mix(1.,texture2D(groundSandRoughness,vRoughnessMapUv).g,sandBlend),texelRoughness.g,grassBlend);')+`
         float rockRoughness=texture2D(groundRockRoughness,rockX).g*rockWeights.x+texture2D(groundRockRoughness,rockY).g*rockWeights.y+texture2D(groundRockRoughness,rockZ).g*rockWeights.z;
@@ -124,6 +133,6 @@ export function createGroundSurface(detail,{loader=new THREE.TextureLoader(),ani
         #endif
         normal=normalize(mix(normal,normalize(tbn*shoreNormal),settlementBlend*groundSandReady*.8));`);
   };
-  material.customProgramCacheKey=()=> 'tidelands-ground-landscape-v7-'+landscape;
+  material.customProgramCacheKey=()=> 'tidelands-ground-landscape-v8-'+landscape;
   return material;
 }

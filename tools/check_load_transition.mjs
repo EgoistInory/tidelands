@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 
 const [name,saveFile,out,mode]=process.argv.slice(2);
 assert(/^[a-zA-Z0-9_-]+$/.test(name)&&saveFile&&out&&!fs.existsSync(out));
-assert(mode===undefined||mode==='--profile'||mode==='--no-parallel-compile');
+assert(mode===undefined||mode==='--profile'||mode==='--no-parallel-compile'||mode==='--walk-yard');
 const root=`dist/${name}/tidelands-local`,origin='http://127.0.0.1:4190',key='tidelands-save-v1';
 const sha=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const manifest=JSON.parse(fs.readFileSync(`dist/${name}.json`));
@@ -146,6 +146,35 @@ try{
       await page.waitForTimeout(650);
       const imported=await page.evaluate(()=>window.loadTrace);
       await page.screenshot({path:path.join(out,`${width}-import.jpg`),type:'jpeg',quality:85});
+      let yard;
+      if(mode==='--walk-yard'){
+        const hold=async(key,ms)=>{
+          await page.keyboard.down(key);
+          try{await page.waitForTimeout(ms);}finally{await page.keyboard.up(key);}
+        };
+        const snapshot=async(label)=>{
+          await page.keyboard.press('1');
+          const {player,buildings,inventory,quest}=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),key);
+          await page.screenshot({path:path.join(out,`${width}-${label}.jpg`),type:'jpeg',quality:85});
+          return {player,buildings,inventory,quest};
+        };
+        const porch=await snapshot('porch');
+        await hold('d',1580);
+        const verge=await snapshot('verge');
+        await hold('w',1320);
+        const repairYard=await snapshot('repair-yard');
+        await hold('s',950);await hold('a',1450);
+        const returned=await snapshot('return');
+        assert(verge.player.x>porch.player.x+8);
+        assert(repairYard.player.z<verge.player.z-2);
+        assert(repairYard.player.x>-40&&repairYard.player.z<84);
+        assert(Math.hypot(returned.player.x-porch.player.x,returned.player.z-porch.player.z)<4);
+        for(const state of [verge,repairYard,returned]){
+          assert.deepEqual(state.buildings,porch.buildings);assert.deepEqual(state.inventory,porch.inventory);
+          assert.equal(state.quest,porch.quest);
+        }
+        yard={porch,verge,repairYard,returned};
+      }
       await page.click('#pause-button');await page.getByRole('button',{name:'保存进度',exact:true}).click();
       const saved=await page.evaluate(key=>localStorage.getItem(key),key);
       await page.reload();await ready();
@@ -181,7 +210,7 @@ try{
         assert.equal(parallelShaderCompile,false);
         assert(!imported.events.some(event=>event.name==='compile'));
       }
-      report.rows.push({width,glError,parallelShaderCompile,invalidRejected:true,importDraw,imported,continued});
+      report.rows.push({width,glError,parallelShaderCompile,invalidRejected:true,importDraw,imported,continued,yard});
     }finally{await context.close();}
   }
   assert.deepEqual(report.logs,[]);assert.equal(sha(saveFile),report.save);report.complete=true;

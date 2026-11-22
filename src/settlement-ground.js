@@ -3,6 +3,7 @@ import {FISHING_YARD} from './fishing-yard-layout.js';
 export const SETTLEMENT_PATH=[[-70,108],[-70,102],[-59,94],[-46,86],[-40,82],[-33,81]];
 const [yardX,yardZ,yardW,yardD]=FISHING_YARD.clearance;
 const clearings=[[-70,108,3.3],[-59,94,1.8],[-46,86,2.1]];
+const banks=[[-53,85,5.8,4.4],[-44,91,6,3.6],[-34,85.8,5.3,3.1],[-35,71.9,5.4,2.3]];
 const smooth=(a,b,x)=>{const t=Math.max(0,Math.min(1,(x-a)/(b-a)));return t*t*(3-2*t);};
 export function settlementWearAt(x,z){
  if(x< -80||x> -26||z<71||z>117)return 0;
@@ -13,6 +14,13 @@ export function settlementWearAt(x,z){
  }
  for(const [cx,cz,r]of clearings)wear=Math.max(wear,1-smooth(r-.7,r+.7,Math.hypot(x-cx,z-cz)));
  return Math.max(wear,1-smooth(0,1.1,Math.hypot(Math.max(0,Math.abs(x-yardX)-yardW),Math.max(0,Math.abs(z-yardZ)-yardD))));
+}
+export function settlementBankAt(x,z){
+  let bank=0;
+  for(const [cx,cz,rx,rz]of banks){
+    bank=Math.max(bank,1-smooth(.3,1,Math.hypot((x-cx)/rx,(z-cz)/rz)));
+  }
+  return bank*(1-smooth(.08,.36,settlementWearAt(x,z)));
 }
 const vec=([x,z])=>`vec2(${x.toFixed(1)},${z.toFixed(1)})`;
 export const settlementGroundGLSL=`
@@ -26,5 +34,10 @@ export const settlementGroundGLSL=`
   ${clearings.map(([x,z,r])=>`w=max(w,1.-smoothstep(${(r-.7).toFixed(2)},${(r+.7).toFixed(2)},length(p-${vec([x,z])})));`).join('\n')}
   vec2 yard=max(abs(p-vec2(${yardX.toFixed(5)},${yardZ.toFixed(5)}))-vec2(${yardW.toFixed(5)},${yardD.toFixed(5)}),vec2(0.));
   return max(w,1.-smoothstep(0.,1.1,length(yard)));
+ }
+ float settlementBank(vec2 p,float wear){
+  float bank=0.;
+  ${banks.map(([x,z,rx,rz])=>`bank=max(bank,1.-smoothstep(.3,1.,length((p-${vec([x,z])})/${vec([rx,rz])})));`).join('\n')}
+  return bank*(1.-smoothstep(.08,.36,wear));
  }
 `;
