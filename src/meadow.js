@@ -4,6 +4,7 @@ import {landscapeMass} from './landscape.js';
 import {seatMeadowRoots} from './ground-support.js';
 import {estuaryHabitat} from './estuary-habitat.js';
 import {highlandAscent} from './highland-ascent.js';
+import {shoalHabitat} from './shoal-habitat.js';
 import {settlementWearAt} from './settlement-ground.js';
 
 const windTime={value:0};
@@ -56,14 +57,14 @@ function groundCoverSurface(){
 
 export function updateGroundCover(batches,camera){
   for(const batch of batches){
-    if(!['meadow-cover','meadow-shore','meadow-fern','highland-heath'].includes(batch.name))continue;
+    if(!['meadow-cover','meadow-shore','meadow-fern','highland-heath','shoal-dune'].includes(batch.name))continue;
     const box=batch.boundingBox,dx=Math.max(box.min.x-camera.x,0,camera.x-box.max.x),dz=Math.max(box.min.z-camera.z,0,camera.z-box.max.z);
     batch.visible=batch.userData.detailEnabled!==false&&dx*dx+dz*dz<80*80;
   }
 }
 
 const campFootprints={tent:[2.15,1.85],workbench:[1.65,1.2],campfire:[1.4,1.4]};
-const landscapeNames=new Set(['meadow-grass','meadow-flowers','meadow-cover','meadow-shore','meadow-fern','shore-stones','highland-heath','highland-scree']);
+const landscapeNames=new Set(['meadow-grass','meadow-flowers','meadow-cover','meadow-shore','meadow-fern','shore-stones','highland-heath','highland-scree','shoal-dune']);
 export function updateCampClearance(batches,buildings,scenery=[]){
   const footprints=[...buildings.filter(b=>campFootprints[b.type]).map(b=>[b.x,b.z,...campFootprints[b.type]]),...scenery],key=JSON.stringify(footprints);
   let changed=0;
@@ -244,7 +245,7 @@ function createGroundCover(groundHeight){
 }
 
 // Sparse salt-tolerant tufts above the wave band, independent of inland placement RNG.
-function createShoreCover(groundHeight,highland){
+function createShoreCover(groundHeight,highland,shoal){
   const random=randomGenerator(26081),dummy=new THREE.Object3D(),matrices=[],colors=[];
   for(let patch=0;patch<2400;patch++){
     const cx=random()*590-295,cz=random()*650-325,radius=1.5+random()*2.5;
@@ -288,8 +289,21 @@ function createShoreCover(groundHeight,highland){
     dummy.scale.set(scale,scale*.58,scale);dummy.updateMatrix();
     heathMatrices.push(dummy.matrix.clone());heathColors.push(heathTone.clone().multiplyScalar(.8+heath()*.23));
   }
+  const duneRandom=randomGenerator(29017),duneTint=new THREE.Color(0xc3b482),duneMatrices=[],duneColors=[];
+  if(shoal)for(let x=68;x<=142;x+=1.65)for(let z=126;z<=180;z+=1.65){
+    const px=x+(duneRandom()-.5)*1.3,pz=z+(duneRandom()-.5)*1.3,height=terrain(px,pz);
+    const slope=Math.hypot(terrain(px+.5,pz)-terrain(px-.5,pz),terrain(px,pz+.5)-terrain(px,pz-.5));
+    const dune=shoalHabitat(px,pz,height,slope)?.dune??0;
+    if(dune<.52||duneRandom()>.67*dune)continue;
+    const scale=.95+duneRandom()*.68;
+    dummy.position.set(px,height-.04,pz);dummy.rotation.set(0,duneRandom()*Math.PI*2,0);
+    dummy.scale.set(scale,scale*(1.08+dune*.42),scale);dummy.updateMatrix();
+    duneMatrices.push(dummy.matrix.clone());duneColors.push(duneTint.clone().multiplyScalar(.83+duneRandom()*.17));
+  }
   const model=createDuneClump();
-  return [...regionBatches(model,matrices,'meadow-shore',32,colors,groundHeight),...regionBatches(model,heathMatrices,'highland-heath',32,heathColors,groundHeight)];
+  return [...regionBatches(model,matrices,'meadow-shore',32,colors,groundHeight),
+    ...regionBatches(model,heathMatrices,'highland-heath',32,heathColors,groundHeight),
+    ...regionBatches(model,duneMatrices,'shoal-dune',64,duneColors,groundHeight)];
 }
 
 // A tree's shelter defines a small community, leaving open routes and exposed slopes clear.
@@ -330,7 +344,7 @@ export function createForestCover(objects,groundHeight){
   return regionBatches(createFernClump(),matrices,'meadow-fern',32,colors,groundHeight);
 }
 
-export function createMeadow(random=randomGenerator(4321),objects=[],groundHeight=null,{settlement=false,highland=false}={}){
+export function createMeadow(random=randomGenerator(4321),objects=[],groundHeight=null,{settlement=false,highland=false,shoal=false}={}){
   const dummy=new THREE.Object3D(),flowers=[],grass=[];
   for(let i=0;i<3000&&flowers.length<1200;i++){
     const x=random()*440-260,z=random()*450-290,y=layoutTerrain(x,z);if(y<2||y>28)continue;
@@ -341,7 +355,7 @@ export function createMeadow(random=randomGenerator(4321),objects=[],groundHeigh
     if(y<2.4||y>33||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<5)||Math.sin(x*.11)*Math.cos(z*.13)<-.5)continue;
     dummy.position.set(x,terrain(x,z)-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);const scale=.7+random()*.9;dummy.scale.set(scale,scale*(.4+landscapeMass(x,z)*.85),scale);dummy.updateMatrix();grass.push(dummy.matrix.clone());
   }
-  const batches=[...regionBatches(createWildflower(),flowers,'meadow-flowers',128,[],groundHeight),...regionBatches(createGrassClump(),grass,'meadow-grass',128,[],groundHeight),...createGroundCover(groundHeight),...createShoreCover(groundHeight,highland),...createForestCover(objects,groundHeight)];
+  const batches=[...regionBatches(createWildflower(),flowers,'meadow-flowers',128,[],groundHeight),...regionBatches(createGrassClump(),grass,'meadow-grass',128,[],groundHeight),...createGroundCover(groundHeight),...createShoreCover(groundHeight,highland,shoal),...createForestCover(objects,groundHeight)];
   if(settlement)for(const batch of batches){
     const data=batch.instanceMatrix.array;let hidden=0;
     for(let i=0;i<batch.count;i++){const at=i*16;if(settlementWearAt(data[at+12],data[at+14])>.36){data[at+13]=-10000;hidden++;}}

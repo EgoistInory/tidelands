@@ -7,23 +7,27 @@ import {createHash} from 'node:crypto';
 import {guardCameraQaRoute} from './camera_policy_qa.mjs';
 
 const {chromium} = await import(process.env.PLAYWRIGHT_PACKAGE ?? 'playwright');
-const output = process.argv[2];
+const [output, route] = process.argv.slice(2);
+const shoal = route === '--shoal';
 assert(output && !fs.existsSync(output));
 fs.mkdirSync(output, {recursive: true});
 const origin = 'http://127.0.0.1:4190';
-const baseline = 'd700ce0b610e80cf63dc7c2c710d5ab13de01175';
+const baseline = shoal ? 'cd0538f3c82279d99ecdd594b850e48f3db2d1bb' : 'd700ce0b610e80cf63dc7c2c710d5ab13de01175';
 const files = ['src/landscape.js', 'src/meadow.js'];
 const old = new Map(files.map(file => ['/' + file, execFileSync('git', ['show', `${baseline}:${file}`], {encoding: 'utf8'})]));
 const sha = data => createHash('sha256').update(data).digest('hex');
-const report = {complete: false, baseline, rows: [], logs: [], source: Object.fromEntries([...files, 'src/estuary-habitat.js'].map(file => [file, sha(fs.readFileSync(file))])), scope: 'Declared positions and times, HDR, no storage or ordinary gameplay claim'};
+const habitatFile = shoal ? 'src/shoal-habitat.js' : 'src/estuary-habitat.js';
+const report = {complete: false, baseline, rows: [], logs: [], source: Object.fromEntries([...files, habitatFile].map(file => [file, sha(fs.readFileSync(file))])), scope: 'Declared positions and times, HDR, no storage or ordinary gameplay claim'};
 const html = fs.readFileSync('tests/regional-landform-review.html', 'utf8')
-  .replace('coast:[-130,20],forest:[164.4377,-108.4654],highland:[-41.4534111,-208.3750763]', 'coast:[55,-18],forest:[76,-19],highland:[106,-23]')
+  .replace('coast:[-130,20],forest:[164.4377,-108.4654],highland:[-41.4534111,-208.3750763]',
+    shoal ? 'coast:[81,134],forest:[92,141],highland:[110,159]' : 'coast:[55,-18],forest:[76,-19],highland:[106,-23]')
   .replace('near:[7,6,8],middle:[25,18,28]', 'near:[-12,5,4],middle:[-23,11,8]')
   .replace('h+1,z);saved', 'h+2,z);saved')
   .replace('state.time=240', 'state.time=Number(document.body.dataset.time||240)')
   .replace('window.regionalReview={reset,snapshot,move,sites};', 'window.regionalReview={reset,snapshot,move,sites,view};')
   .replace('四岛同镜头 · 无存档的声明fixture', '渡口／登陆／上坡 · 同镜头')
-  .replace('潮汐海岸</option>', '渡口</option>').replace('苍翠林地</option>', '登陆岸</option>').replace('雾岬高地</option>', '林缘上坡</option>');
+  .replace('潮汐海岸</option>', '渡口</option>').replace('苍翠林地</option>', '登陆岸</option>')
+  .replace('雾岬高地</option>', shoal ? '沙丘内侧</option>' : '林缘上坡</option>');
 const browser = await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
 try {
   for (const width of [1280,390]) for (const variant of ['before','after']) {
