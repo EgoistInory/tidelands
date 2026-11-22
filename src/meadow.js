@@ -4,8 +4,9 @@ import {landscapeMass} from './landscape.js';
 import {seatMeadowRoots} from './ground-support.js';
 import {estuaryHabitat} from './estuary-habitat.js';
 import {highlandAscent} from './highland-ascent.js';
-import {shoalHabitat} from './shoal-habitat.js';
+import {shoalHabitat,shoalInterior} from './shoal-habitat.js';
 import {settlementWearAt} from './settlement-ground.js';
+import {createCanopy} from './foliage.js';
 
 const windTime={value:0};
 const windStrength={value:1};
@@ -64,7 +65,7 @@ export function updateGroundCover(batches,camera){
 }
 
 const campFootprints={tent:[2.15,1.85],workbench:[1.65,1.2],campfire:[1.4,1.4]};
-const landscapeNames=new Set(['meadow-grass','meadow-flowers','meadow-cover','meadow-shore','meadow-fern','shore-stones','highland-heath','highland-scree','shoal-dune']);
+const landscapeNames=new Set(['meadow-grass','meadow-flowers','meadow-cover','meadow-shore','meadow-fern','shore-stones','highland-heath','highland-scree','shoal-dune','shoal-scrub']);
 export function updateCampClearance(batches,buildings,scenery=[]){
   const footprints=[...buildings.filter(b=>campFootprints[b.type]).map(b=>[b.x,b.z,...campFootprints[b.type]]),...scenery],key=JSON.stringify(footprints);
   let changed=0;
@@ -344,6 +345,26 @@ export function createForestCover(objects,groundHeight){
   return regionBatches(createFernClump(),matrices,'meadow-fern',32,colors,groundHeight);
 }
 
+function createShoalScrub(objects,groundHeight){
+  const random=randomGenerator(12679),dummy=new THREE.Object3D(),matrices=[],colors=[];
+  const nearby=objects.filter(o=>o.x>96&&o.x<180&&o.z>142&&o.z<222);
+  const tint=new THREE.Color(0xc7bd8e);
+  for(let gx=102;gx<=173;gx+=2.8)for(let gz=149;gz<=213;gz+=2.8){
+    const x=gx+(random()-.5)*2.1,z=gz+(random()-.5)*2.1,y=terrain(x,z);
+    const slope=Math.hypot(terrain(x+.5,z)-terrain(x-.5,z),terrain(x,z+.5)-terrain(x,z-.5));
+    const cover=shoalInterior(x,z,y,slope);
+    if(!cover||cover.heath<.49||cover.sand>.18||random()>.58*cover.heath)continue;
+    const scale=.65+random()*.63;
+    if(nearby.some(o=>Math.hypot(o.x-x,o.z-z)<o.scale+1.2*scale))continue;
+    dummy.position.set(x,y,z);dummy.rotation.set(0,random()*Math.PI*2,0);
+    dummy.scale.set(scale,scale*(.66+cover.heath*.33),scale);dummy.updateMatrix();
+    matrices.push(dummy.matrix.clone());colors.push(tint.clone().multiplyScalar(.82+random()*.18));
+  }
+  const shrub=createCanopy({anchors:[[-.52,.48,0],[.15,.65,-.38],[.39,.54,.42],[0,.82,.04]],
+    seed:9186,leavesPerCluster:20,spread:.49,verticalScale:.35,leafScale:.57});
+  return regionBatches(shrub,matrices,'shoal-scrub',32,colors,groundHeight);
+}
+
 export function createMeadow(random=randomGenerator(4321),objects=[],groundHeight=null,{settlement=false,highland=false,shoal=false}={}){
   const dummy=new THREE.Object3D(),flowers=[],grass=[];
   for(let i=0;i<3000&&flowers.length<1200;i++){
@@ -353,9 +374,11 @@ export function createMeadow(random=randomGenerator(4321),objects=[],groundHeigh
   for(let i=0;i<85000&&grass.length<26000;i++){
     const x=random()*590-295,z=random()*650-325,y=layoutTerrain(x,z);
     if(y<2.4||y>33||LANDMARKS.some(o=>Math.hypot(x-o.x,z-o.z)<5)||Math.sin(x*.11)*Math.cos(z*.13)<-.5)continue;
-    dummy.position.set(x,terrain(x,z)-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);const scale=.7+random()*.9;dummy.scale.set(scale,scale*(.4+landscapeMass(x,z)*.85),scale);dummy.updateMatrix();grass.push(dummy.matrix.clone());
+    const height=terrain(x,z),sand=shoal?(shoalInterior(x,z,height)?.sand??0):0;
+    dummy.position.set(x,height-.04,z);dummy.rotation.set(0,random()*Math.PI*2,0);const scale=.7+random()*.9;dummy.scale.set(scale,scale*(.4+landscapeMass(x,z)*.85)*(1-.76*sand),scale);dummy.updateMatrix();grass.push(dummy.matrix.clone());
   }
   const batches=[...regionBatches(createWildflower(),flowers,'meadow-flowers',128,[],groundHeight),...regionBatches(createGrassClump(),grass,'meadow-grass',128,[],groundHeight),...createGroundCover(groundHeight),...createShoreCover(groundHeight,highland,shoal),...createForestCover(objects,groundHeight)];
+  if(shoal)batches.push(...createShoalScrub(objects,groundHeight));
   if(settlement)for(const batch of batches){
     const data=batch.instanceMatrix.array;let hidden=0;
     for(let i=0;i<batch.count;i++){const at=i*16;if(settlementWearAt(data[at+12],data[at+14])>.36){data[at+13]=-10000;hidden++;}}

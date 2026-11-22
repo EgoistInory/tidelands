@@ -9,7 +9,9 @@ import {LANDMARKS, terrain} from '../src/world.js';
 import {assertCameraRestoreEvidence} from './camera_policy_qa.mjs';
 
 const [name, output, saveFile, route] = process.argv.slice(2);
-const shoal = route === '--shoal';
+const interior = route === '--shoal-interior';
+const shoal = route === '--shoal' || interior;
+assert(route===undefined || shoal);
 assert(/^[a-zA-Z0-9_-]+$/.test(name));
 assert(output && !fs.existsSync(output));
 const sha = data => createHash('sha256').update(data).digest('hex');
@@ -92,6 +94,24 @@ try {
         high=await capture('04-ridge');
         assert(terrain(high.player.x,high.player.z)>terrain(landing.player.x,landing.player.z)+2);
         assert.deepEqual(high.inventory,{...seed.inventory,shell:seed.inventory.shell+2});
+        if(interior){
+          await go({id:'shoal-inner-rise',type:'waypoint',x:123,z:175});
+          const vantage=await capture('05-inner-rise');
+          assert(terrain(vantage.player.x,vantage.player.z)>terrain(high.player.x,high.player.z)+3);
+          const {x,y,width,height}=await page.locator('#world').boundingBox();
+          const start=x+width*.23,lookY=y+height*.56;
+          assert(await page.evaluate(([x,y])=>document.elementFromPoint(x,y)?.id==='world',[start,lookY]));
+          for(let i=0;i<3;i++){
+            await page.mouse.move(start,lookY);
+            await page.mouse.down();
+            await page.mouse.move(start+126,lookY,{steps:21});
+            await page.mouse.up();
+          }
+          await page.waitForTimeout(550);
+          high=await capture('06-inland-look');
+          assert(Math.hypot(high.player.x-vantage.player.x,high.player.z-vantage.player.z)<.01);
+          assert.deepEqual(high.inventory,{...seed.inventory,shell:seed.inventory.shell+2});
+        }
       }else{
         await go({id:'estuary-landing',type:'npc',x:76,z:-19});
         const low=await capture('01-landing');

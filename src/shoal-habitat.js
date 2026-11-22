@@ -23,3 +23,20 @@ export function shoalHabitat(x, z, height, slope = 0) {
     (.37 + .63 * smooth(-.27, .56, Math.sin(x * .19 - z * .12 + bend)));
   return { wash, strand, dune };
 }
+
+// Inland of the wash line, exposed shoulders frame a shallow sandy passage.
+export function shoalInterior(x, z, height, slope = 0) {
+  const spread = smooth(98, 115, x) * (1 - smooth(158, 178, x)) *
+    smooth(144, 159, z) * (1 - smooth(194, 218, z)) * smooth(3.8, 8, height);
+  if (!spread) return null;
+
+  const trough = 157 + (x - 108) * .94 + 3 * Math.sin((x - 106) * .105);
+  const opening = 1 - smooth(2.9, 9.2, Math.abs(z - trough));
+  const patch = Math.sin(x * .105 + Math.sin(z * .15) * .8) * Math.cos(z * .11 - x * .045);
+  const heath = spread * (1 - .9 * opening) * (.36 + .64 * smooth(-.46, .47, patch)) *
+    (1 - smooth(.39, .8, slope));
+  const seam = Math.sin(height * 1.22 + x * .085 - z * .061 + patch);
+  const ledge = spread * (1 - opening) * smooth(.28, .66, slope) *
+    (.36 + .64 * smooth(-.3, .55, seam));
+  return { sand:spread * opening, heath, ledge };
+}

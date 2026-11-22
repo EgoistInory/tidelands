@@ -2,12 +2,13 @@ import * as THREE from '../vendor/three.module.min.js';
 import {ISLANDS,LANDMARKS,SPAWN,terrain,randomGenerator} from './world.js';
 import {estuaryHabitat} from './estuary-habitat.js';
 import {highlandAscent} from './highland-ascent.js';
-import {shoalHabitat} from './shoal-habitat.js';
+import {shoalHabitat,shoalInterior} from './shoal-habitat.js';
 
 const estuaryGravel=new THREE.Color(0x77766a),estuarySoil=new THREE.Color(0x485139);
 const ascentGravel=new THREE.Color(0xa59a83),ascentLedge=new THREE.Color(0x8d8c83),ascentHeath=new THREE.Color(0x626949);
 const exposedSlate=new THREE.Color(0x777f7b);
 const wetShoalSand=new THREE.Color(0x807966),shoalStrand=new THREE.Color(0x837053),duneCover=new THREE.Color(0x85885b);
+const compactSand=new THREE.Color(0xb0946b),shoalHeath=new THREE.Color(0x69764a),shoalLedge=new THREE.Color(0x8b8778);
 const grass=[0x68794f,0x405e48,0x737b70,0xa79b5f],sand=[0xcabe9b,0xb5b294,0xa2aba4,0xddc38c];
 const smooth=(a,b,x)=>{const t=THREE.MathUtils.clamp((x-a)/(b-a),0,1);return t*t*(3-2*t);};
 
@@ -29,9 +30,12 @@ export function landscapeSample(x,z){
   color.lerp(new THREE.Color(0x81745b),litter*.7).lerp(new THREE.Color(0x8d9590),rock*.65);
   color.multiplyScalar(.89+patch*.18);
   const shoal=biome===3?shoalHabitat(x,z,y,slope):null;
-  if(shoal){
-    color.lerp(wetShoalSand,shoal.wash*.9).lerp(shoalStrand,shoal.strand*.88).lerp(duneCover,shoal.dune*.72);
-    return {biome,color,rock:rock*(1-shoal.wash*.65),litter:shoal.strand*.38,exposure:0};
+  const interior=biome===3?shoalInterior(x,z,y,slope):null;
+  if(shoal||interior){
+    if(shoal)color.lerp(wetShoalSand,shoal.wash*.9).lerp(shoalStrand,shoal.strand*.88).lerp(duneCover,shoal.dune*.72);
+    if(interior)color.lerp(compactSand,interior.sand*.75).lerp(shoalHeath,interior.heath*.92).lerp(shoalLedge,interior.ledge*.9);
+    return {biome,color,rock:Math.max(rock*(1-(shoal?.wash??0)*.65),(interior?.ledge??0)*.78),
+      litter:Math.max((shoal?.strand??0)*.38,(interior?.heath??0)*.47),exposure:0};
   }
   const ascent=highlandAscent(x,z,y,slope);
   if(ascent){

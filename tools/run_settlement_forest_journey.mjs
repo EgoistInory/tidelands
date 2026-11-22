@@ -6,7 +6,8 @@ import {assertCameraRestoreEvidence} from './camera_policy_qa.mjs';
 const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright'),out=process.argv[2]??'dist/settlement-forest-journey-2026-11-15',width=Number(process.env.JOURNEY_WIDTH??1920),dpr=width===390?1.5:1;
 assert([390,1920].includes(width));assert(!fs.existsSync(out));fs.mkdirSync(out,{recursive:true});
 const current=Boolean(process.argv[3]),packageName=process.argv[3]??'tidelands-m5-2026-11-15-yard',origin='http://127.0.0.1:4190',root=`dist/${packageName}/tidelands-local`,entry=`${origin}/${root}/`,key='tidelands-save-v1',originalSave='docs/yard-delivery-2026-11-15/desktop-final-save.json',sha=b=>createHash('sha256').update(b).digest('hex');
-const shoal=process.argv[4]==='--shoal';
+const interior=process.argv[4]==='--shoal-interior';
+const shoal=process.argv[4]==='--shoal'||interior;
 assert(/^[a-zA-Z0-9_-]+$/.test(packageName)&&(!current||profileRoute));
 assert(process.argv[4]===undefined||(shoal&&current));
 const manifest=JSON.parse(fs.readFileSync(`dist/${packageName}.json`));assert.equal(sha(fs.readFileSync(`dist/${packageName}.zip`)),manifest.archiveSha256);
@@ -120,6 +121,11 @@ try{
   await go({id:'shoal-dune',type:'waypoint',x:110,z:159});
   await snapshot('08-shoal-dune');await heap();
   assert(terrain(state.player.x,state.player.z)>3);
+  if(interior){
+   await go({id:'shoal-inner-rise',type:'waypoint',x:123,z:175});
+   await snapshot('08b-shoal-inner-rise');
+   assert(terrain(state.player.x,state.player.z)>8);
+  }
   for(const target of [landing,crossing,coast])await go(target);
  }
  await go(camp,{interact:true});await press('e');await page.waitForTimeout(550);await snapshot(shoal?'09-original-camp':current?'07-original-camp':'05-original-camp');await heap();
