@@ -57,7 +57,22 @@ for(let i=1;i<frames.length;i++){
 }
 const phases=raw.phases.map(p=>({name:p.name,imageSha256:p.imageSha256,saveSha256:p.saveSha256,
   time:p.time,cycle:dayCycle(p.time),player:p.player,elevation:terrain(p.player.x,p.player.z),kills:p.kills,
-  wood:p.inventory.wood,crystal:p.inventory.crystal,berry:p.inventory.berry}));
+  wood:p.inventory.wood,crystal:p.inventory.crystal,berry:p.inventory.berry,shell:p.inventory.shell}));
+// Phase boundaries use the local save clock, so they can be compared with the rendered sample clock.
+const legs=[];
+let first=0;
+for(const end of [...phases,{name:'profile-stop',time:Infinity}]){
+  let last=first;
+  while(last<frames.length&&frames[last][2]<=end.time)last++;
+  if(last===first)continue;
+  const samples=frames.slice(first,last);
+  legs.push({
+    endingAt:end.name,frames:samples.length,gpuMs:metric(samples.map(frame=>byFrame.get(frame[0]))),
+    intervalMs:metric(samples.map(frame=>frame[7])),
+    spikes:spikes.filter(spike=>spike.frame>=first&&spike.frame<last).length
+  });
+  first=last;
+}
 const timing=profile.timing, matched=spikes.filter(s=>s.costs);
 const summary={
   archiveSha256:raw.packageSha256,framesSha256:sha(frameBytes),frameProfileSha256:sha(read('profile.json')),
@@ -72,7 +87,7 @@ const summary={
   observedLongAnimationFrames:profile.longFrames.length,
   spikes:spikes.sort((a,b)=>b.intervalMs-a.intervalMs).slice(0,12),
   resourceSamples:{first:resources[0],last:resources.at(-1),max:Object.fromEntries(['geometries','textures','programs'].map(k=>[k,Math.max(...resources.map(a=>a[k]))]))},
-  usedHeapBytes:raw.heap.map(a=>a.usedSize),phases,
+  usedHeapBytes:raw.heap.map(a=>a.usedSize),phases,legs,
   scope:'Actual native keys and clock, production rendering and save format. Main/scene only carry time observers. Unassigned gaps can include host/browser scheduling. JS heap and renderer object counts are not VRAM.'
 };
 fs.writeFileSync(output,JSON.stringify(summary,null,2)+'\n');

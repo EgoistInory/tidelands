@@ -6,11 +6,14 @@ import {assertCameraRestoreEvidence} from './camera_policy_qa.mjs';
 const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright'),out=process.argv[2]??'dist/settlement-forest-journey-2026-11-15',width=Number(process.env.JOURNEY_WIDTH??1920),dpr=width===390?1.5:1;
 assert([390,1920].includes(width));assert(!fs.existsSync(out));fs.mkdirSync(out,{recursive:true});
 const current=Boolean(process.argv[3]),packageName=process.argv[3]??'tidelands-m5-2026-11-15-yard',origin='http://127.0.0.1:4190',root=`dist/${packageName}/tidelands-local`,entry=`${origin}/${root}/`,key='tidelands-save-v1',originalSave='docs/yard-delivery-2026-11-15/desktop-final-save.json',sha=b=>createHash('sha256').update(b).digest('hex');
+const shoal=process.argv[4]==='--shoal';
 assert(/^[a-zA-Z0-9_-]+$/.test(packageName)&&(!current||profileRoute));
+assert(process.argv[4]===undefined||(shoal&&current));
 const manifest=JSON.parse(fs.readFileSync(`dist/${packageName}.json`));assert.equal(sha(fs.readFileSync(`dist/${packageName}.zip`)),manifest.archiveSha256);
 for(const [file,row]of Object.entries(manifest.files)){assert.equal(sha(fs.readFileSync(`dist/${packageName}/tidelands-local/${file}`)),row.sha256);assert.equal(sha(fs.readFileSync(file==='README.md'?'docs/LOCAL-DELIVERY.md':file)),row.sha256);}
 const report={entry,width,dpr,runnerSha256:sha(fs.readFileSync(new URL(import.meta.url))),complete:false,phases:[],logs:[],heap:[],initialSaveSha256:sha(fs.readFileSync(originalSave)),packageSha256:manifest.archiveSha256,probeSha256:sha(fs.readFileSync('tools/journey_frame_probe.js')),timerSha256:sha(fs.readFileSync('tools/runtime_budget_probe.js')),scope:'Native file import of our own preferred ordinary progress, continuous input and natural clock. Only scene response appends a bounded read-only observer around full WorldView.draw, including all HDR passes. No teleport, resource/enemy/state/clock injection. Headless Metal 1080p or high-DPI390, not physical phones, VRAM, system GPU isolation, listening or final3A acceptance.'};
 if(current)report.scope='Real inputs and historical save through forest, highland and back to camp. Main and scene append read-only frame timings. No video recording, no state injection.';
+if(shoal)report.scope='Real inputs and historical save from the coast through forest, highland and Amber Shoal, then back to the original camp. Main and scene append read-only frame timings. No video recording, no state injection.';
 fs.copyFileSync('tools/journey_frame_probe.js',path.join(out,'probe-source.js'));fs.copyFileSync('tools/runtime_budget_probe.js',path.join(out,'timer-source.js'));fs.copyFileSync(new URL(import.meta.url),path.join(out,'runner-source.mjs'));
 const journal=e=>fs.appendFileSync(path.join(out,'inputs.jsonl'),JSON.stringify({wall:Date.now(),...e})+'\n'),plannerContacts=bindCampaignContacts(world);
 const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']}),context=await browser.newContext({viewport:{width,height:width===390?844:1080},deviceScaleFactor:dpr,...(current?{}:{recordVideo:{dir:out,size:{width:960,height:540}}})});
@@ -40,7 +43,7 @@ async function go(target,{interact=false}={}){
   await observe();await heal();await defend();
   // Loaded authored footprints can differ from the pure planner's original proxies.
   // The real interaction label is authoritative for collecting that resource kind.
-  const label={tree:'木材',stone:'石料',crystal:'晶石',berry:'浆果'}[target.type];
+  const label={tree:'木材',stone:'石料',crystal:'晶石',berry:'浆果',shell:'贝壳'}[target.type];
   if(interact&&label&&Math.hypot(state.player.x-target.x,state.player.z-target.z)<8&&(await page.locator('#interact-label').textContent()).includes(label)){journal({event:'native-resource-label-arrival',planned:target.id,label});return;}
   const route=nextInput(state,target);
   if(route.reached){
@@ -90,18 +93,38 @@ try{
   await go({id:'highland-foot',type:'waypoint',x:-79,z:-151});await snapshot('04-highland-foot');
   for(const [x,z] of [[-82,-158],[-82,-166],[-79,-173],[-76,-180]])await go({id:'highland-ascent',type:'waypoint',x,z});
   await talk('explorer');assert.match(await page.locator('#toast').textContent(),/^远舟：/);await snapshot('05-highland-lookout');await heap();
-  while(Date.now()-report.startedWall<minimumMs-105000){
+  const returnBudgetMs=shoal?220000:105000;
+  while(Date.now()-report.startedWall<minimumMs-returnBudgetMs){
    for(const [x,z] of [[-76,-180],[-79,-173],[-82,-166],[-81,-177],[-73,-186]]){
     await go({id:`highland-lap-${lap++}`,type:'waypoint',x,z});
     if(lap%8===0)await heap();
-    if(Date.now()-report.startedWall>=minimumMs-105000)break;
+    if(Date.now()-report.startedWall>=minimumMs-returnBudgetMs)break;
    }
   }
   await go({id:'highland-exit',type:'waypoint',x:-79,z:-151});
  }else while(Date.now()-report.startedWall<minimumMs-90000){const p=LANDMARKS.find(l=>l.id==='botanist');for(const [dx,dz]of [[-9,5],[7,6],[8,-5],[0,0]]){await go({id:`forest-lap-${lap++}`,type:'npc',x:p.x+dx,z:p.z+dz});if(lap%8===0)await heap();if(Date.now()-report.startedWall>=minimumMs-90000)break;}}
- await snapshot(current?'06-highland-departure':'04-forest-return');await go(camp,{interact:true});await press('e');await page.waitForTimeout(550);await snapshot(current?'07-original-camp':'05-original-camp');await heap();
+ await snapshot(current?'06-highland-departure':'04-forest-return');
+ if(shoal){
+  const coast={id:'shoal-west-coast',type:'waypoint',x:9.87,z:71.36};
+  const crossing={id:'shoal-crossing',type:'waypoint',x:44,z:100};
+  const landing={id:'shoal-landing',type:'waypoint',x:86,z:139};
+  const shell=world.objects.find(o=>o.id==='resource-1077');
+  const before=state.inventory.shell;
+  for(const target of [coast,crossing,landing])await go(target);
+  await snapshot('07-shoal-landing');
+  assert(terrain(state.player.x,state.player.z)>.12);
+  await go(shell,{interact:true});
+  assert.match(await page.locator('#interact-label').textContent(),/拾取贝壳/);
+  await press('e');await page.waitForTimeout(570);await observe();
+  assert.equal(state.inventory.shell,before+2);
+  await go({id:'shoal-dune',type:'waypoint',x:110,z:159});
+  await snapshot('08-shoal-dune');await heap();
+  assert(terrain(state.player.x,state.player.z)>3);
+  for(const target of [landing,crossing,coast])await go(target);
+ }
+ await go(camp,{interact:true});await press('e');await page.waitForTimeout(550);await snapshot(shoal?'09-original-camp':current?'07-original-camp':'05-original-camp');await heap();
  while(Date.now()-report.startedWall<minimumMs){for(const [dx,dz]of [[-8,4],[6,4],[0,0]]){await go({id:`camp-lap-${lap++}`,type:'npc',x:camp.x+dx,z:camp.z+dz});if(Date.now()-report.startedWall>=minimumMs)break;}}
- await go(camp,{interact:true});await press('e');await page.waitForTimeout(550);await snapshot(current?'08-final-rest':'06-final-rest');await heap();assert.equal(state.quest,6);assert.equal(state.player.hp,100);assert.deepEqual(state.buildings,original.buildings);assert.equal(respawns,0);
+ await go(camp,{interact:true});await press('e');await page.waitForTimeout(550);await snapshot(shoal?'10-final-rest':current?'08-final-rest':'06-final-rest');await heap();assert.equal(state.quest,6);assert.equal(state.player.hp,100);assert.deepEqual(state.buildings,original.buildings);assert.equal(respawns,0);
  report.probe=current?await stopRouteProfile(page,out):await page.evaluate(()=>window.journeyProbe.stop());report.stoppedWall=Date.now();assert.equal(report.probe.dropped,0);assert.equal(report.probe.errors.length,0);assert.equal(report.probe.hiddenFrames,0);assert(!report.probe.contextLost);assert.equal(report.probe.issued,report.probe.deleted);
  await page.click('#pause-button');await page.getByRole('button',{name:'保存进度',exact:true}).click();const saved=await page.evaluate(key=>localStorage.getItem(key),key);fs.writeFileSync(path.join(out,'final-save.json'),saved);report.final=JSON.parse(saved);
  await page.reload();await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),saved);report.reloadExact=true;
