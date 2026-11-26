@@ -273,5 +273,98 @@
     "checkpointSha256": "0d56686d97f853cfaa41da8144d4e5f82ab78620ff537023619288a58c285db7",
     "checkpointQuest": 2,
     "consoleErrors": []
+  },
+  "freshCampaign": {
+    "attempts": 2,
+    "fromEmptyProfile": true,
+    "resumeFromOwnCheckpoint": true,
+    "phases": [
+      {
+        "name": "00-fresh",
+        "time": 120.0782,
+        "quest": 0,
+        "kills": 0,
+        "saveSha256": "062c561427f0d12ab11c3a4a3114e2689edcdb74e10017cc045c448dd3291388",
+        "imageSha256": "7becf7cd599f47b638fb15669e5f5d8544a8ade92300e37d8d7efcf942b2a4ea"
+      },
+      {
+        "name": "01-keeper",
+        "time": 122.86149999999984,
+        "quest": 1,
+        "kills": 0,
+        "saveSha256": "8dcbf0763bbd31063a1400dabaedcfc11cbfe53ac02bdacd8b9258a76508c4c1",
+        "imageSha256": "c8a241e5b9747ac11476125ee890e4c39aabde502874b3769a764f3a68102580"
+      },
+      {
+        "name": "02-axe",
+        "time": 136.62770000000305,
+        "quest": 2,
+        "kills": 0,
+        "saveSha256": "8f1915813912e3668e2f6d988f9915e95e8fb6c7f5c6ab116e7d130b6303facc",
+        "imageSha256": "a860fd2079dd9c5011f9d4ecb0ec2c6f7129d237b1bcf33ec5bf2d2752c2d31f"
+      },
+      {
+        "name": "03-camp",
+        "time": 200.15510000002396,
+        "quest": 3,
+        "kills": 1,
+        "saveSha256": "fdc1cdc0b429c2615a49274de502f243b42272d108662cbd8aaf90282f8d22eb",
+        "imageSha256": "0c2d7d471a963e8c47d9d23659995b4036e2249d57aa2d1767ccc463a84ab569"
+      },
+      {
+        "name": "04-botanist",
+        "time": 255.40300000001986,
+        "quest": 4,
+        "kills": 5,
+        "saveSha256": "932240ba900333412e028bbf119f7b44f2a6f2cb15e0720bdaece58694444885",
+        "imageSha256": "03f5a9b731753f50fabf1c09413a0177df518372976ccdf11bbbb448d38e8002"
+      },
+      {
+        "name": "05-two-kills",
+        "time": 255.6197000000198,
+        "quest": 4,
+        "kills": 5,
+        "saveSha256": "ad57554a4cb1317fe1287fb530e2d6e19235471d5765c0dbda76cb29f93aa771",
+        "imageSha256": "272ed1326983fa58b2add828a29b75ff68b979b751a9d4b5308d80f05c707c22"
+      },
+      {
+        "name": "06-explorer",
+        "time": 317.90050000000696,
+        "quest": 5,
+        "kills": 7,
+        "saveSha256": "0740ebed2b236c58b4cac9de7f86e05085e1c3187db8a694b67e390b7d0bb212",
+        "imageSha256": "8c890f476fb79495eac844ef64c63b08bb582b380ccb10226c9329b82869ec8f"
+      },
+      {
+        "name": "07-lamp-materials",
+        "time": 344.1493999999883,
+        "quest": 5,
+        "kills": 10,
+        "saveSha256": "1b5e33f888348dffec62b3cd960a73352a4d67563bc4d506d963e4694a683f08",
+        "imageSha256": "c6687a38aa486bf0f679e1cf6f1176a344d0254dca49d611dc4b6d62cd18a359"
+      },
+      {
+        "name": "08-beacon",
+        "time": 374.6647999999665,
+        "quest": 6,
+        "kills": 12,
+        "saveSha256": "8835f4cf0f55643d6ea25168fb69217ea15f42b411ccb79728128d9cdd45a307",
+        "imageSha256": "f8a8ea32fa655140acc11bd65cebfac80af9f2c7754d4188a90073202e23b0ff"
+      },
+      {
+        "name": "09-exploration",
+        "time": 378.1480999999642,
+        "quest": 6,
+        "kills": 12,
+        "saveSha256": "2b02ed5b0a1ee0c468d0a4c410b042c1fee357d8c793df1b7418d2df5f7759b5",
+        "imageSha256": "bb957f2a30ec9a13f892cdc4f9da03193d520f23749ef4b4f901b98f71b5d098"
+      }
+    ],
+    "postEndingDistanceMetres": 18.323676216305234,
+    "reloadExact": true,
+    "finalSaveSha256": "c3230f78d1dbf8f9d4287f32f65795338f5f39b1f5f5da448f082cd193e2e87a",
+    "kills": 12,
+    "health": 64,
+    "consoleErrors": []
   }
 }
