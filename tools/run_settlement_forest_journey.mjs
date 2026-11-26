@@ -17,7 +17,7 @@ if(current)report.scope='Real inputs and historical save through forest, highlan
 if(shoal)report.scope='Real inputs and historical save from the coast through forest, highland and Amber Shoal, then back to the original camp. Main and scene append read-only frame timings. No video recording, no state injection.';
 fs.copyFileSync('tools/journey_frame_probe.js',path.join(out,'probe-source.js'));fs.copyFileSync('tools/runtime_budget_probe.js',path.join(out,'timer-source.js'));fs.copyFileSync(new URL(import.meta.url),path.join(out,'runner-source.mjs'));
 const journal=e=>fs.appendFileSync(path.join(out,'inputs.jsonl'),JSON.stringify({wall:Date.now(),...e})+'\n'),plannerContacts=bindCampaignContacts(world);
-const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']}),context=await browser.newContext({viewport:{width,height:width===390?844:1080},deviceScaleFactor:dpr,...(current?{}:{recordVideo:{dir:out,size:{width:960,height:540}}})});
+const browser=await chromium.launch({channel:process.env.PLAYWRIGHT_CHANNEL??'chromium',headless:true,args:['--use-angle=metal']}),context=await browser.newContext({viewport:{width,height:width===390?844:1080},deviceScaleFactor:dpr,...(current?{}:{recordVideo:{dir:out,size:{width:960,height:540}}})});
 let page,video,state,started=false,steps=0,respawns=0,lastPosition=null;
 async function press(k){journal({input:'press',key:k});await page.keyboard.press(k);}
 async function walk(k,ms){journal({input:'hold',key:k,ms});await page.keyboard.down(k);try{await page.waitForTimeout(ms);}finally{await page.keyboard.up(k);}}
