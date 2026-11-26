@@ -3,16 +3,26 @@
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
 import {world,nextInput,plan} from './journey_path.mjs';
 import {LANDMARKS,terrain} from '../src/world.js';
-import {nearest,canBuild} from '../src/game.js';
+import {nearest,canBuild,restore} from '../src/game.js';
 import {bindCampaignContacts} from './campaign_contact_plan.mjs';
 const plannerContacts=bindCampaignContacts(world);
 const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright'),out=process.argv[2]??'dist/bedrock-native-campaign-2026-11-05',resume=process.argv.includes('--resume'),key='tidelands-save-v1';
 assert(resume?fs.existsSync(path.join(out,'browser-state.json')):!fs.existsSync(out));fs.mkdirSync(out,{recursive:true});
-const packageName='tidelands-m5-2026-11-05-bedrock',entry=`http://127.0.0.1:4190/dist/${packageName}/tidelands-local/`,sha=b=>createHash('sha256').update(b).digest('hex'),manifest=JSON.parse(fs.readFileSync(`dist/${packageName}.json`));
+const packageName=process.env.TIDELANDS_PACKAGE??'tidelands-m5-2026-11-05-bedrock';
+const importSave=process.env.TIDELANDS_IMPORT_SAVE;
+assert(!(resume&&importSave),'choose an archived save import or a previous run to resume');
+assert(/^[a-z0-9][a-z0-9_-]*$/i.test(packageName),'invalid archive name');
+const entry=`http://127.0.0.1:4190/dist/${packageName}/tidelands-local/`,sha=b=>createHash('sha256').update(b).digest('hex'),manifest=JSON.parse(fs.readFileSync(`dist/${packageName}.json`));
 assert.equal(sha(fs.readFileSync(`dist/${packageName}.zip`)),manifest.archiveSha256);
+for(const [file,row] of Object.entries(manifest.files))assert.equal(sha(fs.readFileSync(`dist/${packageName}/tidelands-local/${file}`)),row.sha256,file);
 const journal=event=>fs.appendFileSync(path.join(out,'inputs.jsonl'),JSON.stringify({wall:Date.now(),...event})+'\n'),report=resume?JSON.parse(fs.readFileSync(path.join(out,'raw.json'))):{entry,packageSha256:manifest.archiveSha256,phases:[],logs:[],scope:'Unmodified packaged index in a fresh isolated browser context. No init script, route replacement, game-state injection, clock change or teleport. Own ordinary saves are read after actual slot-1 input. Pure Node planning on copied save observations. Not physical device, audition or GPU acceptance.'};
+assert.equal(report.packageSha256,manifest.archiveSha256,'resume requires the same archive');
 if(resume){const attempt=report.attempt??1;for(const name of ['raw.json','browser-state.json','checkpoint-save.json']){const copy=path.join(out,`attempt-${attempt}-`+name);assert(!fs.existsSync(copy));fs.copyFileSync(path.join(out,name),copy);}report.runs??=[];if(!report.runs.some(r=>r.attempt===attempt))report.runs.push({attempt,video:report.video,videoSha256:report.videoSha256,error:report.error});report.attempt=attempt+1;}else report.attempt=1;
-delete report.error;report.complete=false;const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']}),context=await browser.newContext({viewport:{width:1280,height:800},recordVideo:{dir:out,size:{width:960,height:600}},...(resume?{storageState:path.join(out,'browser-state.json')}:{})});
+delete report.error;report.complete=false;
+const browser=await chromium.launch({channel:process.env.PLAYWRIGHT_CHANNEL??'chromium',headless:true,args:['--use-angle=metal']});
+const context=await browser.newContext({viewport:{width:1280,height:800},
+ ...(process.argv.includes('--screenshots-only')?{}:{recordVideo:{dir:out,size:{width:960,height:600}}}),
+ ...(resume?{storageState:path.join(out,'browser-state.json')}:{})});
 let page,video,state,started=false,steps=0,respawns=report.respawns??0,lastPosition=null;
 async function press(k){journal({input:'press',key:k});await page.keyboard.press(k);}
 async function walk(k,ms){journal({input:'hold',key:k,ms});await page.keyboard.down(k);try{await page.waitForTimeout(ms);}finally{await page.keyboard.up(k);}}
@@ -45,21 +55,39 @@ async function go(target,{interact=false}={}){
    if(!interact||nearest(state,world.objects)?.id===target.id)return;
    const before={...state.player};await walk(directionTo(target),100);await observe();if(Math.hypot(state.player.x-before.x,state.player.z-before.z)<.03){stalled++;if(stalled>=3)return;}continue;
   }
-  if(!route.key)throw Error(`No route to ${target.id??target.type}: ${route.error}`);
+  if(!route.key){
+   if(interact&&label){journal({event:'resource-route-unavailable',id:target.id,reason:route.error});return false;}
+   throw Error(`No route to ${target.id??target.type}: ${route.error}`);
+  }
   const before={...state.player};await walk(route.key,route.durationMs);await observe();const moved=Math.hypot(state.player.x-before.x,state.player.z-before.z);stalled=moved<.05?stalled+1:0;
   if(stalled===2){const alternatives=['a','d','s','w'].filter(k=>k!==route.key);await walk(alternatives[0],350);}
   if(stalled>=4)throw Error(`Native movement stalled near ${target.id}`);
   if(++steps%20===0)console.log(JSON.stringify({step:steps,target:target.id,x:state.player.x,z:state.player.z,hp:state.player.hp,quest:state.quest}));
  }throw Error(`Navigation budget exhausted: ${target.id}`);
 }
-async function talk(id){const target=LANDMARKS.find(o=>o.id===id);await go(target,{interact:true});await press('e');await page.waitForTimeout(550);await observe();journal({event:'native-talk',id,quest:state.quest,toast:await page.locator('#toast').textContent()});}
+async function talk(id){
+ const target=LANDMARKS.find(o=>o.id===id);
+ await observe();
+ if(Math.hypot(state.player.x-target.x,state.player.z-target.z)>70){
+  const route=plan(state,target);
+  assert(!route.error,`${id}: ${route.error}`);
+  // Split the long search into reachable local destinations; every leg still uses game inputs.
+  for(let i=23;i<route.path.length-12;i+=24){
+   const {x,z}=route.path[i];
+   await go({id:`${id}-leg-${i+1}`,type:'point',x,z});
+  }
+ }
+ await go(target,{interact:true});await press('e');await page.waitForTimeout(550);await observe();
+ journal({event:'native-talk',id,quest:state.quest,toast:await page.locator('#toast').textContent()});
+}
 async function gather(type,minimum){
  const item={tree:'wood',stone:'stone',crystal:'crystal',berry:'berry'}[type],skipped=new Set();let attempts=0;
  while(state.inventory[item]<minimum&&attempts++<35){
   const candidates=world.objects.filter(o=>o.type===type&&!skipped.has(o.id)&&(state.depleted[o.id]??0)<=state.time&&terrain(o.x,o.z)>.7).sort((a,b)=>Math.hypot(a.x-state.player.x,a.z-state.player.z)-Math.hypot(b.x-state.player.x,b.z-state.player.z));
   // A closer node can be above a ledge; choose a bounded alternative before issuing inputs.
   let target;for(const candidate of candidates.slice(0,8)){const route=plan(state,candidate);journal({event:'resource-route-choice',id:candidate.id,visited:route.visited,error:route.error});if(route.reached||route.path.length){target=candidate;break;}skipped.add(candidate.id);}assert(target,`No ${type} candidate within the bounded planner search`);
-  await go(target,{interact:true});const prior=state.inventory[item];let label=await page.locator('#interact-label').textContent();const expected={tree:'木材',stone:'石料',crystal:'晶石',berry:'浆果'}[type];
+  if(await go(target,{interact:true})===false){skipped.add(target.id);continue;}
+  const prior=state.inventory[item];let label=await page.locator('#interact-label').textContent();const expected={tree:'木材',stone:'石料',crystal:'晶石',berry:'浆果'}[type];
   for(let n=0;n<3&&!label.includes(expected);n++){await walk(directionTo(target),100);await observe();label=await page.locator('#interact-label').textContent();}
   await press('e');await page.waitForTimeout(570);await observe();journal({event:'native-gather',planned:target.id,kind:type,before:prior,after:state.inventory[item],label,toast:await page.locator('#toast').textContent()});if(state.inventory[item]===prior)skipped.add(target.id);
  }assert(state.inventory[item]>=minimum,`Collection budget exhausted: ${item}`);
@@ -75,15 +103,26 @@ async function camp(){
 }
 try{
  await context.route('**/*',r=>new URL(r.request().url()).origin==='http://127.0.0.1:4190'?r.continue():r.abort());page=await context.newPage();video=page.video();page.setDefaultTimeout(90000);page.on('pageerror',e=>report.logs.push(e.message));page.on('console',e=>{if(['warning','error'].includes(e.type()))report.logs.push(e.text());});
- await page.goto(entry);await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);assert((await page.title()).includes('潮生群岛'));if(!resume)assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),null);await page.click('#start-button');started=true;await observe();
- if(!resume){assert(state.quest===0&&state.kills===0&&state.inventory.axe===0&&state.buildings.length===0);await snapshot('00-fresh');}
+ await page.goto(entry);await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);assert((await page.title()).includes('潮生群岛'));if(!resume)assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),null);await page.click('#start-button');started=true;
+ if(importSave){
+  const source=fs.readFileSync(importSave),expected=restore(source.toString());
+  report.importedSave={sha256:sha(source),quest:expected.quest};
+  await page.click('#pause-button');const file=page.waitForEvent('filechooser');
+  await page.getByRole('button',{name:'导入存档',exact:true}).click();await(await file).setFiles(importSave);
+  await page.waitForFunction(()=>!document.querySelector('#panel').open);
+  await snapshot('00-imported');
+  assert.equal(state.quest,expected.quest);assert.deepEqual(state.inventory,expected.inventory);assert.deepEqual(state.buildings,expected.buildings);
+ }else{
+  await observe();
+  if(!resume){assert(state.quest===0&&state.kills===0&&state.inventory.axe===0&&state.buildings.length===0);await snapshot('00-fresh');}
+ }
  if(state.quest===0){await talk('keeper');assert.equal(state.quest,1);await snapshot('01-keeper');}
  if(state.quest===1){await gather('tree',4);await gather('stone',3);await craftAxe();await snapshot('02-axe');}
  if(state.quest===2){await gather('tree',17);await gather('stone',11);await camp();assert.equal(state.quest,3);await snapshot('03-camp');}
  if(state.quest===3){await talk('botanist');assert.equal(state.quest,4);await snapshot('04-botanist');}
  if(state.quest===4){while(state.kills<2){const enemy=state.enemies.filter(e=>e.hp>0&&e.type==='crab').sort((a,b)=>Math.hypot(a.x-state.player.x,a.z-state.player.z)-Math.hypot(b.x-state.player.x,b.z-state.player.z))[0];await go({...enemy,type:'npc'});await defend();await observe();}await snapshot('05-two-kills');await talk('explorer');assert.equal(state.quest,5);await snapshot('06-explorer');}
  if(state.quest===5){await gather('tree',12);await gather('stone',8);await gather('crystal',3);await snapshot('07-lamp-materials');await talk('lighthouse');assert.equal(state.quest,6);await snapshot('08-beacon');}
- await go({id:'post-ending-walk',type:'point',x:-103,z:-42});await snapshot('09-exploration');await page.click('#pause-button');await page.getByRole('button',{name:'保存进度',exact:true}).click();const saved=await page.evaluate(key=>localStorage.getItem(key),key);fs.writeFileSync(path.join(out,'final-save.json'),saved);await context.storageState({path:path.join(out,'browser-state.json')});await page.reload();await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),saved);report.reloadExact=true;report.complete=true;assert.equal(report.logs.length,0);
+ await go({id:'post-ending-walk',type:'point',x:-103,z:-42});await snapshot('09-exploration');await page.click('#pause-button');await page.getByRole('button',{name:'保存进度',exact:true}).click();const saved=await page.evaluate(key=>localStorage.getItem(key),key);fs.writeFileSync(path.join(out,'final-save.json'),saved);await context.storageState({path:path.join(out,'browser-state.json')});await page.reload();await page.waitForFunction(()=>!document.querySelector('#start-button').disabled);assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),saved);report.reloadExact=true;assert.equal(report.logs.length,0);report.complete=true;
 }catch(e){report.error=e.stack;console.error(e.stack);process.exitCode=1;
 }finally{
  if(page&&!page.isClosed()&&started&&await page.locator('#start-screen').evaluate(e=>e.hidden)){try{if(!await page.locator('#panel').evaluate(e=>e.open))await page.click('#pause-button',{timeout:5000});const saved=await page.evaluate(key=>localStorage.getItem(key),key);if(saved)fs.writeFileSync(path.join(out,'checkpoint-save.json'),saved);await context.storageState({path:path.join(out,'browser-state.json')});}catch(e){report.checkpointError=e.message;}}

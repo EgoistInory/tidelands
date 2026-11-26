@@ -6,13 +6,14 @@ import {createHash} from 'node:crypto';
 
 const [name,saveFile,out,mode]=process.argv.slice(2);
 assert(/^[a-zA-Z0-9_-]+$/.test(name)&&saveFile&&out&&!fs.existsSync(out));
-assert(mode===undefined||mode==='--profile'||mode==='--no-parallel-compile'||mode==='--walk-yard');
+assert(mode===undefined||mode==='--profile'||mode==='--no-parallel-compile'||mode==='--walk-yard'||mode==='--touch'||mode==='--mix-yard');
 const root=`dist/${name}/tidelands-local`,origin='http://127.0.0.1:4190',key='tidelands-save-v1';
 const sha=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const manifest=JSON.parse(fs.readFileSync(`dist/${name}.json`));
 assert.equal(sha(`dist/${name}.zip`),manifest.archiveSha256);
 for(const [file,entry] of Object.entries(manifest.files))assert.equal(sha(`${root}/${file}`),entry.sha256,file);
 const report={archive:manifest.archiveSha256,save:sha(saveFile),rows:[],logs:[],complete:false};
+const mixObserver=mode==='--mix-yard'?fs.readFileSync(new URL('./observe_main_mix.js',import.meta.url),'utf8'):null;
 const trace=String.raw`
 const loadTrace={events:[],longFrames:[],longTasks:[]};
 window.loadTrace=loadTrace;
@@ -85,17 +86,20 @@ for(const name of ['sync','draw','warmInlandTree']){
     }
     const start=performance.now();
     try{return method.apply(this,args);}
-    finally{note(name,start,{time:args[0]?.time,panel:document.querySelector('#panel').open});}
+    finally{note(name,start,{time:args[0]?.time,panel:document.querySelector('#panel').open,yaw:this.yaw});}
   };
 }
 `;
 fs.mkdirSync(out,{recursive:true});
 const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright');
-const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
+const browser=await chromium.launch({channel:process.env.PLAYWRIGHT_CHANNEL??'chromium',headless:true,args:['--use-angle=metal']});
 try{
-  for(const width of [1920,390]){
-    const context=await browser.newContext({viewport:{width,height:width===390?844:1080},deviceScaleFactor:width===390?1.5:1});
+  const widths=mode==='--touch'?[390]:mode==='--mix-yard'?[1920]:[1920,390];
+  for(const width of widths){
+    const context=await browser.newContext({viewport:{width,height:width===390?844:1080},deviceScaleFactor:width===390?1.5:1,hasTouch:mode==='--touch'});
     try{
+      const mixFile=path.join(out,`${width}-main-mix.webm`);
+      if(mixObserver)await context.exposeBinding('__mainMixSink',(_source,bytes)=>fs.appendFileSync(mixFile,Buffer.from(bytes)));
       if(mode==='--no-parallel-compile')await context.addInitScript(()=>{
         const original=WebGL2RenderingContext.prototype.getExtension;
         WebGL2RenderingContext.prototype.getExtension=function(name){
@@ -107,6 +111,7 @@ try{
         const url=new URL(route.request().url());
         if(url.origin!==origin)return route.abort();
         if(url.pathname===`/${root}/src/scene.js`)return route.fulfill({contentType:'application/javascript',body:fs.readFileSync(`${root}/src/scene.js`,'utf8')+trace});
+        if(mixObserver&&url.pathname===`/${root}/src/audio.js`)return route.fulfill({contentType:'application/javascript',body:fs.readFileSync(`${root}/src/audio.js`,'utf8')+mixObserver});
         return route.continue();
       });
       const page=await context.newPage();
@@ -146,8 +151,65 @@ try{
       await page.waitForTimeout(650);
       const imported=await page.evaluate(()=>window.loadTrace);
       await page.screenshot({path:path.join(out,`${width}-import.jpg`),type:'jpeg',quality:85});
-      let yard;
-      if(mode==='--walk-yard'){
+      let yard,touch,mix;
+      if(mode==='--touch'){
+        const stick=await page.locator('#joystick').boundingBox();
+        const finger={id:1,x:stick.x+stick.width/2,y:stick.y+stick.height/2};
+        const look={id:2,x:260,y:475};
+        assert.equal(await page.evaluate(({x,y})=>document.elementFromPoint(x,y)?.id,look),'world','look contact must hit the canvas');
+        await page.evaluate(()=>{
+          window.gestureEvents=[];
+          for(const id of ['world','joystick'])for(const type of ['pointerdown','pointermove','pointerup','pointercancel']){
+            document.getElementById(id).addEventListener(type,event=>{
+              window.gestureEvents.push({id,type,pointerId:event.pointerId,pointerType:event.pointerType});
+            },{passive:true});
+          }
+        });
+        const before=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),key);
+        const readYaw=()=>page.evaluate(()=>window.loadTrace.events.findLast(e=>e.name==='draw')?.yaw);
+        const beforeYaw=await readYaw();
+        const input=await context.newCDPSession(page);
+        const send=(type,touchPoints)=>input.send('Input.dispatchTouchEvent',{type,touchPoints});
+        const held={...finger,x:finger.x+31,y:finger.y+6};
+        await send('touchStart',[finger]);
+        await send('touchMove',[held]);
+        await send('touchStart',[held,look]);
+        try{
+          for(let i=1;i<=5;i++){
+            await send('touchMove',[held,{...look,x:look.x+i*10,y:look.y+i*3}]);
+            await page.waitForTimeout(70);
+          }
+        }finally{await send('touchEnd',[]);await input.detach();}
+        await page.keyboard.press('1');
+        const after=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),key);
+        const afterYaw=await readYaw();
+        assert(Math.hypot(after.player.x-before.player.x,after.player.z-before.player.z)>.75);
+        assert(Math.abs(afterYaw-beforeYaw)>.15);
+        const events=await page.evaluate(()=>window.gestureEvents);
+        const joystick=events.find(e=>e.id==='joystick'&&e.type==='pointerdown');
+        const world=events.find(e=>e.id==='world'&&e.type==='pointerdown');
+        assert(joystick?.pointerType==='touch'&&world?.pointerType==='touch'&&joystick.pointerId!==world.pointerId);
+        for(const contact of [joystick,world]){
+          assert(events.some(e=>e.pointerId===contact.pointerId&&e.id===contact.id&&e.type==='pointermove'));
+          assert(events.some(e=>e.pointerId===contact.pointerId&&e.id===contact.id&&e.type==='pointerup'));
+        }
+        assert(!events.some(e=>e.type==='pointercancel'));
+        await page.locator('#attack-button').tap();
+        await page.waitForTimeout(550);
+        await page.locator('#map-button').tap();
+        const map=await page.locator('#large-map').boundingBox();
+        await page.touchscreen.tap(map.x+map.width*.65,map.y+map.height*.35);
+        await page.waitForFunction(()=>document.querySelector('#toast').textContent.includes('已设置地图标记'));
+        await page.getByRole('button',{name:'清除导航标记',exact:true}).tap();
+        await page.locator('#panel-close').tap();
+        touch={start:before.player,end:after.player,beforeYaw,afterYaw,events};
+        await page.screenshot({path:path.join(out,'390-after-touch.jpg'),type:'jpeg',quality:85});
+      }
+      if(mode==='--walk-yard'||mixObserver){
+        if(mixObserver){
+          await page.waitForFunction(()=>window.mainMix.status().context==='running');
+          await page.evaluate(()=>window.mainMix.start());
+        }
         const hold=async(key,ms)=>{
           await page.keyboard.down(key);
           try{await page.waitForTimeout(ms);}finally{await page.keyboard.up(key);}
@@ -176,6 +238,23 @@ try{
         yard={porch,verge,repairYard,returned};
       }
       await page.click('#pause-button');await page.getByRole('button',{name:'保存进度',exact:true}).click();
+      if(mixObserver){
+        await page.waitForTimeout(1600);
+        mix=await page.evaluate(async url=>{
+          const recording=await window.mainMix.stop();
+          const audio=new OfflineAudioContext(2,1,48000);
+          const buffer=await audio.decodeAudioData(await(await fetch(url)).arrayBuffer());
+          let peak=0,clipped=0;
+          for(let channel=0;channel<buffer.numberOfChannels;channel++)for(const sample of buffer.getChannelData(channel)){
+            const magnitude=Math.abs(sample);peak=Math.max(peak,magnitude);if(magnitude>=1)clipped++;
+          }
+          return {recording,duration:buffer.duration,channels:buffer.numberOfChannels,sampleRate:buffer.sampleRate,peak,clipped};
+        },`/${mixFile}`);
+        mix.sha256=sha(mixFile);
+        assert.equal(mix.channels,2);assert.equal(mix.clipped,0);
+        assert(mix.duration>6&&mix.peak>.01&&mix.recording.events.some(e=>e.kind==='step'));
+        assert.deepEqual(mix.recording.errors,[]);
+      }
       const saved=await page.evaluate(key=>localStorage.getItem(key),key);
       await page.reload();await ready();
       assert.equal(await page.evaluate(key=>localStorage.getItem(key),key),saved);
@@ -210,7 +289,7 @@ try{
         assert.equal(parallelShaderCompile,false);
         assert(!imported.events.some(event=>event.name==='compile'));
       }
-      report.rows.push({width,glError,parallelShaderCompile,invalidRejected:true,importDraw,imported,continued,yard});
+      report.rows.push({width,glError,parallelShaderCompile,invalidRejected:true,importDraw,imported,continued,yard,touch,mix});
     }finally{await context.close();}
   }
   assert.deepEqual(report.logs,[]);assert.equal(sha(saveFile),report.save);report.complete=true;

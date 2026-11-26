@@ -2,13 +2,15 @@
 
 正在开发的单人 3D 海岛开放世界。中文界面，本地运行；M1 自由探索、M2 生存与营地、M3 世界内容与成长、M4 本地交付已完成功能验收，证据见 docs/M1-ACCEPTANCE.md 至 docs/M4-ACCEPTANCE.md。最终 M5 品质验收仍在推进，见 AGENT_PROGRESS.md 和 ROADMAP.md。
 
-最新本地可运行检查点：`dist/tidelands-m5-2026-11-05-camera-orbit-r2.zip`，SHA `79c84f319f64b6cf5b06c9597cdf002ea95ca5c069b8b64f042cd0e032bc7e65`。两个实际镜头输入的固定焦点转角141.10°/97.32°降为8.90°/7.32°；419规则/7打包、桌面与390旧档原生恢复、普通高地采集和真实野猪战斗/返营地恢复通过。**全局镜头质量未通过：新普通路径仍有94.24°瞬转**，三轮后停止当前路线继续小修，剩余RED与失败包保留，见 `docs/CAMERA-ORBIT-CHECKPOINT.md`。M5五项、自然动作/整体美术声音、最终性能与真机及完整3A仍未完成；所有本地包在ignored `dist/`中保留。
+当前用于收尾验收的本地包是 `dist/tidelands-m5-2026-11-23-settlement-verges.zip`，SHA-256 为 `3a650b356e43db543e5a76d6dd8cf1b636da3af86289bb430dc813eeb403cd4c`。本地包和实游记录保存在忽略提交的 `dist/` 中。重建、核验和收尾证据见 [收尾验收](docs/RELEASE-AUDIT.md)。
+
+2026-11-05 镜头历史检查点为 `dist/tidelands-m5-2026-11-05-camera-orbit-r2.zip`，SHA-256 为 `79c84f319f64b6cf5b06c9597cdf002ea95ca5c069b8b64f042cd0e032bc7e65`。两个实际镜头输入的固定焦点转角从 141.10°、97.32° 降为 8.90°、7.32°。当时的普通路径仍测到 94.24° 瞬转，原始失败留存于 `docs/CAMERA-ORBIT-CHECKPOINT.md`。
 
 代码与必要证据由Git管理，`main`同步到公开仓库 [EgoistInory/tidelands](https://github.com/EgoistInory/tidelands)。用户于2026-11-02明确确认继续同步该公开仓库；提交、推送和本地交付包的边界见 `docs/GIT-WORKFLOW.md`。
 
-当前主混音片段：真实普通营地/历史实战分支已保存30.42/34.98秒48kHz立体声录音和独立无声视频，实际采集/受击/击败/食用、静音与恢复及保存刷新通过；未试听/完整播放/AV同步或真机验收，见 `docs/MAIN-MIX-CHECKPOINT.md`。运行包保持，M5/3A仍未完成。
+2026-11-05 主混音片段保存了普通营地和实战分支的 30.42、34.98 秒 48kHz 立体声录音及独立无声视频。采集、受击、击败、食用、静音恢复和保存刷新通过，试听与音画同步仍待验收。见 `docs/MAIN-MIX-CHECKPOINT.md`。
 
-当前同包像素上限普通旅程：1080p/390高DPI实际585×1266完成614.52/601.67秒，采集/实战/林栖/营火/自然夜晚与保存刷新通过，GPU P95 14.76/9.83ms；DOM与原生堆在活动/暂停中观察到自然回收，前轮短窗疑问有了较长窗口证据，见 `docs/RUNTIME-CEILING-CHECKPOINT.md`。115.5/94ms长帧、真机/VRAM/试听和整体美术/动作仍待，未改211运行输入或上方ZIP；历史短窗证据保留在 `docs/RUNTIME-BUDGET-CHECKPOINT.md`，M5/3A仍未完成。
+2026-11-05 像素上限实走在 1080p 和 585×1266 缓冲区分别运行 614.52、601.67 秒，GPU P95 为 14.76、9.83 ms。采集、实战、林栖、营火、自然入夜及保存刷新通过。DOM 与原生堆观察到自然回收，仍有 115.5、94 ms 的长帧。见 `docs/RUNTIME-CEILING-CHECKPOINT.md` 和 `docs/RUNTIME-BUDGET-CHECKPOINT.md`。
 
 历史有限功能组：全身低物采集，33针对性/291全量与真实原生E/main结算、暂停取消通过；近距纤维/浆果/贝壳、390检视与远距手臂限伸已保存，见 `docs/LOW-GATHER-REVIEW.md`。整体自然度/远距真实接触仍待，M5和完整3A未完成。该批本地包 `dist/tidelands-m5-2026-10-23-low-gather.zip`，SHA `63501f1a6b641985928aefe6ea5fb3ddc82c13a96f6674f4f31af062aed2a3b8`；独立包普通q6接续/保存390恢复通过，见 `docs/LOW-GATHER-DELIVERY.md`。新源GPU/长时不套用旧证据。
 
@@ -38,7 +40,7 @@ python3 serve.py
 
 当前开发源码还增加低岸线起伏海浪层，与既有风声叠加、渐入内陆，并共享暂停/静音。112项测试、八组真实离线PCM和实际营地/海域接线验证通过，见 `docs/coastal-audio-review.json`；尚未试听或做完整声场品质验收。这批声音修改已进入coastal及最新state-reuse包，本地开发服务运行相同生产源码。
 
-用 `python3 tools/verify_local.py --name tidelands-m5-2026-11-05-camera-orbit-r2` 校验并单独解压当前有限检查点；`python3 tools/verify_camera_orbit_delivery.py` 核对镜头两case/普通操作/新包来源及仍然失败的全局品质记录。历史 `verify_motion_sound_delivery.py` 绑定其旧运动声音版本。旧空间/运动候选审核绑定各自原源码，不能对新源码直接重跑套作通过结论。旧资源/镜头审计继续绑定各自历史源码，不对新源码套用旧通过结论。后续构建使用 `python3 tools/package_local.py --name tidelands-m5-next --stage 'M5 quality batch checkpoint'`，每次改源码换新包名；已有包只允许相同来源的完全一致重建，拒绝覆盖历史检查点。打包工具回归运行 `python3 tools/test_local_delivery.py`。四岛正常旅程和实际战斗已有十分钟有效帧调度/JS堆记录，见 `docs/cross-island-review.json`：含间歇输入与较多静止时间，不能代替持续运动或GPU品质验收；该采样在两处岛民对话修正之前完成，绑定自己的源码SHA，不能作为当前包完全一致的长时证明。
+用 `python3 tools/verify_local.py --name tidelands-m5-2026-11-05-camera-orbit-r2` 校验并单独解压 2026-11-05 的历史镜头包；`python3 tools/verify_camera_orbit_delivery.py` 核对镜头两case/普通操作/新包来源及仍然失败的全局品质记录。历史 `verify_motion_sound_delivery.py` 绑定其旧运动声音版本。旧空间/运动候选审核绑定各自原源码，不能对新源码直接重跑套作通过结论。旧资源/镜头审计继续绑定各自历史源码，不对新源码套用旧通过结论。后续构建使用 `python3 tools/package_local.py --name tidelands-m5-next --stage 'M5 quality batch checkpoint'`，每次改源码换新包名；已有包只允许相同来源的完全一致重建，拒绝覆盖历史检查点。打包工具回归运行 `python3 tools/test_local_delivery.py`。四岛正常旅程和实际战斗已有十分钟有效帧调度/JS堆记录，见 `docs/cross-island-review.json`：含间歇输入与较多静止时间，不能代替持续运动或GPU品质验收；该采样在两处岛民对话修正之前完成，绑定自己的源码SHA，不能作为当前包完全一致的长时证明。
 
 2026-10-07后续源码增加岛民近距交谈朝向和待机手臂轻动，以及攻击/采集从装备待机姿态进入和恢复的衔接；101项测试和桌面/窄屏12秒隔离循环通过，见 `docs/islander-response-review.json` 与 `docs/action-transition-review.json`。攻击结果统一由短时战斗提示显示，消除空挥时残留旧命中提示；桌面键盘/390窄屏攻击键已实测。上述早期包不含这些后续修改，完整动作品质与声音同步仍待验收。
 
