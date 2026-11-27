@@ -65,13 +65,14 @@ WorldView.prototype.draw=function(...args){
 };`;
 const contacts=bindCampaignContacts(world);
 const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright');
-const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
+const browser=await chromium.launch({channel:process.env.PLAYWRIGHT_CHANNEL??'chromium',headless:true,args:['--use-angle=metal']});
 fs.mkdirSync(out,{recursive:true});
 try {
   for(const width of (expected==='centered'?[1280]:[1280,390])){
     const dir=path.join(out,String(width));fs.mkdirSync(dir);
     const movie=path.join(dir,'forest-route.webm');
-    const context=await browser.newContext({viewport:{width,height:width===390?844:800},recordVideo:{dir,size:{width:960,height:600}}});
+    const context=await browser.newContext({viewport:{width,height:width===390?844:800},
+      ...(!recordMix&&{recordVideo:{dir,size:{width:960,height:600}}})});
     const page=await context.newPage(),inputs=[],phases=[];
     let rest=null;
     page.on('pageerror',e=>report.logs.push(e.message));

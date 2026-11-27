@@ -15,7 +15,9 @@ const batches=frameBytes.toString().trim().split('\n').map(JSON.parse);
 const frames=batches.flatMap(b=>b.frames),gpu=batches.flatMap(b=>b.gpu),resources=batches.flatMap(b=>b.resources);
 assert.equal(frames.length,profile.timing.frames);assert.equal(gpu.length,profile.timing.completed);
 assert(frames.every(row=>row[12]===4)&&resources.every(row=>row.glError===0||(row.glError===null&&profile.glError===0)));
-assert(frameBytes.length&&raw.stoppedWall-raw.startedWall>=600000);
+const minimumDuration=raw.returnOnly?10000:600000;
+if(raw.returnOnly)assert.deepEqual(raw.phases.map(p=>p.name),['00-shoal-import','01-coast-return','02-original-camp']);
+assert(frameBytes.length&&raw.stoppedWall-raw.startedWall>=minimumDuration);
 const rounded=n=>+n.toFixed(3);
 const metric=values=>{
   const a=values.filter(Number.isFinite).sort((u,v)=>u-v);
@@ -74,6 +76,7 @@ for(const end of [...phases,{name:'profile-stop',time:Infinity}]){
   first=last;
 }
 const timing=profile.timing, matched=spikes.filter(s=>s.costs);
+const returnFrames=raw.returnOnly?frames.filter(f=>Math.hypot(f[3]+66.29146,f[4]-96.59255)<8):[];
 const summary={
   archiveSha256:raw.packageSha256,framesSha256:sha(frameBytes),frameProfileSha256:sha(read('profile.json')),
   runnerSha256:raw.runnerSha256,startingSaveSha256:raw.initialSaveSha256,
@@ -88,6 +91,8 @@ const summary={
   spikes:spikes.sort((a,b)=>b.intervalMs-a.intervalMs).slice(0,12),
   resourceSamples:{first:resources[0],last:resources.at(-1),max:Object.fromEntries(['geometries','textures','programs'].map(k=>[k,Math.max(...resources.map(a=>a[k]))]))},
   usedHeapBytes:raw.heap.map(a=>a.usedSize),phases,legs,
+  ...(raw.returnOnly?{returnOnly:true,priorStallArea:{radius:8,drawCpuMs:metric(returnFrames.map(f=>f[8])),
+    intervalMs:metric(returnFrames.map(f=>f[7]))}}:{}),
   scope:'Actual native keys and clock, production rendering and save format. Main/scene only carry time observers. Unassigned gaps can include host/browser scheduling. JS heap and renderer object counts are not VRAM.'
 };
 fs.writeFileSync(output,JSON.stringify(summary,null,2)+'\n');
