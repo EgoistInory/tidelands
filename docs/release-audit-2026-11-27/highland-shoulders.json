@@ -1,0 +1,256 @@
+{
+  "archive": "tidelands-m5-2026-11-27-highland-shoulders.zip",
+  "archiveSha256": "d15e2c51879324085689f1da5b4c85699e7c93008f3a2f1681b408459362f60c",
+  "frozenSha256": "eda207610f872495a6b4b76a6d9ccedacfb73173cb4cb41738ca72eb030a943b",
+  "filesChanged": [
+    "src/highland-ascent.js",
+    "src/landscape.js",
+    "src/meadow.js",
+    "src/scene.js"
+  ],
+  "comparison": {
+    "path": "dist/highland-shoulders-review-2026-11-27-r2",
+    "baseline": "6d9c5c0",
+    "complete": true,
+    "logs": [],
+    "rows": [
+      {
+        "width": 1280,
+        "view": "entry",
+        "before": {
+          "calls": 136,
+          "triangles": 1288223,
+          "imageSha256": "8589a27102c8ffe0a351ddb70841c579299dd8fde99823e019ff1af80fe9f4d8"
+        },
+        "after": {
+          "calls": 138,
+          "triangles": 1278067,
+          "imageSha256": "4ff6760435cd6f27f4984a37916e759fd43682b0d6119d1367a2cee74e0038ca"
+        }
+      },
+      {
+        "width": 1280,
+        "view": "ascent",
+        "before": {
+          "calls": 156,
+          "triangles": 1370387,
+          "imageSha256": "d53096931b898f123b5b9e61dc2729fecd36becd43fe7b0da1c1ad4c5525efdc"
+        },
+        "after": {
+          "calls": 158,
+          "triangles": 1360231,
+          "imageSha256": "07b9b0c05aa182d3594d573bd7b813e9211f0099c4d76949e15510eb931dc5e1"
+        }
+      },
+      {
+        "width": 1280,
+        "view": "lookout",
+        "before": {
+          "calls": 133,
+          "triangles": 1185210,
+          "imageSha256": "3a7f105d9d2a12aae7ef229612d17a493f391a88c925f142b784b21ceb3e20b8"
+        },
+        "after": {
+          "calls": 134,
+          "triangles": 1176104,
+          "imageSha256": "57d4e74f3fdb8e48c23716f2d7bafd8ed6d70aff1f5ed39a18b0ea6c3062b2c0"
+        }
+      },
+      {
+        "width": 1280,
+        "view": "night",
+        "before": {
+          "calls": 134,
+          "triangles": 1278181,
+          "imageSha256": "9881cf906e391c87249fc68a95d3a88ec3d0ecdd46fed660ccba79da2559785e"
+        },
+        "after": {
+          "calls": 135,
+          "triangles": 1267955,
+          "imageSha256": "66d986662d999cda8b22102d0160bb718937f79a51ca2282f863b21339aa2ddd"
+        }
+      },
+      {
+        "width": 390,
+        "view": "entry",
+        "before": {
+          "calls": 115,
+          "triangles": 1237280,
+          "imageSha256": "8b9fe9f636257b198e29a89d5d4afe80396ba10aa3fc6a35d9371db634402ee0"
+        },
+        "after": {
+          "calls": 116,
+          "triangles": 1228359,
+          "imageSha256": "2663639678dee8659f469153cba62936d453b82bf6fc1fc429a9036dc43ed2d3"
+        }
+      },
+      {
+        "width": 390,
+        "view": "ascent",
+        "before": {
+          "calls": 119,
+          "triangles": 1219448,
+          "imageSha256": "29d6fea667ce659adc07ebe0de1b65c3455e8ca19fedad467b3941bf1c69d1bf"
+        },
+        "after": {
+          "calls": 120,
+          "triangles": 1208627,
+          "imageSha256": "3336e84bfb8d37ac71529de24c08f437c32693042bdac1c657495cd1f23c4719"
+        }
+      },
+      {
+        "width": 390,
+        "view": "lookout",
+        "before": {
+          "calls": 103,
+          "triangles": 1081203,
+          "imageSha256": "b2b374b7ce3b63371095ecb2c4ba7274e6ae977cd84683714897a1932599c5e8"
+        },
+        "after": {
+          "calls": 103,
+          "triangles": 1071467,
+          "imageSha256": "1bb0adb9caee7bc2077abcc88097ada371bd8639af5cec2302518fdd7700f79d"
+        }
+      },
+      {
+        "width": 390,
+        "view": "night",
+        "before": {
+          "calls": 107,
+          "triangles": 1223624,
+          "imageSha256": "f8d9e311d362380d879401a17ab308f69cc840abf31067957fbea7d57bd9a937"
+        },
+        "after": {
+          "calls": 108,
+          "triangles": 1214703,
+          "imageSha256": "1bdbcb77cd48137b3321cfc4e691e32d728f8a8ee20d3cf689cd945cbe12096e"
+        }
+      }
+    ]
+  },
+  "native": {
+    "path": "dist/highland-shoulders-native-2026-11-27",
+    "scope": "Ordinary historical save, native inputs and clock. Only scene response appends read-only complete-draw GPU/CPU measurement. No video recording during timing.",
+    "complete": true,
+    "logs": [],
+    "importedSaveSha256": "f6f1c753630728201ba986ed69163ecf25cbf1dcf5c137229625654369d26117",
+    "rows": [
+      {
+        "cssWidth": 1920,
+        "ascentMeters": 24.131110919295818,
+        "dialogue": true,
+        "restore": true,
+        "glError": 0,
+        "frames": 825,
+        "gpuQueries": 103,
+        "contextLost": false,
+        "imageSha256": "0e07ba80f04d8d31bbe2c444042b96b79de4f49c901fec9e9a0f3427ecee45e5"
+      },
+      {
+        "cssWidth": 390,
+        "ascentMeters": 23.27853739555063,
+        "dialogue": true,
+        "restore": true,
+        "glError": 0,
+        "frames": 809,
+        "gpuQueries": 101,
+        "contextLost": false,
+        "imageSha256": "6dced65fcb40276d7548e551abca0f509377d70ddfabde591fa628f232a42c1a"
+      }
+    ],
+    "simulatedTouchQuest": 1
+  },
+  "tests": {
+    "game": 472,
+    "packaging": 7
+  },
+  "physicalDeviceVerified": false,
+  "fullGoalComplete": false,
+  "campaign": {
+    "path": "dist/highland-shoulders-fresh-2026-11-27",
+    "fromEmptyProfile": true,
+    "complete": true,
+    "attempts": 2,
+    "firstFailure": "No route to resource-1206: No route within budget",
+    "firstFailureReceipt": "attempt-1-raw.json",
+    "resumeFromProducedSave": true,
+    "quest": 6,
+    "kills": 12,
+    "materials": {
+      "wood": 12,
+      "stone": 8,
+      "crystal": 3
+    },
+    "explorationMeters": 17.160081165600385,
+    "reloadExact": true,
+    "exportExact": true,
+    "respawns": 0,
+    "logs": [],
+    "phases": [
+      {
+        "name": "00-fresh",
+        "quest": 0,
+        "saveSha256": "6a8e76e304129d69e7a4c8f43819c274408356c8cf9aefe8da8daad55cf19469",
+        "imageSha256": "523aeed5e8c3d0b86446160a45c868eeb9bee3057403b0740cf7c6ce0897f18e"
+      },
+      {
+        "name": "01-keeper",
+        "quest": 1,
+        "saveSha256": "6600b638c05638b85236561647872f660afad26fd868eef0b49646f867bd70c9",
+        "imageSha256": "8cbbbc3cd82bc961626e939960c8f239b30f08df8748302216aa549487a7cfcf"
+      },
+      {
+        "name": "02-axe",
+        "quest": 2,
+        "saveSha256": "697ae0bf531986b9a1315d7a6a3745c0f83892bc572be34eecd9d89c2408e7ee",
+        "imageSha256": "7a5e32d2e6da6888523a35c50058dcdf0e39346d99a47e22dafcd0bffffc1c74"
+      },
+      {
+        "name": "03-camp",
+        "quest": 3,
+        "saveSha256": "a4562d187b0a9969217cf112727a9ff8e7f24aab276294c341fa41d769750d39",
+        "imageSha256": "fadfbfb916d90ad42c4fd5b58093adb3cad70404a686c9e21dad284d97a757b8"
+      },
+      {
+        "name": "04-botanist",
+        "quest": 4,
+        "saveSha256": "7de9c88489a9abf143787c2962f56de3d7aed6fde9a6b5d3b1e5a00f9e0c2e2f",
+        "imageSha256": "829a4ffcd6a03283b3814476227f67e8a9402812b42a53a3bd3c028605eea3cb"
+      },
+      {
+        "name": "05-two-kills",
+        "quest": 4,
+        "saveSha256": "1e28870ac8bd09b7cb839c7132f2dc39b63b3b2631fdb5d9343ac47e4d0ece00",
+        "imageSha256": "919cb7e172a77f50183d1f000d65fe65f5c7c788b5021f854b0c431c1b5e6d26"
+      },
+      {
+        "name": "06-explorer",
+        "quest": 5,
+        "saveSha256": "02ff6b66a6c76a3fddf3ae86003753907a450969682c266d847fbda91a7b5199",
+        "imageSha256": "38eb352605df3694268c827afca1e5d8679b11ca7b3d918839107f71e10a530a"
+      },
+      {
+        "name": "07-lamp-materials",
+        "quest": 5,
+        "saveSha256": "6f51949399d4bb1fa6de1b25c7b33e5f62ee864bac9e7e5c920d082870c77955",
+        "imageSha256": "1364be1ae246f18f7d7041d22807fb00b698c7675157bbddd0bd7e1cef6b2f3c"
+      },
+      {
+        "name": "08-beacon",
+        "quest": 6,
+        "saveSha256": "08225bf3ce34d28e8e42ffe9f691e344011fc9d4b90862e7e67360f954d46af7",
+        "imageSha256": "6d16bd254360cd736ebdcc609877cc71b06f7713ec2d5ed6299553b4d6dc5d51"
+      },
+      {
+        "name": "09-exploration",
+        "quest": 6,
+        "saveSha256": "09e06dabdc4b904a60508da374bc9c2fb99c9e7b74c719580ac81f437f9868e3",
+        "imageSha256": "2cd98500eaa7e103a9a087c375729dae6e1e987c821034082620f127cdf0f12b"
+      }
+    ]
+  },
+  "independentServer": {
+    "loopback": true,
+    "manifestResponsesVerified": 5
+  }
+}

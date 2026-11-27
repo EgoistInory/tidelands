@@ -5,7 +5,7 @@ import {highlandAscent} from './highland-ascent.js';
 import {shoalHabitat,shoalInterior} from './shoal-habitat.js';
 
 const estuaryGravel=new THREE.Color(0x77766a),estuarySoil=new THREE.Color(0x485139);
-const ascentGravel=new THREE.Color(0xa59a83),ascentLedge=new THREE.Color(0x8d8c83),ascentHeath=new THREE.Color(0x626949);
+const ascentGravel=new THREE.Color(0xa59a83),ascentLedge=new THREE.Color(0x858b84),ascentHeath=new THREE.Color(0x536348);
 const exposedSlate=new THREE.Color(0x777f7b);
 const wetShoalSand=new THREE.Color(0x807966),shoalStrand=new THREE.Color(0x837053),duneCover=new THREE.Color(0x85885b);
 const compactSand=new THREE.Color(0xb0946b),shoalHeath=new THREE.Color(0x69764a),shoalLedge=new THREE.Color(0x8b8778);
@@ -40,9 +40,10 @@ export function landscapeSample(x,z){
   const ascent=highlandAscent(x,z,y,slope);
   if(ascent){
     const exposure=Math.max(cliff,ascent.outcrop)*(1-ascent.wear);
-    color.lerp(ascentHeath,ascent.plants*.48).lerp(ascentLedge,ascent.stone*.7)
-      .lerp(exposedSlate,ascent.outcrop).lerp(ascentGravel,ascent.wear*(.62+.14*patch));
-    return {biome,color,rock:Math.max(rock,ascent.stone*.92,exposure)*(1-ascent.wear*.46),litter,exposure};
+    color.lerp(ascentHeath,ascent.plants*.86).lerp(ascentLedge,ascent.stone*.76)
+      .lerp(exposedSlate,ascent.outcrop*(1-ascent.plants*.58)).lerp(ascentGravel,ascent.wear*(.62+.14*patch));
+    const rockFace=Math.max(rock*(1-ascent.plants*.74),ascent.stone*.90,exposure*(1-ascent.plants*.60));
+    return {biome,color,rock:rockFace*(1-ascent.wear*.46),litter,exposure};
   }
   const habitat=estuaryHabitat(x,z,y,slope);
   if(!habitat)return {biome,color,rock:Math.max(rock,cliff),litter,exposure:cliff};
@@ -50,7 +51,31 @@ export function landscapeSample(x,z){
   return {biome,color,rock:Math.max(rock,habitat.bedrock*.87),litter:Math.max(litter,habitat.shelter*.48),exposure:0};
 }
 
-export function createShoreStones({highland=false}={}){
+function createSlateFragments(){
+  const edge=[[-1,-.26],[-.63,-.78],[.54,-.70],[1,.13],[.41,.73],[-.54,.57]];
+  const base=edge.map(([x,z])=>[x,-.85,z]);
+  const top=edge.map(([x,z],i)=>[x*.87,[.55,.65,.9,.74,.47,.61][i],z*.84]);
+  const ridge=[.12,1,-.12],positions=[],uvs=[],colors=[];
+  const face=(a,b,c,shade)=>{
+    for(const [x,y,z] of [a,b,c]){
+      positions.push(x,y,z);uvs.push((x+1)*.5,(z+1)*.5);colors.push(shade,shade,shade);
+    }
+  };
+  for(let i=0;i<edge.length;i++){
+    const j=(i+1)%edge.length;
+    face(ridge,top[j],top[i],i<3?.94:1);
+    face(top[i],top[j],base[i],.84);
+    face(top[j],base[j],base[i],.84);
+  }
+  const geometry=new THREE.BufferGeometry();
+  geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));
+  geometry.setAttribute('uv',new THREE.Float32BufferAttribute(uvs,2));
+  geometry.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));
+  geometry.computeVertexNormals();geometry.computeBoundingBox();
+  return geometry;
+}
+
+export function createShoreStones({highland=false,rockSurface}={}){
   const random=randomGenerator(61549),regions=new Map(),dummy=new THREE.Object3D();
   const geometry=new THREE.IcosahedronGeometry(1,1);geometry.computeBoundingBox();
   const material=new THREE.MeshStandardMaterial({vertexColors:false,roughness:.95});
@@ -73,20 +98,29 @@ export function createShoreStones({highland=false}={}){
       add(x,z,color);
     }
   }
-  // Buried scree uses the same mesh and camp clearance as the shore gravel.
+  // Low exposed plates follow the existing hill contour and share its rock texture.
   const scree=randomGenerator(3621);
-  if(highland)for(let gx=-102;gx<=-53;gx+=1.2)for(let gz=-198;gz<=-146;gz+=1.2){
-    const x=gx+(scree()-.5),z=gz+(scree()-.5),y=terrain(x,z);
-    const slope=Math.hypot(terrain(x+.5,z)-terrain(x-.5,z),terrain(x,z+.5)-terrain(x,z-.5));
+  const slate=highland?createSlateFragments():null;
+  const slateMaterial=rockSurface??material;
+  const tangent=new THREE.Vector3(),normal=new THREE.Vector3(),depth=new THREE.Vector3(),basis=new THREE.Matrix4();
+  if(highland)for(let gx=-103;gx<=-49;gx+=1.75)for(let gz=-201;gz<=-146;gz+=1.75){
+    const x=gx+(scree()-.5)*1.65,z=gz+(scree()-.5)*1.65,y=terrain(x,z);
+    const dx=terrain(x+.5,z)-terrain(x-.5,z),dz=terrain(x,z+.5)-terrain(x,z-.5),slope=Math.hypot(dx,dz);
     const ascent=highlandAscent(x,z,y,slope);
-    if(!ascent||ascent.wear>.16||ascent.stone<.4||scree()>.48*ascent.stone)continue;
-    const size=.28+scree()*.53;
-    dummy.position.set(x,y-.09,z);dummy.rotation.set(0,scree()*Math.PI*2,0);
-    dummy.scale.set(size,.14+scree()*.17,size*.63);dummy.updateMatrix();
-    add(x,z,ascentLedge.clone().multiplyScalar(.63+scree()*.30),'highland-scree');
+    if(!ascent||ascent.wear>.11||ascent.stone<.31||scree()>.93*ascent.stone)continue;
+    const size=.42+scree()*.95;
+    normal.set(-dx,1,-dz).normalize();
+    if(slope>.001)tangent.set(dz,0,-dx).normalize();else tangent.set(1,0,0);
+    depth.crossVectors(tangent,normal);
+    dummy.quaternion.setFromRotationMatrix(basis.makeBasis(tangent,normal,depth));
+    dummy.rotateY((scree()-.5)*.47);
+    dummy.position.set(x,y-.16,z);
+    dummy.scale.set(size,.18+scree()*.19,size*(.37+scree()*.22));dummy.updateMatrix();
+    add(x,z,ascentLedge.clone().multiplyScalar(.61+scree()*.43),'highland-scree');
   }
   return [...regions.values()].map(({name,entries})=>{
-    const batch=new THREE.InstancedMesh(geometry,material,entries.length);batch.name=name;batch.receiveShadow=true;
+    const isSlate=name==='highland-scree';
+    const batch=new THREE.InstancedMesh(isSlate?slate:geometry,isSlate?slateMaterial:material,entries.length);batch.name=name;batch.receiveShadow=true;
     entries.forEach((e,i)=>{batch.setMatrixAt(i,e.matrix);batch.setColorAt(i,e.color);});batch.computeBoundingBox();batch.computeBoundingSphere();return batch;
   });
 }

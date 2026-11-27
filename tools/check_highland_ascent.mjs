@@ -28,7 +28,7 @@ if(profileRoute)report.scope='Ordinary historical save, native inputs and clock.
 if(measureMotion)report.scope='Ordinary saved state and native ascent. Scene response adds read-only motion samples, audio response adds an isolated stereo recorder. Sound and silent video are separate captures.';
 const contacts=bindCampaignContacts(world);
 const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright');
-const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
+const browser=await chromium.launch({channel:process.env.PLAYWRIGHT_CHANNEL??'chromium',headless:true,args:['--use-angle=metal']});
 fs.mkdirSync(out,{recursive:true});
 try{
   for(const width of [1280,390]){

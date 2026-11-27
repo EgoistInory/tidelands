@@ -20,7 +20,7 @@ const html=fs.readFileSync('tests/regional-landform-review.html','utf8')
   .replace('state.time=240;', 'state.time=Number(document.body.dataset.time||240);')
   .replace('window.regionalReview={reset,snapshot,move,sites};','window.regionalReview={reset,snapshot,view};');
 const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright');
-const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
+const browser=await chromium.launch({channel:process.env.PLAYWRIGHT_CHANNEL??'chromium',headless:true,args:['--use-angle=metal']});
 try{
   for(const width of [1280,390])for(const variant of ['before','after']){
     const context=await browser.newContext({viewport:{width,height:width===390?844:800}});

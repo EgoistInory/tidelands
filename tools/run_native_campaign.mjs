@@ -51,7 +51,7 @@ async function defend(){
   await heal();await walk(directionTo(enemy),80);await press(state.inventory.axe||state.inventory.sword?'2':'1');await press('Space');await page.waitForTimeout(660);await observe();enemy=state.enemies.find(e=>e.id===enemy.id);if(Math.hypot(enemy.x-state.player.x,enemy.z-state.player.z)>12)break;
  }journal({event:'encounter-ended',enemy:enemy.id,enemyHp:enemy.hp,kills:state.kills,hp:state.player.hp});
 }
-async function go(target,{interact=false}={}){
+async function go(target,{interact=false,skipUnreachable=false}={}){
  let stalled=0;
  for(let i=0;i<420;i++){
   await observe();await heal();await defend();
@@ -64,7 +64,10 @@ async function go(target,{interact=false}={}){
    if(!interact||nearest(state,world.objects)?.id===target.id)return;
    const before={...state.player};await walk(directionTo(target),100);await observe();if(Math.hypot(state.player.x-before.x,state.player.z-before.z)<.03){stalled++;if(stalled>=3)return;}continue;
   }
-  if(!route.key)throw Error(`No route to ${target.id??target.type}: ${route.error}`);
+  if(!route.key){
+   if(skipUnreachable){journal({event:'resource-became-unreachable',id:target.id,error:route.error});return false;}
+   throw Error(`No route to ${target.id??target.type}: ${route.error}`);
+  }
   const before={...state.player};await walk(route.key,route.durationMs);await observe();const moved=Math.hypot(state.player.x-before.x,state.player.z-before.z);stalled=moved<.05?stalled+1:0;
   if(stalled===2){const alternatives=['a','d','s','w'].filter(k=>k!==route.key);await walk(alternatives[0],350);}
   if(stalled>=4)throw Error(`Native movement stalled near ${target.id}`);
@@ -85,7 +88,8 @@ async function gather(type,minimum){
    return false;
   });
   assert(target,`No ${type} candidate within the bounded planner search`);
-  await go(target,{interact:true});const prior=state.inventory[item];let label=await page.locator('#interact-label').textContent();const expected={tree:'木材',stone:'石料',crystal:'晶石',berry:'浆果'}[type];
+  if(await go(target,{interact:true,skipUnreachable:true})===false){skipped.add(target.id);continue;}
+  const prior=state.inventory[item];let label=await page.locator('#interact-label').textContent();const expected={tree:'木材',stone:'石料',crystal:'晶石',berry:'浆果'}[type];
   for(let n=0;n<3&&!label.includes(expected);n++){await walk(directionTo(target),100);await observe();label=await page.locator('#interact-label').textContent();}
   await press('e');await page.waitForTimeout(570);await observe();journal({event:'native-gather',planned:target.id,kind:type,before:prior,after:state.inventory[item],label,toast:await page.locator('#toast').textContent()});if(state.inventory[item]===prior)skipped.add(target.id);
  }assert(state.inventory[item]>=minimum,`Collection budget exhausted: ${item}`);

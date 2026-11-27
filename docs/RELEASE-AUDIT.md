@@ -4,9 +4,9 @@
 
 ## 运行与复现
 
-当前包是 `dist/tidelands-m5-2026-11-27-contact-readability.zip`，SHA-256 为 `eda207610f872495a6b4b76a6d9ccedacfb73173cb4cb41738ca72eb030a943b`。解压进入 `tidelands-local`，运行 `python3 serve.py` 并打开终端显示的本地地址。需要 Python 3 及支持 WebGL 2 的浏览器。
+冻结包是 `dist/tidelands-m5-2026-11-27-contact-readability.zip`，SHA-256 为 `eda207610f872495a6b4b76a6d9ccedacfb73173cb4cb41738ca72eb030a943b`。解压进入 `tidelands-local`，运行 `python3 serve.py` 并打开终端显示的本地地址。需要 Python 3 及支持 WebGL 2 的浏览器。
 
-从当前源码可用以下命令重建和独立解压校验。已独立校验 221 个运行文件及交付清单。源代码和关键验收记录存入 Git，运行包及完整原始输出存入本地 `dist/`。
+若需重建冻结包，在提交 `6d9c5c0` 的独立工作树运行下列命令。已独立校验 221 个运行文件及交付清单。源代码和关键验收记录存入 Git，运行包及完整原始输出存入本地 `dist/`。
 
 ```sh
 python3 tools/package_local.py --name tidelands-m5-2026-11-27-contact-readability \
@@ -74,13 +74,13 @@ python3 tools/verify_local.py --name tidelands-m5-2026-11-27-contact-readability
 
 该版从既有第 5 步存档点亮灯塔，扣除 12 木材、8 石料、3 晶石。结局后继续走 17.99 米，刷新回读一致。390×844 Chrome 模拟双触点同时移动 3.83 米和转镜 17.19°，并实测攻击、地图标记、导出和拒绝损坏存档。472 项游戏测试和 7 项打包测试通过。[该版实走与操作回归](release-audit-2026-11-27/contact-mix-regression.json)
 
-## 当前包的夜间接触反馈
+## 冻结包的夜间接触反馈
 
 林地第一击时，玩家和潮蟹水平相距约 2.23 米，横向投影只差约 3 像素。旧的全壳橙色发光压平了近身时的甲壳细节。新版让潮蟹和野猪的命中发光沿用现有程序化材质贴图，分别跟随甲壳和皮毛纹理。仅 `src/creature.js` 与 `src/creature-surface.js` 变化，使用同一组纹理和绘制通道。
 
 桌面及窄屏导入同一林地实走档，实际采集浆果并击败潮蟹，保存、刷新和完整导出均通过。对第一击的同一帧，保持镜头、骨骼与光照位置，将原发光、新发光及关闭发光三种材质分别绘制取样。两种发光覆盖同一可见表面。新版在命中高亮期间仍能看见甲壳纹理，发光也明显高于关闭发光的对照。观察范围为真实潮蟹遭遇，夜间野猪实战和其他方向的遮挡仍待核验。[同帧画面对照](release-audit-2026-11-27/night-contact-comparison.jpg)
 
-当前包从既有第 5 步档再次点亮灯塔，扣除原定材料，结局后探索 16.57 米并刷新完整恢复。窄屏 Chrome 双触点同时移动 3.37 米并转镜 17.19°，攻击、地图标记、导出和损坏档拒绝通过。472 项游戏测试及 7 项打包测试通过。现以此包继续从零主线及四岛持续实测。本轮实体手机尚未接入，真机和整段品质审计保留为 M5 待验。[新版回归与原始记录索引](release-audit-2026-11-27/night-contact-regression.json)
+冻结包从既有第 5 步档再次点亮灯塔，扣除原定材料，结局后探索 16.57 米并刷新完整恢复。窄屏 Chrome 双触点同时移动 3.37 米并转镜 17.19°，攻击、地图标记、导出和损坏档拒绝通过。472 项游戏测试及 7 项打包测试通过。这个包随后通过从零主线及四岛持续实测，结果见下文。实体手机尚未接入，真机和整段品质审计保留为 M5 待验。[夜间反馈回归与原始记录索引](release-audit-2026-11-27/night-contact-regression.json)
 
 ## 冻结包从零主线
 
@@ -105,3 +105,21 @@ python3 tools/verify_local.py --name tidelands-m5-2026-11-27-contact-readability
 两趟没有死亡回跳、页面异常或 WebGL 上下文丢失。桌面与窄屏分别完成 4410 和 4508 次完整绘制计时，全部查询资源均释放。旧包返营所见的 239.3 ms 绘制长帧未在此样本复现；当前两端的最大帧间隔主要落在游戏帧回调外。JS 堆在运行中反复回落，窄屏尾样本比首样本高 18.3 MB，属于本次离散采样，显存未测。原始帧、输入和阶段存档留在 `dist/release-audit-2026-11-27-frozen-{desktop,narrow}/`。[桌面明细](release-audit-2026-11-27/frozen-four-island-desktop.json) [窄屏明细](release-audit-2026-11-27/frozen-four-island-narrow.json)
 
 浅滩夜色中仍能辨认海岸、水线、旅人与两只野猪。窄屏高地的主角、交谈目标和触控入口可见，坡体大面上的重复纹理和规则分布碎石仍削弱地形层次。本轮双触点证据来自同包的 Chrome 模拟。验收机未接入实体手机，真机触控、音频实际播放和整段体验仍待。M5 整体验收开放。[桌面浅滩夜景](release-audit-2026-11-27/frozen-desktop-shoal.jpg) [窄屏雾岬高地](release-audit-2026-11-27/frozen-narrow-lookout.jpg)
+
+## 雾岬高地候选包
+
+`d15e2c51` 候选包用贴坡的片状露岩和成簇草丛改善整段登坡。沿高度和坡度分布的露岩与草丛衔接现有踏径，复用岩石材质和植被模型。地形高度、碰撞和任务仍使用原有规则。与 `eda20761` 冻结包的 221 个运行文件逐项对比，变化限于地形外观、散布和场景绑定的四个模块。
+
+桌面及 390×844 模拟窄屏的八组 HDR 对照使用相同镜头、时间和地形高度。近处的踏径、草丛和薄岩比旧坡面更容易区分，远坡的大面纹理仍较单一。按每帧四遍绘制统计，三角面数减少约 8900–10800，绘制调用增加 0–2 次。[桌面对照](release-audit-2026-11-27/highland-shoulders-desktop-comparison.jpg) [窄屏对照](release-audit-2026-11-27/highland-shoulders-narrow-comparison.jpg)
+
+在解压候选包内从既有存档下到岸线，再走回瞭望点。桌面及模拟窄屏分别上升 24.13 和 23.28 米，与远舟交谈、保存、刷新并原生导出均通过。窄屏点按阿岚也推进到任务 1。全程无页面异常、WebGL 错误或上下文丢失。472 项游戏测试和 7 项打包测试通过。[窄屏实玩](release-audit-2026-11-27/highland-shoulders-native-lookout.jpg) [候选包验收记录](release-audit-2026-11-27/highland-shoulders.json)
+
+候选包也从空白档走完六步主线。第一轮采石时验收脚本遇到无法规划路线的采集点，失败记录保留在 `dist/highland-shoulders-fresh-2026-11-27/attempt-1-raw.json`。加入有界的采集点切换后，从这轮自己生成的存档恢复并完成到灯塔的原生操作。灯塔实际扣除 12 木材、8 石料、3 晶石，结局后探索 17.16 米，累计击败 12 只生物，零死亡回跳或页面错误。刷新和游戏内导出均完整恢复。
+
+候选包的 `serve.py` 独立启动通过，入口和四个变更模块的 HTTP 响应与清单 SHA-256 一致。可从当前源码重建候选包。真机触控、实际听感和全地图品质仍待验收，本批截图和短程实玩覆盖雾岬高地。
+
+```sh
+python3 tools/package_local.py --name tidelands-m5-2026-11-27-highland-shoulders \
+  --stage 'M5 highland slope composition candidate'
+python3 tools/verify_local.py --name tidelands-m5-2026-11-27-highland-shoulders
+```

@@ -245,7 +245,7 @@ export class WorldView{
     this.islanders=[];
     for(const o of LANDMARKS){const g=landmarkModel(o,this.rockSurface);if(o.type!=='npc'){this.cameraForegroundRoots??=[];this.cameraForegroundRoots.push(g);}g.position.set(o.x,terrain(o.x,o.z),o.z);if(o.type==='ruin')this.cameraObstacles.push({object:o,boxes:g.userData.cameraBoxes.map(box=>box.clone().translate(g.position))});if(o.type==='npc'){animateCharacter(g,{x:o.x,z:o.z,yaw:0,time:0,attackAt:-100,selected:'hand'},0,terrain);this.islanders.push({object:o,model:g});}this.scene.add(g);if(o.type==='lighthouse')this.lighthouse=g;}
     const random=randomGenerator(4321);
-    this.meadow=[...createMeadow(random,this.world.objects,this.groundHeight,{settlement:true,highland:true,shoal:true}),...createShoreStones({highland:true})];this.scene.add(...this.meadow);
+    this.meadow=[...createMeadow(random,this.world.objects,this.groundHeight,{settlement:true,highland:true,shoal:true}),...createShoreStones({highland:true,rockSurface:this.rockSurface})];this.scene.add(...this.meadow);
     this.fishingYard=createFishingYard();this.scene.add(this.fishingYard.root);
     this.yardCameraBoxes=FISHING_YARD.boxes.map(([a,b])=>new THREE.Box3(new THREE.Vector3(...a),new THREE.Vector3(...b)));
     this.sky=createSky();this.scene.add(this.sky);

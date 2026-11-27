@@ -279,15 +279,15 @@ function createShoreCover(groundHeight,highland,shoal){
     dummy.scale.set(scale,scale*(1.13+reed*.42),scale);dummy.updateMatrix();
     matrices.push(dummy.matrix.clone());colors.push(reedColor.clone().multiplyScalar(.84+random()*.16));
   }
-  const heath=randomGenerator(53128),heathTone=new THREE.Color(0xb4b18b),heathMatrices=[],heathColors=[];
-  if(highland)for(let x=-102;x<=-53;x+=1.15)for(let z=-198;z<=-146;z+=1.15){
-    const px=x+(heath()-.5),pz=z+(heath()-.5),height=terrain(px,pz);
+  const heath=randomGenerator(53128),heathTone=new THREE.Color(0xa3b28d),heathMatrices=[],heathColors=[];
+  if(highland)for(let x=-103;x<=-49;x+=1.1)for(let z=-199;z<=-146;z+=1.1){
+    const px=x+(heath()-.5)*1.05,pz=z+(heath()-.5)*1.05,height=terrain(px,pz);
     const slope=Math.hypot(terrain(px+.5,pz)-terrain(px-.5,pz),terrain(px,pz+.5)-terrain(px,pz-.5));
     const ascent=highlandAscent(px,pz,height,slope);
-    if(!ascent||ascent.wear>.22||ascent.plants<.45||heath()>.8*ascent.plants)continue;
-    const scale=.85+heath()*.77;
+    if(!ascent||ascent.wear>.16||ascent.plants<.45||heath()>.94*ascent.plants)continue;
+    const scale=1.16+heath()*.85;
     dummy.position.set(px,height-.04,pz);dummy.rotation.set(0,heath()*Math.PI*2,0);
-    dummy.scale.set(scale,scale*.58,scale);dummy.updateMatrix();
+    dummy.scale.set(scale,scale*.67,scale);dummy.updateMatrix();
     heathMatrices.push(dummy.matrix.clone());heathColors.push(heathTone.clone().multiplyScalar(.8+heath()*.23));
   }
   const duneRandom=randomGenerator(29017),duneTint=new THREE.Color(0xc3b482),duneMatrices=[],duneColors=[];
