@@ -19,7 +19,9 @@ test('confirmed wood, rock and soft pickups have distinct bounded physical cues'
   assert.ok(stone.frequency>wood.frequency*2,'stone must not sound like the same filtered wood hit');
   assert.ok(leaf.level<wood.level&&leaf.length<wood.length,'a soft pickup must not have the axe impact envelope');
   for(const surface of ['tree','stone','crystal','berry','fiber','shell','unknown']){
-    const r=sample(a,'gather',{surface});assert.ok(r.frequency>=100&&r.frequency<=4000&&r.length>0&&r.length<.5&&r.level<=.55);
+    const r=sample(a,'gather',{surface});
+    assert.ok(r.frequency>=100&&r.frequency<=4000&&r.length>0&&r.length<.5);
+    assert.ok(r.level>0&&r.level<=.45*3,'the gathering envelope stays within the contact gain ceiling');
   }
 });
 test('weapon swing and confirmed shell/flesh hit preserve their physical identity',()=>{

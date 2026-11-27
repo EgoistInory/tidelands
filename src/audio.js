@@ -121,7 +121,11 @@ export class GameAudio{
     else if(kind==='hurt'){frequency=95;length=.34;peak=.50;}
     if(tone){node.type='sine';node.frequency.setValueAtTime(kind==='quest'?440:kind==='craft'?660:330,now);node.frequency.exponentialRampToValueAtTime(kind==='quest'?880:440,now+length);}else node.buffer=this.noise;
     filter.type=tone?'lowpass':'bandpass';filter.frequency.value=frequency;filter.Q.value=.7;
-    gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(peak*level,now+(windup?.04:.008));gain.gain.exponentialRampToValueAtTime(.0001,now+length);
+    // Bring confirmed contacts forward in the mix while preserving their envelope and distance falloff.
+    const contactGain=kind==='gather'||kind==='hit'?3:1;
+    gain.gain.setValueAtTime(0,now);
+    gain.gain.linearRampToValueAtTime(peak*level*contactGain,now+(windup?.04:.008));
+    gain.gain.exponentialRampToValueAtTime(.0001*contactGain,now+length);
     const spatial=!tone&&(windup||Number.isFinite(pan))&&ctx.createStereoPanner?ctx.createStereoPanner():null;
     node.connect(filter);filter.connect(gain);
     if(spatial){spatial.pan.setValueAtTime(Number.isFinite(pan)?Math.max(-.85,Math.min(.85,pan)):0,now);gain.connect(spatial);spatial.connect(this.master);}else gain.connect(ui?this.ui:this.master);

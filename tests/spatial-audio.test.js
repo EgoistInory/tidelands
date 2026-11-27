@@ -24,11 +24,15 @@ test('spatial effect routes and releases one bounded panner; muted cues allocate
   assert.equal(panner.pan.value,0);[...a.sources][0].onended();assert.ok(panner.disconnected);
   a.effect('enemy-windup',{volume:0});assert.equal(made,2);a.enabled=false;a.effect('enemy-windup',{pan:1});assert.equal(made,2);
   a.enabled=true;
-  for(const [kind,pan] of [['gather',0],['hit',-.55]]){
-    a.effect(kind,{pan,volume:.9});
-    assert.equal(panner.pan.value,pan);
+  for(const [kind,options,expectedPeak] of [
+    ['gather',{pan:0,surface:'berry'},.648],
+    ['hit',{pan:-.55,enemyType:'crab'},1.134],
+  ]){
+    a.effect(kind,{...options,volume:.9});
+    assert.equal(panner.pan.value,options.pan);
     const source=[...a.sources][0];
     assert.equal(source.target.target.target,panner);
+    assert.ok(Math.abs(source.target.target.gain.peak-expectedPeak)<1e-12);
     source.onended();
   }
   assert.equal(made,4);

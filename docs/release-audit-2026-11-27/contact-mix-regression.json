@@ -1,0 +1,844 @@
+{
+  "archiveSha256": "673155bd8ed9b32c4487b62b90f0a893d2f90a2a6e62f136a0d13e9f282528ad",
+  "baselineArchiveSha256": "3a650b356e43db543e5a76d6dd8cf1b636da3af86289bb430dc813eeb403cd4c",
+  "forestSeedSha256": "420d8d26d0e919f84bda1c8550036a6d4050c95663ca07c0ae7304d2cc978499",
+  "captures": [
+    {
+      "width": 1280,
+      "nativeReport": {
+        "path": "dist/release-audit-2026-11-27-contact-mix-native/report.json",
+        "sha256": "0ac15a7c8e5ae63fa455dbbcb327e0b34a9c3a5313c2c7fdf239fe91b588287d"
+      },
+      "current": {
+        "width": 1280,
+        "phases": [
+          {
+            "label": "00-start",
+            "player": {
+              "x": 112.9563189999983,
+              "z": -22.18711151512753,
+              "hp": 100,
+              "stamina": 100,
+              "yaw": -0.4766429070330268
+            },
+            "kills": 20,
+            "wood": 4,
+            "berry": 17,
+            "image": "00-start.jpg"
+          },
+          {
+            "label": "01-gather",
+            "player": {
+              "x": 112.49571922096287,
+              "z": -35.07155879871534,
+              "hp": 100,
+              "stamina": 100,
+              "yaw": 2.110262699157284
+            },
+            "kills": 20,
+            "wood": 4,
+            "berry": 19,
+            "image": "01-gather.jpg"
+          },
+          {
+            "label": "02-encounter",
+            "player": {
+              "x": 139.303367690885,
+              "z": -45.86009387725269,
+              "hp": 93,
+              "stamina": 100,
+              "yaw": -2.991592653589793
+            },
+            "kills": 21,
+            "wood": 4,
+            "berry": 20,
+            "image": "02-encounter.jpg"
+          },
+          {
+            "label": "03-camp",
+            "player": {
+              "x": -68.56101715766381,
+              "z": 102.45921279367636,
+              "hp": 100,
+              "stamina": 100,
+              "yaw": 0.15000000000000002
+            },
+            "kills": 21,
+            "wood": 4,
+            "berry": 20,
+            "image": "03-camp.jpg"
+          }
+        ],
+        "cues": {
+          "sounds": [
+            {
+              "kind": "gather",
+              "options": {
+                "surface": "berry",
+                "pan": 0.7770845452217204,
+                "volume": 0.9876593962522511
+              },
+              "played": true,
+              "wall": 6179.800000000745
+            },
+            {
+              "kind": "hit",
+              "options": {
+                "enemyType": "crab",
+                "pan": 0.15738088142484277,
+                "volume": 1
+              },
+              "played": true,
+              "wall": 11612.300000000745
+            },
+            {
+              "kind": "hit",
+              "options": {
+                "enemyType": "crab",
+                "pan": 0.23038784719856487,
+                "volume": 1
+              },
+              "played": true,
+              "wall": 12395.5
+            }
+          ],
+          "impacts": [
+            {
+              "id": "resource-170",
+              "kind": "berry",
+              "x": 114.8830231372267,
+              "y": 13.844977416527291,
+              "z": -36.50084836408496,
+              "floor": 13.494977416527291,
+              "time": 1996.8980000003307,
+              "wall": 6179.89999999851,
+              "spawned": true,
+              "drawAt": 6186,
+              "activeParticles": 6
+            },
+            {
+              "id": "enemy-37",
+              "kind": "hit",
+              "x": 139.51003325132592,
+              "y": 25.261082466174425,
+              "z": -46.59460894402482,
+              "floor": 24.111082466174427,
+              "time": 2002.3312000003034,
+              "wall": 11612.300000000745,
+              "spawned": true,
+              "drawAt": 11618.199999999255,
+              "activeParticles": 6
+            },
+            {
+              "id": "enemy-37",
+              "kind": "hit",
+              "x": 139.44614801283964,
+              "y": 25.38748044626334,
+              "z": -47.00119587955684,
+              "floor": 24.23748044626334,
+              "time": 2003.1145000003003,
+              "wall": 12395.5,
+              "spawned": true,
+              "drawAt": 12400.5,
+              "activeParticles": 6
+            }
+          ],
+          "windups": [
+            {
+              "visible": true,
+              "time": 2001.9646000003054,
+              "wall": 11251.199999999255,
+              "buffer": [
+                1280,
+                800
+              ],
+              "centre": [
+                0.0018435943564320267,
+                -0.2608039604948985,
+                0.9745178965216962
+              ]
+            },
+            {
+              "visible": false,
+              "time": 2002.2812000003037,
+              "wall": 11567.699999999255,
+              "buffer": [
+                1280,
+                800
+              ],
+              "centre": [
+                0.010995790449002214,
+                -0.2994374068313373,
+                0.9737741349630441
+              ]
+            }
+          ],
+          "resourceSuppressed": 19
+        },
+        "rest": {
+          "before": 51,
+          "after": 100
+        },
+        "restored": true,
+        "savedSha256": "fe7bfb5e322fd458b167ac65465fd0340b75fd3dea958ab84d972a64e2626205",
+        "glError": 0,
+        "recording": {
+          "width": 1280,
+          "height": 800,
+          "seconds": 117.42,
+          "channels": 2,
+          "peak": 0.034565433859825134,
+          "clipped": 0,
+          "bytes": 23979656,
+          "sha256": "cd40d2db2df928a20855524417fd8e26c389f40a74f64f2dc74899bad051034c",
+          "contacts": [
+            {
+              "kind": "gather",
+              "target": "resource-170",
+              "soundToDrawMs": 6.199999999254942,
+              "pan": 0.7770845452217204,
+              "particles": 6
+            },
+            {
+              "kind": "hit",
+              "target": "enemy-37",
+              "soundToDrawMs": 5.899999998509884,
+              "pan": 0.15738088142484277,
+              "particles": 6
+            },
+            {
+              "kind": "hit",
+              "target": "enemy-37",
+              "soundToDrawMs": 5,
+              "pan": 0.23038784719856487,
+              "particles": 6
+            }
+          ],
+          "capturedSeconds": 117.664
+        }
+      },
+      "firstElevenSeconds": {
+        "baseline": {
+          "path": "dist/release-audit-2026-11-27-forest-av/1280/forest-route.webm",
+          "sha256": "cf61c36acf063299788805e0071ec560fd1dc8a17152ad5dfb1b7d8bca952a95",
+          "meanDbFS": -55.1,
+          "peakDbFS": -35.7
+        },
+        "current": {
+          "path": "dist/release-audit-2026-11-27-contact-mix-native/1280/forest-route.webm",
+          "sha256": "cd40d2db2df928a20855524417fd8e26c389f40a74f64f2dc74899bad051034c",
+          "meanDbFS": -54.6,
+          "peakDbFS": -29.2
+        }
+      }
+    },
+    {
+      "width": 390,
+      "nativeReport": {
+        "path": "dist/release-audit-2026-11-27-contact-mix-narrow-r2/report.json",
+        "sha256": "c1caf3040b54c56352948ae70f3b8ba3a0b04b0612897304116dd620ec2719f1"
+      },
+      "current": {
+        "width": 390,
+        "phases": [
+          {
+            "label": "00-start",
+            "player": {
+              "x": 112.9563189999983,
+              "z": -22.18711151512753,
+              "hp": 100,
+              "stamina": 100,
+              "yaw": -0.4766429070330268
+            },
+            "kills": 20,
+            "wood": 4,
+            "berry": 17,
+            "image": "00-start.jpg"
+          },
+          {
+            "label": "01-gather",
+            "player": {
+              "x": 112.49481786782286,
+              "z": -35.07283847153176,
+              "hp": 100,
+              "stamina": 100,
+              "yaw": 2.109701728954791
+            },
+            "kills": 20,
+            "wood": 4,
+            "berry": 19,
+            "image": "01-gather.jpg"
+          },
+          {
+            "label": "02-encounter",
+            "player": {
+              "x": 139.4035621314732,
+              "z": -45.87926129452621,
+              "hp": 93,
+              "stamina": 100,
+              "yaw": -2.991592653589793
+            },
+            "kills": 21,
+            "wood": 4,
+            "berry": 20,
+            "image": "02-encounter.jpg"
+          },
+          {
+            "label": "03-camp",
+            "player": {
+              "x": -69.09956646496502,
+              "z": 101.63832375549147,
+              "hp": 100,
+              "stamina": 100,
+              "yaw": 0.15
+            },
+            "kills": 21,
+            "wood": 4,
+            "berry": 20,
+            "image": "03-camp.jpg"
+          }
+        ],
+        "cues": {
+          "sounds": [
+            {
+              "kind": "gather",
+              "options": {
+                "surface": "berry",
+                "pan": 0.7772877533707107,
+                "volume": 0.9876557683430508
+              },
+              "played": true,
+              "wall": 5451.5
+            },
+            {
+              "kind": "hit",
+              "options": {
+                "enemyType": "crab",
+                "pan": 0.13080747556485983,
+                "volume": 1
+              },
+              "played": true,
+              "wall": 10868.20000000298
+            },
+            {
+              "kind": "hit",
+              "options": {
+                "enemyType": "crab",
+                "pan": 0.20013152816557472,
+                "volume": 1
+              },
+              "played": true,
+              "wall": 11651.300000000745
+            }
+          ],
+          "impacts": [
+            {
+              "id": "resource-170",
+              "kind": "berry",
+              "x": 114.8830231372267,
+              "y": 13.844977416527291,
+              "z": -36.50084836408496,
+              "floor": 13.494977416527291,
+              "time": 1996.8316000003297,
+              "wall": 5451.60000000149,
+              "spawned": true,
+              "drawAt": 5457.300000000745,
+              "activeParticles": 6
+            },
+            {
+              "id": "enemy-37",
+              "kind": "hit",
+              "x": 139.5757144722003,
+              "y": 25.2826658812092,
+              "z": -46.59386600498789,
+              "floor": 24.132665881209203,
+              "time": 2002.248000000304,
+              "wall": 10868.20000000298,
+              "spawned": true,
+              "drawAt": 10873.300000000745,
+              "activeParticles": 6
+            },
+            {
+              "id": "enemy-37",
+              "kind": "hit",
+              "x": 139.5042654238911,
+              "y": 25.417846785108807,
+              "z": -47.024843612343744,
+              "floor": 24.26784678510881,
+              "time": 2003.0313000003007,
+              "wall": 11651.400000002235,
+              "spawned": true,
+              "drawAt": 11656,
+              "activeParticles": 6
+            }
+          ],
+          "windups": [
+            {
+              "visible": true,
+              "time": 2001.8814000003053,
+              "wall": 10506.20000000298,
+              "buffer": [
+                390,
+                844
+              ],
+              "centre": [
+                0.004201935830642205,
+                -0.26229391714894873,
+                0.9745007000116057
+              ]
+            },
+            {
+              "visible": false,
+              "time": 2002.198100000304,
+              "wall": 10823.20000000298,
+              "buffer": [
+                390,
+                844
+              ],
+              "centre": [
+                0.04061733054563479,
+                -0.30053096026386716,
+                0.9737475109771011
+              ]
+            }
+          ],
+          "resourceSuppressed": 19
+        },
+        "rest": {
+          "before": 79,
+          "after": 100
+        },
+        "restored": true,
+        "savedSha256": "846de093b55009553333fcb7beecf2bc646719ed015fbc5a556c2e54c6989770",
+        "glError": 0,
+        "recording": {
+          "width": 390,
+          "height": 844,
+          "seconds": 106.5,
+          "channels": 2,
+          "peak": 0.039347223937511444,
+          "clipped": 0,
+          "bytes": 19419705,
+          "sha256": "20650ac3e4d860a5d58417e18b28696df2239219df41e1045d9ec448ea295a26",
+          "contacts": [
+            {
+              "kind": "gather",
+              "target": "resource-170",
+              "soundToDrawMs": 5.800000000745058,
+              "pan": 0.7772877533707107,
+              "particles": 6
+            },
+            {
+              "kind": "hit",
+              "target": "enemy-37",
+              "soundToDrawMs": 5.099999997764826,
+              "pan": 0.13080747556485983,
+              "particles": 6
+            },
+            {
+              "kind": "hit",
+              "target": "enemy-37",
+              "soundToDrawMs": 4.699999999254942,
+              "pan": 0.20013152816557472,
+              "particles": 6
+            }
+          ],
+          "capturedSeconds": 106.51733333333334
+        }
+      },
+      "firstElevenSeconds": {
+        "baseline": {
+          "path": "dist/release-audit-2026-11-27-forest-av/390/forest-route.webm",
+          "sha256": "58498ad69e2c7535accd06cde0e1e48f696cc11cd11d3ea6a650949480dd53af",
+          "meanDbFS": -55.0,
+          "peakDbFS": -35.9
+        },
+        "current": {
+          "path": "dist/release-audit-2026-11-27-contact-mix-narrow-r2/390/forest-route.webm",
+          "sha256": "20650ac3e4d860a5d58417e18b28696df2239219df41e1045d9ec448ea295a26",
+          "meanDbFS": -54.7,
+          "peakDbFS": -28.1
+        }
+      }
+    }
+  ],
+  "desktopExcerpt": {
+    "path": "docs/release-audit-2026-11-27/forest-contact-mix.webm",
+    "sha256": "b1364c70247c8e57f0010824c3eb601e543dd24d43bde16fae2b781e259d57c4"
+  },
+  "narrowCaptureAttempt1": {
+    "reason": [
+      "Recorder backpressure: chunk rejected"
+    ],
+    "status": {
+      "path": "dist/release-audit-2026-11-27-contact-mix-native/390/mix-status.json",
+      "sha256": "4b6a137060bbc816af7eaffec1d25a6ac6db00c953172466c34b2e3e4e197fbf"
+    },
+    "serialRetryPassed": true
+  },
+  "legacyEnding": {
+    "report": {
+      "path": "dist/release-audit-2026-11-27-contact-mix-ending/raw.json",
+      "sha256": "a7f84e37862b17218e785d4a93c7ba8ba894a84e7d5b363a41ec1eedb0f62bdc"
+    },
+    "stages": [
+      {
+        "name": "00-imported",
+        "save": "00-imported-save.json",
+        "saveSha256": "041d754b8f2d6b214f71010b8de4478683771cfc5e3f95d5a07453a9c74802f0",
+        "image": "00-imported.png",
+        "imageSha256": "8b8ead4f4213a08cca9058346a815f8162941a41ba854a05abfb70934ef818c8",
+        "quest": 5,
+        "kills": 10,
+        "time": 650.3827999998695,
+        "player": {
+          "x": -71.93420667822949,
+          "z": -214.58080259705696,
+          "hp": 66,
+          "stamina": 100,
+          "yaw": -2.3045363985883274
+        },
+        "inventory": {
+          "wood": 13,
+          "stone": 10,
+          "fiber": 20,
+          "berry": 9,
+          "shell": 0,
+          "crystal": 3,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "built-0-18988",
+            "type": "campfire",
+            "x": -73.06273408212543,
+            "z": 106.72297401425469
+          }
+        ],
+        "discovered": [
+          "潮汐海岸",
+          "群岛海域",
+          "苍翠林地",
+          "雾岬高地"
+        ],
+        "ui": {
+          "title": "让灯塔重新发光",
+          "hp": 66,
+          "toast": "存档已导入。",
+          "hidden": false,
+          "glError": 0,
+          "viewport": [
+            1280,
+            800
+          ],
+          "buffer": [
+            1280,
+            800
+          ]
+        }
+      },
+      {
+        "name": "07-lamp-materials",
+        "save": "07-lamp-materials-save.json",
+        "saveSha256": "9ebac61296b2f88cad59b4e1ac5ff37c8d16d7d851ee3fd7ae16721f11177440",
+        "image": "07-lamp-materials.png",
+        "imageSha256": "1c77a447f7bfcc5b47320680419c41a6640b58aaa102ee2bd6b82f3d755b6305",
+        "quest": 5,
+        "kills": 10,
+        "time": 650.6993999998699,
+        "player": {
+          "x": -71.93420667822949,
+          "z": -214.58080259705696,
+          "hp": 66,
+          "stamina": 100,
+          "yaw": -2.3045363985883274
+        },
+        "inventory": {
+          "wood": 13,
+          "stone": 10,
+          "fiber": 20,
+          "berry": 9,
+          "shell": 0,
+          "crystal": 3,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "built-0-18988",
+            "type": "campfire",
+            "x": -73.06273408212543,
+            "z": 106.72297401425469
+          }
+        ],
+        "discovered": [
+          "潮汐海岸",
+          "群岛海域",
+          "苍翠林地",
+          "雾岬高地"
+        ],
+        "ui": {
+          "title": "让灯塔重新发光",
+          "hp": 66,
+          "toast": "存档已导入。",
+          "hidden": false,
+          "glError": 0,
+          "viewport": [
+            1280,
+            800
+          ],
+          "buffer": [
+            1280,
+            800
+          ]
+        }
+      },
+      {
+        "name": "08-beacon",
+        "save": "08-beacon-save.json",
+        "saveSha256": "7c715feb82520d3cbefb44206079dbec7d55c6051daacf3c13056f2a4c5ee570",
+        "image": "08-beacon.png",
+        "imageSha256": "465ede59d327678a59d92b5d0ecdb84782051cb7f16e13cccbef0f588e2e6637",
+        "quest": 6,
+        "kills": 12,
+        "time": 683.5980999999132,
+        "player": {
+          "x": -90.56441358150279,
+          "z": -58.315844612399985,
+          "hp": 63,
+          "stamina": 100,
+          "yaw": -1.4207963267948966
+        },
+        "inventory": {
+          "wood": 1,
+          "stone": 2,
+          "fiber": 24,
+          "berry": 10,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "built-0-18988",
+            "type": "campfire",
+            "x": -73.06273408212543,
+            "z": 106.72297401425469
+          }
+        ],
+        "discovered": [
+          "潮汐海岸",
+          "群岛海域",
+          "苍翠林地",
+          "雾岬高地"
+        ],
+        "ui": {
+          "title": "群岛，再次相连",
+          "hp": 63,
+          "toast": "灯塔亮了！远处传来船鸣，群岛再次相连。主线已完成，可以继续自由探索。\n归航灯塔已被修复，主线完成！你可以继续自由探索。",
+          "hidden": false,
+          "glError": 0,
+          "viewport": [
+            1280,
+            800
+          ],
+          "buffer": [
+            1280,
+            800
+          ]
+        }
+      },
+      {
+        "name": "09-exploration",
+        "save": "09-exploration-save.json",
+        "saveSha256": "d1db4e03da600f56b378ffef77fd6a54799ef9a604d68e722dec17ed83bc0312",
+        "image": "09-exploration.png",
+        "imageSha256": "e3a581a3c2f3cae990e059c6dd38e231c95ef331ce65db1c9f00c8f6aac4bfb9",
+        "quest": 6,
+        "kills": 12,
+        "time": 687.7312999999174,
+        "player": {
+          "x": -102.12017217657339,
+          "z": -44.534220849488186,
+          "hp": 63,
+          "stamina": 100,
+          "yaw": -1.4207963267948966
+        },
+        "inventory": {
+          "wood": 1,
+          "stone": 2,
+          "fiber": 24,
+          "berry": 10,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "built-0-18988",
+            "type": "campfire",
+            "x": -73.06273408212543,
+            "z": 106.72297401425469
+          }
+        ],
+        "discovered": [
+          "潮汐海岸",
+          "群岛海域",
+          "苍翠林地",
+          "雾岬高地"
+        ],
+        "ui": {
+          "title": "群岛，再次相连",
+          "hp": 63,
+          "toast": "灯塔亮了！远处传来船鸣，群岛再次相连。主线已完成，可以继续自由探索。\n归航灯塔已被修复，主线完成！你可以继续自由探索。",
+          "hidden": false,
+          "glError": 0,
+          "viewport": [
+            1280,
+            800
+          ],
+          "buffer": [
+            1280,
+            800
+          ]
+        }
+      }
+    ],
+    "materialCost": {
+      "wood": 12,
+      "stone": 8,
+      "crystal": 3
+    },
+    "postEndingDistance": 17.98523589642358,
+    "reloadExact": true,
+    "positionChangeDuringImport": {
+      "wall": 1795742190020,
+      "event": "observed-position-jump",
+      "from": {
+        "x": -70,
+        "z": 102,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "to": {
+        "x": -71.93420667822949,
+        "z": -214.58080259705696,
+        "hp": 66,
+        "stamina": 100,
+        "yaw": -2.3045363985883274
+      }
+    },
+    "finalSave": {
+      "path": "dist/release-audit-2026-11-27-contact-mix-ending/final-save.json",
+      "sha256": "a6efb8b6515bcfc5852cc541c8b57c781ebc4d8607d6d0e74a522b6e757127ca"
+    }
+  },
+  "simulatedTwoTouch": {
+    "report": {
+      "path": "dist/release-audit-2026-11-27-contact-mix-touch/report.json",
+      "sha256": "3808dc0e3bb4efb3b5320d548979418c8fdbccecd2ccee2d46b9014d4db35183"
+    },
+    "movementM": 3.830954246565696,
+    "cameraTurnDeg": 17.188733853924695,
+    "touch": {
+      "start": {
+        "x": -46.00116743636531,
+        "z": 85.86318677915428,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "end": {
+        "x": -42.25756177316553,
+        "z": 86.67659140032278,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 1.2296118671978822
+      },
+      "beforeYaw": 0.15,
+      "afterYaw": -0.15,
+      "events": [
+        {
+          "id": "joystick",
+          "type": "pointerdown",
+          "pointerId": 2,
+          "pointerType": "touch"
+        },
+        {
+          "id": "joystick",
+          "type": "pointermove",
+          "pointerId": 2,
+          "pointerType": "touch"
+        },
+        {
+          "id": "world",
+          "type": "pointerdown",
+          "pointerId": 3,
+          "pointerType": "touch"
+        },
+        {
+          "id": "world",
+          "type": "pointermove",
+          "pointerId": 3,
+          "pointerType": "touch"
+        },
+        {
+          "id": "world",
+          "type": "pointermove",
+          "pointerId": 3,
+          "pointerType": "touch"
+        },
+        {
+          "id": "world",
+          "type": "pointermove",
+          "pointerId": 3,
+          "pointerType": "touch"
+        },
+        {
+          "id": "world",
+          "type": "pointermove",
+          "pointerId": 3,
+          "pointerType": "touch"
+        },
+        {
+          "id": "world",
+          "type": "pointermove",
+          "pointerId": 3,
+          "pointerType": "touch"
+        },
+        {
+          "id": "joystick",
+          "type": "pointerup",
+          "pointerId": 2,
+          "pointerType": "touch"
+        },
+        {
+          "id": "world",
+          "type": "pointerup",
+          "pointerId": 3,
+          "pointerType": "touch"
+        }
+      ]
+    },
+    "validRestore": true,
+    "corruptSaveRejected": true
+  },
+  "gameTests": {
+    "passed": 472,
+    "receipt": {
+      "path": "dist/release-audit-2026-11-27-contact-mix-pcm/game-tests-r2.tap",
+      "sha256": "41a8a46cd51e1d71bb47d41311653bc75880af1392c5cd7d8c29f3f6f74c1d55"
+    }
+  },
+  "packageTests": {
+    "passed": 7
+  }
+}

@@ -8,8 +8,10 @@ import {assertCameraRestoreEvidence} from './camera_policy_qa.mjs';
 
 const [name,out,history,expected='spatial',...checks]=process.argv.slice(2);
 const recordMix=checks.includes('--record-mix'),checkWindup=checks.includes('--check-windup');
+const narrowOnly=checks.includes('--narrow-only');
 assert(/^[a-zA-Z0-9_-]+$/.test(name)&&out&&!fs.existsSync(out));
 assert(['centered','spatial'].includes(expected));
+assert(!narrowOnly||expected==='spatial');
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 const root=`dist/${name}/tidelands-local`,key='tidelands-save-v1',origin='http://127.0.0.1:4190';
 const manifest=JSON.parse(fs.readFileSync(`dist/${name}.json`));
@@ -68,7 +70,8 @@ const {chromium}=await import(process.env.PLAYWRIGHT_PACKAGE??'playwright');
 const browser=await chromium.launch({channel:process.env.PLAYWRIGHT_CHANNEL??'chromium',headless:true,args:['--use-angle=metal']});
 fs.mkdirSync(out,{recursive:true});
 try {
-  for(const width of (expected==='centered'?[1280]:[1280,390])){
+  const widths=narrowOnly?[390]:expected==='centered'?[1280]:[1280,390];
+  for(const width of widths){
     const dir=path.join(out,String(width));fs.mkdirSync(dir);
     const movie=path.join(dir,'forest-route.webm');
     const context=await browser.newContext({viewport:{width,height:width===390?844:800},

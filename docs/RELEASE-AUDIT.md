@@ -4,21 +4,23 @@
 
 ## 运行与复现
 
-当前包是 `dist/tidelands-m5-2026-11-23-settlement-verges.zip`，SHA-256 为 `3a650b356e43db543e5a76d6dd8cf1b636da3af86289bb430dc813eeb403cd4c`。解压进入 `tidelands-local`，运行 `python3 serve.py` 并打开终端显示的本地地址。需要 Python 3 及支持 WebGL 2 的浏览器。
+当前包是 `dist/tidelands-m5-2026-11-27-contact-mix.zip`，SHA-256 为 `673155bd8ed9b32c4487b62b90f0a893d2f90a2a6e62f136a0d13e9f282528ad`。解压进入 `tidelands-local`，运行 `python3 serve.py` 并打开终端显示的本地地址。需要 Python 3 及支持 WebGL 2 的浏览器。
 
-从源码可用以下命令重建和独立解压校验。2026-11-27 重建得到相同 SHA-256，独立验过 221 个运行文件及交付清单。源代码和关键验收记录存入 Git，运行包及完整原始输出存入本地 `dist/`。
+从当前源码可用以下命令重建和独立解压校验。已独立校验 221 个运行文件及交付清单。源代码和关键验收记录存入 Git，运行包及完整原始输出存入本地 `dist/`。
 
 ```sh
-python3 tools/package_local.py --name tidelands-m5-2026-11-23-settlement-verges \
-  --stage 'M5 porch and repair yard ground continuity'
-python3 tools/verify_local.py --name tidelands-m5-2026-11-23-settlement-verges
+python3 tools/package_local.py --name tidelands-m5-2026-11-27-contact-mix \
+  --stage 'M5 action contact mix'
+python3 tools/verify_local.py --name tidelands-m5-2026-11-27-contact-mix
 ```
 
-## 当前证据
+## 基线包证据
 
-| 范围 | 当前包和已知缺口 |
+以下基线证据来自 `tidelands-m5-2026-11-23-settlement-verges.zip`（SHA-256 `3a650b356e43db543e5a76d6dd8cf1b636da3af86289bb430dc813eeb403cd4c`），对应源版本 `3c6671c`。新版的定向复验见文末。
+
+| 范围 | 基线包和已知缺口 |
 | --- | --- |
-| 主线与交付 | 当前包从空白进度出发，经本轮自己的存档续跑，完成采集、石斧、营火、跨岛对话、战斗、点亮灯塔。通关后继续走了 18.32 米，刷新保留完整存档。独立旧档路线也到达结局，并核对扣除 12 木材、8 石料、3 晶石。 |
+| 主线与交付 | 从空白进度出发，经本轮自己的存档续跑，完成采集、石斧、营火、跨岛对话、战斗、点亮灯塔。通关后继续走了 18.32 米，刷新保留完整存档。独立旧档路线也到达结局，并核对扣除 12 木材、8 石料、3 晶石。 |
 | 导入、恢复与窄屏 | 390×844、DPR 1.5 的 Chrome 模拟双触点接触，角色移动 3.60 米、实际镜头水平转动 17.19°。真实触控事件完成摇杆、镜头、攻击按钮、地图标记及存档恢复。真实移动设备待验。 |
 | 美术、环境、动作与反馈 | 当前包灯塔画面有结局提示及取景证据。坡顶远景、近处建筑表面与角色过渡动作仍需做整段品质判断。结局提示重复显示一条同义消息，已记录。 |
 | 声场与性能 | 门廊至渔作院的原声 7.44 秒，48 kHz 双声道，峰值 .01185，零削波。16 次脚步全部使用草地声，行走与路面过渡的听感待核对。四岛连续实测见下文。启动和导入的长尾、实体设备表现仍待验。 |
@@ -52,7 +54,7 @@ python3 tools/verify_local.py --name tidelands-m5-2026-11-23-settlement-verges
 
 同包导入实际四岛路线的浅滩留档，两次在独立桌面浏览器中沿浅滩、过海点、西岸和原营火走完约 48 秒。两次都覆盖原长帧坐标 8 米内的区域，区内绘制最大值为 47.0 和 6.1 ms，全程显示帧间隔最大值为 67.2 和 68.4 ms。营火恢复、刷新和完整再导出均通过。未复现 239.3 ms 的长帧。短路线从导入开始，与前次连续游玩八分多钟时的资源状态有差异。保留长帧原始证据，优先推进余下收尾。[第一轮](release-audit-2026-11-27/return-camp-r1.json) [第二轮](release-audit-2026-11-27/return-camp-r2.json)
 
-使用 `TIDELANDS_ROUTE_PROFILE=1 JOURNEY_WIDTH=1920` 后运行 `tools/run_settlement_forest_journey.mjs`，依次传入新输出目录、当前包名、`--return-camp` 和原始 `08b-shoal-inner-rise-save.json`。同一摘要工具按模式校验短程或完整长跑。
+使用 `TIDELANDS_ROUTE_PROFILE=1 JOURNEY_WIDTH=1920` 后运行 `tools/run_settlement_forest_journey.mjs`，依次传入新输出目录、基线包名、`--return-camp` 和原始 `08b-shoal-inner-rise-save.json`。同一摘要工具按模式校验短程或完整长跑。
 
 ## 同包林地声画
 
@@ -60,4 +62,12 @@ python3 tools/verify_local.py --name tidelands-m5-2026-11-23-settlement-verges
 
 桌面录像前 11 秒包含采集、潮蟹蓄力及两次命中。逐帧可见后退与交战反馈，也可见林下暗处的采集动作偏小，近身玩家与潮蟹的轮廓短暂重叠。两趟未调整音量的原始录像前 11 秒平均约 −55 dBFS，峰值约 −36 dBFS，需复核动作声音在环境床中的响度。可查看保留原混音响度的 720×450 摘录。完整原录屏及输入、混音事件和恢复档保留在本地 `dist/release-audit-2026-11-27-forest-av/`。[林地采集和命中摘录](release-audit-2026-11-27/forest-contact-clip.webm)
 
-后续用同一场景集中处理角色接触可读性和动作响度，再核对实体手机的触控、声画与稳定性。本机本轮未检出可用的实体手机。局部路面、岩石轮廓和偶发重复提示已列为品质待办。M5 整体验收仍开放。
+局部路面、岩石轮廓和偶发重复提示已列为品质待办。
+
+## 当前包的动作接触声
+
+采集成功和确认命中的声音独立提高，沿用原有音色、包络、方向和距离衰减。两包逐文件比较只有 `src/audio.js` 变化。固定种子的 48 kHz 双声道对照中，采集和命中声的单独信号提高 9.54 dB。警告、脚步、菜单声和环境声的对照一致。九个命中声同时叠加三种成功提示，仍只有 12 个声源，峰值 0.199，结束后全部释放。快速暂停或静音再恢复后，原瞬态的样本窗为零。[双声道 PCM 对照](release-audit-2026-11-27/contact-mix-pcm.json)
+
+桌面和窄屏从同一原生林地存档实际采集浆果、击败潮蟹、返营休息、刷新和重新导出。完整录像分别为 117.42 和 106.50 秒，均无削波。前 11 秒的实录峰值，桌面由 −35.7 提高至 −29.2 dBFS，窄屏由 −35.9 提高至 −28.1 dBFS。六次采集或命中由声源启动到对应绘制返回为 4.7–6.2 ms。首次窄屏因录像缓冲积压丢弃一块，原始失败已保留，串行单测通过。[新版录像摘录](release-audit-2026-11-27/forest-contact-mix.webm)
+
+新版另外从既有第 5 步存档确实点亮灯塔，扣除 12 木材、8 石料、3 晶石。结局后继续走 17.99 米，刷新回读一致。390×844 Chrome 模拟双触点同时移动 3.83 米和转镜 17.19°，也实测攻击、地图标记、导出和拒绝损坏存档。472 项游戏测试和 7 项打包测试通过。当前包从零的整段主线及四岛长跑待最后冻结时复核。夜间角色接触可读性、实体手机与实际试听仍待审，M5 整体验收开放。[新版实走与操作回归](release-audit-2026-11-27/contact-mix-regression.json)
