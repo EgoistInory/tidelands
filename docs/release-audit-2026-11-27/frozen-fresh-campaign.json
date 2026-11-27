@@ -1,0 +1,569 @@
+{
+  "archiveSha256": "eda207610f872495a6b4b76a6d9ccedacfb73173cb4cb41738ca72eb030a943b",
+  "runnerSha256": "63e603d6e3f59e69721e4c9b6e4491ed54e9d6a992dce0d4dd5cdd4919e96aac",
+  "scope": "Unmodified packaged index in a fresh isolated browser context. No init script, route replacement, game-state injection, clock change or teleport. Own ordinary saves are read after actual slot-1 input. Pure Node planning on copied save observations. Not physical device, audition or GPU acceptance.",
+  "attempt": 1,
+  "fromEmptyProfile": true,
+  "phases": [
+    {
+      "name": "00-fresh",
+      "save": "00-fresh-save.json",
+      "saveSha256": "4ba2ecf77d1d7bb04fee8c4805f99a26f38cf2c006f181b5908f670831905f5c",
+      "image": "00-fresh.png",
+      "imageSha256": "0bce24e774509eeff64ab859498b3b786052c9adf229166faf8bd6627bf10ffe",
+      "quest": 0,
+      "kills": 0,
+      "time": 120.08170000000149,
+      "player": {
+        "x": -70,
+        "z": 102,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 0,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [],
+      "discovered": [
+        "潮汐海岸"
+      ],
+      "ui": {
+        "title": "归航的灯火",
+        "hp": 100,
+        "toast": "欢迎来到群岛。向守灯人走去，靠近后按 E 交谈。",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "01-keeper",
+      "save": "01-keeper-save.json",
+      "saveSha256": "fbfb2aca430b92b38404fe399efc151eb47af95ac0658768bcde9a7167ac6912",
+      "image": "01-keeper.png",
+      "imageSha256": "9659da3821bb89173da1933b19caa6f12d82ba8f3281aee27457c4d8941d5cf1",
+      "quest": 1,
+      "kills": 0,
+      "time": 122.81490000000133,
+      "player": {
+        "x": -60.15028209836293,
+        "z": 95.8169475371651,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 1.7207963267948967
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 0,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [],
+      "discovered": [
+        "潮汐海岸"
+      ],
+      "ui": {
+        "title": "荒野的第一把工具",
+        "hp": 100,
+        "toast": "阿岚：风暴熄灭了归航灯塔。先采些木材和石料，做一把石斧，我们会需要它。\n新的目标：荒野的第一把工具",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "02-axe",
+      "save": "02-axe-save.json",
+      "saveSha256": "6820d053699747788651bd49933db14f575e334a30f228a46fa3e4c150a389e2",
+      "image": "02-axe.png",
+      "imageSha256": "7fd07b73cc77cd5d10f968d15b366d24f1079de18639123ac9515b385db95e2a",
+      "quest": 2,
+      "kills": 0,
+      "time": 134.04780000000284,
+      "player": {
+        "x": -70.65538539072487,
+        "z": 115.29027503137617,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0.9328886669248243
+      },
+      "inventory": {
+        "wood": 0,
+        "stone": 1,
+        "fiber": 0,
+        "berry": 3,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [],
+      "discovered": [
+        "潮汐海岸"
+      ],
+      "ui": {
+        "title": "在岛上安一个家",
+        "hp": 100,
+        "toast": "制作完成：石斧\n新的目标：在岛上安一个家",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "03-camp",
+      "save": "03-camp-save.json",
+      "saveSha256": "808942e97d95b09d73d0ae14d0ceb1e29376ffdb5f552c8c4353bc4d3a1db275",
+      "image": "03-camp.png",
+      "imageSha256": "9fe7157d180a2f47465a67d3c0fd18fd5ec803845764d968c27649eb795b9aff",
+      "quest": 3,
+      "kills": 1,
+      "time": 189.02890000001304,
+      "player": {
+        "x": -72.36578625972528,
+        "z": 100.20682751353846,
+        "hp": 76,
+        "stamina": 100,
+        "yaw": -2.991592653589793
+      },
+      "inventory": {
+        "wood": 13,
+        "stone": 10,
+        "fiber": 2,
+        "berry": 4,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18872",
+          "type": "campfire",
+          "x": -73.26241505456687,
+          "z": 94.2742010459222
+        }
+      ],
+      "discovered": [
+        "潮汐海岸"
+      ],
+      "ui": {
+        "title": "林间的来信",
+        "hp": 76,
+        "toast": "建造完成：营火\n新的目标：林间的来信",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "04-botanist",
+      "save": "04-botanist-save.json",
+      "saveSha256": "c7c43287e9d98427e889b32d7cc0e988237311cf8012995c58232d6708635609",
+      "image": "04-botanist.png",
+      "imageSha256": "980c32c14511297e36c2e806ee581a42a83ac3f10887b0e135eb4536e63d3dc1",
+      "quest": 4,
+      "kills": 4,
+      "time": 292.6579999999704,
+      "player": {
+        "x": 129.0515298023282,
+        "z": -25.973322337711068,
+        "hp": 62,
+        "stamina": 100,
+        "yaw": 1.7207963267948967
+      },
+      "inventory": {
+        "wood": 13,
+        "stone": 10,
+        "fiber": 8,
+        "berry": 10,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18872",
+          "type": "campfire",
+          "x": -73.26241505456687,
+          "z": 94.2742010459222
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地"
+      ],
+      "ui": {
+        "title": "雾岬的回声",
+        "hp": 62,
+        "toast": "林栖：雾岬高地上有能点亮灯塔的晶石。野兽守着山路，击退两只，再去找航海家远舟。送你一些浆果。\n新的目标：雾岬的回声",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "05-two-kills",
+      "save": "05-two-kills-save.json",
+      "saveSha256": "75650f8eea031981560aaca5fe674916a32016c7f0c2d280eaa1580c8acadc62",
+      "image": "05-two-kills.png",
+      "imageSha256": "584040ed1481c19c81e847b8def657cd4b0f3a308c0416150ae9da5f3a154af3",
+      "quest": 4,
+      "kills": 4,
+      "time": 292.8913999999703,
+      "player": {
+        "x": 129.0515298023282,
+        "z": -25.973322337711068,
+        "hp": 62,
+        "stamina": 100,
+        "yaw": 1.7207963267948967
+      },
+      "inventory": {
+        "wood": 13,
+        "stone": 10,
+        "fiber": 8,
+        "berry": 10,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18872",
+          "type": "campfire",
+          "x": -73.26241505456687,
+          "z": 94.2742010459222
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地"
+      ],
+      "ui": {
+        "title": "雾岬的回声",
+        "hp": 62,
+        "toast": "林栖：雾岬高地上有能点亮灯塔的晶石。野兽守着山路，击退两只，再去找航海家远舟。送你一些浆果。\n新的目标：雾岬的回声",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "06-explorer",
+      "save": "06-explorer-save.json",
+      "saveSha256": "6e28e779bdca70fc0990eeca11b28da10bc2ce67dfcc3eb6afba1c6a6f61bd5d",
+      "image": "06-explorer.png",
+      "imageSha256": "04bbc50c1facaf18c7f4e97786b8427f344cca6ce9b543da2b05e3b98c4de201",
+      "quest": 5,
+      "kills": 7,
+      "time": 654.4435999997816,
+      "player": {
+        "x": -71.52143577061614,
+        "z": -187.40984141101973,
+        "hp": 73,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "inventory": {
+        "wood": 13,
+        "stone": 10,
+        "fiber": 14,
+        "berry": 10,
+        "shell": 0,
+        "crystal": 1,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18872",
+          "type": "campfire",
+          "x": -73.26241505456687,
+          "z": 94.2742010459222
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "让灯塔重新发光",
+        "hp": 73,
+        "toast": "远舟：你已经能独自穿过荒野了。这块晶石送给你；带齐材料，回去修复灯塔吧。\n新的目标：让灯塔重新发光",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "07-lamp-materials",
+      "save": "07-lamp-materials-save.json",
+      "saveSha256": "ada570f5ce11a1bb00498b0477fb4a5c1a438641d6b06201342ec13111193412",
+      "image": "07-lamp-materials.png",
+      "imageSha256": "f042e852c5b37806de5153dfee46ce0ff2d8fe57c7ee92570e706356aee15eb8",
+      "quest": 5,
+      "kills": 9,
+      "time": 671.0262999997315,
+      "player": {
+        "x": -57.18340068609616,
+        "z": -210.80988115789776,
+        "hp": 67,
+        "stamina": 100,
+        "yaw": 2.177845232831356
+      },
+      "inventory": {
+        "wood": 13,
+        "stone": 10,
+        "fiber": 18,
+        "berry": 9,
+        "shell": 0,
+        "crystal": 3,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18872",
+          "type": "campfire",
+          "x": -73.26241505456687,
+          "z": 94.2742010459222
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "让灯塔重新发光",
+        "hp": 67,
+        "toast": "晶石 +1",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "08-beacon",
+      "save": "08-beacon-save.json",
+      "saveSha256": "b7e81204db87da70f363fa0867432148830796b392b4d04f8469cd6e8407292a",
+      "image": "08-beacon.png",
+      "imageSha256": "207852a35194096a3376dda12d93ac1fe7435cfa317d27ea8346d78f8c488068",
+      "quest": 6,
+      "kills": 12,
+      "time": 708.0247999996202,
+      "player": {
+        "x": -90.95505741391305,
+        "z": -57.863215497739944,
+        "hp": 75,
+        "stamina": 100,
+        "yaw": -1.4207963267948966
+      },
+      "inventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 24,
+        "berry": 10,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18872",
+          "type": "campfire",
+          "x": -73.26241505456687,
+          "z": 94.2742010459222
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "群岛，再次相连",
+        "hp": 75,
+        "toast": "灯塔亮了！远处传来船鸣，群岛再次相连。主线已完成，可以继续自由探索。\n归航灯塔已被修复，主线完成！你可以继续自由探索。",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    },
+    {
+      "name": "09-exploration",
+      "save": "09-exploration-save.json",
+      "saveSha256": "2249c2be0abbefc4c08525add1e3a7c78c2efdb8feb62de41610d9ec523dff4f",
+      "image": "09-exploration.png",
+      "imageSha256": "b4e2d232fa7d115e7ae1f9f9fdfe384da182c96ecf33ca7861377710c79fa992",
+      "quest": 6,
+      "kills": 12,
+      "time": 711.34129999961,
+      "player": {
+        "x": -101.17450335632176,
+        "z": -44.284971538002,
+        "hp": 75,
+        "stamina": 100,
+        "yaw": 0.15000000000000002
+      },
+      "inventory": {
+        "wood": 1,
+        "stone": 2,
+        "fiber": 24,
+        "berry": 10,
+        "shell": 0,
+        "crystal": 0,
+        "axe": 1,
+        "sword": 0,
+        "meal": 0
+      },
+      "buildings": [
+        {
+          "id": "built-0-18872",
+          "type": "campfire",
+          "x": -73.26241505456687,
+          "z": 94.2742010459222
+        }
+      ],
+      "discovered": [
+        "潮汐海岸",
+        "群岛海域",
+        "苍翠林地",
+        "雾岬高地"
+      ],
+      "ui": {
+        "title": "群岛，再次相连",
+        "hp": 75,
+        "toast": "灯塔亮了！远处传来船鸣，群岛再次相连。主线已完成，可以继续自由探索。\n归航灯塔已被修复，主线完成！你可以继续自由探索。",
+        "hidden": false,
+        "glError": 0,
+        "viewport": [
+          1280,
+          800
+        ],
+        "buffer": [
+          1280,
+          800
+        ]
+      }
+    }
+  ],
+  "lanternMaterialCost": {
+    "wood": 12,
+    "stone": 8,
+    "crystal": 3
+  },
+  "postEndingDistanceM": 16.99428681645611,
+  "reloadExact": true,
+  "normalizedLiveExportExact": true,
+  "logs": [],
+  "respawns": 0,
+  "packagedServer": {
+    "localBind": "127.0.0.1",
+    "status": 200,
+    "checkedPaths": [
+      "/",
+      "/src/main.js",
+      "/delivery-manifest.json"
+    ]
+  },
+  "evidenceDirectory": "dist/release-audit-2026-11-27-frozen-fresh",
+  "rawSha256": "05b1fa2d1d71f26ab8a1d80f4864ae954e905b141f3f26a4fc6090cea401f176",
+  "inputLogSha256": "57a96c7d7b16e7113464860ecd21c87ada181cca0f7f0809878fbfb41d950928",
+  "finalSaveSha256": "80b5211ddf1a30b81e1ff380ed055a80073ac79950a862b8c43cf5d061da314a",
+  "restoredNativeExportSha256": "133e49501f44c630f6736517eedaa141cd275fd4520becc4d8a3d1f14c03fae7",
+  "endingImageSha256": "942627147f5a904681fa05ac64d6df7b171beb37cac6198a3accbd6d457a3edb"
+}

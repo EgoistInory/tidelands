@@ -81,3 +81,9 @@ python3 tools/verify_local.py --name tidelands-m5-2026-11-27-contact-readability
 桌面及窄屏导入同一林地实走档，实际采集浆果并击败潮蟹，保存、刷新和完整导出均通过。对第一击的同一帧，保持镜头、骨骼与光照位置，将原发光、新发光及关闭发光三种材质分别绘制取样。两种发光覆盖同一可见表面。新版在命中高亮期间仍能看见甲壳纹理，发光也明显高于关闭发光的对照。观察范围为真实潮蟹遭遇，夜间野猪实战和其他方向的遮挡仍待核验。[同帧画面对照](release-audit-2026-11-27/night-contact-comparison.jpg)
 
 当前包从既有第 5 步档再次点亮灯塔，扣除原定材料，结局后探索 16.57 米并刷新完整恢复。窄屏 Chrome 双触点同时移动 3.37 米并转镜 17.19°，攻击、地图标记、导出和损坏档拒绝通过。472 项游戏测试及 7 项打包测试通过。现以此包继续从零主线及四岛持续实测。本轮实体手机尚未接入，真机和整段品质审计保留为 M5 待验。[新版回归与原始记录索引](release-audit-2026-11-27/night-contact-regression.json)
+
+## 冻结包从零主线
+
+从空白浏览器档一次实走完成六步主线。通过游戏界面采集木石、制作石斧、摆放营火、跨岛对话、战斗与修复灯塔。终态击败 12 只生物，灯塔扣除 12 木材、8 石料、3 晶石。结局后继续走 16.99 米，原地保存和刷新回读逐字一致，继续游玩菜单导出的存档与恢复后的完整状态一致。全程无死亡回跳、页面报错或 WebGL 错误。另验证包内 `serve.py` 可在本机自动分配的回环端口启动并返回包内入口、游戏模块和清单。[从零实走记录](release-audit-2026-11-27/frozen-fresh-campaign.json) [灯塔结局画面](release-audit-2026-11-27/frozen-beacon.jpg)
+
+复现时设置 `TIDELANDS_CAMPAIGN_PACKAGE=tidelands-m5-2026-11-27-contact-readability`，运行 `node tools/run_native_campaign.mjs <新输出目录>`。使用本机 Chrome 时设置 `PLAYWRIGHT_CHANNEL=chrome`，按本机环境提供 Playwright 包。规划器根据实际存档预选可达采集点，所有采集、移动、战斗与对话均通过原生操作，场景和游戏时钟自然推进。阶段存档、可复现的输入及原图留在本地 `dist/release-audit-2026-11-27-frozen-fresh/`。
