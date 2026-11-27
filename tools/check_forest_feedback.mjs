@@ -8,10 +8,11 @@ import {assertCameraRestoreEvidence} from './camera_policy_qa.mjs';
 
 const [name,out,history,expected='spatial',...checks]=process.argv.slice(2);
 const recordMix=checks.includes('--record-mix'),checkWindup=checks.includes('--check-windup');
-const narrowOnly=checks.includes('--narrow-only');
+const narrowOnly=checks.includes('--narrow-only'),contactClip=checks.includes('--contact-clip');
 assert(/^[a-zA-Z0-9_-]+$/.test(name)&&out&&!fs.existsSync(out));
 assert(['centered','spatial'].includes(expected));
 assert(!narrowOnly||expected==='spatial');
+assert(!contactClip||(expected==='spatial'&&recordMix));
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 const root=`dist/${name}/tidelands-local`,key='tidelands-save-v1',origin='http://127.0.0.1:4190';
 const manifest=JSON.parse(fs.readFileSync(`dist/${name}.json`));
@@ -20,6 +21,7 @@ for(const [file,{sha256}] of Object.entries(manifest.files))assert.equal(sha(fs.
 const original=fs.readFileSync(history),seed=JSON.parse(original);
 const report={complete:false,expected,archiveSha256:manifest.archiveSha256,saveSha256:sha(original),rows:[],logs:[],scope:'Native Chromium and a historical normal save. Audio and the impact pool are observed without altering the game state.'};
 if(recordMix)report.scope+=' Canvas and stereo game buses are muxed into one WebM. Event wall times are measured in the game callback; they do not establish hardware output latency.';
+if(contactClip)report.scope+=' Short capture through collection and the encounter, followed by a normal save and restore at the encounter site.';
 const mixObserver=recordMix?fs.readFileSync('tools/observe_main_mix.js','utf8'):'';
 const audioTrace=`
 window.forestFeedback={sounds:[],impacts:[],windups:[],resourceSuppressed:0};
@@ -161,7 +163,8 @@ try {
         }
       }
       if(expected==='spatial')assert(cues.sounds.some(e=>Math.abs(e.options.pan)>.05));
-      if(expected==='spatial'){
+      if(contactClip)await page.waitForTimeout(2500);
+      else if(expected==='spatial'){
         const camp=state.buildings.find(b=>b.type==='campfire');
         await go(camp,'休息');const before=await observe();
         await press('e');await page.waitForTimeout(260);state=await observe();

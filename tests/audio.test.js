@@ -185,6 +185,18 @@ test('Amber Shoal carries more surf at its wash line and follows the terrain ban
   await audio.dispose();
 });
 
+test('settlement footfalls distinguish the worn repair-yard tread from the grass verge',()=>{
+  const contacts=[];
+  for(const position of [{x:-35.371,z:79.230},{x:-37.740,z:84.610}]){
+    const audio=new GameAudio(),height=terrain(position.x,position.z);
+    audio.setActive(true);
+    audio.effect=(kind,options)=>contacts.push({kind,surface:options.surface});
+    audio.update(position,5,height,0,{swimming:false});
+    audio.update(position,5.1,height,1,{swimming:false});
+  }
+  assert.deepEqual(contacts,[{kind:'step',surface:'gravel'},{kind:'step',surface:'grass'}]);
+});
+
 test('surf shares world mute/pause and releases all persistent nodes on disposal',async()=>{
   const a=new GameAudio({contextFactory:context});a.setActive(true);await a.unlock();
   assert.ok(a.surfSource);const source=a.surfSource,filter=a.surfFilter,gain=a.surf;

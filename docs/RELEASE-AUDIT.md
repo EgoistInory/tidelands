@@ -172,3 +172,13 @@ python3 tools/verify_local.py --name tidelands-m5-2026-11-27-highland-shoulders
 | JS 堆首尾 / 峰值 | 95.4 → 105.0 / 119.6 MB | 88.8 → 102.2 / 134.5 MB |
 
 最大帧间隔主要落在游戏帧回调外，分别为 70.4 和 98.0 ms。模拟窄屏 JS 堆峰值高于上一包本次对照的 116.1 MB，尾样本回落至 102.2 MB。测量来自同一台 Mac 上的 Chrome，真机与显存仍待验收。过程证据位于 `dist/release-audit-2026-11-27-sightline-{desktop,narrow}/`。[桌面记录](release-audit-2026-11-27/sightline-four-island-desktop.json) [窄屏记录](release-audit-2026-11-27/sightline-four-island-narrow.json)
+
+### 同包林地声画
+
+`a77a459e` 从该包四岛长跑留存的旧档进入，在桌面和模拟窄屏实玩采集和潮蟹遭遇。首轮长录的桌面返营段丢弃 12 个录制块。保留失败后改为录制采集至交战结束的短片。两端录得 12.00 秒和 11.16 秒双声道，无削波和录制积压，随后在遭遇地保存、刷新并完整导出。六次采集与命中的声音到相应粒子进入画面的绘制调用返回为 4.6–7.0 ms。人耳听感和设备播放仍待验收。[修订包林地原声](release-audit-2026-11-27/sightline-forest-contact.webm)
+
+### 聚落脚步候选
+
+`a77a459e` 的逐次落脚记录显示，门廊至渔作院的 15 次落脚均用草地声，其中 6 次踩在已有的压实路面分布内。`62b2fcb4` 复用该分布和砂砾声，实录 5 次砂砾、9 次草地，在压实路及草坡间随落脚切换。两轮原声峰值分别为 0.00927 和 0.00978，均低于既有录音检查线 0.01。保留原声、坐标和失败记录。两段均无削波，主观听感仍需实听。[原包脚步](release-audit-2026-11-27/sightline-yard-steps.webm) [候选脚步](release-audit-2026-11-27/candidate-yard-steps.webm) [声画与落脚记录](release-audit-2026-11-27/settlement-steps-audio.json)
+
+候选 `dist/tidelands-m5-2026-11-27-settlement-steps.zip` 共 221 个运行文件，仅 `src/audio.js` 与 `a77a459e` 有差异。474 项游戏测试、7 项打包测试通过。桌面、模拟窄屏实际走进渔作院并返回门廊，刷新、原生导出及坏档拒绝通过，模拟双触点另通过。空白档主线和十分钟四岛实走继续以 `a77a459e` 的已验包为交付依据。[候选包校验](tidelands-m5-2026-11-27-settlement-steps-verification.json)

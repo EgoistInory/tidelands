@@ -3,6 +3,7 @@ import {ISLANDS,WATER_LEVEL,dayCycle,randomGenerator,terrain,weatherAt} from './
 import {estuaryHabitat} from './estuary-habitat.js';
 import {highlandAscent} from './highland-ascent.js';
 import {shoalHabitat} from './shoal-habitat.js';
+import {settlementWearAt} from './settlement-ground.js';
 const habitatDensity=[.6,1,.24,.48];
 const contactProfiles={
   wade:{frequency:1450,length:.125,peak:.29},
@@ -188,9 +189,13 @@ export class GameAudio{
       }
     }
     else if(hasRenderedMode){
-      const ascent=highlandAscent(player.x,player.z,height);
+      const {x,z}=player,ascent=highlandAscent(x,z,height);
       if(ascent?.wear>=.5)surface='gravel';
       else if(ascent?.outcrop>=.48)surface='rock';
+      else if(height>=4&&settlementWearAt(x,z)>=.5){
+        const slope=Math.hypot(terrain(x+.5,z)-terrain(x-.5,z),terrain(x,z+.5)-terrain(x,z-.5));
+        if(1-1/Math.hypot(1,slope)<=.12)surface='gravel';
+      }
     }
     // The rig reports ground contacts through shallow water and idle recovery.
     if(!isSwimming&&this.lastFootfallCount!==null){

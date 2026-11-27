@@ -1,0 +1,428 @@
+{
+  "frozenArchiveSha256": "a77a459ebaac60f7f396717b8eb29ffe2afe07bc1cc327c0ead6b124cda940e8",
+  "candidateArchiveSha256": "62b2fcb42ce23ac51a34d07c7eb1829929b22bd4f862a68519742b81249df1ac",
+  "changedRuntimeFiles": [
+    "src/audio.js"
+  ],
+  "forest": {
+    "source": "dist/release-audit-2026-11-27-sightline-contact-clip/report.json",
+    "sourceSha256": "6dcb53e32f613dc08cdf3d4bb72b8cb10cf27232ebbd9fff8695266be27f8409",
+    "seedSha256": "8ee79773a8458e440b64d023ee00f549a9e33b7bb1529ae22bcad6a12e1911cd",
+    "rows": [
+      {
+        "width": 1280,
+        "restored": true,
+        "recording": {
+          "width": 1280,
+          "height": 800,
+          "seconds": 12,
+          "channels": 2,
+          "peak": 0.03537498041987419,
+          "clipped": 0,
+          "bytes": 1744916,
+          "sha256": "ba6897da121e0110f3d47648008c899b05ccde876eac616b6c46bcb340de2293",
+          "contacts": [
+            {
+              "kind": "gather",
+              "target": "resource-170",
+              "soundToDrawMs": 7,
+              "pan": 0.31568324887174326,
+              "particles": 6
+            },
+            {
+              "kind": "hit",
+              "target": "enemy-37",
+              "soundToDrawMs": 5.700000002980232,
+              "pan": 0.7760353506241755,
+              "particles": 6
+            },
+            {
+              "kind": "hit",
+              "target": "enemy-37",
+              "soundToDrawMs": 4.600000008940697,
+              "pan": 0.7467671546823029,
+              "particles": 6
+            }
+          ],
+          "capturedSeconds": 12.064
+        },
+        "contacts": [
+          [
+            "gather",
+            2.176
+          ],
+          [
+            "hit",
+            7.477333333333333
+          ],
+          [
+            "hit",
+            9.040000000000001
+          ]
+        ]
+      },
+      {
+        "width": 390,
+        "restored": true,
+        "recording": {
+          "width": 390,
+          "height": 844,
+          "seconds": 11.16,
+          "channels": 2,
+          "peak": 0.05708359554409981,
+          "clipped": 0,
+          "bytes": 1562509,
+          "sha256": "4f6178e5f473761efb39e092e975365a432fe4862cc0f91d2419fd5c1a9c42e6",
+          "contacts": [
+            {
+              "kind": "gather",
+              "target": "resource-170",
+              "soundToDrawMs": 6.700000002980232,
+              "pan": 0.3697822258289048,
+              "particles": 6
+            },
+            {
+              "kind": "hit",
+              "target": "enemy-37",
+              "soundToDrawMs": 5.100000008940697,
+              "pan": 0.7639354163963057,
+              "particles": 6
+            },
+            {
+              "kind": "hit",
+              "target": "enemy-37",
+              "soundToDrawMs": 4.600000008940697,
+              "pan": 0.7467867559810255,
+              "particles": 6
+            }
+          ],
+          "capturedSeconds": 11.184
+        },
+        "contacts": [
+          [
+            "gather",
+            2.1333333333333333
+          ],
+          [
+            "hit",
+            7.381333333333333
+          ],
+          [
+            "hit",
+            8.165333333333333
+          ]
+        ]
+      }
+    ],
+    "excerpt": "sightline-forest-contact.webm",
+    "excerptSha256": "1c9a4189e321ca9cb6cc0d79170b1673cf037ec54c9aef9cf41fd1cac29e445f",
+    "failedLongCapture": {
+      "source": "dist/release-audit-2026-11-27-sightline-av/report.json",
+      "sourceSha256": "7d82601c16594bf246c9bec76a33a882daceaa35f503118f8613955875f4853e",
+      "seconds": 172.57066666666668,
+      "droppedChunks": 12
+    }
+  },
+  "yard": {
+    "firstFailure": "dist/release-audit-2026-11-27-sightline-yard/report.json",
+    "runnerSha256": "eaff0b7ec583442ce7a5197a0699ad2fde82ee86ff3d44dde306362471b85aeb",
+    "rows": [
+      {
+        "archiveSha256": "a77a459ebaac60f7f396717b8eb29ffe2afe07bc1cc327c0ead6b124cda940e8",
+        "dir": "dist/release-audit-2026-11-27-sightline-yard-r2",
+        "reportSha256": "eb3ee55c7134a030e39af9a560c1fe8d31d62cab3f27e1800768c36211abde4a",
+        "mixDetailsSha256": "a7197666ca41b53b156dd6622d34029a3dd071621c43985a057f76f62373bfd1",
+        "duration": 7.5,
+        "peak": 0.009266461245715618,
+        "clipped": 0,
+        "levelThreshold": 0.01,
+        "passedLevelThreshold": false,
+        "grass": 15,
+        "gravel": 0,
+        "contacts": [
+          {
+            "x": -41.779114933578406,
+            "z": 85.225085953492,
+            "height": 7.424479269150503,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 0.688
+          },
+          {
+            "x": -40.626010102489396,
+            "z": 85.05081120340128,
+            "height": 7.204043116706551,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 0.8480000000000001
+          },
+          {
+            "x": -37.741863745257746,
+            "z": 84.61491511478903,
+            "height": 6.672328169634252,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 1.264
+          },
+          {
+            "x": -34.62792698951374,
+            "z": 84.14428960418991,
+            "height": 6.144771440388892,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 1.8773333333333333
+          },
+          {
+            "x": -34.708160322838815,
+            "z": 83.61341841244604,
+            "height": 6.301335814987643,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 1.8933333333333333
+          },
+          {
+            "x": -35.370634507907546,
+            "z": 79.23009734684778,
+            "height": 7.575768929986779,
+            "material": "grass",
+            "wear": 1,
+            "seconds": 2.5439999999999996
+          },
+          {
+            "x": -35.457876489645635,
+            "z": 78.99961480858089,
+            "height": 7.650226655749743,
+            "material": "grass",
+            "wear": 1,
+            "seconds": 2.618666666666667
+          },
+          {
+            "x": -36.068047328348605,
+            "z": 78.769132270314,
+            "height": 7.8126216240538,
+            "material": "grass",
+            "wear": 1,
+            "seconds": 3.3119999999999994
+          },
+          {
+            "x": -35.29040117458247,
+            "z": 83.9144992056775,
+            "height": 6.338363642845522,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 4.005333333333333
+          },
+          {
+            "x": -35.11612642449175,
+            "z": 85.06760403676651,
+            "height": 5.994839235675907,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 4.1706666666666665
+          },
+          {
+            "x": -37.4051048268345,
+            "z": 86.00327122845832,
+            "height": 6.258925980493506,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 4.533333333333333
+          },
+          {
+            "x": -41.442356015155184,
+            "z": 86.61344206716129,
+            "height": 7.070261468439113,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 5.109333333333333
+          },
+          {
+            "x": -45.47960720347582,
+            "z": 87.22361290586426,
+            "height": 7.898871894287804,
+            "material": "grass",
+            "wear": 1,
+            "seconds": 5.701333333333333
+          },
+          {
+            "x": -45.59519454248655,
+            "z": 87.24108222355042,
+            "height": 7.9229842328906575,
+            "material": "grass",
+            "wear": 1,
+            "seconds": 5.754666666666666
+          },
+          {
+            "x": -45.59519454248655,
+            "z": 87.24108222355042,
+            "height": 7.9229842328906575,
+            "material": "grass",
+            "wear": 1,
+            "seconds": 5.84
+          }
+        ],
+        "clip": "sightline-yard-steps.webm",
+        "clipSha256": "3d2e944630f18f5dd86105651aff3113cc54f08f873463eeeada67d918799924"
+      },
+      {
+        "archiveSha256": "62b2fcb42ce23ac51a34d07c7eb1829929b22bd4f862a68519742b81249df1ac",
+        "dir": "dist/release-audit-2026-11-27-settlement-steps-yard",
+        "reportSha256": "d56c8540c30182270df255a7d972e8e4306367bf4740f83d023c983d2d2d4e41",
+        "mixDetailsSha256": "c71dfd30bf667a2e5342c5ce1aa86d4725de7b0237a77d4b9071aefd64086d63",
+        "duration": 7.44,
+        "peak": 0.009780538268387318,
+        "clipped": 0,
+        "levelThreshold": 0.01,
+        "passedLevelThreshold": false,
+        "grass": 9,
+        "gravel": 5,
+        "contacts": [
+          {
+            "x": -41.779807073332954,
+            "z": 85.22519056018473,
+            "height": 7.424611583767821,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 0.6453333333333331
+          },
+          {
+            "x": -37.74186374525774,
+            "z": 84.61491511478903,
+            "height": 6.672328169634236,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 1.2373333333333332
+          },
+          {
+            "x": -34.62723484975921,
+            "z": 84.14418499749718,
+            "height": 6.144669609709074,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 1.84
+          },
+          {
+            "x": -34.70746818308429,
+            "z": 83.61331380575331,
+            "height": 6.301233984307839,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 1.856
+          },
+          {
+            "x": -35.36994236815302,
+            "z": 79.22999274015505,
+            "height": 7.575679672580928,
+            "material": "gravel",
+            "wear": 1,
+            "seconds": 2.490666666666667
+          },
+          {
+            "x": -35.45707974319838,
+            "z": 78.99951020188817,
+            "height": 7.65011980737719,
+            "material": "gravel",
+            "wear": 1,
+            "seconds": 2.586666666666666
+          },
+          {
+            "x": -36.06725058190134,
+            "z": 78.76902766362127,
+            "height": 7.8125147756812465,
+            "material": "gravel",
+            "wear": 1,
+            "seconds": 3.2586666666666666
+          },
+          {
+            "x": -35.289709034827936,
+            "z": 83.9137024592303,
+            "height": 6.338426853585092,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 3.9466666666666663
+          },
+          {
+            "x": -35.11532967804449,
+            "z": 85.06749943007387,
+            "height": 5.994693127500534,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 4.112
+          },
+          {
+            "x": -37.38683876270106,
+            "z": 86.1187539607764,
+            "height": 6.226684612839428,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 4.490666666666667
+          },
+          {
+            "x": -38.4250483945339,
+            "z": 86.27566399987369,
+            "height": 6.437374842376429,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 4.656
+          },
+          {
+            "x": -41.42408995102171,
+            "z": 86.72892479947937,
+            "height": 7.040117897964124,
+            "material": "grass",
+            "wear": 0,
+            "seconds": 5.072
+          },
+          {
+            "x": -45.34575380033165,
+            "z": 87.32162632049618,
+            "height": 7.850276696542315,
+            "material": "gravel",
+            "wear": 0.9917632906223601,
+            "seconds": 5.648
+          },
+          {
+            "x": -45.57692847835311,
+            "z": 87.3565649558685,
+            "height": 7.898501373748081,
+            "material": "gravel",
+            "wear": 0.9993313713577893,
+            "seconds": 5.7973333333333334
+          }
+        ],
+        "clip": "candidate-yard-steps.webm",
+        "clipSha256": "b25390cfc5b51d9783c0a83a2c52b23593b88394b308d02fa6051f12de782501"
+      }
+    ]
+  },
+  "tests": {
+    "game": 474,
+    "packaging": 7
+  },
+  "physicalListeningVerified": false,
+  "physicalTouchVerified": false,
+  "fullGoalComplete": false,
+  "walk": {
+    "path": "dist/release-audit-2026-11-27-settlement-steps-walk/report.json",
+    "sha256": "77dc6b2eac7dc54561031a5b0129f28e50fbb296d29ea905f384978fc78d3b9d",
+    "widths": [
+      1920,
+      390
+    ],
+    "restored": true,
+    "invalidRejected": true,
+    "simulated": true
+  },
+  "touch": {
+    "path": "dist/release-audit-2026-11-27-settlement-steps-touch/report.json",
+    "sha256": "0864694b28bef47776de565c31c8a9158072d11919bc9e1b27dc1acb7dc7f812",
+    "widths": [
+      390
+    ],
+    "restored": true,
+    "invalidRejected": true,
+    "simulated": true,
+    "movementMeters": 3.366466265438065,
+    "cameraDegrees": 17.188733853924695
+  }
+}
