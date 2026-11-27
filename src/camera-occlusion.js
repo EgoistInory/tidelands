@@ -34,7 +34,29 @@ export function prepareCameraOccluder(root){
 }
 export function createForegroundFade(){
  let amount=0;
- return {get amount(){return amount;},update(focus,camera,blocked,dt){const target=blocked?1:0;amount+=(target-amount)*(1-Math.exp(-Math.max(0,Math.min(.05,dt))*(blocked?12:5)));uniforms.cameraOcclusionFocus.value.copy(focus);uniforms.cameraOcclusionLens.value.copy(camera);uniforms.cameraOcclusionAmount.value=amount;},reset(){amount=0;uniforms.cameraOcclusionAmount.value=0;}};
+ const ray=new T.Ray(),hit=new T.Vector3();
+ return {
+  get amount(){return amount;},
+  update(focus,camera,blocked,dt,boxes=[]){
+   // Low foreground can cover the body while the higher camera framing ray stays clear.
+   if(!blocked&&boxes.length){
+    ray.origin.copy(focus);
+    ray.direction.subVectors(camera,focus);
+    const distance=ray.direction.length();
+    if(distance>1e-6){
+     ray.direction.divideScalar(distance);
+     blocked=boxes.some(box=>box.containsPoint(focus)||
+       (ray.intersectBox(box,hit)&&focus.distanceToSquared(hit)<distance*distance));
+    }
+   }
+   const target=blocked?1:0;
+   amount+=(target-amount)*(1-Math.exp(-Math.max(0,Math.min(.05,dt))*(blocked?12:5)));
+   uniforms.cameraOcclusionFocus.value.copy(focus);
+   uniforms.cameraOcclusionLens.value.copy(camera);
+   uniforms.cameraOcclusionAmount.value=amount;
+  },
+  reset(){amount=0;uniforms.cameraOcclusionAmount.value=0;}
+ };
 }
 
 // Explicit scenery ownership: never infer eligibility from every scene Group.

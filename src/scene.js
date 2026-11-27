@@ -369,7 +369,7 @@ export class WorldView{
     this.cameraRoute??={};const cameraResult=followCamera(focus,this.camera.position,target,boxes,terrain,dt,this.cameraRoute);
     this.camera.position.copy(cameraResult.position);
     this.cameraFade??=createForegroundFade();for(const root of cameraOccluderRoots(this))prepareCameraOccluder(root);
-    const bodyFocus=focus.clone();bodyFocus.y-=1;this.cameraFade.update(bodyFocus,this.camera.position,cameraResult.occluded,dt);
+    const bodyFocus=focus.clone();bodyFocus.y-=1;this.cameraFade.update(bodyFocus,this.camera.position,cameraResult.occluded,dt,boxes);
     // A retracted camera frames the body centre; the ordinary distant view keeps its look-ahead.
     const framing=THREE.MathUtils.smoothstep(this.camera.position.distanceTo(focus),3,6),framedFocus=focus.clone();framedFocus.y-=1.4*(1-framing);this.camera.lookAt(framedFocus);
     const fov=70-15*framing;if(Math.abs(this.camera.fov-fov)>1e-4){this.camera.fov=fov;this.camera.updateProjectionMatrix();}

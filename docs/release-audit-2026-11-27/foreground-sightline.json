@@ -1,0 +1,397 @@
+{
+  "archiveSha256": "a77a459ebaac60f7f396717b8eb29ffe2afe07bc1cc327c0ead6b124cda940e8",
+  "parentArchiveSha256": "d15e2c51879324085689f1da5b4c85699e7c93008f3a2f1681b408459362f60c",
+  "filesCompared": 221,
+  "changed": [
+    "src/camera-occlusion.js",
+    "src/scene.js"
+  ],
+  "native": {
+    "baseline": "dist/foreground-hit-baseline-2026-11-27/report.json",
+    "candidate": "dist/foreground-hit-candidate-2026-11-27/report.json",
+    "baselineSha256": "3a183bb610a11d3a231ab25cf52dcb75b3e898df01e4744d25534eec96da7d43",
+    "candidateSha256": "57e9cb4fba787fd93f105e5b8d7e6601ac35883741ec42fc2369a05424a21415",
+    "baselineRunnerSha256": "ce9854e5a45d394937996e3763de35b119aa0fa42e3bb0704cf7748449111946",
+    "candidateRunnerSha256": "4d9546c2efaef40e4df02c113f02fe7c9208bc63efa2de85eb50dc21a88f3155",
+    "importSaveSha256": "e8f13a619edb7e4ca779f4faf6b7a0fdaaa21b6a9e5e917adefeefdb2a6775ae",
+    "rows": [
+      {
+        "viewport": [
+          1280,
+          800
+        ],
+        "oldFirstHit": {
+          "time": 1999.415200000282,
+          "player": [
+            137.45708752453072,
+            23.515560309139445,
+            -47.21680414417823
+          ],
+          "enemy": [
+            139.47024112555712,
+            17,
+            -47.74385433467072
+          ],
+          "camera": [
+            139.5492213791611,
+            30.093339321111486,
+            -33.374009053073635
+          ],
+          "foregroundFade": 2.4384518130656694e-16,
+          "trace": [
+            {
+              "role": "playerCentre",
+              "boxHits": [
+                "resource-944"
+              ]
+            },
+            {
+              "role": "routeFocus",
+              "boxHits": []
+            },
+            {
+              "role": "crabCentre",
+              "boxHits": []
+            }
+          ],
+          "image": "dist/foreground-hit-baseline-2026-11-27/1280/foreground-hit-1.jpg",
+          "imageSha256": "be76eb08104ff4e1c7cab216b23ca46f0cbec54cfa6923c005bbe486fc6191a1"
+        },
+        "newFirstHit": {
+          "time": 1999.5985000002836,
+          "player": [
+            137.38558791642652,
+            23.537584469933048,
+            -47.367775994293346
+          ],
+          "enemy": [
+            139.47024112555712,
+            17,
+            -47.74385433467072
+          ],
+          "camera": [
+            139.4777217710569,
+            30.11536348190509,
+            -33.524980903188755
+          ],
+          "foregroundFade": 0.9979689451696043,
+          "trace": [
+            {
+              "role": "playerCentre",
+              "boxHits": [
+                "resource-944"
+              ]
+            },
+            {
+              "role": "routeFocus",
+              "boxHits": []
+            },
+            {
+              "role": "crabCentre",
+              "boxHits": []
+            }
+          ],
+          "image": "dist/foreground-hit-candidate-2026-11-27/1280/foreground-hit-1.png",
+          "imageSha256": "96e539b1f180ec59a8d391d5ddaaa092ac2bd050eaf8fb25111a5f9e8b2ab114"
+        },
+        "disabledComparison": {
+          "image": "dist/foreground-hit-candidate-2026-11-27/1280/foreground-hit-1-no-fade.png",
+          "sha256": "9eaf859a99ea374c4d6df7a399c0a44e29634051b84ddf26b4ec676cebf7fbab"
+        },
+        "laterFade": 0.20535529301069666,
+        "restored": true,
+        "glError": 0,
+        "kills": 1,
+        "rest": {
+          "before": 79,
+          "after": 100
+        },
+        "restoredExportSha256": "e4cb4ef1ceca42b0384db1a776aaf6d2cf0c411522e31a2e190d80300436d006"
+      },
+      {
+        "viewport": [
+          390,
+          844
+        ],
+        "oldFirstHit": {
+          "time": 1999.3486000002822,
+          "player": [
+            137.49261369296485,
+            23.48686765423481,
+            -47.08402425692253
+          ],
+          "enemy": [
+            139.5094105015134,
+            17,
+            -47.75830502625263
+          ],
+          "camera": [
+            139.58474754759524,
+            30.06464666620685,
+            -33.24122916581794
+          ],
+          "foregroundFade": 2.834470485445121e-16,
+          "trace": [
+            {
+              "role": "playerCentre",
+              "boxHits": [
+                "resource-944"
+              ]
+            },
+            {
+              "role": "routeFocus",
+              "boxHits": []
+            },
+            {
+              "role": "crabCentre",
+              "boxHits": []
+            }
+          ],
+          "image": "dist/foreground-hit-baseline-2026-11-27/390/foreground-hit-1.jpg",
+          "imageSha256": "bd565ba8bc283c693b48dd5717f20d894052061024e5af04529d0e86896e3774"
+        },
+        "newFirstHit": {
+          "time": 1999.4152000002834,
+          "player": [
+            137.64213370751526,
+            23.459382542983718,
+            -46.80251804510629
+          ],
+          "enemy": [
+            139.47024112555712,
+            17,
+            -47.74385433467072
+          ],
+          "camera": [
+            139.73426756214565,
+            30.03716155495576,
+            -32.9597229540017
+          ],
+          "foregroundFade": 0.996303615133214,
+          "trace": [
+            {
+              "role": "playerCentre",
+              "boxHits": [
+                "resource-944"
+              ]
+            },
+            {
+              "role": "routeFocus",
+              "boxHits": []
+            },
+            {
+              "role": "crabCentre",
+              "boxHits": []
+            }
+          ],
+          "image": "dist/foreground-hit-candidate-2026-11-27/390/foreground-hit-1.png",
+          "imageSha256": "0471e62e671f684c6cb5d9542e12b1ad1ee154b2bcb80fe908afad523af7d951"
+        },
+        "disabledComparison": {
+          "image": "dist/foreground-hit-candidate-2026-11-27/390/foreground-hit-1-no-fade.png",
+          "sha256": "620ed17035f4c348916ba4e96e80af0b54e822ab1a5a0e575977f3aa34813d8d"
+        },
+        "laterFade": 0.9999991678057918,
+        "restored": true,
+        "glError": 0,
+        "kills": 1,
+        "rest": {
+          "before": 79,
+          "after": 100
+        },
+        "restoredExportSha256": "097a4f677d90f3fc45461304a273458f89c7eb9f8aaabae940d797d8dfe17ff7"
+      }
+    ]
+  },
+  "sameFramePixelComparisons": [
+    {
+      "viewport": 1280,
+      "changedPixelsAbove12": 493,
+      "allChangedBounds": [
+        591,
+        463,
+        663,
+        558
+      ]
+    },
+    {
+      "viewport": 390,
+      "changedPixelsAbove12": 1082,
+      "allChangedBounds": [
+        142,
+        470,
+        211,
+        574
+      ]
+    }
+  ],
+  "comparisonJpegSha256": "1e95f55d9eb724ee182a304d60974b64121d311e90f276bb099499a3ded14d53",
+  "touch": {
+    "source": "dist/foreground-sightline-touch-2026-11-27/report.json",
+    "sourceSha256": "23c447780c024017081363118693563fe98e9f9e59e54b6d1569db7849eaec5f",
+    "viewport": [
+      390,
+      844
+    ],
+    "simulated": true,
+    "metres": 3.9452882586632723,
+    "yawDegrees": 17.188733853924695,
+    "pointerEvents": [
+      {
+        "id": "joystick",
+        "type": "pointerdown",
+        "pointerId": 2,
+        "pointerType": "touch"
+      },
+      {
+        "id": "joystick",
+        "type": "pointermove",
+        "pointerId": 2,
+        "pointerType": "touch"
+      },
+      {
+        "id": "world",
+        "type": "pointerdown",
+        "pointerId": 3,
+        "pointerType": "touch"
+      },
+      {
+        "id": "world",
+        "type": "pointermove",
+        "pointerId": 3,
+        "pointerType": "touch"
+      },
+      {
+        "id": "world",
+        "type": "pointermove",
+        "pointerId": 3,
+        "pointerType": "touch"
+      },
+      {
+        "id": "world",
+        "type": "pointermove",
+        "pointerId": 3,
+        "pointerType": "touch"
+      },
+      {
+        "id": "world",
+        "type": "pointermove",
+        "pointerId": 3,
+        "pointerType": "touch"
+      },
+      {
+        "id": "world",
+        "type": "pointermove",
+        "pointerId": 3,
+        "pointerType": "touch"
+      },
+      {
+        "id": "joystick",
+        "type": "pointerup",
+        "pointerId": 2,
+        "pointerType": "touch"
+      },
+      {
+        "id": "world",
+        "type": "pointerup",
+        "pointerId": 3,
+        "pointerType": "touch"
+      }
+    ],
+    "GL": 0,
+    "invalidRejected": true,
+    "exportSha256": "8a117e338dd5c1e919de8e418b87c483e23f70e7e1e05176d62c2a4c750421f4"
+  },
+  "independentServer": {
+    "loopback": true,
+    "manifestResponsesVerified": 3
+  },
+  "tests": {
+    "game": 473,
+    "packaging": 7
+  },
+  "fullGoalComplete": false,
+  "campaign": {
+    "path": "dist/foreground-sightline-fresh-2026-11-27",
+    "sourceSha256": "df7e50a657b6e5e99f28d7b6a052481f3f9c7d6ee475b3528b58f2956ea93521",
+    "runnerSha256": "ce84ff26b8c06c8bd294d7c094398e26f96c1374e8a1a8d481699a8b1474fda1",
+    "fromEmptyProfile": true,
+    "attempts": 1,
+    "complete": true,
+    "reloadExact": true,
+    "exportExact": true,
+    "kills": 13,
+    "respawns": 0,
+    "logs": [],
+    "cost": {
+      "wood": 12,
+      "stone": 8,
+      "crystal": 3
+    },
+    "postEndingMeters": 17.242324549201893,
+    "finalSaveSha256": "e328d845a130c91dabd85b648eb137096a84755f7b5fe3f469d3b116d2388428",
+    "exportSha256": "598c919ab3b569338fbb8a7c562f5fc3a3db2995b2fcc2aec6f539671bc99dcc",
+    "phases": [
+      {
+        "name": "00-fresh",
+        "quest": 0,
+        "saveSha256": "c3bc04df29545f2d6e39074001d0a8eae935693cd4b5210a9e996b1195be8314",
+        "imageSha256": "703294e2a1c505464842e405e18d3c4dfe90db669ff433d37674e30e5324b168"
+      },
+      {
+        "name": "01-keeper",
+        "quest": 1,
+        "saveSha256": "c21930e766535df1362c1d9723eb91284b52c346abc8a2e5538373debdc5cc5e",
+        "imageSha256": "f48078ff9af8dbff6a26ac7490f8620e72db1bc3f9dff226fcf1954db2a8846d"
+      },
+      {
+        "name": "02-axe",
+        "quest": 2,
+        "saveSha256": "669e5df6e0df74cd90247dc8e719681bf8d7487c61f6d6a3d25b93120f66e193",
+        "imageSha256": "40cf1ae94f08954aa853cfd9890c6beea4558822a3f2c344361c06d3b30cb625"
+      },
+      {
+        "name": "03-camp",
+        "quest": 3,
+        "saveSha256": "5d0b15491ff806079fbbbdf1f22b61305590dac298e29b34d4922536f54ba16d",
+        "imageSha256": "789e3a51787c3c0350202f1a9edd7537857ceca5c3b05a4e653f5f8d1f84a0f2"
+      },
+      {
+        "name": "04-botanist",
+        "quest": 4,
+        "saveSha256": "dc25e7e6f6447b66077a0f9616cd939d9f6e0e3ff7e2b4081970b53e6cd770bf",
+        "imageSha256": "d653d8f4339becb0076adcc8e433f533478cdde57cd30bcbbd7aff39b5f62814"
+      },
+      {
+        "name": "05-two-kills",
+        "quest": 4,
+        "saveSha256": "a120f31bbc90148dc69b4067929f872745c6187070b07589d11c08fe4e9051e6",
+        "imageSha256": "0f35a521d3bb3e1fa1e9670f4939a91b42ce6f53b820ab35ea1a542c7031b5a2"
+      },
+      {
+        "name": "06-explorer",
+        "quest": 5,
+        "saveSha256": "340dcd1d375ddede833a973f705d2cf73dcfb73ea5427b806e778978b4e4db4b",
+        "imageSha256": "8a3c101648fb7fc808413852237bd69eb6e8da4c847e6a4ca8b7d5f37a1a9488"
+      },
+      {
+        "name": "07-lamp-materials",
+        "quest": 5,
+        "saveSha256": "400fd21c86fc8a8af5fa558ac8fca57aae2fa7e50946ec9fff6272bb149bc903",
+        "imageSha256": "634a24d0708b6c6fc7793acfcdb4e9b398506e84df9469d8a736d40004cebc76"
+      },
+      {
+        "name": "08-beacon",
+        "quest": 6,
+        "saveSha256": "7e17b9ec92aebddc77b0d79dca3aa39cdcf2cb1c87dab81c75e03ab60cee4557",
+        "imageSha256": "720d71de95c13c5085f5dd6f23c412df90c00fe20c38ba8e6bbe1a86273dcf20"
+      },
+      {
+        "name": "09-exploration",
+        "quest": 6,
+        "saveSha256": "c7f019546333dac712ce23727a9fbcff8da4d796923297ccd996031b11f646b3",
+        "imageSha256": "6e9e05fd726b5a3690a05076eff8188f74865f03079cb1e7d75427466ed2a8a2"
+      }
+    ]
+  }
+}
