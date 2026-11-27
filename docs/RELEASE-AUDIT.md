@@ -4,14 +4,14 @@
 
 ## 运行与复现
 
-当前包是 `dist/tidelands-m5-2026-11-27-contact-mix.zip`，SHA-256 为 `673155bd8ed9b32c4487b62b90f0a893d2f90a2a6e62f136a0d13e9f282528ad`。解压进入 `tidelands-local`，运行 `python3 serve.py` 并打开终端显示的本地地址。需要 Python 3 及支持 WebGL 2 的浏览器。
+当前包是 `dist/tidelands-m5-2026-11-27-contact-readability.zip`，SHA-256 为 `eda207610f872495a6b4b76a6d9ccedacfb73173cb4cb41738ca72eb030a943b`。解压进入 `tidelands-local`，运行 `python3 serve.py` 并打开终端显示的本地地址。需要 Python 3 及支持 WebGL 2 的浏览器。
 
 从当前源码可用以下命令重建和独立解压校验。已独立校验 221 个运行文件及交付清单。源代码和关键验收记录存入 Git，运行包及完整原始输出存入本地 `dist/`。
 
 ```sh
-python3 tools/package_local.py --name tidelands-m5-2026-11-27-contact-mix \
-  --stage 'M5 action contact mix'
-python3 tools/verify_local.py --name tidelands-m5-2026-11-27-contact-mix
+python3 tools/package_local.py --name tidelands-m5-2026-11-27-contact-readability \
+  --stage 'M5 material-aware encounter feedback'
+python3 tools/verify_local.py --name tidelands-m5-2026-11-27-contact-readability
 ```
 
 ## 基线包证据
@@ -64,10 +64,20 @@ python3 tools/verify_local.py --name tidelands-m5-2026-11-27-contact-mix
 
 局部路面、岩石轮廓和偶发重复提示已列为品质待办。
 
-## 当前包的动作接触声
+## 动作接触声版
+
+该组测试使用上一包 `tidelands-m5-2026-11-27-contact-mix.zip`（SHA-256 `673155bd8ed9b32c4487b62b90f0a893d2f90a2a6e62f136a0d13e9f282528ad`）。
 
 采集成功和确认命中的声音独立提高，沿用原有音色、包络、方向和距离衰减。两包逐文件比较只有 `src/audio.js` 变化。固定种子的 48 kHz 双声道对照中，采集和命中声的单独信号提高 9.54 dB。警告、脚步、菜单声和环境声的对照一致。九个命中声同时叠加三种成功提示，仍只有 12 个声源，峰值 0.199，结束后全部释放。快速暂停或静音再恢复后，原瞬态的样本窗为零。[双声道 PCM 对照](release-audit-2026-11-27/contact-mix-pcm.json)
 
 桌面和窄屏从同一原生林地存档实际采集浆果、击败潮蟹、返营休息、刷新和重新导出。完整录像分别为 117.42 和 106.50 秒，均无削波。前 11 秒的实录峰值，桌面由 −35.7 提高至 −29.2 dBFS，窄屏由 −35.9 提高至 −28.1 dBFS。六次采集或命中由声源启动到对应绘制返回为 4.7–6.2 ms。首次窄屏因录像缓冲积压丢弃一块，原始失败已保留，串行单测通过。[新版录像摘录](release-audit-2026-11-27/forest-contact-mix.webm)
 
-新版另外从既有第 5 步存档确实点亮灯塔，扣除 12 木材、8 石料、3 晶石。结局后继续走 17.99 米，刷新回读一致。390×844 Chrome 模拟双触点同时移动 3.83 米和转镜 17.19°，也实测攻击、地图标记、导出和拒绝损坏存档。472 项游戏测试和 7 项打包测试通过。当前包从零的整段主线及四岛长跑待最后冻结时复核。夜间角色接触可读性、实体手机与实际试听仍待审，M5 整体验收开放。[新版实走与操作回归](release-audit-2026-11-27/contact-mix-regression.json)
+该版从既有第 5 步存档点亮灯塔，扣除 12 木材、8 石料、3 晶石。结局后继续走 17.99 米，刷新回读一致。390×844 Chrome 模拟双触点同时移动 3.83 米和转镜 17.19°，并实测攻击、地图标记、导出和拒绝损坏存档。472 项游戏测试和 7 项打包测试通过。[该版实走与操作回归](release-audit-2026-11-27/contact-mix-regression.json)
+
+## 当前包的夜间接触反馈
+
+林地第一击时，玩家和潮蟹水平相距约 2.23 米，横向投影只差约 3 像素。旧的全壳橙色发光压平了近身时的甲壳细节。新版让潮蟹和野猪的命中发光沿用现有程序化材质贴图，分别跟随甲壳和皮毛纹理。仅 `src/creature.js` 与 `src/creature-surface.js` 变化，使用同一组纹理和绘制通道。
+
+桌面及窄屏导入同一林地实走档，实际采集浆果并击败潮蟹，保存、刷新和完整导出均通过。对第一击的同一帧，保持镜头、骨骼与光照位置，将原发光、新发光及关闭发光三种材质分别绘制取样。两种发光覆盖同一可见表面。新版在命中高亮期间仍能看见甲壳纹理，发光也明显高于关闭发光的对照。观察范围为真实潮蟹遭遇，夜间野猪实战和其他方向的遮挡仍待核验。[同帧画面对照](release-audit-2026-11-27/night-contact-comparison.jpg)
+
+当前包从既有第 5 步档再次点亮灯塔，扣除原定材料，结局后探索 16.57 米并刷新完整恢复。窄屏 Chrome 双触点同时移动 3.37 米并转镜 17.19°，攻击、地图标记、导出和损坏档拒绝通过。472 项游戏测试及 7 项打包测试通过。现以此包继续从零主线及四岛持续实测。本轮实体手机尚未接入，真机和整段品质审计保留为 M5 待验。[新版回归与原始记录索引](release-audit-2026-11-27/night-contact-regression.json)

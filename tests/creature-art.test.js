@@ -16,6 +16,8 @@ for(const type of ['boar','crab'])test(`${type}: local coat/shell maps are bound
     assert.ok(t.image.data.every(Number.isFinite));
   }
   assert.equal(textures[0].colorSpace,THREE.SRGBColorSpace);
+  assert.equal(a.userData.hide.emissiveMap,textures[0]);
+  assert.equal(b.userData.hide.emissiveMap,textures[0]);
   let disposed=0;for(const t of textures)t.addEventListener('dispose',()=>disposed++);
   a.userData.hide.emissive.setRGB(.2,0,0);assert.equal(b.userData.hide.emissive.r,0);
   WorldView.prototype.disposeGroup(a);assert.equal(disposed,0,'a live neighbour still uses every map');

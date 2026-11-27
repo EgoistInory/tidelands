@@ -1,0 +1,908 @@
+{
+  "archiveSha256": "eda207610f872495a6b4b76a6d9ccedacfb73173cb4cb41738ca72eb030a943b",
+  "baselineArchiveSha256": "673155bd8ed9b32c4487b62b90f0a893d2f90a2a6e62f136a0d13e9f282528ad",
+  "changedRuntimeFiles": [
+    "src/creature-surface.js",
+    "src/creature.js"
+  ],
+  "samePoseComparison": {
+    "method": "One native first hit per viewport, then re-rendered the frozen pose and camera with previous emissive material and emissive off. Pixel mask is max absolute 8-bit RGB difference over 12 vs off. Only this diagnostic capture adds temporary comparison draws.",
+    "rows": [
+      {
+        "frame": {
+          "time": 2002.381300000305,
+          "target": "enemy-37",
+          "targetHp": 17,
+          "playerHp": 93,
+          "player": {
+            "x": 643.8347392552618,
+            "y": 467.5437604588108
+          },
+          "subject": {
+            "x": 641.2457796187264,
+            "y": 416.79655443824214
+          },
+          "camera": [
+            141.56654216604403,
+            30.27504676044897,
+            -31.671059802579585
+          ],
+          "terrainDistance": 2.231503447959731,
+          "width": 1280,
+          "height": 800
+        },
+        "source": {
+          "path": "dist/release-audit-2026-11-27-night-contact/native/1280/contact-frame.json",
+          "sha256": "10226dfd4262a15d7d7509ce836e6c4f4cbcf41cee1558d98298be0a8cb0e900"
+        },
+        "screenSpaceOverlapX": 2.588959636535378,
+        "visibleResponsePixels": 7013,
+        "meanSrgbOverMask": {
+          "flat": [
+            203.94,
+            95.17,
+            56.85
+          ],
+          "linked": [
+            165.73,
+            88.22,
+            60.49
+          ],
+          "flashOff": [
+            86.62,
+            40.41,
+            28.45
+          ]
+        },
+        "lumaP05P95": {
+          "flat": [
+            91.25,
+            123.36
+          ],
+          "linked": [
+            76.23,
+            115.2
+          ],
+          "flashOff": [
+            31.22,
+            67.28
+          ]
+        },
+        "screens": [
+          {
+            "path": "dist/release-audit-2026-11-27-night-contact/native/1280/flat.png",
+            "sha256": "f000d40383719432037e5be3e9bad212e212e3a141a5a2604faca8ba172f18fd"
+          },
+          {
+            "path": "dist/release-audit-2026-11-27-night-contact/native/1280/candidate.png",
+            "sha256": "2c66acfd3f4fc29d76c2a5b6473000c801d24afbc0090403943e1eb9d7e325ba"
+          },
+          {
+            "path": "dist/release-audit-2026-11-27-night-contact/native/1280/unlit.png",
+            "sha256": "cd7bdebe3b04f8f6d873fe2c706cec1bb1be9d7637071e4386229ac95520da38"
+          }
+        ]
+      },
+      {
+        "frame": {
+          "time": 2002.231200000305,
+          "target": "enemy-37",
+          "targetHp": 17,
+          "playerHp": 93,
+          "player": {
+            "x": 199.40963270872365,
+            "y": 488.1794699525987
+          },
+          "subject": {
+            "x": 196.1382279047999,
+            "y": 439.30846480052355
+          },
+          "camera": [
+            141.56494867314956,
+            30.274953456323072,
+            -31.672234868703256
+          ],
+          "terrainDistance": 2.2302358632590833,
+          "width": 390,
+          "height": 844
+        },
+        "source": {
+          "path": "dist/release-audit-2026-11-27-night-contact/native/390/contact-frame.json",
+          "sha256": "3a942b83412b20a5e2b7423282e9b71ea6ac788b85a518afb3b477231ec7af2e"
+        },
+        "screenSpaceOverlapX": 3.271404803923758,
+        "visibleResponsePixels": 7487,
+        "meanSrgbOverMask": {
+          "flat": [
+            204.43,
+            95.42,
+            56.94
+          ],
+          "linked": [
+            166.37,
+            88.51,
+            60.64
+          ],
+          "flashOff": [
+            87.43,
+            40.59,
+            28.52
+          ]
+        },
+        "lumaP05P95": {
+          "flat": [
+            92.18,
+            123.36
+          ],
+          "linked": [
+            77.32,
+            115.13
+          ],
+          "flashOff": [
+            31.94,
+            67.41
+          ]
+        },
+        "screens": [
+          {
+            "path": "dist/release-audit-2026-11-27-night-contact/native/390/flat.png",
+            "sha256": "c5878055accc0a065d39e0950f68e946a63f45aeac1586bd2761da51862607e4"
+          },
+          {
+            "path": "dist/release-audit-2026-11-27-night-contact/native/390/candidate.png",
+            "sha256": "61b15a6c7ce1474ccf839683f94e7d719030240214ff2ab39f2abf326e086974"
+          },
+          {
+            "path": "dist/release-audit-2026-11-27-night-contact/native/390/unlit.png",
+            "sha256": "9259beb4b05d175845a16ac2aae22f77ebd91c05baf6905b58a890e6b2950249"
+          }
+        ]
+      }
+    ],
+    "crop": {
+      "path": "docs/release-audit-2026-11-27/night-contact-comparison.jpg",
+      "sha256": "461686e815d74ea44bd0a8ea61a003cffc7fb8a93db98da5f3b57a6a89af56b0"
+    }
+  },
+  "nativeForest": {
+    "source": {
+      "path": "dist/release-audit-2026-11-27-night-contact/native/report.json",
+      "sha256": "292c09410da5fa2abb52d804098696b0d14abfb12083e7b19e92deb4235ac52f"
+    },
+    "rows": [
+      {
+        "width": 1280,
+        "phases": [
+          {
+            "label": "00-start",
+            "player": {
+              "x": 112.9563189999983,
+              "z": -22.18711151512753,
+              "hp": 100,
+              "stamina": 100,
+              "yaw": -0.4766429070330268
+            },
+            "kills": 20,
+            "wood": 4,
+            "berry": 17,
+            "image": "00-start.jpg"
+          },
+          {
+            "label": "01-gather",
+            "player": {
+              "x": 112.62867127096703,
+              "z": -34.97413291714532,
+              "hp": 100,
+              "stamina": 100,
+              "yaw": 2.16607662048493
+            },
+            "kills": 20,
+            "wood": 4,
+            "berry": 19,
+            "image": "01-gather.jpg"
+          },
+          {
+            "label": "02-encounter",
+            "player": {
+              "x": 139.3070376030432,
+              "z": -45.85923263120724,
+              "hp": 93,
+              "stamina": 100,
+              "yaw": -2.991592653589793
+            },
+            "kills": 21,
+            "wood": 4,
+            "berry": 20,
+            "image": "02-encounter.jpg"
+          }
+        ],
+        "cues": {
+          "sounds": [
+            {
+              "kind": "gather",
+              "options": {
+                "surface": "berry",
+                "pan": 0.7747835905438861,
+                "volume": 0.9894540351204706
+              },
+              "played": true,
+              "wall": 6399.39999999851
+            },
+            {
+              "kind": "hit",
+              "options": {
+                "enemyType": "crab",
+                "pan": 0.1577887519495646,
+                "volume": 1
+              },
+              "played": true,
+              "wall": 11866
+            },
+            {
+              "kind": "hit",
+              "options": {
+                "enemyType": "crab",
+                "pan": 0.23074213776024058,
+                "volume": 1
+              },
+              "played": true,
+              "wall": 12665.70000000298
+            }
+          ],
+          "impacts": [
+            {
+              "id": "resource-170",
+              "kind": "berry",
+              "x": 114.8830231372267,
+              "y": 13.844977416527291,
+              "z": -36.50084836408496,
+              "floor": 13.494977416527291,
+              "time": 1996.9148000003308,
+              "wall": 6399.60000000149,
+              "spawned": true,
+              "drawAt": 6405.70000000298,
+              "activeParticles": 6
+            },
+            {
+              "id": "enemy-37",
+              "kind": "hit",
+              "x": 139.5141088007997,
+              "y": 25.2624464883301,
+              "z": -46.59462942109093,
+              "floor": 24.1124464883301,
+              "time": 2002.381300000305,
+              "wall": 11866.10000000149,
+              "spawned": true,
+              "drawAt": 11871.80000000447,
+              "activeParticles": 6
+            },
+            {
+              "id": "enemy-37",
+              "kind": "hit",
+              "x": 139.45031206379633,
+              "y": 25.38885189312253,
+              "z": -47.00027269575182,
+              "floor": 24.238851893122533,
+              "time": 2003.0313000003027,
+              "wall": 12665.70000000298,
+              "spawned": true,
+              "drawAt": 12670.80000000447,
+              "activeParticles": 6
+            }
+          ],
+          "windups": [
+            {
+              "visible": true,
+              "time": 2002.0313000003066,
+              "wall": 11520.60000000149,
+              "buffer": [
+                1280,
+                800
+              ],
+              "centre": [
+                0.0018455333436975638,
+                -0.26085327659827967,
+                0.9745170558704563
+              ]
+            },
+            {
+              "visible": false,
+              "time": 2002.348000000305,
+              "wall": 11835.70000000298,
+              "buffer": [
+                1280,
+                800
+              ],
+              "centre": [
+                0.010989807946060191,
+                -0.29949262767766227,
+                0.9737732894895083
+              ]
+            }
+          ],
+          "resourceSuppressed": 19
+        },
+        "rest": null,
+        "restored": true,
+        "savedSha256": "a1ed8bb0bad6f3567a09d58ba6ea81854ccc6d895829d225d271d065d79e3bcb",
+        "glError": 0,
+        "recording": {
+          "width": 1280,
+          "height": 800,
+          "seconds": 11.46,
+          "channels": 2,
+          "peak": 0.032728008925914764,
+          "clipped": 0,
+          "bytes": 1684926,
+          "sha256": "2e0a5917768945880998dcbf8b71d13579c20a92b6f3d74e191ee24acd739ea0",
+          "contacts": [
+            {
+              "kind": "gather",
+              "target": "resource-170",
+              "soundToDrawMs": 6.300000004470348,
+              "pan": 0.7747835905438861,
+              "particles": 6
+            },
+            {
+              "kind": "hit",
+              "target": "enemy-37",
+              "soundToDrawMs": 5.800000004470348,
+              "pan": 0.1577887519495646,
+              "particles": 6
+            },
+            {
+              "kind": "hit",
+              "target": "enemy-37",
+              "soundToDrawMs": 5.100000001490116,
+              "pan": 0.23074213776024058,
+              "particles": 6
+            }
+          ],
+          "capturedSeconds": 11.525333333333334
+        }
+      },
+      {
+        "width": 390,
+        "phases": [
+          {
+            "label": "00-start",
+            "player": {
+              "x": 112.9563189999983,
+              "z": -22.18711151512753,
+              "hp": 100,
+              "stamina": 100,
+              "yaw": -0.4766429070330268
+            },
+            "kills": 20,
+            "wood": 4,
+            "berry": 17,
+            "image": "00-start.jpg"
+          },
+          {
+            "label": "01-gather",
+            "player": {
+              "x": 112.49561461427017,
+              "z": -35.07225093846992,
+              "hp": 100,
+              "stamina": 100,
+              "yaw": 2.1100299411272694
+            },
+            "kills": 20,
+            "wood": 4,
+            "berry": 19,
+            "image": "01-gather.jpg"
+          },
+          {
+            "label": "02-encounter",
+            "player": {
+              "x": 139.30554871684146,
+              "z": -45.86109983708546,
+              "hp": 93,
+              "stamina": 100,
+              "yaw": -2.991592653589793
+            },
+            "kills": 21,
+            "wood": 4,
+            "berry": 20,
+            "image": "02-encounter.jpg"
+          }
+        ],
+        "cues": {
+          "sounds": [
+            {
+              "kind": "gather",
+              "options": {
+                "surface": "berry",
+                "pan": 0.7547428064397003,
+                "volume": 0.9876676728220826
+              },
+              "played": true,
+              "wall": 5185.10000000149
+            },
+            {
+              "kind": "hit",
+              "options": {
+                "enemyType": "crab",
+                "pan": 0.15683878760977293,
+                "volume": 1
+              },
+              "played": true,
+              "wall": 10618.5
+            },
+            {
+              "kind": "hit",
+              "options": {
+                "enemyType": "crab",
+                "pan": 0.2296637913564979,
+                "volume": 1
+              },
+              "played": true,
+              "wall": 11401.60000000149
+            }
+          ],
+          "impacts": [
+            {
+              "id": "resource-170",
+              "kind": "berry",
+              "x": 114.8830231372267,
+              "y": 13.844977416527291,
+              "z": -36.50084836408496,
+              "floor": 13.494977416527291,
+              "time": 1996.7981000003313,
+              "wall": 5185.20000000298,
+              "spawned": true,
+              "drawAt": 5190.79999999702,
+              "activeParticles": 6
+            },
+            {
+              "id": "enemy-37",
+              "kind": "hit",
+              "x": 139.51124107897377,
+              "y": 25.261474486632096,
+              "z": -46.594582155293814,
+              "floor": 24.111474486632098,
+              "time": 2002.231200000305,
+              "wall": 10618.60000000149,
+              "spawned": true,
+              "drawAt": 10623.39999999851,
+              "activeParticles": 6
+            },
+            {
+              "id": "enemy-37",
+              "kind": "hit",
+              "x": 139.4473192822885,
+              "y": 25.3882937743608,
+              "z": -47.002327731404925,
+              "floor": 24.238293774360802,
+              "time": 2002.981200000302,
+              "wall": 11401.60000000149,
+              "spawned": true,
+              "drawAt": 11405.70000000298,
+              "activeParticles": 6
+            }
+          ],
+          "windups": [
+            {
+              "visible": true,
+              "time": 2001.8479000003067,
+              "wall": 10239.60000000149,
+              "buffer": [
+                390,
+                844
+              ],
+              "centre": [
+                0.006304199966534124,
+                -0.26095975706917895,
+                0.9745155946677511
+              ]
+            },
+            {
+              "visible": false,
+              "time": 2002.1645000003055,
+              "wall": 10556.39999999851,
+              "buffer": [
+                390,
+                844
+              ],
+              "centre": [
+                0.03796620216126135,
+                -0.29960441215114414,
+                0.9737717431004056
+              ]
+            }
+          ],
+          "resourceSuppressed": 19
+        },
+        "rest": null,
+        "restored": true,
+        "savedSha256": "caec43f89d2178cf89cb80cd1cc28c9e77303a9d0a46d75a0ecd6e8b9de5106f",
+        "glError": 0,
+        "recording": {
+          "width": 390,
+          "height": 844,
+          "seconds": 11.46,
+          "channels": 2,
+          "peak": 0.032322607934474945,
+          "clipped": 0,
+          "bytes": 1579133,
+          "sha256": "1dd4add206fe3e4d1ec2f542b9acd124eb164bfaf6d7c6a6a5f90281d50509b4",
+          "contacts": [
+            {
+              "kind": "gather",
+              "target": "resource-170",
+              "soundToDrawMs": 5.699999995529652,
+              "pan": 0.7547428064397003,
+              "particles": 6
+            },
+            {
+              "kind": "hit",
+              "target": "enemy-37",
+              "soundToDrawMs": 4.899999998509884,
+              "pan": 0.15683878760977293,
+              "particles": 6
+            },
+            {
+              "kind": "hit",
+              "target": "enemy-37",
+              "soundToDrawMs": 4.100000001490116,
+              "pan": 0.2296637913564979,
+              "particles": 6
+            }
+          ],
+          "capturedSeconds": 11.530666666666667
+        }
+      }
+    ],
+    "fixtureSha256": "420d8d26d0e919f84bda1c8550036a6d4050c95663ca07c0ae7304d2cc978499",
+    "driver": {
+      "path": "dist/release-audit-2026-11-27-night-contact/run.mjs",
+      "sha256": "38bc61bf890e1cc50632c3b5baaca736af35417d5fe0de47224489280d646f2a"
+    }
+  },
+  "endingFromStageFive": {
+    "source": {
+      "path": "dist/release-audit-2026-11-27-night-contact/ending/raw.json",
+      "sha256": "dfa7a3fecc567c291633ff3ff3a70023a65b76fef0054038c6b6e9c70dd5b761"
+    },
+    "sourceSaveSha256": "26308d5c7559a85a99162af13cd14e6f57d8e4fbebdb4822ca8b8c7fd01e696c",
+    "postEndingM": 16.572026624707227,
+    "materialCost": {
+      "wood": 12,
+      "stone": 8,
+      "crystal": 3
+    },
+    "reloadExact": true,
+    "importPositionChange": {
+      "wall": 1795746205454,
+      "event": "observed-position-jump",
+      "from": {
+        "x": -70,
+        "z": 102,
+        "hp": 100,
+        "stamina": 100,
+        "yaw": 0
+      },
+      "to": {
+        "x": -71.93420667822949,
+        "z": -214.58080259705696,
+        "hp": 66,
+        "stamina": 100,
+        "yaw": -2.3045363985883274
+      }
+    },
+    "states": [
+      {
+        "name": "00-imported",
+        "save": "00-imported-save.json",
+        "saveSha256": "082ca2b17ac3a00490cbdd265e293781adcb343561b069edbfc14bab7b4cf839",
+        "image": "00-imported.png",
+        "imageSha256": "b029da2bfb5c26688ec9a9669920bc1963dcc2b58d279e0da8a17f61c1428f09",
+        "quest": 5,
+        "kills": 10,
+        "time": 650.3327999998695,
+        "player": {
+          "x": -71.93420667822949,
+          "z": -214.58080259705696,
+          "hp": 66,
+          "stamina": 100,
+          "yaw": -2.3045363985883274
+        },
+        "inventory": {
+          "wood": 13,
+          "stone": 10,
+          "fiber": 20,
+          "berry": 9,
+          "shell": 0,
+          "crystal": 3,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "built-0-18988",
+            "type": "campfire",
+            "x": -73.06273408212543,
+            "z": 106.72297401425469
+          }
+        ],
+        "discovered": [
+          "潮汐海岸",
+          "群岛海域",
+          "苍翠林地",
+          "雾岬高地"
+        ],
+        "ui": {
+          "title": "让灯塔重新发光",
+          "hp": 66,
+          "toast": "存档已导入。",
+          "hidden": false,
+          "glError": 0,
+          "viewport": [
+            1280,
+            800
+          ],
+          "buffer": [
+            1280,
+            800
+          ]
+        }
+      },
+      {
+        "name": "07-lamp-materials",
+        "save": "07-lamp-materials-save.json",
+        "saveSha256": "8f5b3ca93e440de49e8058404370680f84d86a267e878716cf6167ac50402f2a",
+        "image": "07-lamp-materials.png",
+        "imageSha256": "e59b9c7b9db9753e50c159febe2947edc488622b95934d0b537196f87e8ec5b2",
+        "quest": 5,
+        "kills": 10,
+        "time": 650.5494999998697,
+        "player": {
+          "x": -71.93420667822949,
+          "z": -214.58080259705696,
+          "hp": 66,
+          "stamina": 100,
+          "yaw": -2.3045363985883274
+        },
+        "inventory": {
+          "wood": 13,
+          "stone": 10,
+          "fiber": 20,
+          "berry": 9,
+          "shell": 0,
+          "crystal": 3,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "built-0-18988",
+            "type": "campfire",
+            "x": -73.06273408212543,
+            "z": 106.72297401425469
+          }
+        ],
+        "discovered": [
+          "潮汐海岸",
+          "群岛海域",
+          "苍翠林地",
+          "雾岬高地"
+        ],
+        "ui": {
+          "title": "让灯塔重新发光",
+          "hp": 66,
+          "toast": "存档已导入。",
+          "hidden": false,
+          "glError": 0,
+          "viewport": [
+            1280,
+            800
+          ],
+          "buffer": [
+            1280,
+            800
+          ]
+        }
+      },
+      {
+        "name": "08-beacon",
+        "save": "08-beacon-save.json",
+        "saveSha256": "f85c580913894fa91d6fb55cddfdacaffab421ab00a14a670db1111ec6432e23",
+        "image": "08-beacon.png",
+        "imageSha256": "4cf32456e3cf8926b841009f25b22289d2ed754fc7090c8eb113caaf53336c17",
+        "quest": 6,
+        "kills": 12,
+        "time": 683.2146999999135,
+        "player": {
+          "x": -90.02298664244313,
+          "z": -56.651521881536034,
+          "hp": 70,
+          "stamina": 100,
+          "yaw": 0.15
+        },
+        "inventory": {
+          "wood": 1,
+          "stone": 2,
+          "fiber": 24,
+          "berry": 10,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "built-0-18988",
+            "type": "campfire",
+            "x": -73.06273408212543,
+            "z": 106.72297401425469
+          }
+        ],
+        "discovered": [
+          "潮汐海岸",
+          "群岛海域",
+          "苍翠林地",
+          "雾岬高地"
+        ],
+        "ui": {
+          "title": "群岛，再次相连",
+          "hp": 70,
+          "toast": "灯塔亮了！远处传来船鸣，群岛再次相连。主线已完成，可以继续自由探索。\n归航灯塔已被修复，主线完成！你可以继续自由探索。",
+          "hidden": false,
+          "glError": 0,
+          "viewport": [
+            1280,
+            800
+          ],
+          "buffer": [
+            1280,
+            800
+          ]
+        }
+      },
+      {
+        "name": "09-exploration",
+        "save": "09-exploration-save.json",
+        "saveSha256": "2867a71d9426b974e66d03d09b7115b8f1964ed7e0d3f2a36f95754d499c18d9",
+        "image": "09-exploration.png",
+        "imageSha256": "49042f73bce50b2df03f7409530e79df053550f3361681144f9fc6771fac7b32",
+        "quest": 6,
+        "kills": 12,
+        "time": 686.4645999999178,
+        "player": {
+          "x": -101.19923547819052,
+          "z": -44.41536527860469,
+          "hp": 70,
+          "stamina": 100,
+          "yaw": 0.15
+        },
+        "inventory": {
+          "wood": 1,
+          "stone": 2,
+          "fiber": 24,
+          "berry": 10,
+          "shell": 0,
+          "crystal": 0,
+          "axe": 1,
+          "sword": 0,
+          "meal": 0
+        },
+        "buildings": [
+          {
+            "id": "built-0-18988",
+            "type": "campfire",
+            "x": -73.06273408212543,
+            "z": 106.72297401425469
+          }
+        ],
+        "discovered": [
+          "潮汐海岸",
+          "群岛海域",
+          "苍翠林地",
+          "雾岬高地"
+        ],
+        "ui": {
+          "title": "群岛，再次相连",
+          "hp": 70,
+          "toast": "灯塔亮了！远处传来船鸣，群岛再次相连。主线已完成，可以继续自由探索。\n归航灯塔已被修复，主线完成！你可以继续自由探索。",
+          "hidden": false,
+          "glError": 0,
+          "viewport": [
+            1280,
+            800
+          ],
+          "buffer": [
+            1280,
+            800
+          ]
+        }
+      }
+    ],
+    "driver": {
+      "path": "dist/release-audit-2026-11-27-night-contact/ending-run.mjs",
+      "sha256": "751f8e72ea81534394195348be4bc3e6c2bf7e792d6eb89ccf2fa433c937cd1a"
+    }
+  },
+  "touch": {
+    "source": {
+      "path": "dist/release-audit-2026-11-27-night-contact/touch/report.json",
+      "sha256": "430f166547fb89197511402fbad71bb773a8b66b1d787b853160801566361209"
+    },
+    "device": "Chrome viewport simulation on Mac",
+    "travelM": 3.3664750279394537,
+    "cameraTurnDegrees": 17.188733853924695,
+    "invalidRejected": true,
+    "events": [
+      {
+        "id": "joystick",
+        "type": "pointerdown",
+        "pointerId": 2,
+        "pointerType": "touch"
+      },
+      {
+        "id": "joystick",
+        "type": "pointermove",
+        "pointerId": 2,
+        "pointerType": "touch"
+      },
+      {
+        "id": "world",
+        "type": "pointerdown",
+        "pointerId": 3,
+        "pointerType": "touch"
+      },
+      {
+        "id": "world",
+        "type": "pointermove",
+        "pointerId": 3,
+        "pointerType": "touch"
+      },
+      {
+        "id": "world",
+        "type": "pointermove",
+        "pointerId": 3,
+        "pointerType": "touch"
+      },
+      {
+        "id": "world",
+        "type": "pointermove",
+        "pointerId": 3,
+        "pointerType": "touch"
+      },
+      {
+        "id": "world",
+        "type": "pointermove",
+        "pointerId": 3,
+        "pointerType": "touch"
+      },
+      {
+        "id": "world",
+        "type": "pointermove",
+        "pointerId": 3,
+        "pointerType": "touch"
+      },
+      {
+        "id": "joystick",
+        "type": "pointerup",
+        "pointerId": 2,
+        "pointerType": "touch"
+      },
+      {
+        "id": "world",
+        "type": "pointerup",
+        "pointerId": 3,
+        "pointerType": "touch"
+      }
+    ]
+  },
+  "testResults": {
+    "gameTestsPassed": 472,
+    "gameTestsReceipt": {
+      "path": "dist/release-audit-2026-11-27-night-contact/game-tests.tap",
+      "sha256": "2ba177264daa2f6fbdf6fc32af923a420c80d61482846c64ad1e9f36925f4ea9"
+    },
+    "packagingTestsPassed": 7
+  }
+}

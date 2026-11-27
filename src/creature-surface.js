@@ -25,7 +25,8 @@ export function acquireCreatureSurface(type,cache=null){
   let pool;if(cache){pool=pools.get(cache);if(!pool){pool=new Map();pools.set(cache,pool);}}
   let entry=pool?.get(type);if(!entry){entry={maps:makeMaps(type),references:0};pool?.set(type,entry);}entry.references++;
   const [map,normalMap,roughnessMap]=entry.maps;
-  const material=new THREE.MeshStandardMaterial({map,normalMap,roughnessMap,roughness:1,normalScale:new THREE.Vector2(.55,.55)});
+  // The hit response follows the same shell or hide detail as the lit surface.
+  const material=new THREE.MeshStandardMaterial({map,emissiveMap:map,normalMap,roughnessMap,roughness:1,normalScale:new THREE.Vector2(.55,.55)});
   let released=false;
   return {material,release(){if(released)return;released=true;if(--entry.references===0){entry.maps.forEach(t=>t.dispose());pool?.delete(type);}}};
 }

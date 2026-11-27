@@ -179,7 +179,7 @@ export function animateCreature(root,enemy,time,dt,height,target,attackPose=unde
   const distant=u.far&&!moving&&attack===0&&hurt===0&&death===0;
   u.body.visible=!distant;u.distant.visible=distant;
   u.distant.position.copy(u.body.position);u.distant.rotation.copy(u.body.rotation);
-  u.hide.emissive.setRGB(hurt*.28,hurt*.045,hurt*.015);
+  u.hide.emissive.setRGB(hurt*.36,hurt*.38,hurt*.42);
   root.position.set(enemy.x,height,enemy.z);root.visible=death<1;
   u.ground.position.y=0;u.ground.quaternion.identity();
   if(heightAt&&death===0&&enemy.hp>0){
