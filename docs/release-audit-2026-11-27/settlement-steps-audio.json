@@ -424,5 +424,88 @@
     "simulated": true,
     "movementMeters": 3.366466265438065,
     "cameraDegrees": 17.188733853924695
+  },
+  "freshCampaign": {
+    "path": "dist/settlement-steps-fresh-2026-11-28",
+    "sourceSha256": "1219d04b3cff8547502ded240be90530b4c2ba999c766ad4da7d5f9baf5e5184",
+    "runnerSha256": "ce84ff26b8c06c8bd294d7c094398e26f96c1374e8a1a8d481699a8b1474fda1",
+    "fromEmptyProfile": true,
+    "attempts": 1,
+    "complete": true,
+    "reloadExact": true,
+    "exportExact": true,
+    "cost": {
+      "wood": 12,
+      "stone": 8,
+      "crystal": 3
+    },
+    "postEndingMeters": 18.139841234420317,
+    "kills": 12,
+    "respawns": 0,
+    "logs": [],
+    "phases": [
+      {
+        "name": "00-fresh",
+        "quest": 0,
+        "saveSha256": "1bb1a152f71f28711f06bfeeae049871a31778d2c35f9241a4b1e2ca9b6d147d",
+        "imageSha256": "bfff7924cf5da198c03046e10eeb8d920a831be24b8ae6c2267313d8cd11d6ac"
+      },
+      {
+        "name": "01-keeper",
+        "quest": 1,
+        "saveSha256": "64b7e85b8c3ead76bda1ee99c4cc6e5ee37a56346176617377f3588c88caac13",
+        "imageSha256": "0fa169dca304e44b2c5d63b430edc9e7c6e66fa53475253462868c1d69c96bd8"
+      },
+      {
+        "name": "02-axe",
+        "quest": 2,
+        "saveSha256": "1a88de6655cc903a0236a946e5dc3cbab1746c8888d7ee174ff9789e8833b7e0",
+        "imageSha256": "0e0233ad7c8e699b6d11e1cba94fb50eadef573d4a4589bb2393c5f5a7023c07"
+      },
+      {
+        "name": "03-camp",
+        "quest": 3,
+        "saveSha256": "612e6b56dd7b2f952f6cd74366b32d08325e9fd0af281e234ebd8f176a66f965",
+        "imageSha256": "bc5cb6b32ebfa6a243267d329ef84bfe8cac80fd635fd477fcd66cfe636b59f7"
+      },
+      {
+        "name": "04-botanist",
+        "quest": 4,
+        "saveSha256": "b672a4968579c67813b62040592ba7ed1f169eb4b2b9574a08094e1c5f715c38",
+        "imageSha256": "03fee1839d690e281b704687f2f662fa82bd333bb1d086a9d84e4abe83d3a85b"
+      },
+      {
+        "name": "05-two-kills",
+        "quest": 4,
+        "saveSha256": "82579419c60ae1dc15cf6ab8f8784695480fa88a9c6af0354da2a233340d3d98",
+        "imageSha256": "6022142de820aaa3099de7b6037f029669b1839984f8c21e5819cc107234f825"
+      },
+      {
+        "name": "06-explorer",
+        "quest": 5,
+        "saveSha256": "195d7d7df344ea9ba9b8b7513b1c5c522f0fd47e0371387df927dee17bb3b418",
+        "imageSha256": "ac89b9dc597fcb2c1456beb2436bf6465efa7b3e3f10b5dbe3ff7ea47e0de6fc"
+      },
+      {
+        "name": "07-lamp-materials",
+        "quest": 5,
+        "saveSha256": "f0cf589598c3f16240cf22bba0d72ac05a4ec8c162014c2d163d88fcf5984a88",
+        "imageSha256": "3b44580c02c8fc931bc1615a196ef02595083f8e3ab50065f0d9a96da2e8671a"
+      },
+      {
+        "name": "08-beacon",
+        "quest": 6,
+        "saveSha256": "6db63a4a880acc3c0d1c30cd6bc1eb92aeba9fc67b69f046964197bef646b900",
+        "imageSha256": "05a1be5afd409f8060109fc46f4063a149a4825723b87a5145945054d5afd7d6"
+      },
+      {
+        "name": "09-exploration",
+        "quest": 6,
+        "saveSha256": "39a57c84a8b02c948aa76a356166a8135e6a221bfc7dc59f922d4a825851708c",
+        "imageSha256": "57733c21ad1b7e660300d74d05536d35a354f18ef379403e6881369013e6efae"
+      }
+    ],
+    "finalSaveSha256": "c96c0e3c845af9dfc86ebbe6839f5b2df8ea71e8a38f411fd9f6c006155ee203",
+    "exportSha256": "0212cf54aed97e3d8cbd6ac9691abdcdbc078261d59918e7bf739b537a89d26e"
   }
 }

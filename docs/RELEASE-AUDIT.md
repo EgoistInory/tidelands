@@ -181,4 +181,6 @@ python3 tools/verify_local.py --name tidelands-m5-2026-11-27-highland-shoulders
 
 `a77a459e` 的逐次落脚记录显示，门廊至渔作院的 15 次落脚均用草地声，其中 6 次踩在已有的压实路面分布内。`62b2fcb4` 复用该分布和砂砾声，实录 5 次砂砾、9 次草地，在压实路及草坡间随落脚切换。两轮原声峰值分别为 0.00927 和 0.00978，均低于既有录音检查线 0.01。保留原声、坐标和失败记录。两段均无削波，主观听感仍需实听。[原包脚步](release-audit-2026-11-27/sightline-yard-steps.webm) [候选脚步](release-audit-2026-11-27/candidate-yard-steps.webm) [声画与落脚记录](release-audit-2026-11-27/settlement-steps-audio.json)
 
-候选 `dist/tidelands-m5-2026-11-27-settlement-steps.zip` 共 221 个运行文件，仅 `src/audio.js` 与 `a77a459e` 有差异。474 项游戏测试、7 项打包测试通过。桌面、模拟窄屏实际走进渔作院并返回门廊，刷新、原生导出及坏档拒绝通过，模拟双触点另通过。空白档主线和十分钟四岛实走继续以 `a77a459e` 的已验包为交付依据。[候选包校验](tidelands-m5-2026-11-27-settlement-steps-verification.json)
+候选 `dist/tidelands-m5-2026-11-27-settlement-steps.zip` 共 221 个运行文件，仅 `src/audio.js` 与 `a77a459e` 有差异。474 项游戏测试、7 项打包测试通过。桌面、模拟窄屏实际走进渔作院并返回门廊，刷新、原生导出及坏档拒绝通过，模拟双触点另通过。十分钟四岛实走证据来自 `a77a459e`。[候选包校验](tidelands-m5-2026-11-27-settlement-steps-verification.json)
+
+2026-11-28，`62b2fcb4` 从空白档一次完成六步主线。点亮灯塔扣除 12 木材、8 石料、3 晶石，累计击败 12 只生物。结局后探索 18.14 米，刷新和游戏内完整再导出通过，零死亡回跳和页面告警。过程记录位于 `dist/settlement-steps-fresh-2026-11-28/`。[脚步候选主线证据](release-audit-2026-11-27/settlement-steps-audio.json)
