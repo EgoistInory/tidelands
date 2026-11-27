@@ -1,0 +1,157 @@
+{
+  "archiveSha256": "d15e2c51879324085689f1da5b4c85699e7c93008f3a2f1681b408459362f60c",
+  "startingSaveSha256": "e8f13a619edb7e4ca779f4faf6b7a0fdaaa21b6a9e5e917adefeefdb2a6775ae",
+  "source": "dist/release-audit-2026-11-27-shoulders-av/report.json",
+  "sourceSha256": "3f807b187888ec0794d96a2c4bbde13109caca26b457cd334d65fd1f0b4b036b",
+  "complete": true,
+  "logs": [],
+  "scope": "Actual forest collection and combat with a read-only canvas and game mix recorder on Mac Chrome. Hardware audio output and physical touch remain unverified.",
+  "excerpt": {
+    "file": "shoulders-forest-contact.webm",
+    "sha256": "fbc9c14ab3a922f4335c848fd5bec0372a9e16bda7f74bbd2ac43d561a74c596",
+    "resolution": [
+      720,
+      450
+    ],
+    "audio": "Opus stereo 48000 Hz, copied with original level",
+    "durationSeconds": 12.027,
+    "reviewFrameTimes": [
+      1.6,
+      2.05,
+      2.4,
+      7.2,
+      7.5,
+      8.2
+    ]
+  },
+  "rows": [
+    {
+      "viewport": [
+        1280,
+        800
+      ],
+      "restored": true,
+      "rest": {
+        "before": 72,
+        "after": 100
+      },
+      "glError": 0,
+      "recording": {
+        "width": 1280,
+        "height": 800,
+        "seconds": 106.68,
+        "channels": 2,
+        "peak": 0.045939043164253235,
+        "clipped": 0,
+        "bytes": 22102191,
+        "sha256": "f32537966722828b48e66f008b0be627a34c2f18dadcec213cff3453fc212da7",
+        "contacts": [
+          {
+            "kind": "gather",
+            "target": "resource-170",
+            "soundToDrawMs": 6.5,
+            "pan": 0.5922098686197749,
+            "particles": 6
+          },
+          {
+            "kind": "hit",
+            "target": "enemy-37",
+            "soundToDrawMs": 5.899999998509884,
+            "pan": 0.8114219024322432,
+            "particles": 6
+          },
+          {
+            "kind": "hit",
+            "target": "enemy-37",
+            "soundToDrawMs": 5,
+            "pan": 0.8112141442997417,
+            "particles": 6
+          }
+        ],
+        "capturedSeconds": 106.74133333333333
+      },
+      "sourceEvents": [
+        {
+          "kind": "gather",
+          "seconds": 1.984
+        },
+        {
+          "kind": "hit",
+          "seconds": 7.317333333333333
+        },
+        {
+          "kind": "hit",
+          "seconds": 8.101333333333333
+        }
+      ],
+      "feedback": {
+        "gather": 1,
+        "hits": 2
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "restored": true,
+      "rest": {
+        "before": 79,
+        "after": 100
+      },
+      "glError": 0,
+      "recording": {
+        "width": 390,
+        "height": 844,
+        "seconds": 105.36,
+        "channels": 2,
+        "peak": 0.04036035016179085,
+        "clipped": 0,
+        "bytes": 19275435,
+        "sha256": "9f6de7ef08f022a77d1ad2b526cb15431211ee5af52df59ceb6699803ace3290",
+        "contacts": [
+          {
+            "kind": "gather",
+            "target": "resource-170",
+            "soundToDrawMs": 5.699999995529652,
+            "pan": 0.8096911902510514,
+            "particles": 6
+          },
+          {
+            "kind": "hit",
+            "target": "enemy-37",
+            "soundToDrawMs": 5.600000001490116,
+            "pan": 0.8257734997896506,
+            "particles": 6
+          },
+          {
+            "kind": "hit",
+            "target": "enemy-37",
+            "soundToDrawMs": 5,
+            "pan": 0.8249806619585421,
+            "particles": 6
+          }
+        ],
+        "capturedSeconds": 105.41866666666667
+      },
+      "sourceEvents": [
+        {
+          "kind": "gather",
+          "seconds": 2.1066666666666665
+        },
+        {
+          "kind": "hit",
+          "seconds": 7.221333333333334
+        },
+        {
+          "kind": "hit",
+          "seconds": 8.021333333333333
+        }
+      ],
+      "feedback": {
+        "gather": 1,
+        "hits": 2
+      }
+    }
+  ]
+}
